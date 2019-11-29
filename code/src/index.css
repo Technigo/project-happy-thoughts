@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+* {
+  font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +14,95 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+.App {
+  /* font-family: sans-serif; */
+  display: flex;
+  flex-direction: column;
+}
+
+.thought, .add-happy-thought {
+  width: 400px;
+  height: 140px;
+  margin: 1rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #9f9f9f;
+  box-shadow: .4rem .4rem;
+}
+
+.add-happy-thought {
+  display: inline-block;
+  height: 180px;
+  font-size: .8rem;
+  background-color: #f2f0f0;
+}
+
+#thought-question {
+  display: block;
+
+}
+
+.add-thought-text {
+  resize: none;
+  padding: .5rem;
+  width: 370px;
+  height: 50px;
+}
+.button-submit {
+  color: #000;
+  background-color: #ffadac;
+  border-radius: 2rem;
+  border: none;
+  padding: .5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: auto;
+  font-family: 'Roboto Mono', monospace;
+  font-size: .8rem;
+  margin-top: 1rem;
+}
+
+
+.thoughts-list {
+  display: inline-block;
+}
+
+.heart-button-liked,
+.heart-button-unliked {
+  background-color: #eaeaea;
+  border-radius: 100%;
+  padding: .5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  height: 3rem;
+  width: 3rem;
+  margin: 1rem 1rem 1rem 0;
+}
+.heart-button-liked {
+  background-color: #FFACAC;
+}
+
+.heart {
+  display: inline;
+}
+
+#hearts-count, #thought-timer {
+  color: #afafaf;
+}
+
+.thought-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
