@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { Heart } from './Heart'
+import './thoughts.css'
 
 export const Thoughts = () => {
 
@@ -11,13 +13,13 @@ export const Thoughts = () => {
   }, [])
 
   return (
-    <div>
-      <ul>
-        {thoughts.map(thought => (
-          <li key={thought._id}>{thought.message}</li>
-        ))}
-      </ul>
+    <div className="thoughts-wrapper">
+      {thoughts.map(thought => (
+        <div className="thought" key={thought._id}>
+          <div className="message">{thought.message}</div>
+          <div className="likes"><span className="icon"><Heart /></span>{thought.hearts}</div>
+        </div>
+      ))}
     </div>
-
   )
 }

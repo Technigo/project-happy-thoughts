@@ -1,0 +1,27 @@
+.thoughts-wrapper {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thought {
+  margin: 20px 0;
+  width: 30%;
+  height: 120px;
+  border: 1px solid #000;
+  box-shadow: 0 5px 5px 0 #000;
+}
+
+.message {
+  padding: 10px;
+}
+
+.likes {
+  padding: 10px;
+}
+
+.icon {
+  margin-right: 10px;
+}
