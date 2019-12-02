@@ -32,6 +32,12 @@ main,
 textarea {
   width: 100%;
   resize: none;
+  margin: 5px;
+  padding: 15px;
+}
+
+p {
+  padding: 5px;
 }
 
 .new-message button {
@@ -50,7 +56,18 @@ textarea {
   color: #ff4234;
 }
 
-.card button {
+.card-bottom,
+.like-section {
+  display: flex;
+  align-items: center;
+}
+
+.card-bottom {
+  justify-content: space-between;
+  color: #cdcdcd;
+}
+
+.like-section button {
   padding: 10px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -59,6 +76,7 @@ textarea {
   -o-border-radius: 50%;
   border: none;
   color: #ff4234;
+  margin: 15px;
 }
 
 .liked {
