@@ -18,7 +18,7 @@ const handleSubmit = (event) => {
   return (
     <div className="myResult">
       {showResult && (
-        <div>
+        <div className="theResult">
           <h1>Here's your result!</h1>
           <p>You are {happiness ==='happy' ? 'Super happy!' : 'Sad :('}</p>
           <p>{feeling}</p>
@@ -67,6 +67,7 @@ const handleSubmit = (event) => {
             <select onChange={(event) => setColor(event.target.value)}>
               <option value="Blue">Blue</option>
               <option value="Green">Green</option>
+              <option value="Red">Red</option>
             </select>
            </div>
           <br></br>
