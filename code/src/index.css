@@ -13,6 +13,10 @@ body {
   background: #000;
 }
 
+button {
+  display: inline-block;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -20,18 +24,75 @@ code {
 
 .container {
   background: #fff;
-  width: 90%;
-  height: 100vh;
+  width: 85%;
+  height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   padding-top: 2rem;
 }
 
 .main-message-container {
+  margin-bottom: 2rem;
+  background: #f2f0f0;
+  height: 10rem;
+}
+
+.main-message-container,
+.message-li {
   width: 80%;
   margin: 0 auto;
   border: 1px solid rgb(54, 54, 54);
+  box-shadow: 8px 8px 0 #000;
+}
+
+.main-message-container--btn {
+  background: #ffadad;
 }
 
 .newMessage-input {
   display: block;
+}
+
+.message-li {
+  list-style-type: none;
+  margin-top: 2rem;
+  /* margin-bottom: 2rem; */
+  height: 7rem;
+}
+
+/* .message-li:last-of-type {
+  padding-bottom: 2rem;
+} */
+
+@media (min-width: 500px) {
+  .container {
+    width: 75%;
+  }
+
+  .main-message-container,
+  .message-li {
+    width: 70%;
+  }
+}
+
+@media (min-width: 700px) {
+  .container {
+    width: 70%;
+  }
+
+  .main-message-container,
+  .message-li {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 65%;
+  }
+
+  .main-message-container,
+  .message-li {
+    width: 45%;
+  }
 }
