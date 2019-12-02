@@ -6,7 +6,7 @@ export const App = () => {
 const [happiness,setHappiness] = useState('happy')
 const [feeling, setFeeling] = useState('')
 const [reason, setReason] = useState('')
-const [color, setColor] = useState('')
+const [color, setColor] = useState('Blue')
 
 const [showResult, setShowResult] = useState(false)
 
@@ -21,9 +21,9 @@ const handleSubmit = (event) => {
         <div className="theResult">
           <h1>Here's your result!</h1>
           <p>You are {happiness ==='happy' ? 'Super happy!' : 'Sad :('}</p>
-          <p>{feeling}</p>
-          <p>{reason}</p>
-          <p>{color}</p>
+          <p>And you are feeling {feeling}</p>
+          <p>Coz of {reason}</p>
+          <p>You feel {color}</p>
         </div>
 
 
