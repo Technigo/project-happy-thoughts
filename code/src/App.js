@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Thoughts } from './components/Thoughts'
 
 export const App = () => {
+
   return (
     <div>
-      Find me in src/app.js!
+      <Thoughts />
     </div>
   )
+
 }
