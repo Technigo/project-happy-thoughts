@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Tahoma,Verdana,Segoe,sans-serif; 
-  font-weight: lighter;
+  font-family: 'Inconsolata', monospace;
   box-sizing: border-box;
 }
 body {
@@ -19,7 +18,7 @@ main,
 
 .new-message,
 .card {
-  margin-top: 15px;
+  margin: 20px 10px;
   border: 1px #000 solid;
   box-shadow: 5px 5px 0px 0px #000;
   padding: 15px;
@@ -49,6 +48,7 @@ p {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   border: none;
+  font-weight: 700;
 }
 
 .new-message button i {
@@ -79,6 +79,20 @@ p {
   margin: 15px;
 }
 
+.notLiked {
+  background-color: #eaeaea;
+}
+
 .liked {
   background-color: #ffadad;
+}
+
+.wrongLength {
+  color: #ff4234;
+  font-weight: 700;
+}
+
+.goodLength {
+  color: #10b12b;
+  font-weight: 700;
 }

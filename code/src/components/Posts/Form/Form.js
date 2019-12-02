@@ -15,13 +15,15 @@ const Form = () => {
     <article className="new-message">
       <form>
         <h4>What{'\''}s making you happy right now? </h4>
-        <textarea maxLength="140" required onChange={(e) => { setMessage(e.target.value) }} />
-        <p>{message.length}/140</p>
-        <button type="submit" onClick={submitHandler}>
+        <textarea rows="4" minLength="5" maxLength="140" required onChange={(e) => { setMessage(e.target.value) }} />
+        <section className="card-bottom">
+          <button type="submit" onClick={submitHandler}>
+            <i className="fa fa-heart" aria-hidden="true" />
+            Send Happy Thought
           <i className="fa fa-heart" aria-hidden="true" />
-          Send Happy Thought
-          <i className="fa fa-heart" aria-hidden="true" />
-        </button>
+          </button>
+          <p className={((message.length < 5 || message.length >= 140) ? 'wrongLength' : 'goodLength')}>{message.length}/140</p>
+        </section>
       </form>
     </article>
   )

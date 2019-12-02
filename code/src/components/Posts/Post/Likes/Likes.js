@@ -10,7 +10,7 @@ const Likes = ({ hearts, id }) => {
 
   return (
     <section className="like-section">
-      <button type="button" className={(likes > 0 ? 'liked' : '')} onClick={likeClickHandler}>
+      <button type="button" className={(likes > 0 ? 'liked' : 'notLiked')} onClick={likeClickHandler}>
         <i className="fa fa-heart" aria-hidden="true" />
       </button>
       <p>x{likes}</p>
