@@ -1,4 +1,5 @@
 import React from 'react'
+import './heart.css'
 
 export const Heart = () => {
   return (

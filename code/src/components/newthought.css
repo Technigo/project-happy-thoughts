@@ -1,4 +1,4 @@
-.thoughts-wrapper {
+.newthought-wrapper {
   margin: 20px 0;
   display: flex;
   flex-direction: column;
@@ -6,25 +6,25 @@
   align-items: center;
 }
 
-.thought {
+.newthought {
   margin: 20px 0;
   padding: 15px;
   width: 350px;
-  height: 100px;
+  height: 150px;
+  background: #efefef;
   border: 1px solid #000;
   box-shadow: 5px 10px #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
-.message, .likes {
-  padding: 5px;
+textarea {
+  margin: 10px 0;
 }
 
-.icon {
-  background: #e6e6e6;
-  border-radius: 50%;
+button {
+  background: #ffb3b3;
   padding: 10px;
-  margin-right: 10px;
+  border-style: none;
+  border-radius: 20px;
+  font-family: inherit;
+  font-weight: bold;
 }
