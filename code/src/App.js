@@ -6,6 +6,8 @@ export const App = () => {
 const [happiness,setHappiness] = useState('happy')
 const [feeling, setFeeling] = useState('')
 const [reason, setReason] = useState('')
+const [color, setColor] = useState('')
+
 const [showResult, setShowResult] = useState(false)
 
 const handleSubmit = (event) => {
@@ -21,6 +23,7 @@ const handleSubmit = (event) => {
           <p>You are {happiness ==='happy' ? 'Super happy!' : 'Sad :('}</p>
           <p>{feeling}</p>
           <p>{reason}</p>
+          <p>{color}</p>
         </div>
 
 
@@ -29,6 +32,7 @@ const handleSubmit = (event) => {
 
         <form onSubmit={handleSubmit}>
           <div className="feelings">
+            <h1>Choose your mood:</h1>
             <label>
               <input
                 type="radio"
@@ -59,7 +63,12 @@ const handleSubmit = (event) => {
               <h2>And why is that?</h2>
               <input type="text" value={reason} onChange={(event) => setReason(event.target.value)} />
             </label>
-          </div>
+            <h2>Your mood-color</h2>
+            <select onChange={(event) => setColor(event.target.value)}>
+              <option value="Blue">Blue</option>
+              <option value="Green">Green</option>
+            </select>
+           </div>
           <br></br>
           <button type="submit">Send my feelings!</button>
         </form>
