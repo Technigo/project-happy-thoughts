@@ -17,7 +17,7 @@ export const Thoughts = () => {
       {thoughts.map(thought => (
         <div className="thought" key={thought._id}>
           <div className="message">{thought.message}</div>
-          <div className="likes"><span className="icon"><Heart /></span>{thought.hearts}</div>
+          <div className="likes"><button type="button" className="heart-button"><Heart /></button>x {thought.hearts}</div>
         </div>
       ))}
     </div>

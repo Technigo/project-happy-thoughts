@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Thoughts } from './components/Thoughts'
 import { NewThought } from './components/NewThought'
 
