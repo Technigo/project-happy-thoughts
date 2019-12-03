@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Heart } from './Heart'
+import { ListThoughts } from './ListThoughts'
+import { NewThought } from './NewThought'
 import './thoughts.css'
+import './likes.css'
 
+// THOUGHTS - FETCHING FROM API AND RETURNING FORM AND LIST OF THOUGHTS
 export const Thoughts = () => {
-
   const [thoughts, setThoughts] = useState([])
 
   useEffect(() => {
@@ -12,14 +14,15 @@ export const Thoughts = () => {
       .then(json => setThoughts(json))
   }, [])
 
+  // To add the NewThought in the array of thoughts without fetching again
+  const addedThought = (newThought) => {
+    setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+  }
+
   return (
-    <div className="thoughts-wrapper">
-      {thoughts.map(thought => (
-        <div className="thought" key={thought._id}>
-          <div className="message">{thought.message}</div>
-          <div className="likes"><button type="button" className="heart-button"><Heart /></button>x {thought.hearts}</div>
-        </div>
-      ))}
+    <div>
+      <NewThought addedThought={addedThought} />
+      <ListThoughts thoughts={thoughts} />
     </div>
   )
 }

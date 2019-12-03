@@ -2,30 +2,20 @@ import React, { useState } from 'react'
 import { Heart } from './Heart'
 import './newthought.css'
 
-export const NewThought = () => {
-
-  const [newThought, setNewThought] = useState([])
+//  NEWTHOUGHT WITH FORM TO POST TO API
+export const NewThought = (props) => {
   const [message, setMessage] = useState("")
 
   // Function for submit
   const handleFormSubmit = (event) => {
-
     event.preventDefault()
+    props.addedThought({ message })
+    // setMessage({ message })
 
     // POST message to API
     fetch("https://technigo-thoughts.herokuapp.com/", {
       method: 'POST', body: JSON.stringify({ message }), headers: { 'Content-Type': 'application/json' }
     })
-
-      // Fetch the API again with the updated newThought
-      .then((res) => res.json())
-      .then((newThought) => {
-        console.log(newThought)
-        // Now you have `newThought` which is the response from the
-        // API as documented at the top of this readme. You can use
-        // it to update the `thoughts` array: 
-        setNewThought((previousThoughts) => [newThought, ...previousThoughts])
-      })
   }
 
   return (

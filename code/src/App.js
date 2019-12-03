@@ -1,12 +1,11 @@
 import React from 'react'
 import { Thoughts } from './components/Thoughts'
-import { NewThought } from './components/NewThought'
 
+// APP - RETURNING THOUGHTS WHERE NEWTHOUGHTS AND LISTTHOUGHTS ARE
 export const App = () => {
 
   return (
     <div>
-      <NewThought />
       <Thoughts />
     </div>
   )
