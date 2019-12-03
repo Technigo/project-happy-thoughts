@@ -7,6 +7,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.thoughtBox {
+  margin: 20px 10px;
+  border: 1px solid #000;
+  box-shadow: 5px 5px 0 0 #000;
+  padding: 15px;
+
+}
+
+.postedThoughts {
+    margin: 20px 10px;
+    border: 1px solid #000;
+    box-shadow: 5px 5px 0 0 #000;
+    padding: 15px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
