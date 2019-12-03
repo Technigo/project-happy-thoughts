@@ -1,32 +1,16 @@
-import React, { useState, useEffect } from "react";
-
-
-
-
+import React from "react";
+import { MyThought } from "./components/MyThought"
+import { ThoughtList } from "./components/ThoughtList"
 
 export const App = () => {
-
-  const [thoughts, setThoughts] = useState([]);
-
-
-  useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/", {
-      method: "POST",
-      body: JSON.stringify({ message: "my happy thought" })
-
-    })
-      .then(res => res.json())
-      .then(json => console.log(json));
-  }, []);
-
 
 
   return (
 
     <div>
-      <h3>my happy thought</h3>
+      <MyThought />
+      <ThoughtList />
     </div>
+
   )
-
-
 }
