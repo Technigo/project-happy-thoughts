@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { NewMessage } from "NewMessage";
 import { ButtonMessage } from "ButtonMessage";
+import { Hearts } from "Hearts";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  let [newMessage, setNewMessage] = useState();
+  const [newMessage, setNewMessage] = useState();
+  // const [thisId, setThisId] = useState();
+  // const [like, setLike] = useState(like);
+  // const [count, setCount] = useState(0);
 
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
@@ -53,12 +57,8 @@ export const App = () => {
             return (
               <li key={thought.message} className="message-li">
                 <p>{thought.message}</p>
-                <button>
-                  <span role="img" aria-labelledby="heart icon">
-                    💖
-                  </span>
-                </button>{" "}
-                x {thought.hearts}
+                <Hearts id={thought._id} hearts={thought.hearts} />x{" "}
+                {thought.hearts}
               </li>
             );
           })}
@@ -67,27 +67,4 @@ export const App = () => {
       <div className="messages"></div>
     </main>
   );
-
-  //   return (
-  //     <div>
-  //       <ul>
-  //         {thoughts.map(thought => {
-  //           return (
-  //             <li key={thought._id}>
-  //               {thought.message}
-  //               <button onClick={() => setNewEl(thoughts)}>Click me</button>
-  //             </li>
-  //           );
-  //         })}
-  //       </ul>
-  //       {newEl && (
-  //         <NewElement
-  //           message={newEl.message}
-  //           hearts={newEl.hearts}
-  //           _id={newEl._id}
-  //         />
-  //       )}
-  //     </div>
-  //   );
-  // };
 };
