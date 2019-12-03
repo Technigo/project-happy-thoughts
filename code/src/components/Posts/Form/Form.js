@@ -8,6 +8,8 @@ const Form = () => {
       method: 'POST',
       body: JSON.stringify({ message }),
       headers: { 'Content-Type': 'application/json' }
+    }).catch(() => {
+      alert('Something gone wrong, but stay positive and try again :)')
     })
   }
 
