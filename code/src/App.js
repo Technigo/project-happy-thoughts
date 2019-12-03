@@ -28,7 +28,9 @@ export const App = () => {
       }
     </div>
 
+  )
 
+}
 
 
 
@@ -46,7 +48,5 @@ export const App = () => {
     //   </ul>
     //   {selectedThoughts && <Detail name={selectedThoughts.message} hearts={selectedThoughts.hearts} />}
     // </div>
-  )
 
-}
 
