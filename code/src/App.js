@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import InputThoughts from 'Components/InputThoughts.js'
 import ThoughtsList from 'Components/ThoughtsList.js'
+import { getThoughts } from './smarts.js'
 
 export const App = () => {
 
-  const [thoughts, setThoughts] = useState([0,1,2,1,1,1,1,1,1,1,1,1,1,1,1])
-
+  const [thoughts, setThoughts] = useState([])
   
+  getThoughts(setThoughts) /* load thoughts */
+
   return (
     <div>
       <main>

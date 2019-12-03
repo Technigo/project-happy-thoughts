@@ -10,8 +10,9 @@ const ThoughtsList = ({ thoughts }) => {
         return(
           <Thought 
             key={index}
-            keytext='Text'
-            likes={0} 
+            id={thought._id}
+            text={thought.message}
+            likes={thought.hearts} 
             time={'30 seconds ago'}
           />
         )
