@@ -20,7 +20,7 @@ const Form = () => {
           <button type="submit" onClick={submitHandler}>
             <i className="fa fa-heart" aria-hidden="true" />
             Send Happy Thought
-          <i className="fa fa-heart" aria-hidden="true" />
+            <i className="fa fa-heart" aria-hidden="true" />
           </button>
           <p className={((message.length < 5 || message.length >= 140) ? 'wrongLength' : 'goodLength')}>{message.length}/140</p>
         </section>

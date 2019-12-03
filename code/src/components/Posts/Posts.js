@@ -5,15 +5,21 @@ import Post from './Post/Post'
 const Posts = () => {
   const [postsList, setPostsList] = useState([])
 
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     fetch('https://technigo-thoughts.herokuapp.com/')
       .then((res) => res.json())
-      .then((data) => setPostsList(data))
+      .then((data) => {
+        setPostsList(data)
+        setLoading(false)
+      })
   }, [])
 
   return (
     <section className="posts">
       <Form />
+      {loading && <h3>Love is on the way <i className="fa fa-heart" aria-hidden="true" /></h3>}
       {postsList.map((post) => {
         return (
           <Post
