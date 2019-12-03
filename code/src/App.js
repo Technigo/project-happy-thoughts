@@ -4,6 +4,7 @@ import './App.css'
 
 export const App = () => {
   const [thouhgts, setThoughts] = useState([])
+  const [messages, setMessages] = useState()
   const [submitted, setSubmitted] = useState(false)
   const [text, setText] = useState([])
 
@@ -20,15 +21,20 @@ export const App = () => {
     <div>
 
       <form onSubmit={event => event.preventDefault()}>
-        <div>
-          <h4>Whats making you happy right now?</h4>
-        </div>
-        <input className="formField"
-          type="text"
-          onChange={event => setText(event.target.value)}
-          value={text}
-        />
+        <div className="headForm">
+          <p>What's making you happy right now?</p>
 
+          <input className="form-text"
+            type="text"
+            onChange={event => setText(event.target.value)}
+            value={text}
+
+          />
+        </div>
+      </form>
+
+
+      <form>
         <ul>
           {thouhgts.map(thought => (
             <li key={thought.message} className="messages">{thought.message}</li>
