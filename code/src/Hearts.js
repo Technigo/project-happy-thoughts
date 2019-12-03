@@ -6,11 +6,10 @@ export const Hearts = (props) => {
 
   return (
     <div className="hearts">
-      <button>
-        <span className="like-heart"> ❤️</span>
+      <button className="like-heart"> ❤️
       </button>
 
-      x{props.hearts}
+      x {props.hearts}
     </div >
   )
 

@@ -1,6 +1,13 @@
 /*Post: 
 #ededed*/
-
-body{
-  font-family: 'Inconsolata', monospace;
+@font-face{
+  font-family:Menlo;
+  src: url(./Menlo-Regular.ttf);
 }
+*{
+  font-family: Menlo;
+}
+
+/* body{
+  font-family: 'Inconsolata', monospace;
+} */
