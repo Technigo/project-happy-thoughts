@@ -2,7 +2,7 @@
 
 In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
 
-We've built a simple API to collect 'happy thoughts'. Think of it as our own version of Twitter, but with less negativity, and 100% fewer US presidents using it. 
+We've built a simple API to collect 'happy thoughts'. Think of it as our own version of Twitter, but with less negativity, and 100% fewer US presidents using it.
 
 The end result should look like this:
 
@@ -69,9 +69,9 @@ When the user clicks the heart button on a thought, send a POST request (with no
 
 ## What you will learn 🧠
 
-* How to use APIs in React, firing requests within `useEffect`.
-* How to put the result of API responses into React state to show in the page.
-* What it's like to work with an API which you both send and receive data from.
+- How to use APIs in React, firing requests within `useEffect`.
+- How to put the result of API responses into React state to show in the page.
+- What it's like to work with an API which you both send and receive data from.
 
 ## How to get started 💪🏼
 
@@ -90,44 +90,44 @@ When you submit the form to add a new thought, the API returns the new thought o
 
 ```js
 // Assuming you have this kind of state in your component:
-const [thoughts, setThoughts] = useState([]) 
+const [thoughts, setThoughts] = useState([]);
 
-// Later, in your code which handles the form submission, you 
-// could have something which looks like this to send the new 
-// message, get the response from the API, and then add it to 
+// Later, in your code which handles the form submission, you
+// could have something which looks like this to send the new
+// message, get the response from the API, and then add it to
 // the thoughts array:
-const handleFormSubmit = (event) => {
-  event.preventDefault()
+const handleFormSubmit = event => {
+  event.preventDefault();
 
   // Send the POST request with the input from your form (instead
   // of 'Hello world' like this example does):
-  fetch('https://technigo-thoughts.herokuapp.com/', { 
-    method: 'POST', 
-    body: JSON.stringify({ message: 'Hello world' })
+  fetch("https://technigo-thoughts.herokuapp.com/", {
+    method: "POST",
+    body: JSON.stringify({ message: "Hello world" })
   })
-    .then((res) => res.json())
-    .then((newThought) => {
+    .then(res => res.json())
+    .then(newThought => {
       // Now you have `newThought` which is the response from the
       // API as documented at the top of this readme. You can use
-      // it to update the `thoughts` array: 
-      setThoughts((previousThoughts) => [newThought, ...previousThoughts])
-    })
-}
+      // it to update the `thoughts` array:
+      setThoughts(previousThoughts => [newThought, ...previousThoughts]);
+    });
+};
 ```
 
 ## Requirements 🧪
 
-* Your page should follow the design as closely as possible
-* You should list the most recent thoughts
-* You should have a form to post new thoughts
-* You should implement the heart button to send likes on a thought
-* Code follows Technigo’s code guidelines.
-* Contribute by helping others with this project on Stack Overflow.
-* If selected; demo your solution for your team.
+- Your page should follow the design as closely as possible
+- You should list the most recent thoughts
+- You should have a form to post new thoughts
+- You should implement the heart button to send likes on a thought
+- Code follows Technigo’s code guidelines.
+- Contribute by helping others with this project on Stack Overflow.
+- If selected; demo your solution for your team.
 
 ## How to hand in the code 🎯
 
-* When you’re finished with the project, push your code to GitHub with these commands:
+- When you’re finished with the project, push your code to GitHub with these commands:
 
   ```
   git add .
@@ -135,16 +135,16 @@ const handleFormSubmit = (event) => {
   git push origin master
   ```
 
-* Navigate to your repo and create a Pull Request into the Technigo repo (Add a link to your deployed project.)
-* Wait for the code review from your teachers
+- Navigate to your repo and create a Pull Request into the Technigo repo (Add a link to your deployed project.)
+- Wait for the code review from your teachers
 
 ## How to get help 🆘
 
-Ask for help and share your knowledge about this project with the '[TAG]' tag on [Stack Overflow](https://stackoverflow.com/c/technigo/questions). Talk to your team on Slack and help each other out. Do some research about your problem, you are surely not the first one with this problem, Google is your friend 🙂. And you can of course also book a tech call. 
+Ask for help and share your knowledge about this project with the '[TAG]' tag on [Stack Overflow](https://stackoverflow.com/c/technigo/questions). Talk to your team on Slack and help each other out. Do some research about your problem, you are surely not the first one with this problem, Google is your friend 🙂. And you can of course also book a tech call.
 
 ## Stretch Goals 🏃‍♂
 
-Below are some ideas for improvements you could make to the app. Feel free to pick from these, or come up with other features you think would be nice. 
+Below are some ideas for improvements you could make to the app. Feel free to pick from these, or come up with other features you think would be nice.
 
 Make sure you've commited and pushed a version of your project before starting with the stretch goals.
 
