@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { PostedText } from './PostedText'
 import { Hearts } from './Hearts'
-import { Time } from './Time'
+// import { Time } from './Time'
 import './PostedThought.css'
+import Time from 'react-timeago'
+import './Time.css'
+
 
 export const PostedThought = () => {
   const [postedThought, setPostedThought] = useState([])
@@ -27,9 +30,12 @@ export const PostedThought = () => {
             <Hearts
               hearts={item.hearts}
             />
-            <Time
+            {/* <Time
               time={item.createdAt}
-            />
+            /> */}
+            <span className="time">
+              <Time date={item.createdAt} />
+            </span>
           </div>
         </div>
       ))
