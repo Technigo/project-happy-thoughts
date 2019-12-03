@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 export const Timestamp = (props) => {
 
@@ -6,3 +6,4 @@ export const Timestamp = (props) => {
     <li>{props.createdAt}</li>
   )
 }
+

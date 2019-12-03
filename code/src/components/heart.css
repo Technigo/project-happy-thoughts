@@ -1,0 +1,11 @@
+span {
+  font-family: 'Inconsolata', monospace;
+}
+
+.like-button {
+  background:#eaeaea;
+  height: 40px;
+  width: 40px;
+  border-radius: 3rem;
+  border: none;
+}

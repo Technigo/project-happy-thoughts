@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Heart } from "./components/Heart";
-import { Timestamp } from "./components/Timestamp";
-
+// import { Timestamp } from "./components/Timestamp";
+import Timestamp from "react-timeago"
 import './app.css'
 
 
@@ -28,6 +28,7 @@ export const App = () => {
               onChange={event => setNewThought(event.target.value)}
               value={newThought}
             />
+            <button className="send-button">❤️ Send Happy Thought ❤️</button>
           </label>
         </form>
       </div>
@@ -38,13 +39,19 @@ export const App = () => {
             <p key={thought.id}>{thought.message}</p>
             <ul>
               <Heart hearts={thought.hearts} />
-              <Timestamp createdAt={thought.createdAt} />
+              <span className="time">
+                <Timestamp date={thought.createdAt} />
+              </span>
             </ul>
           </div>
         ))
         }
       </div>
+
+      <footer>Technigo Bootcamp 2019 © Linda Isell</footer>
+
     </div >
+
 
   )
 }
