@@ -1,12 +1,14 @@
 import React from 'react'
-import { PostedMessages } from 'PostedMessages'
+import { PostedThought } from 'PostedThought'
 import './App.css'
+import { NewThought } from 'NewThought'
 
 
 export const App = () => {
   return (
     <div>
-      <PostedMessages />
+      <NewThought />
+      <PostedThought />
     </div>
   )
 }
