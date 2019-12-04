@@ -31,3 +31,20 @@ textarea {
   font-weight: bold;
   cursor: pointer;
 }
+
+.form-button:disabled {
+  opacity: 0.5;
+  color: #000;
+  cursor: default;
+}
+
+.submit-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-wrapper p {
+  color: #a6a6a6;
+}

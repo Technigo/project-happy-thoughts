@@ -36,7 +36,10 @@ export const NewThoughtForm = (props) => {
               onChange={(event) => setMessage(event.target.value)}
             />
           </label>
-          <button className="form-button" type="submit" disabled={message.length < 5 || message.length > 140 ? true : false}><Heart /> Send happy thought <Heart /></button>
+          <div className="submit-wrapper">
+            <button className="form-button" type="submit" disabled={message.length < 5 || message.length > 140 ? true : false}><Heart /> Send happy thought <Heart /></button>
+            <p>{message.length}/140</p>
+          </div>
         </form>
       </div>
     </div>
