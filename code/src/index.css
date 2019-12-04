@@ -1,6 +1,7 @@
 body {
+  background: #FFFACD;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Montserrat',-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +11,147 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.main-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
+/* The form for posting thoughts */
+.question-card {
+  border: 1px solid gray;
+  box-shadow: 5px 10px;
+  background: #F5F5F5;
+  height: 35vh;
+  margin-bottom: 4vh;
+  /* margin-left: 20vw; */
+  padding-left: 3vw;
+  width: 60vw;
+}
+
+input[type=text] {
+  height: 4vh;
+  margin-top: 2vh;
+  width: 50vw;
+}
+
+.question, .required {
+  margin-bottom: 0;
+}
+
+/* Button for form submit */
+.send-form {
+  background-color: lightpink;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 8px 0;
+  margin-bottom: 3vh;
+  margin-top: 1vh;
+  /* padding: 10px 18px; */
+  width: 55vw;
+}
+
+/* The list of thoughts */
+.cards {
+  background: #F5F5F5;
+  border: 1px solid gray;
+  box-shadow: 5px 10px;
+  height: 30vh;
+  margin-bottom: 4vh;
+  margin-right: 10vw;
+  padding-left: 1vw;
+  width: 60vw;
+}
+
+ul {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.li a {
+  text-decoration: none;
+}
+
+.message {
+  padding-top: 2vh;
+}
+
+.cards-bottom {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  padding-left: 0;
+  padding-top: 6vh;
+}
+
+.heart-button {
+  background-color: lightgrey;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  height: 6vh;
+  width: 9vw;
+}
+
+@media(min-width: 1024px) {
+h1 {
+  font-size: 32px;
+  margin-bottom: 5vh;
+}
+
+input[type=text] {
+  height: 4vh;
+  margin-top: 2vh;
+  width: 27vw;
+}
+
+.question-card {
+  box-shadow: 5px 10px;
+  height: 30vh;
+  margin-bottom: 4vh;
+  padding-left: 1vw;
+  width: 30vw;
+}
+
+.send-form {
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 8px 0;
+  margin-bottom: 8vh;
+  margin-top: 3vh;
+  padding: 10px 18px;
+  width: 18vw;
+}
+
+.cards {
+  box-shadow: 5px 10px;
+  height: 23vh;
+  margin-bottom: 4vh;
+  margin-right: 3vw;
+  padding-left: 1vw;
+  width: 30vw;
+}
+
+.heart-button {
+  width: 3vw;
+}
 }
