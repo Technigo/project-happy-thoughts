@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.post-wrapper {
+  margin: auto;
+  padding: 40px;
+  font-family: "Source Code Pro", monospace;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+.new-post,
+.card {
+  width: 450px;
+  height: 180px;
+  margin: auto;
+  background-color: rgb(238, 238, 238);
+  padding: 10px 8px;
+  border: 2px grey solid;
+  -webkit-box-shadow: 17px 17px 0px -6px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 17px 17px 0px -6px rgba(0, 0, 0, 1);
+  box-shadow: 17px 17px 0px -6px rgba(0, 0, 0, 1);
+}
+
+input {
+  height: 50px;
+  width: 400px;
+  margin: 5px;
+  border: 2px, rgb(128, 128, 128) solid;
+}
+
+button {
+  width: 190px;
+  height: 45px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background-color: rgb(254, 168, 182);
+}
