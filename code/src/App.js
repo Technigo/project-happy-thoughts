@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Heart } from "./components/Heart";
-// import { Timestamp } from "./components/Timestamp";
+// import { Form } from "./components/Form";
+
 import Timestamp from "react-timeago"
 import './app.css'
 
@@ -15,20 +16,39 @@ export const App = () => {
       .then(json => setThoughts(json))
   }, [])
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+    fetch('https://technigo-thoughts.herokuapp.com/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ newThought })
+    })
+      .then((res) => res.json())
+      .then((newThought) => {
+        setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+      })
+  }
+
+
   return (
     <div className="app">
       <div className="cards">
-        <form className="thought-input">
+        <form className="thought-input" onSubmit={handleFormSubmit}>
           <p>What is making you happy right now?</p>
           <label>
             <input
               type="text"
               autoFocus
-              placeholder="Type your tought here..."
+              placeholder="Type your thought here..."
               onChange={event => setNewThought(event.target.value)}
               value={newThought}
             />
-            <button className="send-button">❤️ Send Happy Thought ❤️</button>
+            <div className="buttom-input-card">
+              <button className="send-button"><span role="img" aria-label="heart">❤️ </span>
+                Send Happy Thought
+            <span role="img" aria-label="heart">❤️ </span></button>
+              <p className={((newThought.length < 5 || newThought.length >= 140) ? 'wrongLength' : 'goodLength')}>{newThought.length}/140</p>
+            </div>
           </label>
         </form>
       </div>
@@ -50,8 +70,7 @@ export const App = () => {
 
       <footer>Technigo Bootcamp 2019 © Linda Isell</footer>
 
-    </div >
-
+    </div>
 
   )
 }

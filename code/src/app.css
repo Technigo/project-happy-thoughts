@@ -27,6 +27,22 @@ align-items: center;
   margin-top: 20px;
   padding: 20px;
 }
+.buttom-input-card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.send-button {
+  border-radius: 2rem;
+  padding: 10px;
+  border: none;
+  font-family: 'Inconsolata', monospace;
+  background: pink;
+  font-size: 16px;
+}
+
 input,
 textarea {
   background: #fff;
@@ -79,15 +95,7 @@ li {
   color: #cacaca;
 } */
 
-.send-button {
-  border-radius: 2rem;
-  padding: 10px;
-  border: none;
-  font-family: 'Inconsolata', monospace;
-  margin-top: 35px;
-  background: pink;
-  font-size: 16px;
-}
+
 ul .time{
   color: #CACACA;
   font-size: 13px;
