@@ -4,11 +4,12 @@ import './App.css'
 
 
 export const App = () => {
-  const [thouhgts, setThoughts] = useState([])
+  const [thoughts, setThoughts] = useState([])
   const [messages, setMessages] = useState('')
   // const [submitted, setSubmitted] = useState(false)
   const [text, setText] = useState([])
   const [heart, setHeart] = useState()
+  //relode thoughts, setreloadThoughts//
 
 
   useEffect(() => {
@@ -21,26 +22,12 @@ export const App = () => {
   })
 
   const handleFormSubmit = () => {
-    // ssubmit and update thoughts
+    // submit and update thoughts
     // fetch to submit thought
   }
 
   const handleHeartClick = () => {
   }
-
-
-  // const Form = () => {
-  //   const [message, setMessage] = useState('')
-
-  //   const submitHandler = () => {
-  //     fetch('https://technigo-thoughts.herokuapp.com/', {
-  //       method: 'POST',
-  //       body: JSON.stringify({ message }),
-  //       headers: { 'Content-Type': 'application/json' }
-  //     }).catch(() => {
-  //       alert('Something gone wrong, but stay positive and try again :)')
-  //     })
-  //   }
 
   return (
     <div>
@@ -51,15 +38,12 @@ export const App = () => {
 
           <textarea className="form-text">
 
-            {/* minLenght: 2;
-          kMaxLength: 140; */}
+            {/* min/maxlength charachters to be added  */}
           </textarea>
 
-
-          {/* onChange={event => setText(event.target.value)}
-          value={text}>
-
-        /> */}
+          {/*           
+          onChange={(event) => setText(event.target.value)}}
+          {/* value={text}> /> */}
 
           <button onClick={handleFormSubmit}>❤️ Send happy thought ❤️</button>
         </div>
@@ -68,8 +52,8 @@ export const App = () => {
 
       <section>
         <ul>
-          {thouhgts.map(thought => (
-            <li key={thought.message} className="messages">
+          {thoughts.map(thought => (
+            <li key-id={thought.message} className="messages">
               <div> {thought.message} </div>
 
               <div className="likes"><button onClick={handleHeartClick}>❤️</button>{thought.hearts}</div>
@@ -83,3 +67,39 @@ export const App = () => {
 
   )
 }
+
+/******ALT ****/
+// import React, { useState, useEffect } from "react"
+// import { HappyThought } from "./components/HappyThought"
+// import { HappyForm } from "./components/HappyForm"
+
+// export const App = () => {
+//   const [thoughts, setThoughts] = useState([])
+//   const [postedMessage, setPostedMessage] = useState("")
+
+  // useEffect(() => {
+  //   fetch("https://technigo-thoughts.herokuapp.com/")
+  //     .then(res => res.json())
+  //     .then(json => setThoughts(json))
+  //     }, [postedMessage])
+//  
+//    const handleFormSubmit = message => {
+//     fetch("https://technigo-thoughts.herokuapp.com/", {
+//     method: "POST",
+//     body: JSON.stringify({ message }),
+//     headers: { "Content-Type": "application/json" }
+//      })
+//     .then(() => setPostMessage(message))
+//     .catch(err => console.log("error:", err))
+//     }
+
+
+//   return (
+//     <div>
+//       <HappyForm onFormSubmit={handleFormSubmit}/>
+//       {thoughts.map(thought => (
+//         <HappyThought key={thought._id} thought={thought} />
+//       ))}
+//     </div>
+//   )
+// }
