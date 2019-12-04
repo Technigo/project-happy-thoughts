@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import moment from "moment";
 
 export const Hearts = props => {
-  const { hearts, id, message } = props;
+  const { hearts, id, message, time } = props;
   const [like, setLike] = useState(hearts);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export const Hearts = props => {
     <li className="message-li">
       <p>{message}</p>
       <p>x {hearts}</p>
+      <p>{moment(time).fromNow()}</p>
       <button onClick={handleLikeClick}>
         <span role="img" aria-labelledby="heart icon">
           💖

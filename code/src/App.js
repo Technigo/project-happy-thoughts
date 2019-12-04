@@ -59,6 +59,7 @@ export const App = () => {
                   id={thought._id}
                   hearts={thought.hearts}
                   message={thought.message}
+                  time={thought.createdAt}
                 />
               </div>
             );
