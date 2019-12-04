@@ -83,6 +83,9 @@ article {
   justify-content: center;
   display: flex;
 }
+.red {
+  background-color: rgb(255, 213, 222);
+}
 
 .heart {
   height: 16px;

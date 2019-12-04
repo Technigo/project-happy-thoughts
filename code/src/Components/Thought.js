@@ -2,7 +2,7 @@ import React from 'react'
 // import test from 'smarts.js'
 import { sendLike } from '../smarts.js'
 
-const Thought = ({ id,text, likes, time }) => {
+const Thought = ({ id,text, likes, time, setReloadThoughts }) => {
   
   return (
     <article>
@@ -10,7 +10,10 @@ const Thought = ({ id,text, likes, time }) => {
       <div className='likes'>
         <div 
           className={likes > 0 ? "circle red" : "circle"} 
-          onClick={() => sendLike(id)} 
+          onClick={() => {
+            sendLike(id)
+            setReloadThoughts(reload => !reload)
+          }} 
           alt="Click to like"
         >
           <img src='/images/like.svg' alt="Likes" className="heart"/>

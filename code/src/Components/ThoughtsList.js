@@ -1,7 +1,7 @@
 import React from 'react'
 import Thought from './Thought.js'
 
-const ThoughtsList = ({ thoughts }) => {
+const ThoughtsList = ({ thoughts, setReloadThoughts }) => {
 
   return (
     <section>
@@ -14,6 +14,7 @@ const ThoughtsList = ({ thoughts }) => {
             text={thought.message}
             likes={thought.hearts} 
             time={'30 seconds ago'}
+            setReloadThoughts={setReloadThoughts}
           />
         )
       })}

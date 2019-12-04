@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import InputThoughts from 'Components/InputThoughts.js'
 import ThoughtsList from 'Components/ThoughtsList.js'
 import { getThoughts } from './smarts.js'
@@ -6,8 +6,11 @@ import { getThoughts } from './smarts.js'
 export const App = () => {
 
   const [thoughts, setThoughts] = useState([])
-  
-  getThoughts(setThoughts) /* load thoughts */
+  const [reloadThoughts, setReloadThoughts] = useState(false)
+
+  useEffect(() => {
+    getThoughts(setThoughts) /* load thoughts */
+  }, [reloadThoughts])
 
   return (
     <div>
@@ -18,6 +21,7 @@ export const App = () => {
         <hr />
         <ThoughtsList 
           thoughts={thoughts}
+          setReloadThoughts={setReloadThoughts}
         />
       </main>
       <footer>
