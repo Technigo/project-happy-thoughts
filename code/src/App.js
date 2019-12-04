@@ -20,7 +20,8 @@ export const App = () => {
     if(newThought.length>=5 && newThought.length<=140) {
     fetch("https://technigo-thoughts.herokuapp.com/", {
       method: 'POST',
-      body: JSON.stringify({message: newThought})
+      body: JSON.stringify({message: newThought}),
+      headers: { 'Content-Type': 'application/json' }
     })
       .then((res) => res.json())
       .then((newThought) => {
