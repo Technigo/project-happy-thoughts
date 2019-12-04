@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { ListThoughts } from './ListThoughts'
 import { NewThought } from './NewThought'
-import './thoughts.css'
-import './likes.css'
 
-// THOUGHTS - FETCHING FROM API AND RETURNING FORM AND LIST OF THOUGHTS
+// THOUGHTS - FETCHING FROM API AND RETURNING COMPONENTS FORM AND LIST OF THOUGHTS
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([])
 
+  // Fetching the API and listing the json in setThoughts
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/", { method: 'GET' })
       .then(res => res.json())

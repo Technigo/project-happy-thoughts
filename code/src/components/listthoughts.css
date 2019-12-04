@@ -27,7 +27,11 @@ label {
   font-weight: bold;
 }
 
-.likes {
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 5px;
   color: #a6a6a6;
 }
