@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ListThoughts } from './ListThoughts'
-import { NewThoughtForm } from './NewThought'
+import { NewThoughtForm } from './NewThoughtForm'
 
 // THOUGHTS - FETCHING FROM API AND RETURNING COMPONENTS FORM AND LIST OF THOUGHTS
 export const Thoughts = () => {
