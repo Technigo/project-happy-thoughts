@@ -15,12 +15,12 @@ export const App = () => {
   }, [])
 
   const handleFormSubmit = (event) => {
-    // event.preventDefault()
+    event.preventDefault()
 
     if(newThought.length>=5 && newThought.length<=140) {
     fetch("https://technigo-thoughts.herokuapp.com/", {
       method: 'POST',
-      body: JSON.stringify({message:'My happy thought'})
+      body: JSON.stringify({message: newThought})
     })
       .then((res) => res.json())
       .then((newThought) => {
