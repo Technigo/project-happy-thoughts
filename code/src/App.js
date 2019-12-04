@@ -33,8 +33,9 @@ export const App = () => {
       <div className="thoughtBox">
         <form onSubmit={handleFormSubmit}>
           <p> What's making you happy right now?</p>
-          <input type="text" onChange={event => setUserText(event.target.value)} value={userText} required />
-          <button type="submit">❤️ Send your happy thought!❤️ </button>
+          <input type="text" onChange={event => setUserText(event.target.value)} value={userText} rows="4" minlength="5" maxlength="140" required />
+          <br></br>
+          <button type="submit">❤️ Send Happy Thought ❤️ </button>
         </form>
       </div>
 
