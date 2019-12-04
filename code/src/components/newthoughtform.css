@@ -10,7 +10,7 @@
   margin: 20px 0;
   padding: 15px;
   width: 350px;
-  height: 150px;
+  height: 100%;
   background: #efefef;
   border: 1px solid #000;
   box-shadow: 5px 10px #000;
@@ -19,9 +19,10 @@
 textarea {
   margin: 10px 0;
   border: 2px solid #d9d9d9;
+  resize: none; /* User not able to resize the textarea in the browser */
 }
 
-button {
+.form-button {
   background: #ffb3b3;
   padding: 10px;
   border-style: none;

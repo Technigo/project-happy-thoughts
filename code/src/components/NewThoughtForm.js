@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Heart } from './Heart'
-import './newthought.css'
+import './newthoughtform.css'
 
 //  NEWTHOUGHT WITH FORM TO POST TO API
-export const NewThought = (props) => {
+export const NewThoughtForm = (props) => {
   const [message, setMessage] = useState("")
 
   // Function for submit
@@ -14,7 +14,8 @@ export const NewThought = (props) => {
 
     // POST message to API
     fetch("https://technigo-thoughts.herokuapp.com/", {
-      method: 'POST', body: JSON.stringify({ message }), headers: { 'Content-Type': 'application/json' }
+      // Just need {message} since the key and value is the same {message: message}
+      method: "POST", body: JSON.stringify({ message }), headers: { "Content-Type": "application/json" }
     })
   }
 
@@ -35,7 +36,7 @@ export const NewThought = (props) => {
               onChange={(event) => setMessage(event.target.value)}
             />
           </label>
-          <button type="submit"><Heart /> Send happy thought <Heart /></button>
+          <button className="form-button" type="submit" disabled={message.length < 5 || message.length > 140 ? true : false}><Heart /> Send happy thought <Heart /></button>
         </form>
       </div>
     </div>

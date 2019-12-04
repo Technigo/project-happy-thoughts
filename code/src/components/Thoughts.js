@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ListThoughts } from './ListThoughts'
-import { NewThought } from './NewThought'
+import { NewThoughtForm } from './NewThought'
 
 // THOUGHTS - FETCHING FROM API AND RETURNING COMPONENTS FORM AND LIST OF THOUGHTS
 export const Thoughts = () => {
@@ -20,7 +20,7 @@ export const Thoughts = () => {
 
   return (
     <div>
-      <NewThought addedThought={addedThought} />
+      <NewThoughtForm addedThought={addedThought} />
       <ListThoughts thoughts={thoughts} />
     </div>
   )
