@@ -21,15 +21,13 @@ const SUFFIX = '/like' /* POST https://technigo-thoughts.herokuapp.com/THOUGHT_I
 //     })
 // }
 
-export const sendLike = (id) => {
-  console.log('like sent for' + id) 
+const sendLike = (id) => {
   fetch(THOUGHTSURL+id+SUFFIX, {
     method: 'POST',
   })
   .then(response => response.json())
-  .then(data => {
-    // return data
-    console.log(data)
+  .then(json => {
+    console.log(json)
   })
 }
 
@@ -38,11 +36,11 @@ const getThoughts = (setThoughts) => {
     method: 'GET'
   })
   .then(response => response.json())
-  .then(data => {
+  .then(json => {
     // return data
-    setThoughts(data)
-    console.log(data)
+    setThoughts(json)
+    console.log(json)
   })
 }
 
-export { getThoughts }
+export { getThoughts, sendLike }

@@ -13,7 +13,7 @@ const ThoughtsList = ({ thoughts, setReloadThoughts }) => {
             id={thought._id}
             text={thought.message}
             likes={thought.hearts} 
-            time={'30 seconds ago'}
+            time={thought.createdAt}
             setReloadThoughts={setReloadThoughts}
           />
         )
