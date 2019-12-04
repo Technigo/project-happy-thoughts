@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export const Hearts = props => {
-  const { hearts, id } = props;
+  const { hearts, id, message } = props;
   const [like, setLike] = useState(hearts);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export const Hearts = props => {
         "Content-Type": "application/json"
       }
     }).then(res => res.json());
-  }, [like, id]);
+  }, [id, like]);
 
   // setLike(like + 1);
   // const handle = () => {
@@ -26,10 +26,14 @@ export const Hearts = props => {
   };
 
   return (
-    <button onClick={handleLikeClick}>
-      <span role="img" aria-labelledby="heart icon">
-        💖
-      </span>
-    </button>
+    <li className="message-li">
+      <p>{message}</p>
+      <p>x {hearts}</p>
+      <button onClick={handleLikeClick}>
+        <span role="img" aria-labelledby="heart icon">
+          💖
+        </span>
+      </button>
+    </li>
   );
 };

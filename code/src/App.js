@@ -6,9 +6,6 @@ import { Hearts } from "Hearts";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newMessage, setNewMessage] = useState();
-  // const [thisId, setThisId] = useState();
-  // const [like, setLike] = useState(like);
-  // const [count, setCount] = useState(0);
 
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
@@ -46,20 +43,24 @@ export const App = () => {
 
   return (
     <main className="container">
-      <div className="main-message-container">
+      <form className="main-message-container">
         <p>What´s making you happy right now?</p>
         <NewMessage newMessage={newMessage} setNewMessage={setNewMessage} />
         <ButtonMessage onClick={addThought} />
-      </div>
+      </form>
       <div className="messages">
         <ul>
           {thoughts.map(thought => {
             return (
-              <li key={thought.message} className="message-li">
-                <p>{thought.message}</p>
-                <Hearts id={thought._id} hearts={thought.hearts} />x{" "}
-                {thought.hearts}
-              </li>
+              // <li key={thought._id} className="message-li">
+              //   <p>{thought.message}</p>
+              <div key={thought._id}>
+                <Hearts
+                  id={thought._id}
+                  hearts={thought.hearts}
+                  message={thought.message}
+                />
+              </div>
             );
           })}
         </ul>
