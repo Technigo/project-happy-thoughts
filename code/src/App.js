@@ -23,10 +23,6 @@ export const App = () => {
       body: JSON.stringify({message: newThought}),
       headers: { 'Content-Type': 'application/json' }
     })
-      // .then((res) => res.json())
-      // .then((newThought) => {
-      //   setThoughts((thoughts) => [newThought, ...thoughts])
-      // })
     } else {
       setError(true)
     }
@@ -49,13 +45,14 @@ export const App = () => {
       <h1>😃 Happy Thoughts 😃</h1>
     
     <div className="question-card">
-      <form onSubmit={event => event.preventDefault()}>
+      <form>
       {!error &&(<p className="question">What is making you happy right now?</p>)}
       {error &&(<p className="required">Please write between 5 and 140 characters</p>)}
 
       <label>
       <input 
-        type="text"
+        type="textarea"
+        rows="3"
         value={newThought}
         onChange={event => setNewThought(event.target.value)}
       />
@@ -63,7 +60,7 @@ export const App = () => {
       <button 
         className="send-form"
         type="submit"
-        onClick={() => handleFormSubmit()}
+        onClick={handleFormSubmit}
         >
         ❤️ Send Happy Thought ❤️
       </button>
@@ -74,7 +71,7 @@ export const App = () => {
       <ul>
         {thoughts.map(thought => (
           <div className="cards">
-            <li key={thought.id} className="message">{thought.message}</li>
+            <li key={thought._id} className="message">{thought.message}</li>
             <div className="cards-bottom">
             <li className="hearts">
               <button className="heart-button" type="submit">❤️</button> x {thought.hearts}</li>

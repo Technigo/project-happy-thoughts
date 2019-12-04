@@ -39,9 +39,10 @@ h1 {
   width: 60vw;
 }
 
-input[type=text] {
+input[type=textarea] {
   height: 4vh;
   margin-top: 2vh;
+  resize: none;
   width: 50vw;
 }
 
@@ -116,7 +117,7 @@ h1 {
   margin-bottom: 5vh;
 }
 
-input[type=text] {
+input[type=textarea] {
   height: 4vh;
   margin-top: 2vh;
   width: 27vw;
