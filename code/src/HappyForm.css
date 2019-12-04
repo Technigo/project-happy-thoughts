@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 10px;
+    background: #f2f0f0;
+    border: solid 1px black;
+    box-shadow: black 8px 8px;
+}
+
+button {
+    background: #ffadad;
+    border: none;
+    border-radius: 30px;
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+    color: black;
+}
