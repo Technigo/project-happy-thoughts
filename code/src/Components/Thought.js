@@ -13,7 +13,7 @@ const Thought = ({ id, text, likes, time, setReloadThoughts }) => {
           onClick={() => {
             sendLike(id)
             setReloadThoughts(reload => !reload)
-          }} 
+          }}
           alt="Click to like"
         >
           <img src='/images/like.svg' alt="Likes" className="heart"/>

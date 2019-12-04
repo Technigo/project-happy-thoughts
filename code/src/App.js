@@ -3,6 +3,8 @@ import { getThoughts, submitThought } from './smarts.js'
 import Thought from 'Components/Thought.js'
 
 const UPDATEFREQUENCY = 5000 /* Interval for new fetch from server in ms */
+const MINLENGTH = 5
+const MAXLENGTH = 140
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -11,7 +13,7 @@ export const App = () => {
   const [allowSubmit, setAllowSubmit] = useState(false) /* Variable used for allowing submitting the form (and some styling as well) */
 
   useEffect(() => { /* only allow submitting valid messages */
-    if(message.length >= 5 && message.length <= 140) {
+    if(message.length >= MINLENGTH && message.length <= MAXLENGTH) {
       setAllowSubmit(true)
     } else {
       setAllowSubmit(false)
@@ -51,9 +53,12 @@ export const App = () => {
                   setMessage(event.target.value)
                 }}
                 required
-                maxLength="140"
+                maxLength={MAXLENGTH}
               />
-              <p className="error-message">{!allowSubmit && 'The message should be between 5-140 characters.'} </p>
+              <div className="descriptions">
+                <p className="error-message">{!allowSubmit && `The message should be at least ${MINLENGTH} characters`} </p>
+                <p className="error-message">{(MAXLENGTH === message.length) ? 'No more characters' : `${MAXLENGTH - message.length} characters left`}</p>
+              </div>
               <button 
                 type="submit"
                 disabled={!allowSubmit}
