@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+}
+
+p {
+  font-size: 0.9em;
+}
+
+.container {
+  width: 350px;
+  border: solid 1px black;
+  margin: 2em auto;
+  box-shadow: 6px 6px black;
+  font-family: "Courier New", Courier, monospace;
+  padding: 0.9em;
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+  color: rgb(102, 101, 101);
+  margin-top: 1.2em;
+}
+
+.likes {
+  display: flex;
+}
+
+.heart {
+  width: 30px;
+}
