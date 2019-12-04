@@ -1,9 +1,9 @@
 import React from 'react'
 import { sendLike } from '../smarts.js'
-import ReactTimeAgo from 'react-time-ago'
+import TimeAgo from 'react-timeago'
 
-const Thought = ({ id,text, likes, time, setReloadThoughts }) => {
-  console.log(time)
+const Thought = ({ id, text, likes, time, setReloadThoughts }) => {
+
   return (
     <article>
       <p className="text">{text}</p>
@@ -21,7 +21,7 @@ const Thought = ({ id,text, likes, time, setReloadThoughts }) => {
         <p>x {likes}</p>
       </div>
       <div className='time'>
-        <p><ReactTimeAgo date={time}/></p>
+        <p><TimeAgo date={time}/></p>
       </div>
     </article>
   )

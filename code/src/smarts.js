@@ -2,24 +2,22 @@
 const THOUGHTSURL = 'https://technigo-thoughts.herokuapp.com/' /* POST GET https://technigo-thoughts.herokuapp.com/ */
 const SUFFIX = '/like' /* POST https://technigo-thoughts.herokuapp.com/THOUGHT_ID/like */
 
-
-// const handleFormSubmit = (event, setThoughts) => {
-//   event.preventDefault()
-
-//   // Send the POST request with the input from your form (instead
-//   // of 'Hello world' like this example does):
-//   fetch('https://technigo-thoughts.herokuapp.com/', { 
-//     method: 'POST', 
-//     body: JSON.stringify({ message: 'Hello world' })
-//   })
-//     .then((res) => res.json())
-//     .then((newThought) => {
-//       // Now you have `newThought` which is the response from the
-//       // API as documented at the top of this readme. You can use
-//       // it to update the `thoughts` array: 
-//       setThoughts((previousThoughts) => [newThought, ...previousThoughts])
-//     })
-// }
+const submitThought = (event, message, setThoughts, setMessage) => {
+  event.preventDefault()
+  
+  fetch(THOUGHTSURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ message: message})
+  })
+  .then(response => response.json())
+  .then(json => {
+    setThoughts(prevThoughts => [json, ...prevThoughts])
+    setMessage('')
+  })
+}
 
 const sendLike = (id) => {
   fetch(THOUGHTSURL+id+SUFFIX, {
@@ -27,7 +25,7 @@ const sendLike = (id) => {
   })
   .then(response => response.json())
   .then(json => {
-    console.log(json)
+    return
   })
 }
 
@@ -37,10 +35,8 @@ const getThoughts = (setThoughts) => {
   })
   .then(response => response.json())
   .then(json => {
-    // return data
     setThoughts(json)
-    console.log(json)
   })
 }
 
-export { getThoughts, sendLike }
+export { submitThought, getThoughts, sendLike }

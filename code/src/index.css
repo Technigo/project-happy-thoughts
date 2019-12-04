@@ -16,6 +16,7 @@
 
 main {
   max-width: 1050px;
+  margin: 0 auto;
 }
 
 code {
@@ -55,8 +56,49 @@ article {
   flex-wrap: wrap;
 }
 
-.input-thought {
-  background: #eee;
+form {
+  width: 100%;
+}
+textarea {
+  width: 100%;
+  /* height: auto; */
+  font-size: 14px;
+
+}
+textarea:focus {
+  outline: 0;
+  background: rgb(255, 254, 246);
+}
+.input-box {
+  background: #fff;
+  width: 100%;
+  max-width: 615px;
+  margin-bottom: 30px;
+}
+
+button, button:focus {
+  margin-top: 20px;width: 200px;
+  height: 30px;
+  background-color: rgba(235, 86, 66, 0.884);
+  outline: 0;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #fff;
+  transition: background 120ms ease-in, transform 120ms ease-in;
+}
+
+button:hover {
+  transition: background 112ms ease-out;
+  background-color: rgb(255, 0, 0);
+}
+
+button:disabled {
+  background-color: rgb(218, 218, 218);
+}
+.error-message {
+  font-size: 9px;
+  color: gray;
+  min-height: 9px;
 }
 
 .text {
