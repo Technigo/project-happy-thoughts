@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { getThoughts, submitThought } from './smarts.js'
 import Thought from 'Components/Thought.js'
 
-export const App = () => {
+const UPDATEFREQUENCY = 5000 /* Interval for new fetch from server in ms */
 
+export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [reloadThoughts, setReloadThoughts] = useState(false) /* The bool value is never used, this is only to trigger the useEffect by forcing a state change */
-  const [message, setMessage] = useState('')
-  const [allowSubmit, setAllowSubmit] = useState(false)
+  const [message, setMessage] = useState('') /* Message captured to be sent as Thought */
+  const [allowSubmit, setAllowSubmit] = useState(false) /* Variable used for allowing submitting the form (and some styling as well) */
 
-  useEffect(() => {
+  useEffect(() => { /* only allow submitting valid messages */
     if(message.length >= 5 && message.length <= 140) {
       setAllowSubmit(true)
     } else {
@@ -20,6 +21,14 @@ export const App = () => {
   useEffect(() => {
     getThoughts(setThoughts) /* load thoughts */
   }, [reloadThoughts])
+  
+  useEffect(() => {
+
+    const interval = setInterval(() => {
+      setReloadThoughts(flip => !flip)
+    }, UPDATEFREQUENCY);
+    return () => clearInterval(interval)
+  })
 
   return (
     <div>
@@ -48,8 +57,10 @@ export const App = () => {
               <button 
                 type="submit"
                 disabled={!allowSubmit}
-              >
-                Send happy thought
+              > 
+                {allowSubmit && <img src='/images/like.svg' alt="Likes" className="heart"/>}
+                <p>Send happy thought</p>
+                {allowSubmit && <img src='/images/like.svg' alt="Likes" className="heart"/>}
               </button>
             </form>
           </article>
