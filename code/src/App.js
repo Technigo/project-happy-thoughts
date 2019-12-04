@@ -23,10 +23,10 @@ export const App = () => {
       body: JSON.stringify({message: newThought}),
       headers: { 'Content-Type': 'application/json' }
     })
-      .then((res) => res.json())
-      .then((newThought) => {
-        setThoughts((thoughts) => [newThought, ...thoughts])
-      })
+      // .then((res) => res.json())
+      // .then((newThought) => {
+      //   setThoughts((thoughts) => [newThought, ...thoughts])
+      // })
     } else {
       setError(true)
     }
