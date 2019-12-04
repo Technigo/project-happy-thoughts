@@ -15,8 +15,10 @@ export const ListThoughts = (props) => (
         <div className="message">{thought.message}</div>
 
         <div className="details">
-          <button type="heart-button" className="heart-button"><Heart /></button>
-          <div className="likes"> x {thought.hearts}</div>
+          <div className="likes-wrapper">
+            <button type="heart-button" className="heart-button"><Heart /></button>
+            <div className="likes"> x {thought.hearts}</div>
+          </div>
           <div className="time">{moment(thought.createdAt).fromNow()}</div>
         </div>
 

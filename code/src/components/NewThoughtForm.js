@@ -29,7 +29,6 @@ export const NewThoughtForm = (props) => {
               minLength="5"
               maxLength="140"
               rows="4"
-              cols="45"
               name="message"
               form="form"
               value={message}

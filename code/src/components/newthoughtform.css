@@ -9,7 +9,7 @@
 .newthought {
   margin: 20px 0;
   padding: 15px;
-  width: 350px;
+  width: 30%;
   height: 100%;
   background: #efefef;
   border: 1px solid #000;
@@ -19,6 +19,7 @@
 textarea {
   margin: 10px 0;
   border: 2px solid #d9d9d9;
+  width: 90%;
   resize: none; /* User not able to resize the textarea in the browser */
 }
 
@@ -47,4 +48,16 @@ textarea {
 
 .submit-wrapper p {
   color: #a6a6a6;
+}
+
+@media (max-width: 1024px) {
+  .newthought {
+    width: 40%;
+  }
+}
+
+@media (max-width: 667px) {
+  .newthought {
+    width: 80%;
+  }
 }
