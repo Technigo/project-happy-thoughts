@@ -26,7 +26,7 @@ export const PostHappyThought = ({ onFormSubmit }) => {
                 <p>{sendThought.length}/140</p>
                 <div className="card-bottom">
                     <div>
-                        <button className="send-btn" type="submit" onClick={submitHandler} disabled={sendThought.length < 5 || sendThought.lenght > 140 ? true : false}><span>❤️ </span>Send a happy thought <span>❤️ </span></button>
+                        <button className="send-btn" type="submit" onClick={submitHandler} disabled={sendThought.length < 5 || sendThought.lenght > 140 ? true : false}><span role="img" aria-label="Heart"> ❤️ </span>Send a happy thought <span role="img" aria-label="Heart"> ❤️ </span></button>
                     </div>
                 </div>
             </form >

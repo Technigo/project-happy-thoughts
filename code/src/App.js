@@ -14,7 +14,7 @@ export const App = () => {
       .then(res => res.json())
       .then(json => { setThoughts(json) })
       .catch(error => console.error("Error:", error))
-  }, [postedMessage]);
+  }, [postedMessage])
 
 
   //function to handle the submit-btn in PostHappyThought.
@@ -43,8 +43,6 @@ export const App = () => {
       {thoughts.map(thought => (
         <ThoughtList key={thought._id} thought={thought} />
       ))}
-
-
     </div>
 
   )

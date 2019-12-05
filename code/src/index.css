@@ -10,3 +10,7 @@ body {
 code {
   font-family: 'Inconsolata', monospace;
 }
+
+form {
+  display: inline-block;
+}
