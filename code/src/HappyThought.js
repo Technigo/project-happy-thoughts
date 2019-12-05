@@ -13,8 +13,10 @@ export const HappyThought = (props) => {
     return (
         <article>
             <p>{message}</p>
-            <button >❤️</button>
-            <span> x {hearts}</span>
+            <div className="hearts">
+                <button>❤️</button>
+                <span> x {hearts}</span>
+            </div>
             <p>{moment(createdAt).fromNow()}</p>
         </article>
     )

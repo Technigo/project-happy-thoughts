@@ -8,7 +8,7 @@ form {
     box-shadow: black 8px 8px;
 }
 
-button {
+form button {
     background: #ffadad;
     border: none;
     border-radius: 30px;
@@ -18,7 +18,7 @@ button {
     color: black;
 }
 
-button:disabled {
+form button:disabled {
     opacity: 0.5;
 }
 
