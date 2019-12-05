@@ -6,12 +6,14 @@ import './app.css'
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [postedMessage, setPostedMessage] = useState("")
+  const [loading, setLoading] = useState(true)
 
 
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
       .then(json => setThoughts(json))
+    setLoading(false)
   }, [postedMessage])
 
   const handleFormSubmit = (message) => {
@@ -47,6 +49,9 @@ export const App = () => {
   return (
     <div className="app">
       <Form onFormSubmit={handleFormSubmit} />
+      <br></br>
+      {loading && <h3>Loading happy thoughts...</h3>}
+
       {thoughts.map(thought => (
         <HappyThoughts key={thought._id}
           thought={thought}

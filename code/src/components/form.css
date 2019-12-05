@@ -1,0 +1,54 @@
+.thought-form{
+  background: #ebebeb;
+  width: 400px;
+  box-shadow: 5px 5px;
+  height: 200px;
+  border: solid 1px #7e7e7e;
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+textarea {
+  padding: 7px;
+  opacity: 1;
+  background: #fff;
+  width: 100%;
+  border: none;
+  border: 1px solid #93989d;
+}
+
+textarea::placeholder{
+background: #fff;
+height: 100%;
+color: #93989d;
+opacity: 0.5;
+}
+
+.buttom-form-card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.send-button {
+  border-radius: 2rem;
+  padding: 10px;
+  border: none;
+  font-size: 700;
+  font-family: 'Inconsolata', monospace;
+  background: #FFADAD;
+  font-size: 16px;
+}
+.send-button span {
+  font-family: 'Inconsolata', monospace;
+}
+.text-length{
+  display: flex;
+  
+}
+.red {
+  color:red;
+}
