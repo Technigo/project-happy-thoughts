@@ -23,7 +23,9 @@ export const App = () => {
       headers: { 'Content-Type': 'application/json' }
     })
       .then(() => setPostedMessage(message))
-      .catch(err => console.log("error:", err))
+      .catch(() => {
+        alert("Don't worry and think happy thoughts!")
+      })
   }
 
   const onThoughtLiked = (likedThoughtId) => {
@@ -50,7 +52,9 @@ export const App = () => {
     <div className="app">
       <Form onFormSubmit={handleFormSubmit} />
       <br></br>
-      {loading && <h3>Loading happy thoughts...</h3>}
+      {loading && <svg height="100" width="100">
+        <circle className="circle" cx="50" cy="50" r="40" stroke=" #FFADAD" strokeWidth="5" fill="none" />
+      </svg>}
 
       {thoughts.map(thought => (
         <HappyThoughts key={thought._id}
