@@ -1,11 +1,25 @@
 article {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 400px;
     padding: 10px;
     background: #fff;
     border: solid 1px black;
     box-shadow: black 8px 8px;
     margin: 20px 0px;
     text-overflow: initial;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    background: blue;
+    border: none;
+    border-radius: 30px;
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    color: black;
 }

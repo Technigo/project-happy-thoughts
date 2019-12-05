@@ -13,18 +13,17 @@ export const App = () => {
     .then(json => setThoughts(json))
   }, [])
 
-  // const handleFormSubmit = () => {
-
-  //   fetch("https://technigo-thoughts.herokuapp.com/", {
-  //     method: "POST",
-  //     body: JSON.stringify({ message }),
-  //     headers: { "Content-Type": "application/json" }
-  // }).catch(err => console.log("error:", err))
-  // }
-
+  const handleFormSubmit = message => {
+    fetch("https://technigo-thoughts.herokuapp.com/", {
+        method: "POST",
+        body: JSON.stringify({ message }),
+        headers: { "Content-Type": "application/json" }
+    }).catch(err => console.log("error:" , err ))
+  }
+  
   return (
     <div>
-      <HappyForm />
+      <HappyForm onFormSubmit={handleFormSubmit}/>
       {thoughts.map(thought => (
         <HappyThought key={thought._id} thought={thought}/>
       ))}

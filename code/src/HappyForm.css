@@ -17,3 +17,8 @@ button {
     margin: 10px;
     color: black;
 }
+
+button:disabled {
+    opacity: 0.5;
+}
+
