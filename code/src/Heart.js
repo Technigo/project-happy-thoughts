@@ -18,7 +18,7 @@ export const Heart = () => {
     <div>
       {heartLike.map(hearts => (
         <div>
-          <div key={hearts._id}>{hearts._id}</div>
+          <div key={hearts.hearts}>{hearts.hearts}</div>
         </div>
       ))}
     </div>

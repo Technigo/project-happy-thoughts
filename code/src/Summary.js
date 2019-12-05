@@ -6,7 +6,7 @@ export const Summary = props => {
   useEffect(() => {
     fetch(props.url, {
       method: "POST",
-      body: JSON.stringify({ message: "The sun is out tomorrow" })
+      body: JSON.stringify({ message: "The sun will show again soon" })
     })
       .then(res => res.json())
       .then(newThought => {
@@ -14,5 +14,9 @@ export const Summary = props => {
       });
   });
 
-  return <div>{submitMessage}</div>;
+  return (
+    <div>
+      <p>{submitMessage}</p>
+    </div>
+  );
 };
