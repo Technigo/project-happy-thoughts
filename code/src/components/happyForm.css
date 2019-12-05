@@ -1,0 +1,12 @@
+article {
+    border: 2px solid black;
+    margin: 10px 0px;
+    width: 500px;
+    padding: 10px 20px;
+    box-shadow: 10px 10px;
+    background: whitesmoke;
+}
+
+textarea {
+    resize: none;
+}

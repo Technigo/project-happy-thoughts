@@ -1,0 +1,17 @@
+.thought {
+    background: #fff;
+}
+
+.thought-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.thought-bottom span {
+    color: silver;
+}
+
+.thought p {
+    color: lightgray;
+}
