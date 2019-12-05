@@ -1,0 +1,58 @@
+article {
+    display: inline-block;
+}
+
+textarea {
+    resize: none;
+}
+
+button:focus {
+    outline: 0 !important;
+}
+
+.thought-card {
+    width: 400px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+    padding: 18px 15px 15px 15px;
+    border: 1px solid black;
+    -webkit-box-shadow: 10px 8px 0px -2px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 10px 8px 0px -2px rgba(0, 0, 0, 1);
+    box-shadow: 10px 8px 0px -2px rgba(0, 0, 0, 1);
+}
+
+.card-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.elapsed-time {
+    display: flex;
+    justify-self: right;
+    align-items: center;
+    color: rgb(148, 147, 147);
+}
+
+.heart-btn {
+    background-color: rgb(231, 231, 231);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 4px;
+    border: 0px;
+}
+
+.heart-btn:hover {
+    background-color: rgb(247, 168, 223);
+}
+
+.send-btn {
+    height: 40px;
+    width: 250px;
+    font-size: 15px;
+    border-radius: 20px;
+}
