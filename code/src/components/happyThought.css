@@ -1,0 +1,70 @@
+* {
+
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+    /* font-size: 15px; */
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+/** headline **/
+h2 {
+    display: flex;
+    margin-left: 30px;
+    
+}
+
+form {
+    background-color: pink;
+    display: inline-block;
+    flex-direction: column;
+    width: 500px;  
+}
+
+textarea {
+    width: 440px;
+    height: 70px;
+    resize: none;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-left: 30px;
+    border: 1px solid lightgrey;
+    margin-top: 0px; 
+}
+
+/** big button top of the page **/
+button {
+    border: 2px solid rgb(247, 171, 183);  
+    border-radius: 30px;
+    background-color: rgb(247, 171, 183); 
+    margin-top: 15px;
+    margin-bottom: 15px;
+    align-self: flex-start;
+    margin-left: 30px;
+    height: 45px;
+    width: 240px;
+    font-size: 15px;   
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 150px;
+    border: 1px solid black;
+    background-color: #fff;
+    box-shadow: 6px 6px;
+    padding-left: 10px;
+} 
+
+/* number of likes*/
+span{
+    display: flex;
+    margin-left: 100px;
+}
+
+p {
+    margin-left: 320px;  
+}

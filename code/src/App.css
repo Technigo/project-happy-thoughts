@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
   font-family: 'Inconsolata', monospace;
   font-size: 15px;
@@ -19,7 +19,7 @@
 .headForm {
     display: flex;
     flex-direction: column;
-    /*max-width: 50%;*/
+    /*max-width: 50%;
     align-items: center;
     margin-top: 40px;
     margin-left: 40px;
@@ -39,18 +39,18 @@
 textarea.form-text { 
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    /* align-items: center; 
     width: 410px;
     height: 60px;
     border: 1px solid lightgrey;
 }
   
 /* happy thoughts */
-
+/* 
 .messages {
   display: flex;
   flex-direction: column;
-  /*max-width: 50%;*/
+  /*max-width: 50%;
   align-items: flex-start;
   justify-content: start;
   margin-top: 30px;
@@ -76,6 +76,7 @@ textarea.form-text {
 .likes {
   width: 150px;
   margin-top: 25px;
-  /* display: flex; */
+  /* display: flex; 
   
-}
+}  */
+
