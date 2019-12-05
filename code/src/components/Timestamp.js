@@ -1,9 +1,10 @@
 import React from 'react';
+import moment from "moment"
 
 export const Timestamp = (props) => {
 
   return (
-    <li>{props.createdAt}</li>
+    <li> {moment(props.createdAt).fromNow()}</li>
   )
 }
 
