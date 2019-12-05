@@ -27,7 +27,6 @@ export const App = () => {
       })
   }
 
-
   return (
     <div>
 
@@ -40,14 +39,13 @@ export const App = () => {
         </form>
       </div>
 
-
       {thoughts.map(thought => (
         <div className="postedThoughts">
           <p key={thought._id}><h3>{thought.message}</h3> </p>
 
           <section className="cardbottom">
             <section className="like-section">
-              <p> <span role="img" aria-label="heart">❤️ x {thought.hearts} </span> {moment(thought.createdAt).fromNow()} </p>
+              <p> <span role="img" aria-label="heart">❤️ </span> x {thought.hearts} {moment(thought.createdAt).fromNow()} </p>
             </section>
           </section>
 
