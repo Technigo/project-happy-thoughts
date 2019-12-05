@@ -39,11 +39,12 @@ h1 {
   width: 60vw;
 }
 
-input[type=textarea] {
+textarea {
   height: 4vh;
-  margin-top: 2vh;
+  margin-top: 1vh;
+  margin-left: 2vw;
   resize: none;
-  width: 50vw;
+  width: 45vw;
 }
 
 .question, .required {
@@ -61,7 +62,6 @@ input[type=textarea] {
   margin: 8px 0;
   margin-bottom: 3vh;
   margin-top: 1vh;
-  /* padding: 10px 18px; */
   width: 55vw;
 }
 
@@ -72,7 +72,6 @@ input[type=textarea] {
   box-shadow: 5px 10px;
   height: 30vh;
   margin-bottom: 4vh;
-  margin-right: 10vw;
   padding-left: 1vw;
   width: 60vw;
 }
@@ -99,7 +98,7 @@ ul {
   justify-content: space-between;
   padding: 10px;
   padding-left: 0;
-  padding-top: 6vh;
+  padding-top: 0;
 }
 
 .heart-button {
@@ -117,9 +116,10 @@ h1 {
   margin-bottom: 5vh;
 }
 
-input[type=textarea] {
-  height: 4vh;
-  margin-top: 2vh;
+textarea {
+  height: 5vh;
+  margin-left: 0;
+  margin-top: 0vh;
   width: 27vw;
 }
 
@@ -147,7 +147,6 @@ input[type=textarea] {
   box-shadow: 5px 10px;
   height: 23vh;
   margin-bottom: 4vh;
-  margin-right: 3vw;
   padding-left: 1vw;
   width: 30vw;
 }
