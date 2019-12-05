@@ -5,12 +5,14 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Inconsolata", monospace;
+  font-weight: 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #000;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
 }
 
 button {
@@ -31,13 +33,13 @@ code {
   padding-top: 2rem;
 }
 
-.main-message-container {
+.form-container {
   margin-bottom: 2rem;
   background: #f2f0f0;
-  height: 10rem;
+  height: 12rem;
 }
 
-.main-message-container,
+.form-container,
 .message-li {
   width: 80%;
   margin: 0 auto;
@@ -45,19 +47,85 @@ code {
   box-shadow: 8px 8px 0 #000;
 }
 
-.main-message-container--btn {
+.form-container--btn {
   background: #ffadad;
+  font-family: "Inconsolata", monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 70%;
+  padding: 0.8rem 0.3rem;
+  border-radius: 20px;
+  border: none;
+}
+
+.form-container--content {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-around;
+  margin: 1rem;
+  height: 10rem;
+}
+
+.messages {
+  padding-bottom: 2rem;
 }
 
 .newMessage-input {
-  display: block;
+  font-family: "Inconsolata", monospace;
+  overflow-wrap: break-word;
+  width: 95%;
+  height: 3rem;
+  padding: 1rem;
 }
 
 .message-li {
   list-style-type: none;
   margin-top: 2rem;
   /* margin-bottom: 2rem; */
-  height: 7rem;
+  height: 9rem;
+  /* margin: 0 auto; */
+}
+
+.message-li-bottom {
+  display: flex;
+  margin: auto 1rem 2rem 0;
+  align-content: center;
+  align-items: center;
+  /* align-self: center; */
+  justify-self: center;
+  justify-content: left;
+}
+
+.message-li-bottom button {
+  font-size: 1.1rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: none;
+  margin-right: 0.5rem;
+}
+
+.message-li-topandbottom {
+  margin: 1rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  height: 100%;
+}
+
+.hearts-number {
+  color: #a9a9a9;
+}
+
+.time {
+  margin: 0 0 0 auto;
+  align-self: center;
+  color: #d5d5d5;
+}
+
+.message-li-title {
+  font-size: 1rem;
+  letter-spacing: 1px;
 }
 
 /* .message-li:last-of-type {
@@ -69,9 +137,15 @@ code {
     width: 75%;
   }
 
-  .main-message-container,
+  .form-container,
   .message-li {
     width: 70%;
+  }
+
+  .form-container--btn {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.8rem 0.3rem;
   }
 }
 
@@ -80,7 +154,7 @@ code {
     width: 70%;
   }
 
-  .main-message-container,
+  .form-container,
   .message-li {
     width: 60%;
   }
@@ -91,8 +165,23 @@ code {
     width: 65%;
   }
 
-  .main-message-container,
+  .form-container,
   .message-li {
-    width: 45%;
+    width: 50%;
+  }
+
+  .form-container--btn {
+    font-size: 0.8rem;
+    width: 55%;
+  }
+
+  .message-li-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-container--btn {
+    font-size: 0.9rem;
   }
 }

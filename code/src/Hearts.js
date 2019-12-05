@@ -15,27 +15,26 @@ export const Hearts = props => {
     }).then(res => res.json());
   }, [id, like]);
 
-  // setLike(like + 1);
-  // const handle = () => {
-  //   setLike(like + 1);
+  // const handleLikeClick = () => {
+  //   console.log(like);
+  //   console.log(like + 1);
+  //   return setLike(like + 1);
   // };
-
-  const handleLikeClick = () => {
-    console.log(like);
-    console.log(like + 1);
-    return setLike(like + 1);
-  };
 
   return (
     <li className="message-li">
-      <p>{message}</p>
-      <p>x {hearts}</p>
-      <p>{moment(time).fromNow()}</p>
-      <button onClick={handleLikeClick}>
-        <span role="img" aria-labelledby="heart icon">
-          💖
-        </span>
-      </button>
+      <div className="message-li-topandbottom">
+        <p className="message-li-title">{message}</p>
+        <div className="message-li-bottom">
+          <button onClick={() => setLike(like + 1)}>
+            <span role="img" aria-labelledby="heart icon">
+              💖
+            </span>
+          </button>
+          <p className="hearts-number">x {hearts}</p>
+          <p className="time">{moment(time).fromNow()}</p>
+        </div>
+      </div>
     </li>
   );
 };

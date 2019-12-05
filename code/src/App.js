@@ -12,7 +12,6 @@ export const App = () => {
       .then(res => res.json())
       .then(json => json.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1)))
       .then(json => {
-        // console.log(json);
         setThoughts(json);
       });
   }, []);
@@ -36,24 +35,23 @@ export const App = () => {
           a.createdAt < b.createdAt ? 1 : -1
         );
         setThoughts(newThoughts);
-        // console.log(newThoughts);
         setNewMessage("");
       });
   };
 
   return (
     <main className="container">
-      <form className="main-message-container">
-        <p>What´s making you happy right now?</p>
-        <NewMessage newMessage={newMessage} setNewMessage={setNewMessage} />
-        <ButtonMessage onClick={addThought} />
+      <form className="form-container">
+        <div className="form-container--content">
+          <p>What´s making you happy right now?</p>
+          <NewMessage newMessage={newMessage} setNewMessage={setNewMessage} />
+          <ButtonMessage onClick={addThought} />
+        </div>
       </form>
       <div className="messages">
         <ul>
           {thoughts.map(thought => {
             return (
-              // <li key={thought._id} className="message-li">
-              //   <p>{thought.message}</p>
               <div key={thought._id}>
                 <Hearts
                   id={thought._id}
@@ -66,7 +64,6 @@ export const App = () => {
           })}
         </ul>
       </div>
-      <div className="messages"></div>
     </main>
   );
 };
