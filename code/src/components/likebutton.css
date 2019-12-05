@@ -6,3 +6,7 @@
   margin-right: 10px;
   cursor: pointer;
 }
+
+.heart-button:hover {
+  background: #ffb3b3;
+}
