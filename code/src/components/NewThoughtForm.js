@@ -10,7 +10,6 @@ export const NewThoughtForm = (props) => {
   const handleFormSubmit = (event) => {
     event.preventDefault()
     props.addedThought({ message })
-    // setMessage({ message })
 
     // POST message to API
     fetch("https://technigo-thoughts.herokuapp.com/", {

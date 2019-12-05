@@ -8,7 +8,7 @@ export const Thoughts = () => {
 
   // Fetching the API and listing the json in setThoughts
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/", { method: 'GET' })
+    fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
       .then(json => setThoughts(json))
   }, [])

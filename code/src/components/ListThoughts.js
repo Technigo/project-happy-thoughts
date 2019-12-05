@@ -18,7 +18,7 @@ export const ListThoughts = (props) => {
 
           <div className="details">
             <div className="likes-wrapper">
-              <LikeButton />
+              <LikeButton id={thought._id} />
               <div className="likes"> x {thought.hearts}</div>
             </div>
             <div className="time">{moment(thought.createdAt).fromNow()}</div>

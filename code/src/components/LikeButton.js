@@ -2,18 +2,23 @@ import React, { useState } from 'react'
 import { Heart } from './Heart'
 import './likebutton.css'
 
-//Need a function to count clicks when doing onClick to heart-button and post them to API
+// Likes should increase by 1 for every click
+// How to add the like..?
+
 export const LikeButton = (props) => {
 
-  const id = props._id
+  // const id = props.thoughts._id
   const [likes, setLikes] = useState()
 
   const handleOnclick = () => {
-    // POST like to API
-    fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
-      method: "POST", headers: { "Content-Type": "application/json" }
-    })
+    //Increase likes by 1
     setLikes(likes + 1)
+
+    // POST like to API
+    fetch(`https://technigo-thoughts.herokuapp.com/${props.id}/like`, {
+      method: "POST", body: "", headers: { "Content-Type": "application/json" }
+    })
+
   }
 
   return (
