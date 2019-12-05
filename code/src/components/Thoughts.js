@@ -18,10 +18,23 @@ export const Thoughts = () => {
     setThoughts((previousThoughts) => [newThought, ...previousThoughts])
   }
 
+  // To add likes
+  const onThoughtLiked = (likedThoughtId) => {
+    const updatedThoughts = thoughts.map((thought) => {
+      if (thought._id === likedThoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
+  }
+
   return (
     <div>
       <NewThoughtForm addedThought={addedThought} />
-      <ListThoughts thoughts={thoughts} />
+      <ListThoughts
+        thoughts={thoughts}
+        onThoughtLiked={onThoughtLiked} />
     </div>
   )
 }

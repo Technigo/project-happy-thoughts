@@ -1,22 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Heart } from './Heart'
 import './likebutton.css'
 
-// Likes should increase by 1 for every click
-// How to add the like..?
-
 export const LikeButton = (props) => {
 
-  // const id = props.thoughts._id
-  const [likes, setLikes] = useState()
-
   const handleOnclick = () => {
-    //Increase likes by 1
-    setLikes(likes + 1)
 
-    // POST like to API
+    // POST like to API and then add like to that id
     fetch(`https://technigo-thoughts.herokuapp.com/${props.id}/like`, {
       method: "POST", body: "", headers: { "Content-Type": "application/json" }
+    }).then(() => {
+      props.onThoughtLiked(props.id)
     })
 
   }
