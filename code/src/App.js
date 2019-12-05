@@ -4,26 +4,25 @@ import { HappyPosts } from './HappyPosts.js'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
-  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
       .then(json => {
         setThoughts(json)
+        setLoading(false)
       })
   }, [])
 
   const handleFormSubmit = message => {
-    if(message.length>=5 && message.length<=140) {
     fetch("https://technigo-thoughts.herokuapp.com/", {
       method: 'POST',
       body: JSON.stringify({message}),
       headers: { 'Content-Type': 'application/json' }
+    }) .catch(() => {
+      alert("Don't worry, be happy! :D")
     })
-    } else {
-      setError(true)
-    }
   }
 
   const onThoughtLiked = (likedThoughtId) => {
@@ -40,11 +39,14 @@ export const App = () => {
   return (
     <div className="main-container">
       <h1>😃 Happy Thoughts 😃</h1>
+
+      {loading && <h4>Don't worry, be happy! 😄</h4>}
     
-      <HappyForm onFormSubmit={handleFormSubmit} error={error}/>
+      <HappyForm onFormSubmit={handleFormSubmit} />
     
       {thoughts.map(thought => (
-        <HappyPosts 
+        <HappyPosts
+          hearts={thought.hearts} 
           key={thought._id} 
           thought={thought}
           onThoughtLiked={onThoughtLiked}
@@ -53,4 +55,3 @@ export const App = () => {
     </div>
   )
 }
-

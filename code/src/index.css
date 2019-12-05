@@ -13,18 +13,18 @@ code {
     monospace;
 }
 
+h1 {
+  font-size: 24px;
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
 .main-container {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100vw;
-}
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 3vh;
-  text-align: center;
 }
 
 /* The form for posting thoughts */
@@ -34,21 +34,24 @@ h1 {
   background: #F5F5F5;
   height: 35vh;
   margin-bottom: 4vh;
-  /* margin-left: 20vw; */
-  padding-left: 3vw;
+  padding-left: 6vw;
   width: 60vw;
 }
 
 textarea {
   height: 4vh;
   margin-top: 1vh;
-  margin-left: 2vw;
+  margin-left: 0vw;
   resize: none;
-  width: 45vw;
+  width: 55vw;
 }
 
-.question, .required {
-  margin-bottom: 0;
+.invalid-length, .valid-length {
+  margin: 0;
+}
+
+.invalid-length {
+  color: red;
 }
 
 /* Button for form submit */
@@ -76,19 +79,8 @@ textarea {
   width: 60vw;
 }
 
-ul {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-}
-
-.li a {
-  text-decoration: none;
-}
-
 .message {
-  padding-top: 2vh;
+  padding-top: 1vh;
 }
 
 .cards-bottom {
@@ -102,7 +94,7 @@ ul {
 }
 
 .heart-button {
-  background-color: lightgrey;
+  background-color: pink;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -116,19 +108,19 @@ h1 {
   margin-bottom: 5vh;
 }
 
+.question-card {
+  box-shadow: 5px 10px;
+  height: 35vh;
+  margin-bottom: 4vh;
+  padding-left: 1vw;
+  width: 30vw;
+}
+
 textarea {
   height: 5vh;
   margin-left: 0;
   margin-top: 0vh;
   width: 27vw;
-}
-
-.question-card {
-  box-shadow: 5px 10px;
-  height: 30vh;
-  margin-bottom: 4vh;
-  padding-left: 1vw;
-  width: 30vw;
 }
 
 .send-form {

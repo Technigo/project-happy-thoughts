@@ -9,13 +9,13 @@ export const HappyPosts = props => {
     <article className="cards">
       <p className="message">{message}</p>
       <div className="cards-bottom">
-      <p className="hearts">
-        <LikeButton 
-          id={props.thought._id}
-          onThoughtLiked={props.onThoughtLiked}
-        /> x {hearts}
-      </p>
-      <p className="time"><Timestamp date={createdAt}/></p>
+        <p className="hearts">
+          <LikeButton
+            id={props.thought._id}
+            onThoughtLiked={props.onThoughtLiked}
+          /> x {hearts}
+        </p>
+        <p className="time"><Timestamp date={createdAt}/></p>
       </div>
     </article>
   )
