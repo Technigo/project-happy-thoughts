@@ -11,7 +11,9 @@ export const HappyThoughts = props => {
     <article className="inside-cards">
       <p>{message}</p>
       <ul>
-        <Heart hearts={hearts} />
+        <Heart hearts={hearts}
+          id={props.thought._id}
+          onThoughtLiked={props.onThoughtLiked} />
         <Timestamp createdAt={createdAt} />
       </ul>
     </article >

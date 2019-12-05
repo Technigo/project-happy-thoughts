@@ -1,13 +1,12 @@
-@font-face{
+/* @font-face{
   font-family:Menlo;
   src: url(./Menlo-Regular.ttf);
-}
+} */
 
 * {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Inconsolata', monospace;
-  font-family: Menlo;
 }
 
 .app {

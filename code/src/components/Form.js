@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export const Form = (props) => {
   const [message, setMessage] = useState("")
@@ -30,39 +30,3 @@ export const Form = (props) => {
   )
 }
 
-
-// export const Form = (props) => {
-
-//   const handleFormSubmit = (event) => {
-//   event.preventDefault()
-//   fetch('https://technigo-thoughts.herokuapp.com/', {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify({ newThought })
-//   })
-//     .then((res) => res.json())
-//     .then((newThought) => {
-//       setThoughts((previousThoughts) => [newThought, ...previousThoughts])
-//     })
-// }}
-
-// return (
-//   <form className="thought-input" onSubmit={handleFormSubmit}>
-//   <p>What is making you happy right now?</p>
-//   <label>
-//     <input
-//       type="text"
-//       autoFocus
-//       placeholder="Type your thought here..."
-//       onChange={event => setNewThought(event.target.value)}
-//       value={newThought}
-//     />
-//     <div className="buttom-input-card">
-//       <button className="send-button"><span role="img" aria-label="heart">❤️ </span>
-//         Send Happy Thought
-//     <span role="img" aria-label="heart">❤️ </span></button>
-//       <p className={((newThought.length < 5 || newThought.length >= 140) ? 'wrongLength' : 'goodLength')}>{newThought.length}/140</p>
-//     </div>
-//   </label>
-// </form>
-// )
