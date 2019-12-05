@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { PostedText } from './PostedText'
 import { Hearts } from './Hearts'
 // import { Time } from './Time'
@@ -7,43 +7,41 @@ import Time from 'react-timeago'
 import './Time.css'
 
 
-export const PostedThought = () => {
-  const [postedThought, setPostedThought] = useState([])
+export const PostedThought = (item) => {
+  // const [postedThought, setPostedThought] = useState([])
 
-  useEffect(() => {
-    fetch('https://technigo-thoughts.herokuapp.com/')
-      .then(res => res.json())
-      .then(json => setPostedThought(json))
-  }
-  )
+  // useEffect(() => {
+  //   fetch('https://technigo-thoughts.herokuapp.com/', { method: 'GET' })
+  //     .then(res => res.json())
+  //     .then(json => setPostedThought(json))
+  // }, [])
+
+  // const addedThought = (newThought) => {
+  //   setPostedThoughts((previousThoughts) => [newThought, ...previousThoughts])
+  // }
 
   return (
-    <div>
-      {postedThought.map((item) => (
-        <div
-          className="message-box"
-          key={item._id}>
-          <PostedText
-            text={item.message}
-          />
-          <div className="hearts-time">
-            <Hearts
-              hearts={item.hearts}
-            />
-            {/* <Time
+    <div
+      className="message-box"
+      key={item._id}>
+      <PostedText
+        text={item.message}
+      />
+      <div className="hearts-time">
+        <Hearts
+          hearts={item.hearts}
+        />
+        {/* <Time
               time={item.createdAt}
             /> */}
-            <span className="time">
-              <Time date={item.createdAt} />
-            </span>
-          </div>
-        </div>
-      ))
-      }
+        <span className="time">
+          <Time date={item.createdAt} />
+        </span>
+      </div>
     </div>
 
   )
-
+}
 
   // export const PostedMessages = (props) => {
   //   return (
@@ -55,4 +53,3 @@ export const PostedThought = () => {
   //   )
 
 
-}
