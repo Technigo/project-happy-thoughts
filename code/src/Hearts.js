@@ -15,18 +15,19 @@ export const Hearts = props => {
     }).then(res => res.json());
   }, [id, like]);
 
-  // const handleLikeClick = () => {
-  //   console.log(like);
-  //   console.log(like + 1);
-  //   return setLike(like + 1);
-  // };
+  const handleClick = () => {
+    setLike(like + 1);
+  };
+
+  let style = { background: "#f2f0f0" };
+  if (like > 0) style.background = "#ffadad";
 
   return (
     <li className="message-li">
       <div className="message-li-topandbottom">
         <p className="message-li-title">{message}</p>
         <div className="message-li-bottom">
-          <button onClick={() => setLike(like + 1)}>
+          <button onClick={handleClick} style={style}>
             <span role="img" aria-labelledby="heart icon">
               💖
             </span>

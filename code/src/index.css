@@ -82,9 +82,7 @@ code {
 .message-li {
   list-style-type: none;
   margin-top: 2rem;
-  /* margin-bottom: 2rem; */
   height: 9rem;
-  /* margin: 0 auto; */
 }
 
 .message-li-bottom {
@@ -103,6 +101,7 @@ code {
   padding: 0.5rem;
   border: none;
   margin-right: 0.5rem;
+  outline: none;
 }
 
 .message-li-topandbottom {
