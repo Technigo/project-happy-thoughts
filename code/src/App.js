@@ -4,6 +4,8 @@ import moment from 'moment'
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [message, setMessage] = useState('')
+  const [like, setLike] = useState('')
+  const [newThought, setNewThought] = useState('')
 
   useEffect(() => {
     fetch('https://technigo-thoughts.herokuapp.com/')
@@ -11,16 +13,11 @@ export const App = () => {
     .then (json => setThoughts(json));
   }, []);
 
-  // Later, in your code which handles the form submission, you 
-// could have something which looks like this to send the new 
-// message, get the response from the API, and then add it to 
-// the thoughts array:
-
   const handleFormSubmit = (event) => {
     event.preventDefault()
     console.log('hej')
-  // Send the POST request with the input from your form (instead
-  // of 'Hello world' like this example does):
+  // Send the POST request with the input from your form 
+  
     fetch('https://technigo-thoughts.herokuapp.com/', {
       method: 'POST',
       body: JSON.stringify({ message }),
@@ -34,6 +31,21 @@ export const App = () => {
         setThoughts((previousThoughts) => [newThought, ...previousThoughts])
       })
   }
+
+  const handleHeartClick = (id) => {
+    console.log('test')
+    fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
+      method: 'POST',
+      body: "",
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then((res) => res.json())
+    .then((json) => console.log(json))
+    .then((newLike) => {
+    setLike((previousLike) => [newLike, ...previousLike])
+    })
+  }
+
   return (
     <form className="background" onSubmit={handleFormSubmit}>
       <article className="inputField">
@@ -43,10 +55,12 @@ export const App = () => {
       </article>
       <ul>
         {thoughts.map((thought) => (
-          <li className="li" key={thought.message}>{thought.message}<br /><br />
-          <div className="heartAndTimeContainer"><div className="heart"><span className="emojiHeart" role="img" area-label="heart">💗 </span> x {thought.hearts}</div><p>{moment(thought.createdAt).fromNow()}</p></div></li>
+          <li className="li" key={thought._id}>{thought.message}<br /><br />
+          <div className="heartAndTimeContainer"><div className="heart"><button onClick={() => handleHeartClick(thought._id)} className="emojiHeart" role="img" area-label="heart">💗 </button> x {thought.hearts}</div><p>{moment(thought.createdAt).fromNow()}</p></div></li>
         ))}
       </ul>
+
+    
     </form>
   )
 }

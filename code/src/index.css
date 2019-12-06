@@ -84,6 +84,7 @@ ul{
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
+  color: #888888;
 }
 
 .heartAndTimeContainer p{
@@ -103,4 +104,5 @@ ul{
   justify-content: center;
   padding: 7px;
   cursor: pointer;
+  margin-right: 10px;
 }
