@@ -15,8 +15,6 @@ export const Hearts = (props) => {
   }
 
 
-
-
   return (
     <div className="hearts">
       <button className="like-heart"

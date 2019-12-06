@@ -8,6 +8,8 @@
   font-family: Menlo;
 }
 
-/* body{
-  font-family: 'Inconsolata', monospace;
-} */
+body{
+  /* font-family: 'Inconsolata', monospace; */
+  display:flex;
+  justify-content: center;
+}
