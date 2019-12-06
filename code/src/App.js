@@ -2,63 +2,41 @@ import React, { useEffect, useState } from "react"
 import { HappyThought } from "./components/HappyThought"
 import { HappyForm } from "./components/HappyForm"
 
+const url = "https://technigo-thoughts.herokuapp.com/"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [postedMessage, setPostedMessage] = useState("")
-  // const [likes, setLikes] = useState()
-
-  //   const [heart, setHeart] = useState()
-  //   relode thoughts, setreloadThoughts//
 
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch(url)
       .then(res => res.json())
       .then(json => setThoughts(json))
   }, [postedMessage])
 
-
-  const handleFormSubmit = message => {
-    fetch("https://technigo-thoughts.herokuapp.com/", {
-      method: "POST",
-      body: JSON.stringify({ message }),
-      headers: { "Content-Type": "application/json" }
-    })
-      .then(() => setPostedMessage(message))
-      .catch(err => console.log("error:", err))
+  const onFormSubmit = message => {
+    setPostedMessage(message)
   }
 
-  // const onThoughtLiked = likedThoughtId => {
-  //   const updatedThoughts = thoughts.map(thought => {
-  //     if (thought._id === likedThoughtId) {
-  //       thought.hearts += 1;
-  //     }
-  //     return thought;
-  //   });
-  //   setThoughts(updatedThoughts);
-  // };
+  const onLiked = (thoughtId) => {
+    console.log("Logging in the App.js", thoughtId)
+    //to make sure the right func is being calles hand has the id
 
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
+  }
 
   return (
-    <div>
-      <HappyForm onFormSubmit={handleFormSubmit} />
+    <main>
+      <HappyForm onFormSubmit={onFormSubmit} />
       {thoughts.map(thought => (
-        <HappyThought key={thought._id} thought={thought} />
+        <HappyThought key={thought._id} thought={thought} onLiked={onLiked} />
       ))}
-    </div>
+    </main>
   )
 }
-
-
-//   return (
-//     <div>
-//       {thoughts.map(thought => (
-//         <Thought
-//           key={thought._id}
-//           thought={thought}
-//           onThoughtLiked={onThoughtLiked}
-//         />
-//       ))}
-//     </div>
-//   )
-// }

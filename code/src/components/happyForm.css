@@ -2,7 +2,8 @@
   font-family: 'Inconsolata', monospace;
 }
 .happy-form {
-  background-color: #f3f1f1;
+  background-color: rgb(244, 134, 170);
+  /* background-color: #f3f1f1; */
   border: 2px solid black;
   box-shadow: 4px 4px black;
   width: 300px;
@@ -29,13 +30,15 @@
 .happy-form button {
   height: 50px;
   width: 70%;
-  background-color:rgb(247, 171, 183); 
+  background-color: pink;
+  /* background-color:rgb(247, 171, 183);  */
   border: none;
   font-size: 14px;
+  font-weight: bold;
   border-radius: 25px;
   padding: 10px;
-  font-weight: 500;
   color: black;
+  
 }
 
 .happy-form button:hover {

@@ -1,20 +1,31 @@
 import React, { useState } from "react"
 import "./happyForm.css"
 
+const url = "https://technigo-thoughts.herokuapp.com/"
+
 export const HappyForm = props => {
     const [message, setMessage] = useState("")
 
     const handleSubmit = event => {
         event.preventDefault()
-        props.onFormSubmit(message) // this onFormSubmit comes as a props from App.js
+        fetch(url, {
+            method: "POST",
+            body: JSON.stringify({ message }),
+            headers: { "Content-Type": "application/json" }
+        })
+            .then(() => {
+                setMessage("")
+                props.onFormSubmit(message)
+            })
+            .catch(err => console.log("error:", err))
     }
-
 
     return (
         <form className='happy-form'>
             <h3>Post a happy thought!</h3>
             <textarea
                 rows='3'
+                value={message}
                 onChange={event => setMessage(event.target.value)}
             ></textarea>
             <div className='form-footer'>
