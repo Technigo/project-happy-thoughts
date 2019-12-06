@@ -14,12 +14,7 @@ export const App = () => {
   }, [sentThought])
 
   const sendHappyThought = (message) => {
-    fetch("https://technigo-thoughts.herokuapp.com", {
-      method: "POST",
-      body: JSON.stringify({ message }),
-      headers: { 'Content-Type': 'application/json' }
-    })
-      .then(() => setSentThought(message))
+    setSentThought(message)
   }
 
   const onLiked = thoughtId => {

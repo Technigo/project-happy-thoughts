@@ -1,12 +1,21 @@
 import React, { useState } from 'react'
 import './happyForm.css'
 
-export const HappyForm = ({ onFormSubmit }) => {
+export const HappyForm = props => {
     const [message, setMessage] = useState("")
 
     const sendHappyThought = (event) => {
         event.preventDefault()
-        onFormSubmit(message)
+        fetch("https://technigo-thoughts.herokuapp.com", {
+            method: "POST",
+            body: JSON.stringify({ message }),
+            headers: { "Content-Type": "application/json" }
+        })
+            .then(() => {
+                setMessage("")
+                props.onFormSubmit(message)
+            })
+            .catch(err => console.log("error:", err))
     }
 
     return (
