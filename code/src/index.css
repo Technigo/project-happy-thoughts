@@ -15,7 +15,6 @@ code {
 .post-wrapper {
   margin: auto;
   padding: 40px;
-  font-family: "Source Code Pro", monospace;
   font-size: 16px;
 }
 
@@ -25,8 +24,9 @@ h2 {
 
 .new-post,
 .card {
+  font-family: "Source Code Pro", monospace;
   width: 450px;
-  height: 180px;
+  height: 210px;
   margin: auto;
   background-color: rgb(238, 238, 238);
   padding: 10px 8px;
@@ -36,17 +36,49 @@ h2 {
   box-shadow: 17px 17px 0px -6px rgba(0, 0, 0, 1);
 }
 
-input {
+.new-post p {
+  margin: 8px 10px;
+}
+.card {
+  height: 150px;
+  margin-bottom: 40px;
+  background-color: white;
+}
+
+.card-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.likes {
+  display: flex;
+}
+textarea {
   height: 50px;
   width: 400px;
   margin: 5px;
   border: 2px, rgb(128, 128, 128) solid;
+  resize: none;
+  font-size: 18px;
 }
 
-button {
+.submit-button {
   width: 190px;
   height: 45px;
   margin-top: 8px;
   border-radius: 20px;
   background-color: rgb(254, 168, 182);
+}
+
+.like-button {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background: rgb(238, 238, 238);
+  border: none;
+}
+
+.like-button-red {
+  background: rgb(254, 168, 182);
 }
