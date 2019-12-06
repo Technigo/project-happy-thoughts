@@ -22,17 +22,17 @@ export const HappyForm = props => {
 
   return (
     <form className="happy-form">
-      <h3>Post a happy thought!</h3>
-      <p>{message}</p>
+      <h3>What's making you happy right now?</h3>
       <textarea
         rows="3"
+        value={message}
         onChange={event => setMessage(event.target.value)}
       ></textarea>
       <div className="happy-footer">
         <button
           type="submit"
           onClick={handleSubmit}
-          disabled={message.length < 5 || message.length > 140 ? true : false}
+          disabled={message.length < 6 || message.length > 140 ? true : false}
         >
           Send a happy thought!
         </button>

@@ -1,8 +1,9 @@
 .happy-form {
   background-color: #f3f1f1;
   border: 2px solid black;
-  box-shadow: 4px 4px black;
-  width: 300px;
+  box-shadow: 6px 6px black;
+  width: 450px;
+  height: 200px;
   margin: 16px;
   display: flex;
   flex-direction: column;
@@ -17,8 +18,34 @@
   font-size: 16px;
   box-sizing: border-box;
   margin: 10px 0;
+  overflow: hidden;
+  white-space: normal;
 }
 
 .happy-form h3 {
   margin: 0;
+  font-size: 17px;
+}
+
+.happy-form button {
+  height: 50px;
+  width: 60%;
+  background-color: #ffadad;
+  border: none;
+  font-size: 14px;
+  border-radius: 25px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.happy-form button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.happy-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
