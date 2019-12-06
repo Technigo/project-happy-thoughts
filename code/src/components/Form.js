@@ -7,7 +7,9 @@ export const Form = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     props.onFormSubmit(message)
+    setMessage('')
   }
+  // setMessage("") making the form/textarea clears after you submit message
 
   return (
     <form className="thought-form">
