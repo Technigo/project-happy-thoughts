@@ -7,7 +7,7 @@ import Time from 'react-timeago'
 import './Time.css'
 
 
-export const PostedThought = (item) => {
+export const PostedThought = (props) => {
   // const [postedThought, setPostedThought] = useState([])
 
   // useEffect(() => {
@@ -23,19 +23,21 @@ export const PostedThought = (item) => {
   return (
     <div
       className="message-box"
-      key={item._id}>
+      key={props._id}>
       <PostedText
-        text={item.message}
+        text={props.message}
       />
       <div className="hearts-time">
         <Hearts
-          hearts={item.hearts}
+          id={props._id}
+          onThoughtLiked={props.onThoughtLiked}
+          hearts={props.hearts}
         />
         {/* <Time
               time={item.createdAt}
             /> */}
         <span className="time">
-          <Time date={item.createdAt} />
+          <Time date={props.createdAt} />
         </span>
       </div>
     </div>

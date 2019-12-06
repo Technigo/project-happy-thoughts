@@ -25,18 +25,29 @@ export const App = () => {
 
   }
 
+  const onThoughtLiked = (likedThoughtId) => {
+    const updatedThoughts = postedThought.map((thought) => {
+      if (thought._id === likedThoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setPostedThought(updatedThoughts)
+  }
+
   return (
     <div>
       <NewThought
         onFormSubmit={handleFormSubmit}
       />
-      {postedThought.map((props) => (
+      {postedThought.map((thought) => (
         <PostedThought
-          key={props._id}
-          // _id={props._id}
-          message={props.message}
-          hearts={props.hearts}
-          createdAt={props.createdAt}
+          key={thought._id}
+          _id={thought._id}
+          message={thought.message}
+          hearts={thought.hearts}
+          createdAt={thought.createdAt}
+          onThoughtLiked={onThoughtLiked}
         />
       ))
       }

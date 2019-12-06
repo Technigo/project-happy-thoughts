@@ -8,7 +8,7 @@ export const NewThought = ({ onFormSubmit }) => {
   const handleNewThought = (event) => {
     event.preventDefault()
     onFormSubmit(newThought)
-
+    setNewThought('')
   }
 
 
