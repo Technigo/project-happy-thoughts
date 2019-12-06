@@ -5,17 +5,19 @@ import { NewThoughtForm } from './NewThoughtForm'
 // THOUGHTS - FETCHING FROM API AND RETURNING COMPONENTS FORM AND LIST OF THOUGHTS
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([])
+  const [postedMessage, setPostedMessage] = useState("") //"Fake state" needed to refetch the array with new thought
+
 
   // Fetching the API and listing the json in setThoughts
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
       .then(json => setThoughts(json))
-  }, [])
+  }, [postedMessage])
 
-  // To add the NewThought in the array of thoughts without fetching again
-  const addedThought = (newThought) => {
-    setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+  // Passing the addedThought from form to postedMessage
+  const addedThought = message => {
+    setPostedMessage(message)
   }
 
   // To add likes
@@ -33,6 +35,7 @@ export const Thoughts = () => {
     <div>
       <NewThoughtForm addedThought={addedThought} />
       <ListThoughts
+        key={thoughts._id}
         thoughts={thoughts}
         onThoughtLiked={onThoughtLiked} />
     </div>

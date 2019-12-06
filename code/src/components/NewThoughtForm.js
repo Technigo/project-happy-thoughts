@@ -9,13 +9,14 @@ export const NewThoughtForm = (props) => {
   // Function for submit
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    props.addedThought({ message })
-    setMessage("")
 
     // POST message to API
     fetch("https://technigo-thoughts.herokuapp.com/", {
       // Just need {message} since the key and value is the same {message: message}
       method: "POST", body: JSON.stringify({ message }), headers: { "Content-Type": "application/json" }
+    }).then(() => {
+      props.addedThought({ message })
+      setMessage("")
     })
   }
 

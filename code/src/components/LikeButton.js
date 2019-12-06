@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Heart } from './Heart'
 import './likebutton.css'
 
