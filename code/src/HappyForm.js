@@ -13,6 +13,7 @@ export const HappyForm = ({onFormSubmit}) => {
         <form>
             <h3>Post a happy thought!</h3>
             <textarea rows="3" onChange={event => setMessage(event.target.value)}></textarea>
+            {message.length} / 140
             <button type="submit" onClick={handleSubmit} disabled={message.length < 5 || message.length > 140 ? true : false}>
                 ❤️ Send your happy thought ❤️
             </button>
