@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './NewThought.css'
 
 export const NewThought = ({ onFormSubmit }) => {
-
   const [newThought, setNewThought] = useState('')
 
   const handleNewThought = (event) => {
@@ -10,7 +9,6 @@ export const NewThought = ({ onFormSubmit }) => {
     onFormSubmit(newThought)
     setNewThought('')
   }
-
 
   return (
     <form className="new-thought">
@@ -29,11 +27,12 @@ export const NewThought = ({ onFormSubmit }) => {
           className="send-button"
           onClick={handleNewThought}
           disabled={newThought.length < 5 || newThought.length >= 140 ? true : false}>
-          <span role="img" aria-label="heart-emoji">❤️</span>Send Happy Thought<span role="img" aria-label="heart-emoji">❤️</span>
+          <span role="img" aria-label="heart-emoji">❤️</span>
+          Send Happy Thought
+          <span role="img" aria-label="heart-emoji">❤️</span>
         </button>
         <p className={newThought.length < 5 || newThought.length >= 140 ? "red" : "black"}>{newThought.length}/140</p>
       </div>
     </form>
   )
-
 }

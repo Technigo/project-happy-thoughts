@@ -1,7 +1,7 @@
 .message-box{
   border: solid 2px #7E7E7E;
   width:379px;
-  height: 95px;
+  height: 110px;
   margin:30px;
   padding:15px;
   box-shadow: 7px 7px;
@@ -14,4 +14,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.time{
+  color: #CACACA;
+  font-size: 12px;
+  font-weight: bold;
 }

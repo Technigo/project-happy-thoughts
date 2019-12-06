@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { PostedThought } from 'PostedThought'
+import { PostedThought } from './components/PostedThought'
 import './App.css'
-import { NewThought } from 'NewThought'
+import { NewThought } from './components/NewThought'
 
 
 export const App = () => {
@@ -17,7 +17,7 @@ export const App = () => {
   const handleFormSubmit = (newThought) => {
     fetch('https://technigo-thoughts.herokuapp.com/', {
       method: 'POST',
-      body: JSON.stringify({ message: newThought }), //Eventuellt ta bort message:?
+      body: JSON.stringify({ message: newThought }),
       headers: { 'Content-Type': 'application/json' }
     })
       .then(() => setNewPostedThought(newThought))
@@ -52,7 +52,7 @@ export const App = () => {
       ))
       }
 
-
+      <p>Technigo Bootcamp 2019 - Matilda Arvidsson</p>
     </div>
   )
 }

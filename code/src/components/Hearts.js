@@ -2,8 +2,6 @@ import React from 'react'
 import './Hearts.css'
 
 export const Hearts = (props) => {
-  // const [noOfHearts, setNoOfHearts] = useState(false)
-  // const {message, hearts, createdAt, _id: id} = props.thought
   const handleLikes = () => {
     fetch(`https://technigo-thoughts.herokuapp.com/${props.id}/like`, {
       method: "POST",
@@ -14,17 +12,14 @@ export const Hearts = (props) => {
     })
   }
 
-
   return (
     <div className="hearts">
       <button className="like-heart"
         onClick={handleLikes}>
         <span role="img" aria-label="heart-emoji"> ❤️</span>
       </button>
-
       x {props.hearts}
     </div >
   )
-
 }
 

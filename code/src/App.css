@@ -1,5 +1,3 @@
-/*Post: 
-#ededed*/
 @font-face{
   font-family:Menlo;
   src: url(./Menlo-Regular.ttf);
@@ -9,7 +7,6 @@
 }
 
 body{
-  /* font-family: 'Inconsolata', monospace; */
   display:flex;
   justify-content: center;
 }

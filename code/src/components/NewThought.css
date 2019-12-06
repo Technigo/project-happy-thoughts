@@ -1,14 +1,14 @@
 .new-thought{
-    border: solid 2px #7E7E7E;
-    background-color: #ebebeb;
-    width:379px;
-    height: 130px;
-    margin:30px;
-    padding:15px;
-    box-shadow: 7px 7px;
-    display:flex;
-    flex-direction:column;
-    justify-content: space-between;
+  border: solid 2px #7E7E7E;
+  background-color: #ebebeb;
+  width:379px;
+  height: 130px;
+  margin:30px;
+  padding:15px;
+  box-shadow: 7px 7px;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
 }
 label{
   margin:0;
@@ -39,7 +39,6 @@ span{
   display:flex;
   justify-content: space-between;
 }
-
 .red{
   color: crimson;
 }
