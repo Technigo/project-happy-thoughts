@@ -32,12 +32,12 @@ export const Thoughts = () => {
   }
 
   return (
-    <div>
+    <main>
       <NewThoughtForm addedThought={addedThought} />
       <ListThoughts
         key={thoughts._id}
         thoughts={thoughts}
         onThoughtLiked={onThoughtLiked} />
-    </div>
+    </main>
   )
 }

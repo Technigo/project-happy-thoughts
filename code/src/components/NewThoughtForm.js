@@ -22,7 +22,7 @@ export const NewThoughtForm = (props) => {
 
   return (
     <div className="newthought-wrapper">
-      <div className="newthought">
+      <section className="newthought">
         <form onSubmit={handleFormSubmit} name="form">
           <label>
             What's making you happy right now?
@@ -41,7 +41,7 @@ export const NewThoughtForm = (props) => {
             <p>{message.length}/140</p>
           </div>
         </form>
-      </div>
+      </section>
     </div>
   )
 }
