@@ -7,18 +7,24 @@ export const HappyForm = ({ onFormSubmit }) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         onFormSubmit(message)
+        setMessage('')
     }
 
     return (
         <form>
-            <h3>Post a happy thought!</h3>
-            <p>{message}</p>
+            <h5>Post a happy thought!</h5>
             <textarea
                 rows='3'
                 onChange={event => setMessage(event.target.value)}>
             </textarea>
-            <button type="submit" onClick={handleSubmit}>
+            <p className="messageLength">{message.length} / 140</p>
+            <button className="formButton"
+                type="submit"
+                onClick={handleSubmit}
+                disabled={message.length < 5 || message.length > 140 ? true : false}>
+                <span className="heartLogo">&hearts;</span>
                 Send a happy thought!
+                <span className="heartLogo">&hearts;</span>
             </button>
         </form>
     )

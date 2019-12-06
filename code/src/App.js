@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { HappyThought } from './HappyThought'
 import { HappyForm } from './HappyForm'
+import './app.css'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -21,13 +22,24 @@ export const App = () => {
       .then(() => setPostedMessage(message))
   }
 
+  const onLikedThought = (likedThoughtId) => {
+    const updatedThoughts = thoughts.map((thought) => {
+      if (thought._id === likedThoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
+  }
+
   return (
-    <div>
+    <div className="appContainer">
       <HappyForm onFormSubmit={handleFormSubmit} />
       {thoughts.map(thought => (
         <HappyThought
           key={thought._id}
-          thought={thought} />
+          thought={thought}
+          onLikedThought={onLikedThought} />
       ))}
     </div>
   )

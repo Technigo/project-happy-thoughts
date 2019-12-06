@@ -1,0 +1,57 @@
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height:130px;
+    width:300px;
+    border:0.5px solid black;
+    margin:5px;
+    box-shadow: 4px 4px black;
+    font-family: 'Inconsolata', monospace;
+}
+
+h3 {
+    margin-left:5px;
+    margin:10px;
+}
+
+.likeContainer {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin:5px;
+}
+
+.heartContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.heartContainer p {
+    margin-left:5px;
+}
+
+.likeButton {
+    height: 40px;
+    width: 40px;
+    border-radius:50px;
+    background-color:lightpink
+}
+
+.likeButton:hover {
+    cursor: pointer;
+    transform: scale(1.2); 
+    opacity:1;
+}
+
+.likeButton:focus {
+    outline:0px;
+    border:none;
+ }
+
+.heartLike {
+    font-size: 200%;
+    color:red;
+}
