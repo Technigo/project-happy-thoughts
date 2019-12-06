@@ -19,13 +19,11 @@ export const HappyThought = props => {
             <p>
                 <button
                     onClick={handleClick}>
-                    {/* style={{ background: hearts > 0 ? "#ffadad" : "#f3f1f1  " }} */}
-
                     <span role='img' aria-label='Heart' >
                         {"❤️ "}
                     </span>
                 </button>
-                x {hearts}
+                {hearts}
             </p>
             <p>{moment(createdAt).fromNow()}</p>
         </article>

@@ -30,7 +30,8 @@
 .happy-form button {
   height: 50px;
   width: 70%;
-  background-color: pink;
+  /* background-color: pink; */
+  background-color: rgb(255, 210, 217);
   /* background-color:rgb(247, 171, 183);  */
   border: none;
   font-size: 14px;
