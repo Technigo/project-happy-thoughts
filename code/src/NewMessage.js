@@ -8,6 +8,7 @@ export const NewMessage = props => {
     <input
       type="textarea"
       className="newMessage-input"
+      rows="3"
       value={newMessage}
       placeholder="Add New Happy Thought"
       onChange={event => setNewMessage(event.target.value)}

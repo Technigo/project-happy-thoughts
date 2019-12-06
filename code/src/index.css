@@ -19,6 +19,11 @@ button {
   display: inline-block;
 }
 
+button:focus,
+input:focus {
+  outline: 1px red solid;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -101,7 +106,6 @@ code {
   padding: 0.5rem;
   border: none;
   margin-right: 0.5rem;
-  outline: none;
 }
 
 .message-li-topandbottom {
@@ -126,10 +130,6 @@ code {
   font-size: 1rem;
   letter-spacing: 1px;
 }
-
-/* .message-li:last-of-type {
-  padding-bottom: 2rem;
-} */
 
 @media (min-width: 500px) {
   .container {

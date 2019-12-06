@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 export const Hearts = props => {
-  const { hearts, id, message, time } = props;
+  const { hearts, id, message, time, onLiked } = props;
   const [like, setLike] = useState(hearts);
 
-  useEffect(() => {
+  const handleClick = () => {
     fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
       }
-    }).then(res => res.json());
-  }, [id, like]);
-
-  const handleClick = () => {
+    })
+      .then(res => res.json())
+      .then(() => onLiked(id));
     setLike(like + 1);
   };
 

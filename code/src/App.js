@@ -39,6 +39,16 @@ export const App = () => {
       });
   };
 
+  const onLiked = thoughtId => {
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1;
+      }
+      return thought;
+    });
+    setThoughts(updatedThoughts);
+  };
+
   return (
     <main className="container">
       <form className="form-container">
@@ -58,6 +68,7 @@ export const App = () => {
                   hearts={thought.hearts}
                   message={thought.message}
                   time={thought.createdAt}
+                  onLiked={onLiked}
                 />
               </div>
             );
