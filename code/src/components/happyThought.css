@@ -16,11 +16,16 @@ button.heart {
     margin-right: 4px;
 }
 
+button.heart::before {
+    content: "\02764";
+}
+
 button.heart:hover {
     cursor: pointer;
 }
 
-button.heart span {
-    margin-left: 2px;
-    line-height: 2.8;
+@media (max-width: 668px) {
+    h1 {
+        font-size: 22px;
+    }
 }

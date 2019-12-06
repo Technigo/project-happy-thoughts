@@ -22,9 +22,6 @@ export const HappyThought = (props) => {
                     <button className="heart"
                         onClick={likeThought}
                         style={{ background: hearts > 0 ? "#ffadad" : "#f3f1f1  " }}>
-                        <span role='img' aria-label='Heart'>
-                            {"❤️ "}
-                        </span>
                     </button>
                     x {hearts}
                 </p>

@@ -12,17 +12,18 @@ export const HappyForm = ({ onFormSubmit }) => {
     return (
         <article>
             <h3>What's making you happy right now?</h3>
-            <p>{message}</p>
             <textarea r
                 rows="3"
                 onChange={event => setMessage(event.target.value)}></textarea>
-            <p>{message.length <= 140 ? 140 - message.length + ' character(s) left' : message.length - 140 + ' character(s) over the limit'}</p>
-            <button
-                type="submit"
-                onClick={sendHappyThought}
-                disabled={message.length < 5 || message.length > 140 ? true : false}>
-                Send Happy Thought
-            </button>
+            <div className="formBottom">
+                <button
+                    type="submit"
+                    className="sendThought"
+                    onClick={sendHappyThought}
+                    disabled={message.length < 5 || message.length > 140 ? true : false}>
+                </button>
+                <p>{message.length}/140</p>
+            </div>
         </article>
     )
 }
