@@ -19,7 +19,7 @@ const Form = () => {
         <h4>What{'\''}s making you happy right now? </h4>
         <textarea rows="4" minLength="5" maxLength="140" required onChange={(e) => { setMessage(e.target.value) }} />
         <section className="card-bottom">
-          <button type="submit" onClick={submitHandler}>
+          <button type="submit" onClick={submitHandler} disabled={message.length < 5}>
             <i className="fa fa-heart" aria-hidden="true" />
             Send Happy Thought
             <i className="fa fa-heart" aria-hidden="true" />

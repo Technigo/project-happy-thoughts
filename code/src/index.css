@@ -80,6 +80,13 @@ h3 i {
   margin: 15px;
 }
 
+.like-section button:focus,
+.new-message button:focus,
+textarea:focus {
+  outline: 0;
+  border: #e28686 2px solid;
+}
+
 .notLiked {
   background-color: #eaeaea;
 }
