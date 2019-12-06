@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { HappyThought } from "./components/HappyThought"
 import { HappyForm } from "./components/HappyForm"
 
+
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [postedMessage, setPostedMessage] = useState("")
@@ -27,6 +28,16 @@ export const App = () => {
       .catch(err => console.log("error:", err))
   }
 
+  // const onThoughtLiked = likedThoughtId => {
+  //   const updatedThoughts = thoughts.map(thought => {
+  //     if (thought._id === likedThoughtId) {
+  //       thought.hearts += 1;
+  //     }
+  //     return thought;
+  //   });
+  //   setThoughts(updatedThoughts);
+  // };
+
 
   return (
     <div>
@@ -37,3 +48,17 @@ export const App = () => {
     </div>
   )
 }
+
+
+//   return (
+//     <div>
+//       {thoughts.map(thought => (
+//         <Thought
+//           key={thought._id}
+//           thought={thought}
+//           onThoughtLiked={onThoughtLiked}
+//         />
+//       ))}
+//     </div>
+//   )
+// }

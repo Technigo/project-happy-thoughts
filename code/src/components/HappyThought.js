@@ -1,6 +1,7 @@
 import React from "react"
 import moment from "moment"
 import "./happyThought.css"
+// import { LikeButton } from './LikeButton'
 
 export const HappyThought = props => {
 
@@ -12,10 +13,13 @@ export const HappyThought = props => {
                 <button role='img' aria-label='Heart'>                    {"❤️ "}
                 </button>
                 {hearts}
+
             </p>
             <p>{moment(createdAt).fromNow()}</p>
         </article>
     )
 }
+
+
 
 
