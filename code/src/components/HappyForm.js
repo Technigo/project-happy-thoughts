@@ -12,8 +12,9 @@ export const HappyForm = props => {
             headers: { "Content-Type": "application/json" }
         })
             .then(() => {
-                setMessage("")
                 props.onFormSubmit(message)
+                setMessage("")
+                document.getElementById("form").reset()
             })
             .catch(err => console.log("error:", err))
     }
@@ -21,18 +22,20 @@ export const HappyForm = props => {
     return (
         <article>
             <h3>What's making you happy right now?</h3>
-            <textarea r
-                rows="3"
-                onChange={event => setMessage(event.target.value)}></textarea>
-            <div className="formBottom">
-                <button
-                    type="submit"
-                    className="sendThought"
-                    onClick={sendHappyThought}
-                    disabled={message.length < 5 || message.length > 140 ? true : false}>
-                </button>
-                <p>{message.length}/140</p>
-            </div>
+            <form id="form">
+                <textarea
+                    rows="3"
+                    onChange={event => setMessage(event.target.value)}></textarea>
+                <div className="formBottom">
+                    <button
+                        type="submit"
+                        className="sendThought"
+                        onClick={sendHappyThought}
+                        disabled={message.length < 5 || message.length > 140 ? true : false}>
+                    </button>
+                    <p>{message.length}/140</p>
+                </div>
+            </form>
         </article>
     )
 }
