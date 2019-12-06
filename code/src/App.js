@@ -21,6 +21,7 @@ export const App = () => {
         headers: { "Content-Type": "application/json" }
     })
     .then(() => setPostedMessage(message))
+    // .then(() => setMessage(""))
     .catch(err => console.log("error:" , err ))
   }
 

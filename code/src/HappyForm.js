@@ -8,6 +8,7 @@ export const HappyForm = ({onFormSubmit}) => {
     const handleSubmit = event => {
         event.preventDefault()
         onFormSubmit(message)
+        setMessage("")
     }
     return (
         <form>
