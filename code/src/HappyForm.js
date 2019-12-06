@@ -26,6 +26,7 @@ export const HappyForm = ({onFormSubmit}) => {
       <p className={((message.length < 5 || message.length > 140) ? "invalid-length" : "valid-length")}>
         {message.length} / 140
       </p>
+
       <button 
         className="send-form"
         type="submit"
@@ -38,7 +39,3 @@ export const HappyForm = ({onFormSubmit}) => {
     </div>
   )
 }
-
-
-// {!error &&(<p className="question">What is making you happy right now?</p>)}
-// {error &&(<p className="required">Please write between 5 and 140 characters</p>)}

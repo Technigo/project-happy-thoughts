@@ -8,6 +8,7 @@ export const HappyPosts = props => {
   return (
     <article className="cards">
       <p className="message">{message}</p>
+
       <div className="cards-bottom">
         <p className="hearts">
           <LikeButton
@@ -17,6 +18,7 @@ export const HappyPosts = props => {
         </p>
         <p className="time"><Timestamp date={createdAt}/></p>
       </div>
+
     </article>
   )
 }

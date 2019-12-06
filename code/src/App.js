@@ -20,8 +20,8 @@ export const App = () => {
       method: 'POST',
       body: JSON.stringify({message}),
       headers: { 'Content-Type': 'application/json' }
-    }) .catch(() => {
-      alert("Don't worry, be happy! :D")
+    }) 
+      .catch(() => {alert("Don't worry, be happy! :D")
     })
   }
 
@@ -46,9 +46,9 @@ export const App = () => {
     
       {thoughts.map(thought => (
         <HappyPosts
-          hearts={thought.hearts} 
           key={thought._id} 
           thought={thought}
+          hearts={thought.hearts} 
           onThoughtLiked={onThoughtLiked}
         />
       ))}
