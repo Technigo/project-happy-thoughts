@@ -1,3 +1,8 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .happy-thought {
   border: 2px solid black;
   box-shadow: 4px 4px black;
@@ -11,7 +16,12 @@
 }
 
 .happy-thought h3 {
-  font-family: "Courier", monospace;
+  font-family: "Inconsolata", monospace;
   font-size: 16px;
   margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
 }

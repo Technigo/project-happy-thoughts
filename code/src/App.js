@@ -19,11 +19,11 @@ export const App = () => {
   };
 
   return (
-    <div>
+    <article>
       <HappyForm onFormSubmit={onFormSubmit} />
       {thoughts.map(thought => (
         <HappyThought key={thought._id} thought={thought} />
       ))}
-    </div>
+    </article>
   );
 };
