@@ -1,6 +1,6 @@
 import React from "react"
 import Moment from "react-moment"
-import { ReactComponent as Heart } from "./heart.svg"
+import { ReactComponent as Heart } from "./heart3.svg"
 import "./thought.css"
 
 export const Thought = props => {
@@ -9,7 +9,10 @@ export const Thought = props => {
       <p>{props.thoughtInsideComponent.message}</p>
       <div className='bar'>
         <div className='likes'>
-          <Heart className='heart' /> x{props.thoughtInsideComponent.hearts}
+          <button className='likeButton'>
+            <Heart className='heart' />{" "}
+          </button>
+          x{props.thoughtInsideComponent.hearts}
         </div>
 
         <Moment fromNow>{props.thoughtInsideComponent.createdAt}</Moment>
@@ -17,3 +20,8 @@ export const Thought = props => {
     </div>
   )
 }
+
+//button onClick - vill att den ska gå från grå bakgrund till rosa bakgrund
+//samt såklart att den ska adderas på antal likes
+
+//varför vill inte mitt hjärta centreras i min button?

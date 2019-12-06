@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+}
+
+.formContainer {
+  width: 350px;
+  background-color: lightgrey;
+  border: solid 1px black;
+  margin: 2em auto;
+  box-shadow: 6px 6px black;
+  font-family: "Courier New", Courier, monospace;
+  padding: 0.9em;
+}
+
+label {
+  font-size: 0.7em;
+}
+
+input {
+  width: 100%;
+  margin-top: 1em;
+}
+
+.submitButton {
+  background-color: pink;
+  padding: 7px 10px;
+  margin-top: 1em;
+  border-radius: 25px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.7em;
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  margin: 2px;
+}
