@@ -45,3 +45,17 @@ span{
 .red, .black{
   font-size: 12px;
 }
+@media (min-width: 0px) and (max-width: 400px){
+  .new-thought{
+    width: 250px;
+  }
+  textarea{
+    width:240px;
+  }
+  label{
+    font-size:16px;
+  }
+  .send-button{
+    width: auto;
+  }
+  }
