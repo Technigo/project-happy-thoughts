@@ -4,12 +4,30 @@ import './happyThought.css'
 
 export const HappyThought = (props) => {
     console.log('props', props)
-    const { message, hearts, createdAt } = props.happyThought
+    const { message, hearts, createdAt, _id } = props.happyThought
+
+    const likeThought = () => {
+        fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+            method: "POST",
+            body: "",
+            headers: { "Content-Type": "application/json" }
+        }).then(() => props.onLiked(_id))
+    }
+
     return (
         <article className="thought">
             <h1>{message}</h1>
             <div className="thought-bottom">
-                <span><button className="heart" type="submit"></button> x {hearts}</span>
+                <p>
+                    <button className="heart"
+                        onClick={likeThought}
+                        style={{ background: hearts > 0 ? "#ffadad" : "#f3f1f1  " }}>
+                        <span role='img' aria-label='Heart'>
+                            {"❤️ "}
+                        </span>
+                    </button>
+                    x {hearts}
+                </p>
                 <p>{moment(createdAt).fromNow()}</p>
             </div>
         </article>

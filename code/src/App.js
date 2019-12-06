@@ -22,11 +22,24 @@ export const App = () => {
       .then(() => setSentThought(message))
   }
 
+  const onLiked = thoughtId => {
+    console.log("Logging in the APP.js", thoughtId)
+    // just to check that the func is being called and has the id
+
+    const updatedThoughts = happyThoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setHappyThoughts(updatedThoughts)
+  }
+
   return (
     <main>
       <HappyForm onFormSubmit={sendHappyThought} />
       {happyThoughts.map(happyThought => (
-        <HappyThought key={happyThought._id} happyThought={happyThought} />
+        <HappyThought key={happyThought._id} happyThought={happyThought} onLiked={onLiked} />
       ))}
     </main>
   )

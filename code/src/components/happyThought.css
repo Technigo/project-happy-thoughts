@@ -8,10 +8,19 @@
     align-items: center;
 }
 
-.thought-bottom span {
-    color: silver;
+button.heart {
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
 }
 
-.thought p {
-    color: lightgray;
+button.heart:hover {
+    cursor: pointer;
+}
+
+button.heart span {
+    margin-left: 2px;
+    line-height: 2.8;
 }
