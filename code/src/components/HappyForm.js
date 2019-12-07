@@ -23,10 +23,10 @@ export const HappyForm = props => {
         <form onSubmit={props.handleFormSubmit}>
             <div className="send-thought">
             <h2>What's making you happy right now?</h2>
-            <textarea rows='4' cols='40' value={message} minLength="5" maxLength="140" required onChange={event => setMessage(event.target.value)} />
+            <textarea rows='4' cols='40' value={message} onChange={event => setMessage(event.target.value)} />
                 <div className="send-happy">
-                    <button type='submit' className="button-send" onClick={handleSubmit}> 💜Send a HAPPY thought💜</button>
-                    <p>{message.length} / 140</p>
+                    <button type='submit' className="button-send" onClick={handleSubmit} disabled={message.length < 6 || message.length > 140 ? true : false}> 💜Send a HAPPY thought💜</button>
+                    <p className="length">{message.length}/140</p>
                 </div>
             </div>
         </form>

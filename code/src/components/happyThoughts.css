@@ -1,6 +1,11 @@
 h3 {
-    color: green;
     font-family: Menlo;
+}
+
+p {
+    font-family: Menlo;  
+    color: grey;
+    letter-spacing: -1px;
 }
 
 article {
@@ -8,5 +13,28 @@ article {
     box-shadow: 5px 5px;
     width: 300px;
     padding: 20px;
-    margin: 15px 5px;
+    margin: 15px 10px;
+    background-color: rgb(230,230,250);
+}
+
+.heart-time {
+    display: flex;
+    justify-content: space-between;   
+    align-items: baseline;
+}
+
+.heart-time button {
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    margin-right: 4px;
+    background-color: rgba(128, 128, 128, 0.459);
+    border: none;
+    cursor: pointer;
+}
+
+span {
+    color: grey;
+    font-family: Menlo; 
+    letter-spacing: -4px;
 }

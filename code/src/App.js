@@ -20,12 +20,25 @@ const onFormSubmit = message => {
   setPostedMessage(message)
 }
 
+const onLiked = thoughtId => {
+  console.log("Logging in the APP.js", thoughtId)
+  // just to check that the func is being called and has the id
+
+  const updatedThoughts = thoughts.map(thought => {
+    if (thought._id === thoughtId) {
+      thought.hearts += 1
+    }
+    return thought
+  })
+  setThoughts(updatedThoughts)
+}
+
   return (
     <div className="thoughts-flow">
       <div>
       <HappyForm onFormSubmit={onFormSubmit} />
       {thoughts.map(thought => (
-        <HappyThoughts key={thought._id} thought={thought} />
+        <HappyThoughts key={thought._id} thought={thought} onLiked={onLiked} />
       ))}
       </div>
     </div>

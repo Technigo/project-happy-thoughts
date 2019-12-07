@@ -19,7 +19,7 @@ h2 {
 
 textarea {
     resize: none;
-    margin-bottom: -8px;
+    margin-bottom: -12px;
   }
 
   button {
@@ -38,8 +38,14 @@ textarea {
     background-color: rgb(230,230,250);
     padding: 5px;
     font-family: Menlo;
+    cursor: pointer;
   }
+
   .send-happy p {
     font-family: Menlo;
-    padding-top: 8px;
+    padding-top: 12px;
+  }
+
+  .length {
+    letter-spacing: -1px;
   }
