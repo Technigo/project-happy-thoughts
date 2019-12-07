@@ -1,14 +1,21 @@
 body {
-  margin: 0;
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0px;
+  margin: 0;
 }
 
 code {
   font-family: 'Roboto Mono', monospace;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
 }

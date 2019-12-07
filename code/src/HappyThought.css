@@ -1,7 +1,7 @@
 article {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 100%;
     padding: 10px;
     background: #fff;
     border: solid 1px black;
@@ -27,3 +27,26 @@ article button {
 .hearts {
     flex-direction: row;
 }
+
+article div {
+    display: block;
+
+}
+
+/* MEDIA QUERIES */
+
+/* tablet version */
+@media (min-width: 667px) {
+    article {
+        width: 400px;
+    }
+    
+}
+
+/* desktop version */
+@media (min-width: 1025px) {
+    article {
+        width: 400px;
+    }
+  }
+

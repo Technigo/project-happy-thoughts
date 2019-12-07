@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react"
-import 'HappyForm.css'
+import React, {useState} from "react"
+import 'happyForm.css'
 
 export const HappyForm = ({onFormSubmit}) => {
 
@@ -16,7 +16,7 @@ export const HappyForm = ({onFormSubmit}) => {
             <textarea rows="3" onChange={event => setMessage(event.target.value)}></textarea>
             {message.length} / 140
             <button type="submit" onClick={handleSubmit} disabled={message.length < 5 || message.length > 140 ? true : false}>
-                ❤️ Send your happy thought ❤️
+                <span>❤️ Send your happy thought ❤️</span>
             </button>
         </form>
     )

@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { HappyThought } from './HappyThought'
 import { HappyForm } from './HappyForm'
-import "App.css"
 
 
 export const App = () => {

@@ -1,6 +1,6 @@
 import React from "react"
 import moment from "moment"
-import "HappyThought.css"
+import "happyThought.css"
 
 export const HappyThought = (props) => {
     const { message, hearts, createdAt, _id: id} = props.thought
