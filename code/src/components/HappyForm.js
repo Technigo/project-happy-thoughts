@@ -33,7 +33,7 @@ export const HappyForm = props => {
                         onClick={sendHappyThought}
                         disabled={message.length < 5 || message.length > 140 ? true : false}>
                     </button>
-                    <p>{message.length}/140</p>
+                    <p style={{ color: message.length > 140 ? "red" : "#cecece  " }}>{message.length}/140</p>
                 </div>
             </form>
         </article>

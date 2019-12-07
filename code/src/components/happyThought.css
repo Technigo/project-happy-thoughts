@@ -8,6 +8,12 @@
     align-items: center;
 }
 
+h1 {
+    font-family: "Courier New", monospace;
+    font-size: 20px;
+    margin: 0;
+}
+
 button.heart {
     border: none;
     border-radius: 50%;
@@ -23,6 +29,14 @@ button.heart::before {
 
 button.heart:hover {
     cursor: pointer;
+}
+
+.thought-bottom p {
+    color: #a3a3a3;
+}
+
+.thought-bottom p:nth-of-type(2) {
+    color: #cecece;
 }
 
 @media (max-width: 668px) {

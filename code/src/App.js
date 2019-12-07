@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { MoonLoader } from 'react-spinners'
 import { HappyThought } from './components/HappyThought'
 import { HappyForm } from './components/HappyForm'
 import './app.css'
@@ -6,11 +7,16 @@ import './app.css'
 export const App = () => {
   const [happyThoughts, setHappyThoughts] = useState([])
   const [sentThought, setSentThought] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    setLoading(true)
     fetch("https://technigo-thoughts.herokuapp.com")
       .then(res => res.json())
-      .then(json => setHappyThoughts(json))
+      .then(json => {
+        setHappyThoughts(json)
+        setLoading(false)
+      })
   }, [sentThought])
 
   const sendHappyThought = (message) => {
@@ -33,7 +39,7 @@ export const App = () => {
   return (
     <main>
       <HappyForm onFormSubmit={sendHappyThought} />
-      {happyThoughts.map(happyThought => (
+      {loading ? <div className="loader"><MoonLoader color='#000' /></div> : happyThoughts.map(happyThought => (
         <HappyThought key={happyThought._id} happyThought={happyThought} onLiked={onLiked} />
       ))}
     </main>
