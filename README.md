@@ -11,7 +11,7 @@ https://happythought-agnes.netlify.com/
 -Implementing a given design
 -Putting API responses into React state
 
-##Technologies used:
+## Technologies used:
 
 -CSS3
 -HTML5
