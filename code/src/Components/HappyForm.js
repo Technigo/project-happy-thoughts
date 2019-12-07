@@ -30,11 +30,12 @@ export const HappyForm = props => {
       ></textarea>
       <div className="happy-footer">
         <button
+          className="submit-button"
           type="submit"
           onClick={handleSubmit}
           disabled={message.length < 6 || message.length > 140 ? true : false}
         >
-          Send a happy thought!
+          ❤️ Send Happy Thought ❤️
         </button>
         <p>{message.length} / 140</p>
       </div>

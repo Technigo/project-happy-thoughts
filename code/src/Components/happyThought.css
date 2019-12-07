@@ -2,7 +2,7 @@
   border: 2px solid black;
   box-shadow: 7px 7px black;
   width: 450px;
-  height: 1100%;
+  height: 100%;
   margin: 16px;
   display: flex;
   flex-direction: column;
@@ -15,15 +15,16 @@
 .happy-thought h3 {
   font-family: "Inconsolata", monospace;
   font-size: 16px;
-  margin: 0;
+  margin-bottom: 10px;
 }
 
 .happy-thought button {
   border: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  margin-right: 4px;
+  width: 40px;
+  height: 40px;
+  margin-right: 3px;
+  font-size: 16px;
 }
 
 .happy-thought button:hover {
@@ -31,8 +32,8 @@
 }
 
 .happy-thought button span {
-  margin-left: 2px;
-  line-height: 2.8;
+  margin-left: 4px;
+  line-height: 2;
 }
 
 body {

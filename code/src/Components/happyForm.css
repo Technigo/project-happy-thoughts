@@ -20,6 +20,7 @@
   margin: 10px 0;
   overflow: hidden;
   white-space: normal;
+  border: 2px solid rgb(184, 184, 184);
 }
 
 .happy-form h3 {
@@ -35,7 +36,6 @@
   font-size: 14px;
   border-radius: 25px;
   padding: 10px;
-  font-weight: 500;
 }
 
 .happy-form button:hover {
@@ -48,4 +48,12 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  font-size: 13px;
+  color: rgb(184, 184, 184);
+  font-weight: 700;
+}
+
+.submit-button {
+  color: black;
+  font-weight: 700;
 }

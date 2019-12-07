@@ -18,11 +18,21 @@ export const App = () => {
     setPostedMessage(message);
   };
 
+  const onLiked = thoughtId => {
+    const newThought = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1;
+      }
+      return thought;
+    });
+    setThoughts(newThought);
+  };
+
   return (
     <article>
       <HappyForm onFormSubmit={onFormSubmit} />
       {thoughts.map(thought => (
-        <HappyThought key={thought._id} thought={thought} />
+        <HappyThought key={thought._id} thought={thought} onLiked={onLiked} />
       ))}
     </article>
   );
