@@ -6,15 +6,15 @@ https://happythought-agnes.netlify.com/
 
 ## The requirements for the project:
 
--Working with useState and useEffect
--Working with APIs in React
--Implementing a given design
--Putting API responses into React state
+- Working with useState and useEffect
+- Working with APIs in React
+- Implementing a given design
+- Putting API responses into React state
 
 ## Technologies used:
 
--CSS3
--HTML5
--React
--React Hooks
--JSX
+- CSS3
+- HTML5
+- React
+- React Hooks
+- JSX
