@@ -6,7 +6,7 @@ export const HappyForm = () => {
   // const [handleSubmit, setHandleSubmit] = useState([])
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    // event.preventDefault()
     fetch("https://technigo-thoughts.herokuapp.com", {
       method: 'POST',
       body: JSON.stringify({ message: message }),
@@ -18,7 +18,7 @@ export const HappyForm = () => {
     <div className="message">
       <h1>What's making you happy right now?</h1>
       <form>
-        <p>{message}</p>
+        {/* <p>{message}</p> */}
         <textarea
           placeholder="React is making me happy!"
           rows="3"
