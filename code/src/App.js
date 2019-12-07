@@ -6,14 +6,17 @@ import { Hearts } from "Hearts";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newMessage, setNewMessage] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
       .then(json => json.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1)))
       .then(json => {
         setThoughts(json);
       });
+    setLoading(false);
   }, []);
 
   const addThought = event => {
@@ -50,7 +53,7 @@ export const App = () => {
   };
 
   return (
-    <main className="container">
+    <main>
       <form className="form-container">
         <div className="form-container--content">
           <p>What´s making you happy right now?</p>
@@ -59,6 +62,7 @@ export const App = () => {
         </div>
       </form>
       <div className="messages">
+        {loading && <div className="loading">loading...</div>}
         <ul>
           {thoughts.map(thought => {
             return (

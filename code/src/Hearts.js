@@ -22,10 +22,10 @@ export const Hearts = props => {
   if (like > 0) style.background = "#ffadad";
 
   return (
-    <li className="message-li">
-      <div className="message-li-topandbottom">
-        <p className="message-li-title">{message}</p>
-        <div className="message-li-bottom">
+    <li className="single-message">
+      <div className="single-message--container">
+        <p className="single-message--title">{message}</p>
+        <div className="single-message--bottom">
           <button onClick={handleClick} style={style}>
             <span role="img" aria-labelledby="heart icon">
               💖

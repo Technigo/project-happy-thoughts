@@ -24,12 +24,7 @@ input:focus {
   outline: 1px red solid;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.container {
+main {
   background: #fff;
   width: 85%;
   height: 100%;
@@ -45,7 +40,7 @@ code {
 }
 
 .form-container,
-.message-li {
+.single-message {
   width: 80%;
   margin: 0 auto;
   border: 1px solid rgb(54, 54, 54);
@@ -84,23 +79,25 @@ code {
   padding: 1rem;
 }
 
-.message-li {
+.single-message {
   list-style-type: none;
   margin-top: 2rem;
   height: 9rem;
 }
 
-.message-li-bottom {
+.single-message--bottom {
   display: flex;
   margin: auto 1rem 2rem 0;
-  align-content: center;
   align-items: center;
-  /* align-self: center; */
-  justify-self: center;
   justify-content: left;
 }
 
-.message-li-bottom button {
+.single-message--title {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.single-message--bottom button {
   font-size: 1.1rem;
   border-radius: 50%;
   padding: 0.5rem;
@@ -108,7 +105,7 @@ code {
   margin-right: 0.5rem;
 }
 
-.message-li-topandbottom {
+.single-message--container {
   margin: 1rem 1rem 1rem 1rem;
   display: flex;
   flex-direction: column;
@@ -126,18 +123,19 @@ code {
   color: #d5d5d5;
 }
 
-.message-li-title {
-  font-size: 1rem;
-  letter-spacing: 1px;
+/** LOADING **/
+
+.loading {
+  text-align: center;
 }
 
 @media (min-width: 500px) {
-  .container {
+  main {
     width: 75%;
   }
 
   .form-container,
-  .message-li {
+  .single-message {
     width: 70%;
   }
 
@@ -149,23 +147,23 @@ code {
 }
 
 @media (min-width: 700px) {
-  .container {
+  main {
     width: 70%;
   }
 
   .form-container,
-  .message-li {
+  .single-message {
     width: 60%;
   }
 }
 
 @media (min-width: 1024px) {
-  .container {
+  main {
     width: 65%;
   }
 
   .form-container,
-  .message-li {
+  .single-message {
     width: 50%;
   }
 
@@ -174,7 +172,7 @@ code {
     width: 55%;
   }
 
-  .message-li-title {
+  .single-message--title {
     font-size: 1.2rem;
   }
 }
