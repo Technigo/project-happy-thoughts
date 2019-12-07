@@ -13,14 +13,14 @@ export const Thoughts = () => {
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
       .then(json => setThoughts(json))
-  }, [postedMessage])
+  }, [postedMessage]) //Adding the new message from form to the array of thouhgts without new fetch
 
-  // Passing the addedThought from form to postedMessage
+  // Passing the message from form to postedMessage via function addedThought
   const addedThought = message => {
     setPostedMessage(message)
   }
 
-  // To add likes
+  // To add likes to API and show the updated thoughts with new likes
   const onThoughtLiked = (likedThoughtId) => {
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === likedThoughtId) {
@@ -31,6 +31,7 @@ export const Thoughts = () => {
     setThoughts(updatedThoughts)
   }
 
+  // Passing consts to the components to use them there with props
   return (
     <main>
       <NewThoughtForm addedThought={addedThought} />

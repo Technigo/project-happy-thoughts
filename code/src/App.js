@@ -7,6 +7,7 @@ export const App = () => {
   return (
     <div>
       <Thoughts />
+      <footer>Technigo Bootcamp 2019 © Sofie Nyblad</footer>
     </div>
   )
 

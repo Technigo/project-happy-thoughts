@@ -6,7 +6,8 @@ export const LikeButton = (props) => {
 
   const handleOnclick = () => {
 
-    // POST like to API and then add like to that id
+    // POST like to API and then add like to that matching id
+    //onThoughtLiked is passed via ListThoughts from the function onThoughtLikes in Thought
     fetch(`https://technigo-thoughts.herokuapp.com/${props.id}/like`, {
       method: "POST", body: "", headers: { "Content-Type": "application/json" }
     }).then(() => {
