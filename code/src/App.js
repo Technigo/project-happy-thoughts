@@ -7,6 +7,7 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newMessage, setNewMessage] = useState();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -21,7 +22,13 @@ export const App = () => {
 
   const addThought = event => {
     event.preventDefault();
-    if (!newMessage) return;
+
+    if (!newMessage) {
+      setError(true);
+    } else {
+      setError(false);
+    }
+
     fetch("https://technigo-thoughts.herokuapp.com/", {
       method: "POST",
       headers: {
@@ -54,6 +61,7 @@ export const App = () => {
 
   return (
     <main>
+      {error && <div className="error">Error! Please try again</div>}
       <form className="form-container">
         <div className="form-container--content">
           <p>What´s making you happy right now?</p>
