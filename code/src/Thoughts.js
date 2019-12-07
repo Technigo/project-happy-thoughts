@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import moment from "moment";
+import { Emoji } from "./Emoji";
 
 export const Thoughts = props => {
-  const { message, hearts, createdAt } = props.thought;
+  const { message, hearts, createdAt, _id } = props.thought;
   const [heartLike, setHeartLike] = useState(hearts);
 
   const submitHeart = () => {
-    fetch("https://technigo-thoughts.herokuapp.com/THOUGHT_ID/like", {
-      method: "POST"
-    });
+    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+      method: "POST",
+      body: "",
+      headers: { "Content-Type": "application/json" }
+    }); //.then(() => props.onLiked(_id));
     setHeartLike(heartLike + 1);
   };
 
@@ -23,9 +26,7 @@ export const Thoughts = props => {
               type="submit"
               onClick={submitHeart}
             >
-              <span className="heartLike" role="img">
-                ❤️
-              </span>
+              <Emoji symbol="❤️" label="heart" />
             </button>
             <span className="likes">x {heartLike}</span>
           </div>
@@ -39,19 +40,3 @@ export const Thoughts = props => {
     </div>
   );
 };
-
-/*
-<article>
-  <div>
-    <br /> {thought.message}
-    <div>
-      <ul>
-        <li>
-          <button onClick={handleHeartClick}>Heart</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</article>;
-
-*/

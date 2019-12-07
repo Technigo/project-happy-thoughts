@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Emoji } from "./Emoji";
 
 export const Form = props => {
   const [message, setMessage] = useState("");
@@ -6,6 +7,7 @@ export const Form = props => {
   const handleSubmit = event => {
     event.preventDefault();
     props.submitForm(message);
+    setMessage("");
   };
 
   return (
@@ -17,7 +19,7 @@ export const Form = props => {
           resize="none"
           rows="4"
           minLength="5"
-          maxLength="60"
+          maxLength="140"
           required
           onChange={event => {
             setMessage(event.target.value);
@@ -28,10 +30,11 @@ export const Form = props => {
             className="submitButton"
             type="submit"
             onClick={handleSubmit}
-            disabled={message.length < 5 || message.length > 140 ? true : false}
+            disabled={message.length < 0 || message.length > 140 ? true : false}
           >
-            <span className="heart">❤️</span>
-            Send happy thought<span className="heart">❤️</span>
+            <Emoji symbol="❤️" label="heart" />
+            <span className="button-text">Send happy thought</span>
+            <Emoji symbol="❤️" label="heart" />
           </button>
           <p className="textCounter">{message.length}/140</p>
         </div>

@@ -32,8 +32,14 @@ export const App = () => {
       method: "POST",
       body: JSON.stringify({ message }),
       headers: { "Content-Type": "application/json" }
-    }).then(() => setPostMessage(message));
+    })
+      .catch(() => {
+        alert("try again");
+      })
+      .then(() => setPostMessage(message));
   };
+
+  //const onLiked = ()=>
 
   return (
     <div>
@@ -47,24 +53,3 @@ export const App = () => {
     </div>
   );
 };
-
-/*
-<form>
-        <h4>What's making you happy right know?</h4>
-        <textarea
-          rows="4"
-          minLength="5"
-          maxLength="60"
-          required
-          onChange={e => {
-            setMessage(e.target.value);
-          }}
-        />
-
-        <br />
-        <button type="submit" onClick={handleFormSubmit}>
-          Send happy Thought
-        </button>
-      </form>
-
-      */
