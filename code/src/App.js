@@ -5,6 +5,7 @@ import { ThoughtList } from "./components/ThoughtList"
 export const App = () => {
 
   const [thoughts, setThoughts] = useState([])
+
   const [postedMessage, setPostedMessage] = useState([])
 
   useEffect(() => {
@@ -25,21 +26,20 @@ export const App = () => {
       headers: { 'Content-Type': 'application/json' }
     })
       //when the message saved to API, then send the new message to the message.
+      .then((res) => res.json())
       .then(() => setPostedMessage(sendThought))
 
-
-
+      // .then(() => setPostedMessage(""))
       .catch((error) => {
         alert('Try Again!', error)
       })
   }
 
-
-
   return (
 
     <div>
       <PostHappyThought onFormSubmit={handleFormSubmit} />
+
       {thoughts.map(thought => (
         <ThoughtList key={thought._id} thought={thought} />
       ))}

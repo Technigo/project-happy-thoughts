@@ -7,13 +7,16 @@ export const PostHappyThought = ({ onFormSubmit }) => {
 
     const [sendThought, setSendThought] = useState('')
 
-    //     // let object = {}
+
+
 
 
     const submitHandler = (e) => {
-        e.preventDefault();
+        e.preventDefault()
+
         //we get the function(post metod)from the parent (App)
         onFormSubmit(sendThought)
+
 
     }
 
@@ -21,8 +24,8 @@ export const PostHappyThought = ({ onFormSubmit }) => {
         <div className="thought-card">
             <form>
                 <h3>What makes you happy right now?</h3>
-                <p> {sendThought}</p>
-                <textarea rows="3" minLength="5" maxLength="140" required onChange={(e) => { setSendThought(e.target.value) }} />
+                <textarea id="" rows="3" value={sendThought} minLength="5" maxLength="140"
+                    onChange={(e) => { setSendThought(e.target.value) }} />
                 <p>{sendThought.length}/140</p>
                 <div className="card-bottom">
                     <div>
@@ -34,3 +37,4 @@ export const PostHappyThought = ({ onFormSubmit }) => {
 
     )
 }
+
