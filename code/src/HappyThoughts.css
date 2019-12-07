@@ -1,0 +1,38 @@
+article{
+  font-family: 'Roboto Mono', monospace;
+  margin: 20px;
+  width:320px;
+  /* height: 150px; */
+  background: #FFF;
+  border: 1px solid black;
+  box-shadow: 7px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 5px 0 0;
+}
+
+.countContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.likeButton{
+  border-radius: 50%;
+  background: #eaeaea;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 7px;
+}
+
+.count{
+  font-size: 12px;
+  color: #b3b3b3;
+  margin-right: 20px;
+  /* display: inline; */
+}
