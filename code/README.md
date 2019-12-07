@@ -1,19 +1,20 @@
-# Technigo React Starter App
+# Project 11 - Twitter imitation app @ Technigo Bootcamp 2019
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+The week 11th project of the Technigo Bootcamp was to build a Twitter-like app by fetching and posting data to an API.
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+https://happythought-agnes.netlify.com/
 
-## Usage
+## The requirements for the project:
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+-Working with useState and useEffect
+-Working with APIs in React
+-Implementing a given design
+-Putting API responses into React state
 
-Alternatively, if you don't want a new git repo on your account;
+##Technologies used:
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+-CSS3
+-HTML5
+-React
+-React Hooks
+-JSX
