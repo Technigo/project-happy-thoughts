@@ -27,7 +27,7 @@ color: #93989d;
 opacity: 0.5;
 }
 
-.buttom-form-card{
+.bottom-form-card{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,4 +51,11 @@ opacity: 0.5;
 }
 .red {
   color:red;
+}
+
+@media screen and (max-width: 600px) {
+ 
+  .thought-form{
+    width: 340px;
+  }
 }

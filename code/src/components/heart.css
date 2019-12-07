@@ -9,3 +9,15 @@
   border-radius: 3rem;
   border: none;
 }
+
+
+@media screen and (max-width: 600px) {
+ 
+  .like-button {
+    background:#eaeaea;
+    height: 30px;
+    width: 30px;
+    border-radius: 3rem;
+    border: none;
+  }
+}

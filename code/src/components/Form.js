@@ -21,15 +21,15 @@ export const Form = (props) => {
         placeholder="Type your thought here..."
         onChange={event => setMessage(event.target.value)}
       ></textarea>
-      <div className="buttom-form-card">
+      <div className="bottom-form-card">
         <button type="submit" className="send-button"
           onClick={handleSubmit}
-          disabled={message.length < 5 || message.length >= 140 ? true : false}>
+          disabled={message.length < 5 || message.length > 140 ? true : false}>
           <span role="img" aria-label="heart">❤️ </span>
           Send Happy Thought
       <span role="img" aria-label="heart"> ❤️</span></button>
         <div className="text-length">
-          <p className={message.length < 5 || message.length >= 140 ? "red" : "black"}>{message.length}</p><p>/140</p></div>
+          <p className={message.length < 5 || message.length > 140 ? "red" : "black"}>{message.length}</p><p>/140</p></div>
       </div>
     </form >
   )
