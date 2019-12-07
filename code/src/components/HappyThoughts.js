@@ -8,7 +8,7 @@ export const HappyThoughts = (props) => {
     return (
         <article>
             <h3>{message}</h3>
-            <span>{hearts}</span>
+            <span>❤️ x {hearts}</span>
             <p>{moment(createdAt).fromNow()}</p>
         </article>
     )

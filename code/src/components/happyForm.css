@@ -1,3 +1,45 @@
+.send-thought {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 300px;
+  border: 1px solid black;
+  box-shadow: 5px 5px black;
+  padding: 20px;
+  margin: 10px;
+  background-color:rgba(128, 128, 128, 0.445);
+}
+
+h2 {
+  font-family: Menlo;
+  font-size: 14px;
+  text-align: center;
+}
+
 textarea {
     resize: none;
+    margin-bottom: -8px;
+  }
+
+  button {
+    width: 180px;
+  }
+
+  .send-happy {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+  }
+
+  .button-send {
+    margin-top: 10px;
+    align-self: center;
+    background-color: rgb(230,230,250);
+    padding: 5px;
+    font-family: Menlo;
+  }
+  .send-happy p {
+    font-family: Menlo;
+    padding-top: 8px;
   }
