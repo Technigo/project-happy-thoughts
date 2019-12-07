@@ -1,40 +1,45 @@
-import React, { useState, useEffect } from "react"
-import "./thoughtList.css"
+import React, { useState } from "react"
+import "./happythoughts.css"
 
 
 
-export const PostHappyThought = ({ onFormSubmit }) => {
+export const PostHappyThought = props => {
 
-    const [sendThought, setSendThought] = useState('')
+  const [message, setMessage] = useState("")
 
+  //function to handle the submit-btn in PostHappyThought.
+  const handleSubmit = (event) => {
+    event.preventDefault()
 
+    fetch('https://technigo-thoughts.herokuapp.com/', {
+      method: 'POST',
+      body: JSON.stringify({ message }),
+      headers: { 'Content-Type': 'application/json' }
+    })
+      //when the message saved to API, then send the new message to the message.
+      .then(() => {
+        setMessage("")
+        props.onFormSubmit(message)
+      })
+      .catch((error) => { console.error(error); alert('Try Again!', error) })
+  }
 
+  return (
+    <div >
+      <form className="post-thought-card">
+        <h3>What makes you happy right now?</h3>
+        <textarea rows="3" value={message} minLength="5" maxLength="140"
+          onChange={(e) => { setMessage(e.target.value) }}
+        />
+        <p>{message.length}/140</p>
+        <div className="card-bottom">
+          <div>
+            <button className="send-btn" type="submit" onClick={handleSubmit} disabled={message.length < 5 || message.lenght > 140 ? true : false}><span role="img" aria-label="Heart">❤️</span>Send Happy Thought <span role="img" aria-label="Heart">❤️</span></button>
+          </div>
+        </div>
+      </form >
+    </div >
 
-
-    const submitHandler = (e) => {
-        e.preventDefault()
-
-        //we get the function(post metod)from the parent (App)
-        onFormSubmit(sendThought)
-
-
-    }
-
-    return (
-        <div className="thought-card">
-            <form>
-                <h3>What makes you happy right now?</h3>
-                <textarea id="" rows="3" value={sendThought} minLength="5" maxLength="140"
-                    onChange={(e) => { setSendThought(e.target.value) }} />
-                <p>{sendThought.length}/140</p>
-                <div className="card-bottom">
-                    <div>
-                        <button className="send-btn" type="submit" onClick={submitHandler} disabled={sendThought.length < 5 || sendThought.lenght > 140 ? true : false}><span role="img" aria-label="Heart"> ❤️ </span>Send a happy thought <span role="img" aria-label="Heart"> ❤️ </span></button>
-                    </div>
-                </div>
-            </form >
-        </div >
-
-    )
+  )
 }
 

@@ -6,10 +6,10 @@ export const App = () => {
 
   const [thoughts, setThoughts] = useState([])
 
-  const [postedMessage, setPostedMessage] = useState([])
+  const [postedMessage, setPostedMessage] = useState("")
 
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/", {
+    fetch("https://technigo-thoughts.herokuapp.com", {
       method: "GET",
     })
       .then(res => res.json())
@@ -18,31 +18,38 @@ export const App = () => {
   }, [postedMessage])
 
 
-  //function to handle the submit-btn in PostHappyThought.
-  const handleFormSubmit = (sendThought) => {
-    fetch('https://technigo-thoughts.herokuapp.com/', {
-      method: 'POST',
-      body: JSON.stringify({ message: sendThought }),
-      headers: { 'Content-Type': 'application/json' }
-    })
-      //when the message saved to API, then send the new message to the message.
-      .then((res) => res.json())
-      .then(() => setPostedMessage(sendThought))
+  const onFormSubmit = message => {
+    setPostedMessage(message)
+  }
 
-      // .then(() => setPostedMessage(""))
-      .catch((error) => {
-        alert('Try Again!', error)
-      })
+  const onLiked = thoughtId => {
+    console.log("Logging in the APP.js", thoughtId)
+    // just to check that the func is being called and has the id
+
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
   }
 
   return (
 
-    <div>
-      <PostHappyThought onFormSubmit={handleFormSubmit} />
+    <div className="container">
+      <main>
+        <PostHappyThought onFormSubmit={onFormSubmit} />
 
-      {thoughts.map(thought => (
-        <ThoughtList key={thought._id} thought={thought} />
-      ))}
+        {thoughts.map(thought => (
+          <ThoughtList key={thought._id} thought={thought} onLiked={onLiked} />
+
+        ))}
+      </main>
+
+      <footer>
+        <p>Nasim Mahzoun &copy; 2019</p>
+      </footer>
     </div>
 
   )
