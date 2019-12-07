@@ -8,7 +8,6 @@ export const App = () => {
   const [postedMessage, setPostedMessage] = useState("")
   const [loading, setLoading] = useState(true)
 
-
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
@@ -16,7 +15,7 @@ export const App = () => {
     setLoading(false)
   }, [postedMessage])
 
-  const handleFormSubmit = (message) => {
+  const onFormSubmit = (message) => {
     fetch('https://technigo-thoughts.herokuapp.com/', {
       method: 'POST',
       body: JSON.stringify({ message }),
@@ -42,7 +41,6 @@ export const App = () => {
   // That component can then invoke the function with the thought id and then the 
   // App.js component can update the state with the new count and re-render the updated thought.
 
-
   //UseEffect: if we dont say to it what to listen to and when to change/update it 
   //will change everytime the state is changing and will create an infinity loop.
   //With an empty array it will only fetch once when the component did mount. 
@@ -50,7 +48,7 @@ export const App = () => {
 
   return (
     <div className="app">
-      <Form onFormSubmit={handleFormSubmit} />
+      <Form onFormSubmit={onFormSubmit} />
       <br></br>
       {loading && <svg height="100" width="100">
         <circle className="circle" cx="50" cy="50" r="40" stroke=" #FFADAD" strokeWidth="5" fill="none" />
