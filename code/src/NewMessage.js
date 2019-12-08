@@ -5,13 +5,17 @@ export const NewMessage = props => {
   let { newMessage, setNewMessage } = props;
 
   return (
-    <input
-      type="textarea"
-      className="newMessage-input"
-      rows="3"
-      value={newMessage}
-      placeholder="Add New Happy Thought"
-      onChange={event => setNewMessage(event.target.value)}
-    />
+    <div>
+      <input
+        type="textarea"
+        className="newMessage-input"
+        minLength={5}
+        maxLength={140}
+        rows="3"
+        value={newMessage}
+        placeholder="Add New Happy Thought"
+        onChange={event => setNewMessage(event.target.value)}
+      />
+    </div>
   );
 };

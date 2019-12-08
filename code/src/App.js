@@ -23,7 +23,7 @@ export const App = () => {
   const addThought = event => {
     event.preventDefault();
 
-    if (!newMessage) {
+    if (!newMessage || newMessage.length < 5) {
       setError(true);
     } else {
       setError(false);
