@@ -21,11 +21,22 @@ export const App = () => {
       .then(() => setPostedMessage(message))
   }
 
+  const onLike = (thoughtId) => {
+    console.log('logging sum shit', thoughtId)
+    const updatedThoughts = thoughts.map(thought => {
+     if(thought._id === thoughtId) {
+       thought.hearts +=1
+     } 
+    return thought
+    })
+setThoughts(updatedThoughts)
+  }
+
   return (
     <div>
       <HappyForm onFormSubmit={handleFormSubmit} />
       {thoughts.map(thought => (
-        <HappyThought key={thought._id} thought={thought} />
+        <HappyThought key={thought._id} thought={thought} onLike={onLike} />
       ))}
     </div>
   )
