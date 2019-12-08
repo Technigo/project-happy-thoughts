@@ -8,8 +8,9 @@ https://happy-thoughts-linda.netlify.com/
 ### Learning objectives
 How to use APIs in React, firing requests within useEffect  
 Learn more about working with useState  
-How to put the result of API responses into React state to show in   the page  
+How to put the result of API responses into React state to show in the page  
 What it's like to work with an API which you both send and receive data from   
+How to store data in localStorage  
 Implement a given design  
 
 ### Technologies used
