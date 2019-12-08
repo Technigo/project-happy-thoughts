@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './form.css'
+import React, { useState } from "react";
+import "./form.css"
 
 export const Form = (props) => {
   const [message, setMessage] = useState("")
@@ -7,10 +7,10 @@ export const Form = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     props.onFormSubmit(message)
-    setMessage('')
+    setMessage("")
   }
   // setMessage("") clears the form/textarea after you submit message
-  // onFromSubmitt comes as a props from App.js
+  // onFromSubmit comes as a props from App.js
 
   return (
     <form className="thought-form">

@@ -28,6 +28,8 @@ align-items: center;
   border: solid 1px #7e7e7e;
   margin-top: 35px;
   padding: 20px 20px 10px 20px;
+  word-wrap: break-word;
+overflow-wrap: break-word;
 }
 
 p {

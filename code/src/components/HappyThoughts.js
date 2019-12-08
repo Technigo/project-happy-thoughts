@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 import { Heart } from "./Heart"
 import { Timestamp } from "./Timestamp"
-import './happythoughts.css'
 
 
 export const HappyThoughts = props => {
   console.log("props", props)
-  const { message, hearts, createdAt } = props.thought
+  const { message, hearts, createdAt, _id } = props.thought
   return (
     <article className="inside-cards">
       <p>{message}</p>
@@ -19,5 +18,3 @@ export const HappyThoughts = props => {
     </article >
   )
 }
-
-// varför måste jag ha hearts/timestamp={hearts} igen??

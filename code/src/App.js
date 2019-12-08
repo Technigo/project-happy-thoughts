@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { HappyThoughts } from "./components/HappyThoughts";
 import { Form } from "./components/Form";
-import './app.css'
+import "./app.css"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -16,10 +16,10 @@ export const App = () => {
   }, [postedMessage])
 
   const onFormSubmit = (message) => {
-    fetch('https://technigo-thoughts.herokuapp.com/', {
-      method: 'POST',
+    fetch("https://technigo-thoughts.herokuapp.com/", {
+      method: "POST",
       body: JSON.stringify({ message }),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { "Content-Type": "application/json" }
     })
       .then(() => setPostedMessage(message))
       .catch(() => {
