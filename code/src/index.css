@@ -13,7 +13,7 @@ code {
 }
 
 *{
-  font-family: 'Inconsolata', monospace;
+  font-family: Menlo;
 }
 
 .background{
@@ -41,6 +41,7 @@ code {
 .inputField p{
   margin: 10px 0px;
   color: black;
+  font-weight: bold;
 }
 
 
@@ -49,6 +50,7 @@ textarea {
   resize: none;
   padding: 15px;
   width: 320px;
+  font-weight: bold;
 }
 
 li{
@@ -64,6 +66,7 @@ li{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  font-weight: bold;
 }
 
 ul{
@@ -74,9 +77,10 @@ ul{
   background: rgb(250, 179, 179);  
   border: none;
   border-radius: 20px;
-  height: 60px;
+  font-weight: bold;
   width: 200px;
   cursor: pointer;
+  padding: 12px
 }
 
 .heartAndTimeContainer{
@@ -85,6 +89,7 @@ ul{
   align-items: baseline;
   justify-content: space-between;
   color: #888888;
+  font-size: 16px;
 }
 
 .heartAndTimeContainer p{
@@ -105,4 +110,5 @@ ul{
   padding: 7px;
   cursor: pointer;
   margin-right: 10px;
+  border: solid 2px rgb(250, 179, 179);
 }
