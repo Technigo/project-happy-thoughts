@@ -3,7 +3,6 @@
 }
 .happy-form {
   background-color: rgb(244, 134, 170);
-  /* background-color: #f3f1f1; */
   border: 2px solid black;
   box-shadow: 4px 4px black;
   width: 300px;
@@ -30,16 +29,13 @@
 .happy-form button {
   height: 50px;
   width: 70%;
-  /* background-color: pink; */
   background-color: rgb(255, 210, 217);
-  /* background-color:rgb(247, 171, 183);  */
   border: none;
   font-size: 14px;
   font-weight: 500px;
   border-radius: 25px;
   padding: 10px;
-  color: black;
-  
+  color: black;  
 }
 
 .happy-form button:hover {

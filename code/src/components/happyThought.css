@@ -12,7 +12,6 @@
 }
 
 .happy-thought h3 {
-  font-family: 'Inconsolata', monospace;
   font-size: 16px;
   margin: 0;
 }
@@ -20,27 +19,23 @@
 .happy-thought button {
     display: inline-flex;
     justify-content: space-evenly;
-    /* background: pink; */
     background: white;
     height: 30px;
     width: 30px;
     border-radius: 50%;
     margin-right: 7px;
     border-color:  rgb(244, 134, 170);
+  
+    
 }
 
 .happy-thought button:hover {
   cursor: pointer;
 }
 
-/*button:active {
-   outline: none;
-   border: none;
-}   */
 button:focus {outline: 3px solid var(--cl-primary);
 }   
 
-/* .happy-thought button span {
-  /* margin-left: 2px; 
-  line-height: 2.8;
-} */
+.happy-thought button span {
+  margin-left: 4px; 
+} 
