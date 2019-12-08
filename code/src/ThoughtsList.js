@@ -10,7 +10,7 @@ export const ThoughtsList = ({
   onThoughtLiked
 }) => {
   return (
-    <div className="card">
+    <section className="card">
       <h2>{message}</h2>
       <div className="card-bottom">
         <div className="likes">
@@ -19,6 +19,6 @@ export const ThoughtsList = ({
         </div>
         <p>{moment(createdAt).fromNow()}</p>
       </div>
-    </div>
+    </section>
   );
 };

@@ -12,6 +12,7 @@ export const LikeButton = ({ id, onThoughtLiked }) => {
       onThoughtLiked(id);
     });
   };
+
   return (
     <button
       type="button"

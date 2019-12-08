@@ -4,18 +4,19 @@ import { ThoughtsList } from "ThoughtsList";
 export const NewPost = () => {
   const [newThought, setNewThought] = useState("");
   const [thoughts, setThoughts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
       .then(json => setThoughts(json));
+    setLoading(false);
   }, []);
 
   const handleFormSubmit = event => {
     event.preventDefault();
 
-    // Send the POST request with the input from your form (instead
-    // of 'Hello world' like this example does):
+    // Sends the POST request with the input from the form
     fetch("https://technigo-thoughts.herokuapp.com/", {
       method: "POST",
       body: JSON.stringify({ message: newThought }),
@@ -44,33 +45,39 @@ export const NewPost = () => {
   };
 
   return (
-    <div>
+    <section className="post-wrapper">
       <form>
-        <section className="post-wrapper">
-          <div className="new-post">
-            <h2>What's making you happy right now?</h2>
-            <label>
-              <textarea
-                rows="3"
-                onChange={event => setNewThought(event.target.value)}
-                value={newThought}
-              />
-            </label>
-            <button
-              type="submit"
-              className="submit-button"
-              onClick={handleFormSubmit}
-              disabled={
-                newThought.length < 5 || newThought.length > 140 ? true : false
-              }
-            >
-              <span role="img" aria-label="heart">
-                ❤️ Send Happy Thought ❤️
-              </span>
-            </button>
-            <p> {newThought.length} / 140</p>
-          </div>
-        </section>
+        {loading && (
+          <h2>
+            Don't worry, happy thoughts coming your way
+            <span role="img" aria-label="heart">
+              ❤️
+            </span>
+          </h2>
+        )}
+        <article className="new-post">
+          <h2>What's making you happy right now?</h2>
+          <label>
+            <textarea
+              rows="3"
+              onChange={event => setNewThought(event.target.value)}
+              value={newThought}
+            />
+          </label>
+          <p> {newThought.length} / 140</p>
+          <button
+            type="submit"
+            className="submit-button"
+            onClick={handleFormSubmit}
+            disabled={
+              newThought.length < 5 || newThought.length > 140 ? true : false
+            }
+          >
+            <span role="img" aria-label="heart">
+              ❤️ Send Happy Thought ❤️
+            </span>
+          </button>
+        </article>
       </form>
 
       {thoughts.map(thought => {
@@ -85,6 +92,6 @@ export const NewPost = () => {
           />
         );
       })}
-    </div>
+    </section>
   );
 };
