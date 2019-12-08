@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react'
 
 
-export const HappyForm = () => {
+export const HappyForm = ({ onFormSubmit }) => {
   const [message, setMessage] = useState("")
   // const [handleSubmit, setHandleSubmit] = useState([])
 
   const handleSubmit = (event) => {
-    // event.preventDefault()
-    fetch("https://technigo-thoughts.herokuapp.com", {
-      method: 'POST',
-      body: JSON.stringify({ message: message }),
-      headers: { "Content-Type": "application/json" }
-    })
+    event.preventDefault()
+    onFormSubmit(message)
   }
 
   return (
