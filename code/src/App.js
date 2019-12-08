@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { NewMessage } from "NewMessage";
-import { ButtonMessage } from "ButtonMessage";
-import { Hearts } from "Hearts";
+import { NewMessage } from "Components/NewMessage";
+import { ButtonMessage } from "Components/ButtonMessage";
+import { Hearts } from "Components/Hearts";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -65,13 +65,7 @@ export const App = () => {
       <form className="form-container">
         <div className="form-container--content">
           <p>What´s making you happy right now?</p>
-          <NewMessage
-            newMessage={newMessage}
-            setNewMessage={setNewMessage}
-            // num={newMessage.value.length}
-            // length={newMessage.length}
-          />
-
+          <NewMessage newMessage={newMessage} setNewMessage={setNewMessage} />
           <ButtonMessage onClick={addThought} />
         </div>
       </form>

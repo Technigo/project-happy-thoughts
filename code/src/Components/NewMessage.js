@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { ButtonMessage } from "ButtonMessage";
 
 export const NewMessage = props => {
   let { newMessage, setNewMessage } = props;
