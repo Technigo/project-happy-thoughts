@@ -105,6 +105,11 @@ textarea {
   width: 9vw;
 }
 
+.hearts {
+  margin: 0;
+  padding: 0;
+}
+
 
 @media(min-width: 1024px) {
 h1 {
