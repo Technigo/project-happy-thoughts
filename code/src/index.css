@@ -75,10 +75,11 @@ textarea {
   background: #F5F5F5;
   border: 1px solid gray;
   box-shadow: 5px 10px;
-  height: 30vh;
   margin-bottom: 4vh;
+  overflow-wrap: break-word;
   padding-left: 1vw;
-  width: 60vw;
+  width: 65vw;
+  word-wrap: break-word;
 }
 
 .message {
@@ -134,7 +135,6 @@ textarea {
 }
 
 .cards {
-  height: 23vh;
   margin-bottom: 4vh;
   padding-bottom: 1vh;
   padding-left: 1vw;

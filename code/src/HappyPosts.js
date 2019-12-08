@@ -12,9 +12,10 @@ export const HappyPosts = props => {
       <div className="cards-bottom">
         <p className="hearts">
           <LikeButton
+            hearts={hearts}
             id={props.thought._id}
             onThoughtLiked={props.onThoughtLiked}
-          /> x {hearts}
+          /> 
         </p>
         <p className="time"><Timestamp date={createdAt}/></p>
       </div>
