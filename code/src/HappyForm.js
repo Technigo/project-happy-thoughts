@@ -33,7 +33,7 @@ export const HappyForm = ({onFormSubmit}) => {
         onClick={handleSubmit}
         disabled={message.length < 5 || message.length > 140 ? true : false}
       >
-      ❤️ Send Happy Thought ❤️
+      <span role="img" aria-label="heart">❤️</span> Send Happy Thought <span role="img" aria-label="heart">❤️</span>
       </button>
     </form>
     </div>

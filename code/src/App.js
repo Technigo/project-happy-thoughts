@@ -38,9 +38,11 @@ export const App = () => {
 
   return (
     <div className="main-container">
-      <h1>😃 Happy Thoughts 😃</h1>
+      <h1>
+        <span role="img" aria-label="smiley">😃</span> Happy Thoughts <span role="img" aria-label="smiley">😃</span>
+      </h1>
 
-      {loading && <h4>Don't worry, be happy! 😄</h4>}
+      {loading && <h4>Don't worry, be happy! <span role="img" aria-label="smiley">😄</span></h4>}
     
       <HappyForm onFormSubmit={handleFormSubmit} />
     

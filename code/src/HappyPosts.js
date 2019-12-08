@@ -10,13 +10,13 @@ export const HappyPosts = props => {
       <p className="message">{message}</p>
 
       <div className="cards-bottom">
-        <p className="hearts">
+        <div className="hearts">
           <LikeButton
             hearts={hearts}
             id={props.thought._id}
             onThoughtLiked={props.onThoughtLiked}
           /> 
-        </p>
+        </div>
         <p className="time"><Timestamp date={createdAt}/></p>
       </div>
 

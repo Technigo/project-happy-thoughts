@@ -25,7 +25,7 @@ export const LikeButton = (props) => {
       className="heart-button"
       type="submit"
       onClick={handleClick}
-    >❤️ 
+    > <span role="img" aria-label="heart">❤️</span>
     </button> x {clicks} (you clicked x {localStorage[props.id]})
     </div>
   )}
