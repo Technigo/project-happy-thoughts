@@ -30,3 +30,9 @@ footer {
   align-items: center;
   font-size: 20px;
 }
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
