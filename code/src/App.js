@@ -5,6 +5,7 @@ import { Like } from './Like'
 
 import "./App.css";
 import "./HappyThoughts.css";
+import "./HappyForm.css";
 
 
 export const App = () => {

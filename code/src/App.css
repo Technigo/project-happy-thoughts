@@ -58,15 +58,3 @@ textarea:focus{
   justify-content: space-between;
   margin: 0 0 2px 0;
 }
-
-
-button{
-  background: #ffadad;
-  border-radius: 20px;
-  padding: 12px;
-  box-sizing: none;
-  border: none;
-  align-self: flex-start;
-  margin: 12px;
-}
-
