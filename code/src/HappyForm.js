@@ -11,12 +11,17 @@ export const HappyForm = ({onFormSubmit}) => {
         setMessage("")
     }
     return (
-        <form>
+        <form
+        onKeyPress={(e) => {
+            if (e.key === 'Enter') { onFormSubmit(message) }
+          }}>
             <h3>Post a happy thought!</h3>
-            <textarea rows="3" onChange={event => setMessage(event.target.value)}></textarea>
+            <textarea 
+            rows="3" 
+            onChange={event => setMessage(event.target.value)}></textarea>
             {message.length} / 140
             <button type="submit" onClick={handleSubmit} disabled={message.length < 5 || message.length > 140 ? true : false}>
-                <span>❤️ Send your happy thought ❤️</span>
+                <span role="img" aria-label="Send your thought">❤️ Send your happy thought ❤️</span>
             </button>
         </form>
     )

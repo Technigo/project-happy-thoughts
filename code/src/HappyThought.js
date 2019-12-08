@@ -18,7 +18,9 @@ export const HappyThought = (props) => {
         <article>
             <p>{message}</p>
             <div className="hearts">
-                <button onClick={handleHeart}>❤️</button>
+                <button onClick={handleHeart}>
+                    <span role="img" aria-label="heart">❤️</span>
+                </button>
                 <span> x {hearts}</span>
             </div>
             <p>{moment(createdAt).fromNow()}</p>
