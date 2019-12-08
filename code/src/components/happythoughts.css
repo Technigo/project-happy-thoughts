@@ -88,3 +88,16 @@ button:focus {
     background-color: #cccccc;
     color: #666666;
 }
+
+@media (max-width: 667px) {
+    .post-thought-card, .thought-card {
+        width: 90%;
+    }
+    textarea {
+        width: 100%;
+    }
+    .send-btn {
+        width: 100%;
+        border-radius: 5px;
+    }
+}

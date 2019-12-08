@@ -3,6 +3,7 @@ body {
   font-family: 'Inconsolata', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 240px;
 }
 
 * {

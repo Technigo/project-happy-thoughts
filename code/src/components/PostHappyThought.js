@@ -25,20 +25,18 @@ export const PostHappyThought = props => {
   }
 
   return (
-    <div >
-      <form className="post-thought-card">
+    <div className="post-thought-card" >
+      <form >
         <h3>What makes you happy right now?</h3>
         <textarea rows="3" value={message} minLength="5" maxLength="140"
           onChange={(e) => { setMessage(e.target.value) }}
         />
         <p>{message.length}/140</p>
-        <div className="card-bottom">
-          <div>
-            <button className="send-btn" type="submit" onClick={handleSubmit} disabled={message.length < 5 || message.lenght > 140 ? true : false}><span role="img" aria-label="Heart">❤️</span>Send Happy Thought <span role="img" aria-label="Heart">❤️</span></button>
-          </div>
+        <div>
+          <button className="send-btn" type="submit" onClick={handleSubmit} disabled={message.length < 5 || message.lenght > 140 ? true : false}><span role="img" aria-label="Heart">❤️</span>Send Happy Thought <span role="img" aria-label="Heart">❤️</span></button>
         </div>
       </form >
-    </div >
+    </div>
 
   )
 }
