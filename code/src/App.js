@@ -9,9 +9,8 @@ export const App = () => {
 const [thoughts, setThoughts] = useState ([])
 const [postedMessage, setPostedMessage] = useState("")
 
-
 useEffect(() => {
-  fetch('https://technigo-thoughts.herokuapp.com/')
+  fetch(url)
   .then (res => res.json())
   .then (json => setThoughts(json));
 }, [postedMessage]);
@@ -21,8 +20,6 @@ const onFormSubmit = message => {
 }
 
 const onLiked = thoughtId => {
-  console.log("Logging in the APP.js", thoughtId)
-  // just to check that the func is being called and has the id
 
   const updatedThoughts = thoughts.map(thought => {
     if (thought._id === thoughtId) {
@@ -34,13 +31,11 @@ const onLiked = thoughtId => {
 }
 
   return (
-    <div className="thoughts-flow">
-      <div>
+    <main>
       <HappyForm onFormSubmit={onFormSubmit} />
       {thoughts.map(thought => (
         <HappyThoughts key={thought._id} thought={thought} onLiked={onLiked} />
       ))}
-      </div>
-    </div>
+    </main>
   )
 }

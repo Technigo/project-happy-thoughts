@@ -6,13 +6,13 @@ export const HappyThoughts = props => {
     console.log("props", props)
     const { message, hearts, createdAt, _id } = props.thought
 
-    const handleClick = () => {
-        fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
-          method: "POST",
-          body: "",
-          headers: { "Content-Type": "application/json" }
-        }).then(() => props.onLiked(_id))
-      }
+        const handleClick = () => {
+            fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+            method: "POST",
+            body: "",
+            headers: { "Content-Type": "application/json" }
+            }).then(() => props.onLiked(_id))
+        }
 
     return (
         <article>

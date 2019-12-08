@@ -1,3 +1,14 @@
+I created a forum for Happy Thought from an API. It shows 20 posts that you can like by clicking the herat button and you can also send your own thought.
+
+I started to fetch all the data from the API to see what part i needed and after that creating a plan on what to show and how it should look.
+I created the the fetch with 20 posts first, did som design to make it look OK with the heart button and created time. I did use the moment install to fix the time in the way i wanted it to look. 
+After that i did the part were you could send a Happy Thought, by making a textarea that was fixed whit the send button thats only clickeble when you write the right amount of letters. I also decide to show amount of letters when typing under the message.
+When everything was done i created the update function, when askins the API to uppdate the post or the likes.
+
+To see the site click on this link: https://focused-elion-27758f.netlify.com/
+
+
+----------------------------------------------
 # Happy Thoughts
 
 In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './happyForm.css'
 
 export const HappyForm = props => {
@@ -18,14 +18,13 @@ export const HappyForm = props => {
     })
     }
   
-  
     return (
         <form onSubmit={props.handleFormSubmit}>
             <div className="send-thought">
             <h2>What's making you happy right now?</h2>
             <textarea rows='4' cols='40' value={message} onChange={event => setMessage(event.target.value)} />
                 <div className="send-happy">
-                    <button type='submit' className="button-send" onClick={handleSubmit} disabled={message.length < 6 || message.length > 140 ? true : false}> 💜Send a HAPPY thought💜</button>
+                    <button type='submit' className="button-send" onClick={handleSubmit} disabled={message.length < 6 || message.length > 140 ? true : false}> <span role="img" arial-label='heart'>💜</span> Send a HAPPY thought <span role="img" arial-label='heart'>💜</span></button>
                     <p className="length">{message.length}/140</p>
                 </div>
             </div>

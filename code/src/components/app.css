@@ -1,6 +1,10 @@
-.thoughts-flow {
+body {
+    margin: 0px;
+}
+
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
-}
+    align-items: center;
+  }
