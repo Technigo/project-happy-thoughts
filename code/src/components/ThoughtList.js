@@ -31,7 +31,7 @@ export const ThoughtList = props => {
           <button className="heart-btn"
             onClick={handleHeartClick}
             style={hearts > 0 ? { backgroundColor: "pink" } : { backgroundColor: "#e7e7e7" }}>
-            <span role="img" aria-label="Like post">{"❤️ "}</span>
+            <span role="img" aria-label="Like post">{"❤️"}</span>
           </button>
           <span className="highlight-grey"> x {hearts} </span>
         </div>

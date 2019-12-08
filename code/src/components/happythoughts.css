@@ -91,13 +91,26 @@ button:focus {
 
 @media (max-width: 667px) {
     .post-thought-card, .thought-card {
-        width: 90%;
+        width: 80%;
     }
     textarea {
-        width: 100%;
+        width: 94%;
     }
     .send-btn {
         width: 100%;
         border-radius: 5px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    .heart-btn {
+        height: 60px;
+        width: 60px;
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+    .heart-btn span {
+        font-size: 30px;
+        text-align: left;
     }
 }
