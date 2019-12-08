@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'
 
 
-export const HappyForm = ({ onFormSubmit }) => {
+export const HappyForm = () => {
   const [message, setMessage] = useState("")
   // const [handleSubmit, setHandleSubmit] = useState([])
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    onFormSubmit(message)
+  const handleSubmit = () => {
+    // event.preventDefault()
+    fetch("https://technigo-thoughts.herokuapp.com", {
+      method: 'POST',
+      body: JSON.stringify({ message: message }),
+      headers: { "Content-Type": "application/json" }
+    }).catch(err => console.log('error:', err))
   }
 
   return (
@@ -22,7 +26,8 @@ export const HappyForm = ({ onFormSubmit }) => {
           onChange={event => setMessage(event.target.value)}
         >
         </textarea>
-        <button type="submit" onClick={handleSubmit}>&#10084;&#65039; Send Happy Thought &#10084;&#65039;</button>
+        <p>{message.length}/140</p>
+        <button type="submit" onClick={handleSubmit} disabled={message.length < 5 || message.length > 140 ? true : false}>&#10084;&#65039; Send Happy Thought &#10084;&#65039;</button>
       </form>
     </div>
 
