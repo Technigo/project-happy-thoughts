@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 // import { ButtonMessage } from "ButtonMessage";
 
 export const NewMessage = props => {
   let { newMessage, setNewMessage } = props;
+
+  const [num, setNum] = useState(0);
+
+  const handleChange = event => {
+    setNewMessage(event.target.value);
+    setNum(event.target.value.length);
+  };
 
   return (
     <div>
@@ -14,8 +21,9 @@ export const NewMessage = props => {
         rows="3"
         value={newMessage}
         placeholder="Add New Happy Thought"
-        onChange={event => setNewMessage(event.target.value)}
+        onChange={handleChange}
       />
+      <p className="charNum">{num} / 140</p>
     </div>
   );
 };

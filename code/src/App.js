@@ -65,7 +65,13 @@ export const App = () => {
       <form className="form-container">
         <div className="form-container--content">
           <p>What´s making you happy right now?</p>
-          <NewMessage newMessage={newMessage} setNewMessage={setNewMessage} />
+          <NewMessage
+            newMessage={newMessage}
+            setNewMessage={setNewMessage}
+            // num={newMessage.value.length}
+            // length={newMessage.length}
+          />
+
           <ButtonMessage onClick={addThought} />
         </div>
       </form>

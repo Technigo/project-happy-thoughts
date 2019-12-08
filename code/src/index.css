@@ -123,6 +123,11 @@ main {
   color: #d5d5d5;
 }
 
+.charNum {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 /** LOADING and ERROR **/
 
 .loading,
