@@ -1,0 +1,14 @@
+* {
+    box-sizing: 0;
+}
+
+textarea {
+    font-size: 1.5rem;
+    height: 100px;
+    width: 600px;
+    resize: none;
+}
+
+button {
+    font-size: 1.4rem;
+}
