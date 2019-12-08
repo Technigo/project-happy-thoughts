@@ -8,6 +8,12 @@ export const Form = props => {
     event.preventDefault();
     props.submitForm(message);
     setMessage("");
+
+    if (message < 5) {
+      return alert(
+        "Message needs to have at least 5 letters. Please try again"
+      );
+    }
   };
 
   return (
@@ -30,7 +36,7 @@ export const Form = props => {
             className="submitButton"
             type="submit"
             onClick={handleSubmit}
-            disabled={message.length < 0 || message.length > 140 ? true : false}
+            disabled={message.length > 140 ? true : false}
           >
             <Emoji symbol="❤️" label="heart" />
             <span className="button-text">Send happy thought</span>

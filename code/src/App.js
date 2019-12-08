@@ -15,18 +15,6 @@ export const App = () => {
       });
   }, [postMessage]);
 
-  /*
-  const handleHeartClick = () => {
-    fetch("https://technigo-thoughts.herokuapp.com/THOUGHT_ID/like", {
-      method: "POST"
-    })
-      .then(res => res.json())
-      .then(json => {
-        console.log("json", json);
-      });
-  };
-  */
-
   const handleFormSubmit = message => {
     fetch("https://technigo-thoughts.herokuapp.com/", {
       method: "POST",
@@ -39,15 +27,13 @@ export const App = () => {
       .then(() => setPostMessage(message));
   };
 
-  //const onLiked = ()=>
-
   return (
     <div>
       <Form submitForm={handleFormSubmit} />
 
       <div>
         {thoughts.map(thought => (
-          <Thoughts key={thought.id} thought={thought} />
+          <Thoughts key={thought._id} thought={thought} />
         ))}
       </div>
     </div>

@@ -11,7 +11,7 @@ export const Thoughts = props => {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" }
-    }); //.then(() => props.onLiked(_id));
+    });
     setHeartLike(heartLike + 1);
   };
 
@@ -28,7 +28,7 @@ export const Thoughts = props => {
             >
               <Emoji symbol="❤️" label="heart" />
             </button>
-            <span className="likes">x {heartLike}</span>
+            <span className="likes"> x {heartLike}</span>
           </div>
           <p className="time">
             {moment(createdAt)
