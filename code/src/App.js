@@ -4,19 +4,19 @@ import { Form } from "./Form.js"
 import "./index.css"
 
 export const App = () => {
-  const [thoughts, setThoughts] = useState([])
   const [apiThoughts, setApiThoughts] = useState([])
 
-  const handleFormSubmit = event => {
-    event.preventDefault()
-
+  const postThoughtToAPI = message => {
     fetch("https://technigo-thoughts.herokuapp.com/", {
       method: "POST",
-      body: JSON.stringify({ message: "Hello world" })
+      body: JSON.stringify({ message: message }),
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
       .then(res => res.json())
       .then(newThought => {
-        setThoughts(previousThoughts => [newThought, ...previousThoughts])
+        setApiThoughts(previousThoughts => [newThought, ...previousThoughts])
       })
   }
 
@@ -24,12 +24,12 @@ export const App = () => {
     fetch("https://technigo-thoughts.herokuapp.com")
       .then(res => res.json())
       .then(json => setApiThoughts(json))
-  })
+  }, [])
 
   return (
     <div>
       <div>
-        <Form onSubmit={handleFormSubmit} />
+        <Form postThoughtToAPI={postThoughtToAPI} />
       </div>
       <div>
         {apiThoughts.map(oneApiThought => {
