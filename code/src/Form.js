@@ -6,7 +6,7 @@ export const Form = props => {
   const [message, setMessage] = useState("")
 
   return (
-    <div className='formContainer'>
+    <div className='form'>
       <label htmlFor='inputField'>What's making you happy right now?</label>
       <input
         id='inputField'

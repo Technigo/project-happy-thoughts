@@ -20,6 +20,12 @@ export const App = () => {
       })
   }
 
+  const postLikeToAPI = id => {
+    fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
+      method: "POST"
+    })
+  }
+
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com")
       .then(res => res.json())
@@ -27,7 +33,7 @@ export const App = () => {
   }, [])
 
   return (
-    <div>
+    <div className='container'>
       <div>
         <Form postThoughtToAPI={postThoughtToAPI} />
       </div>
@@ -37,6 +43,13 @@ export const App = () => {
             <Thought
               key={oneApiThought._id}
               thoughtInsideComponent={oneApiThought}
+              postLikeToAPI={() => {
+                postLikeToAPI(oneApiThought._id)
+                setApiThoughts(previousThoughts => {
+                  oneApiThought.hearts = oneApiThought.hearts + 1
+                  return [...previousThoughts]
+                })
+              }}
             />
           )
         })}

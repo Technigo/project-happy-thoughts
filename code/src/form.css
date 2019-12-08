@@ -2,11 +2,10 @@
   margin: 0;
 }
 
-.formContainer {
-  width: 350px;
+.form {
   background-color: lightgrey;
   border: solid 1px black;
-  margin: 2em auto;
+  margin: 2em 0;
   box-shadow: 6px 6px black;
   font-family: "Courier New", Courier, monospace;
   padding: 0.9em;

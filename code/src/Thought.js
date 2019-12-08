@@ -5,11 +5,11 @@ import "./thought.css"
 
 export const Thought = props => {
   return (
-    <div className='container'>
+    <div className='thought'>
       <p>{props.thoughtInsideComponent.message}</p>
       <div className='bar'>
         <div className='likes'>
-          <button className='likeButton'>
+          <button onClick={props.postLikeToAPI} className='likeButton'>
             <Heart className='heart' />{" "}
           </button>
           x{props.thoughtInsideComponent.hearts}
@@ -20,8 +20,3 @@ export const Thought = props => {
     </div>
   )
 }
-
-//button onClick - vill att den ska gå från grå bakgrund till rosa bakgrund
-//samt såklart att den ska adderas på antal likes
-
-//varför vill inte mitt hjärta centreras i min button?
