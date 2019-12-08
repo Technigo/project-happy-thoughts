@@ -19,9 +19,6 @@ export const App = () => {
   }
 
   const onLiked = thoughtId => {
-    console.log("Logging in the APP.js", thoughtId)
-    // just to check that the func is being called and has the id
-
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
         thought.hearts += 1

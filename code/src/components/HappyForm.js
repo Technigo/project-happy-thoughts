@@ -22,7 +22,8 @@ export const HappyForm = props => {
 
   return (
     <form className='happy-form'>
-      <h3>Post a happy thought!</h3>
+      <h3>Spread the happiness!</h3>
+      <h3>What made you happy today? </h3>
       <textarea
         rows='3'
         value={message}
@@ -34,7 +35,7 @@ export const HappyForm = props => {
           onClick={handleSubmit}
           disabled={message.length < 6 || message.length > 140 ? true : false}
         >
-          Send a happy thought
+          Share!
         </button>
         <p>{message.length} / 140</p>
       </div>
