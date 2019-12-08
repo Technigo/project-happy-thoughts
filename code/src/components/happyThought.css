@@ -26,3 +26,13 @@
     margin-left: 2px;
     line-height: 2.8;
 }
+
+.happy-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.happy-footer span {
+    padding-bottom: 0px;
+    padding-top: 10px;
+}
