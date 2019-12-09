@@ -1,6 +1,6 @@
-import React {useState, useEffect} from 'react'
-import { HappyThoughts } from "./Components/HappyThoughts.js"
-import { HappyForm } from "./Components/HappyForm.js"
+import React, {useState, useEffect} from 'react';
+import { HappyThoughts } from './Components/HappyThoughts';
+import { HappyForm } from './Components/HappyForm';
 
 const url ="https://technigo-thoughts.herokuapp.com/"
 
@@ -27,7 +27,7 @@ export const App = () => {
   const onLiked = (thoughtId) => {
     console.log ("logging on the App.js", thoughtId)
     const updatedThoughts = thoughts.map(thought => {
-      if (thought, _id === thoughtId){
+      if (thought._id === thoughtId){
         thought.heart += 1
       }
     return thought
@@ -37,8 +37,8 @@ export const App = () => {
   return (
     <main>
       <HappyForm onFormSubmit ={handleFormSubmit} />
-      {thought.map(thought => (
-        <HappyThoughts key={thought._id} thought={thoughts} onLiked={onLiked} />
+      {thoughts.map(thoughts => (
+        <HappyThoughts key={thoughts._id} thought={thoughts} onLiked={onLiked} />
       ))}
     </main>
   )

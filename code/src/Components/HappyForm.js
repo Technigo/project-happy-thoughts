@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import "./happyForm.css"
+import React, { useState } from 'react';
 
 export const HappyForm = props => {
   const [message, setMessage] = useState("")
