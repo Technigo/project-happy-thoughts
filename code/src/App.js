@@ -43,7 +43,6 @@ export const App = () => {
 
   return (
     <div>
-
       <div className="thoughtBox">
         <form onSubmit={handleFormSubmit}>
           <p> What's making you happy right now?</p>
