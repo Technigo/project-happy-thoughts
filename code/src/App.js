@@ -15,9 +15,9 @@ export const App = () => {
     fetch("https://technigo-thoughts.herokuapp.com")
       .then(res => res.json()
         .then(json => setThoughts(json))
-        // Jag vill spara datan från json i en state .. därför skapar vi Thoughts-state och skriver här metoden setThoughts 
       )
   }, [])
+
 
   const onLiked = (thoughtId) => {
     console.log('Logging in the App.js')
@@ -30,6 +30,8 @@ export const App = () => {
     setThoughts(updatedThoughts)
   }
 
+
+
   return (
     <div className="mainContainer">
       <HappyForm />
@@ -37,7 +39,6 @@ export const App = () => {
         {thoughts.map(thought => (
           <div>
             <HappyThoughts key={thought._id} thought={thought} onLiked={onLiked} />
-            {/* <Like /> */}
           </div>
         ))}
       </div>
@@ -45,5 +46,3 @@ export const App = () => {
     </div>
   )
 }
-
-{/* // <HappyThoughts key={thought._id} /> denna nyckel är den unika komponenten som särskiljer varje objekt i arrayn */ }

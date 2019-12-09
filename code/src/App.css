@@ -22,39 +22,4 @@ p{
   flex-direction: column;
 }
 
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-}
 
-textarea{
-  width: 270px;
-  margin: 12px;
-  resize: none;
-  padding: 12px;
-}
-
-textarea:focus{
-  outline: none ;
-
-}
-
-.message{
-  width:320px;
-  background: #f2f0f0;
-  border: 1px solid black;
-  box-shadow: 7px 7px;
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-}
-
-.messageLive{
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-  margin: 0 0 2px 0;
-}
