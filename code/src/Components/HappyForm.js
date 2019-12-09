@@ -19,8 +19,12 @@ export const HappyForm = props => {
         type="submit"
         onClick={handleSubmit}
         disabled={message.length < 6 || message.length > 140 ? true : false}>
-          <span role="img" aria-lable="Heart">
+          <span role="img" aria-label="Heart">
             {"❤️"}
+          </span>
+          Send a happy thought
+          <span role='img' aria-label='Heart' >
+            {"❤️ "}
           </span>
         </button>
         <p> {message.length}/140 </p>

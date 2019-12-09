@@ -1,3 +1,32 @@
-.happy-thoughts {}
+.happy-thoughts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  width: 300px;
+  height: 130px;
+  margin: 16px;
+  padding: 20px;
+}
 
-.happy-heart {}
+.happy-thoughts h3 {
+  font-family: 'Inconsolata', monospace;
+  font-size: 16px;
+  margin: 0;
+  color: #6a6a6a;
+}
+
+.happy-thoughts p {
+  border-bottom: 0px;
+  margin: 0;
+  font-size: 13px;
+  color: #8f8f8f;
+}
+
+.happy-heart {
+  background-color: #e85d75;
+  border-radius: 100px;
+  padding: 10px;
+  border-right: 5px;
+}

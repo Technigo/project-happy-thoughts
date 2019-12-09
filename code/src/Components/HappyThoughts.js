@@ -1,18 +1,18 @@
 import React from 'react';
 import moment from 'moment';
 
-const url="https://technigo-thoughts.herokuapp.com/${_id}/like"
+const url = "https://technigo-thoughts.herokuapp.com/";
 
 export const HappyThoughts = props => {
   const {message,hearts,createdAt,_id} = props.thought
   const handleClick = () => {
     console.log("clicking", _id)
-    fetch (url, {
+    fetch (url,`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
       method: "POST",
       body:"",
       headers: {"Content-Type":"application/json"}
     })
-    .then (()=> props.onLiked(_id))
+    .then(() => props.onLiked(_id));
   }
   return (
     <article className="happy-thoughts">
@@ -22,7 +22,7 @@ export const HappyThoughts = props => {
       onClick={handleClick}
       style={{background: hearts > 0 ? "#ffadad" : "#f3f1f1  " }}
       >
-      <span role="img" aria-lable="Heart"> 
+      <span role="img" aria-label="Heart"> 
       {"❤️"}
       </span>
       </button>
