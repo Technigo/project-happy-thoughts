@@ -10,13 +10,11 @@ export const HappyPosts = props => {
       <p className="message">{message}</p>
 
       <section className="cards-bottom">
-        <section className="hearts">
           <LikeButton
             hearts={hearts}
             id={props.thought._id}
             onThoughtLiked={props.onThoughtLiked}
           /> 
-        </section>
         <p className="time"><Timestamp date={createdAt}/></p>
       </section>
 
