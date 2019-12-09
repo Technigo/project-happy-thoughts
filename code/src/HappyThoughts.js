@@ -6,7 +6,7 @@ import { Like } from './Like'
 
 
 export const HappyThoughts = (props) => {
-  const { message, hearts, createdAt, _id } = props.thought
+  const { message, hearts, createdAt, _id, } = props.thought
 
   const handleClick = () => {
     console.log('clicking', _id)
@@ -14,7 +14,7 @@ export const HappyThoughts = (props) => {
       method: 'POST',
       body: "",
       headers: { 'Content-Type': 'application/json' }
-    })
+    }).then(() => props.onLiked(_id))
   }
 
   return (
