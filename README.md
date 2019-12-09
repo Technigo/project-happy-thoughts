@@ -1,7 +1,7 @@
 # Project 11 @ Technigo Bootcamp - Our own version of Twitter 
 
 
-The second week with React - We practiced our React state skills by fetching and posting data to an API 
+The third week with React - We practiced our React state skills by fetching and posting data to an API 
 
 ## To learn this week 🧠
 
