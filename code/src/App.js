@@ -27,6 +27,20 @@ export const App = () => {
       })
   }
 
+  const likeThought = (thought) => {
+    fetch(`https://technigo-thoughts.herokuapp.com/${thought._id}/like`, { method: 'POST' })
+      .then((res) => res.json())
+      .then((responsejson) => {
+        const updatedThoughts = thoughts.map((heartthought) => {
+          if (heartthought._id === thought._id) {
+            heartthought.hearts += 1
+          }
+          return heartthought
+        })
+        setThoughts(updatedThoughts)
+      })
+  }
+
   return (
     <div>
 
@@ -45,7 +59,8 @@ export const App = () => {
 
           <section className="cardbottom">
             <section className="like-section">
-              <p> <span role="img" aria-label="heart">❤️ </span> x {thought.hearts} {moment(thought.createdAt).fromNow()} </p>
+
+              <p> <button onClick={() => likeThought(thought)}><span role="img" aria-label="heart">❤️ </span></button> x {thought.hearts} {moment(thought.createdAt).fromNow()} </p>
             </section>
           </section>
 

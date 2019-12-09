@@ -68,3 +68,9 @@ code {
     font-weight: bold;
     font-size: 14px;
   }
+
+  button {
+    background-color: #ffadad;
+    padding: 5px 7px;
+    border-radius: 50%;
+  }
