@@ -33,7 +33,7 @@ setThoughts(updatedThoughts)
   }
 
   return (
-    <div>
+    <div className="mainContainer">
       <HappyForm onFormSubmit={handleFormSubmit} />
       {thoughts.map(thought => (
         <HappyThought key={thought._id} thought={thought} onLike={onLike} />

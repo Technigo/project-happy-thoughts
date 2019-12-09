@@ -19,13 +19,13 @@ export const HappyThought = (props) => {
   return (
     <article>
       <h1>{message}</h1>
-      <button onClick={handleClick}>
+      <button className="theHeart" onClick={handleClick}>
       <span role='img' aria-label='Heart'>
         {"❤️"}
       </span>
       </button>
-      x{hearts}
-      <p>{moment(createdAt).fromNow()}</p>
+      <span className="noLikes">x{hearts}</span>
+      <p className="theDate">{moment(createdAt).fromNow()}</p>
     </article>
   )
 }

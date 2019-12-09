@@ -2,13 +2,22 @@
     box-sizing: 0;
 }
 
+h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
 textarea {
     font-size: 1.5rem;
-    height: 100px;
+    height: 80px;
     width: 600px;
     resize: none;
 }
 
-button {
+button.theSubmit {
+    padding: 7px;
     font-size: 1.4rem;
+    border: 1 px solid black;
+    border-radius: 15px;
+    background-color: pink;
 }
