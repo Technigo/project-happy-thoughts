@@ -1,11 +1,46 @@
-import React from 'react'
+import React {useState, useEffect} from 'react'
+import { HappyThoughts } from "./Components/HappyThoughts.js"
+import { HappyForm } from "./Components/HappyForm.js"
 
-/* GET https://technigo-thoughts.herokuapp.com/ */
+const url ="https://technigo-thoughts.herokuapp.com/"
 
 export const App = () => {
-  return ( 
-    <div>
-    Find me in src / app.js!
-    </div>
+  const [thoughts, setThoughts] = useState([])
+  const [postedMessage, setPostedMessage] = useState("")
+
+  useEffect (() => {
+    fetch(url)
+    .then(res => res.json())
+    .then(json => setThoughts(json))
+  }, [postedMessage])
+
+  const handleFormSubmit = message => {
+    fetch(url,{
+      method:"POST",
+      body:JSON.stringify({message}),
+      headers:{"Content-Type":"application/json"}
+    })
+    .then(() => setPostedMessage(message))
+    .catch(err => console.log("error:", err))
+  }
+
+  const onLiked = (thoughtId) => {
+    console.log ("logging on the App.js", thoughtId)
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought, _id === thoughtId){
+        thought.heart += 1
+      }
+    return thought
+  })
+  setThoughts(updatedThoughts)
+  }
+  return (
+    <main>
+      <HappyForm onFormSubmit ={handleFormSubmit} />
+      {thought.map(thought => (
+        <HappyThoughts key={thought._id} thought={thoughts} onLiked={onLiked} />
+      ))}
+    </main>
   )
+
 }
