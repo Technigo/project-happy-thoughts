@@ -27,3 +27,10 @@ span {
   background-color: #f3f1f1
 }
 
+@media (max-width: 668px) {
+  .happy-thoughts {
+    width: 300px;
+    padding: 30px; 
+  }
+}
+

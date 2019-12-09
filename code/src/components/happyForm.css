@@ -39,3 +39,15 @@ h3 {
 p {
   font-size: 10px; 
 }
+
+@media (max-width: 668px) {
+  .happy-form {
+    width: 300px;
+    padding: 30px; 
+  }
+
+  .happy-form textarea {
+    width: 290px; 
+    
+  }
+}
