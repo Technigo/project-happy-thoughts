@@ -6,6 +6,8 @@ To practice React state skills and how to fetch and post data to an API, I build
 
 I used an API provided by Technigo Bootcamp. The API has three endpoints, and it's public. It gives me 20 last posted happy thoughts.
 
+User can share a thought, shorter than 140 characters, and like other posts by clicking a heart button.
+
 ## Design
 
 ![Design](https://i.imgur.com/NUoE9gX.png)
