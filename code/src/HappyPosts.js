@@ -9,16 +9,16 @@ export const HappyPosts = props => {
     <article className="cards">
       <p className="message">{message}</p>
 
-      <div className="cards-bottom">
-        <div className="hearts">
+      <section className="cards-bottom">
+        <section className="hearts">
           <LikeButton
             hearts={hearts}
             id={props.thought._id}
             onThoughtLiked={props.onThoughtLiked}
           /> 
-        </div>
+        </section>
         <p className="time"><Timestamp date={createdAt}/></p>
-      </div>
+      </section>
 
     </article>
   )
