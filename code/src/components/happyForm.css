@@ -1,0 +1,41 @@
+.happy-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid black;
+  box-shadow: 5px 5px black;
+  width: 400px;
+  height: 180px;
+  margin: 16px; 
+  padding: 20px;
+  justify-content: space-around;
+  background-color: #f3f1f1;
+  font-weight: lighter;
+}
+
+.happy-form textarea {
+  height: 100px;
+  width: 400px; 
+  font-weight: lighter;
+  font-size: 12px;
+  font-family: 'Special Elite', cursive;
+}
+
+.happy-form button {
+  background-color: #FFADAD;
+  height: 50px; 
+  border-radius: 50px;
+  width: 200px;
+}
+
+span {
+  height: 50px;
+}
+
+h3 {
+  font-size: 12px; 
+}
+
+p {
+  font-size: 10px; 
+}
