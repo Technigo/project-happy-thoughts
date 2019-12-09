@@ -4,7 +4,7 @@ import { Form } from "./Form.js"
 import "./index.css"
 
 export const App = () => {
-  const [apiThoughts, setApiThoughts] = useState([])
+  const [APIThoughts, setAPIThoughts] = useState([])
 
   const postThoughtToAPI = message => {
     fetch("https://technigo-thoughts.herokuapp.com/", {
@@ -16,7 +16,7 @@ export const App = () => {
     })
       .then(res => res.json())
       .then(newThought => {
-        setApiThoughts(previousThoughts => [newThought, ...previousThoughts])
+        setAPIThoughts(previousThoughts => [newThought, ...previousThoughts])
       })
   }
 
@@ -29,7 +29,7 @@ export const App = () => {
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com")
       .then(res => res.json())
-      .then(json => setApiThoughts(json))
+      .then(json => setAPIThoughts(json))
   }, [])
 
   return (
@@ -38,15 +38,15 @@ export const App = () => {
         <Form postThoughtToAPI={postThoughtToAPI} />
       </div>
       <div>
-        {apiThoughts.map(oneApiThought => {
+        {APIThoughts.map(oneAPIThought => {
           return (
             <Thought
-              key={oneApiThought._id}
-              thoughtInsideComponent={oneApiThought}
+              key={oneAPIThought._id}
+              thoughtInsideComponent={oneAPIThought}
               postLikeToAPI={() => {
-                postLikeToAPI(oneApiThought._id)
-                setApiThoughts(previousThoughts => {
-                  oneApiThought.hearts = oneApiThought.hearts + 1
+                postLikeToAPI(oneAPIThought._id)
+                setAPIThoughts(previousThoughts => {
+                  oneAPIThought.hearts = oneAPIThought.hearts + 1
                   return [...previousThoughts]
                 })
               }}
