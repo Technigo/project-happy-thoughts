@@ -48,7 +48,7 @@ export const App = () => {
           <p> What's making you happy right now?</p>
           <input type="text" onChange={event => setUserText(event.target.value)} value={userText} rows="4" minLength="5" maxLength="140" required />
           <br></br>
-          <button type="submit">❤️ Send Happy Thought here ❤️ </button>
+          <button type="submit">❤️ Send Happy Thought ❤️ </button>
         </form>
       </div>
 
