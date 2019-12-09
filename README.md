@@ -5,9 +5,9 @@ The third week with React - We practiced our React state skills by fetching and 
 
 ## To learn this week 🧠
 
-- What component lifecycle means 
-- How to use the useEffect hook in React to perform actions when components mount, unmount, or when state changes.
-- How to call APIs from React and put the data into state.
+- How to use APIs in React, firing requests within <code> useEffect </code> .
+- How to put the result of API responses into React state to show in the page.
+- What it's like to work with an API which you both send and receive data from.
 
 ### Tech  💻
 
