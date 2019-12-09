@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import "./happyForm.css"
 
 
@@ -14,8 +14,7 @@ export const HappyForm = ({ onFormSubmit }) => {
 
   return (
     <form className="happy-form">
-      <h3>Tell me what makes you happy right now!</h3>
-      {/* <p>{message}</p> */}
+      <h3>What makes you happy right now!</h3>
       <textarea
         rows="3"
         onChange={event => setMessage(event.target.value)}>

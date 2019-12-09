@@ -4,7 +4,7 @@ import "./happyThought.css"
 
 
 export const HappyThought = props => {
-  const { message, hearts, createdAt, _id, onLiked } = props.thought
+  const { message, hearts, createdAt, _id } = props.thought
 
   const handleClick = () => {
     console.log("clicking", _id)
@@ -18,9 +18,10 @@ export const HappyThought = props => {
 
   return (
     <article className="happy-thoughts">
-      <p>
+      <div>
         <h1>{message}</h1>
-        <button id="heart-button" onClick={handleClick}><span role="img" img="heart">💌</span></button> x {hearts}</p>
+        <button id="heart-button" onClick={handleClick}><span role="img" img="heart">💌</span></button> x {hearts}
+      </div>
       <p>{moment(createdAt).fromNow()}</p>
     </article >
   )

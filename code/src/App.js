@@ -24,7 +24,6 @@ export const App = () => {
   }
 
   const onLiked = (thoughtId) => {
-    console.log("Logging in the App.js", thoughtId)
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
         thought.hearts += 1
