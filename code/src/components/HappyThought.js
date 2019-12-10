@@ -27,19 +27,17 @@ export const HappyThought = props => {
 	return (
 		<article className='happy-thought'>
 			<h3>{message}</h3>
-			<p>
-				<button
-					className='btn liked-btn'
-					onClick={handleClick}
-					disable={clicks < 1}
-				>
-					<span role='img' aria-label='Heart'>
-						{'❤️'}
-					</span>
-				</button>
-				x {hearts} (you liked {localStorage[_id]} times)
-			</p>
-			<p>{moment(createdAt).fromNow()}</p>
+			<div className='thought-footer'>
+				<p>
+					<button onClick={handleClick}>
+						<span role='img' aria-label='Heart'>
+							{'❤️'}
+						</span>
+					</button>
+					x {hearts} (you liked {localStorage[_id]} times)
+				</p>
+				<p>{moment(createdAt).fromNow()}</p>
+			</div>
 		</article>
 	);
 };
