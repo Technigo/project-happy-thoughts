@@ -15,7 +15,7 @@ export const NewThoughtForm = (props) => {
       // Just need {message} since the key and value is the same {message: message}
       method: "POST", body: JSON.stringify({ message }), headers: { "Content-Type": "application/json" }
     }).then(() => {
-      props.addedThought({ message })
+      props.addedThought(message)
       setMessage("")
     })
   }

@@ -20,7 +20,7 @@ export const Thoughts = () => {
     setPostedMessage(message)
   }
 
-  // To add likes to API and show the updated thoughts with new likes
+  // To add likes to API and show the updated thoughts with new likes (callback function)
   const onThoughtLiked = (likedThoughtId) => {
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === likedThoughtId) {
@@ -31,12 +31,11 @@ export const Thoughts = () => {
     setThoughts(updatedThoughts)
   }
 
-  // Passing consts to the components to use them there with props
+  // Passing consts to the components to use them there with props (anyname={the real name on what to pass on})
   return (
     <main>
       <NewThoughtForm addedThought={addedThought} />
       <ListThoughts
-        key={thoughts._id}
         thoughts={thoughts}
         onThoughtLiked={onThoughtLiked} />
     </main>
