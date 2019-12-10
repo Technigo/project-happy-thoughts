@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import moment from 'moment'; // this is to format the date
 import './happyThought.css';
 
-const url = 'https://technigo-thoughts.herokuapp.com/';
+// const url = 'https://technigo-thoughts.herokuapp.com/';
 
 export const HappyThought = props => {
 	const { message, hearts, createdAt, _id } = props.thought;
