@@ -1,0 +1,24 @@
+.hej {
+  background: cadetblue;
+  display: flex;
+  flex-direction: column;
+  border: black 1px solid;
+  width: 350px;
+  height: 130px;
+  margin: 20px;
+  box-shadow: 8px 8px black;
+}
+
+textarea {
+  resize: none;
+  width: 300px;
+  margin: 0px;
+}
+
+h3 {
+  margin: 0;
+}
+
+button {
+  width: 60px;
+}
