@@ -6,12 +6,12 @@ export const HappyForm = props => {
 
 	const handleSubmit = event => {
 		event.preventDefault();
-		props.onFormSubmit(message); // this onFormSubmit comes as a props from App.js
+		props.onFormSubmit(message);
 	};
 
 	return (
 		<form className='happy-form'>
-			<h3>Post a happy thought!</h3>
+			<h3>What's making you happy right now?</h3>
 			<textarea
 				rows='3'
 				onChange={event => setMessage(event.target.value)}
@@ -22,7 +22,9 @@ export const HappyForm = props => {
 					onClick={handleSubmit}
 					disabled={message.length < 6 || message.length > 140 ? true : false}
 				>
-					Send a happy thought
+					<span span role='img' aria-label='Heart'>
+						❤️Send Happy Thought❤️
+					</span>
 				</button>
 				<p>{message.length} / 140</p>
 			</div>

@@ -19,9 +19,7 @@ export const App = () => {
 			method: 'POST',
 			body: JSON.stringify({ message }),
 			headers: { 'Content-Type': 'application/json' }
-		})
-			.then(() => setPostedMessage(message))
-			.catch(err => console.log('error:', err));
+		}).then(() => setPostedMessage(message));
 	};
 
 	const onLiked = thoughtId => {
