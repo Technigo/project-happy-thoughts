@@ -1,24 +1,50 @@
-.hej {
-  background: cadetblue;
+  
+.happy-form {
+  background-color: #f3f1f1;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  max-width: 430px;
+  width: 85%;
+  margin: 16px;
   display: flex;
   flex-direction: column;
-  border: black 1px solid;
-  width: 350px;
-  height: 130px;
-  margin: 20px;
-  box-shadow: 8px 8px black;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-textarea {
+.happy-form textarea {
+  width: 100%;
   resize: none;
-  width: 300px;
-  margin: 0px;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 10px 0;
 }
 
-h3 {
+.happy-form h3 {
   margin: 0;
 }
 
-button {
-  width: 60px;
+.happy-form button {
+  height: 50px;
+  width: 60%;
+  background-color: #ffadad;
+  border: none;
+  font-size: 14px;
+  border-radius: 25px;
+  padding: 10px;
+  font-weight: 600;
 }
+
+.happy-form button:hover {
+  cursor: pointer;
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: gray;
+}
+

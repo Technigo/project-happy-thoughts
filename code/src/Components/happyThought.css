@@ -1,14 +1,50 @@
-article {
+.happy-thought {
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  max-width: 430px;
+  width: 90%;
+  height: 110px;
+  margin: 16px;
   display: flex;
-  flex-wrap: wrap;
-  border: black 1px solid;
-  width: 350px;
-  height: 130px;
-  margin: 20px;
-  box-shadow: 8px 8px black;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
 }
 
-h1 {
-  font-size: 10px;
+.happy-thought h3 {
+  font-family: "Courier", monospace;
+  font-size: 16px;
+  margin: 0;
 }
 
+.happy-thought button {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.happy-thought button:hover {
+  cursor: pointer;
+}
+
+.happyThoughtFooter {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color:rgb(255, 112, 112);
+}
+
+.momentText {
+  color: rgb(161, 161, 161);
+  margin-top: 25px;
+}
