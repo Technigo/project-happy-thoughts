@@ -40,8 +40,6 @@ form {
 
 .formButton:hover {
     cursor: pointer;
-    transform: scale(1.2); 
-    opacity:1;
 }
 
 .heartLogo {

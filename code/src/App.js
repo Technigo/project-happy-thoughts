@@ -20,6 +20,7 @@ export const App = () => {
       headers: { "Content-Type": "application/json" }
     })
       .then(() => setPostedMessage(message))
+    setPostedMessage('')
   }
 
   const onLikedThought = (likedThoughtId) => {

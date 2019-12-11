@@ -42,14 +42,7 @@ h3 {
 
 .likeButton:hover {
     cursor: pointer;
-    transform: scale(1.2); 
-    opacity:1;
 }
-
-.likeButton:focus {
-    outline:0px;
-    border:none;
- }
 
 .heartLike {
     font-size: 200%;
