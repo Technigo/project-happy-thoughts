@@ -4,25 +4,16 @@ import { HappyPosts } from './HappyPosts.js'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [postedMessage, setPostedMessage] = useState("")
 
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
-      .then(json => {
-        setThoughts(json)
-        setLoading(false)
-      })
-  }, [])
+      .then(json => setThoughts(json))
+  }, [postedMessage])
 
-  const handleFormSubmit = message => {
-    fetch("https://technigo-thoughts.herokuapp.com/", {
-      method: 'POST',
-      body: JSON.stringify({message}),
-      headers: { 'Content-Type': 'application/json' }
-    }) 
-      .catch(() => {alert("Don't worry, be happy! :D")
-    })
+  const onFormSubmit = message => {
+    setPostedMessage(message)
   }
 
   const onThoughtLiked = (likedThoughtId) => {
@@ -41,11 +32,9 @@ export const App = () => {
       <h1>
         <span role="img" aria-label="smiley">😃</span> Happy Thoughts <span role="img" aria-label="smiley">😃</span>
       </h1>
+    
+      <HappyForm onFormSubmit={onFormSubmit} />
 
-      {loading && <h4>Don't worry, be happy! <span role="img" aria-label="smiley">😄</span></h4>}
-    
-      <HappyForm onFormSubmit={handleFormSubmit} />
-    
       {thoughts.map(thought => (
         <HappyPosts
           key={thought._id} 
