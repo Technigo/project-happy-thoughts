@@ -1,6 +1,7 @@
 h1{
   font-size: 14px;
   margin: 12px 0 0 12px;
+  align-self: flex-start;
 }
 
 h2{

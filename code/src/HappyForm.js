@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-
 export const HappyForm = () => {
   const [message, setMessage] = useState("")
 

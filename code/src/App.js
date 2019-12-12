@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { HappyThoughts } from './HappyThoughts'
 import { HappyForm } from './HappyForm'
-import { Like } from './Like'
 
 import "./App.css";
 import "./HappyThoughts.css";
