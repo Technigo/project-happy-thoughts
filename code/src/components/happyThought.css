@@ -23,10 +23,8 @@
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    margin-right: 7px;
-    border-color:  rgb(244, 134, 170);
-  
-    
+    margin-right: 10px;
+    border-color:  rgb(244, 134, 170);    
 }
 
 .happy-thought button:hover {
@@ -37,5 +35,7 @@ button:focus {outline: 3px solid var(--cl-primary);
 }   
 
 .happy-thought button span {
-  margin-left: 4px; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
 } 

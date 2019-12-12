@@ -20,7 +20,7 @@ export const HappyThought = props => {
                 <button
                     onClick={handleClick}>
                     <span role='img' aria-label='Heart' >
-                        {"❤️ "}
+                        {" ❤️ "}
                     </span>
                 </button>
                 {hearts}

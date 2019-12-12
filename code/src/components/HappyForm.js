@@ -26,16 +26,16 @@ export const HappyForm = props => {
             <textarea
                 rows='3'
                 value={message}
-                onChange={event => setMessage(event.target.value)}
-            ></textarea>
+                onChange={event => setMessage(event.target.value)}>
+            </textarea>
             <div className='form-footer'>
                 <button
                     type='submit'
                     onClick={handleSubmit}
                     disabled={message.length < 6 || message.length > 140 ? true : false}
                 >
-                    ❤️Send a happy thought ❤️
-        </button>
+                    ❤️ Send a happy thought ❤️
+                </button>
                 <p>{message.length} / 140</p>
             </div>
         </form>
