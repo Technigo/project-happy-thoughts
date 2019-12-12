@@ -19,20 +19,21 @@ form{
  align-items: center;
 }
 
-  form p{
-  margin: 0 12px 0 0;
-  }
+form p{
+ margin: 0 12px 0 0;
+ align-self: flex-end;
+}
 
-  textarea{
-  width: 270px;
-  margin: 12px 12px 5px 12px;
-  resize: none;
-  padding: 12px;
-  }
+textarea{
+ width: 270px;
+ margin: 12px 12px 5px 12px;
+ resize: none;
+ padding: 12px;
+ }
   
-  textarea:focus{
-  outline: none; 
-  }
+textarea:focus{
+ outline: none; 
+}
 
 .message{
  width:320px;
