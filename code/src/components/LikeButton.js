@@ -13,11 +13,10 @@ export const LikeButton = (props) => {
     }).then(() => {
       props.onThoughtLiked(props.id)
     })
-
   }
 
   return (
-    <button type="button" className="heart-button" onClick={handleOnclick}><Heart /></button>
+    <button type="button" className={props.hearts > 0 ? "heart-button-liked" : "heart-button"} onClick={handleOnClick}><Heart /></button>
   )
 
 }
