@@ -4,7 +4,7 @@ import './likebutton.css'
 
 export const LikeButton = (props) => {
 
-  const handleOnclick = () => {
+  const handleOnClick = () => {
 
     // POST like to API and then add like to that matching id
     //onThoughtLiked is passed via ListThoughts from the function onThoughtLikes in Thought
@@ -21,4 +21,3 @@ export const LikeButton = (props) => {
   )
 
 }
-
