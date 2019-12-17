@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ButtonMessage = props => {
+export const Button = props => {
   const { onClick } = props;
   return (
     <button onClick={onClick} className="form-container--btn">

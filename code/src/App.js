@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NewMessage } from "Components/NewMessage";
-import { ButtonMessage } from "Components/ButtonMessage";
+import { Button } from "Components/Button";
 import { Hearts } from "Components/Hearts";
 
 export const App = () => {
@@ -66,7 +66,7 @@ export const App = () => {
         <div className="form-container--content">
           <p>What´s making you happy right now?</p>
           <NewMessage newMessage={newMessage} setNewMessage={setNewMessage} />
-          <ButtonMessage onClick={addThought} />
+          <Button onClick={addThought} />
         </div>
       </form>
       <div className="messages">
