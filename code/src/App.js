@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Thought } from "./Thought.js"
 import { Form } from "./Form.js"
+import { ReactComponent as Heart } from "./heart3.svg"
 import "./index.css"
 
 export const App = () => {
@@ -34,6 +35,10 @@ export const App = () => {
 
   return (
     <div className='container'>
+      <header>
+        {" "}
+        Happy Thoughts <Heart className='heart' />
+      </header>
       <div>
         <Form postThoughtToAPI={postThoughtToAPI} />
       </div>
