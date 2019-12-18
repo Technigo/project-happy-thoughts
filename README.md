@@ -1,11 +1,12 @@
-# Happy Thoughts
+# Build "Happy Thoughts" - a nicer (and smaller) version of Twitter
 
-In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
+https://happy-twitterish.netlify.com/
+Week 11 of Technigo's Bootcamp
 
-We've built a simple API to collect 'happy thoughts'. Think of it as our own version of Twitter, but with less negativity, and 100% fewer US presidents using it.
+Building a nicer and smaller version of Twitter, to practice React state by fetching and posting data to an API. Technigo built a simple API for us to use.
 
-## What you will learn 🧠
+This week I got to try to work with an API which I both sent to and received data from. I got to practise to use API in React and how to put the result in to React state to show it on the page.
 
-- How to use APIs in React, firing requests within `useEffect`.
-- How to put the result of API responses into React state to show in the page.
-- What it's like to work with an API which you both send and receive data from.
+# Design
+
+The design was set from school and I had to make my result as similar as possible.
