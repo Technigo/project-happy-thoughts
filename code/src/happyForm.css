@@ -2,14 +2,24 @@ textarea {
     resize: none;
     width: 100%;
     margin: 10px 0 10px 0;
+    font-size: 20px;
 }
+
+.wraperBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
 .btn {
     display: flex;
     flex-direction: row;
     align-items:center;
     justify-content: space-between;
     background: #ffb3b3;
-    padding: 10px;
+    /* padding: 10px; */
     border-style: none;
     border-radius: 40px;
     font-family: inherit;
@@ -19,14 +29,16 @@ textarea {
 svg {
     fill: red;
     padding: 10px;
+    border-radius: 40px;
+    background-color: #ffb3b3;
 }
 
 .formWrapper {
-    margin: 20px 0;
     padding: 15px;
-    width: 30%;
+    width: 100%;
     height: 100%;
     background: #efefef;
     border: 1px solid #000;
     box-shadow: 10px 10px #000;
+    align-items: center;
 }

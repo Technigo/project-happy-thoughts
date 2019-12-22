@@ -18,16 +18,17 @@ export const HappyForm = (props) => {
                     onChange={event => setMessage(event.target.value)}
                     value={message}
                 ></textarea>
-                <p>{message.length} / 140</p>
-                <button className="btn"
-                    type="submit"
-                    onClick={handleSubmit}
-                    disabled={message.length < 5 || message.length > 140 ? true : false}
-                >
-                    <Heart />
-                    Send a happy thought
-                <Heart />
-                </button>
+                <div className="wraperBtn">
+                    <button className="btn"
+                        type="submit"
+                        onClick={handleSubmit}
+                        disabled={message.length < 5 || message.length > 140 ? true : false}>
+                        <Heart />
+                        Send a happy thought
+                        <Heart />
+                    </button>
+                    <p>{message.length} / 140</p>
+                </div>
             </form>
         </div>
     )

@@ -24,6 +24,15 @@ export const App = () => {
       .then(() => setPostedMessage(message))
   }
 
+  const clickLiked = thoughtId => {
+    const updateThought = happyT.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setHappyT(updateThought)
+  }
 
   return (
     <div>
@@ -31,6 +40,8 @@ export const App = () => {
       {happyT.map(thought => (
         <HappyThought key={thought._id}
           thought={thought}
+          clickLiked={clickLiked}
+
         />
       ))}
     </div>
