@@ -22,4 +22,5 @@ div.btnxnr {
     justify-content: space-evenly;
     flex-direction: row;
     width: 60px;
+    border:0;
 }

@@ -10,7 +10,6 @@ body {
 
 .main-wrapper {
   max-width: 600px;
-  min-width:300px;
   margin: auto;
   /* border: 2px solid olivedrab; */
 }
