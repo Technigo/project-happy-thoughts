@@ -19,7 +19,6 @@ export const App = () => {
   }
 
   const onLiked = (thoughtId) => {
-    console.log("Logging in the App.js", thoughtId)
     //to make sure the right func is being calles hand has the id
 
     const updatedThoughts = thoughts.map(thought => {
