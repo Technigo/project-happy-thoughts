@@ -2,7 +2,7 @@
 
 article {
     padding: 15px;
-    width: 100%;
+    width: 90%;
     height: 100%;
     background:white;
     border: 1px solid #000;
@@ -15,6 +15,7 @@ article {
     align-content: center;
     justify-content: space-between;
     padding:6px
+    
 }
 div.btnxnr {
     display: flex;
