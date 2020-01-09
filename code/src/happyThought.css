@@ -25,3 +25,7 @@ div.btnxnr {
     width: 60px;
     border:0;
 }
+button .likesButton {
+    width: 30px;
+    height: 30px;
+}

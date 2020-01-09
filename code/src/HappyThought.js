@@ -19,7 +19,7 @@ export const HappyThought = (props) => {
             <h2>{message}</h2>
             <div className="heartsAndDate">
                 <div clasName="btnxnr">
-                    <button
+                    <button className="likesButton"
                         onClick={handleClick}
                     >
                         <span> <Heart /></span>
