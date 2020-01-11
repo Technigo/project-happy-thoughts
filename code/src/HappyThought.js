@@ -22,7 +22,7 @@ export const HappyThought = (props) => {
                     <button className="likesButton"
                         onClick={handleClick}
                     >
-                        <span> <Heart /></span>
+                        <span>❤️</span>
                     </button>
                     x {hearts}
                 </div>
