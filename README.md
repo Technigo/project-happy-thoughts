@@ -11,7 +11,7 @@ My third project in React - In this app you are able to posting your thoughts to
 ### Technologies used 💻
 
 - JSX
--CSS
+- CSS
 - JavaScript 
 - React JS 
 - Moment.js
