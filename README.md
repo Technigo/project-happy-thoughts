@@ -1,24 +1,33 @@
-# Project 11 @ Technigo Bootcamp - Our own version of Twitter 
+#  "Happy Thoughts" Our own version of Twitter 
 
+My third project in React - In this app you are able to posting your thoughts to an API, fetch the recent posts. You are also able to "like" a post.  
 
-The third week with React - We practiced our React state skills by fetching and posting data to an API 
-
-## To learn this week 🧠
+## Learning objectives 🧠
 
 - How to use APIs in React, firing requests within <code> useEffect </code> .
 - How to put the result of API responses into React state to show in the page.
 - What it's like to work with an API which you both send and receive data from.
 
-### Tech  💻
+### Technologies used 💻
 
-- HTML
-- CSS 
+- JSX
+-CSS
 - JavaScript 
 - React JS 
 - Moment.js
 
 
-My live project [Here](https://happy-thoughts-by-nasim.netlify.com/)
+### Deployed version 🎯
+
+
+https://happy-thoughts-by-nasim.netlify.com/
+
+<br>
+<br>
+
+<p> Nasim Mahzoun 2019 </p>
+
+
 
 
 
