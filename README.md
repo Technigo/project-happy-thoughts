@@ -1,6 +1,6 @@
 Description
 
-This project is simple API to collect and share'happy thoughts' to make the world a better place. Sort of Twitter but with <3 only.
+This project is simple API to collect and share'happy thoughts' to make the world a better place. Almost like Twitter but with love only.
 
 
 What did I do?
