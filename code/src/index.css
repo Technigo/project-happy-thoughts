@@ -1,13 +1,104 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Inconsolata", monospace;
+  box-sizing: border-box;
+}
+body {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+main,
+.posts {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.new-message,
+.card {
+  margin: 20px 10px;
+  border: 1px #000 solid;
+  box-shadow: 5px 5px 0px 0px #000;
+  padding: 15px;
+}
+
+.new-message {
+  background-color: #f3f1f1;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  margin: 5px;
+  padding: 15px;
+}
+
+p {
+  padding: 5px;
+}
+
+.new-message button {
+  background-color: #ffadad;
+  padding: 10px 20px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border: none;
+  font-weight: 700;
+}
+
+.card-bottom,
+.like-section {
+  display: flex;
+  align-items: center;
+}
+
+.card-bottom {
+  justify-content: space-between;
+  color: #cdcdcd;
+}
+
+.card-bottom span {
+  display: flex;
+}
+
+.like-section button {
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: none;
+  color: #ff4234;
+  margin: 15px;
+}
+
+.like-section button:focus,
+.new-message button:focus,
+textarea:focus {
+  outline: 0;
+  border: #e28686 2px solid;
+}
+
+.notLiked {
+  background-color: #eaeaea;
+}
+
+.liked {
+  background-color: #ffadad;
+}
+
+.wrongLength {
+  color: #ff4234;
+  font-weight: 700;
+}
+
+.goodLength {
+  color: #10b12b;
+  font-weight: 700;
 }
