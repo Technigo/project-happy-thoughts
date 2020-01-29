@@ -5,6 +5,8 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: turquoise;
+    /* background-color: paleturquoise; */
 }
 .happy-form {
   background-color: rgb(244, 134, 170);
