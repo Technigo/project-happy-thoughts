@@ -14,7 +14,7 @@ export const Hearts = (props) => {
 
   return (
     <div className="hearts">
-      <button className="like-heart"
+      <button
         onClick={handleLikes}>
         <span role="img" aria-label="heart-emoji"> ❤️</span>
       </button>

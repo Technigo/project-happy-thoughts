@@ -19,6 +19,7 @@
   color: #CACACA;
   font-size: 12px;
   font-weight: bold;
+  text-align: right;
 }
 
 @media (min-width: 0px) and (max-width: 400px){

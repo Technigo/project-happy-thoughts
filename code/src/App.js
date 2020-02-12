@@ -9,13 +9,13 @@ export const App = () => {
   const [newPostedThought, setNewPostedThought] = useState('')
 
   useEffect(() => {
-    fetch('https://technigo-thoughts.herokuapp.com/', { method: 'GET' })
+    fetch('https://happy-thoughts-matilda.herokuapp.com/', { method: 'GET' })
       .then(res => res.json())
       .then(json => setPostedThought(json))
   }, [newPostedThought])
 
   const handleFormSubmit = (newThought) => {
-    fetch('https://technigo-thoughts.herokuapp.com/', {
+    fetch('https://happy-thoughts-matilda.herokuapp.com/', {
       method: 'POST',
       body: JSON.stringify({ message: newThought }),
       headers: { 'Content-Type': 'application/json' }
@@ -48,6 +48,7 @@ export const App = () => {
           hearts={thought.hearts}
           createdAt={thought.createdAt}
           onThoughtLiked={onThoughtLiked}
+          name={thought.name}
         />
       ))
       }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { PostedText } from './PostedText'
 import { Hearts } from './Hearts'
+import { Name } from './Name'
 import './PostedThought.css'
 import Time from 'react-timeago'
 
@@ -21,6 +22,7 @@ export const PostedThought = (props) => {
           hearts={props.hearts}
         />
         <span className="time">
+          <Name name={props.name} />
           <Time date={props.createdAt} />
         </span>
       </div>
