@@ -15,13 +15,22 @@ export const App = () => {
   }, [newPostedThought])
 
   const handleFormSubmit = ({ newThought, name }) => {
+    const jsonBody = JSON.stringify({ message: newThought, name }, (key, value) => {
+      if (value) {
+        return value
+      }
+      return undefined
+    })
     fetch('https://happy-thoughts-matilda.herokuapp.com/', {
       method: 'POST',
-      body: JSON.stringify({ message: newThought, name: name }),
+      body: jsonBody,
       headers: { 'Content-Type': 'application/json' }
     })
       .then(() => setNewPostedThought(newThought))
-      .catch(err => console.log("error:", err))
+      .catch(err => {
+        console.log("some terribel error:", err)
+        throw err;
+      })
 
   }
 
