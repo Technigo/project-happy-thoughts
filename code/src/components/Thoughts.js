@@ -10,7 +10,7 @@ export const Thoughts = () => {
 
   // Fetching the API and listing the json in setThoughts
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch("https://nyblad-happy-thoughts.herokuapp.com/")
       .then(res => res.json())
       .then(json => setThoughts(json))
   }, [postedMessage]) //Adding the new message from form to the array of thouhgts without new fetch

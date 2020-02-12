@@ -11,7 +11,7 @@ export const NewThoughtForm = (props) => {
     event.preventDefault()
 
     // POST message to API
-    fetch("https://technigo-thoughts.herokuapp.com/", {
+    fetch("https://nyblad-happy-thoughts.herokuapp.com/", {
       // Just need {message} since the key and value is the same {message: message}
       method: "POST", body: JSON.stringify({ message }), headers: { "Content-Type": "application/json" }
     }).then(() => {
