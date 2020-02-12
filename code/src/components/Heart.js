@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./heart.css";
 
 export const Heart = (props) => {
@@ -9,7 +9,7 @@ export const Heart = (props) => {
   }
 
   const handleLikeClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${props.id}/like`, {
+    fetch(`https://happy-thoughts-linda.herokuapp.com/${props.id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" }

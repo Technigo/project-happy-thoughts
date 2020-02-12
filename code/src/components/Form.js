@@ -10,7 +10,7 @@ export const Form = (props) => {
     setMessage("")
   }
   // setMessage("") clears the form/textarea after you submit message
-  // onFromSubmit comes as a props from App.js
+  // onFormSubmit comes as a props from App.js
 
   return (
     <form className="thought-form">
