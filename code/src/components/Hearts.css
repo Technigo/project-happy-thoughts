@@ -8,10 +8,14 @@
   font-family: 'Inconsolata', monospace;
   background-color: #eaeaea;
   border: 0px;
-  width: 40px;
-  height:40px;
+  width: 37px;
+  height:37px;
   border-radius:50%;
   font-size: 16.5px;
   margin-right: 5px;
-  padding:7px 3px 7px 7px;
+}
+.like-heart svg{
+  fill: red;
+  width: 18px;
+  height: 18px;
 }

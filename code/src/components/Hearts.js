@@ -1,5 +1,6 @@
 import React from 'react'
 import './Hearts.css'
+import { ReactComponent as Heart } from './media/heart.svg'
 
 export const Hearts = (props) => {
   const handleLikes = () => {
@@ -16,7 +17,7 @@ export const Hearts = (props) => {
     <div className="hearts">
       <button
         onClick={handleLikes}>
-        <span role="img" aria-label="heart-emoji"> ❤️</span>
+        <span class="like-heart" role="img" aria-label="heart-emoji"> <Heart /></span>
       </button>
       x {props.hearts}
     </div >

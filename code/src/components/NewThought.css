@@ -24,16 +24,19 @@ textarea{
   margin-top:5px;
 }
 .send-button{
+  display:flex;
+  align-items: center;
   background-color: #F2ACAD;
   height:35px;
   border-radius:25px;
   font-size: 12px;
   font-weight: bold;
-  width: 50%;
 }
-span{
-  font-family: 'Inconsolata', monospace;
-  font-size: 16px;
+.heart svg{
+  fill: red;
+  width: 18px;
+  height: 18px;
+  margin: 2px;
 }
 .button-and-length{
   display:flex;

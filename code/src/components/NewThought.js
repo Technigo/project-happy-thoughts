@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './NewThought.css'
+import { ReactComponent as Heart } from './media/heart.svg'
 
 export const NewThought = ({ onFormSubmit }) => {
   const [newThought, setNewThought] = useState('')
@@ -27,9 +28,9 @@ export const NewThought = ({ onFormSubmit }) => {
           className="send-button"
           onClick={handleNewThought}
           disabled={newThought.length < 5 || newThought.length >= 140 ? true : false}>
-          <span role="img" aria-label="heart-emoji">❤️</span>
+          <span class="heart" role="img" aria-label="heart-emoji"><Heart /></span>
           Send Happy Thought
-          <span role="img" aria-label="heart-emoji">❤️</span>
+          <span class="heart" role="img" aria-label="heart-emoji"><Heart /></span>
         </button>
         <p className={newThought.length < 5 || newThought.length >= 140 ? "red" : "black"}>{newThought.length}/140</p>
       </div>
