@@ -35,6 +35,13 @@ overflow-wrap: break-word;
 p {
   font-size: 16px;
 }
+.name {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: end;
+  text-transform: capitalize;
+
+}
 
 ul { 
   display:flex;  

@@ -3,11 +3,13 @@ import "./form.css"
 
 export const Form = (props) => {
   const [message, setMessage] = useState("")
+  const [name, setName] = useState("")
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.onFormSubmit(message)
+    props.onFormSubmit(message, name)
     setMessage("")
+    setName("")
   }
   // setMessage("") clears the form/textarea after you submit message
   // onFormSubmit comes as a props from App.js
@@ -21,6 +23,12 @@ export const Form = (props) => {
         placeholder="Type your thought here..."
         onChange={event => setMessage(event.target.value)}
       ></textarea>
+      <input
+        autoFocus
+        value={name}
+        placeholder="What's your name? (optional)"
+        onChange={event => setName(event.target.value)}
+      ></input>
       <div className="bottom-form-card">
         <button type="submit" className="send-button"
           onClick={handleSubmit}

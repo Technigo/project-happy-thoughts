@@ -9,19 +9,19 @@ export const App = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("https://happy-thoughts-linda.herokuapp.com/")
+    fetch("http://localhost:8080/")
       .then(res => res.json())
       .then(json => setThoughts(json))
     setLoading(false)
   }, [postedMessage])
 
-  const onFormSubmit = (message) => {
-    fetch("https://happy-thoughts-linda.herokuapp.com/", {
+  const onFormSubmit = (message, name) => {
+    fetch("http://localhost:8080/", {
       method: "POST",
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message, name }),
       headers: { "Content-Type": "application/json" }
     })
-      .then(() => setPostedMessage(message))
+      .then(() => setPostedMessage(message, name))
       .catch(() => {
         alert("Don't worry and think happy thoughts!")
       })
