@@ -14,10 +14,10 @@ export const App = () => {
       .then(json => setPostedThought(json))
   }, [newPostedThought])
 
-  const handleFormSubmit = (newThought) => {
+  const handleFormSubmit = ({ newThought, name }) => {
     fetch('https://happy-thoughts-matilda.herokuapp.com/', {
       method: 'POST',
-      body: JSON.stringify({ message: newThought }),
+      body: JSON.stringify({ message: newThought, name: name }),
       headers: { 'Content-Type': 'application/json' }
     })
       .then(() => setNewPostedThought(newThought))

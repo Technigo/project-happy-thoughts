@@ -2,7 +2,7 @@
   border: solid 2px #7E7E7E;
   background-color: #ebebeb;
   width:379px;
-  height: 130px;
+  height: 180px;
   margin:30px;
   padding:15px;
   box-shadow: 7px 7px;
@@ -14,14 +14,34 @@ label{
   margin:0;
   font-size:13px;
 }
+.input-limit{
+  display:flex;
+  height: 30px;
+align-items: center;
+margin-bottom: 10px;
+}
+.name-label p{
+  margin:0;
+}
+input{
+  border: 2px solid #cacaca;
+  height: 18px;
+  font-size: 13px;
+  padding: 0 3px;
+  /* margin: 5px 0 15px 0; */
+}
+.input-limit .red, .input-limit .black{
+  margin-left: 5px;
+}
 textarea{
   width:369px;
-  height:50px;
+  height:70px;
   border: 2px solid #cacaca;
   text-align: start;
   font-size: 13px;
   resize:none;
   margin-top:5px;
+  padding: 0 3px;
 }
 .send-button{
   display:flex;
