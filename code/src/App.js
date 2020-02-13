@@ -3,7 +3,8 @@ import {HappyThoughts} from './components/HappyThoughts'
 import {HappyForm} from './components/HappyForm'
 import './components/app.css'
 
-const url = "https://technigo-thoughts.herokuapp.com/"
+// const url = "https://technigo-thoughts.herokuapp.com/"
+const url ="https://happy-thoughts-mongoose.herokuapp.com/"
 
 export const App = () => {
 const [thoughts, setThoughts] = useState ([])
