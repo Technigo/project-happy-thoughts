@@ -4,7 +4,7 @@ import { ReactComponent as Heart } from './media/heart.svg'
 
 export const Hearts = (props) => {
   const handleLikes = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${props.id}/like`, {
+    fetch(`https://happy-thoughts-matilda.herokuapp.com/${props.id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" }
