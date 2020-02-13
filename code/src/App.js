@@ -8,7 +8,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch("https://michel-happy-thoughts.herokuapp.com/")
       .then(res => res.json())
       .then(json => {
         setThoughts(json)
