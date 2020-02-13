@@ -1,44 +1,51 @@
 /* API requests mgmt in this file */
-const THOUGHTSURL =
-  "https://technigo-thoughts.herokuapp.com/"; /* POST GET https://technigo-thoughts.herokuapp.com/ */
-const SUFFIX =
-  "/like"; /* POST https://technigo-thoughts.herokuapp.com/THOUGHT_ID/like */
+
+/* decide URL */
+let THOUGHTSURL
+if (process.env.TECHNIGO) {
+  THOUGHTSURL = 'https://technigo-thoughts.herokuapp.com/' /* POST GET https://technigo-thoughts.herokuapp.com/ */
+} else {
+  THOUGHTSURL = 'https://happy-thoughts-api-vd.herokuapp.com/'
+}
+const SUFFIX = '/like' /* POST https://technigo-thoughts.herokuapp.com/THOUGHT_ID/like */
 
 const submitThought = (event, message, setThoughts, setMessage) => {
-  event.preventDefault();
+  event.preventDefault()
 
   fetch(THOUGHTSURL, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({ message: message })
   })
     .then(response => response.json())
     .then(json => {
-      setThoughts(prevThoughts => [json, ...prevThoughts]);
-      setMessage("");
-    });
-};
+      console.log(json)
+      setThoughts(prevThoughts => [json, ...prevThoughts])
+      setMessage('')
+    })
+}
 
 const sendLike = id => {
   fetch(THOUGHTSURL + id + SUFFIX, {
-    method: "POST"
+    method: 'POST'
   })
     .then(response => response.json())
     .then(json => {
-      return;
-    });
-};
+      return
+    })
+}
 
 const getThoughts = setThoughts => {
   fetch(THOUGHTSURL, {
-    method: "GET"
+    method: 'GET'
   })
     .then(response => response.json())
     .then(json => {
-      setThoughts(json);
-    });
-};
+      console.log(json)
+      setThoughts(json)
+    })
+}
 
-export { submitThought, getThoughts, sendLike };
+export { submitThought, getThoughts, sendLike }
