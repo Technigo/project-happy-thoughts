@@ -26,4 +26,4 @@ I decided to not follow the design guidelies and added some happy colors. We hav
 ## If IO had more time 🏃‍♂
 If would have wanted to create another one... I have some great ideas :-)
 
-You can see it here: https://gallant-heisenberg-b2ecb5.netlify.com/
+You can see it here: https://happythoughts-petrabrinck.netlify.com
