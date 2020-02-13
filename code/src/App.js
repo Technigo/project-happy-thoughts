@@ -1,28 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { Thoughts } from "Thoughts";
-import { Form } from "./Form";
+import React, { useState, useEffect } from 'react';
+import { Thoughts } from 'Thoughts';
+import { Form } from './Form';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [postMessage, setPostMessage] = useState("");
+  const [postMessage, setPostMessage] = useState('');
 
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch('https://happy-thoughts-app.herokuapp.com/')
       .then(res => res.json())
       .then(json => {
-        console.log("json", json);
         setThoughts(json);
       });
   }, [postMessage]);
 
   const handleFormSubmit = message => {
-    fetch("https://technigo-thoughts.herokuapp.com/", {
-      method: "POST",
+    fetch('https://happy-thoughts-app.herokuapp.com/', {
+      method: 'POST',
       body: JSON.stringify({ message }),
-      headers: { "Content-Type": "application/json" }
+      headers: { 'Content-Type': 'application/json' }
     })
       .catch(() => {
-        alert("try again");
+        alert('try again');
       })
       .then(() => setPostMessage(message));
   };

@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 export const Heart = () => {
   const [heartLike, setHeartLike] = useState([]);
 
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/THOUGHT_ID/like", {
-      method: "POST"
+    fetch('https://happy-thoughts-app.herokuapp.com/id/like', {
+      method: 'POST'
     })
       .then(res => res.json())
       .then(json => {
-        console.log("json", json);
+        console.log('json', json);
         setHeartLike(json);
       });
   }, []);
 
   return (
     <div>
-      {heartLike.map(hearts => (
+      {heartLike.map(heart => (
         <div>
-          <div key={hearts.hearts}>{hearts.hearts}</div>
+          <div key={heart.heart}>{heart.heart}</div>
         </div>
       ))}
     </div>
