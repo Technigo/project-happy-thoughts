@@ -32,7 +32,7 @@ export const App = () => {
   const handleHeartClick = (_id) => {
     console.log('test')
     fetch(`https://annatereliushappythoughtsapi.herokuapp.com/${_id}/like`, {
-      method: 'POST',
+      method: 'POST'
      
     })
     .then((res) => res.json())
