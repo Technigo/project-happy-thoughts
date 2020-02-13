@@ -32,8 +32,9 @@ export const App = () => {
   const handleHeartClick = (_id) => {
     console.log('test')
     fetch(`https://annatereliushappythoughtsapi.herokuapp.com/${_id}/like`, {
-      method: 'POST'
-     
+      method: 'POST',
+      body: {},
+      headers: { 'Content-Type': 'application/json' }
     })
     .then((res) => res.json())
     .then((json) => console.log(json))
