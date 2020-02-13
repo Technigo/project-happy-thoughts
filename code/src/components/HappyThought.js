@@ -6,7 +6,8 @@ export const HappyThought = props => {
     const { message, hearts, createdAt, _id } = props.thought
 
     const handleClick = () => {
-        fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+        // fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+        fetch(`https://pb-happy-thoughts.herokuapp.com/${_id}/like`, {
             method: "POST",
             body: "",
             headers: { "Content-Type": "application/json" }
