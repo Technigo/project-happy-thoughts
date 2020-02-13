@@ -29,7 +29,7 @@ export const App = () => {
       .then(() => setMessage(''))
   }
 
-  const handleHeartClick = () => {
+  const handleHeartClick = (_id) => {
     console.log('test')
     fetch(`https://annatereliushappythoughtsapi.herokuapp.com/${_id}/like`, {
       method: 'POST',
