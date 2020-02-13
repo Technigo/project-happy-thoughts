@@ -22,6 +22,7 @@ export const NewThought = ({ onFormSubmit }) => {
             type="text"
             onChange={(event) => setName(event.target.value)}
             value={name}
+            placeholder="What's your name? (optional)"
           >
           </input>
           <p className={name.length < 2 || name.length >= 50 ? "red" : "black"}>{name.length}/50</p>
@@ -35,6 +36,7 @@ export const NewThought = ({ onFormSubmit }) => {
           autoFocus
           onChange={(event) => setNewThought(event.target.value)}
           value={newThought}
+          placeholder="Write you're happy thought here..."
         />
       </label>
 

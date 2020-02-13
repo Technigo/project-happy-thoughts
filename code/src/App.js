@@ -26,12 +26,10 @@ export const App = () => {
       body: jsonBody,
       headers: { 'Content-Type': 'application/json' }
     })
-      .then(() => setNewPostedThought(newThought))
+      .then(() => setNewPostedThought(newThought, name))
       .catch(err => {
-        console.log("some terribel error:", err)
         throw err;
       })
-
   }
 
   const onThoughtLiked = (likedThoughtId) => {
@@ -61,8 +59,10 @@ export const App = () => {
         />
       ))
       }
-
-      <p>Technigo Bootcamp 2019 - Matilda Arvidsson</p>
+      <footer>
+        <p>Technigo Bootcamp 2019 - Matilda Arvidsson</p>
+        <p>Pixel heart created by tulpahn from Noun Project</p>
+      </footer>
     </div>
   )
 }

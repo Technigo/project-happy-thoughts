@@ -26,9 +26,15 @@ margin-bottom: 10px;
 input{
   border: 2px solid #cacaca;
   height: 18px;
+  width: 220px;
   font-size: 13px;
   padding: 0 3px;
   /* margin: 5px 0 15px 0; */
+}
+input::placeholder, textarea::placeholder{
+  font-size: 11px;
+  color: lightgrey;
+  padding: 2px;
 }
 .input-limit .red, .input-limit .black{
   margin-left: 5px;
