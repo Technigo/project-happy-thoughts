@@ -6,7 +6,7 @@ export const App = () => {
   const [message, setMessage] = useState('')
 
   useEffect(() => {
-    fetch('https://technigo-thoughts.herokuapp.com/')
+    fetch('https://annatereliushappythoughtsapi.herokuapp.com/')
     .then (res => res.json())
     .then (json => setThoughts(json));
   }, []);
@@ -15,7 +15,7 @@ export const App = () => {
     event.preventDefault()
     console.log('event handleFormsubmit= när man submittar ny text')
   // Sends the POST request with the input from your form 
-    fetch('https://technigo-thoughts.herokuapp.com/', {
+    fetch('https://annatereliushappythoughtsapi.herokuapp.com/', {
       method: 'POST',
       body: JSON.stringify({ message }),
       headers: { 'Content-Type': 'application/json' }
@@ -31,7 +31,7 @@ export const App = () => {
 
   const handleHeartClick = (_id) => {
     console.log('test')
-    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+    fetch(`https://annatereliushappythoughtsapi.herokuapp.com/${_id}/like`), {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' }
