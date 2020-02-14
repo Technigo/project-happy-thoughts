@@ -6,7 +6,7 @@ import "./HappyThoughts.css";
 
 export const HappyThoughts = (props) => {
   const { message, heart, createdAt, _id } = props.thought
-  // const [likes, setLikes] = useState(heart)
+
 
   const handleClick = () => {
     fetch(`https://jennifershappythoughts.herokuapp.com/${_id}/like`, {
@@ -15,7 +15,7 @@ export const HappyThoughts = (props) => {
       headers: { 'Content-Type': 'application/json' }
     })
       .then(() => props.onLiked(_id))
-    // .then(setLikes(likes + 1))
+
   }
   console.log(handleClick)
 
