@@ -9,6 +9,7 @@ article {
     box-shadow: 5px 5px #000;
     align-items: center;
     margin: 50px 0;
+    word-break: break-all;
 }
 .heartsAndDate {
     display: flex;

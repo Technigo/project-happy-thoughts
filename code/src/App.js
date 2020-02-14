@@ -10,13 +10,13 @@ export const App = () => {
   const [postedMessage, setPostedMessage] = useState("")
 
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch("https://ivett-happy-thoughts.herokuapp.com/thoughts")
       .then(res => res.json())
       .then(json => setHappyT(json))
   }, [postedMessage])
 
   const handleFormSubmit = (message) => {
-    fetch("https://technigo-thoughts.herokuapp.com/", {
+    fetch("https://ivett-happy-thoughts.herokuapp.com/thoughts", {
       method: "POST",
       body: JSON.stringify({ message: message }),
       headers: { "Content-Type": "application/json" }
