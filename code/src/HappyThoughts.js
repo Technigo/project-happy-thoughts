@@ -1,18 +1,23 @@
 import React from 'react'
+import { useState } from 'react'
 import moment from 'moment'
 
 import "./HappyThoughts.css";
 
 export const HappyThoughts = (props) => {
   const { message, heart, createdAt, _id } = props.thought
+  // const [likes, setLikes] = useState(heart)
 
   const handleClick = () => {
     fetch(`https://jennifershappythoughts.herokuapp.com/${_id}/like`, {
       method: 'POST',
       body: "",
       headers: { 'Content-Type': 'application/json' }
-    }).then(() => props.onLiked(_id))
+    })
+      .then(() => props.onLiked(_id))
+    // .then(setLikes(likes + 1))
   }
+  console.log(handleClick)
 
   return (
     <article>

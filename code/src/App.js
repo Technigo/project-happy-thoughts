@@ -6,7 +6,6 @@ import "./App.css";
 import "./HappyThoughts.css";
 import "./HappyForm.css";
 
-
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
 
@@ -17,19 +16,16 @@ export const App = () => {
       )
   }, [])
 
-
   const onLiked = (thoughtId) => {
     console.log('Logging in the App.js')
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
-        thought.hearts += 1
+        thought.heart += 1
       }
       return thought
     })
     setThoughts(updatedThoughts)
   }
-
-
 
   return (
     <div className="mainContainer">
