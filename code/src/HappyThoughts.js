@@ -4,10 +4,10 @@ import moment from 'moment'
 import "./HappyThoughts.css";
 
 export const HappyThoughts = (props) => {
-  const { message, hearts, createdAt, _id, } = props.thought
+  const { message, heart, createdAt, _id } = props.thought
 
   const handleClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+    fetch(`https://jennifershappythoughts.herokuapp.com/${_id}/like`, {
       method: 'POST',
       body: "",
       headers: { 'Content-Type': 'application/json' }
@@ -20,7 +20,7 @@ export const HappyThoughts = (props) => {
       <div className="messageLive">
         <div className="countContainer">
           <button className={`like-button ${props.hearts > 0 ? "has-likes" : ""}`} onClick={handleClick}>&#10084;&#65039;</button>
-          <p className="count">x {hearts}</p>
+          <p className="count">x {heart}</p>
         </div>
         <p>{moment(createdAt).fromNow()}</p>
       </div>

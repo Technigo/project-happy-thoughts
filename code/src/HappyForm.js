@@ -4,7 +4,7 @@ export const HappyForm = () => {
   const [message, setMessage] = useState("")
 
   const handleSubmit = () => {
-    fetch("https://technigo-thoughts.herokuapp.com", {
+    fetch("https://jennifershappythoughts.herokuapp.com/", {
       method: 'POST',
       body: JSON.stringify({ message: message }),
       headers: { "Content-Type": "application/json" }

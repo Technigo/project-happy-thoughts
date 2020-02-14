@@ -11,7 +11,7 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
 
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com")
+    fetch("https://jennifershappythoughts.herokuapp.com/")
       .then(res => res.json()
         .then(json => setThoughts(json))
       )
