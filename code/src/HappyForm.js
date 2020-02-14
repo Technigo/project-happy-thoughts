@@ -8,7 +8,7 @@ export const HappyForm = ({onFormSubmit}) => {
     const handleSubmit = event => {
         event.preventDefault()
         onFormSubmit(message)
-        setMessage("")
+        // .then(()=> setMessage(""))
     }
     return (
         <form
@@ -16,7 +16,7 @@ export const HappyForm = ({onFormSubmit}) => {
             if (e.key === 'Enter') { onFormSubmit(message) }
           }}>
             <h3>Post a happy thought!</h3>
-            <textarea 
+            <textarea
             rows="3" 
             onChange={event => setMessage(event.target.value)}></textarea>
             {message.length} / 140
