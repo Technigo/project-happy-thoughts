@@ -12,7 +12,7 @@ export const HappyForm = (props) => {
     return (
         <div className="formWrapper">
             <form>
-                <h2>What´s making you happy right now?</h2>
+                <h2>What makes you happy right now?</h2>
                 <textarea
                     rows='3'
                     onChange={event => setMessage(event.target.value)}
