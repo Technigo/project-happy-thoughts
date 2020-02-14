@@ -9,14 +9,14 @@ export const App = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("http://localhost:8080/")
+    fetch("https://happy-thoughts-linda.herokuapp.com/")
       .then(res => res.json())
       .then(json => setThoughts(json))
     setLoading(false)
   }, [postedMessage])
 
   const onFormSubmit = (message, name) => {
-    fetch("http://localhost:8080/", {
+    fetch("https://happy-thoughts-linda.herokuapp.com/", {
       method: "POST",
       body: JSON.stringify({ message, name }),
       headers: { "Content-Type": "application/json" }
