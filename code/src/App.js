@@ -4,8 +4,8 @@ import { HappyForm } from "./components/HappyForm"
 
 // const url = "https://technigo-thoughts.herokuapp.com/"
 
-// const url = "https://pb-happy-thoughts.herokuapp.com/"
-const url = "https://pb-happy-thoughts-mongoose.herokuapp.com/"
+const url = "https://pb-happy-thoughts.herokuapp.com/"
+// const url = "https://pb-happy-thoughts-mongoose.herokuapp.com/"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
