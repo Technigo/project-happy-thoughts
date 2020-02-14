@@ -19,8 +19,3 @@ If I would have more time, I would have changed the text in the submit form, to 
 
 This is where you can find my deployed project: 
 https://myhappythoughts.netlify.com/
-
-
-
-
-
