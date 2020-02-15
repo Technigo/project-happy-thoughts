@@ -1,3 +1,5 @@
+### UNDER CONSTRUCTION - UPPDATING THIS WITH A BACKEND API I'M BUILDING ###
+
 # Happy Thoughts App - a twitter like tool where you can post inspiring and happy messages to your friends.
 
 In this project, I was able to practice your React state skills by fetching and posting data to an API. (to achieve this I've used a prebuilt API with three end points)
