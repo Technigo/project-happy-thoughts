@@ -3,19 +3,21 @@ import { HappyThought } from "./components/HappyThought.js"
 import { HappyForm } from "./components/HappyForm.js"
 import "./app.css"
 
+const thoughtsUrl = 'https://project-happy-api.herokuapp.com/'
+
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [postedMessage, setPostedMessage] = useState("")
 
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch(thoughtsUrl)
       .then(res => res.json())
       .then(json => setThoughts(json))
   }, [postedMessage])
 
   const handleFormSubmit = message => {
-    fetch("https://technigo-thoughts.herokuapp.com/", {
+    fetch(thoughtsUrl, {
       method: "POST",
       body: JSON.stringify({ message }),
       headers: { "Content-type": "application/json" }
