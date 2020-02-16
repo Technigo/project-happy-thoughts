@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { HappyThought } from "./Components/HappyThought";
 import { HappyForm } from "./Components/HappyForm";
 
-const url = "https://technigo-thoughts.herokuapp.com/";
+//const url = "https://technigo-thoughts.herokuapp.com/";//
+const url = "http://localhost:1000/"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -14,9 +15,18 @@ export const App = () => {
       .then(json => setThoughts(json));
   }, [postedMessage]);
 
+  /* const onFormSubmit = message => {
+     setPostedMessage(message);
+   }*/
+
   const onFormSubmit = message => {
-    setPostedMessage(message);
-  };
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({ message }),
+      headers: { "Content-type": "application/json" }
+    })
+      .then(() => setPostedMessage(message))
+  }
 
   const onLiked = thoughtId => {
     const newThought = thoughts.map(thought => {

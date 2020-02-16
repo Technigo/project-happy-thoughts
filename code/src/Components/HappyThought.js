@@ -2,17 +2,19 @@ import React from "react";
 import "./happyThought.css";
 import moment from "moment";
 
-const url = "https://technigo-thoughts.herokuapp.com/";
+//const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";//
+const thoughtsUrl = "http://localhost:1000"
 
 export const HappyThought = props => {
   const { message, hearts, createdAt, _id } = props.thought;
 
   const handleClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+    fetch(`${thoughtsUrl}/${_id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" }
-    }).then(() => props.onLiked(_id));
+    })
+      .then(() => props.onLiked(_id));
   };
 
   return (
@@ -22,7 +24,7 @@ export const HappyThought = props => {
         <div className="heart-container">
           <button
             onClick={handleClick}
-            style={{ background: hearts > 0 ? "#ffadad" : "#f3f1f1  " }}
+            style={{ background: hearts > 0 ? "#ffadad" : "#f3f1f1" }}
           >
             <span role="img" aria-label="Heart">
               {"❤️"}
