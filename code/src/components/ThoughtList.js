@@ -9,7 +9,7 @@ export const ThoughtList = props => {
   const { _id, message, hearts, createdAt } = props.thought
 
   const handleHeartClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+    fetch(`http://localhost:8080/${_id}/like`, {
       method: 'POST'
     })
       .then(() => props.onLiked(_id))
