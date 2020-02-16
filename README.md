@@ -1,6 +1,8 @@
 #  "Happy Thoughts" Our own version of Twitter 
 
-My third project in React - In this app you are able to posting your thoughts to an API, fetch the recent posts. You are also able to "like" a post.  
+My third project in React - In this app you are able to posting your thoughts to an API, fetch the recent posts. You are also able to "like" a post.
+
+Update:  Now using a MongoDB API from my other repo https://github.com/Nasimmhn/project-happy-thoughts-api
 
 ## Learning objectives 🧠
 
