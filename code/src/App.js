@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { PostHappyThought } from "./components/PostHappyThought"
 import { ThoughtList } from "./components/ThoughtList"
 
+
 export const App = () => {
 
   const [thoughts, setThoughts] = useState([])
@@ -9,7 +10,7 @@ export const App = () => {
   const [postedMessage, setPostedMessage] = useState("")
 
   useEffect(() => {
-    fetch("http://localhost:8080/thoughts", {
+    fetch("https://happy-thoughts-api-by-nasim.herokuapp.com/thoughts", {
       method: "GET",
     })
       .then(res => res.json())
