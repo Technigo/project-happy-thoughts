@@ -11,7 +11,7 @@ export const App = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch("https://happy-thoughts-of-aleksandra.herokuapp.com/")
       .then(res => res.json())
       .then(json => json.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1)))
       .then(json => {
@@ -29,7 +29,7 @@ export const App = () => {
       setError(false);
     }
 
-    fetch("https://technigo-thoughts.herokuapp.com/", {
+    fetch("https://happy-thoughts-of-aleksandra.herokuapp.com/", {
       method: "POST",
       headers: {
         Accept: "application/json",

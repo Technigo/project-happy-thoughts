@@ -6,7 +6,7 @@ export const Hearts = props => {
   const [like, setLike] = useState(hearts);
 
   const handleClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
+    fetch(`https://happy-thoughts-of-aleksandra.herokuapp.com/${id}/like`, {
       method: "POST",
       headers: {
         Accept: "application/json",
