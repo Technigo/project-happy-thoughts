@@ -21,8 +21,8 @@ export const App = () => {
       })
   }
 
-  const postLikeToAPI = (id) => {
-    fetch(`https://happy-twitterish-api.herokuapp.com//${id}/like`, {
+  const postLikeToAPI = (_id) => {
+    fetch(`https://happy-twitterish-api.herokuapp.com/thoughts/${_id}/like`, {
       method: 'POST'
     })
   }
