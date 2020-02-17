@@ -8,7 +8,7 @@ export const App = () => {
   const [APIThoughts, setAPIThoughts] = useState([])
 
   const postThoughtToAPI = (message) => {
-    fetch('https://happy-twitterish-api.herokuapp.com', {
+    fetch('https://happy-twitterish-api.herokuapp.com/thoughts', {
       method: 'POST',
       body: JSON.stringify({ message: message }),
       headers: {
@@ -28,7 +28,7 @@ export const App = () => {
   }
 
   useEffect(() => {
-    fetch('https://happy-twitterish-api.herokuapp.com')
+    fetch('https://happy-twitterish-api.herokuapp.com/thoughts')
       .then((res) => res.json())
       .then((json) => setAPIThoughts(json))
   }, [])
