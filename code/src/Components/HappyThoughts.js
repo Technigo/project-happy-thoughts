@@ -1,19 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import moment from 'moment';
 
-const url = "https://technigo-thoughts.herokuapp.com/";
 
 export const HappyThoughts = props => {
-  const {message,hearts,createdAt,_id} = props.thought
+  const {message,hearts,createdAt,_id: id} = props.thought
+  const [likes, setLikes] = useState(hearts)
+
   const handleClick = () => {
-    console.log("clicking", _id)
-    fetch (url,`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
-      method: "POST",
-      body:"",
-      headers: {"Content-Type":"application/json"}
+    fetch(`https://sara-happythought.herokuapp.com/${id}/like`, {
+        method: "POST",
+        body: "",
+        headers: { "Content-Type": "application/json" }
     })
-    .then(() => props.onLiked(_id));
-  }
+    .then(setLikes(likes + 1))
+    .catch(err => console.log('error', err))
+}
+
   return (
     <article className="happy-thoughts">
     <h3>{message}</h3>

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { HappyThoughts } from './Components/HappyThoughts';
 import { HappyForm } from './Components/HappyForm';
 
-const url ="https://technigo-thoughts.herokuapp.com/"
+const url = "https://sara-happythought.herokuapp.com/"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -25,10 +25,9 @@ export const App = () => {
   }
 
   const onLiked = (thoughtId) => {
-    console.log ("logging on the App.js", thoughtId)
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId){
-        thought.heart += 1
+        thought.hearts += 1
       }
     return thought
   })
