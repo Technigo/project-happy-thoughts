@@ -4,6 +4,7 @@ import { LikeButton } from "LikeButton";
 
 export const ThoughtsList = ({
   id,
+  name,
   message,
   hearts,
   createdAt,
@@ -11,7 +12,8 @@ export const ThoughtsList = ({
 }) => {
   return (
     <section className="card">
-      <h2>{message}</h2>
+      <h2 className="name">Name:{name}</h2>
+      <h2>- {message}</h2>
       <div className="card-bottom">
         <div className="likes">
           <LikeButton onThoughtLiked={onThoughtLiked} id={id} />

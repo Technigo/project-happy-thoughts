@@ -2,24 +2,27 @@ import React, { useState, useEffect } from "react";
 import { ThoughtsList } from "ThoughtsList";
 
 export const NewPost = () => {
+  const [newName, setNewName] = useState("")
   const [newThought, setNewThought] = useState("");
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch("https://jenny-happy-api.herokuapp.com/")
       .then(res => res.json())
       .then(json => setThoughts(json));
     setLoading(false);
   }, []);
 
+  // https://technigo-thoughts.herokuapp.com/
+
   const handleFormSubmit = event => {
     event.preventDefault();
 
     // Sends the POST request with the input from the form
-    fetch("https://technigo-thoughts.herokuapp.com/", {
+    fetch("https://jenny-happy-api.herokuapp.com/", {
       method: "POST",
-      body: JSON.stringify({ message: newThought }),
+      body: JSON.stringify({ name: (newName || 'Anonymous'), message: newThought }),
       headers: { "Content-Type": "application/json" }
     })
       .then(res => {
@@ -54,8 +57,17 @@ export const NewPost = () => {
               ❤️
             </span>
           </h2>
+
         )}
+
         <article className="new-post">
+          <label className="name-label">
+            <h2>Name</h2>
+            <input label="name" type="text"
+              onChange={(event) => setNewName(event.target.value)}
+              value={newName}
+            />
+          </label>
           <h2>What's making you happy right now?</h2>
           <label>
             <textarea
@@ -85,6 +97,7 @@ export const NewPost = () => {
           <ThoughtsList
             key={thought._id}
             id={thought._id}
+            name={thought.name}
             message={thought.message}
             hearts={thought.hearts}
             createdAt={thought.createdAt}

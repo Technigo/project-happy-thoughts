@@ -4,7 +4,7 @@ export const LikeButton = ({ id, onThoughtLiked }) => {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
     setClicked(true);
-    fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
+    fetch(`https://jenny-happy-api.herokuapp.com/${id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" }

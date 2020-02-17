@@ -18,6 +18,11 @@ code {
 
 h2 {
   font-size: 16px;
+  margin:6px;
+}
+
+.name {
+  padding-bottom:10px;
 }
 
 .new-post,
@@ -26,7 +31,7 @@ h2 {
   width: 450px;
   margin: auto;
   background-color: #eeeeee;
-  padding: 10px 8px;
+  padding: 10px 10px;
   border: 2px grey solid;
   -webkit-box-shadow: 17px 17px 0px -6px rgba(0, 0, 0, 1);
   -moz-box-shadow: 17px 17px 0px -6px rgba(0, 0, 0, 1);
@@ -35,16 +40,21 @@ h2 {
 
 .new-post {
   margin-bottom: 40px;
-  height: 210px;
+  height: 280px;
 }
 
-textarea {
+textarea,
+input[type=text] {
   height: 50px;
   width: 400px;
   margin: 5px;
   border: 2px, #808080 solid;
   resize: none;
   font-size: 18px;
+}
+input[type=text]  {
+  height:20px;
+  width:200px;
 }
 
 .new-post p {
