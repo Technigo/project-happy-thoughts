@@ -24,7 +24,7 @@ export const HappyForm = props => {
         onClick={handleSubmit}
         disabled={message.length < 6 || message.length > 140 ? true : false}
       >
-        Send a happy thought
+        Send a happy thought ❤️
       </button>
     <p>{message.length} / 140</p>
     </div>
