@@ -8,7 +8,7 @@ export const App = () => {
   const [APIThoughts, setAPIThoughts] = useState([])
 
   const postThoughtToAPI = (message) => {
-    fetch('https://technigo-thoughts.herokuapp.com/', {
+    fetch('https://happy-twitterish-api.herokuapp.com/', {
       method: 'POST',
       body: JSON.stringify({ message: message }),
       headers: {
@@ -22,13 +22,13 @@ export const App = () => {
   }
 
   const postLikeToAPI = (id) => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
+    fetch(`https://happy-twitterish-api.herokuapp.com/${id}/like`, {
       method: 'POST'
     })
   }
 
   useEffect(() => {
-    fetch('https://technigo-thoughts.herokuapp.com')
+    fetch('https://happy-twitterish-api.herokuapp.com/')
       .then((res) => res.json())
       .then((json) => setAPIThoughts(json))
   }, [])
