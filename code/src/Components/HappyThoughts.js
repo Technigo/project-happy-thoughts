@@ -28,7 +28,7 @@ export const HappyThoughts = props => {
       {"❤️"}
       </span>
       </button>
-      x {hearts}
+      x {likes}
     </p>
     <p>{moment(createdAt).fromNow()}</p>
     </article>
