@@ -3,7 +3,7 @@ import "./happyThought.css";
 import moment from "moment";
 
 //const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";//
-const thoughtsUrl = "http://localhost:1000"
+const thoughtsUrl = "https://happy-thoughts-api-agnes.herokuapp.com"
 
 export const HappyThought = props => {
   const { message, hearts, createdAt, _id } = props.thought;

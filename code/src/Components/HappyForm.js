@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./happyForm.css";
 
-const url = "https://technigo-thoughts.herokuapp.com/";
+const url = "https://happy-thoughts-api-agnes.herokuapp.com/";
 
 export const HappyForm = props => {
   const [message, setMessage] = useState("");

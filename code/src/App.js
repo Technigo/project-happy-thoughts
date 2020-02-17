@@ -3,7 +3,7 @@ import { HappyThought } from "./Components/HappyThought";
 import { HappyForm } from "./Components/HappyForm";
 
 //const url = "https://technigo-thoughts.herokuapp.com/";//
-const url = "http://localhost:1000/"
+const url = "https://happy-thoughts-api-agnes.herokuapp.com/"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
