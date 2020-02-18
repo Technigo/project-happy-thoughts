@@ -1,8 +1,6 @@
-This was the third project of the third sprint on the Technigo Frontend Bootcamp, which was focused on React.
-
 ## 1. What is this?
 
-The purpose of this assignment was to practice fetching and posting data to an API.
+The purpose of this project was to practice fetching and posting data to an API.
 With this project I've learned:
 * How to use APIs in React, firing requests within useEffect.
 * How to put the result of API responses into React state to show in the page.
