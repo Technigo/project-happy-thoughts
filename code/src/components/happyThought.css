@@ -17,7 +17,7 @@
 }
 
 .happy-thought button {
-    display: inline-flex;
+    display: inline-flex; 
     justify-content: space-evenly;
     background: white;
     height: 30px;
@@ -34,8 +34,11 @@
 button:focus {outline: 3px solid var(--cl-primary);
 }   
 
+span {
+  margin-left: 5px;
+}
 .happy-thought button span {
   display: flex; 
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
 } 
