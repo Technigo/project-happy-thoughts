@@ -6,7 +6,7 @@ export const HappyForm = props => {
 
     const sendHappyThought = (event) => {
         event.preventDefault()
-        fetch("https://technigo-thoughts.herokuapp.com", {
+        fetch("https://tavferreira-happy-thoughts-api.herokuapp.com", {
             method: "POST",
             body: JSON.stringify({ message }),
             headers: { "Content-Type": "application/json" }

@@ -11,7 +11,7 @@ export const App = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch("https://technigo-thoughts.herokuapp.com")
+    fetch("https://tavferreira-happy-thoughts-api.herokuapp.com/")
       .then(res => res.json())
       .then(json => {
         setHappyThoughts(json)

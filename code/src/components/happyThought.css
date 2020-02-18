@@ -24,7 +24,7 @@ button.heart {
 }
 
 button.heart::before {
-    content: "\02764";
+    content: "❤️    ";
 }
 
 button.heart:hover {
