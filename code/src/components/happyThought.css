@@ -42,3 +42,10 @@ span {
   align-items: center;
   justify-content: center; 
 } 
+
+@media (min-width: 375px) and (max-width: 667px) { 
+
+span {
+  margin-left: 3px;
+}
+}
