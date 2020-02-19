@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
-import './happyForm.css';
+import React, { useState } from 'react'
+import './happyForm.css'
 
 export const HappyForm = props => {
-	const [message, setMessage] = useState('');
+	const [message, setMessage] = useState('')
 
 	const handleSubmit = event => {
-		event.preventDefault();
-		props.onFormSubmit(message);
-	};
+		event.preventDefault()
+		fetch('https://joacims-happy-thoughts.herokuapp.com/', {
+			method: 'POST',
+			body: JSON.stringify({ message }),
+			headers: { 'Content-Type': 'application/json'}
+		})
+			.then(() => {
+				props.onFormSubmit(message)
+				setMessage('')
+				document.getElementById('form').reset()
+			})
+			.catch(err => console.log('error:', err))
+	}
 
 	return (
 		<form className='happy-form'>
@@ -20,7 +30,7 @@ export const HappyForm = props => {
 				<button
 					type='submit'
 					onClick={handleSubmit}
-					disabled={message.length < 6 || message.length > 140 ? true : false}
+					disabled={message.length < 5 || message.length > 140 ? true : false}
 				>
 					<span role='img' aria-label='Heart'>
 						❤️Send Happy Thought❤️
@@ -29,5 +39,5 @@ export const HappyForm = props => {
 				<p>{message.length} / 140</p>
 			</div>
 		</form>
-	);
-};
+	)
+}

@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
-import moment from 'moment'; // this is to format the date
-import './happyThought.css';
-
-// const url = 'https://technigo-thoughts.herokuapp.com/';
+import React, { useState } from 'react'
+import moment from 'moment' // this is to format the date
+import './happyThought.css'
 
 export const HappyThought = props => {
-	const { message, likes, createdAt, _id } = props.thought;
-	const [clicks, setClicks] = useState(0);
+	const { message, likes, createdAt, _id } = props.thought
+	const [clicks, setClicks] = useState(0)
 
 	if (!localStorage[_id]) {
-		localStorage.setItem(_id, 0);
+		localStorage.setItem(_id, 0)
 	}
 
 	const handleClick = () => {
@@ -18,11 +16,11 @@ export const HappyThought = props => {
 			body: '',
 			headers: { 'Content-Type': 'application/json' }
 		}).then(() => {
-			props.onLiked(_id);
-			localStorage[_id] = Number(localStorage[_id]) + 1;
-			setClicks(clicks + 1);
-		});
-	};
+			props.onLiked(_id)
+			localStorage[_id] = Number(localStorage[_id]) + 1
+			setClicks(clicks + 1)
+		})
+	}
 
 	return (
 		<article className='happy-thought'>
