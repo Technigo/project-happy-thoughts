@@ -20,11 +20,7 @@ export const App = () => {
 	}, [postedMessage])
 
 	const handleFormSubmit = message => {
-		fetch(url, {
-			method: 'POST',
-			body: JSON.stringify({ message }),
-			headers: { 'Content-Type': 'application/json' }
-		}).then(() => setPostedMessage(message))
+		 setPostedMessage(message)
 	}
 
 	const onLiked = thoughtId => {
