@@ -5,7 +5,7 @@ import './happyThought.css';
 // const url = 'https://technigo-thoughts.herokuapp.com/';
 
 export const HappyThought = props => {
-	const { message, hearts, createdAt, _id } = props.thought;
+	const { message, likes, createdAt, _id } = props.thought;
 	const [clicks, setClicks] = useState(0);
 
 	if (!localStorage[_id]) {
@@ -34,7 +34,7 @@ export const HappyThought = props => {
 							{'❤️'}
 						</span>
 					</button>
-					x {hearts} (you liked {localStorage[_id]} times)
+					x {likes} (you liked {localStorage[_id]} times)
 				</p>
 				<p>{moment(createdAt).fromNow()}</p>
 			</div>
