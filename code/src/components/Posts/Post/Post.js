@@ -6,7 +6,7 @@ export const Post = ({ message, hearts, _id, createdAt }) => {
   const [likes, setLikes] = useState(hearts)
 
   const likeClickHandler = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, { method: 'POST' })
+    fetch(`https://happy-charlotte.herokuapp.com/${_id}/like`, { method: 'POST' })
     setLikes((oldState) => oldState + 1)
   }
 

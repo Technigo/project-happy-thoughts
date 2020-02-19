@@ -7,7 +7,7 @@ export const Posts = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetch('https://technigo-thoughts.herokuapp.com/')
+    fetch('https://happy-charlotte.herokuapp.com/')
       .then((res) => res.json())
       .then((data) => {
         setPosts(data)
