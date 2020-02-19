@@ -6,7 +6,7 @@ const url = 'https://joacims-happy-thoughts.herokuapp.com/';
 
 export const App = () => {
 	const [thoughts, setThoughts] = useState([])
-	const [postedMessage, setPostedMessage] = useState([])
+	const [postedMessage, setPostedMessage] = useState('')
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
