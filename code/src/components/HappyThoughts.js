@@ -4,7 +4,7 @@ import { Timestamp } from "./Timestamp"
 
 
 export const HappyThoughts = props => {
-  console.log("props", props)
+  // console.log("props", props)
   const { message, name, hearts, createdAt } = props.thought
   return (
     <article className="inside-cards">
