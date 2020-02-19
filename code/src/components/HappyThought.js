@@ -4,7 +4,7 @@ import './happyThought.css'
 
 export const HappyThought = props => {
 	const { message, likes, createdAt, _id } = props.thought
-	const [clicks, setClicks] = useState(0)
+	const [clicks, setClicks] = useState([])
 
 	if (!localStorage[_id]) {
 		localStorage.setItem(_id, 0)
