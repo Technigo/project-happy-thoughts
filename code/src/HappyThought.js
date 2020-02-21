@@ -4,7 +4,7 @@ import "happyThought.css"
 
 export const HappyThought = (props) => {
     const { message, hearts, createdAt, _id: id} = props.thought
-    const handleHeart = _id => {
+    const handleHeart = (_id) => {
         fetch(`https://frijon-happy-thoughts.herokuapp.com/${id}/like`, {
             method: "POST",
             body: "",
