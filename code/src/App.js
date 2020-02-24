@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
+import cors from 'cors'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [message, setMessage] = useState('')
+
+  // Add middlewares to enable cors and json body parsing
+  //app.use(cors())
+  //app.use(bodyParser.json())
 
   useEffect(() => {
     fetch('https://annatereliushappythoughtsapi.herokuapp.com/')
@@ -17,8 +22,8 @@ export const App = () => {
   // Sends the POST request with the input from your form 
     fetch('https://annatereliushappythoughtsapi.herokuapp.com/', {
       method: 'POST',
-      body: JSON.stringify({ message }),
-      headers: { 'Content-Type': 'application/json' }
+      body: JSON.stringify({ 'message': message }),
+      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}
     })
       .then((res) => res.json())
       .then((newThought) => {
@@ -33,7 +38,8 @@ export const App = () => {
     console.log('test')
     fetch(`https://annatereliushappythoughtsapi.herokuapp.com/${_id}/like`, {
       method: 'POST',
-      body: {},
+      body: '{}',
+      //body: JSON.stringify({}),
       headers: { 'Content-Type': 'application/json' }
     })
     .then((res) => res.json())
