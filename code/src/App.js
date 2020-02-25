@@ -6,6 +6,7 @@ import './index.css'
 
 export const App = () => {
   const [APIThoughts, setAPIThoughts] = useState([])
+  const [errorMessage, setErrorMessage] = useState()
 
   const postThoughtToAPI = (message) => {
     fetch('https://happy-twitterish-api.herokuapp.com/thoughts', {
@@ -16,8 +17,15 @@ export const App = () => {
       }
     })
       .then((res) => res.json())
-      .then((newThought) => {
-        setAPIThoughts((previousThoughts) => [newThought, ...previousThoughts])
+      .then((thoughtOrError) => {
+        if (thoughtOrError._id) {
+          setAPIThoughts((previousThoughts) => [
+            thoughtOrError,
+            ...previousThoughts
+          ])
+        } else {
+          setErrorMessage(thoughtOrError.message)
+        }
       })
   }
 
@@ -36,11 +44,10 @@ export const App = () => {
   return (
     <div className='container'>
       <header>
-        {' '}
         Happy Thoughts <Heart className='heart' />
       </header>
       <div>
-        <Form postThoughtToAPI={postThoughtToAPI} />
+        <Form postThoughtToAPI={postThoughtToAPI} errorMessage={errorMessage} />
       </div>
       <div>
         {APIThoughts.map((oneAPIThought) => {
