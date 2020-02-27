@@ -1,8 +1,7 @@
-import React from 'react'
-import { useState } from 'react'
-import moment from 'moment'
-
+import moment from 'moment';
+import React from 'react';
 import "./HappyThoughts.css";
+
 
 export const HappyThoughts = (props) => {
   const { message, heart, createdAt, _id } = props.thought
@@ -15,9 +14,7 @@ export const HappyThoughts = (props) => {
       headers: { 'Content-Type': 'application/json' }
     })
       .then(() => props.onLiked(_id))
-
   }
-  console.log(handleClick)
 
   return (
     <article>

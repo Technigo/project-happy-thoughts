@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import moment from 'moment'
 import { HappyThoughts } from './HappyThoughts'
 import { HappyForm } from './HappyForm'
 
@@ -8,16 +9,18 @@ import "./HappyForm.css";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
+  const [updated, setUpdated] = useState('')
 
   useEffect(() => {
     fetch("https://jennifershappythoughts.herokuapp.com/")
       .then(res => res.json()
         .then(json => setThoughts(json))
+        .then(json => setUpdated(Date.now()))
       )
   }, [])
 
+
   const onLiked = (thoughtId) => {
-    console.log('Logging in the App.js')
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
         thought.heart += 1
@@ -36,8 +39,9 @@ export const App = () => {
             <HappyThoughts key={thought._id} thought={thought} onLiked={onLiked} />
           </div>
         ))}
-      </div>
 
+      </div>
+      <p>{moment(updated).fromNow()}</p>
     </div>
   )
 }

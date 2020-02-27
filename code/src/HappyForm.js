@@ -23,7 +23,11 @@ export const HappyForm = () => {
         >
         </textarea>
         <p>{message.length}/140</p>
-        <button type="submit" onClick={handleSubmit} disabled={message.length < 5 || message.length > 140 ? true : false}>&#10084;&#65039; Send Happy Thought &#10084;&#65039;</button>
+        <button
+          type="submit"
+          onClick={handleSubmit} disabled={message.length < 5 || message.length > 140 ? true : false}>
+          &#10084;&#65039; Send Happy Thought &#10084;&#65039;
+          </button>
       </form>
     </div>
 
