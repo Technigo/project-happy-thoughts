@@ -5,7 +5,7 @@ export const HappyForm = () => {
   const [message, setMessage] = useState('')
 
   const handleSubmit = () => {
-    fetch('http://localhost:8080/', {
+    fetch('https://joacims-happy-thoughts.herokuapp.com/', {
       method: 'POST',
       body: JSON.stringify({ message }),
       headers: { 'Content-Type': 'application/json' }

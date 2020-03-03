@@ -4,7 +4,7 @@ import moment from 'moment'
 import { HappyThought } from './components/HappyThought';
 import { HappyForm } from './components/HappyForm';
 
-const url = 'http://localhost:8080/';
+const url = 'https://joacims-happy-thoughts.herokuapp.com/';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])

@@ -11,7 +11,7 @@ export const HappyThought = (props) => {
   }
 
   const handleClick = () => {
-    fetch(`http://localhost:8080/${_id}/likes`, {
+    fetch(`https://joacims-happy-thoughts.herokuapp.com/${_id}/likes`, {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' }
