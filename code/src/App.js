@@ -14,7 +14,7 @@ export const App = () => {
     fetch(url)
       .then(res => res.json())
 			.then(json => setThoughts(json))
-			.then(json => setPostedMessage(Date.now))
+			.then(json => setPostedMessage(Date.now()))
   }, [])
 
   const onLiked = (thoughtId) => {
