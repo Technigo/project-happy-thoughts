@@ -21,7 +21,7 @@ export const HappyThoughts = (props) => {
       <h2>{message}</h2>
       <div className="messageLive">
         <div className="countContainer">
-          <button className={`like-button ${props.hearts > 0 ? "has-likes" : ""}`} onClick={handleClick}>&#10084;&#65039;</button>
+          <button className={`like-button${heart > 0 ? "has-likes" : ""}`} onClick={handleClick}>&#10084;&#65039;</button>
           <p className="count">x {heart}</p>
         </div>
         <p>{moment(createdAt).fromNow()}</p>
