@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
-import { HappyThoughts } from './HappyThoughts'
-import { HappyForm } from './HappyForm'
-import "./App.css";
-import "./HappyThoughts.css";
-import "./HappyForm.css";
+import { HappyThoughts } from './components/HappyThoughts'
+import { HappyForm } from './components/HappyForm'
+import './styling/App.css';
+import './styling/HappyThoughts.css';
+import './styling/HappyForm.css';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
