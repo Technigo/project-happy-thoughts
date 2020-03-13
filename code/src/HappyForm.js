@@ -8,8 +8,9 @@ export const HappyForm = ({onFormSubmit}) => {
     const handleSubmit = event => {
         event.preventDefault()
         onFormSubmit(message)
-        // .then(()=> setMessage(""))
+        setMessage("")
     }
+
     return (
         <form
         onKeyPress={(e) => {
