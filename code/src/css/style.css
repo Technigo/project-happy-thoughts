@@ -24,8 +24,8 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 400px;
-  height: 150px;
-  margin: auto;
+  height: 125px;
+  margin: 20px auto;
   padding: 10px;
   border: 1px solid #000;
   -webkit-box-shadow: 6px 6px 0px #000;
@@ -57,11 +57,7 @@ body {
           flex-direction: row;
 }
 
-.icon-container span {
-  margin-left: 5px;
-}
-
-.heart-container {
+.heart-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,10 +70,20 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  border: none;
   background-color: #eaeaea;
+  cursor: pointer;
 }
 
-.heart-container span {
+.amount-of-hearts {
+  margin-left: 5px;
+  opacity: 0.5;
+}
+
+.heart {
   margin-left: 4px;
-  margin-top: 2px;
+}
+
+.time-gone-by {
+  opacity: 0.3;
 }

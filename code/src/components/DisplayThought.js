@@ -1,22 +1,22 @@
 import React from 'react';
+import ReactTimeAgo from 'react-time-ago';
 
-export const DisplayThought = () => {
+export const DisplayThought = ({ id, message, hearts, date }) => {
 	return (
 		<section className="thought-container">
-			<p>
-				Fruit flavored crunchy loops colored cereal pour milk. Breakfast hoops sweetened tutti frutti soaked
-				treats. Tasty Froot Loops rainbow liquid spoon happy family Sugar Smacks fruit.
-			</p>
+			<p>{message}</p>
 			<div className="icon-container">
 				<div>
-					<div className="heart-container">
-						<span role="img" aria-label="Red heart">
+					<button className="heart-button">
+						<span className="heart" role="img" aria-label="Red heart">
 							❤️
 						</span>
-					</div>
-					<span className="amount-of-hearts">x0</span>
+					</button>
+					<span className="amount-of-hearts">x {hearts}</span>
 				</div>
-				<span className="time-gone-by">x minutes ago</span>
+				<span className="time-gone-by">
+					<ReactTimeAgo date={date} />
+				</span>
 			</div>
 		</section>
 	);
