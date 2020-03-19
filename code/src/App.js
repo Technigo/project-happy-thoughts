@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Thought } from 'components/Thought'
+
+import 'css/app.css'
 
 export const App = () => {
+
+  const apiUrl = 'https://technigo-thoughts.herokuapp.com/'
+  const [thoughts, setThoughts] = useState([])
+
+  useEffect(() => {
+    fetch(apiUrl)
+      .then(res => res.json())
+      .then(json => setThoughts(json))
+  }, [])
+
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <section className="thoughts-container">
+      {thoughts.map(thought => (
+
+        <Thought
+          id={thought._id}
+          message={thought.message}
+          hearts={thought.hearts}
+          date={thought.createdAt}
+        />
+
+      ))}
+    </section>
   )
 }
