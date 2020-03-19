@@ -1,9 +1,10 @@
 import React from 'react'
+import Posts from './Posts'
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <main>
+      <Posts />
+    </main>
   )
 }
