@@ -47,7 +47,7 @@ const handleFormSubmit = (event) => {
 
 
   return (
-    <div>
+    <div className = "app">
       
       <form onSubmit={handleFormSubmit}>
       <MyThought myThought={myThought} setMyThought={setMyThought} />
