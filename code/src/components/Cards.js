@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const Cards = ({ thoughts, setThoughts }) => {
+export const Cards = ( {info} ) => {
+    const [hearts, setHearts] = useState(info.hearts)
+
+    const handleHearts = (event) => {
+        event.preventDefault()
+        setHearts(hearts+1)
+      }
+
   return (
-<section className="card-box">
-{thoughts.map((thought)=>{
-          return(<article className = "card" key= {thought.id}>
-              <p>{thought.message}</p>
-              <p>{thought.hearts}</p>
-              <p>{thought.createdAt}</p>
-              </article>)
-        })}
-</section>
+          <article className = "card" key= {info.id}>
+              <p>{info.message}</p>
+              <p>{hearts}</p>
+              <button onClick = {handleHearts} >More Love</button>
+              <p>{info.createdAt}</p>
+              </article>
+     
   );
 };
 
