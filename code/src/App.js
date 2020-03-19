@@ -44,16 +44,9 @@ const handleFormSubmit = (event) => {
       setThoughts((previousThoughts) => [newThought, ...previousThoughts])
     })
 }
-
-
   return (
     <div>
-      Find me in src/app.js!
-      <div>
       <Cards thoughts={thoughts} setThoughts={setThoughts} />
-
-     
-      </div>
       <form onSubmit={handleFormSubmit}>
       <MyThought myThought={myThought} setMyThought={setMyThought} />
         <button type ="submit">send thought</button>
