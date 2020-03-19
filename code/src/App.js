@@ -23,20 +23,8 @@ useEffect(() => {
 
 const handleFormSubmit = (event) => {
   event.preventDefault()
+  console.log(myThought)
 
-  // Send the POST request with the input from your form (instead
-  // of 'Hello world' like this example does):
-  fetch('https://technigo-thoughts.herokuapp.com/', { 
-    method: 'POST', 
-    body: JSON.stringify({ message: myThought })
-  })
-    .then((res) => res.json())
-    .then((newThought) => {
-      // Now you have `newThought` which is the response from the
-      // API as documented at the top of this readme. You can use
-      // it to update the `thoughts` array: 
-      setThoughts((previousThoughts) => [newThought, ...previousThoughts])
-    })
 }
 
 
@@ -45,7 +33,7 @@ const handleFormSubmit = (event) => {
       Find me in src/app.js!
       <div>
         {thoughts.map((thought)=>{
-          return(<p>{thought.message}</p>)
+          return(<p key= {thought.message}>{thought.message}</p>)
         })}
       </div>
       <form onSubmit={handleFormSubmit}>
