@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react'
+import { MyThought } from 'components/MyThought'
+import { Cards } from 'components/Cards'
 
 // https://technigo-thoughts.herokuapp.com/
 
@@ -48,22 +50,18 @@ const handleFormSubmit = (event) => {
     <div>
       Find me in src/app.js!
       <div>
-        {thoughts.map((thought)=>{
-          return(<p key= {thought.message}>{thought.message}</p>)
-        })}
+      <Cards thoughts={thoughts} setThoughts={setThoughts} />
+
+     
       </div>
       <form onSubmit={handleFormSubmit}>
-        <label>
-          What is your thought?
-          <input type="text"
-          value = {myThought}
-          onChange={e => setMyThought(e.target.value)}
-          required
-          />
-
-        </label>
+      <MyThought myThought={myThought} setMyThought={setMyThought} />
         <button type ="submit">send thought</button>
       </form>
     </div>
   )
 }
+
+
+
+
