@@ -54,7 +54,7 @@ const handleFormSubmit = (event) => {
         <button type ="submit">send thought</button>
       </form>
       <section className="card-box">
-        {thoughts.map((thought)=>{
+        {thoughts.slice(0, 5).map((thought)=>{
           return (
           <Cards info = {thought} />
           )
