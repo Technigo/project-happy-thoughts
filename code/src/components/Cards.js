@@ -12,7 +12,7 @@ export const Cards = ( {info} ) => {
           <article className = "card" key= {info.id}>
               <p>{info.message}</p>
               <p>{hearts}</p>
-              <button onClick = {handleHearts} >More Love</button>
+              <button className = "heart" onClick = {handleHearts} ></button>
               <p>{info.createdAt}</p>
               </article>
      
