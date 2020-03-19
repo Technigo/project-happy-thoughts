@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500&display=swap');
+
+
+.btn {
+  background-color: #FFAEAC;
+  border-style: none;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  font-size: 0.8em;
+  width: 250px;
+  padding: 0.8em;
+}

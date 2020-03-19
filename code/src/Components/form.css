@@ -1,11 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Hammersmith+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
 .form-card {
+  display: flex;
+  flex-direction: column;
   background-color: #f2f2f2;
-  font-family: 'Hammersmith One', sans-serif;
-  width: 450px;
+  font-family: 'Roboto Mono', monospace;
+  width: 500px;
   margin: 1em;
-  padding: 2em;
+  padding: 1em;
   border: 2px solid black;
   box-shadow: 6px 6px black;
+}
+
+.form-question {
+  margin-bottom: 1em;
+}
+
+.text-box {
+  width: 400px;
+  height: 50px;
+  margin-bottom: 1.5em;
 }
