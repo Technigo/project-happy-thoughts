@@ -1,9 +1,12 @@
 import React from 'react'
+import { Thoughts } from './Components/Thoughts'
+import { Form } from './Components/Form'
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <Form />
+      <Thoughts />
     </div>
   )
 }
