@@ -6,7 +6,7 @@ export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([])
 
   useEffect(() => {
-    fetch('https://technigo-thoughts.herokuapp.com/')
+    fetch('https://technigo-thoughts.herokuapp.com/',{method: 'GET'})    
     .then(res => res.json())
     .then(json => setThoughts(json))
   },[])
