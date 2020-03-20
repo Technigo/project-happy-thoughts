@@ -1,0 +1,17 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-card {
+  border: 2px solid #000;
+  box-shadow: 4px 4px #000;
+  max-width: 430px;
+  width: 90%;
+  height: 110px;
+  margin: 16px;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+}

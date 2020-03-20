@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './posting.css'
 
 const Posting = () => {
   const [message, setMessage] = useState('')

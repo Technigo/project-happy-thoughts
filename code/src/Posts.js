@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Postcard from './Postcard.js'
 import Posting from './Posting.js'
+import './postcard.css'
 
 const Posts = () => {
   const [postsList, setPostsList] = useState([])
