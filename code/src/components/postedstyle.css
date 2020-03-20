@@ -42,18 +42,35 @@ span {
   font-size: 24px;
 }
 
-.thought button span {
+/* .thought button span {
   display: flex; 
   align-items: center;
   justify-content: center; 
-} 
+}  */
+
+.postedInfo {
+  /* bottom: 0; */
+  display: flex;
+  align-items: baseline;
+}
+
+.moment {
+  text-align: right;
+  font-size: 14px;
+}
+
+.howMany {
+  font-size: 14px;
+}
+
+.footerPost {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
 
 @media (max-width: 680px) { 
   .thought {
     width: 300px;
-  }
-
-  span {
-    margin-left: 2px;
   }
 }

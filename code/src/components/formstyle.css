@@ -59,6 +59,10 @@ body {
   cursor: pointer;
 }
 
+.happy button:disabled {
+  opacity: 0.3;
+}
+
 @media (max-width: 680px) {
   .happy {
     width: 300px;
