@@ -15,17 +15,19 @@ export const App = () => {
   }, [])
 
   return (
-    <section className="thoughts-container">
-      {thoughts.map(thought => (
+    <div className="wrapper">
+      <section className="thoughts-container">
+        {thoughts.map(thought => (
 
-        <Thought
-          id={thought._id}
-          message={thought.message}
-          hearts={thought.hearts}
-          date={thought.createdAt}
-        />
+          <Thought
+            id={thought._id}
+            message={thought.message}
+            hearts={thought.hearts}
+            date={thought.createdAt}
+          />
 
-      ))}
-    </section>
+        ))}
+      </section>
+    </div>
   )
 }
