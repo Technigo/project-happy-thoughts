@@ -1,11 +1,14 @@
 import React from 'react'
+import Hearts from './Hearts'
 
-const Postcard = ({ message }) => {
+
+const Postcard = ({ message, hearts }) => {
   return (
     <article className="message-card">
-      <h3>{message}</h3>
+      <h3>{message}
+        <Hearts heart={hearts} />
+      </h3>
     </article>
-
   )
 }
 

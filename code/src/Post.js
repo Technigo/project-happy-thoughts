@@ -2,7 +2,7 @@ import React from 'react'
 import Hearts from './Hearts'
 
 
-const Post = ({ message }) => {
+const Post = ({ message, hearts, _id }) => {
   return (
     <article className="message-card">
       <h3>{message}</h3>

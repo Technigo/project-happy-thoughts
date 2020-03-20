@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Postcard from './Postcard.js'
+import Posting from './Posting.js'
 
 const Posts = () => {
   const [postsList, setPostsList] = useState([])
-
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -17,8 +17,8 @@ const Posts = () => {
 
   return (
     <section className="posts">
-
-      {loading && <h3>Love </h3>}
+      <Posting />
+      {loading && <h3>There will be messages of love soon ... </h3>}
       {postsList.map((post) => {
         return (
           <Postcard
@@ -26,11 +26,13 @@ const Posts = () => {
             message={post.message}
             hearts={post.hearts}
             createdAt={post.createdAt}
-            _id={post._id} />
+            _id={post._id}
+          />
         )
       })}
     </section>
   )
 }
+
 
 export default Posts
