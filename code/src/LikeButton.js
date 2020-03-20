@@ -1,24 +1,26 @@
 import React, { useState } from "react"
 import "./likebutton.css"
 export const LikeButton = (props) => {
-    const { messages, setMessages, hearts, id } = props
+    const { hearts, id } = props
     const [isLiked, setIsLiked] = useState(hearts)
+    const [pressed, setPressed] = useState(false)
+    const [heartCounter, setHeartCounter] = useState()
     const like = () => {
         fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
             method: "POST"
         })
             .then(res => res.json())
             .then(newData => {
-                const foundIndex = messages.findIndex(x => x._id === newData._id)
-                messages[foundIndex] = newData
-                setMessages(messages)
+                setHeartCounter(newData.hearts)
+                setPressed(true)
             })
     }
     return (
         <article>
             <button style={{ backgroundColor: isLiked ? '#ffadad' : '#f2f0f0' }}
                 className="like-button"
-                onClick={like}>❤️</button> x {hearts}
+                onClick={like}>❤️</button> {pressed && <div className="heart-counter">x {heartCounter}</div>}
+            {!pressed && <div className="heart-counter">x {hearts}</div>}
         </article >
     )
 }

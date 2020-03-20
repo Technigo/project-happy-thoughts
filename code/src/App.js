@@ -37,7 +37,7 @@ export const App = () => {
       {messages &&
         messages.map((message) => {
 
-          return <div className="thoughts-container">
+          return <div key={message._id} className="thoughts-container">
             <p>{message.message}</p>
             <article className="likes-and-time">
               <LikeButton messages={messages} setMessages={setMessages} id={message._id} hearts={message.hearts} />

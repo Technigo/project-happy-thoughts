@@ -3,10 +3,13 @@
     font-size: 15px; 
     border-radius: 50%;
     border: none;
-    /* background-color: #f2f0f0; */
     cursor: pointer;
 }
 
 .like-button:hover {
-    background-color: #ffadad;
+    background-color: #ffadad !important;
+}
+
+.heart-counter {
+    display: inline;
 }
