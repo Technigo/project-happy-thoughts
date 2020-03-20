@@ -13,12 +13,12 @@ export const HappyThought = props => {
     }
 
     return (
-        <article className='thought'>
+        <div className='thought'>
             <h3>{message}</h3>
             <div className="footerPost">
             <div className="postedInfo">
-                <button
-                // style={hearts > 0 ? { backgroundColor: "#eae3e8" } : { backgroundColor: "#fff" }}
+                <button tabIndex="0"
+                style={hearts > 0 ? { opacity: 0.5 } : { opacity: 1 }}
                     onClick={handleClick}>
                     <span role='img' aria-label='Heart'>
                         {" 💘"}
@@ -29,7 +29,6 @@ export const HappyThought = props => {
             <div className="moment">{moment(createdAt).fromNow()}</div>
             </div>
             
-            {/* <span className="moment">{moment(createdAt).fromNow()}</span> */}
-        </article>
+        </div>
     )
 }

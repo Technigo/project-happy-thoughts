@@ -2,13 +2,22 @@
   font-family: 'Menlo', monospace;
 }
 
+html,
 body {
   display: flex;
   justify-content: center;
   /* background-color: white; */
   background: rgb(225,214,226);
-  background: linear-gradient(0deg, rgba(225,214,226,0.8710040983606557) 5%, rgba(255,255,255,1) 100%) no-repeat;
+  background: linear-gradient(0deg, rgba(232, 221, 233, 0.871) 5%, rgba(255,255,255,1) 100%) fixed no-repeat;
   scroll-behavior: smooth;
+  max-height: 100%;
+  max-width: 100%
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
 
 form {
@@ -26,6 +35,11 @@ form {
 
 .wordCount p {
   margin: 10px 0px 0px 0px;
+}
+
+.heartBtn {
+  font-size: 18px;
+  margin: 10px;
 }
 
 .happy {
@@ -52,6 +66,7 @@ form {
 
 .happy textarea:focus {
   outline: none;
+  box-shadow: 4px 4px black;
 }
 
 .happy h3 {
@@ -69,18 +84,27 @@ form {
   color: black;
   margin-top: 5px;
   margin-bottom: 15px;
+  transition: all .2s ease-in-out;
 }
 
 .happy button:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 .happy button:disabled {
   opacity: 0.3;
+  transform: scale(1.0);
 }
 
 @media (max-width: 680px) {
   .happy {
     width: 300px;
+  }
+
+  .wordCount {
+    width: 280px;
+    margin: 5px;
+    font-size: 14px;
   }
 }
