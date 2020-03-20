@@ -50,7 +50,7 @@ const handleFormSubmit = (event) => {
       
       <form onSubmit={handleFormSubmit}>
       <MyThought myThought={myThought} setMyThought={setMyThought} />
-        <button type ="submit">send thought</button>
+        <button type ="submit"><span>&#9829;</span> send thought <span>&#9829;</span></button>
       </form>
       <section className="card-box">
         {thoughts.slice(0, 5).map((thought)=>{
