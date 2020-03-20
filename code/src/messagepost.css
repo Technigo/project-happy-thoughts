@@ -1,0 +1,18 @@
+.post-button {
+    color: black;
+    background-color: #ffadad;
+    border-radius: 500px;
+    padding: 8px 20px;
+    margin-top: 15px;
+    display: block;
+}
+
+.post-text {
+width: 100%;
+padding: 10px;
+font-size: 15px;
+}
+
+.post-title {
+    font-size: 13px;
+}
