@@ -15,19 +15,60 @@ body {
 	margin: 0;
 }
 
-.thought-container {
+%thoughts-shared {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-
 	width: 400px;
-	height: 125px;
 
 	margin: 20px auto;
 	padding: 10px;
 
 	border: 1px solid #000;
 	box-shadow: 6px 6px 0px #000;
+}
+
+%buttons-shared {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+
+	border: none;
+
+	cursor: pointer;
+}
+
+.send-thought-container {
+	@extend %thoughts-shared;
+	height: 170px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 80%;
+}
+
+.thought-input {
+	height: 60px;
+	border: 1px solid rgba(0, 0, 0, 0.534);
+	padding: 5px;
+	font-family: monospace;
+}
+
+.two-hearts-button {
+	@extend %buttons-shared;
+	border-radius: 30px;
+	width: 190px;
+	font-size: 14px;
+	background-color: $pink-circle-color;
+}
+
+.thought-container {
+	@extend %thoughts-shared;
+	height: 100px;
 }
 
 .icon-container {
@@ -43,15 +84,10 @@ body {
 }
 
 .heart-button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 30px;
-	height: 30px;
+	@extend %buttons-shared;
 	border-radius: 50%;
-	border: none;
-	background-color: #eaeaea;
-	cursor: pointer;
+	width: 40px;
+	background-color: $grey-circle-color;
 }
 
 .amount-of-hearts {
@@ -61,6 +97,7 @@ body {
 
 .heart {
 	margin-left: 4px;
+	font-size: 16px;
 }
 
 .time-gone-by {

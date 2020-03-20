@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactTimeAgo from 'react-time-ago';
+import moment from 'moment';
 
-export const DisplayThought = ({ id, message, hearts, date }) => {
+export const DisplayThought = ({ message, hearts, date }) => {
 	return (
 		<section className="thought-container">
 			<p>{message}</p>
@@ -14,10 +14,10 @@ export const DisplayThought = ({ id, message, hearts, date }) => {
 					</button>
 					<span className="amount-of-hearts">x {hearts}</span>
 				</div>
-				<span className="time-gone-by">
-					<ReactTimeAgo date={date} />
-				</span>
+				<span className="time-gone-by">{moment(date).fromNow()}</span>
 			</div>
 		</section>
 	);
 };
+
+// {moment(date)}
