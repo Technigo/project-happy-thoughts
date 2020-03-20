@@ -1,15 +1,18 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 
 import './button.css'
 
 export const Button = (props) => {
-  const { message, setMessage } = props
+  const { message } = props
 
-  const submitHandler = () => {
+
+  const submitHandler = (event) => {
     fetch('https://technigo-thoughts.herokuapp.com/', 
     {method: 'POST',
     body: JSON.stringify({ message }),
     headers: { 'Content-Type': 'application/json'}})
+    .then(event.preventDefault())
+    
     
   } 
 

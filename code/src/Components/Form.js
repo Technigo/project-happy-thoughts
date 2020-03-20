@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Button } from './Button'
 
 import './form.css'
@@ -10,16 +10,17 @@ export const Form = () => {
   return(
       <form className="form-card">      
           <label className="form-question">What's making you happy right now?</label>
-          <input 
+          <textarea 
+            value={message}
             type="text"
             name="happy-thought"
             className="text-box"
             onChange={(event) => setMessage(event.target.value)}>
-          </input>
+          </textarea>
       
         
 
-        <Button message={message} setMessage={setMessage} />
+        <Button message={message}/>
       </form>
       
 
