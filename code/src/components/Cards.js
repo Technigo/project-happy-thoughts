@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Moment from 'react-moment';
 
 export const Cards = ( {info} ) => {
     const [hearts, setHearts] = useState(info.hearts)
@@ -13,8 +14,9 @@ export const Cards = ( {info} ) => {
               <p>{info.message}</p>
               
               <div><button className = "heart" onClick = {handleHearts} >&#9829;</button> <p>x {hearts}</p> </div>
+              <p><Moment fromNow>{info.createdAt}</Moment></p>
               <p>{info.createdAt}</p>
-              </article>
+          </article>
      
   );
 };
@@ -26,3 +28,15 @@ export const Cards = ( {info} ) => {
 //     "createdAt": "2020-03-19T10:19:03.868Z",
 //     "__v": 0
 // },
+
+ 
+// export default class MyComponent extends React.Component {
+//     render() {
+//         return (
+//             <Moment toNow>1976-04-19T12:59-0500</Moment>
+//         );
+//     }
+// } <Moment date={info.createdAt} liveUpdate>
+  // {moment => moment.fromNow()}
+  // </Moment>
+// <time>40 years ago</time>

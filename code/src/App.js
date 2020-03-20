@@ -45,7 +45,6 @@ const handleFormSubmit = (event) => {
     })
 }
 
-
   return (
     <div className = "app">
       
@@ -63,7 +62,3 @@ const handleFormSubmit = (event) => {
     </div>
   )
 }
-
-
-
-
