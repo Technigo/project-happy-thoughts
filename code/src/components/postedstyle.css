@@ -10,6 +10,11 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
+  transition: all .3s ease-in-out;
+}
+
+.thought:hover {
+  box-shadow: 7px 7px black;
 }
 
 .thought h3 {
@@ -33,6 +38,10 @@
   cursor: pointer;
   transform: scale(1.2);
 }
+
+/* .thought button:focus {
+  opacity: .4;
+} */
 
 button:focus {outline: 3px solid var(--cl-primary);
 }   

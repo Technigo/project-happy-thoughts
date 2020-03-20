@@ -17,17 +17,18 @@ export const HappyForm = props => {
     <form className="happy">
       <h3>SHARING IS CARING:</h3>
 
-      <textarea value={message} 
+      <textarea value={message}
         onChange={event => setMessage(event.target.value)}>
       </textarea>
-
+      <div className="wordCount">
+        <p>{message.length}/140</p>
+      </div>
       <div className="sending">
         <button onClick={handleSubmit}
           type="submit"
           disabled={message.length <= 5 || message.length >= 140 ? true : false}>
           POST
         </button>
-        <p>{message.length}/140</p>
       </div>
     </form>
   )
