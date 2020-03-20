@@ -1,8 +1,7 @@
 .app {
-    width: 500px;
+    width: 90%;
     margin: 0px auto;
 }
-
 
 form {
     border: 1px solid black;
@@ -22,7 +21,7 @@ form button {
 }
 span {
     color: red;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 form input {
     width: 90%;
@@ -31,5 +30,10 @@ form input {
 }
 form p{
     margin: 0px ;
+}
+@media (min-width: 576px) {
+    .app {
+        width: 500px;
+    }
 }
 
