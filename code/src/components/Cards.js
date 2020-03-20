@@ -11,11 +11,9 @@ export const Cards = ( {info} ) => {
 
   return (
           <article className = "card" key= {info.id}>
-              <p>{info.message}</p>
-              
+              <p className="message">{info.message}</p>
               <div><button className = "heart" onClick = {handleHearts} >&#9829;</button> <p>x {hearts}</p> </div>
-              <p><Moment fromNow>{info.createdAt}</Moment></p>
-              <p>{info.createdAt}</p>
+              <p className="time"><Moment fromNow>{info.createdAt}</Moment></p>
           </article>
      
   );
