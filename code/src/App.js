@@ -14,9 +14,11 @@ export const App = () => {
   return (
     <section className="container">
 
-      {data.map(item => (
-        <ToughtCard key={item._id} message={item.message} hearts={item.hearts} CreatedAt={item.createdAt} />
-      ))}
+      {data.map(item => {
+        return (
+          <ToughtCard key={item._id} id={item._id} message={item.message} hearts={item.hearts} CreatedAt={item.createdAt} />
+        )
+      })}
 
     </section>
   )
