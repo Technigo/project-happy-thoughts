@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import { HeartButton } from './HeartButton'
+import './thoughtcard.css'
 
 export const ThoughtCard = ({ happyThought, hearts, createdAt }) => {
   return (

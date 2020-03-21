@@ -1,0 +1,41 @@
+.thought-card {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 60% 40%;
+  width: 100%;
+  max-width: 280px;
+  height: 80px;
+  margin: 40px;
+  padding: 15px;
+  border: 1px solid #000;
+  -webkit-box-shadow: 6px 6px #000;
+  -moz-box-shadow: 6px 6px #000;
+  box-shadow: 6px 6px #000;
+}
+
+.happy-thought {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin: 0;
+  font-size: 14px;
+}
+
+.heart-container {
+  display: flex;
+  align-items: center;
+}
+
+.likes-counter {
+  margin-left: 5px;
+  color: 
+  #8f8f8f;
+  font-size: 11px;
+}
+
+.timestamp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #c9c9c9;
+  font-size: 11px;
+}

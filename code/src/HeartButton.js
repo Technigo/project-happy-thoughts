@@ -1,4 +1,5 @@
 import React from 'react'
+import './heartbutton.css'
 
 export const HeartButton = () => {
   return (
