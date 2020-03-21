@@ -1,0 +1,24 @@
+.toughtCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2vw;
+  height: 20vh;
+  width: 40vw;
+  border: 1px solid black;
+  background-color: #fff;
+  box-shadow: 10px 10px;
+}
+
+.toughtCardDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 40vw;
+}
+
+p {
+  margin: 16px;
+}
