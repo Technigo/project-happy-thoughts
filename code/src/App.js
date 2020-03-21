@@ -20,7 +20,7 @@ export const App = () => {
         {thoughts.map(thought => (
 
           <Thought
-            id={thought._id}
+            key={thought._id}
             message={thought.message}
             hearts={thought.hearts}
             date={thought.createdAt}

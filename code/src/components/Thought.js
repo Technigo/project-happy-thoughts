@@ -1,11 +1,13 @@
 import React from 'react'
+import Moment from 'react-moment'
 
-export const Thought = ({ id, message, hearts, date }) => {
+export const Thought = ({ message, hearts, date }) => {
+
   return (
-    <section key={id} className="thought-card">
+    <section className="thought-card">
       <h2>{message}</h2>
-      <span>{hearts}</span>
-      <p>{date}</p>
+      <span className="likes">{hearts}</span>
+      <Moment className="timestamp" fromNow>{date}</Moment>
     </section>
   )
 }

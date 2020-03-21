@@ -35,7 +35,7 @@ h2 {
   justify-content: space-between;
 
   margin-top: 3rem;
-  padding: .5rem 1rem;
+  padding: .5rem 1rem 1rem;
   border: 1px solid #000;
   background-color: #fff;
 }
@@ -43,10 +43,10 @@ h2 {
 .thought-card h2 {
   flex-basis: 100%;
 }
-.thought-card span {
+.thought-card .likes {
   flex: 0 1 auto;
 }
-.thought-card p {
+.thought-card .timestamp {
   flex: 0 1 auto;
 }
 
