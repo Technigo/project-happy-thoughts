@@ -24,38 +24,43 @@
 
 .thought button {
   display: inline-flex; 
-  justify-content: space-evenly;
+  justify-content: center;
   background: white;
   height: 40px;
   width: 40px;
   border-radius: 50%;
   margin-right: 10px;
   border-color:  white;
-  transition: all .4s ease-in;
+  transition: all .4s ease-in-out;
 }
 
 .thought button:hover {
   cursor: pointer;
   transform: scale(1.2);
+  /* transform: rotate(30deg); */
+  /* transition: all .4s ease-in-out; */
 }
 
-/* .thought button:focus {
-  opacity: .4;
-} */
+.thought button:focus {
+  animation-name: roll;
+  animation: roll 1.5s;
+  animation-iteration-count: 1;
+  outline: 3px solid var(--cl-primary)
+}
 
-button:focus {outline: 3px solid var(--cl-primary);
-}   
+@keyframes roll {
+  0% {
+    transform: rotate(0)scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg)scale(1.2);
+  }
+}
 
 span {
   margin-left: 4px;
   font-size: 24px;
 }
-
-/* .thought button span {
-  display: flex; 
-  align-items: center;
-  justify-content: center; 
-}  */
 
 .postedInfo {
   /* bottom: 0; */
@@ -76,6 +81,19 @@ span {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+.react-tooltip-lite {
+  background: rgb(77, 77, 77);
+  color: rgb(243, 232, 238);
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  width: 50px;
+}
+
+.react-tooltip-lite-arrow {
+  border-color: rgb(77, 77, 77);
 }
 
 @media (max-width: 680px) { 

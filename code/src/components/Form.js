@@ -4,6 +4,7 @@ import './formstyle.css'
 
 
 
+
 export const HappyForm = props => {
   const [message, setMessage] = useState('')
 
@@ -24,6 +25,7 @@ export const HappyForm = props => {
         <p>{message.length}/140</p>
       </div>
       <div className="sending">
+
         <button onClick={handleSubmit}
           type="submit" tabIndex="0" aria-label="Submit button"
           disabled={message.length <= 4 || message.length >= 140 ? true : false}>
@@ -31,6 +33,7 @@ export const HappyForm = props => {
           POST
           <span className="heartBtn">♥︎</span>
         </button>
+        
       </div>
     </form>
   )

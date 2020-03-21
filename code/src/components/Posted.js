@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import Tooltip from 'react-tooltip-lite'
 import './postedstyle.css'
 
 export const HappyThought = props => {
@@ -17,12 +18,14 @@ export const HappyThought = props => {
             <h3>{message}</h3>
             <div className="footerPost">
             <div className="postedInfo">
-                <button tabIndex="0"
-                style={hearts > 0 ? { opacity: 0.5 } : { opacity: 1 }}
+                <button tabIndex="0" aria-label="Like button"
+                style={hearts > 0 ? { backgroundColor: '#E7BBCA' } : { backgroundColor: '#fff' }}
                     onClick={handleClick}>
-                    <span role='img' aria-label='Heart'>
-                        {" 💘"}
-                    </span>
+                        <Tooltip content="Like" direction="up">
+                            <span role='img'>
+                                {" 💘"}
+                            </span>
+                        </Tooltip>
                 </button>
                 <span className="howMany">{hearts}</span>
             </div>
