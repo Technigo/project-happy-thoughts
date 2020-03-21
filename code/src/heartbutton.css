@@ -1,7 +1,14 @@
-.heart-button {
+.heart-button, .clicked-heart-button {
   width: 35px;
   height: 35px;
   border: none;
   border-radius: 50%;
+}
+
+.heart-button {
   background: #eaeaea;
+}
+
+.clicked-heart-button {
+  background: #ffadad;
 }

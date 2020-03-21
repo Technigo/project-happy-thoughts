@@ -10,12 +10,24 @@ export const Thoughts = () => {
       .then(json => setThoughts(json))
   }, [])
 
+  const onHeartClicked = (thoughtId) => {
+    const heartClicked = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(heartClicked)
+  }
+
   return (
     <div>
       {thoughts.map(thought => (
         <ThoughtCard
           key={thought._id}
           happyThought={thought.message}
+          id={thought._id}
+          onHeartClicked={onHeartClicked}
           hearts={thought.hearts}
           createdAt={thought.createdAt}
         />
