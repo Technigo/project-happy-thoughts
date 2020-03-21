@@ -18,10 +18,14 @@ export const ToughtCard = (props) => {
   console.log(url)
   return (
     <article className="toughtCard">
-      <p>{message}</p>
+      <p className="toughtText">{message}</p>
       <section className="toughtCardDetails">
-        <p onClick={() => handleLike()}>{hearts}</p>
-        <p>{CreatedAt}</p>
+        <div className="toughtCardLike">
+          <span className="toughtCardLikeIcon" onClick={() => handleLike()}>❤️</span>
+          <p> x {hearts}</p>
+        </div>
+
+        <p className="toughtText">{CreatedAt}</p>
         {/* <p>Id: {props.id}</p> */}
       </section>
     </article>
