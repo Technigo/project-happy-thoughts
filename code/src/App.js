@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Thought } from './Thought'
+import { Thoughts } from './Thoughts'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -9,12 +9,11 @@ export const App = () => {
       .then(json => setThoughts(json))
   }, [])
   return (
-
-    <div>
-      {thoughts.map(json =>
-        <div key={json._id}>{json.message} {json.hearts} {json.createdAt}</div>
-      )}
-    </div>
+    <main>
+      <div>
+        <Thoughts thoughts={thoughts} />
+      </div>
+    </main>
 
   )
 }
