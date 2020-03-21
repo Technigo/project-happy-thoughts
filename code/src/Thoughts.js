@@ -16,6 +16,8 @@ export const Thoughts = () => {
         <ThoughtCard
           key={thought._id}
           happyThought={thought.message}
+          hearts={thought.hearts}
+          createdAt={thought.createdAt}
         />
       ))}
     </div>
