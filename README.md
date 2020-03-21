@@ -1,13 +1,20 @@
-# Happy Thoughts
+# Happy Thoughts 
 
-Replace this readme with your own information about your project.
+Try the site out here:
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## What I learned 🧠
 
-## The problem
+* How to use APIs in React, firing requests within `useEffect`.
+* How to put the result of API responses into React state to show in the page.
+* What it's like to work with an API which you both send and receive data from.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Requirements I reached 🧪
 
-## View it live
+* The page follow the design as closely as possible
+* The page lists the most recent thoughts
+* The page has a form to post new thoughts
+* The page has the heart button to send likes on a thought
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+## Stretch-goals I reached 🧪
+
+* 
