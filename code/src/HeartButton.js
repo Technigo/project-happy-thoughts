@@ -2,6 +2,8 @@ import React from 'react'
 
 export const HeartButton = () => {
   return (
-    <button type="button">Heart</button>
+    <button className="heart-button" type="button">
+      <span className="heart-emoji" role="img" aria-label="red heart">❤️</span>
+    </button>
   )
 }
