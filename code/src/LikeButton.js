@@ -1,4 +1,5 @@
 import React from 'react'
+import { Emoji } from './Emoji'
 
 export const LikeButton = (props) => {
   const handleClick = () => {
@@ -12,6 +13,8 @@ export const LikeButton = (props) => {
   }
 
   return (
-    <button onClick={handleClick}>Heart</button>
+
+    <button onClick={handleClick}><Emoji symbol="❤️" label="heart" /></button>
+    // <button onClick={handleClick}>Heart</button>
   )
 }
