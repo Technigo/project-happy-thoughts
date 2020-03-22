@@ -1,9 +1,13 @@
 import React from 'react'
+import {Thoughts} from './Thoughts'
+import {AddThoughts} from './AddThoughts.js'
+
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
+    <div className="thoughts">
+      <AddThoughts />
+      <Thoughts />
     </div>
   )
 }
