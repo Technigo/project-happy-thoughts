@@ -28,11 +28,16 @@
 
 .toughtCardLikeIcon {
   cursor: pointer;
+  padding: 8px;
+  margin-right: 6px;
+  border-radius: 100%;
+  background-color: rgb(199, 199, 199);
 }
 
 .toughtCardLikeIcon:hover {
   animation: pulse 1s infinite;
   animation-timing-function: linear;   
+  background-color: #FFADAD;
 }
 
 @keyframes pulse {

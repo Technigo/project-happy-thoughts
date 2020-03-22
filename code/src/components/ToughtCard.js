@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Moment from 'react-moment'
 import '../components/toughtcard.css'
 
 
@@ -7,7 +8,7 @@ export const ToughtCard = (props) => {
 
   const url = `https://technigo-thoughts.herokuapp.com/${id}/like`
 
-  const handleLike = (event) => {
+  const handleLike = () => {
     // Send the POST request with the input from your form (instead
     // of 'Hello world' like this example does):
     fetch(url, { 
@@ -15,6 +16,7 @@ export const ToughtCard = (props) => {
     })
   }
 
+  
   console.log(url)
   return (
     <article className="toughtCard">
@@ -25,8 +27,7 @@ export const ToughtCard = (props) => {
           <p> x {hearts}</p>
         </div>
 
-        <p className="toughtText">{CreatedAt}</p>
-        {/* <p>Id: {props.id}</p> */}
+        <Moment className="toughtText" fromNow>{CreatedAt}</Moment>
       </section>
     </article>
   )
