@@ -105,8 +105,14 @@ form em{
   width: 100%;
 }
 
-form button {
-  margin-top: -15px;
+#minimum{
+  display: flex;
+  justify-content: flex-start;
+}
+
+form div{
+  display: flex;
+  width: 100%;
 }
 
 /* MESSAGES */
@@ -121,6 +127,14 @@ article{
   border-radius: 10px;
   box-shadow:  5px 5px 14px #e6e6e6, 
              -5px -5px 14px #ffffff;
+}
+
+article svg {
+  color: #EC5569;
+}
+
+button svg {
+  color: white;
 }
 
 div {

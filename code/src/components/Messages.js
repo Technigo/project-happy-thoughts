@@ -29,7 +29,7 @@ export const Messages = (props) => {
       {messages.map((message, index) => (
         <>
           <article key={index} >
-            <FontAwesomeIcon icon="quote-right" />< p > {message.message}</p>
+            < p ><FontAwesomeIcon icon="quote-right" /> {message.message} <FontAwesomeIcon icon="quote-left" /></p>
             <div>
               <LikeButton id={message._id} likedMessage={likedMessage} />
               <p>{message.hearts} likes</p>
