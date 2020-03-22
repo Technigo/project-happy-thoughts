@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import ReactTimeAgo from 'react-time-ago'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export const Messages = () => {
+export const Messages = (props) => {
 
-  const [messages, setMessages] = useState([])
+  const { messages, setMessages } = props
 
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
