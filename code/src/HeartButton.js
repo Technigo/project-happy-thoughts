@@ -9,7 +9,7 @@ export const HeartButton = ({ id, onHeartClicked, hearts }) => {
       body: "",
       headers: { "Content-Type": "application/json" }
     }).then(() => {
-      { onHeartClicked(id) }
+      onHeartClicked(id)
     })
   }
 
