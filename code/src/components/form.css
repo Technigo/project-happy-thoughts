@@ -1,0 +1,18 @@
+form {
+display: flex;
+flex-direction: column;
+padding: 20px;
+background-color: #eceae7;
+}
+
+.send-love-button {
+background-color: #ffadad;
+color: black;
+border-radius: 20px;
+border: solid #ffadad;
+padding: 5px;
+}
+
+.input-text {
+  height: 50px;
+}
