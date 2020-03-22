@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Detail } from './components/Detail'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHeart, faPaperPlane, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+library.add(faHeart, faPaperPlane, faSpinner)
 
 export const App = () => {
 
@@ -16,10 +21,12 @@ export const App = () => {
     <>
       <ul>
         {pokemons.map((pokemon, index) => (
-          <li key={index}><button onClick={() => setSelectedPokemon(pokemon)}>{pokemon.name}</button></li>
+          <li key={index}><button onClick={() => setSelectedPokemon(pokemon)}><FontAwesomeIcon icon="heart" />{pokemon.name}</button></li>
         ))}
       </ul>
 
+      <FontAwesomeIcon icon="paper-plane" />
+      <FontAwesomeIcon icon="spinner" className="fa-spin" />
       {selectedPokemon && <Detail name={selectedPokemon.name} url={selectedPokemon.url} />}
     </>
   )
