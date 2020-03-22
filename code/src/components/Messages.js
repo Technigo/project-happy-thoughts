@@ -18,7 +18,7 @@ export const Messages = (props) => {
       {messages.map((message, index) => (
         <>
           <article key={index} >
-            < p > {message.message}</p>
+            <FontAwesomeIcon icon="quote-right" />< p > {message.message}</p>
             <div>
               <button><FontAwesomeIcon icon="heart" /></button>
               <p>{message.hearts} likes</p>

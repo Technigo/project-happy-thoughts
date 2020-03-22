@@ -1,12 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h3{
+  font-family: 'Gochi Hand', cursive;
+  color: #EC5569;
+  text-align: center;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+em, p {
+  font-weight: 300;
+  text-align: center;
+  font-size: 0.75rem;
 }
 
 body {
-  background: rgb(34,193,195);
-  background: linear-gradient(323deg, rgba(34,193,195,1) 0%, rgba(253,214,45,1) 91%);
+  background-image: url(./img/pattern.svg);
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -15,19 +34,81 @@ body {
 }
 
 main {
+  margin: 20px 0;
+  padding: 20px;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 90vw;
   max-width: 500px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow:  5px 5px 25px #bfbfbf, 
+             -5px -5px 25px #ffffff;
 }
 
 form {
-  height: 50vh;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+textarea {
+  height: 100px;
+  width: 70vw;
+  max-width: 400px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+  text-align: center;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: inset 6px 6px 15px #e8e8e8, 
+            inset -6px -6px 15px #ffffff;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+button {
+  color: white;
+  background-color: #EC5569;
+  font-weight: 300;
+  text-transform: lowercase;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+article{
+  padding: 1rem;
+  width: 70vw;
+  max-width: 400px;
+  height: 125px;
+  margin: 1.5rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow:  5px 5px 14px #e6e6e6, 
+             -5px -5px 14px #ffffff;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+}
+
+article div {
+  align-items: center;
+  padding: ;
 }
 

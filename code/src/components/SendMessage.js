@@ -23,7 +23,7 @@ export const SendMessage = (props) => {
 
   return (
     <form>
-      <h2>What's making you happy right now?</h2>
+      <h3>what's making you happy right now?</h3>
       <textarea
         rows="4"
         minLength="5"
@@ -37,8 +37,8 @@ export const SendMessage = (props) => {
           type="submit"
           onClick={submitHandler}
         >
-          Send happy thought
-          </button>
+          Send a happy thought
+        </button>
       </section>
     </form>
   )
