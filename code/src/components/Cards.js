@@ -3,16 +3,18 @@ import Moment from 'react-moment';
 
 export const Cards = ( {info} ) => {
     const [hearts, setHearts] = useState(info.hearts)
+    const [clicked, setClicked] = useState(false)
 
     const handleHearts = (event) => {
         event.preventDefault()
         setHearts(hearts+1)
+        setClicked(true)
       }
 
   return (
           <article className = "card" key= {info.id}>
               <p className="message">{info.message}</p>
-              <div><button className = "heart" onClick = {handleHearts} >&#9829;</button> <p>x {hearts}</p> </div>
+              <div><button className = "heart" onClick = {handleHearts} disabled={clicked} >&#9829;</button> <p>x {hearts}</p> </div>
               <p className="time"><Moment fromNow>{info.createdAt}</Moment></p>
           </article>
      

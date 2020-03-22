@@ -45,3 +45,13 @@
     background-position: center;
     background-repeat: no-repeat; */
 }
+.heart:hover {
+    background-color: lightcoral;
+}
+.heart:active {
+    background-color:lightcoral;
+}
+.heart:disabled {
+    background-color: pink;
+    color: #C88691;
+}
