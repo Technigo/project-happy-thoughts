@@ -1,5 +1,10 @@
 $grey-circle-color: #eaeaea;
+$grey-transparent-color: rgba(228, 226, 226, 0.5);
+$darkgrey-circle-color: #acacac;
 $pink-circle-color: #ffadad;
+$darkpink-circle-color: #ff6868;
+$darkred-border-color: #c03c3c;
+$darkblue-border-color: #3cc068;
 
 * {
 	box-sizing: border-box;
@@ -13,6 +18,46 @@ body {
 	line-height: 1.6;
 
 	margin: 0;
+}
+
+h1 {
+	text-shadow: -4px -4px 2px $darkred-border-color, 4px -4px 2px $darkred-border-color,
+		-4px 4px 2px $darkred-border-color, 4px 4px 2px $darkred-border-color;
+	text-align: center;
+	color: white;
+	font-size: 80px;
+	position: relative;
+	z-index: 10;
+}
+
+.p-red {
+	color: $darkred-border-color;
+	font-weight: 700;
+}
+
+.p-blue {
+	color: $darkblue-border-color;
+	font-weight: 700;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url("../images/Hearts-Background.svg");
+	height: 200px;
+	position: relative;
+	z-index: 1;
+
+	transition: background 0.5s linear;
+}
+
+.layer-header {
+	position: absolute;
+	z-index: 5;
+	background-color: $grey-transparent-color;
+	height: 100%;
+	width: 100%;
 }
 
 %thoughts-shared {
@@ -44,6 +89,12 @@ body {
 	height: 170px;
 }
 
+.btn-and-count-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 form {
 	display: flex;
 	flex-direction: column;
@@ -68,7 +119,7 @@ form {
 
 .thought-container {
 	@extend %thoughts-shared;
-	height: 100px;
+	height: 130px;
 }
 
 .icon-container {
@@ -83,11 +134,27 @@ form {
 	}
 }
 
-.heart-button {
+.heart-button-no-like {
 	@extend %buttons-shared;
 	border-radius: 50%;
 	width: 40px;
 	background-color: $grey-circle-color;
+}
+
+.heart-button-like {
+	@extend %buttons-shared;
+	border-radius: 50%;
+	width: 40px;
+	background-color: $pink-circle-color;
+}
+
+.heart-button-no-like:hover {
+	background-color: $darkgrey-circle-color;
+}
+
+.heart-button-like:hover,
+.two-hearts-button:hover {
+	background-color: $darkpink-circle-color;
 }
 
 .amount-of-hearts {

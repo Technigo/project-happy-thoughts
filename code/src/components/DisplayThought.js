@@ -1,23 +1,15 @@
 import React from 'react';
 import moment from 'moment';
+import { HeartButtons } from './HeartButtons';
 
-export const DisplayThought = ({ message, hearts, date }) => {
+export const DisplayThought = ({ id, message, hearts, date }) => {
 	return (
 		<section className="thought-container">
 			<p>{message}</p>
 			<div className="icon-container">
-				<div>
-					<button className="heart-button">
-						<span className="heart" role="img" aria-label="Red heart">
-							❤️
-						</span>
-					</button>
-					<span className="amount-of-hearts">x {hearts}</span>
-				</div>
+				<HeartButtons hearts={hearts} id={id} />
 				<span className="time-gone-by">{moment(date).fromNow()}</span>
 			</div>
 		</section>
 	);
 };
-
-// {moment(date)}
