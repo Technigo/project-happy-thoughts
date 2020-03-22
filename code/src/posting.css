@@ -1,7 +1,8 @@
 .new-message {
   margin: 20px 0;
   padding: 15px;
-  width: 30%;
+  max-width: 430px;
+  width: 90%;
   height: 100%;
   background: #efefef;
   border: 1px solid #000;
@@ -14,7 +15,41 @@ textarea {
   width: 90%;
   resize: none;
 }
-
 .message-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+.wrong-length {
+  color: #a6a6a6;
+}
+
+.good-length {
+  color: green;
+}
+
+.happy-thougth-button {
+  background-color: #ffadad;
+  padding: 5px 10px;
+  border-style: none;
+  border-radius: 30px;
+  font-family: inherit;
+  color: black;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+svg {
+  margin:0px 5px;
+}
+
+svg path {
+  fill:#ff4031; 
+ 
+}
+
+.happy-thougth-button:hover{
+  background-color: #f3769c;
 }

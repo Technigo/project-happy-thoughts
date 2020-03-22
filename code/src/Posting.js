@@ -19,13 +19,17 @@ const Posting = () => {
       <form>
         <h4>"What's making you happy right now?"</h4>
         <textarea rows="4" minLength="5" maxLength="140" required onChange={(e) => { setMessage(e.target.value) }} />
-        <section className="card-footer">
-          <button type="submit" onClick={submitHandler} disabled={message.length < 5}>
-            <i className="" aria-hidden="true" />
+        <section className="message-footer">
+          <button className="happy-thougth-button" type="submit" onClick={submitHandler} disabled={message.length < 5}>
+            <svg xmlns="http://www.w3.org/2000/svg" alt="heart" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+            </svg>
             Send Happy Thought
-            <i className="" aria-hidden="true" />
+            <svg xmlns="http://www.w3.org/2000/svg" alt="heart" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+            </svg>
           </button>
-          <p className={((message.length < 5 || message.length >= 140) ? 'wrongLength' : 'goodLength')}>{message.length}/140</p>
+          <p className={((message.length < 5 || message.length >= 140) ? 'wrong-length' : 'good-length')}>{message.length}/140</p>
         </section>
       </form>
     </article>
