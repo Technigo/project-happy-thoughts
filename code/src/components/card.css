@@ -6,9 +6,10 @@
     width: 90%;
     margin: 1em auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
     padding: 1em;
+    align-items: end;
 }
 
 .card div {
