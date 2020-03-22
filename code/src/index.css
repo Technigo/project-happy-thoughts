@@ -16,6 +16,7 @@ h1, h3{
 
 h1{
   font-size: 3rem;
+  margin-bottom: -5px;
 }
 
 em, p {
@@ -58,6 +59,7 @@ form {
 }
 
 textarea {
+  margin-top: 0.5rem;
   height: 100px;
   width: 70vw;
   max-width: 400px;
@@ -90,6 +92,7 @@ button {
   cursor: pointer;
 }
 
+
 article{
   padding: 1rem;
   width: 70vw;
@@ -109,6 +112,5 @@ div {
 
 article div {
   align-items: center;
-  padding: ;
 }
 
