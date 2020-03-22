@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import 'app.css'
+import {ToughtForm} from './components/ToughtForm'
 import {ToughtCard} from './components/ToughtCard'
 
 export const App = () => {
@@ -14,6 +15,7 @@ export const App = () => {
   return (
     <section className="container">
 
+      <ToughtForm />
       {data.map(item => {
         return (
           <ToughtCard key={item._id} id={item._id} message={item.message} hearts={item.hearts} CreatedAt={item.createdAt} />
