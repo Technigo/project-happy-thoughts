@@ -37,8 +37,6 @@
 .thought button:hover {
   cursor: pointer;
   transform: scale(1.2);
-  /* transform: rotate(30deg); */
-  /* transition: all .4s ease-in-out; */
 }
 
 .thought button:focus {
@@ -58,12 +56,12 @@
 }
 
 span {
-  margin-left: 4px;
-  font-size: 24px;
+  margin-left: 3px;
+  font-size: 28px;
+  text-align: center;
 }
 
 .postedInfo {
-  /* bottom: 0; */
   display: flex;
   align-items: baseline;
 }

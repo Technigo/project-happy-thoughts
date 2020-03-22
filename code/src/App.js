@@ -20,14 +20,17 @@ export const App = () => {
       setLoading(false)
       )}, [postedMessage])
 
+  // const handleFormSubmit = message => {
+  //   fetch(APIdata, {
+  //     method: 'POST',
+  //     body: JSON.stringify({ message }),
+  //     headers: { "Content-Type": "application/json" }
+  //   })
+  //   .then(() => setPostedMessage(message))
+  //   .catch(err => console.log("error:", err))
+  // }
   const handleFormSubmit = message => {
-    fetch(APIdata, {
-      method: 'POST',
-      body: JSON.stringify({ message }),
-      headers: { "Content-Type": "application/json" }
-    })
-    .then(() => setPostedMessage(message))
-    .catch(err => console.log("error:", err))
+    setPostedMessage(message)
   }
 
   const onLiked = thoughtId => {
@@ -42,9 +45,9 @@ export const App = () => {
 
   return (
     <div>
-      <HappyForm onFormSubmit={handleFormSubmit} />
+      <HappyForm formSubmit={handleFormSubmit} />
 
-      {loading ? <div className="loading"><ScaleLoader color='black' /></div> : 
+      {loading ? <div className='loading'><ScaleLoader color='black' /></div> : 
       thoughts.map(thought => (
         <HappyThought key={thought._id} thought={thought} onLiked={onLiked} />
       ))}
