@@ -25,7 +25,7 @@ export const App = () => {
   return (
     <div className="wrapper">
 
-      <PostThought />
+      <PostThought setThoughts={setThoughts} apiUrl={apiUrl} />
 
       <section className="thoughts-container">
         {thoughts.map(thought => (
