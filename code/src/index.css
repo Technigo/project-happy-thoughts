@@ -50,6 +50,24 @@ main {
              -5px -5px 25px #ffffff;
 }
 
+button {
+  color: white;
+  background-color: #EC5569;
+  font-weight: 300;
+  text-transform: lowercase;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover{
+  background-color: #F8C0C8;
+}
+
+/* SEND MESSAGE */
+
 form {
   margin: 1rem 0;
   display: flex;
@@ -60,6 +78,7 @@ form {
 
 textarea {
   margin-top: 0.5rem;
+  font-size: 18px;
   height: 100px;
   width: 70vw;
   max-width: 400px;
@@ -80,18 +99,17 @@ textarea:focus, input:focus {
   outline: none;
 }
 
-button {
-  color: white;
-  background-color: #EC5569;
-  font-weight: 300;
-  text-transform: lowercase;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem 0;
-  cursor: pointer;
+form em{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
+form button {
+  margin-top: -15px;
+}
+
+/* MESSAGES */
 
 article{
   padding: 1rem;

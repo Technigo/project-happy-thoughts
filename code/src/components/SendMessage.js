@@ -32,13 +32,20 @@ export const SendMessage = (props) => {
         value={message}
         onChange={event => setMessage(event.target.value)}>
       </textarea>
+      <em>{message.length}/140 characters</em>
       <section>
-        <button
+
+        {message.length < 5 && <button disabled>
+          Minimum 5 characters
+        </button>}
+        {message.length >= 5 && <button
           type="submit"
           onClick={submitHandler}
         >
           Send a happy thought
-        </button>
+        </button>}
+
+
       </section>
     </form>
   )
