@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 // import {Thoughts} from '/Thoughts'
 
-export const AddThoughts = (props) => {
+export const AddThoughts = () => {
+  
   const [addThoughts, setAddThoughts] = useState('')
+
   // const [thought, setThoughts] = useState([])
  
 
@@ -10,14 +12,14 @@ export const AddThoughts = (props) => {
     event.preventDefault()
     fetch('https://technigo-thoughts.herokuapp.com/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'content-type': 'application/json' },
       body: JSON.stringify({message: { addThoughts } })
     })
     .then((res) => res.json())
-    .then(data => AddThoughts({postId: data._id}))  
-     
-   
-  }
+    .then((addThoughts) => {
+      setAddThoughts((thoughts) => [addThoughts, ...thoughts])
+    }) }
+    
 
   return (
     <form>
