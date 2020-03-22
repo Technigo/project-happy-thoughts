@@ -1,20 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
 
 export const Cards = ( {info} ) => {
-    const [hearts, setHearts] = useState(info.hearts)
+    const [myHearts, setMyHearts] = useState(info.hearts)
     const [clicked, setClicked] = useState(false)
+    const [count, setCount] = useState(0);
+    const myID = info._id
 
     const handleHearts = (event) => {
         event.preventDefault()
-        setHearts(hearts+1)
-        setClicked(true)
+        setMyHearts(myHearts+1)
+        fetch(`https://technigo-thoughts.herokuapp.com/${myID}/like`, { 
+          method: 'POST', 
+          headers: {'Content-Type': 'application/json'},
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          }).catch((error) => {
+            console.error('Error:', error);
+          });
+        
+        
       }
+      // useEffect(() => {
+      //   if (clicked){
+
+      //   }
+      //     console.log(myHearts)
+
+      // }, [myHearts])
+
+
+      //POST https://technigo-thoughts.herokuapp.com/THOUGHT_ID/like
+ 
+    
+
 
   return (
           <article className = "card" key= {info.id}>
               <p className="message">{info.message}</p>
-              <div><button className = "heart" onClick = {handleHearts} disabled={clicked} >&#9829;</button> <p>x {hearts}</p> </div>
+              <div><button className = "heart" onClick = {handleHearts} >&#9829;</button> <p>x {myHearts}</p> </div>
               <p className="time"><Moment fromNow>{info.createdAt}</Moment></p>
           </article>
      

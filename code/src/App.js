@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { MyThought } from 'components/MyThought'
-import { Cards } from 'components/Cards'
+import { Cards, count } from 'components/Cards'
 
 // https://technigo-thoughts.herokuapp.com/
 
