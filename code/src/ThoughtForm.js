@@ -2,12 +2,13 @@ import React from 'react'
 import { NewThought } from './NewThought'
 import './thoughtform.css'
 
-export const ThoughtForm = ({ onSubmit, onChange }) => {
+export const ThoughtForm = ({ onSubmit, value, onChange }) => {
   return (
     <div>
       <form className="thought-form" onSubmit={onSubmit}>
         <div className="new-thought-container">
           <NewThought
+            value={value}
             onChange={onChange} />
         </div>
         <button className="thougt-button" type="submit">

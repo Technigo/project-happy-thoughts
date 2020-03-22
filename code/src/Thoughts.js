@@ -23,6 +23,7 @@ export const Thoughts = () => {
       .then((res) => res.json())
       .then((newThought) => {
         setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+        setNewThought('')
       })
   }
 
@@ -40,6 +41,7 @@ export const Thoughts = () => {
     <div>
       <ThoughtForm
         onSubmit={handleThoughtFormSubmit}
+        value={newThought}
         onChange={(event) => setNewThought(event.target.value)} />
       {thoughts.map(thought => (
         <ThoughtCard

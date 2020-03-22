@@ -1,10 +1,10 @@
 .thought-card {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 60% 40%;
+  grid-template-rows: 70% 30%;
   width: 100%;
   max-width: 280px;
-  height: 80px;
+  min-height: 80px;
   margin: 40px;
   padding: 15px;
   border: 1px solid #000;
@@ -17,6 +17,7 @@
   grid-column-start: 1;
   grid-column-end: 3;
   margin: 0;
+  padding-bottom: 10px;
   font-size: 14px;
 }
 
