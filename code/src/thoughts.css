@@ -1,0 +1,8 @@
+.thoughts-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.thoughts-container {
+  width: fit-content;
+}

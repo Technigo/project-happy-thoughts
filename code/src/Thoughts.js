@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ThoughtCard } from './ThoughtCard'
 import { ThoughtForm } from './ThoughtForm'
+import './thoughts.css'
 
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([])
@@ -38,21 +39,23 @@ export const Thoughts = () => {
   }
 
   return (
-    <div>
-      <ThoughtForm
-        onSubmit={handleThoughtFormSubmit}
-        value={newThought}
-        onChange={(event) => setNewThought(event.target.value)} />
-      {thoughts.map(thought => (
-        <ThoughtCard
-          key={thought._id}
-          happyThought={thought.message}
-          id={thought._id}
-          onHeartClicked={onHeartClicked}
-          hearts={thought.hearts}
-          createdAt={thought.createdAt}
-        />
-      ))}
+    <div className="thoughts-wrapper">
+      <section className="thoughts-container">
+        <ThoughtForm
+          onSubmit={handleThoughtFormSubmit}
+          value={newThought}
+          onChange={(event) => setNewThought(event.target.value)} />
+        {thoughts.map(thought => (
+          <ThoughtCard
+            key={thought._id}
+            happyThought={thought.message}
+            id={thought._id}
+            onHeartClicked={onHeartClicked}
+            hearts={thought.hearts}
+            createdAt={thought.createdAt}
+          />
+        ))}
+      </section>
     </div>
   )
 }

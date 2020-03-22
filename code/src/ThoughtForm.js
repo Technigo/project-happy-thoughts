@@ -4,7 +4,7 @@ import './thoughtform.css'
 
 export const ThoughtForm = ({ onSubmit, value, onChange }) => {
   return (
-    <div>
+    <article className="thought-form-wrapper">
       <form className="thought-form" onSubmit={onSubmit}>
         <div className="new-thought-container">
           <NewThought
@@ -15,6 +15,6 @@ export const ThoughtForm = ({ onSubmit, value, onChange }) => {
           <span className="heart-emoji" role="img" aria-label="red heart">❤️</span> Send Happy Thought <span className="heart-emoji" role="img" aria-label="red heart">❤️</span>
         </button>
       </form>
-    </div>
+    </article>
   )
 }
