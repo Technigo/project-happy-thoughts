@@ -31,7 +31,6 @@ export const Thoughts = () => {
         myThought={myThought}
         setMyThought={setMyThought}
         setThoughts={setThoughts}
-
       />
 
       {thoughts.map((thought) => (
@@ -39,11 +38,11 @@ export const Thoughts = () => {
           <Thought
             key={thought._id}
             thought={thought}
-            onThoughtLiked={onThoughtLiked}
-          /></div>
+            onThoughtLiked={onThoughtLiked} />
+        </div>
       ))}
 
-    </div >
+    </div>
   )
 }
 

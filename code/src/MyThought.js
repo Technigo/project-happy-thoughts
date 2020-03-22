@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Emoji } from './Emoji'
 
 export const MyThought = ({ setThoughts }) => {
   const [myThought, setMyThought] = useState('')
@@ -27,7 +28,7 @@ export const MyThought = ({ setThoughts }) => {
             id="myThought"
             onChange={(event) => setMyThought(event.target.value)}
             value={myThought} />
-          <button type="submit">Send</button>
+          <button className="send-button" type="submit"><Emoji symbol="❤️" /> Send Happy Thought! <Emoji symbol="❤️" /></button>
         </label>
       </div>
     </form>

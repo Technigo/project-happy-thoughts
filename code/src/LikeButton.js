@@ -15,6 +15,5 @@ export const LikeButton = (props) => {
   return (
 
     <button onClick={handleClick}><Emoji symbol="❤️" label="heart" /></button>
-    // <button onClick={handleClick}>Heart</button>
   )
 }
