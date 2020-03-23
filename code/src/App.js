@@ -1,9 +1,13 @@
 import React from 'react'
+import {MessageList} from "./MessageList"
+import {MessageForm} from "./MessageForm"
+
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <MessageForm />
+      < MessageList />
     </div>
   )
 }
