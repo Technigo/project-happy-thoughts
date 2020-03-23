@@ -17,12 +17,15 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
       )
   }
 
-  console.log(likes)
-
   return (
-    <span className="likes">
-      <button onClick={addLike} className={"like-btn" + (likes > 0 ? " has-likes" : "")} ><span role="img" aria-label="heart">❤️</span></button>
-      x { likes}
-    </span >
+    <div className="likes">
+
+      <button onClick={addLike} id={id} className={"like-btn" + (likes > 0 ? " has-likes" : "")} >
+        <span role="img" aria-label="heart">❤️</span>
+      </button>
+
+      <label for={id}>x {likes}</label>
+
+    </div >
   )
 }
