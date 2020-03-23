@@ -2,17 +2,12 @@ import React, {useState, useEffect} from 'react'
 import { MyThought } from 'components/MyThought'
 import { Cards, count } from 'components/Cards'
 
-// https://technigo-thoughts.herokuapp.com/
-
 export const App = () => {
-
-  // Assuming you have this kind of state in your component:
 const [thoughts, setThoughts] = useState([]) 
 const [myThought, setMyThought] = useState("")
 
-// Later, in your code which handles the form submission, you 
-// could have something which looks like this to send the new 
-// message, get the response from the API, and then add it to 
+// send the new message, get the
+// response from the API, and then add it to 
 // the thoughts array:
 useEffect(() => {
   fetch("https://technigo-thoughts.herokuapp.com/")
@@ -26,14 +21,12 @@ useEffect(() => {
 const handleFormSubmit = (event) => {
   event.preventDefault()
   console.log(myThought)
-  // Send the POST request with the input from your form (instead
-  // of 'Hello world' like this example does):
+  // Send the POST request with the input from your form.
+ 
   fetch('https://technigo-thoughts.herokuapp.com/', { 
     method: 'POST', 
     body: JSON.stringify({ message: myThought }),
-    headers: {'Content-Type': 'application/json'},
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    
+    headers: {'Content-Type': 'application/json'},  
   })
     .then((res) => res.json())
     .then((newThought) => {
@@ -50,7 +43,7 @@ const handleFormSubmit = (event) => {
       
       <form onSubmit={handleFormSubmit}>
       <MyThought myThought={myThought} setMyThought={setMyThought} />
-        <button type ="submit"><span>&#9829;</span> send thought <span>&#9829;</span></button>
+        <button type ="submit"><span>&#9829;</span> Send Happy Thought <span>&#9829;</span></button>
       </form>
       <section className="card-box">
         {thoughts.slice(0, 5).map((thought)=>{

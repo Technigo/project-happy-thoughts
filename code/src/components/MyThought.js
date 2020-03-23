@@ -5,7 +5,7 @@ export const MyThought = ({ myThought, setMyThought }) => {
    
     
     <label className = "input">
-    <p>What is your thought?</p>
+    <p>What's making you happy right now?</p>
         <input type="text"
             value = {myThought}
             onChange={e => setMyThought(e.target.value)}
