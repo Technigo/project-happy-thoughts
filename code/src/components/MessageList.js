@@ -26,7 +26,7 @@ export const MessageList = props => {
                 // Add a section for each message returned by the backend
                 thoughts.map(thought => (
                     <p className="message" key={thought._id}>
-                        {thought.messages}
+                        {thought.message}
                         <span className="message-time">
                             {moment(thought.createdAt).fromNow()}
                         </span>
