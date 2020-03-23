@@ -1,6 +1,6 @@
-# Happy Thoughts 
+# Happy Thoughts App 
 
-Try the site out here:
+Try the site out here: https://rautellin-happy-thoughts.netlify.com/
 
 ## What I learned 🧠
 
@@ -10,11 +10,13 @@ Try the site out here:
 
 ## Requirements I reached 🧪
 
-* The page follow the design as closely as possible
 * The page lists the most recent thoughts
 * The page has a form to post new thoughts
 * The page has the heart button to send likes on a thought
 
-## Stretch-goals I reached 🧪
+## Stretch-goals I reached 🧘
 
-* 
+* Show a character counter
+* Disable submit button if message is too long or too short
+* Added loading message and spinner 
+* Show the number of times an user liked a post
