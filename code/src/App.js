@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { ThoughtsList } from "./components/ThoughtsList.js";
+import { ThoughtsForm } from "./components/ThoughtsForm.js";
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <ThoughtsForm />
+      <ThoughtsList />
     </div>
-  )
-}
+  );
+};
