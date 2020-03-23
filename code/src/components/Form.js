@@ -5,7 +5,7 @@ const APIdata = 'https://technigo-thoughts.herokuapp.com/'
 
 
 
-export const HappyForm = props => {
+export const UserInput = props => {
   const [message, setMessage] = useState('')
 
   const handleSubmit = event => {
@@ -22,6 +22,7 @@ export const HappyForm = props => {
       })
       .catch(err => console.log('error:', err))
   }
+  
 
   return (
     <form className='happy'>

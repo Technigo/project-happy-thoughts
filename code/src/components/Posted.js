@@ -3,7 +3,7 @@ import moment from 'moment'
 import Tooltip from 'react-tooltip-lite'
 import './postedstyle.css'
 
-export const HappyThought = props => {
+export const AlreadyPosted = props => {
     const { message, createdAt, hearts, _id } = props.thought
 
     const handleClick = () => {
@@ -17,21 +17,21 @@ export const HappyThought = props => {
         <div className='thought'>
             <h3>{message}</h3>
             <div className='footerPost'>
-            <div className='postedInfo'>
-                <button tabIndex='0' aria-label='Like button'
-                style={hearts > 0 ? { backgroundColor: '#E7BBCA' } : { backgroundColor: '#fff' }}
-                    onClick={handleClick}>
+                <div className='postedInfo'>
+                    <button tabIndex='0' aria-label='Like button'
+                        style={hearts > 0 ? { backgroundColor: '#E7BBCA' } : { backgroundColor: '#fff' }}
+                        onClick={handleClick}>
                         <Tooltip content='Like' direction='up'>
                             <span role='img'>
                                 {' 💗 '}
                             </span>
                         </Tooltip>
-                </button>
-                <span className='howMany'>{hearts}</span>
+                    </button>
+                    <span className='howMany'>{hearts}</span>
+                </div>
+                <div className='moment'>{moment(createdAt).fromNow()}</div>
             </div>
-            <div className='moment'>{moment(createdAt).fromNow()}</div>
-            </div>
-            
+
         </div>
     )
 }

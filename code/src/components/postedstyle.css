@@ -43,7 +43,7 @@
   animation-name: roll;
   animation: roll 1.5s;
   animation-iteration-count: 1;
-  outline: 3px solid var(--cl-primary)
+  outline: none;
 }
 
 @keyframes roll {
@@ -54,6 +54,25 @@
     transform: rotate(360deg)scale(1.2);
   }
 }
+
+@-moz-keyframes roll {
+  0% {
+    transform: rotate(0)scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg)scale(1.2);
+  }
+}
+
+@-webkit-keyframes roll {
+  0% {
+    transform: rotate(0)scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg)scale(1.2);
+  }
+}
+
 
 span {
   margin-left: 3px;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ScaleLoader } from 'react-spinners'
-import { HappyThought } from './components/Posted'
-import { HappyForm } from './components/Form'
+import { AlreadyPosted } from './components/Posted'
+import { UserInput } from './components/Form'
 
 const APIdata = 'https://technigo-thoughts.herokuapp.com/'
 
@@ -45,11 +45,11 @@ export const App = () => {
 
   return (
     <div>
-      <HappyForm formSubmit={handleFormSubmit} />
+      <UserInput formSubmit={handleFormSubmit} />
 
       {loading ? <div className='loading'><ScaleLoader color='black' /></div> : 
       thoughts.map(thought => (
-        <HappyThought key={thought._id} thought={thought} onLiked={onLiked} />
+        <AlreadyPosted key={thought._id} thought={thought} onLiked={onLiked} />
       ))}
     </div>
   )
