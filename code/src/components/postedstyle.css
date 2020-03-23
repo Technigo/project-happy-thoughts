@@ -43,39 +43,33 @@
   animation-name: roll;
   animation: roll 1.5s;
   animation-iteration-count: 1;
+  -moz-animation-name: roll;
+  -moz-animation: 1.5s roll;
+  -moz-animation-iteration-count: 1;
+  -webkit-animation-name: roll;
+  -webkit-animation: roll 1.5s;
+  -webkit-animation-iteration-count: 1;
   outline: none;
 }
 
 @keyframes roll {
-  0% {
-    transform: rotate(0)scale(1.2);
-  }
-  100% {
-    transform: rotate(360deg)scale(1.2);
-  }
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg)scale(1.2); }
 }
 
 @-moz-keyframes roll {
-  0% {
-    transform: rotate(0)scale(1.2);
-  }
-  100% {
-    transform: rotate(360deg)scale(1.2);
-  }
+  0% { -moz-transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); }
 }
 
 @-webkit-keyframes roll {
-  0% {
-    transform: rotate(0)scale(1.2);
-  }
-  100% {
-    transform: rotate(360deg)scale(1.2);
-  }
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
 }
 
 
 span {
-  margin-left: 3px;
+  margin-left: 2px;
   font-size: 28px;
   text-align: center;
 }

@@ -20,15 +20,7 @@ export const App = () => {
       setLoading(false)
       )}, [postedMessage])
 
-  // const handleFormSubmit = message => {
-  //   fetch(APIdata, {
-  //     method: 'POST',
-  //     body: JSON.stringify({ message }),
-  //     headers: { "Content-Type": "application/json" }
-  //   })
-  //   .then(() => setPostedMessage(message))
-  //   .catch(err => console.log("error:", err))
-  // }
+
   const handleFormSubmit = message => {
     setPostedMessage(message)
   }

@@ -38,7 +38,7 @@ export const UserInput = props => {
 
         <button onClick={handleSubmit}
           type='submit' tabIndex='0' aria-label='Submit button'
-          disabled={message.length < 4 || message.length >= 140 ? true : false}>
+          disabled={message.length <= 4 || message.length >= 140 ? true : false}>
           <span className='heartBtn'>♥︎</span>
           POST
           <span className='heartBtn'>♥︎</span>
