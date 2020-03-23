@@ -9,8 +9,6 @@ const Posting = () => {
       method: 'POST',
       body: JSON.stringify({ message }),
       headers: { 'Content-Type': 'application/json' }
-    }).catch(() => {
-      alert("Please try typing again")
     })
   }
 
