@@ -5,12 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Messages = (props) => {
 
-  const { messages, setMessages } = props
+  const { messages, setMessages, setLoading } = props
 
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
-      .then(json => setMessages(json))
+      .then(json => {
+        setLoading(false)
+        setMessages(json)
+      }
+      )
   }, [])
 
   const likedMessage = (likedMessageId) => {
@@ -28,13 +32,17 @@ export const Messages = (props) => {
     <section>
       {messages.map((message, index) => (
         <>
-          <article key={index} >
-            < p ><FontAwesomeIcon icon="quote-right" /> {message.message} <FontAwesomeIcon icon="quote-left" /></p>
-            <div>
-              <LikeButton id={message._id} likedMessage={likedMessage} />
-              <p>{message.hearts} likes</p>
-              <p><ReactTimeAgo date={message.createdAt} /></p>
+          <article key={index} className="message-container">
+            <div className="text-container">
+              < p ><FontAwesomeIcon icon="quote-right" /> {message.message} <FontAwesomeIcon icon="quote-left" /></p>
             </div>
+            <aside>
+              <div className="likes-container">
+                <LikeButton id={message._id} likedMessage={likedMessage} />
+                <p>{message.hearts} likes</p>
+              </div>
+              <p><ReactTimeAgo date={message.createdAt} /></p>
+            </aside>
           </article>
         </>
       ))}

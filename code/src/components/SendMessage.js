@@ -32,7 +32,7 @@ export const SendMessage = (props) => {
         value={message}
         onChange={event => setMessage(event.target.value)}>
       </textarea>
-      <div>
+      <div className="characters-container">
         {message.length < 5 && <em id="minimum">min. 5 characters</em>}
         <em>{message.length}/140 characters</em>
       </div>

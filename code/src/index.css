@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap');
 
+/* GENERAL SETTINGS */
+
 *{
   margin: 0;
   padding: 0;
@@ -8,15 +10,24 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-h1, h3{
+svg {
+  color: #EC5569;
+}
+
+h1, h2, h3{
   font-family: 'Gochi Hand', cursive;
   color: #EC5569;
   text-align: center;
 }
 
 h1{
-  font-size: 3rem;
+  font-size: 3.25rem;
   margin-bottom: -5px;
+}
+
+h2{
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 
 em, p {
@@ -24,6 +35,29 @@ em, p {
   text-align: center;
   font-size: 0.75rem;
 }
+
+button {
+  color: white;
+  background-color: #EC5569;
+  font-weight: 300;
+  text-transform: lowercase;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover{
+  background-color: #F8C0C8;
+}
+
+button:disabled{
+  background-color: #F8C0C8;
+  cursor: not-allowed;
+}
+
+/* BODY */
 
 body {
   background-image: url(./img/pattern.svg);
@@ -50,20 +84,10 @@ main {
              -5px -5px 25px #ffffff;
 }
 
-button {
-  color: white;
-  background-color: #EC5569;
-  font-weight: 300;
-  text-transform: lowercase;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  outline: none;
-}
+/* HEADER */
 
-button:hover{
-  background-color: #F8C0C8;
+header {
+  display: flex;
 }
 
 /* SEND MESSAGE */
@@ -78,8 +102,9 @@ form {
 
 textarea {
   margin-top: 0.5rem;
+  padding: 1rem;
   font-size: 18px;
-  height: 100px;
+  height: 120px;
   width: 70vw;
   max-width: 400px;
   border: none;
@@ -91,8 +116,12 @@ textarea {
   text-align: center;
   border-radius: 10px;
   background: #ffffff;
-  box-shadow: inset 6px 6px 15px #e8e8e8, 
-            inset -6px -6px 15px #ffffff;
+  box-shadow:  inset 6px 6px 15px #e8e8e8, 
+               inset -6px -6px 15px #ffffff;
+  -webkit-boxbox-shadow: inset 6px 6px 15px #e8e8e8, 
+                         inset -6px -6px 15px #ffffff;
+  -moz-box-shadow:  inset 6px 6px 15px #e8e8e8, 
+                    inset -6px -6px 15px #ffffff;         
 }
 
 textarea:focus, input:focus {
@@ -110,12 +139,16 @@ form em{
   justify-content: flex-start;
 }
 
-form div{
+.characters-container {
   display: flex;
   width: 100%;
 }
 
-/* MESSAGES */
+form button {
+  margin-top: 1rem;
+}
+
+/* PRINTED MESSAGES */
 
 article{
   padding: 1rem;
@@ -129,20 +162,47 @@ article{
              -5px -5px 14px #ffffff;
 }
 
+.text-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75%;
+}
+
+.likes-container p {
+  height: 100%;
+}
+
 article svg {
-  color: #EC5569;
+  margin: 0 0.25rem;
+}
+
+aside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.likes-container {
+  display: flex;
+  align-items: center;
+}
+
+.likes-container button {
+  margin-right: 0.5rem;
+  padding: 5px 10px;
 }
 
 button svg {
   color: white;
+  margin: 0;
 }
 
-div {
-  display: flex;
-  justify-content: space-between;
+/* LOADING SPINNER */
+
+.fa-spin{
+  font-size: 2rem;
+  margin-top: 0.5rem;
 }
 
-article div {
-  align-items: center;
-}
 
