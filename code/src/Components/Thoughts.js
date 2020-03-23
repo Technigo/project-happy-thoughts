@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { HeartButton } from 'Components/HeartButton'
+import TimeAgo from 'timeago-react'
 
 import './thoughts.css'
 
@@ -30,7 +31,11 @@ export const Thoughts = () => {
         {thoughts.map(thought => (
           <div key={thought._id} className='thoughts-card'>
             <p>{thought.message}</p>
-            <HeartButton hearts={thought.hearts} id={thought._id} onThoughtLiked={onThoughtLiked} />
+            <div className='hearts-time-container'>
+              <HeartButton hearts={thought.hearts} id={thought._id} onThoughtLiked={onThoughtLiked} />
+              <TimeAgo className='time-style' datetime={thought.createdAt} />
+            </div>
+            
           </div>
           
         ))}

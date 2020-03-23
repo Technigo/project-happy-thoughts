@@ -4,7 +4,7 @@ import { Form } from './Components/Form'
 
 export const App = () => {
   return (
-    <div>
+    <div className='happy-thoughts-container'>
       <Form />
       <Thoughts />
     </div>

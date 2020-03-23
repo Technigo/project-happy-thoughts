@@ -10,3 +10,14 @@
   font-family: 'Roboto Mono', monospace;
   
 }
+
+.hearts-time-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.time-style {
+  color: #b0b0b0;
+  font-size: 0.8em;
+  padding-left: 0.8em;
+}
