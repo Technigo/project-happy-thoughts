@@ -5,18 +5,19 @@ import { Form } from './components/Form';
 
 export const App = () => {
 
+  const messages_URL = ("https://technigo-thoughts.herokuapp.com/")
   const [thoughts, setThoughts] = useState([]) 
   const [myPost, setMyPost] = useState('')
 
   useEffect(() => {
     
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch(messages_URL)
       .then(res => res.json())
       .then(json => setThoughts(json)
       )}, [myPost])
   
       const handleFormSubmit = message => {
-        fetch("https://technigo-thoughts.herokuapp.com/", {
+        fetch(messages_URL, {
           method: 'POST',
           body: JSON.stringify({ message }),
           headers: { "Content-Type": "application/json" }
@@ -30,7 +31,7 @@ export const App = () => {
     redirect: 'follow'
   };
   
-  fetch("https://technigo-thoughts.herokuapp.com/", requestOptions)
+  fetch("messages_URL", requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
