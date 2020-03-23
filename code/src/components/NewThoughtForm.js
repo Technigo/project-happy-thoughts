@@ -17,8 +17,10 @@ export const NewThoughtForm = ({ setThoughts }) => {
     })
       .then((res) => res.json())
       .then((newThought) => {
-        setThoughts((previousThoughts) => [newThought, ...previousThoughts]) // Adds new thought to array without having to fetch again
-        setNewThought('') // Clears textarea input field
+        // Adds new thought to array without having to fetch again
+        setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+        // Clears textarea input field
+        setNewThought('')
       })
   }
 

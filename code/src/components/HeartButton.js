@@ -10,7 +10,8 @@ export const HeartButton = ({ id, onHeartClicked, hearts }) => {
       body: "",
       headers: { "Content-Type": "application/json" }
     }).then(() => {
-      onHeartClicked(id) // Callback function, from Thoughts.js
+      // Callback function, from Thoughts.js
+      onHeartClicked(id)
     })
   }
 
