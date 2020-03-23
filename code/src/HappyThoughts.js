@@ -1,20 +1,41 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Emoji } from "./Emoji"
 import './HappyThoughts.css'
+import moment from 'moment';
 
 
-export const HappyThoughts = (props) => {
-  const { message } = props
-  const { hearts } = props
-  const { date } = props
+export const HappyThoughts = () => {
+  const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
+  const [thoughts, setThoughts] = useState([])
+
+  useEffect(() => {
+    fetch(THOUGHTS_URL)
+      .then((res) => {
+        return res.json()
+      })
+      .then(json => {
+        setThoughts(json.reverse())
+      })
+  }, [])
 
   return (
-    <article className="thoughts-container">
-      <h2>{message}</h2>
-      <Emoji symbol="❤️" />
-      <p>x {hearts}</p>
-      <p>{date}</p>
-
-    </article>
+    <div>
+      {
+        thoughts.map(thought => (
+          <div className="thoughts-container">
+            <h2 className="message" key={thought._id}>
+              {thought.message}</h2>
+            <p>
+              <Emoji symbol="❤️" />
+              x {thought.hearts}</p>
+            <p>
+              <span className="message-time">
+                {moment(thought.date).fromNow()}
+              </span>
+            </p>
+          </div>
+        ))
+      }
+    </div>
   )
 }
