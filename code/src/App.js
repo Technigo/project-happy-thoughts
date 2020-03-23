@@ -8,18 +8,12 @@ export const App = () => {
 
   const apiUrl = 'https://technigo-thoughts.herokuapp.com/'
   const [thoughts, setThoughts] = useState([])
-  // const [likes, setLikes] = useState()
-
-  // // Like button
-  // const increaseLikes = () => {
-  //   setLikes(likes + 1)
-  // }
 
 
   useEffect(() => {
     fetch(apiUrl)
       .then(res => res.json())
-      .then(json => setThoughts(json))
+      .then(data => setThoughts(data))
   }, [])
 
   return (
@@ -32,9 +26,11 @@ export const App = () => {
 
           <Thought
             key={thought._id}
+            id={thought._id}
             message={thought.message}
             hearts={thought.hearts}
             date={thought.createdAt}
+            apiUrl={apiUrl}
           />
 
         ))}

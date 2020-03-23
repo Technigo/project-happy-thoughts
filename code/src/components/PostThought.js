@@ -4,12 +4,12 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
   const [message, setMessage] = useState('')
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     fetch(apiUrl, {
       method: 'POST',
-      body: JSON.stringify({ message: message }),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: message })
     })
       .then((res) => res.json())
       .then((newThought) => {
