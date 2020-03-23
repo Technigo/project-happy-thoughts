@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ThoughtCard } from './ThoughtCard'
-import { ThoughtForm } from './ThoughtForm'
+import { NewThoughtForm } from './NewThoughtForm'
 import './thoughts.css'
 
 export const Thoughts = () => {
@@ -41,7 +41,7 @@ export const Thoughts = () => {
   return (
     <div className="thoughts-wrapper">
       <section className="thoughts-container">
-        <ThoughtForm
+        <NewThoughtForm
           onSubmit={handleThoughtFormSubmit}
           value={newThought}
           onChange={(event) => setNewThought(event.target.value)} />

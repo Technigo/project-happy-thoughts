@@ -1,8 +1,8 @@
 import React from 'react'
 import { NewThought } from './NewThought'
-import './thoughtform.css'
+import './newthoughtform.css'
 
-export const ThoughtForm = ({ onSubmit, value, onChange }) => {
+export const NewThoughtForm = ({ onSubmit, value, onChange }) => {
   return (
     <article className="thought-form-wrapper">
       <form className="thought-form" onSubmit={onSubmit}>
