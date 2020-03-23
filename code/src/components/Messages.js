@@ -20,10 +20,7 @@ export const Messages = (props) => {
   const likedMessage = (likedMessageId) => {
     const updatedMessages = messages.map((message) => {
 
-      if (!localStorage[message._id]) {
-        localStorage.setItem((message._id), 0)
-      }
-      else if (message._id === likedMessageId) {
+      if (message._id === likedMessageId) {
         message.hearts += 1
         localStorage[message._id] = Number(localStorage[message._id]) + 1
       }
