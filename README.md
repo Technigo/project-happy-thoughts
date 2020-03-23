@@ -9,7 +9,7 @@ This project was to build a twitter like feed with only happy thoughts. :)
 
 *What it's like to work with an API which you both send and receive data from
 
-* Implement a given design
+*Implement a given design
 
 ## Technologies used in this project
 HTML5
