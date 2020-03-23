@@ -7,11 +7,15 @@ export const Button = (props) => {
 
 
   const submitHandler = (event) => {
+    event.preventDefault()
+
     fetch('https://technigo-thoughts.herokuapp.com/', 
     {method: 'POST',
     body: JSON.stringify({ message }),
     headers: { 'Content-Type': 'application/json'}})
-    .then(event.preventDefault())
+    .then(() => {
+      window.location.reload()
+    })
     
     
   } 

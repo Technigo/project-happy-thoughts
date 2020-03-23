@@ -1,0 +1,21 @@
+.likes-container {
+  display: flex;
+}
+
+.heart-count-btn {
+  background-color: #FFAEAC;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.counter {
+  color: #b0b0b0;
+  font-size: 0.8em;
+  padding-left: 0.8em;
+}
