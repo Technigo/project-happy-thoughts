@@ -12,7 +12,7 @@ export const App = () => {
 
 	return (
 		<React.Fragment>
-			<Header />
+			{/* <Header /> */}
 			<SendThought thoughts={thoughts} setThoughts={setThoughts} />
 			{thoughts.map((thought) => (
 				<DisplayThought

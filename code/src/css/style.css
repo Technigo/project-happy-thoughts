@@ -7,7 +7,7 @@
 
 body {
   background: #fff;
-  font-family: monospace;
+  font-family: 'Arimo', sans-serif;
   line-height: 1.6;
   margin: 0;
 }
@@ -21,14 +21,30 @@ h1 {
   z-index: 10;
 }
 
+p {
+  font-size: 14px;
+}
+
+.p-message-count, .p-red, .p-blue {
+  font-weight: 700;
+  font-family: 'Arimo', sans-serif;
+  font-size: 12px;
+}
+
+.p-header {
+  letter-spacing: 1px;
+}
+
+.p-thoughts {
+  font-family: 'Inconsolata', monospace;
+}
+
 .p-red {
   color: #c03c3c;
-  font-weight: 700;
 }
 
 .p-blue {
   color: #3cc068;
-  font-weight: 700;
 }
 
 .header {
@@ -65,9 +81,6 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 400px;
   margin: 20px auto;
   padding: 10px;
@@ -92,7 +105,10 @@ h1 {
 }
 
 .send-thought-container {
-  height: 170px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 165px;
+  background-color: #f2f0f0;
 }
 
 .btn-and-count-container {
@@ -115,16 +131,20 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 80%;
 }
 
 .thought-input {
-  height: 60px;
+  height: 65px;
   border: 1px solid rgba(0, 0, 0, 0.534);
   padding: 5px;
   font-family: monospace;
+  font-size: 13px;
+  resize: none;
+  margin: 5px 0 10px;
 }
 
 .two-hearts-button {
@@ -135,7 +155,10 @@ form {
 }
 
 .thought-container {
-  height: 130px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 135px;
 }
 
 .icon-container {
@@ -145,12 +168,12 @@ form {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.icon-container div {
+.icon-container .heart-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,8 +207,27 @@ form {
   background-color: #ff6868;
 }
 
-.amount-of-hearts {
+.all-likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-left: 5px;
+  font-size: 12px;
+}
+
+.your-likes {
+  opacity: 0.5;
+  line-height: 5px;
+}
+
+.amount-of-hearts {
   opacity: 0.5;
 }
 
@@ -196,4 +238,5 @@ form {
 
 .time-gone-by {
   opacity: 0.3;
+  font-size: 12px;
 }

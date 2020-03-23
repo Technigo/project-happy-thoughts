@@ -25,7 +25,7 @@ export const SendThought = ({ thoughts, setThoughts }) => {
 
 	return (
 		<section className="send-thought-container">
-			<p>What's making you happy right now?</p>
+			<p className="p-header">What's making you happy right now?</p>
 			<form>
 				<textarea
 					className="thought-input"
