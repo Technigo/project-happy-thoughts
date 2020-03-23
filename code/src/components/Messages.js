@@ -19,8 +19,13 @@ export const Messages = (props) => {
 
   const likedMessage = (likedMessageId) => {
     const updatedMessages = messages.map((message) => {
-      if (message._id === likedMessageId) {
+
+      if (!localStorage[message._id]) {
+        localStorage.setItem((message._id), 0)
+      }
+      else if (message._id === likedMessageId) {
         message.hearts += 1
+        localStorage[message._id] = Number(localStorage[message._id]) + 1
       }
       return message
     })
@@ -39,7 +44,7 @@ export const Messages = (props) => {
             <aside>
               <div className="likes-container">
                 <LikeButton id={message._id} likedMessage={likedMessage} />
-                <p>{message.hearts} likes</p>
+                <p>{message.hearts} likes (you liked this {localStorage[message._id]} times)</p>
               </div>
               <p><ReactTimeAgo date={message.createdAt} /></p>
             </aside>
