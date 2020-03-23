@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { MessageList } from 'Components/MessageList'
+import { MessageInput } from 'Components/MessageInput'
+
 
 export const App = () => {
-  const [thoughts, setThoughts] = useState([])
-
-  useEffect(() => {
-    fetch('https://technigo-thoughts.herokuapp.com/')
-      .then(res => res.json())
-      .then(json => setThoughts(json))
-  }, [])
 
   return (
-    <div>
-      {thoughts.map(thought => (
-        <p key={thought._id}>{thought.message}</p>
-      ))}
-
-    </div>
+    <section className='app'>
+      <MessageInput />
+      <MessageList />
+    </section>
   )
 }
+
