@@ -1,34 +1,42 @@
 import React, {useState, useEffect} from 'react'
 import TimeAgo from 'react-timeago'
 // import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
-import {AddThoughts} from './AddThoughts'
+
 
 
 export const Thoughts = () => {
-  const [thoughts, SetThoughts] = useState([])
-  const APIdata = 'https://technigo-thoughts.herokuapp.com/'
-  
+  const MESSAGE_URL = 'https://technigo-thoughts.herokuapp.com/'
+  const [message, SetMessage] = useState([])
+
+
   useEffect(() => {
-    fetch(APIdata)
-    .then(result => result.json())
-    .then(json => SetThoughts (json))
-  })
+    fetch(MESSAGE_URL)
+      .then((res) => {
+        return res.json()
+      })
+      .then(data => { 
+        SetMessage(data)
+  });
+}, []);
 
   return (
-   <section>
-   
-    {thoughts.map(thought => ( 
-   
-    <div key={thought._id} className="eachThought">
+   <div>
+    {
+      message.map(post => ( 
+      <p className="thought" key={post._id}> 
+      {post.message} 
+      <span className="thought-time"> <TimeAgo date={post.createdAt} /> </span>
+      </p>
+    // <div className="eachThought">
       
-       <div> {thought.message} </div> 
-       <div> &hearts; x {thought.hearts} <TimeAgo date={thought.createdAt} />
-       </div>
+      //  <div>  </div> 
+      //  <div> &hearts; x {thought.hearts} 
+      //  </div>
+    // </div>
+   
+      ))
+}
     </div>
-   
-   
-    ))}
-    </section>
-  
+      
   ) 
 }

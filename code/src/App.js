@@ -1,12 +1,12 @@
 import React from 'react'
 import {Thoughts} from './Thoughts'
-import {AddThoughts} from './AddThoughts.js'
+import {MessageInput} from './MessageInput'
 
 
 export const App = () => {
   return (
     <div className="thoughts">
-      <AddThoughts />
+      <MessageInput />
       <Thoughts />
     </div>
   )
