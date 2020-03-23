@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDom from 'react-dom';
 import { Form } from './components/Form';
+import { MessageList } from 'components/MessageList';
 
 
 export const App = () => {
@@ -26,20 +27,12 @@ export const App = () => {
         .catch(err => console.log("error:", err))
       }
 
-  const requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
-  
-  fetch("messages_URL", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
 
   return (
+    <div>
     <Form onFormSubmit={handleFormSubmit}/>
-     
+    <MessageList />
+    </div>
   )
 
   } 
-  
