@@ -13,6 +13,8 @@ export const Thoughts = () => {
       .then(json => setThoughts(json))
   }, [])
 
+  // Mapping through the array of thoughts
+  // Adding one heart if the id is tha same as the id for the heart clicked 
   const onHeartClicked = (thoughtId) => {
     const heartClicked = thoughts.map(thought => {
       if (thought._id === thoughtId) {

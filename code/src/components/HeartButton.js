@@ -3,13 +3,14 @@ import './heartbutton.css'
 
 export const HeartButton = ({ id, onHeartClicked, hearts }) => {
 
+  // Posting to API with POST, using the thought id, when heart button is clicked
   const handleClick = () => {
     fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" }
     }).then(() => {
-      onHeartClicked(id)
+      onHeartClicked(id) // Callback function, from Thoughts.js
     })
   }
 
