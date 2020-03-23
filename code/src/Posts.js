@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Postcard from './Postcard.js'
 import Posting from './Posting.js'
 import './postcard.css'
+import moment from 'moment'
 
 const Posts = () => {
   const [postsList, setPostsList] = useState([])
@@ -26,7 +27,7 @@ const Posts = () => {
             key={post._id}
             message={post.message}
             hearts={post.hearts}
-            createdAt={post.createdAt}
+            createdAt={moment(post.createdAt).fromNow()}
             _id={post._id}
           />
         )

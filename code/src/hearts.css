@@ -10,8 +10,8 @@
   font-size: 12 px;
 }
 
-svg path {
-  fill:#ff4031; 
+.heart-section svg {
+  fill:#ff4031;
 }
 
 .nothearted {
