@@ -24,13 +24,17 @@ export const MessageLike = (props) => {
     // An inout text field
     // A sumbit button
     return (
-        <form onSubmit={handleSubmit}>
-            <input
+        <form onSubmit={handleSubmit} className='like-container'>
+            <div>
+               <input
                 type='submit'
                 className='like-button'
-                value='Like'
-            ></input>
-            <div>x {likes}</div>
+                value=''
+                /> 
+                <img src='/assets/sparkling-heart.png' alt='heart'/>
+            </div>
+            
+            <div className='like-display'>x {likes}</div>
         </form>
     )
 }

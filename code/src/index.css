@@ -5,9 +5,97 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lavenderblush;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Sumbit thought form */
+
+.form-container, .message-cards {
+  border: 1px solid black;
+  padding: 0px 20px;
+  width: 75%;
+  margin: 40px auto;
+  box-shadow: 7px 7px black;
+}
+
+.form-container {
+  background-color: rgb(236, 236, 236);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-text {
+  height: 40px;
+  padding: 15px;
+}
+
+/* Posted thoughts */
+.message-cards {
+  background-color: white;
+}
+
+.message-card-bottom {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.message-time {
+  margin: auto 0px;
+  color: lightgrey;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+}
+
+.like-display {
+  height: auto;
+  padding-left: 10px;
+}
+
+
+/* Buttons */
+
+.form-button, .like-button {
+  padding: 10px;
+  background-color: pink;
+  box-shadow: none;
+  border: none;
+}
+
+.form-button {
+  width: 50%;
+  border-radius: 50px;
+  margin: 20px 0px;
+}
+
+.like-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Media quaries */
+
+@media (min-width: 768px) {
+  .form-container, .message-cards {
+    width: 55%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-container, .message-cards {
+    width: 465px;
+  }
 }

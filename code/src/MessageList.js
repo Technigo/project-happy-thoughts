@@ -30,15 +30,17 @@ export const MessageList =() => {
         <div>
             {
                 messages.map(message => (
-                <div className='message' key={message._id}>
-                    {message.message}
-                    <span className='message-time'>
-                        {moment(message.createdAt).fromNow()}
-                    </span>
-                    <MessageLike 
-                        thoughtId={message._id}
-                        likes={message.hearts}
-                    />
+                <div className='message-cards' key={message._id}>
+                    <p>{message.message}</p>
+                    <div className='message-card-bottom'> 
+                        <div className='message-time'>
+                            {moment(message.createdAt).fromNow()}
+                        </div>
+                        <MessageLike 
+                            thoughtId={message._id}
+                            likes={message.hearts}
+                        />
+                    </div>
                 </div>
                 ))
             }

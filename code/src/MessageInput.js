@@ -4,7 +4,7 @@ export const MessageInput = () => {
     // The message state to save the message ti send to the backend
     const MESSAGES_URL = 'https://technigo-thoughts.herokuapp.com/';
     const [message, setMessage] = useState('');
-    
+        
     // A submit function which POSTs the text field
     const handleSubmit = event => {
         event.preventDefault();
@@ -26,19 +26,19 @@ export const MessageInput = () => {
     // An inout text field
     // A sumbit button
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input
+        <div className='form-container'>
+            <p>What's making you happy right now?</p>
+            <form onSubmit={handleSubmit} className='form'>
+                <textarea
                     type='text'
                     className='form-text'
                     onChange={event => setMessage(event.target.value)}
-                ></input>
+                />
                 <input
                     type='submit'
                     className='form-button'
-                    value='Add Message'
-                >
-                </input>
+                    value=' Send Happy Thought '
+                />
             </form>
             
         </div>
