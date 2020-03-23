@@ -30,6 +30,7 @@ button {
   max-width: 768px;
   margin: auto;
   padding-right: .3rem;
+  margin-bottom: 3rem;
 }
 
 .thoughts-container {
@@ -58,9 +59,11 @@ button {
 }
 .thought-card .likes {
   flex: 0 1 auto;
+  color: var(--color-darkGray);
 }
 .thought-card .timestamp {
   flex: 0 1 auto;
+  color: var(--color-darkGray);
 }
 
 .thought-card::before,
