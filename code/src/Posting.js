@@ -9,8 +9,11 @@ const Posting = () => {
       method: 'POST',
       body: JSON.stringify({ message }),
       headers: { 'Content-Type': 'application/json' }
+    }).then(() => {
+      window.location.reload();
     })
   }
+
 
   return (
     <article className="new-message">
