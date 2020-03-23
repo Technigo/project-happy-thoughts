@@ -1,0 +1,42 @@
+.thoughts-container {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thought-card {
+  border: 1px solid #000;
+  box-shadow: 6px 8px #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 15px;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+
+}
+
+
+.message-id {
+  color: grey;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+
+.message-text {
+  font-weight: 700;
+}
+
+.message-time {
+  color: grey;
+  text-align: right;
+  font-size: 12px;
+}
+
+.message-likes {
+  padding-top: 20px;
+}
