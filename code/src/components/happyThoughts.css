@@ -1,0 +1,45 @@
+.cardContainer {
+  width: 80%;
+  height: 170px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  border: solid 1px #BFBFBF;
+  background: #fefcff;
+  box-shadow:  5px 5px 0px #bfbdbf, 
+               -5px -5px 0px #ffffff;
+}
+
+.cardContainer p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-align: left;
+}
+
+.postedTime span {
+  color: grey;
+  float: right;
+  font-size: 12px;
+}
+
+.heartTime {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 667px) {
+  .cardContainer {
+    width: 60%;
+    height: 150px;
+
+  }
+}
+@media (min-width: 992px){
+  .cardContainer {
+    width: 33.33%;
+    height: 150px;
+  }
+}

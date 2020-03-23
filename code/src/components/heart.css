@@ -1,0 +1,14 @@
+.heartButton {
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  margin: 7px;
+  cursor: pointer;
+  outline: none;
+  background-color: #F2B3B9;
+}
+
+.heartButton span {
+  font-size: 14px;
+  padding-left: 3px;
+}
