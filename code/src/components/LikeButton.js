@@ -21,8 +21,8 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
 
   return (
     <span className="likes">
-      <button onClick={addLike} className="like-btn"><span role="img" aria-label="heart">❤️</span></button>
-      x {likes}
-    </span>
+      <button onClick={addLike} className={"like-btn" + (likes > 0 ? " has-likes" : "")} ><span role="img" aria-label="heart">❤️</span></button>
+      x { likes}
+    </span >
   )
 }

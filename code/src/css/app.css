@@ -1,3 +1,9 @@
+:root {
+  --color-pink: #ffadad;
+  --color-lightGray: #eaeaea;
+  --color-darkGray: #a0a0a0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -75,16 +81,20 @@ button {
   padding-left: .7rem;
   padding-top: .2rem;
   font-size: 1.2rem;
-  background-color: #eaeaea;
+  background-color: var(--color-lightGray);
   border: 0;
   border-radius: 50%;
+}
+
+.has-likes {
+  background-color: var(--color-pink);
 }
 
 .post-thought {
   flex-direction: column;
   align-items: flex-start;
   padding: 1.5rem 1rem;
-  background-color: #eaeaea;
+  background-color: var(--color-lightGray);
 }
 
 .post-thought > * {
@@ -102,13 +112,13 @@ textarea {
   padding: .6rem .8rem;
   font-family: inherit;
   resize: none;
-  border: 1px solid #a0a0a0;
+  border: 1px solid var(--color-darkGray);
 }
 
 .post-btn {
   padding: .6rem 1rem .8rem;
   border-radius: 30px;
-  background-color: #FFADAD;
+  background-color: var(--color-pink);
   font-family: inherit;
   font-size: inherit;
   font-weight: 500;
