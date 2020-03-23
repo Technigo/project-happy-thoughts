@@ -12,22 +12,3 @@ code {
     monospace;
 }
 
-.thoughts {
-  background-color: pink;
-  width: 50%;
-  margin: 10px auto;
-}
-
-.eachThought {
-  background-color: plum;
-  margin: 20px auto;
-  width: 50%;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 700;
-  box-shadow: black 2px 2px 2px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-}

@@ -1,0 +1,54 @@
+.thoughts {
+  width: 40%;
+background-color: rgb(255, 255, 255);
+margin: 10px auto;
+
+}
+
+.each-thought {
+  background-color: rgba(255, 255, 255, 0.521);
+  margin: 20px auto;
+  width: 100%;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+  letter-spacing: 1px;
+  line-height: 20px;
+  box-shadow: black 2px 2px 2px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  border: solid rgb(179, 177, 177) 1px;
+  align-items: center;
+  height: 150px
+
+}
+
+
+
+.thought {
+  margin:20px;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width:90%;
+  justify-content: space-between;
+}
+
+.time-and-likes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+
+.likes {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

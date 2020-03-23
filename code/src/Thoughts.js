@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
-import TimeAgo from 'react-timeago'
+import moment from 'moment'
 // import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
+import heart from './heart.png'
 
 
 
 export const Thoughts = () => {
   const MESSAGE_URL = 'https://technigo-thoughts.herokuapp.com/'
   const [message, SetMessage] = useState([])
-
+  
 
   useEffect(() => {
     fetch(MESSAGE_URL)
@@ -19,23 +20,21 @@ export const Thoughts = () => {
   });
 }, []);
 
+
   return (
-   <div>
+   <div className="Message-list">
     {
       message.map(post => ( 
-      <p className="thought" key={post._id}> 
-      {post.message} 
-      <span className="thought-time"> <TimeAgo date={post.createdAt} /> </span>
-      </p>
-    // <div className="eachThought">
-      
-      //  <div>  </div> 
-      //  <div> &hearts; x {thought.hearts} 
-      //  </div>
-    // </div>
+      <div className="each-thought">
+        <p className="thought" key={post._id}> 
+        {post.message} 
+        <p className="time-and-likes"> <span className="likes"> <button><img src={heart} alt="heart icon"/></button> x {post.hearts} </span> <span> {moment(post.createdAt).fromNow()} </span> </p>
+        </p>
+    </div>
    
       ))
 }
+
     </div>
       
   ) 
