@@ -1,0 +1,26 @@
+.thought {
+  width: 500px;
+  padding: 20px;
+  margin: 20px;  
+  border: 1px black solid;
+  box-shadow: 5px 5px black;
+  box-sizing: border-box;
+}
+
+.thought-text{
+  font-family: monospace;
+}
+
+
+.thought-details {
+  display: flex;
+  justify-content: space-between;
+  color: grey;
+}
+
+.heart-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90px;
+}
