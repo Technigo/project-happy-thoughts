@@ -11,7 +11,11 @@ export const MessageList = () => {
         return res.json()
       })
       .then(data => {
-        setMessages(data)
+        const filteredData = data.filter(message => {
+          return message.text
+        })
+        filteredData.reverse()
+        setMessages(filteredData)
       })
   }, [])
 
