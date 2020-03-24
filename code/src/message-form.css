@@ -36,4 +36,15 @@ label {
   .submit-button{
     width: 40%;
   }
+
+  form {
+    width: 60%;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  form {
+    width: 50%;
+  }
 }

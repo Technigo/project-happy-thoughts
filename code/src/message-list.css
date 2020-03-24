@@ -30,3 +30,16 @@
        color: #beb4b3; 
        font-size: 12px;
    }
+
+
+@media (min-width: 668px) {
+    .message {
+      width: 60%;
+    }
+  }
+
+   @media (min-width: 1024px) {
+    .message {
+      width: 50%;
+    }
+  }
