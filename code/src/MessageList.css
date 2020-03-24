@@ -1,0 +1,24 @@
+.message-box {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 250px;
+  background-color: whitesmoke;
+  padding: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  box-shadow: 7px 7px black;
+  margin: 20px;
+}
+.message-time {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+.like-button {
+  margin: 10px 0px;
+  padding: 2px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
