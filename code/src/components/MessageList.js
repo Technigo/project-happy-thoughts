@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import moment from 'moment';
+import moment from 'moment'
+import { Heart } from 'components/Heart'
+import './messageList.css'
 
 export const MessageList = props => {
     const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/";
@@ -13,9 +15,9 @@ export const MessageList = props => {
                 return res.json() 
             })
             .then(data => {
-                // Set the state based on the response
-                setThoughts(data.reverse());
-                console.log(data)
+                // Set the state based on the response reversed setThoughts(data.reverse());
+                setThoughts(data.sort());
+                
             });
     }, []);
 
@@ -25,7 +27,7 @@ export const MessageList = props => {
             {
                 // Add a section for each message returned by the backend
                 thoughts.map(thought => (
-                    <p className="message" key={thought._id}>
+                    <p className="message card" key={thought._id}>
                         {thought.message}
                         <span className="message-time">
                             {moment(thought.createdAt).fromNow()}

@@ -12,7 +12,7 @@ export const Form = props => {
   }
 
   return (
-    <form>
+    <form className="card">
     <h1>What is making you happy right now?</h1>
       <textarea value={message}
         onChange={event => setMessage(event.target.value)}
