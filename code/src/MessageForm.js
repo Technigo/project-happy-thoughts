@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './message-form.css'
 
 export const MessageForm = () => {
   const [message, setMessage] = useState("")
@@ -19,17 +20,20 @@ export const MessageForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label className="textLabel">
+      <label>
         What's making you happy right now?
       <input
-          className="textInput"
+          className="text-input"
           type="text"
           onChange={event => setMessage(event.target.value)}
-          required />
+        />
       </label>
       <input
+        className="submit-button"
         type="submit"
-        value="Send Happy Thought" />
+        {...message.length < 5 || message.length > 140 ? { disabled: true } : { enabled: true }}
+        value="Send Happy Thought"
+      />
     </form>
   )
 }

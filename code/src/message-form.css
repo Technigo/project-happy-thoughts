@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  width: 80%;
+  background-color: #f2f0f0;
+  border: 1px solid black;
+  box-shadow: 6px 6px black;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 6px 0;
+}
+
+.submit-button {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #f2acad;
+}
