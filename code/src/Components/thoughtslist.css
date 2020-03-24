@@ -1,0 +1,14 @@
+.thoughts-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thought-message {
+  border: solid 1px black;
+  padding: 16px;
+  background-color: #f1f1f1;
+  width: 350px;
+  height: auto;
+}

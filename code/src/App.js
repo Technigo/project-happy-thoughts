@@ -1,9 +1,13 @@
 import React from 'react'
+import { NewThoughtForm } from "./Components/NewThoughtForm"
+import { ThoughtsList } from "./Components/ThoughtsList"
 
 export const App = () => {
+
   return (
-    <div>
-      Find me in src/app.js!
+    <div className="happythoughts-container">
+      <NewThoughtForm />
+      <ThoughtsList />
     </div>
   )
 }
