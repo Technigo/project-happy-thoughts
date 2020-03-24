@@ -24,7 +24,7 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
         <span role="img" aria-label="heart">❤️</span>
       </button>
 
-      <label for={id}>x {likes}</label>
+      <label htmlFor={id}>x {likes}</label>
 
     </div >
   )

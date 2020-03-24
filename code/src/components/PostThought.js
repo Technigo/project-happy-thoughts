@@ -18,6 +18,8 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
 
     // clear textarea
     setMessage('')
+
+    console.log(message.length)
   };
 
   return (
@@ -28,9 +30,12 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
 
         <textarea
           id="postThoughtField"
+          className={(message.length < 5 || message.length > 140) && 'error'}
           onChange={(event) => { setMessage(event.target.value) }}
           value={message}
         ></textarea>
+
+        <div className="char-count">#{140 - message.length}</div>
 
         <button type="submit" className="post-btn">
           <span role="img" aria-label="heart">❤️</span>Send happy thought <span role="img" aria-label="heart">❤️</span>

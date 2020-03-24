@@ -16,6 +16,8 @@ export const App = () => {
       .then(data => setThoughts(data))
   }, [])
 
+  // console.log(thoughts[0].errors)
+
   return (
     <div className="wrapper">
 
