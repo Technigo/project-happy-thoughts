@@ -22,11 +22,10 @@ export const MessageForm = () => {
     <form onSubmit={handleSubmit}>
       <label>
         What's making you happy right now?
-      <input
+      <textarea
           className="text-input"
-          type="text"
           onChange={event => setMessage(event.target.value)}
-        />
+        > </textarea>
       </label>
       <button
         className="submit-button"

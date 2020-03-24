@@ -15,6 +15,7 @@ label {
 }
 
 .text-input {
+  padding: 12px;
   height: 100px;
   margin: 8px 0;
 }
