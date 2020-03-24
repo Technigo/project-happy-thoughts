@@ -12,15 +12,6 @@ body {
   margin: 0;
 }
 
-h1 {
-  text-shadow: -4px -4px 2px #c03c3c, 4px -4px 2px #c03c3c, -4px 4px 2px #c03c3c, 4px 4px 2px #c03c3c;
-  text-align: center;
-  color: white;
-  font-size: 80px;
-  position: relative;
-  z-index: 10;
-}
-
 p {
   font-size: 14px;
 }
@@ -47,30 +38,12 @@ p {
   color: #3cc068;
 }
 
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-image: url("../images/Hearts-Background.svg");
-  height: 200px;
-  position: relative;
-  z-index: 1;
-  -webkit-transition: background 0.5s linear;
-  transition: background 0.5s linear;
-}
-
-.layer-header {
-  position: absolute;
-  z-index: 5;
-  background-color: rgba(228, 226, 226, 0.5);
-  height: 100%;
-  width: 100%;
+.all-thoughts-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 30px;
+  margin: auto;
 }
 
 .send-thought-container, .thought-container {

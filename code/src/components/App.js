@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from './Header';
 import { SendThought } from './SendThought';
 import { DisplayThought } from './DisplayThought';
 
@@ -11,8 +10,7 @@ export const App = () => {
 	}, []);
 
 	return (
-		<React.Fragment>
-			{/* <Header /> */}
+		<section className="all-thoughts-container">
 			<SendThought thoughts={thoughts} setThoughts={setThoughts} />
 			{thoughts.map((thought) => (
 				<DisplayThought
@@ -23,6 +21,6 @@ export const App = () => {
 					date={thought.createdAt}
 				/>
 			))}
-		</React.Fragment>
+		</section>
 	);
 };

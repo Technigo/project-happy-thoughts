@@ -20,16 +20,6 @@ body {
 	margin: 0;
 }
 
-h1 {
-	text-shadow: -4px -4px 2px $darkred-border-color, 4px -4px 2px $darkred-border-color,
-		-4px 4px 2px $darkred-border-color, 4px 4px 2px $darkred-border-color;
-	text-align: center;
-	color: white;
-	font-size: 80px;
-	position: relative;
-	z-index: 10;
-}
-
 p {
 	font-size: 14px;
 }
@@ -59,24 +49,10 @@ p {
 	color: $darkblue-border-color;
 }
 
-.header {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-image: url("../images/Hearts-Background.svg");
-	height: 200px;
-	position: relative;
-	z-index: 1;
-
-	transition: background 0.5s linear;
-}
-
-.layer-header {
-	position: absolute;
-	z-index: 5;
-	background-color: $grey-transparent-color;
-	height: 100%;
-	width: 100%;
+.all-thoughts-container {
+	width: fit-content;
+	padding: 0 30px;
+	margin: auto;
 }
 
 %thoughts-shared {
