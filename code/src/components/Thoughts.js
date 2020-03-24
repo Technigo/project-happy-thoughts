@@ -45,12 +45,9 @@ export const ThoughtsList = () => {
           {/* <div className="message-id">ID: {thought._id}</div> */}
           <div className="message-text">{thought.message}</div>
           {/* <div className="message-likes"><Heart /> x {thought.hearts}</div> */}
-          <div className="message-likes"><LikeButton id={thought._id} onThoughtLiked={onThoughtLiked} hearts={thought.hearts} /> x {thought.hearts} </div>
+          <div className="message-likes"><LikeButton id={thought._id} onThoughtLiked={onThoughtLiked} hearts={thought.hearts} /> <span>x {thought.hearts}</span></div>
           <div className="message-time">{moment(thought.createdAt).fromNow()}</div>
         </article>
-
-       
-
       ))}
 
     </div>

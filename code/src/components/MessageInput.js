@@ -35,7 +35,7 @@ export const MessageInputForm = () => {
     <div className="submit-form-container">
       <article className="submit-form-card">
         <form onSubmit={handleSubmit}>
-        <p>What's making you happy right now?</p>
+        <h3>What's making you happy right now?</h3>
 {/*           <input
             type="text"
             className="form-text"
@@ -59,8 +59,11 @@ export const MessageInputForm = () => {
           </input> */}
           {/* <button className="submit-button" type="submit" disabled={message.length < 1 || false}><Heart />Send Happy Thought<Heart /></button> */}
           <button className="submit-button" type="submit" disabled={message.length > 140 || false}><Heart />Send Happy Thought<Heart /></button>
+          <p className="counter">{message.length}/140</p>
         </form>
+        <div className="banana-container"><span role="img" aria-label="Banana image">🍌🍌🍌🍌🍌🍌🍌🍌🍌🍌🍌</span></div>
       </article>
+      
     </div>
   )
 }

@@ -10,10 +10,10 @@
 .like-button-clicked {
   border: none;
   cursor: pointer;
-  background:  rgb(254, 189, 219);
+  background:  rgb(249, 178, 211);
+  /* filter: hue-rotate(90deg); */
   border-radius: 50%;
   padding: 11px 8px;
- 
 }
 
 .like-button-start:hover {
