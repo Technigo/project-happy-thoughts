@@ -5,6 +5,7 @@ form {
  align-content: center;
  box-shadow: black 2px 2px 2px;
  border: gray solid 1px;
+ background-color: rgba(211, 207, 207, 0.397);
 }
 
 .input-field {
@@ -16,7 +17,19 @@ form {
   width: 90%;
   height: 150px;
   margin: 0 auto;
+}
 
+textarea:focus { 
+  outline: thin solid pink; 
+}
+
+input:focus {
+  outline: none;
+}
+
+.form-button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .text-area { 
@@ -24,7 +37,6 @@ form {
   width: 100%;
   display: flex;
   flex-direction: column; 
- 
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
 }
@@ -36,7 +48,6 @@ form {
   height: 30px;
   border-radius: 50px;
   background-color: rgb(243, 178, 227);
-  
 }
 
 .label-input {
