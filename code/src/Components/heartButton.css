@@ -3,7 +3,7 @@
 }
 
 .heart-count-btn {
-  background-color: #FFAEAC;
+  background-color: #d1d1d1;
   border: none;
   width: 40px;
   height: 40px;
@@ -12,6 +12,14 @@
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+
+.heart-count-btn:hover {
+  background-color: #ebebeb;
+}
+
+.heart-count-btn:focus {
+  background-color: #FFAEAC;
 }
 
 .heart-count-btn:focus {
