@@ -25,24 +25,25 @@ export const Thoughts = () => {
   }
 
   return (
-    <div>
+    <section className="happy-thoughts">
+      <div className="thoughts">
 
-      <MyThought
-        myThought={myThought}
-        setMyThought={setMyThought}
-        setThoughts={setThoughts}
-      />
+        <MyThought
+          myThought={myThought}
+          setMyThought={setMyThought}
+          setThoughts={setThoughts}
+        />
 
-      {thoughts.map((thought) => (
-        <div className="thoughts-card">
-          <Thought
-            key={thought._id}
-            thought={thought}
-            onThoughtLiked={onThoughtLiked} />
-        </div>
-      ))}
-
-    </div>
+        {thoughts.map((thought) => (
+          <div className="thought-cards">
+            <Thought
+              key={thought._id}
+              thought={thought}
+              onThoughtLiked={onThoughtLiked} />
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }
 

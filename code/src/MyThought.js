@@ -8,20 +8,20 @@ export const MyThought = ({ setThoughts }) => {
     event.preventDefault()
     fetch('https://technigo-thoughts.herokuapp.com/', {
       method: 'POST',
-      headers: { "Content-Type": "application/json" },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: myThought })
     })
       .then((res) => res.json())
       .then((newThought) => {
         setThoughts((previousThoughts) => [newThought, ...previousThoughts])
-        setMyThought('') //will empty the textarea when the form is submitted
+        setMyThought('') // will empty the textarea when the form is submitted
       })
   }
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <div className="new-thought">
-        <label>
+      <div className="thought-cards new-thought">
+        <label className="form">
           <p>What's making you happy right now?</p>
           <textarea
             className="inputfield"

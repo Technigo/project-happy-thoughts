@@ -6,7 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  background-color: pink;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 code {
@@ -14,39 +17,80 @@ code {
     monospace;
 }
 
-main {
-height: 100vh;
-
-display: flex;
-justify-content: center;
-}
-
-.new-thought {
+.happy-thoughts {
   display: flex;
   flex-direction: column;
-  align-items: centers;
-  justify-content: space-between;
- margin: 20px 20px;
- padding: 20px 20px;
+  align-items: center;
+}
+
+ .thoughts {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+} 
+
+.thought-cards {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 10px;
+  margin: 20px 20px;
+  padding: 20px 20px;
   border: 2px solid black;
-  background-color: whitesmoke;
+  font-family: 'Cutive Mono', monospace;
+}
+
+/*** THE MY-THOGHT-CARD ***/
+
+.new-thought {
+  background-color: whitesmoke; 
+}
+
+.form {
+  display: flex;
+  flex-direction: column; 
+}
+
+.inputfield {
+  border: 1px solid black;
+  height: 50px;
 }
 
 .send-button {
-padding: 6px 10px;
-border-radius: 16px;
-background-color: lightpink;
-
+  padding: 6px 10px;
+  border-radius: 16px;
+  background-color: lightpink;
+  margin-top: 16px;
+  width: 200px;
 }
 
-.thoughts-card {
-  display: flex;
-  flex-direction: column;
-  align-items: centers;
-  justify-content: space-between;
- margin: 20px 20px;
- padding: 20px 20px;
-  border: 2px solid black;
-  background-color: blanchedalmond;
+.send-button:focus {
+  outline: none;
+  }
 
+/** RECENT THOUGHTS ***/
+
+.likebutton {
+  background-color: lavender;
+  border-radius: 50%;
+  padding: 6px;
+  border: none;
+  text-decoration: none;
+} 
+
+.likebutton:focus {
+  outline: none;
+  background-color: lightpink; 
+}
+
+.thought-details {
+  display: flex;
+  justify-content: space-between;
+  color: grey;
+}
+
+.like-details {
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+  align-items: baseline;
 }
