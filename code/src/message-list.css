@@ -16,6 +16,7 @@
    .likes-and-time-container {
        display: flex;
        justify-content: space-between;
+       align-items: flex-end;
    }
 
    .time-stamp {
