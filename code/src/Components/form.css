@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
+textarea {
+  outline: none;
+  resize: none;
+}
+
 .form-card {
   display: flex;
   flex-direction: column;

@@ -22,6 +22,6 @@ export const Button = (props) => {
 
 
   return (
-    <button onClick={submitHandler} className="btn">❤️ Send Happy Thought ❤️</button>
+    <button aria-label='Send Happy Thought' onClick={submitHandler} className="btn"><span aria-label='heart-emoji' role='img' alt='heart-emoji'>❤️</span> Send Happy Thought <span aria-label='heart-emoji' role='img' alt='heart-emoji'>❤️</span></button>
   )
 }
