@@ -1,15 +1,14 @@
 import React from 'react'
-import { Fetch } from './Fetch'
-import { Form } from './Form'
-import "./form.css"
+import { MessageList } from './components/MessageList'
+import { MessageForm } from './components/MessageForm'
 
 export const App = () => {
 
   return (
     <div>
-      <Form />
-      <Fetch />
-      <p>hej</p>
+      <MessageForm />
+      <MessageList />
+      
     </div>
   )
 }
