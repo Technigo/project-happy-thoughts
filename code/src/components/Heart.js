@@ -2,21 +2,23 @@ import React, { useState } from 'react';
 import './heart.css';
 
 export const Heart = (props) => {
-  const [heartClicks, setHeartClicks] = useState((props.hearts))
+  const [heartClicks, setHeartClicks] = useState((props.hearts));
+
   if (!localStorage[props.id]) {
     localStorage.setItem(props.id, 0)
-  }
+  };
+
   const likeClick = () => {
     fetch(`https://technigo-thoughts.herokuapp.com/${props.id}/like`, {
       method: 'POST',
       body: "",
       headers: { "Content-Type": "application/json" }
-    }).then(() => {
-      props.likedThought(props.id)
-      localStorage[props.id] = Number(localStorage[props.id])
-      setHeartClicks(heartClicks + 1)
     })
-  }
+      .then(() => {
+        setHeartClicks(heartClicks + 1)
+      })
+  };
+
   return (
     <div>
       <button className="heartButton" onClick={() => { likeClick() }}>

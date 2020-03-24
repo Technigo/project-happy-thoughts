@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import './form.css'
+import './form.css';
+
+// This component sets: 1. Text area input (+ message lenght conditions) / 2. Submit button / 3. Function to handle the message submit
 
 export const Form = (props) => {
   const MESSAGES_URL = 'https://technigo-thoughts.herokuapp.com/';
   const [message, setMessage] = useState("");
-  if (!localStorage[props.id]) {
-    localStorage.setItem(props.id)
-  }
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     fetch(MESSAGES_URL, {
       method: 'POST',
