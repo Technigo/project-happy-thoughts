@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this project we were working with an API and made a small Twitter-like application that collects and shows 'Happy Thougths' where we can all share our happy thoughts and 'heart' them. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We are using React to build this app and working with GET and POST requests (POST requests for the first time).
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+View my website here❤️: https://fervent-booth-7b4846.netlify.com/
