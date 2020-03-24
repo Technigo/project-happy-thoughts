@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
-import { Heart } from './Heart'
+// import { Heart } from './Heart'
 import { LikeButton } from './LikeButton'
 // import { Thought } from './Thought'
 
@@ -42,7 +42,7 @@ export const ThoughtsList = () => {
     <div className="thoughts-container">
       {thoughts.map((thought) => (
         <article className="thought-card" key={thought._id}>
-          <div className="message-id">ID: {thought._id}</div>
+          {/* <div className="message-id">ID: {thought._id}</div> */}
           <div className="message-text">{thought.message}</div>
           {/* <div className="message-likes"><Heart /> x {thought.hearts}</div> */}
           <div className="message-likes"><LikeButton id={thought._id} onThoughtLiked={onThoughtLiked} /> x {thought.hearts} </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Heart } from './Heart'
 import './messageinput_style.css'
 
   // An input text field
@@ -36,17 +37,36 @@ export const MessageInputForm = () => {
         <form onSubmit={handleSubmit}>
         <p>What's making you happy right now?</p>
 
-          <input
+{/*           <input
             type="text"
             className="form-text"
             onChange={(event) => setMessage(event.target.value)}
             >
-          </input>
-          <input
+          </input> */}
+
+          <textarea
+          minLength="5"
+          maxLength="140"
+          rows="4"
+          className="form-text"
+          onChange={(event) => setMessage(event.target.value)}
+          required
+          defaultValue='Start enter text here..'
+          >
+          </textarea>
+
+{/*           <input
             type="submit"
             className="form-button"
             value="Post Message">
-          </input>
+          </input> */}
+
+          <button className="submit-button" type="submit" disabled={message.length < 1 || false}><Heart />Send Happy Thought<Heart /></button>
+
+          <div>
+            
+          </div>
+          
         </form>
       </article>
     </div>

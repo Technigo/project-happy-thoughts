@@ -16,6 +16,14 @@ export const LikeButton = (props) => {
     })
   }
   return (
-    <button className="like-button"onClick={handleClick}><Heart /></button>
+    // <button className="like-button" onClick={handleClick}><Heart /></button>
+    <button className={props.hearts > 2 ? "like-button-clicked" : "like-button-start"} onClick={handleClick}><Heart /></button>
   )
 }
+
+/*
+react conditional styling of color button
+idea: Can the button color change depending on how many like's the post have?
+
+https://stackoverflow.com/questions/40853161/change-text-colour-depending-on-if-condition-react
+*/
