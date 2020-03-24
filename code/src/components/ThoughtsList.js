@@ -25,18 +25,18 @@ export const ThoughtsList = () => {
   return (
     <section className="messages">
       {loading && <h3>There will be messages that make you happy soon ... </h3>}
+
       {// Each message returned
       messages.map(message => (
-        <section className="message-card">
-          <p className="message" key={message.createdAt}>
-            {message.message}
-            <section className="message-card-footer">
-              <span className="hearts">x{message.hearts}</span>
-              <span className="message-time">
-                {moment(message.createdAt).fromNow()}
-              </span>
-            </section>
-          </p>
+        <section key={message._id} className="message-card">
+          <p className="message"></p>
+          {message.message}
+          <div className="message-card-footer">
+            <span className="hearts">x{message.hearts}</span>
+            <span className="message-time">
+              {moment(message.createdAt).fromNow()}
+            </span>
+          </div>
         </section>
       ))}
     </section>

@@ -36,11 +36,19 @@ export const ThoughtsForm = () => {
           onChange={event => setMessage(event.target.value)}
         />
         <section className="button-section">
-          <input
+          <button
             type="submit"
             className="happy-button"
             value="Send Happy Thought"
-          ></input>
+          >
+            <span className="heart-emoji" role="img" aria-label="red heart">
+              ❤️
+            </span>{" "}
+            Send Happy Thought{" "}
+            <span className="heart-emoji" role="img" aria-label="red heart">
+              ❤️
+            </span>
+          </button>
         </section>
       </form>
     </section>
