@@ -16,7 +16,7 @@ export const ThoughtsForm = () => {
         "Content-Type": "application/json"
       },
       // Send the JSON as a string -- object does not work here
-      body: JSON.stringify({ text: message })
+      body: JSON.stringify({ message: message })
     }).then(() => {
       // Reload the page after the request is complete
       window.location.reload();
