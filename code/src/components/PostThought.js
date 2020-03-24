@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Textarea } from './Textarea.js'
 
 export const PostThought = ({ setThoughts, apiUrl }) => {
   const [message, setMessage] = useState('')
@@ -26,16 +27,9 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
     <section className="post-thought">
       <form onSubmit={handleSubmit}>
 
-        <label htmlFor="postThoughtField">What's making you happy right now?</label>
+        <Textarea message={message} setMessage={setMessage} />
 
-        <textarea
-          id="postThoughtField"
-          className={(message.length < 5 || message.length > 140) && 'error'}
-          onChange={(event) => { setMessage(event.target.value) }}
-          value={message}
-        ></textarea>
-
-        <div className="char-count">#{140 - message.length}</div>
+        <div className="char-count">{140 - message.length}</div>
 
         <button type="submit" className="post-btn">
           <span role="img" aria-label="heart">❤️</span>Send happy thought <span role="img" aria-label="heart">❤️</span>
