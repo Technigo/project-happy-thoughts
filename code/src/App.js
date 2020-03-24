@@ -31,6 +31,7 @@ const handleSubmit = event => {
     setThoughts(json)
     )
   },[]);
+  
   const onThoughtLiked = (likedThoughtId) => {
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === likedThoughtId) {
@@ -63,7 +64,11 @@ const handleSubmit = event => {
               </li>
          ))};
          </ul>
+
+         
     </div>
     </div>
+
+    
   )
 }
