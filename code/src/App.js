@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Thought } from 'components/Thought'
 import { PostThought } from 'components/PostThought'
 
-import 'css/app.css'
+import 'app.scss'
 
 export const App = () => {
 

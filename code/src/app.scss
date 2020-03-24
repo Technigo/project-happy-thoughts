@@ -1,8 +1,11 @@
-:root {
-  --color-pink: #ffadad;
-  --color-lightGray: #eaeaea;
-  --color-darkGray: #a0a0a0;
-}
+/* –– Variables –– */
+
+$color-pink: #ffadad;
+$color-lightGray: #eaeaea;
+$color-darkGray: #a0a0a0;
+
+
+/* –– General styles –– */
 
 * {
   box-sizing: border-box;
@@ -52,54 +55,27 @@ button {
   padding: .5rem 1rem 1rem;
   border: 1px solid #000;
   background-color: #fff;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    bottom: -.5rem;
+    left: .5rem;
+  
+    width: 100%;
+    height: 95%;
+    background-color: #000;
+  }
 }
 
-.thought-card h2 {
-  flex-basis: 100%;
-}
-.thought-card .likes {
-  flex: 0 1 auto;
-  color: var(--color-darkGray);
-}
-.thought-card .timestamp {
-  flex: 0 1 auto;
-  color: var(--color-darkGray);
-}
 
-.thought-card::before,
-.post-thought::before {
-  position: absolute;
-  z-index: -1;
-  content: '';
-  bottom: -.5rem;
-  left: .5rem;
-
-  width: 100%;
-  height: 95%;
-  background-color: #000;
-}
-
-.like-btn {
-  width: 2.8rem;
-  height: 2.8rem;
-  margin-right: 1rem;
-  padding-left: .7rem;
-  padding-top: .2rem;
-  font-size: 1.2rem;
-  background-color: var(--color-lightGray);
-  border: 0;
-  border-radius: 50%;
-}
-
-.has-likes {
-  background-color: var(--color-pink);
-}
+/* –– Post thought card –– */
 
 .post-thought {
   flex-direction: column;
-  /* align-items: flex-start; */
   padding: 1.5rem 1rem;
-  background-color: var(--color-lightGray);
+  background-color: $color-lightGray;
 }
 
 .post-thought > * {
@@ -117,15 +93,48 @@ textarea {
   padding: .6rem .8rem;
   font-family: inherit;
   resize: none;
-  border: 1px solid var(--color-darkGray);
+  border: 1px solid $color-darkGray;
 }
 
 .post-btn {
   padding: .6rem 1rem .8rem;
   border-radius: 30px;
-  background-color: var(--color-pink);
+  background-color: $color-pink;
   font-family: inherit;
   font-size: inherit;
   font-weight: 500;
   border: 0;
+}
+
+
+/* –– Thought card –– */
+
+.thought-card {
+  h2 {
+    flex-basis: 100%;
+  }
+  .likes {
+    flex: 0 1 auto;
+    color: $color-darkGray;
+  }
+  .timestamp {
+    flex: 0 1 auto;
+    color: $color-darkGray;
+  }
+}
+
+.like-btn {
+  width: 2.8rem;
+  height: 2.8rem;
+  margin-right: 1rem;
+  padding-left: .7rem;
+  padding-top: .2rem;
+  font-size: 1.2rem;
+  background-color: $color-lightGray;
+  border: 0;
+  border-radius: 50%;
+}
+
+.has-likes {
+  background-color: $color-pink;
 }
