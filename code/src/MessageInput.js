@@ -28,6 +28,7 @@ export const MessageInput = () => {
             <form onSubmit={handleSubmit} className='form'>
                 <textarea
                     type='text'
+                    placeholder='Type your thought here...'
                     className='form-text'
                     onChange={event => setMessage(event.target.value)}
                 />
@@ -41,7 +42,6 @@ export const MessageInput = () => {
                     <img className='heart' src={require('./assets/heart.png')} alt='heart'/>
                 </button>
             </form>
-            
         </div>
     )
 }

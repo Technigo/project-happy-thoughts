@@ -65,6 +65,7 @@ h1 {
   flex-direction: row-reverse;
   justify-content: space-between;
   margin-bottom: 20px;
+  font-size: 16px;
 }
 
 .message-time {
