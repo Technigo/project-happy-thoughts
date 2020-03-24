@@ -2,7 +2,6 @@
   width: 40%;
 background-color: rgb(255, 255, 255);
 margin: 10px auto;
-
 }
 
 .each-thought {
@@ -14,7 +13,7 @@ margin: 10px auto;
   letter-spacing: 1px;
   line-height: 20px;
   box-shadow: black 2px 2px 2px;
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   flex-direction: column;
   border: solid rgb(179, 177, 177) 1px;
@@ -37,18 +36,21 @@ margin: 10px auto;
 .time-and-likes {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 95%;
   align-items: center;
+  margin-bottom: 10px;
 }
 
-img {
-  width: 20px;
-  height: 20px;
+.time-and-likes span {
+  color: gray;
 }
 
-.likes {
- 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+button {
+  border: none;
+}
+
+.heart-button {
+  background: rgba(165, 164, 164, 0.514);
+  padding: 8px;
+  border-radius: 50%;
 }

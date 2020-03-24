@@ -1,20 +1,16 @@
 import React, {useState} from 'react'
 // import  heart from './heart.png'
-import {LikeButton} from './LikeButton'
 
-
-export const MessageInput = () => {
+export const MessageInput = (props) => {
   const MESSAGE_URL = "https://technigo-thoughts.herokuapp.com/"
   const [message, setMessage] = useState('');
 
- 
 
   const handleSubmit = event => {
     event.preventDefault()
 
     fetch(MESSAGE_URL, 
       {
-        
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json' 
@@ -25,11 +21,9 @@ export const MessageInput = () => {
       window.location.reload();
     });
   
-  
   }
 
   
-
   return (
     <form onSubmit={handleSubmit}>
       {/* <div className="new-thought"> */}
@@ -43,15 +37,15 @@ export const MessageInput = () => {
             className="input-field" 
             type="text" 
             id="myThought"
+            required
             onChange={event => setMessage(event.target.value)}> 
             </textarea>
             </label>
             <input
             type="submit"
-            value= 'add message'
+            value= '❤️    add message    ❤️'
             className="form-button"
             >
-
             </input>
           
         {/* </label> */}
