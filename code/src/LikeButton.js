@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
+import './like-button.css'
 
 export const LikeButton = (props) => {
   const likes_url = `https://technigo-thoughts.herokuapp.com/${props.id}/like`
-  const [likes, setLikes] = useState()
   const handleClick = () => {
     fetch(likes_url, {
       method: "post",
@@ -11,13 +11,12 @@ export const LikeButton = (props) => {
       },
       body: ""
     })
-    setLikes(props.likes + 1)
+    props.onMessageLiked(props.id)
   }
 
   return (
-    <div>
-      <button
-        onClick={handleClick}>Heart</button>
-    </div>
+    <button
+      onClick={handleClick}><img className="heartIcon" src="./icons/heart.png" alt="Heart icon" /></button>
   )
 }
+// How to get the svg to render?

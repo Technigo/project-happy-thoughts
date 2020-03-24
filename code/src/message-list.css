@@ -7,12 +7,23 @@
 
    .message {
     padding: 16px;
+    margin: 8px;
     width: 80%;
     border: 1px solid black;
     box-shadow: 6px 6px black;
    }
 
-   span {
+   .likes-and-time-container {
+       display: flex;
+       justify-content: space-between;
+   }
+
+   .time-stamp {
        color: #beb4b3; 
        font-size: 12px;
+   }
+
+   .likes {
+       display: flex;
+       align-items: center;
    }

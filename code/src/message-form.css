@@ -2,6 +2,7 @@ form {
   display: flex;
   flex-direction: column;
   padding: 16px;
+  margin: 8px;
   width: 80%;
   background-color: #f2f0f0;
   border: 1px solid black;
@@ -17,7 +18,17 @@ input {
   margin: 6px 0;
 }
 
+.text-input {
+  height: 100px;
+}
+
+/* How to style font-family on button? */
+
 .submit-button {
-  font-family: 'Roboto Mono', monospace;
+  width: 50%;
+  height: 36px;
   background-color: #f2acad;
+  border: none;
+  border-radius: 50px;
+
 }
