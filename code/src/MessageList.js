@@ -1,34 +1,36 @@
 import React, {useState, useEffect} from 'react'
 import moment from 'moment';
 import { MessageLike } from 'MessageLike';
+import { Spinner } from 'Spinner'
 
 export const MessageList =() => {
-    // Create state for messages
     const MESSAGES_URL = 'https://technigo-thoughts.herokuapp.com/';
     const [messages, setMessages] = useState([]); 
-
-    // Use useEffect to fetch messages from backend
-    // Do this on component load
+    const [loading, setLoading] = useState();
+   
     useEffect(() => {
-        // Fetch from backend
-        fetch(MESSAGES_URL)
-        .then((response) => {
-            return response.json();
-        })
-        .then(data => {
-            console.log(data)
-            // Set the state, data is an array of messages
-            const filteredData = data.filter(message => {
-                return message.message;
+        setLoading(true);
+        setTimeout(() => {
+
+           fetch(MESSAGES_URL)
+            .then((response) => {
+                return response.json();
             })
-            setMessages(filteredData);
-        })
+            .then(data => {
+                console.log(data)
+                const filteredData = data.filter(message => {
+                    return message.message;
+                })
+                setMessages(filteredData);
+                setLoading(false)
+            })
+        }, 5000)
     }, []);
 
-    // Render messages using map
     return (
         <div>
-            {
+            {loading && <Spinner />}
+            {!loading &&
                 messages.map(message => (
                 <div className='message-cards' key={message._id}>
                     <p>{message.message}</p>

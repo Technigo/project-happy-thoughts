@@ -7,7 +7,6 @@ export const MessageLike = (props) => {
     const handleSubmit = event => {
         event.preventDefault();
 
-        // Send a POST request using the 'message' state
         fetch(MESSAGES_URL, 
             {
                 method: 'POST',
@@ -21,19 +20,14 @@ export const MessageLike = (props) => {
         });
     }
 
-    // An inout text field
-    // A sumbit button
     return (
         <form onSubmit={handleSubmit} className='like-container'>
-            <div>
-               <input
+            <button
                 type='submit'
                 className='like-button'
-                value=''
-                /> 
-                <img src='/assets/sparkling-heart.png' alt='heart'/>
-            </div>
-            
+            >
+                <img className='sparkling-heart' src={require('./assets/sparkling-heart.png')} alt='heart'/>
+            </button>
             <div className='like-display'>x {likes}</div>
         </form>
     )

@@ -13,6 +13,13 @@ code {
     monospace;
 }
 
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: pink;
+  text-shadow: 1px 1px 1px black;
+}
+
 /* Sumbit thought form */
 
 .form-container, .message-cards {
@@ -21,6 +28,8 @@ code {
   width: 75%;
   margin: 40px auto;
   box-shadow: 7px 7px black;
+  font-family: 'Oxygen Mono', monospace;
+  font-size: 18px;
 }
 
 .form-container {
@@ -35,11 +44,20 @@ code {
 .form-text {
   height: 40px;
   padding: 15px;
+  font-size: 16px;
+}
+
+.error {
+  margin-top: 10px;
 }
 
 /* Posted thoughts */
 .message-cards {
   background-color: white;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .message-card-bottom {
@@ -68,22 +86,44 @@ code {
 /* Buttons */
 
 .form-button, .like-button {
-  padding: 10px;
   background-color: pink;
   box-shadow: none;
   border: none;
 }
 
 .form-button {
-  width: 50%;
+  padding: 10px;
   border-radius: 50px;
-  margin: 20px 0px;
+  margin: 20px auto 20px 0px;
+  font-family: 'Oxygen Mono', monospace;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.heart {
+  width: 22px;
+  height: 22px;
+}
+
+.heart-button-text {
+  margin: 0px;
+  padding: 0px 5px;
 }
 
 .like-button {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+  padding: 0px;
+}
+
+.sparkling-heart {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  padding-top: 5px;
 }
 
 /* Media quaries */

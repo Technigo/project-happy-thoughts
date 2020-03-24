@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
+import { ErrorMessage } from 'ErrorMessage'
 
 export const MessageInput = () => {
-    // The message state to save the message ti send to the backend
     const MESSAGES_URL = 'https://technigo-thoughts.herokuapp.com/';
     const [message, setMessage] = useState('');
+    const [error, setError] = useState(false);
         
-    // A submit function which POSTs the text field
     const handleSubmit = event => {
         event.preventDefault();
 
-        // Send a POST request using the 'message' state
         fetch(MESSAGES_URL, 
             {
                 method: 'POST',
@@ -18,13 +17,11 @@ export const MessageInput = () => {
                 }, 
                 body: JSON.stringify({message: message})
             })
-        .then(() => {
-            window.location.reload();
-        });
+        .then(response => {
+            response.ok ? window.location.reload() : setError(true);
+        })
     }
 
-    // An inout text field
-    // A sumbit button
     return (
         <div className='form-container'>
             <p>What's making you happy right now?</p>
@@ -34,11 +31,15 @@ export const MessageInput = () => {
                     className='form-text'
                     onChange={event => setMessage(event.target.value)}
                 />
-                <input
+                {error && <ErrorMessage />}
+                <button
                     type='submit'
                     className='form-button'
-                    value=' Send Happy Thought '
-                />
+                >
+                    <img className='heart' src={require('./assets/heart.png')} alt='heart'/>
+                    <p className='heart-button-text'>Send Happy Thought</p>
+                    <img className='heart' src={require('./assets/heart.png')} alt='heart'/>
+                </button>
             </form>
             
         </div>
