@@ -18,6 +18,14 @@ export const MyThought = ({ setThoughts }) => {
       })
   }
 
+  const countCharacters = () => {
+    const textEntered = document.getElementById('myThought').value;
+    const counter = (140 - (textEntered.length));
+    const countRemaining = document.getElementById('countdown')
+    countRemaining.textContent = counter;
+    document.getElementById('countdown').innerHTML = (`${counter} characters remaining`);
+  }
+
   return (
     <form onSubmit={handleFormSubmit}>
       <div className="thought-cards new-thought">
@@ -26,8 +34,10 @@ export const MyThought = ({ setThoughts }) => {
           <textarea
             className="inputfield"
             id="myThought"
+            onKeyUp={(event) => countCharacters(event.target.value)}
             onChange={(event) => setMyThought(event.target.value)}
             value={myThought} />
+          <p id="countdown">140 characters remaining</p>
           <button className="send-button" type="submit"><Emoji symbol="❤️" /> Send Happy Thought! <Emoji symbol="❤️" /></button>
         </label>
       </div>
