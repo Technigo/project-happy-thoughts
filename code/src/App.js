@@ -1,9 +1,21 @@
 import React from 'react'
+import { HappyThoughts } from './HappyThoughts'
+import { NewThought } from './NewThought'
+
+
 
 export const App = () => {
+
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <section className="allThoughts">
+      < NewThought />
+      < HappyThoughts />
+    </section>
   )
 }
+
+
+
+
+
+

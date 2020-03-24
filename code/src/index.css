@@ -5,9 +5,93 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.allThoughts {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.newThoughtCard {
+  max-width: 400px;
+  height: 150px;
+  background-color: rgb(227, 224, 224);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 50px;
+  border: 1px solid black;
+  box-shadow: 6px 7px black;
+  padding-left: 15px;
+  font-family: 'arial', "Courier New";
+  font-weight: 400;
+  font-size: 13px;
+  padding-top: 5px;
+  font-size: 12px;
+}
+
+.textinput {
+  margin-bottom: 9px;
+  width: 95%;
+  height: 52px;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  font-family: "Inconsolata";
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sendButton {
+  background-color: rgb(255, 192, 198);
+  border-radius: 30px;
+  padding: 8px;
+  font-size: 13px;
+  font-family: 'Inconsolata', "Courier New";
+  font-weight: 700;
+  padding-top: 5px;
+}
+
+.thoughtsCard {
+  max-width: 400px;
+  height: 100px;
+  background-color: fff;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  margin-top: 30px;
+  font-family: 'Inconsolata', "monospace";
+  border: 1px solid black;
+  box-shadow: 6px 7px black;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 18px;
+}
+
+.thought {
+  margin-bottom: 45px;
+}
+
+.heartSection {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: grey;
+}
+
+.likeButton {
+  cursor: pointer;
 }
