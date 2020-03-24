@@ -1,0 +1,11 @@
+.new-message {
+  margin: 50px;
+  padding: 15px;
+  background-color: #f2f0f0;
+  border: 1px solid #000;
+  box-shadow: 6px 6px #000;
+}
+
+.message-text {
+  width: 100%;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ThoughtsForm.css";
 
 export const ThoughtsForm = () => {
   const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";

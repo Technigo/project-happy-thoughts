@@ -12,23 +12,47 @@ code {
     monospace;
 }
 
-.form-text {
-  margin: 8px;
-  font-size: 26px;
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
 }
 
-.form-button {
+p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.form-text {
   margin: 8px;
-  font-size: 26px;
+  font-size: 12px;
+}
+
+.happy-button {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  font-weight: bolder;
+  background: #ffadad;
+  border: none;
+  border-radius: 20px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  padding: 10px 20px;
 }
 
 .message {
   margin: 8px;
-  font-size: 26px;
+  font-size: 12px;
+}
+
+.hearts {
+  margin: 8px;
+  font-size: 10px;
+  color: #6e6e6e;
 }
 
 .message-time {
   margin: 8px;
-  font-size: 18px;
+  font-size: 10px;
   color: #6e6e6e;
 }

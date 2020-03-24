@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import moment from "moment";
+import "./ThoughtsList.css";
 
 export const ThoughtsList = () => {
   const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";
@@ -30,7 +31,7 @@ export const ThoughtsList = () => {
           <p className="message" key={message.createdAt}>
             {message.message}
             <section className="message-card-footer">
-              <span className="hearts">{message.hearts}</span>
+              <span className="hearts">x{message.hearts}</span>
               <span className="message-time">
                 {moment(message.createdAt).fromNow()}
               </span>

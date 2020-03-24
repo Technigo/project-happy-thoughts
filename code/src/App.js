@@ -1,12 +1,13 @@
 import React from "react";
 import { ThoughtsList } from "./components/ThoughtsList.js";
 import { ThoughtsForm } from "./components/ThoughtsForm.js";
+import "app.css";
 
 export const App = () => {
   return (
-    <div>
+    <section className="app-container">
       <ThoughtsForm />
       <ThoughtsList />
-    </div>
+    </section>
   );
 };
