@@ -17,14 +17,13 @@ export const App = () => {
   return (
     <div className="appContainer">
       <Form />
-      <div className="appContainer">
-        {thoughts.map(thought => (
-          <HappyThoughts
-            key={thought._id}
-            thought={thought}
-          />
-        ))}
-      </div>
+      {thoughts.map(thought => (
+        <HappyThoughts
+          key={thought._id}
+          thought={thought}
+        />
+      ))}
+      <footer>Anne-Sophie Gendron - Technigo Bootcamp 2020</footer>
     </div>
   )
 }

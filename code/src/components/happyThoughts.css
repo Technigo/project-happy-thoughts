@@ -1,6 +1,6 @@
 .cardContainer {
-  width: 80%;
-  height: 170px;
+  height: 100%;
+  width: 380px;
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -12,9 +12,10 @@
 }
 
 .cardContainer p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
   text-align: left;
+  padding: 7px;
 }
 
 .postedTime span {
@@ -27,19 +28,4 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-/* MEDIA QUERIES */
-@media (min-width: 667px) {
-  .cardContainer {
-    width: 60%;
-    height: 150px;
-
-  }
-}
-@media (min-width: 992px){
-  .cardContainer {
-    width: 33.33%;
-    height: 150px;
-  }
 }

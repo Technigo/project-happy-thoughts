@@ -1,6 +1,6 @@
 .formContainer {
-  width: 80%;
-  height: 210px;
+  font-family: 'Source Code Pro', monospace;
+  height: 100%;
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@ input::placeholder {
   color: white;
   margin-top: 5px;
   outline: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   font-size: 13px;
 }
 
@@ -50,19 +50,4 @@ input::placeholder {
 
 .green {
   color: green;
-}
-
-/* MEDIA QUERIES */
-@media (min-width: 667px) {
-  .formContainer {
-    width: 60%;
-    height: 210px;
-  }
-}
-
-@media (min-width: 992px){
-  .formContainer {
-    width: 33.33%;
-    height: 210px;
-  }
 }
