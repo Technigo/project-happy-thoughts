@@ -4,7 +4,8 @@ import React, {useState} from 'react'
 export const MessageInput = (props) => {
   const MESSAGE_URL = "https://technigo-thoughts.herokuapp.com/"
   const [message, setMessage] = useState('');
-
+  const [count, setCount] = useState(0);
+  
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -26,20 +27,20 @@ export const MessageInput = (props) => {
   
   return (
     <form onSubmit={handleSubmit}>
-      {/* <div className="new-thought"> */}
-        {/* <label>*/}
+      
         <label className="text-area">
           <p className="label-input">What's making you happy right now?</p> 
           <textarea 
             type="text"
             minLength="1"
-            maxLength="120"
+            maxLength="140"
             className="input-field" 
-            type="text" 
             id="myThought"
             required
-            onChange={event => setMessage(event.target.value)}> 
+            onChange={event => setMessage(event.target.value)}
+            onChange={event => setCount(event.target.value.length)}> 
             </textarea>
+            <p className="char-count">{count}/140</p>
             </label>
             <input
             type="submit"
@@ -48,7 +49,7 @@ export const MessageInput = (props) => {
             >
             </input>
           
-        {/* </label> */}
+        
 
      
     </form>

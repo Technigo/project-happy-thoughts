@@ -24,7 +24,9 @@ export const PostedThoughts = (props) => {
     <div className="each-thought" >
       <div  className="thought"> {message} </div>
         <div className="time-and-likes"> 
-        <span> <button className="heart-button" onClick={handleClick}> <span> ❤️ </span> </button> <span> x {hearts}</span> </span> 
+        <span> <button 
+        style= {hearts > 0 ? {backgroundColor: 'rgba(253, 174, 229, 0.896)'} : {backgroundColor: 'rgba(134, 105, 126, 0.279'}}
+        className="heart-button" onClick={handleClick}> <span> ❤️ </span> </button> <span> x {hearts}</span> </span> 
           <span>{moment(createdAt).fromNow()}</span> 
     </div>
 
