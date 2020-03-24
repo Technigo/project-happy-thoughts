@@ -1,9 +1,12 @@
 import React from 'react'
+import { ThoughtsList } from './ThoughtsList'
+import { ThoughtInput } from './ThoughtInput'
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
+    <div className='app'>
+      <ThoughtInput />
+      <ThoughtsList />
     </div>
   )
 }

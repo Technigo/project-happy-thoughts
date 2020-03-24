@@ -5,9 +5,66 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* .app {
+  width: 100%;
+} */
+
+p {
+  margin: 10px 0px;
+}
+.thought, .input-thought {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px;
+
+}
+
+.input-thought {
+  background-color: #f2f0f0;
+}
+
+.form-text {
+  border: 1px solid black;
+  width: 90%;
+  height: 25%;
+  padding: 15px;
+}
+
+.form-button {
+  border-radius: 10px;
+  background-color: #f4acac;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.thought {
+
+}
+
+.thought-time {
+  color: gray;
+}
+
+/* @media (min-width: 700px) {
+  .thought, .input-thought {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .thought, .input-thought {
+    width: 50%;
+  }
+} */
