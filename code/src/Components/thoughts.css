@@ -21,3 +21,15 @@
   font-size: 0.8em;
   padding-left: 0.8em;
 }
+
+@media (max-width: 560px) {
+  .thoughts-card {
+    width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .thoughts-card {
+    width: 300px;
+  }
+}

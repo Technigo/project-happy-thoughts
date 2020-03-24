@@ -3,6 +3,7 @@
 textarea {
   outline: none;
   resize: none;
+  overflow: hidden;
 }
 
 .form-card {
@@ -25,4 +26,21 @@ textarea {
   width: 400px;
   height: 50px;
   margin-bottom: 1.5em;
+}
+
+@media (max-width: 560px) {
+  .form-card {
+    width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .text-box {
+    width: 280px;
+  }
+
+  .form-card {
+    width: 300px;
+  }
+  
 }

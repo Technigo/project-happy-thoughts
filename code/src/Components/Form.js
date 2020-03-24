@@ -14,6 +14,7 @@ export const Form = () => {
             value={message}
             type="text"
             name="happy-thought"
+            maxLength='140'
             className="text-box"
             onChange={(event) => setMessage(event.target.value)}>
           </textarea>
