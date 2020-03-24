@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 export const Like = (thought) => {
 
     
-  const sendLike = "https://technigo-thoughts.herokuapp.com/thought._id/like"  
+  const sendLike = "https://technigo-thoughts.herokuapp.com/likedThoughtId/like"  
   const handleClick = () => {
     fetch(sendLike, {
       method: "POST", 
@@ -15,6 +16,6 @@ export const Like = (thought) => {
   }
 
   return (
-    <button onClick={handleClick}><span role="img" aria-label="like-heart">♥️</span></button>
+    <button onClick={handleClick}><span role="img" aria-label="like-heart" style={thought.hearts === 0 ? {backgroundColor: '#ccc9c9'} : {backgroundColor: '#ffb2b2'}}>♥️</span></button>
   )
 }

@@ -6,7 +6,7 @@ export const HappyWords = ({happyWords, setHappyWords}) => {
     
       <div className="HappyThoughtInput">
         <label>
-        <h2>What made you happy today?</h2>
+        <h2>What's making you happy right now?</h2>
           <input
             type="text"
             value={happyWords}
@@ -14,6 +14,7 @@ export const HappyWords = ({happyWords, setHappyWords}) => {
             required
           />
         </label> 
+        <button type="submit" className="SubmitButton" onChange={event => setHappyWords(event.target.value)} disabled={happyWords === " "}>Send Happy Thought </button>
       </div>
     ) 
 }

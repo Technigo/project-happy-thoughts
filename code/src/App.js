@@ -9,6 +9,7 @@ const [happyWords, setHappyWords] = useState([])
 const fetchUrl = "https://technigo-thoughts.herokuapp.com/"
 
 
+
 const handleSubmit = event => {
   event.preventDefault();
   fetch(fetchUrl, { 
@@ -31,8 +32,9 @@ const handleSubmit = event => {
     setThoughts(json)
     )
   },[]);
-  
-  const onThoughtLiked = (likedThoughtId) => {
+
+ /*  WHY??? */
+const onThoughtLiked = (likedThoughtId) => {
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === likedThoughtId) {
         thought.hearts += 1
@@ -44,11 +46,10 @@ const handleSubmit = event => {
 
   return (
     <div className="WrapperDiv">
-      <form onSubmit ={handleSubmit}>
-        <div className="FormDiv">
+      <form className="FormDiv" onSubmit ={handleSubmit}>
+        
           <HappyWords happyWords={happyWords} setHappyWords={setHappyWords}/>
-         <button type="submit" className="SubmitButton" onChange={event => setHappyWords(event.target.value)} disabled={happyWords === " "}>Post</button>
-        </div>
+         
       </form>
     <div>
       <ul>
