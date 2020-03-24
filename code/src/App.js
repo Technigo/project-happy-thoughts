@@ -57,7 +57,7 @@ const onThoughtLiked = (likedThoughtId) => {
               <li className="HappyThoughtsCard"> 
                <p className=" thought-txt"> {thought.message}</p>
                <p className="thought-time">{moment(thought.createdAt).fromNow()}</p>
-              <p className="thought-hearts"> X{thought.hearts}</p>
+              <p className="thought-hearts"> <span aria-hidden="true">X</span> {thought.hearts} <span className ="visually-hidden">likes</span></p>
              <Like key={thought._id}
           thought={thought}
           onThoughtLiked={onThoughtLiked}/>
