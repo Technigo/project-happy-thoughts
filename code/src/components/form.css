@@ -37,6 +37,12 @@ input::placeholder {
   outline: none;
   font-family: 'Source Code Pro', monospace;
   font-size: 13px;
+  transition: transform 1s;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 .text-length{
