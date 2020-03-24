@@ -34,6 +34,8 @@ export const MessageInputForm = () => {
     <div className="submit-form-container">
       <article className="submit-form-card">
         <form onSubmit={handleSubmit}>
+        <p>What's making you happy right now?</p>
+
           <input
             type="text"
             className="form-text"

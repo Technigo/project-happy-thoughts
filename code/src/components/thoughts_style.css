@@ -39,4 +39,6 @@
 
 .message-likes {
   padding-top: 20px;
+  color: grey;
+  font-size: 12px;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Heart } from './Heart'
+import { Heart } from './Heart'
 import './likebutton_style.css'
 
 export const LikeButton = (props) => {
@@ -16,6 +16,6 @@ export const LikeButton = (props) => {
     })
   }
   return (
-    <button onClick={handleClick}>Heart</button>
+    <button className="like-button"onClick={handleClick}><Heart /></button>
   )
 }
