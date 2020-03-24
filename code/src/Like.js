@@ -19,3 +19,4 @@ export const Like = ({thought, onThoughtLiked}) => {
     <button onClick={handleClick}><span aria-label="click to like" style={thought.hearts === 0 ? {backgroundColor: '#ccc9c9'} : {backgroundColor: '#ffb2b2'}}>♥️</span></button>
   )
 }
+/* /adding */
