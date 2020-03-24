@@ -28,12 +28,15 @@ export const MessageForm = () => {
           onChange={event => setMessage(event.target.value)}
         />
       </label>
-      <input
+      <button
         className="submit-button"
         type="submit"
         {...message.length < 5 || message.length > 140 ? { disabled: true } : { enabled: true }}
-        value="Send Happy Thought"
-      />
+      >
+        <img className="heartIcon" src="./icons/heart.png" alt="Heart icon" />
+        Send Happy Thought
+        <img className="heartIcon" src="./icons/heart.png" alt="Heart icon" />
+      </button>
     </form>
   )
 }

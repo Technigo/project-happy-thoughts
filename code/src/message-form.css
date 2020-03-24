@@ -14,21 +14,26 @@ label {
   flex-direction: column;
 }
 
-input {
-  margin: 6px 0;
-}
-
 .text-input {
   height: 100px;
+  margin: 8px 0;
 }
 
 /* How to style font-family on button? */
 
 .submit-button {
-  width: 50%;
-  height: 36px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+  color: black;
   background-color: #f2acad;
   border: none;
   border-radius: 50px;
+}
 
+@media (min-width: 668px) {
+  .submit-button{
+    width: 40%;
+  }
 }

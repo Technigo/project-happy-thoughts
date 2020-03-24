@@ -26,4 +26,6 @@
    .likes {
        display: flex;
        align-items: center;
+       color: #beb4b3; 
+       font-size: 12px;
    }
