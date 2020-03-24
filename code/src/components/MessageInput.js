@@ -36,14 +36,12 @@ export const MessageInputForm = () => {
       <article className="submit-form-card">
         <form onSubmit={handleSubmit}>
         <p>What's making you happy right now?</p>
-
 {/*           <input
             type="text"
             className="form-text"
             onChange={(event) => setMessage(event.target.value)}
             >
           </input> */}
-
           <textarea
           minLength="5"
           maxLength="140"
@@ -51,25 +49,18 @@ export const MessageInputForm = () => {
           className="form-text"
           onChange={(event) => setMessage(event.target.value)}
           required
-          defaultValue='Start enter text here..'
+          // defaultValue='Write something here..'
           >
           </textarea>
-
 {/*           <input
             type="submit"
             className="form-button"
             value="Post Message">
           </input> */}
-
-          <button className="submit-button" type="submit" disabled={message.length < 1 || false}><Heart />Send Happy Thought<Heart /></button>
-
-          <div>
-            
-          </div>
-          
+          {/* <button className="submit-button" type="submit" disabled={message.length < 1 || false}><Heart />Send Happy Thought<Heart /></button> */}
+          <button className="submit-button" type="submit" disabled={message.length > 140 || false}><Heart />Send Happy Thought<Heart /></button>
         </form>
       </article>
     </div>
-
   )
 }
