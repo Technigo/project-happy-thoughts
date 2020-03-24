@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import './messageinput_style.css'
 
   // An input text field
   // A Submit button
@@ -30,20 +31,23 @@ export const MessageInputForm = () => {
 
 
   return  (
-    <form onSubmit={handleSubmit}>
-      
-      <input
-        type="text"
-        className="form-text"
-        onChange={(event) => setMessage(event.target.value)}
-        >
-      </input>
-      <input
-        type="submit"
-        className="form-button"
-        value="Add Message">
-      </input>
+    <div className="submit-form-container">
+      <article className="submit-form-card">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            className="form-text"
+            onChange={(event) => setMessage(event.target.value)}
+            >
+          </input>
+          <input
+            type="submit"
+            className="form-button"
+            value="Post Message">
+          </input>
+        </form>
+      </article>
+    </div>
 
-    </form>
   )
 }

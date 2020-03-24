@@ -1,0 +1,30 @@
+.submit-form-container {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-form-card {
+  border: 1px solid #000;
+  box-shadow: 6px 8px #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 15px;
+  width: 50%;
+  /* height: 100%; */
+  height: 100px;
+  background-color: rgb(226, 234, 242);
+}
+
+.form-text {
+  width: 100%;
+  height: 30px;
+}
+
+.form-button {
+  margin-top: 10px;
+}
