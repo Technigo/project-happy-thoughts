@@ -8,4 +8,4 @@ In React I used an API built by Technigo to display happy thoughts that other us
 
 ## View it live
 
-
+https://wonderful-swirles-55fc34.netlify.com/
