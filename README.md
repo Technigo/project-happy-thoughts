@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This was one of the projects at the Technigo bootcamp. We used an API to collect and post 'happy thoughts'. Think of it as a version of Twitter, but with less negativity, and 100% fewer US presidents using it. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+There were three main steps or problems in this project. The first was to collect the 'happy thoughts' from the API and make them show up as a list. The second was to be able to post your own 'happy thought' to the API and see it show up in the list with the other thoughts. The third was to add a like-function so that you could click a like-button and see how many likes each thought had received. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Read all the happy thoughts here: https://annas-happy-thought-app.netlify.com

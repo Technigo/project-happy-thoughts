@@ -9,6 +9,11 @@ form {
   box-shadow: 6px 6px black;
 }
 
+.button-and-length-container{
+  display: flex;
+  justify-content: space-between;
+}
+
 label {
   display: flex;
   flex-direction: column;
@@ -20,14 +25,13 @@ label {
   margin: 8px 0;
 }
 
-/* How to style font-family on button? */
+/* How to style font-family on button and text-input? */
 
 .submit-button {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 60%;
-  color: black;
   background-color: #f2acad;
   border: none;
   border-radius: 50px;

@@ -7,6 +7,7 @@ export const MessageList = () => {
   const messages_url = "https://technigo-thoughts.herokuapp.com/"
   const [messages, setMessages] = useState([])
 
+  //Gets messages from API
   useEffect(() => {
     fetch(messages_url)
       .then(res => res.json())
@@ -15,6 +16,7 @@ export const MessageList = () => {
       })
   }, [])
 
+  //Shows likes on thoughts
   const onMessageLiked = (likedMessageId) => {
     const updatedMessages = messages.map((message) => {
       if (message._id === likedMessageId) {
@@ -25,6 +27,7 @@ export const MessageList = () => {
     setMessages(updatedMessages)
   }
 
+  //Returns an article with a thought, a like-button and a time-stamp
   return (
     <section className="message-list">
       {
@@ -34,10 +37,12 @@ export const MessageList = () => {
             </p>
             <div className="likes-and-time-container">
 
-              <div className="likes">  < LikeButton
-                id={message._id}
-                message={message}
-                onMessageLiked={onMessageLiked} /> x {message.hearts}</div>
+              <div className="likes">
+                < LikeButton
+                  likes={message.hearts}
+                  id={message._id}
+                  message={message}
+                  onMessageLiked={onMessageLiked} /> x {message.hearts}</div>
               <div className="time-stamp">{moment(message.createdAt).fromNow()}</div>
             </div>
           </article>

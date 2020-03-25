@@ -4,9 +4,16 @@ button {
   border: none;
   margin: 4px;
   border-radius: 50%;
-  background-color: #eaeaea;
 }
 
 .heartIcon {
   height: 18px;
+}
+
+.liked {
+  background-color: #f2acad
+}
+
+.notLiked {
+  background-color: #eaeaea;
 }
