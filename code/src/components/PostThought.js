@@ -16,9 +16,8 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: message })
     })
-      .then((res) => res.json())
-      .then((newThought) => {
-        setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+      .then(() => {
+        window.location.reload()
       })
 
     // clear textarea
