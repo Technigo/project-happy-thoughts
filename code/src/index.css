@@ -55,6 +55,12 @@ code {
   font-weight: 600;
 }
 
+.sendSection {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .sendButton {
   background-color: rgb(255, 192, 198);
   border-radius: 30px;
@@ -64,6 +70,8 @@ code {
   font-weight: 700;
   padding-top: 5px;
 }
+
+.newThoughtLength {}
 
 .thoughtsCard {
   max-width: 400px;

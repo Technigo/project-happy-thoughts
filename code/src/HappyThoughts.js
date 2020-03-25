@@ -22,7 +22,6 @@ export const HappyThoughts = () => {
       });
   }, [])
 
-
   return (
     <div>
       {thoughts.map(json => (

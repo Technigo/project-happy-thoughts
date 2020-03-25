@@ -21,6 +21,7 @@ export const NewThought = () => {
       })
   }
 
+
   return (
     <form onSubmit={handleFormSubmit}>
       <div className="newThoughtCard">
@@ -30,13 +31,16 @@ export const NewThought = () => {
           className="textinput"
           onChange={event => setNewThought(event.target.value)}
           value={newThought}
-        >
-        </textarea>
-        <button
-          type="submit"
-          className="sendButton">
-          <Emoji symbol="❤️" /> Send Happy Thought <Emoji symbol="❤️" />
-        </button>
+        />
+        <article className="sendSection">
+          <button
+            type="submit"
+            disabled={newThought.length < 6 || newThought > 140 ? true : false}
+            className="sendButton">
+            <Emoji symbol="❤️" /> Send Happy Thought <Emoji symbol="❤️" />
+          </button>
+          <p className="newThoughtLength">{newThought.length} / 140</p>
+        </article>
       </div>
     </form>
   )
