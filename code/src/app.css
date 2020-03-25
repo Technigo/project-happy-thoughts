@@ -31,7 +31,14 @@ form input {
 }
 form p{
     margin: 0px ;
+    width: 100%;
+    text-align: right;
 }
+form p:nth-child(1){
+    text-align: left;
+    display: inline;
+}
+
 @media (min-width: 576px) {
     .app {
         width: 500px;
