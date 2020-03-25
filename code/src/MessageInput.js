@@ -32,7 +32,7 @@ export const MessageInput = (props) => {
           <p className="label-input">What's making you happy right now?</p> 
           <textarea 
             type="text"
-            minLength="1"
+            minLength="6"
             maxLength="140"
             className="input-field" 
             type="text"
@@ -47,7 +47,8 @@ export const MessageInput = (props) => {
             type="submit"
             value= '❤️    Add message    ❤️'
             className="form-button"
-            tabIndex='0'>
+            tabIndex='0'
+            disabled={message.length < 6 || message.length > 140 ? true : false}>
           </input>
     </form>
   )}

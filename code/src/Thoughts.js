@@ -15,13 +15,19 @@ export const PostedThoughts = (props) => {
     <div className="each-thought" >
       <div  className="thought" tabIndex='0'> {message} </div>
         <div className="time-and-likes"> 
-        <span> <button 
-        style= {hearts > 0 ? {backgroundColor: 'rgba(253, 174, 229, 0.896)'} : {backgroundColor: 'rgba(134, 105, 126, 0.279'}}
-        className="heart-button" onClick={handleClick} tabIndex='0'> <span> ❤️ </span> </button> <span> x {hearts}</span> </span> 
+          <span> 
+            <button 
+            className={hearts > 0 ? 'liked heart-button': 'notLiked heart-button'}
+            onClick={handleClick} 
+            tabIndex='0'> 
+            <span> ❤️ </span> 
+            </button>
+            <span> x {hearts}</span> 
+          </span> 
           <span>{moment(createdAt).fromNow()}</span> 
+        </div>
+      </div>
     </div>
-    </div>
-  </div>
-  )  }
+  )}
 
   
