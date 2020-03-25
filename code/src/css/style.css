@@ -28,6 +28,7 @@ p {
 
 .p-thoughts {
   font-family: 'Inconsolata', monospace;
+  word-break: break-word;
 }
 
 .p-red {
