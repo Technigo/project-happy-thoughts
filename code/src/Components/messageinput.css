@@ -12,6 +12,7 @@ form.message-input {
   border: 2px solid black;
   box-shadow: 4px 4px black;
   width: 350px;
+  height: 100%;
   margin: 16px;
   display: flex;
   flex-direction: column;

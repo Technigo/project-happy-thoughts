@@ -3,7 +3,7 @@
   border: 2px solid black;
   box-shadow: 4px 4px black;
   width: 350px;
-  height: 130px;
+  height: 100px;
   margin: 16px;
   display: flex;
   flex-direction: column;
@@ -29,6 +29,11 @@
 
 .heart:hover {
   cursor: pointer;
+}
+
+span {
+  transform: scale();
+  font-size: 15px;
 }
 
 .liked {
