@@ -15,7 +15,11 @@ export const HeartButton = (props) => {
   }
   return (
     <div className='likes-container'>
-      <button onClick={handleClick} className="heart-count-btn"><span area-label='heart-emoji' role='img' alt='heart-emoji'>❤️</span></button>
+      <button 
+        onClick={handleClick} 
+        className='heart-count-btn'>
+          <span area-label='heart-emoji' role='img' alt='heart-emoji'>{'❤️'}</span>
+      </button>
     <p className='counter'>x {hearts}</p>
     </div>
     

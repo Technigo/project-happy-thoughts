@@ -45,16 +45,3 @@ export const Thoughts = () => {
     </div>
   )
 }
-
-// const handleClick = (event) => {
-//   event.preventDefault()
-
-//   fetch('https://technigo-thoughts.herokuapp.com/${_id}/like',
-//   {method: 'POST',
-//   body: '',
-//   headers: {'Content-Type': 'application/json'}})
-//   .then(res => res.json)
-//   .then(() => {
-//     window.location.reload()
-//   })
-// }
