@@ -5,12 +5,16 @@ import './thoughts.css'
 
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([])
+  const [loading, setLoading] = useState(true)
 
   // Fetch happy thoughts from API using GET
   useEffect(() => {
     fetch("https://technigo-thoughts.herokuapp.com/")
       .then(res => res.json())
-      .then(json => setThoughts(json))
+      .then(json => {
+        setThoughts(json)
+        setLoading(false)
+      })
   }, [])
 
   // Mapping through the array of thoughts
@@ -30,6 +34,9 @@ export const Thoughts = () => {
       <section className="thoughts-container">
         <NewThoughtForm
           setThoughts={setThoughts} />
+
+        {loading && <p className="loading-thoughts">Loading happy thoughts...</p>}
+
         <ThoughtsList
           thoughts={thoughts}
           onHeartClicked={onHeartClicked} />

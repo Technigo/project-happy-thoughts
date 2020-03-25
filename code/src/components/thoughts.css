@@ -6,3 +6,9 @@
 .thoughts-container {
   width: fit-content;
 }
+
+.loading-thoughts {
+  margin: 40px 0;
+  font-size: 14px;
+  text-align: center;
+}
