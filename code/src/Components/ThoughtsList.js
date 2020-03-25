@@ -22,19 +22,24 @@ export const ThoughtsList = () => {
 
   return (
 
-    <div className="thoughts-list">
+    <div className="happy-thought">
       {
         // Add a section for each message returned by the backend
         thoughts.map(thought => (
-          <p className="thought-message" key={thought._id}>
-            {thought.message}
-            <span className="thought-time">
+          <article className="thought-message">
+            <p key={thought._id}>
+              {thought.message}
+            </p>
+            <button>
+              <span role="img" aria-label="Heart">
+                ❤️
+                </span>
+            </button>
+             x {thought.hearts}
+            <p>
               {moment(thought.createdAt).fromNow()}
-            </span>
-            <div className="heart">
-              {thought.hearts}
-            </div>
-          </p>
+            </p>
+          </article>
         ))
       }
     </div>

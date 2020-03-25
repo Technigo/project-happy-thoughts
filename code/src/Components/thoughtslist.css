@@ -1,14 +1,33 @@
-.thoughts-list{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.thought-message {
-  border: solid 1px black;
-  padding: 16px;
-  background-color: #f1f1f1;
+.happy-thought {
+  font-family: 'Courier', monospace;
   width: 350px;
   height: auto;
 }
+
+.thought-message {
+  width: 90%;
+  height: auto;
+  border: solid 2px darkgray;
+  box-shadow: 4px 4px black;
+  padding: 16px;
+  background-color: #f1f1f1;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.thought-message button {
+  border: 2px solid lightgray;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+}
+
+.thought-message button:hover {
+  cursor: pointer;
+}
+
+
+
