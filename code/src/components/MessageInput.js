@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './messageInput.css'
 
 export const MessageInput = () => {
   const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com";
@@ -22,12 +23,14 @@ export const MessageInput = () => {
   };
   
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <form className="message-card" sonSubmit={handleSubmit}>
+      <h2>Post a Happy Thought!</h2>
+      <textarea 
+        rows= '2'
         type="text"
         onChange={event => setMessage(event.target.value)}
         >
-      </input>
+      </textarea>
       <input
       type="submit"
       value="Add Message">
