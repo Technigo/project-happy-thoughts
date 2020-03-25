@@ -19,7 +19,7 @@ const Posting = () => {
     <article className="new-message">
       <form>
         <h4>"What's making you happy right now?"</h4>
-        <textarea rows="4" minLength="5" maxLength="140" required onChange={(e) => { setMessage(e.target.value) }} />
+        <textarea rows="4" minLength="5" maxLength="140" required onChange={(event) => { setMessage(event.target.value) }} />
         <section className="message-footer">
           <button className="happy-thougth-button" type="submit" onClick={submitHandler} disabled={message.length < 5}>
             <svg xmlns="http://www.w3.org/2000/svg" alt="heart" width="24" height="24" viewBox="0 0 24 24">
