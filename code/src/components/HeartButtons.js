@@ -27,7 +27,7 @@ export const HeartButtons = ({ id, hearts }) => {
 		<div className="heart-container">
 			<button onClick={clickLike} className={like > 0 ? 'heart-button-like' : 'heart-button-no-like'}>
 				<span className="heart" role="img" aria-label="Red heart">
-					❤️
+					{'❤️'}
 				</span>
 			</button>
 			<div className="all-likes">
