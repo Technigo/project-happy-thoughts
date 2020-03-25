@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The assignment was to build a Twitter-like web app using React. It should have a form to post happy thoughts + list the most recent thoughts.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I split it up in components, using props and state to keep track of the thoughts and number of likes. I also added a counter to visualize number of characters in the textarea. The submit button gets disabled if the user types less than 5 or more than 140 characters.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happythoughts.netlify.com/
