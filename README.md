@@ -6,7 +6,7 @@ Small Twitter-like application collecting happy thoughts. The application is fet
 
 The application is split up into components for posting new thoughts to the api, listing thoughts fetched from the API, liking thoughts and posting the likes to the API.
 
-If I had more time I would like to ade a generic button component, using it for all buttons of the application.
+If I had more time I would've liked to add a generic button component, using it for all buttons of the application.
 
 ## Learning objectives
 
