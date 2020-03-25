@@ -3,6 +3,7 @@
   height: 35px;
   border: none;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .heart-button {
