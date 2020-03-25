@@ -20,7 +20,7 @@ export const LikeButton = (props) => {
         <article>
             <button style={{ backgroundColor: heartCounter ? '#ffadad' : '#f2f0f0' }}
                 className="like-button"
-                onClick={like}>❤️</button> x {heartCounter}
+                onClick={like}><span role="img" aria-label="heart">❤️</span></button> x {heartCounter}
             <p>You've liked this post {youLiked} times.</p>
         </article >
     )
