@@ -11,6 +11,7 @@
   justify-content: space-between;
   padding: 20px;
   transition: all .3s ease-in-out;
+  overflow-wrap: break-word;
 }
 
 .thought:hover {
