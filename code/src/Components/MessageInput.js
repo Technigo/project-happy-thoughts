@@ -33,9 +33,9 @@ export const MessageInput = (props) => {
           type='submit'
           onClick={handleSubmit}
           disabled={message.length < 5 || message.length > 140 ? true : false}>
-          <span role='img' aria-label='Red Heart'> ❤️</span>
+          <span role='img' aria-label='Red Heart'>❤️</span>
           Send Happy Thought!
-          <span role='img' aria-label='Red Heart'> ❤️</span>
+          <span role='img' aria-label='Red Heart'>❤️</span>
         </button>
         <p>{message.length}/140</p>
       </div>
