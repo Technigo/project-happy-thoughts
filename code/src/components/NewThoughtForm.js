@@ -35,6 +35,7 @@ export const NewThoughtForm = ({ setThoughts }) => {
         <button className="thougt-button" type="submit">
           <span className="heart-emoji" role="img" aria-label="red heart">❤️</span> Send Happy Thought <span className="heart-emoji" role="img" aria-label="red heart">❤️</span>
         </button>
+        <p className="word-counter">{newThought.length}/140</p>
       </form>
     </article>
   )

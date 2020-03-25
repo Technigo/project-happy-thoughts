@@ -33,3 +33,10 @@
   cursor: pointer;
 }
 
+.word-counter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 12px;
+}
+
