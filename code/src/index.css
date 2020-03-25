@@ -47,6 +47,16 @@ h1 {
   font-size: 16px;
 }
 
+.validation-black {
+  color: black;
+  align-self: flex-end;
+}
+
+.validation-red {
+  color: red;
+  align-self: flex-end;
+}
+
 .error {
   margin-top: 10px;
 }
@@ -54,7 +64,7 @@ h1 {
 /* Posted thoughts */
 .message-cards {
   background-color: white;
-  height: 150px;
+  max-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -66,6 +76,10 @@ h1 {
   justify-content: space-between;
   margin-bottom: 20px;
   font-size: 16px;
+}
+
+.message-cards p {
+  overflow-wrap: break-word;
 }
 
 .message-time {
@@ -86,18 +100,15 @@ h1 {
 
 /* Buttons */
 
-.form-button, .like-button {
-  background-color: pink;
-  box-shadow: none;
-  border: none;
-}
-
 .form-button {
   padding: 10px;
   border-radius: 50px;
   margin: 20px auto 20px 0px;
   font-family: 'Oxygen Mono', monospace;
   font-size: 18px;
+  background-color: pink;
+  box-shadow: none;
+  border: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -113,11 +124,24 @@ h1 {
   padding: 0px 5px;
 }
 
-.like-button {
+.like-button-grey {
+  background-color: lightgrey;
   width: 45px;
   height: 45px;
   border-radius: 50%;
   padding: 0px;
+  box-shadow: none;
+  border: none;
+}
+
+.like-button-pink {
+  background-color: pink;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  padding: 0px;
+  box-shadow: none;
+  border: none;
 }
 
 .sparkling-heart {

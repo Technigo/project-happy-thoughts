@@ -6,7 +6,7 @@ export const MessageLike = (props) => {
     const [amountLikes, setAmountLikes] = useState(likes);
     const [myLikes, setMyLikes] = useState(+localStorage.getItem(thoughtId) || 0);
 
-    const clickHandler = () => {
+    const clickHandler = (event) => {
         fetch(MESSAGES_URL, 
             {
                 method: 'POST',
@@ -22,7 +22,7 @@ export const MessageLike = (props) => {
         <section className='like-container'>
             <button
                 type='button'
-                className='like-button'
+                className={myLikes > 0 ? 'like-button-pink': 'like-button-grey'}
                 onClick={clickHandler}
             >
                 <img className='sparkling-heart' src={require('./assets/sparkling-heart.png')} alt='heart'/>

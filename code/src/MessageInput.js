@@ -12,14 +12,16 @@ export const MessageInput = () => {
         fetch(MESSAGES_URL, 
             {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }, 
+                headers: {'Content-Type': 'application/json'}, 
                 body: JSON.stringify({message: message})
             })
         .then(response => {
             response.ok ? window.location.reload() : setError(true);
         })
+    }
+
+    const lengthCheck = () => {
+        return (message.length > 4 && message.length < 141)
     }
 
     return (
@@ -32,6 +34,9 @@ export const MessageInput = () => {
                     className='form-text'
                     onChange={event => setMessage(event.target.value)}
                 />
+                <div className={lengthCheck() ? 'validation-black' : 'validation-red'}>
+                    {message.length}/140
+                </div>
                 {error && <ErrorMessage />}
                 <button
                     type='submit'
