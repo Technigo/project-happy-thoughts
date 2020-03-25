@@ -19,7 +19,7 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
     <div className="likes">
 
       <button onClick={addLike} id={id} className={"like-btn" + (likes > 0 ? " has-likes" : "")} > {/* Add class if post has likes */}
-        <span role="img" aria-label="heart">❤️</span>
+        <span role="img" aria-label="heart">{'❤️'}</span>
       </button>
 
       <label htmlFor={id}>x {likes}</label>
