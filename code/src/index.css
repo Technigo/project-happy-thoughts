@@ -33,3 +33,27 @@ code {
   font-size:18px;
   color:#6e6e6e;
 }
+
+.send-like {
+  background-color: #d7d7df;
+  border-radius: 50px;
+  border: none ;
+  padding: 15px;
+  transition: all .1s ease-in;
+  }
+
+.send-like:active {
+  border: solid #ffadad;
+  transform: scale(1.1)
+}
+
+.superLiked {
+background-color: aliceblue;
+}
+.liked {
+background-color: rgb(17, 73, 122);
+}
+.default {
+background-color: rgb(97, 231, 148);
+}
+

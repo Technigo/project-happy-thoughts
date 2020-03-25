@@ -1,38 +1,50 @@
 import React, { useState, useEffect } from 'react';
-import ReactDom from 'react-dom';
 import { Form } from './components/Form';
 import { MessageList } from 'components/MessageList';
 
+const messages_URL = ("https://technigo-thoughts.herokuapp.com/")
 
 export const App = () => {
-
-  const messages_URL = ("https://technigo-thoughts.herokuapp.com/")
-  const [thoughts, setThoughts] = useState([]) 
+  const [thoughts, setThoughts] = useState([])
   const [myPost, setMyPost] = useState('')
 
   useEffect(() => {
-    
+
     fetch(messages_URL)
       .then(res => res.json())
       .then(json => setThoughts(json)
-      )}, [myPost])
-  
-      const handleFormSubmit = message => {
-        fetch(messages_URL, {
-          method: 'POST',
-          body: JSON.stringify({ message }),
-          headers: { "Content-Type": "application/json" }
-        })
-        .then(() => setMyPost(message))
-        .catch(err => console.log("error:", err))
-      }
+      )
+  }, [myPost])
 
+  const handleFormSubmit = message => {
+    fetch(messages_URL, {
+      method: 'POST',
+      body: JSON.stringify({ message }),
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(() => setMyPost(message))
+      .catch(err => console.log("error:", err))
+  }
+
+  const onLiked = thoughtId => {
+    console.log('Logging in the APP.js', thoughtId)
+
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
+  }
 
   return (
-    <div>
-    <Form onFormSubmit={handleFormSubmit}/>
-    <MessageList />
-    </div>
+    <main>
+      <Form onFormSubmit={handleFormSubmit} />
+      {thoughts.map(thought => (
+        <MessageList key={thought._id} thought={thought} onLiked={onLiked} />
+      ))}
+    </main>
   )
 
-  } 
+} 
