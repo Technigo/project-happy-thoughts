@@ -4,7 +4,6 @@ import './heartButton.css'
 
 export const HeartButton = (props) => {
   const { hearts, id } = props
-  console.log(props)
 
   const handleClick = () => {
     fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`,{
