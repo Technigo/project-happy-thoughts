@@ -6,7 +6,6 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
 
   // Check if Message length is between 5 – 140 characters
   const checkMessageLength = message.length < 5 || message.length > 140
-  console.log(checkMessageLength)
 
   // Send button
   const handleSubmit = (event) => {
@@ -39,7 +38,7 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
         <div className="char-count">{140 - message.length}/140</div>
 
         <button type="submit" className="post-btn" disabled={(checkMessageLength) ? true : false}> {/* Disable button if characters are not between 5 – 140 */}
-          <span role="img" aria-label="heart">❤️</span>Send happy thought <span role="img" aria-label="heart">❤️</span>
+          <span role="img" aria-label="heart">❤️</span> Send happy thought <span role="img" aria-label="heart">❤️</span>
         </button>
 
       </form>

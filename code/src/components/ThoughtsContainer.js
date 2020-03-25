@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Thought } from './Thought'
 
 export const ThoughtsContainer = ({ thoughts, apiUrl }) => {
