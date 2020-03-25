@@ -122,6 +122,8 @@ textarea {
 .thought-card {
   h2 {
     flex-basis: 100%;
+    word-break: break-word;
+    hyphens: auto;
   }
   .likes {
     flex: 0 1 auto;

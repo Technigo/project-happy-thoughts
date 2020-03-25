@@ -4,6 +4,10 @@ import { Textarea } from './Textarea.js'
 export const PostThought = ({ setThoughts, apiUrl }) => {
   const [message, setMessage] = useState('')
 
+  // Check if Message length is between 5 – 140 characters
+  const checkMessageLength = message.length < 5 || message.length > 140
+  console.log(checkMessageLength)
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -19,19 +23,17 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
 
     // clear textarea
     setMessage('')
-
-    console.log(message.length)
-  };
+  }
 
   return (
     <section className="post-thought">
       <form onSubmit={handleSubmit}>
 
-        <Textarea message={message} setMessage={setMessage} />
+        <Textarea message={message} setMessage={setMessage} checkMessageLength={checkMessageLength} />
 
-        <div className="char-count">{140 - message.length}</div>
+        <div className="char-count">{140 - message.length}/140</div>
 
-        <button type="submit" className="post-btn">
+        <button type="submit" className="post-btn" disabled={(checkMessageLength) ? true : false}>
           <span role="img" aria-label="heart">❤️</span>Send happy thought <span role="img" aria-label="heart">❤️</span>
         </button>
 
