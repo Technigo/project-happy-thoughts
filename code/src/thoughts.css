@@ -67,6 +67,18 @@ button {
   background-color: rgba(134, 105, 126, 0.279);
 }
 
+.react-tooltip-lite {
+  background: #333;
+  color: white;
+  height: 30px;
+  width: 40px;
+  font-size: 10px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New";
+}
+
+.react-tooltip-lite-arrow {
+  border-color: #333;
+}
 
 
 @media only screen and (min-width: 1000px) {

@@ -1,5 +1,6 @@
 import moment from 'moment'
 import React from 'react'
+import Tooltip from 'react-tooltip-lite'
 
 export const PostedThoughts = (props) => {
   const { message, createdAt, hearts, _id } = props.thought
@@ -20,7 +21,9 @@ export const PostedThoughts = (props) => {
             className={hearts > 0 ? 'liked heart-button': 'notLiked heart-button'}
             onClick={handleClick} 
             tabIndex='0'> 
+            <Tooltip content='Like' direction='up'>
             <span> ❤️ </span> 
+            </Tooltip>
             </button>
             <span> x {hearts}</span> 
           </span> 
