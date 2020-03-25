@@ -34,26 +34,20 @@ code {
   color:#6e6e6e;
 }
 
-.send-like {
-  background-color: #d7d7df;
-  border-radius: 50px;
-  border: none ;
-  padding: 15px;
-  transition: all .1s ease-in;
-  }
-
-.send-like:active {
-  border: solid #ffadad;
-  transform: scale(1.1)
+.heart {
+ padding: 10px;
+ width: 5%;
+ border-radius: 50px;
+ border: none ;
 }
 
 .superLiked {
-background-color: aliceblue;
+  background-color: rgb(236, 82, 128);
 }
 .liked {
-background-color: rgb(17, 73, 122);
+  background-color: #ffadad;
 }
-.default {
-background-color: rgb(97, 231, 148);
+.send-like {
+  background-color: #d7d7df;
 }
 

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import './messageList.css'
 
+const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/";
+
 export const MessageList = ({ thought, onLiked }) => {
     const { message, hearts, createdAt, _id } = thought
-
-    const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/";
     const [thoughts, setThoughts] = useState([]);
 
     const handleClick = () => {
@@ -29,7 +29,7 @@ export const MessageList = ({ thought, onLiked }) => {
                 setThoughts(data.sort());
 
             });
-    }, []);
+    }, [thought]);
 
 
     return (
@@ -40,7 +40,10 @@ export const MessageList = ({ thought, onLiked }) => {
                         {thought.message}
                         <button
                         onClick={handleClick}
-                        className="send-love-button">
+                        className={
+                            hearts > 5 ? 'heart superLiked' : hearts > 0 ? ' heart liked' : 'heart send-like'
+                        }
+                        >
                         <span role='img' aria-label='Heart'>💜</span>
                         </button> x {hearts}
 
