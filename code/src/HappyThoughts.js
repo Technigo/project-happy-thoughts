@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Emoji } from "./Emoji"
+import { LikeHeart } from "./LikeHeart"
+
 import './HappyThoughts.css'
 import moment from 'moment'
 
@@ -14,22 +15,31 @@ export const HappyThoughts = () => {
       .then(json => setThoughts(json))
   }, [])
 
+  const onThoughtLiked = (likedThoughtId) => {
+    const updatedThoughts = thoughts.map((thought) => {
+      if (thought._id === likedThoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
+  }
 
   return (
     <div>
       {thoughts.map(thought => (
-        <article className="thoughts-container">
-          <h2 className="message" key={thought._id}>
-            {thought.message}</h2>
-          <p>
-            <Emoji symbol="❤️" />
-            x {thought.hearts}
-          </p>
-          <p>
+        <article className="thoughts-container" key={thought._id}>
+          <h2>{thought.message}</h2>
+          <div className="thought-info">
+            <LikeHeart
+              key={thought._id}
+              id={thought._id}
+              onThoughtLiked={onThoughtLiked}
+              hearts={thought.hearts} />
             <span className="message-time">
               {moment(thought.createdAt).fromNow()}
             </span>
-          </p>
+          </div>
         </article>
       ))
       }

@@ -6,3 +6,20 @@
   border: 1px solid black;
   box-shadow: 10px 10px 0px 0px #000000;
 }
+.thought-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message-time {
+  color: grey;
+}
+
+
+@media (min-width: 669px) {
+
+  .thoughts-container {
+    width: 500px;
+  }
+}

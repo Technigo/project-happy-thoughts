@@ -6,16 +6,15 @@ export const PostThoughts = () => {
   const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
   const [message, setMessage] = useState("")
 
+
   const handleSubmit = event => {
     event.preventDefault()
 
     fetch(THOUGHTS_URL,
       {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ message: message })
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
       }
     ).then(() => {
       window.location.reload()
@@ -24,18 +23,25 @@ export const PostThoughts = () => {
 
   return (
     <form onSubmit={handleSubmit} className="post-thoughts">
-      <h2>What's making you happy right now?</h2>
-      <input
-        type="text"
+      <h1>What's making you happy right now?</h1>
+      <textarea
+        value={message}
+        tabIndex='0'
+        aria-label='Input textarea'
         className="form-text"
+        maxLength="140"
         onChange={event => setMessage(event.target.value)}
-        required
-      />
-      <div className="post-button">
-        <button className="send-button" type="submit">
-          <Emoji symbol="❤️" /> Send Happy Thought! <Emoji symbol="❤️" />
-        </button>
+        required>
+      </textarea>
+      <div className="letter-count">
+        <p>{message.length}/140</p>
       </div>
+      <button
+        className="send-button"
+        type="submit"
+        disabled={message.length < 6 || message.length > 140 ? true : false}>
+        <Emoji symbol="❤️" /> Send Happy Thought! <Emoji symbol="❤️" />
+      </button>
     </form>
   )
 }
