@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 
 export const MyThought = ({ myThought, setMyThought }) => {
+  const [count, setCount] = useState(0)
   return (
    
     

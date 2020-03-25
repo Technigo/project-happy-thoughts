@@ -35,6 +35,7 @@ const handleFormSubmit = (event) => {
       // API as documented at the top of this readme. You can use
       // it to update the `thoughts` array: 
       setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+      setMyThought("")
     })
 }
 
@@ -43,12 +44,14 @@ const handleFormSubmit = (event) => {
       
       <form onSubmit={handleFormSubmit}>
       <MyThought myThought={myThought} setMyThought={setMyThought} />
-        <button type ="submit"><span>&#9829;</span> Send Happy Thought <span>&#9829;</span></button>
+        <button type ="submit" disabled = {(myThought.length<5 || myThought.length>140)}><span>&#9829;</span> Send Happy Thought <span>&#9829;</span></button>
+        <p>{myThought.length} / 140</p>
       </form>
       <section className="card-box">
         {thoughts.slice(0, 5).map((thought)=>{
           return (
           <Cards info = {thought} />
+          
           )
         })}
       </section>
