@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { ErrorMessage } from 'ErrorMessage'
+import React, { useState } from 'react';
+import { ErrorMessage } from 'ErrorMessage';
 
 export const MessageInput = () => {
     const MESSAGES_URL = 'https://technigo-thoughts.herokuapp.com/';
@@ -29,7 +29,6 @@ export const MessageInput = () => {
             <p>What's making you happy right now?</p>
             <form onSubmit={handleSubmit} className='form'>
                 <textarea
-                    type='text'
                     placeholder='Type your thought here...'
                     className='form-text'
                     onChange={event => setMessage(event.target.value)}

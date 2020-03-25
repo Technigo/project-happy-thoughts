@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 import moment from 'moment';
 import { MessageLike } from 'MessageLike';
-import { Spinner } from 'Spinner'
+import { Spinner } from 'Spinner';
 
 export const MessageList =() => {
     const MESSAGES_URL = 'https://technigo-thoughts.herokuapp.com/';
@@ -17,12 +17,11 @@ export const MessageList =() => {
                 return response.json();
             })
             .then(data => {
-                console.log(data)
                 const filteredData = data.filter(message => {
                     return message.message;
                 })
                 setMessages(filteredData);
-                setLoading(false)
+                setLoading(false);
             })
         }, 2000)
     }, []);

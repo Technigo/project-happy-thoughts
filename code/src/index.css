@@ -72,7 +72,7 @@ h1 {
 
 .message-card-bottom {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 20px;
   font-size: 16px;
@@ -85,6 +85,7 @@ h1 {
 .message-time {
   margin: auto 0px;
   color: lightgrey;
+  align-self: flex-end;
 }
 
 .like-container {
@@ -151,11 +152,35 @@ h1 {
   padding-top: 5px;
 }
 
+.sparkling-heart:hover {
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+}
+
+.react-tooltip-lite {
+  background: pink;
+  color: black;
+}
+
+.react-tooltip-lite-arrow {
+  border-color: pink;
+}
+
 /* Media quaries */
 
 @media (min-width: 768px) {
   .form-container, .message-cards {
     width: 55%;
+  }
+
+  .message-card-bottom {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .message-time {
+    align-self: none;
   }
 }
 
