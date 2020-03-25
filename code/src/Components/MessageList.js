@@ -24,7 +24,9 @@ export const MessageList = () => {
         messages.map(message => (
           <p className='message-list' key={message._id}>
             {message.message}
-            <a><button className='heart'>❤️</button></a>
+            <a><button className='heart'>
+
+            </button></a>
             <span className='heart-count'>
               {message.hearts}x
             </span>

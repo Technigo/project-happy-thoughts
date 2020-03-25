@@ -33,7 +33,10 @@ export const MessageInput = () => {
           type='submit'
           className='input-button'
           value='❤️ Send Happy Thought ❤️'
+          onClick={handleSubmit}
+          disabled={message.length < 5 || message.length > 140}
         />
+        <p>{message.length} / 140</p>
       </form>
     </article>
   )
