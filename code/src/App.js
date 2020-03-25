@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Thought } from 'components/Thought'
+
+import { ThoughtsContainer } from 'components/ThoughtsContainer'
 import { PostThought } from 'components/PostThought'
 
 import 'app.scss'
+
 
 export const App = () => {
 
@@ -16,27 +18,19 @@ export const App = () => {
       .then(data => setThoughts(data))
   }, [])
 
-  // console.log(thoughts[0].errors)
-
   return (
     <div className="wrapper">
 
-      <PostThought setThoughts={setThoughts} apiUrl={apiUrl} />
+      <PostThought
+        setThoughts={setThoughts}
+        apiUrl={apiUrl}
+      />
 
-      <section className="thoughts-container">
-        {thoughts.map(thought => (
+      <ThoughtsContainer
+        thoughts={thoughts}
+        apiUrl={apiUrl}
+      />
 
-          <Thought
-            key={thought._id}
-            id={thought._id}
-            message={thought.message}
-            hearts={thought.hearts}
-            date={thought.createdAt}
-            apiUrl={apiUrl}
-          />
-
-        ))}
-      </section>
     </div>
   )
 }

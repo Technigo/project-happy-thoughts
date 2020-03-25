@@ -119,16 +119,17 @@ textarea {
 button:disabled {
   color: inherit;
   opacity: .5;
+  cursor: default;
 }
 
 
 /* –– Thought card –– */
 
 .thought-card {
+  overflow-wrap: break-word;
   h2 {
     flex-basis: 100%;
-    word-break: break-word;
-    hyphens: auto;
+    width: 100%;
   }
   .likes {
     flex: 0 1 auto;
