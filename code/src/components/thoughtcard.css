@@ -26,12 +26,26 @@
   margin-left: 16px;
 }
 
-.thoughtCardLikeIcon {
+.thoughtCardNotLikeIcon {
   cursor: pointer;
   padding: 8px;
   margin-right: 6px;
   border-radius: 100%;
   background-color: rgb(199, 199, 199);
+}
+
+.thoughtCardNotLikeIcon:hover {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+  background-color: #FFADAD;
+}
+
+.thoughtCardLikeIcon {
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 6px;
+  border-radius: 100%;
+  background-color: #FFADAD;
 }
 
 .thoughtCardLikeIcon:hover {

@@ -17,6 +17,9 @@ export const ThoughtCard = ( props ) => {
       headers: { "Content-Type": "application/json" }
     })
     .then(() => props.onLiked(id))
+    .catch((error) => {
+      console.error('Error:', error);
+    })
   }
 
   return (
@@ -24,7 +27,7 @@ export const ThoughtCard = ( props ) => {
       <p className="thoughtText">{message}</p>
       <section className="thoughtCardDetails">
         <div className="thoughtCardLike">
-          <span className="thoughtCardLikeIcon" onClick={handleLike}>❤️</span>
+          <span className={ hearts > 0 ? 'thoughtCardLikeIcon' : 'thoughtCardNotLikeIcon' } onClick={handleLike}>❤️</span>
           <p> x {hearts}</p>
         </div>
 

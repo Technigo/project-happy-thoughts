@@ -11,6 +11,9 @@ export const App = () => {
     fetch("https://technigo-thoughts.herokuapp.com/")
     .then(res => res.json())
     .then(json => setData(json))
+    .catch((error) => {
+      console.error('Error:', error);
+    })
   }, [newMessage])
 
   const handleSubmit = (message) => {
@@ -22,6 +25,9 @@ export const App = () => {
     .then((res) => res.json())
     .then((newThought) => {
       setNewMessage((previousThoughts) => [newThought, ...previousThoughts])
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     })
   }
 
