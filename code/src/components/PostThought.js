@@ -8,6 +8,7 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
   const checkMessageLength = message.length < 5 || message.length > 140
   console.log(checkMessageLength)
 
+  // Send button
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -16,11 +17,12 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: message })
     })
+      // Reload page to get recent posts
       .then(() => {
         window.location.reload()
       })
 
-    // clear textarea
+    // Clear the textarea
     setMessage('')
   }
 
@@ -28,11 +30,15 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
     <section className="post-thought">
       <form onSubmit={handleSubmit}>
 
-        <Textarea message={message} setMessage={setMessage} checkMessageLength={checkMessageLength} />
+        <Textarea
+          message={message}
+          setMessage={setMessage}
+          checkMessageLength={checkMessageLength}
+        />
 
         <div className="char-count">{140 - message.length}/140</div>
 
-        <button type="submit" className="post-btn" disabled={(checkMessageLength) ? true : false}>
+        <button type="submit" className="post-btn" disabled={(checkMessageLength) ? true : false}> {/* Disable button if characters are not between 5 – 140 */}
           <span role="img" aria-label="heart">❤️</span>Send happy thought <span role="img" aria-label="heart">❤️</span>
         </button>
 

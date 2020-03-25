@@ -12,15 +12,13 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
       headers: { 'Content-Type': 'application/json' }
     })
       .then((res) => res.json())
-      .then(
-        setLikes(likes + 1)
-      )
+      .then(setLikes(likes + 1))
   }
 
   return (
     <div className="likes">
 
-      <button onClick={addLike} id={id} className={"like-btn" + (likes > 0 ? " has-likes" : "")} >
+      <button onClick={addLike} id={id} className={"like-btn" + (likes > 0 ? " has-likes" : "")} > {/* Add class if post has likes */}
         <span role="img" aria-label="heart">❤️</span>
       </button>
 
