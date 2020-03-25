@@ -11,7 +11,7 @@ export const App = () => {
     fetch(MESSAGES_URL)
       .then((res) => res.json())
       .then(json => { setThoughts(json) })
-      .catch(error => console.error("Error:", error))
+      .catch(error => console.log("Error:", error))
   }, [])
 
   return (

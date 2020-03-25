@@ -18,7 +18,7 @@ export const Form = (props) => {
       .then(() => {
         window.location.reload();
       })
-      .catch((error) => { console.error(error); alert('Give it a try again ❤️', error) })
+      .catch((error) => { console.log("error"); alert('Give it a try again ❤️', error) })
   }
 
   return (
@@ -27,7 +27,7 @@ export const Form = (props) => {
       <textarea
         value={message}
         placeholder="Type your happy thought here..."
-        autoFocus4
+        autoFocus
         rows="4"
         onChange={(event) => { setMessage(event.target.value) }}>
       </textarea>
