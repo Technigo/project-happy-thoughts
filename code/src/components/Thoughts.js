@@ -29,7 +29,6 @@ export const Thoughts = () => {
   return (
     <div>
       {loading ? <PulseLoader color='black' /> :
-
         messages.map(thought => (
           <article className='thought'>
             <p
@@ -43,6 +42,7 @@ export const Thoughts = () => {
                   id={thought._id}
                   message={thought.message}
                   onMessageLiked={onMessageLiked}
+                  hearts={thought.hearts}
                 />
                 <p>x</p>
                 <p

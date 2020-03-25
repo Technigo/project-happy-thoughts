@@ -29,7 +29,7 @@ export const NewThought = () => {
       <h2>What's making you happy right now?</h2>
       <textarea
         type='text'
-        maxlength="140"
+        maxLength="140"
         onChange={event => setNewThought(event.target.value)}
         className='form-textarea'>
       </textarea>
