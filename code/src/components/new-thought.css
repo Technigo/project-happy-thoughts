@@ -21,6 +21,13 @@ textarea.form-textarea {
   resize: none;
 }
 
+.button-count {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; 
+  width: 100%;
+}
+
 .form-button {
   background-color:#ffadad;
   border: none;

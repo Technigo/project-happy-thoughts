@@ -1,5 +1,4 @@
 .heart-button {
-  background-color:#ffadad;
   border: none;
   height: 50px;
   width: 50px;
@@ -11,4 +10,12 @@
 .heart-button:hover{
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.unliked {
+  background-color: whitesmoke;
+}
+
+.liked {
+background-color:#ffadad;
 }

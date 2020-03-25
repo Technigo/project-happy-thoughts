@@ -1,10 +1,10 @@
 .thought {
-  width: 500px;
   padding: 20px;
   margin: 20px;  
   border: 1px black solid;
   box-shadow: 5px 5px black;
   box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
 .thought-text{

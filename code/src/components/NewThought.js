@@ -6,7 +6,6 @@ export const NewThought = () => {
   const url = 'https://technigo-thoughts.herokuapp.com/'
   const [newThought, setNewThought] = useState('')
 
-
   const handleSubmit = event => {
     event.preventDefault()
 
@@ -23,25 +22,26 @@ export const NewThought = () => {
     })
   }
 
-
   return (
     <form
       className='thought new-thought'
       onSubmit={handleSubmit}>
-
       <h2>What's making you happy right now?</h2>
       <textarea
         type='text'
+        maxlength="140"
         onChange={event => setNewThought(event.target.value)}
         className='form-textarea'>
       </textarea>
-      <input
-        type='submit'
-        className='form-button'
-        disabled={newThought.length <= 4 || newThought.length >= 140 ? true : false}
-        value='❤️Send Happy Thought❤️'>
-      </input>
-
+      <div className='button-count'>
+        <input
+          type='submit'
+          className='form-button'
+          disabled={newThought.length <= 5 || newThought.length >= 140 ? true : false}
+          value='❤️Send Happy Thought❤️'>
+        </input>
+        <p>{newThought.length}/140</p>
+      </div>
     </form>
   )
 }

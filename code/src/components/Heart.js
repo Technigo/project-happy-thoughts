@@ -19,11 +19,16 @@ export const Heart = (props) => {
   }
 
   return (
-    <button
+
+    < button
       className='heart-button'
-      onClick={handleHeart}
-    >
-      ❤️
-    </button>
+      // { props.hearts <= 0 : className='unliked' ?className='liked'}
+      onClick={handleHeart} >
+      <span role='img' aria-label='heart'>
+        {'❤️'}
+      </span>
+    </button >
   )
 }
+
+// {newThought.length <= 5 || newThought.length >= 140 ? true : false}

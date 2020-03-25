@@ -1,13 +1,12 @@
 # Happy Thoughts
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is an app where you can post happy thoughts.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The project is built in React, using three components. One for the new message, one for the list of the latest messages and one for the like-button. I started by making the messages show and then created a form to be able to post to the API. useEffect is used when calling the API. I made the like button its own component. The form button is disabled until the message is validated.
+I added a react-spinner for the messages loading and some css animation to the buttons.
+If I had had more time I would have liked to add a tooltip when the messages is too short or too long.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-emma.netlify.com/

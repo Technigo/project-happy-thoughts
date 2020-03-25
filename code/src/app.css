@@ -1,7 +1,16 @@
 .app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-family: 'Roboto';
   font-size: 18px;
+  
+}
+
+@media (min-width: 450px){
+  body {
+    display:flex;
+    justify-content: center;
+  }
+
+  .app-container {
+    max-width: 500px;
+  }
 }
