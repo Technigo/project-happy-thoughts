@@ -1,0 +1,48 @@
+
+.message-list {
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  width: 350px;
+  height: 130px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.message-list h2 {
+  font-family: 'Courier', monospace;
+  font-size: 16px;
+  margin: 0;
+  font-weight: lighter;
+}
+
+.heart {
+  border: none;
+  background: lightgrey;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+}
+
+.heart:hover {
+  cursor: pointer;
+}
+
+.liked {
+  background:#ffadad;
+}
+
+.hearts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.message-time {
+  color: grey;
+  font-weight: lighter;
+  margin-top: 5px;
+}

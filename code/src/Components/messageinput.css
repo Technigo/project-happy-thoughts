@@ -1,0 +1,47 @@
+h1 {
+  font-size: 17px;
+  font-weight: lighter;
+}
+
+p {
+  margin-left: 150px;
+}
+
+form.message-input {
+  background-color: #f3f1f1;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  width: 350px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.message-input textarea {
+  width: 100%;
+  font-family: 'Courier', monospace;
+  resize: none;
+  padding: 10px;
+  font-size: 18px;
+  box-sizing: border-box;
+  margin: 10px 0;
+}
+
+.message-input-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.message-input button {
+  height: fit-content;
+  width: fit-content;
+  background-color: #ffadad;
+  border: none;
+  margin: auto;
+  border-radius: 25px;
+  padding: 10px;
+  font-weight: 500;
+}

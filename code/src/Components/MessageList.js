@@ -1,41 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import moment from 'moment'
+import React from 'react';
+import moment from 'moment';
+import './messagelist.css'
+import { Hearts } from './Hearts';
 
-export const MessageList = () => {
-  const MESSAGE_URL = 'https://technigo-thoughts.herokuapp.com/'
-  const [messages, setMessages] = useState([])
-
-  useEffect(() => {
-    fetch(MESSAGE_URL)
-      .then((response) => {
-        return response.json()
-      })
-      .then(data => {
-        setMessages(data)
-        console.log(data)
-      })
-
-
-  }, [])
+export const MessageList = (props) => {
+  const { message, hearts, createdAt } = props.thought;
 
   return (
-    <div>
-      {
-        messages.map(message => (
-          <p className='message-list' key={message._id}>
-            {message.message}
-            <a><button className='heart'>
-
-            </button></a>
-            <span className='heart-count'>
-              {message.hearts}x
-            </span>
-            <span className='message-time'>
-              {moment(message.createdAt).fromNow()}
-            </span>
-          </p >
-        ))
-      }
-    </div >
+    <article className='message-list'>
+      <div>
+        <h2>{message}</h2>
+      </div>
+      <div className='hearts'>
+        <Hearts hearts={hearts}
+          id={props.thought._id}
+        />
+        <span className='message-time'>
+          {moment(createdAt).fromNow()}
+        </span>
+      </div>
+    </article>
   )
 }

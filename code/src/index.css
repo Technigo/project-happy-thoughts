@@ -1,74 +1,18 @@
 body {
   margin: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Courier', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier', monospace;
 }
 
-.app {
+main {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-h1 {
-  font-size: 15px;
-  margin: 5px;
-  font-weight: lighter;
-}
-
-.input-card, .message-list {
-  background-color:whitesmoke;
-  border: 1px solid black;
-  box-shadow: 5px 5px black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 350px;
-  padding: 10px;
-}
-
-.message-time {
-  color: grey;
-  font-weight: lighter;
-  align-self: flex-end;
-}
-
-.form-input {
-  width: 100%;
-  height: 30px;
-}
-
-.input-button {
-  background: #ffadad;
-  padding: 10px;
-  border-radius: 15px;
-  margin-top: 5px;
-  font-weight: bolder;
-  border: none;
-}
-
-.heart-count {
-  color: grey;
-  font-weight: lighter;
-  margin: 5px;
-}
-
-button.heart {
-  border-radius: 50%;
-  width: fit-content;
-  padding: 5px;
-} 
-
-.heart:active{
-  background-color: lightgrey;
-  }
-  .heart:visited{
-  background-color: #ffadad;
-  }
