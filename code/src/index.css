@@ -152,12 +152,6 @@ h1 {
   padding-top: 5px;
 }
 
-.sparkling-heart:hover {
-  width: 40px;
-  height: 40px;
-  padding: 0px;
-}
-
 .react-tooltip-lite {
   background: pink;
   color: black;
