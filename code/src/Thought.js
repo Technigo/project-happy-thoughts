@@ -8,7 +8,6 @@ export const Thought = (props) => (
     <div className="thought-details">
       <div className="like-details">
         <LikeButton id={props.thought._id} onThoughtLiked={props.onThoughtLiked} />
-
         <p>x {props.thought.hearts}</p>
       </div>
       <p>{moment(props.thought.createdAt).fromNow()}</p>

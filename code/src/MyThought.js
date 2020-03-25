@@ -32,13 +32,17 @@ export const MyThought = ({ setThoughts }) => {
         <label className="form">
           <p>What's making you happy right now?</p>
           <textarea
+            maxLength="140"
             className="inputfield"
             id="myThought"
             onKeyUp={(event) => countCharacters(event.target.value)}
             onChange={(event) => setMyThought(event.target.value)}
             value={myThought} />
           <p id="countdown">140 characters remaining</p>
-          <button className="send-button" type="submit"><Emoji symbol="❤️" /> Send Happy Thought! <Emoji symbol="❤️" /></button>
+          <button
+            className="send-button"
+            disabled={myThought.length < 6 || myThought.length > 140 ? true : false}
+            type="submit"><Emoji symbol="❤️" /> Send Happy Thought! <Emoji symbol="❤️" /></button>
         </label>
       </div>
     </form>

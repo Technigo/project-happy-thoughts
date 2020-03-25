@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { MyThought } from './MyThought'
 import { Thought } from './Thought'
 
-
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([])
   const [myThought, setMyThought] = useState('')
-
 
   useEffect(() => {
     fetch('https://technigo-thoughts.herokuapp.com/')
