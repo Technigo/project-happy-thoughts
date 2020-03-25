@@ -33,7 +33,7 @@ const handleSubmit = event => {
     )
   },[]);
 
- /*  WHY??? */
+ 
 const onThoughtLiked = (likedThoughtId) => {
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === likedThoughtId) {
@@ -54,22 +54,24 @@ const onThoughtLiked = (likedThoughtId) => {
     <div>
       <ul>
          {thoughts.map(thought => (
-              <li className="HappyThoughtsCard"> 
-               <p className=" thought-txt"> {thought.message}</p>
-               <p className="thought-time">{moment(thought.createdAt).fromNow()}</p>
-              <p className="thought-hearts"> <span aria-hidden="true">X</span> {thought.hearts} <span className ="visually-hidden">likes</span></p>
-             <Like key={thought._id}
-          thought={thought}
-          onThoughtLiked={onThoughtLiked}/>
-          
+          <li className="HappyThoughtsCard"> 
+          <p className=" Thought-txt"> {thought.message}</p>
+         
+          <div className="BottomSection">
+            <div className="Left">
+          <Like key={thought._id}
+           thought={thought}
+           onThoughtLiked={onThoughtLiked}/>
+          <p className="number-hearts"> <span aria-hidden="true">X</span> {thought.hearts} <span className ="visually-hidden">likes</span></p>
+          </div>
+          <div className="Right">
+          <p className="Thought-time">{moment(thought.createdAt).fromNow()}</p>
+          </div>
+          </div>
               </li>
          ))};
          </ul>
-
-         
     </div>
-    </div>
-
-    
+  </div>
   )
 }

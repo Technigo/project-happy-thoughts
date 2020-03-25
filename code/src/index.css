@@ -16,21 +16,28 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 30px;
 }
 
 .HappyThoughtsCard{
   
   border: solid 1px rgb(114, 114, 110);
-  background-color: rgb(228, 224, 224);
+  background-color: rgb(255, 255, 255);
   margin: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 3px 3px 3px;
 }
 
 li {
   list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 label {
   display: flex;
@@ -41,13 +48,17 @@ label {
 .HappyThoughtInput {
   
   border: solid 1px rgb(114, 114, 110);
-  background-color: rgb(228, 224, 224);
+  background-color: rgb(199, 194, 194);
   margin: 4px;
   flex-direction: column;
+  box-shadow: 3px 3px 3px;
   
 }
 .SubmitButton {
   margin: 10px;
+  border-radius: 40%;
+  height: 40px;
+  background: #ffb2b2;
 }
 
 .visually-hidden {
@@ -58,4 +69,41 @@ label {
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap; 
+}
+.Unliked {
+background: #ccc9c9;
+border-radius: 50%;
+width: 30px;
+height: 30px;
+margin-right: 4px;
+margin-bottom: 2px;
+}
+
+.Liked {
+background: #ffb2b2;
+border-radius: 50%;  
+width: 30px;
+height: 30px;
+margin-right: 4px;
+margin-bottom: 2px; 
+}
+.BottomSection {
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+.Left{
+  display: flex;
+  margin-left: 4px;
+}
+.Right {
+  margin-right: 4px;
+}
+.Thought-time {
+  color: rgb(168, 167, 167);
+  font-size: small;
+}
+.ThoughtTxt{
+  padding: 5px 15px
 }
