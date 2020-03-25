@@ -6,7 +6,7 @@ textarea {
   margin-bottom: 24px;
 }
 
-.toughtForm {
+.thoughtForm {
   display: flex;
   flex-direction: column;
   margin: 2vw;
@@ -17,7 +17,13 @@ textarea {
   box-shadow: 10px 10px;
 }
 
-.sendToughtButton {
+.thoughtBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sendThoughtButton {
   cursor: pointer;
   padding: 8px;
   margin-left: 16px;
@@ -25,4 +31,8 @@ textarea {
   background-color: #FFADAD;
 }
 
+.sendThoughtInfo {
+  padding: 8px;
+  margin-right: 16px;
+}
 
