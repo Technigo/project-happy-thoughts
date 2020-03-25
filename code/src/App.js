@@ -1,9 +1,18 @@
 import React from 'react'
+import { HappyForm } from './components/HappyForm'
+import { Happythoughts } from './components/Happythoughts'
+
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+
+
+      <HappyForm />
+      <Happythoughts /> 
+
+
+
     </div>
   )
 }

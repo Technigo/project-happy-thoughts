@@ -1,0 +1,10 @@
+
+.thoughtBox {
+    width: 400px;
+    height: 110px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    padding: 10px;
+    box-shadow: 7px 7px;
+    margin: 30px;
+}
