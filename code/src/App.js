@@ -1,12 +1,15 @@
 import React from 'react'
 import {MessageList} from './MessageList'
 import {MessageInput} from './MessageInput'
+import {LikeButton} from './LikeButton'
+import {Message} from 'Message'
 
 export const App = () => {
   return (
     <div>
-      <MessageList />
       <MessageInput />
+      <MessageList />
+      
     </div>
   )
 }
