@@ -19,6 +19,7 @@ h3 {
 }
 
 textarea {
+  font-family: 'Courier', monospace;
   width: 100%;
   border: solid 2px darkgray;
   margin: 0px;
@@ -42,6 +43,15 @@ textarea {
 .submit-thought:hover {
   cursor: pointer;
   background-color: palevioletred;
+}
+
+.form-footer {
+  width: 95%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 
 }
 
 

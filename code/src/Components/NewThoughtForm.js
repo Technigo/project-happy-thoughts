@@ -33,14 +33,17 @@ export const NewThoughtForm = () => {
           rows="2"
           value={newThought}
           onChange={event => setNewThought(event.target.value)}
-
         ></textarea>
       </label>
-      <button className="submit-thought"
-        type="submit"
-        value="Add New Thought"
-      >❤️ Send Happy Thought ❤️
+      <div className="form-footer">
+        <button className="submit-thought"
+          type="submit"
+          value="Add New Thought"
+          disabled={newThought.length < 5 || newThought.length > 140}
+        >❤️ Send Happy Thought ❤️
       </button>
+        <p>{newThought.length}/140</p>
+      </div>
     </form>
   )
 }

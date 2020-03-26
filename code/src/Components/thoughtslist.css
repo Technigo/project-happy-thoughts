@@ -9,7 +9,7 @@
   height: auto;
   border: solid 2px darkgray;
   box-shadow: 4px 4px black;
-  padding: 16px;
+  padding: 10px;
   background-color: #f1f1f1;
   margin: 16px;
   display: flex;
@@ -28,6 +28,15 @@
 .thought-message button:hover {
   cursor: pointer;
 }
+
+.thought-footer {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
 
 
 

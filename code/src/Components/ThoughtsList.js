@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import "./thoughtslist.css"
 
-export const ThoughtsList = () => {
+export const ThoughtsList = (props) => {
+  const { message, hearts, createdAt, _id } = props
   // Good practice to put URLs in constants
   const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
   const [thoughts, setThoughts] = useState([])
@@ -20,28 +21,48 @@ export const ThoughtsList = () => {
       })
   }, [])
 
+  const onLiked = (thoughtId) => {
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
+  }
+
+  const handleClick = () => {
+    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+      method: "POST",
+      body: "",
+      headers: { "Content-Type": "application/json" }
+    }).then(() => onLiked(_id))
+  }
   return (
 
     <div className="happy-thought">
       {
         // Add a section for each message returned by the backend
+        // Add onClick function to Button and add POST fetch inside that function
         thoughts.map(thought => (
           <article className="thought-message">
             <p key={thought._id}>
               {thought.message}
             </p>
-            <button>
-              <span role="img" aria-label="Heart">
-                ❤️
+            <div className="thought-footer">
+              <button onClick={handleClick}>
+                <span role="img" aria-label="Heart">
+                  ❤️
                 </span>
-            </button>
-             x {thought.hearts}
-            <p>
-              {moment(thought.createdAt).fromNow()}
-            </p>
-          </article>
+              </button>
+              <p>x {thought.hearts}</p>
+              < p >
+                {moment(thought.createdAt).fromNow()}
+              </p>
+            </div>
+          </article >
         ))
       }
-    </div>
+    </div >
   )
 }
