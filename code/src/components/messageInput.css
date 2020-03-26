@@ -5,9 +5,31 @@
 }
 
 .message-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
-  width: 40%;
-  box-shadow: 2px 2px;
-  padding: 10px;
+  width: 50%;
+  box-shadow: 5px 5px;
+  padding: 20px;
   margin: 20px;
+  background-color: #f2f0f0;
 }
+
+p {
+  margin-block-start: 0;
+}
+.textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid #d0cfcf;
+}
+
+button {
+  width: fit-content;
+  border-radius: 40px;
+  padding: 10px;
+  background-color: #ffadad;
+  border-width: 0;
+  border-style: outset;
+}
+

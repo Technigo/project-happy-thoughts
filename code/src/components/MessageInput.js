@@ -25,8 +25,8 @@ export const MessageInput = () => {
   return (
     <section className="input-section">
     <form className="message-card">
-      <h2>What's making you happy right now?</h2>
-      <textarea 
+      <p>What's making you happy right now?</p>
+      <textarea className="textarea"
         rows= '2'
         type="text"
         onChange={event => setMessage(event.target.value)}
