@@ -23,6 +23,7 @@ export const MessageList = () => {
       {messages.map(message =>(
         <section className="messages">
         <p key={message.createdAt}>{message.message}</p>
+          <button /*onCLick={handleClick}*/>❤️</button>
         <h5>{moment(message.createdAt).fromNow()}</h5>
         </section>
       ))}

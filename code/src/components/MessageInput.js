@@ -32,12 +32,14 @@ export const MessageInput = () => {
         onChange={event => setMessage(event.target.value)}
         >
       </textarea>
-      <button
+        <p>{140 - message.length}</p>
+      <button className="btn"
       type="submit"
       onClick={handleSubmit} 
       disabled={message.length < 5 || message.length > 140}
       >❤️ Send Happy Thought ❤️
       </button>
+      
     </form>
     </section>
   )

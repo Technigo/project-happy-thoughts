@@ -24,12 +24,11 @@ p {
   border: 2px solid #d0cfcf;
 }
 
-button {
+.btn {
   width: fit-content;
   border-radius: 40px;
   padding: 10px;
   background-color: #ffadad;
   border-width: 0;
-  border-style: outset;
 }
 
