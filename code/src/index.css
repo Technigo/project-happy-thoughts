@@ -147,10 +147,10 @@ code {
   }
 
   .likeButton {
-    padding-left: 4px;
+    padding-left: 8px;
   }
 
   .notLiked {
-    padding-left: 4px;
+    padding-left: 8px;
   }
 }
