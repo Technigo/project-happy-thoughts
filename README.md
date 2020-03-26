@@ -8,4 +8,4 @@ I am still struggeling with wrapping my head around JavaScript and how to use Re
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://agitated-wing-5b989c.netlify.com/
