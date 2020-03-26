@@ -35,7 +35,7 @@ export const App = () => {
         // Now you have `newThought` which is the response from the
         // API as documented at the top of this readme. You can use
         // it to update the `thoughts` array: 
-        //oldway  setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+        setThoughts((previousThoughts) => [newThought, ...previousThoughts])
         // Vansway setState((state) => ({ thoughts: [newThought, ...state.thoughts] }))
         console.log("important", thoughts)
         setMyThought("")
