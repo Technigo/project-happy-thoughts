@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { LikeButton } from './LikeButton'
 import moment from 'moment'
 import ('messageList.css')
 
@@ -31,6 +32,16 @@ export const MessageList = () => {
 
   }, [])
 
+  const onThoughtLiked = (likedThoughtId) => {
+    const updatedThoughts = messages.map((thought) => {
+      if (thought._id === likedThoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setMessages(updatedThoughts)
+  }
+
   //we are using useEffect to fetch from the backend
   //we are transforming the data in the API to json
   //then we use jsonData(could be called anything) that is an array
@@ -42,16 +53,24 @@ export const MessageList = () => {
   //Render messages using map
   return (
     <div>
+      <article >
+        {messages.map(message => (
+        <div className='message' key={message._id}>
+            <p>{message.message}</p>
+            <div>
+              <p>className='messageTime'>{moment(message.createdAt).fromNow()}</p>
+              <LikeButton liked={onThoughtLiked} hearts={message.hearts} thoughtId={message._id}/>
+            </div>
+        </div>
+        
+          
+        
+        ))}
+        
+      </article>
+    </div>  
 
-      {messages.map(message => (
-        <p className='message' key={message._id}>{message.message}
-          <span className='messageTime'>{moment(message.createdAt).fromNow()}
-          </span>
-        </p>
-      ))}
-
-    </div>
-
+  
 
   )
 }

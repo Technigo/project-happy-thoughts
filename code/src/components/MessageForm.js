@@ -21,9 +21,11 @@ export const MessageForm = () => {
         body: JSON.stringify({ message: message })
       }
     ).then(() => {
+      //setMessage("")//resets the form to be empty
       //Ask this page to refresh
       window.location.reload()
     })
+    .catch(err => console.log("error:",err))
 
 
   }
@@ -40,11 +42,14 @@ export const MessageForm = () => {
       </input>
 
       {/* A submit button */}
-      <input
-        type="submit"
-        value="🌈 Send a happy thought 🐶"
-        className="button">
-      </input>
+      <button 
+              className="button"
+              type="submit"
+              disabled={message.length < 6 || message.length >140 ? true : false}
+              >
+              <span>🌈 Send a Happy Thought! 🐶</span> 
+      </button>
+      <p className="letters-typed">{message.length} / 140</p>
 
     </form>
 
