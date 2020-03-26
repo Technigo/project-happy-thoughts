@@ -30,9 +30,7 @@ export const MessageList = () => {
         setMessages(filteredjsonData)
         console.log(jsonData)
       })
-
-
-  }, [])
+    }, [])
 
   const onThoughtLiked = (likedThoughtId) => {
     const updatedThoughts = messages.map((thought) => {
@@ -65,15 +63,9 @@ export const MessageList = () => {
               <LikeButton liked={onThoughtLiked} hearts={message.hearts} thoughtId={message._id} />
             </div>
           </div>
-
-
-
-        ))}
+      ))}
 
       </article>
     </div>
-
-
-
-  )
+)
 }

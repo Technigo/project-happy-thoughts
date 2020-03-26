@@ -1,28 +1,28 @@
 import React from 'react'
-import ('button.css')
+import('button.css')
 
 export const LikeButton = props => {
-  const {hearts, thoughtId} = props
+  const { hearts, thoughtId } = props
   const APImessages = `https://technigo-thoughts.herokuapp.com/${thoughtId}/like`
-  
-  const handleClick= () => {
+
+  const handleClick = () => {
     fetch(APImessages, {
-      method:'POST',
-      headers: {"Content-Type": "application/json" },
-      body:""
-    },[])
-    .then(() => {
-      props.liked(thoughtId)
-    })
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: ""
+    }, [])
+      .then(() => {
+        props.liked(thoughtId)
+      })
   }
- 
-  return(
-  <div className= "heart-button">
-    <button 
-    className= {hearts > 5 ? 'superliked' : hearts > 0 ? 'liked' : 'unliked' }
-    onClick={handleClick}>❤️</button>
-    <p className="number-of-likes">x {hearts}</p>
-  </div>  
+
+  return (
+    <div className="heart-button">
+      <button
+        className={hearts > 5 ? 'superliked' : hearts > 0 ? 'liked' : 'unliked'}
+        onClick={handleClick}>❤️</button>
+      <p className="number-of-likes">x {hearts}</p>
+    </div>
   )
 
 }

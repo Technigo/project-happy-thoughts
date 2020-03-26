@@ -22,7 +22,6 @@ input {
   font-size: 18px;
   border-radius: 5px;
 }
-
 .button {
   font-family: 'Courier New', Courier, monospace;
   width:330px;
@@ -34,7 +33,6 @@ input {
   color:#fff;
   margin-top: 20px;
   border:none;
-  
 }
 .letters-typed {
   margin-left:50px;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { messageList } from 'components/MessageList'
-import ('form.css')
+import('form.css')
 
 
 export const MessageForm = () => {
@@ -25,9 +25,7 @@ export const MessageForm = () => {
       //Ask this page to refresh
       window.location.reload()
     })
-    .catch(err => console.log("error:",err))
-
-
+      .catch(err => console.log("error:", err))
   }
 
   return (
@@ -43,17 +41,15 @@ export const MessageForm = () => {
 
       {/* A submit button */}
       <div className="formContent">
-      <button 
-              className="button"
-              type="submit"
-              disabled={message.length < 6 || message.length >140 ? true : false}
-              >
-              <span>🌈Send a Happy Thought!🐶</span> 
-      </button>
-      <p className="letters-typed">{message.length} / 140</p>
+        <button
+          className="button"
+          type="submit"
+          disabled={message.length < 6 || message.length > 140 ? true : false}
+        >
+          <span>🌈Send a Happy Thought!🐶</span>
+        </button>
+        <p className="letters-typed">{message.length} / 140</p>
       </div>
     </form>
-
-
   )
 }
