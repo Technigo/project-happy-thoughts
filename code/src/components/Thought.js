@@ -9,7 +9,4 @@ export const Thought = (props) => (
     <LikeButton id={props.thought._id} onThoughtLiked={props.onThoughtLiked} />
   </article>
 )
-
-
-
-// denna används just nu inte
+// NOT IN USE AT THE MOMENT

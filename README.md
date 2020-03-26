@@ -1,13 +1,17 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Mission was to practice React state skills by fetching and posting data to an API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by writing with paper and pen, parts and how they could work together, based on the brief. 
+First I tested the API using Postman, to see what is happening and what "data" I could use. Than I started to code in VS Code. I tried using Components and props and if I had more time I would have done that even more. 
+
+I used moment.js for time, a little validation and a counter. 
+I did the design a little bit "banana-colorized" as I thought the grey/black design guide was not that "happy". 
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://upbeat-wing-e5182a.netlify.com/
+

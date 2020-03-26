@@ -5,10 +5,8 @@ import { MessageInputForm } from './components/MessageInput'
 export const App = () => {
   return (
     <div>
-      {/* Find me in src/app.js! */}
       <MessageInputForm />
       <ThoughtsList />
-      
     </div>
   )
 }

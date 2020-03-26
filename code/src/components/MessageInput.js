@@ -6,6 +6,8 @@ import './messageinput_style.css'
   // A Submit button
   // A submit function that POSTs the text field
   // Change STATE to send to backend
+  // Catch errors
+  // Validation of text + counter
   
 // MESSAGE FORM FOR POSTING TO API:
 export const MessageInputForm = () => {
@@ -16,32 +18,26 @@ export const MessageInputForm = () => {
   const handleSubmit = (event) => {
     // PREVENT REFRESH OF PAGE
     event.preventDefault()
-
+    // POST:
     fetch(apiURL, 
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ message })
         }
-    // Refresh page after submit:
+    // REFRESH PAGE AFTER SUBMIT:
     ).then(() => {
       window.location.reload()
     })
-
+    // CATCH ERRORS:
+    .catch(err => console.log("error:", err))
   }
-
 
   return  (
     <div className="submit-form-container">
       <article className="submit-form-card">
         <form onSubmit={handleSubmit}>
         <h3>What's making you happy right now?</h3>
-{/*           <input
-            type="text"
-            className="form-text"
-            onChange={(event) => setMessage(event.target.value)}
-            >
-          </input> */}
           <textarea
           minLength="5"
           maxLength="140"
@@ -49,21 +45,14 @@ export const MessageInputForm = () => {
           className="form-text"
           onChange={(event) => setMessage(event.target.value)}
           required
-          // defaultValue='Write something here..'
+          // defaultValue='Bananas?'
           >
           </textarea>
-{/*           <input
-            type="submit"
-            className="form-button"
-            value="Post Message">
-          </input> */}
-          {/* <button className="submit-button" type="submit" disabled={message.length < 1 || false}><Heart />Send Happy Thought<Heart /></button> */}
-          <button className="submit-button" type="submit" disabled={message.length > 140 || false}><Heart />Send Happy Thought<Heart /></button>
+          <button className="submit-button" type="submit" disabled={message.length < 5 || message.length > 140 ? true : false}><Heart />Send<Heart /></button>
           <p className="counter">{message.length}/140</p>
         </form>
-        <div className="banana-container"><span role="img" aria-label="Banana image">🍌🍌🍌🍌🍌🍌🍌🍌🍌🍌🍌</span></div>
+        <div className="banana-container"><span role="img" aria-label="Banana image">🍌🍌🍌🍌</span></div>
       </article>
-      
     </div>
   )
 }

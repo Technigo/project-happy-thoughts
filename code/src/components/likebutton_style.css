@@ -4,14 +4,12 @@
   background: rgb(235, 235, 235);
   border-radius: 50%;
   padding: 11px 8px;
- 
 }
 
 .like-button-clicked {
   border: none;
   cursor: pointer;
   background:  rgb(249, 178, 211);
-  /* filter: hue-rotate(90deg); */
   border-radius: 50%;
   padding: 11px 8px;
 }
