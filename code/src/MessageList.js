@@ -1,38 +1,33 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import moment from 'moment'
 import './MessageList.css'
 
-export const MessageList = () => {
-  const MESSAGES_URL = "https://wk11livesession.herokuapp.com/messages"
-  const [messages, setMessages] = useState([])
+export const MessageList = ({ thought, onLiked }) => {
+  const { message, hearts, createdAt, _id } = thought
 
-  useEffect(() => {
-    fetch(MESSAGES_URL)
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        const filteredData = data.filter(message => {
-          return message.text
-        })
-        filteredData.reverse()
-        setMessages(filteredData)
-      })
-  }, [])
+  const handleClick = () => {
+    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+      method: 'POST',
+      body: '',
+      headers: {
+        'Content-Type': 'application / json'
+      }
+    }).then(() => onLiked(_id))
+  }
 
   return (
-    <div>
-      {
-        messages.map(message => (
-          <p className="message-box">
-            {message.text}
-            <button className="like-button">❤️</button>
-            <span className="message-time">
-              {moment(message.created).fromNow()}
-            </span>
-          </p>
-        ))
-      }
-    </div>
+    <article className="message-box">
+      <h3>{message}</h3>
+      <p>
+        <button
+          className="like-button"
+          style={{ background: hearts > 5 ? 'red' : hearts > 0 ? 'lightred' : '#808080' }}
+          onClick={handleClick}
+        ><span role="img" aria-label="Heart">{"❤️ "}</span></button> X {hearts}
+      </p>
+      <p>
+        {moment(createdAt).fromNow()}
+      </p>
+    </article >
   )
 }
