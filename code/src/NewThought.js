@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Emoji } from './Emoji'
-
 
 export const NewThought = () => {
 
@@ -21,12 +20,12 @@ export const NewThought = () => {
       })
   }
 
-
   return (
     <form onSubmit={handleFormSubmit}>
       <div className="newThoughtCard">
         <p>What's making you happy right now?</p>
         <textarea
+          rows="3"
           type="text"
           className="textinput"
           onChange={event => setNewThought(event.target.value)}
