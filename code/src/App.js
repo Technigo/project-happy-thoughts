@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { MessageLikes } from 'components/MessageLikes'
-import { MessageInput } from 'components/MessageInput'
+import { MessageLikes } from './components/MessageLikes'
+import { MessageInput } from './components/MessageInput'
 
 const url = 'https://technigo-thoughts.herokuapp.com/'
 
@@ -18,21 +18,24 @@ export const App = () => {
     setPostedMessage(message)
   }
 
-  const updatedThoughts = thoughts.map(thought => {
-    if (thought._id === thoughtId) {
-      thought.hearts += 1
-    }
-    return thought
-  })
-  setThoughts(updatedThoughts)
-}
+  const onLiked = thoughtId => {
+    console.log('Logging in the APP.js', thoughtId)
 
-return (
-  <main>
-    <MessageInput onFormSubmit={onFormSubmit} />
-    {thoughts.map(thought => (
-      <MessageLikes key={thought._id} thought={thought} onLiked={onLiked} />
-    ))}
-  </main>
-)
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
+  }
+
+  return (
+    <main>
+      <MessageInput onFormSubmit={onFormSubmit} />
+      {thoughts.map(thought => (
+        <MessageLikes key={thought._id} thought={thought} onLiked={onLiked} />
+      ))}
+    </main>
+  )
 }

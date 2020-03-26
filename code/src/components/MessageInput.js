@@ -34,7 +34,7 @@ export const MessageInput = props => {
           onClick={handleSubmit}
           disabled={message.length < 5 || message.length > 140}
         >
-          Send a happy thought
+          ❤️Send a happy thought❤️
       </button>
         <p>{message.length} / 140</p>
       </div>

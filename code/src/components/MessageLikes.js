@@ -16,20 +16,23 @@ export const MessageLikes = ({ thought, onLiked }) => {
   return (
     <article className='happy-thought'>
       <h3>{message}</h3>
-      <p>
-        <button
-          onClick={handleClick}
-          className={
-            hearts > 5 ? 'superLiked' : hearts > 0 ? 'liked' : 'notLiked'
-          }
-        >
-          <span role='img' aria-label='Heart'>
-            ❤️
-          </span>
-        </button>
+      <div className='likes-time'>
+        <p>
+          <button
+            onClick={handleClick}
+            className={
+              hearts > 5 ? 'superLiked' : hearts > 0 ? 'liked' : 'notLiked'
+            }
+          >
+            <span role='img' aria-label='Heart'>
+              {`❤️  `}
+            </span>
+          </button>
         x {hearts}
-      </p>
-      <p>{moment(createdAt).fromNow()}</p>
+        </p>
+
+        <p className='toughts-time'>{moment(createdAt).fromNow()}</p>
+      </div>
     </article>
   )
 

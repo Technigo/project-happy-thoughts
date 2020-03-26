@@ -1,0 +1,66 @@
+
+
+.happy-thought {
+
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  width: 300px;
+ 
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.happy-thought h3 {
+  font-family: 'Courier', monospace;
+  font-size: 16px;
+  margin: 0;
+}
+
+.happy-thought button {
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+}
+
+.happy-thought button:hover {
+  cursor: pointer;
+}
+
+.happy-thought button span {
+  line-height: 2.8;
+ }
+
+ .likes-time {
+
+   color: rgb(152, 151, 151);
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: flex-end;
+ }
+
+.superLiked {
+  background: red;
+}
+
+.liked {
+  background: rgb(250, 150, 217);
+
+}
+
+.notLiked {
+  background: lightgrey;
+}
+
+.toughts-time {
+  color: rgb(152, 151, 151);
+ 
+ 
+}
