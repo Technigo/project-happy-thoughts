@@ -26,7 +26,7 @@ export const Form = props => {
         <button onClick={handleSubmit} className="send-love-button"
           type="submit" tabIndex="0" 
           disabled={message.length <= 5 || message.length >= 140 ? true : false}>
-          <span>❤</span>Send Happy Thought<span>❤</span>
+          <span>❤️</span>Send Happy Thought<span>❤️</span>
         </button>
         
       </div>

@@ -45,7 +45,7 @@ export const Card = ({ thought, onLiked }) => {
                             hearts > 5 ? 'heart superLiked' : hearts > 0 ? ' heart liked' : 'heart send-like'
                         }
                         >
-                        <span role='img' aria-label='Heart'>💜</span>
+                        <span role='img' aria-label='Heart'>❤️</span>
                         </button> x {thought.hearts}
 
                         <span className="message-time">

@@ -4,7 +4,7 @@ A form for text-input with happy thoughts. The text is displayed in a list with 
 
 ## The problem
 
-Testing API calls with postman.
+Testing API calls with postman and building includes useState and useEffect.
 
 ## View it live
 
