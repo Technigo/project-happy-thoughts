@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was made on my 11th week of the bootcamp. The porject was about making a messagefeed, like twitter in React using different component and two API's. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I had no difficulties in fetching the API's and finding the required data, my strugles on the project was with props and my biggest lesson learn for the future is to have "obvious" classnames and and not so similar const names, it can get really confusing. I was 90% done with my project until I messed it up and had to redo everything, but the second time aroung I just followed the teachers git. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://condescending-hopper-08aa97.netlify.com

@@ -1,5 +1,6 @@
 .happy-message {
-  background:linear-gradient(to bottom, #fafafa 5%, #d3c8c8 100%);  border: 2px solid black;
+  background:linear-gradient(to bottom, #fafafa 5%, #d3c8c8 100%);  
+  border: 2px solid black;
   box-shadow: 4px 4px rgb(90, 88, 88);
   width: 300px;
   margin: 16px;

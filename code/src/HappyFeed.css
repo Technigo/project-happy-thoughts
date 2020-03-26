@@ -23,8 +23,6 @@
   border: none;
   border-radius: 50%;
 	margin-right: 4px;
-	background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
-	background-color:#ef027d;
 }
 
 .happy-feed button:hover {
@@ -40,12 +38,12 @@
 	
 }
 .liked {
-	background: lightpink;
+	background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
 
 }
 
 .notLiked {
-	background: lightgrey;
+	background:linear-gradient(to bottom, #fafafa 5%, #d3c8c8 100%); 
 	
 }
 
