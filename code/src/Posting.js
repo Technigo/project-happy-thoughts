@@ -5,7 +5,8 @@ const Posting = () => {
   const [message, setMessage] = useState('')
 
 
-  const submitHandler = () => {
+  const submitHandler = (event) => {
+    event.preventDefault();
     fetch('https://technigo-thoughts.herokuapp.com/', {
       method: 'POST',
       body: JSON.stringify({ message }),
