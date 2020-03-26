@@ -8,4 +8,4 @@ I decided which components I would put the different elements in and then I star
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://boring-hamilton-513392.netlify.com/
