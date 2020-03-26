@@ -1,10 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto Mono', monospace;
   display: flex;
   justify-content: center;
 }
@@ -36,6 +32,8 @@ p {
 }
 
 .form-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 17px;
   border: 1px solid black;
   width: 90%;
   height: 25%;
@@ -43,10 +41,13 @@ p {
 }
 
 .form-button {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 15px;
   border-radius: 30px;
   background-color: #f4acac;
-  padding: 5px;
+  padding: 10px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .thought {
@@ -66,6 +67,7 @@ p {
   padding: 10px;
   background-color: #eaeaea;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .likes {
@@ -77,7 +79,7 @@ p {
   color:rgb(187, 184, 184);
 }
 
-/* @media (min-width: 700px) {
+@media (min-width: 700px) {
   .thought, .input-thought {
     width: 70%;
   }
@@ -87,4 +89,4 @@ p {
   .thought, .input-thought {
     width: 50%;
   }
-} */
+}

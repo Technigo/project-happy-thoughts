@@ -26,11 +26,12 @@ export const ThoughtInput = () => {
         <p>
           What is making you happy right now?
         </p>
-        <input
+        <textarea
+          rows='2'
           type='text'
           onChange={event => setThought(event.target.value)}
           className='form-text'>
-        </input>
+        </textarea>
         <button
           className='form-button'
           type='submit'
