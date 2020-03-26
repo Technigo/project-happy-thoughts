@@ -1,12 +1,10 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+I built a "Happy Thoughts" webpage in react using useState and useEffect. Using GET and POST to fetch and send data from and to an API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I decided which components I would put the different elements in and then I started to fetch information from the API. The last thing I did was to build a like button that shows how many likes a post gets. 
 
 ## View it live
 

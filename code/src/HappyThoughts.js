@@ -15,8 +15,6 @@ export const HappyThoughts = () => {
   }, [])
 
   const onLiked = thoughtId => {
-    console.log('Logging in the APP.js', thoughtId)
-    // just to check that the func is being called and has the id
 
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
@@ -28,7 +26,7 @@ export const HappyThoughts = () => {
   }
 
   return (
-    <div>
+    <article>
       {thoughts.map(thought => (
         <section className="thoughtsCard" key={thought._id}>
           <div className="thought">{thought.message}</div>
@@ -36,7 +34,7 @@ export const HappyThoughts = () => {
             <LikeButton key={thought._id} thought={thought} onLiked={onLiked} /> {moment(thought.createdAt).fromNow()} </span></section>
       ))
       }
-    </div >
+    </article >
   )
 }
 
