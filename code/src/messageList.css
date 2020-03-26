@@ -11,5 +11,28 @@ margin:50px;
   border: solid 1px rgb(39, 39, 39);
   padding:20px;
   box-shadow: 8px 9px 0px -1px rgb(39, 39, 39);
+  position:relative;
 }
-
+.hearts-container{
+  position:absolute;
+  right:25px;
+  bottom:10px;
+}
+div.message {
+  height:250px;
+}
+.message-text {
+  font-size:21px;
+  line-height:1.0.;
+}
+.message {
+  font-weight: 400;
+  font-size: 16px;
+  background-color: rgb(252, 251, 248);
+}
+.message-time {
+  font-size: 15px;
+  font-weight:300;
+  font-style:italic;
+  margin-left:10px;
+}

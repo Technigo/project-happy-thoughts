@@ -8,7 +8,7 @@ export const App = () => {
 
   return (
     <div>
-      <LikeButton/>
+      
       <MessageForm />
       <MessageList />
       

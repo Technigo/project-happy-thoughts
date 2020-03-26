@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { LikeButton } from './LikeButton'
 import moment from 'moment'
-import ('messageList.css')
+import('messageList.css')
+
+
 
 export const MessageList = () => {
   const [messages, setMessages] = useState([])//Create state for messages
@@ -53,24 +55,25 @@ export const MessageList = () => {
   //Render messages using map
   return (
     <div>
-      <article >
+      <article>
         {messages.map(message => (
-        <div className='message' key={message._id}>
-            <p>{message.message}</p>
-            <div>
-              <p>className='messageTime'>{moment(message.createdAt).fromNow()}</p>
-              <LikeButton liked={onThoughtLiked} hearts={message.hearts} thoughtId={message._id}/>
+          <div className="message"
+            key={message._id}>
+            <p className="message-text">{message.message}</p>
+            <p className="message-time">{moment(message.createdAt).fromNow()}</p>
+            <div className="hearts-container">
+              <LikeButton liked={onThoughtLiked} hearts={message.hearts} thoughtId={message._id} />
             </div>
-        </div>
-        
-          
-        
-        ))}
-        
-      </article>
-    </div>  
+          </div>
 
-  
+
+
+        ))}
+
+      </article>
+    </div>
+
+
 
   )
 }

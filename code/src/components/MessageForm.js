@@ -42,15 +42,16 @@ export const MessageForm = () => {
       </input>
 
       {/* A submit button */}
+      <div className="formContent">
       <button 
               className="button"
               type="submit"
               disabled={message.length < 6 || message.length >140 ? true : false}
               >
-              <span>🌈 Send a Happy Thought! 🐶</span> 
+              <span>🌈Send a Happy Thought!🐶</span> 
       </button>
       <p className="letters-typed">{message.length} / 140</p>
-
+      </div>
     </form>
 
 

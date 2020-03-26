@@ -16,36 +16,29 @@ form{
 input {
   display:flex;
   align-items:space-between;
-  height:50px;
+  height:100px;
   width:450px;
-  margin-top:20px;
+  margin-top:5px;
   font-size: 18px;
   border-radius: 5px;
-  
 }
 
 .button {
   font-family: 'Courier New', Courier, monospace;
-  
-  width:320px;
+  width:330px;
   height:70px;
-  border-radius: 30px;
-  font-size:18px;
+  border-radius: 50px;
+  font-size:21px;
   font-weight: bold;
-  background-color: lightpink;
+  background-color: #ffb6c1;
   color:#fff;
-  margin-top: 40px;
+  margin-top: 20px;
   border:none;
   
 }
-.message {
-  font-weight: 550;
-  font-size: 20px;
-  background-color: rgb(252, 251, 248);
+.letters-typed {
+  margin-left:50px;
 }
-.messageTime {
-  font-size: 18px;
-  font-weight:300;
-  font-style:italic;
-  margin-left:10px;
+.formContent{
+  display:flex;
 }
