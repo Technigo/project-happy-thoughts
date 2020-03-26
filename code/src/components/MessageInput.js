@@ -14,7 +14,7 @@ export const MessageInput = () => {
         headers: {
           'Content-Type':'application/json'
         },
-        body:JSON.stringify({message: message})
+        body:JSON.stringify({message})
       }
     ).then(()=>{
       window.location.reload();
@@ -23,18 +23,22 @@ export const MessageInput = () => {
   };
   
   return (
-    <form className="message-card" sonSubmit={handleSubmit}>
-      <h2>Post a Happy Thought!</h2>
+    <section className="input-section">
+    <form className="message-card">
+      <h2>What's making you happy right now?</h2>
       <textarea 
         rows= '2'
         type="text"
         onChange={event => setMessage(event.target.value)}
         >
       </textarea>
-      <input
+      <button
       type="submit"
-      value="Add Message">
-      </input>
+      onClick={handleSubmit} 
+      disabled={message.length < 5 || message.length > 140}
+      >❤️ Send Happy Thought ❤️
+      </button>
     </form>
+    </section>
   )
 }
