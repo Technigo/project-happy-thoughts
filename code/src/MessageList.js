@@ -1,59 +1,42 @@
-import React, {useState, useEffect} from 'react'
-import moment from 'moment'
-import {Message} from './Message'
-import { tsPropertySignature } from '@babel/types'
-import {LikeButton} from './LikeButton'
+import React, { useEffect, useState } from 'react'
+import { LikeButton } from './HappyFeed'
+import { MessageInput } from './HappyMessage'
+
+const url = 'https://technigo-thoughts.herokuapp.com/'
 
 export const MessageList = () => {
-  const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/"
   const [messages, setMessages] = useState([])
-  const [postedMessage, setPostedMessage] =("")
+  const [postedMessages, setPostedMessages] = useState('')
 
-  useEffect (() => {
-    fetch("MESSAGE_URL")
-    .then(res => res.json())
-    .then(json => setMessages(json))
-  
-    }, [postedMessage])
-      
-      const onFormSubmit = message => {
-      setPostedMessage(message)
-    }
-    const onMessageLiked = (likedMessageId) => {
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(json => setMessages(json))
+  }, [postedMessages])
 
-    const updatedMessages = messages.map ((message) =>{
-      if (message._id === likedMessageId) {
-        messages.hearts +=1
+  const onFormSubmit = message => {
+    setPostedMessages(message)
+  }
+
+  const onLiked = messageId => {
+    console.log('Logging in the APP.js', messageId)
+    // just to check that the func is being called and has the id
+
+    const updatedMessages = messages.map(message => {
+      if (message._id === messageId) {
+        message.hearts += 1
       }
       return message
     })
     setMessages(updatedMessages)
   }
 
-
-    return (
-    <div>
-      <MessageList onFormSubmit={onFormSubmit} />
-        {messages.map((message) => (
-        <Message
-          key={message._id}
-          message={message}
-          onMessageLiked={onMessageLiked} />
-          ))}
-    </div>
+  return (
+    <main>
+      <MessageInput onFormSubmit={onFormSubmit} />
+      {messages.map(message => (
+        <LikeButton key={message._id} message={message} onLiked={onLiked} />
+      ))}
+    </main>
   )
 }
-
-// return (
-// <div>
-// {
-//   messages.map (message => (
-//     <p>{message.message} ❤️x{message.hearts}{moment(message.createdAt).fromNow()}</p>
-//   ))
-// }
-
-//     </div>
-    
-//   )
-  
-// }

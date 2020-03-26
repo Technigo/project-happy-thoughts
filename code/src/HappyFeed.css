@@ -1,0 +1,56 @@
+
+.happy-feed {
+  border: 2px solid black;
+  box-shadow: 4px 4px rgb(90, 88, 88);
+  width: 300px;
+  height: 130px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+	padding: 20px;
+	overflow-wrap: break-word;
+	
+}
+
+.happy-feed h3 {
+  font-family: 'Courier', monospace;
+  font-size: 16px;
+  margin: 0;
+}
+
+.happy-feed button {
+  border: none;
+  border-radius: 50%;
+	margin-right: 4px;
+	background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
+	background-color:#ef027d;
+}
+
+.happy-feed button:hover {
+  cursor: pointer;
+}
+
+.happy-feed button span {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+
+	
+}
+.liked {
+	background: lightpink;
+
+}
+
+.notLiked {
+	background: lightgrey;
+	
+}
+
+.comment {
+	display: block;
+	justify-content: space-between;
+}
+
