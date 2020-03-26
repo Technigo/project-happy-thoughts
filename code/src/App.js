@@ -1,9 +1,12 @@
 import React from 'react'
+import {MessageList} from './MessageList'
+import {PostMessages} from './PostMessages'
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+     <PostMessages />
+     <MessageList />
     </div>
   )
 }
