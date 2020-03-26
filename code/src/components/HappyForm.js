@@ -16,29 +16,32 @@ export const HappyForm = () => {
             Header: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({ text: message})
+            body: JSON.stringify({message})
         }
       ).then(()=> {
           window.location.reload();
-
       });
 
     };
 
 
 return (
+    
+    <article className="messageSubmitbox">
+    <h3>What's making you happy right now?</h3>
     <form onSubmit={handleSubmit}>
-        <input
+        <textarea
         type="text"
-        className="form-text"
+        placeholder="Write something happy"
         onChange={event => setMessage(event.target.value)}>
-        </input>
-        <input
+        </textarea>
+        <button
         type="submit"
-        className="form-button"
+        className="messageSubmitbutton"
         value="Add Message">
-        </input>
+        Send happy thought</button>
     </form>
+    </article>
 )
 
 }
