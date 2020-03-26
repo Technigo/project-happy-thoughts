@@ -4,14 +4,16 @@ import './posting.css'
 const Posting = () => {
   const [message, setMessage] = useState('')
 
+
   const submitHandler = () => {
     fetch('https://technigo-thoughts.herokuapp.com/', {
       method: 'POST',
       body: JSON.stringify({ message }),
-      headers: { 'Content-Type': 'application/json' }
-    }).then(() => {
-      window.location.reload();
+      headers: { 'Content-Type': 'application/json' },
     })
+    /*  .then(() => {
+       window.location.reload();
+     }) */
   }
 
 
