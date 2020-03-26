@@ -1,8 +1,27 @@
 body {
   margin: 0px;
-  background: pink;
+  background: #fff;
 }
 
 .app-container {
   width: 100%;
+}
+
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+/* Tablets & desktop */
+@media (min-width: 640px) {
+  .app-container {
+    margin: auto;
+    width: 500px;
+  }
 }

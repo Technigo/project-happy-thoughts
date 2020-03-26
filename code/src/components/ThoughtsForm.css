@@ -7,5 +7,22 @@
 }
 
 .message-text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
   width: 100%;
+}
+.counter {
+  text-align: right;
+}
+
+.happy-button {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  font-weight: bolder;
+  background: #ffadad;
+  border: none;
+  border-radius: 20px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  padding: 10px 20px;
 }

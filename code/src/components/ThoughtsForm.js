@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import "./ThoughtsForm.css";
 
+const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";
+
 export const ThoughtsForm = () => {
-  const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";
   const [message, setMessage] = useState("");
 
   const handleSubmit = event => {
     // Prevent page from refreshing automatically
     event.preventDefault();
 
-    // Post the current value of the text input to the server
+    // Posting the message to the server
     fetch(thoughtsUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      // Send the JSON as a string -- object does not work here
-      body: JSON.stringify({ message: message })
+      // Send the JSON as a string
+      body: JSON.stringify({ message })
     }).then(() => {
       // Reload the page after the request is complete
       window.location.reload();
@@ -25,7 +26,7 @@ export const ThoughtsForm = () => {
 
   return (
     <section className="new-message">
-      <form onSubmit={handleSubmit}>
+      <form className="happy-form">
         <h2>What's making you happy right now?</h2>
         <textarea
           className="message-text"
@@ -35,21 +36,24 @@ export const ThoughtsForm = () => {
           maxLength="140"
           onChange={event => setMessage(event.target.value)}
         />
-        <section className="button-section">
-          <button
-            type="submit"
-            className="happy-button"
-            value="Send Happy Thought"
-          >
-            <span className="heart-emoji" role="img" aria-label="red heart">
-              ❤️
-            </span>{" "}
-            Send Happy Thought{" "}
-            <span className="heart-emoji" role="img" aria-label="red heart">
-              ❤️
-            </span>
-          </button>
-        </section>
+        {/* character counter */}
+        <p className="counter">{message.length} / 140</p>
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className="happy-button"
+          value="Send Happy Thought"
+          /* disabled button if the message length is less than 6 */
+          disabled={message.length < 6 ? true : false}
+        >
+          <span className="heart-emoji" role="img" aria-label="red heart">
+            {"❤️ "}
+          </span>
+          Send Happy Thought
+          <span className="heart-emoji" role="img" aria-label="red heart">
+            {" ❤️"}
+          </span>
+        </button>
       </form>
     </section>
   );

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import moment from "moment";
+import moment from "moment"; /* To format date */
 import "./ThoughtsList.css";
 
+const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";
+
 export const ThoughtsList = () => {
-  const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,6 +33,11 @@ export const ThoughtsList = () => {
           <p className="message"></p>
           {message.message}
           <div className="message-card-footer">
+            <button className="like-button">
+              <span role="img" aria-label="Heart">
+                {"❤️"}
+              </span>
+            </button>
             <span className="hearts">x{message.hearts}</span>
             <span className="message-time">
               {moment(message.createdAt).fromNow()}
