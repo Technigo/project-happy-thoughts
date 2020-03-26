@@ -1,48 +1,32 @@
 import React, { useState } from 'react'
 
-export const ThoughtInput = () => {
-  const MESSAGES_URL = 'https://technigo-thoughts.herokuapp.com/'
-  const [thougth, setThought] = useState('')
+export const ThoughtInput = (props) => {
 
-  const handleSubmit = event => {
-    event.preventDefault()
 
-    fetch(MESSAGES_URL,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ message: thougth })
-      }
-    ).then(() => {
-      window.location.reload()
-    })
-  }
 
   return (
     <section className='input-thought'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={props.onSubmit}>
         <p>
           What is making you happy right now?
         </p>
         <textarea
           rows='2'
           type='text'
-          onChange={event => setThought(event.target.value)}
-          className='form-text'>
+          onChange={event => props.onChange(event.target.value)}
+          className='form-text'
+          value={props.value}
+        >
         </textarea>
         <button
           className='form-button'
           type='submit'
-          onClick={handleSubmit}
-        // disabled={thought.length < 5 || thought.length > 140}
-        // thought.length  or message.length?
+          disabled={props.value.length < 4 || props.value.length >= 140}
         >
           ❤️ Send Thought ❤️
         </button>
       </form>
-      {/* <p>{thought.length} / 140</p> */}
+      <p>{props.value.length} / 140</p>
     </section>
   )
 

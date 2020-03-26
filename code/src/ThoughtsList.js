@@ -1,40 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment';
 
-export const ThoughtsList = () => {
-  const THOUGHTS_URL = 'https://technigo-thoughts.herokuapp.com/'
-  const [thoughts, setThoughts] = useState([])
-
-  useEffect(() => {
-    fetch(THOUGHTS_URL)
-      .then((res) => {
-        return res.json()
-      })
-      .then(data => {
-        setThoughts(data)
-
-        console.log(data)
-
-      })
-  }, [])
-
-
+export const ThoughtsList = (props) => {
 
   return (
     <div>
       {
-        thoughts.map(thought => (
-          <section className='thought'>
-            <p key={thought.id}>
+        props.list.map(thought => (
+          <section
+            className='thought'
+            key={thought._id}
+          >
+            <p>
               {thought.message}
             </p>
             <div className="heart-wrapper">
               <div className="heart-section">
-                <button className="heart-btn">
-                  ❤️
+                <button
+                  className='heart-btn'
+                  onClick={() => props.onLike(thought._id)}
+                >
+                  <span role='img' aria-label='Heart'>
+                    ❤️
+                  </span>
                 </button>
                 <p className="likes">
-                  x 0
+                  x {thought.hearts}
                 </p>
               </div>
               <p>
