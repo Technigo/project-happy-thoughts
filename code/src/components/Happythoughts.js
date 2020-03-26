@@ -5,12 +5,12 @@ import 'components/design/messagebox.css'
 
 export const Happythoughts = () => {
 
-const messages_URL = "https://technigo-thoughts.herokuapp.com/"
+const thoughts_URL = "https://technigo-thoughts.herokuapp.com/"
 const [thoughts, setThoughts] = useState([]) 
 
     useEffect(() => {
 
-        fetch(messages_URL) 
+        fetch(thoughts_URL) 
         .then((res) => {
             return res.json();
         })
