@@ -21,7 +21,7 @@ code {
 
 .allThoughts {
   font-family: Spicy Rice;
-  font-size: 40px;
+  font-size: 45px;
   color: rgb(255, 80, 112);
   padding-top: 20px;
   width: 350px;
@@ -136,4 +136,21 @@ code {
 .notLiked {
   background: lightgrey;
   padding-left: 10px;
+  cursor: pointer;
+}
+
+/* MEDIA QUERY mobile*/
+@media (max-width:700px) {
+
+  .allThoughts {
+    font-size: 40px;
+  }
+
+  .likeButton {
+    padding-left: 4px;
+  }
+
+  .notLiked {
+    padding-left: 4px;
+  }
 }
