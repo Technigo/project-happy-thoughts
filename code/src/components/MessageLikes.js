@@ -30,7 +30,6 @@ export const MessageLikes = ({ thought, onLiked }) => {
           </button>
         x {hearts}
         </p>
-
         <p className='toughts-time'>{moment(createdAt).fromNow()}</p>
       </div>
     </article>
