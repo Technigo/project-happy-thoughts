@@ -21,7 +21,7 @@ code {
 
 .allThoughts {
   font-family: Spicy Rice;
-  font-size: 45px;
+  font-size: 42px;
   color: rgb(255, 80, 112);
   padding-top: 20px;
   width: 350px;
@@ -105,7 +105,7 @@ code {
 
 .thought {
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 16px;
   color: black;
 }
 
@@ -130,8 +130,10 @@ code {
 .likeButton {
   cursor: pointer;
   background: pink;
+  padding-left: 10px;
 }
 
 .notLiked {
   background: lightgrey;
+  padding-left: 10px;
 }
