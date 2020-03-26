@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form } from './components/Form';
-import { MessageList } from 'components/MessageList';
+import { Card } from 'components/Card';
 
 const messages_URL = ("https://technigo-thoughts.herokuapp.com/")
 
@@ -31,7 +31,7 @@ export const App = () => {
 
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
-        thought.hearts += 1
+        thought.hearts += 1 
       }
       return thought
     })
@@ -42,7 +42,7 @@ export const App = () => {
     <main>
       <Form onFormSubmit={handleFormSubmit} />
       {thoughts.map(thought => (
-        <MessageList key={thought._id} thought={thought} onLiked={onLiked} />
+        <Card key={thought._id} thought={thought} onLiked={onLiked} />
       ))}
     </main>
   )

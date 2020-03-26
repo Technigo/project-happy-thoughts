@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
-import './messageList.css'
+import './card.css'
 
 const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/";
 
-export const MessageList = ({ thought, onLiked }) => {
-    const { message, hearts, createdAt, _id } = thought
+export const Card = ({ thought, onLiked }) => {
+    const { hearts, _id } = thought
     const [thoughts, setThoughts] = useState([]);
 
     const handleClick = () => {
@@ -14,6 +14,7 @@ export const MessageList = ({ thought, onLiked }) => {
             body: '',
             headers: { 'Content-Type': 'application/json' }
         }).then(() => onLiked(_id))
+        console.log('from handleclick',_id)
 
     }
 
@@ -29,13 +30,13 @@ export const MessageList = ({ thought, onLiked }) => {
                 setThoughts(data.sort());
 
             });
-    }, [thought]);
+    }, []);
 
 
     return (
         <article>
             {
-                thoughts.map(thought => (
+                
                     <p className="message card" key={thought._id}>
                         {thought.message}
                         <button
@@ -45,13 +46,13 @@ export const MessageList = ({ thought, onLiked }) => {
                         }
                         >
                         <span role='img' aria-label='Heart'>💜</span>
-                        </button> x {hearts}
+                        </button> x {thought.hearts}
 
                         <span className="message-time">
                             {moment(thought.createdAt).fromNow()}
                         </span>
                     </p>
-                ))
+                
             }
         </article>
     )
