@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Emoji } from './Emoji.js'
 
 export const LikeButton = ({ hearts, id, apiUrl }) => {
 
@@ -19,7 +20,7 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
     <div className="likes">
 
       <button onClick={addLike} id={id} className={"like-btn" + (likes > 0 ? " has-likes" : "")} > {/* Add class if post has likes */}
-        <span role="img" aria-label="heart">{'❤️'}</span>
+        <Emoji symbol="❤️" label="heart" />
       </button>
 
       <label htmlFor={id}>x {likes}</label>

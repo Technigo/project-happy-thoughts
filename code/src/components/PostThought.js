@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Textarea } from './Textarea.js'
+import { Emoji } from './Emoji.js'
 
 export const PostThought = ({ setThoughts, apiUrl }) => {
   const [message, setMessage] = useState('')
@@ -38,7 +39,9 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
         <div className="char-count">{140 - message.length}/140</div>
 
         <button type="submit" className="post-btn" disabled={(checkMessageLength) ? true : false}> {/* Disable button if characters are not between 5 – 140 */}
-          <span role="img" aria-label="heart">❤️</span> Send happy thought <span role="img" aria-label="heart">❤️</span>
+          <Emoji symbol="❤️" label="heart" />
+          Send happy thought
+          <Emoji symbol="❤️" label="heart" />
         </button>
 
       </form>
