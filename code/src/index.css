@@ -43,18 +43,38 @@ p {
 }
 
 .form-button {
-  border-radius: 10px;
+  border-radius: 30px;
   background-color: #f4acac;
   padding: 5px;
   margin-top: 10px;
 }
 
 .thought {
+  display: flex;
+}
 
+.heart-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart-section {
+  display: flex;
+}
+
+.heart-btn {
+  padding: 10px;
+  background-color: #eaeaea;
+  border-radius: 50%;
+}
+
+.likes {
+  padding-left: 8px;
+  color: grey;
 }
 
 .thought-time {
-  color: gray;
+  color:rgb(187, 184, 184);
 }
 
 /* @media (min-width: 700px) {

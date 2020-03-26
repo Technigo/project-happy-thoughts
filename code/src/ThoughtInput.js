@@ -31,12 +31,17 @@ export const ThoughtInput = () => {
           onChange={event => setThought(event.target.value)}
           className='form-text'>
         </input>
-        <input
-          type='submit'
+        <button
           className='form-button'
-          value='❤️ Send Happy Thought ❤️'>
-        </input>
+          type='submit'
+          onClick={handleSubmit}
+        // disabled={thought.length < 5 || thought.length > 140}
+        // thought.length  or message.length?
+        >
+          ❤️ Send Thought ❤️
+        </button>
       </form>
+      {/* <p>{thought.length} / 140</p> */}
     </section>
   )
 

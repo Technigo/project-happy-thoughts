@@ -28,11 +28,21 @@ export const ThoughtsList = () => {
             <p key={thought.id}>
               {thought.message}
             </p>
-            <p>
-              <span className='thought-time'>
-                {moment(thought.createdAt).fromNow()}
-              </span>
-            </p>
+            <div className="heart-wrapper">
+              <div className="heart-section">
+                <button className="heart-btn">
+                  ❤️
+                </button>
+                <p className="likes">
+                  x 0
+                </p>
+              </div>
+              <p>
+                <span className='thought-time'>
+                  {moment(thought.createdAt).fromNow()}
+                </span>
+              </p>
+            </div>
           </section>
         ))
       }
