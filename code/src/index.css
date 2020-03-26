@@ -26,7 +26,7 @@ code {
  .thoughts {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 90%;
 } 
 
 .thought-cards {
@@ -99,3 +99,19 @@ code {
   width: 70px;
   align-items: baseline;
 }
+
+/** MEDIA QUERY TABLET **/
+
+@media(min-width:668px){
+.thoughts {
+    width: 60%;
+} 
+}
+/** MEDIA QUERY DESKTOP **/
+
+@media(min-width:1024px){
+.thoughts {
+    width: 40%;
+} 
+}
+
