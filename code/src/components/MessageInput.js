@@ -19,9 +19,9 @@ export const MessageInput = () => {
     ).then(()=>{
       window.location.reload();
     })
-
   };
   
+
   return (
     <section className="input-section">
     <form className="message-card">

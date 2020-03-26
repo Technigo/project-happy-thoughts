@@ -1,27 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-export const LikeHearts = () => {
-  const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com"
-  const [hearts, setHearts] = useState([])
+export const LikeHearts = ({message, onLiked}) => {
+  const {hearts, _id} = message
 
-  useEffect(() => { 
-    fetch(MESSAGES_URL)
-      .then((res) => {
-        return res.json();
-      })
-      .then(heart => {
-        setHearts(heart)
-      });
-
-  }, []);
+  const handleClick = () => {
+    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+      method: 'POST',
+      body: '',
+      headers: { 'Content-Type': 'application/json' }
+    }).then(() => onLiked(_id))
+  }
 
   return (
-    <div>
-      {hearts.map(like => (
-        <p key={like.createdAt}>{like.hearts}
-        </p>
-      ))}
-    </div>
-
+    <span>
+      <button onClick={handleClick}>
+        <p><span role='img' aria-label='Heart'>❤️</span></p>
+      </button>
+      x {hearts}
+    </span>
   )
 }
