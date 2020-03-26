@@ -10,10 +10,9 @@ const Posting = () => {
       method: 'POST',
       body: JSON.stringify({ message }),
       headers: { 'Content-Type': 'application/json' },
+    }).then(() => {
+      window.location.reload();
     })
-    /*  .then(() => {
-       window.location.reload();
-     }) */
   }
 
 
