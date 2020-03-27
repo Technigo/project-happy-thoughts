@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './MessageInput.css'
 
-export const MessageInput = () => {
+export const MessageInput = props => {
 
   const [message, setMessage] = useState("")
   const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/"
@@ -16,6 +16,7 @@ export const MessageInput = () => {
       })
       .then(() => {
         window.location.reload()
+        props.onFormSubmit(message)
       })
   }
   return (

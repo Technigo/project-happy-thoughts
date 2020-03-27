@@ -5,6 +5,7 @@ import './app.css'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
+  const [postedMessage, setPostedMessage] = useState('')
   const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/"
 
   useEffect(() => {
@@ -19,8 +20,11 @@ export const App = () => {
         })
         setThoughts(filteredData)
       })
-  }, [])
+  }, [postedMessage])
 
+  const onFormSubmit = message => {
+    setPostedMessage(message)
+  }
 
   const onLiked = thoughtId => {
     console.log("Logging in the App.js", thoughtId)
@@ -30,12 +34,12 @@ export const App = () => {
       }
       return thought
     })
-    setThoughts(updatedThoughts.reverse())
+    setThoughts(updatedThoughts)
   }
 
   return (
-    <div className="app">
-      <MessageInput className="message-input" />
+    <div className="app-container">
+      <MessageInput className="message-input" onFormSubmit={onFormSubmit} />
       {thoughts.map(thought => (
         <MessageList className="message-list" key={thought._id} thought={thought} onLiked={onLiked} />
       ))}
