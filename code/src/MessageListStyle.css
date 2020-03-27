@@ -12,25 +12,27 @@
     padding: 20px;
     overflow-wrap: break-word;
     display: flex;
+    font-family: 'Courier', monospace;
 }
-
-.small-gray-text {
-    color: gray;
-    font-size: 12px;
-}
-
 .heart-and-time-container {
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    flex-direction: row;    
+    color: gray;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
 }
 
-.heart-button {
-    background-color: pink;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    border: none;
-    margin: 5px;
+.heart-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+.time-container {
+    display: flex;
+    justify-content: center;
 }

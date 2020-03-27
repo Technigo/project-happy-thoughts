@@ -1,0 +1,22 @@
+.heart-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    margin: 5px;
+    border: black solid 1px; /* Take this away when the background cplpr works!*/
+    display: flex;
+    justify-content: center;
+}
+
+
+/* and this is suppose to change the color of the HeartButton.js backgruond, but i doesnt.... 
+className={hearts > 0 ? 'liked' : 'unliked'}
+*/
+.liked {
+background-color: pink;
+}
+
+.unliked {
+    background-color: gray;
+}

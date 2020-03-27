@@ -5,8 +5,8 @@ import {PostMessages} from './PostMessages'
 export const App = () => {
   return (
     <div>
-     <PostMessages />
-     <MessageList />
-    </div>
+      <PostMessages />
+      <MessageList />
+     </div>
   )
 }

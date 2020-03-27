@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './MessageListStyle.css'
 import moment from 'moment'
-
+import { HeartButton } from 'HeartButton'
 
 
 export const MessageList = () => {
@@ -27,18 +27,19 @@ export const MessageList = () => {
             happyThougths.map(thought => (
                 <p key={thought._id}  className= 'happy-thought-box'>
                     {thought.message}
-                    <button className="heart-button">
-                        <span> 💗</span>
-                    </button> 
-                    <span className="small-gray-text">
-                        x {thought.hearts}
-                    </span>
-                    <span className="small-gray-text">
-                        {moment(thought.createdAt).fromNow()}
-                    </span>
-
-
-
+                    <section className="heart-and-time-container">
+                    <section className='heart-container'>
+                            <HeartButton />
+                            <span>
+                                x {thought.hearts}
+                            </span>
+                        </section>
+                        <section className="time-container">
+                            <span>
+                                {moment(thought.createdAt).fromNow()}
+                            </span>
+                        </section> 
+                    </section>
                 </p> 
         
             ))

@@ -14,7 +14,6 @@ export const PostMessages = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-
             body: JSON.stringify({ message: happyThougths })
         }
     ).then(()=>{
@@ -24,18 +23,23 @@ export const PostMessages = () => {
 
     return (
         <div className="input-box">
-            <h5>Did You Give the World Some Love Today Baby?</h5>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
+            <h5>What's making you happy right now?</h5>
+            <form>
+                <textarea
+                    rows='3'
+                    value={happyThougths}
                     onChange={event => setHappyThougths(event.target.value)}
-                    className="input-text">
-                    </input>
-                <input 
+                >
+                </textarea>
+                <button 
                     type="submit"
+                    onClick={handleSubmit}
                     className="input-button"
-                    value="💗 Send happy thought 💗">
-                </input>
+                    disabled={happyThougths.length < 5 || happyThougths.length > 140}
+                    >
+                    💗 Send happy thought 💗
+                </button>
+                <p className='letter-counting'>{happyThougths.length}/140</p>
             </form>
         </div>
     )
