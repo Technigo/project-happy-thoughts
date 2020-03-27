@@ -20,7 +20,7 @@ export const MessageList = () => {
 
   const onLiked = messageId => {
     const updatedMessages = messages.map(message => {
-      if (message.id === messageId) {
+      if (message._id === messageId) {
         message.hearts += 1
       }
       return message
