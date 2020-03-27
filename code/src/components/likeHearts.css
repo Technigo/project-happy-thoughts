@@ -1,8 +1,26 @@
+.like-hearts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 button {
   border-radius: 50%;
-  background-color: #eaeaea;
   border-width: 0;
   height: 40px;
   width: 40px;
   padding-top: 10px;
+}
+.liked {
+  background-color: #ffadad;
+}
+
+.not-liked {
+  background-color: #eaeaea;
+}
+
+.heart-count {
+  color: grey;
+  font-size: 14px;
+  margin-left: 10px;
 }

@@ -8,12 +8,17 @@
   border: 1px solid black;
   width: 50%;
   box-shadow: 5px 5px;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   margin: 20px;
+  overflow: hidden;
 }
 
-
+.likes-and-when {
+  display: flex;
+  justify-content: space-between;
+}
 
 h5 {
+  display: flex;
   color:#cacaca;
 }

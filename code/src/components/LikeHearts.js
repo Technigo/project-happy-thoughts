@@ -13,11 +13,15 @@ export const LikeHearts = ({ message, onLiked }) => {
   }
 
   return (
-    <span>
-      <button onClick={handleClick}>
+    <section className="like-hearts">
+      <button   
+      className={
+        hearts > 0 ? 'liked' : 'not-liked'} 
+        onClick={handleClick}>
         <p><span role='img' aria-label='Heart'>❤️</span></p>
       </button>
-      x {hearts}
-    </span>
+      <div className="heart-count">x {hearts}</div>
+      
+    </section>
   )
 }
