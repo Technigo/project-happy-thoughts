@@ -25,7 +25,7 @@ export const PostMessages = () => {
     return (
         <div className="input-box">
             <h5>Did You Give the World Some Love Today Baby?</h5>
-            <p>Please post your happy thoughts!</p>
+            <p> Please post your happy thoughts! 💌</p>
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 

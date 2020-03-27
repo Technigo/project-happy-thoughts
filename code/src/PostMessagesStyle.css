@@ -4,8 +4,12 @@
 }
 
 .input-button {
-    background-color: blue;
+    background-color:pink;
     display: flex;
+    border-radius: 20px;
+    height: 50px;
+    width: auto;
+    border-color: none;
 }
 
 .input-box {
@@ -21,3 +25,4 @@
     display: flex;
     flex-direction: column;
 }
+

@@ -27,10 +27,11 @@ export const MessageList = () => {
             happyThougths.map(thought => (
                 <p key={thought._id}  className= 'happy-thought-box'>
                     {thought.message}
-                    <span>
+                    <span className="timestamp">
                         {moment(thought.createdAt).fromNow()}
                     </span>
-                    </p>
+                </p> 
+        
             ))
             }
         </div>
