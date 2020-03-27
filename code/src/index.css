@@ -105,7 +105,7 @@ textarea {
   padding: 1rem;
   font-size: 18px;
   height: 120px;
-  width: 70vw;
+  width: 80vw;
   max-width: 400px;
   border: none;
   outline: none;
@@ -152,7 +152,7 @@ form button {
 
 article{
   padding: 1rem;
-  width: 70vw;
+  width: 80vw;
   max-width: 400px;
   height: 125px;
   margin: 1.5rem;
@@ -205,4 +205,16 @@ button svg {
   margin-top: 0.5rem;
 }
 
+@media (max-width: 500px){
+  aside p{
+    font-size: 0.65rem;
+  }
 
+  h1{
+    font-size: 2.5rem;
+  }
+
+  h3{
+    font-size: 1rem;
+  }
+}
