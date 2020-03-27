@@ -18,6 +18,15 @@
 p {
   margin-block-start: 0;
 }
+
+h4 {
+  display: flex;
+  font-size: 14px;
+  color: grey;
+  font-weight: normal;
+  margin: 0;
+  justify-content: flex-end;
+}
 .textarea {
   margin-bottom: 10px;
   padding: 10px;
@@ -30,5 +39,10 @@ p {
   padding: 10px;
   background-color: #ffadad;
   border-width: 0;
+  transition: 0.4s;
 }
 
+
+.btn:hover:enabled {
+  box-shadow: 3px 3px #65686a;
+}
