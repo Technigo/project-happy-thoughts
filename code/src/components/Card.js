@@ -6,7 +6,6 @@ const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/";
 
 export const Card = ({ thought, onLiked }) => {
     const { hearts, _id } = thought
-    const [thoughts, setThoughts] = useState([]);
 
     const handleClick = () => {
         fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
@@ -14,24 +13,8 @@ export const Card = ({ thought, onLiked }) => {
             body: '',
             headers: { 'Content-Type': 'application/json' }
         }).then(() => onLiked(_id))
-        console.log('from handleclick',_id)
 
     }
-
-    useEffect(() => {
-        // Ask the server for the messages using a GET requests
-        fetch(MESSAGES_URL)
-            .then((res) => {
-                // Get the JSON of the response body
-                return res.json()
-            })
-            .then(data => {
-                // Set the state based on the response reversed setThoughts(data.reverse());
-                setThoughts(data.sort());
-
-            });
-    }, []);
-
 
     return (
         <article>
