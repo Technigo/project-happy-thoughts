@@ -5,9 +5,9 @@ import { ThoughtsList } from "./Components/ThoughtsList"
 export const App = () => {
 
   return (
-    <div className="happythoughts-container">
+    <main>
       <NewThoughtForm />
       <ThoughtsList />
-    </div>
+    </main>
   )
 }

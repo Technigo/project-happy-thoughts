@@ -4,7 +4,6 @@ import "./thoughtslist.css"
 
 export const ThoughtsList = (props) => {
   const { message, hearts, createdAt, _id } = props
-  // Good practice to put URLs in constants
   const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
   const [thoughts, setThoughts] = useState([])
 
@@ -44,24 +43,28 @@ export const ThoughtsList = (props) => {
       {
         // Add a section for each message returned by the backend
         // Add onClick function to Button and add POST fetch inside that function
-        thoughts.map(thought => (
-          <article className="thought-message">
-            <p key={thought._id}>
-              {thought.message}
-            </p>
-            <div className="thought-footer">
-              <button onClick={handleClick}>
-                <span role="img" aria-label="Heart">
-                  ❤️
-                </span>
-              </button>
-              <p>x {thought.hearts}</p>
-              < p >
-                {moment(thought.createdAt).fromNow()}
+        thoughts.map(thought => {
+          console.log('thought?', thought)
+          return (
+            <article className="thought-message">
+              <p key={thought._id}>
+                {thought.message}
               </p>
-            </div>
-          </article >
-        ))
+              <div className="thought-footer">
+                <button onClick={handleClick}>
+                  <span role="img" aria-label="Heart">
+                    ❤️
+                      </span>
+                </button>
+                <p>x {thought.hearts}</p>
+                < p >
+                  {moment(thought.createdAt).fromNow()}
+                </p>
+              </div>
+            </article >
+          )
+        }
+        )
       }
     </div >
   )
