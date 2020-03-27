@@ -8,17 +8,16 @@ const url = 'https://technigo-thoughts.herokuapp.com/'
 export const App = () => {
 
   const [thoughts, setThoughts] = useState([])
-  const [submitMessage, setSumbitMessage] = useState('')
+  const [postedMessage, setPostedMessage] = useState('')
 
   useEffect(() => {
     fetch(url)
     .then(res => res.json())
     .then(json => setThoughts(json))
-  },  [submitMessage])
+  },  [postedMessage])
 
-  const onFromSubmit = message => {
-    setSumbitMessage(message)
-
+  const handleFromSubmit = message => {
+    setPostedMessage(message)
   }
   
   const onLiked = thoughtId => {
@@ -37,13 +36,12 @@ return (
     <main>
 
 
-      <HappyForm />
-      
+      <HappyForm handleFromSubmit={handleFromSubmit}/>
+
       {thoughts.map(thought => (
 
       <Happythoughts key={thought._id} thought={thought} onLiked={onLiked}/> 
       ))}
-
 
 
     </main>

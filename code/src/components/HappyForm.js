@@ -2,26 +2,27 @@ import React, {useState} from 'react'
 import 'components/design/messageform.css'
 
 
-export const HappyForm = () => {
+const thoughts_URL = "https://technigo-thoughts.herokuapp.com/"
 
-    const thoughts_URL = "https://technigo-thoughts.herokuapp.com/"
-    const [message, setMessage] = useState("");
+export const HappyForm = props => {
+    const [message, setMessage] = useState('');
 
-    const handleSubmit = event => {
+    const handleSubmit = (event) => {
         event.preventDefault()
 
         fetch(thoughts_URL, {
 
             method: "POST",
-            Header: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({message})
-        }
-      ).then(()=> {
-          window.location.reload();
-      });
+            body: JSON.stringify({ message }),
+            headers: { 'Content-Type': 'application/json'}
+        })
+        .then(() => {
+            props.handleFromSubmit(message)
+            setMessage('')
 
+        })
+       .catch(err => console.log('error:', err))
+    
     };
 
 
@@ -29,18 +30,23 @@ return (
     
     <article className="messageSubmitbox">
     <h3>What's making you happy right now?</h3>
-    <form onSubmit={handleSubmit}>
         <textarea
-        type="text"
-        placeholder="Write something happy"
+        row='3'
+        value={message}
+        placeholder="Write 5 or more character"
         onChange={event => setMessage(event.target.value)}>
         </textarea>
+
         <button
         type="submit"
+        onClick={handleSubmit}
         className="messageSubmitbutton"
-        value="Add Message">
-        Send happy thought</button>
-    </form>
+        disabled={message.length < 5 || message.length > 140}
+        >
+        Send happy thought
+        </button> 
+        <p className="number-character">{message.length} / 140</p>
+
     </article>
 )
 
