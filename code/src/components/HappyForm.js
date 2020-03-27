@@ -43,7 +43,7 @@ return (
         className="messageSubmitbutton"
         disabled={message.length < 5 || message.length > 140}
         >
-        <span role="img" aria-label="heart">❤️</span>Send happy thought<span role="img" aria-label="heart">❤️</span>
+        <span>🎉 </span>Send happy thought<span> 🎉</span>
         </button> 
         <p className="number-character">{message.length} / 140</p>
 
