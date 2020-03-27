@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import "./thoughtslist.css"
 
-export const ThoughtsList = (props) => {
+export const ThoughtsList = () => {
   const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
   const [thoughts, setThoughts] = useState([])
 
@@ -51,7 +51,6 @@ export const ThoughtsList = (props) => {
                 {thought.message}
               </p>
               <div className="thought-footer">
-
                 <button onClick={() => handleClick(thought._id)}
                   className={
                     thought.hearts > 5 ? "superLiked" : thought.hearts > 0 ? "liked" : "notLiked"
@@ -61,16 +60,16 @@ export const ThoughtsList = (props) => {
                     ❤️
                       </span>
                 </button>
-                <p>x {thought.hearts}</p>
-                < p >
+                <p>x{thought.hearts}</p>
+                <p>
                   {moment(thought.createdAt).fromNow()}
                 </p>
               </div>
-            </article >
+            </article>
           )
         }
         )
       }
-    </div >
+    </div>
   )
 }

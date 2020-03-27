@@ -1,12 +1,14 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This is a project within the Technigo frontend boot camp. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The objective was to practice React state by fetching and posting data to an API; sending, reading and liking messages.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started out by sketching up the components needed and what their role should be. I decided not to split the project up in many components, in order to understand the flow of each function. I used React State and useEffect hooks, and window.location.reload to retreive a fresh set of all new messages. A ternary operator was used to control the length of the text in the form textarea.
+
+If I had more time I would work more on the styling, and also implement an error message when form validation requirements are not met. 
 
 ## View it live
 
