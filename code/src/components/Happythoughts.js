@@ -5,7 +5,7 @@ import 'components/design/messagebox.css'
 
 
 export const Happythoughts = ({ thought, onLiked}) => {
-    const {message, hearts, createdArt, _id} = thought
+    const {message, hearts, createdAt, _id} = thought
 
     const handleClick = () => {
         fetch(`https://technigo-thoughts.herokuapp.com/${_id}Like`, {
@@ -26,18 +26,10 @@ export const Happythoughts = ({ thought, onLiked}) => {
                     hearts >5 ? 'superLiked' : hearts > 0 ? 'liked' : 'notLiked'
                 }
                 >
-                <span role='img' aria-label='heart'>
-                 💜
-                </span>
-                </button>
-                x {hearts}
-            </p>
-            <p>{moment(createdArt).fromNow()}</p>
+                <span role="img" aria-label="heart">❤️</span>
+                </button> x {hearts} 
+            </p> 
+            <spna className="creadtedAt-text">{moment(createdAt).fromNow()}</spna>
         </article>
-    )
-
-
-    
-
-   
+    )  
 }

@@ -8,3 +8,21 @@
     box-shadow: 7px 7px;
     margin: 30px;
 }
+
+
+.thoughtBox button {
+    width: 35px;
+    height: 35px;
+    padding: 2px;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(187, 184, 184, 0.447);
+}
+
+.creadtedAt-text {
+    display: block;
+    text-align: right;
+    color: rgba(96, 93, 93, 0.625);
+    font-weight: 400;
+}
+
