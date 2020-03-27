@@ -46,7 +46,6 @@ const onThoughtLiked = (likedThoughtId) => {
 
   return (
     <div className="WrapperDiv">
-<<<<<<< HEAD
       <form className="FormDiv" onSubmit ={handleSubmit}>
         
         <HappyWords happyWords={happyWords} setHappyWords={setHappyWords}/>
@@ -61,19 +60,6 @@ const onThoughtLiked = (likedThoughtId) => {
           <div className="BottomSection">
           <div className="Left">
           <Like key={thought._id}
-=======
-
-          <HappyWords happyWords={happyWords} setHappyWords={setHappyWords}/>
-
-      <ul>
-         {thoughts.map(thought => (
-          <li className="HappyThoughtsCard"> 
-            <p className=" ThoughtTxt"> {thought.message}</p>
-
-            <div className="BottomSection">
-            <div className="Left">
-            <Like key={thought._id}
->>>>>>> lisas
            thought={thought}
            onThoughtLiked={onThoughtLiked}/>
           <p className="number-hearts"> <span aria-hidden="true">X</span> {thought.hearts} <span className ="visually-hidden">likes</span></p>
@@ -86,6 +72,6 @@ const onThoughtLiked = (likedThoughtId) => {
          ))};
          </ul>
     </div>
-  
+  </div>
   )
 }
