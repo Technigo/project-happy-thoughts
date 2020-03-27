@@ -22,7 +22,7 @@ export const App = () => {
       }
     ).then(res => res.json())
       .then(newThought => {
-        setThoughts([newThought, ...thoughts]);
+        setThoughts([newThought, ...thoughts])
       })
   }
 
@@ -33,9 +33,6 @@ export const App = () => {
       })
       .then(data => {
         setThoughts(data)
-
-        console.log(data)
-
       })
   }, [])
 

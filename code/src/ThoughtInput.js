@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export const ThoughtInput = (props) => {
-
-
 
   return (
     <section className='input-thought'>
@@ -26,9 +24,10 @@ export const ThoughtInput = (props) => {
           ❤️ Send Thought ❤️
         </button>
       </form>
-      <p>{props.value.length} / 140</p>
+      <p
+        className='counter'>
+        {props.value.length} / 140
+      </p>
     </section>
   )
-
-
 }

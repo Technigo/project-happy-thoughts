@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Roboto Mono', monospace;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 code {
@@ -16,6 +16,7 @@ code {
 
 p {
   margin: 10px 0px;
+  overflow-wrap: break-word;
 }
 
 .thought, .input-thought {
@@ -48,8 +49,10 @@ p {
   padding: 10px;
   margin-top: 10px;
   cursor: pointer;
-  /* border: none; */
-  /* box-shadow: none; */
+}
+
+.counter {
+  align-self: flex-end;
 }
 
 .thought {
@@ -65,11 +68,25 @@ p {
   display: flex;
 }
 
-.heart-btn {
-  padding: 10px;
+.not-liked {
   background-color: #eaeaea;
+  padding: 10px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.liked {
+  background-color: pink;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.super-liked {
+ background-color: rgb(240, 94, 114);
+ padding: 10px;
+ border-radius: 50%;
+ cursor: pointer;
 }
 
 .likes {

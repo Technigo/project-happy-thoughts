@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import moment from 'moment';
+import React from 'react'
+import moment from 'moment'
 
 export const ThoughtsList = (props) => {
 
@@ -17,10 +17,15 @@ export const ThoughtsList = (props) => {
             <div className="heart-wrapper">
               <div className="heart-section">
                 <button
-                  className='heart-btn'
                   onClick={() => props.onLike(thought._id)}
+                  className={
+                    thought.hearts > 5 ? 'super-liked' : thought.hearts > 0 ? 'liked' : 'not-liked'
+                  }
                 >
-                  <span role='img' aria-label='Heart'>
+                  <span
+                    className='hearts'
+                    role='img'
+                    aria-label='Heart'>
                     ❤️
                   </span>
                 </button>
@@ -39,5 +44,4 @@ export const ThoughtsList = (props) => {
       }
     </div>
   )
-
 }
