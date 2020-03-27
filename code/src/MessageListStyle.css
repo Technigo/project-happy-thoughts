@@ -24,3 +24,13 @@
     flex-direction: row;
     align-items: stretch;
 }
+
+.heart-button {
+    background-color: pink;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    margin: 5px;
+
+}

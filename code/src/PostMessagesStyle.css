@@ -7,9 +7,13 @@
     background-color:pink;
     display: flex;
     border-radius: 20px;
-    height: 50px;
+    height: 40px;
     width: auto;
-    border-color: none;
+    border: none;
+    margin: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
 
 .input-box {
