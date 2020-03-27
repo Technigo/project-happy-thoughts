@@ -48,17 +48,17 @@ const onThoughtLiked = (likedThoughtId) => {
     <div className="WrapperDiv">
       <form className="FormDiv" onSubmit ={handleSubmit}>
         
-          <HappyWords happyWords={happyWords} setHappyWords={setHappyWords}/>
+        <HappyWords happyWords={happyWords} setHappyWords={setHappyWords}/>
          
       </form>
-    <div>
+    <div>     {/* I wanted this to be a component but just could not get it to work, if you have time id love some words on what i should have done. what are the props that need to be passed. Im lost!! */}
       <ul>
          {thoughts.map(thought => (
           <li className="HappyThoughtsCard"> 
           <p className=" Thought-txt"> {thought.message}</p>
          
           <div className="BottomSection">
-            <div className="Left">
+          <div className="Left">
           <Like key={thought._id}
            thought={thought}
            onThoughtLiked={onThoughtLiked}/>
