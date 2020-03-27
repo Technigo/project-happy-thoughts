@@ -10,7 +10,17 @@ button {
   height: 40px;
   width: 40px;
   padding-top: 10px;
+  transition: 0.4s;
 }
+
+button:hover:enabled {
+  box-shadow: 3px 3px #65686a;
+}
+
+button:active:enabled {
+  box-shadow: none; 
+}
+
 .liked {
   background-color: #ffadad;
 }

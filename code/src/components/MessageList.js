@@ -34,8 +34,8 @@ export const MessageList = () => {
         <section className="messages">
           <p key={message.createdAt}>{message.message}</p>
           <div className="likes-and-when">
-          <p><LikeHearts message={message} onLiked={onLiked} /></p>
-          <h5>{moment(message.createdAt).fromNow()}</h5>
+            <p><LikeHearts message={message} onLiked={onLiked} /></p>
+            <h5>{moment(message.createdAt).fromNow()}</h5>
           </div>
         </section>
       ))}
