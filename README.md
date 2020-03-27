@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Technigo remote bootcamp project to fecth and post data from API using React.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Starting with fetching already existing Happy Thouhgts-messagesfor a message list. Then creating a form to post new messages to the Happy Thoughts app. Finalising with adding a "heart"-button to like posted messages.  
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://compassionate-hamilton-850c95.netlify.com/
