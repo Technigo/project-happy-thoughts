@@ -1,7 +1,8 @@
 import React from 'react'
+import './likeHearts.css'
 
-export const LikeHearts = ({message, onLiked}) => {
-  const {hearts, _id} = message
+export const LikeHearts = ({ message, onLiked }) => {
+  const { hearts, _id } = message
 
   const handleClick = () => {
     fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {

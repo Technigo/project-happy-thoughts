@@ -5,7 +5,7 @@ export const MessageInput = () => {
   const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com";
   const [message, setMessage] = useState("");
 
-  const handleSubmit = event => {
+  const handleClick = event => {
     event.preventDefault();
 
     fetch(MESSAGES_URL, 
@@ -21,7 +21,6 @@ export const MessageInput = () => {
     })
   };
   
-
   return (
     <section className="input-section">
     <form className="message-card">
@@ -35,9 +34,9 @@ export const MessageInput = () => {
         <p>{140 - message.length}</p>
       <button className="btn"
       type="submit"
-      onClick={handleSubmit} 
+      onClick={handleClick} 
       disabled={message.length < 5 || message.length > 140}
-      >❤️ Send Happy Thought ❤️
+        ><span role='img' aria-label='Heart'>❤️</span> Send Happy Thought <span role='img' aria-label='Heart'>❤️</span>
       </button>
       
     </form>
