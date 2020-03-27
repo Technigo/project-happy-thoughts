@@ -116,6 +116,7 @@ textarea {
   text-align: center;
   border-radius: 10px;
   background: #ffffff;
+  -webkit-appearance: none;
   box-shadow:  inset 6px 6px 15px #e8e8e8, 
                inset -6px -6px 15px #ffffff;
   -webkit-boxbox-shadow: inset 6px 6px 15px #e8e8e8, 
