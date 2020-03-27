@@ -5,13 +5,13 @@
 }
 
 .thought-message {
-  width: 90%;
+  width: 95%;
   height: auto;
   border: solid 2px darkgray;
   box-shadow: 4px 4px black;
   padding: 10px;
   background-color: #f1f1f1;
-  margin: 16px;
+  margin: 16px 0px;
   display: flex;
   flex-direction: column;
   font-size: 14px;
@@ -36,7 +36,17 @@
   justify-content: space-between;
 }
 
+.superLiked {
+  background: red;
+}
 
+.liked {
+  background: #ffadad;
+}
+
+.notLiked {
+  background: lightgrey;
+}
 
 
 

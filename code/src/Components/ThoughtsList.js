@@ -3,7 +3,6 @@ import moment from 'moment'
 import "./thoughtslist.css"
 
 export const ThoughtsList = (props) => {
-  const { message, hearts, createdAt, _id } = props
   const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
   const [thoughts, setThoughts] = useState([])
 
@@ -11,7 +10,7 @@ export const ThoughtsList = (props) => {
     //Ask the server for the thoughts using a GET request
     fetch(THOUGHTS_URL)
       .then((res) => {
-        // GET the JSON of the response body
+        // GET the JSON of the response body. All info is retreived here.
         return res.json()
       })
       .then(data => {
@@ -30,28 +29,34 @@ export const ThoughtsList = (props) => {
     setThoughts(updatedThoughts)
   }
 
-  const handleClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+  const handleClick = (thoughtId) => {
+    //console.log("id", thoughtId)
+    fetch(`https://technigo-thoughts.herokuapp.com/${thoughtId}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" }
-    }).then(() => onLiked(_id))
+    }).then(() => onLiked(thoughtId))
   }
   return (
 
     <div className="happy-thought">
       {
         // Add a section for each message returned by the backend
-        // Add onClick function to Button and add POST fetch inside that function
+        // Map through "thoughts" array and print out each thought
         thoughts.map(thought => {
           console.log('thought?', thought)
           return (
-            <article className="thought-message">
-              <p key={thought._id}>
+            <article className="thought-message" key={thought._id}>
+              <p>
                 {thought.message}
               </p>
               <div className="thought-footer">
-                <button onClick={handleClick}>
+
+                <button onClick={() => handleClick(thought._id)}
+                  className={
+                    thought.hearts > 5 ? "superLiked" : thought.hearts > 0 ? "liked" : "notLiked"
+                  }
+                >
                   <span role="img" aria-label="Heart">
                     ❤️
                       </span>
