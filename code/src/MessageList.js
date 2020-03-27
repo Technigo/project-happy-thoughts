@@ -29,8 +29,11 @@ export const MessageList = () => {
                     {thought.message}
                     <button className="heart-button">
                         <span> 💗</span>
-                    </button>   
-                    <span className="timestamp">
+                    </button> 
+                    <span className="small-gray-text">
+                        x {thought.hearts}
+                    </span>
+                    <span className="small-gray-text">
                         {moment(thought.createdAt).fromNow()}
                     </span>
 
