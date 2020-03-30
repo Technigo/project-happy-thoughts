@@ -1,13 +1,17 @@
-# Happy Thoughts
+# Happy Thoughts React Project
 
-Replace this readme with your own information about your project.
+This is my very own mini-twitter with 100% less negativity and no US presidents using it. Here you can write your own posts, like and read other peoples happy thoughts. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The project is built using React and useEffect for API calls  
 
-## The problem
+# Tech used 🧠
+- React
+- useEffect for API call 
+- useState 
+- POST and GET 
+- Props
+- CSS 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+# View it live
 
-## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://infallible-archimedes-9a857b.netlify.com/
