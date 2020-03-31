@@ -24,14 +24,11 @@
 
 .heart-count-btn:focus {
   background-color: #FFAEAC;
+  outline: none;
 }
 
 .heart-count-btn:visited {
   background-color: #FFAEAC;
-}
-
-.heart-count-btn:focus {
-  outline: none;
 }
 
 .counter {

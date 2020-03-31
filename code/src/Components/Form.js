@@ -21,8 +21,5 @@ export const Form = () => {
       
         <Button message={message}/>
       </form>
-      
-
-    
   )
 } 

@@ -15,7 +15,7 @@ export const Thoughts = () => {
     .then(json => setThoughts(json))
   },[])
 
-  const onThoughtLiked = (likedThoughtId) => {
+  const onThoughtLiked = likedThoughtId => {
     const updatedThoughts = thoughts.map((thought) => {
       if(thought._id === likedThoughtId) {
         thought.hearts += 1
