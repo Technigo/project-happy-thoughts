@@ -28,8 +28,9 @@ textarea {
     font-weight: 600;
 }
 
-.messageSubmitbutton:disabled {
-    background-color: rgba(238, 84, 84, 0.776);
+
+.messageSubmitbutton:enabled {
+    background-color: rgba(238, 84, 84, 0.932);
 }
 
 .number-character {
