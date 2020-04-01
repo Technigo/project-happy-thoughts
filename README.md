@@ -1,6 +1,6 @@
 # Happy Thoughts App 
 
-A one-page React application used for fetching and posting data to an API. Similar to Twitter, the user get to like and post short messages. Built for happy thoughts. 
+An one-page React application used for fetching and posting data to an API. Similar to Twitter, the user get to like and post short messages. Built for happy thoughts. 
 
 ## View it live
 
