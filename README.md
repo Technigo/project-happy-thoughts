@@ -1,6 +1,10 @@
 # Happy Thoughts App 
 
-Try the site out here: https://rautellin-happy-thoughts.netlify.com/
+A one-page React application used for fetching and posting data to an API. Similar to Twitter, the user get to like and post short messages. Built for happy thoughts. 
+
+## View it live
+
+https://rautellin-happy-thoughts.netlify.com/
 
 ## What I learned 🧠
 
