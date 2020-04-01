@@ -32,13 +32,14 @@ export const MessageList = () => {
     <section className="message-list">
       {
         messages.map(message => (
-          <article className="message" key={message._id}>
+          <article className="message" 
+          key={message._id}>
             <p>{message.message}
             </p>
             <div className="likes-and-time-container">
 
               <div className="likes">
-                < LikeButton
+                <LikeButton
                   likes={message.hearts}
                   id={message._id}
                   message={message}

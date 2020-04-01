@@ -37,7 +37,7 @@ export const MessageForm = () => {
         >
           <img className="heartIcon" src="./icons/heart.png" alt="Heart icon" />
           Send Happy Thought
-        <img className="heartIcon" src="./icons/heart.png" alt="Heart icon" />
+          <img className="heartIcon" src="./icons/heart.png" alt="Heart icon" />
         </button>
         <p>{message.length} /140</p>
       </div>
