@@ -28,6 +28,10 @@ textarea {
     font-weight: 600;
 }
 
+.messageSubmitbutton:disabled {
+    background-color: rgba(238, 84, 84, 0.776);
+}
+
 .number-character {
     display: inline-block;
     padding-left: 130px;
