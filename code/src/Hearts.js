@@ -1,13 +1,23 @@
 import React, { useState } from 'react'
 import './hearts.css'
 
-const Hearts = ({ heart, id }) => {
+const Hearts = ({ heart, _id }) => {
   const [hearts, setHearts] = useState(heart)
 
+
   const likeClickHandler = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, { method: 'POST' })
-    setHearts(heart + 1)
+
+    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+      method: 'POST', body: '', headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    )
+      .then((res) => res.json())
+      .then(() => { }, []);
+    setHearts((heart) => heart + 1);
   }
+
 
   return (
     <section className="heart-section">
