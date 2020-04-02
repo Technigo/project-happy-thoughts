@@ -52,7 +52,7 @@ span {
   margin-top: 5px;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
 
   .message-list {
   width: 250px;
