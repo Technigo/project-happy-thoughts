@@ -18,7 +18,7 @@ export const Hearts = (props) => {
   return (
     <div>
       <button
-        className='heart'
+        className={heartClicks > 0 ? 'liked' : 'unliked'}
         onClick={() => { likeClick() }}>
         <span role='img' aria-label='Click to like'>{'❤️ '}</span>
       </button>

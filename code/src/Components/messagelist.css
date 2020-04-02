@@ -18,7 +18,7 @@
   font-weight: lighter;
 }
 
-.heart {
+.liked, .unliked {
   border: none;
   background: lightgrey;
   border-radius: 50%;

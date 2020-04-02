@@ -37,12 +37,12 @@ form.message-input {
 }
 
 .message-input button {
-  height: fit-content;
-  width: fit-content;
   background-color: #ffadad;
   border: none;
-  margin: auto;
   border-radius: 25px;
   padding: 10px;
   font-weight: 500;
+  color: 000;
+  display: flex;
+  flex-direction: row;
 }
