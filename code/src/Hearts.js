@@ -4,11 +4,10 @@ import './hearts.css'
 const Hearts = ({ heart, _id }) => {
   const [hearts, setHearts] = useState(heart)
 
-
   const likeClickHandler = () => {
 
     fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
-      method: 'POST', body: '', headers: {
+      method: 'POST', headers: {
         'Content-Type': 'application/json'
       }
     }
