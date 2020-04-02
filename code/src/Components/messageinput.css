@@ -42,7 +42,18 @@ form.message-input {
   border-radius: 25px;
   padding: 10px;
   font-weight: 500;
-  color: 000;
   display: flex;
   flex-direction: row;
+}
+
+@media (max-width: 350px) {
+
+  form.message-input {
+  width: 250px;
+  }
+
+  p {
+    margin-left: 50px;
+  }
+
 }

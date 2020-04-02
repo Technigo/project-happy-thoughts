@@ -51,3 +51,11 @@ span {
   font-weight: lighter;
   margin-top: 5px;
 }
+
+@media (max-width: 350px) {
+
+  .message-list {
+  width: 250px;
+  }
+}
+
