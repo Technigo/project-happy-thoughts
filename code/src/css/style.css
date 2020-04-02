@@ -6,10 +6,20 @@
 }
 
 body {
-  background: #fff;
+  background: #ffadad;
   font-family: 'Arimo', sans-serif;
   line-height: 1.6;
   margin: 0;
+}
+
+h1 {
+  font-family: monospace;
+  font-size: 50px;
+  text-align: center;
+}
+
+.title-emoji {
+  font-size: 38px;
 }
 
 p {
@@ -43,8 +53,12 @@ p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0 30px;
-  margin: auto;
+  padding: 20px 30px;
+  margin: 20px auto;
+  border: 1px solid #000;
+  -webkit-box-shadow: 6px 6px 0px #000;
+          box-shadow: 6px 6px 0px #000;
+  background-color: #ffe8e8;
 }
 
 .send-thought-container, .thought-container {
@@ -133,6 +147,7 @@ form {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 135px;
+  background-color: #fff;
 }
 
 .icon-container {

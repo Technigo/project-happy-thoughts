@@ -11,6 +11,11 @@ export const App = () => {
 
 	return (
 		<section className="all-thoughts-container">
+			<h1>
+				HAPPY TH<span className="title-emoji" role="img" aria-label="Red heart">
+					❤️
+				</span>UGHTS
+			</h1>
 			<SendThought thoughts={thoughts} setThoughts={setThoughts} />
 			{thoughts.map((thought) => (
 				<DisplayThought
