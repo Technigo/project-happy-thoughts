@@ -20,7 +20,7 @@ export const Hearts = (props) => {
       <button
         className={heartClicks > 0 ? 'liked' : 'unliked'}
         onClick={() => { likeClick() }}>
-        <span role='img' aria-label='Click to like'>{'❤️'}</span>
+        <span role='img' aria-label='Click to like'>{'❤️  '}</span>
       </button>
       x{heartClicks}
     </div >
