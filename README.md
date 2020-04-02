@@ -22,5 +22,5 @@ Moment.js
 
 ## View it live
 
-Send a happy thought!
+Send a happy thought or like one!
 https://epic-shaw-0a70d8.netlify.com/
