@@ -20,16 +20,25 @@ export const App = () => {
     setPostedMessage(message)
   }
   
-  const onLiked = thoughtId => {
-    console.log('Looging in the APP.js', thoughtId)
-  
-  const updatedThoughts = thoughts.map(thought => {
-    if( thought._id === thoughtId) {
-      thought.hearts += 1
-    }
-    return thought
+
+const sendHeart = (id) => {
+  const end = `${url}${id}/like`
+
+
+fetch(end, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+}).then((res) => res.json())
+  .then((updateMessage) => {
+    const updatedThoughts = [...thoughts]
+    const index = thoughts.findIndex(thought => thought._id === id)
+    updatedThoughts.splice(index, 1, updateMessage)
+    setPostedMessage(setPostedMessage)
+
   })
-  setThoughts(updatedThoughts)
+
 }
 
 return (
@@ -40,7 +49,7 @@ return (
 
       {thoughts.map(thought => (
 
-      <Happythoughts key={thought._id} thought={thought} onLiked={onLiked}/> 
+      <Happythoughts key={thought._id} thought={thought} onLiked={sendHeart} /> 
       ))}
 
 
