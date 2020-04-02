@@ -46,7 +46,7 @@ form.message-input {
   flex-direction: row;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
 
   form.message-input {
   width: 250px;
