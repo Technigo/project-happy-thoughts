@@ -13,8 +13,10 @@ const Hearts = ({ heart, _id }) => {
     }
     )
       .then((res) => res.json())
-      .then(() => { }, []);
-    setHearts((heart) => heart + 1);
+      .then(() => {
+        setHearts((heart) => heart + 1);
+      }, []);
+
   }
 
 
