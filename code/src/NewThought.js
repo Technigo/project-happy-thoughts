@@ -5,15 +5,18 @@ export const NewThought = () => {
 
   const THOUGHTS_URL = 'https://technigo-thoughts.herokuapp.com/'
 
-  //The initial state "useState([])"" is an empty object that we can access with the element "newThought" 
-  //it will be set updated with "setNewThought" that is a function. 
+  /* useState("") returns an object with the state and a function 
+    - 1st element - state holding the value (newThought) 
+    - 2nd element - function to set the value (setNewThought) */
+
   const [newThought, setNewThought] = useState("")
 
-  //When the button "Send Happy Thought" is clicked, the form onSubmit triggers the function handleFormSubmit.
 
+  //When the button "Send Happy Thought" is clicked, the form onSubmit triggers the function handleFormSubmit.
   const handleFormSubmit = event => {
-    event.preventDefault(); //I dont exactly remember this: event.preventDefault(); But the new thought does not show without it.
-    //The function will post the newThought value to the object "message" in the url. 
+    event.preventDefault();
+    /* I dont exactly remember this: event.preventDefault(); But the new thought does not show without it.
+    The function will post the newThought value to the object "message" in the url. */
     fetch(THOUGHTS_URL, {
       method: 'POST',
       headers: {
@@ -27,9 +30,11 @@ export const NewThought = () => {
       })
   }
 
-  //When the user adds a new thought (changes the content of the input), the onChange function updates the state (setNewThought), 
-  //and the function handleFormSubmit triggers and the component re-renders with the new Json (and the value, aka NewThought, passed to Input). 
-  //If there isn't a new thought input, the handleFormSubmit is not triggered.
+  /* When the user adds a new thought, 
+    - the onChange function updates the state (setNewThought) 
+    - the function handleFormSubmit triggers 
+    - the component re-renders with the new Json (and the value, aka NewThought, passed to Input). 
+    - If there isn't a new thought input, the handleFormSubmit is not triggered. */
   return (
     <form onSubmit={handleFormSubmit}>
       <div className="newThoughtCard">
