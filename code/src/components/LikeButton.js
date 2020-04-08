@@ -5,7 +5,7 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
 
   const [likes, setLikes] = useState(hearts)
 
-  const addLike = (event) => {
+  const addLike = event => {
     event.preventDefault()
 
     fetch(`${apiUrl}${id}/like`, {
