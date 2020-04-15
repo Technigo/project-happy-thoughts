@@ -1,0 +1,42 @@
+.messageCard {
+  width: 300px;
+  height: 150px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.messageCard h3 {
+  font-size: 18px;
+  padding: 20px 0px;
+}
+
+.messageCard button {
+  border-radius: 50%;
+  padding: 5px;
+  margin: 0;
+}
+
+.messagecard button:hover{
+  cursor: pointer;
+}
+
+.notLiked {
+  background-color: lightgrey; 
+}
+
+.liked {
+  background-color: lightpink;
+}
+
+.time {
+  font-size: 12px;
+  font-style: italic;
+  text-align: right;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,48 @@
+.postCard {
+  width: 300px;
+  height: 150px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postCard h3 {
+  margin: 5px;
+}
+
+textarea {
+  width: 250px;
+  height: 40px;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid grey;
+}
+
+textarea:hover {
+  box-shadow: 3px 3px 2px lightskyblue;
+}
+
+.postCard button {
+  background-color: lightpink;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+.postCard span {
+  margin: 5px;
+}
+
+.postCard p {
+  display: inline-block;
+  font-size: 12px;
+  text-align: right;
+  margin: 5px;
+}
