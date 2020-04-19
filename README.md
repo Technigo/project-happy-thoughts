@@ -1,6 +1,15 @@
 # Happy Thoughts
 
-In this project we were working with an API and made a small Twitter-like application that collects and shows 'Happy Thougths' where we can all share our happy thoughts and 'heart' them. 
+In this project we were working with an API and made a small Twitter-like application that collects and shows 'Happy Thougths' where we can all share our happy thoughts and 'heart' them 💌  
+
+## Tech
+
+- React
+- API
+- JSX
+- JavaScript
+- CSS
+              
 
 ## The problem
 
