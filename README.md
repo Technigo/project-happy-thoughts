@@ -1,4 +1,4 @@
-# Happy Thoughts 💌
+# Happy Thoughts 💌☀️🌈💕
 
 In this project I made a small Twitter-like application that collects and shows 'Happy Thougths' from a collective API. Now we can all share our happy thoughts and 'heart' them   
 
@@ -11,7 +11,7 @@ In this project I made a small Twitter-like application that collects and shows 
 - CSS
               
 
-## The problem
+## How I did it
 
 This app is built using React and I was working with GET and POST requests to an API (POST requests for the first time).
 
