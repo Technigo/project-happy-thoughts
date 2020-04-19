@@ -1,6 +1,6 @@
-# Happy Thoughts
+# Happy Thoughts 💌
 
-In this project we were working with an API and made a small Twitter-like application that collects and shows 'Happy Thougths' where we can all share our happy thoughts and 'heart' them 💌  
+In this project I made a small Twitter-like application that collects and shows 'Happy Thougths' from a collective API. Now we can all share our happy thoughts and 'heart' them   
 
 ## Tech
 
@@ -13,7 +13,7 @@ In this project we were working with an API and made a small Twitter-like applic
 
 ## The problem
 
-We are using React to build this app and working with GET and POST requests (POST requests for the first time).
+This app is built using React and I was working with GET and POST requests to an API (POST requests for the first time).
 
 ## View it live
 
