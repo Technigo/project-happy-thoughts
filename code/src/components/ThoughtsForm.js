@@ -6,7 +6,7 @@ const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";
 export const ThoughtsForm = () => {
   const [message, setMessage] = useState("");
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     // Prevent page from refreshing automatically
     event.preventDefault();
 
@@ -14,10 +14,10 @@ export const ThoughtsForm = () => {
     fetch(thoughtsUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       // Send the JSON as a string
-      body: JSON.stringify({ message })
+      body: JSON.stringify({ message }),
     }).then(() => {
       // Reload the page after the request is complete
       window.location.reload();
@@ -34,14 +34,14 @@ export const ThoughtsForm = () => {
           rows="4"
           minLength="5"
           maxLength="140"
-          onChange={event => setMessage(event.target.value)}
+          onChange={(event) => setMessage(event.target.value)}
         />
         {/* character counter */}
         <p className="counter">{message.length} / 140</p>
         <button
           type="submit"
           onClick={handleSubmit}
-          className="happy-button"
+          className="submit-button"
           value="Send Happy Thought"
           /* disabled button if the message length is less than 6 */
           disabled={message.length < 6 ? true : false}
