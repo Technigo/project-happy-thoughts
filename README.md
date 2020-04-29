@@ -8,4 +8,4 @@ To solve the problem I worked with using API's in React and setting up a fetch r
 
 ## View it live
 
-https://fervent-mirzakhani-b37cf5.netlify.com
+https://er-project-happy-thoughts.netlify.app/
