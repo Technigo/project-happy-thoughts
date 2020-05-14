@@ -20,7 +20,7 @@ export const Thoughts = () => {
         setPage(json.page)
         setTotalPages(json.total_pages)
       })
-  }, [])
+  }, [page])
 
   // Mapping through the array of thoughts
   // Adding one heart if the id is the same as the id for the heart clicked 
@@ -32,6 +32,14 @@ export const Thoughts = () => {
       return thought
     })
     setThoughts(heartClicked)
+  }
+
+  const previousPage = () => {
+    setPage(page - 1)
+  }
+
+  const nextPage = () => {
+    setPage(page + 1)
   }
 
   return (
@@ -48,7 +56,9 @@ export const Thoughts = () => {
 
         <Pagination
           page={page}
-          totalPages={totalPages} />
+          totalPages={totalPages}
+          back={previousPage}
+          next={nextPage} />
       </section>
     </div>
   )

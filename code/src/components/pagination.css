@@ -3,3 +3,8 @@
   text-align: center;
   font-family: 'Limelight', cursive;
 }
+
+.arrow {
+  margin: 0 5px;
+  cursor: pointer;
+}
