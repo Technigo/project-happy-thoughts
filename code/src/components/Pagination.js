@@ -4,17 +4,19 @@ import './pagination.css'
 export const Pagination = ({ page, totalPages, back, next }) => {
   return (
     <p className='pagination'>
-      <span
+      <button
         className='arrow'
+        disabled={page === 1 ? true : false}
         onClick={back}>
         &lt;
-      </span>
+      </button>
       {page} / {totalPages}
-      <span
+      <button
         className='arrow'
+        disabled={page === totalPages ? true : false}
         onClick={next}>
         &gt;
-      </span>
+      </button>
     </p>
   )
 }
