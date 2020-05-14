@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ThoughtsList } from './ThoughtsList'
 import { NewThoughtForm } from './NewThoughtForm'
 import './thoughts.css'
+import { Pagination } from './Pagination'
 
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([])
@@ -40,6 +41,8 @@ export const Thoughts = () => {
         <ThoughtsList
           thoughts={thoughts}
           onHeartClicked={onHeartClicked} />
+
+        <Pagination />
       </section>
     </div>
   )

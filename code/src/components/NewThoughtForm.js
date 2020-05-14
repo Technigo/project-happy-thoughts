@@ -10,7 +10,7 @@ export const NewThoughtForm = ({ setThoughts }) => {
     event.preventDefault()
 
     // Post new messages to API using POST
-    fetch("https://technigo-thoughts.herokuapp.com/", {
+    fetch("https://fridamaria-happy-api.herokuapp.com/thoughts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: newThought })
