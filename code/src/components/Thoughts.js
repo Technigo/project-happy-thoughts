@@ -7,6 +7,8 @@ import { Pagination } from './Pagination'
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
 
   // Fetch happy thoughts from API using GET
   useEffect(() => {
@@ -15,6 +17,8 @@ export const Thoughts = () => {
       .then(json => {
         setThoughts(json.thoughts)
         setLoading(false)
+        setPage(json.page)
+        setTotalPages(json.total_pages)
       })
   }, [])
 
@@ -42,7 +46,9 @@ export const Thoughts = () => {
           thoughts={thoughts}
           onHeartClicked={onHeartClicked} />
 
-        <Pagination />
+        <Pagination
+          page={page}
+          totalPages={totalPages} />
       </section>
     </div>
   )
