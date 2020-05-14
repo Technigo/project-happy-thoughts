@@ -32,7 +32,7 @@ export const NewThoughtForm = ({ setThoughts }) => {
             value={newThought}
             onChange={(event) => setNewThought(event.target.value)} />
         </div>
-        <button className="thougt-button" type="submit">
+        <button className="thought-button" type="submit" disabled={newThought.length < 5 ? true : false}>
           <span className="heart-emoji" role="img" aria-label="red heart">❤️</span> Send Happy Thought <span className="heart-emoji" role="img" aria-label="red heart">❤️</span>
         </button>
         <p className="word-counter">{newThought.length}/140</p>
