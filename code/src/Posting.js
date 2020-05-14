@@ -7,7 +7,7 @@ const Posting = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    fetch('https://technigo-thoughts.herokuapp.com/', {
+    fetch('https://happyclappy.herokuapp.com/thoughts', {
       method: 'POST',
       body: JSON.stringify({ message }),
       headers: { 'Content-Type': 'application/json' },

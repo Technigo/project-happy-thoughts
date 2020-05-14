@@ -6,7 +6,7 @@ const Hearts = ({ heart, _id }) => {
 
   const likeClickHandler = () => {
 
-    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+    fetch(`https://happyclappy.herokuapp.com/${_id}/like`, {
       method: 'POST', headers: {
         'Content-Type': 'application/json'
       }

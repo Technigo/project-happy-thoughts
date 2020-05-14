@@ -9,7 +9,7 @@ const Posts = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('https://technigo-thoughts.herokuapp.com/')
+    fetch('https://happyclappy.herokuapp.com/thoughts')
       .then((res) => res.json())
       .then((data) => {
         setPostsList(data)
