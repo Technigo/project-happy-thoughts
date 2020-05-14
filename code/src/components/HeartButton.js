@@ -5,7 +5,7 @@ export const HeartButton = ({ id, onHeartClicked, hearts }) => {
 
   // Posting to API with POST, using the thought id, when heart button is clicked
   const handleClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
+    fetch(`https://fridamaria-happy-api.herokuapp.com/thoughts/${id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" }

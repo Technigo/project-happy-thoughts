@@ -9,10 +9,10 @@ export const Thoughts = () => {
 
   // Fetch happy thoughts from API using GET
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch("https://fridamaria-happy-api.herokuapp.com/thoughts")
       .then(res => res.json())
       .then(json => {
-        setThoughts(json)
+        setThoughts(json.thoughts)
         setLoading(false)
       })
   }, [])
