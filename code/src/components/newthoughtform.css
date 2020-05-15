@@ -1,10 +1,9 @@
 .thought-form {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 60% 25%;
-  row-gap: 15px;
+  grid-template-rows: 82% 18%;
   width: 280px;
-  height: 120px;
+  height: 160px;
   margin-bottom: 20px;
   padding: 15px;
   border: 1px solid #000;

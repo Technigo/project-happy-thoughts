@@ -17,7 +17,8 @@ export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
             <p className="likes-counter">x {thought.hearts}</p>
           </div>
           <div className="timestamp">
-            {moment(thought.createdAt).fromNow()}
+            <p className="created">{thought.createdBy}</p>
+            <p className="created">{moment(thought.createdAt).fromNow()}</p>
           </div>
         </article>
       ))}
