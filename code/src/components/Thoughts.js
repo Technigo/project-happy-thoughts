@@ -47,8 +47,7 @@ export const Thoughts = () => {
   return (
     <div className="thoughts-wrapper">
       <section className="thoughts-container">
-        <NewThoughtForm
-          setThoughts={setThoughts} />
+        <NewThoughtForm setThoughts={setThoughts} />
 
         <Sort onChange={(e) => setSort(e.target.value)} />
 
