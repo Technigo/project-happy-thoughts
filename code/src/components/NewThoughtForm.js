@@ -23,7 +23,7 @@ export const NewThoughtForm = ({ setThoughts }) => {
         setThoughts((previousThoughts) => [newThought, ...previousThoughts])
         // Clears textarea input field
         setNewThought('')
-        setName()
+        setName('')
       })
   }
 
