@@ -3,16 +3,18 @@ import { ThoughtsList } from './ThoughtsList'
 import { NewThoughtForm } from './NewThoughtForm'
 import './thoughts.css'
 import { Pagination } from './Pagination'
+import { Sort } from './Sort'
 
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([])
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
+  const [sort, setSort] = useState("newest")
 
   // Fetch happy thoughts from API using GET
   useEffect(() => {
-    fetch(`https://fridamaria-happy-api.herokuapp.com/thoughts?page=${page}`)
+    fetch(`https://fridamaria-happy-api.herokuapp.com/thoughts?page=${page}&sort=${sort}`)
       .then(res => res.json())
       .then(json => {
         setThoughts(json.thoughts)
@@ -20,7 +22,7 @@ export const Thoughts = () => {
         setPage(json.page)
         setTotalPages(json.total_pages)
       })
-  }, [page])
+  }, [page, sort])
 
   // Mapping through the array of thoughts
   // Adding one heart if the id is the same as the id for the heart clicked 
@@ -47,6 +49,8 @@ export const Thoughts = () => {
       <section className="thoughts-container">
         <NewThoughtForm
           setThoughts={setThoughts} />
+
+        <Sort onChange={(e) => setSort(e.target.value)} />
 
         {loading && <p className="loading-thoughts">Loading happy thoughts...</p>}
 
