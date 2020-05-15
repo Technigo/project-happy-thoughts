@@ -8,7 +8,7 @@ export const Name = ({ value, onChange }) => {
       <textarea className="name-field"
         placeholder="Enter name (optional)"
         minLength="1"
-        maxLength="15"
+        maxLength="14"
         rows="1"
         value={value}
         onChange={onChange} />

@@ -6,8 +6,12 @@
 
 .name-field {
   width: 96%;
+  height: 12px;
   margin-bottom: 5px;
   padding: 4px;
+  border: 1px solid #000;
+  -webkit-border-radius: 0;
+  border-radius: 0;
   resize: none;
   font-size: 10px;
 }

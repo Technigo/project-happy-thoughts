@@ -21,6 +21,8 @@
 .sort-select {
   padding: 0 5px;
   border: 1px solid #000;
+  -webkit-border-radius: 0;
+  border-radius: 0;
   background: none;
   font-family: 'Inconsolata', monospace;
   cursor: pointer;

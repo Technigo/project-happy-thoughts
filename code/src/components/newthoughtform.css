@@ -1,7 +1,7 @@
 .thought-form {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 82% 18%;
+  grid-template-rows: 85% 15%;
   width: 280px;
   height: 160px;
   margin-bottom: 20px;
