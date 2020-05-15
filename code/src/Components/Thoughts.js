@@ -7,7 +7,7 @@ import './thoughts.css'
 export const Thoughts = () => {
   const [thoughts, setThoughts] = useState([])
 
-  const MESSAGES_URL = 'https://technigo-thoughts.herokuapp.com/'
+  const MESSAGES_URL = 'https://ragna-happy-thoughts.herokuapp.com/'
 
   useEffect(() => {
     fetch(MESSAGES_URL,{method: 'GET'})    
