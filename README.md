@@ -18,11 +18,11 @@ If I had more time I would've liked to add a generic button component, using it 
 
 ## Tech
 
-- HTML5
-- CSS3
-- JavaScript ES6
 - React
 - JSX
+- JavaScript ES6
+- HTTP methods
+- CSS3
 
 ## View it live
 
