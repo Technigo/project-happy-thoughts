@@ -12,7 +12,7 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    fetch(apiUrl, {
+    fetch(`${apiUrl}/thoughts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: message })

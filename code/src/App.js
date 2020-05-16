@@ -8,12 +8,12 @@ import 'app.scss'
 
 export const App = () => {
 
-  const apiUrl = 'https://technigo-thoughts.herokuapp.com/'
+  const apiUrl = 'https://api-happy-thoughts.herokuapp.com'
   const [thoughts, setThoughts] = useState([])
 
 
   useEffect(() => {
-    fetch(apiUrl)
+    fetch(`${apiUrl}/thoughts`)
       .then(res => res.json())
       .then(data => setThoughts(data))
   }, [])
