@@ -12,20 +12,20 @@ If I had more time I would've liked to add a generic button component, using it 
 
 ## Learning objectives
 
-* Using APIs in React, firing requests witin useEffect
-* Displaying results of API responses via React state
-* Working with APIs to both send and reveive data
+- Using APIs in React, firing requests witin useEffect
+- Displaying results of API responses via React state
+- Working with APIs to both send and reveive data
 
 ## Tech
 
-* HTML5
-* CSS3
-* JavaScript ES6
-* React
-* JSX
+- HTML5
+- CSS3
+- JavaScript ES6
+- React
+- JSX
 
 ## View it live
 
-View the site here: https://fridamaria-happy-thoughts.netlify.app/
-API: https://fridamaria-happy-api.herokuapp.com/
-API repo: https://github.com/fridamaria/project-happy-thoughts-api
+- https://fridamaria-happy-thoughts.netlify.app/
+- API: https://fridamaria-happy-api.herokuapp.com/
+- API repo: https://github.com/fridamaria/project-happy-thoughts-api
