@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './messageInput.css'
 
 export const MessageInput = () => {
-  const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com";
+  const MESSAGES_URL = "https://happy-thoughts-week19.herokuapp.com/thoughts";
   const [message, setMessage] = useState("");
 
   const handleClick = event => {

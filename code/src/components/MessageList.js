@@ -4,7 +4,7 @@ import './messageList.css'
 import { LikeHearts } from "./LikeHearts";
 
 export const MessageList = () => {
-  const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com"
+  const MESSAGES_URL = "https://happy-thoughts-week19.herokuapp.com/thoughts"
   const [messages, setMessages] = useState([])
 
   useEffect(() => {
