@@ -230,9 +230,20 @@ form {
   justify-content: space-between;
 }
 
-.wraper-optional {
+.wrapper-optional-left, .wrapper-optional-right {
   display: flex;
   flex-direction: column;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.wrapper-optional-left {
+  margin-right: 1px;
+}
+
+.wrapper-optional-right {
+  text-align: end;
+  margin-left: 1px;
 }
 
 .spinning-loader {

@@ -258,9 +258,22 @@ form {
   justify-content: space-between;
 }
 
-.wraper-optional {
+%wraper-optional {
   display: flex;
   flex-direction: column;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.wrapper-optional-left {
+  @extend %wraper-optional;
+  margin-right: 1px;
+}
+
+.wrapper-optional-right {
+  @extend %wraper-optional;
+  text-align: end;
+  margin-left: 1px;
 }
 
 .spinning-loader {

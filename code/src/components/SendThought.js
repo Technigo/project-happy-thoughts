@@ -40,7 +40,7 @@ export const SendThought = ({
     <section className="send-thought-container">
       <form>
         <div className="wrapper-row">
-          <div className="wrapper-optional">
+          <div className="wrapper-optional-left">
             <p className="p-header">Who are you?</p>
             <input
               className="thought-input-name"
@@ -49,10 +49,10 @@ export const SendThought = ({
               }}
               name="thought"
               type="text"
-              placeholder="Anonymous or name?"
+              placeholder="Anonymous?"
             />
           </div>
-          <div className="wrapper-optional">
+          <div className="wrapper-optional-right">
             <p className="p-header">What are you thinking about?</p>
             <select
               className="selector"
@@ -60,7 +60,7 @@ export const SendThought = ({
               onChange={(event) => setTheme(event.target.value)}
               value={theme}
             >
-              <option value="">Choose a theme - optional</option>
+              <option value="">Choose a theme</option>
               <option value="🐶">🐶Animals</option>
               <option value="🍔">🍔 Food</option>
               <option value="🏝">🏝 Traveling</option>
