@@ -132,6 +132,8 @@ form {
   font-size: 13px;
   resize: none;
   margin: 5px 0 10px;
+  appearance: none;
+  border-radius: 0;
 }
 
 .thought-input-name {
