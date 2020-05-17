@@ -47,7 +47,6 @@ export const SendThought = ({
               onChange={(event) => {
                 setName(event.target.value);
               }}
-              {...console.log(name)}
               name="thought"
               type="text"
               placeholder="Anonymous or name?"

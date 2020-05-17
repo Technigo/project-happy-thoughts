@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { SendThought } from "./SendThought";
 import { DisplayThought } from "./DisplayThought";
+import { Sort } from "./Sort";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [sort, setSort] = useState("default");
   const [totalPages, setTotalPages] = useState(0);
   const [theme, setTheme] = useState("❤️");
 
   useEffect(() => {
-    fetch(`https://perssons-happy-thoughts.herokuapp.com/thoughts?page=${page}`)
+    fetch(
+      `https://perssons-happy-thoughts.herokuapp.com/thoughts?page=${page}&sort=${sort}`
+    )
       .then((res) => res.json())
       .then((json) => {
         setTotalPages(json.pages);
         setThoughts(json.thoughts);
         setLoading(false);
       });
-  }, [page]);
+  }, [page, sort]);
 
   return (
     <section className="all-thoughts-container">
@@ -38,6 +42,7 @@ export const App = () => {
         setPage={setPage}
       />
       {loading && <div className="spinning-loader" />}
+      {!loading && <Sort onChange={(e) => setSort(e.target.value)} />}
       {!loading && (
         <div className="pages-back-forth">
           <button

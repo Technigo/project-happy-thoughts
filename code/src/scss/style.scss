@@ -77,7 +77,6 @@ p {
 %thoughts-shared {
   display: flex;
   flex-direction: column;
-  // width: 400px;
 
   margin: 20px;
   padding: 10px;
@@ -115,6 +114,23 @@ p {
   justify-content: space-around;
   margin: 15px 20px;
   background-color: $lightgrey-background-color;
+}
+
+.sort-container {
+  @extend %thoughts-shared;
+  height: 63px;
+  background-color: #f2f0f0;
+
+  font-size: 16px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.p-sort {
+  font-size: 18px;
 }
 
 .btn-and-count-container {
@@ -260,7 +276,7 @@ form {
   animation: spin 1.9s linear infinite;
 }
 
-.selector {
+%selector-shared {
   border: 1px solid rgba(0, 0, 0, 0.534);
   background: #fff;
   color: #00000080;
@@ -270,7 +286,6 @@ form {
   text-align: center;
 
   height: 35px;
-  width: 100%;
 
   padding: 5px;
   margin: 5px 0 10px;
@@ -281,6 +296,15 @@ form {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+}
+
+.selector {
+  @extend %selector-shared;
+  width: 100%;
+}
+
+.selector-sort {
+  @extend %selector-shared;
 }
 
 @keyframes spin {
