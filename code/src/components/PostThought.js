@@ -16,21 +16,27 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    console.log(message, name)
-
+    const thoughtBody = JSON.stringify({ message, name }, (key, value) => {
+      if (value) {
+        return value
+      } else {
+        return undefined
+      }
+    })
 
     fetch(`${apiUrl}/thoughts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message, name })
+      body: thoughtBody
     })
-      // Reload page to get recent posts
-      .then(() => {
-        window.location.reload()
+      .then((res) => res.json())
+      .then((newThought) => {
+        setThoughts((previousThoughts) => [newThought, ...previousThoughts])
       })
 
-    // Clear the textarea
+    // Clear fields
     setMessage('')
+    setName('')
   }
 
   return (

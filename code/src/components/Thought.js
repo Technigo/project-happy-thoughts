@@ -13,7 +13,11 @@ export const Thought = ({ thought, apiUrl }) => {
       <h2>{firstCharUppercase(thought.message)}</h2>
       <p className="name">{firstCharUppercase(thought.name)}</p>
 
-      <LikeButton hearts={thought.hearts} id={thought._id} apiUrl={apiUrl} />
+      <LikeButton
+        hearts={thought.hearts}
+        id={thought._id}
+        apiUrl={apiUrl} />
+
       <Moment className="timestamp" fromNow>{thought.date}</Moment>
     </section>
   )

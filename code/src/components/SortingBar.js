@@ -8,7 +8,6 @@ export const SortingBar = () => {
     <div className="sorting-container">
       <RadioButtons
         label="Sort:"
-        id=""
         items={testArray}
         state=""
         setState="" />

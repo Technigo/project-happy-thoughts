@@ -23,13 +23,11 @@ export const App = () => {
 
       <PostThought
         setThoughts={setThoughts}
-        apiUrl={apiUrl}
-      />
+        apiUrl={apiUrl} />
 
       <ThoughtsContainer
         thoughts={thoughts}
-        apiUrl={apiUrl}
-      />
+        apiUrl={apiUrl} />
 
     </div>
   )

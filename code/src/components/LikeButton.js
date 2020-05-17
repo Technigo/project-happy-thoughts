@@ -9,7 +9,8 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
     event.preventDefault()
 
     fetch(`${apiUrl}/${id}/like`, {
-      method: 'PUT',
+      method: 'POST',
+      body: '',
       headers: { 'Content-Type': 'application/json' }
     })
       .then((res) => res.json())
