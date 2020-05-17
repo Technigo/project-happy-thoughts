@@ -42,7 +42,8 @@ button {
 }
 
 .thought-card,
-.post-thought {
+.post-thought,
+.sorting-container {
   position: relative;
   flex: 0 1 auto;
 
@@ -131,6 +132,32 @@ button:disabled {
   cursor: default;
 }
 
+/* –– Thought card –– */
+
+.sorting-container {
+  padding-bottom: .5rem;
+
+  p {
+    text-transform: uppercase;
+  }
+
+  .radio-btn-container {
+    display: flex;
+  }
+  
+  .radio-btn {
+    display: flex;
+    align-items: center;
+
+    &+.radio-btn {
+      margin-left: 1.5rem;
+    }
+
+    label {
+      margin-left: .4rem;
+    }
+  }
+}
 
 /* –– Thought card –– */
 
