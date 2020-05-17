@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { MessageCount } from "./MessageCount";
 
-export const SendThought = ({ thoughts, setThoughts, theme, setTheme }) => {
+export const SendThought = ({
+  thoughts,
+  setThoughts,
+  theme,
+  setTheme,
+  setPage,
+}) => {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("Anonymous");
 
@@ -24,6 +30,7 @@ export const SendThought = ({ thoughts, setThoughts, theme, setTheme }) => {
     //Clears textarea after message is sent
     setMessage("");
     setName("");
+    setPage(1);
   };
 
   // Does not allow empty (only space) messages

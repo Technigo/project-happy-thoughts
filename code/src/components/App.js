@@ -35,6 +35,7 @@ export const App = () => {
         setThoughts={setThoughts}
         theme={theme}
         setTheme={setTheme}
+        setPage={setPage}
       />
       {loading && <div className="spinning-loader" />}
       {!loading && (
