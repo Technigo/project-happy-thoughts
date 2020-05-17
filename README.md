@@ -18,3 +18,9 @@
 ### View it live:
 
 https://perssons-happy-thoughts.netlify.app/
+
+## Backend
+
+https://perssons-happy-thoughts.herokuapp.com/
+
+https://github.com/Cilpersson/project-happy-thoughts-api

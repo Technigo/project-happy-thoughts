@@ -1,15 +1,19 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
   background: #ffadad;
-  font-family: 'Arimo', sans-serif;
+  font-family: "Arimo", sans-serif;
   line-height: 1.6;
   margin: 0;
+}
+
+#root {
+  padding: 0 20px;
+  width: 100vw;
 }
 
 h1 {
@@ -28,7 +32,7 @@ p {
 
 .p-message-count, .p-red, .p-blue {
   font-weight: 700;
-  font-family: 'Arimo', sans-serif;
+  font-family: "Arimo", sans-serif;
   font-size: 12px;
 }
 
@@ -37,7 +41,7 @@ p {
 }
 
 .p-thoughts {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   word-break: break-word;
 }
 
@@ -50,83 +54,64 @@ p {
 }
 
 .all-thoughts-container {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 20px 30px;
+  max-width: 484px;
   margin: 20px auto;
+  padding-bottom: 15px;
   border: 1px solid #000;
-  -webkit-box-shadow: 6px 6px 0px #000;
-          box-shadow: 6px 6px 0px #000;
+  box-shadow: 6px 6px 0px #000;
   background-color: #ffe8e8;
 }
 
 .send-thought-container, .thought-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 400px;
-  margin: 20px auto;
+  flex-direction: column;
+  margin: 20px;
   padding: 10px;
   border: 1px solid #000;
-  -webkit-box-shadow: 6px 6px 0px #000;
-          box-shadow: 6px 6px 0px #000;
+  box-shadow: 6px 6px 0px #000;
 }
 
 .two-hearts-button, .heart-button-no-like, .heart-button-like {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 40px;
   border: none;
   cursor: pointer;
 }
 
+.pages-back-forth {
+  text-align: center;
+  margin: 0 0 -10px;
+}
+
+.pages-back-forth-btn {
+  font-size: 20px;
+  margin: 0 10px;
+  background: none;
+  border: none;
+}
+
 .send-thought-container {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  height: 165px;
+  justify-content: space-around;
+  margin: 15px 20px;
   background-color: #f2f0f0;
 }
 
 .btn-and-count-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   height: 80%;
 }
 
-.thought-input {
-  height: 65px;
+.thought-input-name, .thought-input-text {
   border: 1px solid rgba(0, 0, 0, 0.534);
   padding: 5px;
   font-family: monospace;
@@ -135,44 +120,39 @@ form {
   margin: 5px 0 10px;
 }
 
+.thought-input-name {
+  height: 35px;
+  width: 100%;
+}
+
+.thought-input-text {
+  height: 65px;
+}
+
 .two-hearts-button {
   border-radius: 30px;
   width: 190px;
   font-size: 14px;
   background-color: #ffadad;
+  appearance: none;
 }
 
 .thought-container {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   height: 135px;
   background-color: #fff;
 }
 
 .icon-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .icon-container .heart-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  align-items: center;
+  flex-direction: row;
 }
 
 .heart-button-no-like {
@@ -197,16 +177,9 @@ form {
 }
 
 .all-likes {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
   margin-left: 5px;
   font-size: 12px;
 }
@@ -221,11 +194,59 @@ form {
 }
 
 .heart {
-  margin-left: 4px;
-  font-size: 16px;
+  margin-left: 1px;
+  margin-top: 1px;
+  font-size: 22px;
 }
 
 .time-gone-by {
   opacity: 0.3;
   font-size: 12px;
+}
+
+.wrapper-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.wrapper-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wraper-optional {
+  display: flex;
+  flex-direction: column;
+}
+
+.spinning-loader {
+  border: 26px solid #ffc0cb;
+  border-top: 26px solid #fe0000;
+  border-radius: 50%;
+  margin: 40px auto;
+  width: 100px;
+  height: 100px;
+  animation: spin 1.9s linear infinite;
+}
+
+.selector {
+  border: 1px solid rgba(0, 0, 0, 0.534);
+  color: #00000080;
+  padding: 5px;
+  height: 35px;
+  font-family: monospace;
+  font-size: 13px;
+  text-align: center;
+  margin: 5px 0 10px;
+  width: 100%;
+  appearance: none;
+  border-radius: 0;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
