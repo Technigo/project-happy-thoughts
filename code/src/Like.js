@@ -4,7 +4,7 @@ import React from 'react'
 export const Like = ({ thought, onThoughtLiked }) => {
 
 
-  const sendLike = `"http://localhost:8080/"${thought._id}/like`
+  const sendLike = `"https://happy-happy-api.herokuapp.com/"${thought._id}/like`
   const handleClick = () => {
     fetch(sendLike, {
       method: "POST",

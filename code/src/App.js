@@ -6,9 +6,9 @@ import { Like } from "./Like"
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [happyWords, setHappyWords] = useState([])
-  const fetchUrl = "http://localhost:8080/"
+  /* const fetchUrl = "http://localhost:8080/" */
   /* const fetchUrl = "https://technigo-thoughts.herokuapp.com/" */
-
+  const fetchUrl = "https://happy-happy-api.herokuapp.com/"
 
   const handleSubmit = event => {
     event.preventDefault();
