@@ -20,7 +20,7 @@ export const NewThoughtForm = ({ setThoughts }) => {
     })
 
     // Post new messages to API using POST
-    fetch("http://localhost:8080/thoughts", {
+    fetch("https://fridamaria-happy-api.herokuapp.com/thoughts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: jBody
