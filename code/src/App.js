@@ -13,7 +13,6 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [sort, setSort] = useState('newest')
 
-
   useEffect(() => {
     fetch(`${apiUrl}/thoughts?sort=${sort}`)
       .then(res => res.json())

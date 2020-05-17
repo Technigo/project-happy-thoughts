@@ -132,7 +132,8 @@ button:disabled {
   cursor: default;
 }
 
-/* –– Thought card –– */
+
+/* –– Sorting –– */
 
 .sorting-container {
   padding-bottom: .5rem;
@@ -144,7 +145,7 @@ button:disabled {
   .radio-btn-container {
     display: flex;
   }
-  
+
   .radio-btn {
     display: flex;
     align-items: center;
@@ -171,6 +172,7 @@ button:disabled {
   }
   .name {
     flex-basis: 100%;
+    margin-left: .2rem;
     color: $color-darkGray;
   }
   .likes {
