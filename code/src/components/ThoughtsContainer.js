@@ -9,10 +9,7 @@ export const ThoughtsContainer = ({ thoughts, apiUrl }) => {
 
         <Thought
           key={thought._id}
-          id={thought._id}
-          message={thought.message}
-          hearts={thought.hearts}
-          date={thought.createdAt}
+          thought={thought}
           apiUrl={apiUrl}
         />
 

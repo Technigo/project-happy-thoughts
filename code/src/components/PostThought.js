@@ -1,21 +1,28 @@
 import React, { useState } from 'react'
 import { Textarea } from './Textarea.js'
+import { TextInput } from './TextInput.js'
 import { Emoji } from './Emoji.js'
 
 export const PostThought = ({ setThoughts, apiUrl }) => {
   const [message, setMessage] = useState('')
+  const [name, setName] = useState('')
 
-  // Check if Message length is between 5 – 140 characters
-  const checkMessageLength = message.length < 5 || message.length > 140
+  // Check length of input
+  const checkLength = (str, min, max) => {
+    return str.length < min || str.length > max
+  }
 
   // Send button
   const handleSubmit = (event) => {
     event.preventDefault()
 
+    console.log(message, name)
+
+
     fetch(`${apiUrl}/thoughts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: message })
+      body: JSON.stringify({ message, name })
     })
       // Reload page to get recent posts
       .then(() => {
@@ -33,12 +40,16 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
         <Textarea
           message={message}
           setMessage={setMessage}
-          checkMessageLength={checkMessageLength}
-        />
+          checkLength={checkLength(message, 5, 140)} />
 
         <div className="char-count">{140 - message.length}/140</div>
 
-        <button type="submit" className="post-btn" disabled={(checkMessageLength) ? true : false}> {/* Disable button if characters are not between 5 – 140 */}
+        <TextInput
+          name={name}
+          setName={setName}
+          checkLength={checkLength(name, 2, 30)} />
+
+        <button type="submit" className="post-btn" disabled={(checkLength(message, 5, 140)) ? true : false}> {/* Disable button if message or name length is not valid */}
           <Emoji symbol="❤️" label="heart" />
           Send happy thought
           <Emoji symbol="❤️" label="heart" />

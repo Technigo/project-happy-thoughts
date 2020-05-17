@@ -2,13 +2,19 @@ import React from 'react'
 import Moment from 'react-moment'
 import { LikeButton } from './LikeButton'
 
-export const Thought = ({ id, message, hearts, date, apiUrl }) => {
+const firstCharUppercase = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+export const Thought = ({ thought, apiUrl }) => {
 
   return (
     <section className="thought-card">
-      <h2>{message}</h2>
-      <LikeButton hearts={hearts} id={id} apiUrl={apiUrl} />
-      <Moment className="timestamp" fromNow>{date}</Moment>
+      <h2>{firstCharUppercase(thought.message)}</h2>
+      <p className="name">{firstCharUppercase(thought.name)}</p>
+
+      <LikeButton hearts={thought.hearts} id={thought._id} apiUrl={apiUrl} />
+      <Moment className="timestamp" fromNow>{thought.date}</Moment>
     </section>
   )
 }
