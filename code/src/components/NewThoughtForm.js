@@ -5,17 +5,25 @@ import './newthoughtform.css'
 
 export const NewThoughtForm = ({ setThoughts }) => {
   const [newThought, setNewThought] = useState('')
-  const [name, setName] = useState()
+  const [name, setName] = useState('')
 
   // Function determining what is happening when form i submitted 
   const handleThoughtFormSubmit = (event) => {
     event.preventDefault()
 
+    const jBody = JSON.stringify({ message: newThought, createdBy: name }, (key, value) => {
+      if (value) {
+        return value
+      } else {
+        return undefined
+      }
+    })
+
     // Post new messages to API using POST
-    fetch("https://fridamaria-happy-api.herokuapp.com/thoughts", {
+    fetch("http://localhost:8080/thoughts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: newThought, createdBy: name })
+      body: jBody
     })
       .then((res) => res.json())
       .then((newThought) => {
