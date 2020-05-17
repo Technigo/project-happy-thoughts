@@ -10,10 +10,9 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
 
     fetch(`${apiUrl}/${id}/like`, {
       method: 'POST',
-      body: '',
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
+      body: ''
     })
-      .then((res) => res.json())
       .then(setLikes(likes + 1))
   }
 

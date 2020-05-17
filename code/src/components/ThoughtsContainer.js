@@ -3,7 +3,6 @@ import { Thought } from './Thought'
 import { SortingBar } from './SortingBar'
 
 export const ThoughtsContainer = ({ thoughts, apiUrl }) => {
-
   return (
     <section className="thoughts-container">
 
