@@ -1,6 +1,6 @@
 # Project happy thoughts
 
-### For this project I used useEffect to fetch and post information to an API .
+### For this project I used useEffect to fetch and post information to an API.
 
 ## Learning objectives
 
