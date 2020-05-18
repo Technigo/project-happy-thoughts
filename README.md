@@ -1,6 +1,14 @@
 # Happy Thoughts
 
-A positive Twitter replica to post happy thoughts built in React.js.
+A positive Twitter replica to post happy thoughts built in React.js 🌈💌🥳💘
+
+## Code
+ I've used:
+  * **React.js**
+  * **API**
+  * **JSX**
+  * **JavaScaript**
+  * **CSS**
 
 ## The problem
 
