@@ -25,8 +25,14 @@ export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
             </div>
           </div>
           <div className="comments-container">
+            {thought.comments.length !== 0 &&
+              <>
+                {thought.comments.map((comment) => (
+                  <p key={comment._id}>{comment.createdBy} said {comment.comment} {moment(comment.createdAt).fromNow()}</p>
+                ))}
+              </>
+            }
             <CommentForm />
-            <Comments />
           </div>
         </article>
       ))}
