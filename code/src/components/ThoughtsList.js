@@ -3,7 +3,6 @@ import moment from 'moment'
 import { HeartButton } from './HeartButton'
 import './thoughtslist.css'
 import { CommentForm } from './CommentForm'
-import { Comments } from './Comments'
 
 export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
   return (
