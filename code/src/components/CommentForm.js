@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Name } from './Name'
 import { NewThought } from './NewThought'
 
-export const CommentForm = ({ setComments, id }) => {
+export const CommentForm = ({ id }) => {
+  const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState('')
   const [name, setName] = useState('')
 
@@ -27,7 +28,7 @@ export const CommentForm = ({ setComments, id }) => {
       .then((res) => res.json())
       .then((newComment) => {
         // Adds new thought to array without having to fetch again
-        setComments((previousComments) => [setNewComment, ...previousComments])
+        setComments((previousComments) => [newComment, ...previousComments])
         // Clears textarea input field
         setNewComment('')
         setName('')

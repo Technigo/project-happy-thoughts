@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import moment from 'moment'
 import { HeartButton } from './HeartButton'
 import './thoughtslist.css'
 import { CommentForm } from './CommentForm'
 
 export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
+
   return (
     <>
       {thoughts.map((thought) => (
@@ -31,7 +32,7 @@ export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
                 ))}
               </>
             }
-            <CommentForm />
+            <CommentForm id={thought._id} />
           </div>
         </article>
       ))}
