@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Textarea } from './Textarea.js'
 import { TextInput } from './TextInput.js'
-import { Emoji } from './Emoji.js'
 
 export const PostThought = ({ setThoughts, setPage, apiUrl }) => {
   const [message, setMessage] = useState('')
@@ -37,8 +36,10 @@ export const PostThought = ({ setThoughts, setPage, apiUrl }) => {
 
   return (
     <section className="post-thought">
-      <form onSubmit={handleSubmit}>
 
+      <h1>What's making you happy right now?</h1>
+
+      <form onSubmit={handleSubmit}>
         <Textarea
           message={message}
           setMessage={setMessage}
@@ -52,12 +53,10 @@ export const PostThought = ({ setThoughts, setPage, apiUrl }) => {
           checkLength={checkLength(name, 2, 30)} />
 
         <button type="submit" className="post-btn" disabled={(checkLength(message, 5, 140)) ? true : false}> {/* Disable button if message or name length is not valid */}
-          <Emoji symbol="❤️" label="heart" />
           Send happy thought
-          <Emoji symbol="❤️" label="heart" />
         </button>
-
       </form>
+
     </section>
   )
 }

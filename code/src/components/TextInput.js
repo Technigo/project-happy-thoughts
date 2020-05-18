@@ -7,6 +7,7 @@ export const TextInput = ({ name, setName, checkLength }) => {
       className={checkLength ? 'error' : '' /* Add error class if not desired length0 */}
       onChange={(event) => { setName(event.target.value) }}
       value={name}
-      placeholder="Your name" />
+      placeholder="Your name"
+      aria-label="Your name" />
   )
 }

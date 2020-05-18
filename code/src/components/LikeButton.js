@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Emoji } from './Emoji.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 export const LikeButton = ({ hearts, id, apiUrl }) => {
 
@@ -20,7 +21,7 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
     <div className="likes">
 
       <button onClick={addLike} id={id} className={"like-btn" + (likes > 0 ? " has-likes" : "")} > {/* Add class if post has likes */}
-        <Emoji symbol="❤️" label="heart" />
+        <FontAwesomeIcon icon={faHeart} />
       </button>
 
       <label htmlFor={id}>x {likes}</label>
