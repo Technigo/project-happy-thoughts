@@ -1,9 +1,4 @@
 .thought-card {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 70% 30%;
-  width: 280px;
-  min-height: 80px;
   margin-bottom: 20px;
   padding: 15px;
   border: 1px solid #000;
@@ -11,6 +6,16 @@
   -moz-box-shadow: 6px 6px #000;
   box-shadow: 6px 6px #000;
   background: #fff;
+}
+
+.thought-wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 70% 30%;
+  width: 280px;
+  min-height: 80px;
+  margin-bottom: 20px;
+  
 }
 
 .happy-thought {
