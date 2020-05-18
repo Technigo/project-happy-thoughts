@@ -61,12 +61,25 @@ export const SendThought = ({
               value={theme}
             >
               <option value="">Choose a theme</option>
-              <option value="🐶">🐶Animals</option>
-              <option value="🍔">🍔 Food</option>
-              <option value="🏝">🏝 Traveling</option>
-              <option value="👶🏼">👶🏼 Kids</option>
-              <option value="🍻">🍻 Beer</option>
-              <option value="👩🏼‍💻">👩🏼‍💻 Code</option>
+              <option value="">Traveling</option>
+              <option value="🏝">🏝</option>
+              <option value="🛩">🛩</option>
+              <option value="⛴">⛴</option>
+              <option value="">Animals</option>
+              <option value="🐶">🐶</option>
+              <option value="🦛">🦛</option>
+              <option value="🦊">🦊</option>
+              <option value="">Kids</option>
+              <option value="👶🏼">👶🏼</option>
+              <option value="">Food & Drinks</option>
+              <option value="🍔">🍔</option>
+              <option value="🍻">🍻</option>
+              <option value="🍕">🍕</option>
+              <option value="🍾">🍾</option>
+              <option value="">Code</option>
+              <option value="👩🏼‍💻">👩🏼‍💻</option>
+              <option value="👨🏽‍💻">👨🏽‍💻</option>
+              <option value="🧑🏻‍💻">🧑🏻‍💻</option>
             </select>
           </div>
         </div>
