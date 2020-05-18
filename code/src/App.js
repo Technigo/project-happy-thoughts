@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { PostThought } from 'components/PostThought'
 import { Loading } from 'components/Loading'
 import { Sorting } from 'components/Sorting'
+import { Pagination } from 'components/Pagination'
 import { ThoughtsContainer } from 'components/ThoughtsContainer'
 
 import 'app.scss'
@@ -46,9 +47,21 @@ export const App = () => {
       {loading ?
         <Loading loading={loading} />
         :
-        <ThoughtsContainer
-          thoughts={thoughts}
-          apiUrl={apiUrl} />
+        <>
+          <Pagination
+            page={page}
+            setPage={setPage}
+            totalPages={totalPages} />
+
+          <ThoughtsContainer
+            thoughts={thoughts}
+            apiUrl={apiUrl} />
+
+          <Pagination
+            page={page}
+            setPage={setPage}
+            totalPages={totalPages} />
+        </>
       }
     </div>
   )

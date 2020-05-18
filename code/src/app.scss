@@ -52,7 +52,7 @@ button {
   justify-content: space-between;
 
   margin-top: 2.5rem;
-  padding: .5rem 1rem 1rem;
+  padding: .5rem 1.5rem 1rem;
   border: 1px solid #000;
   background-color: #fff;
 
@@ -74,7 +74,8 @@ button {
 
 .post-thought {
   flex-direction: column;
-  padding: 1.5rem 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   background-color: $color-lightGray;
 }
 
@@ -160,11 +161,43 @@ button:disabled {
   }
 }
 
+/* –– Pagination –– */
+
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2rem;
+
+  button {
+    border: 0;
+    padding: .5rem .6rem;
+    background-color: #000;
+    color: #fff;
+    font-weight: 900;
+
+    &:disabled {
+      background-color: $color-darkGray;
+    }
+  }
+
+  span {
+    margin: 0 1rem;
+    color: $color-darkGray;
+    letter-spacing: .1rem;
+  }
+}
+
+
 /* –– Thought card –– */
 
 .thought-card {
   align-items: baseline;
   overflow-wrap: break-word;
+
+  &:first-child {
+    margin-top: 1.5rem;
+  }
 
   h2 {
     flex-basis: 100%;
@@ -188,6 +221,7 @@ button:disabled {
 .like-btn {
   width: 3.5rem;
   height: 3.5rem;
+  margin-left: -.3rem;
   margin-right: 1rem;
   padding-top: .5rem;
   font-size: 1.6rem;

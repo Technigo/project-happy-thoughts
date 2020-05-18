@@ -28,16 +28,11 @@ export const PostThought = ({ setThoughts, setPage, apiUrl }) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: thoughtBody
+    }).then(() => {
+      window.location.reload()
     })
-      .then((res) => res.json())
-      .then((newThought) => {
-        setThoughts((previousThoughts) => [newThought, ...previousThoughts])
-      })
-
-    // Clear fields
+    // Clear the textarea
     setMessage('')
-    setName('')
-    setPage(1)
   }
 
   return (

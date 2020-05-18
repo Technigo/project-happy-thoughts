@@ -18,7 +18,7 @@ export const Thought = ({ thought, apiUrl }) => {
         id={thought._id}
         apiUrl={apiUrl} />
 
-      <Moment className="timestamp" fromNow>{thought.date}</Moment>
+      <Moment className="timestamp" fromNow>{thought.createdAt}</Moment>
     </section>
   )
 }
