@@ -3,7 +3,7 @@ import './thoughts.css'
 import './new-thought.css'
 
 export const NewThought = () => {
-  const url = 'https://technigo-thoughts.herokuapp.com/'
+  const url = 'https://emmas-happy-thoughts.herokuapp.com/'
   const [newThought, setNewThought] = useState('')
 
   const handleSubmit = event => {

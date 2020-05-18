@@ -2,7 +2,7 @@ import React from 'react'
 import './heart.css'
 
 export const Heart = (props) => {
-  const heartUrl = `https://technigo-thoughts.herokuapp.com/${props.id}/like`
+  const heartUrl = `https://emmas-happy-thoughts.herokuapp.com//${props.id}/like`
 
   const handleHeart = () => {
 

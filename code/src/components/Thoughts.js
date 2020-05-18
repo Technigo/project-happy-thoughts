@@ -5,7 +5,7 @@ import { Heart } from './Heart.js'
 import './thoughts.css'
 
 export const Thoughts = () => {
-  const url = 'https://technigo-thoughts.herokuapp.com/'
+  const url = 'https://emmas-happy-thoughts.herokuapp.com/'
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(true)
 
