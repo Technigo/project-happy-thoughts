@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './formstyle.css'
 
-const APIdata = 'https://technigo-thoughts.herokuapp.com/'
+// const APIdata = 'https://technigo-thoughts.herokuapp.com/'
+const APIdata = 'https://happy-thoughts-bealun.herokuapp.com/'
 
 
 

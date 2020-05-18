@@ -3,7 +3,8 @@ import { ScaleLoader } from 'react-spinners'
 import { AlreadyPosted } from './components/Posted'
 import { UserInput } from './components/Form'
 
-const APIdata = 'https://technigo-thoughts.herokuapp.com/'
+// const APIdata = 'https://technigo-thoughts.herokuapp.com/'
+const APIdata = 'https://happy-thoughts-bealun.herokuapp.com/'
 
 
 
