@@ -14,4 +14,7 @@ The project is built using React and useEffect for API calls
 
 # View it live
 
-https://infallible-archimedes-9a857b.netlify.com/
+Frontend: https://infallible-archimedes-9a857b.netlify.com/
+
+Backend: https://happy-thoughts-api-johanna.herokuapp.com/
+Github: https://github.com/jastrand/project-happy-thoughts-api
