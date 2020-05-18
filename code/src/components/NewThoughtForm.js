@@ -41,7 +41,8 @@ export const NewThoughtForm = ({ setThoughts }) => {
         <div className="new-thought-container">
           <Name
             value={name}
-            onChange={(event) => setName(event.target.value)} />
+            onChange={(event) => setName(event.target.value)}
+            nameQ="Who's happy?" />
           <NewThought
             value={newThought}
             onChange={(event) => setNewThought(event.target.value)} />
