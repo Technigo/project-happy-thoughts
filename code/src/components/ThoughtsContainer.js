@@ -5,7 +5,7 @@ export const ThoughtsContainer = ({ thoughts, apiUrl }) => {
   return (
     <section className="thoughts-container">
 
-      {thoughts.map(thought => ( // Maps through thoughts
+      {thoughts.thoughts.map(thought => ( // Maps through thoughts
 
         <Thought
           key={thought._id}

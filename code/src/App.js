@@ -13,27 +13,30 @@ export const App = () => {
   const apiUrl = 'https://api-happy-thoughts.herokuapp.com'
   const [loading, setLoading] = useState(true)
   const [thoughts, setThoughts] = useState([])
+  const [totalPages, setTotalPages] = useState(0)
+  const [page, setPage] = useState(1)
   const [sort, setSort] = useState('newest')
 
   useEffect(() => {
     setLoading(true);
 
-    fetch(`${apiUrl}/thoughts?sort=${sort}`)
+    fetch(`${apiUrl}/thoughts?page=${page}&sort=${sort}`)
       .then(res => res.json())
       // .then(data => setThoughts(data))
       .then(data => {
-        setTimeout(() => { // timeout to always show loader
-          setThoughts(data);
-          setLoading(false)
-        }, 1500)
+        setTotalPages(data.pages)
+        setThoughts(data)
+        setLoading(false)
       });
-  }, [sort])
+  }, [page, sort])
+
 
   return (
     <div className="wrapper">
 
       <PostThought
         setThoughts={setThoughts}
+        setPage={setPage}
         apiUrl={apiUrl} />
 
       <Sorting

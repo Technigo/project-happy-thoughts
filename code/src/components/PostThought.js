@@ -3,7 +3,7 @@ import { Textarea } from './Textarea.js'
 import { TextInput } from './TextInput.js'
 import { Emoji } from './Emoji.js'
 
-export const PostThought = ({ setThoughts, apiUrl }) => {
+export const PostThought = ({ setThoughts, setPage, apiUrl }) => {
   const [message, setMessage] = useState('')
   const [name, setName] = useState('')
 
@@ -37,6 +37,7 @@ export const PostThought = ({ setThoughts, apiUrl }) => {
     // Clear fields
     setMessage('')
     setName('')
+    setPage(1)
   }
 
   return (
