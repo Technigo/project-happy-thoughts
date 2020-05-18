@@ -9,7 +9,7 @@ export const SendThought = ({
   setPage,
 }) => {
   const [message, setMessage] = useState("");
-  const [name, setName] = useState("Anonymous");
+  const [name, setName] = useState("");
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -29,6 +29,7 @@ export const SendThought = ({
 
     //Clears textarea after message is sent
     setMessage("");
+    setTheme("");
     setName("");
     setPage(1);
   };
@@ -47,9 +48,9 @@ export const SendThought = ({
               onChange={(event) => {
                 setName(event.target.value);
               }}
-              name="thought"
               type="text"
               placeholder="Anonymous?"
+              value={name}
             />
           </div>
           <div className="wrapper-optional-right">
