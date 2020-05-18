@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { SendThought } from "./SendThought";
 import { DisplayThought } from "./DisplayThought";
 import { Sort } from "./Sort";
+import { ButtonsBackAndForth } from "./ButtonsBackAndForth";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState("default");
-  const [totalPages, setTotalPages] = useState(0);
   const [theme, setTheme] = useState("❤️");
 
   useEffect(() => {
@@ -33,7 +34,6 @@ export const App = () => {
         </span>
         UGHTS
       </h1>
-
       <SendThought
         thoughts={thoughts}
         setThoughts={setThoughts}
@@ -44,27 +44,18 @@ export const App = () => {
       {loading && <div className="spinning-loader" />}
       {!loading && <Sort onChange={(e) => setSort(e.target.value)} />}
       {!loading && (
-        <div className="pages-back-forth">
-          <button
-            disabled={page === 1 ? true : false}
-            className="pages-back-forth-btn"
-            onClick={() => {
-              setPage(page - 1);
-            }}
-          >
-            {"<"}
-          </button>
-          {page} / {totalPages}
-          <button
-            disabled={page === totalPages ? true : false}
-            className="pages-back-forth-btn"
-            onClick={() => {
-              setPage(page + 1);
-            }}
-          >
-            {">"}
-          </button>
-        </div>
+        <ButtonsBackAndForth
+          page={page}
+          totalPages={totalPages}
+          disabledBack={page === 1 ? true : false}
+          disabledForth={page === totalPages ? true : false}
+          onClickBack={() => {
+            setPage(page - 1);
+          }}
+          onClickForth={() => {
+            setPage(page + 1);
+          }}
+        />
       )}
       {thoughts.map((thought) => (
         <DisplayThought
@@ -78,27 +69,18 @@ export const App = () => {
         />
       ))}
       {!loading && (
-        <div className="pages-back-forth">
-          <button
-            disabled={page === 1 ? true : false}
-            className="pages-back-forth-btn"
-            onClick={() => {
-              setPage(page - 1);
-            }}
-          >
-            {"<"}
-          </button>
-          {page} / {totalPages}
-          <button
-            disabled={page === totalPages ? true : false}
-            className="pages-back-forth-btn"
-            onClick={() => {
-              setPage(page + 1);
-            }}
-          >
-            {">"}
-          </button>
-        </div>
+        <ButtonsBackAndForth
+          page={page}
+          totalPages={totalPages}
+          disabledBack={page === 1 ? true : false}
+          disabledForth={page === totalPages ? true : false}
+          onClickBack={() => {
+            setPage(page - 1);
+          }}
+          onClickForth={() => {
+            setPage(page + 1);
+          }}
+        />
       )}
     </section>
   );
