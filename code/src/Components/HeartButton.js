@@ -6,7 +6,7 @@ export const HeartButton = (props) => {
   const { hearts, id } = props
 
   const handleClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`,{
+    fetch(`https://ragna-happy-thoughts.herokuapp.com/${id}/like`,{
       method: 'POST'
     }).then(() => {
       props.onThoughtLiked(id)
