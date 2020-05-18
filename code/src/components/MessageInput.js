@@ -10,7 +10,7 @@ export const MessageInput = () => {
 
     fetch(MESSAGES_URL, 
       {
-        method: "POST",
+        method: 'POST',
         headers: {
           'Content-Type':'application/json'
         },
