@@ -9,7 +9,7 @@ export const Button = (props) => {
   const submitHandler = (event) => {
     event.preventDefault()
 
-    fetch('https://technigo-thoughts.herokuapp.com/', 
+    fetch('https://ragna-happy-thoughts.herokuapp.com/', 
     {method: 'POST',
     body: JSON.stringify({ message }),
     headers: { 'Content-Type': 'application/json'}})
