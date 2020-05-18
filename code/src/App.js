@@ -40,12 +40,13 @@ export const App = () => {
         state={sort}
         setState={setSort} />
 
-      <Loading loading={loading} />
-
-      <ThoughtsContainer
-        thoughts={thoughts}
-        apiUrl={apiUrl} />
-
+      {loading ?
+        <Loading loading={loading} />
+        :
+        <ThoughtsContainer
+          thoughts={thoughts}
+          apiUrl={apiUrl} />
+      }
     </div>
   )
 }

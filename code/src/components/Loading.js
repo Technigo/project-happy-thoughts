@@ -4,19 +4,19 @@ import { Emoji } from './Emoji'
 export const Loading = ({ loading }) => {
   return (
     <>
-      {loading &&
-        <section className="loading-container">
 
-          <div className="loader">
-            <Emoji label="Thought balloon" symbol="💭" />
-            <Emoji label="Thought balloon" symbol="💭" />
-            <Emoji label="Thought balloon" symbol="💭" />
-          </div>
+      <section className="loading-container">
 
-          <p>Loading posts...</p>
+        <div className="loader">
+          <Emoji label="Thought balloon" symbol="💭" />
+          <Emoji label="Thought balloon" symbol="💭" />
+          <Emoji label="Thought balloon" symbol="💭" />
+        </div>
 
-        </section>
-      }
+        <p>Loading posts...</p>
+
+      </section>
+
     </>
   )
 }
