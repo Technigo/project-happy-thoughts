@@ -20,7 +20,7 @@ export const CommentForm = ({ id }) => {
     })
 
     // Post new comment to API using POST
-    fetch(`https://fridamaria-happy-api.herokuapp.com/thoughts/${id}/comment`, {
+    fetch(`https://fridamaria-happy-api.herokuapp.com/thoughts/${id}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: jBody

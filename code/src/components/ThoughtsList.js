@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import { HeartButton } from './HeartButton'
 import './thoughtslist.css'
 import { CommentForm } from './CommentForm'
+import { Comments } from './Comments'
 
 export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
 
@@ -25,13 +26,7 @@ export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
             </div>
           </div>
           <div className="comments-container">
-            {thought.comments.length !== 0 &&
-              <>
-                {thought.comments.map((comment) => (
-                  <p key={comment._id}>{comment.createdBy} said {comment.comment} {moment(comment.createdAt).fromNow()}</p>
-                ))}
-              </>
-            }
+            <Comments id={thought._id} />
             <CommentForm id={thought._id} />
           </div>
         </article>
