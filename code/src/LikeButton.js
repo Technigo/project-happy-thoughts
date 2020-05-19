@@ -7,12 +7,14 @@ import { Emoji } from './Emoji'
   - The thought will pass two props, hearts and _id */
 export const LikeButton = ({ thought, onLiked }) => {
   const { hearts, _id } = thought
+  //const THOUGHTS_URL = 'http://localhost:8080'
+  const THOUGHTS_URL = 'https://happylove-api.herokuapp.com'
 
   /* When the button that belongs to a specific thought (with a specific id) is clicked
   - the handleClick function will post "or address" this thought
   - the onLiked function for this thought will run. */
   const handleClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+    fetch(`${THOUGHTS_URL}/${_id}/like`, {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' }

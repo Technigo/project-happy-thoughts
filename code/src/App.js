@@ -6,7 +6,7 @@ export const App = () => {
 
   return (
     <section className="allThoughts">
-      Love to the people!
+      Happy thoughts!
       < NewThought />
       < HappyThoughts />
     </section>
