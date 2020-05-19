@@ -2,5 +2,9 @@ import React from "react"
 
 
 export const MessageText = (props) => {
-    return <p>{props.text}</p>
+    return (<div>
+        <p>{props.text}</p>
+        <p>~ {props.user}</p>
+    </div>
+    )
 }

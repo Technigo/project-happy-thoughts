@@ -3,7 +3,7 @@ import Moment from 'react-moment';
 
 export const TimePosted = (props) => {
     return (
-        // <p>{moment(props.createdAt).fromNow()}</p>
-        <Moment fromNow>{props.createdAt}</Moment>
+
+        <Moment style={{ marginBottom: "12px" }} fromNow>{props.createdAt}</Moment>
     )
 }

@@ -1,3 +1,8 @@
+.flex-wrapper {
+    width: 50%;
+}
+
+
 .like-button {
     padding: 8px 11px;
     font-size: 15px; 
@@ -8,5 +13,12 @@
 
 .like-button:hover {
     background-color: #ffadad !important;
+}
+
+.button-and-theme {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    
 }
 

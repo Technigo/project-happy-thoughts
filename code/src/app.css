@@ -30,6 +30,19 @@
     font: .8em helvetica;
 }
 
+.nav-buttons-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-buttons {
+    margin: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+}
+
 @media (min-width: 680px) {
     .thoughts-container {
         width: 50%;
