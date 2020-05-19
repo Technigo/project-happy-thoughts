@@ -1,16 +1,17 @@
 .thought-name {
-  margin-top: 0;
+  margin: 0 0 5px 0;
   font-size: 12px;
   font-weight: bolder;
 }
 
 .name-field {
-  width: 96%;
+  width: 97%;
   height: 12px;
   margin-bottom: 5px;
   padding: 4px;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
   resize: none;
   font-size: 10px;
 }

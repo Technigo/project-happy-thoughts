@@ -1,7 +1,7 @@
 .thought-form {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 85% 15%;
+  grid-template-columns: 100%;
+  grid-template-rows: 79% 21%;
   width: 280px;
   height: 160px;
   margin-bottom: 20px;
@@ -20,22 +20,21 @@
 }
 
 .thought-button {
-  grid-row-start: 2;
-  grid-row-end: 3;
-  width: 160px;
-  height: 30px;
+  display: inline-block;
+  padding: 6px 50px;
   border: none;
-  border-radius: 50px;
-  background: #ffadad;
-  font-size: 10px;
-  font-weight: bolder;
+	border-radius: 3px;
+  background-color: #ffe6e6;
+  font-family: 'Inconsolata', monospace;
+  font-size: 12px;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.word-counter {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-size: 12px;
+.thought-button:hover {
+	background-color:#ffadad;
 }
-
+.thought-button:active {
+	position:relative;
+	top:1px;
+}

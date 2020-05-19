@@ -4,7 +4,7 @@ import './name.css'
 export const Name = ({ value, onChange }) => {
   return (
     <label>
-      <h2 className="thought-name">Who's happy?</h2>
+      <h2 className="thought-name">Hello...</h2>
       <textarea className="name-field"
         placeholder="Enter name (optional)"
         maxLength="14"
