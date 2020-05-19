@@ -3,6 +3,7 @@ import moment from 'moment'
 import { HeartButton } from './HeartButton'
 import './thoughtslist.css'
 import { Comments } from './Comments'
+import { CommentsButton } from './CommentsButton'
 
 export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
 
@@ -17,7 +18,11 @@ export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
                 id={thought._id}
                 onHeartClicked={onHeartClicked}
                 hearts={thought.hearts} />
-              <p className="likes-counter">x {thought.hearts}</p>
+              <p className="likes-counter">{thought.hearts}</p>
+            </div>
+            <div className="comment-bubble-container">
+              <CommentsButton />
+              <p className="comment-counter">{thought.hearts}</p>
             </div>
             <div className="timestamp">
               <p className="created">{thought.createdBy}</p>

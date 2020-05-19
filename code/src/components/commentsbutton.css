@@ -1,4 +1,4 @@
-.heart-button {
+.comment-bubble-button {
   width: 32px;
   height: 32px;
   padding-top: 5px;
@@ -10,11 +10,11 @@
   cursor: pointer;
 }
 
-.heart-button:hover {
-  background: #ffe6e6;
-  color: #ff6868;
+.comment-bubble-button:hover {
+  background: #dfeffa;
+  color: #4eb4f4;
 }
 
-.heart-button:hover + .likes-counter {
-  color: #ff6868;
+.comment-bubble-button:hover + .comment-counter {
+  color: #4eb4f4;
 }

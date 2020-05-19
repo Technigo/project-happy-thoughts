@@ -1,4 +1,7 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import './heartbutton.css'
 
 export const HeartButton = ({ id, onHeartClicked, hearts }) => {
@@ -16,8 +19,8 @@ export const HeartButton = ({ id, onHeartClicked, hearts }) => {
   }
 
   return (
-    <button className={hearts > 0 ? "clicked-heart-button" : "heart-button"} type="button" onClick={handleClick}>
-      <span className="heart-emoji" role="img" aria-label="red heart">❤️</span>
+    <button className="heart-button" type="button" onClick={handleClick}>
+      <FontAwesomeIcon icon={hearts > 0 ? faHeartSolid : faHeart} className="heart-emoji" role="img" aria-label="red heart" />
     </button>
   )
 }

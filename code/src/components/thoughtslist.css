@@ -10,7 +10,7 @@
 
 .thought-wrapper {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 20% 30% 50%;
   grid-template-rows: 70% 30%;
   width: 280px;
   min-height: 80px;
@@ -20,23 +20,22 @@
 
 .happy-thought {
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 4;
   margin: 0;
   padding-bottom: 10px;
   font-size: 12px;
   overflow-wrap: break-word;
 }
 
-.heart-container {
+.heart-container, .comment-bubble-container {
   display: flex;
   align-items: center;
 }
 
-.likes-counter {
+.likes-counter, .comment-counter {
   margin-left: 5px;
-  color: 
-  #6e6e6e;
-  font-size: 11px;
+  color: #6e6e6e;
+  font-size: 14px;
 }
 
 .timestamp {
