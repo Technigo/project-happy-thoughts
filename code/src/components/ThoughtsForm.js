@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./ThoughtsForm.css";
 
-const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";
+const thoughtsUrl = "https://elins-happy-thoughts-api.herokuapp.com/thoughts";
+//https://technigo-thoughts.herokuapp.com/
 
 export const ThoughtsForm = () => {
   const [message, setMessage] = useState("");

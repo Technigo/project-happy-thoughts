@@ -5,7 +5,7 @@ import "./ThoughtsList.css";
 import { LikeButton } from "./LikeButton";
 
 export const ThoughtsList = () => {
-  const thoughtsUrl = "https://technigo-thoughts.herokuapp.com/";
+  const thoughtsUrl = "https://elins-happy-thoughts-api.herokuapp.com/thoughts";
 
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
