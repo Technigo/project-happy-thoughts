@@ -15,6 +15,14 @@
   font-family: inherit;
 }
 
+.name-field {
+  height: 20px;
+  border: 1px solid grey;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 0 3px;
+}
+
 .send-button {
   background: #ffaaaa;
   border-radius: 20px;

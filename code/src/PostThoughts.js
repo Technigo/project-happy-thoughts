@@ -3,9 +3,9 @@ import { Emoji } from "./Emoji"
 import './PostThoughts.css'
 
 export const PostThoughts = () => {
-  const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
+  const THOUGHTS_URL = "https://anna-happythoughts.herokuapp.com/"
   const [message, setMessage] = useState("")
-
+  const [name, setName] = useState("")
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -14,7 +14,7 @@ export const PostThoughts = () => {
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message })
+        body: JSON.stringify({ message, name })
       }
     ).then(() => {
       window.location.reload()
@@ -33,13 +33,21 @@ export const PostThoughts = () => {
         onChange={event => setMessage(event.target.value)}
         required>
       </textarea>
+      <input
+        placeholder="Name"
+        type="text"
+        value={name}
+        aria-label='Input text'
+        className="name-field"
+        onChange={event => setName(event.target.value)}>
+      </input>
       <div className="letter-count">
         <p>{message.length}/140</p>
       </div>
       <button
         className="send-button"
         type="submit"
-        disabled={message.length < 6 || message.length > 140 ? true : false}>
+        disabled={message.length < 5 || message.length > 140 ? true : false}>
         <Emoji symbol="❤️" /> Send Happy Thought! <Emoji symbol="❤️" />
       </button>
     </form>

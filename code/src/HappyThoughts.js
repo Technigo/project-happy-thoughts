@@ -6,7 +6,9 @@ import moment from 'moment'
 
 
 export const HappyThoughts = () => {
-  const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
+  // const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
+  const THOUGHTS_URL = "https://anna-happythoughts.herokuapp.com/"
+
   const [thoughts, setThoughts] = useState([])
 
   useEffect(() => {
@@ -18,7 +20,7 @@ export const HappyThoughts = () => {
   const onThoughtLiked = (likedThoughtId) => {
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === likedThoughtId) {
-        thought.hearts += 1
+        thought.heart += 1
       }
       return thought
     })
@@ -30,12 +32,13 @@ export const HappyThoughts = () => {
       {thoughts.map(thought => (
         <article className="thoughts-container" key={thought._id}>
           <h2>{thought.message}</h2>
+          <p>/{thought.name}</p>
           <div className="thought-info">
             <LikeHeart
               key={thought._id}
               id={thought._id}
               onThoughtLiked={onThoughtLiked}
-              hearts={thought.hearts} />
+              hearts={thought.heart} />
             <span className="message-time">
               {moment(thought.createdAt).fromNow()}
             </span>
