@@ -5,7 +5,16 @@ import './thoughtslist.css'
 import { Comments } from './Comments'
 import { CommentsButton } from './CommentsButton'
 
-export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
+export const ThoughtsList = ({ thoughts, onHeartClicked, setThoughts }) => {
+  const incrementComments = (thoughtId) => {
+    const commentClicked = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.comment_count += 1
+      }
+      return thought
+    })
+    setThoughts(commentClicked)
+  }
 
   return (
     <>
@@ -21,8 +30,9 @@ export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
               <p className="likes-counter">{thought.hearts}</p>
             </div>
             <div className="comment-bubble-container">
-              <CommentsButton />
-              <p className="comment-counter">{thought.hearts}</p>
+              <CommentsButton
+                comments={thought.comment_count} />
+              <p className="comment-counter">{thought.comment_count}</p>
             </div>
             <div className="timestamp">
               <p className="created">{thought.createdBy}</p>
@@ -30,7 +40,9 @@ export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
             </div>
           </div>
           <div className="comments-container">
-            <Comments id={thought._id} />
+            <Comments
+              id={thought._id}
+              incrementComments={incrementComments} />
           </div>
         </article>
       ))}

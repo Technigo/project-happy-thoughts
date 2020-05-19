@@ -55,7 +55,8 @@ export const Thoughts = () => {
 
         <ThoughtsList
           thoughts={thoughts}
-          onHeartClicked={onHeartClicked} />
+          onHeartClicked={onHeartClicked}
+          setThoughts={setThoughts} />
 
         <Pagination
           page={page}

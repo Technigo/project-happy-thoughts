@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import './comments.css'
 
-export const Comments = ({ id }) => {
+export const Comments = ({ id, incrementComments }) => {
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState('')
   const [commentName, setCommentName] = useState('')
@@ -32,6 +32,7 @@ export const Comments = ({ id }) => {
         setComments((previousComments) => [...previousComments, newComment])
         setNewComment('')
         setCommentName('')
+        incrementComments(id)
       })
   }
 
