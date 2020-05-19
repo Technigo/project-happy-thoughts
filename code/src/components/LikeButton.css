@@ -19,3 +19,21 @@
   border-radius: 50%;
   background-color: #eaeaea;
 }
+
+@media (max-width: 380px) {
+  .notLiked {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+  }
+
+  .liked {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+  }
+
+  .like-emoji {
+    font-size: 10px;
+  }
+}

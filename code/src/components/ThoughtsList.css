@@ -11,6 +11,10 @@
   overflow-wrap: break-word;
 }
 
+.message-card-footer {
+  margin-top: 20px;
+}
+
 .hearts {
   font-family: "Courier New", Courier, monospace;
   margin: 8px 0;
