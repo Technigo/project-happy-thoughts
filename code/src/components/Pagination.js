@@ -9,7 +9,8 @@ export const Pagination = ({ page, setPage, totalPages }) => {
 
       <button
         onClick={() => setPage(page - 1)}
-        disabled={page === 1 ? true : false}>
+        disabled={page === 1 ? true : false}
+        value="Previous page">
         <FontAwesomeIcon icon={faArrowLeft} />
       </button>
 
@@ -17,7 +18,8 @@ export const Pagination = ({ page, setPage, totalPages }) => {
 
       <button
         onClick={() => setPage(page + 1)}
-        disabled={page === totalPages ? true : false}>
+        disabled={page === totalPages ? true : false}
+        value="Next page">
         <FontAwesomeIcon icon={faArrowRight} />
       </button>
 

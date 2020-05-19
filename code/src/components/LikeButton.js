@@ -20,7 +20,7 @@ export const LikeButton = ({ hearts, id, apiUrl }) => {
   return (
     <div className="likes">
 
-      <button onClick={addLike} id={id} className={"like-btn" + (likes > 0 ? " has-likes" : "")} > {/* Add class if post has likes */}
+      <button onClick={addLike} id={id} value="Add like" className={"like-btn" + (likes > 0 ? " has-likes" : "")} > {/* Add class if post has likes */}
         <FontAwesomeIcon icon={faHeart} />
       </button>
 
