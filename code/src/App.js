@@ -22,7 +22,7 @@ export const App = () => {
     fetch(`${apiUrl}/thoughts?page=${page}&sort=${sort}`)
       .then(res => res.json())
       .then(data => {
-        setTimeout(() => { // Timeout to show loader for a longer time
+        setTimeout(() => { // Show loader for a longer time
           setTotalPages(data.pages)
           setThoughts(data)
           setLoading(false)
