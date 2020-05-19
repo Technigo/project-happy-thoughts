@@ -26,7 +26,7 @@ export const App = () => {
           setTotalPages(data.pages)
           setThoughts(data)
           setLoading(false)
-        }, 1500)
+        }, 1000)
       })
   }, [page, sort])
 
