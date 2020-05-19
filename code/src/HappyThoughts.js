@@ -6,7 +6,6 @@ import moment from 'moment'
 
 
 export const HappyThoughts = () => {
-  // const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
   const THOUGHTS_URL = "https://anna-happythoughts.herokuapp.com/"
 
   const [thoughts, setThoughts] = useState([])
