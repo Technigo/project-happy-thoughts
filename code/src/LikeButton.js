@@ -5,7 +5,7 @@ export const LikeButton = (props) => {
     const [heartCounter, setHeartCounter] = useState(hearts)
     const [youLiked, setYouLiked] = useState(+localStorage.getItem(`${id}`) || 0)
     const like = () => {
-        fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
+        fetch(`https://williamjensen-happythoughts.herokuapp.com/${id}/like`, {
             method: "POST"
         })
             .then(res => res.json())

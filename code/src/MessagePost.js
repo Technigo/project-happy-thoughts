@@ -11,7 +11,7 @@ export const MessagePost = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setSendingThought(true)
-        fetch("https://technigo-thoughts.herokuapp.com/", {
+        fetch("https://williamjensen-happythoughts.herokuapp.com/", {
             method: 'POST',
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ message: newThought })

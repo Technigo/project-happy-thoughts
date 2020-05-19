@@ -1,8 +1,9 @@
 import React from 'react'
-import moment from "moment"
+import Moment from 'react-moment';
 
 export const TimePosted = (props) => {
     return (
-        <p>{moment(props.createdAt).fromNow()}</p>
+        // <p>{moment(props.createdAt).fromNow()}</p>
+        <Moment fromNow>{props.createdAt}</Moment>
     )
 }

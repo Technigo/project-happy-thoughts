@@ -11,7 +11,7 @@ export const App = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [sendingThought, setSendingThought] = useState(false)
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch("https://williamjensen-happythoughts.herokuapp.com/")
       .then(res => res.json())
       .then(data => {
         setMessages(data)
