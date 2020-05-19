@@ -7,7 +7,6 @@ import { ThoughtsContainer } from 'components/ThoughtsContainer'
 
 import 'app.scss'
 
-
 export const App = () => {
 
   const apiUrl = 'https://api-happy-thoughts.herokuapp.com'
@@ -18,16 +17,17 @@ export const App = () => {
   const [sort, setSort] = useState('newest')
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(true)
 
     fetch(`${apiUrl}/thoughts?page=${page}&sort=${sort}`)
       .then(res => res.json())
-      // .then(data => setThoughts(data))
       .then(data => {
-        setTotalPages(data.pages)
-        setThoughts(data)
-        setLoading(false)
-      });
+        setTimeout(() => { // Timeout to show loader for a longer time
+          setTotalPages(data.pages)
+          setThoughts(data)
+          setLoading(false)
+        }, 1500)
+      })
   }, [page, sort])
 
 
@@ -43,7 +43,7 @@ export const App = () => {
         state={sort}
         setState={setSort} />
 
-      {loading ?
+      {loading ? // Show loader if loading is true, else display thoughts
         <Loading loading={loading} />
         :
         <ThoughtsContainer
@@ -53,6 +53,7 @@ export const App = () => {
           setPage={setPage}
           totalPages={totalPages} />
       }
+
     </div>
   )
 }
