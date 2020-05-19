@@ -40,7 +40,7 @@ export const Comments = ({ id }) => {
   }, [id])
 
   return (
-    <div>
+    <div className="comments-container">
       <h3 className="comments-title">Comments</h3>
       {comments.map((comment) => (
         <div className="comment-wrapper" key={comment._id}>
@@ -49,8 +49,21 @@ export const Comments = ({ id }) => {
         </div>
       ))}
       <form className="comments-form" onSubmit={commentSubmit}>
-        <input className="comment-name" type="text" value={commentName} onChange={(e) => setCommentName(e.target.value)} />
-        <input className="comment-text" type="text" onChange={(e) => setNewComment(e.target.value)} />
+        <input
+          className="comment-text"
+          type="text"
+          value={commentName}
+          placeholder="Enter name (optional)"
+          maxLength="14"
+          onChange={(e) => setCommentName(e.target.value)} />
+        <input
+          className="comment-text"
+          type="text"
+          value={newComment}
+          placeholder="Enter comment"
+          minLength="3"
+          maxLength="40"
+          onChange={(e) => setNewComment(e.target.value)} />
         <button className="comment-button" type="submit">Comment</button>
       </form>
     </div>
