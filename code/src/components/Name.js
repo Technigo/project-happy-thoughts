@@ -1,10 +1,10 @@
 import React from 'react'
 import './name.css'
 
-export const Name = ({ value, onChange, nameQ }) => {
+export const Name = ({ value, onChange }) => {
   return (
     <label>
-      <h2 className="thought-name">{nameQ}</h2>
+      <h2 className="thought-name">Who's happy?</h2>
       <textarea className="name-field"
         placeholder="Enter name (optional)"
         maxLength="14"

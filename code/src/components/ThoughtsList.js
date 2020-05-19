@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import moment from 'moment'
 import { HeartButton } from './HeartButton'
 import './thoughtslist.css'
-import { CommentForm } from './CommentForm'
 import { Comments } from './Comments'
 
 export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
@@ -27,7 +26,6 @@ export const ThoughtsList = ({ thoughts, onHeartClicked }) => {
           </div>
           <div className="comments-container">
             <Comments id={thought._id} />
-            <CommentForm id={thought._id} />
           </div>
         </article>
       ))}
