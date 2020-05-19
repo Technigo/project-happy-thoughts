@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
+import './comments.css'
 
 export const Comments = ({ id }) => {
   const [comments, setComments] = useState([])
@@ -40,13 +41,17 @@ export const Comments = ({ id }) => {
 
   return (
     <div>
+      <h3 className="comments-title">Comments</h3>
       {comments.map((comment) => (
-        <p key={comment._id}>{comment.createdBy} said {comment.comment} {moment(comment.createdAt).fromNow()}</p>
+        <div className="comment-wrapper" key={comment._id}>
+          <p className="comment">{comment.comment}</p>
+          <p className="comment-stamp">{comment.createdBy} {moment(comment.createdAt).fromNow()}</p>
+        </div>
       ))}
-      <form onSubmit={commentSubmit}>
-        <input type="text" value={commentName} onChange={(e) => setCommentName(e.target.value)} />
-        <input type="text" onChange={(e) => setNewComment(e.target.value)} />
-        <button type="submit">Comment</button>
+      <form className="comments-form" onSubmit={commentSubmit}>
+        <input className="comment-name" type="text" value={commentName} onChange={(e) => setCommentName(e.target.value)} />
+        <input className="comment-text" type="text" onChange={(e) => setNewComment(e.target.value)} />
+        <button className="comment-button" type="submit">Comment</button>
       </form>
     </div>
   )

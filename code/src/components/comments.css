@@ -1,0 +1,30 @@
+.comments-title {
+  margin-top: 0;
+  padding-top: 10px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: #6e6e6e;
+  font-size: 11px;
+  overflow-wrap: break-word;
+}
+
+.comment {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.comment-stamp {
+  align-self: flex-end;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.comments-form {
+  display: flex;
+  flex-direction: column;
+}
