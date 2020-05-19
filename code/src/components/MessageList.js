@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import moment from "moment";
+import React, { useState, useEffect } from 'react'
+import moment from 'moment'
 import './messageList.css'
-import { LikeHearts } from "./LikeHearts";
+import { LikeHearts } from './LikeHearts'
 
 export const MessageList = () => {
-  //const MESSAGES_URL = 'https://happy-thoughts-week19.herokuapp.com/thoughts'
-  const MESSAGES_URL = 'http://localhost:8080/thoughts'
+  const MESSAGES_URL = 'https://happy-thoughts-week19.herokuapp.com/thoughts'
+  //const MESSAGES_URL = 'http://localhost:8080/thoughts'
   const [messages, setMessages] = useState([])
 
   useEffect(() => {
     fetch(MESSAGES_URL)
       .then((res) => {
-        return res.json();
+        return res.json()
       })
       .then(data => {
         setMessages(data)
