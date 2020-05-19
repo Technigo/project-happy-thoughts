@@ -64,7 +64,7 @@ export const Comments = ({ id }) => {
           minLength="3"
           maxLength="40"
           onChange={(e) => setNewComment(e.target.value)} />
-        <button className="comment-button" type="submit">Comment</button>
+        <button className="comment-button" type="submit" disabled={newComment.length < 3 ? true : false}>Comment</button>
       </form>
     </div>
   )
