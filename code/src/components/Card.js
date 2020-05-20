@@ -8,7 +8,7 @@ export const Card = ({ thought, onLiked }) => {
     const { hearts, _id } = thought
 
     const handleClick = () => {
-        fetch(MESSAGES_URL`thoughts/${_id}/like`, {
+        fetch(`${MESSAGES_URL}thoughts/${_id}/like`, {
             method: 'POST',
             body: '',
             headers: { 'Content-Type': 'application/json' }
