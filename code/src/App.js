@@ -6,7 +6,7 @@ import { Loading } from './Components/Loading'
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(true)
-  const MESSAGES_URL = 'https://happy-thoughts-api-johanna.herokuapp.com/';
+  const MESSAGES_URL = 'https://happy-thoughts-api-johanna.herokuapp.com/thoughts';
 
   useEffect(() => {
     fetch(MESSAGES_URL)
@@ -20,6 +20,7 @@ export const App = () => {
     <main>
       <MessageInput />
       {loading && <Loading />}
+
       {thoughts.map(thought => (
         <MessageList
           key={thought._id}

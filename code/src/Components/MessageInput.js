@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './messageinput.css'
 
 export const MessageInput = (props) => {
-  const MESSAGES_URL = 'https://happy-thoughts-api-johanna.herokuapp.com/';
+  const MESSAGES_URL = 'https://happy-thoughts-api-johanna.herokuapp.com/thoughts';
   const [message, setMessage] = useState('');
 
   const handleSubmit = (event) => {
@@ -27,7 +27,7 @@ export const MessageInput = (props) => {
         rows='3'
         onChange={(event) => { setMessage(event.target.value) }}>
       </textarea>
-      <div class='message-input-footer'>
+      <div className='message-input-footer'>
         <button
           className='input-button'
           type='submit'
