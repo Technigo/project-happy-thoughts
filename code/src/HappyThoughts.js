@@ -11,7 +11,7 @@ export const HappyThoughts = () => {
 
   //const THOUGHTS_URL = 'https://technigo-thoughts.herokuapp.com/'
   //const THOUGHTS_URL = 'http://localhost:8080'
-  const THOUGHTS_URL = 'https://happylove-api.herokuapp.com/'
+  const THOUGHTS_URL = 'https://happylove-api.herokuapp.com'
 
   /* The onLiked function will be triggered by Handleclick in LikeButton.js. It will 
     - map through the thoughts and check every thought if it has the same id as the clicked thought.
@@ -48,7 +48,7 @@ export const HappyThoughts = () => {
       {thoughts.map(thought => (
         <section className="thoughtsCard" key={thought._id}>
           <div className="thought">{thought.message}</div>
-          <div className="thoughtBy">/{thought.name}</div>
+          <div className="thoughtBy">❤️{thought.name}</div>
           <span className="heartSection">
             <LikeButton key={thought._id} thought={thought} onLiked={onLiked} /> {moment(thought.createdAt).fromNow()} </span></section>
       ))

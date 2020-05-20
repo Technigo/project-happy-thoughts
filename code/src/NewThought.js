@@ -5,7 +5,7 @@ export const NewThought = () => {
 
   //const THOUGHTS_URL = 'https://technigo-thoughts.herokuapp.com/'
   //const THOUGHTS_URL = 'http://localhost:8080'
-  const THOUGHTS_URL = 'https://happylove-api.herokuapp.com/'
+  const THOUGHTS_URL = 'https://happylove-api.herokuapp.com'
 
 
   /* useState("") returns an object with the state and a function 
