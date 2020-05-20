@@ -1,6 +1,6 @@
 # Happy Thoughts
 
-The aim of the project was to practice React state skills by fetching and posting data to an API. I've used a simple API that collects 'happy thoughts'. 
+The aim of the project was to practice React state skills by fetching and posting data to an API. The API was built using node.js and can be found in the project happy-thoughts-api (https://github.com/elsareutersward/project-happy-thoughts-api).
 
 ## The problem
 
