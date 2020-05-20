@@ -3,7 +3,7 @@ import { Form } from './components/Form';
 import { Card } from 'components/Card';
 
 //const messages_URL = ("https://technigo-thoughts.herokuapp.com/")
-const messages_URL = ('https://app-happy-thought.herokuapp.com/')
+const messages_URL = ('https://app-happy-thought.herokuapp.com/thoughts')
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])

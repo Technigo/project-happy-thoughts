@@ -8,7 +8,7 @@ export const Card = ({ thought, onLiked }) => {
     const { hearts, _id } = thought
 
     const handleClick = () => {
-        fetch(`https://app-happy-thought.herokuapp.com/${_id}/like`, {
+        fetch(`https://app-happy-thought.herokuapp.com/thoughts/${_id}/like`, {
             method: 'POST',
             body: '',
             headers: { 'Content-Type': 'application/json' }
