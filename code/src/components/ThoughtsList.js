@@ -37,7 +37,7 @@ export const ThoughtsList = () => {
 
   return (
     <section className="messages">
-      {loading && <h3>There will be messages that make you happy soon ... </h3>}
+      {loading && <div className="loader" />}
 
       {
         // Each message returned

@@ -9,6 +9,7 @@
   margin: 4px;
   border-radius: 50%;
   background-color: #f2acad;
+  cursor: pointer;
 }
 
 .notLiked {
@@ -18,6 +19,7 @@
   margin: 4px;
   border-radius: 50%;
   background-color: #eaeaea;
+  cursor: pointer;
 }
 
 @media (max-width: 380px) {
