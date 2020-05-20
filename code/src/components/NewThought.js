@@ -4,7 +4,8 @@ import './new-thought.css'
 
 export const NewThought = () => {
   const url = 'https://emmas-happy-thoughts.herokuapp.com/thoughts'
-  const [newThought, setNewThought] = useState('')
+  const [message, setMessage] = useState('')
+  const [name, setName] = useState('')
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -15,7 +16,10 @@ export const NewThought = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ message: newThought })
+        body: JSON.stringify({
+          message: message,
+          name: name
+        })
       }
     ).then(() => {
       window.location.reload()
@@ -26,21 +30,31 @@ export const NewThought = () => {
     <form
       className='thought new-thought'
       onSubmit={handleSubmit}>
-      <h2>What's making you happy right now?</h2>
-      <textarea
-        type='text'
-        maxLength="140"
-        onChange={event => setNewThought(event.target.value)}
-        className='form-textarea'>
-      </textarea>
+      <div
+        className='form-inputs'>
+        <h2>What's your name?</h2>
+        <input
+          className='input-name'
+          type='text'
+          maxLength='15'
+          onChange={event => setName(event.target.value)}>
+        </input>
+        <h2>What's making you happy right now?</h2>
+        <textarea
+          type='text'
+          maxLength="140"
+          onChange={event => setMessage(event.target.value)}
+          className='form-textarea'>
+        </textarea>
+      </div>
       <div className='button-count'>
         <input
           type='submit'
           className='form-button'
-          disabled={newThought.length <= 5 || newThought.length >= 140 ? true : false}
+          disabled={message.length <= 5 || message.length >= 140 ? true : false}
           value='❤️Send Happy Thought❤️'>
         </input>
-        <p>{newThought.length}/140</p>
+        <p>{message.length}/140</p>
       </div>
     </form>
   )

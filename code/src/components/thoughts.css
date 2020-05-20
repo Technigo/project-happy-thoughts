@@ -18,6 +18,22 @@
   color: grey;
 }
 
+.name-date {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+ justify-content: center;
+}
+
+.name-p {
+  margin: 0;
+  font-style: italic;
+}
+
+.time-stamp {
+  margin: 5px 0 0 0;
+}
+
 .heart-div {
   display: flex;
   justify-content: space-between;

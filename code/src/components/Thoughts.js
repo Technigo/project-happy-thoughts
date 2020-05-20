@@ -31,6 +31,7 @@ export const Thoughts = () => {
       {loading ? <PulseLoader color='black' /> :
         messages.map(thought => (
           <article className='thought'>
+
             <p
               className="thought-text"
               key={thought.id}>
@@ -50,11 +51,17 @@ export const Thoughts = () => {
                   {thought.hearts}
                 </p>
               </div>
-              <p
-                className='time-stamp'
-                key={thought.id}>
-                {moment(thought.createdAt).fromNow()}
-              </p>
+              <div
+                className='name-date'>
+                <p
+                  className='name-p'>
+                </p>{thought.name}
+                <p
+                  className='time-stamp'
+                  key={thought.id}>
+                  {moment(thought.createdAt).fromNow()}
+                </p>
+              </div>
             </div>
           </article>
         ))
