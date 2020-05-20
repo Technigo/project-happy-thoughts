@@ -7,15 +7,18 @@ width: 70%;
 }
 
 .send-love-button {
-background-color: #ffadad;
+background-color: #ecdbe5;
 color: black;
 border-radius: 20px;
 border: solid #ffadad;
 padding: 5px;
 }
 
+.send-love-button:hover {transform: scale(1.1) perspective(1px)}
+
 .input-text {
   height: 50px;
+  padding: 8px;
 }
 
 @media ( min-width: 900px) {

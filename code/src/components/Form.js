@@ -12,14 +12,14 @@ export const Form = props => {
   }
 
   return (
-    <form className="card">
+    <form className="card firstCard">
     <h1>What is making you happy right now?</h1>
       <textarea value={message}
         onChange={event => setMessage(event.target.value)}
         className="input-text">
       </textarea>
       <div>
-        <p>{message.length}/max 140</p>
+        <p>{message.length} min 5/max 140</p>
       </div>
       <div>
 

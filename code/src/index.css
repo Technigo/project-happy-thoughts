@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('media/joe-woods-4Zaq5xY5M_c-unsplash.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  display: flex;
+  justify-content: center;
 }
 
 code {

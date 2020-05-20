@@ -8,7 +8,7 @@ export const Card = ({ thought, onLiked }) => {
     const { hearts, _id } = thought
 
     const handleClick = () => {
-        fetch(`https://app-happy-thought.herokuapp.com/thoughts/${_id}/like`, {
+        fetch(MESSAGES_URL`thoughts/${_id}/like`, {
             method: 'POST',
             body: '',
             headers: { 'Content-Type': 'application/json' }
@@ -16,11 +16,9 @@ export const Card = ({ thought, onLiked }) => {
 
     }
 
-    return (
-        <article>
-            {
-                
-                    <p className="message card" key={thought._id}>
+  return (
+    <article>
+        {      <p className="message card" key={thought._id}>
                         {thought.message}
                         <button
                         onClick={handleClick}
@@ -36,7 +34,9 @@ export const Card = ({ thought, onLiked }) => {
                         </span>
                     </p>
                 
-            }
-        </article>
-    )
+            
+                
+        }
+    </article>
+  )
 }
