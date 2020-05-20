@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import './card.css'
 
-const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/";
+const MESSAGES_URL = 'https://app-happy-thought.herokuapp.com/';
 
 export const Card = ({ thought, onLiked }) => {
     const { hearts, _id } = thought
 
     const handleClick = () => {
-        fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+        fetch(`https://app-happy-thought.herokuapp.com/${_id}/like`, {
             method: 'POST',
             body: '',
             headers: { 'Content-Type': 'application/json' }
