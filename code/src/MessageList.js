@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { LikeButton } from './HappyFeed'
 import { MessageInput } from './HappyMessage'
 
-const url = 'https://technigo-thoughts.herokuapp.com/'
+const url = 'https://happy-thoughts-api-by-tuliany.herokuapp.com/'
 
 export const MessageList = () => {
   const [messages, setMessages] = useState([])
