@@ -8,7 +8,7 @@ export const App = () => {
   const [ newMessage, setNewMessage] = useState('')
 
   useEffect (() => {
-    fetch("https://plunta-happy-thought-api.herokuapp.com/")
+    fetch("https://plunta-happy-thought-api.herokuapp.com/thoughts")
     .then(res => res.json())
     .then(json => setData(json))
     .catch((error) => {
@@ -17,7 +17,7 @@ export const App = () => {
   }, [newMessage])
 
   const handleSubmit = (message) => {
-    fetch('https://plunta-happy-thought-api.herokuapp.com/', { 
+    fetch('https://plunta-happy-thought-api.herokuapp.com/thoughts', { 
     method: 'POST', 
     body: JSON.stringify({ message }),
     headers: { 'Content-Type': 'application/json' }
