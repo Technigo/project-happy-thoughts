@@ -8,4 +8,4 @@ Testing API calls with postman and building includes useState and useEffect.
 
 ## View it live
 
-https://trusting-hypatia-6ef066.netlify.com/
+https://connectthefamily.netlify.app/
