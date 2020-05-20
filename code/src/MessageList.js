@@ -31,7 +31,7 @@ export const MessageList =() => {
                 messages.map(message => (
                 <div className='message-cards' key={message._id}>
                     <p>{message.message}</p>
-                    <p className='message-sender'>{message.name === '' ? null : `/${message.name}`}</p>
+                    <p className='message-sender'>{message.name === '' ? message.name : `/${message.name}`}</p>
                     <div className='message-card-bottom'> 
                         <div className='message-time'>
                             {moment(message.createdAt).fromNow()}
