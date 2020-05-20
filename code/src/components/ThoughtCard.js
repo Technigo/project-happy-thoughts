@@ -6,11 +6,9 @@ import '../components/thoughtcard.css'
 export const ThoughtCard = ( props ) => {
   const { message, hearts, CreatedAt, id } = props
 
-  const url = `https://technigo-thoughts.herokuapp.com/${id}/like`
+  const url = `https://plunta-happy-thought-api.herokuapp.com/${id}/like`
 
   const handleLike = () => {
-    // Send the POST request with the input from your form (instead
-    // of 'Hello world' like this example does):
     fetch(url, { 
       method: 'POST', 
       body: "",
