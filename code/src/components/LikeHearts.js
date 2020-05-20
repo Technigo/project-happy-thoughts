@@ -1,7 +1,7 @@
 import React from 'react'
 import './likeHearts.css'
 
-const MESSAGES_URL = 'https://happy-thoughts-week19.herokuapp.com/thoughts'
+const MESSAGES_URL = 'https://happy-thoughts-week19.herokuapp.com/'
 //const MESSAGES_URL = 'http://localhost:8080/thoughts'
 
 export const LikeHearts = ({ message, onLiked }) => {
