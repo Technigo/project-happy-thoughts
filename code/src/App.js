@@ -3,7 +3,7 @@ import { HappyFeed } from './HappyFeed'
 import { HappyMessage } from './HappyMessage'
 import './App.css'
 
-const url = 'https://technigo-thoughts.herokuapp.com/'
+const url = 'https://happy-thoughts-api-by-tuliany.herokuapp.com/'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
