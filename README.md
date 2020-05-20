@@ -1,11 +1,24 @@
 # Happy Thoughts
 
-The assignment was to build a Twitter-like web app using React. It should have a form to post happy thoughts + list the most recent thoughts.
+A Twitter-like web app using an API to render & post happy thoughts.
 
-## Approach
+## Description
 
-I split it up in components, using props and state to keep track of the thoughts and number of likes. I also added a counter to visualize number of characters in the textarea. The submit button gets disabled if the user types less than 5 or more than 140 characters.
+The UI is built using React with the state & effect hook. It displays happy thoughts & a form to post new thoughts + a like function. The sorting function lets the user sort thought based on newest/oldest/most liked. 
 
-## View it live
+## Tech
+- React
+- Javascript ES6
+- SASS
 
+## ToDo
+- Implement infinite scroller
+- Add SASS structure
+- Only like once
+
+## Deployed
 https://happythoughts.netlify.com/
+
+## Backend
+- API: https://api-happy-thoughts.herokuapp.com/
+- Repo: https://github.com/crushoftheyear/project-happy-thoughts-api
