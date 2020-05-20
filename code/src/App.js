@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Form } from './components/Form';
 import { Card } from 'components/Card';
 
-const messages_URL = ("https://technigo-thoughts.herokuapp.com/")
+//const messages_URL = ("https://technigo-thoughts.herokuapp.com/")
+const messages_URL = ('https://app-happy-thought.herokuapp.com/')
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
