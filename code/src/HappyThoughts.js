@@ -28,7 +28,7 @@ export const HappyThoughts = () => {
       //The function will return the object thought (with the new value of the hearts)
       return thought
     })
-    //Then updates the state of the thoughts array with setThoughts(updatedThoughts).
+    //Then updates the state of the thoughts array with setThoughts(updatedThoughts)
     setThoughts(updatedThoughts)
   }
 
