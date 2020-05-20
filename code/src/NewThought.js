@@ -7,7 +7,6 @@ export const NewThought = () => {
   //const THOUGHTS_URL = 'http://localhost:8080'
   const THOUGHTS_URL = 'https://happylove-api.herokuapp.com'
 
-
   /* useState("") returns an object with the state and a function 
     - 1st element - state holding the value (newThought) 
     - 2nd element - function to set the value (setNewThought) */
