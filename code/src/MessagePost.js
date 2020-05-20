@@ -62,12 +62,12 @@ export const MessagePost = (props) => {
                         placeholder="Sign your thought by writing your name after '~'. Eg. The sun is shining ~Bob">
 
                     </textarea>
-                    <div className="count-and-input-wrapper">
-                        <p className="character-count"
-                            style={{ color: newThought.length >= 100 ? "red" : newThought.length >= 50 ? "orange" : "black" }}>
-                            {140 - newThought.length} characters left
+
+                    <p className="character-count"
+                        style={{ color: newThought.length >= 100 ? "red" : newThought.length >= 50 ? "orange" : "black" }}>
+                        {140 - newThought.length} characters left
                         </p>
-                    </div>
+
                     <div className="chips-wrapper">
                         {categories.map((item) => {
                             return (
