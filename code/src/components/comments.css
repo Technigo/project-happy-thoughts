@@ -1,6 +1,7 @@
 .comments-container {
-  background: #f2f0f0;
+  margin-top: 10px;
   padding: 5px;
+  background: #f2f0f0;
 }
 
 .comments-title {
