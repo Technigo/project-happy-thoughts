@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Tooltip from 'react-tooltip-lite';
+import { API_URL } from 'App';
 
 export const MessageLike = (props) => {
     const { thoughtId, likes } = props
-    const MESSAGES_URL = `https://technigo-thoughts.herokuapp.com/${thoughtId}/like`;
+    const MESSAGES_URL = `${API_URL}${thoughtId}/like`;
     const [amountLikes, setAmountLikes] = useState(likes);
     const [myLikes, setMyLikes] = useState(+localStorage.getItem(thoughtId) || 0);
 

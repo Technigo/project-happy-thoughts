@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { API_URL } from 'App';
 import { ErrorMessage } from 'ErrorMessage';
 
 export const MessageInput = () => {
-    const MESSAGES_URL = 'https://technigo-thoughts.herokuapp.com/';
+    const MESSAGES_URL = API_URL;
     const [message, setMessage] = useState('');
+    const [name, setName] = useState('');
     const [error, setError] = useState(false);
         
     const handleSubmit = event => {
@@ -13,7 +15,7 @@ export const MessageInput = () => {
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'}, 
-                body: JSON.stringify({message: message})
+                body: JSON.stringify({message: message, name: name})
             })
         .then(response => {
             response.ok ? window.location.reload() : setError(true);
@@ -35,6 +37,15 @@ export const MessageInput = () => {
                 />
                 <div className={lengthCheck() ? 'validation-black' : 'validation-red'}>
                     {message.length}/140
+                </div>
+                <div>
+                    <span>Happy thought from:</span>
+                    <input
+                        type='text'
+                        placeholder='Name'
+                        className='form-text-name'
+                        onChange={event => setName(event.target.value)}
+                    />
                 </div>
                 {error && <ErrorMessage />}
                 <button
