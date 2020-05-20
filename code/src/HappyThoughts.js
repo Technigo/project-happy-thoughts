@@ -32,7 +32,6 @@ export const HappyThoughts = () => {
     setThoughts(updatedThoughts)
   }
 
-
   //useEffect will run and fetch the json (with all the thougths) 
   useEffect(() => {
     fetch(THOUGHTS_URL)
