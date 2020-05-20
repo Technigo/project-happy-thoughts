@@ -47,7 +47,7 @@ export const HappyThoughts = () => {
       {thoughts.map(thought => (
         <section className="thoughtsCard" key={thought._id}>
           <div className="thought">{thought.message}</div>
-          <div className="thoughtBy">/ {thought.name}</div>
+          <div className="thoughtBy">❤️ {thought.name}</div>
           <span className="heartSection">
             <LikeButton key={thought._id} thought={thought} onLiked={onLiked} /> {moment(thought.createdAt).fromNow()} </span></section>
       ))
