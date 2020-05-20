@@ -24,9 +24,9 @@ export const App = () => {
       .then(data => {
         setTimeout(() => { // Show loader for a longer time
           setTotalPages(data.pages)
-          setThoughts(data)
+          setThoughts(data.thoughts)
           setLoading(false)
-        }, 1000)
+        }, 1500)
       })
   }, [page, sort])
 

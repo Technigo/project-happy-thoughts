@@ -190,6 +190,7 @@ input[type=text] {
   justify-content: flex-end;
   align-items: center;
   margin-top: 1.5rem;
+  margin-bottom: -1rem;
 
   @media (max-width: 575px) {
     justify-content: space-between;
@@ -225,10 +226,6 @@ input[type=text] {
 .thought-card {
   align-items: baseline;
   overflow-wrap: break-word;
-
-  &:first-child {
-    margin-top: 1rem;
-  }
 
   h2 {
     flex-basis: 100%;
