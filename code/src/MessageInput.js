@@ -4,7 +4,7 @@ import './MessageInput.css'
 export const MessageInput = props => {
 
   const [message, setMessage] = useState("")
-  const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/"
+  const MESSAGES_URL = "https://jihyeon-happy-thoughts-api.herokuapp.com/POST"
 
   const handleSubmit = event => {
     event.preventDefault()

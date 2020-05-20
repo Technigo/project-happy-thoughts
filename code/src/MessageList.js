@@ -6,7 +6,7 @@ export const MessageList = ({ thought, onLiked }) => {
   const { message, hearts, createdAt, _id } = thought
 
   const handleClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+    fetch(`https://jihyeon-happy-thoughts-api.herokuapp.com/POST/${_id}/like`, {
       method: 'POST',
       body: '',
       headers: {

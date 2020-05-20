@@ -6,7 +6,7 @@ import './app.css'
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [postedMessage, setPostedMessage] = useState('')
-  const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/"
+  const MESSAGES_URL = "https://jihyeon-happy-thoughts-api.herokuapp.com/GET"
 
   useEffect(() => {
     fetch(MESSAGES_URL)
