@@ -16,22 +16,23 @@
 .smiley {
     color: yellow;
     position: absolute;
-    left: -60px;
+    left: -30px;
     animation: Bob .7s infinite ease-in-out;
-    font-size: 50px;
+    font-size: 25px;
  cursor: pointer;
 }
 
 @keyframes Bob {
-    0% {top: 22%}
-    50% {top: 27%}
-    100% {top: 22%}
+    0% {top: 30%}
+    50% {top: 35%}
+    100% {top: 30%}
 }
 
 .chips-wrapper {
     display: flex;
     align-items: center;
     margin-top: 5px;
+    flex-wrap: wrap;
 }
 
 .post-text {
@@ -62,4 +63,17 @@ word-break: break-all;
 .signature-input {
     padding: 5px;
     font-size: 18x;
+}
+
+@media (min-width: 400px) {
+    .smiley {
+        font-size: 50px;
+        left: -60px;
+    }
+
+    @keyframes Bob {
+        0% {top: 22%}
+        50% {top: 27%}
+        100% {top: 22%}
+    }
 }
