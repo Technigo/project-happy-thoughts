@@ -13,7 +13,7 @@ export const Thoughts = () => {
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
-      .then(json => setMessages(json), setLoading(false))
+      .then(json => setMessages(json.thoughts), setLoading(false))
   }, [])
 
   const onMessageLiked = (likedMessageId) => {
@@ -31,7 +31,6 @@ export const Thoughts = () => {
       {loading ? <PulseLoader color='black' /> :
         messages.map(thought => (
           <article className='thought'>
-
             <p
               className="thought-text"
               key={thought.id}>
@@ -54,8 +53,10 @@ export const Thoughts = () => {
               <div
                 className='name-date'>
                 <p
-                  className='name-p'>
-                </p>{thought.name}
+                  className='name'
+                  key={thought.id}>
+                  {thought.name}
+                </p>
                 <p
                   className='time-stamp'
                   key={thought.id}>
