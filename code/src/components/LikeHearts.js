@@ -1,14 +1,14 @@
 import React from 'react'
 import './likeHearts.css'
 
-const MESSAGES_URL = 'https://happy-thoughts-week19.herokuapp.com/'
+const MESSAGES_URL = 'https://happy-thoughts-week19.herokuapp.com/thoughts'
 //const MESSAGES_URL = 'http://localhost:8080/thoughts'
 
 export const LikeHearts = ({ message, onLiked }) => {
   const { hearts, _id } = message
 
   const handleClick = () => {
-    fetch(`MESSAGES_URL/${_id}/like`, {
+    fetch(`https://happy-thoughts-week19.herokuapp.com/thoughts/${_id}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: '',
@@ -20,7 +20,7 @@ export const LikeHearts = ({ message, onLiked }) => {
     <section className="like-hearts">
       <button className={hearts > 0 ? 'liked' : 'not-liked'} 
         onClick={handleClick}>
-        <p><span  role='img' aria-label='Heart'>❤️</span></p>
+        <p><span className="hearts" role='img' aria-label='Heart'>❤️</span></p>
       </button>
       <div className="heart-count">x {hearts}</div>
     </section>
