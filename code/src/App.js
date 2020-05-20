@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import "./app.css"
@@ -8,6 +8,8 @@ import { MessagePost } from "./MessagePost"
 import { LikeButton } from "./LikeButton"
 import { TimePosted } from "./TimePosted"
 import { Loader } from "./Loader"
+import { ThemeChip } from './ThemeChips'
+
 
 
 export const App = () => {
@@ -22,7 +24,7 @@ export const App = () => {
   const forwardButton = <FontAwesomeIcon icon={faChevronRight} />
   const backButton = <FontAwesomeIcon icon={faChevronLeft} />
   useEffect(() => {
-    fetch(`https://williamjensen-happythoughts.herokuapp.com?order=${order}&page=${page}&theme=${theme}`)
+    fetch(`https://williamjensen-happythoughts.herokuapp.com?order=${order}&page=${page}${theme}`)
       .then(res => res.json())
       .then(data => {
         setMessages(data.thoughts)
@@ -47,11 +49,21 @@ export const App = () => {
   return (
 
     <div className="flex-container">
-      {isLoading && <Loader />}
       <MessagePost newThought={newThought} setNewThought={setNewThought}
         setSendingThought={setSendingThought} sendingThought={sendingThought}
         messages={messages} setMessages={setMessages} setDataLength={setDataLength} />
 
+      <div className="filter-container">
+        <select onChange={(e) => handleQueryChange(e.target.value, 'order')}>
+          <option value="">Show by</option>
+          <option value="">Newest</option>
+          <option value="oldest">Oldest</option>
+          <option value="mostliked">Most liked</option>
+        </select>
+        <ThemeChip image={require('./cross.png')} text={'Clear Theme'} setTheme={setTheme}
+          function={() => setTheme()} />
+      </div>
+      {isLoading && <Loader />}
 
       {messages &&
         messages.map((message) => {
@@ -72,12 +84,6 @@ export const App = () => {
         <p>Showing page {page} of {dataLength}</p>
         <button className="nav-buttons" disabled={page === dataLength} onClick={() => handleQueryChange(+ 1, "page")}>{forwardButton}</button>
       </div>
-      <select onChange={(e) => handleQueryChange(e.target.value, 'order')}>
-        <option value="">Show by</option>
-        <option value="">Newest</option>
-        <option value="oldest">Oldest</option>
-        <option value="mostliked">Most liked</option>
-      </select>
     </div>
   )
 }

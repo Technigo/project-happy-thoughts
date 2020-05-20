@@ -1,12 +1,12 @@
 .flex-wrapper {
-    width: 50%;
+    width: 100%;
 }
 
 
 .like-button {
     padding: 8px 11px;
     font-size: 15px; 
-    border-radius: 50%;
+    border-radius: 100%;
     border: none;
     cursor: pointer;
 }

@@ -1,19 +1,37 @@
 .form {
     background-color: #f2f0f0;
+    position: relative;
 }
 
 .post-button {
-    color: black;
-    background-color: #ffadad;
-    border-radius: 500px;
-    padding: 8px 20px;
-    display: block;
-    cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 .post-button:disabled {
-opacity: .5;
-cursor: default;
+    opacity: .5;
+    cursor: default;
+    }
+
+.smiley {
+    color: yellow;
+    position: absolute;
+    left: -60px;
+    animation: Bob .7s infinite ease-in-out;
+    font-size: 50px;
+ cursor: pointer;
+}
+
+@keyframes Bob {
+    0% {top: 22%}
+    50% {top: 27%}
+    100% {top: 22%}
+}
+
+.chips-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
 }
 
 .post-text {

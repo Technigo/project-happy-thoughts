@@ -1,16 +1,9 @@
 import React, { useState } from "react"
-import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSmile } from '@fortawesome/free-solid-svg-icons'
 import "./messagepost.css"
 import { Loader } from "./Loader"
-import { ThemeChips, ThemeChip } from './ThemeChips'
-
-const ButtonsWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  @media (min-width: 680px) and (max-width: 800px ) {
-      flex-direction: column;
-  }
-`
+import { ThemeChip } from './ThemeChips'
 
 
 
@@ -55,6 +48,9 @@ export const MessagePost = (props) => {
     }
     return (
         <form className="thoughts-container form" onSubmit={handleSubmit}>
+            <button style={{ background: "transparent", border: "none" }} className="post-button" type="submit" disabled={!newThought || newThought.length < 5}>
+                <FontAwesomeIcon className="smiley" icon={faSmile} />
+            </button>
             {sendingThought && <Loader />}
             {!sendingThought &&
                 <div>
@@ -71,30 +67,16 @@ export const MessagePost = (props) => {
                             style={{ color: newThought.length >= 100 ? "red" : newThought.length >= 50 ? "orange" : "black" }}>
                             {140 - newThought.length} characters left
                         </p>
-                        {/* <div style={{ display: "flex", flexDirection: "column" }}>
-                            <input className="signature-input" type="text"
-                                placeholder="Sign your thought"
-                                maxLength={20}
-                                onChange={(e) => setUser(e.target.value)}></input>
-                        </div> */}
                     </div>
-                    <ButtonsWrapper>
-                        <button className="post-button" disabled={!newThought || newThought.length < 5} type="submit" >
-                            <span role="img" aria-label="heart">❤️</span>
-                        Send Happy Thought<span role="img" aria-label="heart">❤️</span>
-                        </button>
+                    <div className="chips-wrapper">
                         {categories.map((item) => {
                             return (
-                                // <ThemeChips text={item.text} theme={theme} type="button" onClick={() => setTheme(item.text)}>
-                                //     <ChipPic src={item.Image} />
-                                //     <ChipText>{item.text}</ChipText>
-                                // </ThemeChips>
                                 <ThemeChip image={item.Image} text={item.text} theme={theme} setTheme={setTheme}
                                     function={() => setTheme(item.text)} />
                             )
 
                         })}
-                    </ButtonsWrapper>
+                    </div>
                 </div >}
         </form >
     )

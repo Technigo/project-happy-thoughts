@@ -32,7 +32,7 @@ export const LikeButton = (props) => {
     const filterTheme = (messageTheme) => {
         setPage(1)
         setOrder('default')
-        setTheme(messageTheme)
+        setTheme(`&theme=${messageTheme}`)
         window.scrollTo(0, 0)
     }
     return (
