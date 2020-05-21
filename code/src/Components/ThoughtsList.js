@@ -30,7 +30,7 @@ export const ThoughtsList = () => {
   }
 
   const handleClick = thoughtId => {
-    fetch(`https://happy-thoughts-api-deployment.herokuapp.com/${thoughtId}/like`, {
+    fetch(`https://happy-thoughts-api-deployment.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: "PUT",
       body: "",
       headers: { "Content-Type": "application/json" }
