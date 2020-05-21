@@ -5,7 +5,6 @@ import { LikeHearts } from './LikeHearts'
 
 export const MessageList = () => {
   const MESSAGES_URL = 'https://happy-thoughts-week19.herokuapp.com/thoughts'
-  //const MESSAGES_URL = 'http://localhost:8080/thoughts'
   const [messages, setMessages] = useState([])
 
   useEffect(() => {
@@ -19,16 +18,13 @@ export const MessageList = () => {
 
   }, []);
 
-  const onLiked = messageId => {
-  }
-
   return (
     <div className="messages-list">
       {messages.map(message => (
         <section key={message._id} className="messages">
           <p> {message.message}</p>
           <div className="likes-and-when">
-            <LikeHearts message={message} onLiked={onLiked} />
+            <LikeHearts message={message} />
             <h5>{moment(message.createdAt).fromNow()}</h5>
           </div>
         </section>

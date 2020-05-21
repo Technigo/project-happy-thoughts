@@ -1,27 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './likeHearts.css'
 
 const MESSAGES_URL = 'https://happy-thoughts-week19.herokuapp.com/thoughts'
-//const MESSAGES_URL = 'http://localhost:8080/thoughts'
 
-export const LikeHearts = ({ message, onLiked }) => {
+export const LikeHearts = ({ message }) => {
   const { hearts, _id } = message
+  const [heartClicks, setHeartClicks] = useState(hearts)
 
   const handleClick = () => {
     fetch(`${MESSAGES_URL}/${_id}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: '',
-    }).then(() => onLiked(_id))
+    }).then(res => res.json())
+      .then(setHeartClicks(heartClicks + 1))
   }
 
   return (
     <section className="like-hearts">
-      <button className={hearts > 0 ? 'liked' : 'not-liked'} 
+      <button className={heartClicks > 0 ? 'liked' : 'not-liked'} 
         onClick={handleClick}>
         <p><span className="hearts" role='img' aria-label='Heart'>❤️</span></p>
       </button>
-      <div className="heart-count">x {hearts}</div>
+      <div className="heart-count">x {heartClicks}</div>
     </section>
   )
 }
