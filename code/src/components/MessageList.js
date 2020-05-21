@@ -20,22 +20,15 @@ export const MessageList = () => {
   }, []);
 
   const onLiked = messageId => {
-    const updatedMessages = messages.map(message => {
-      if (message._id === messageId) {
-        message.hearts += 1
-      }
-      return message
-    })
-    setMessages(updatedMessages)
   }
 
   return (
     <div className="messages-list">
       {messages.map(message => (
-        <section className="messages">
-          <p key={message.createdAt}>{message.message}</p>
+        <section key={message._id} className="messages">
+          <p> {message.message}</p>
           <div className="likes-and-when">
-            <p><LikeHearts message={message} onLiked={onLiked} /></p>
+            <LikeHearts message={message} onLiked={onLiked} />
             <h5>{moment(message.createdAt).fromNow()}</h5>
           </div>
         </section>

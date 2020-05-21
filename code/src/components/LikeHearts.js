@@ -8,11 +8,10 @@ export const LikeHearts = ({ message, onLiked }) => {
   const { hearts, _id } = message
 
   const handleClick = () => {
-    fetch(`https://happy-thoughts-week19.herokuapp.com/thoughts/${_id}/like`, {
+    fetch(`${MESSAGES_URL}/${_id}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: '',
-      
     }).then(() => onLiked(_id))
   }
 
