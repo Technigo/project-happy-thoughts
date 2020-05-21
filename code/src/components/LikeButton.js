@@ -3,7 +3,8 @@ import('button.css')
 
 export const LikeButton = props => {
   const { hearts, thoughtId } = props
-  const APImessages = `https://technigo-thoughts.herokuapp.com/${thoughtId}/like`
+  
+  const APImessages = `https://viktorias-happy-thoughts-app.herokuapp.com/${thoughtId}/like`
 
   const handleClick = () => {
     fetch(APImessages, {

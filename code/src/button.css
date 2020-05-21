@@ -5,7 +5,9 @@ button {
   font-size:24px;
   background-color:pink;
   border:none;
+  outline: none !important;
 }
+
 
 .heart-button{
   display:flex;
