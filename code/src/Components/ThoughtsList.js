@@ -3,7 +3,7 @@ import moment from 'moment'
 import "./thoughtslist.css"
 
 export const ThoughtsList = () => {
-  const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
+  const THOUGHTS_URL = "https://happy-thoughts-api-deployment.herokuapp.com/thoughts"
   const [thoughts, setThoughts] = useState([])
 
   useEffect(() => {
@@ -31,8 +31,8 @@ export const ThoughtsList = () => {
 
   const handleClick = (thoughtId) => {
     //console.log("id", thoughtId)
-    fetch(`https://technigo-thoughts.herokuapp.com/${thoughtId}/like`, {
-      method: "POST",
+    fetch(`https://happy-thoughts-api-deployment.herokuapp.com/${thoughtId}/like`, {
+      method: "PUT",
       body: "",
       headers: { "Content-Type": "application/json" }
     }).then(() => onLiked(thoughtId))
@@ -47,20 +47,22 @@ export const ThoughtsList = () => {
           console.log('thought?', thought)
           return (
             <article className="thought-message" key={thought._id}>
-              <p>
+              <p className="message-p">
                 {thought.message}
               </p>
               <div className="thought-footer">
-                <button onClick={() => handleClick(thought._id)}
-                  className={
-                    thought.hearts > 5 ? "superLiked" : thought.hearts > 0 ? "liked" : "notLiked"
-                  }
-                >
-                  <span role="img" aria-label="Heart">
-                    ❤️
+                <div className="likes">
+                  <button onClick={() => handleClick(thought._id)}
+                    className={
+                      thought.hearts > 5 ? "superLiked" : thought.hearts > 0 ? "liked" : "notLiked"
+                    }
+                  >
+                    <span role="img" aria-label="Heart">
+                      ❤️
                       </span>
-                </button>
-                <p>x{thought.hearts}</p>
+                  </button>
+                  <p className="like-count">x{thought.hearts}</p>
+                </div>
                 <p>
                   {moment(thought.createdAt).fromNow()}
                 </p>

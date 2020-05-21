@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./newthoughtform.css"
 
 export const NewThoughtForm = () => {
-  const THOUGHTS_URL = "https://technigo-thoughts.herokuapp.com/"
+  const THOUGHTS_URL = "https://happy-thoughts-api-deployment.herokuapp.com/thoughts"
   const [newThought, setNewThought] = useState("")
 
   const handleFormSubmit = (event) => {
