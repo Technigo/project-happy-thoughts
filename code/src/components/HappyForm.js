@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import 'components/design/messageform.css'
 
 
-const thoughts_URL = "https://technigo-thoughts.herokuapp.com/"
+const thoughts_URL = "https://ebbabw-project-happy-thoughts.herokuapp.com/thoughts"
 
 export const HappyForm = props => {
     const [message, setMessage] = useState('');
