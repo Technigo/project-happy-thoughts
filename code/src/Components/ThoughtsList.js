@@ -29,8 +29,7 @@ export const ThoughtsList = () => {
     setThoughts(updatedThoughts)
   }
 
-  const handleClick = (thoughtId) => {
-    //console.log("id", thoughtId)
+  const handleClick = thoughtId => {
     fetch(`https://happy-thoughts-api-deployment.herokuapp.com/${thoughtId}/like`, {
       method: "PUT",
       body: "",

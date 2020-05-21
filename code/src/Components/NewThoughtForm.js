@@ -28,7 +28,7 @@ export const NewThoughtForm = () => {
   return (
     <form onSubmit={handleFormSubmit}>
       <label>
-        <h3>What's making you happy right now!</h3>
+        <h1>What's making you happy right now!</h1>
         <textarea
           rows="2"
           value={newThought}
