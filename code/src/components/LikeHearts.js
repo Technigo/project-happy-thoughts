@@ -17,12 +17,12 @@ export const LikeHearts = ({ message }) => {
   }
 
   return (
-    <section className="like-hearts">
+    <section className='like-hearts'>
       <button className={heartClicks > 0 ? 'liked' : 'not-liked'} 
         onClick={handleClick}>
-        <p><span className="hearts" role='img' aria-label='Heart'>❤️</span></p>
+          <p></p>
       </button>
-      <div className="heart-count">x {heartClicks}</div>
+      <div className='heart-count'>x {heartClicks}</div>
     </section>
   )
 }

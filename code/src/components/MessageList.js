@@ -14,15 +14,14 @@ export const MessageList = () => {
       })
       .then(data => {
         setMessages(data)
-      });
-
-  }, []);
+      })
+  }, [])
 
   return (
     <div className="messages-list">
       {messages.map(message => (
         <section key={message._id} className="messages">
-          <p> {message.message}</p>
+          <h4> {message.message}</h4>
           <div className="likes-and-when">
             <LikeHearts message={message} />
             <h5>{moment(message.createdAt).fromNow()}</h5>

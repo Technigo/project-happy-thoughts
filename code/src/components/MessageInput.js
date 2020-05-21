@@ -3,8 +3,7 @@ import './messageInput.css'
 
 export const MessageInput = () => {
   const MESSAGES_URL = 'https://happy-thoughts-week19.herokuapp.com/thoughts'
-  //const MESSAGES_URL = 'http://localhost:8080/thoughts'
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   const handleClick = event => {
     event.preventDefault()
@@ -23,20 +22,20 @@ export const MessageInput = () => {
   }
   
   return (
-    <section className="input-section">
-      <form className="message-card">
-        <p>What's making you happy right now?</p>
-        <textarea className="textarea"
+    <section className='input-section'>
+      <form className='message-card'>
+        <h4>What's making you happy right now?</h4>
+        <textarea className='textarea'
           rows= '2'
-          type="text"
+          type='text'
           onChange={event => setMessage(event.target.value)}>
         </textarea>
-        <h4>{140 - message.length}</h4>
-        <button className="btn"
-          type="submit"
+        <p>{140 - message.length}</p>
+        <button className='btn'
+          type='submit'
           onClick={handleClick} 
           disabled={message.length < 5 || message.length > 140}>
-          <span role='img' aria-label='Heart'>❤️</span> Send Happy Thought <span role='img' aria-label='Heart'>❤️</span>
+          <h4> Send Happy Thought </h4>
         </button>
       </form>
     </section>
