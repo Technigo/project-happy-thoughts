@@ -13,7 +13,7 @@ export const HappyForm = props => {
         fetch(thoughts_URL, {
 
             method: "POST",
-            body: JSON.stringify({ message: HappyForm }),
+            body: JSON.stringify({ message: message }),
             headers: { 'Content-Type': 'application/json'}
         })
         .then(() => {
