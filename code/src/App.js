@@ -4,7 +4,7 @@ import {MessageInput} from './MessageInput'
 
 export const App = () => {
 const [ thoughts, setThoughts ] = useState([])
-const MESSAGE_URL = 'https://technigo-thoughts.herokuapp.com/'
+const MESSAGE_URL = 'https://happy-thought-api-camilla.herokuapp.com/'
 
   useEffect(() => {
     fetch(MESSAGE_URL)
