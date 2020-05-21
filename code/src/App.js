@@ -34,13 +34,14 @@ export const App = () => {
 
 
   const onThoughtLiked = (likedThoughtId) => {
+
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === likedThoughtId) {
         thought.hearts += 1
       }
       return thought
     })
-    setThoughts(updatedThoughts)
+    setThoughts(updatedThoughts) /// Post to /likedthought id/like + try catch
   }
 
   return (

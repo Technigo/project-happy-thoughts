@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-export const Like = ({ thought, onThoughtLiked }) => {
+export const Like = ({ thought, onThoughtLiked, _id }) => {
 
 
-  const sendLike = `"https://happy-happy-api.herokuapp.com/"${thought._id}/like`
+  const sendLike = `https://happy-happy-api.herokuapp.com/${thought._id}/like`
   const handleClick = () => {
     fetch(sendLike, {
       method: "POST",
