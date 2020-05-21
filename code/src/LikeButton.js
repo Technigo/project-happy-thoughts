@@ -25,7 +25,6 @@ export const LikeButton = (props) => {
                 return require('./22124-process-working.gif');
             case "Random":
                 return require('./992-articulation.gif');
-
         }
     }
 

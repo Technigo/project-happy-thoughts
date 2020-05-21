@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import styled, { keyframes } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import "./app.css"
@@ -9,7 +8,6 @@ import { LikeButton } from "./LikeButton"
 import { TimePosted } from "./TimePosted"
 import { Loader } from "./Loader"
 import { ThemeChip } from './ThemeChips'
-
 
 
 export const App = () => {
@@ -40,11 +38,8 @@ export const App = () => {
     } else if (query === "page") {
       setPage(page + val)
     }
-
     window.scrollTo(0, 0)
   }
-
-
 
   return (
 
