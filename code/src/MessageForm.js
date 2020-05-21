@@ -3,7 +3,7 @@ import './message-form.css'
 
 export const MessageForm = () => {
   const [message, setMessage] = useState("")
-  const messages_url = "https://technigo-thoughts.herokuapp.com/"
+  const messages_url = "https://annas-happy-thoughts.herokuapp.com/thoughts"
 
   //Posts message to API
   const handleSubmit = event => {

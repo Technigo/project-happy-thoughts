@@ -2,7 +2,7 @@ import React from 'react'
 import './like-button.css'
 
 export const LikeButton = (props) => {
-  const likes_url = `https://technigo-thoughts.herokuapp.com/${props.id}/like`
+  const likes_url = `https://annas-happy-thoughts.herokuapp.com/thoughts/${props.id}/like`
 
   //Posts a like to API
   const handleClick = () => {

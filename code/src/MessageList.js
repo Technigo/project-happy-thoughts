@@ -4,7 +4,7 @@ import moment from "moment"
 import './message-list.css'
 
 export const MessageList = () => {
-  const messages_url = "https://technigo-thoughts.herokuapp.com/"
+  const messages_url = "https://annas-happy-thoughts.herokuapp.com/thoughts"
   const [messages, setMessages] = useState([])
 
   //Gets messages from API
@@ -32,8 +32,8 @@ export const MessageList = () => {
     <section className="message-list">
       {
         messages.map(message => (
-          <article className="message" 
-          key={message._id}>
+          <article className="message"
+            key={message._id}>
             <p>{message.message}
             </p>
             <div className="likes-and-time-container">
