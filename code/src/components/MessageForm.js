@@ -5,7 +5,7 @@ import('form.css')
 
 export const MessageForm = () => {
   //the message state to send to the backend
-  const APImessages = 'https://technigo-thoughts.herokuapp.com/'
+  const APImessages = 'https://viktorias-happy-thoughts-app.herokuapp.com/'
   const [message, setMessage] = useState("")
 
 

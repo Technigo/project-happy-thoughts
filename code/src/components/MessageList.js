@@ -7,7 +7,7 @@ import('messageList.css')
 
 export const MessageList = () => {
   const [messages, setMessages] = useState([])//Create state for messages
-  const APImessages = 'https://technigo-thoughts.herokuapp.com/'
+  const APImessages = 'https://viktorias-happy-thoughts-app.herokuapp.com/'
 
   //Use useEffect(function that triggers on render)to fetch messages from backend
   //UseEffect(function that triggers on render)since react rerenders the app everytime 
