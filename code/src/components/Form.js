@@ -19,7 +19,8 @@ export const Form = props => {
         className="input-text">
       </textarea>
       <div>
-        <p>{message.length} min 5/max 140</p>
+        <p>{message.length}/140</p>
+        <p> min 5/max 140</p>
       </div>
       <div>
 
