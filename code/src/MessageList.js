@@ -1,50 +1,34 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './MessageListStyle.css'
 import moment from 'moment'
-import { HeartButton } from 'HeartButton'
 
 
-export const MessageList = () => {
 
-    const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/"
-    const [happyThougths, setHappyThougths] = useState([]);
+export const MessageList = ({ thought, onLiked}) => {
+    const {message, heart, createdAt, _id} = thought
 
-    useEffect(() => {
+    const handleClick = () => {
+        fetch(`https://elins-happythoughts-api.herokuapp.com/thoughts/${_id}/like`, {
+            method: 'POST',
+            body: '',
+            headers: { 'Content-Type': 'application/json' }
+        }).then(() => onLiked(_id))
 
-        fetch(MESSAGES_URL)
-        .then((res) => {
-          return res.json()
-        })
-        .then(data => {
-            setHappyThougths(data)
-        })
-      }, [])
+    }
 
     return (
-
-        <div>
-            {
-            happyThougths.map(thought => (
-                <p key={thought._id}  className= 'happy-thought-box'>
-                    {thought.message}
-                    <section className="heart-and-time-container">
-                    <section className='heart-container'>
-                            <HeartButton />
-                            <span>
-                                x {thought.hearts}
-                            </span>
-                        </section>
-                        <section className="time-container">
-                            <span>
-                                {moment(thought.createdAt).fromNow()}
-                            </span>
-                        </section> 
-                    </section>
-                </p> 
-        
-            ))
-            }
-        </div>
-    )
+        <article className="happy-thought-box">
+            <h3>{message}</h3>
+            <section className="heart-box">
+                <button 
+                onClick={handleClick}
+                className={ heart > 0 ? 'liked' : 'notLiked'}
+                >
+                <span role="img" aria-label='hearts'>❤️</span>
+                </button>x {heart} 
+                   
+            </section> 
+            <spna className="time-box">{moment(createdAt).fromNow()}</spna>
+        </article>
+    )  
 }
- 

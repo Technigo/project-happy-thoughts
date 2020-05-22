@@ -1,23 +1,23 @@
 import React, { useState } from 'react'
 import './PostMessagesStyle.css'
 
-export const PostMessages = () => {
-    const MESSAGES_URL = "https://technigo-thoughts.herokuapp.com/"
-    const [happyThougths, setHappyThougths] = useState("")
+export const PostMessages = (props) => {
+    const MESSAGES_URL = "https://elins-happythoughts-api.herokuapp.com/"
+    const [message, setMessage] = useState("")
 
-    const handleSubmit = event => {
+    const handleSubmit = (event) => {
     event.preventDefault()
 
-    fetch(MESSAGES_URL,
-        {
+    fetch(MESSAGES_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ message: happyThougths })
+            body: JSON.stringify({ message })
         }
-    ).then(()=>{
-        window.location.reload()
+    ).then(() => {
+        props.handleFromSubmit(message)
+        setMessage('')
     })
     }
 
@@ -27,19 +27,19 @@ export const PostMessages = () => {
             <form>
                 <textarea
                     rows='3'
-                    value={happyThougths}
-                    onChange={event => setHappyThougths(event.target.value)}
+                    value={message}
+                    onChange={event => setMessage(event.target.value)}
                 >
                 </textarea>
                 <button 
                     type="submit"
                     onClick={handleSubmit}
                     className="input-button"
-                    disabled={happyThougths.length < 5 || happyThougths.length > 140}
+                    disabled={message.length < 5 || message.length > 140}
                     >
                     💗 Send happy thought 💗
                 </button>
-                <p className='letter-counting'>{happyThougths.length}/140</p>
+                <p className='letter-counting'>{message.length}/140</p>
             </form>
         </div>
     )
