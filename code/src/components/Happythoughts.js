@@ -22,7 +22,7 @@ export const Happythoughts = ({ thought, onLiked}) => {
             <p>
                 <button 
                 onClick={handleClick}
-                className={ hearts > 1 ? 'liked' : 'notLiked'}
+                className={ hearts > 0 ? 'liked' : 'notLiked'}
                 >
                 <span role="img" aria-label='hearts'>❤️</span>
                 </button> x {hearts} 
