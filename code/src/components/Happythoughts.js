@@ -12,7 +12,7 @@ export const Happythoughts = ({ thought, onLiked}) => {
             method: 'POST',
             body: '',
             headers: { 'Content-Type': 'application/json' }
-        }).then(() => onLiked(_id + 1))
+        }).then(() => onLiked(_id))
 
     }
 
@@ -25,7 +25,7 @@ export const Happythoughts = ({ thought, onLiked}) => {
                 className={ heart > 0 ? 'liked' : 'notLiked'}
                 >
                 <span role="img" aria-label='hearts'>❤️</span>
-                </button> x {heart +1} 
+                </button> x {heart} 
             </p> 
             <spna className="creadtedAt-text">{moment(createdAt).fromNow()}</spna>
         </article>
