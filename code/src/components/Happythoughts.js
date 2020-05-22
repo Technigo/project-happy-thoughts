@@ -12,7 +12,7 @@ export const Happythoughts = ({ thought, onLiked}) => {
             method: 'POST',
             body: '',
             headers: { 'Content-Type': 'application/json' }
-        }).then(() => onLiked(_id))
+        }).then(() => onLiked(_id + 1))
 
     }
 
@@ -22,7 +22,7 @@ export const Happythoughts = ({ thought, onLiked}) => {
             <p>
                 <button 
                 onClick={handleClick}
-                className={ heart + 1 ? 'liked' : 'notLiked'}
+                className={ heart > 0 ? 'liked' : 'notLiked'}
                 >
                 <span role="img" aria-label='hearts'>❤️</span>
                 </button> x {heart} 
