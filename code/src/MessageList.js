@@ -5,7 +5,7 @@ import moment from 'moment'
 
 
 export const MessageList = ({ thought, onLiked}) => {
-    const {message, heart, createdAt, _id} = thought
+    const {message, hearts, createdAt, _id} = thought
 
     const handleClick = () => {
         fetch(`https://elins-happythoughts-api.herokuapp.com/thoughts/${_id}/like`, {
@@ -22,10 +22,10 @@ export const MessageList = ({ thought, onLiked}) => {
             <section className="heart-box">
                 <button 
                 onClick={handleClick}
-                className={ heart > 0 ? 'liked' : 'notLiked'}
+                className={ hearts > 0 ? 'liked' : 'notLiked'}
                 >
                 <span role="img" aria-label='hearts'>❤️</span>
-                </button>x {heart} 
+                </button>x {hearts} 
                    
             </section> 
             <spna className="time-box">{moment(createdAt).fromNow()}</spna>

@@ -2,7 +2,7 @@ import React, {useEffect, useState}  from 'react'
 import {MessageList} from './MessageList'
 import {PostMessages} from './PostMessages'
 
-const url = 'https://elins-happythoughts-api.herokuapp.com/'
+const url = 'https://elins-happythoughts-api.herokuapp.com/thoughts/'
 
 
 export const App = () => {
