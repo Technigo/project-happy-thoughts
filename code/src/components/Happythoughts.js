@@ -25,7 +25,7 @@ export const Happythoughts = ({ thought, onLiked}) => {
                 className={ heart > 0 ? 'liked' : 'notLiked'}
                 >
                 <span role="img" aria-label='hearts'>❤️</span>
-                </button> x {heart} 
+                </button> x {heart +1} 
             </p> 
             <spna className="creadtedAt-text">{moment(createdAt).fromNow()}</spna>
         </article>
