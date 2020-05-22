@@ -22,7 +22,7 @@ export const App = () => {
   
 
 const sendHeart = (id) => {
-  const end = `${url}${id}/like`
+  const end = `${url}/${id}/like`
 
 
 fetch(end, {
