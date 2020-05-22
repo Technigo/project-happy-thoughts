@@ -27,6 +27,7 @@ const sendHeart = (id) => {
 
 fetch(end, {
   method: 'POST',
+  body: JSON.stringify({ message }),
   headers: {
     'Content-Type': 'application/json'
   },

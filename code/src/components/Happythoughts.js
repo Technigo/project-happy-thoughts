@@ -11,6 +11,7 @@ export const Happythoughts = ({ thought, onLiked}) => {
         fetch(`https://ebbabw-project-happy-thoughts.herokuapp.com/${id}/like`, {
             method: 'POST',
             body: '',
+            body: JSON.stringify({ message }),
             headers: { 'Content-Type': 'application/json' }
         }).then(() => onLiked(_id))
 
@@ -22,8 +23,7 @@ export const Happythoughts = ({ thought, onLiked}) => {
             <p>
                 <button 
                 onClick={handleClick}
-                className={
-                    hearts > 0 ? 'liked' : 'notLiked'}
+                className={ hearts > 1 ? 'liked' : 'notLiked'}
                 >
                 <span role="img" aria-label='hearts'>❤️</span>
                 </button> x {hearts} 
