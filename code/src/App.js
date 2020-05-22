@@ -22,12 +22,11 @@ export const App = () => {
   
 
 const sendHeart = (id) => {
-  const end = `${url}/${id}/like`
+  const end = `${url}/${_id}/like`
 
 
 fetch(end, {
   method: 'POST',
-  body: JSON.stringify({ message }),
   headers: {
     'Content-Type': 'application/json'
   },
@@ -39,6 +38,7 @@ fetch(end, {
     setPostedMessage(setPostedMessage)
 
   })
+
 
 }
 
