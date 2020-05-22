@@ -5,7 +5,7 @@ import 'components/design/messagebox.css'
 
 
 export const Happythoughts = ({ thought, onLiked}) => {
-    const {message, hearts, createdAt, _id} = thought
+    const {message, heart, createdAt, _id} = thought
 
     const handleClick = () => {
         fetch(`https://ebbabw-project-happy-thoughts.herokuapp.com/thoughts/${_id}/like`, {
@@ -22,10 +22,10 @@ export const Happythoughts = ({ thought, onLiked}) => {
             <p>
                 <button 
                 onClick={handleClick}
-                className={ hearts > 0 ? 'liked' : 'notLiked'}
+                className={ heart > 0 ? 'liked' : 'notLiked'}
                 >
                 <span role="img" aria-label='hearts'>❤️</span>
-                </button> x {hearts} 
+                </button> x {heart} 
             </p> 
             <spna className="creadtedAt-text">{moment(createdAt).fromNow()}</spna>
         </article>
