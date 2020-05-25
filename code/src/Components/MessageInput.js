@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './messageinput.css'
 
 export const MessageInput = (props) => {
-  const MESSAGES_URL = 'https://happy-thoughts-api-johanna.herokuapp.com/thoughts';
+  const MESSAGES_URL = 'https://happy-thoughts-api-johanna.herokuapp.com/';
   const [message, setMessage] = useState('');
 
   const handleSubmit = (event) => {
