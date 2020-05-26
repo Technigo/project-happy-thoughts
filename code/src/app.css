@@ -3,7 +3,7 @@
     margin: 0px auto;
 }
 
-form {
+/* form {
     border: 1px solid black;
     background-color: lightgray;
     box-shadow: 3px 3px 3px black;
@@ -37,7 +37,7 @@ form p{
 form p:nth-child(1){
     text-align: left;
     display: inline;
-}
+} */
 
 @media (min-width: 576px) {
     .app {
