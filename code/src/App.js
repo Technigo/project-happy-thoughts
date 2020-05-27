@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ThoughtsList } from './ThoughtsList'
 import { ThoughtInput } from './ThoughtInput'
 
-const THOUGHTS_URL = 'https://technigo-thoughts.herokuapp.com/'
+const THOUGHTS_URL = 'https://louise-happy-thoughts-api.herokuapp.com/thoughts'
 
 export const App = () => {
   const [thought, setThought] = useState('')
