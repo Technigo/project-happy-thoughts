@@ -72,7 +72,7 @@ export const NewThought = ({ thoughts, setThoughts }) => {
         />
       </label>
       <Button type="submit" disabled={(myThought.length < 5 || myThought.length > 140)}><span>&#9829;</span> Send Happy Thought <span>&#9829;</span></Button>
-      <Paragraf>{myThought.length} / 140</Paragraf>
+      <Paragraf inputColor="black">{myThought.length} / 140</Paragraf>
     </Form>
   )
 }

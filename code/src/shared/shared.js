@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const Title = styled.p`
 color: black;
 font-size: 1em;
+max-width: 90%;
+word-break: break-all;
 text-align: left;
 `
 
