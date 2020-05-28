@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ThoughtsList } from './ThoughtsList'
 import { ThoughtInput } from './ThoughtInput'
 
-const THOUGHTS_URL = 'https://louise-happy-thoughts-api.herokuapp.com/thoughts'
+const THOUGHTS_URL = 'https://louise-happy-thoughts-api.herokuapp.com/thoughts/'
 
 export const App = () => {
   const [thought, setThought] = useState('')
@@ -49,6 +49,7 @@ export const App = () => {
         const updatedThoughts = [...thoughts]
         const index = thoughts.findIndex(thought => thought._id === id)
         updatedThoughts.splice(index, 1, updatedMessage)
+        console.log(updatedThoughts)
         setThoughts(updatedThoughts)
       })
   }
