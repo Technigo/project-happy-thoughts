@@ -1,6 +1,7 @@
 # Happy Thoughts
 
 The task was to build a  happy "twitter" with useState and useEffect in React and with a specific styling.
+I'm also using my own database built with express and Mongo DB.
 
 ## The problem
 
