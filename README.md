@@ -11,3 +11,4 @@ If I had had more time I would have liked to add a tooltip when the messages is 
 ## View it live
 
 Take a look! https://happy-thoughts-emma.netlify.com/
+Backend: https://github.com/emmapre/project-happy-thoughts-api
