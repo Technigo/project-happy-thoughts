@@ -36,27 +36,6 @@ export const App = () => {
   }
 
 
-// const onLiked = (id) => {
-//   const end = `${url}/${id}/like`
-
-
-// fetch(end, {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-// })
-//   .then((heartMessage) => {
-//     const updatedThoughts = [...thoughts]
-//     const index = thoughts.findIndex(thought => thought._id === id)
-//     updatedThoughts.splice(index, 1, heartMessage)
-//     setPostedMessage(setPostedMessage)
-
-//   })
-
-
-// }
-
 return (
     <main>
 
