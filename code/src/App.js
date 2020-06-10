@@ -31,7 +31,6 @@ fetch(end, {
     'Content-Type': 'application/json'
   },
 })
-  .then(() => onLiked(id)) 
   .then((heartMessage) => {
     const updatedThoughts = [...thoughts]
     const index = thoughts.findIndex(thought => thought._id === id)
