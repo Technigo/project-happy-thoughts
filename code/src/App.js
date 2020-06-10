@@ -30,12 +30,13 @@ fetch(end, {
   headers: {
     'Content-Type': 'application/json'
   },
+  body: ""
 }).then((res) => res.json())
   .then((updateMessage) => {
     const updatedThoughts = [...thoughts]
     const index = thoughts.findIndex(thought => thought._id === id)
-    updatedThoughts.splice(index, 0, updateMessage)
-    setPostedMessage(setPostedMessage)
+    updatedThoughts.splice(index, 1, updateMessage)
+    setPostedMessage(setPostedMessage + 1)
 
   })
 
