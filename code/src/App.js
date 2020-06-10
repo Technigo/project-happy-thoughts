@@ -29,13 +29,17 @@ fetch(end, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
-  }.then(() => onLiked(id))
-   .then((heartMessage) => {
-        const updatedThoughts = [...thoughts]
-        const index = thoughts.findIndex(thought => thought._id === id)
-        updatedThoughts.splice(index, 1, heartMessage + 1)
-        setPostedMessage(setPostedMessage)
+  },
 })
+  .then(() => onLiked(id)) 
+  .then((heartMessage) => {
+    const updatedThoughts = [...thoughts]
+    const index = thoughts.findIndex(thought => thought._id === id)
+    updatedThoughts.splice(index, 1, heartMessage += 1)
+    setPostedMessage(setPostedMessage)
+
+  })
+
 
 }
 
