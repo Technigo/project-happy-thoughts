@@ -23,7 +23,11 @@ export const App = () => {
       headers: { "Content-Type": "application/json" }
     })
       .then(() => setPostedMessage(message))
-  }
+      .then(() => {
+        window.location.reload()
+      })
+  } 
+  
 
   const onLiked = (likedThoughtId) => {
     const updatedThoughts = thoughts.map((thought) => {
