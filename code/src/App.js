@@ -19,13 +19,12 @@ export const App = () => {
   const handleFormSubmit = (message) => {
     fetch(url, {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message }),
-      headers: { "Content-Type": "application/json" }
+    }).then(() => {
+      window.location.reload()
     })
-      .then(() => setPostedMessage(message))
-      .then(() => {
-        window.location.reload()
-      })
+
   } 
   
 
