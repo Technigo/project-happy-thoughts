@@ -21,10 +21,8 @@ export const App = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message }),
-    }).then(() => {
-      window.location.reload()
     })
-
+      .then(() => setPostedMessage(message))
   } 
   
 

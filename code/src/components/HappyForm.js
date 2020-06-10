@@ -9,6 +9,7 @@ export const HappyForm = props => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        window.location.reload()
 
         fetch(thoughts_URL, {
 
