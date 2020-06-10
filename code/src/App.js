@@ -19,7 +19,7 @@ export const App = () => {
   const handleFormSubmit = (message) => {
     fetch(url, {
       method: "POST",
-      body: JSON.stringify({ message: message }),
+      body: JSON.stringify({ message }),
       headers: { "Content-Type": "application/json" }
     })
       .then(() => setPostedMessage(message))
