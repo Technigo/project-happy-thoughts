@@ -2,8 +2,6 @@ import React from 'react';
 import moment from "moment";
 import  "./messageList.css";
 
-const HappyURL = "https://happiestthoughtsapi.herokuapp.com/";
-
 export const MessageList = props => {
   const { message, hearts, createdAt, _id } = props.thought
 
