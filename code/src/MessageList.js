@@ -6,7 +6,7 @@ export const MessageList = props => {
   const { message, hearts, createdAt, _id } = props.thought
 
   const handleClick = () => {
-    fetch (`https://happiestthoughtsapi.herokuapp.com/${_id}/like`, {
+    fetch (`https://happiestthoughtsapi.herokuapp.com/thoughts/${_id}/like`, {
       method :"POST",
       body : "",
       headers : {"content-type": "application/json"}
