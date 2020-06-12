@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MessageList } from "./MessageList";
 import { PostMessage } from "./PostMessage";
 
-const HappyURL = "https://happiestthoughtsapi.herokuapp.com/";
+const HappyURL = "https://happiestthoughtsapi.herokuapp.com/thoughts";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);

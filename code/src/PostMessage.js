@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './postMessage.css';
 
-const HappyURL = "https://happiestthoughtsapi.herokuapp.com/";
+const HappyURL = "https://happiestthoughtsapi.herokuapp.com/thoughts";
 
 export const PostMessage = props => {
   const [message, setMessage] = useState("");
