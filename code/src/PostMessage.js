@@ -3,7 +3,6 @@ import './postMessage.css';
 
 const HappyURL = "https://happiestthoughtsapi.herokuapp.com/";
 
-
 export const PostMessage = props => {
   const [message, setMessage] = useState("");
   
