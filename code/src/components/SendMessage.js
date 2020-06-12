@@ -7,7 +7,7 @@ export const SendMessage = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    fetch('https://technigo-thoughts.herokuapp.com/', {
+    fetch('https://rautellin-happy-thoughts-api.herokuapp.com/thouhts', {
       method: 'POST',
       body: JSON.stringify({ message }),
       headers: { 'Content-Type': 'application/json' }
