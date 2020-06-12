@@ -6,5 +6,6 @@ The object was to copy a finished design, to practice GET and POST from API with
 
 
 ## View it live
-https://nervous-shaw-abb742.netlify.app/
+Frontend: https://nervous-shaw-abb742.netlify.app/
+Backend: https://happiestthoughtsapi.herokuapp.com/
 
