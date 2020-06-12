@@ -9,7 +9,7 @@ export const Likes = (props) => {
   localStorage.setItem(id, JSON.stringify(yourLikes))
 
   const handleClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
+    fetch(`https://rautellin-happy-thoughts-api.herokuapp.com/${id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" }
