@@ -6,7 +6,7 @@ export const Messages = (props) => {
   const { messages, setMessages, setLoading } = props
 
   useEffect(() => {
-    fetch("https://technigo-thoughts.herokuapp.com/")
+    fetch("https://rautellin-happy-thoughts-api.herokuapp.com/thouhts")
       .then(res => res.json())
       .then(json => {
         setLoading(false)
