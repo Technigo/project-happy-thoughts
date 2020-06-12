@@ -24,7 +24,7 @@ export const Likes = (props) => {
   return (
     <>
       <button onClick={handleClick}><FontAwesomeIcon icon="heart" /></button>
-      <p>{likes} likes (you liked this {yourLikes} times)</p>
+      <p>{likes} likes </p>
     </>
   )
 }
