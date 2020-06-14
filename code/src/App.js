@@ -5,10 +5,11 @@ import { Loading } from './Components/Loading'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const MESSAGES_URL = 'https://happy-thoughts-api-johanna.herokuapp.com/';
 
   useEffect(() => {
+    setLoading(true)
     fetch(MESSAGES_URL)
       .then((res) => res.json())
       .then(json => { setThoughts(json) })
