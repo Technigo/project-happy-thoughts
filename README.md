@@ -18,6 +18,8 @@ The project is built with both frontend and backend.
 
 Frontend: 
 
+(Note that the API goes to sleep when unused, please wait a few secs)
+
 https://infallible-archimedes-9a857b.netlify.com/
 
 Backend: 
