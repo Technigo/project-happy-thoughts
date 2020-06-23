@@ -4,45 +4,40 @@ import {PostMessages} from './PostMessages'
 
 const url = 'https://elins-happythoughts-api.herokuapp.com/thoughts/'
 
-
 export const App = () => {
+  const [thoughts, setThoughts] = useState([]);
+  const [postedMessage, setPostedMessage] = useState("");
 
-  const [thoughts, setThoughts] = useState([])
-  const [postedMessage, setPostedMessage] = useState('')
+  useEffect (() => {
+    fetch (url)
+    .then (res => res.json()) 
+    .then (json => setThoughts(json))
+  }, [postedMessage]);
 
-  useEffect(() => {
-    fetch(url)
-    .then(res => res.json())
-    .then(json => setThoughts(json))
-  },  [postedMessage])
-
-  const handleFromSubmit = message => {
-    setPostedMessage(message)
+  const handleFormSubmit = message => {
+  setPostedMessage (message)
   }
-  
-const sendHeart = (id) => {
-  const end = `${url}${id}/like`
 
-fetch(end, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-}).then((res) => res.json())
-  .then((updateMessage) => {
-    const updatedThoughts = [...thoughts]
-    const index = thoughts.findIndex(thought => thought._id === id)
-    updatedThoughts.splice(index, 0, updateMessage)
-    setPostedMessage(updatedThoughts)
-  })
-}
+  const onLiked = thoughtId => {
+    const uppdatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(uppdatedThoughts)
+  }
 
 return (
     <main>
-      <PostMessages handleFromSubmit={handleFromSubmit}/>
+      <PostMessages handleFormSubmit={handleFormSubmit}/>
+
       {thoughts.map(thought => (
-      <MessageList key={thought._id} thought={thought} onLiked={sendHeart} /> 
+
+      <MessageList key={thought._id} thought={thought} onLiked={onLiked} /> 
       ))}
+
+
     </main>
   )
 }
