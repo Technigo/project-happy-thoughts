@@ -33,7 +33,7 @@ fetch(end, {
     const updatedThoughts = [...thoughts]
     const index = thoughts.findIndex(thought => thought._id === id)
     updatedThoughts.splice(index, 0, updateMessage)
-    setPostedMessage(setPostedMessage)
+    setPostedMessage(updatedThoughts)
   })
 }
 
