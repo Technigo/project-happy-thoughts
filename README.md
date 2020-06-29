@@ -9,4 +9,4 @@ In this project we have lerarned...
 
 ## View it live
 
-Link to the page: https://elated-mestorf-558d00.netlify.com
+Link to the page: https://happy-darwin-2ec4df.netlify.app
