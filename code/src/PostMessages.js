@@ -37,7 +37,7 @@ export const PostMessages = (props) => {
                     className="input-button"
                     disabled={message.length < 5 || message.length > 140}
                     >
-                    💗 Send happy thought 💗
+                    <span role="img" aria-label='hearts'>❤️</span> Send happy thought <span role="img" aria-label='hearts'>❤️</span> 
                 </button>
                 <p className='letter-counting'>{message.length}/140</p>
             </form>
