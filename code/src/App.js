@@ -2,7 +2,7 @@ import React, {useEffect, useState}  from 'react'
 import {MessageList} from './MessageList'
 import {PostMessages} from './PostMessages'
 
-const url = 'https://elins-happythoughts-api.herokuapp.com/thoughts/'
+const url = 'https://elins-happythoughts-api.herokuapp.com/thoughts'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -14,7 +14,7 @@ export const App = () => {
     .then (json => setThoughts(json))
   }, [postedMessage]);
 
-  const handleFormSubmit = message => {
+  const onFormSubmit = message => {
   setPostedMessage (message)
   }
 
@@ -30,13 +30,12 @@ export const App = () => {
 
 return (
     <main>
-      <PostMessages handleFormSubmit={handleFormSubmit}/>
+      <PostMessages onFormSubmit={onFormSubmit}/>
 
       {thoughts.map(thought => (
 
       <MessageList key={thought._id} thought={thought} onLiked={onLiked} /> 
       ))}
-
 
     </main>
   )

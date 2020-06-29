@@ -3,16 +3,15 @@ import './MessageListStyle.css'
 import moment from 'moment'
 
 
-
-export const MessageList = ({ thought, onLiked}) => {
-    const {message, hearts, createdAt, _id} = thought
+export const MessageList = props => {
+    const {message, hearts, createdAt, _id} = props.thought
 
     const handleClick = () => {
-        fetch(`https://elins-happythoughts-api.herokuapp.com/thoughts/${_id}/like`, {
+        fetch(`https://elins-happythoughts-api.herokuapp.com/thoughts${_id}/like`, {
             method: 'POST',
             body: '',
             headers: { 'Content-Type': 'application/json' }
-        }).then(() => onLiked(_id))
+        }).then(() => props.onLiked(_id))
 
     }
 

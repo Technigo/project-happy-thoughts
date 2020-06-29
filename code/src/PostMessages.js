@@ -1,25 +1,26 @@
 import React, { useState } from 'react'
 import './PostMessagesStyle.css'
 
-export const PostMessages = (props) => {
-    const MESSAGES_URL = "https://elins-happythoughts-api.herokuapp.com/thoughts/"
+const MESSAGES_URL = "https://elins-happythoughts-api.herokuapp.com/thoughts"
+
+export const PostMessages = props => {
     const [message, setMessage] = useState("")
 
-    const handleSubmit = (event) => {
+    const handleSubmit = event => {
     event.preventDefault()
 
-    fetch(MESSAGES_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message })
-        }
-    ).then(() => {
-        props.handleFromSubmit(message)
-        setMessage('')
-    })
-    }
+    fetch(MESSAGES_URL, 
+        {
+            method: "POST",
+            headers: {"content-Type": "application/json"},
+            body: JSON.stringify({message})
+          })
+          .then (() => {
+            setMessage('')
+            props.onFormSubmit(message)
+          })
+          .catch(err => console.log("error:", err))
+      };
 
     return (
         <div className="input-box">
