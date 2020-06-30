@@ -10,6 +10,11 @@ export const NewThought = () => {
 
   const handleSubmit = event => {
     event.preventDefault()
+    ReactGA.event({
+      category: 'Thoughts',
+      action: 'Thoughts sent',
+      transport: 'beacon'
+    })
 
     fetch(url,
       {
@@ -54,10 +59,7 @@ export const NewThought = () => {
           className='form-button'
           disabled={message.length <= 5 || message.length >= 140 ? true : false}
           value='❤️Send Happy Thought❤️'
-          onClick={ReactGA.event({
-            category: 'User',
-            action: 'Thought posted'
-          })}>
+          >
         </input>
         <p>{message.length}/140</p>
       </div>
