@@ -31,7 +31,8 @@ export const ThoughtsList = () => {
       {thoughts.map((thought) => (
         <article className="thought-card" key={thought._id}>
           <div className="message-text">{thought.message}</div>
-          <div className="message-likes"><LikeButton id={thought._id} onThoughtLiked={onThoughtLiked} hearts={thought.hearts} /> <span>x {thought.hearts}</span></div>
+          <div className="message-likes"><LikeButton id={thought._id} onThoughtLiked={onThoughtLiked} hearts={thought.hearts} /> <span>x {thought.hearts}</span>
+          </div>
           <div className="message-time">{moment(thought.createdAt).fromNow()}</div>
         </article>
       ))}

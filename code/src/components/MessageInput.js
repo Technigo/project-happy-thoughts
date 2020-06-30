@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ReactTooltip from 'react-tooltip'
 import { Heart } from './Heart'
 import './messageinput_style.css'
 
@@ -48,10 +49,27 @@ export const MessageInputForm = () => {
           // defaultValue='Bananas?'
           >
           </textarea>
-          <button className="submit-button" type="submit" disabled={message.length < 5 || message.length > 140 ? true : false}><Heart />Send<Heart /></button>
+
+
+          {/* <p data-tip="hello worlddfghdfgh">Tooltip ONE</p>
+          <ReactTooltip />
+
+          <p data-tip data-for="nose">NoseTip</p>
+          <ReactTooltip id="nose" type="dark"  /> */}
+
+          <button data-tip data-for="send-here" className="submit-button" type="submit" disabled={message.length < 5 || message.length > 140 ? true : false}><Heart />Send<Heart /></button>
+          {/* <button data-tip data-for="send-here" className="submit-button" type="submit" disabled={message.length < 5 || message.length > 140 ? true : false}><Heart />Send<Heart /></button> */}
+          <ReactTooltip id="send-here" type="dark"  >
+          <span>Yes send it!</span>
+          </ReactTooltip>
+          {/* <ReactTooltip id="send-here" type="dark"  /> */}
           <p className="counter">{message.length}/140</p>
         </form>
-        <div className="banana-container"><span role="img" aria-label="Banana image">🍌🍌🍌🍌</span></div>
+        <div className="banana-container"><span data-tip data-for="bananas" role="img" aria-label="Banana image">🍌🍌🍌🍌</span>
+          <ReactTooltip id="bananas" type="dark"  >
+          <span>Lovely bananas!</span>
+          </ReactTooltip>
+        </div>
       </article>
     </div>
   )

@@ -17,7 +17,7 @@ export const LikeButton = (props) => {
   return (
     // <button className="like-button" onClick={handleClick}><Heart /></button>
     <button className={props.hearts > 0 ? "like-button-clicked" : "like-button-start"} onClick={handleClick}><Heart /></button>
-  )
+    )
 }
 /*
 react conditional styling of color button
