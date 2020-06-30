@@ -52,7 +52,11 @@ export const NewThought = () => {
           type='submit'
           className='form-button'
           disabled={message.length <= 5 || message.length >= 140 ? true : false}
-          value='❤️Send Happy Thought❤️'>
+          value='❤️Send Happy Thought❤️'
+          onClick={ReactGA.event({
+            category: 'User',
+            action: 'Thought posted'
+          })}>
         </input>
         <p>{message.length}/140</p>
       </div>

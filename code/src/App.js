@@ -7,6 +7,7 @@ import './app.css'
 export const App = () => {
 
   ReactGA.initialize('UA-171137939-1')
+  ReactGA.pageview(window.location.pathname + window.location.search)
 
   return (
     <div className='app-container'>
