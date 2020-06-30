@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ReactGA from 'react-ga'
 import './thoughts.css'
 import './new-thought.css'
 
