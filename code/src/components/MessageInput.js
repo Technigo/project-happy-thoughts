@@ -40,29 +40,19 @@ export const MessageInputForm = () => {
         <form onSubmit={handleSubmit}>
         <h3>What's making you happy right now?</h3>
           <textarea
-          minLength="5"
-          maxLength="140"
-          rows="4"
-          className="form-text"
-          onChange={(event) => setMessage(event.target.value)}
-          required
-          // defaultValue='Bananas?'
+            minLength="5"
+            maxLength="140"
+            rows="4"
+            className="form-text"
+            onChange={(event) => setMessage(event.target.value)}
+            required
           >
           </textarea>
 
-
-          {/* <p data-tip="hello worlddfghdfgh">Tooltip ONE</p>
-          <ReactTooltip />
-
-          <p data-tip data-for="nose">NoseTip</p>
-          <ReactTooltip id="nose" type="dark"  /> */}
-
           <button data-tip data-for="send-here" className="submit-button" type="submit" disabled={message.length < 5 || message.length > 140 ? true : false}><Heart />Send<Heart /></button>
-          {/* <button data-tip data-for="send-here" className="submit-button" type="submit" disabled={message.length < 5 || message.length > 140 ? true : false}><Heart />Send<Heart /></button> */}
           <ReactTooltip id="send-here" type="dark"  >
           <span>Yes send it!</span>
           </ReactTooltip>
-          {/* <ReactTooltip id="send-here" type="dark"  /> */}
           <p className="counter">{message.length}/140</p>
         </form>
         <div className="banana-container"><span data-tip data-for="bananas" role="img" aria-label="Banana image">🍌🍌🍌🍌</span>
