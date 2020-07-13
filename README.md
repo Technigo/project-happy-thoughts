@@ -1,6 +1,6 @@
 # Happy Thoughts React Project
 
-This is my very own mini-twitter with 100% less negativity and no US presidents using it. Here you can write your own posts, like and read other peoples happy thoughts. Everything you post will be added to my own API and databae. 
+This is my very own mini-twitter with 100% less negativity and no US presidents using it. Here you can write your own posts, like and read other peoples happy thoughts. Everything you post will be added to my own API and database that I have built in node.js using MongoDB.
 
 The project is built with both frontend and backend. 
 
