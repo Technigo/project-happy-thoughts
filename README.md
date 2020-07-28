@@ -2,6 +2,8 @@
 
 This project was to build a twitter like feed with only happy thoughts. :)
 
+In the next stage I put it together with my own back-end as well: https://github.com/Ruterryter/project-happy-thoughts-api
+
 ## The problem
 *How to use APIs in React, firing requests within useEffect and working more with useState in React.
 
