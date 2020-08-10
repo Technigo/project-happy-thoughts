@@ -45,11 +45,11 @@ p {
 }
 
 .btn h4:before {
-  content: "❤️";
+  content: '❤️';
 }
 
 .btn h4:after {
-  content: "❤️";
+  content: '❤️';
 }
 
 .btn:hover:enabled {
