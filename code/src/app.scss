@@ -12,6 +12,11 @@ $color-darkGray: #a0a0a0;
 }
 
 body {
+  background: url('./img/clouds_bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 20%;
+
   font-family: 'Roboto Mono';
   font-size: 14px;
 }
@@ -200,6 +205,7 @@ input[type=text] {
     border: 0;
     padding: .5rem .6rem;
     background-color: #000;
+    border: 1px solid #000;
     color: #fff;
     font-weight: 900;
 
@@ -208,14 +214,15 @@ input[type=text] {
     }
 
     &:disabled {
-      background-color: lighten($color-darkGray, 20%);
+      background-color: transparent;
+      border: 1px solid #fff;
       cursor: default;
     }
   }
 
   span {
     margin: 0 1rem;
-    color: $color-darkGray;
+    color: #fff;
     letter-spacing: .1rem;
   }
 }
