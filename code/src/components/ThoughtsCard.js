@@ -4,10 +4,10 @@ export const ThoughtsCard = ({message, timeCreated}) => {
     const timeCreatedInMili = new Date(timeCreated);
 
     return (
-        <>
-            <p>{message}</p>
-            <p>{timeAgo(timeCreatedInMili)}</p>
-        </>
+        <div className="thought-card">
+          <p>{message}</p>
+          <p>{timeAgo(timeCreatedInMili)}</p>
+        </div>
     )
 };
 
