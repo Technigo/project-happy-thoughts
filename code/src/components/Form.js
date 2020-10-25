@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export const Form = () => {
   const [newThought, setNewThought] = useState('');
@@ -27,10 +27,12 @@ export const Form = () => {
     };
 
     return (
-      <form onSubmit={handleSubmit}>
-        <p>What's making you happy right now?</p>
-        <input type="text" onChange={event => setNewThought(event.target.value)}></input>
-        <button type="submit">&#128151; Send Happy Thought &#128151;</button>
+      <form onSubmit={handleSubmit} className="thoughts-form">
+        <p className="form-title">What's making you happy right now?</p>
+        <textarea type="text" onChange={event => setNewThought(event.target.value)}></textarea>
+        <button className="form-button" type="submit">&#128151; Send Happy Thought &#128151;</button>
       </form>
     );
 };
+
+//Check how to send validation alert: Message should be 5 chars min and max 140
