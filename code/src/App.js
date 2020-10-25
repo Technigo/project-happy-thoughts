@@ -8,12 +8,12 @@ export const App = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then(response => response.json())
       .then(json => setThoughts(json))
-  });
+  }, []);
 
   return (
     <>
       {thoughts.map((thought) => (
-        <ThoughtsCard key={thought.id} message={thought.message} />
+        <ThoughtsCard key={thought._id} message={thought.message} timeCreated={thought.createdAt} />
       ))}
     </>
   )
