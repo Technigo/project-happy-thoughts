@@ -23,7 +23,7 @@ body {
 }
 
 .form-button {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 250px;
   background-color: #ffadad;
   border: none;
@@ -36,4 +36,12 @@ body {
 textarea {
   font-size: 17px;
   font-family: 'Trispace', sans-serif;
+  width: 470px;
+  height: 80px;
+  max-width: 470px;
+  max-height: 150px;
+}
+
+.text-counter {
+  font-size: 12px;
 }
