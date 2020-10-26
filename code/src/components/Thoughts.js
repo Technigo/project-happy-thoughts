@@ -1,8 +1,7 @@
-/* Thought component that shows all the thoughts in a nice way
-Should also show when the thought was posted (10 minutes ago/5 seconds ago)
-Each thought displayed inside a flex-box card? 
-GET https://happy-thoughts-technigo.herokuapp.com/thoughts 
-THousghts are going to be an array that is displayed, Use a map() to show each thought on different card?*/
+/* TO FIX: 
+Each thought displayed inside a flex-box card?
+Only show about 20 cards at a time?
+Max-characters in user input */
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 
@@ -11,7 +10,7 @@ import './thoughts.css'
 
 export const Thoughts = () => {
     const [thoughts, setThoughts] = useState([])
-    const THOUGHTS__URL = 'https://wk11livesession.herokuapp.com/messages'
+    const THOUGHTS__URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
     /* We need to use useEffect because we don't want this to rerender on 
     each refresh, only when it's neccessary and [] is updated
@@ -32,10 +31,10 @@ export const Thoughts = () => {
     filter through array, if thought.text isn't an 
     empty string then move it to a new array, which then the map.() iterates over*/
     return (
-        <div className="thoughts__container">{thoughts.filter((thought) => thought.text !== undefined).map((thought) => {
+        <div className="thoughts__container">{thoughts.filter((thought) => thought.message !== undefined).map((thought) => {
             return (
             <div className="thoughts__card">
-                <p className="thoughts__message" key={thought._id}>{thought.text}
+                <p className="thoughts__message" key={thought._id}>{thought.message}
                     <span className="thoughts__time-posted">{moment(thought.created).fromNow()}</span>
                 </p>
             </div>
