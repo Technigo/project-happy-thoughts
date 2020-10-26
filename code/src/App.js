@@ -4,7 +4,7 @@ import PostInput from './components/PostInput';
 
 export const App = () => {
   return (
-    <main className="main">
+    <main className="App App__grid">
       <PostInput />
       <PostList />
     </main>

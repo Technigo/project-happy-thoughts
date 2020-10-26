@@ -25,11 +25,11 @@ const PostLiked = ({ hearts, id }) => {
     <div>
       <Button
         type="button"
-        className="Button"
+        className="Button Button--round"
         click={handleLike}
         text={
           <span role="img" aria-label="Heart">
-            ❤️
+            {'❤️'}
           </span>
         }
       />
