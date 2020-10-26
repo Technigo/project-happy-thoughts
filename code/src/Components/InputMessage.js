@@ -45,7 +45,7 @@ const InputMessage = () => {
                         <span
                             role="img"
                             aria-label="Heart"
-                        >❤️
+                        >❤️ 
                         </span>
                             Send Happy Thought
                         <span
@@ -54,7 +54,7 @@ const InputMessage = () => {
                         >❤️
                         </span>
                     </button>
-                    <p>{message.length} / 140</p>
+                    <p className="grey-style">{message.length} / 140</p>
 
                 </div>
                 
