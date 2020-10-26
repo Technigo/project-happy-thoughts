@@ -6,6 +6,8 @@ import './Style.css';
 const PostMessage = () => {
 	const MESSAGE_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
 	const [message, setMessage] = useState(''); //post a single message (a happy message)
+	//const [name, setName] = useState('');
+	//const [isLoading, setLoading] = useState(true); //to show a loading circle when waiting for the message posted
 
 	// a submit function witch POSTs the text input
 	const handleSubmit = event => {
@@ -18,7 +20,8 @@ const PostMessage = () => {
 			body: JSON.stringify({ message }),
 		})
 			.then(() => {
-				setMessage('');
+				setMessage(''); //clear form when submitting form
+				//setName('');
 				//to make the page reload
 				window.location.reload();
 			})
@@ -27,25 +30,35 @@ const PostMessage = () => {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<p className="post_message question">
-				What's making you happy right now?
-			</p>
-			<textarea
-				rows="4"
-				className="post__message"
-				//value={message}
-				onChange={event => setMessage(event.target.value)}
-			/>
-			<div className="post__message wrapper">
+			{/* <label>
+				What's your name?
+				<input
+					type="text"
+					placeholder="Type your name..."
+					onChange={event => setName(event.target.value)}
+					value={name}
+				/>
+			</label> */}
+			<label className="post-input">
+				<h1>What's making you happy right now?</h1>
+				<textarea
+					rows="4"
+					className="post-message"
+					//value={message}
+					placeholder="Type your happy thought...."
+					onChange={event => setMessage(event.target.value)}
+				/>
+			</label>
+			<div className="post-message-wrapper">
 				<Button
-					className="post__message_button"
+					// className="post-message-button"
 					type="submit"
 					text={
 						<p>
 							<span role="img" aria-label="Heart">
 								{'❤️ '}
 							</span>
-							Post thought
+							Post
 							<span role="img" aria-label="Heart">
 								{' ❤️'}
 							</span>
@@ -54,14 +67,17 @@ const PostMessage = () => {
 					disabled={message.length < 6 || message.length > 140 ? true : false}
 				/>
 				{/* add a tooltip? To indicate that the message is to long or to short */}
-				<p
-					className={
-						message.length < 6 || message.length > 140
-							? 'wrongLength'
-							: 'goodLength'
-					}
-				>
-					<strong>{message.length}</strong> / 140
+				<p className="">
+					<span
+						className={
+							message.length < 6 || message.length > 140
+								? 'wrongLength'
+								: 'goodLength'
+						}
+					>
+						<strong>{140 - message.length}</strong>
+					</span>
+					/ 140
 				</p>
 			</div>
 		</form>
