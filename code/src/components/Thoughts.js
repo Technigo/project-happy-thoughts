@@ -28,9 +28,11 @@ export const Thoughts = () => {
             })
     }, []);
 
-    /* Use map() to show things from the array of data */
+    /* Use map() to show things from the array of data 
+    filter through array, if thought.text isn't an 
+    empty string then move it to a new array, which then the map.() iterates over*/
     return (
-        <div className="thoughts__container">{thoughts.map((thought) => {
+        <div className="thoughts__container">{thoughts.filter((thought) => thought.text !== undefined).map((thought) => {
             return (
             <div className="thoughts__card">
                 <p className="thoughts__message" key={thought._id}>{thought.text}
