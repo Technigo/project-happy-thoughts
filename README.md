@@ -5,7 +5,7 @@ The goal was to practice React state and effect hooks.
 
 ## The problem
 
-# Tech I've used / What I've practiced
+### Tech I've used / What I've practiced
 - React.js / State and Effect hooks
 - JavaScript
 - JSX
