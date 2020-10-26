@@ -2,7 +2,7 @@ import React from 'react';
 
 import moment from 'moment';
 
-const Message = ({ message, created, hearts, id, onLiked }) => {
+const Message = ({ message, created, hearts, id, whenLiked }) => {
 
     const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
     
@@ -13,7 +13,7 @@ const Message = ({ message, created, hearts, id, onLiked }) => {
                 body: '',
                 headers: {'Content-Type': 'application/json'}
             })
-            .then(() => onLiked(id))
+            .then(() => whenLiked(id))
     }
 
     return (
@@ -26,7 +26,7 @@ const Message = ({ message, created, hearts, id, onLiked }) => {
                         className={hearts > 0 ? 'likes-button got-likes' : 'likes-button no-likes'}
                     >
                         <span>
-                            {'💛'}
+                            {'❤️'}
                         </span>
                     </button>
                     x {hearts}

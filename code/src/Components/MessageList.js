@@ -19,7 +19,7 @@ const MessageList = () => {
             });
     }, []); // Vi behöver empty array annars blir det infinite loop. some second argument, not fetch on every re-render
 
-    const onLiked = (id) => {
+    const whenLiked = (id) => {
 
         // Maps over the current messages and increments the like number
         const updatedMessagesWithLikes = messages.map(message => {
@@ -43,7 +43,7 @@ const MessageList = () => {
                             message={message.message} 
                             created={message.createdAt}
                             hearts={message.hearts}
-                            onLiked={onLiked}
+                            whenLiked={whenLiked}
                         />
                     )    
                 })
