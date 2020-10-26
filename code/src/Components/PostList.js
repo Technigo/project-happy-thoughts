@@ -35,20 +35,22 @@ const PostList = props => {
 	// console.log(fetch);
 
 	return (
-		<>
+		<section className="message__container">
 			{/* to print all messages send to backlog using POST */}
 
 			{messages.map(post => (
-				<article className="message-text" key={post._id}>
+				<article className="message__text" key={post._id}>
 					{post.message}
-					<span>{moment(post.createdAt).fromNow()}</span>
+					<span className="message__text__posted">
+						{moment(post.createdAt).fromNow()}
+					</span>
 					<PostLiked hearts={post.hearts} id={post._id} />
 					{/* <button onClick={onLiked(post._id)}>{post.hearts}</button> */}
 					{/* <p>{post.hearts}</p>
 					 <p>{post._id}</p> */}
 				</article>
 			))}
-		</>
+		</section>
 	);
 };
 

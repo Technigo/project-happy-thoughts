@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Button from './Button';
-//import moment from 'moment'; //to format the date
 
 const PostLiked = ({ hearts, id }) => {
 	const [likes, setLikes] = useState(hearts);
 	const handleLikes = () => {
-		fetch(`https://technigo-thoughts.herokuapp.com/thoughts/${id}/like`, {
+		fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
 			method: 'POST',
 			body: '',
 			headers: { 'Content-Type': 'application/json' },
@@ -13,17 +12,18 @@ const PostLiked = ({ hearts, id }) => {
 		setLikes(likes + 1);
 	};
 	return (
-		<div>
+		<div className="message__text__liked">
 			<Button
 				type="button"
+				className="message__text__like__button"
 				click={handleLikes}
 				text={
 					<span role="img" aria-label="Heart">
-						{' ❤️'}
+						{'❤️'}
 					</span>
 				}
 			/>
-			<p>x{likes}</p>
+			<p className="message__text_likes">x {likes}</p>
 		</div>
 	);
 };

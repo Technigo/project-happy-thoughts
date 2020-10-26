@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from './Button';
-import moment from 'moment'; //to format the date
+//import moment from 'moment'; //to format the date
+import './Style.css';
 
 const PostMessage = () => {
 	const MESSAGE_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
@@ -26,17 +27,49 @@ const PostMessage = () => {
 
 	return (
 		<form onSubmit={handleSubmit}>
+			<p className="post_message question">
+				What's making you happy right now?
+			</p>
 			<textarea
 				rows="4"
-				className="post-message"
+				className="post__message"
+				//value={message}
 				onChange={event => setMessage(event.target.value)}
 			/>
-			<Button type="submit" text="Post your message" />
+			<div className="post__message wrapper">
+				<Button
+					className="post__message_button"
+					type="submit"
+					text={
+						<p>
+							<span role="img" aria-label="Heart">
+								{'❤️ '}
+							</span>
+							Post thought
+							<span role="img" aria-label="Heart">
+								{' ❤️'}
+							</span>
+						</p>
+					}
+					disabled={message.length < 6 || message.length > 140 ? true : false}
+				/>
+				{/* add a tooltip? To indicate that the message is to long or to short */}
+				<p
+					className={
+						message.length < 6 || message.length > 140
+							? 'wrongLength'
+							: 'goodLength'
+					}
+				>
+					<strong>{message.length}</strong> / 140
+				</p>
+			</div>
 		</form>
 	);
 };
 
 export default PostMessage;
+
 // import React, { useEffect, useState } from 'react';
 // import moment from 'moment';
 
