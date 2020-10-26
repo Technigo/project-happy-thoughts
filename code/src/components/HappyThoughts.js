@@ -23,11 +23,10 @@ export const HappyThoughts = () =>  {
         return (
             <p className='message' key={message._id}>
             {message.message}
-            {/* {moment(message.createdAt).fromNow()} */}
+            {moment(message.createdAt).fromNow()} {/*The code on this row is not working*/}
             <button className='like-button'>
             <span role='img' aria-label='heart'>❤️ </span>
             </button>
-
             </p>
         );
         
