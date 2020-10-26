@@ -6,14 +6,14 @@ const List = () => {
     const MESSAGES_URL ='https://happy-thoughts-technigo.herokuapp.com/thoughts';
     const [messages , setMessages] = useState ([]);
     useEffect(() => {
-        // Ask the server for the messages using a GET requests
+      
         fetch(MESSAGES_URL)
             .then((res) => {
-                // Get the JSON of the response body
-                return res.json()
+            return res.json()
             })
             .then(data => {
-                // Set the state based on the response
+                console.log(data)
+                //change to better function then reverse later
                 setMessages(data.reverse());
 
                 const filteredMessages = data.filter(message => message.message );
@@ -26,7 +26,7 @@ const List = () => {
         <section className ="list">
             {messages.map((message) =>  {
                 return(
-                    <>
+                <>
                 <p className="previous-messages" key={message._id}>
                     {message.message}
                     <span className ="message-time">

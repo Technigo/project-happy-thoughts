@@ -6,25 +6,26 @@ import List from "./List";
 
 
 const Main = () => {
-    //const [happy, setHappy] = useState ([])
-    //const [thoughts, setThoughts] = useState([]) 
+    const THOUGTHS_URL ="https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    const [thoughts, setThoughts] = useState([]) 
     const [messages , setMessages] = useState ([]);
-   
-   //useEffect(() => {
-    //fetch('https://technigo-thoughts.herokuapp.com/', { 
-      // method: 'POST', 
-       // body: JSON.stringify({ message: 'Hello world' })
-      //})
-      //.then (res => res.json())
-      //.then((json) => {
-       // console.log(json);
-      //then ((newThought) => {
-        //setThoughts((previousThoughts) => [newThought, ...previousThoughts])
-        
-    //});
-   //}, []);
-  // const handleFormSubmit = (event) => {
-  //event.preventDefault() }
+    const [happy, setHappy] = useState([]) 
+    
+     const handleFormSubmit = (event) => {
+     event.preventDefault() }
+
+
+   useEffect(() => {
+    fetch(THOUGTHS_URL , { 
+        method: 'POST', 
+        body: JSON.stringify({ message: 'Hello world' })
+      })
+        .then((res) => res.json())
+        .then((newThought) => {
+    
+          setThoughts((previousThoughts) => [newThought, ...previousThoughts])
+        })
+   });
 
     return (
       <>

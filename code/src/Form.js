@@ -4,7 +4,9 @@ import Send from "./Send";
 
 
 
-const Form = ( {thoughts, setThoughts } ) => { 
+const Form = ( { happy, setHappy } ) => { 
+    const handleFormSubmit = (event) => {
+    event.preventDefault() }
     return(
         <section className ="form-conatiner">
            
@@ -12,8 +14,8 @@ const Form = ( {thoughts, setThoughts } ) => {
                 What's making you happy right now?   
                 <input
                 type="text"
-                value={thoughts}
-                onChange = {(event) =>setThoughts (event.target.value)}
+                value={happy}
+                onChange = {(event) => setHappy(event.target.value)}
                 required
                 />
             </label> 
