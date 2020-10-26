@@ -9,7 +9,7 @@ export const HappyForm = (props) => {
     const handleSubmit = event => {
         event.preventDefault()
         fetch(url, {
-            method: "GET",
+            method: "POST",
             body: JSON.stringify({ message }),
             headers: { "Content-Type": "application/json" }
         })
@@ -25,14 +25,17 @@ export const HappyForm = (props) => {
             <h3>Post a happy thought!</h3>
             <textarea
                 rows="3"
-                value={message} o
-                nChange={event => setMessage(event.target.value)}
+                value={message}
+                onChange={event => setMessage(event.target.value)}
             ></textarea>
             <div className="form-footer">
                 <button
                     type="submit"
-                    onClick="{handleSubmit}"
-                    disabled={message.length < 6 || message.length > 140 ? true : false}></button>
+                    onClick={handleSubmit}
+                    disabled={message.length < 6 || message.length > 140 ? true : false}>
+                    Send a happy thought
+                    </button>
+                <p>{message.length} / 140</p>
             </div>
         </form>
     )
