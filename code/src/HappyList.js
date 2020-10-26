@@ -40,7 +40,7 @@ useEffect(() => {
       <p>HappyList:</p>
       {
         messages.map(message => (
-          <p className="message">
+          <p className="message" key={message._id}>
             {message.message}
             <span className="message-time">
               {moment(message.createdAt).fromNow()}
