@@ -1,11 +1,13 @@
 import React from 'react'
 
 import HappyList from './HappyList'
+import HappyInput from './HappyInput'
 
 export const App = () => {
   return (
     <div>
-     <HappyList />
+      <HappyInput />
+      <HappyList />
     </div>
   )
 }
