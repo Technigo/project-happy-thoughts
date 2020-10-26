@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './MessageInput.css'
 
 export const MessageInput = () => {
 
@@ -7,7 +8,6 @@ export const MessageInput = () => {
 
     const handleSubmit = event => {
         event.preventDefault()
-
         fetch(MESSAGES_URL,
             {
                 method: "POST",
@@ -17,21 +17,22 @@ export const MessageInput = () => {
                 body: JSON.stringify({message: message})
             }
         ).then(() => {
-            window.location.reload()
+             window.location.reload()
         })
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                type="text"
+            <textarea
+                rows='3'
+                value={message}
                 className="message-input"
                 onChange={event => setMessage(event.target.value)}>
-            </input>
+            </textarea>
             <input
                 type="submit"
                 className="button"
-                value="Send your Happy thought" >
+                value="Send your Happy thought">
             </input>
         </form>
     )

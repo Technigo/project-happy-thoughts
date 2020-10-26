@@ -1,5 +1,5 @@
 import React, {useState,  useEffect } from 'react'
-import moment from 'moment'
+import {HappyThought} from './HappyThought'
 import './MessageList.css'
 
 export const MessageList = () => {
@@ -22,14 +22,10 @@ export const MessageList = () => {
     return (
         <div>
             {
-                messages.map(message => (
-                <p key={message._id} className='messages'> 
-                {message.message}
-                <span className='message-time'>
-                    {moment(message.createdAt).fromNow()}
-                </span>
-                </p>
-                ))
+                messages.map(message => {
+                    console.log(message)
+                   return  <HappyThought key={message._id} props={message}/> 
+                })
             }
         </div>
     )

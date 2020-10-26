@@ -9,6 +9,7 @@ export const App = () => {
 
       <MessageInput /> 
       <MessageList />
+      
 
     </div>
   )
