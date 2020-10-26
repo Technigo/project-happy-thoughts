@@ -18,5 +18,12 @@ export const Messages = () => {
         setMessages(data)
     });
 },[]);
-    return <div>{messages.map((message) => message.text)}</div>;
+    return <div>{messages.map((message) => {
+        return <p className="message" key={message._id}> 
+        {message.message}
+        {message.createdAt}
+        </p>
+            
+            })}
+        </div>;
 }; 
