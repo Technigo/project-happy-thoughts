@@ -50,14 +50,25 @@ export const Thought = (props) => {
     <p className="message">{props.message}</p>
     <div className="bottom-container">
    
-    {!liked && <div>
+    {!liked && 
+    <div>
+      {numLikes === 0 && 
+      <button className="no-likes-button" onClick=
+      {() => clickedLikeButton(props.id)}
+        ><span role="img" aria-label="heart emoji">
+          ❤️</span>
+          </button>
+      }
+       {numLikes > 0 && 
       <button className="like-button" onClick=
       {() => clickedLikeButton(props.id)}
         ><span role="img" aria-label="heart emoji">
           ❤️</span>
           </button>
+      }
       <span className="number-of-initial-likes">x {numLikes}</span>
     </div>}
+
     {liked && 
     <div>
       <button disabled className="disabled-button"
