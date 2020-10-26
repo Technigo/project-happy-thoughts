@@ -41,6 +41,8 @@ form {
   height: 30px;
   border-radius: 50px;
   background: #ffadad;
+  cursor: pointer;
+  border: none;
 }
 /*************** MESSAGES LIST ************/
 .message-list {
