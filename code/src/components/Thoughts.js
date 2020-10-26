@@ -5,29 +5,40 @@ GET https://happy-thoughts-technigo.herokuapp.com/thoughts
 THousghts are going to be an array that is displayed, Use a map() to show each thought on different card?*/
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
+
 import './thoughts.css'
 
 
 export const Thoughts = () => {
     const [thoughts, setThoughts] = useState([])
     const THOUGHTS__URL = 'https://wk11livesession.herokuapp.com/messages'
-    /* Why we need to use useEffect is to not rerender on 
-    each refresh, only when it's neccessary and [] is updated */
+
+    /* We need to use useEffect because we don't want this to rerender on 
+    each refresh, only when it's neccessary and [] is updated
+    You need to use the empty array to only render on change */
+
     useEffect(() => {
         fetch(THOUGHTS__URL)
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            console.log(data);
-            setThoughts(data);
-        })
-    }, []); /* You need to use the empty array to only render on change */    
-    
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                console.log(data);
+                setThoughts(data);
+            })
+    }, []);
+
     /* Use map() to show things from the array of data */
     return (
-        <div>{thoughts.map((thought) => {
-        return <p className="thoughts__message" key={thought._id}>{thought.text} <span className="thoughts__time-posted">{moment(thought.created).fromNow()}</span></p>})}</div>
+        <div className="thoughts__container">{thoughts.map((thought) => {
+            return (
+            <div className="thoughts__card">
+                <p className="thoughts__message" key={thought._id}>{thought.text}
+                    <span className="thoughts__time-posted">{moment(thought.created).fromNow()}</span>
+                </p>
+            </div>
+        )})}
+        </div>
     )
 }
 

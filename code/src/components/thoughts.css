@@ -1,7 +1,25 @@
+
+.thoughts__container {
+    background: #F9F8EB;
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.thoughts__card {
+    background: #ECDEC6;
+    justify-self: center;
+    padding: 10px;
+    margin: 5px;
+    width: 250px;
+}
+
 .thoughts__time-posted {
     font-size: 16px;
+    padding: 2px;
 }
 
 .thoughts__message {
-    font-size: 20px;
+    font-size: 22px;
 }
+
