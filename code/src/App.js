@@ -74,7 +74,9 @@ export const App = () => {
   
 return(
 <section className="app-container">
+  <header className="header">
 {likeCount > 0 && <LikeCounter numberOfLikes={likeCount}/>}
+</header>
   <Form 
       submitForm = {handleSubmit}
   />

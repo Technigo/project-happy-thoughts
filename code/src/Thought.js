@@ -56,14 +56,14 @@ export const Thought = (props) => {
         ><span role="img" aria-label="heart emoji">
           ❤️</span>
           </button>
-      <span className="number-of-initial-likes">{numLikes}</span>
+      <span className="number-of-initial-likes">x {numLikes}</span>
     </div>}
     {liked && 
     <div>
       <button disabled className="disabled-button"
         ><span role="img" aria-label="heart emoji">
         ❤️</span></button>
-      <span className="number-of-likes">{numLikes}</span>
+      <span className="number-of-likes">x {numLikes}</span>
     </div>}
     <p className="date">
     <p>{moment(props.createdAt).fromNow()}</p>

@@ -18,9 +18,25 @@ code {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 30px;
 }
 
+.header {
+	height: 49px;
+	/* border: 1px solid black; */
+	width: 100%;
+	position: sticky;
+	top: 0;
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 1) 65%,
+		rgba(9, 9, 121, 0) 100%
+	);
+	padding: 5px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
 .form {
 	background-color: lightgray;
 	padding: 20px;
@@ -32,6 +48,10 @@ code {
 
 .input-label {
 	font-weight: bold;
+}
+
+.input-not-ok {
+	color: orange;
 }
 
 .text-input {
@@ -75,6 +95,7 @@ textarea {
 }
 
 .thought-card {
+	background-color: #fafafa;
 	padding: 20px;
 	border: 1px solid black;
 	width: 300px;
@@ -94,6 +115,7 @@ textarea {
 
 .date {
 	color: #808080;
+	font-size: 12px;
 }
 
 .like-button,
@@ -125,11 +147,11 @@ textarea {
 
 .loader {
 	border: 16px solid #f3f3f3;
-	border-top: 16px solid #ff8000;
+	border-top: 16px solid #ff0063;
 	border-radius: 50%;
 	width: 80px;
 	height: 80px;
-	animation: spin 1s linear infinite;
+	animation: spin 1.5s linear infinite;
 	margin-top: 50px;
 }
 

@@ -32,7 +32,7 @@ const handleChange = (event) =>{
 
           </label>
           {inputLengthOK && <p className="input-ok">{numChars}/140</p>}
-          {!inputLengthOK && <p className="input-not-ok">Oops, too many {numChars}/140</p>}
+          {!inputLengthOK && <p className="input-not-ok">{numChars}/140</p>}
           
           <button className="submit-button" type="submit"> 
           <span role="img" aria-label="heart emoji">
