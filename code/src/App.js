@@ -1,12 +1,12 @@
 import React from 'react'
 
 import HappyList from './HappyList'
-import HappyInput from './HappyInput'
+import HappyForm from './HappyForm'
 
 export const App = () => {
   return (
     <div>
-      <HappyInput />
+      <HappyForm />
       <HappyList />
     </div>
   )

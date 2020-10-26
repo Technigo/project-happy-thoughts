@@ -1,3 +1,5 @@
+//This component is from Van's lecture and is not going to be used as it is now.
+//New component is HappyThought (and also changes in the App-component)
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 
