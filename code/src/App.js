@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+
+import Main from './Main';
+
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
+    <div className="app">
+      <Main  /> 
     </div>
   )
 }
