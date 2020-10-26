@@ -1,5 +1,6 @@
 import React, {useState,  useEffect } from 'react'
 import moment from 'moment'
+import './MessageList.css'
 
 export const MessageList = () => {
     const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
