@@ -19,14 +19,21 @@ export const HappyThoughts = () =>  {
     }, []);
 
     return (
-    <div>{thoughts.map(message => {
+    <div className='thoughts-card'>{thoughts.map(message => {
         return (
             <p className='message' key={message._id}>
             {message.message}
             {/* {moment(message.createdAt).fromNow()} */}
+            <button className='like-button'>
+            <span role='img' aria-label='heart'>❤️ </span>
+            </button>
+
             </p>
         );
+        
         })};
+        
+        
         </div>
     );
     };
