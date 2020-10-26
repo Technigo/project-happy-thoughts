@@ -35,7 +35,7 @@ export const Form = () => {
         className="form-button" 
         type="submit" 
         disabled={newThought.length < 6 || newThought.length > 140 ? true : false}>
-          &#128151; Send Happy Thought &#128151;
+          <span role="img" aria-label="Heart emoji">&#128151;</span> Send Happy Thought <span role="img" aria-label="Heart emoji">&#128151;</span>
       </button>
     </form>
   );

@@ -4,7 +4,6 @@ import { Form } from 'components/Form';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [likes, setLikes] = useState(0);
 
   useEffect(() => {
     //Fetches data from the API: an array including all Thoughts and 
@@ -21,13 +20,23 @@ export const App = () => {
       });
   }, []);
 
+  const addLike = (id) => {
+    const updatedLikes = thoughts.map((thought) => {
+      if(thought._id === id) {
+        thought.hearts += 1;
+      }
+      return thought;
+    })
+    setThoughts(updatedLikes);
+  };
+
   return (
     <>
       <Form />
       
       <section className="though-cards-container">
         {thoughts.map((thought) => (
-          <ThoughtsCard key={thought._id} id={thought._id} message={thought.message} timeCreated={thought.createdAt} likes={likes} setLikes={setLikes} hearts={thought.hearts}/>
+          <ThoughtsCard key={thought._id} id={thought._id} message={thought.message} timeCreated={thought.createdAt} hearts={thought.hearts} addLike={addLike} />
         ))}
       </section>
     </>
