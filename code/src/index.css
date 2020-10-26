@@ -31,6 +31,17 @@ code {
   padding: 0 10px;
 }
 
+.happy-thought-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.happy-thought-title {
+  flex-basis: 100%;
+}
+
 .heart {
   color: red;
   font-size: 200%;

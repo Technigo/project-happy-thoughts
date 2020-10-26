@@ -1,29 +1,18 @@
 import React, { useState } from 'react';
 
-const happyFormURL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
-
-export const HappyForm = () => {
+export const HappyForm = ({ onMessageSubmit }) => {
   const [message, setMessage] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(happyFormURL, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({ message: message }),
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-        window.location.reload();
-      });
+    onMessageSubmit(message);
   };
 
   return (
     <article className="happy-form-wrapper">
-      <form className="happy-form-content" onSubmit={handleSubmit}>
+      <form
+        className="happy-form-content"
+        onSubmit={(event) => handleSubmit(event)}>
         <div>
           <label htmlFor="message">What's making you happy right now?</label>
           <textarea
