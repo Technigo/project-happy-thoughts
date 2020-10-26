@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react"
 import moment from "moment" 
 
+import "../css/thoughtslist.css"
+
 export const ThoughtsList = () => {
-    // Turning it to a const so it's not just a string like it was from start fetch("https.."). 
+  // Turning it to a const so it's not just a string like it was from start fetch("https.."). 
   // It's also better to make it a const if you gonna fecth more things etc.
   const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts" 
   const [thoughts, setThoughts] = useState([]);

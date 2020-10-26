@@ -1,11 +1,14 @@
 import React from 'react'
-import { ThoughtsList } from "./components/js/ThoughtsList"
+
+import "./index.css"
+import { ThoughtsCard } from "./components/js/ThoughtsCard"
+
 
 export const App = () => {
 
   return (
-    <div>
-      <ThoughtsList />
+    <div className="card">
+      <ThoughtsCard />
     </div>
   )
 }
