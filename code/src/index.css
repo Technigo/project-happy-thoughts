@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +7,87 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./freestocks-Y9mWkERHYCU-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/************* INPUT FIELD *****************/
+.input-message-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 400px;
+  border: 2px solid #8e8d8d;
+  box-shadow: 5px 5px;
+  margin: 20px;
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  background: #f2f0f0;
+}
+
+.submit-button {
+  width: 200px;
+  height: 30px;
+  border-radius: 50px;
+  background: #ffadad;
+}
+/*************** MESSAGES LIST ************/
+.message-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/************** MESSAGES *****************/
+.message {
+  width: 400px;
+  border: 2px solid #8e8d8d;
+  box-shadow: 5px 5px;
+  margin: 20px;
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  background: white;
+}
+
+.message-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.time-stamp {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: grey;
+}
+
+.likes-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  margin-right: 5px;
+}
+
+.no-likes {
+  background:#eaeaea;
+}
+
+.got-likes {
+  background: #ffadad;
 }
