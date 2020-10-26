@@ -25,13 +25,22 @@ export const App = () => {
       },
       body: JSON.stringify({ message: message }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.status >= 200 && response.status <= 299) {
+          return response.json();
+        } else {
+          throw Error(response.statusText);
+        }
+      })
       .then((newHappyThought) => {
         console.log(newHappyThought);
         setHappyThoughts((previousHappyThoughts) => [
           newHappyThought,
           ...previousHappyThoughts,
         ]);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
