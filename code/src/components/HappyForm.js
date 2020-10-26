@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
+const happyFormURL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+
 export const HappyForm = () => {
-  const happyFormURL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
-  const [postMessage, setPostMessage] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -11,7 +12,7 @@ export const HappyForm = () => {
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify({ message: postMessage }),
+      body: JSON.stringify({ message: message }),
     })
       .then((response) => response.json())
       .then((json) => {
@@ -30,8 +31,8 @@ export const HappyForm = () => {
             name="message"
             rows="3"
             cols="30"
-            onChange={(event) => setPostMessage(event.target.value)}
-            value={postMessage}></textarea>
+            onChange={(event) => setMessage(event.target.value)}
+            value={message}></textarea>
           <button type="submit">
             <span className="heart">&hearts;</span> Send Happy Thoughts{' '}
             <span className="heart">&hearts;</span>
