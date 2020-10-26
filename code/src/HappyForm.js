@@ -10,7 +10,7 @@ export const HappyForm = props => {
         event.preventDefault()
         fetch(Happyform, {
             method: 'POST',
-            body: JSON.stringify({ message }),
+            body: JSON.stringify({ message: 'Hello World' }),
             headers: { "Content-Type": "application/json" }
         })
         .then(() => {
