@@ -25,7 +25,31 @@ const PostInput = () => {
         rows="4"
         onChange={event => setPost(event.target.value)}
       ></textarea>
-      <Button type="submit" text="Submit" />
+      <div>
+        <Button
+          type="submit"
+          disabled={post.length < 6 || post.length > 140 ? true : false}
+          text={
+            <p>
+              <span role="img" aria-label="Heart">
+                {'❤️ '}
+              </span>
+              Post Thought
+              <span role="img" aria-label="Heart">
+                {' ❤️'}
+              </span>
+            </p>
+          }
+        />
+        {/* add a tooltip on hover to inform if too short or too long */}
+        <p
+          className={
+            post.length < 6 || post.length > 140 ? 'text--red' : 'text'
+          }
+        >
+          {post.length / 140}
+        </p>
+      </div>
       {/* <button>Post</button> */}
     </form>
   );
