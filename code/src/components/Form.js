@@ -29,7 +29,7 @@ export const Form = () => {
   return (
     <form onSubmit={handleSubmit} className="thoughts-form">
       <p className="form-title">What's making you happy right now?</p>
-      <textarea type="text" maxlength='140' onChange={event => setNewThought(event.target.value)}></textarea>
+      <textarea type="text" maxLength='140' onChange={event => setNewThought(event.target.value)}></textarea>
       <p className="text-counter">{140 - newThought.length} characters left</p>
       <button 
         className="form-button" 
