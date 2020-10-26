@@ -14,7 +14,7 @@ export const ThoughtsCard = ({id, message, timeCreated, hearts, addLike}) => {
     <div className="thought-card">
       <p>{message}</p>
       <p>
-        <button onClick={handleLikes} className="heart-button" style={{backgroundColor: hearts > 0 ? 'pink' : '#eaeaea'}}>
+        <button onClick={handleLikes} className="heart-button" style={{backgroundColor: hearts > 0 ? '#ffadad' : '#f2f0f0'}}>
           <span role="img" aria-label="Heart emoji">&#128151;</span>
         </button>
          x {hearts}
