@@ -23,7 +23,7 @@ const Message = ({ message, created, hearts, id, onLiked }) => {
                 <p className="time-stamp">
                     <button
                         onClick={changeLikes}
-                        className={hearts > 0 ? 'likes-button no-likes' : 'likes-button got-likes'}
+                        className={hearts > 0 ? 'likes-button got-likes' : 'likes-button no-likes'}
                     >
                         <span>
                             {'💛'}

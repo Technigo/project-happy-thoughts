@@ -8,7 +8,7 @@ const MessageList = () => {
     const [messages, setMessages] = useState([]);
     
     useEffect(() => {
-        fetch(MESSAGES_URL) //Gör en GET request
+        fetch(MESSAGES_URL) //Default GET request
             .then((response) => {
                 return response.json();
             })
@@ -20,7 +20,16 @@ const MessageList = () => {
     }, []); // Vi behöver empty array annars blir det infinite loop. some second argument, not fetch on every re-render
 
     const onLiked = (id) => {
-        console.log('message is liked', id)
+
+        // Maps over the current messages and increments the like number
+        const updatedMessagesWithLikes = messages.map(message => {
+            if (message._id === id) {
+                message.hearts += 1
+            }
+            return message
+        })
+        // Changes the state with updated likes
+        setMessages(updatedMessagesWithLikes)
     }
     
     return (
@@ -33,7 +42,7 @@ const MessageList = () => {
                             id={message._id}
                             message={message.message} 
                             created={message.createdAt}
-                            hearts={message.__v}
+                            hearts={message.hearts}
                             onLiked={onLiked}
                         />
                     )    
