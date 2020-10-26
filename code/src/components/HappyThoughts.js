@@ -1,6 +1,6 @@
 import React from "react"
 import moment from "moment"
-// import "./happyThoughts.css"
+import "./happyThoughts.css"
 
 export const HappyThoughts = ({ thought, onLiked }) => {
     const { message, hearts, createdAt, _id } = thought
@@ -19,7 +19,8 @@ export const HappyThoughts = ({ thought, onLiked }) => {
             <p>
                 <button
                     onClick={handleClick}
-                    style={{ background: hearts > 0 ? "#ffadd" : "#f3f1f1" }}>
+                    className={hearts > 0 ? "liked!" : hearts > 5 ? "suppah liked!" : "like me!"}
+                    style={{ background: hearts > 0 ? "#ffadd" : hearts > 5 ? "#ffffff" : "#f3f1f1" }}>
                     <span role="img" aria-label="heart">
                         {"💖 "}
                     </span>

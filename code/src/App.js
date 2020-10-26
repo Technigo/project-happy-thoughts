@@ -19,7 +19,6 @@ export const App = () => {
   }
 
   const onLiked = thoughtId => {
-    thoughtId.preventDefault()
     console.log("is this function being called?", thoughtId)
 
     const updatedThoughts = thoughts.map(thought => {
