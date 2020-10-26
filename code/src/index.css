@@ -95,8 +95,12 @@ button {
 
 }
 
-
-
+.message-time {
+  display: flex;
+  justify-content: flex-end; 
+  padding-top: 80px;
+  color: #b3b2b1;
+}
 
 
 
