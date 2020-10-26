@@ -4,9 +4,9 @@ import PostInput from './components/PostInput';
 
 export const App = () => {
   return (
-    <div>
+    <main className="main">
       <PostInput />
       <PostList />
-    </div>
+    </main>
   );
 };
