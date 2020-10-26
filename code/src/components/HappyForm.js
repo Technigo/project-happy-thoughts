@@ -4,20 +4,25 @@ import React, { useState } from 'react'
 const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 
 export const HappyForm = (props) => {
-    const [message, setMessage] = useState("")
+    const [message, setMessage] = useState([])
 
     const handleSubmit = event => {
         event.preventDefault()
         fetch(url, {
             method: "POST",
             body: JSON.stringify({ message }),
-            headers: { "Content-Type": "application/json" }
+            // headers: { "Content-Type": "application/json" }
         })
-            .then(() => {
-                setMessage("")
-                props.onFormSubmit(message)
+            .then((res) => res.json())
+            .then((newThought) => {
+                setMessage((previousThoughts) => [newThought, ...previousThoughts])
             })
-            .catch(err => console.log("error:", err))
+
+        // .then(() => {
+        //     setMessage("")
+        //     props.onFormSubmit(message)
+        // })
+        // .catch(err => console.log("error:", err))
     }
 
     return (

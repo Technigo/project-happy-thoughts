@@ -19,8 +19,9 @@ export const HappyThoughts = ({ thought, onLiked }) => {
             <p>
                 <button
                     onClick={handleClick}
-                    className={hearts > 0 ? "liked!" : hearts > 5 ? "suppah liked!" : "like me!"}
-                    style={{ background: hearts > 0 ? "#ffadd" : hearts > 5 ? "#ffffff" : "#f3f1f1" }}>
+                    className={hearts > 5 ? "super-liked" : hearts > 0 ? "liked" : "not-liked"}
+                // style={{ background: hearts > 0 ? "#ffadd" : hearts > 5 ? "#ffffff" : "#f3f1f1" }}
+                >
                     <span role="img" aria-label="heart">
                         {"💖 "}
                     </span>

@@ -3,9 +3,48 @@
   box-shadow: 4px 4px black;
   width: 300px;
   height: 100%;
-  margin: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 15px auto;
   padding: 18px;
+  background-color: rgba(255, 192, 203, 0.292);
+}
+
+.happy-thought h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+  /* font-family: to-add later; */
+}
+
+/* WHY are only some buttons white?? */
+.happy-thought button {
+  border-radius: 50%;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  /* background-color: white; */
+}
+
+.happy-thought button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.497);
+  /* ONLY SHOWS HOVER COLOR ON SOME BUTTONS? */
+}
+
+.happy-thought button span {
+  margin-left: 1.5px;
+  line-height: 2.5;
+}
+
+.liked {
+  background-color: pink;
+}
+.super-liked {
+  background-color: rgba(218, 112, 214, 0.346);
+}
+.not-liked {
+  background-color: rgba(211, 211, 211, 0.415);
 }
