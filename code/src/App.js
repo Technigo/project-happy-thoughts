@@ -19,6 +19,7 @@ export const App = () => {
   }
 
   const onLiked = thoughtId => {
+    thoughtId.preventDefault()
     console.log("is this function being called?", thoughtId)
 
     const updatedThoughts = thoughts.map(thought => {
@@ -29,6 +30,7 @@ export const App = () => {
     })
     setThoughts(updatedThoughts)
   }
+
   return (
     <main>
       <HappyForm onFormSubmit={onFormSubmit} />

@@ -2,15 +2,15 @@ import React from "react"
 import moment from "moment"
 // import "./happyThoughts.css"
 
-export const HappyThoughts = props => {
-    const { message, hearts, createdAt, _id } = props.thought
+export const HappyThoughts = ({ thought, onLiked }) => {
+    const { message, hearts, createdAt, _id } = thought
 
     const handleClick = () => {
         fetch(`https://happy-thoughts-technigo.herokuapp.com/${_id}like`, {
             method: "POST",
             body: "",
             headers: { "Content-Type": "application/json" }
-        }).then(() => props.onLiked(_id))
+        }).then(() => onLiked(_id))
     }
 
     return (
