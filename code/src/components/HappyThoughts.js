@@ -2,7 +2,7 @@ import React from "react"
 import moment from "moment"
 // import "./happyThoughts.css"
 
-export const happyThoughts = props => {
+export const HappyThoughts = props => {
     const { message, hearts, createdAt, _id } = props.thought
 
     const handleClick = () => {
