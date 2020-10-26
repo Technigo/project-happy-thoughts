@@ -1,9 +1,14 @@
 import React from 'react'
 
+import { Published } from './components/Published'
+import { NewPost } from './components/NewPost'
+
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <NewPost />
+      <Published />
+
     </div>
   )
 }
