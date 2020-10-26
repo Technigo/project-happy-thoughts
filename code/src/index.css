@@ -20,6 +20,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 
 .happy-form-wrapper,
@@ -52,4 +53,5 @@ code {
   height: 40px;
   border-radius: 100%;
   border: none;
+  margin-right: 5px;
 }

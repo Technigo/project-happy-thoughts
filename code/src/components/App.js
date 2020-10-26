@@ -7,6 +7,7 @@ const happyThoughtsURL =
 
 export const App = () => {
   const [happyThoughts, setHappyThoughts] = useState([]);
+  const [messageOK, setMessageOK] = useState(true);
 
   useEffect(() => {
     fetch(happyThoughtsURL)
@@ -27,8 +28,10 @@ export const App = () => {
     })
       .then((response) => {
         if (response.status >= 200 && response.status <= 299) {
+          setMessageOK(true);
           return response.json();
         } else {
+          setMessageOK(false);
           throw Error(response.statusText);
         }
       })
@@ -46,7 +49,7 @@ export const App = () => {
 
   return (
     <main className="main-wrapper">
-      <HappyForm onMessageSubmit={onMessageSubmit} />
+      <HappyForm onMessageSubmit={onMessageSubmit} messageOK={messageOK} />
       {happyThoughts.map((happyThought) => (
         <HappyThought key={happyThought._id} happyThought={happyThought} />
       ))}
