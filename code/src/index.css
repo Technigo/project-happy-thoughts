@@ -1,13 +1,41 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  background: url(./assets/background.svg) no-repeat center center fixed;
+  background-size: cover;
+  background-color: #FF586D;
+}
+
+main {
+  width: 420px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px 16px;
+  border: 1px dashed rgba(255,255,255,0.4);
+  overflow: scroll;
+}
+
+p {
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0;
+}
+
+.p-subtle {
+  font-size: 14px;
+  color: rgba(0,0,0,0.4);
+}
+
+.semibold {
+  font-weight: 600;
 }

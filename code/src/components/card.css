@@ -1,0 +1,60 @@
+.card {
+  background: #ffffff;
+  box-shadow: 
+    0px 2px 4px rgba(0, 0, 0, 0.15),
+    0px 12px 24px rgba(255, 88, 108, .7),
+    inset 0px -2px 4px rgba(255, 255, 255, .7),
+    inset 0px -5px 16px rgba(255, 88, 108, 0.4);
+  border-radius: 16px;
+  padding: 20px 20px 16px 20px;
+  margin-bottom: 24px;
+}
+
+.card-bottom {
+  /* border: 1px dashed salmon; */
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.card-bottom-likes {
+  /* border: 1px dashed aqua; */
+  display: flex;
+  align-items: center;
+}
+
+.card-bottom-time {
+  /* border: 1px dashed lightgreen; */
+  display: flex;
+  align-items: center;
+}
+
+button {
+  border: 0;
+  outline: 0;
+}
+
+button img {
+  display: block;
+  margin: auto;
+  fill: red;
+}
+
+.button-like {
+  border-radius: 16px;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  background-color: rgba(255, 88, 109, 0);
+}
+
+.button-like:hover {
+  background-color: rgba(255, 88, 109, 0.08);
+  /* background-color: rgba(0,0,0, 0.05); */
+  cursor: pointer;
+}
+
+.button-like:active {
+  background-color: rgba(255, 88, 109, 0.25);
+}
