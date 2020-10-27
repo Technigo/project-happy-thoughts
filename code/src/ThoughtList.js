@@ -1,13 +1,23 @@
-import React from "react"
+import React, {useState} from "react"
 
-export const ThoughtList = ({thoughts}) => {
+import {LikeNumber} from "./LikeNumber"
+
+export const ThoughtList = ({thoughts, onIsLikedChange, isLiked}) => {
+
+
     return (
         <div className="thoughts-container">
             {thoughts.map((thought) => 
                 <div className="message-box">
                     <p>{thought.message}</p>
                     <div className="message-infos-wrapper">
-                        {/* <Likes /> */}
+                        <div>
+                            <button onClick={onIsLikedChange}>❤</button>
+                            <LikeNumber 
+                                thought={thought}
+                                isLiked={isLiked}
+                            />
+                        </div>
                         <p>{thought.createdAt}</p>
                     </div>
                 </div>

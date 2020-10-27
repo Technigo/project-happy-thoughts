@@ -5,7 +5,13 @@ import {ThoughtList} from "./ThoughtList"
 
 export const Thoughts = () => {
     const [thoughts, setThoughts] = useState([]);
+    const [isLiked, setIsLiked] = useState(false)
+
     const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+
+    const handleIsLikedChange = () => {
+        setIsLiked(true)
+    }
 
     useEffect(() => {
         fetch(THOUGHTS_URL)
@@ -20,6 +26,8 @@ export const Thoughts = () => {
                 />
             <ThoughtList 
                 thoughts={thoughts}
+                onIsLikedChange={handleIsLikedChange}
+                isLiked={isLiked}
                 />            
         </section>
     )
