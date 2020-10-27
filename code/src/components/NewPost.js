@@ -12,7 +12,7 @@ export const NewPost = () => {
     event.preventDefault()
     fetch(post_url, {
       method:'POST',
-      headers: { 'Content-type': 'application/json'},
+      headers: {'Content-type': 'application/json'},
       body: JSON.stringify({ message: thought })
       })
       .then(() => {
@@ -32,6 +32,7 @@ export const NewPost = () => {
         spellCheck="true"
         name="thought"
         required
+        placeholder="Send some happy out into the ether..."
         value={thought}
       />
       {/* Counter to show characters remaining */}
@@ -59,3 +60,5 @@ export const NewPost = () => {
     </form>
   )
 }
+
+// onload counter is always counting 1
