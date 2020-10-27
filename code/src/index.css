@@ -1,9 +1,7 @@
-
-
 body {
   margin: 0;
   background: rgb(225, 222, 222);
-  font-family: 'Trispace', sans-serif;
+  font-family: "Trispace", sans-serif;
 }
 
 .message-card,
@@ -17,22 +15,22 @@ body {
 }
 
 .heart-image {
-  height:20px;
-  width:20px
+  height: 20px;
+  width: 20px;
 }
+
 .message-text {
-  word-wrap: break-word
+  word-wrap: break-word;
 }
 
 .message-heart {
   display: flex;
   flex-direction: column;
-
 }
 
 textarea {
   font-size: 17px;
-  font-family: 'Trispace', sans-serif;
+  font-family: "Trispace", sans-serif;
   width: 470px;
   height: 80px;
   max-width: 470px;
@@ -40,7 +38,7 @@ textarea {
 }
 
 .text-counter {
-  font-size: 12px; 
+  font-size: 12px;
 }
 
 .input-card-button {
@@ -49,5 +47,12 @@ textarea {
   width: 250px;
   padding: 10px;
   border-radius: 20px;
-  font-family: 'Trispace', sans-serif;
+  font-family: "Trispace", sans-serif;
+}
+
+.likes-time-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }
