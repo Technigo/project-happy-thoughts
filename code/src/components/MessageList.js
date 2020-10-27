@@ -21,21 +21,20 @@ export const MessageList = () => {
     }, [])
     //render messages using map
     return (
-        <main className="wrapper">
-            <section className="cards-container">
+        
+            <section className="cards-container" >
             
                 {messages.map(message => (
-                    <article className="message-card">
-            <p className="message" key={message._id}> 
-            {message.message}
+                    <article className="message-card" key={message._id}>
+            <p className="message" > 
+            {message.message} </p>
             <p className="message-time"> 
             {moment(message.createdAt).fromNow()} 
-             </p>
             </p>
             </article> 
         ))
     }
     </section>
-    </main>
+    
     )
 }

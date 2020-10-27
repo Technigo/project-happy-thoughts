@@ -1,11 +1,13 @@
 import React from 'react'
 
 import { MessageList } from 'components/MessageList';
+import { MessageInput } from 'components/MessageInput';
 
 export const App = () => {
   return (
-    <div>
-      <MessageList />
-    </div>
+    <section className="wrapper">
+      <MessageInput />
+      <MessageList />  
+      </section>
   )
 }
