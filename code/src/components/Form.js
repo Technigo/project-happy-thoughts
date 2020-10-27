@@ -28,7 +28,12 @@ export const Form = () => {
     <form onSubmit={handleSubmit} className="thoughts-form">
       <p className="form-title">What's making you happy right now?</p>
       <textarea type="text" maxLength='140' onChange={event => setNewThought(event.target.value)}></textarea>
-      <p className="text-counter">{140 - newThought.length} characters left</p>
+      <p 
+        className="text-counter"
+        //Condition to change text color to red when there are only 10 characters left to reach max
+        style={{color: newThought.length > 130 ? 'red' : 'black'}}>
+          {140 - newThought.length} characters left
+      </p>
       <button 
         className="form-button" 
         type="submit"
