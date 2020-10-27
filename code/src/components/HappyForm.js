@@ -21,6 +21,8 @@ export const HappyForm = (props) => {
             .catch(err => console.log("error:", err))
     }
 
+    const emptyMessage = (value) => value.replace(/\s/g, "").length === 0;
+
     return (
         <form className="happy-form">
             <h3>Post a happy thought!</h3>
@@ -33,7 +35,7 @@ export const HappyForm = (props) => {
                 <button
                     type="submit"
                     onClick={handleSubmit}
-                    disabled={message.length < 6 || message.length > 140 ? true : false}>
+                    disabled={message.length < 6 || message.length > 140 || emptyMessage(message)}>
                     Send a happy thought
                     </button>
                 <p><CharacterCount charMinMax={message.length} /></p>
