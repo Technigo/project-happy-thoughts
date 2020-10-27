@@ -8,10 +8,10 @@ const Footer = () => {
             <img className="logo" src={logo}></img>
             <div className="footer-info">
                 <p>Project 11 - Happy Thoughts</p>
-                <p>Anna Hellqvist @ Technigo Bootcamp 2020</p>
+                <p>Anna Hellqvist @ Technigo Bootcamp Fall 2020</p>
                 <div>
                     <p>
-                        <a href="https://github.com/AnnaHellqvist">GitHub</a> - <a href="https://www.linkedin.com/in/anna-hellqvist-62168466/">LinkedIn</a>
+                        <a href="https://github.com/AnnaHellqvist">GitHub</a> - <a href="https://www.linkedin.com/in/anna-hellqvist-62168466/">LinkedIn</a> - <a href="">Medium</a>
                     </p>
                 </div>
             </div>
