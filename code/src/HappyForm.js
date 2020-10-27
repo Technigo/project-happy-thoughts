@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import './HappyForm.css'
+
 const HappyForm = (props) => {
   //Message state to save message to send to the backend:
   const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
@@ -28,28 +30,33 @@ const HappyForm = (props) => {
   };
 
   return (
-    <form className="happy-form"> 
-    
-      <h3>Post a happy thought!</h3>
-      <textarea
-        rows="3"
-        value={message}
-        onChange={event => setMessage(event.target.value)}
-      >
-      </textarea>
-      <div className="form-footer"> 
-        <button
-          type="submit"
-          onClick={handleSubmit} //Why not onSubmit? Difference?
-          disabled={message.length < 6 || message.length > 140 ? true : false}
-          className="input-button"
-          value="Add Message"
+    <section className="happy-form-container"> 
+      <form className="happy-form"> 
+        <h3 className="happy-form-heading">
+          What is making you happy right now?
+        </h3>
+        <textarea
+          className="happy-form-text"
+          rows="3"
+          value={message}
+          onChange={event => setMessage(event.target.value)}
         >
-          Send a happy thought!
-        </button>
-        <p>{message.length} / 140</p>
-      </div>
-    </form>
+        </textarea>
+        <div className="form-footer"> 
+          <button
+            type="submit"
+            text=""
+            onClick={handleSubmit} //Why not onSubmit? Difference?
+            disabled={message.length < 6 || message.length > 140 ? true : false}
+            className="happy-form-input-button"
+            value="Add Message"
+          >
+          ❤️ Send Happy Thought! ❤️
+          </button>
+          <p>{message.length} / 140</p>
+        </div>
+      </form>
+    </section>
   )
 };
 export default HappyForm;

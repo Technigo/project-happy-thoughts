@@ -1,0 +1,54 @@
+
+.happy-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100vw;
+}
+
+.happy-form {
+  width: 520px;
+  border: 1px solid #000;
+  font-family: 'Inconsolata', monospace;
+  font-size: 18px;
+  color: #000;
+  background: #f2f0f0;
+  box-shadow: 5px 5px #000000;
+  margin-top: 40px;
+}
+
+.happy-form-heading {
+  margin: 20px;
+}
+
+.happy-form-text {
+  margin-left: 20px;
+  width: 90%;
+  font-size: 18px;
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+}
+
+.happy-form-input-button {
+  color: #000000;
+  padding: 15px 20px;
+  background: #f9adae;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px;
+  border-radius: 40px;
+  font-family: 'Inconsolata', monospace;
+  border: none;
+}
+
+.form-footer p {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: #707070; 
+  font-weight: 500;
+  margin-left: 40px;
+}

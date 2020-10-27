@@ -1,8 +1,9 @@
 import React from "react"
 import moment from "moment"
 
+import '.HappyThought.css'
 
-export const HappyThought = props => {
+const HappyThought = props => {
   const { message, hearts, createdAt, _id } = props.thought
 
   const handleClick = () => {
@@ -19,10 +20,9 @@ export const HappyThought = props => {
       <p>
         <button
           onClick={handleClick}
-          //Add conditional classname depending on liked or not liked
-          //And remove styling to CSS
-          className=""
-          style={{ background: hearts > 0 ? "#ffadad" : "#f3f1f1 " }}
+          //conditional classname depending on liked or not liked
+          className={hearts > 5 ? "manylikes" : hearts > 0 ? "likes" : "nolikes"}
+          // MOVE TO CSS: style={{ background: hearts > 5 ? "#ffadad" : hearts > 0 ? "#fcc4c4" : "#f3f1f1 " }}
         >
           <span
             role='img'
@@ -37,3 +37,4 @@ export const HappyThought = props => {
     </article>
   )
 }
+export default HappyThought;
