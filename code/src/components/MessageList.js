@@ -20,10 +20,18 @@ export const MessageList = () => {
         return res.json();
       })
       .then((data) => {
+        // 12. Reverses the array.
+        data.reverse()
+        // data.sort((a,b) => a.created > b.created)
+        // Filter if message contains some non-null value for "text". "IF THIS EXISTS".
+        const filteredMessages = data.filter((message) => message.text);
+        const limitedMessages = filteredMessages.slice(0,20);
+        // 
         // 3. Here is where we have access to the server response. ONLY HERE.
         // 2. Save this data variable, and then we want the component to re-render.
-        // console.log(data)
-        setMessages(data);
+        // console.log(data) UPDATE: Only do messages which aren't blank.
+        setMessages(limitedMessages);
+        // setMessages(data);
       })
   }, [])
   // 7. The empty array is important. If we want something to execute only once, the dependencies needs to be ONLY AN EMPTY ARRAY.Second argument to useEffect.
