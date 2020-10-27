@@ -7,7 +7,7 @@ export const HappyForm = () => {
 
 	// a submit function witch POSTs the text input
 	const handleSubmit = event => {
-		event.preventDefault();
+		event.preventDefault()
 
 		//send a POST request
 		fetch(url, {
@@ -16,10 +16,9 @@ export const HappyForm = () => {
 			body: JSON.stringify({ message }),
 		})
 			.then(() => {
-				setMessage('')
-				window.location.reload();
+				setMessage('') // makes the text-area empy when reloaded
+				window.location.reload() // this forces the page to reload
 			})
-			.catch(error => console.log('error', error));
 	};
 
 	return (
@@ -34,10 +33,10 @@ export const HappyForm = () => {
 			<div className="post-message-wrapper">
 				<button
 					type="submit"
-					disabled={message.length < 5 || message.length > 140 ? true : false}>
-            Send halp
+					disabled={message.length <= 5 || message.length > 140 ? true : false}>
+            Send a happy thought!
           </button>
-          <p>{message.length}/140 </p>
+          <p>{message.length} /140 </p>
 			</div>
 		</form>
 	);

@@ -1,0 +1,10 @@
+.like-buttons{
+  border-radius: 50%;
+  border: none;
+  height: 70px;
+  width: 70px;
+}
+
+.liked-heartemoji{
+  font-size: 2em;
+}

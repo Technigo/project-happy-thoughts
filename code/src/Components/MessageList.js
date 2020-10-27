@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
+import { LikedMessage } from 'Components/LikedMessage'
 import './MessageList.css'
 
 export const MessageList = () => {
@@ -7,7 +8,6 @@ export const MessageList = () => {
   const [messages, setMessages] = useState([])
 
   useEffect(() => {
-
     fetch(MessagesUrl)
       .then((res) => {
         return res.json()
@@ -24,13 +24,16 @@ export const MessageList = () => {
     <div>
       {messages.map((message) => {
         return (
-          <section className="message" key={message._id}>
-            <div>{message.message}</div>
-            <div className="heart-time">
-              <div className="heart">{message.hearts}</div>
-              <div className="time">{moment(message.createdAt).fromNow()}</div>
-            </div>
-          </section>
+          <article className="message" key={message._id}>
+            <h3>{message.message}</h3>
+              {/* <div className="heart">{message.hearts}</div> */}
+              <div className='heart-time'>
+              < LikedMessage 
+              hearts={message.hearts} 
+              id={message._id} />
+              <p className="time">{moment(message.createdAt).fromNow()}</p>
+              </div>
+          </article>
 
         )
       })}
