@@ -34,6 +34,7 @@ export const App = () => {
 
   return (
     <main>
+      <h1>🤍HAPPY THOUGHTS🤍</h1>
       <section className="thoughts-container">
         <HappyForm onFormSubmit={onFormSubmit} />
         {thoughts.map(thought => (

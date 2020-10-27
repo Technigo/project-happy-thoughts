@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { CharacterCount } from "./CharacterCount"
 import "./happyForm.css"
 
 const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
@@ -35,7 +36,7 @@ export const HappyForm = (props) => {
                     disabled={message.length < 6 || message.length > 140 ? true : false}>
                     Send a happy thought
                     </button>
-                <p>{message.length} / 140</p>
+                <p><CharacterCount charMinMax={message.length} /></p>
             </div>
         </form>
     )
