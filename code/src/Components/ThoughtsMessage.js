@@ -3,23 +3,34 @@ import moment from 'moment'
 
 import './ThoughtsMessage.css'
 
-export const ThoughtsMessage = ({messageDetails}) => {
+export const ThoughtsMessage = props => {
+    const { message, hearts, createdAt, _id } = props.messageDetails;
+
+    const handleClick = () => {
+        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
+            method: "POST", 
+            body: "",
+            headers: { "Content-Type": "application/json" }
+        }).then (() => {
+            props.onLiked(_id);
+        });
+    };
 
    return (
     <article className="message-container">
-        <h3>{messageDetails.message}</h3>
+        <h3>{message}</h3>
         <p>
-            <button className="hearts-button"
+            <button id="hearts-button"
             onClick={handleClick}
-            style={{background: messageDetails.hearts > 0 ? "#fff" : "#000" }} >
+            className={hearts > 0 ? "liked" : "#not-Liked"} >
                 <span role="img" aria-label="Heart">
-                    {"❤"}                
+                    {"❤ "}                
                 </span>
             </button>
-            x {messageDetails.hearts}
+            x {hearts}
         </p>
         <p className="message-time">
-            {moment(messageDetails.createdAt).fromNow()}
+            {moment(createdAt).fromNow()}
         </p>
     </article>
    );
