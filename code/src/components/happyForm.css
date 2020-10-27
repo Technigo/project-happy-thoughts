@@ -17,6 +17,8 @@ textarea {
 
 .happy-form button {
   margin-top: 15px;
+  border-radius: 20px;
+  padding: 5px;
   color: rgba(2, 2, 2, 0.481);
   font-size: 16px;
   font-weight: lighter;
@@ -24,6 +26,7 @@ textarea {
   border: none;
   margin-right: 5px;
 }
-button :disabled {
-  color: cornflowerblue;
+p {
+  font-style: italic;
+  font-size: 12px;
 }
