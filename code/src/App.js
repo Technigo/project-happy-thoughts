@@ -9,6 +9,9 @@ export const App = () => {
   const apiUrl = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
   const [messages, setMessages] = useState([]);
 
+/* Fetching data from the Happy thoughts API
+Passing the data, an array of 20 object elements, to the setMessages function which in turn passes it tp the messages state variable 
+to the messages */
 fetch(apiUrl)
   .then((apiData) => {
     return apiData.json()
@@ -16,14 +19,15 @@ fetch(apiUrl)
     .then((data) => {
       setMessages(data);
     }, []);
+    // Bit unsure of what the [] does above
 
   return (
-  <div>
+  <main>
     {/* <ThoughtsForm /> */}
-
+    {/* Mapping through the array data that's in the messages state variable so each array element is returned via the messageDetails argument and prop to the ThoughtsMessage component */}
     {messages.map((messageDetails) => (
-      <ThoughtsMessage messageDetails={messageDetails}/>
+      <ThoughtsMessage messageDetails={messageDetails} />
     ))}
-  </div>
+  </main>
   )
 }
