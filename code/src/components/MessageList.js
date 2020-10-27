@@ -1,8 +1,6 @@
 import moment from 'moment';
 import React, { useState, useEffect } from 'react'
 
-
-
 export const MessageList = () => {
     const FETCH_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
     const [messages, setMessages] = useState([])
@@ -13,23 +11,21 @@ export const MessageList = () => {
                 return response.json()
             })
             .then((data) => {
-                console.log(data)
+                //console.log(data)
                 const filteredData = data.filter((getMessage) => getMessage.message)
                 setMessages(filteredData.slice(0, 20))
-            });
-    }, []);
+            })
+    }, [])
 
     return (
         <div>
             {messages.map((getMessages) => {
                 return (
-                    <div key={getMessages._id}>
+                    <div className="message-card" key={getMessages._id}>
+                        <p className="message-text">{getMessages.message}</p>
                         <div>
-                            <p>{getMessages.message}</p>
-                        </div>
-                        <div>
-                            <p><img url="../image/heart.svg" />{getMessages.hearts}</p>
-                            <p>{moment(getMessages.createdAt).fromNow()}</p>
+                            <p><span role="img" aria-label="Heart Icon">&#128151;  </span>x<span>  {getMessages.hearts}</span></p>
+                            <p className="message-time">{moment(getMessages.createdAt).fromNow()}</p>
                         </div>
                     </div>
                 )
