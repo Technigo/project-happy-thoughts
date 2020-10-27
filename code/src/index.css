@@ -58,9 +58,15 @@ form {
   border-radius: 50%;
   border: none;
   padding: 10px;
-  margin: 10px;
-  background-color: #ffadad;
+  margin: 5px;
   display: block;
+}
+
+.message-time {
+  color:darkgray;
+  padding-left: 40px;
+  padding-top: 40px;
+  float: right;
 }
 
 

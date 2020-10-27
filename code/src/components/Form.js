@@ -3,10 +3,12 @@ import { useState} from 'react'
 
 const FORM_URL='https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
+//states for the message so that we can change it
 export const Form = (props) => {
     const [message, setMessage] = useState("")
     
-const handleFormSubmit = event => {
+//This function is for when we are creating a thought and posting it to the API
+    const handleSubmit = (event) => {
     event.preventDefault()
     fetch(FORM_URL, {
         method: "POST",
@@ -15,11 +17,11 @@ const handleFormSubmit = event => {
 
     .then(() => {
         setMessage('')
-        props.onFormSubmit(message)
+        props.onFormSubmit (message)
     })
-} 
+    } 
     
-       
+     //This is the form where we write our message 
     
     return (
     <form className='form'>
@@ -33,7 +35,7 @@ const handleFormSubmit = event => {
         <div>
             <button className="send-button"
             type="submit"
-            onClick={handleFormSubmit}
+            onClick={handleSubmit}
             >
             <span role='img' aria-label='heart'>❤️ </span>Send Happy thought!<span role='img' aria-label='heart'>❤️ </span></button>
         </div>

@@ -5,7 +5,7 @@ import { HappyThoughts } from './components/HappyThoughts'
 export const App = () => {
   return (
     <section className='app-content'>
-      <Form />
+      <Form  />
       <HappyThoughts />
     </section>
   );
