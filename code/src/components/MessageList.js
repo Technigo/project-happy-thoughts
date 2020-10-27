@@ -1,8 +1,8 @@
-import moment from 'moment';
-import React, { useState, useEffect } from 'react'
+import moment from "moment"
+import React, { useState, useEffect } from "react"
 
 export const MessageList = () => {
-  const FETCH_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+  const FETCH_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
   const [messages, setMessages] = useState([])
 
   useEffect(() => {

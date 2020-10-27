@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-const FETCH_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+const FETCH_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 
 export const InputCard = () => {
 	const [newThought, setNewThought] = useState('')
@@ -9,14 +9,14 @@ export const InputCard = () => {
 		event.preventDefault();
 
 		fetch(FETCH_URL, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ message: newThought })
 		})
 			.then(() => {
-				window.location.reload();
-			});
-	};
+				window.location.reload()
+			})
+	}
 
 	return (
 		<form onSubmit={handleSubmit} className="input-card">
