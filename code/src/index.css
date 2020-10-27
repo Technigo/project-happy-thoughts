@@ -53,3 +53,15 @@ textarea {
   border: none;
   border-radius: 50%;
 }
+
+.time-created {
+  color: #a09993;
+}
+
+.heart-time-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}

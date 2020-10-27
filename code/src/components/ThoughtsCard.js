@@ -20,18 +20,20 @@ export const ThoughtsCard = ({id, message, timeCreated, hearts, addLike}) => {
   return (
     <div className="thought-card">
       <p>{message}</p>
-      <p>
-        <button 
-          onClick={handleLikes}
-          className="heart-button"
-          //Condition to determine heart button's back color depending on the amount of hears it has
-          style={{backgroundColor: hearts > 0 ? '#ffadad' : '#f2f0f0'}}        >
-          <span role="img" aria-label="Heart emoji">&#128151;</span>
-        </button>
-         x {hearts}
-      </p>
-      {/* Using the Moment.js package to determine when thought was posted */}
-      <p>{moment(timeCreated).fromNow()}</p>
+      <div className="heart-time-container">
+        <p>
+          <button 
+            onClick={handleLikes}
+            className="heart-button"
+            //Condition to determine heart button's back color depending on the amount of hears it has
+            style={{backgroundColor: hearts > 0 ? '#ffadad' : '#f2f0f0'}}        >
+            <span role="img" aria-label="Heart emoji">&#128151;</span>
+          </button>
+          x {hearts}
+        </p>
+        {/* Using the Moment.js package to determine when thought was posted */}
+        <p className="time-created">{moment(timeCreated).fromNow()}</p>
+      </div>
     </div>
   );
 };
