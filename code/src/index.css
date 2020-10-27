@@ -19,7 +19,7 @@ main {
   width: 420px;
   max-width: 100%;
   margin: 0 auto;
-  padding: 16px 16px;
+  padding: 16px 16px 140px 16px;
   /* border: 1px dashed rgba(255,255,255,0.4); */
   overflow: scroll;
 }
@@ -38,4 +38,14 @@ p {
 
 .semibold {
   font-weight: 600;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
