@@ -26,7 +26,6 @@ export const App = () => {
   }, []);
 
   const addLike = (id, clicks) => {
-    console.log(clicks);
     //addLike gets an id as an argument which is the id we got from the function
     //handleLikes, which is the function posting thoughts to the API. This was we make
     //sure we are adding the like to the right thought. addLike will add +1 to the
