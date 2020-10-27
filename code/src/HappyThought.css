@@ -1,3 +1,15 @@
 .happy-thought {
     background-color: rosybrown;
+    width:300px;
+    border: 2px solid black;
+    box-shadow: 4px 4px black;
+    margin: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.happy-container {
+    display: flex;
+    justify-content: center;
 }

@@ -23,8 +23,7 @@ export const MessageList = () => {
         <div>
             {
                 messages.map(message => {
-                    console.log(message)
-                   return  <HappyThought key={message._id} props={message}/> 
+                   return <HappyThought key={message._id} props={message}/> 
                 })
             }
         </div>

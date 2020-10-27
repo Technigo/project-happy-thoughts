@@ -14,17 +14,19 @@ export const MessageInput = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({message: message})
+                body: JSON.stringify({ message: message })
             }
         ).then(() => {
-             window.location.reload()
+            window.location.reload()
         })
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <textarea
-                rows='3'
+            <h3> Share a happy thought ♥️ </h3>
+
+            <textarea className="text-input"
+                rows='5'
                 value={message}
                 className="message-input"
                 onChange={event => setMessage(event.target.value)}>
