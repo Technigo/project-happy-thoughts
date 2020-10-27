@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+
+import { Happythoughts } from 'Components/Happythoughts';
+import { Postthoughts } from 'Components/Postthoughts';
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <>
+      <Postthoughts />
+      <Happythoughts />
+    </>
+  );
+};

@@ -1,0 +1,42 @@
+.post-box {
+  border: 1px solid #000;
+  box-shadow: 6px 6px #000;
+  background:#edeceb;
+  width: 300px;
+  min-height: 150px;
+  margin: 30px;
+  padding: 12px 12px 0 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.thought-input {
+  margin: 12px 0;
+  height: 60px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.send-thought {
+  font-family: 'Inconsolata', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 18px;
+  padding: 10px;
+  background: #FEACAC;
+  border: none;
+  margin: 8px 0 16px;
+  align-self: flex-start;
+}
+
+/* Media queries*/
+@media (min-width: 668px) { /* Tablet device */
+  .post-box {
+    width: 360px;
+  }
+}
+
+@media (min-width: 1024px) { /* Desktop device */
+ 
+}
