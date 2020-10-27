@@ -14,7 +14,6 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 }
 
 .form-container {
-border:solid green 2px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -23,11 +22,11 @@ align-items: center;
 
 .message {
 border:solid black 1px;
-width: 300px;
+width: 400px;
 padding-top: 20px;
 padding-bottom: 10px;
-padding-left: 10px;
-padding-right: 10px ;
+padding-left: 20px;
+padding-right: 20px ;
 background-color: #f1efef;
 box-shadow: 8px 8px black;
 margin-bottom: 30px;
@@ -60,3 +59,44 @@ color: grey;
 margin-left: 10px;
 }
 
+
+.thought-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.thoughts {
+border:solid black 1px;
+width: 400px;
+padding-top: 20px;
+padding-bottom: 15px;
+padding-left: 10px;
+padding-right: 20px ;
+background-color: #f1efef;
+box-shadow: 8px 8px black;
+margin-bottom: 30px;
+display: flex;
+flex-direction: column;
+
+}
+
+.form-text {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+}
+
+.form-button {
+  margin-top: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: #faafae;
+  padding: 5px 15px 5px 15px;
+  font-size: 11px;
+}
+
+.rubrik {
+padding-bottom: 20px;
+font-size: 15px;
+}
