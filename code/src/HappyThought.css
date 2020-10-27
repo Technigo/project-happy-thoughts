@@ -13,3 +13,16 @@
     display: flex;
     justify-content: center;
 }
+
+.btn {
+    border-radius: 25px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background-color:#ECC8CF;
+}
+
+.heart {
+    color: rgb(202, 74, 74);
+    font-size: large;
+}

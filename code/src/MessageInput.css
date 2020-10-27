@@ -1,16 +1,15 @@
-h3 {
-    margin: 0;
-}
-
 .button {
     height: 50px;
-    width: 30%;
+    width: 40%;
     background-color: #ffadad;
     border: none;
-    font-size: 2.2vw;
+    font-size: 2vw;
     border-radius: 25px;
-    padding: 10px;
     font-weight: 500;
+}
+
+.button:hover {
+    background-color:#cf8d8d;
 }
 
 textarea {
@@ -20,3 +19,4 @@ textarea {
     box-sizing: border-box;
     margin: 10px 0;
 }
+
