@@ -18,15 +18,24 @@ fetch(apiUrl)
   })
     .then((data) => {
       setMessages(data);
-    }, []);
-    // Bit unsure of what the [] does above
+    });
+
+const onLiked = messageId => {
+  const updatedMessage = messages.map(thought => {
+    if (thought._id === messageId) {
+      thought.hearts += 1
+    }
+    return thought    
+  })
+  setMessages(updatedMessage)
+}
 
   return (
   <main>
     {/* <ThoughtsForm /> */}
     {/* Mapping through the array data that's in the messages state variable so each array element is returned via the messageDetails argument and prop to the ThoughtsMessage component */}
-    {messages.map((messageDetails) => (
-      <ThoughtsMessage messageDetails={messageDetails} />
+    {messages.map((messageObject) => (
+      <ThoughtsMessage key={messageObject._id} messageDetails={messageObject} onLiked={onLiked}/>
     ))}
   </main>
   )
