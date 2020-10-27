@@ -16,4 +16,5 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: radial-gradient(#3f5efb, #f0aff0);
 }
