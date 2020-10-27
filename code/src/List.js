@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import moment from "moment";
 
+import moment from "moment";
 
 const List = () => { 
     const MESSAGES_URL ='https://happy-thoughts-technigo.herokuapp.com/thoughts';
@@ -14,7 +14,7 @@ const List = () => {
             .then(data => {
                 console.log(data)
                 //change to better function then reverse later
-                setMessages(data.reverse());
+                //setMessages(data.reverse());
 
                 const filteredMessages = data.filter(message => message.message );
 
@@ -30,7 +30,7 @@ const List = () => {
                 <p className="previous-messages" key={message._id}>
                     {message.message}
                     <span className ="message-time">
-                    {moment(message.created).fromNow()}
+                    {moment(message.created).fromNow()}; 
                     </span>
                 </p>
                 

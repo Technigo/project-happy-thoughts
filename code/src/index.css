@@ -34,9 +34,6 @@ form {
 -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 }
 
-.form-conatiner {
-  
-}
 
 .form-conatiner label{
   display: flex;
@@ -86,8 +83,8 @@ button {
   font-family: 'Roboto Mono', monospace;
   background-color: #fff;
   width: 50%;
-  min-height: 120px;
   padding: 40px; 
+  min-height: 120px;
   border: 1px solid black;
   box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
@@ -110,6 +107,10 @@ button {
   .form {
     width: 40%;
   }
+  .previous-messages {
+    width: 45%;
+  }
+
 
 
   button {
@@ -133,8 +134,14 @@ button {
 @media screen and (min-width: 1024px) {
 
   .form {
-    width: 40%;
+    width: 50%;
   }
+
+  .previous-messages {
+    width: 55%;
+  }
+
+
 
 
   button {
