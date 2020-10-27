@@ -22,11 +22,11 @@ Learning Objectives:
 
 ## Requirements Completed
 🔵  Blue Level
-<!-- - The page should follow the design as closely as possible -->
+- The page should follow the design as closely as possible
 <!-- - It should list the most recent thoughts at the top and older thoughts at the bottom (sorted) -->
-<!-- - Your thoughts should show the content of the message and how many likes they've received -->
-<!-- - You should have a form to post new thoughts -->
-<!-- - You should implement the heart button to send likes on a thought -->
+- The app should show the content of the message and how many likes they've received
+- The app should have a form to post new thoughts
+<!-- - Implement the heart button to send likes on a thought -->
 
 <!-- 🔴  Red Level (Intermediary Goals) -->
 <!-- - Show a count below the form input that updates as the user types and shows how many characters are remaining. Make it go red when the user has typed over 140 characters -->

@@ -8,7 +8,7 @@ export const Published = () => {
 
 
   // const handleLike = event => {
-
+    // this needs to POST the like and refresh the page
   // }
 
   useEffect(() => {
@@ -21,27 +21,38 @@ export const Published = () => {
       })
   }, [])
   
-
+  // the messages need to be sorted with the newest on top
   return (
-    <div>
+    <section>
       {pubPosts.map(pubPost => (
-        <p 
+        <article 
           key={pubPost._id} 
           className="pubPost">
-            {pubPost.message}
-          <span className="post-time">
-            {moment(pubPost.createdAt).fromNow()}
-          </span>
-          <p>
+            <p className="post-txt">
+              {pubPost.message}
+            </p>
+
+          <p className="post-info"> 
+            <span className="post-time">
+              {moment(pubPost.createdAt).fromNow()}
+            </span>
             <span 
-              className="heart-button" 
-              // onClick={}
-              role="heart emoji as a Like button">❤️</span>
-               x {pubPost.hearts}
+                className="heart-button" 
+                // onClick={}
+                role="heart emoji as a Like button">❤️
+              </span>
+            <div className="likes"></div>
+
+              <p className="like-count">
+                x {pubPost.hearts}
+              </p>         
+            
+            
+            
           </p>
-        </p> 
+      </article>
       ))
       }
-    </div>
+    </section>
   )
 }

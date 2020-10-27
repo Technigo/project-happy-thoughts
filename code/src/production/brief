@@ -1,70 +1,13 @@
-The end result should look like this:
-
-ss.png
-
-To achieve this, we've built an API with three endpoints. **Note that all of the thoughts you write will show up for everyone - this is a public API which you will all share**
-
-### **Fetch recent thoughts**
-
-`GET https://happy-thoughts-technigo.herokuapp.com/thoughts`
-
-This will return the latest 20 thoughts from the API, looking something like this:
-```json
-[
-  {
-    "_id": "5dd671c864cc480017f40979",
-    "message": "I'm happy because we're starting a fun new project",
-    "hearts": 0,
-    "createdAt": "2019-11-21T11:15:20.888Z",
-    "__v": 0
-  },
-  {
-    "_id": "5dd6759064cc480017f4097a",
-    "message": "I just ate a super tasty lunch",
-    "hearts": 0,
-    "createdAt": "2019-11-21T11:31:28.547Z",
-    "__v": 0
-  }
-]
-```
-
-
-
 ### **Create a thought**
-
-`POST https://happy-thoughts-technigo.herokuapp.com/thoughts`
-
-Send a POST request with a JSON body like this:
-
-```json
-{
-  "message": "My happy thought"
-}
-```
-
-If the request was successful and a thought was added, you'll get a response which looks like this:
-
-```json
-{
-  "_id": "123456",
-  "message": "My happy thought",
-  "hearts": 0,
-  "createdAt": "2019-11-21T11:31:28.547Z",
-  "__v": 0
-}
-```
 
 The message you send is validated - it must be present and be between 5 and 140 characters long. If it fails these validations, you'll get a response with detailed error information, which you could use to show a friendly error to the user.
 
 
 
 ### **Like a thought**
-
 `POST https://happy-thoughts-technigo.herokuapp.com/thoughts/THOUGHT_ID/like`
 
 When the user clicks the heart button on a thought, send a POST request (with no body) to this URL. **Replace THOUGHT_ID with the `_id` parameter of the thought the user clicked on**
-
----
 
 
 4. In the terminal, run `cd code` to change into the code folder

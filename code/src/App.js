@@ -5,10 +5,10 @@ import { NewPost } from './components/NewPost'
 
 export const App = () => {
   return (
-    <div>
+    <div className="app-container">
+    <h1>Happy Thoughts Machine</h1>
       <NewPost />
       <Published />
-
     </div>
   )
 }
