@@ -38,17 +38,19 @@ export const HappyForm = () => {
 					type="submit"
 					disabled={message.length <= 5 || message.length > 140 ? true : false}
           >
-            <img src={img} alt='Heart'></img>
-            {/* <span className='button-heartemoji' role='img' aria-label='Heart'>
-						{'❤️' }
-					</span> */}
+            <img
+            className='heart-button-left' 
+            src={img} 
+            alt='Heart'>
+            </img>
             Send a happy thought!
-            {/* <span className='button-heartemoji' role='img' aria-label='Heart'>
-						{'❤️' }
-					</span> */}
-          <img src={img} alt='Heart'></img>
+          <img 
+          className='heart-button-right' 
+          src={img} 
+          alt='Heart'>
+          </img>
           </button>
-          <p>{message.length} /140 </p>
+          <p className='submit-length'>{message.length} /140 </p>
 			</div>
 		</form>
     </article>

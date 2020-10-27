@@ -23,7 +23,7 @@ export const MessageList = () => {
       })
   }, [])
   return (
-    <div>
+    <section className='message-wrapper'>
       {messages.map((message) => {
         return (
           <article className="message" key={message._id}>
@@ -39,6 +39,6 @@ export const MessageList = () => {
 
         )
       })}
-    </div>
+    </section>
   )
 }

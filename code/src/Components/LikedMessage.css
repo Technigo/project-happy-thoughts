@@ -10,31 +10,48 @@
   background: rgb(250, 168, 168);
   border-radius: 50%;
   border: none;
-  height: 70px;
-  width: 70px;
-  margin-top: 20px;
+  height: 35px;
+  width: 35px;
+  margin: 4px 0 10px 12px;
 }
 
 .not-liked{
   background: '#ffadad';
   border-radius: 50%;
   border: none;
-  height: 70px;
-  width: 70px;
-  margin-top: 20px;
+  height: 35px;
+  width: 35px;
+  margin: 4px 0 10px 12px;
 }
 
-img{
-  height: 38px;
-    margin-top: 5px;
+.heart-like{
+  height: 20px;
+  margin-top: 5px;
 }
 
 .times-liked{
-  margin-left:10px;
+  margin: 13px 73px 5px 0;
   color: rgb(126, 126, 126);
 }
 
 .time{
-  margin-left:30px;
+  margin-top: 13px;
   color: rgb(126, 126, 126);
+}
+
+@media screen and (min-width:768px) {
+  .liked, 
+  .not-liked {
+    height: 50px;
+    width: 50px;
+    margin: 10px 0 10px 10px;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .liked, 
+  .not-liked {
+    height: 50px;
+    width: 50px;
+  }
 }

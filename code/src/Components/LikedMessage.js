@@ -19,7 +19,11 @@ export const LikedMessage = ({ hearts, id }) => {
 				type='button'
         onClick={handleLikes}
         >
-        <img src={img} alt='Heart'></img>
+        <img 
+        className='heart-like' 
+        src={img} 
+        alt='Heart'>
+        </img>
       </button>
       <p className='times-liked'>x {likes}</p>
       </>
