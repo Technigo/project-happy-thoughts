@@ -29,6 +29,7 @@ export const HappyForm = (props) => {
             <textarea
                 rows="3"
                 value={message}
+                placeholder="your happy thoughts here"
                 onChange={event => setMessage(event.target.value)}
             ></textarea>
             <div className="form-footer">
@@ -36,8 +37,8 @@ export const HappyForm = (props) => {
                     type="submit"
                     onClick={handleSubmit}
                     disabled={message.length < 6 || message.length > 140 || emptyMessage(message)}>
-                    Send a happy thought
-                    </button>
+                    <span className="heart" role="img" aria-label="purple-heart">{"💜"}</span>Send a happy thought<span className="heart" role="img" aria-label="purple-heart">{"💜"}</span>
+                </button>
                 <p><CharacterCount charMinMax={message.length} /></p>
             </div>
         </form>

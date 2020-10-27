@@ -1,14 +1,19 @@
 .happy-form {
   border: 2px solid black;
   box-shadow: 4px 4px black;
-  width: 300px;
+  width: 500px;
   height: 100%;
+  word-wrap: break-word;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 15px auto;
   padding: 18px;
   background-color: rgba(255, 192, 203, 0.796);
+}
+
+h3 {
+  font-family: "Titillium Web", sans-serif;
 }
 
 textarea {
