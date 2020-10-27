@@ -26,7 +26,24 @@ textarea {
   border: none;
   margin-right: 5px;
 }
+
 p {
   font-style: italic;
   font-size: 12px;
+}
+
+.p-message-length,
+.p-red,
+.p-green {
+  font-size: 13px;
+  font-weight: 600;
+  font-style: normal;
+  display: inline-block;
+}
+
+.p-red {
+  color: #f44336;
+}
+.p-green {
+  color: #2cb797;
 }
