@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
+import { Likes } from './Likes'
+
 export const Published = () => {
   const posted_url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
-  const like = "https://happy-thoughts-technigo.herokuapp.com/thoughts/{pubPost._id}/like"
   const [pubPosts, setPubPosts] = useState([])
-
-
-  // const handleLike = event => {
-
-  // }
 
   useEffect(() => {
     fetch(posted_url)
@@ -21,27 +17,32 @@ export const Published = () => {
       })
   }, [])
   
-
   return (
-    <div>
+    <section>
       {pubPosts.map(pubPost => (
-        <p 
+        <article 
           key={pubPost._id} 
           className="pubPost">
-            {pubPost.message}
-          <span className="post-time">
-            {moment(pubPost.createdAt).fromNow()}
-          </span>
-          <p>
-            <span 
-              className="heart-button" 
-              // onClick={}
-              role="heart emoji as a Like button">❤️</span>
-               x {pubPost.hearts}
-          </p>
-        </p> 
+            <p className="post-txt">
+              {pubPost.message}
+            </p>
+            <div className="post-info"> 
+              <span className="post-time">
+                {moment(pubPost.createdAt).fromNow()}
+              </span>
+              <Likes 
+                id={pubPost._id}
+                hearts={pubPost.hearts}
+                onLike={pubPost.onLike}
+                />
+              <div className="like-count">x {pubPost.hearts}</div>
+            </div>
+      </article>
       ))
       }
-    </div>
+    </section>
   )
 }
+
+// why don't long messages wrap and stay in box?
+// tabbing navigates from page bottom to top since flex colum is reversed :/
