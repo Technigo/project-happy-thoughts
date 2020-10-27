@@ -2,20 +2,18 @@ import React, { useState } from 'react';
 
 export const Form = () => {
   const [newThought, setNewThought] = useState('');
+  const POST_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
 
   const handleSubmit = event => {
     event.preventDefault();
-
     //Creates a POST request to add new Thought to the API
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts',
+    fetch(POST_URL,
       {
         method: 'POST',
-        headers:{
-          'Content-Type': 'application/json'
-        },
+        headers: {'Content-Type': 'application/json'},
         //Adds new thought to the API's body in json format
         //newThought is the value we got from the input field
-        body:JSON.stringify({message: newThought})
+        body: JSON.stringify({message: newThought})
       }
     ).then(() => {
       //Asks page to reload after the new thought has been POSTed
@@ -33,9 +31,12 @@ export const Form = () => {
       <p className="text-counter">{140 - newThought.length} characters left</p>
       <button 
         className="form-button" 
-        type="submit" 
+        type="submit"
+        /* Condition to enable the submit button only when the thought has right amount of characters */
         disabled={newThought.length < 6 || newThought.length > 140 ? true : false}>
-          <span role="img" aria-label="Heart emoji">&#128151;</span> Send Happy Thought <span role="img" aria-label="Heart emoji">&#128151;</span>
+          <span role="img" aria-label="Heart emoji">&#128151;</span> 
+            Send Happy Thought 
+          <span role="img" aria-label="Heart emoji">&#128151;</span>
       </button>
     </form>
   );
