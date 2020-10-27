@@ -29,19 +29,26 @@ export const ThoughtsInput = () => {
     };
 
     return ( 
-        <form onSubmit = {handleSubmit}>
-            <input 
-                type="text"
-                className="form-text"
-                onChange= {event => setThought(event.target.value)}
-                >
-            </input>
-            <input
-                type="submit"
-                className="submit-button"
-                value="Add Thought">
-            </input>
+        <div className="input-form">
+            <form onSubmit = {handleSubmit}>
+                <p className="form-title">What's making you happy right now?</p>
+                <input 
+                    type="text"
+                    className="text-area"
+                    maxLength="140"
+                    onChange= {event => setThought(event.target.value)}
+                    >
+                </input>
+                <button
+                    type="submit"
+                    className="submit-button"
+                    value="Add Thought">
+                    <span role="img" aria-label="Heart emoji">💗 </span> 
+                        Send Happy Thought
+                    <span role="img" aria-label="Heart emoji"> 💗</span>
+                </button>
 
-        </form>
+            </form>
+        </div>
     )
     }

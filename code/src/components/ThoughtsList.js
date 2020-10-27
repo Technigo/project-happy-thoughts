@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+
 import { useEffect } from "react"
 import { ThoughtCard } from "./ThoughtCard"
 
@@ -17,7 +18,7 @@ export const ThoughtsList = () => {
                 const filteredThoughts = data.filter(thought => {
                     return thought !== '';
                 });
-                setThoughts(filteredThoughts);
+                setThoughts(filteredThoughts);     
             });
     }, []);
 

@@ -7,9 +7,9 @@ import { ThoughtsInput } from 'components/ThoughtsInput'
 export const App = () => {
   return (
     <div>
+      <ThoughtsInput/>
       <ThoughtsList/>
       <ThoughtCard/>
-      <ThoughtsInput/>
     </div>
   )
 }
