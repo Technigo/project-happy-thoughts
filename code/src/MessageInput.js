@@ -8,6 +8,7 @@ export const MessageInput = () => {
 
     const handleSubmit = event => {
         event.preventDefault()
+
         fetch(MESSAGES_URL,
             {
                 method: "POST",
@@ -23,12 +24,11 @@ export const MessageInput = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h3> Share a happy thought ♥️ </h3>
+            <h3> Share a happy thought <span className='heart'role='img' aria-label='heart'>♥</span> </h3>
 
             <textarea className="text-input"
                 rows='5'
                 value={message}
-                className="message-input"
                 onChange={event => setMessage(event.target.value)}>
             </textarea>
             <input

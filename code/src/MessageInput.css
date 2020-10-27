@@ -13,10 +13,14 @@
 }
 
 textarea {
-    width: 80%;
+    width: 50%;
     resize: none;
     padding: 10px;
     box-sizing: border-box;
     margin: 10px 0;
+}
+
+.heart {
+    color: rgb(151, 112, 112);
 }
 

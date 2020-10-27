@@ -1,6 +1,12 @@
+.happy-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
 .happy-thought {
     background-color: rosybrown;
-    width:300px;
+    width: 500px;
     border: 2px solid black;
     box-shadow: 4px 4px black;
     margin: 16px;
@@ -9,9 +15,10 @@
     flex-direction: column;
 }
 
-.happy-container {
+.thought-details {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .btn {

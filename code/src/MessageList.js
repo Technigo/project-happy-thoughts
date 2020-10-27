@@ -1,5 +1,5 @@
-import React, {useState,  useEffect } from 'react'
-import {HappyThought} from './HappyThought'
+import React, { useState,  useEffect } from 'react'
+import { HappyThought } from './HappyThought'
 import './MessageList.css'
 
 export const MessageList = () => {
