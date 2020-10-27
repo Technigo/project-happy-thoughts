@@ -1,15 +1,40 @@
-.like-buttons{
+/* .liked-message-button{
   border-radius: 50%;
   border: none;
   height: 70px;
   width: 70px;
+  margin-top: 20px;
+} */
+
+.liked{
+  background: rgb(250, 168, 168);
+  border-radius: 50%;
+  border: none;
+  height: 70px;
+  width: 70px;
+  margin-top: 20px;
 }
 
-.liked-heartemoji{
-  font-size: 2em;
+.not-liked{
+  background: '#ffadad';
+  border-radius: 50%;
+  border: none;
+  height: 70px;
+  width: 70px;
+  margin-top: 20px;
 }
 
 img{
   height: 38px;
     margin-top: 5px;
+}
+
+.times-liked{
+  margin-left:10px;
+  color: rgb(126, 126, 126);
+}
+
+.time{
+  margin-left:30px;
+  color: rgb(126, 126, 126);
 }
