@@ -4,6 +4,7 @@ import { Form } from 'components/Form';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
+  const [clickCounts , setClickCounts] = useState(0);
   const FETCH_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
 
   useEffect(() => {
@@ -24,7 +25,8 @@ export const App = () => {
       });
   }, []);
 
-  const addLike = (id) => {
+  const addLike = (id, clicks) => {
+    console.log(clicks);
     //addLike gets an id as an argument which is the id we got from the function
     //handleLikes, which is the function posting thoughts to the API. This was we make
     //sure we are adding the like to the right thought. addLike will add +1 to the
@@ -40,12 +42,16 @@ export const App = () => {
     })
     //we setThoughts again so the thoughts now show with the updated amount of hearts
     setThoughts(updatedLikes);
+    //Created a State for clickCounts which will show how many time the Heart button
+    //has been clicked, we get the number of clicks from the callback function in 
+    //ThoughtCard component and add it to the existing clickCounts
+    setClickCounts(clicks + clickCounts);
   };
 
   return (
     <>
       <Form />
-      
+      <p className="posts-liked-counter">Amount of Hearts given out this session: {clickCounts}</p>
       <section className="though-cards-container">
         {/* map thru the thoughts array to generate the thoughts cards */}
         {/* Send the necessary data to the Thoughts Cards component as props */}

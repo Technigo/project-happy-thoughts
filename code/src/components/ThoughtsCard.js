@@ -8,13 +8,17 @@ export const ThoughtsCard = ({id, message, timeCreated, hearts, addLike}) => {
   //by doing a POST request
   //using that thought's id we make sure we add the heart to the right thought
   const handleLikes = () => {
+    //Stretch goal: created a click counter so we know how many times the Heart button
+    //has been clicked and send that data in the callback function to App component
+    let clicks = 0;
+    clicks += 1;
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,{
       method: 'POST',
       body: "",
       headers: {"Content-Type": "application/json"}
       //addLike is a function we got from App sent as prop, and is responsible for visually
       //adding +1 to the amount of likes a thought has (it is explained in the App component)
-    }).then(() => {addLike(id)})
+    }).then(() => {addLike(id, clicks)})
   };
 
   return (
