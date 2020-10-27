@@ -9,10 +9,7 @@ The message you send is validated - it must be present and be between 5 and 140 
 
 When the user clicks the heart button on a thought, send a POST request (with no body) to this URL. **Replace THOUGHT_ID with the `_id` parameter of the thought the user clicked on**
 
-
-4. In the terminal, run `cd code` to change into the code folder
-5. Install the dependencies needed for react by running `npm install`
-6. Run the react development server by running `npm start`
+ running `npm start`
 
 ## Hints and tips to complete the project 🤓
 
