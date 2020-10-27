@@ -142,6 +142,7 @@ textarea {
 	width: 70px;
 	height: 70px;
 	animation: spin 8s linear infinite;
+	display: flex;
 	justify-content: center;
 }
 
