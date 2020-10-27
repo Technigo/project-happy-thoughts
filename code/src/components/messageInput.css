@@ -1,0 +1,31 @@
+.message-input-container {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 380px;
+  border: 2px solid black;
+}
+
+.btn-thought {
+  width: 50%;
+  margin: 10px 20px;
+  padding: 0;
+}
+
+.form-text {
+  margin: auto;
+  width: 340px;
+  height: 50px;
+}
+
+.input-heading {
+  margin: 10px 20px;
+}
+
+.characters-left {
+  margin: 0 20px;
+}
+
+textarea {
+  resize: none;
+}

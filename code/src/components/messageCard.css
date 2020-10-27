@@ -1,0 +1,23 @@
+.message-card-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  justify-content: space-between;
+  margin: 20px 0;
+  height: 120px;
+}
+
+.bottom-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+.heart-btn {
+  margin-right: 10px;
+}
+
+.card-message {
+  margin: 20px;
+}
