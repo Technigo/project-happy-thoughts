@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import moment from "moment";
 
 
 export const Messages = () => {
@@ -18,12 +18,21 @@ export const Messages = () => {
         setMessages(data)
     });
 },[]);
-    return <div>{messages.map((message) => {
-        return <p className="message" key={message._id}> 
-        {message.message}
-        {message.createdAt}
-        </p>
-            
+    return <div className="form-container">{messages.map((message) => {
+        return  <div className="message" key={message._id}>
+        {message.message} 
+       
+        <div className="form">
+        <span className="message-time">
+        {moment(message.createdAt).fromNow()}
+        </span>
+        <div className="like"><span className="heart">❤️</span></div>
+        </div>
+       </div>
+        
             })}
         </div>;
+
+        
 }; 
+
