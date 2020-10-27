@@ -1,9 +1,13 @@
 import React from 'react'
 
+import { ListThoughts } from './component/ListThoughts'
+
+
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <>
+      <ListThoughts />
+
+    </>
+  );
+};
