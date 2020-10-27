@@ -5,51 +5,133 @@
 }
 
 h1 {
-	font-size: 22px;
+	font-size: 20px;
 	margin-bottom: 30px;
+	font-weight: 400;
 }
 
 main {
+	width: 90%;
+	max-width: 500px;
+	margin: 30px auto;
+	font-family: menlo;
 	display: grid;
 	row-gap: 30px;
-	width: 100%;
-	max-width: 500px;
-	margin: 0 auto;
+	justify-content: center;
 }
 
 form {
 	background: #f2f0f0;
-	padding: 30px;
+	border: 1px solid #000000;
+	box-shadow: 7px 7px;
+	display: grid;
+	grid-template-rows: min-content;
+	grid-row-gap: 20px;
+	grid-template-columns: min-content;
+	grid-column-gap: 10px;
+	align-items: center;
+	padding: 20px;
 }
 
 label {
 	display: flex;
 	flex-direction: column;
+	grid-column: 1/3;
 }
 
-.post-message-wrapper {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 30px;
+textarea {
+	width: 100%;
 }
 
-.post-message-wrapper button {
-	width: 200px;
+.button-send-post {
 	height: 40px;
+	font-size: 14px;
+	font-family: menlo;
+	padding: 8px;
+	width: 220px;
+	border: none;
+	border-radius: 25px;
+	background: #ffadad;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	border: none;
-	border-radius: 15px;
-	background: #ffadad;
 }
 
-.post {
-	border: 1px solid #000000;
+.heart-post {
+	font-family: ui-rounded;
+}
+
+.post-message-length {
+	text-align: end;
+	font-size: 13px;
 }
 
 .wrongLength {
 	color: #e73a3a;
+}
+
+.post {
+	border: 1px solid #000000;
+	box-shadow: 7px 7px;
+	display: grid;
+	grid-template-rows: min-content;
+	grid-row-gap: 20px;
+	grid-template-columns: min-content;
+	grid-column-gap: 10px;
+	align-items: center;
+	padding: 20px;
+}
+
+.post-text {
+	grid-column: 1/4;
+}
+
+.post-text-likes {
+	font-size: 14px;
+	opacity: 0.5;
+	width: max-content;
+}
+
+.post-text-posted {
+	font-size: 14px;
+	opacity: 0.5;
+	text-align: end;
+}
+
+.post-text-info {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-column-gap: 10px;
+	align-items: center;
+	justify-items: center;
+	width: 100%;
+}
+
+.heart-like {
+	margin-left: 3px;
+}
+
+.notLiked,
+.liked,
+.superLiked {
+	border-radius: 50%;
+	border: none;
+	width: 40px;
+	height: 40px;
+	font-size: 16px;
+	grid-column: 1/2;
+}
+
+.notLiked {
+	background: #f2f0f0;
+}
+
+.liked {
+	background: #ffadad;
+}
+
+.superLiked {
+	background: #ffadad;
+	animation: stretch 4s ease-in-out infinite;
 }
 
 /*LOADING SPINNER*/
@@ -60,6 +142,7 @@ label {
 	width: 70px;
 	height: 70px;
 	animation: spin 8s linear infinite;
+	justify-content: center;
 }
 
 @keyframes loader {
@@ -71,6 +154,19 @@ label {
 	}
 }
 
+@keyframes stretch {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/*Media querys*/
 @media (min-width: 768px) {
 }
 

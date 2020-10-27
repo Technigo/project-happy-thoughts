@@ -56,12 +56,12 @@ const PostList = () => {
 					{messages.map(post => (
 						<article className="post" key={post._id}>
 							<p className="post-text">{post.message}</p>
-							<div className="post-text-info">
-								<p className="post-text-posted">
-									{moment(post.createdAt).fromNow()}
-								</p>
-								<PostLiked hearts={post.hearts} id={post._id} />
-							</div>
+							{/* <div className="post-text-info"> */}
+							<PostLiked hearts={post.hearts} id={post._id} />
+							<p className="post-text-posted">
+								{moment(post.createdAt).fromNow()}
+							</p>
+							{/* </div> */}
 							{/* <button onClick={onLiked(post._id)}>{post.hearts}</button> */}
 							{/* <p>{post.hearts}</p>
 				 			<p>{post._id}</p> */}

@@ -27,23 +27,22 @@ const PostLiked = ({ hearts, id }) => {
 		//console.log(localStorage[id]);
 	};
 	return (
-		<div className="post-text-likes">
+		<>
 			<Button
 				type="button"
-				className="message__text__like__button"
 				click={handleLikes}
+				className={likes > 5 ? 'superLiked' : likes > 0 ? 'liked' : 'notLiked'}
 				text={
-					<span role="img" aria-label="Heart">
+					<span className="heart-like" role="img" aria-label="Heart">
 						{'❤️'}
 					</span>
 				}
 			/>
-			<p className="post-total-likes">x {likes}</p>
-			<p className="post-my-likes">
-				You liked this: x {localStorage[id]}
-				{/* You liked this: x {yourLikes} */}
-			</p>
-		</div>
+			<div className="post-text-likes">
+				<p className="post-total-likes">x {likes}</p>
+				<p className="post-my-likes">x {localStorage[id]} my likes</p>
+			</div>
+		</>
 	);
 };
 

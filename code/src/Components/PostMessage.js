@@ -49,37 +49,37 @@ const PostMessage = () => {
 					onChange={event => setMessage(event.target.value)}
 				/>
 			</label>
-			<div className="post-message-wrapper">
-				<Button
-					// className="post-message-button"
-					type="submit"
-					text={
-						<p>
-							<span role="img" aria-label="Heart">
-								{'❤️ '}
-							</span>
-							Post
-							<span role="img" aria-label="Heart">
-								{' ❤️'}
-							</span>
-						</p>
+			{/* <div className="post-message-wrapper"> */}
+			<Button
+				className="button-send-post"
+				type="submit"
+				text={
+					<p>
+						<span className="heart-post" role="img" aria-label="Heart">
+							{'❤️ '}
+						</span>
+						Post happy thought
+						<span className="heart-post" role="img" aria-label="Heart">
+							{' ❤️'}
+						</span>
+					</p>
+				}
+				disabled={message.length < 6 || message.length > 140 ? true : false}
+			/>
+			{/* add a tooltip? To indicate that the message is to long or to short */}
+			<p className="post-message-length">
+				<span
+					className={
+						message.length < 6 || message.length > 140
+							? 'wrongLength'
+							: 'goodLength'
 					}
-					disabled={message.length < 6 || message.length > 140 ? true : false}
-				/>
-				{/* add a tooltip? To indicate that the message is to long or to short */}
-				<p className="">
-					<span
-						className={
-							message.length < 6 || message.length > 140
-								? 'wrongLength'
-								: 'goodLength'
-						}
-					>
-						<strong>{140 - message.length}</strong>
-					</span>
-					/ 140
-				</p>
-			</div>
+				>
+					<strong>{140 - message.length}</strong>
+				</span>
+				/ 140
+			</p>
+			{/* </div> */}
 		</form>
 	);
 };
