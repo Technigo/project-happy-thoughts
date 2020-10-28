@@ -33,20 +33,20 @@ export const App = () => {
 			.catch((error) => console.error(error));
 	};
 
-	const reachLikeInput = (newLike) => {
-		fetch(
-			'https://happy-thoughts-technigo.herokuapp.com/thoughts/{postId}/like',
-			{
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-			}
-		).then(() => fetchMessages());
-	};
-
 	return (
 		<div className="list-container">
 			<Form onMessageChange={reachMessageInput} />
-			<ThoughtsList thoughtsList={thoughts} onLikeChange={reachLikeInput} />
+			{thoughts.map((item) => {
+				return (
+					<ThoughtsList
+						key={item._id}
+						hearts={item.hearts}
+						id={item._id}
+						message={item.message}
+						time={item.createdAt}
+					/>
+				);
+			})}
 		</div>
 	);
 };
