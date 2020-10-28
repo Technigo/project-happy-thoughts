@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-
+import { Likeathought } from 'Components/Likeathought';
 import 'styles/happythoughts.css';
 
-export const Happythoughts = () => {
-  const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+export const ThoughtsList = () => {
+  const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
   const [thoughts, setThoughts] = useState([]);
   // Use [] in the useState since it is an array that we get in the get-request
   
   useEffect(() => {
-    fetch(MESSAGES_URL)
+    fetch(THOUGHTS_URL)
     .then((res) => {
         return res.json();
     })
     .then((data) => {
-      console.log(data);
-      // Sort the messages time while from a to b
+      // Sort the messages on time passed since message sent, from a to b
       data.sort(function(a, b) {
         return a - b;
       });
@@ -23,20 +22,37 @@ export const Happythoughts = () => {
       // Filter out if any thoughts are empty
       const filteredThoughts = data.filter((thought) => thought.message);
 
+      // Chooses to 'call' the filteredThoughts. 
       setThoughts(filteredThoughts);
     });
   }, []);
   // If we want we can put the fetch in another separate component
 
+  const onThoughtLiked = (likedThoughtId) => {
+    const updatedThoughts = thoughts.map((thought) => {
+      if (thought._id === likedThoughtId) {
+        thought.hearts += 1;
+      }
+      return thought;
+    })
+    setThoughts(updatedThoughts);
+  };
+
   return (
     <div>
       {thoughts.map(thought => {
         return (
-          <div className="thoughts-box">
-            <p className="thoughts" key={thought._id}>
+          <div className="thoughts-box" key={thought._id}>
+            <p className="thoughts">
               {thought.message}
             </p>
-            <div className="time-wrapper">
+            <div className="thoughts-footer">
+              <Likeathought 
+                key={thought._id}
+                id={thought._id}
+                onThoughtLiked={onThoughtLiked}
+                hearts={thought.hearts}
+              />
               <p className="time-stamp"> 
                 {moment(thought.createdAt).fromNow()}
               </p> 

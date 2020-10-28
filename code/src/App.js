@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { Happythoughts } from 'Components/Happythoughts';
+import { ThoughtsList } from 'Components/ThoughtsList';
 import { Postthoughts } from 'Components/Postthoughts';
 
 export const App = () => {
+  
   return (
     <>
       <Postthoughts />
-      <Happythoughts />
+      <ThoughtsList />
     </>
   );
 };

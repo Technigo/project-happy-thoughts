@@ -1,8 +1,8 @@
 .post-box {
   border: 1px solid #000;
   box-shadow: 6px 6px #000;
-  background:#edeceb;
-  width: 300px;
+  background:#F2F0F0;
+  width: 315px;
   min-height: 150px;
   margin: 30px;
   padding: 12px 12px 0 10px;
@@ -16,6 +16,12 @@
   margin: 12px 0;
   height: 60px;
   font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.button-footer {
+  display: flex;
 }
 
 .send-thought {
@@ -26,8 +32,19 @@
   padding: 10px;
   background: #FEACAC;
   border: none;
-  margin: 8px 0 16px;
+  margin: 8px 20px 16px 0;
   align-self: flex-start;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.send-thought:disabled {
+  color: #F2F0F0;
+}
+
+.counter {
+  align-self: center;
+
 }
 
 /* Media queries*/
