@@ -40,7 +40,7 @@ export const Likes = ({ id, hearts }) => {
           </span>
       </button>
       <div className="like-count">x {like}</div>
-      <div className="your-like-count">you liked this: x {yourLiked}</div>
+      <div className="your-like-count" id={yourLike}>you liked this: x {yourLiked}</div>
     </div>
   )
 }
