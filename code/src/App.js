@@ -12,13 +12,12 @@ export const App = () => {
 
   useEffect(() => {
     fetchThoughts();  
-  });
+  }, []);
 
   const fetchThoughts = () => {
     fetch(STATUS_URL)
       .then(res => res.json())
       .then(data => setThoughts(data.reverse()))
-      console.log(data);
   }
 
   return (

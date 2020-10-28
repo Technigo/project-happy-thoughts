@@ -8,11 +8,11 @@ export const ThoughtsList = ( { thoughtsList } ) => {
   return (
     <div>
       {
-        messageList.map(message => (
-          <p className="thought-text" key={thoughts.created}>
-            {thoughts.message}
-            <span className="message-time">
-              {moment(message.created).fromNow()}
+        thoughtsList.map(thought => (
+          <p className="thought-text" key={thought._id}>
+            {thought.message}
+            <span className="posting-time">
+              {moment(thought.createdAt).fromNow()}
             </span>
           </p>
         ))
