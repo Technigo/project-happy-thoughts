@@ -16,7 +16,17 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  word-wrap: break-word;
   margin-top: 100px;
+
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:20px;
+
 
 }
 
@@ -26,12 +36,17 @@ form {
   flex-direction: column;
   font-family: 'Roboto Mono', monospace;
   background-color: #e8e9eb;
-  width: 50%;
-  padding: 40px; 
+  width: 60%;
+  padding: 30px; 
   border: 1px solid black;
   box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+}
+
+.form-conatiner {
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -40,7 +55,9 @@ form {
   flex-direction: column;
 }
 
-input[type=text], select {
+
+/*
+input[type=textarea], select {
   width: 95%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -48,13 +65,13 @@ input[type=text], select {
   font-size: 18px; 
   padding-inline-start: 5px;
 }
-
+*/
 
 button {
   display: flex;
   justify-content: center;
   width: 80%;
-  margin-top: 10px;
+  margin-top: 50px;
   border: none;
   border-radius: 25px;
   color: #000;
@@ -66,6 +83,33 @@ button {
   cursor: pointer; 
 }
 
+
+button p {
+  padding: 10px;
+}
+
+.heart-button {
+  display: flex;
+  justify-content: center;
+  width: 8%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 100%;
+  color: #000;
+  background-color: #d9fcc2;
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer; 
+}
+
+
+
+.thoughts-length-left {
+  display: flex;
+  justify-content: flex-end;
+}
 
 
 /** Prevoius messages **/
@@ -83,8 +127,9 @@ button {
   font-family: 'Roboto Mono', monospace;
   background-color: #fff;
   width: 50%;
+  min-height: 80px;
+  margin-top: 30px;
   padding: 40px; 
-  min-height: 120px;
   border: 1px solid black;
   box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
@@ -105,7 +150,7 @@ button {
 @media screen and (min-width: 667px) and (max-width:1024px) { 
 
   .form {
-    width: 40%;
+    width: 55%;
   }
   .previous-messages {
     width: 45%;
@@ -114,18 +159,12 @@ button {
 
 
   button {
-    width: 70%;
+    width: 80%;
     font-size: 14px;
     padding: 10px 18px;
      
-    }
-
-
+  }
 }
-
-
-
-
 
 
 
@@ -134,7 +173,7 @@ button {
 @media screen and (min-width: 1024px) {
 
   .form {
-    width: 50%;
+    width: 60%;
   }
 
   .previous-messages {
@@ -145,7 +184,7 @@ button {
 
 
   button {
-  width: 50%;
+  width: 60%;
   font-size: 16px;
   padding: 15px 32px;
    

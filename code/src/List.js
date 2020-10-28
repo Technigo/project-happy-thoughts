@@ -30,7 +30,7 @@ const List = () => {
                 <p className="previous-messages" key={message._id}>
                     {message.message}
                     <span className ="message-time">
-                    {moment(message.created).fromNow()}; 
+                    {moment(message.createdAt).fromNow()}; 
                     </span>
                 </p>
                 

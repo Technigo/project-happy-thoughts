@@ -1,11 +1,19 @@
+
+/*
+
 import React  from "react";
 
-const Send = () => { 
+const Send = ( {messages , setMessages }) => { 
     return(
         <section className ="send-happy">
-            <button >  &#128154;   Send Happy Thougth  &#128154;    </button>
+            <button 
+                type="submit" 
+                disabled={messages.length < 6 || messages.length > 140 ? true: false}
+            > <span className="green-heart" role="img" aria-label="Green heart"> &#128154;  </span>    Send Happy Thougth    <span className="green-heart" role="img" aria-label="Green heart"> &#128154; </span>    </button>
         </section>
     )
 }
 
 export default Send; 
+
+*/

@@ -1,54 +1,66 @@
 import React, { useState, useEffect } from "react";
 
-import List from "./List";
-import Send from "./Send";
+import HappyForm from "./HappyForm"
+import HappyThougthList from "./HappyThougthList";
 
+import { THOUGTHS_URL } from "./urls"
 
+const Main = () => { 
+const [thoughts, setThoughts] = useState([]); 
 
-const Main = () => {
-    const THOUGTHS_URL ="https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    useEffect(() => {
+        fetchThougths();
+    }, []);  
 
-    const [thoughts, setThoughts] = useState([]) 
-    const [messages , setMessages] = useState ([]);
-    
-    const handleFormSubmit = (event) => {
-    event.preventDefault(); 
-    console.log(JSON.stringify({text: thoughts})) 
+    const fetchThougths = () => {
+        fetch(THOUGTHS_URL )
+        .then(res => res.json())
+        .then(data => setThoughts(data.reverse()))
+        .then(data => {
+                console.log(data)
+                //const filteredThoughts= data.filter(message => message.message );
+                //const filteredMessages = data.filter(message => message.message );
 
+                //setThoughts(filteredThoughts);
+    })}
+    const postSingleMessage = newMessage => {
+        fetch(THOUGTHS_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: newMessage })
+        })
+          .then(() => fetchThougths())
+          .catch(error => console.error(error));
+      }
 
-     fetch(THOUGTHS_URL, {
-        method: "POST",
-        headers:
-        {
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify({message: thoughts})
-        }
-        ).then(() => {
-        window.location.reload();
-        });
-    }
+      const onLiked = thoughtId => {
 
-    return (
-      <>
-         <form onSubmit = {handleFormSubmit}>
-            <section className ="form-conatiner">
-              <label htmlFor="" tabIndex ="0">
-                What's making you happy right now?   
-                <input
-                type="text"
-                onChange = {(event) => setThoughts(event.target.value)}
-                />
-            </label> 
+        const updatedThoughts = thoughts.map(thought => {
+          if (thought._id === thoughtId) {
+            thought.hearts += 1
+          }
+          return thought
+        })
+        setThoughts(updatedThoughts)
+      }
+      
 
-            <Send />  
+        return(
+            <main>
+                <HappyForm onMessageChange={postSingleMessage} /> 
 
-            </section>
-        </form> 
-
-            <List messages={messages} setMessages ={setMessages} /> 
-      </>
- )
-}
+                {thoughts.map((thought) => (
+                <HappyThougthList 
+                 key={thought._id}
+                 thought={thought}
+                 onLiked={onLiked} />
+                    ))}
+            </main>
+    )}
+   
    
 export default Main;
+
+//<List  messages={messages} setMessages ={setMessages}  /> 
+
+
