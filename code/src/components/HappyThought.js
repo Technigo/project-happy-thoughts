@@ -14,12 +14,20 @@ export const HappyThought = () => {
       })
       .then((data) => {
         console.log(data)
-        //data.reverse() - if we wanted to reverse the order
-        const filteredMessages = data.filter(message => message._id) // - to filter the empty messages
-
-        setMessages(filteredMessages.slice(0, 10)) // - slice will minimize the array 
+        //data.reverse() - if I wanted to reverse the order
+        setMessages(data.slice(0, 10)) // - slice will minimize the array 
       })
   },[])
+
+  const onLiked = messageId => {
+    const updatedThoughts = messages.map(message => {
+      if(message._id === messageId) {
+        message.hearts += 1 
+      }
+      return message
+    })
+    setMessages(updatedThoughts)
+  }
 
   return(
     <section className="thoughts-section">
@@ -30,7 +38,7 @@ export const HappyThought = () => {
             {message.message}
           </p>
           <div className="thought-footer">
-            <HappyHeart />
+            <HappyHeart onLiked={onLiked} message={message.message} hearts={message.hearts} id={message._id} />
             <p className="text-time">
               {moment(message.createdAt).fromNow()} 
             </p>
