@@ -56,3 +56,9 @@ textarea {
   justify-content: space-between;
   align-items: baseline;
 }
+
+.like-button {
+  border: none;
+  border-radius: 30px;
+  height: 30px;
+}

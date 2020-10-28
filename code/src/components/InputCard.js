@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const FETCH_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const LIKES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 
 export const InputCard = () => {
 	const [newThought, setNewThought] = useState('')
@@ -8,7 +8,7 @@ export const InputCard = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		fetch(FETCH_URL, {
+		fetch(LIKES_URL, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ message: newThought })
@@ -23,14 +23,22 @@ export const InputCard = () => {
 			<p className="input-card-title">What's making you happy right now?</p>
 			<textarea
 				type="text"
-				maxLength="160"
+				maxLength="130"
 				onChange={(event) => setNewThought(event.target.value)} />
-			<p className="text-counter">{160 - newThought.length} x characters left</p>
-			<button className="input-card-button" type="submit">
-				<span role="img" aria-label="heart">&#128151; </span>
+			<p className="text-counter"
+			   style={{color: newThought.length > 120 ? 'red' : 'black'}}
+			> {130 - newThought.length} x characters left 
+			</p>
+
+			<button 
+			className="input-card-button" 
+			type="submit"
+			disabled={newThought.length < 6 || newThought.length > 130 ? true : false}>
+				<span role="img" aria-label="heart">&#10084;&#65039; </span>
         Send Happy Thoughts
-        <span role="img" aria-label="heart"> &#128151;</span>
+        <span role="img" aria-label="heart"> &#10084;&#65039;</span>
 			</button>
 		</form>
 	)
+
 };
