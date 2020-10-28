@@ -14,7 +14,7 @@ export const LikedMessage = ({ hearts, id }) => {
     window.location.reload()} /// this needs to be fixed - look at the tips 
     )}
   return (
-    <>
+    <div className='heart-time'>
 			<button
       className={hearts > 0 ? 'liked' : 'not-liked'}
 				type='button'
@@ -26,7 +26,9 @@ export const LikedMessage = ({ hearts, id }) => {
         alt='Heart'>
         </img>
       </button>
+      <span>
       <p className='times-liked'>x {likes}</p>
-      </>
+      </span>
+      </div>
   )
 }

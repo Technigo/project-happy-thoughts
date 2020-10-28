@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 
 import { LikedMessage } from 'Components/LikedMessage'
-
 import './MessageList.css'
 
 export const MessageList = () => {
@@ -29,12 +28,13 @@ export const MessageList = () => {
         return (
           <article className="message" key={message._id}>
             <h3>{message.message}</h3>
-              {/* <div className="heart">{message.hearts}</div> */}
               <div className='heart-time'>
               < LikedMessage 
               hearts={message.hearts} 
               id={message._id} />
+              <span className='span-time'>
               <p className="time">{moment(message.createdAt).fromNow()}</p>
+              </span>
               </div>
           </article>
 

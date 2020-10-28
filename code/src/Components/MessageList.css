@@ -27,7 +27,8 @@ h3{
 
 .heart-time{
   display: flex;
-  justify-content: space-around;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .heart{

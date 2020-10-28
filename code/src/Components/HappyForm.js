@@ -21,7 +21,7 @@ export const HappyForm = () => {
 			setMessage('') // makes the text-area empy when reloaded
 			window.location.reload() // this forces the page to reload - refresh the contnet without 
 		}) //refreshing the page - how do we do that in a neat way?
-};
+}
 
 	return (
     <article className='form-wrapper'>

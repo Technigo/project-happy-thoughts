@@ -12,7 +12,7 @@
   border: none;
   height: 35px;
   width: 35px;
-  margin: 4px 0 10px 12px;
+  margin: 4px 10px 10px 12px;
 }
 
 .not-liked{
@@ -21,7 +21,7 @@
   border: none;
   height: 35px;
   width: 35px;
-  margin: 4px 0 10px 12px;
+  margin: 4px 10px 10px 12px;
 }
 
 .heart-like{
@@ -35,11 +35,11 @@
 }
 
 .time{
-  margin-top: 13px;
+  margin: 13px 5px 13px 0;
   color: rgb(126, 126, 126);
 }
 
-@media screen and (min-width:768px) {
+/* @media screen and (min-width:768px) {
   .liked, 
   .not-liked {
     height: 50px;
@@ -54,4 +54,4 @@
     height: 50px;
     width: 50px;
   }
-}
+} */
