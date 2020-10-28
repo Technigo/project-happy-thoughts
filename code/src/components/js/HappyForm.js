@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import "../css/thoughtsInput.css";
+import "../css/happyForm.css";
 
-export const ThoughtsInput = props => {
+export const HappyForm = props => {
   const [status, setStatus] = useState("");
   const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 
@@ -22,8 +22,8 @@ export const ThoughtsInput = props => {
   };
 
   return (
-    <form className="status-update-form">
-      <h2>What's making you happy right now?</h2>
+    <form className="form-container">
+      <label>What's making you happy right now?</label>
       <textarea
         rows="3"
         value={status}
@@ -31,11 +31,12 @@ export const ThoughtsInput = props => {
       ></textarea>
       <div className="form-footer">
         <button 
+        className="send-button"
         type="submit" 
         onClick={handleSubmit} 
         disabled={status.length < 3 || status.length > 140 ? true : false}
         >
-          Send a happy thought
+          Send Happy Thought
         </button>
         <p>{status.length} / 140</p>
       </div>

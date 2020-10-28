@@ -1,0 +1,30 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background: #f2f0f0;
+  border: 1px solid black;
+  width: 50%;
+}
+
+label {
+  font-family: 'Inconsolata';
+  margin: 20px 0px;
+}
+
+textarea {
+  margin-bottom: 20px;
+  width: 450px;
+}
+
+.send-button {
+  background: #ffadad;
+  border: none;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 10px;
+}
+button:disabled {
+  color: black;
+  background: lightgrey;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import moment from "moment" 
 
 import "../css/thoughtsList.css"
@@ -11,7 +11,7 @@ export const ThoughtsList = ( { thoughtsList } ) => {
         thoughtsList.map(thought => (
           <p className="thought-text" key={thought._id}>
             {thought.message}
-            <span className="posting-time">
+            <span className="post-time">
               {moment(thought.createdAt).fromNow()}
             </span>
           </p>
