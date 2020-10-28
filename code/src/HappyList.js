@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 
+import './HappyList.css'
+
 const HappyList = () => {
 // What I want to do inside HappyList 
 // (which is simply a list of happy thoughts):
@@ -16,7 +18,7 @@ const [messages, setMessages] = useState([]); //Square brackets because: array
 //as a second argument, so adding an empty array as a second argument means that 
 //it will run when the component loads the first time.
 useEffect(() => { 
-  //Fetch from backend
+  //Fetch from backend API
   fetch(MESSAGES_URL)
   .then(response => {
     return response.json();
@@ -27,7 +29,6 @@ useEffect(() => {
     const filteredData = data.filter(message => {
       return message.message;
     });
-
     //Sort the data based on date using reverse (could also use sort for this):
     //(removed this because list already shows latest message first).
     //filteredData.reverse();
@@ -38,19 +39,20 @@ useEffect(() => {
 
 // 3. Render messages using map 
   return (
-    <div>
-      <p>HappyList:</p>
+    <section className="happy-post-container">
       {
         messages.map(message => (
-          <p className="message" key={message._id}>
-            {message.message}
-            <span className="message-time">
-              {moment(message.createdAt).fromNow()}
-            </span>
-          </p>
+          <article className="happy-post" key={message._id}> 
+            <p className="happy-message" >
+              {message.message}
+              <span className="message-time">
+                {moment(message.createdAt).fromNow()}
+              </span>
+            </p>
+          </article>
         ))
       }
-    </div>
+    </section>
   )
 };
 export default HappyList;

@@ -22,9 +22,9 @@ const HappyForm = (props) => {
       .then(() => {
       //Refresh on clicking submit-button (to get the new message to show). 
       //This will make both components re-render:
-      //window.location.reload(); removed this and added from Jennies code:
+      window.location.reload(); //removed this and added from Jennies code:
       setMessage("") //resets the textbox to be empty after submit
-      props.onFormSubmit(message)
+      //props.onFormSubmit(message)
       })
       .catch(err => console.log("error", err))
   };
@@ -36,6 +36,7 @@ const HappyForm = (props) => {
           What is making you happy right now?
         </h3>
         <textarea
+          tabIndex="0"
           className="happy-form-text"
           rows="3"
           value={message}
@@ -45,7 +46,6 @@ const HappyForm = (props) => {
         <div className="form-footer"> 
           <button
             type="submit"
-            text=""
             onClick={handleSubmit} //Why not onSubmit? Difference?
             disabled={message.length < 6 || message.length > 140 ? true : false}
             className="happy-form-input-button"
