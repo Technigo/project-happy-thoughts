@@ -11,6 +11,10 @@ body {
   padding: 20px;
 }
 
+.thought-card {
+  word-wrap: break-word;
+}
+
 .thoughts-form {
   background-color: #f2f0f0;
   display: flex;
