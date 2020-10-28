@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import Button from './Button';
 import './Style.css';
 
@@ -8,11 +9,6 @@ const PostLiked = ({ hearts, id }) => {
 	if (!localStorage[id]) {
 		localStorage.setItem(id, 0);
 	}
-	//const [yourLikes, setYourLikes] = useState(Number(localStorage.getItem(id))); //starts with NaN
-
-	// if (!yourLikes) {
-	// 	localStorage.setItem(id, 0);
-	// }
 
 	const handleLikes = () => {
 		fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
@@ -26,6 +22,7 @@ const PostLiked = ({ hearts, id }) => {
 		//localStorage[id] = setYourLikes(yourLikes + 1);
 		//console.log(localStorage[id]);
 	};
+
 	return (
 		<>
 			<Button
