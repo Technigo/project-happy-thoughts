@@ -35,7 +35,7 @@ export const MessageInput = () => {
             <input
                 type="submit"
                 className="button"
-                value="Send your Happy thought">
+                value="Send">
             </input>
         </form>
     )
