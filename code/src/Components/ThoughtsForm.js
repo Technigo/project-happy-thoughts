@@ -2,24 +2,12 @@ import React, {useState} from 'react'
 
 import './ThoughtsForm.css'
 
-export const ThoughtsForm = () => {
-
-    const apiUrl = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-    const [messages, setMessages] = useState("");
+export const ThoughtsForm = ({onMessageChange}) => {
+    const [newMessages, setNewMessages] = useState("");
 
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(apiUrl, 
-            {
-                method: "POST",
-                headers: {
-                    "content-Type": "application/json"
-                },
-                body: JSON.stringify({ message: messages })
-            }
-            ).then(() => {
-                window.location.reload();
-        });
+        onMessageChange(newMessages);
     };
 
     return (
@@ -33,7 +21,7 @@ export const ThoughtsForm = () => {
                 rows="4"
                 cols="40"
                 placeholder="Write your happy thoughts.."
-                onChange={event => setMessages(event.target.value)}
+                onChange={event => setNewMessages(event.target.value)}
                 />
                 <button className="form-button"><span role="img" aria-label="heart emoji">❤️</span> Send Happy Thought<span role="img" aria-label="heart emoji">❤️</span></button>
             </form>
