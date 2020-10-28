@@ -1,0 +1,1 @@
+export const STATUS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"

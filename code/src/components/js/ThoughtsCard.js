@@ -1,6 +1,6 @@
 import React from "react"
 
-import "../css/thoughtscard.css"
+import "../css/thoughtsCard.css"
 import { ThoughtsList } from "./ThoughtsList"
 
 
