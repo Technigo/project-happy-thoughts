@@ -15,7 +15,16 @@ export const MessageList = () => {
     });
 },[]);
 // Leaving empty squarebrackets to stop it updating constantly 
-return <div>{messages.length}</div>;
+return <div>{messages.map((message) => {
+    return (
+        <p className="message" key={message._id}>
+            {message.message}
+            {message.createdAt}
+            </p>
+        );
+        }
+        )}
+        </div>;
 };
 
 
