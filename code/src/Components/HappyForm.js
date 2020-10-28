@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+
 import img from './media/pixel_heart.png'
 import './HappyForm.css'
 
 export const HappyForm = () => {
-	const url = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+	const url='https://happy-thoughts-technigo.herokuapp.com/thoughts'
 	const [message, setMessage] = useState('')
 
 	// a submit function witch POSTs the text input
@@ -11,16 +12,16 @@ export const HappyForm = () => {
 		event.preventDefault()
 
 		//send a POST request
-		fetch(url, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ message }),
-		})
-			.then(() => {
-				setMessage('') // makes the text-area empy when reloaded
-				window.location.reload() // this forces the page to reload - refresh the contnet without 
-			}) //refreshing the page - how do we do that in a neat way?
-	};
+	fetch(url, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ message }),
+	})
+		.then(() => {
+			setMessage('') // makes the text-area empy when reloaded
+			window.location.reload() // this forces the page to reload - refresh the contnet without 
+		}) //refreshing the page - how do we do that in a neat way?
+};
 
 	return (
     <article className='form-wrapper'>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import img from './media/pixel_heart.png'
 import './LikedMessage.css'
 
@@ -27,5 +28,5 @@ export const LikedMessage = ({ hearts, id }) => {
       </button>
       <p className='times-liked'>x {likes}</p>
       </>
-	);
-};
+  )
+}

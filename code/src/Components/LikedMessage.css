@@ -16,7 +16,7 @@
 }
 
 .not-liked{
-  background: '#ffadad';
+  background: rgb(230, 229, 229);
   border-radius: 50%;
   border: none;
   height: 35px;
