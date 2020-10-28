@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+
+import { ThoughtsList } from './ThoughtsList';
+import { SendThought } from './SendThought';
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <main className="main-container">
+      <SendThought />
+      <ThoughtsList />
+    </main>
+  );
+};
