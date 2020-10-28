@@ -6,6 +6,7 @@ const Message = ({ message, created, hearts, id, whenLiked }) => {
 
     const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
     
+    // When user clicks heart, posts a like, then run whenLiked-function with current id
     const changeLikes = () => {
         fetch(LIKES_URL,
             {
@@ -18,7 +19,7 @@ const Message = ({ message, created, hearts, id, whenLiked }) => {
 
     return (
         <article className="message">
-            <h3>{message}</h3>
+            <h3 className="thought">{message}</h3>
             <div className="message-footer">
                 <p className="grey-style">
                     <button

@@ -52,6 +52,11 @@ form {
   align-items: center;
 }
 /************** MESSAGES *****************/
+
+.thought {
+  word-break: break-word;
+}
+
 .message {
   width: 400px;
   border: 2px solid #8e8d8d;

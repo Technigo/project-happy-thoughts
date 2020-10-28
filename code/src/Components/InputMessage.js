@@ -1,28 +1,17 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-const InputMessage = () => {
-    const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-    const [message, setMessage] = useState('');
+const InputMessage = ({onMessageChange, setListOfMessages}) => {
+
+    const [inputMessage, setInputMessage] = useState('');
 
     const handleSubmit = event => {
         // Prevents the page from refreshing
         event.preventDefault();
 
-        // POST request
-        fetch(THOUGHTS_URL,
-            {
-                method: "POST",
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ message: message })
-            })
-            .then(() => {
-            // Empty the message textbox, behövs inte med window reload??
-                //setMessage('');
-                //props.onFormSubmit(message)
-            // Refresh page
-                window.location.reload();
-            })
-            .catch(error => console.log("error:", error))
+        onMessageChange(inputMessage);
+        
+        setInputMessage('');
+        
     };
 
     return (
@@ -32,15 +21,14 @@ const InputMessage = () => {
                 <textarea
                     placeholder="React is making me happy!"
                     rows='4'
-                    value={message}
-                    onChange={event => setMessage(event.target.value)}>  
+                    value={inputMessage}
+                    onChange={event => setInputMessage(event.target.value)}>  
                 </textarea>
                 <div className="message-footer">
                     <button
                         className="submit-button"          
                         type="submit"
-                        onClick={handleSubmit}
-                        disabled={message.length < 6 || message.length > 140 ? true : false}
+                        disabled={inputMessage.length < 6 || inputMessage.length > 140 ? true : false}
                     >
                         <span
                             role="img"
@@ -54,10 +42,8 @@ const InputMessage = () => {
                         >❤️
                         </span>
                     </button>
-                    <p className="grey-style">{message.length} / 140</p>
-
+                    <p className="grey-style">{inputMessage.length} / 140</p>
                 </div>
-                
             </form>
         </div>
     )

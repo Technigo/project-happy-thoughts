@@ -1,41 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import Message from './Message';
 
 
-const MessageList = () => {
+const MessageList = ({listOfMessages, setListOfMessages, inputMessage}) => {
     const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-    const [messages, setMessages] = useState([]);
-    
+    //const [listOfMessages, setListOfMessages] = useState([]);
+
     useEffect(() => {
         fetch(MESSAGES_URL) //Default GET request
             .then((response) => {
                 return response.json();
             })
-            .then((data) => { // Vart ska vi förvara datan? Använd setmessages för att använda data för att ändra state
-                console.log(data);
+            .then((data) => { 
                 const filteredMessages = data.filter(message => message.message)
-                setMessages(filteredMessages);
+                setListOfMessages(filteredMessages);
             });
-    }, []); // Vi behöver empty array annars blir det infinite loop. some second argument, not fetch on every re-render
+    }, [setListOfMessages]); // first argument - a function, second argument - empty array to prevent re-render after the fetch (by setting a new state) since this creates an infinite loop.
 
+    
     const whenLiked = (id) => {
-
         // Maps over the current messages and increments the like number
-        const updatedMessagesWithLikes = messages.map(message => {
+        const updatedMessagesWithLikes = listOfMessages.map(message => {
             if (message._id === id) {
                 message.hearts += 1
             }
             return message
         })
-        // Changes the state with updated likes
-        setMessages(updatedMessagesWithLikes)
+        // Changes the state with array with updated likes no
+        setListOfMessages(updatedMessagesWithLikes)
     }
     
     return (
         <div className="message-list">
             {
-                messages.map((message) => {
+                listOfMessages.map((message) => {
                     return (
                         <Message
                             key={message._id}
