@@ -1,5 +1,6 @@
 import React from "react"
 import moment from "moment"
+
 import "./happyThoughts.css"
 
 export const HappyThoughts = ({ thought, onLiked }) => {
