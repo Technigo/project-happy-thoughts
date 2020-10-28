@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: mistyrose;
 }
 
 code {
@@ -56,6 +57,7 @@ form {
   max-width: 350px;
   padding: 10px;
   margin-bottom: 30px;
+  background-color: #fff;
 }
 
 .like-button {

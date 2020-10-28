@@ -17,6 +17,11 @@ export const HappyThoughts = () =>  {
     });
     }, []);
 
+    //to like a thought
+
+    /* https: *///happy-thoughts-technigo.herokuapp.com/thoughts/THOUGHT_ID/like
+
+
     //the map function here makes every thought-card show each individual message and a heart button.
     return (
     <div className='thoughts-card'>{thoughts.map(message => {
