@@ -1,13 +1,21 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This weeks project was to create a Twitter-like app where Technigo students can share their happy thoughts.
+Here we have practiced React state skills by fetching and posting data to an API.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Learning objectives
 
-## The problem
+- How to use UseEffect to do API calls
+- How to use local storage to save like information
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Tech used
+
+- CSS
+- JSX
+- React
+- React Hooks
+- API
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-therese-linden.netlify.app/
