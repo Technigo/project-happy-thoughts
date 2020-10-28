@@ -31,11 +31,13 @@ export const ThoughtInput = () => {
                 type='text'
                 onChange={handleThought}
             />
-            <input
+            <button
                 type='submit'
-                value='send happy thought'
-            />
-            
+                disabled={thought.length < 5 || thought.length > 140 ? true : false}
+            >
+            send happy thought
+            </button>
+            <p>{thought.length} / 140</p>
         </form>
     )
 

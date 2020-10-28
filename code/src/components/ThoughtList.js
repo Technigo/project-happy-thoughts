@@ -1,38 +1,46 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment'
+
+import { ThoughtMessage } from './ThoughtMessage'
 
 export const ThoughtList = () => {
-    const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-    /* create state for messages */
-    const [thoughts, setThoughts] = useState([])
+  const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+  const [thoughts, setThoughts] = useState([])
 
-    useEffect(() => {
-        /* use useeffects to fetch messages from backend */
-        fetch(THOUGHTS_URL)
-        .then((res)=>{
-            return res.json()
-        })
-        .then(data => {
-          
-            const filteredData = data.filter(thought => {
-               return thought.message !== ""
-            })
+  useEffect(() => {
+    /* use useeffects to fetch messages from backend */
+    fetch(THOUGHTS_URL)
+    .then((res)=>{
+        return res.json()
+    }).then(data => {
+      const filteredData = data.filter(thought => {
+        return thought.message !== ""
+      })
+      setThoughts(filteredData) /* filteredData is an array of messages */
+      })
+  }, [])
 
-            setThoughts(filteredData) /* data is an array of messages */
-        })
-    }, [])
+  const onLikeThought = (likeId) => {
+    const updatedThoughts = thoughts.map((thought) => {
+      if (thought._id === likeId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
+  }
 
-    return (
-        <div>
-            {thoughts.map(thought=> 
-              <p className='thought' key={thought._id}>
-                  {thought.message}
-                  <span className='thought-time'>
-                      {moment(thought.createdAt).fromNow()}
-                  </span>
-              </p>  
-            )}
-            
-        </div>
-    )
+  return (
+    <div>
+      {thoughts.map(thought=> 
+        <ThoughtMessage
+          key={thought._id}
+          message={thought.message}
+          time={thought.createdAt}
+          likes={thought.hearts}
+          id={thought._id}
+          handleLikeThought={onLikeThought}
+        />
+      )}        
+    </div>
+  )
 }
