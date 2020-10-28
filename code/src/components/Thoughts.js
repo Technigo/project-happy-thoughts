@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import moment from 'moment'
 
+import {NewThought} from 'components/NewThought'
+
 export const Thoughts = () => {
     const [messages, setMessages] = useState([])
 
@@ -16,7 +18,7 @@ export const Thoughts = () => {
 
     return (
         <section className="thought-list">
-        <p>{messages.length}</p>
+            <NewThought />
         {messages.map(message => {
             return(
                 

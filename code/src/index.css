@@ -10,6 +10,10 @@ code {
     monospace;
 }
 
+p {
+  font-family: 'PT Mono', monospace;
+}
+
 .thought-list {
   display: flex;
   flex-direction: column;
@@ -28,6 +32,26 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.new-thought {
+  width: 350px;
+  height: auto;
+  background-color: #F2F0F0;
+  border: 1px solid black;
+  box-shadow: 5px 5px black;
+  margin: 20px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.new-thought p {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .thought-date {
@@ -51,19 +75,38 @@ code {
 }
 
 .heart-icon {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background-color: #FFADAD;
+  
   font-size: 11px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
+  margin: 5px;
 }
 
 .like-container {
   display: inline-flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.like-container .heart-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #FFADAD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.submit-thought {
+  width: 200px;
+  padding: 12px;
+  background-color: #FFADAD;
+  border: none;
+  border-radius: 30px;
+}
+
+textarea {
+  width: 100%;
+  margin: 15px 0;
 }
