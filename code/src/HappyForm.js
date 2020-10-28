@@ -8,6 +8,7 @@ const HappyForm = ({ onMessageChange }) => {
   const handleSubmit = event => {
     event.preventDefault();
     onMessageChange(newMessage);
+    setNewMessage("")
   }
 
   //Message state to save message to send to the backend:
