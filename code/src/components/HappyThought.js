@@ -1,52 +1,23 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import moment from 'moment'
 import { HappyHeart } from './HappyHeart.js'
 import './happyThought.css'
 
-export const HappyThought = () => {
-  const url = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-  const [messages, setMessages] = useState([])
-
-  useEffect(() => {
-    fetch(url)
-      .then((res) => {
-        return res.json()
-      })
-      .then((data) => {
-        console.log(data)
-        //data.reverse() - if I wanted to reverse the order
-        setMessages(data.slice(0, 10)) // - slice will minimize the array 
-      })
-  },[])
-
-  const onLiked = messageId => {
-    const updatedThoughts = messages.map(message => {
-      if(message._id === messageId) {
-        message.hearts += 1 
-      }
-      return message
-    })
-    setMessages(updatedThoughts)
-  }
-
+export const HappyThought = ({id, thought, onLiked, heart, createdAt}) => {
+ 
   return(
     <section className="thoughts-section">
-      {messages.map(message => {
-      return (
-        <article className="thought-container">
-          <p key={message._id} className="text-message">
-            {message.message}
+      <article className="thought-container">
+        <p key={id} className="text-message">
+          {thought}
+        </p>
+        <div className="thought-footer">
+          <HappyHeart onLiked={onLiked} thought={thought} heart={heart} messageId={id} />
+          <p className="text-time">
+            {moment(createdAt).fromNow()} 
           </p>
-          <div className="thought-footer">
-            <HappyHeart onLiked={onLiked} message={message.message} hearts={message.hearts} id={message._id} />
-            <p className="text-time">
-              {moment(message.createdAt).fromNow()} 
-            </p>
-          </div>
-        </article>
-        )
-      })
-      }
+        </div>
+      </article>
     </section>
   )
 }

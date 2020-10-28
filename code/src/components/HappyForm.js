@@ -3,7 +3,7 @@ import './happyForm.css'
 
 const url = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
-export const HappyForm = (props) => {
+export const HappyForm = ({onFormSubmit}) => {
   const [message, setMessage] = useState('')
 
   const handleSubmit = event => {
@@ -15,7 +15,7 @@ export const HappyForm = (props) => {
     })
       .then(() => {
         setMessage('') 
-        props.onFormSubmit(message)
+        onFormSubmit(message)
       })
       .catch(err => console.log('error:', err))
   }
