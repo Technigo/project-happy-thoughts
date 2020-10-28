@@ -11,3 +11,51 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+article {
+  border: black;
+  border-style: solid;
+  border-width: thin;
+  box-shadow: 8px 5px black;
+  margin: 20px;
+  width: 400px;
+  padding: 10px;
+}
+form {
+  border: black;
+  border-style: solid;
+  border-width: thin;
+  box-shadow: 8px 5px black;
+  margin: 20px;
+  width: 400px;
+  padding: 10px;
+  background-color:rgb(242,240,240);
+  line-height: 1.6;
+}
+
+.hearts-container{
+  display:flex;
+  justify-content: space-between;
+}
+.hearts-button{
+  border-radius: 50%;
+  background-color:rgb(255,173,173);
+}
+p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 13px;
+}
+.hearts-container{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  color:grey;
+  font-size: 12px;
+}
+
+h1{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 14px;
+}
