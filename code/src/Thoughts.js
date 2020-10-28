@@ -1,28 +1,45 @@
 import React, { useEffect, useState } from "react";
 
-import {ThoughtForm} from "./ThoughtForm"
-import {ThoughtList} from "./ThoughtList"
+import {ThoughtForm} from "./ThoughtForm";
+import {ThoughtList} from "./ThoughtList";
+import {THOUGHTS_URL} from "./urls";
 
 export const Thoughts = () => {
     const [thoughts, setThoughts] = useState([]);
-    const [isLiked, setIsLiked] = useState(false)
+    const [isLiked, setIsLiked] = useState(false);
 
-    const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    useEffect(() => {
+        getMessages();
+    })
+
+    const getMessages = () => {
+        fetch(THOUGHTS_URL)
+        .then(res => res.json())
+        .then(json => setThoughts(json));
+    }
+
+    const postMessage = myThought => {
+        fetch(THOUGHTS_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({message: myThought})
+        })
+        .then(() => getMessages())
+    }
+
 
     const handleIsLikedChange = () => {
         setIsLiked(true)
     }
 
-    useEffect(() => {
-        fetch(THOUGHTS_URL)
-            .then(res => res.json())
-            .then(json => setThoughts(json))
-    })
+
 
     return (
         <section>
             <ThoughtForm 
-                thoughtsUrl={THOUGHTS_URL}
+                onMyThoughtChange={postMessage}
                 />
             <ThoughtList 
                 thoughts={thoughts}
