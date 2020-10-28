@@ -31,8 +31,6 @@ export const HappyForm = ({onFormSubmit}) => {
           name="thoughts"
           value={message}
           onChange={event => setMessage(event.target.value)}
-          minLength="5"
-          maxLength="140"
           required
           autoFocus
         >
@@ -48,7 +46,11 @@ export const HappyForm = ({onFormSubmit}) => {
             Send Happy Thought
             <span role="img" aria-label="heart">❤️</span>
           </button>
-          <p className="text-length">{message.length} / 140</p>
+          <p className="text-length">
+            <span style={{ color: message.length < 5 || message.length > 140 ? "#FF0000" : "#000000"}}>
+              {message.length}
+              </span> / 140
+          </p>
         </div>
       </form>
     </section>
