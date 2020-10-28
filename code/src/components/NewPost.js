@@ -18,6 +18,7 @@ export const NewPost = () => {
       .then(() => {
       window.location.reload()
     })
+    .catch(err => console.log("error:", err))
   }
   
   return (
@@ -37,7 +38,9 @@ export const NewPost = () => {
       />
       {/* Counter to show characters remaining */}
       <p className={
-        thought.length > 140 ? "p-red" : "p-green" }>{ 140 - thought.length}<span className="counter">&nbsp;/ 140</span></p>
+        thought.length > 140 ? "p-red" : "p-green" }>
+          { 140 - thought.length}<span className="counter">&nbsp;/ 140</span>
+      </p>
       <button 
         onClick={handleSubmit}
         className="submit-button" 
