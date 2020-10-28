@@ -26,7 +26,7 @@ export const HappyThought = props => {
                     <div className="likes">
                         <button className="btn"
                             onClick={handleClick}
-                            style={{ background: hearts > 0 ? '#ffadad' : '#f3f1f1  ' }}
+                            style={{ background: hearts > 0 ? '#ffadad' : '#f3f1f1' }}
                         >
                             <span className="heart" role='img' aria-label='Heart'>{'♥️'}</span>
                         </button>
