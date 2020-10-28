@@ -1,12 +1,10 @@
 import React from 'react';
 import moment from 'moment'
 
-export const ThoughtMessage = ({message, time, likes, id, handleLikeThought}) => {
-   
-   const LIKE_URL=`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
-  /*const [like, setLike] = useState(0) *//* Should this be here or in the thoughtList component? */
- 
+export const ThoughtMessage = ({thought, onLikeThought}) => {
   const onLikeClick = event => {
+    const LIKE_URL=`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`
+    
     event.preventDefault()
         fetch(LIKE_URL, {
             method: 'POST',
@@ -14,26 +12,25 @@ export const ThoughtMessage = ({message, time, likes, id, handleLikeThought}) =>
                 'Content-Type':'application/json'
             },
             body:''
-        }).then(()=> handleLikeThought(id)) 
+        }).then(()=> onLikeThought(thought._id)) 
     } 
-    
-    return (
-      <article>
-            <p className='thought'>
-            {message}
-            </p> 
-            <button
-             onClick={onLikeClick}
-            >
-                <span role='img' aria-label='heart'>
-                {'❤️'}
-                </span>
-            </button>
-            <p>x {likes}</p>
-            <span className='thought-time'>
-                {moment(time).fromNow()}
-            </span>
-        </article>
-         
-    )
+
+  return (
+    <article key={thought._id}>
+    <p className='thought'>
+      {thought.message}
+    </p> 
+    <button
+      onClick={onLikeClick}
+    >
+      <span role='img' aria-label='heart'>
+        {'❤️'}
+      </span>
+    </button>
+    <p>x {thought.hearts}</p>
+    <span className='thought-time'>
+      {moment(thought.createdAt).fromNow()}
+    </span>
+  </article>  
+  )
 }
