@@ -43,6 +43,10 @@ form {
   background-color: #ffadad;
 }
 
+.message-length {
+  float: right;
+}
+
 /*THOUGHTS STYLING*/
 
 .message {
