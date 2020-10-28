@@ -22,7 +22,7 @@ export const Likes = ({ id, onLike, hearts }) => {
         <span 
           role="img"
           aria-label="Heart"
-          className="like-span">❤️
+          className="like-span">{'❤️'}
         </span>
     </button>
   )

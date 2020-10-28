@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const NewPost = () => {
   const post_url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
-  const [thought, setThought] = useState([""])
+  const [thought, setThought] = useState("")
 
   // Disallow empty post
   const isEmpty = value => value.replace(/\s/g, "").length === 0
@@ -60,5 +60,3 @@ export const NewPost = () => {
     </form>
   )
 }
-
-// onload counter is always counting 1

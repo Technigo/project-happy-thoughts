@@ -9,11 +9,11 @@ export const Published = () => {
 
   useEffect(() => {
     fetch(posted_url)
-      .then((res) => {
-        return res.json()
+      .then(response => {
+        return response.json()
       })
       .then(data => {
-        setPubPosts(data.reverse())
+        setPubPosts(data)
       })
   }, [])
   
@@ -44,5 +44,4 @@ export const Published = () => {
   )
 }
 
-// why don't long messages wrap and stay in box?
 // tabbing navigates from page bottom to top since flex colum is reversed :/
