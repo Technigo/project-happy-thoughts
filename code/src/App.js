@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { MessageList } from 'components/MessageList';
 import { MessageInput } from 'components/MessageInput'
 import { MESSAGE_URL } from './url'; 
+import './index.css'
 
 export const App = () => {
   const [messages, setMessages] = useState([]);

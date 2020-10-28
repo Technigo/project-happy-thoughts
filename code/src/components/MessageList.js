@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment'; 
-
+import { MESSAGE_URL } from '../url'; 
 
 export const MessageList = () => {
-  const MESSAGE_URL = 'https://wk11livesession.herokuapp.com/messages'; 
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -27,15 +26,19 @@ const limitedMessages = filteredMessages.slice(0, 10);
   return ( 
   <div>
     {messages.map(messages => {
+
       return (
+        <article className="message-card">
         <p className='message' key={messages._id}> 
           {messages.text}
           <span className="messageTime">
           {moment(messages.created).fromNow()}
           </span>
+          <button className="heart-button">
           <p>{messages.hearts}</p>
+          </button>
         </p>
-        
+        </article>
       ); 
     })}
   </div>
