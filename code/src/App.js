@@ -15,7 +15,7 @@ export const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="main-container">
       <MessageForm messages={messages}/>
       <MessageList messages={messages}/>
     </div>

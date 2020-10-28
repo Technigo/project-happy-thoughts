@@ -11,3 +11,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.main-container {
+  font-size: 13px;
+  padding-top: 100px;
+  width: 400px;
+  margin: auto;
+}
+
+.form-container {
+  height: 200px;
+  background: #f2f0f0;
+  border: 2px solid;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+  padding: 20px;
+}
+
+.form-button {
+  border-radius: 50px;
+  border: none;
+  height: 30px;
+  width: 50%;
+  background: #ffadad;
+  font-size: 11px;
+}
+
+.message-container {
+  height: 150px;
+  border: 2px solid;
+  margin-top: 30px;
+}
+
+.message-content {
+  padding: 15px 20px;
+}
+
+.message-text {
+  word-wrap: break-word;
+}
+
+.message-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 34px;
+}
+
+.hearts {
+  padding: 10px;
+  background: #eaeaea;
+  text-align: center;
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.hearts-count {
+  margin-right: auto;
+}

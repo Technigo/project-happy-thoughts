@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { MessageCard } from "./MessageCard";
 
 export const MessageList = (props) => {
-  console.log(props.messages);
+  
   return (
     <div>
       {props.messages.map((message) => (
-        <p>{message.message}</p>
+        <MessageCard key={message._id} message={message}/>
       ))}
     </div>
   );
