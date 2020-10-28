@@ -15,10 +15,25 @@ code {
 
 main {
   display: flex;
-  justify-content: center;
-  flex-flow: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
+h2 {
+  margin: 0 0 10px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+p {
+  margin: 10px;
+}
+
+
+/* QUESTION CARD */
 .input-card {
   width: 400px;
   margin: 20px 0;
@@ -31,29 +46,55 @@ main {
 }
 
 .form-text {
-width: 380px;
-height: 80px;
+  width: 380px;
+  height: 80px;
 }
 
 .form-button {
-width: 250px;
-height: 45px;
-border-radius: 30px;
-padding: 10px;
-border: 1px solid #999;
-background-color: #ccc;
-color: #666;
+  width: 250px;
+  height: 45px;
+  border-radius: 30px;
+  padding: 10px;
+  border: 1px solid #999;
+  background-color: #ccc;
+  color: #666;
 }
 
+/* MESSAGE CARD */
 .message-card {
+  display: flex;
+  flex-direction: column;
   width: 400px;
   background: white;
   margin: 20px 0;
-  padding: 15px;
+  padding: 0 15px;
   border: 1px solid black ;
   box-shadow: 10px 8px 0 -2px black;
 }
 
-button{
-background-color: pink;
+/*.message {
+  
+}*/
+
+.message-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.messageTime {
+  justify-self: right;
+  align-items: center;
+  font-size: 14px;
+  color: #949393;
+  margin-top: 20px;
+  font-weight: lighter;
+}
+
+.heart-button {
+  width: 40px;
+  height: 40px; 
+  border-radius: 50%;
+  background-color: #cccccc85;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
 } 

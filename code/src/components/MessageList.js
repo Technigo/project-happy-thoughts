@@ -29,15 +29,18 @@ const limitedMessages = filteredMessages.slice(0, 10);
 
       return (
         <article className="message-card">
-        <p className='message' key={messages._id}> 
+        <h3 className='message' key={messages._id}> 
           {messages.text}
+          <div class="message-bottom">
+          <button className="heart-button">
+            <p>❤️</p>
+          <p>{messages.hearts}</p>
+          </button>
           <span className="messageTime">
           {moment(messages.created).fromNow()}
           </span>
-          <button className="heart-button">
-          <p>{messages.hearts}</p>
-          </button>
-        </p>
+        </div>
+        </h3>
         </article>
       ); 
     })}
