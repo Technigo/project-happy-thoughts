@@ -52,20 +52,20 @@ export const Thought = (props) => {
    
     {!liked && 
     <div>
-      {numLikes === 0 && 
-      <button className="no-likes-button" onClick=
+     
+      <button className={numLikes === 0 ?  "no-likes-button" : (numLikes > 0 && numLikes < 3 ? "like-button" : "mega-like-button")} onClick=
       {() => clickedLikeButton(props.id)}
         ><span role="img" aria-label="heart emoji">
           ❤️</span>
           </button>
-      }
-       {numLikes > 0 && 
+      
+     {/*{numLikes > 0 && 
       <button className="like-button" onClick=
       {() => clickedLikeButton(props.id)}
         ><span role="img" aria-label="heart emoji">
           ❤️</span>
           </button>
-      }
+      }*/ }  
       <span className="number-of-initial-likes">x {numLikes}</span>
     </div>}
 
@@ -77,7 +77,7 @@ export const Thought = (props) => {
       <span className="number-of-likes">x {numLikes}</span>
     </div>}
     <p className="date">
-    <p>{moment(props.createdAt).fromNow()}</p>
+    <span>{moment(props.createdAt).fromNow()}</span>
     </p></div>
   </div>
   )

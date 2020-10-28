@@ -14,10 +14,23 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newUserMessage, setNewUserMessage] = useState("");
   const [messageOK, setMessageOK] = useState(true);
-  const [likeCount, increaseLikeCount] = useState(0);
+  //const [likeCount, increaseLikeCount] = useState(0);
   const [loading, setLoading] = useState(true);
-  
+  //use the value in localstorage, if it exists. otherwise use 0
+  //arrow function, only runs once on first render
+  const initialLikeCount = () => Number(window.localStorage.getItem("count")) || 0
+  const [likeCount, increaseLikeCount] = useState(initialLikeCount);
+
   useEffect(() => {
+    getThoughts();
+  }, []);
+
+  //useEffect for saving the likeCount in local storage
+ useEffect(()=>{
+   window.localStorage.setItem("count",likeCount);
+ },[likeCount])
+
+  const getThoughts = () =>{
     fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
     .then((res) => res.json())
       //set the result from api-call in state variable.
@@ -26,7 +39,7 @@ export const App = () => {
        setLoading(false);
       
       });
-  }, []);
+  }
 
   const handleLikes = () => {
     console.log("In app, handle likes");
@@ -64,14 +77,15 @@ export const App = () => {
 
        } else {
         setMessageOK(true);
-       
-        setThoughts((previousThoughts) => [newThought, ...previousThoughts]) }
+       getThoughts();
+        //setThoughts((previousThoughts) => [newThought, ...previousThoughts]) }
         }
-    
-    )
-    
-}
+      }
+    ).catch((error) => console.log(error))
+  }
+
   
+ 
 return(
 <section className="app-container">
   <header className="header">
