@@ -5,6 +5,7 @@ export const Thoughts = () => {
     
     const handleSubmit = event => {
         event.preventDefault();
+        
 
         fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts',
             {
@@ -25,6 +26,7 @@ export const Thoughts = () => {
             <div className="rubrik">What´s making you happy right now?</div>
             <input
                 type="text"
+                value={thought}
                 className="form-text"
                 onChange={event => setThought(event.target.value)}>
                 </input><br></br>

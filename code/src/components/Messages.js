@@ -14,7 +14,6 @@ export const Messages = () => {
         return res.json();
     } )
     .then((data) => {
-        console.log(data);
         setMessages(data)
     });
 },[]);
