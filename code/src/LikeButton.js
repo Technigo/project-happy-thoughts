@@ -1,4 +1,5 @@
 import React from 'react';
+import './LikeButton.css';
 import { Emoji } from './Emoji';
 
 export const LikeButton = props => {
@@ -6,24 +7,23 @@ export const LikeButton = props => {
   const id = props.id;
 
   const handleClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+    fetch(`https://mats-happythoughts.herokuapp.com/${id}/like`, {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' }
     }).then(() => {
-      props.onContentLiked(id)
+      props.onLikedContent(id)
     });
   };
   return (
     <div>
       <button
-        className='like-button'
         onClick={handleClick}>
         <div>
-          <Emoji symbol='x' />
+          <Emoji symbol='♥' />
         </div>
       </button>
-      x{like}
+      {like}
     </div>
   );
 };

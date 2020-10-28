@@ -1,0 +1,31 @@
+.happy-contents {
+  height: 120px;
+  margin: 20px;
+  padding: 20px;
+  background: lightgrey;
+  border: 1px solid black;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0px 0px black;
+}
+
+.happy-contents h2 {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: courier;
+}
+
+.contents-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contents-time {
+  font-size: 10px;
+}
+
+@media (min-width: 669px) {
+  .happy-contents {
+    width: 510px;
+  }
+}

@@ -1,0 +1,61 @@
+  .post-contents {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    background: lightgrey;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow: 2px 2px 0px 0px black;
+  }
+  
+  .happyheader-text {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+  }
+  
+  .letter-length {
+    font-size: 6px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .form-input {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    border: 1px solid grey;
+    padding: 5px;
+  }
+  
+  .name-input {
+    font-family: 'Courier New', Courier, monospace;
+    width: 150px;
+    height: 15px;
+    font-size: 10px;
+    padding: 3px;
+    border: 1px solid grey;
+  }
+  
+  .submit-button {
+    width: 120px;
+    background: rgb(192, 145, 145);
+    border-radius: 5px;
+    border: 1px solid rgb(192, 145, 145);
+    padding: 4px 1px;
+    font-size: 9px;
+    font-family: inherit;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+  
+  @media (min-width: 669px) {
+    .post-content {
+      width: 510px;
+    }
+    .form-input {
+      width: 430px;
+    }
+  }
