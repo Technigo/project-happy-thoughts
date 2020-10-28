@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+
 import MessageCard from "./MessageCard";
 import "./messageList.css";
 
@@ -20,12 +21,23 @@ const MessageList = ({ messages, setMessages }) => {
       });
   }, []);
 
+  const onLiked = (messageId) => {
+    const updatedMessages = messages.map((message) => {
+      if (message._id === messageId) {
+        message.hearts += 1;
+      }
+      return message;
+    });
+
+    setMessages(updatedMessages);
+  };
+
   console.log(messages);
   return (
     <div className="message-list-container">
       {messages.map((message) => {
         // props destructuring ... --> sends as individual props (see MessageCard)
-        return <MessageCard {...message} />;
+        return <MessageCard {...message} onLiked={onLiked} />;
       })}
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import "./messageInput.css";
 
 const MessageInput = ({ setMessages }) => {
@@ -16,7 +17,7 @@ const MessageInput = ({ setMessages }) => {
         "Content-Type": "application/json",
       },
       // Send the JSON as a string -- object does not work here
-      body: JSON.stringify({ message: message }),
+      body: JSON.stringify({ message }), // = ({ message: message })
     })
       .then((res) => res.json())
       .then((newMessage) => {
@@ -40,7 +41,12 @@ const MessageInput = ({ setMessages }) => {
         className="form-text"
       ></textarea>
       <p className="characters-left">characters left</p>
-      <button className="btn-thought" type="submit" value="happyThought">
+      <button
+        className="btn-thought"
+        type="submit"
+        value="happyThought"
+        disabled={message.length < 6 || message.length > 140 ? true : false}
+      >
         🖤 Send a happy thought 🖤
       </button>
     </form>
