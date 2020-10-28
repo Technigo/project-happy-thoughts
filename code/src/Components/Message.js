@@ -20,8 +20,8 @@ const Message = ({ message, created, hearts, id, whenLiked }) => {
     return (
         <article className="message">
             <h3 className="thought">{message}</h3>
-            <div className="message-footer">
-                <p className="grey-style">
+            <div className="message-footer grey-style">
+                <p>
                     <button
                         onClick={changeLikes}
                         className={hearts > 0 ? 'likes-button got-likes' : 'likes-button no-likes'}
@@ -32,7 +32,7 @@ const Message = ({ message, created, hearts, id, whenLiked }) => {
                     </button>
                     x {hearts}
                 </p>
-                <span className="grey-style">
+                <span>
                     {moment(created).fromNow()}
                 </span>
             </div>

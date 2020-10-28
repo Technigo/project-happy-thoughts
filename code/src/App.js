@@ -22,7 +22,12 @@ export const App = () => {
         return response.json();
       })
       .then((data) => {
-        const filteredMessages = data.filter(message => message.message)
+        // Sorts the data depending on timestamp
+        const sortedMessages = [...data];
+        sortedMessages.sort((a, b) => (Date.parse(b.createdAt) - Date.parse(a.createdAt)));
+        
+        // Filters the sorted data to remove empty messages
+        const filteredMessages = sortedMessages.filter(message => message.message)
         setListOfMessages(filteredMessages);
       })
       .catch(error => console.log("error:", error));

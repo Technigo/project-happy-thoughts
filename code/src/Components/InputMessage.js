@@ -8,10 +8,11 @@ const InputMessage = ({onMessageChange}) => {
         // Prevents the page from refreshing
         event.preventDefault();
 
+        // Call onMessageChange to POST new message and fetch messages again
         onMessageChange(inputMessage);
 
-        setInputMessage('');
-        
+        // Clear the input field
+        setInputMessage(''); 
     };
 
     return (
@@ -42,7 +43,7 @@ const InputMessage = ({onMessageChange}) => {
                         >❤️
                         </span>
                     </button>
-                    <p className="grey-style">{inputMessage.length} / 140</p>
+                    <p className={inputMessage.length > 140 ? 'red-style' : 'grey-style'}>{inputMessage.length} / 140</p>
                 </div>
             </form>
         </div>
