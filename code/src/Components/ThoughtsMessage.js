@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import moment from 'moment'
 
 import './ThoughtsMessage.css'
@@ -18,20 +18,22 @@ export const ThoughtsMessage = props => {
 
    return (
     <article className="message-container">
-        <h3>{message}</h3>
-        <p>
-            <button id="hearts-button"
-            onClick={handleClick}
-            className={hearts > 0 ? "liked" : "#not-Liked"} >
-                <span role="img" aria-label="Heart">
-                    {"❤ "}                
-                </span>
-            </button>
-            x {hearts}
-        </p>
-        <p className="message-time">
-            {moment(createdAt).fromNow()}
-        </p>
+        <h3 className="message-text">{message}</h3>
+        <span className="message-wrapper">
+            <p>
+                <button id="hearts-button"
+                onClick={handleClick}
+                className={hearts > 0 ? "liked" : "not-Liked"} >
+                    <span role="img" aria-label="Heart">
+                        {"❤️ "}                
+                    </span>
+                </button>
+                x {hearts}
+            </p>
+            <p className="message-time">
+                {moment(createdAt).fromNow()}
+            </p>
+        </span>
     </article>
    );
 };
