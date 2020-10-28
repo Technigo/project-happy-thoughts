@@ -13,6 +13,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    word-wrap: break-word;
 }
 
 .thought-details {
