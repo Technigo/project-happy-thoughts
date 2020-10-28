@@ -5,18 +5,18 @@ import 'styles/likeathought.css';
 // Replace THOUGHT_ID with the _id parameter of the thought the user clicked on
 // Number of 'hearts' will increase when clicked
 
-export const Likeathought = (props) => {
-  const hearts = props.hearts
-  const _id = props._id
+export const Likeathought = ({hearts , id, onThoughtLiked}) => {
+  //const hearts = props.hearts
+  //const _id = props._id
 
   const handleClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`,
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: ""
       }).then(() => {
-        props.onThoughtLiked(_id)
+        onThoughtLiked(id);
       });
     };
 

@@ -28,9 +28,9 @@ export const ThoughtsList = () => {
   }, []);
   // If we want we can put the fetch in another separate component
 
-  const onThoughtLiked = (likedThoughtId) => {
+  const onThoughtLiked = (id) => {
     const updatedThoughts = thoughts.map((thought) => {
-      if (thought._id === likedThoughtId) {
+      if (thought._id === id) {
         thought.hearts += 1;
       }
       return thought;
