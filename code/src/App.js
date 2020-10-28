@@ -10,8 +10,6 @@ export const App = () => {
 
   const [listOfMessages, setListOfMessages] = useState([]);
 
-  
-
   // after return jsx, after app mounted, useeffect will run, do a fetch
   useEffect(() => {
     fetchMessages();
@@ -32,7 +30,6 @@ export const App = () => {
 
   //Take value and pass it to server, POST request
   const reachMessageInput = (newMessage) => {
-    console.log(newMessage);
     fetch(MESSAGES_URL,
       {
         method: 'POST',

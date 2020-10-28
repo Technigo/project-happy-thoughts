@@ -3,7 +3,7 @@ import React from 'react';
 import Message from './Message';
 
 
-const MessageList = ({listOfMessages, setListOfMessages, inputMessage}) => {
+const MessageList = ({listOfMessages, setListOfMessages}) => {
     
     const whenLiked = (id) => {
         // Maps over the current messages and increments the like number

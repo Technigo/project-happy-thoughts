@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const InputMessage = ({onMessageChange, setListOfMessages}) => {
+const InputMessage = ({onMessageChange}) => {
 
     const [inputMessage, setInputMessage] = useState('');
 
@@ -9,7 +9,7 @@ const InputMessage = ({onMessageChange, setListOfMessages}) => {
         event.preventDefault();
 
         onMessageChange(inputMessage);
-        
+
         setInputMessage('');
         
     };
