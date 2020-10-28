@@ -1,21 +1,14 @@
 .card {
   background: #ffffff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15),
-    0px 12px 24px rgba(255, 88, 108, 0.7),
-    inset 0px -2px 4px rgba(255, 255, 255, 0.7),
+  box-shadow: 
+    0px 2px 4px rgba(0, 0, 0, 0.15),
+    0px 12px 24px rgba(255, 88, 108, .7),
+    inset 0px -2px 4px rgba(255, 255, 255, .7),
     inset 0px -5px 16px rgba(255, 88, 108, 0.4);
   border-radius: 16px;
   padding: 20px 20px 16px 20px;
-  word-wrap: break-word;
   margin-bottom: 24px;
-  transition: 0.1s;
-  top: 0;
 }
-
-/* .card:hover {
-  position: relative;
-  top: -3px;
-} */
 
 .card-bottom {
   /* border: 1px dashed salmon; */
@@ -40,7 +33,6 @@
 button {
   border: 0;
   outline: 0;
-  background: none;
 }
 
 button img {
