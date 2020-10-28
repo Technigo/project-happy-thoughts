@@ -24,9 +24,10 @@ export const MessageList = () => {
       {messages.map(message => {
         return <Message
           key={message._id}
+          id={message._id}
           message={message.message}
           created={moment(message.createdAt).fromNow()}
-          hearts={message.hearts}
+          likes={message.hearts}
         />
       })}
     </>
