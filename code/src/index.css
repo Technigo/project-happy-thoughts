@@ -29,13 +29,50 @@ header {
 section {
   box-sizing: border-box;
   padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.thought {
+.thought, .new-thought {
   width: 250px;
   margin-bottom: 15px;
   border: 1px solid black;
   box-shadow: 5px 5px black;
+}
+
+.new-thought {
+  background: #f2f0f0;
+}
+
+.new-message {
+  margin: 10px;
+  font-size: 12px;
+}
+
+.input {
+  margin: 0 10px;
+  width: 90%;
+  border: 1px solid #d0cfcf;
+  height: 32px;
+}
+
+.send-button {
+  width: 170px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  padding: 0 5px;
+  margin: 10px;
+  background: #ffadad;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  width: 20px;
 }
 
 .message {
@@ -59,11 +96,12 @@ section {
   height: 30px;
   border: none;
   border-radius: 50%;
-  background-image: url(./assets/heart.svg);
-  background-repeat: no-repeat;
-  background-size: 20px;
-  background-position: center;
+  padding: 5px;
   margin-right: 5px;
+}
+
+.liked {
+  background-color:#ffadad;
 }
 
 .time {

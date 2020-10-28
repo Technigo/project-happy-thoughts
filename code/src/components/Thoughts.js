@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import Thought from 'Thought';
-import NewThought from 'NewThought';
+import Thought from 'components/thought/Thought';
+import NewThought from 'components/newthought/NewThought';
 
 const Thoughts = () => {
   const [thoughts, setThoughts] = useState([]);
