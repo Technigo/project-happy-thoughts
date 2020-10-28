@@ -1,0 +1,41 @@
+// import React, {useEffect, useState} from 'react';
+// import moment from 'moment';
+
+
+// export const MessageList = () => {
+//     const MESSAGE_URL = 'https://wk11livesession.herokuapp.com/messages';
+//     const [messages, setMessages] = useState([]);
+
+//     useEffect(() => {
+//         fetch(MESSAGE_URL)
+//         .then((res) => {
+//             return res.json();
+//         })
+//         .then((data) => {
+//             console.log(data);
+//             data.reverse();
+
+//             const filteredMessage = data.filter(message => message.text);
+//             const limitedMessage = filteredMessage.slice(0,10)
+
+//             // Save the data to state
+//             setMessages(limitedMessage);
+
+//         });
+//     },[]);    
+
+//     return (
+//         <div>
+//             {messages.map((message) => {
+//                 return (
+//                     <p className="message" key={message._id}>
+//                     {message.text}
+//                     <span className="message-time">
+//                         {Moment(message.created).fromNow()}
+//                     </span>
+//                 </p>
+//                 );
+//             })}
+//         </div>
+//     )
+// }
