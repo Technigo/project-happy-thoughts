@@ -27,7 +27,7 @@ export const HappyForm = (props) => {
         <form className="happy-form">
             <h3>Post a happy thought!</h3>
             <textarea
-                rows="3"
+                rows="5"
                 value={message}
                 placeholder="your happy thoughts here"
                 onChange={event => setMessage(event.target.value)}

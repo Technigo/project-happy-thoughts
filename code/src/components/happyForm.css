@@ -14,9 +14,11 @@
 
 h3 {
   font-family: "Titillium Web", sans-serif;
+  letter-spacing: 0.2px;
 }
 
 textarea {
+  margin-bottom: 15px;
   border: 1px solid rgba(0, 0, 0, 0.556);
 }
 
@@ -24,7 +26,7 @@ textarea {
   margin-top: 15px;
   border-radius: 20px;
   padding: 5px;
-  color: rgba(2, 2, 2, 0.481);
+  background-color: rgba(242, 233, 233, 0.837);
   font-size: 16px;
   font-weight: lighter;
   letter-spacing: 1px;

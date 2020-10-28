@@ -15,7 +15,7 @@ export const App = () => {
       .then(res => res.json())
       .then(json => setThoughts(json))
     setLoading(false)
-  }, [postedMessage])
+  }, [postedMessage, loading])
 
 
   const onFormSubmit = message => {

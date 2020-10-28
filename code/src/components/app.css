@@ -16,6 +16,10 @@ h1 {
   font-weight: 500;
   font-family: "Titillium Web", sans-serif;
 }
+p {
+  letter-spacing: 2px;
+  float: right;
+}
 .loader {
   border: 26px solid #ffc0cb;
   border-top: 26px solid #fe0000;
