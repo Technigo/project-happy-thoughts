@@ -1,12 +1,12 @@
 import React from 'react';
-import { HappyContents } from './HappyContents';
-import { PostContents } from './PostContents';
+import { HappyThoughts } from './HappyThoughts';
+import { PostThoughts } from './PostThoughts';
 
 export const App = () => {
   return (
     <div>
-      <PostContents />
-      <HappyContents />
+      <PostThoughts />
+      <HappyThoughts />
     </div>
   );
 };

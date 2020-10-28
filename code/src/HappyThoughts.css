@@ -1,31 +1,35 @@
-.happy-contents {
+.happy-thoughts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
   height: 120px;
   margin: 20px;
   padding: 20px;
-  background: lightgrey;
+  background: rgb(245, 241, 241);
   border: 1px solid black;
   border-radius: 2px;
   box-shadow: 2px 2px 0px 0px black;
 }
 
-.happy-contents h2 {
+.happy-thoughts h2 {
   font-size: 15px;
   font-weight: 500;
   font-family: courier;
 }
 
-.contents-info {
+.thought-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.contents-time {
+.thoughts-time {
   font-size: 10px;
 }
 
 @media (min-width: 669px) {
-  .happy-contents {
+  .happy-thoughts {
     width: 510px;
   }
 }

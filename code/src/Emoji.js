@@ -5,6 +5,7 @@ export const Emoji = props => {
    <span
     className='emoji'
     role='img'
+    aria-label='like'
   >
     {props.symbol}
   </span>

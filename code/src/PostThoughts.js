@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Emoji } from "./Emoji";
-import './PostContents.css';
+import './PostThoughts.css';
 
-export const PostContents = () => {
-  const CONTENTS_URL = 'https://wk11livesession.herokuapp.com/messages';
-  const [messages, setMessages] = useState('');
+export const PostThoughts = () => {
+  const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+  const [message, setMessage] = useState('');
   const [name, setName] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault()
 
-    fetch(CONTENTS_URL,
+    fetch(THOUGHTS_URL,
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages, name })
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ message })
       }
     ).then(() => {
       window.location.reload()
@@ -26,16 +26,17 @@ export const PostContents = () => {
         <h1 className='happyheader-text'>What is making you happy right now?</h1>
         <textarea
           placeholder='Enter stoke here!'
-          value={messages}
+          value={message}
           tabIndex='0'
           aria-label='Input for text'
           className='form-input'
           maxLength='140'
-          onChange={event => setMessages(event.target.value)}
-          required>
+          onChange={event => setMessage(event.target.value)}
+          required
+        >
         </textarea>
         <div className='letter-length'>
-          <p>{messages.length}/140</p>
+          <p>{message.length}/140</p>
         </div>
         <input
           type='text'
@@ -50,7 +51,7 @@ export const PostContents = () => {
         <button
           className='submit-button'
           type='submit'
-          disabled={messages.length < 5 && messages.length > 140 ? true : false}>
+          disabled={message.length < 5 && message.length > 140 ? true : false}>
           <Emoji symbol ='♥' /> Send stoke now! <Emoji symbol='♥' />
         </button>
       </form>

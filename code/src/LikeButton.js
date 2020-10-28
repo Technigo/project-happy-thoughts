@@ -3,27 +3,26 @@ import './LikeButton.css';
 import { Emoji } from './Emoji';
 
 export const LikeButton = props => {
-  const like = props.like;
+  const likes = props.likes;
   const id = props.id;
 
   const handleClick = () => {
-    fetch(`https://mats-happythoughts.herokuapp.com/${id}/like`, {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts`, {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' }
     }).then(() => {
-      props.onLikedContent(id)
+      props.onLikedThought(id);
     });
   };
   return (
     <div>
-      <button
-        onClick={handleClick}>
+      <button onClick={handleClick}>
         <div>
           <Emoji symbol='♥' />
         </div>
       </button>
-      {like}
+      x{likes}
     </div>
   );
 };
