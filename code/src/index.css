@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'PT Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,62 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.thought-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thought-container {
+  width: 350px;
+  height: 112px;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 5px 5px black;
+  margin: 20px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.thought-date {
+  color: #d0d0d0;
+  font-size: 12px;
+  margin: 0;
+}
+
+.thought-text {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+  
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.heart-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #FFADAD;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.like-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
 }
