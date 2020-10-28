@@ -113,7 +113,21 @@ input.form-text {
   font-weight: lighter;
 }
 
+/* MEDIA QUERIES */
 
+@media (max-width: 768px) {
+  .message-card {
+    width: 320px;
+  }
+
+  input.form-text {
+    width: 308px;
+  }
+
+  .input-card {
+    width: 310px;
+  }
+}
 
 
 
