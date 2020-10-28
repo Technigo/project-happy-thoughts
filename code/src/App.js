@@ -1,9 +1,11 @@
 import React from 'react'
 
+import {ThoughtsFeed} from './ThoughtsFeed.js'
+
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <>
+      <ThoughtsFeed />
+    </>
   )
-}
+};
