@@ -24,7 +24,7 @@ export const MessageInput = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h3> Share a happy thought <span className='heart' role='img' aria-label='heart'>♥</span> </h3>
+            <h3> Share a happy thought <span className='heart-one' role='img' aria-label='heart'>♥</span> </h3>
             <textarea className="text-input"
                 rows='5'
                 value={message}

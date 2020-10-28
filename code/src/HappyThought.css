@@ -28,10 +28,10 @@
     width: 30px;
     border: none;
     background-color:#ECC8CF;
-    text-align: center;
+    padding: 0;
 }
 
 .heart {
-    color: rgb(202, 74, 74);
-    font-size: large;
+    font-size: medium;
+    color: rgb(151, 112, 112);
 }
