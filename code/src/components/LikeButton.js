@@ -1,10 +1,11 @@
 import React from 'react';
 
+
 // POST https://happy-thoughts-technigo.herokuapp.com/thoughts/{THOUGHT_ID}/like
 // Replace THOUGHT_ID with the _id parameter of the thought the user clicked on
 // Number of 'hearts' will increase when clicked
 
-export const Likeathought = ({hearts , id, onThoughtLiked}) => {
+export const LikeButton = ({hearts , id, onThoughtLiked}) => {
   //const hearts = props.hearts
   //const _id = props._id
 
@@ -24,7 +25,7 @@ export const Likeathought = ({hearts , id, onThoughtLiked}) => {
       <button
         className="like-button"
         onClick={handleClick}
-        style={{ background: hearts > 0 ? "#FEACAC" : "#EAEAEA"}}
+        style={{ background: hearts > 0 ? "#FEACAC" : "grey"}}
       >
         <span role="img" aria-label="Red heart emoji">&#10084;&#65039;</span>
       </button>

@@ -1,7 +1,7 @@
 import moment from "moment"
 import React, { useState, useEffect } from "react"
 
-import { Likeathought } from './LikeButton'
+import { LikeButton } from './LikeButton'
 
 export const MessageList = () => {
   const LIKES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
@@ -39,7 +39,7 @@ export const MessageList = () => {
           <div className="message-card" key={getMessages._id}>
             <p className="message-text">{getMessages.message}</p>
             <div className="likes-time-container">
-            <Likeathought 
+            <LikeButton
                 key={getMessages._id}
                 id={getMessages._id}
                 onThoughtLiked={onThoughtLiked}

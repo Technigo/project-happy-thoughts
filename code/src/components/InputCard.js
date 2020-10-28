@@ -26,14 +26,14 @@ export const InputCard = () => {
 				maxLength="130"
 				onChange={(event) => setNewThought(event.target.value)} />
 			<p className="text-counter"
-			   style={{color: newThought.length > 120 ? 'red' : 'black'}}
-			> {130 - newThought.length} x characters left 
+			   style={{color: newThought.length > 130 ? 'red' : 'black'}}
+			> {140 - newThought.length} x characters left 
 			</p>
 
 			<button 
 			className="input-card-button" 
 			type="submit"
-			disabled={newThought.length < 6 || newThought.length > 130 ? true : false}>
+			disabled={newThought.length < 6 || newThought.length > 140 ? true : false}>
 				<span role="img" aria-label="heart">&#10084;&#65039; </span>
         Send Happy Thoughts
         <span role="img" aria-label="heart"> &#10084;&#65039;</span>
