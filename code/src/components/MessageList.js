@@ -17,24 +17,22 @@ export const MessageList = () => {
                 //Set the state. Data is an array of messages.
                 setMessages(data)
             })
-
     }, [])
     //render messages using map
     return (
-        
-            <section className="cards-container" >
-            
-                {messages.map(message => (
-                    <article className="message-card" key={message._id}>
-            <p className="message" > 
-            {message.message} </p>
-            <p className="message-time"> 
-            {moment(message.createdAt).fromNow()} 
-            </p>
-            </article> 
-        ))
-    }
-    </section>
-    
+
+        <section className="cards-container" >
+            {messages.map(message => (
+                <article className="message-card" key={message._id}>
+                    <p className="message" >
+                        {message.message} </p>
+                    <p className="message-time">
+                        {moment(message.createdAt).fromNow()}
+                    </p>
+                </article>
+            ))
+            }
+        </section>
+
     )
 }
