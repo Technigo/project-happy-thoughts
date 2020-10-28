@@ -22,7 +22,7 @@ const fetchMessages = () => {
     fetch(MESSAGE_URL, {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify({ text: newMessage })
+      body: JSON.stringify({ message: newMessage })
     }).then(() => fetchMessages());
     //then(data => console.log(data)); 
   }

@@ -15,7 +15,7 @@ export const MessageList = () => {
     data.reverse();
 
     // Dont show empty messages
-const filteredMessages = data.filter(message => message.text);
+const filteredMessages = data.filter(message => message.message);
 const limitedMessages = filteredMessages.slice(0, 10);
 
     //Save the data to state
@@ -30,16 +30,18 @@ const limitedMessages = filteredMessages.slice(0, 10);
       return (
         <article className="message-card">
         <h3 className='message' key={messages._id}> 
-          {messages.text}
-          <div class="message-bottom">
+          {messages.message}
+          <div className="message-bottom">
+          <div className="like-wrapper">  
           <button className="heart-button">
-            <p>❤️</p>
-          <p>{messages.hearts}</p>
-          </button>
+          <p className="heart">❤️</p></button>
+          <p className="likes">x  {messages.hearts}</p>
+          </div>
           <span className="messageTime">
           {moment(messages.created).fromNow()}
           </span>
-        </div>
+          
+          </div>
         </h3>
         </article>
       ); 
