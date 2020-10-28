@@ -10,44 +10,41 @@ export const ThoughtsInput = () => {
     
     const handleSubmit = (event) => { 
         event.preventDefault();
-        console.log(JSON.stringify({text: thought}))
-
         // submit function that POSTs the text field 
         fetch(ThoughtsUrl, {
             method: "POST",
             headers:
-            {
-                "Content-Type":"application/json"
-            },
+            {"Content-Type":"application/json"},
             body:JSON.stringify({message: thought})
         }
         ).then(() => {
             // ask the page to refresh 
+            setThought("");
             window.location.reload();
         });
-
     };
 
     return ( 
         <div className="input-form">
-            <form onSubmit = {handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <p className="form-title">What's making you happy right now?</p>
-                <input 
-                    type="text"
+                <textarea
                     className="text-area"
-                    maxLength="140"
+                    rows="3"
                     onChange= {event => setThought(event.target.value)}
                     >
-                </input>
+                </textarea>
                 <button
                     type="submit"
                     className="submit-button"
-                    value="Add Thought">
-                    <span role="img" aria-label="Heart emoji">💗 </span> 
+                    value="thought"
+                    disabled={thought.length < 6 || thought.length > 140 ? true : false}  
+                    >
+                    <span role="img" aria-label="Heart emoji">{"💗"} </span> 
                         Send Happy Thought
-                    <span role="img" aria-label="Heart emoji"> 💗</span>
+                    <span role="img" aria-label="Heart emoji"> {"💗"} </span>
                 </button>
-
+                <p className="thoughts-length-left"> {thought.length} / 140 </p>
             </form>
         </div>
     )

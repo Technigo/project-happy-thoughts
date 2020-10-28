@@ -7,26 +7,42 @@ export const ThoughtsList = () => {
     const ThoughtsUrl= "https://happy-thoughts-technigo.herokuapp.com/thoughts";
     const [thoughts, setThoughts] = useState([]);
 
-    useEffect (() => { 
     // useEffect prevents the infinite looping of creating new arrays after the data is fetched. 
-
-        fetch(ThoughtsUrl)
-            .then ((response) => {
-                return response.json()
-            })
-            .then (data => { 
-                const filteredThoughts = data.filter(thought => {
-                    return thought !== '';
-                });
-                setThoughts(filteredThoughts);     
-            });
+    useEffect (() => { 
+      fetchThoughts()
     }, []);
+
+    const fetchThoughts = () => {
+      fetch(ThoughtsUrl)
+      .then ((response) => {
+          return response.json()
+      })
+      .then (data => { 
+          const filteredThoughts = data.filter(thought => {
+              return thought !== '';
+          });
+          setThoughts(filteredThoughts);     
+      });
+    }
+
+    const onLiked = thoughtId => {
+      const updatedThoughts = thoughts.map(thought => {
+        if (thought._id === thoughtId) {
+          thought.hearts += 1
+        }
+        return thought
+      })
+      setThoughts(updatedThoughts)
+    }
 
     return (
         <>
           <section className="thoughts-container">
             {thoughts.map((thought) => (
-              <ThoughtCard key={thought._id} message={thought.message} createdTime={thought.createdAt} />
+              <ThoughtCard 
+                key={thought._id} 
+                thought={thought}
+                onLiked={onLiked}/>
             ))}
           </section>
         </>
