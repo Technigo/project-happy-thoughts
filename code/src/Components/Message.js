@@ -36,7 +36,6 @@ const Message = ({ message, created, hearts, id, whenLiked }) => {
                     {moment(created).fromNow()}
                 </span>
             </div>
-
         </article>
     )
 }

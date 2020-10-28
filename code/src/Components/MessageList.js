@@ -1,23 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Message from './Message';
 
 
 const MessageList = ({listOfMessages, setListOfMessages, inputMessage}) => {
-    const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-    //const [listOfMessages, setListOfMessages] = useState([]);
-
-    useEffect(() => {
-        fetch(MESSAGES_URL) //Default GET request
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => { 
-                const filteredMessages = data.filter(message => message.message)
-                setListOfMessages(filteredMessages);
-            });
-    }, [setListOfMessages]); // first argument - a function, second argument - empty array to prevent re-render after the fetch (by setting a new state) since this creates an infinite loop.
-
     
     const whenLiked = (id) => {
         // Maps over the current messages and increments the like number

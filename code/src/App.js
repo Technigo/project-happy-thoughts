@@ -3,13 +3,14 @@ import React, { useState, useEffect } from 'react';
 import InputMessage from './Components/InputMessage';
 import MessageList from './Components/MessageList';
 import Footer from './Components/Footer';
+import { MESSAGES_URL } from './urls';
 
 // App is responsible for connection to server
 export const App = () => {
 
   const [listOfMessages, setListOfMessages] = useState([]);
 
-  const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  
 
   // after return jsx, after app mounted, useeffect will run, do a fetch
   useEffect(() => {
