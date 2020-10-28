@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
-import moment from 'moment'
+import React, { useEffect, useState } from 'react'
 
+import moment from 'moment'
 //This function makes all the messages to appear in a list
 export const HappyThoughts = () =>  {
     const THOUGHTS_URL ='https://happy-thoughts-technigo.herokuapp.com/thoughts';

@@ -1,8 +1,8 @@
 import React from 'react'
-import { useState} from 'react'
+
+import { useState } from 'react'
 
 const FORM_URL='https://happy-thoughts-technigo.herokuapp.com/thoughts'
-
 //states for the message so that we can change it
 export const Form = (props) => {
     const [message, setMessage] = useState("")
@@ -11,13 +11,15 @@ export const Form = (props) => {
     const handleSubmit = (event) => {
     event.preventDefault()
     fetch(FORM_URL, {
-        method: "POST",
+        method: 'POST',
+        headers:{'Content-Type':'application/json'},
         body: JSON.stringify({message}),
     })
 
     .then(() => {
         setMessage('')
-        props.onFormSubmit (message)
+        window.location.reload();
+     /*    props.onFormSubmit(message) */
     })
     } 
     
