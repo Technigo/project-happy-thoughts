@@ -1,32 +1,57 @@
 .message-container {
     border: 3px solid #000;
     margin: 10px 0px;
-    padding: 20px;
+    padding: 30px;
     min-width: 30%;
     max-width: 30%;
     background-color: #fff;
     box-shadow: #000 8px 6px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message-text {
+    word-break: break-all;
+    font-size: 21px;
+    font-family: 'Inconsolata', monospace;
+}
+
+.message-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #afafaf;
 }
 
 #hearts-button {
     border-radius: 50%;
     padding: 5px 7px;
     margin-right: 10px;
-    width: 35px;
-    height: 35px;
-    border: 2px solid #000;
+    width: 40px;
+    height: 40px;
+    border: none;
 }
 
 #hearts-button:hover {
     cursor: pointer;
 }
 
-.not-liked {
-    background-color: #fff;
+#hearts-button:focus,
+#hearts-button:hover {
+    border: 2px solid #f04242;
 }
+
+
+.not-liked {
+    background-color: #f2f0f0;
+} 
 
 .liked {
-    background-color: #ff99ff;
+    background-color: #ffadad;
 }
-
-
