@@ -4,11 +4,13 @@ Only show about 20 cards at a time?
 Max-characters in user input */
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
+/* 
+import { THOUGHTS__URL } from './urls' */
 
 import './thoughts.css'
 
 
-export const Thoughts = () => {
+export const Thoughts = (/* {thougths, setThoughts} */) => {
     const [thoughts, setThoughts] = useState([])
     const THOUGHTS__URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
@@ -33,8 +35,9 @@ export const Thoughts = () => {
     return (
         <div className="thoughts__container">{thoughts.filter((thought) => thought.message !== undefined).map((thought) => {
             return (
-            <div className="thoughts__card">
-                <p className="thoughts__message" key={thought._id}>{thought.message}
+            <div className="thoughts__card" key={thought._id}>
+                <p className="thoughts__message">{thought.message}
+                    <span className="thoughts__amount-of-likes">{thought.hearts}</span>
                     <span className="thoughts__time-posted">{moment(thought.created).fromNow()}</span>
                 </p>
             </div>
