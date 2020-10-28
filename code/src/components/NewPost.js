@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const NewPost = () => {
   const post_url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
-  const [thought, setThought] = useState([""])
+  const [thought, setThought] = useState("")
 
   // Disallow empty post
   const isEmpty = value => value.replace(/\s/g, "").length === 0
@@ -18,6 +18,7 @@ export const NewPost = () => {
       .then(() => {
       window.location.reload()
     })
+    .catch(err => console.log("error:", err))
   }
   
   return (
@@ -37,7 +38,9 @@ export const NewPost = () => {
       />
       {/* Counter to show characters remaining */}
       <p className={
-        thought.length > 140 ? "p-red" : "p-green" }>{ 140 - thought.length}<span className="counter">&nbsp;/ 140</span></p>
+        thought.length > 140 ? "p-red" : "p-green" }>
+          { 140 - thought.length}<span className="counter">&nbsp;/ 140</span>
+      </p>
       <button 
         onClick={handleSubmit}
         className="submit-button" 
@@ -60,5 +63,3 @@ export const NewPost = () => {
     </form>
   )
 }
-
-// onload counter is always counting 1
