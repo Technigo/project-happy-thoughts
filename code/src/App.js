@@ -24,13 +24,15 @@ export const App = () => {
     setThoughts(updatedThoughts)
   }
 
-  const onMessageChange = thought => {
+  const onMessageChange = (thought) => {
     fetch(THOUGHTS_URL, {
       method: 'POST',
       headers: { 'Content-Type':'application/json' },
       body:JSON.stringify({message: thought})
     })
-      .then(()=> fetchMessage())
+      .then(()=> {
+        fetchMessage()
+      })
   }
 
   const fetchMessage = () => {
@@ -48,11 +50,11 @@ export const App = () => {
     }
 
   return (
-    <div>
+    <main>
       <ThoughtInput onMessageChange={onMessageChange}/>
       {thoughts.map(thought=> 
       <ThoughtMessage key={thought._id} thought={thought} onLikeThought={onLikeThought}/>
       )} 
-    </div>
+    </main>
   )
 }

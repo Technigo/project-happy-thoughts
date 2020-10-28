@@ -1,0 +1,30 @@
+article{
+  background-color:#ffffff;
+  width: 90%;
+  margin: 10px 0;
+  padding: 15px;
+  border: darkgray 2px solid;
+  border-radius: 2px;
+  box-shadow: black 8px 8px;
+}
+
+.wrapper {
+ display: flex;
+ justify-content: space-between;
+}
+
+.like-button-container {
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  article {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1024px) {
+  article {
+    width: 30%;
+  }
+}
