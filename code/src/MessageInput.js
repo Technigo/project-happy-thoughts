@@ -1,45 +1,32 @@
-/* eslint-disable react/void-dom-elements-no-children */
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable jsx-quotes */
 import React, { useState } from 'react';
+import './messageForm.css';
+// eslint-disable-next-line no-unused-vars
 
-// eslint-disable-next-line padded-blocks
-export const MessageInput = () => {
+export const MessageInput = ({ onMessageChange }) => {
+  const [newMessage, setNewMessage] = useState('');
 
-  const MESSAGES_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
-  // eslint-disable-next-line no-undef
-  const [message, setMessage] = useState('');
-  // eslint-disable-next-line no-trailing-spaces
-  
-  // eslint-disable-next-line arrow-parens
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-
-    fetch(MESSAGES_URL,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ text: message })
-      }
-    // eslint-disable-next-line function-paren-newline
-    ).then(() => {
-      window.location.reload();
-    });
-  };
+    onMessageChange(newMessage);
+  }
 
   return (
-    // eslint-disable-next-line react/jsx-tag-spacing
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="form-text"
-        // eslint-disable-next-line arrow-parens
-        onChange={event => setMessage(event.target.value)} />
-      <input
-        type="submit"
-        className="form-button"
-        value="Add Message" />
+    <form className="happy-form" onSubmit={handleSubmit}>
+      <h3>Post a happy thought!</h3>
+      <textarea
+        rows="3"
+        value={newMessage}
+        onChange={(event) => setNewMessage(event.target.value)} />
+      <div className="form-footer">
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          disabled={!!(newMessage.length < 5 || newMessage.length > 140)}>
+          Send a happy thought
+        </button>
+        <p>{newMessage.length} / 140</p>
+      </div>
     </form>
   );
 };
