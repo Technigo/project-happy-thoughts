@@ -25,14 +25,14 @@ code {
 
 form {
   width: 400px;
-  border: 2px solid #8e8d8d;
+  border: 1px solid #8e8d8d;
   box-shadow: 5px 5px;
   margin: 20px;
   font-family: 'Inconsolata', monospace;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px;
+  padding: 20px;
   background: #f2f0f0;
 }
 
@@ -44,6 +44,10 @@ form {
   cursor: pointer;
   border: none;
   font-family: 'Inconsolata', monospace;
+}
+
+.submit-button:disabled {
+  cursor: auto;
 }
 /*************** MESSAGES LIST ************/
 .message-list {
@@ -59,15 +63,19 @@ form {
 
 .message {
   width: 400px;
-  border: 2px solid #8e8d8d;
+  border: 1px solid #8e8d8d;
   box-shadow: 5px 5px;
   margin: 20px;
   font-family: 'Inconsolata', monospace;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px;
+  padding: 20px;
   background: white;
+}
+
+.message h3 {
+  font-weight: 100;
 }
 
 .message-footer {
@@ -93,6 +101,7 @@ form {
   cursor: pointer;
   border: none;
   margin-right: 5px;
+  outline: none;
 }
 
 .likes-button:hover {

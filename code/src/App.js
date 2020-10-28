@@ -48,7 +48,6 @@ export const App = () => {
     <>
       <InputMessage
         onMessageChange={reachMessageInput}
-        setListOfMessages={setListOfMessages}
       />
       <MessageList
         listOfMessages={listOfMessages}
