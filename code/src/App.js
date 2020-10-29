@@ -8,6 +8,7 @@ import { ThoughtsForm } from './Components/ThoughtsForm.js'
 export const App = () => {
 
   const apiUrlMessages = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -42,14 +43,18 @@ export const App = () => {
         .then(() => {
           fetchMessages();
         })
-          .then(() => {
-            window.location.reload();
-          })
-          .catch((error) => {
-            console.error(error);
-          })
   };
-    
+
+  const postHearts = messageId => {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
+            method: "POST", 
+            body:"",
+            headers: { "Content-Type": "application/json" }
+        }).then (() => {
+            onLiked(messageId);
+        });
+  };
+
   const onLiked = messageId => {
     const updatedMessage = messages.map(thought => {
       if (thought._id === messageId) {
@@ -58,7 +63,7 @@ export const App = () => {
       return thought    
     })
     setMessages(updatedMessage)
-  }
+  };
 
   return (
   <main>
@@ -67,7 +72,7 @@ export const App = () => {
     <ThoughtsForm onMessageChange={postSingleMessage} />
     {/* Mapping through the array data that's in the messages state variable so each array element is returned via the messageDetails argument and prop to the ThoughtsMessage component */}
     {messages.map((messageObject) => (
-      <ThoughtsMessage key={messageObject._id} messageDetails={messageObject} onLiked={onLiked}/>
+      <ThoughtsMessage key={messageObject._id} messageDetails={messageObject} onHeartsChange={postHearts}/>
     ))}
   </main>
   )
