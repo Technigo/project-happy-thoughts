@@ -4,21 +4,13 @@ import Button from './Button';
 
 import './Styles.scss';
 
-const PostInput = () => {
-  const POSTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
-  const [post, setPost] = useState('');
+const MessageInput = ({ onMessageChange }) => {
+  const [newMessage, setNewMessage] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault();
-    fetch(POSTS_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message: post }),
-    }).then(() => {
-      window.location.reload();
-    });
+    onMessageChange(newMessage);
+    setNewMessage('');
   };
 
   return (
@@ -28,15 +20,18 @@ const PostInput = () => {
           <h1 className="Form__header">What's making you happy right now?</h1>
           <textarea
             rows="4"
+            value={newMessage}
+            onChange={event => setNewMessage(event.target.value)}
             placeholder="Type your happy thought..."
-            onChange={event => setPost(event.target.value)}
           ></textarea>
         </label>
         <div className="form-wrapper">
           <Button
             type="submit"
             className="Button"
-            disabled={post.length < 6 || post.length > 140 ? true : false}
+            disabled={
+              newMessage.length < 6 || newMessage.length > 140 ? true : false
+            }
             text={
               <p>
                 <span role="img" aria-label="Heart">
@@ -49,14 +44,15 @@ const PostInput = () => {
               </p>
             }
           />
-          {/* add a tooltip on hover to inform if too short or too long */}
           <p className="">
             <span
               className={
-                post.length < 6 || post.length > 140 ? 'text--red' : 'text'
+                newMessage.length < 6 || newMessage.length > 140
+                  ? 'text--red'
+                  : 'text'
               }
             >
-              {140 - post.length}
+              {140 - newMessage.length}
             </span>
             / 140
           </p>
@@ -66,4 +62,4 @@ const PostInput = () => {
   );
 };
 
-export default PostInput;
+export default MessageInput;

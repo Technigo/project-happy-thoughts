@@ -10,7 +10,7 @@ body {
 
 .App {
   margin: 50px auto;
-  width: 100%;
+  width: 90%;
   max-width: 500px;
 
   &__grid {
@@ -19,13 +19,25 @@ body {
   }
 
   &__item {
-    padding: 30px;
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: min-content 1fr 1fr;
+    grid-row-gap: 5pxpx;
+    grid-column-gap: 10px;
+    align-items: center;
+    padding: 20px;
     border: 1px solid #000;
     box-shadow: 10px 10px #000;
 
     &--gray {
       background: #f2f0f0;
     }
+  }
+}
+
+.Article {
+  &__text {
+    grid-column: 1/4;
   }
 }
 
@@ -62,6 +74,7 @@ body {
     border-radius: 50%;
     width: 40px;
     padding: 10px;
+    grid-column: 1/2;
   }
 }
 
@@ -74,7 +87,7 @@ body {
   animation: spin 8s linear infinite;
 }
 
-@keyframes loader {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }

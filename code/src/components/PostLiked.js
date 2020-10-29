@@ -22,7 +22,7 @@ const PostLiked = ({ hearts, id }) => {
   };
 
   return (
-    <div>
+    <>
       <Button
         type="button"
         className="Button Button--round"
@@ -33,9 +33,11 @@ const PostLiked = ({ hearts, id }) => {
           </span>
         }
       />
-      <p>x{likes}</p>
-      <p>You liked this x{localStorage[id]}</p>
-    </div>
+      <div>
+        <p>x{likes}</p>
+        <p>Your likes x{localStorage[id]}</p>
+      </div>
+    </>
   );
 };
 
