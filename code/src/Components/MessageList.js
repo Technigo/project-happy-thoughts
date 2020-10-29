@@ -16,7 +16,7 @@ const MessageList = ({ listOfMessages, setListOfMessages }) => {
         // Changes the state with array with updated likes no
         setListOfMessages(updatedMessagesWithLikes)
 
-        // Checks if post was liked
+        // Checks if postID is in array - if not - add to array
         if (!likedPosts.includes(id)) {
             setLikedPosts([...likedPosts, id])
         }
@@ -38,16 +38,16 @@ const MessageList = ({ listOfMessages, setListOfMessages }) => {
                     )    
                 })
             }
-            <article className="message">
+            <article className="counter">
                 <p>Did you spread some love?
                     <span>
                         {' 🥰'}
                     </span>
                 </p>
                 <p>
-                    No of posts liked
+                    No. of posts liked
                     <span>
-                        {'❤️ '}
+                        {' ❤️'}
                     </span>
                     : {likedPosts.length}
                 </p>

@@ -13,7 +13,7 @@ export const App = () => {
   // after return jsx, after app mounted, useeffect will run, do a fetch
   useEffect(() => {
     fetchMessages();
-  }, []); // only as mounted not updated
+  }, []); 
 
 
   const fetchMessages = () => {
