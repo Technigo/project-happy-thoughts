@@ -15,12 +15,14 @@ export const ThoughtsForm = ({onMessageChange}) => {
             <h3>What's making you happy right now?</h3>
             <form onSubmit={handleSubmit}>
                 <textarea
+                required
                 className="text-box"
                 id="happyThought"
                 name="happyThought"
                 rows="4"
                 cols="40"
                 placeholder="Write your happy thoughts.."
+                value={newMessages}
                 onChange={event => setNewMessages(event.target.value)}
                 />
                 <button className="form-button"><span role="img" aria-label="heart emoji">❤️</span> Send Happy Thought<span role="img" aria-label="heart emoji">❤️</span></button>
