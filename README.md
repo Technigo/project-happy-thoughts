@@ -9,7 +9,7 @@ We used the Happy Thoughts API 💌 for this and the main goals of this project 
 - Then I build the Thought Input component that does a distinct fetch POST request and we're able to add a new thought to the API. Once this happens, the page reloads so it's updated with the most recent thoughts and these are sorted to show the most recent ones at the top. 
 - In this component I also implemented some validation, the button is disabled until the user reaches a certain amount of characters and the max length of message can't be greater than 140 characters. To make the user aware of the message length I also implemented a characters counter.
 
-Tech ⚡️
+## Tech ⚡️
 - JSX
 - React
 - Javascript
