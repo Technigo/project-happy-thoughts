@@ -11,3 +11,76 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.container {
+  margin: 100px 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-comment{
+  width: 100%;
+  background-color:rgb(239 239 239);
+  border: 2px solid gray;
+  padding: 10px;
+  margin-bottom: 30px;
+  box-shadow: 7px 7px black;
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+.new-comment__text{
+  height: 55px;
+  margin-top: 10px;
+}
+
+.new-comment__button{
+  width: 210px;
+  border-radius: 30px;
+  height: 35px;
+  margin-top: 10px;
+  background-color: #ffa3ac;
+  border:none;
+}
+
+.container-comment{
+  width: 100%;
+  border: 2px solid gray;
+  padding: 10px;
+  margin-bottom: 30px;
+  box-shadow: 7px 7px black;
+}
+
+.container-comment__details{
+  display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+}
+
+.container-comment__button{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.container-comment__button--color-rose{
+  background-color: #f5afaf;
+  border:none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.container-comment__heart, .container-comment__time{
+color: gray;
+}
+

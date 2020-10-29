@@ -1,0 +1,1 @@
+export const CommentUrl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
