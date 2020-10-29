@@ -1,7 +1,6 @@
 .happy-container {
     display: flex;
     justify-content: center;
-    
 }
 
 .happy-thought {
@@ -27,7 +26,7 @@
     height: 30px;
     width: 30px;
     border: none;
-    background-color:#ECC8CF;
+    background-color: #ECC8CF;
     padding: 0;
 }
 

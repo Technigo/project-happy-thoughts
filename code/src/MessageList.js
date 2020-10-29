@@ -1,4 +1,4 @@
-import React, { useState,  useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { HappyThought } from './HappyThought'
 import './MessageList.css'
 
@@ -23,7 +23,7 @@ export const MessageList = () => {
         <div>
             {
                 messages.map(message => {
-                   return <HappyThought key={message._id} props={message}/> 
+                    return <HappyThought key={message._id} props={message} />
                 })
             }
         </div>

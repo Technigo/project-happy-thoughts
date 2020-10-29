@@ -9,7 +9,7 @@
 }
 
 .button:hover {
-    background-color:#cf8d8d;
+    background-color: #cf8d8d;
 }
 
 textarea {
@@ -23,4 +23,3 @@ textarea {
 .heart-one {
     color: rgb(151, 112, 112);
 }
-
