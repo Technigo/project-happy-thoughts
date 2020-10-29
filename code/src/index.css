@@ -11,3 +11,74 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/*.thought-list {
+  display: grid;
+  grid-template-columns: 1fr 300px 1fr;
+  justify-content: space-between;
+  row-gap: 20px;
+}*/
+.header {
+  display: grid;
+  grid-template-columns: 1fr 300px 1fr;
+}
+
+h1 {
+  grid-column-start: 2;
+}
+
+.thoughts-container {
+  display: grid;
+  grid-template-columns: 1fr 300px 1fr;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+
+.post {
+  grid-column-start: 2;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 300px 1fr;
+}
+
+.post-header {
+  grid-column-start: 1;
+}
+
+input {
+  grid-column-start: 1;
+}
+
+.submit-button {
+  grid-column-start: 1;
+}
+
+.thought-list {
+  grid-column-start: 2;
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: 1fr 300px 1fr;
+  word-wrap: break-word;
+}
+
+.thought-wrapper {
+  grid-column-start: 2;
+  border: 1px solid black;
+  padding: 5px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 10px;
+}
+ 
+.heart-wrapper {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  background-color: lightblue;
+}
+
+.heart {
+  width: 20px;
+}
