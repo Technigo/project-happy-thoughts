@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 
 import {ThoughtForm} from "./ThoughtForm";
-import {ThoughtList} from "./ThoughtList";
+import {ThoughtBox} from "./ThoughtBox";
 import {THOUGHTS_URL} from "./urls";
 
 export const Thoughts = () => {
-    const [thoughts, setThoughts] = useState([]);
-    const [isLiked, setIsLiked] = useState(false);
+    const [thoughts, setThoughts] = useState([]);  
 
     useEffect(() => {
         getMessages();
-    })
+    }, [])
 
     const getMessages = () => {
         fetch(THOUGHTS_URL)
@@ -30,22 +29,23 @@ export const Thoughts = () => {
     }
 
 
-    const handleIsLikedChange = () => {
-        setIsLiked(true)
-    }
-
-
-
     return (
         <section>
             <ThoughtForm 
                 onMyThoughtChange={postMessage}
                 />
-            <ThoughtList 
+            {thoughts.map(thought => (
+                <ThoughtBox 
+                    key={thought._id} 
+                    thought={thought} 
+                    getMessages={getMessages}
+                    />
+            ))}    
+            {/* <ThoughtList 
                 thoughts={thoughts}
-                onIsLikedChange={handleIsLikedChange}
+                onIsLikedChange={postLike}
                 isLiked={isLiked}
-                />            
+                />             */}
         </section>
     )
 }

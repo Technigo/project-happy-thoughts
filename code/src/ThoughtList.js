@@ -12,7 +12,7 @@ export const ThoughtList = ({thoughts, onIsLikedChange, isLiked}) => {
                     <p>{thought.message}</p>
                     <div className="message-infos-wrapper">
                         <div>
-                            <button onClick={onIsLikedChange}>❤</button>
+                            <button onClick={onIsLikedChange(thought._id)}>❤</button>
                             <LikeNumber 
                                 thought={thought}
                                 isLiked={isLiked}
