@@ -16,7 +16,7 @@
     font-family: 'Inconsolata', monospace;
 }
 
-.message-wrapper {
+.form-message-footer {
     display: flex;
     justify-content: space-between;
     align-items:center ;
@@ -54,4 +54,8 @@ p {
 
 .liked {
     background-color: #ffadad;
+}
+
+.super-liked {
+    background-color: #ff6868;
 }
