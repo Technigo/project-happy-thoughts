@@ -21,8 +21,15 @@ export const App = () => {
   };
 
   const reachNewThought = (newThought) => {
-    console.log(newThought);
-    // setInput(newInput);
+    // console.log(newThought);
+    //2nd argument = option; without it we send GET request
+    fetch(THOUGHTS_URL, {
+      method: "POST",
+      //obligatory to write headers in POST requests (to communicate to server what kind of info are you sending)
+      headers: { "Content-Type": "application/json" },
+      //our value has to be in appropriate type -> JSON -> to be recognised by the backend server
+      body: JSON.stringify({ message: newThought })
+    }).then(() => fetchThoughts());
   };
 
   return (
