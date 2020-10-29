@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-import PostInput from './PostMessage';
+import PostInput from './PostInput';
 import PostList from './PostList';
 import { MESSAGE_URL } from '../Urls';
 import Loader from './Loader';
+//import PostLiked from './PostLiked';
 import './Style.css';
 
 export const App = () => {
 	const [messages, setMessages] = useState([]);
 	const [isLoading, setLoading] = useState(true); //to show a loading circle when waiting for the fetch
+
+	//const [newLikes, setNewLikes] = useState(); //added
 
 	useEffect(() => {
 		fetchPosts();
@@ -38,18 +41,25 @@ export const App = () => {
 			body: JSON.stringify({ message }),
 		})
 			.then(() => fetchPosts())
-			//fetchPost is our first fetch...
 			.catch(error => console.error(error));
+	};
+
+	//post likes
+	const postSingleLike = id => {
+		fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+			method: 'POST',
+			body: '',
+			headers: { 'Content-Type': 'application/json' },
+		}).then(() => fetchPosts());
 	};
 
 	return (
 		<main>
 			<PostInput onMessageChange={postSingleMessage} />
-
 			{isLoading ? (
 				<Loader className="loader" />
 			) : (
-				<PostList postList={messages} />
+				<PostList postList={messages} onLikeChange={postSingleLike} />
 			)}
 		</main>
 	);
