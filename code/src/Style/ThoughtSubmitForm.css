@@ -8,6 +8,7 @@
   border: none;
   color: #ffffff;
   font-family:  'Capriola', sans-serif;
+  font-size: 13px;
   margin-top: 10px;
   padding: 5px 15px;
   
@@ -30,6 +31,6 @@
 
 @media screen and (min-width: 400px) {
   .button-submit-thought {
-    width: 70%;
+    width: 65%;
   }
 }
