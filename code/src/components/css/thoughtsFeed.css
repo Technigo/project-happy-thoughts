@@ -13,9 +13,9 @@
 }
 
 .thought-text {
-  margin: 10px;
   font-family: "Inconsolata";
   font-size: 16px;
+  margin: 15px 10px 0px 10px;
 }
 
 .post-time {

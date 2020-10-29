@@ -15,7 +15,7 @@ export const ThoughtsFeed = ( { _id, thought, onLiked, heart, createdAt, thought
         <div className="thought-footer">
           <HeartButton onLiked={onLiked} thought={thought} heart={heart} _id={_id}/>
           <p className="post-time">
-            {moment(createdAt).fromNow()}
+            {moment(thought.createdAt).fromNow()}
           </p>
         </div>
       </article>

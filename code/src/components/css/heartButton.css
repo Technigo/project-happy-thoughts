@@ -24,3 +24,15 @@
   height: 35px;
   border-radius: 50%;
 }
+
+.liked {
+  background: "#FFADAD"
+}
+
+.superliked {
+  background: blue;
+}
+
+.noLikes {
+background: "#EAEAEA";
+}

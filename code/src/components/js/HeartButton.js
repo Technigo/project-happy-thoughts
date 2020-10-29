@@ -16,7 +16,7 @@ export const HeartButton = ({ onLiked, heart, id }) => {
       <button
         className="heart-button"
         onClick={handleClick}
-        style ={{ background: heart > 0 ? "#FFADAD" : "#EAEAEA"}}
+        style ={{ background: heart > 0 ? "#FFADAD" : "#EAEAEA" }}
         >
           <span role="img" aria-label="heart">{'❤️'}</span>
         </button>
