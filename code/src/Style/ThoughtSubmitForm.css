@@ -10,6 +10,7 @@
   font-family:  'Capriola', sans-serif;
   margin-top: 10px;
   padding: 5px 15px;
+  
 }
 
 .thought-box {
@@ -25,4 +26,10 @@
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   font-size: 14px;
+}
+
+@media screen and (min-width: 400px) {
+  .button-submit-thought {
+    width: 70%;
+  }
 }
