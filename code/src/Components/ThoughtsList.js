@@ -7,7 +7,8 @@ export const ThoughtsList = () => {
   const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
   const [thoughts, setThoughts] = useState([]);
   // Use [] in the useState since it is an array that we get in the get-request
-  
+  const [addThought] = useState("");
+
   useEffect(() => {
     fetch(THOUGHTS_URL)
     .then((res) => {
@@ -25,9 +26,9 @@ export const ThoughtsList = () => {
       // Chooses to 'call' the filteredThoughts. 
       setThoughts(filteredThoughts);
     });
-  }, []);
-  // If we want we can put the fetch in another separate component
-
+  }, [addThought]);
+  
+  // Updates the 'hearts' when thoughts are liked
   const onThoughtLiked = (id) => {
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === id) {

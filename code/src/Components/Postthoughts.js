@@ -4,7 +4,7 @@ import 'styles/postthoughts.css';
 export const Postthoughts = ({id}) => {
   const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
   const [addThought, setAddThought] = useState("");
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -20,7 +20,7 @@ export const Postthoughts = ({id}) => {
       // And then reload the window so we see the new thought that was added
       ).then(() => {
         window.location.reload();
-      })
+        })
       .catch(err => console.log("error:", err))
   };
 
@@ -39,9 +39,10 @@ export const Postthoughts = ({id}) => {
         <button 
           type="submit" 
           className="send-thought"
-          disabled={addThought.length < 6 || addThought.length > 140 ? true : false}>
+          disabled={addThought.length < 6 || addThought.length > 140 ? true : false}
+        >
           <span role="img" aria-label="Red heart emoji">&#10084;&#65039; </span>
-          Send Happy Thought
+            Send Happy Thought
           <span role="img" aria-label="Red heart emoji"> &#10084;&#65039;</span>
         </button>
         <p className="counter" >
