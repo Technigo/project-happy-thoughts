@@ -1,11 +1,3 @@
-/* .liked-message-button{
-  border-radius: 50%;
-  border: none;
-  height: 70px;
-  width: 70px;
-  margin-top: 20px;
-} */
-
 .liked{
   background: rgb(250, 168, 168);
   border-radius: 50%;
@@ -40,20 +32,3 @@
   margin: 13px 5px 13px 0;
   color: rgb(126, 126, 126);
 }
-
-/* @media screen and (min-width:768px) {
-  .liked, 
-  .not-liked {
-    height: 50px;
-    width: 50px;
-    margin: 10px 0 10px 10px;
-  }
-}
-
-@media screen and (min-width:1024px) {
-  .liked, 
-  .not-liked {
-    height: 50px;
-    width: 50px;
-  }
-} */
