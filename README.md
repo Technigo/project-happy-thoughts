@@ -1,6 +1,7 @@
 # Happy Thoughts
 
-This is a project made with React states by fetching and posting data to an API. Like a 'Twitter' version posting only Happy Thoughts. 
+This is a project made with React states by fetching and posting data to an API. 
+It is like a 'Twitter' version - posting only Happy Thoughts. 
 
 ## The Problem
 

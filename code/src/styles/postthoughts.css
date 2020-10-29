@@ -35,6 +35,9 @@
   margin: 8px 20px 16px 0;
   align-self: flex-start;
   min-width: 200px;
+}
+
+.send-thought:hover {
   cursor: pointer;
 }
 
