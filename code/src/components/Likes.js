@@ -1,18 +1,24 @@
 import React from 'react';
 
-const Likes = (props) => {
-            return (
-                    <div className="likes-container">
-                            <button className={`heart-button ${props.likes > 0 ? 'liked' : ''}`}>
-                                <span className="heart" role="img" aria-label="heart">
-                                    ❤️ 
-                                </span>
-                            </button>
-                            <p>
-                                x {props.likes}
-                            </p>
-                    </div>
-                )
-            }
+const Likes = ({ likes, onHeartsChange }) => {
+
+    const handleClick = () => {
+        onHeartsChange(likes)
+    }
+
+    return (
+        <div className="likes-container">
+            <button 
+                className={`heart-button ${likes > 0 ? 'liked' : ''}`}
+                onClick={handleClick}
+                >
+                <span className="heart" role="img" aria-label="heart">
+                    ❤️ 
+                </span>
+            </button>
+            <p>x {likes}</p>
+        </div>
+    )
+}
 
 export default Likes; 

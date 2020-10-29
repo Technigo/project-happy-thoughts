@@ -13,7 +13,8 @@ export const ThoughtList = ({ thoughtList, onHeartsChange}) => {
                         key={thought._id}
                         text={thought.message}
                         time={Moment(thought.createdAt).fromNow()}
-                        likes={thought.hearts}
+                        likes={thought.hearts} 
+                        onHeartsChange={onHeartsChange}
                     />
                 )
             })}
