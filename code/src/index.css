@@ -120,12 +120,3 @@ section {
 .time {
   color: darkgrey;
 }
-
-footer {
-  box-sizing: border-box;
-  width: 100%;
-  text-align: center;
-  /* position: absolute;
-  bottom: 0; */
-  padding: 30px;
-}
