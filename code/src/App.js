@@ -14,7 +14,7 @@ export const App = () => {
   const thoughtsMessage = () => {
     fetch(THOUGHTS_URL)
     .then(res => res.json())
-    .then(data => setThoughts(data.reverse()))
+    .then(data => setThoughts(data))
     .catch(error => console.error(error));
   }
 
@@ -22,7 +22,7 @@ export const App = () => {
     fetch(THOUGHTS_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ text: newThoughts })
+      body: JSON.stringify({ message: newThoughts })
     })
     .then(() => thoughtsMessage())
     .catch(error => console.error(error));
