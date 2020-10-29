@@ -17,6 +17,7 @@ export const App = () => {
       });
   }, []);
 
+  // Add newHappyThought to existing array of happyThoughts
   const onMessageSubmit = (newHappyThought) => {
     console.log(newHappyThought);
     setHappyThoughts((previousHappyThoughts) => [
@@ -42,7 +43,10 @@ export const App = () => {
       {happyThoughts.map((happyThought) => (
         <HappyThought
           key={happyThought._id}
-          happyThought={happyThought}
+          id={happyThought._id}
+          message={happyThought.message}
+          hearts={happyThought.hearts}
+          createdAt={happyThought.createdAT}
           onLikedThought={onLikedThought}
         />
       ))}

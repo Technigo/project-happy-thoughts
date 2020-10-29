@@ -38,23 +38,35 @@ export const HappyForm = ({ onMessageSubmit }) => {
 
   return (
     <article className="happy-form-wrapper">
-      <form className="happy-form-content" onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit}>
+        <div className="happy-form-content">
           <label htmlFor="message">What's making you happy right now?</label>
           <textarea
             id="message"
             name="message"
             rows="3"
-            cols="30"
             onChange={(event) => setMessage(event.target.value)}
             value={message}></textarea>
           {!messageOK && (
             <p>Message must be between 5 to 140 characters long!</p>
           )}
-          <button type="submit">
-            <span className="heart">&hearts;</span> Send Happy Thoughts{' '}
-            <span className="heart">&hearts;</span>
+          <button type="submit" className="button-form">
+            <span role="img" aria-label="Heart">
+              {'❤️ '}
+            </span>
+            Send Happy Thoughts
+            <span role="img" aria-label="Heart">
+              {' ❤️'}
+            </span>
           </button>
+          <p>
+            {message.length}{' '}
+            {message.length < 5
+              ? 'is too few characters'
+              : message.length > 140
+              ? 'is too many characters'
+              : 'is just fine, send a Happy Thought!'}
+          </p>
         </div>
       </form>
     </article>

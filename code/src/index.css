@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -30,6 +32,29 @@ code {
   margin-bottom: 30px;
   box-shadow: 5px 5px black;
   padding: 0 10px;
+  font-family: 'Courier Prime';
+}
+
+.happy-form-wrapper {
+  background-color: #dedede;
+}
+
+.happy-form-content {
+  margin-top: 16px;
+}
+
+.happy-form-content textarea {
+  width: 280px;
+  margin: 12px 0;
+}
+
+.button-form {
+  border-radius: 20px;
+  border: none;
+  background-color: lightpink;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 20px;
 }
 
 .happy-thought-wrapper {
@@ -43,9 +68,8 @@ code {
   flex-basis: 100%;
 }
 
-.heart {
-  color: red;
-  font-size: 200%;
+.happy-thought-wrapper p {
+  color: gray;
 }
 
 .button-heart {
@@ -54,4 +78,24 @@ code {
   border-radius: 100%;
   border: none;
   margin-right: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #dedede;
+  transition: 1.2s;
+}
+
+.button-heart:hover {
+  transform: scale(1.2);
+}
+
+/*Media queries*/
+@media only screen and (min-width: 768px) {
+  .happy-form-wrapper,
+  .happy-thought-wrapper {
+    width: 510px;
+  }
+
+  .happy-form-content textarea {
+    width: 480px;
+  }
 }
