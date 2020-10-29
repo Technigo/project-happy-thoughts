@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { ThoughtsHeader } from './Components/ThoughtsHeader.js'
 import { ThoughtsMessage } from './Components/ThoughtsMessage.js'
@@ -11,6 +10,7 @@ export const App = () => {
 
   const [messages, setMessages] = useState([]);
 
+  /* Using the useEffect to call the function that contains the api fetch */
   useEffect(() => {
     fetchMessages();    
   }, []);
@@ -30,7 +30,7 @@ export const App = () => {
           })
   };  
 
-  /* Created a function, postSingleMessage, which fetches the apiUrl and creates a post request. Then I believe that after this post is done to the api the fetchMessages function is updated with the new posted message */
+  /* Created a function, postSingleMessage, which fetches the apiUrl and creates a post request. After the post is done the fetchMessages function is called again, doing a new fetch from the api, for our browser to show the api with the updated messages submitted since the last fetch */
   const postSingleMessage = newMessage => {
     fetch(apiUrlMessages, 
       {
@@ -45,13 +45,18 @@ export const App = () => {
         })
   };
 
+  /*PostHearts function is taking the message id's that have had the heart button clicked. Then posting this new information to the api and updating the hearts object property with the amount of new clicks of the button. 
+  
+  We can use onLiked function to show that the hearts count has been updated for specific messages in the browser e.g. on the frontend / client side / local side. As this updates the messages state by way of the setMessages function.
+  
+  However we can also omit this if we want to just do a new fetch from the api as to fetch the updated data on the api which will also show these new hearts/likes. This is done by calling the fetchMesssages function again which houses the fetch from the api */
   const postHearts = messageId => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
             method: "POST", 
-            body:"",
             headers: { "Content-Type": "application/json" }
         }).then (() => {
             onLiked(messageId);
+            fetchMessages();
         });
   };
 
