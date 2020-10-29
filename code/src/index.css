@@ -22,7 +22,7 @@ p {
 
 .thought-container {
   width: 350px;
-  height: 112px;
+  min-height: 112px;
   background-color: white;
   border: 1px solid black;
   box-shadow: 5px 5px black;
@@ -86,9 +86,10 @@ p {
   justify-content: space-around;
 }
 
-.like-container .heart-icon {
+.like-button {
   width: 35px;
   height: 35px;
+  border: none;
   border-radius: 50%;
   background-color: #FFADAD;
   display: flex;
@@ -96,6 +97,14 @@ p {
   align-items: center;
   margin: 0;
   margin-right: 10px;
+  font-size: 11px;
+  cursor: pointer;
+
+}
+
+.like-button:hover {
+  background-color: #ffd5d5;
+
 }
 
 .submit-thought {

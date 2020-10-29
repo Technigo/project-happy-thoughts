@@ -12,8 +12,6 @@ export const NewThought = ({newThought, setNewThought, handleSubmit}) => {
             ></textarea>
             </label>
 
-            <p>{newThought}</p>
-
             <button type="submit" className="submit-thought">
                 <p>
                     <span className="heart-icon" role="img">❤️️</span>

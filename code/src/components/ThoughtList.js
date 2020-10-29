@@ -2,7 +2,14 @@ import React from 'react'
 import moment from 'moment'
 
 
-export const ThoughtList = ({messageList}) => {
+export const ThoughtList = ({messageList, onLike}) => {
+
+    const likeThought = (messageID) => {
+        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+          }).then(onLike)
+      }  
 
     return (
         <section className="thought-list">
@@ -13,7 +20,9 @@ export const ThoughtList = ({messageList}) => {
                 <p className="thought-text">{message.message}</p>
                 <div className="details">
                     <div className="like-container">
-                    <span className="heart-icon" role="img">❤️️</span>
+                    <button className="like-button" onClick={()=>likeThought(message._id)}>
+                        <span role="img">❤️️</span>
+                    </button>
                     <p className="thought-date"> x {message.hearts}</p>
                     </div>
                     <p className="thought-date">{moment(message.createdAt).fromNow()}</p>

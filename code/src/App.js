@@ -7,12 +7,6 @@ export const App = () => {
   const [messages, setMessages] = useState([])
   const [newMessage, setNewMessage] = useState('')
 
-  const onThoughtSubmit = (event) => {
-    event.preventDefault();
-    console.log(newMessage);
-    postThought(newMessage)
-  }
-
   const ThoughtsURL= "https://happy-thoughts-technigo.herokuapp.com/thoughts"
     
   const fetchThoughts = () => {
@@ -36,6 +30,16 @@ export const App = () => {
     }).then(() => fetchThoughts())
   }
 
+  const onThoughtSubmit = (event) => {
+    event.preventDefault();
+    console.log(newMessage);
+    postThought(newMessage)
+  }
+
+  const handleLike = () => {
+    fetchThoughts()
+  }
+
   return (
     <section className="thought-list">
       <NewThought 
@@ -43,7 +47,7 @@ export const App = () => {
         setNewThought={setNewMessage} 
         handleSubmit={onThoughtSubmit}/>
       
-      <ThoughtList messageList={messages}/>
+      <ThoughtList messageList={messages} onLike={handleLike}/>
       
     </section>
   )
