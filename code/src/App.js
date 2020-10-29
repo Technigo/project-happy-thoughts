@@ -6,7 +6,7 @@ import { THOUGHTS_URL } from "./urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [input, setInput] = useState("");
+  // const [input, setInput] = useState("");
 
   //perform useEffect and fetch() after mounting
   useEffect(() => {
@@ -20,16 +20,17 @@ export const App = () => {
       .then(data => setThoughts(data));
   };
 
-  const handleInputChange = (newInput) => {
-    setInput(newInput);
+  const reachNewThought = (newThought) => {
+    console.log(newThought);
+    // setInput(newInput);
   };
 
   return (
     <div className="app-container">
       <h1>Happy thoughts</h1>
       <ThoughtInput
-        inputText={input}
-        onInputChange={handleInputChange}
+        // inputText={input}
+        onNewThought={reachNewThought}
       />
       <ThoughtsList
         thoughtsArray={thoughts}

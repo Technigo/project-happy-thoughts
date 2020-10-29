@@ -1,23 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./thought-input.css";
 
-const ThoughtInput = ({ inputText, onInputChange }) => {
+const ThoughtInput = ({ onNewThought }) => {
+  const [newThought, setNewThought] = useState("");
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    onNewThought(newThought);
+  }
 
   return (
-    <form className="input-container">
+    <form className="input-container" onSubmit={handleSubmit}>
       <label htmlFor="input-text">What's making you happy right now?</label>
       <input
         className="input"
-        id="input-text"
+        // id="input-text"
         type="text"
-        name="thought"
+        // name="thought"
         autoComplete="off"
-        onChange={(event) => onInputChange(event.target.value)}
-        value={inputText}
+        onChange={(event) => setNewThought(event.target.value)}
+        value={newThought}
       >
       </input>
-      <div>Send a happy thought</div>
+
+      <input
+        type="submit"
+        className="input-button"
+        value="Send Happy Thought"
+      >
+      </input>
+
     </form>
   )
 
