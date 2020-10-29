@@ -30,11 +30,13 @@
 }
 
 .times-liked{
+  font-family: 'Inconsolata', monospace;
   margin: 13px 73px 5px 0;
   color: rgb(126, 126, 126);
 }
 
 .time{
+  font-family: 'Inconsolata', monospace;
   margin: 13px 5px 13px 0;
   color: rgb(126, 126, 126);
 }

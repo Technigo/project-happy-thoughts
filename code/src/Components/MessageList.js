@@ -21,7 +21,7 @@ export const MessageList = () => {
         // save data to state
         setMessages(filteredMessages)
       })
-  }, [])
+  }, [messages]) // this updates the content of the page without reloading it!
   return (
     <section className='message-wrapper'>
       {messages.map((message) => {

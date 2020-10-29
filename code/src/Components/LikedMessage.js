@@ -6,12 +6,13 @@ import './LikedMessage.css'
 export const LikedMessage = ({ hearts, id }) => {
   const [likes, setLikes] = useState(hearts)
 
+  
   const handleLikes = () => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     }).then(() => {setLikes(likes + 1)
-    window.location.reload()} /// this needs to be fixed - look at the tips 
+    window.location.reload()} 
     )}
   return (
     <div className='heart-time'>

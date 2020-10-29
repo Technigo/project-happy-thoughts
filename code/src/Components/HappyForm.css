@@ -19,6 +19,7 @@ form{
   background: rgb(230, 229, 229);
   border-style: solid;
   box-shadow: 5px 7px;
+  font-family: 'Inconsolata', monospace;
 }
 
 h1{
