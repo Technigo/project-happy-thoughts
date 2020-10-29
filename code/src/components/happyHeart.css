@@ -15,6 +15,7 @@
   
 .heart-button {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: #EAEAEA;
@@ -23,8 +24,42 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  padding: 0;
 }
 
 .heart-button:focus {
   outline: #FFADAD solid 1px;
+}
+
+/* computer only */
+@media (min-width: 1025px) {
+
+  .heart-text {
+    font-size: 11px;
+    margin-left: 5px;
+  }
+
+  .heart-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .heart-button span {
+    font-size: 16px;
+  }
+
+}
+
+/* tablet only */
+@media screen and (min-width: 667px) and (max-width: 1024px) {
+
+  .heart-text {
+    font-size: 10px;
+    margin-left: 4px;
+  }
+
+  .heart-button {
+    width: 35px;
+    height: 35px;
+  }
 }

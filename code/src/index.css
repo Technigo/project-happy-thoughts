@@ -13,9 +13,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffe4e3;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.happy-thoughts-title {
+  text-align: center;
+  margin: 40px 0 20px 0;
+  font-size: 22px;
+  font-family: Menlo;
+}
+
+/* computer only */
+@media (min-width: 1025px) {
+
+  .happy-thoughts-title {
+  font-size: 36px;
+  }
+}
+
+/* tablet only */
+@media screen and (min-width: 667px) and (max-width: 1024px) {
+
+  .happy-thoughts-title {
+    font-size: 28px;
+    }
 }

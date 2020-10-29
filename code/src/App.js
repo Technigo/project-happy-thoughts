@@ -30,10 +30,19 @@ export const App = () => {
 
   return (
     <main>
+      <h1 class="happy-thoughts-title">Sharing Happy Thoughts!</h1>
       <HappyForm onFormSubmit={onFormSubmit} />
-      {thoughts.map(thought => (
-        <HappyThought id={thought._id} thought={thought.message} onLiked={onLiked} heart={thought.hearts} createdAt={thought.createdAt} />
-      ))}
+      <section className="thoughts-section">
+        {thoughts.map(thought => (
+          <HappyThought 
+            id={thought._id} 
+            thought={thought.message} 
+            onLiked={onLiked} 
+            heart={thought.hearts} 
+            createdAt={thought.createdAt}
+          />
+        ))}
+      </section>
     </main>
   )
 }

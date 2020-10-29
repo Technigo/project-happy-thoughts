@@ -20,6 +20,8 @@ export const HappyForm = ({onFormSubmit}) => {
       .catch(err => console.log('error:', err))
   }
 
+  const emptyMessage = message => message.replace(/\s/g, "").length === 0;
+
   return(
     <section className="form-section">
       <form className="form-container">
@@ -40,14 +42,14 @@ export const HappyForm = ({onFormSubmit}) => {
             className="thought-button"
             type="submit"
             onClick={handleSubmit}
-            disabled={message.length < 5 || message.length > 140 ? true : false}
+            disabled={message.length < 5 || message.length > 140 ? true : false || emptyMessage(message)}
           >
-            <span role="img" aria-label="heart">❤️</span>
+            <span role="img" aria-label="heart">{"❤️"}</span>
             Send Happy Thought
-            <span role="img" aria-label="heart">❤️</span>
+            <span role="img" aria-label="heart">{"❤️"}</span>
           </button>
           <p className="text-length">
-            <span style={{ color: message.length < 5 || message.length > 140 ? "#FF0000" : "#000000"}}>
+            <span style={{ color: message.length < 5 || message.length > 140 || emptyMessage(message) ? "#FF0000" : "#228B22"}}>
               {message.length}
               </span> / 140
           </p>

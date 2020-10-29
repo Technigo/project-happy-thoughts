@@ -3,7 +3,6 @@
 .form-section {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
   }
   
   .form-container {
@@ -16,7 +15,7 @@
     padding: 15px;
     margin: 20px;
     font-size: 12px;
-    width: 400px;
+    width: 90%;
   }
   
   label {
@@ -46,19 +45,18 @@
   }
   
   .thought-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #FFADAD;
     border: none;
     border-radius: 25px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto";
     font-size: 11px;
     font-weight: 500;
-    padding: 10px;
+    text-align: center;
+    padding: 10px 6px;
     margin: 0;
     cursor: pointer;
     transition: 0.5s ease;
+    place-content: center;
   }
 
   .thought-button span {
@@ -70,6 +68,55 @@
   }
 
   .text-length {
-    font-size: 11px;
+    font-size: 10px;
     margin: 0;
   }
+
+  /* computer only */
+@media (min-width: 1025px) {
+
+  .form-container {
+    padding: 20px;
+    font-size: 14px;
+    width: 500px;
+  }
+
+  textarea {
+    font-size: 14px;
+    min-height: 60px;
+  }
+
+  .thought-button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .text-length {
+    font-size: 12px;
+  }
+}
+
+/* tablet only */
+@media screen and (min-width: 667px) and (max-width: 1024px) {
+
+  .form-container {
+    padding: 15px;
+    font-size: 12px;
+    width: 400px;
+  }
+
+  textarea {
+    font-size: 12px;
+    min-height: 50px;
+  }
+
+  .thought-button {
+    font-size: 11px;
+    padding: 10px;
+  }
+
+  .text-length {
+    font-size: 12px;
+  }
+
+}
