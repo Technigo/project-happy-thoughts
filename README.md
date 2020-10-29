@@ -1,5 +1,5 @@
 # Happy Thoughts
-This projects goals are to learn about a **React** component's lifecycle and how to react to that. We looked at how to react to changes in state or a component mounting using **useEffect**. We worked with a 💗 **Happy Thoughts API** which showcases previously posted thoughts, gives us the possibility to post new thoughts and also give likes to the already existing ones 💌
+This project's goals is to learn about a **React** component's lifecycle and how to react to that. We looked at how to react to changes in state or a component mounting using **useEffect**. We worked with a 💗 **Happy Thoughts API** which showcases previously posted thoughts, gives us the possibility to post new thoughts and also give likes to the already existing ones 💌
 
 ## How I built it - What I learned
 - I've built the project using 3 main components: App, ThoughtsCard and Form. App is the main one collecting all the data from the API by performing an initial FETCH Get request with the use of useEffect. This action shows the already existing Thoughts in different cards.
@@ -12,4 +12,4 @@ This projects goals are to learn about a **React** component's lifecycle and how
 - I had a lot of fun implementing these little extra features and gained a better understanding of how to add some conditioned inline styling in React ⚛
 
 ## View it live
-Share some Happy Thoughts with Technigo's Fall 2020 Class or see what's in our minds 💕 View this project live here: https://happy-vane-thoughts.netlify.app/
+Share some **Happy Thoughts with Technigo's Fall 2020 Class** or see what's in our minds 💕 View this project live here: https://happy-vane-thoughts.netlify.app/
