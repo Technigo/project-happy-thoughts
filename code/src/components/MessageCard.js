@@ -26,7 +26,7 @@ export const MessageCard = ({ _id, createdAt, hearts, message, onLiked }) => {
             onClick={handleClick}
           >
             <span role="img" aria-label="hearts">
-              {"💛 "}
+              {"🖤 "}
             </span>
           </button>
           <span className="hearts">x {hearts}</span>

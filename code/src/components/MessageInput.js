@@ -52,7 +52,7 @@ const MessageInput = ({ setMessages }) => {
         }
       >
         {Math.abs(140 - message.length)} characters{" "}
-        {message.length < 140 ? "left" : "too long"}
+        {message.length < 141 ? "left" : "too long"}
       </p>
       <button
         className="btn-thought"

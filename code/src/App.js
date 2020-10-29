@@ -7,8 +7,6 @@ import "./app.css";
 
 const App = () => {
   const [messages, setMessages] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  // const URL = "https://happy-thoughts-technigo.herokuapp.com/";
 
   // useEffect(() => {
   //   setLoading(true);
@@ -27,7 +25,6 @@ const App = () => {
   return (
     <div className="app-container">
       <MessageInput setMessages={setMessages} />
-      {/* <Loading loading={loading} /> */}
       <MessageList messages={messages} setMessages={setMessages} />
     </div>
   );

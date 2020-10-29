@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import MessageCard from "./MessageCard";
+import Loading from "./Loading";
 import "./messageList.css";
 
 const MessageList = ({ messages, setMessages }) => {
+  const [loading, setLoading] = useState(true);
   const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 
   useEffect(() => {
@@ -12,7 +14,10 @@ const MessageList = ({ messages, setMessages }) => {
         return res.json();
       })
       .then((data) => {
-        setMessages(data);
+        setTimeout(() => {
+          setMessages(data);
+          setLoading(false);
+        }, 3000);
       });
   }, []);
 
@@ -30,6 +35,8 @@ const MessageList = ({ messages, setMessages }) => {
 
   return (
     <div className="message-list-container">
+      {loading && <Loading />}
+
       {messages.map((message) => {
         // props destructuring ... --> sends as individual props (see MessageCard)
         return <MessageCard {...message} onLiked={onLiked} />;
