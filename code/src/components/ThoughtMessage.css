@@ -1,7 +1,7 @@
 article{
   background-color:#ffffff;
   width: 85%;
-  margin: 10px 0;
+  margin: 20px 0;
   padding: 15px;
   border: darkgray 2px solid;
   border-radius: 2px;
@@ -28,11 +28,16 @@ article button {
   width: 37px;
   height: 37px;
   margin-right: 10px;
+  outline: none;
+  transition: 0.4s;
+}
+
+article button:hover {
+  box-shadow: 0px 0px 5px 5px #e67687;
 }
 
 article button span {
-  padding: 5px 0 5px 0;
-  transform: translate();
+  padding: 7px 0 5px 0;
 }
 
 .thought {
@@ -57,6 +62,10 @@ article button span {
   background: whitesmoke;
 }
 
+.wrapper p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+}
 
 @media (min-width: 667px) and (max-width: 1024px) {
   article {
@@ -64,7 +73,7 @@ article button span {
   } 
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   article {
     width: 30%;
   }

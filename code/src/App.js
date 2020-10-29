@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
 import { ThoughtInput } from 'components/ThoughtInput'
-import { ThoughtMessage } from 'components/ThoughtMessage';
+import { ThoughtMessage } from 'components/ThoughtMessage'
 
 export const App = () => {
 
@@ -12,7 +12,19 @@ export const App = () => {
     fetchMessage()
   }, [])
 
-  const onMessageChange = (thought) => {
+  const fetchMessage = () => {
+    /* fetch data from server, 20 latest thought posted and details for each post*/
+    fetch(THOUGHTS_URL)
+      .then((res)=>{
+          return res.json()
+      })
+      .then(data => {
+        setThoughts(data) /* data is an array of thoughts */
+      })
+  }
+
+  /*posts message and then creates a new fetch to update the site with new information from the server*/ 
+  const postThought = (thought) => {
     fetch(THOUGHTS_URL, {
       method: 'POST',
       headers: { 'Content-Type':'application/json' },
@@ -20,49 +32,27 @@ export const App = () => {
     })
       .then(()=> {
         fetchMessage()
-        window.location.reload()
       })
   }
 
-  const fetchMessage = () => {
-    /* fetch data from server*/
-    fetch(THOUGHTS_URL)
-      .then((res)=>{
-          return res.json()
+  /*posts data when post is liked. Connected with onClick function in thoughtMessage. fetches again after the post to get updated information from server*/
+  const postHearts = messageId => {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
+      method: 'POST', 
+      headers: { 'Content-Type': 'application/json"'}
       })
-      .then(data => {
-        const filteredData = data.filter(thought => {
-          return thought.message !== ""
-        })
-        setThoughts(filteredData) /* filteredData is an array of messages */
-        })
-    }
+      .then (() => {
+        fetchMessage()
+      });
+  };
 
-    const onLikeThought = (likeId) => {
-      const updatedThoughts = thoughts.map((thought) => {
-        if (thought._id === likeId) {
-          thought.hearts += 1
-        }
-        return thought
-      })
-      setThoughts(updatedThoughts)
-    }
 
-    const onPostHearts = messageId => {
-      fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
-              method: 'POST', 
-              body:'',
-              headers: { 'Content-Type': 'application/json"'}
-          }).then (() => {
-              onLikeThought(messageId);
-          });
-    };
-
+  /*returning components and passing props - functions and the thoughtarray.*/ 
   return (
     <main>
-      <ThoughtInput onMessageChange={onMessageChange}/>
+      <ThoughtInput postThought={postThought}/>
       {thoughts.map(thought=> 
-      <ThoughtMessage key={thought._id} thought={thought} onPostHearts={onPostHearts}/>
+      <ThoughtMessage key={thought._id} thought={thought} postHearts={postHearts}/>
       )} 
     </main>
   )

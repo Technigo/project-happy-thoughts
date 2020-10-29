@@ -5,6 +5,7 @@ form {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
   padding: 15px;
   border: darkgray 2px solid;
   border-radius: 2px;
@@ -13,11 +14,11 @@ form {
 
 h1 {
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 textarea {
-  width: 98%;
+  width: 96%;
   border: 2px solid lightgray;
   border-radius: 2px;
   font-family: 'Inconsolata', monospace;
@@ -26,6 +27,8 @@ textarea {
   resize: none;
   overflow: auto;
   margin-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .submit-button-container {
@@ -40,32 +43,40 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 50%;
+  width: 60%;
   height: 40px;
   font-family: 'Roboto', sans-serif;
   font-weight: bolder;
+  outline: none;
+  transition: 0.4s;
+}
+
+.submit-button:hover {
+  box-shadow: 0px 0px 5px 5px #e67687;
+}
+
+.text-length {
+  font-family: 'Roboto', sans-serif;
 }
 
 @media (min-width: 667px) and (max-width: 1024px) {
-  article {
-    width: 50%;
-  }
+
   form {
     width: 50%;
   }
+
+  .submit-button {
+    width: 45%;
+  }
 }
 
-
 @media (min-width: 1025px) {
-  article {
-    width: 30%;
-  }
 
   form {
     width: 30%;
   }
 
   .submit-button {
-    width: 40%;
+    width: 45%;
   }
 }

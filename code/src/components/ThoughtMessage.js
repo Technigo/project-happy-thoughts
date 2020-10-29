@@ -3,10 +3,10 @@ import moment from 'moment'
 
 import './ThoughtMessage.css'
 
-export const ThoughtMessage = ({thought, onPostHearts}) => {
+export const ThoughtMessage = ({thought, postHearts}) => {
   
-  const handleClick = () => {
-    onPostHearts(thought._id)
+  const onHeartClick = () => {
+    postHearts(thought._id)
   }
 
   return (
@@ -22,7 +22,7 @@ export const ThoughtMessage = ({thought, onPostHearts}) => {
           <button
             className={thought.hearts > 0 ? 'liked' : 'not-liked'}
             type='button' 
-            onClick={handleClick}
+            onClick={onHeartClick}
           >
             <span role='img' aria-label='heart'>
               {'❤️'}

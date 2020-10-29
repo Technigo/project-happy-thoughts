@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 import './ThoughtInput.css'
 
-export const ThoughtInput = ({ onMessageChange}) => {
+export const ThoughtInput = ({ postThought }) => {
   const [newThought, setNewThought] = useState('')
-
+  /*prevents default loading on submit. calls the postThought funtcion and updates the newThought state to an empty string so that the textarea is empty when user has submitted the form. */
   const handleSubmit = event => {
     event.preventDefault()
-    onMessageChange(newThought)
+    postThought(newThought)
+    setNewThought('');
   }
 
   const handleThought = event => {
@@ -16,6 +17,7 @@ export const ThoughtInput = ({ onMessageChange}) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      
       <label htmlFor='happyQuestion'>
         <h1>
           What is making you happy right now?
@@ -27,6 +29,7 @@ export const ThoughtInput = ({ onMessageChange}) => {
           id='happyQuestion'
           autoFocus='autofocus'
           rows='3'
+          value={newThought}
           onChange={handleThought}
         />
         <div className='submit-button-container'>
@@ -37,9 +40,10 @@ export const ThoughtInput = ({ onMessageChange}) => {
           >
             <span role='img' aria-label='heart'>❤️</span>Send Happy Thought<span role='img' aria-label='heart'>❤️</span>
           </button>
-          <p>{newThought.length} / 140</p>
+          <p className='text-length'>{newThought.length} / 140</p>
         </div>
-      </div> 
+      </div>
+
     </form>
   )
 }
