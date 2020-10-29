@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import ThoughtsList from "./components/ThoughtsList";
 import ThoughtInput from "./components/ThoughtInput";
@@ -8,18 +8,17 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [input, setInput] = useState("");
 
+  //perform useEffect and fetch() after mounting
+  useEffect(() => {
+    fetchThoughts();
+  }, []);
+
   const fetchThoughts = () => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
+      //updating the state below-> that's why infinite loop
       .then(data => setThoughts(data.reverse()));
-    // useEffect(() => {
-    //   fetch(THOUGHTS_URL)
-    //     .then(res => res.json())
-    //     // .then(json => console.log(json))
-    //     .then(json => setThoughts(json));
-
-    // }, [])
-  }
+  };
 
   const handleInputChange = (newInput) => {
     setInput(newInput);
