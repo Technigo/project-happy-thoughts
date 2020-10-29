@@ -20,7 +20,7 @@
   box-shadow: 5px 7px;
 }
 
-h3{
+h2{
   font-family: 'Inconsolata', monospace;
   margin: 15px;
   word-wrap: break-word;
@@ -28,7 +28,7 @@ h3{
 
 .heart-time{
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 }
 

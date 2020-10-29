@@ -18,17 +18,19 @@
 
 .heart-like{
   height: 20px;
-  margin-top: 5px;
+  /* margin-top: 5px; */
+  margin: 5px 1px 0px 0;
 }
 
 .times-liked{
   font-family: 'Inconsolata', monospace;
-  margin: 13px 73px 5px 0;
+  /* margin: 13px 2px 5px 0; */
   color: rgb(126, 126, 126);
 }
 
 .time{
   font-family: 'Inconsolata', monospace;
-  margin: 13px 5px 13px 0;
+  margin-right: 5px;
+  /* margin: 13px 5px 13px 0; */
   color: rgb(126, 126, 126);
 }

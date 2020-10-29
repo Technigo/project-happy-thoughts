@@ -51,7 +51,7 @@ export const HappyForm = () => {
           alt='Heart'>
           </img>
           </button>
-          <p tabIndex='0' className='submit-length'>{message.length} out of 140 characters </p>
+          <p tabIndex='0' className='submit-length'>{message.length}/140 characters </p>
 			</div>
 		</form>
     </article>
