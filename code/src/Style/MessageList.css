@@ -4,16 +4,16 @@
 }
 
 .message-second-row {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
 }
 
 .like-button-container {
-  margin-right: 10px;
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
+  margin-right: 10px;
 }
 
 .message {

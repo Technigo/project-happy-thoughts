@@ -1,10 +1,10 @@
 .header {
   height: 20vh;
-  width: 100vw;
+  margin-bottom: 30px;
+  left: 0;
   right: 0;
   top: 0;
-  left: 0;
-  margin-bottom: 30px;
+  width: 100vw;
 }
 
 .header-title {
@@ -51,12 +51,12 @@
   animation-fill-mode: both;
   color: #f72585;
   display: inline-block;
-  background-color: none;
+  font-size: 35px;
 }
 
 
 
 .header-title-3 {
-  color: #9d4edd;
+  color: #02c39a;
   font-size: 60px;
 }

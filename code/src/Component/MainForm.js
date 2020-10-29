@@ -16,8 +16,6 @@ const MainForm = () => {
     })
      .then((data) => {
      data.reverse();
-//Try to console.log date reverse to double check '
-console.log(data)    
      setThoughts(data);
     });
   }, []);

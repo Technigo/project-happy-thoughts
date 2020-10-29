@@ -27,7 +27,7 @@ const LikeButton = ({ message }) => {
     } else {
       setClassNames(["like-button"])
     }
-  }, [count])
+  },[count])
   
   return (
     <div className="like-button-container">
