@@ -2,24 +2,18 @@ import React, { useState } from 'react';
 
 import Button from './Button';
 import moment from 'moment';
-//import PostLiked from './PostLiked';
 
 const PostList = ({ postList, onLikeChange }) => {
 	const [newLikes, setNewLikes] = useState(0); //added
-
-	// if (!localStorage[id]) {
-	// 	localStorage.setItem(id, 0);
-	// }
 
 	const handleLikeClick = id => {
 		if (!localStorage[id]) {
 			localStorage.setItem(id, 0);
 		}
-
-		setNewLikes(newLikes + 1); //visa i dom
-		onLikeChange(id); //skicka likes till api
+		setNewLikes(newLikes + 1);
+		onLikeChange(id);
 		localStorage[id] = Number(localStorage[id]) + 1;
-		console.log(`${localStorage[id]} onlike function`);
+		console.log(`localstorage finns inte`);
 	};
 
 	return (
@@ -27,11 +21,9 @@ const PostList = ({ postList, onLikeChange }) => {
 			{postList.map(post => (
 				<article className="post" key={post._id}>
 					<p className="post-text">{post.message}</p>
-					{/* <PostLiked hearts={post.hearts} id={post._id} /> */}
 
 					<Button
 						type="button"
-						//click={handleLikes}
 						click={() => handleLikeClick(post._id)}
 						className={
 							post.hearts > 5
