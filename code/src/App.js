@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { MessageList } from './MessageList';
-import { MessageInput } from './MessageInput';
+import { MessageForm } from './MessageForm';
 import { THOUGHTS_URL } from './urls';
 
 export const App = () => {
@@ -17,22 +17,40 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => setMessages(data))
       .catch((error) => console.error(error));
-  }
+  };
 
   const postSingleMessage = (newMessage) => {
-    fetch(THOUGHTS_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: newMessage })
-    })
+    fetch(THOUGHTS_URL,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: newMessage })
+      })
       .then(() => fetchMessages())
-      .catch((error) => console.error(error));
-  }
+      .then(() => window.location.reload())
+      .catch((error) => {
+        console.error(error);
+      })
+  };
+
+  const onLiked = (messageId) => {
+    // eslint-disable-next-line no-undef
+    const updatedMessage = message.map((message) => {
+      // eslint-disable-next-line no-underscore-dangle
+      if (message._id === messageId) {
+        message.hearts += 1
+      }
+      return message
+    })
+    setMessages(updatedMessage)
+  };
 
   return (
     <div>
-      <MessageInput onMessageChange={postSingleMessage} />
-      <MessageList messageList={messages} />
+      <MessageForm onMessageChange={postSingleMessage} />
+      <MessageList
+        messageList={messages}
+        onLiked={onLiked} />
     </div>
   );
 };

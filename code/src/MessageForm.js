@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './messageForm.css';
 // eslint-disable-next-line no-unused-vars
 
-export const MessageInput = ({ onMessageChange }) => {
+export const MessageForm = ({ onMessageChange }) => {
   const [newMessage, setNewMessage] = useState('');
 
   const handleSubmit = (event) => {
@@ -16,6 +16,7 @@ export const MessageInput = ({ onMessageChange }) => {
       <h3>Post a happy thought!</h3>
       <textarea
         rows="3"
+        // eslint-disable-next-line react/jsx-curly-brace-presence
         value={newMessage}
         onChange={(event) => setNewMessage(event.target.value)} />
       <div className="form-footer">
@@ -23,7 +24,7 @@ export const MessageInput = ({ onMessageChange }) => {
           type="submit"
           onClick={handleSubmit}
           disabled={!!(newMessage.length < 5 || newMessage.length > 140)}>
-          Send a happy thought
+          <span className="heart-emoji" role="img" aria-label="heart">❤️</span> Send Happy Thought<span className="heartr-emoji" role="img" aria-label="heart">❤️</span>
         </button>
         <p>{newMessage.length} / 140</p>
       </div>
