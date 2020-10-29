@@ -28,8 +28,8 @@ p {
   margin: 10px;
 }
 
-
 /* QUESTION CARD */
+
 .input-card {
   width: 400px;
   margin: 20px 0;
@@ -68,6 +68,7 @@ button {
 }
 
 /* MESSAGE CARD */
+
 .message-card {
   display: flex;
   flex-direction: column;

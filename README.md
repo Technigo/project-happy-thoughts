@@ -1,13 +1,22 @@
-# Happy Thoughts
+# Happy Thoughts 💟
 
-Replace this readme with your own information about your project.
+This weeks project was to create a "twitter-like app", with less bullshit and more love. We have practised fetching and posting data to an API as well as using React state and react hooks.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Learning Objectives:
 
-## The problem
+- How to use API's in React,
+- How to use React state to show content of the API result
+- How to work with an API where you both send and receive data.
+- Lifecycle of a component
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+# Tech 💗
 
-## View it live
+- React
+- React Hooks
+- JSX
+- API
+- CSS
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+## View it live 💖
+
+give-me-some-love.netlify.app

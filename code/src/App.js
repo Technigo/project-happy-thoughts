@@ -24,7 +24,6 @@ const fetchMessages = () => {
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({ message: newMessage })
     }).then(() => fetchMessages());
-    //then(data => console.log(data)); 
   }
 
   return (

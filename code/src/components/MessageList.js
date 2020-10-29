@@ -14,13 +14,13 @@ export const MessageList = () => {
     console.log(data);
     data.reverse();
 
-    // Dont show empty messages
-const filteredMessages = data.filter(message => message.message);
+  // Dont show empty messages
+  const filteredMessages = data.filter(message => message.message);
 
-    //Save the data to state
-    setMessages(filteredMessages);
+  //Save the data to state
+  setMessages(filteredMessages);
   })
-}, []); //Empty array for not getting an infinite loop
+  }, []); //Empty array for not getting an infinite loop
 
   return ( 
   <div>
@@ -34,8 +34,8 @@ const filteredMessages = data.filter(message => message.message);
           <div className="like-wrapper">  
           <button className="heart-button">
           <span className="heart" role="img" aria-label="Heart">
-							{'❤️ '}
-						</span>
+						{'❤️ '}
+					</span>
           </button>
           <p className="likes">x  {messages.hearts}</p>
           </div>

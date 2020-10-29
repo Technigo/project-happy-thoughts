@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//import moment from 'moment'
 import '../index.css'
 
 export const MessageInput = ({ onMessageChange }) => {
@@ -21,19 +20,19 @@ export const MessageInput = ({ onMessageChange }) => {
                     className="form-text">
                 </input>
                 <p>{newMessage.length}/140</p>
-               <button
-				className=".form-button"
-				type="submit">
-				    <p>
-						<span className="heart" role="img" aria-label="Heart">
-							{'❤️ '}
-						</span>
-						Send a happy thought!
-						<span className="heart" role="img" aria-label="Heart">
-							{' ❤️'}
-						</span>
-					</p>
-				</button>
+                <button
+			            className=".form-button"
+				          type="submit">
+				        <p> 
+                  <span className="heart" role="img" aria-label="Heart">
+							      {'❤️ '} 
+                  </span>
+						      Send a happy thought!
+						      <span className="heart" role="img" aria-label="Heart">
+							      {' ❤️'}
+						      </span>
+					      </p>
+				      </button>
             </form>
         </article>
     )
