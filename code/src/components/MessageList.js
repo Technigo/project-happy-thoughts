@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import moment from "moment";
 
-export const MessageList = () => {
+export const MessageList = ({ messageList }) => {
   //   const MESSAGES_URL = "https://wk11livesession.herokuapp.com/messages";
   //   const [messages, setMessages] = useState([]);
   //   //Possibility to create function, extract it and import it to the useEffect//
@@ -27,13 +27,13 @@ export const MessageList = () => {
 
   return (
     <div>
-      {messages.map((message) => {
+      {messageList.map((message) => {
         return (
           <p className="message" key={message._id}>
             {" "}
-            {message.text}
+            {message.message}
             <span className="message-time">
-              {moment(message.created).fromNow()}
+              {moment(message.createdAt).fromNow()}
             </span>
           </p>
         );
