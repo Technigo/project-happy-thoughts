@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import moment from "moment";
 
 
-export const Messages = () => {
+export const Messages = (props) => {
     const MESSAGES_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
     const [messages, setMessages] = useState([]);
-  
+   
     useEffect(() => {
 
     
@@ -25,7 +25,13 @@ export const Messages = () => {
         <span className="message-time">
         {moment(message.createdAt).fromNow()}
         </span>
-        <div className="like"><span className="heart">❤️</span></div>
+        
+        <button 
+        className="like"
+        type="submit"
+        ><span>❤️</span>
+        </button>
+
         </div>
        </div>
         

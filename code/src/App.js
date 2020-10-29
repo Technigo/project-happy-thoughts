@@ -4,9 +4,7 @@ import { Thoughts } from './components/Thoughts';
 
 export const App = () => {
   return (
-    <div>
-     
-     
+    <div> 
       <Thoughts />
       <Messages />
     </div>

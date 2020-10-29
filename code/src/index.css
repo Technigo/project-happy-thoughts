@@ -50,6 +50,7 @@ width: 40px;
 height: 40px;
 background-color: rgba(221, 217, 217, 0.667);
 border-radius: 50%;;
+border:none;
 }
 
 
@@ -84,7 +85,7 @@ flex-direction: column;
 .form-text {
   width: 100%;
   height: 50px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .form-button {
@@ -94,6 +95,26 @@ flex-direction: column;
   background-color: #faafae;
   padding: 5px 15px 5px 15px;
   font-size: 11px;
+}
+
+.thought-length {
+  font-size: 11px;
+  color: grey;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type="submit"]:disabled {
+  color: grey;
+}
+
+input[type="submit"]:enabled {
+  color: red;
 }
 
 .rubrik {
