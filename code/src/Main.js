@@ -3,15 +3,16 @@ import React, { useState, useEffect } from "react";
 import HappyForm from "./HappyForm"
 import HappyThougthList from "./HappyThougthList";
 
-import { THOUGTHS_URL } from "./urls"
+
 
 const Main = () => { 
 const [thoughts, setThoughts] = useState([]); 
 
+const THOUGTHS_URL ="https://happy-thoughts-technigo.herokuapp.com/thoughts";
+
     useEffect(() => {
         fetchThougths();
     }, []);  
-
 
     const fetchThougths = () => {
         fetch(THOUGTHS_URL )
@@ -48,7 +49,6 @@ const [thoughts, setThoughts] = useState([]);
         setThoughts(updatedThoughts)
       }
       
-
         return(
             <main>
                 <HappyForm onMessageChange={postSingleMessage} /> 

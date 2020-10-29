@@ -25,7 +25,7 @@ const HappyThougthList  =  props  => {
                     style={{background: hearts > 0 ? "#d9fcc2" : "#f3f1f1" }}
                     >
                         <span className="heart-button-icon" role="img" aria-label="Heart">
-                            {" 💚"} 
+                            {" 💚 "} 
                         </span>
                         </button>
                         x {hearts}

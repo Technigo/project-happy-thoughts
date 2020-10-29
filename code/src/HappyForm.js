@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import { MESSAGES_URL} from "./urls"
-
 
 const HappyForm = ({ onMessageChange }) => {
     const [message , setMessage] = useState ('');
+
+    const MESSAGES_URL ="https://happy-thoughts-technigo.herokuapp.com/thoughts";
 
     const handleFormSubmit = (event) => {
     event.preventDefault(); 
@@ -45,13 +45,13 @@ const HappyForm = ({ onMessageChange }) => {
                 <span className="green-heart" 
                 role="img" 
                 aria-label="Heart">
-                            {" 💚"}
+                            {" 💚 "}
                 </span>
                 Send Happy Thougth
                 <span className="green-heart"
                  role="img"
                   aria-label="Heart">
-                            {" 💚"}
+                            {" 💚 "}
                 </span>
             </button>
 
