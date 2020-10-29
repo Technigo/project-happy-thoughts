@@ -1,21 +1,40 @@
+.input-section {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  justify-content: center;
   background: #f2f0f0;
   border: 1px solid black;
   width: 80%;
-  box-shadow: 10px 10px 1px 1px black;
+  box-shadow: 13px 14px 0px -6px rgba(0,0,0,1);
+  padding: 0px 10px;
 }
 
 label {
   font-family: 'Inconsolata';
-  margin: 20px 0px;
+  margin: 20px 0 20px 10px;
 }
 
 textarea {
   margin-bottom: 20px;
   width: 90%;
+  margin-left: 10px;
+  padding: 10px;
+  resize: none;
+}
+
+.form-footer {
+  display: flex;
+  margin-bottom: 15px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
 .send-button {
@@ -24,8 +43,15 @@ textarea {
   font-weight: bold;
   border-radius: 25px;
   padding: 10px;
+  margin-left: 10px;
 }
+
 button:disabled {
   color: black;
   background: lightgrey;
+}
+
+.message-length {
+  font-size: 12px;
+  color: #8F8F8F;
 }

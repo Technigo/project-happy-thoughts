@@ -2,14 +2,13 @@ import React from "react"
 
 import "../css/heartButton.css"
 
-export const HeartButton = ({ onLiked, heart, _id }) => {
-
+export const HeartButton = ({ onLiked, heart, id }) => {
   const handleClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/${_id}/like`, {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/${id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" },
-    }).then(() => onLiked(_id));
+    }).then(() => onLiked(id));
   };
 
   return (
@@ -24,5 +23,6 @@ export const HeartButton = ({ onLiked, heart, _id }) => {
         <p className="counted-hearts">x {heart} </p>
     </div>
   )
+
 }
 

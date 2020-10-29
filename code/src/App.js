@@ -32,7 +32,6 @@ export const App = () => {
 
   const onLiked = thoughtId => {
     console.log("Logging it", thoughtId)
-
     const likedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
         thought.hearts += 1
@@ -44,12 +43,10 @@ export const App = () => {
 
   return (
     <main>
-    <div className="card">
       <ThoughtsInput onThoughtsChange={reachThoughtsInput} />
       {thoughts.map(thought => (
-      <ThoughtsFeed thoughtsFeed={thoughts} key={thought._id} thought={thought} onLiked= {onLiked} />
+      <ThoughtsFeed id={thought._id} heart={thought.hearts} thought= {thought} thoughtsFeed={thoughts} key={thought._id} onLiked={onLiked} />
       ))}
-    </div>
     </main>
   )
 }

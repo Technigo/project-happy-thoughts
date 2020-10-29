@@ -1,9 +1,31 @@
+.feed-section {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0; 
+}
+
+.thought-container {
+  display: flex; 
+  flex-direction: column;
+  width: 80%;
+  border: 1px solid black;
+  box-shadow: 13px 14px 0px -6px rgba(0,0,0,1);
+}
+
 .thought-text {
+  margin: 10px;
   font-family: "Inconsolata";
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .post-time {
-  color:grey;
-  font-size: 14px;
+  color: #8F8F8F;
+  font-size: 10px;
+}
+
+.thought-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
 }
