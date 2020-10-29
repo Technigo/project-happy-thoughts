@@ -7,21 +7,21 @@ const MessageInput = ({ setMessages }) => {
   const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
-    // Prevent page from refreshing automatically
+    // prevent page from refreshing automatically
     event.preventDefault();
 
-    // Post the current value of the text input to the server
+    // post the current value of the text input to the server
     fetch(MESSAGES_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      // Send the JSON as a string -- object does not work here
+      // send the JSON as a string (object does not work here)
       body: JSON.stringify({ message }), // = ({ message: message })
     })
       .then((res) => res.json())
       .then((newMessage) => {
-        // Adding new message to start of messages array
+        // adding new message to start of messages array
         console.log(newMessage);
         setMessages((previousMessages) => [newMessage, ...previousMessages]);
         setMessage("");
@@ -47,7 +47,7 @@ const MessageInput = ({ setMessages }) => {
         value="happyThought"
         disabled={message.length < 6 || message.length > 140 ? true : false}
       >
-        🖤 Send a happy thought 🖤
+        Send a happy thought
       </button>
     </form>
   );

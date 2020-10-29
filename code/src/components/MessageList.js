@@ -12,15 +12,11 @@ const MessageList = ({ messages, setMessages }) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
-        // data.reverse();
-
-        // const filteredMessages = data.filter((message) => message.text);
-        // setMessages(filteredMessages);
         setMessages(data);
       });
   }, []);
 
+  // adding a new like (updates)
   const onLiked = (messageId) => {
     const updatedMessages = messages.map((message) => {
       if (message._id === messageId) {
@@ -32,7 +28,6 @@ const MessageList = ({ messages, setMessages }) => {
     setMessages(updatedMessages);
   };
 
-  console.log(messages);
   return (
     <div className="message-list-container">
       {messages.map((message) => {

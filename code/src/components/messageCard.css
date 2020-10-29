@@ -4,7 +4,8 @@
   border: 2px solid black;
   justify-content: space-between;
   margin: 20px 0;
-  height: 120px;
+  height: 150px;
+  word-wrap: break-word;
 }
 
 .bottom-card-container {
@@ -20,4 +21,16 @@
 
 .card-message {
   margin: 20px;
+}
+
+.super-liked {
+  background: red;
+}
+
+.liked {
+  background: pink;
+}
+
+.not-liked {
+  background: black;
 }

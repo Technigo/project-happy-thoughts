@@ -5,14 +5,13 @@ import "./messageCard.css";
 
 export const MessageCard = ({ _id, createdAt, hearts, message, onLiked }) => {
   const handleClick = () => {
-    fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`,
-      {
-        method: "POST",
-        body: "",
-        headers: { "Content-Type": "application/json" },
-      }
-    ).then(() => onLiked(_id));
+    const MESSAGES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`;
+
+    fetch(MESSAGES_URL, {
+      method: "POST",
+      body: "",
+      headers: { "Content-Type": "application/json" },
+    }).then(() => onLiked(_id));
   };
 
   return (
@@ -21,9 +20,10 @@ export const MessageCard = ({ _id, createdAt, hearts, message, onLiked }) => {
       <div className="bottom-card-container">
         <div className="hearts-container">
           <button
-            className="heart-btn"
+            className={`heart-btn ${
+              hearts > 4 ? "super-liked" : hearts > 0 ? "liked" : "not-liked"
+            }`}
             onClick={handleClick}
-            style={{ background: hearts > 0 ? "pink" : "black" }}
           >
             <span role="img" aria-label="hearts">
               {"💛 "}
