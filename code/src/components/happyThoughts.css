@@ -53,6 +53,7 @@
   background-color: rgba(211, 211, 211, 0.415);
 }
 p {
+  margin-top: 20px;
   padding-left: 10px;
   font-family: "Turret Road", cursive;
 }
