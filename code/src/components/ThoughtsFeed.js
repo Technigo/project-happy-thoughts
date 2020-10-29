@@ -4,6 +4,7 @@ import moment from 'moment';
 export const ThoughtsFeed = ({ thoughtsFeed }) => {
 
   return (
+    <section>
     <div>
       {
         thoughtsFeed.map(thoughts => (
@@ -14,8 +15,9 @@ export const ThoughtsFeed = ({ thoughtsFeed }) => {
               </span>
           </p>
           ))
-            }
+      }
     </div>
+    </section>
     );
 }
 

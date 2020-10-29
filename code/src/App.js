@@ -18,20 +18,22 @@ export const App = () => {
     .catch(error => console.error(error));
   }
 
-  const reachThoughtsInput = (newThoughts) => {
+  const thoughtsInput = (newThoughts) => {
     fetch(THOUGHTS_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({ message: newThoughts })
     })
-    .then(() => thoughtsMessage())
+    .then(() =>
+    thoughtsMessage())
     .catch(error => console.error(error));
 
   }
+  
 
   return (
     <>
-      <ThoughtsInput onThoughtsChange={reachThoughtsInput}/>
+      <ThoughtsInput onThoughtsChange={thoughtsInput}/>
       <ThoughtsFeed thoughtsFeed={thoughts}/>
     </>
   )
