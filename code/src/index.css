@@ -37,20 +37,26 @@ h1 {
 .post {
   grid-column-start: 2;
   border: 1px solid black;
-  display: grid;
   grid-template-columns: 1fr 300px 1fr;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .post-header {
-  grid-column-start: 1;
+  margin-left: 5px;
 }
 
 input {
-  grid-column-start: 1;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .submit-button {
-  grid-column-start: 1;
+  margin-left: 5px;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
 .thought-list {
@@ -69,16 +75,32 @@ input {
   padding: 10px;
   box-shadow: 10px 10px;
 }
+
+.likes-container {
+  display: flex;
+}
  
-.heart-wrapper {
+.heart-button {
   border: 1px solid black;
   border-radius: 50%;
   width: 30px;
   height: 30px;
   padding: 3px;
-  background-color: lightblue;
+  background-color: lightgray;
+  display: flex;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.liked {
+  background-color:lightcoral;
 }
 
 .heart {
   width: 20px;
+  justify-content: center;
+}
+
+.created-time {
+  color: gray;
 }

@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Thought = ({ text,time,heart,}) => {
+import Likes from './Likes';
+
+const Thought = ({ text,time,likes,}) => {
     return (
         <section className="thought-wrapper">
             <p>{text}</p>
-            <p><div className="likes-container"><div className="heart-wrapper"><span className="heart" role="img" aria-label="heart">❤️ x{heart}</span></div></div></p>
-            <p>{time}</p>
+            <Likes likes={likes} />
+            <p className="created-time">{time}</p>
         </section>
         )
     }

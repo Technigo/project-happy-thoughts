@@ -28,13 +28,34 @@ export const App = () => {
     .then(() => fetchThoughts())
     .catch(error => console.error(error));
 }
+
+const postHearts = (messageId) => {
+  fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts${messageId}/like`,{
+    method:'POST',
+    headers: { 'Content-Type': 'application/json' }
+  })
+    .then(() => {
+      onLiked(messageId);
+      fetchThoughts();
+    });
+};
+
+const onLiked = (messageId) => {
+  const newMessage = thoughts.map(thought => {
+    if (thought._id === messageId) {
+      thoughts.hearts +=1
+    } 
+    return thought
+  })
+  setThoughts(newMessage);
+}
   
   return (
     <>
       <Header />
       <section className="thoughts-container">
         <ThoughtInput onThoughtChange={postThought} />
-        <ThoughtList thoughtList={thoughts}/>
+        <ThoughtList thoughtList={thoughts} onHeartsChange={postHearts}/>
     </section>
     </>
   );

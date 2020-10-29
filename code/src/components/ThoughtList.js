@@ -3,7 +3,7 @@ import Moment from 'moment';
 
 import Thought from './Thought';
 
-export const ThoughtList = ({ thoughtList}) => {
+export const ThoughtList = ({ thoughtList, onHeartsChange}) => {
 
     return (
         <section className="thought-list">
@@ -13,7 +13,7 @@ export const ThoughtList = ({ thoughtList}) => {
                         key={thought._id}
                         text={thought.message}
                         time={Moment(thought.createdAt).fromNow()}
-                        heart={thought.hearts}
+                        likes={thought.hearts}
                     />
                 )
             })}
