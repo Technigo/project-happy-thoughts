@@ -38,6 +38,7 @@ const HappyForm = ({ onMessageChange }) => {
 
             <div className ="send-happy">
             <button 
+                className ="form-button"
                 type="submit" 
                 disabled={message.length < 6 || message.length > 140 ? true: false}>
 

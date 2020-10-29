@@ -12,17 +12,21 @@ const [thoughts, setThoughts] = useState([]);
         fetchThougths();
     }, []);  
 
+
     const fetchThougths = () => {
         fetch(THOUGTHS_URL )
-        .then(res => res.json())
-        .then(data => setThoughts(data.reverse()))
-        .then(data => {
-                console.log(data)
-                //const filteredThoughts= data.filter(message => message.message );
-                //const filteredMessages = data.filter(message => message.message );
+        .then ((response) => {
+            return response.json()
+        })
+        .then (data => {
+            const filteredThoughts = data.filter(thought => {
+                return thought !== '';
+            })
+            setThoughts (filteredThoughts)
+        })
+    }
+      
 
-                //setThoughts(filteredThoughts);
-    })}
     const postSingleMessage = newMessage => {
         fetch(THOUGTHS_URL, {
           method: 'POST',
@@ -60,7 +64,5 @@ const [thoughts, setThoughts] = useState([]);
    
    
 export default Main;
-
-//<List  messages={messages} setMessages ={setMessages}  /> 
 
 
