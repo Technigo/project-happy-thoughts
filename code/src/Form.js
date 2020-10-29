@@ -37,6 +37,13 @@ export const Form = ({ onMessageChange }) => {
 						</span>
 					</p>
 				</button>
+				<p className="charcount">
+					<span
+						style={{ color: newMessage.length >= 140 ? '#ff3933' : '#000' }}>
+						{newMessage.length}
+					</span>
+					/140
+				</p>
 			</form>
 		</div>
 	);

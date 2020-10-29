@@ -23,6 +23,13 @@ body {
 	margin: 10px;
 }
 
+.charcount {
+	position: absolute;
+	right: 20px;
+	bottom: 15px;
+	font-size: 13px;
+}
+
 .submit-button {
 	position: absolute;
 	display: flex;
