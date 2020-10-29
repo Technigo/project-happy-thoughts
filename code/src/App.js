@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { ThoughtsCard } from 'components/ThoughtsCard';
-import { Form } from 'components/Form';
+import React, { useState, useEffect } from "react";
+import { ThoughtsCard } from "components/ThoughtsCard";
+import { Form } from "components/Form";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [clickCounts , setClickCounts] = useState(0);
-  const FETCH_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+  const [clickCounts, setClickCounts] = useState(0);
+  const FETCH_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 
   useEffect(() => {
-    //Fetches data from the API: an array including all Thoughts and 
+    //Fetches data from the API: an array including all Thoughts and
     //uses the setThoughts setter function to assign that data to the
     //thoughts variable
     fetch(FETCH_URL)
-      .then(response => response.json())
+      .then((response) => response.json())
       //json is now the variable containing thoughts array we got from the API
-      .then(json => {
+      .then((json) => {
         //Filter only Thoughts that have some text in it
-        const filteredThoughts = json.filter(thought => {
-          return thought.message !== '';
+        const filteredThoughts = json.filter((thought) => {
+          return thought.message !== "";
         });
         //We setThoughts again, this time after running the filter, so now the
         //thoughts array we work with is the filtered one with no empty thoughts
-        setThoughts(filteredThoughts)
+        setThoughts(filteredThoughts);
       });
   }, []);
 
@@ -34,15 +34,15 @@ export const App = () => {
     //confirmation that the like went thru. We check if the thought.id is equal to
     //the id argument we got, and if that's the case we add +1
     const updatedLikes = thoughts.map((thought) => {
-      if(thought._id === id) {
+      if (thought._id === id) {
         thought.hearts += 1;
       }
       return thought;
-    })
+    });
     //we setThoughts again so the thoughts now show with the updated amount of hearts
     setThoughts(updatedLikes);
     //Created a State for clickCounts which will show how many time the Heart button
-    //has been clicked, we get the number of clicks from the callback function in 
+    //has been clicked, we get the number of clicks from the callback function in
     //ThoughtCard component and add it to the existing clickCounts
     setClickCounts(clicks + clickCounts);
   };
@@ -50,20 +50,22 @@ export const App = () => {
   return (
     <>
       <Form />
-      <p className="posts-liked-counter">Amount of Hearts given out this session: {clickCounts}</p>
+      <p className="posts-liked-counter">
+        Amount of Hearts given out this session: {clickCounts}
+      </p>
       <section className="though-cards-container">
         {/* map thru the thoughts array to generate the thoughts cards */}
         {/* Send the necessary data to the Thoughts Cards component as props */}
         {thoughts.map((thought) => (
-          <ThoughtsCard 
+          <ThoughtsCard
             key={thought._id}
             id={thought._id}
             message={thought.message}
             timeCreated={thought.createdAt}
-            hearts={thought.hearts} 
+            hearts={thought.hearts}
             addLike={addLike} />
         ))}
       </section>
     </>
-  )
+  );
 };
