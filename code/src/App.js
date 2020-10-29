@@ -5,6 +5,7 @@ import { HappyForm } from 'components/HappyForm';
 export const App = () => {
   return (
     <div>
+      <HappyForm />
       <MessageList />
     </div>
   )
