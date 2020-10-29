@@ -27,14 +27,23 @@ export const App = () => {
     .then(() =>
     thoughtsMessage())
     .catch(error => console.error(error));
+  }
 
+  const onLiked = thoughtId => {
+
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.heart += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
   }
   
-
   return (
     <>
       <ThoughtsInput onThoughtsChange={thoughtsInput}/>
-      <ThoughtsFeed thoughtsFeed={thoughts}/>
+      <ThoughtsFeed thoughtsFeed={thoughts} onLiked={onLiked}/>
     </>
   )
 };
