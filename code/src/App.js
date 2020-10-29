@@ -6,6 +6,7 @@ import { CommentUrl } from './URLS'
 
 export const App = () => {
   const [comments, setComments] = useState([]);
+  const [error, setError]= useState("")
 
   const fetchComments = () => {
     fetch(CommentUrl)
@@ -23,7 +24,14 @@ export const App = () => {
         headers:{ "Content-Type": "application/json" },
         body: JSON.stringify({ message: newComment })
       })
-      .then(() => fetchComments())
+      .then((response) => {
+        if (response.ok) {
+          fetchComments();
+          setError('')
+        } else {
+         setError("Please write in text field")
+        }
+      })
     }
 
     const handleLiked = (comment) => {
@@ -37,7 +45,7 @@ export const App = () => {
 
   return (
     <div className="container">
-      <NewComment onCommentChange={postComment}/>
+      <NewComment onCommentChange={postComment} error={error}/>
 
       {comments.map((comment)=>(
         <Comment comment={comment} onLiked={()=> handleLiked(comment)} key={comment._id} />

@@ -42,6 +42,19 @@ form{
   margin-top: 10px;
 }
 
+.new-comment__error{
+color:red;
+font-style: italic;
+}
+
+.new-comment__characters{
+  color:black;
+}
+
+.new-comment__characters--color-red{
+  color: red;
+}
+
 .new-comment__button{
   width: 210px;
   border-radius: 30px;

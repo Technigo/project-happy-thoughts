@@ -15,7 +15,7 @@ const Comment = ({comment, onLiked}) => {
           <button onClick={onLiked} type="button" className={comment.hearts > 0 ? "container-comment__button--color-rose" : "container-comment__button"}>
           <FontAwesomeIcon icon={faHeart} color="red" />
            </button> 
-           <span className="container-comment__heart">x {comment.hearts}</span>
+           <span className="container-comment__heart"> x {comment.hearts}</span>
            </span>
           <span className="container-comment__time">
           {moment(comment.createdAt).fromNow()}
