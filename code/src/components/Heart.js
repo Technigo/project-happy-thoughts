@@ -36,7 +36,7 @@ always works.*/
 
 export const Heart = () => {
     return (
-            <button className="heart__btn"><img className="heart__btn-icon" src='./heart.png'/>Like this</button>
+            <button className="heart__btn"><img className="heart__btn-icon" src='./heart.png' alt='Heart icon'/>Like this</button>
         
     )
 }

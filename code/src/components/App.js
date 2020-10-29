@@ -11,7 +11,7 @@ Also: Actually post whatever is sent to the feed */
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  /* const [userInput, setUserInput] = useState([]); */
+  const [userInput, setUserInput] = useState([]);
 
   useEffect(() => {
     sendThought();
@@ -24,8 +24,8 @@ export const App = () => {
   })
       .then((response) => response.json())
       .then((newThought) => {
-          console.log('HEllo')
-          setThoughts((previousThoughts) =>[newThought, ...previousThoughts])
+          console.log('Hello')
+          setUserInput((previousThoughts) =>[newThought, ...previousThoughts])
       })
   }
 
@@ -35,7 +35,8 @@ export const App = () => {
       headers: { 'content-Type': 'application/json'},
       body: JSON.stringify({ message: newMessage })
     })
-    .then((data) => console.log(data))
+    .then((/* data */) => /* console.log(data) */
+    window.location.reload())
   }
   
 

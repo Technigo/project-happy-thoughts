@@ -2,7 +2,7 @@
 Each thought displayed inside a flex-box card?
 Only show about 20 cards at a time?
 Max-characters in user input */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, /* useState */ } from 'react';
 import moment from 'moment';
 
 import { THOUGHTS__URL } from './urls'
@@ -12,8 +12,8 @@ import './thoughts.css'
 
 /* This thought-component takes care of showing all messages that has been posted to the API.
 It uses a state that changes based on what the data from fetch is. */
-export const Thoughts = () => {
-    const [thoughts, setThoughts] = useState([])
+export const Thoughts = ({ thoughts, setThoughts }) => {
+    /* const [thoughts, setThoughts] = useState([]) */
 
     /* We need to use useEffect because we don't want this to rerender on 
     each refresh, only when it's neccessary and [] is updated.
@@ -38,7 +38,7 @@ export const Thoughts = () => {
             return (
             <div className="thoughts__card" key={thought._id}>
                 <p className="thoughts__message">{thought.message}
-                    <span><img className="thoughts__heart-icon" src='./heart.png'/></span>
+                    <span><img className="thoughts__heart-icon" src='./heart.png' alt='Heart icon'/></span>
                     <span className="thoughts__amount-of-likes">{thought.hearts>0 ? thought.hearts: <Heart/>}</span>
                     <span className="thoughts__time-posted">{moment(thought.created).fromNow()}</span>
                 </p>
