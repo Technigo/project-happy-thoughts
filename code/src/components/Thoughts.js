@@ -2,18 +2,24 @@ import React, { useState, useEffect } from 'react';
 
 import Thought from 'components/thought/Thought';
 import NewThought from 'components/newthought/NewThought';
+import { THOUGHTS_URL } from '../urls';
 
 const Thoughts = () => {
   const [thoughts, setThoughts] = useState([]);
 
   useEffect(() => {
-    const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    fetchMessages();
+  }, []);
+
+  const fetchMessages = () => {
     fetch(THOUGHTS_URL)
       .then(response => response.json())
       .then(json => {
-        setThoughts(json);
+        const filteredThoughts = json.filter(thought => thought.message);
+        setThoughts(filteredThoughts);
       })
-  }, []);
+      .catch(error => console.error(error))
+  };
 
   return (
     <section>

@@ -98,6 +98,7 @@ section {
   border-radius: 50%;
   padding: 5px;
   margin-right: 5px;
+  background-color:#f2f0f0;
 }
 
 .liked {
@@ -112,7 +113,7 @@ footer {
   box-sizing: border-box;
   width: 100%;
   text-align: center;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   padding: 30px;
 }
