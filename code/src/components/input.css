@@ -1,6 +1,19 @@
-.input__input-container {
+.input__container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     max-width: 250px;
+    grid-column: span 3;
+    justify-self: center;
+    align-items: center;
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+.input__user-input {
+    margin: 5px;
+}
+
+.input__text-field {
+    height: 100px;
 }

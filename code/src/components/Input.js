@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 
 import { Error } from './Error.js'
+import { Heart } from './Heart'
 
 import './input.css'
+import './heart.css'
 
 export const Input = ({ onMessageChange, inputType }) => {
     const [newMessage, setNewMessage] = useState('')
@@ -29,15 +31,19 @@ export const Input = ({ onMessageChange, inputType }) => {
 
     return (
         <>
-        <form onSubmit={handleSubmit} className="input__input-container">
+        <form onSubmit={handleSubmit} className="input__container">
+        <h2>What's making you happy right now?</h2>
         <label className="input__user-input">
             <input 
+            className="input__text-field"
             type={inputType}
             value={newMessage}
             onChange={event => setNewMessage(event.target.value)}/>
         </label>
         <Error message={error}/>
-        <button type={'submit'}>Send thought!</button>
+        <Heart
+        style={'heart__btn'}
+        text={'Send thought!'}/>
         </form>
         </>
     )

@@ -12,12 +12,6 @@ import './thoughts.css'
 /* This thought-component takes care of showing all messages that has been posted to the API.
 It uses a state that changes based on what the data from fetch is. */
 export const Thoughts = ({ thoughts, setThoughts }) => {
-    /* const [thoughts, setThoughts] = useState([]) */
-
-    /* We need to use useEffect because we don't want this to rerender on 
-    each refresh, only when it's neccessary and [] is updated.
-    You need to use the empty array to only render on change, 
-    otherwise it will contiue to do the fetch in an infinite loop */
 
     /* Use map() to show things from the array of data 
     filter through array, if thought.message isn't an 
@@ -27,9 +21,13 @@ export const Thoughts = ({ thoughts, setThoughts }) => {
             return (
             <div className="thoughts__card" key={thought._id}>
                 <p className="thoughts__message">{thought.message}
-                    <span><img className="thoughts__heart-icon" src='./heart.png' alt='Heart icon'/></span>
-                    <span className="thoughts__amount-of-likes">{thought.hearts>0 && thought.hearts} <Heart/></span>
-                    <span className="thoughts__time-posted">{moment(thought.created).fromNow()}</span>
+                <div className="thoughts__info-container">
+                    <img className="thoughts__heart-icon" src='./heart.png' alt='Heart icon'/>
+                    {thought.hearts<10 ? <p className="thoughts__amount-of-likes">{thought.hearts>0 && thought.hearts}</p>
+                    :<p className="thoughts__ten-amount-of-likes">{thought.hearts>0 && thought.hearts}</p>}
+                    <p className="thoughts__time-posted"> {moment(thought.created).fromNow()}</p>
+                    <Heart style={'heart__like'}text={'Like'}/>
+                    </div>
                 </p>
             </div>
         )})}

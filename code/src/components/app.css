@@ -1,5 +1,12 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Trispace', sans-serif;
+}
+
 .app__grid {
+    background: #F9F8EB;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: min-content;
+    justify-content: center;
 }

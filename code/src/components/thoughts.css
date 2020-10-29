@@ -8,17 +8,26 @@
 
 .thoughts__card {
     background: #ECDEC6;
+    /* display: flex;
+    flex-wrap: wrap; */
     justify-self: center;
     padding: 10px;
     margin: 5px;
     width: 250px;
 }
 
-.thoughts__time-posted, .thoughts__amount-of-likes {
+.thoughts__info-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+    position: relative;
+}
+
+/* .thoughts__time-posted, .thoughts__amount-of-likes {
     font-size: 16px;
     padding: 2px;
 }
-
+ */
 /*How to solve when someone writes a really long word?*/
 .thoughts__message {
     font-size: 22px;
@@ -26,10 +35,15 @@
 }
 
 .thoughts__heart-icon {
-    width: 12%;
-    position: relative;
+    height: 50px;
 }
-
-/* .thoughts__amount-of-likes {
+.thoughts__amount-of-likes {
     position: absolute;
-} */
+    left: 20px;
+    top: 0px;
+} 
+.thoughts__ten-amount-of-likes {
+    position: absolute;
+    left: 15px;
+    top: 0px;
+} 

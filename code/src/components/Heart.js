@@ -34,9 +34,8 @@ never needs to re-run. This isn’t handled as a special case
 — it follows directly from how the dependencies array 
 always works.*/
 
-export const Heart = () => {
+export const Heart = ({text, style}) => {
     return (
-            <button className="heart__btn"><img className="heart__btn-icon" src='./heart.png' alt='Heart icon'/>Like this</button>
-        
+            <button className={style} type="submit"><img className="heart__btn-icon" src='./heart.png' alt='Heart icon'/>{text}</button>
     )
 }
