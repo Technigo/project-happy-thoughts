@@ -1,5 +1,5 @@
-import React from 'react';
-import moment from 'moment';
+import React from "react";
+import moment from "moment";
 
 export const ThoughtCard = props => {
   const {message, createdAt, hearts, _id} = props.thought;
@@ -17,14 +17,17 @@ export const ThoughtCard = props => {
   return (
     <div className="thought-card">
       <p>{message}</p>
-      <button 
+      <p>
+      <button className="heart-button"
         onClick={handleClick}
         style={{background: hearts > 0 ? "#ffadad" : "#f3f1f1" }}>
           <span role="img" aria-label="Heart">
-            {"💗"}
+            {"❤️"}
           </span>
       </button>
-      <p>{moment(createdAt).fromNow()}</p>
+      x {hearts}
+      </p>
+      <p className="created-at">{moment(createdAt).fromNow()}</p>
     </div>
   );
 };

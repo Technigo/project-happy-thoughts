@@ -1,13 +1,39 @@
 body {
   margin: 0;
   font-family: 'Inconsolata', monospace;
+  font-size: 17px;
   background-color: #f5dce5;
   }
 
-.input-form, .thought-card{
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 75px;
+  min-height: 150px;
+  padding-bottom: 30px;
+  border:solid 2px #000;
+  background-color: #fffffff0;
+  box-shadow: 5px 5px;
+}
+ 
+h1 {
+  margin:0;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.pixel-heart {
+  width: 50px;
+  height: 70px;
+  padding: 10px;
+}
+
+.input-form, .thought-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: left;
   word-wrap: break-word;
   width: 500px;
@@ -23,7 +49,7 @@ body {
   display: flex;
   width: 450px;
   resize: none;
-  /* min-height: 100px; */
+  min-height: 100px;
   margin: 0;
   border: solid 1px #d1d1d1;
 }
@@ -33,7 +59,56 @@ body {
   background-color:#ffadad ;
   border: none;
   border-radius: 25px;
-  font-size: 17px;
+  font-size: 20px;
   margin: 15px 0px 15px;
   padding: 10px;
 }
+
+.thoughts-chars, .created-at {
+  text-align: right;
+  margin-right: 30px;
+}
+
+.heart-button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 7px 13px;
+  margin-right: 13px;
+  border-radius: 50%;
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0px;
+  margin-top: 65px;
+  background-color: #a2c2e667;
+  width: 100%;
+}
+
+footer p {
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  color: rgb(45, 41, 41);
+  margin: 6px;
+}
+
+a:link {
+  color: rgb(245, 108, 156);
+}
+a:visited {
+  color: rgb(130, 149, 228);
+}
+
+footer img {
+  width: 50px;
+}
+
+
+
