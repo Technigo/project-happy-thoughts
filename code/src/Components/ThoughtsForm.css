@@ -25,6 +25,22 @@
     font-size: 13px;
 }
 
+.form-message-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.letter-counter {
+    color: #8d8c8c;
+    font-weight: 600;
+    font-size: 16px; 
+}
+
 .form-button {
     background: #ffadad;
     padding: 12px 17px;
