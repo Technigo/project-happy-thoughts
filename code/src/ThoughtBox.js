@@ -1,7 +1,9 @@
 import React, {useState} from "react"
+import moment from "moment"
 
 export const ThoughtBox = ({thought, getMessages}) => {
 
+    //will send a like for the current message to the API
     const postLike = () => {
         const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`;
 
@@ -27,7 +29,7 @@ export const ThoughtBox = ({thought, getMessages}) => {
                         </button>
                         <p>{thought.hearts}</p>
                     </div>
-                    <p>{thought.createdAt}</p>
+                    <p>{moment(thought.createdAt).fromNow()}</p>
                 </div>
             </div>
     )
