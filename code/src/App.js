@@ -28,14 +28,27 @@ export const App = () => {
     })
     .then(() => fetchThoughts())
     .catch(error => console.error(error));
+  }
 
+  const onLiked = thoughtId => {
+    console.log("Logging it", thoughtId)
+
+    const likedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      } 
+    return thought
+    })
+    setThoughts(likedThoughts);
   }
 
   return (
     <main>
     <div className="card">
       <ThoughtsInput onThoughtsChange={reachThoughtsInput} />
-      <ThoughtsFeed thoughtsFeed={thoughts} />
+      {thoughts.map(thought => (
+      <ThoughtsFeed thoughtsFeed={thoughts} key={thought._id} thought={thought} onLiked= {onLiked} />
+      ))}
     </div>
     </main>
   )

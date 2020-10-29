@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from "moment"
 
 import "../css/thoughtsInput.css";
 
@@ -12,7 +13,8 @@ export const ThoughtsInput = ({ onThoughtsChange }) => {
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
-      <label>What's making you happy right now?</label>
+      <label>What's making you happy right now?
+      </label>
       <textarea
         rows="3"
         value={newThought}
@@ -25,7 +27,7 @@ export const ThoughtsInput = ({ onThoughtsChange }) => {
         onClick={handleSubmit} 
         disabled={newThought.length < 3 || newThought.length > 140 ? true : false}
         >
-          Send Happy Thought
+          <span role="img" aria-label="heart">❤️</span> Send Happy Thought <span role="img" aria-label="heart">❤️</span>
         </button>
         <p>{newThought.length} / 140</p>
       </div>
