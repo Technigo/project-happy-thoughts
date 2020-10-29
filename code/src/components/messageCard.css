@@ -3,8 +3,10 @@
   flex-direction: column;
   border: 2px solid black;
   justify-content: space-between;
-  margin: 20px 0;
-  height: 150px;
+  margin: 40px 0;
+  min-height: 150px;
+  max-height: 300px;
+  box-shadow: 7px 7px;
   word-wrap: break-word;
 }
 
@@ -12,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px 20px;
+  margin: 20px 20px;
 }
 
 .heart-btn {
@@ -21,6 +23,12 @@
 
 .card-message {
   margin: 20px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+}
+
+.moment {
+  font-size: 14px;
 }
 
 .super-liked {

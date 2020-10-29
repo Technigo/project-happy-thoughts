@@ -35,19 +35,34 @@ const MessageInput = ({ setMessages }) => {
       </label>
       <textarea
         value={message}
-        className="input-messege"
         type="text"
+        rows="3"
         onChange={(event) => setMessage(event.target.value)}
+        // maxLength="140"
         className="form-text"
+        placeholder="Give me at least 5 characters!"
       ></textarea>
-      <p className="characters-left">characters left</p>
+
+      {/* characters left */}
+      <p
+        className={
+          message.length > 140
+            ? "max-characters characters-left"
+            : "characters-left"
+        }
+      >
+        {Math.abs(140 - message.length)} characters{" "}
+        {message.length < 140 ? "left" : "too long"}
+      </p>
       <button
         className="btn-thought"
         type="submit"
         value="happyThought"
         disabled={message.length < 6 || message.length > 140 ? true : false}
       >
-        Send a happy thought
+        {" "}
+        Send a happy thought!
+        {/* {message.length < 5 ? "Minimum 5 characters" : "Send a happy thought!"} */}
       </button>
     </form>
   );
