@@ -1,0 +1,24 @@
+.message-box {
+  margin-top: 30px;
+  word-wrap: break-word;
+}
+
+.message-second-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.like-button-container {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message {
+  margin-top: 0;
+}
+.second-row-elements {
+  font-size: 13px;
+}

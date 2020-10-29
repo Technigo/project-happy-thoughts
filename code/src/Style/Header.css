@@ -1,0 +1,61 @@
+.header {
+  height: 20vh;
+  width: 100vw;
+  right: 0;
+  top: 0;
+  left: 0;
+  margin-bottom: 30px;
+}
+
+.header-title {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Capriola', sans-serif;
+  justify-content: center;
+}
+
+.header-title-1 {
+  color: #e0fbfc;
+  font-size: 35px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  14% {
+    transform: scale(1.3);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.3);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}
+
+.header-title-2 {
+  animation-name: pulse;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  color: #f72585;
+  display: inline-block;
+  background-color: none;
+}
+
+
+
+.header-title-3 {
+  color: #9d4edd;
+  font-size: 60px;
+}

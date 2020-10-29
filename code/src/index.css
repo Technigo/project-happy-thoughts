@@ -2,120 +2,25 @@ body {
   margin: 0;
   font-family: 'Capriola', sans-serif;
   background-image: url("./assets/bfImage.jpg");
-}
-
-@keyframes bganimation {
-  0%{
-    background-position: 0% 50%;
-  }
-  50%{
-    background-position: 100% 50%;
-  }
-  100%{
-    background-position: 0% 50%;
-  }
-}
-
-.main-form {
-  margin-top: 20px;
-  width: 90vw;
-  max-width: 365px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
+  background-position: 74% 41%;
 
   
 }
 
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw; 
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1
-}
-.header-title {
-  font-family: 'Capriola', sans-serif;
-  font-size: 35px;
-  text-align: center;
-  color: #FC427B;
-}
-.header-subtitle {
-  font-family: 'Capriola', sans-serif;
-  font-size: 60px;
-  color: #5f27cd;
-}
 
-.button-submit-thought {
-  background-color: #9a8c98;
-  border-radius: 20px;
-  border: none;
-  color: #ffffff;
-  margin-top: 10px;
-  padding: 5px 15px;
-}
 
-.heart-icon {
-  margin: 5px;
-}
 
-.thought-box {
-  height: 45px;
-}
-.container {
-  border: 1px solid rgb(2 ,2 ,2);
-  box-shadow: 4px 5px rgb(2 ,2 ,2);
-  color: #ffffff;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  background-image: 
-    linear-gradient(
-      125deg,
-      #073b4c,
-      #9e2a2b,
-      #245501,
-      #390099,
-      #0496ff,
-      #bc3908,
-      #023047);
-  background-size: 400%;
-  animation: bganimation 15s infinite;
-}
 
-.message-box {
-  margin-top: 30px;
-}
 
-.message-second-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-.like-button-container {
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-.message {
-  margin-top: 0;
-}
 
-.second-row-elements {
-  font-size: 13px;
-}
 
-.like-button {
-  border-radius: 50%;
-  background-color: #d3d3d3;
-  border: 1px solid #d3d3d3;
-  margin-right: 10px;
-  width: 40px;
-  height: 40px;
-}
+
+
+
+
+
+
+
 

@@ -1,0 +1,23 @@
+.heart-icon {
+  margin: 5px;
+}
+
+.button-submit-thought {
+  background-color: #9a8c98;
+  border-radius: 20px;
+  border: none;
+  color: rgb(2 ,2 ,2);
+  font-family:  'Capriola', sans-serif;
+  margin-top: 10px;
+  padding: 5px 15px;
+}
+
+.thought-box {
+  height: 45px;
+}
+
+.word-count {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}

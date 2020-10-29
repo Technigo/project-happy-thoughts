@@ -1,0 +1,12 @@
+.like-button {
+  border-radius: 50%;
+  background-color: #d3d3d3;
+  border: 1px solid #d3d3d3;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.pink-button {
+  background-color: #ff9ebb;
+}

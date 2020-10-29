@@ -1,6 +1,11 @@
 import React from 'react';
+import '../Style/ThoughtSubmitForm.css';
+import '../Style/Container.css';
+// import '../Style/FixedPosition.css';
 
 const ThoughtSubmitForm = ({ thought, onThoughtChange, onSubmitThought }) => {
+  const thoughtLenght = thought.length;
+  console.log(thoughtLenght)
   return (
     <form 
       id="thought-form" 
@@ -16,8 +21,9 @@ const ThoughtSubmitForm = ({ thought, onThoughtChange, onSubmitThought }) => {
         value={thought}
         onChange={(event) => onThoughtChange (event.target.value)}
       />
-      
+      <p className="word-count">Characters remained: {140 - (thought.length)}</p>
       <button
+        disabled={thought.length < 5 || thought.length > 140}
         form="thought-form"
         type="submit"
         className="button-submit-thought"

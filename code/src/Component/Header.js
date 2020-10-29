@@ -1,15 +1,20 @@
 import React from 'react';
+import  '../Style/Header.css';
+// import '../Style/FixedPosition.css'
 
 const Header = () => {
   return (
-    <div>
-      <video className="video-background" autoPlay muted loop>
-        <source src="./assets/happy.mp4" type="video/mp4"></source>
-        Your browser does not support HTML5 video.
-      </video>
-      <h1 className="header-title"> Happy Thought <br></br><span className="header-subtitle">Happy day</span></h1>
-    </div>
-    );
+  <div className="header">
+    <h1 className="header-title">
+      <div className="header-title-row-1">
+        <span className="header-title-1">Happy</span> <span className="header-title-2">Thought</span>
+      </div>
+      <div>
+      <span className="header-title-1">Happy</span> <span className="header-title-3">Life</span>
+      </div>
+    </h1>
+  </div>
+  );
 }
  
 export default Header;

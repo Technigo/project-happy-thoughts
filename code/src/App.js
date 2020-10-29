@@ -5,7 +5,7 @@ import Header from './Component/Header'
 
 export const App = () => {
   return (
-    <div>
+    <div className="main-container">
       <Header />
       <MainForm />
     </div>

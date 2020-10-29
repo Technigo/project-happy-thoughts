@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ThoughtSubmitForm from 'Component/ThoughtSubmitForm';
 import MessageList from 'Component/MessageList';
-import { API_URL } from '../constants'
+import { API_URL } from '../constants';
+import '../Style/MainForm.css';
 
 const MainForm = () => {
   const [thought, setThought] = useState("");
