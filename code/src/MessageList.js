@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { LikeMessage } from './LikeMessage'
 import moment from 'moment'
 
 import './Messagelist.css'
@@ -18,10 +19,11 @@ export const MessageList = () => {
 
     // Sorts messages on message sent time 
     data.sort((a,b) => a.created > b.created)
+    
 
     // Filter empty messages
-    const filteredMessages = data.filter((message) => message.message);
-    
+    const filteredMessages = data.filter((messages) => messages.message);
+    // setMessages(filteredMessages);
     // Display only the 20 latest messages 
     const limitedMessages = filteredMessages.slice(0,20);
 
@@ -31,9 +33,29 @@ export const MessageList = () => {
 
 }, []);
 
+const onMessageLiked = (id) => {
+    const updatedMessages = messages.map((thought) => {
+      if (thought._id === id) {
+        thought.hearts += 1;
+      }
+      return thought;
+    })
+    setMessages(updatedMessages);
+  };
+
+// const onMessageLiked = (id) => {
+    
+//     const updatedMessages = messages.map((message) => {
+//         if (message._id === id) {
+//             message.hearts += 1;
+//         }
+//         return message;
+//     })
+//       setMessages(updatedMessages);
+// };
+
 return (
     <div>
-        
         {messages.map((message) => {
 
     return(
@@ -43,7 +65,13 @@ return (
                     {message.message}
 
                     {/* How many have liked the post */}
-                    {message.hearts}
+                    
+                    <LikeMessage 
+                    key={message._id}
+                    id={message._id}
+                    onMessageLiked={onMessageLiked}
+                    hearts={message.hearts}
+                    />
                     
                     {/* When message was created */}
                     <span className="message-time">
@@ -54,8 +82,8 @@ return (
     );
     })}
     
-   
-    </div>
+</div>
+ 
 )};
 
 export default MessageList; 

@@ -1,9 +1,22 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+button {
+    border: none;
+}
+
 .message {
     display: flex;
     flex-direction: column;
     font-size: 14;
     font-weight: bold;
     margin-top: 0;
+
 }
 .message-time {
     font-size: 11px;
