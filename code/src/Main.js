@@ -58,9 +58,10 @@ const THOUGTHS_URL ="https://happy-thoughts-technigo.herokuapp.com/thoughts";
                  key={thought._id}
                  thought={thought}
                  onLiked={onLiked} />
-                    ))}
+                ))}
             </main>
-    )}  
+)}
+
 export default Main;
 
 

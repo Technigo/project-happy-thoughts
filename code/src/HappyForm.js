@@ -42,7 +42,8 @@ const HappyForm = ({ onMessageChange }) => {
                 <button 
                 className ="form-button"
                 type="submit" 
-                disabled={message.length < 6 || message.length > 140 ? true: false}>
+                disabled={message.length < 6 || message.length > 140 ? true: false}
+                style ={{background: message.length < 6 ||message.length > 140 ? "#f3f1f1" : "#d9fcc2" }}>    
 
                 <span className="green-heart" 
                 role="img" 
@@ -69,3 +70,4 @@ const HappyForm = ({ onMessageChange }) => {
 }
    
 export default HappyForm;
+
