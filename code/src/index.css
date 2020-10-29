@@ -133,6 +133,16 @@ form {
   background: #ffadad;
 }
 
+.counter {
+  width: 400px;
+  border: 1px solid #8e8d8d;
+  box-shadow: 5px 5px;
+  margin: 20px;
+  font-family: 'Inconsolata', monospace;
+  padding: 20px;
+  background: white;
+}
+
 /************* FOOTER **************/
 footer {
   font-size: 12px;

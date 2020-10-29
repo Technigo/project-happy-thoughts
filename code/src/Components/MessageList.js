@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Message from './Message';
 
-
-const MessageList = ({listOfMessages, setListOfMessages}) => {
+const MessageList = ({ listOfMessages, setListOfMessages }) => {
+    const [likedPosts, setLikedPosts] = useState([]);
     
     const whenLiked = (id) => {
         // Maps over the current messages and increments the like number
@@ -15,6 +15,11 @@ const MessageList = ({listOfMessages, setListOfMessages}) => {
         })
         // Changes the state with array with updated likes no
         setListOfMessages(updatedMessagesWithLikes)
+
+        // Checks if post was liked
+        if (!likedPosts.includes(id)) {
+            setLikedPosts([...likedPosts, id])
+        }
     }
     
     return (
@@ -33,6 +38,20 @@ const MessageList = ({listOfMessages, setListOfMessages}) => {
                     )    
                 })
             }
+            <article className="message">
+                <p>Did you spread some love?
+                    <span>
+                        {' 🥰'}
+                    </span>
+                </p>
+                <p>
+                    No of posts liked
+                    <span>
+                        {'❤️ '}
+                    </span>
+                    : {likedPosts.length}
+                </p>
+            </article>
         </div>
     )
 

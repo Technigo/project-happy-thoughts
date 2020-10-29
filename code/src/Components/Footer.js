@@ -22,12 +22,9 @@ const Footer = () => {
                     </p>
                 </div>
             </div>
-            <p className="reference">Background by
-                <a href="https://unsplash.com/@freestocks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
-                    freestocks
-                </a>
-                 on
-                <a href="https://unsplash.com/s/photos/hearts?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+            <p className="reference">
+                Background by <a href="https://unsplash.com/@freestocks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"> freestocks </a>
+                 on <a href="https://unsplash.com/s/photos/hearts?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
                     Unsplash
                 </a>
             </p>
