@@ -12,18 +12,6 @@ export const App = () => {
     fetchMessage()
   }, [])
 
-    
-  const onLikeThought = (likeId) => {
-    
-    const updatedThoughts = thoughts.map((thought) => {
-      if (thought._id === likeId) {
-        thought.hearts += 1
-      }
-      return thought
-    })
-    setThoughts(updatedThoughts)
-  }
-
   const onMessageChange = (thought) => {
     fetch(THOUGHTS_URL, {
       method: 'POST',
@@ -32,6 +20,7 @@ export const App = () => {
     })
       .then(()=> {
         fetchMessage()
+        window.location.reload()
       })
   }
 
@@ -49,11 +38,31 @@ export const App = () => {
         })
     }
 
+    const onLikeThought = (likeId) => {
+      const updatedThoughts = thoughts.map((thought) => {
+        if (thought._id === likeId) {
+          thought.hearts += 1
+        }
+        return thought
+      })
+      setThoughts(updatedThoughts)
+    }
+
+    const onPostHearts = messageId => {
+      fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
+              method: 'POST', 
+              body:'',
+              headers: { 'Content-Type': 'application/json"'}
+          }).then (() => {
+              onLikeThought(messageId);
+          });
+    };
+
   return (
     <main>
       <ThoughtInput onMessageChange={onMessageChange}/>
       {thoughts.map(thought=> 
-      <ThoughtMessage key={thought._id} thought={thought} onLikeThought={onLikeThought}/>
+      <ThoughtMessage key={thought._id} thought={thought} onPostHearts={onPostHearts}/>
       )} 
     </main>
   )

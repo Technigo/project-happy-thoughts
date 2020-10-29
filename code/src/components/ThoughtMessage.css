@@ -1,26 +1,67 @@
 article{
   background-color:#ffffff;
-  width: 90%;
+  width: 85%;
   margin: 10px 0;
   padding: 15px;
   border: darkgray 2px solid;
   border-radius: 2px;
   box-shadow: black 8px 8px;
+  word-wrap: break-word;
 }
 
 .wrapper {
  display: flex;
  justify-content: space-between;
+ align-items: baseline;
 }
 
 .like-button-container {
   display: flex;
+  align-items: baseline;
 }
 
-@media (min-width: 1024px) {
+article button {
+  display: flex;
+  place-content: center;
+  border-radius: 50%;
+  border: none;
+  width: 37px;
+  height: 37px;
+  margin-right: 10px;
+}
+
+article button span {
+  padding: 5px 0 5px 0;
+  transform: translate();
+}
+
+.thought {
+  font-family: 'Inconsolata', monospace;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.likes-text {
+  color: silver;
+}
+
+.time-text {
+  color: lightgray;
+}
+
+.liked {
+  background: lightpink;
+}
+
+.not-liked {
+  background: whitesmoke;
+}
+
+
+@media (min-width: 667px) and (max-width: 1024px) {
   article {
-    width: 30%;
-  }
+    width: 50%;
+  } 
 }
 
 @media (min-width: 1024px) {

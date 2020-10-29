@@ -3,41 +3,41 @@ import moment from 'moment'
 
 import './ThoughtMessage.css'
 
-export const ThoughtMessage = ({thought, onLikeThought}) => {
-  const onLikeClick = event => {
-    const LIKE_URL=`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`
-    
-    event.preventDefault()
-        fetch(LIKE_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type':'application/json'
-            },
-            body:''
-        }).then(()=> onLikeThought(thought._id)) 
-    } 
+export const ThoughtMessage = ({thought, onPostHearts}) => {
+  
+  const handleClick = () => {
+    onPostHearts(thought._id)
+  }
 
   return (
     <article key={thought._id}>
-      <p className='thought'>
+      
+      <h2 className='thought'>
         {thought.message}
-      </p>
+      </h2>
+
       <div className='wrapper'>
-      <div className='like-button-container'>
-        <button
-          type='button'
-          onClick={onLikeClick}
-        >
-          <span role='img' aria-label='heart'>
-            ❤️
-          </span>
-        </button>
-        
-        <p className='amount-likes'>x {thought.hearts}</p>
+        <div className='like-button-container'>
+
+          <button
+            className={thought.hearts > 0 ? 'liked' : 'not-liked'}
+            type='button' 
+            onClick={handleClick}
+          >
+            <span role='img' aria-label='heart'>
+              {'❤️'}
+            </span>
+          </button>
+
+          <p className='likes-text'>
+            x {thought.hearts}
+          </p>
+
         </div>
-        <span className='time-posted'>
+
+        <p className='time-text'>
           {moment(thought.createdAt).fromNow()}
-        </span>
+        </p>
         
       </div>
     </article>  
