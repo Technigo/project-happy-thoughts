@@ -8,6 +8,7 @@ export const ThoughtsForm = ({onMessageChange}) => {
     const handleSubmit = event => {
         event.preventDefault();
         onMessageChange(newMessages);
+        setNewMessages("");
     };
 
     return (
