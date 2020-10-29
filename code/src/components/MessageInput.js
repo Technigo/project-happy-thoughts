@@ -19,16 +19,22 @@ export const MessageInput = ({ onMessageChange }) => {
                     value={newMessage} minLength="5" maxLength="140"
                     onChange={event => setNewMessage(event.target.value)}
                     className="form-text">
-                
                 </input>
                 <p>{newMessage.length}/140</p>
-                <input
-                    type="submit"
-                    className="form-button"
-                    value="❤️ Send Happy Thought! ❤️">  
-                </input>
+               <button
+				className=".form-button"
+				type="submit">
+				    <p>
+						<span className="heart" role="img" aria-label="Heart">
+							{'❤️ '}
+						</span>
+						Send a happy thought!
+						<span className="heart" role="img" aria-label="Heart">
+							{' ❤️'}
+						</span>
+					</p>
+				</button>
             </form>
         </article>
     )
 }
-

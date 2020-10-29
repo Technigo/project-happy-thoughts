@@ -47,8 +47,8 @@ input.form-text {
   outline-color: pink;
 }
 
-.form-button {
-  width: 250px;
+button {
+  width: 260px;
   height: 45px;
   border-radius: 30px;
   padding: 10px;
@@ -56,8 +56,15 @@ input.form-text {
   background-color: #f4abc4;
   color: #060930;
   cursor: pointer;
-  font-family: "Inconsolata", -apple-system, monospace, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 800; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  text-align: center;
+  font-size: 15px;
 }
 
 /* MESSAGE CARD */
@@ -94,11 +101,6 @@ input.form-text {
   display: flex;
 }
 
-.heart {
-  text-align: center;
-  font-size: 16px;
-}
-
 .likes {
   display: flex;
   color: #d6d0d0;
@@ -128,6 +130,3 @@ input.form-text {
     width: 310px;
   }
 }
-
-
-

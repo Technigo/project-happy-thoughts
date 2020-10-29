@@ -16,7 +16,6 @@ export const MessageList = () => {
 
     // Dont show empty messages
 const filteredMessages = data.filter(message => message.message);
-const limitedMessages = filteredMessages.slice(0, 10);
 
     //Save the data to state
     setMessages(filteredMessages);
@@ -34,13 +33,15 @@ const limitedMessages = filteredMessages.slice(0, 10);
           <div className="message-bottom">
           <div className="like-wrapper">  
           <button className="heart-button">
-          <p className="heart">❤️</p></button>
+          <span className="heart" role="img" aria-label="Heart">
+							{'❤️ '}
+						</span>
+          </button>
           <p className="likes">x  {messages.hearts}</p>
           </div>
           <span className="messageTime">
           {moment(messages.created).fromNow()}
           </span>
-          
           </div>
         </h3>
         </article>
