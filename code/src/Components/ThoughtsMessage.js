@@ -12,11 +12,11 @@ export const ThoughtsMessage = ({messageDetails, onHeartsChange}) => {
    return (
     <article className="message-container">
         <h3 className="message-text">{messageDetails.message}</h3>
-        <span className="message-wrapper">
+        <span className="form-message-footer">
             <p>
                 <button id="hearts-button"
                 onClick={handleClick}
-                className={messageDetails.hearts > 0 ? "liked" : "not-Liked"} >
+                className={messageDetails.hearts > 5 ? "super-liked" :  messageDetails.hearts > 0 ? "liked" : "not-Liked"} >
                     <span role="img" aria-label="Heart">
                         {"❤️ "}                
                     </span>
