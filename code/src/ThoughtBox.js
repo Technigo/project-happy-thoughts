@@ -19,15 +19,21 @@ export const ThoughtBox = ({thought, getMessages}) => {
 
     return (
             <div className="message-box">
-                <p>{thought.message}</p>
+                <div className="message-wrapper">
+                    <p>{thought.message}</p>
+                </div>
                 <div className="message-infos-wrapper">
-                    <div>
-                        <button 
+                    <div className="like-wrapper">
+                        <button
+                            className="like-button" 
                             onClick={postLike}
-                            style={{background: thought.hearts > 0 ? "red" : "grey"}}
-                            >❤
+                            style={{background: thought.hearts > 0 ? "#FFADAD" : "#EAEAEA"}}
+                        >
+                            <span role="img" aria-label="heart"> 
+                            {"❤️"}
+                            </span>
                         </button>
-                        <p>{thought.hearts}</p>
+                        <p>x {thought.hearts}</p>
                     </div>
                     <p>{moment(thought.createdAt).fromNow()}</p>
                 </div>

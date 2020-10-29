@@ -10,14 +10,23 @@ export const ThoughtForm = ({onMyThoughtChange}) => {
     }
 
     return(
-        <form onSubmit={handleFormSubmit}>
-            <input 
-                type="text"
-                value={myThought}
-                onChange={event => setMyThought(event.target.value)}
-                >
-            </input>
-            <button type="submit">Submit thought</button>
-        </form>
+        <div className="form-box">
+            <form onSubmit={handleFormSubmit}>
+                <label htmlFor="mythought-input">
+                What's making you happy right now?
+                <textarea 
+                    id="mythought-input"
+                    rows="3"
+                    value={myThought}
+                    onChange={event => setMyThought(event.target.value)}
+                    ></textarea>
+                </label>
+                <button 
+                    className="send-thought" 
+                    type="submit"
+                    disabled={myThought.length < 6 || myThought.length > 140 ? true : false}
+                >❤️ Send Happy Thought ❤️</button>
+            </form>
+        </div>
     )
 }

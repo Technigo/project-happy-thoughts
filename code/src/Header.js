@@ -2,6 +2,8 @@ import React from "react"
 
 export const Header = () => {
     return (
-        <h1>Happy Thoughts</h1>
+        <header>
+            <h1>Today's happy thoughts</h1>
+        </header>
     )
 }

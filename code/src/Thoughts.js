@@ -33,7 +33,7 @@ export const Thoughts = () => {
 
 
     return (
-        <section>
+        <section className="thought-section">
             <ThoughtForm 
                 onMyThoughtChange={postMessage}
                 />    
