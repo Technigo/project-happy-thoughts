@@ -25,19 +25,21 @@ const HappyForm = ({ onMessageChange }) => {
     };
 
     return (
-      <>
-         <form onSubmit = {handleFormSubmit}>
+    <>
+        <form onSubmit = {handleFormSubmit}>
             <section className ="form-conatiner">
 
-            <h1>What's making you happy right now?</h1>
-            <textarea 
-            rows="5"
-            value={message} 
-            onChange = {(event) => setMessage(event.target.value)}
-            ></textarea>  
+                <h1>What's making you happy right now?</h1>
 
-            <div className ="send-happy">
-            <button 
+                <textarea 
+                rows="5"
+                value={message} 
+                onChange = {(event) => setMessage(event.target.value)}
+                ></textarea>  
+
+                <div className ="send-happy">
+
+                <button 
                 className ="form-button"
                 type="submit" 
                 disabled={message.length < 6 || message.length > 140 ? true: false}>
@@ -45,22 +47,24 @@ const HappyForm = ({ onMessageChange }) => {
                 <span className="green-heart" 
                 role="img" 
                 aria-label="Heart">
-                            {" 💚 "}
+                {" 💚 "}
                 </span>
+
                 Send Happy Thougth
+
                 <span className="green-heart"
-                 role="img"
-                  aria-label="Heart">
-                            {" 💚 "}
+                role="img"
+                aria-label="Heart">
+                {" 💚 "}
                 </span>
-            </button>
+                </button>
 
                 <p className="thoughts-length-left"> {message.length} / 140 </p>
-            </div> 
-            </section>
 
+                </div> 
+            </section>
         </form> 
-      </>
+    </>
  )
 }
    

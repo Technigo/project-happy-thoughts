@@ -36,10 +36,10 @@ const THOUGTHS_URL ="https://happy-thoughts-technigo.herokuapp.com/thoughts";
         })
           .then(() => fetchThougths())
           .catch(error => console.error(error));
-      }
+    }
 
-      const onLiked = thoughtId => {
 
+    const onLiked = thoughtId => {
         const updatedThoughts = thoughts.map(thought => {
           if (thought._id === thoughtId) {
             thought.hearts += 1
@@ -47,7 +47,7 @@ const THOUGTHS_URL ="https://happy-thoughts-technigo.herokuapp.com/thoughts";
           return thought
         })
         setThoughts(updatedThoughts)
-      }
+    }
       
         return(
             <main>
@@ -60,9 +60,7 @@ const THOUGTHS_URL ="https://happy-thoughts-technigo.herokuapp.com/thoughts";
                  onLiked={onLiked} />
                     ))}
             </main>
-    )}
-   
-   
+    )}  
 export default Main;
 
 
