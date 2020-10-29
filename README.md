@@ -11,4 +11,4 @@ After that I did most of the css-part, then I got the POST-fetch and the like-fu
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://nervous-mayer-699099.netlify.app/
