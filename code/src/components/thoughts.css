@@ -25,3 +25,11 @@
     white-space: pre-wrap;
 }
 
+.thoughts__heart-icon {
+    width: 12%;
+    position: relative;
+}
+
+/* .thoughts__amount-of-likes {
+    position: absolute;
+} */

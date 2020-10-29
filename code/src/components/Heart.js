@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './heart.css'
+
 /* Component for heart: 
 Should be a button that sends likes
 When a thought has gotten likes, it should show how many likes the thought has
@@ -34,8 +36,7 @@ always works.*/
 
 export const Heart = () => {
     return (
-        <div className="heart__container">
-            <button>Heart</button>
-        </div>
+            <button className="heart__btn"><img className="heart__btn-icon" src='./heart.png'/>Like this</button>
+        
     )
 }

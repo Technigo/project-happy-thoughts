@@ -1,0 +1,11 @@
+.heart__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 30%;
+}
+
+.heart__btn-icon {
+    width: 60%;
+}
