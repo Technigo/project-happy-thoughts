@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 
-export const ThoughtsList = () => {
-  const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
-  const [thoughts, setThoughts] = useState([]);
+export const ThoughtsList = ( { thoughtsList } ) => {
+ // const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+ // const [thoughts, setThoughts] = useState([]);
   const [likes, setLikes] = useState(0);
 
-  useEffect(() => {
+  /*useEffect(() => {
     fetch(THOUGHTS_URL)
       .then((res) => {
         return res.json();
@@ -18,11 +18,11 @@ export const ThoughtsList = () => {
         console.log(thoughts);
       });
 
-  }, []);
+  }, []); */
 
 return (
   <div>
-    {thoughts.map((item) => {
+    {thoughtsList.map((item) => {
       return (
         <section key={item._id} className="thought-card">
           <div className="top-of-card">
