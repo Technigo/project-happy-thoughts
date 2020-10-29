@@ -16,10 +16,14 @@ export const MessageList = () => {
     console.log(data);
     // data.reverse();
 
+    // Sorts messages on message sent time 
     data.sort((a,b) => a.created > b.created)
 
+    // Filter empty messages
     const filteredMessages = data.filter((message) => message.message);
-    const limitedMessages = filteredMessages.slice(0,15);
+    
+    // Display only the 20 latest messages 
+    const limitedMessages = filteredMessages.slice(0,20);
 
     // Save the data to state 
     setMessages(limitedMessages); 
@@ -29,21 +33,28 @@ export const MessageList = () => {
 
 return (
     <div>
-        <ul>
+        
         {messages.map((message) => {
 
     return(
-                    <p className="message" key={message._id}>
+                    <div className="message-box" key={message._id}>
+                    <p className="message">
+                    {/* Message text */}
                     {message.message}
+
+                    {/* How many have liked the post */}
                     {message.hearts}
+                    
+                    {/* When message was created */}
                     <span className="message-time">
                     {moment(message.createdAt).fromNow()}
                     </span>
                     </p>
+                    </div>
     );
     })}
     
-    </ul>
+   
     </div>
 )};
 
