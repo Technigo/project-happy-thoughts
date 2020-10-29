@@ -32,4 +32,5 @@ In the 'Postthoughts' component there is a fetch-method posting new Happy Though
 
 ## View it live
 
-Link to view the webpage live: 
+Link to view the webpage live: https://happyminds.netlify.app/
+

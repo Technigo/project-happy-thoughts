@@ -44,7 +44,7 @@ export const ThoughtsList = () => {
       {thoughts.map(thought => {
         return (
           <div className="thoughts-box" key={thought._id}>
-            <p className="thoughts">
+            <p className="thoughts" tabIndex="0">
               {thought.message}
             </p>
             <div className="thoughts-footer">
@@ -54,7 +54,7 @@ export const ThoughtsList = () => {
                 onThoughtLiked={onThoughtLiked}
                 hearts={thought.hearts}
               />
-              <p className="time-stamp"> 
+              <p className="time-stamp" tabIndex="0"> 
                 {moment(thought.createdAt).fromNow()}
               </p> 
             </div>

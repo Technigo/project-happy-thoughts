@@ -26,7 +26,7 @@ export const Postthoughts = ({id}) => {
 
   return (
     <form className="post-box" onSubmit={handleSubmit} > 
-      What's making you happy right now?
+      <label>What's making you happy right now?</label>
       <textarea 
         className="thought-input"
         id={id} 
@@ -45,8 +45,10 @@ export const Postthoughts = ({id}) => {
             Send Happy Thought
           <span role="img" aria-label="Red heart emoji"> &#10084;&#65039;</span>
         </button>
-        <p className="counter" >
-          <span style={{ color: addThought.length > 140 ? "#e60707" : "#000"}}>
+        <p className="counter" tabIndex="0">
+          <span 
+            style={{ color: addThought.length > 140 ? "#e60707" : "#000"}} 
+            tabIndex="0">
             {addThought.length}
           </span>
           /140
