@@ -3,11 +3,15 @@ import React from 'react';
 import Likes from './Likes';
 import Time from './Time';
 
-const ThoughtInfo = (props) => {
+const ThoughtInfo = ({ id, created, likes, onLiked }) => {
   return (
     <div className="info">
-      <Likes likes={props.likes} />
-      <Time created={props.created} />
+      <Likes
+        id={id}
+        likes={likes}
+        onLiked={onLiked}
+      />
+      <Time created={created} />
     </div>
   )
 }

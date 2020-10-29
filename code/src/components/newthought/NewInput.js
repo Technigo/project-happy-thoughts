@@ -8,25 +8,31 @@ const NewInput = ({ onInputChange }) => {
   const onHandleSubmit = event => {
     event.preventDefault();
     onInputChange(newThought);
-  }
+    setNewThought('');
+  };
 
   return (
     <form className="new-thought" onSubmit={onHandleSubmit}>
       <p className="new-message">What's making you happy right now?</p>
-      <input
-        type="text"
+      <textarea
+        rows="5"
         value={newThought}
         onChange={event => setNewThought(event.target.value)}
-        minLength="5"
-        maxLength="140"
+        placeholder="Your message should contain between 5 and 140 characters"
         className="input"
       >
-      </input>
-      <button className="send-button">
-        <img className="heart" src={Heart} alt="Pink heart"></img>
-        Send Happy Thought
-        <img className="heart" src={Heart} alt="Pink heart"></img>
-      </button>
+      </textarea>
+      <div className="input-info">
+        <button
+          className="send-button"
+          disabled={newThought.length < 6 || newThought.length > 140 ? true : false}
+        >
+          <img className="heart" src={Heart} alt="Pink heart"></img>
+          Send Happy Thought
+          <img className="heart" src={Heart} alt="Pink heart"></img>
+        </button>
+        <p>{newThought.length}/140</p>
+      </div>
     </form>
   )
 }
