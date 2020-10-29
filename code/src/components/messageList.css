@@ -1,0 +1,13 @@
+
+.message {
+    color: darkmagenta;
+    font-size: 25px;
+    padding: 10px;
+    border: 2px dotted orangered;
+}
+
+.message-time {
+    color: gray;
+    font-size: 15px;
+    margin: 5px;
+}

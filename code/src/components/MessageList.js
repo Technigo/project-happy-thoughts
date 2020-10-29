@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import moment from 'moment';
+import './messageList.css';
 
 export const MessageList = () => {
     const Messages_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
@@ -19,7 +21,9 @@ return <div>{messages.map((message) => {
     return (
         <p className="message" key={message._id}>
             {message.message}
-            {message.createdAt}
+            <span className="message-time">
+            {moment(message.createdAt).fromNow()}
+            </span>
             </p>
         );
         }
