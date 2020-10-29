@@ -12,6 +12,7 @@ import './thoughts.css'
 /* This thought-component takes care of showing all messages that has been posted to the API.
 It uses a state that changes based on what the data from fetch is. */
 export const Thoughts = ({ thoughts, setThoughts }) => {
+    //Errormessage for nesting <p> at 27-29
 
     /* Use map() to show things from the array of data 
     filter through array, if thought.message isn't an 
@@ -21,13 +22,13 @@ export const Thoughts = ({ thoughts, setThoughts }) => {
             return (
             <div className="thoughts__card" key={thought._id}>
                 <p className="thoughts__message">{thought.message}
-                <div className="thoughts__info-container">
+                <span className="thoughts__info-container">
                     <img className="thoughts__heart-icon" src='./heart.png' alt='Heart icon'/>
                     {thought.hearts<10 ? <p className="thoughts__amount-of-likes">{thought.hearts>0 && thought.hearts}</p>
                     :<p className="thoughts__ten-amount-of-likes">{thought.hearts>0 && thought.hearts}</p>}
                     <p className="thoughts__time-posted"> {moment(thought.created).fromNow()}</p>
                     <Heart style={'heart__like'}text={'Like'}/>
-                    </div>
+                    </span>
                 </p>
             </div>
         )})}
