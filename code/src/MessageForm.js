@@ -5,7 +5,7 @@ export const MessageForm = (props) => {
   //const [thoughts, setThoughts] = useState(testArr);
   const [input, setInput] = useState("");  
 
-  console.log(props.messages)
+  //console.log(props.messages)
   //console.log(thoughts)
   // of 'Hello world' like this example does):
   // // // Send the POST request with the input from your form (instead
@@ -18,19 +18,20 @@ export const MessageForm = (props) => {
       body: JSON.stringify({ message: input }),
       headers: { "Content-Type": "application/json" },
     })
-      .then((res) => res.json())
+    .then((res) => res.json())
       .then((newThought) => {
-        console.log(newThought);
+        if(newThought.errors) alert(newThought.errors.message.message)
         // Now you have `newThought` which is the response from the
         // API as documented at the top of this readme. You can use
         // it to update the `thoughts` array:
+        else
         props.setMessages([newThought, ...props.messages])
         //(previousThoughts) => [newThought, ...previousThoughts]);
         //setThoughts([props.messages].concat(newThought));
         //console.log(thoughts)
         //window.location.reload();
         //return (<MessageList messages={thoughts} />)
-      });
+      })
   }
 
   return (

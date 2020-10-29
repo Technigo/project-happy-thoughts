@@ -6,6 +6,7 @@ export const App = () => {
   const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
   const [messages, setMessages] = useState([]);
   const [likes, setLikes] = useState(0)
+  const [likedThoughts, setLikedThoughts] = useState([])
 
   const messageLike = (id) => {
     
@@ -15,8 +16,10 @@ export const App = () => {
     })
     .then(() => {
         setLikes(likes + 1)
+        setLikedThoughts([id, ...likedThoughts]);
+        console.log(likedThoughts)
         //setHearts(hearts + 1)
-        console.log(likes)
+        //console.log(likes)
     })
 }
 
@@ -32,7 +35,7 @@ export const App = () => {
   return (
     <div className="main-container">
       <MessageForm messages = {messages} setMessages = {setMessages}/>
-      <MessageList messages={messages} messageLike={messageLike}/>
+      <MessageList messages={messages} messageLike={messageLike} likedThoughts={likedThoughts}/>
     </div>
   );
 };
