@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import "./index.css"
-import { HappyForm } from "./components/js/HappyForm";
-import { HappyThought} from "./components/js/HappyThought"
-import { ThoughtsList } from "./components/js/ThoughtsList";
-import { STATUS_URL } from "./components/js/urls";
+import { ThoughtsInput } from "./components/js/ThoughtsInput";
+import { ThoughtsFeed } from "./components/js/ThoughtsFeed";
+import { THOUGHTS_URL } from "./components/js/urls";
 
 
 export const App = () => {
@@ -15,26 +14,28 @@ export const App = () => {
   }, []);
 
   const fetchThoughts = () => {
-    fetch(STATUS_URL)
+    fetch(THOUGHTS_URL)
       .then(res => res.json())
-      .then(data => setThoughts(data.reverse()))
+      .then(data => setThoughts(data))
+      .catch(error => console.error(error));
   }
 
-  const onLiked = thoughtId => {
-    const updatedThoughts = thoughts.map(thought => {
-      if (thought._id === thoughtId) {
-        thought.hearts +=1
-      }
-      return thought
+  const reachThoughtsInput = (newThoughts) => {
+    fetch(THOUGHTS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({ message: newThoughts })
     })
-    setThoughts(updatedThoughts)
+    .then(() => fetchThoughts())
+    .catch(error => console.error(error));
+
   }
 
   return (
     <main>
     <div className="card">
-      <HappyForm />
-      <ThoughtsList thoughtsList={thoughts} />
+      <ThoughtsInput onThoughtsChange={reachThoughtsInput} />
+      <ThoughtsFeed thoughtsFeed={thoughts} />
     </div>
     </main>
   )

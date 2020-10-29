@@ -1,14 +1,14 @@
 import React from "react"
 import moment from "moment" 
 
-import "../css/thoughtsList.css"
+import "../css/thoughtsFeed.css"
 
-export const ThoughtsList = ( { thoughtsList } ) => {
+export const ThoughtsFeed = ( { thoughtsFeed } ) => {
 
   return (
     <div>
       {
-        thoughtsList.map(thought => (
+        thoughtsFeed.map(thought => (
           <p className="thought-text" key={thought._id}>
             {thought.message}
             <span className="post-time">
