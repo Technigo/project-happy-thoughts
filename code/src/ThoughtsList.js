@@ -4,13 +4,10 @@ import Moment from 'moment';
 
 export const ThoughtsList = ({ hearts, id, message, time }) => {
 	const [like, setNewLike] = useState(hearts);
+	const [heartCount, setHearthCount] = useState(hearts);
 
-	const LIKES_URL =
-		'https://happy-thoughts-technigo.herokuapp.com/thoughts/{id}/like';
-
-	useEffect(() => {
-		handleLike();
-	}, []);
+	const postId = id;
+	const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${postId}/like`;
 
 	const handleLike = (event) => {
 		fetch(LIKES_URL, {
@@ -18,6 +15,8 @@ export const ThoughtsList = ({ hearts, id, message, time }) => {
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ message }),
 		}).then(() => setNewLike(like + 1));
+
+		setHearthCount(heartCount + 1);
 	};
 
 	return (
@@ -27,15 +26,15 @@ export const ThoughtsList = ({ hearts, id, message, time }) => {
 			<button
 				type="button"
 				className="heart-button"
-				onClick={handleLike}
+				onClick={() => handleLike(postId)}
 				style={{
-					background: hearts > 0 ? '#ffadad' : '#f3f1f1',
+					background: heartCount > 0 ? '#ffadad' : '#f3f1f1',
 				}}>
 				<span aria-label="heart emoji" role="img">
 					&#10084;&#65039;
 				</span>
 			</button>
-			<p className="likes">x {hearts}</p>
+			<p className="likes">x {heartCount}</p>
 		</div>
 	);
 };
