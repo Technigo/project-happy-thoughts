@@ -1,25 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import moment from 'moment'
 
-import {NewThought} from 'components/NewThought'
 
-export const Thoughts = () => {
-    const [messages, setMessages] = useState([])
-
-    const ThoughtsURL= "https://happy-thoughts-technigo.herokuapp.com/thoughts"
-    
-    useEffect(() => {
-    fetch(ThoughtsURL)
-    .then (response => response.json())
-    .then ((thoughts) => {
-        console.log(thoughts)
-        setMessages(thoughts)
-    })}, [])
+export const ThoughtList = ({messageList}) => {
 
     return (
         <section className="thought-list">
-            <NewThought />
-        {messages.map(message => {
+        {messageList.map(message => {
             return(
                 
             <div className="thought-container" key={message._id}>
