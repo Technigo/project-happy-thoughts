@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 
 // import THOUGHTS_URL from "../urls";
@@ -21,7 +22,7 @@ const ThoughtsList = ({ thoughtsArray }) => {
       <ul>
         {thoughtsArray.map(thought => (
           <div className="thought-container" key={thought._id}>
-            <li>{thought.message}<span>{thought.createdAt}</span></li>
+            <li>{thought.message} <span className="time-stamp">{moment(thought.createdAt).fromNow()}</span></li>
             <button>a heart!</button>
           </div>
         ))}

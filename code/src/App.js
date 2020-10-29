@@ -17,7 +17,7 @@ export const App = () => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
       //updating the state below-> that's why infinite loop
-      .then(data => setThoughts(data.reverse()));
+      .then(data => setThoughts(data));
   };
 
   const handleInputChange = (newInput) => {
