@@ -5,8 +5,7 @@
   margin: 20px auto;
   padding-bottom: 15px;
   border: 1px solid #000;
-  box-shadow: 6px 6px 0px #000;
-  background-color: #ffe8e8;
+  background-color: #ffe4e5;
 }
 h1 {
   padding-top: 40px;
@@ -28,4 +27,14 @@ p {
   width: 100px;
   height: 100px;
   animation: spin 1.9s linear infinite;
+}
+/* MEDIA QUERIES */
+@media only screen and (max-width: 600px) {
+  .thoughts-container {
+    width: 400px;
+    margin: auto;
+  }
+  h1 {
+    font-size: 18px;
+  }
 }

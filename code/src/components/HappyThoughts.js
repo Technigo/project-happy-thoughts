@@ -19,7 +19,7 @@ export const HappyThoughts = ({ thought, onLiked }) => {
                         {"💖 "}
                     </span>
                 </button>
-                number of x liked: {hearts}
+               x {hearts}
             </p>
             <p>{moment(createdAt).fromNow()}</p>
         </article>

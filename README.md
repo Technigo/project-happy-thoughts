@@ -1,8 +1,6 @@
-# Happy Thoughts
+🤍 Happy Thoughts 🤍
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week's project was Happy Thoughts! An internal chat app built mostly in React, using API calls ✨
 
 ## The problem
 
