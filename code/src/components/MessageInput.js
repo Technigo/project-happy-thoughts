@@ -10,10 +10,7 @@ export const MessageInput = () => {
         fetch(MESSAGES_URL,
             {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message })
             }
         ).then(() => {
@@ -21,28 +18,29 @@ export const MessageInput = () => {
             // setMessage("")
             // props.onFormSubmit(message)
         })
-        .catch(err=>console.log("error:, err"))
+            .catch(err => console.log("error:, err"))
     }
 
     return (
         <section className="cards-container" >
             <form onSubmit={handleSubmit}>
                 <div className="form-card">
-                    <input
-                        type="text"
+                    <h1>Send some love<span role="img" aria-label="Red heart emoji"> 💖</span></h1>
+                    <textarea
+                        rows="4"
                         className="input-text"
-                        placeholder="Send a happy-message!"
-                        onChange={event => setMessage(event.target.value)}
-                    />
+                        placeholder="Type your happy-message!"
+                        onChange={event => setMessage(event.target.value)}></textarea>
+                   
                     <button
                         type="submit"
                         className="form-button"
                         // value="new message"
-                        disabled={message.length < 6 || message.length > 140 ? true: false}
-                         >
+                        disabled={message.length < 6 || message.length > 140 ? true : false}
+                    >
                         <span role="img" aria-label="Red heart emoji">&#10084;&#65039;</span>
                         Send Happy Thoughts
-                       <span role="img" aria-label="Red heart emoji">&#10084;&#65039;</span>    
+                       <span role="img" aria-label="Red heart emoji">&#10084;&#65039;</span>
                     </button>
                     <p className="length">{message.length} / 140</p>
                 </div>

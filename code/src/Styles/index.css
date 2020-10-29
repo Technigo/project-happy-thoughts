@@ -27,28 +27,48 @@ code {
 
 } */
 
-.message {
+/* ----Message-card */
+
+.message{
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
-}
+  /* width: 350px; */
+  word-break: break-word;
+ }
 
 .message-time {
   font-size: 15px;
   margin-left: 10px;
+  /* align-self: flex-end; */
 }
 
 .message-card, .form-card {
   width: 400px;
-  min-height: 200px;
-  border: 3px solid #989898;
+  height: auto;
+  border: 1px solid #000;
   margin-bottom: 30px; 
   padding: 10px;
+  box-shadow: 6px 6px #000;
 }
 
  .message-card {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 } 
+
+.input-text{
+  width: 360px;
+  height: 80px; 
+  align-self: center;
+}
+
+.message {
+  width: 360px;
+}
+
+
+/* -----Form-card-------------- */
 
 .form-card{
   display: flex;
@@ -66,22 +86,49 @@ code {
 .form-button{
   background:  #ffadad;
   width: 185px;
-  height: 50px;
+  height: 45px;
   border-radius: 20px;
   border: none;
   display: flex;
   align-items: center;
   margin-left: 20px;
+  margin-top: 5px;
 }
 
-.input-text{
-  width: 360px;
-  height: 100px;
-  align-self: center;
+.very-liked {
+  background:#DC143C;
 }
 
-.message {
-  width: 360px;
+.liked {
+  background: #ffadad;
 }
+
+.unliked {
+  background: #c9c0bb;
+}
+
+.heart-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.heart-button:hover{
+  cursor: pointer;
+}
+
+ .heart-container{
+   display: flex;
+
+
+  /* border: none; */
+
+ }
+
 
 
