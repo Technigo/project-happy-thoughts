@@ -43,6 +43,7 @@ export const ThoughtsInput = () => {
                     <textarea
                         className="text-area"
                         rows="3"
+                        placeholder="Write a happy thought!"
                         onChange= {event => setThought(event.target.value)}
                         >
                     </textarea>

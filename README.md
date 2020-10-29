@@ -1,13 +1,22 @@
-# Happy Thoughts
+# Happy Thoughts 💌
+This week's project was to build a twitter like app called "Happy Thoughts" where you can see other people's happy thoughts, post your own and give a ❤️ to existing ones. 
+We used the Happy Thoughts API 💌 for this and the main goals of this project was to learn about a React⚛️ component's lifecycle, how to react to changes in state/components using the useEffect hook, as well as, how top POST data into the API.
 
-Replace this readme with your own information about your project.
+## Planning & What I learned 🧩
+- My project consists of an App component that acts as the main parent component. 
+- I have a Thoughts List component that shows all the messages posted by fetching the data from the API. 
+- I then have a thought card component that that is mounted in the Thought list component and gets the data through props and a map() since thge data from the API is an array. In this component I also implement a "heart" functionality, where ther user is able to leave a  heart to a specific message, this is done by having a function that handles the like function and adds a heart to a message by it's id. 
+- Then I build the Thought Input component that does a distinct fetch POST request and we're able to add a new thought to the API. Once this happens, the page reloads so it's updated with the most recent thoughts and these are sorted to show the most recent ones at the top. 
+- In this component I also implemented some validation, the button is disabled until the user reaches a certain amount of characters and the max length of message can't be greater than 140 characters. To make the user aware of the message length I also implemented a characters counter.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Tech ⚡️
+- JSX
+- React
+- Javascript
+- HTML
+- CSS
 
-## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## View it live 🔴
 
-## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happythoughts-sofia.netlify.app/
