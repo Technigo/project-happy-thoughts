@@ -25,17 +25,18 @@ export const HappyForm = () => {
 	return (
     <article className='form-wrapper'>
 		<form onSubmit={handleSubmit}>
-				<h1>What's making you happy right now?</h1>
+				<h1 tabIndex='0'>What's making you happy right now?</h1>
 				<textarea
-        className="post-message"
-          rows="4"
+        className='post-message'
+          rows='4'
           value={message}
 					onChange={event => setMessage(event.target.value)}
+					aria-label='Type a message no shorter than 5 nor longer than 140 characters'
 				/>
-			<div className="post-message-wrapper">
+			<div className='post-message-wrapper'>
 				<button
-          className="submit-button"
-					type="submit"
+					className='submit-button'
+					type='submit'
 					disabled={message.length <= 5 || message.length > 140 ? true : false}
           >
             <img
@@ -50,9 +51,9 @@ export const HappyForm = () => {
           alt='Heart'>
           </img>
           </button>
-          <p className='submit-length'>{message.length} /140 </p>
+          <p tabIndex='0' className='submit-length'>{message.length} out of 140 characters </p>
 			</div>
 		</form>
     </article>
-	);
-};
+	)
+}

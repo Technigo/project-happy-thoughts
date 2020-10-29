@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 import img from './media/pixel_heart.png'
 import './LikedMessage.css'
@@ -20,6 +20,7 @@ export const LikedMessage = ({ hearts, id }) => {
       className={hearts > 0 ? 'liked' : 'not-liked'}
 				type='button'
         onClick={handleLikes}
+        aria-label="like button"
         >
         <img 
         className='heart-like' 
@@ -28,7 +29,7 @@ export const LikedMessage = ({ hearts, id }) => {
         </img>
       </button>
       <span>
-      <p className='times-liked'>x {likes}</p>
+      <p tabIndex='0' className='times-liked'>x {likes}</p>
       </span>
       </div>
   )

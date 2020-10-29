@@ -26,14 +26,14 @@ export const MessageList = () => {
     <section className='message-wrapper'>
       {messages.map((message) => {
         return (
-          <article className="message" key={message._id}>
-            <h3>{message.message}</h3>
+          <article className='message' key={message._id}>
+            <h2 tabIndex='0'>{message.message}</h2>
               <div className='heart-time'>
               < LikedMessage 
               hearts={message.hearts} 
               id={message._id} />
               <span className='span-time'>
-              <p className="time">{moment(message.createdAt).fromNow()}</p>
+              <p tabIndex='0' className='time'>{moment(message.createdAt).fromNow()}</p>
               </span>
               </div>
           </article>
