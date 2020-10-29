@@ -25,6 +25,7 @@ export const LikeMessage = ({ onMessageLiked, id, hearts }) => {
     return (
         <div className="heart">
             <button
+            className="heart-button"
             onClick={handleClick}
         >
             <span role="img" aria-label="Red heart"> &#10084;&#65039;</span>
