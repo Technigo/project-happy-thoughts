@@ -26,13 +26,13 @@ export const ThoughtsList = () => {
         {thoughts.map((happythought) => {
             return  (
             <article className='happy-thought' key={happythought._id}> 
-            {happythought.message}
-            <span className='happy-thought--time'>
-            {moment(happythought.createdAt).fromNow()}
-            </span>
+                {happythought.message}
+                <span className='happy-thought__time'>
+                {moment(happythought.createdAt).fromNow()}
+                </span>
             </article>
             );
         })}
      </section>
-    )
-}
+    );
+};
