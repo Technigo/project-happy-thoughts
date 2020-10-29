@@ -12,6 +12,7 @@
   width: 500px;
   padding: 20px;
   margin-bottom: 40px;
+  word-wrap: break-word;
 }
 
 .ul-container {

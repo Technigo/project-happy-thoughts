@@ -10,7 +10,7 @@ const ThoughtsList = () => {
   useEffect(() => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
-      // .then(json => console.log(json));
+      // .then(json => console.log(json))
       .then(json => setThoughts(json));
 
   }, [])
@@ -19,9 +19,8 @@ const ThoughtsList = () => {
     <div className="thoughts-list-container">
       <ul>
         {thoughts.map(thought => (
-          <div className="thought-container">
-            <li key={thought._id}>{thought.message}
-            </li>
+          <div className="thought-container" key={thought._id}>
+            <li>{thought.message}</li>
             <button>a heart!</button>
           </div>
         ))}
