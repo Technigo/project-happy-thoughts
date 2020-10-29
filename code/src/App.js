@@ -1,11 +1,13 @@
 import React from 'react'
-import MessageList from './Component/MessageList';
+import MainForm from './Component/MainForm';
+import Header from './Component/Header'
 
 
 export const App = () => {
   return (
     <div>
-      <MessageList />
+      <Header />
+      <MainForm />
     </div>
   )
 }

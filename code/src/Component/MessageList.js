@@ -1,36 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import moment from 'moment';
+import LikeButton from './LikeButton';
 
-const MessageList = () => {
-  const MESSAGE_URL="https://wk11livesession.herokuapp.com/messages"
-  const [messages, setMessages] = useState([]);
-
-  useEffect(() => {
-    fetch(MESSAGE_URL)
-    .then((res) => {
-     return res.json();
-    })
-     .then((data) => {
-     console.log(data);
-     data.reverse();
-     const filterMessages = data.filter((message) => message.text);
-     const limitedMessages = filterMessages.slice(0, 10);
-     
-     setMessages(limitedMessages);
-    });
-  }, []);
-
+const MessageList = ({ messages }) => {
   return (
     <div>
       {messages.map((message) => {
         return (
-          <p className="message" key={message._id}>
-            {message.text}
-            <span className="message-time">
-              {moment(message.created).fromNow()}
-            </span>
-          </p>
-        );
+          <div className="message-box container" key={message._id}>
+            <p className="message">
+              {message.message}
+            </p>
+            <div className="message-second-row">
+              <LikeButton
+                message={message}
+              />
+              <span className="second-row-elements">
+                {moment(message.created).fromNow()}
+              </span>
+              </div>
+            </div>
+         );
       })}
     </div>
    );
