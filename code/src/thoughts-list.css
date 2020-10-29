@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+.thoughts-list-container {
+  font-family: 'Inconsolata', monospace;
+  border: 1px solid orange;
+  display: flex;
+  justify-content: center;
+}
+
+.thought-container {
+  border: 3px solid #EFEFEF;
+  background-color: #FFFFFF;
+  width: 500px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.ul-container {
+  border: 1px solid blue;
+}
+
+li {
+  list-style-type: none;
+}
