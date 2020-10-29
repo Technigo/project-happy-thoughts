@@ -17,6 +17,14 @@ We also learned about how to pass data from the server to the main parent compon
 4. Styled the page as closely as possible to the requested style including adding conditional statements for the heart button. Depending on how many likes it get's the bakground colour of the button will be different.
 6. Working with validation on the form and disabling the button if the amount of letters the user has inputted is below or above a certain amount. Otherwise it will be enabled and the user will be able to sumit their message.  
 
+# What tools I used 🛠️
+1. NPM/Node.js
+2. The React starter App that came included in this project repo
+3. React, useState, useEffect and moment dependancies
+4. CSS
+5. Very little HTML
+6. Googaling, Technigo videos and lectures and help from my team.
+
 # View it live ❤
 https://silly-wing-fdef06.netlify.app/  
 
