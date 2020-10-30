@@ -1,19 +1,33 @@
-# Technigo React Starter App
+# Happy Thoughts
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+This project was made during the Technigo Bootcamp.
+The app is similar to Twitter but with only happy thougths! 
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+The project was made using React and the main goal was to practice fetcing data from the Happy thoughts API and using both useState and useEffect React Hooks.
 
-## Usage
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+## The problem
 
-Alternatively, if you don't want a new git repo on your account;
+I started with a mobile first approach and built a React skelaton. My app contains a  main Component, a HappyForm component where you can post new messages and a HappyThoughtList component where i display the older messages and also where you can like other peoples messages.  
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+I've used React useEffect to control the API and to avoid an infinite loop. 
+
+I have disabled the send button on the Happy form when the text input does not fulfill the requirements. 
+
+The app is also responsive. 
+
+
+## TECH 
+- REACT
+- REACT Hooks 
+- API 
+- JSX 
+- Javascript
+- CSS
+- HTML 
+
+
+## View it live
+
+Here you can see the finished result: 
+https://happy-booth-d6f66f.netlify.app/
