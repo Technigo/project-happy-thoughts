@@ -1,13 +1,31 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This project was made during the Technigo Bootcamp.
+The app is similar to Twitter but with only happy thougths! 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The project was made using React and the main goal was to practice fetcing data from the Happy thoughts API and using both useState and useEffect React Hooks.
+
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with a mobile first approach and built a React skelaton. My app contains a  main Component, a HappyForm component where you can post new messages and a HappyThoughtList where i display the older messages and also where you can like other peoples messages.  
+
+I've used React useEffect to control the API and to avoid an infinite loop. 
+
+I have disabled the send button on the Happy form when the text input does not fulfill the requirements. 
+
+
+
+## TECH 
+- REACT
+- REACT Hooks 
+- API 
+- JSX 
+- Javascript
+- CSS
+- HTML 
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Here you can see the finished result: 
