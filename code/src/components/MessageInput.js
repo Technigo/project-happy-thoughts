@@ -15,8 +15,7 @@ export const MessageInput = () => {
             }
         ).then(() => {
             window.location.reload();
-            // setMessage("")
-            // props.onFormSubmit(message)
+
         })
             .catch(err => console.log("error:, err"))
     }
@@ -25,13 +24,13 @@ export const MessageInput = () => {
         <section className="cards-container" >
             <form onSubmit={handleSubmit}>
                 <div className="form-card">
-                    <h1>Send some love<span role="img" aria-label="Red heart emoji"> 💖</span></h1>
+                    <h1 className="love" tabIndex="0">Send some love<span role="img" aria-label="Red heart emoji"> 💖</span></h1>
                     <textarea
                         rows="4"
                         className="input-text"
-                        placeholder="Type your happy-message!"
-                        onChange={event => setMessage(event.target.value)}></textarea>
-                   
+                        placeholder="Type your happy-message! (6-140 caharacters)"
+                        onChange={event => setMessage(event.target.value)}>
+                    </textarea>
                     <button
                         type="submit"
                         className="form-button"

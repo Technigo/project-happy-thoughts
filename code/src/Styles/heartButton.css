@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+.nrOfLikes{
+    color: #D3D3D3;
+  }
+  
+  .very-liked {
+    background:#DC143C;
+  }
+  
+  .liked {
+    background: #ffadad;
+  }
+  
+  .unliked {
+    background: #c9c0bb;
+  }
+  
+  .heart-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+  }
+  
+  .heart-button:hover{
+    cursor: pointer;
+  }
+  
+   .heart-container{
+     display: flex;
+     align-items: center;
+  
+   }
