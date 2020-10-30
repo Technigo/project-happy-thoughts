@@ -8,6 +8,8 @@ code {
     monospace;
 }
 
+/*Header*/
+
 header {
   background-color:#FFADAD;
   text-align: center;
@@ -19,6 +21,8 @@ header {
   font-size: 20px;
 }
 
+/*Main part of the page with all the thoughts*/
+
 .thought-section {
   display: flex;
   flex-direction: column;
@@ -26,6 +30,8 @@ header {
   width: 100%;
   box-sizing: border-box;
 }
+
+/*Input part to send a new thought*/
 
 .form-box {
   box-sizing: border-box;

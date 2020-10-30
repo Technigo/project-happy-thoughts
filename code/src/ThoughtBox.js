@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import moment from "moment"
+import React from "react";
+import moment from "moment";
 
 export const ThoughtBox = ({thought, getMessages}) => {
 
@@ -14,8 +14,8 @@ export const ThoughtBox = ({thought, getMessages}) => {
                 "Content-Type": "application/json"
             },
         })
-        .then(() => getMessages())
-    }
+        .then(() => getMessages());
+    };
 
     return (
             <div className="message-box">
@@ -38,5 +38,5 @@ export const ThoughtBox = ({thought, getMessages}) => {
                     <p>{moment(thought.createdAt).fromNow()}</p>
                 </div>
             </div>
-    )
-}
+    );
+};

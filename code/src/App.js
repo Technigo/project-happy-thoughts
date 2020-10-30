@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {Thoughts} from "./Thoughts";
 import {Header} from "Header";
@@ -12,4 +12,4 @@ export const App = () => {
       <Footer />
     </>
   );
-}
+};

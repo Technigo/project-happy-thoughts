@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
 import {ThoughtForm} from "./ThoughtForm";
 import {ThoughtBox} from "./ThoughtBox";
@@ -10,14 +10,14 @@ export const Thoughts = () => {
     //will execute the getMessages-function when Thoughts-component is mounted
     useEffect(() => {
         getMessages();
-    }, [])
+    }, []);
 
     //will fetch an array with messages from the API and update the thought-state with this data
     const getMessages = () => {
         fetch(THOUGHTS_URL)
         .then(res => res.json())
         .then(json => setThoughts(json));
-    }
+    };
 
     //will send a new message to the API and get the latest data from the APi again
     const postMessage = myThought => {
@@ -28,22 +28,22 @@ export const Thoughts = () => {
             },
             body: JSON.stringify({message: myThought})
         })
-        .then(() => getMessages())
-    }
+        .then(() => getMessages());
+    };
 
 
     return (
         <section className="thought-section">
             <ThoughtForm 
                 onMyThoughtChange={postMessage}
-                />    
+            />    
             {thoughts.map(thought => ( //maps through the thoughts-array and renders a box for each one
                 <ThoughtBox 
                     key={thought._id} 
                     thought={thought} 
                     getMessages={getMessages}
-                    />
-            ))}    
+                />
+            ))};    
         </section>
-    )
-}
+    );
+};
