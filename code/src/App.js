@@ -34,7 +34,8 @@ export const App = () => {
       <ThoughtsInput onFormSubmit={onFormSubmit} />
       {thoughts.map((thought) => (
         <ThoughtsFeed
-          id={thought._id}
+          key={thought._id}
+          heartId={thought._id}
           onLiked={onLiked}
           heart={thought.hearts}
           createdAt={thought.createdAt}
