@@ -19,28 +19,52 @@ const MessageList = ({ messageList, onLikeChange }) => {
   return (
     <>
       {messageList.map(message => (
-        <article className="App__item" key={message._id}>
+        <article className="Article" key={message._id}>
           {console.log(message._id)}
           {console.log(message.hearts)}
           <p className="Article__text">{message.message}</p>
           <Button
             type="button"
-            className="Button Button--round"
+            className={
+              message.hearts === 0
+                ? 'Button Button__round Button__round--gray'
+                : message.hearts > 5
+                ? 'Button Button__round Button__round--darkpink'
+                : 'Button Button__round Button__round--pink'
+            }
             onClick={() => handleClick(message._id)}
             text={
-              <span role="img" aria-label="Heart">
-                {'❤️'}
-              </span>
+              <img
+                className={
+                  message.hearts < 6
+                    ? 'Button__icon'
+                    : 'Button__icon Button__icon--pulse'
+                }
+                src="./assets/heart.svg"
+                alt="heart icon"
+              />
             }
+            // <span
+            //   className={message.hearts > 5 ? 'Article__span' : ''}
+            //   role="img"
+            //   aria-label="Heart"
+            // >
+            //   {'❤️'}
+            // </span>
           />
           <div>
-            <p>x{message.hearts}</p>
-            <p>
-              x {!localStorage[message._id] ? 0 : localStorage[message._id]}{' '}
-              your likes
+            <p className="Article__text--likes">x {message.hearts}</p>
+            <p className="Article__text--likes">
+              {!localStorage[message._id]
+                ? ''
+                : localStorage[message._id] < 2
+                ? `x ${localStorage[message._id]} your like`
+                : `x ${localStorage[message._id]} your likes`}
             </p>
           </div>
-          <p>{moment(message.createdAt).fromNow()}</p>
+          <p className="Article__text--time">
+            {moment(message.createdAt).fromNow()}
+          </p>
         </article>
       ))}
     </>
