@@ -29,13 +29,15 @@ const PostInput = ({ onMessageChange }) => {
 				type="submit"
 				text={
 					<p>
-						<span className="heart-post" role="img" aria-label="Heart">
-							{'❤️ '}
-						</span>
+						{/* <span className="heart-post" role="img" aria-label="Heart"> */}
+						<img src="./assets/heart.svg" alt="heart icon" />
+						{/* {'❤️ '} */}
+						{/* </span> */}
 						Send happy thought
-						<span className="heart-post" role="img" aria-label="Heart">
-							{' ❤️'}
-						</span>
+						{/* <span className="heart-post" role="img" aria-label="Heart"> */}
+						<img src="./assets/heart.svg" alt="heart icon" />
+						{/* {' ❤️'} */}
+						{/* </span> */}
 					</p>
 				}
 				disabled={newPost.length < 6 || newPost.length > 140 ? true : false}

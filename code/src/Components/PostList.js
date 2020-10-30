@@ -34,12 +34,12 @@ const PostList = ({ postList, onLikeChange }) => {
 								? 'liked'
 								: 'notLiked'
 						}
-						text={
-							<span className="heart-like" role="img" aria-label="Heart">
-								<img src="./assets/heart.svg" alt="heart icon" />
-								{/* {'❤️'} */}
-							</span>
-						}
+						text=//{
+						// <span className="heart-like" role="img" aria-label="Heart">
+						{<img src="./assets/heart.svg" alt="heart icon" />}
+						//{/* {'❤️'} */}
+						// {/* </span> */}
+						//}
 					/>
 					<div className="post-text-likes">
 						<p className="post-total-likes">x {post.hearts}</p>
@@ -48,7 +48,9 @@ const PostList = ({ postList, onLikeChange }) => {
 						</p>
 					</div>
 
-					<p className="post-text-posted">{moment(post.createdAt).fromNow()}</p>
+					<time className="post-text-posted">
+						{moment(post.createdAt).fromNow()}
+					</time>
 				</article>
 			))}
 		</>

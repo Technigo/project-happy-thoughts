@@ -53,13 +53,32 @@ textarea {
 	border: none;
 	border-radius: 25px;
 	background: #ffadad;
+	/* display: flex;
+	justify-content: center; */
+}
+
+.button-send-post p {
 	display: flex;
-	justify-content: center;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
 }
 
 .heart-post {
-	font-family: ui-rounded;
+	display: flex;
 }
+
+.heart-post img {
+	height: 20px;
+}
+
+.button-send-post img {
+	height: 20px;
+}
+
+/* .heart-post {
+	font-family: ui-rounded;
+} */
 
 .post-message-length {
 	text-align: end;
@@ -109,7 +128,9 @@ textarea {
 }
 
 /*heart like button*/
-img {
+.notLiked img,
+.liked img,
+.superLiked img {
 	position: relative;
 	height: 20px;
 	width: 20px;
