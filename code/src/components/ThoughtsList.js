@@ -6,12 +6,6 @@ import "./thoughts-list.css";
 
 const ThoughtsList = ({ thoughtsArray }) => {
 
-  // const [likeClicked, setLikeClicked] = useState(0);
-
-  // const likedThought = () => {
-
-  // };
-
   return (
     <div className="thoughts-list-container">
       <ul>
@@ -24,14 +18,13 @@ const ThoughtsList = ({ thoughtsArray }) => {
             </li>
             <button>
               <span aria-label="heart emoji" role="img">&#10084;&#65039;</span>
-            </button>
+            </button> x {thought.hearts}
           </div>
         ))
         }
       </ul >
     </div >
   )
-
 };
 
 export default ThoughtsList;

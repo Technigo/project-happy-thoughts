@@ -32,7 +32,6 @@ const ThoughtInput = ({ onNewThought }) => {
       </input>
     </form>
   )
-
 };
 
 export default ThoughtInput;

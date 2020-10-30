@@ -6,7 +6,7 @@ import { THOUGHTS_URL } from "./urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  // const [input, setInput] = useState("");
+  const [hearts, setHearts] = useState(0);
 
   //perform useEffect and fetch() after mounting
   useEffect(() => {
@@ -31,6 +31,12 @@ export const App = () => {
       //our value has to be in appropriate type -> JSON -> to be recognised by the backend server
       body: JSON.stringify({ message: newThought })
     }).then(() => fetchThoughts());
+  };
+
+  const fetchHearts = () => {
+    fetch(THOUGHTS_URL)
+      .then(res => res.json())
+      .then(data => setHearts(data));
   };
 
   return (
