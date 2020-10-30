@@ -22,7 +22,7 @@ export const LikedMessage = ({ hearts, id }) => {
         onClick={handleLikes}
         aria-label="like button"
         >
-          <span>
+          <span className='heart-image'>
         <img 
         className='heart-like' 
         src={img} 
