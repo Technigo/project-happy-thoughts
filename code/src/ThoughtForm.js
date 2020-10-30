@@ -1,12 +1,25 @@
 import React, {useState} from "react";
+import {THOUGHTS_URL} from "./urls";
 
-export const ThoughtForm = ({onMyThoughtChange}) => {
+export const ThoughtForm = ({getMessages}) => {
     const [myThought, setMyThought] = useState("");
 
+    //will send a new message to the API and get the latest data from the APi again
+    const postMessage = myThought => {
+        fetch(THOUGHTS_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({message: myThought})
+        })
+        .then(() => getMessages());
+    };
+    
     const handleFormSubmit = (event) => {
         event.preventDefault();
         setMyThought("");
-        onMyThoughtChange(myThought);
+        postMessage(myThought);
     };
 
     return (

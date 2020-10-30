@@ -19,23 +19,10 @@ export const Thoughts = () => {
         .then(json => setThoughts(json));
     };
 
-    //will send a new message to the API and get the latest data from the APi again
-    const postMessage = myThought => {
-        fetch(THOUGHTS_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({message: myThought})
-        })
-        .then(() => getMessages());
-    };
-
-
     return (
         <section className="thought-section">
             <ThoughtForm 
-                onMyThoughtChange={postMessage}
+                getMessages={getMessages}
             />    
             {thoughts.map(thought => ( //maps through the thoughts-array and renders a box for each one
                 <ThoughtBox 
@@ -43,7 +30,7 @@ export const Thoughts = () => {
                     thought={thought} 
                     getMessages={getMessages}
                 />
-            ))};    
+            ))}    
         </section>
     );
 };
