@@ -53,7 +53,7 @@ button:hover {
 }
 
 
-.thought-date {
+.thought-details {
   color: #d0d0d0;
   font-size: 12px;
   margin: 0;
@@ -74,16 +74,16 @@ button:hover {
 }
 
 .like-button {
-  width: 35px;
-  height: 35px;
-  border: none;
-  border-radius: 50%;
-  background-color: #FFADAD;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background-color: #FFADAD;
   font-size: 11px;
   cursor: pointer;
 }
@@ -95,17 +95,17 @@ button:hover {
 /*New Thought*/
 
 .new-thought {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 15px;
   width: 350px;
   height: auto;
   background-color: #F2F0F0;
   border: 1px solid black;
-  box-shadow: 5px 5px black;
-  margin: 20px;
-  padding: 15px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  box-shadow: 5px 5px black;  
 }
 
 .new-thought p {
@@ -125,6 +125,7 @@ button:hover {
 textarea {
   width: 100%;
   margin: 10px 0 5px 0;
+  box-sizing: border-box;
 }
 
 .warning {

@@ -2,11 +2,11 @@ import React from 'react'
 
 export const NewThought = ({newThought, setNewThought, handleSubmit, errorMessage}) => {
 
-    const countCharacters = (num) => {
-        const characters = num - newThought.length
+    const countCharacters = (maxNumber) => {
+        const characters = maxNumber - newThought.length
         const characterCount = document.getElementById("character-count");
 
-        if (newThought.length > num) {
+        if (newThought.length > maxNumber) {
             characterCount.classList.add("warning")
         }
         return characters
@@ -17,9 +17,9 @@ export const NewThought = ({newThought, setNewThought, handleSubmit, errorMessag
             <label>
                 <p>What's making you happy right now?</p>
                 <textarea 
-                placeholder="Happy thoughts"
-                onChange={event => setNewThought(event.target.value)}
-                value={newThought}
+                    placeholder="Happy thoughts"
+                    onChange={event => setNewThought(event.target.value)}
+                    value={newThought}
                 ></textarea>
             </label>
             <div className="details">
