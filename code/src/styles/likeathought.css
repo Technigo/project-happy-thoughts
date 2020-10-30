@@ -4,10 +4,8 @@
   padding: 8px;
   margin-right: 6px;
   font-size: 14px;
-  color: #dbdbdb;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  width: 35px;
+  height: 35px;
 }
 
 .liked {
