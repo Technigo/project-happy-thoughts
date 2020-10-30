@@ -23,7 +23,6 @@ code {
 
 .header {
 	height: 49px;
-	/* border: 1px solid black; */
 	width: 100%;
 	position: sticky;
 	top: 0;
@@ -38,6 +37,7 @@ code {
 	justify-content: flex-end;
 	align-items: center;
 }
+
 .form {
 	background-color: lightgray;
 	padding: 20px;
@@ -110,11 +110,9 @@ textarea {
 
 @keyframes grow {
 	from {
-		/* opacity: 0; */
 		transform: scale(0.8);
 	}
 	to {
-		/* opacity: 1; */
 		transform: scale(1);
 	}
 }
@@ -125,6 +123,7 @@ textarea {
 	align-items: center;
 	justify-content: space-between;
 }
+
 .message {
 	font-weight: bold;
 	font-size: 14px;
@@ -167,13 +166,15 @@ textarea {
 }
 .like-button,
 .submit-button,
-.no-likes-button {
+.no-likes-button,
+.mega-like-button {
 	cursor: pointer;
 }
 
 .disabled-button {
 	cursor: initial;
 }
+
 .like-counter {
 	display: flex;
 	align-items: center;
@@ -199,15 +200,6 @@ textarea {
 	}
 	100% {
 		transform: rotate(360deg);
-	}
-}
-
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
 	}
 }
 
