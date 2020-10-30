@@ -45,7 +45,7 @@ button:hover {
   box-sizing: border-box;
   margin: 20px;
   padding: 15px;
-  width: 350px;
+  width: 300px;
   min-height: 112px;
   background-color: white;
   border: 1px solid black;
@@ -101,7 +101,7 @@ button:hover {
   box-sizing: border-box;
   margin: 20px;
   padding: 15px;
-  width: 350px;
+  width: 300px;
   height: auto;
   background-color: #F2F0F0;
   border: 1px solid black;
@@ -126,6 +126,7 @@ textarea {
   width: 100%;
   margin: 10px 0 5px 0;
   box-sizing: border-box;
+  resize: vertical;
 }
 
 .warning {
@@ -174,4 +175,37 @@ textarea {
   0% {background-color: #ffd5d5;}
   50% {background-color: #FFADAD;}
   100% {background-color: #ffd5d5;}
+}
+
+@media screen and (min-width: 550px) {
+  .new-thought {
+    width: 500px;
+    min-height: 150px;
+  }
+
+  .thought-container {
+    width: 500px;
+    min-height: 150px;
+  }
+
+  .thought-details {
+    font-size: 15px;
+  }
+
+  .thought-text {
+    font-size: 16px;
+  }
+
+  .new-thought p {
+    font-size: 15px;
+  }
+
+  .submit-thought {
+    width: 240px;
+  }
+
+  textarea {
+    min-height: 75px;
+    font-size: 15px;
+  }
 }

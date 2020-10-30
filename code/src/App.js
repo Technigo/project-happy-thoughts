@@ -57,7 +57,7 @@ export const App = () => {
     if (errorKind === 'required') {
     setErrorMessage('Please write your thought')
     } else if (errorKind === 'minlength') {
-      setErrorMessage('Your thought needs at least 5 character')
+      setErrorMessage('Please write min 5 characters')
     } else if (errorKind === 'maxlength') {
       setErrorMessage('Oops a bit to long')
     } else {
