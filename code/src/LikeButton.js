@@ -30,13 +30,11 @@ return (
         type='submit'
         onClick={handleClick}
       >
-        <span
+        <p
           className='heart'
-          role='img'
-          aria-label='heart'
         >
           ❤️
-        </span>
+        </p>
       </button> 
       </a>
       <p
