@@ -38,7 +38,13 @@ export const ThoughtInput = ({ onPostThought }) => {
             type='submit'
             disabled={newThought.length < 5 || newThought.length > 140 ? true : false}
           >
-            <span role='img' aria-label='heart'>❤️</span>Send Happy Thought<span role='img' aria-label='heart'>❤️</span>
+            <span role='img' aria-label='heart'>
+              ❤️
+            </span>
+            Send Happy Thought
+            <span role='img' aria-label='heart'>
+              ❤️
+            </span>
           </button>
           <p className='text-length'>{newThought.length} / 140</p>
         </div>
