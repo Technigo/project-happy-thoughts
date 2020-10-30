@@ -82,13 +82,15 @@ export const App = () => {
     <main>
       <Header />
       <MessageForm onMessageChange={postSingleMessage} />
-      {messages.map((message) => (
-        <MessageList
-          messageDetails={message}
-          // eslint-disable-next-line no-underscore-dangle
-          key={message._id}
-          onHeartsChange={postHearts} />
-      ))}
+      <div className="container-messages">
+        {messages.map((message) => (
+          <MessageList
+            messageDetails={message}
+            // eslint-disable-next-line no-underscore-dangle
+            key={message._id}
+            onHeartsChange={postHearts} />
+        ))}
+      </div>
     </main>
   );
 };
