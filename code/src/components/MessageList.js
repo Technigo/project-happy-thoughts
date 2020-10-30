@@ -5,6 +5,8 @@
 import React from 'react'
 import moment from 'moment';
 
+import './messageList.css';
+
 export const MessageList = ({ messageDetails, onHeartsChange }) => {
 
   const handleClick = () => {

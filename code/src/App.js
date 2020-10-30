@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import { MessageList } from './MessageList';
-import { MessageForm } from './MessageForm';
-import { THOUGHTS_URL } from './urls';
+import { Header } from './components/Header';
+import { MessageList } from './components/MessageList';
+import { MessageForm } from './components/MessageForm';
+import { THOUGHTS_URL } from './components/urls';
 
 export const App = () => {
   // Stores message-input and changes the state of messages.
@@ -78,7 +79,8 @@ export const App = () => {
   // App.js passes data to MessageList and MessageList displays the new messages and
   // the number of likes.
   return (
-    <div>
+    <main>
+      <Header />
       <MessageForm onMessageChange={postSingleMessage} />
       {messages.map((message) => (
         <MessageList
@@ -87,6 +89,6 @@ export const App = () => {
           key={message._id}
           onHeartsChange={postHearts} />
       ))}
-    </div>
+    </main>
   );
 };

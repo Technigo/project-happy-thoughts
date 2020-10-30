@@ -1,0 +1,14 @@
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .form-footer-message {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+  }

@@ -1,4 +1,4 @@
-#root {
+main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -62,20 +62,7 @@
   box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.24); 
 }
 
-.form-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 15px;
-  width: 100%;
-}
 
-.form-footer-message {
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-  width: 100%;
-}
 
 .happy-message {
   display: flex;
@@ -134,3 +121,4 @@ button.not-liked {
   opacity: .5px;
   justify-self: self-start;
 }
+
