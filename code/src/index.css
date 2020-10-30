@@ -70,6 +70,7 @@ h1 {
   margin-right: 30px;
 }
 
+
 .heart-button {
   border: none;
   width: 40px;
@@ -112,5 +113,23 @@ footer img {
   width: 50px;
 }
 
+/* MEDIA QUERY */
 
+@media (max-width:667px) {
+  
+  .header {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  body {
+    font-size: 13px;
+
+    }
+
+
+}
 
