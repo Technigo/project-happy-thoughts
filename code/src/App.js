@@ -6,17 +6,20 @@ import { THOUGHTS_URL } from './urls';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  //const [likes, setLikes] = useState(0);
 
   useEffect(() => {
     fetchThoughts();
+    setInterval(fetchThoughts, 5000);
   }, []);
 
   const fetchThoughts = () => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
+      
       .then(data => setThoughts(data));
+      
   };
+  console.log(thoughts)
 
   const reachThoughtInput = (newThought) => {
     fetch(THOUGHTS_URL, { 
@@ -27,7 +30,6 @@ export const App = () => {
   };
 
   const onLiked = (thoughtId) => {
-
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
         thought.hearts += 1
@@ -44,12 +46,13 @@ export const App = () => {
         <ThoughtsList 
           key={thought._id} 
           thoughtsList={thoughts} 
+          message={thought.message}
           onLiked={onLiked}
           hearts={thought.hearts} 
           _id={thought._id} 
+          createdAt={thought.createdAt}
         />
       ))}
-      
     </main>
   );
 };

@@ -3,19 +3,11 @@ import React, { useState } from 'react';
 export const ThoughtsForm = ( { onThoughtChange }) => {
   const [newThought, setNewThought] = useState('');
 
-  const characterCount = newThought.length;
-
-  const handleSubmit = event => {
-    //event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     onThoughtChange(newThought);
   };
-
-  /*if (characterCount < 5) {
-    document.getElementsByClassName('character-count').style.color="red";
-  } else {
-    document.getElementsByClassName('character-count').style.color="black";
-  }*/
-
+  
   return (
     <section className="send-thought">
 
@@ -32,7 +24,7 @@ export const ThoughtsForm = ( { onThoughtChange }) => {
         <button 
           className="send-thought-btn" 
           type="submit"
-          disabled={characterCount < 5 || characterCount > 140 ? true : false}
+          disabled={newThought.length < 5 || newThought.length > 140 ? true : false}
         >
           <span className='send-heartemoji' role='img' aria-label='Heart'>
 						    {'❤️' }
@@ -45,11 +37,11 @@ export const ThoughtsForm = ( { onThoughtChange }) => {
 
       <p className="character-count">
         <span className=
-          {characterCount < 5 || characterCount > 140
+          {newThought.length < 5 || newThought.length > 140
           ? "red-length"
           : "black-length"} 
         >
-        {characterCount}
+        {newThought.length}
         </span> / 140
       </p>
     </section>

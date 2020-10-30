@@ -86,8 +86,8 @@ code {
   color: red;
 }
 
-.green-length {
-  color: black;
+.black-length {
+  color: #000000;
 }
 
 .thought-card {
@@ -116,13 +116,13 @@ code {
 .liked-heartemoji {
   padding: 6px;
   border-radius: 50%;
-  background-color: rgb(240, 236, 236);
+  /*background-color: rgb(240, 236, 236);*/
   margin-right: 5px;
   cursor: pointer;
 }
 
 /*.liked-heartemoji:hover {
-  background-color: rgb(15, 2, 2);
+  background-color: rgb(250, 123, 123);
 }*/
 
 .top-of-card {
