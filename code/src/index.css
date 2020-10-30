@@ -56,13 +56,13 @@ code {
 
 .message-text {
   word-wrap: break-word;
+  height: 65px;
 }
 
 .message-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 34px;
 }
 
 .hearts {
@@ -77,4 +77,17 @@ code {
 
 .hearts-count {
   margin-right: auto;
+}
+
+.char-counter {
+  text-align: end;
+}
+
+.message-time {
+  opacity: 0.5;
+  font-size: 11px;
+}
+
+.heart {
+  font-size: 13px;
 }
