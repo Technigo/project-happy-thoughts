@@ -10,7 +10,12 @@ export const HappyThought = ({id, thought, onLiked, heart, createdAt}) => {
         {thought}
       </p>
       <div className="thought-footer">
-        <HappyHeart onLiked={onLiked} thought={thought} heart={heart} messageId={id} />
+        <HappyHeart 
+          onLiked={onLiked} 
+          thought={thought} 
+          heart={heart} 
+          messageId={id} 
+        />
         <p className="text-time">
           {moment(createdAt).fromNow()} 
         </p>

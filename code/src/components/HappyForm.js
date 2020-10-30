@@ -44,14 +44,18 @@ export const HappyForm = ({onFormSubmit}) => {
             onClick={handleSubmit}
             disabled={message.length < 5 || message.length > 140 ? true : false || emptyMessage(message)}
           >
-            <span role="img" aria-label="heart">{"❤️"}</span>
+            <span role="img" aria-label="heart">
+              {"❤️"}
+            </span>
             Send Happy Thought
-            <span role="img" aria-label="heart">{"❤️"}</span>
+            <span role="img" aria-label="heart">
+              {"❤️"}
+            </span>
           </button>
           <p className="text-length">
             <span style={{ color: message.length < 5 || message.length > 140 || emptyMessage(message) ? "#FF0000" : "#228B22"}}>
               {message.length}
-              </span> / 140
+            </span> / 140
           </p>
         </div>
       </form>

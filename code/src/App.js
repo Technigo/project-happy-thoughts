@@ -30,11 +30,16 @@ export const App = () => {
 
   return (
     <main>
-      <h1 class="happy-thoughts-title">Share Happy Thoughts!</h1>
-      <HappyForm onFormSubmit={onFormSubmit} />
+      <h1 className="happy-thoughts-title">
+        Share Happy Thoughts!
+      </h1>
+      <HappyForm 
+        onFormSubmit={onFormSubmit} 
+      />
       <section className="thoughts-section">
         {thoughts.map(thought => (
           <HappyThought 
+            key={thought._id}
             id={thought._id} 
             thought={thought.message} 
             onLiked={onLiked} 

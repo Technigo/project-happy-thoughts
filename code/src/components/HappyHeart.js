@@ -17,9 +17,13 @@ export const HappyHeart = ({onLiked, heart, messageId}) => {
           onClick={handleClick}
           style={{ background: heart > 0 ? "#FFADAD" : "#EAEAEA"}}
         >
-          <span role="img" aria-label="heart">{"❤️"}</span>
+          <span role="img" aria-label="heart">
+            {"❤️"}
+          </span>
         </button>
-        <p className="heart-text">x {heart}</p>
+        <p className="heart-text">
+          x {heart}
+        </p>
       </div>
     )
 }
