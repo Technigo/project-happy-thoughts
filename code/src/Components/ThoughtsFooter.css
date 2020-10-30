@@ -1,0 +1,20 @@
+.footer {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+@media (min-width: 600px) {
+    .footer {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 798px) and (max-width: 929px){
+    .footer {
+        font-size: 16px;
+    }
+}
+  
