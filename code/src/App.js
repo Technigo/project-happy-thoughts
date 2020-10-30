@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { ThoughtsList } from "components/ThoughtsList";
-import { ThoughtForm } from 'components/ThoughtForm';
+import { Footer } from "components/Footer";
 
 export const App = () => {
+  
   return (
-    <>
-      <ThoughtForm />
+    <main className="happy-thoughts-container">
       <ThoughtsList />
-    </>
-  )
-}
+      <Footer />
+    </main>
+  );
+};

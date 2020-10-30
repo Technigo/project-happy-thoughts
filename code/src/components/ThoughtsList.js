@@ -1,38 +1,39 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
-import moment from 'moment';
+import { ThoughtForm } from 'components/ThoughtForm';
+import { Thought } from "components/Thought";
+import { ThoughtsUrl} from 'Urls';
 
 import "styles/thoughtsList.css";
 
-
 export const ThoughtsList = () => {
-    const thoughtsUrl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
-    const [thoughts, setThoughts] = useState ([]);
+    const [thoughts, setThoughts] = useState([]);
 
-    useEffect(() => {
-    fetch(thoughtsUrl)
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-        console.log(data);
-        // Save the data to state
-        setThoughts(data)
-        });
-    }, []);
+  useEffect(() => {
+    fetchThoughts();
+  }, []);
+
+  const fetchThoughts = () => {
+    fetch(ThoughtsUrl)
+      .then(results => results.json())
+      .then(data => setThoughts(data))
+      .catch(error => console.error(error));
+    }
+
+    const newThoughtInput = (newThought) => {
+      fetch(ThoughtsUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({ message: newThought })
+       })
+        .then(() => fetchThoughts())
+        .catch(error => console.error(error));
+    }
 
     return (
-     <section>
-        {thoughts.map((happythought) => {
-            return  (
-            <article className='happy-thought' key={happythought._id}> 
-                {happythought.message}
-                <span className='happy-thought__time'>
-                {moment(happythought.createdAt).fromNow()}
-                </span>
-            </article>
-            );
-        })}
-     </section>
+    <div>
+        <ThoughtForm onThoughtChange={newThoughtInput}/>
+        <Thought happyThoughts={thoughts}/>
+    </div>
     );
 };

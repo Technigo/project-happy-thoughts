@@ -1,0 +1,17 @@
+/* STYLE FOR THE FOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: #000000; 
+    height: 250px;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    line-height: 2.0;
+}
+
+.footer-text {
+    font-family: 'Courier New', Courier, monospace;
+}
