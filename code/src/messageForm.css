@@ -1,3 +1,11 @@
+#root {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7dede;
+}
+
 .happy-form, .message {
   background-color: #f3f1f1;
   border: 2px solid black;
@@ -9,6 +17,7 @@
   padding: 20px;
   word-wrap: break-word;
   margin: 20px;
+  font-family: 'Inconsolata', sans-serif;
 }
 
 .happy-form textarea {
@@ -36,15 +45,33 @@
   border-radius: 25px;
   padding: 10px;
   font-weight: 500;
+  transition: 0.2s all; 
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
 }
 
 .happy-form button:hover {
   cursor: pointer;
 }
 
+.happy-form button:focus {
+  outline:0 !important;
+}
+
+.happy-form button:active {
+  transform: scale(0.98); 
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.24); 
+}
+
 .form-footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.form-footer-message {
+  display: flex;
   align-items: center;
   margin-top: 15px;
   width: 100%;
@@ -65,32 +92,45 @@
   border-radius: 50%;
   border: none;
   background-color:#f3f1f1;
+  margin-right: 10px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  transition: 0.2s all; 
 }
 
 .happy-message button:hover {
   cursor: pointer;
 }
 
+.happy-message button:focus {
+  outline:0 !important;
+}
+
+.happy-message button:active {
+  transform: scale(0.98); 
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.24); 
+}
+
 .message-time {
   font-size: 12px;
   opacity: .5;
-}
-
-.heart-likes {
-  font-size: 12px;
-  opacity: .5;
-  margin-left: 5px;
+  margin-left: auto;
 }
 
 .heart {
   position: absolute;
-  transform: translate(-9px, -11px);
+  transform: translate(-47%, -45%);
 }
 
-.liked {
-  background: orange;
+button.liked {
+  background-color: #ffadad;
 }
 
-.not-liked {
-  background: pink;
+button.not-liked {
+  background-color: #f7dede;
+}
+
+.likes {
+  font-size: 12px;
+  opacity: .5px;
+  justify-self: self-start;
 }

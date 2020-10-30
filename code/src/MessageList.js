@@ -5,48 +5,28 @@
 import React from 'react'
 import moment from 'moment';
 
-export const MessageList = ({ messageList, hearts, _id }) => {
-  
-
-  const onLiked = (messageId) => {
-    const newMessages = messages.map(message => {
-      if (message._id === messageId) {
-        message.hearts += 1
-      }
-      return message
-    })
-    setMessages(newMessages)
-  }
+export const MessageList = ({ messageDetails, onHeartsChange }) => {
 
   const handleClick = () => {
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts/THOUGHT_ID/like", {
-      method: 'POST',
-      body: '',
-      headers: { 'Content-Type': 'application/json' }
-    }).then(() => {onLiked(message._id)})
-  }
-  
+    onHeartsChange(messageDetails._id);
+  };
+
   return (
-    <div className="happy-message">
-      {
-        messageList.map((message) => (
-          <div className="message" key={message.createdAt} >
-            {message.message}
-            <div className="form-footer">
-            <button
-              onClick={handleClick}>
-              <span className="heart" role="img" aria-label="Heart">
-                {"❤️"}
-              </span>
-            </button>
-            <span className="heart-likes">x {hearts}</span>
-            <span className="message-time">
-              {moment(message.createdAt).fromNow()}
+    <div className="happy-message message">
+      <h3>{messageDetails.message}</h3>
+      <div className="form-footer-message">
+          <button
+            onClick={handleClick}
+            className={messageDetails.hearts > 0 ? "liked" : "not-liked"} >
+            <span className="heart" role="img" aria-label="Heart">
+              ❤️
             </span>
-            </div>
-          </div>
-        ))
-      }
-    </div>
+          </button> 
+          <span className="likes">x {messageDetails.hearts}</span>
+        <p className="message-time">
+          {moment(messageDetails.createdAt).fromNow()}
+        </p>
+        </div>
+      </div>
   );
 };
