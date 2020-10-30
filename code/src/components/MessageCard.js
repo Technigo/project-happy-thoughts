@@ -18,17 +18,19 @@ export const MessageCard = ({ _id, createdAt, hearts, message, onLiked }) => {
     <div className="message-card-container" key={_id}>
       <p className="card-message">{message}</p>
       <div className="bottom-card-container">
-        <div className="hearts-container">
+        <div className="smiley-container">
           <button
-            className={`heart-btn ${
-              hearts > 4 ? "super-liked" : hearts > 0 ? "liked" : "not-liked"
+            className={`smiley-btn ${
+              hearts > 10
+                ? "love-liked"
+                : hearts > 4
+                ? "super-liked"
+                : hearts > 0
+                ? "liked"
+                : "not-liked"
             }`}
             onClick={handleClick}
-          >
-            <span role="img" aria-label="hearts">
-              {"🖤 "}
-            </span>
-          </button>
+          ></button>
           <span className="hearts">x {hearts}</span>
         </div>
         <span className="moment">{Moment(createdAt).fromNow()}</span>

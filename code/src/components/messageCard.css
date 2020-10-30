@@ -17,13 +17,9 @@
   margin: 20px 20px;
 }
 
-.heart-btn {
-  margin-right: 10px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  outline: none;
+.smiley-container {
+  display: flex;
+  align-items: center;
 }
 
 .card-message {
@@ -32,19 +28,37 @@
   font-weight: 500;
 }
 
+.smiley-btn {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background: green;
+}
+
+.love-liked {
+  background: url(../assets/love-happy2.svg);
+}
+
+.super-liked {
+  background: url(../assets/super-happy2.svg);
+}
+
+.liked {
+  background: url(../assets/happy-happy2.svg);
+}
+
+.not-liked {
+  background: url(../assets/no-happy2.svg);
+}
+
 .moment {
   font-size: 14px;
   color: #ccc;
 }
 
-.super-liked {
-  background: red;
-}
-
-.liked {
-  background: pink;
-}
-
-.not-liked {
-  background: silver;
-}
+/* .smiley {
+  background: url(../assets/happy-happy2.svg);
+} */

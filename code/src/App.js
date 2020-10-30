@@ -1,26 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import MessageList from "./components/MessageList";
 import MessageInput from "./components/MessageInput";
-// import Loading from "./components/Loading";
+
 import "./app.css";
 
 const App = () => {
   const [messages, setMessages] = useState([]);
-
-  // useEffect(() => {
-  //   setLoading(true);
-  //   fetch(URL)
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((data) => {
-  //       setTimeout(() => {
-  //         setMessages(data);
-  //         setLoading(false);
-  //       }, 3000);
-  //     });
-  // }, []);
 
   return (
     <div className="app-container">
