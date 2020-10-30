@@ -20,6 +20,9 @@
   height: 20px;
   /* margin-top: 5px; */
   margin: 5px 1px 0px 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .times-liked{
