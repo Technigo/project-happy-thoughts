@@ -8,7 +8,7 @@ body {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.7)
+      rgba(0, 0, 0, 0.4)
     ),
     url("./background-image.jpg");
   /*background: url("./background-image.jpg");*/
@@ -59,6 +59,9 @@ code {
   background-color: #ffadad;
   font-weight: 600;
   font-size: 12px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
 
 .send-thought-btn:hover {
@@ -115,7 +118,12 @@ code {
   border-radius: 50%;
   background-color: rgb(240, 236, 236);
   margin-right: 5px;
+  cursor: pointer;
 }
+
+/*.liked-heartemoji:hover {
+  background-color: rgb(15, 2, 2);
+}*/
 
 .top-of-card {
   height: 70%;

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-export const SendThought = ( { onThoughtChange }) => {
+export const ThoughtsForm = ( { onThoughtChange }) => {
   const [newThought, setNewThought] = useState('');
 
   const characterCount = newThought.length;
 
   const handleSubmit = event => {
-    event.preventDefault();
+    //event.preventDefault();
     onThoughtChange(newThought);
   };
 
@@ -18,6 +18,7 @@ export const SendThought = ( { onThoughtChange }) => {
 
   return (
     <section className="send-thought">
+
       <form onSubmit={handleSubmit}>
       <label htmlFor="your-thought">What's making you happy right now?</label>
       <textarea 
@@ -26,10 +27,13 @@ export const SendThought = ( { onThoughtChange }) => {
           onChange={event => setNewThought(event.target.value)}
           placeholder="Type happy thought here..."
           rows="3"
-          cols="33"
         >
         </textarea>
-        <button className="send-thought-btn" type="submit">
+        <button 
+          className="send-thought-btn" 
+          type="submit"
+          disabled={characterCount < 5 || characterCount > 140 ? true : false}
+        >
           <span className='send-heartemoji' role='img' aria-label='Heart'>
 						    {'❤️' }
 	        </span>Send Happy Thought
@@ -37,16 +41,16 @@ export const SendThought = ( { onThoughtChange }) => {
 						    {'❤️' }
 					</span>
         </button>
-        
       </form>
-      <p class="character-count">
+
+      <p className="character-count">
         <span className=
           {characterCount < 5 || characterCount > 140
           ? "red-length"
           : "black-length"} 
         >
         {characterCount}
-        </span>/140
+        </span> / 140
       </p>
     </section>
   )
