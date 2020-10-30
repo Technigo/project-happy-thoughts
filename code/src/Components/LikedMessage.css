@@ -1,7 +1,6 @@
 .heart-image{
-  display: block;
-  font-size: 17px;
-  margin-right: 5px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .liked{
