@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React  from 'react';
 import moment from "moment";
 
 
 export const HappyThought = props => {
-    const { message, hearts, createdAt, _id } = props.thought
+    const { message, _id } = props.thought
 
     const handleClick = () => {
         fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
