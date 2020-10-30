@@ -1,5 +1,5 @@
 .liked{
-  -webkit-appearance: none;
+  -webkit-appearance: button;
   background: rgb(250, 168, 168);
   border-radius: 50%;
   border: none;
@@ -9,7 +9,7 @@
 }
 
 .not-liked{
-  -webkit-appearance: none;
+  -webkit-appearance: button;
   background: rgb(230, 229, 229);
   border-radius: 50%;
   border: none;
