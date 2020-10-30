@@ -22,7 +22,12 @@ export const PostThoughts = () => {
 
     return (
       <form onSubmit={handleSubmit} className="post-contents">
-        <h1 className='happyheader-text' tabIndex='0'>What is making you happy right now?</h1>
+        <h1
+          className='happyheader-text'
+          tabIndex='0'
+        >
+          What is making you happy right now?
+        </h1>
         <textarea
           placeholder='Enter stoke here!'
           value={message}
@@ -34,7 +39,7 @@ export const PostThoughts = () => {
           required
         >
         </textarea>
-        <p className={((message.length < 5 || message.length > 140) ? "text-invalid" : "text-valid")}>
+        <p className={((message.length < 5 || message.length > 140) ? "text-invalid" : "text-valid")} tabIndex='0'>
           {message.length} / 140
         </p>
         <button
@@ -43,7 +48,13 @@ export const PostThoughts = () => {
           onClick={handleSubmit}
           disabled={message.length < 5 || message.length > 140 ? true : false}
         >
-        <span role='img' aria-label='Send stoke here'>Send stoke here!</span>
+        <span
+          role='button'
+          tabIndex='0'
+          aria-label='Send stoke here'
+        >
+          Send stoke here!
+        </span>
         </button>
       </form>
     );

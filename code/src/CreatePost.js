@@ -9,14 +9,24 @@ export const CreatePost = props => {
 
   return (
     <div className="happy-thoughts">
-      <h2 className='thought-message'>{message}</h2>
+      <h2
+        className='thought-message'
+        tabIndex='0'
+      >
+        {message}
+      </h2>
       <div className="bottom-content">
         <LikeButton
           hearts={hearts}
           id={props.thought._id}
           onLiked={props.onLiked}
         /> 
-        <p className="thoughts-time"><Timestamp date={createdAt}/></p>
+        <p
+          className="thoughts-time"
+          tabIndex='0'
+        >
+          <Timestamp date={createdAt}/>
+        </p>
       </div>
     </div>
   );

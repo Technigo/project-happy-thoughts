@@ -13,7 +13,7 @@
   }
   
   .happyheader-text {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     margin: 0 0 5px 0;
     text-transform: uppercase;
@@ -25,6 +25,9 @@
     border: 1px solid grey;
     padding: 5px;
     max-width: 300px;
+    min-width: 300px;
+    min-height: 40px;
+    max-height: 40px;
   }
   
   .submit-button {

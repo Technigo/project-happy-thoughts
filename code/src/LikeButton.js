@@ -29,8 +29,18 @@ return (
       type='submit'
       onClick={handleClick}
     >
-      <span role='img' aria-label='heart'>❤️</span>
+      <span
+        role='img'
+        aria-label='heart'
+      >
+        ❤️
+      </span>
     </button> 
-    <p className='like-text'> x {clicks} (you liked it {localStorage[props.id]} times)</p>
+    <p
+      className='like-text'
+      tabIndex='0'
+    >
+      x {clicks} (you liked it {localStorage[props.id]} times)
+    </p>
   </div>
 )};
