@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import './HappyThought.css';
 
 export const HappyThought = ({
   id,

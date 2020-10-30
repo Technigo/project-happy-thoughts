@@ -1,0 +1,43 @@
+.happy-thought-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  width: 310px;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px black;
+  padding: 0 10px;
+}
+
+.happy-thought-title {
+  flex-basis: 100%;
+}
+
+.happy-thought-wrapper p {
+  color: gray;
+}
+
+.button-heart {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  margin-right: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  background-color: #dedede;
+  transition: 1.2s;
+}
+
+.button-heart:hover {
+  transform: scale(1.2);
+}
+
+/*Media queries*/
+@media only screen and (min-width: 768px) {
+  .happy-thought-wrapper {
+    width: 510px;
+  }
+}

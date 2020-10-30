@@ -1,0 +1,38 @@
+.happy-form-wrapper {
+  border: 1px solid black;
+  width: 310px;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px black;
+  padding: 0 10px;
+  background-color: #dedede;
+}
+
+.happy-form-content {
+  margin-top: 16px;
+}
+
+.happy-form-content textarea {
+  width: 280px;
+  margin: 12px 0;
+}
+
+.button-form {
+  border-radius: 20px;
+  border: none;
+  background-color: lightpink;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  padding: 5px 20px;
+}
+
+/*Media queries*/
+@media only screen and (min-width: 768px) {
+  .happy-form-wrapper {
+    width: 510px;
+  }
+
+  .happy-form-content textarea {
+    width: 480px;
+  }
+}

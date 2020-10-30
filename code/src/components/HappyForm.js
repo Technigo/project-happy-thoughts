@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './HappyForm.css';
 
 export const HappyForm = ({ onMessageSubmit }) => {
   const [message, setMessage] = useState('');
