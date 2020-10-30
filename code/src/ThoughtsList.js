@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import moment from 'moment';
 
 export const ThoughtsList = ( { thoughtsList, onLiked, hearts, _id } ) => {
-
-  const [likes, setLikes] = useState(hearts);
 
   const handleClick = (_id) => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
