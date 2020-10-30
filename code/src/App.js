@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import {Thoughts} from "./Thoughts"
-import {Header} from "Header"
-import {Footer} from "Footer"
+import {Thoughts} from "./Thoughts";
+import {Header} from "Header";
+import {Footer} from "Footer";
 
 export const App = () => {
   return (
@@ -11,5 +11,5 @@ export const App = () => {
       <Thoughts />
       <Footer />
     </>
-  )
+  );
 }
