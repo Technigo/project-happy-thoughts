@@ -19,8 +19,10 @@ export const MessageList = () => {
       })
   }, [])
 
+
   return (
     <>
+      <br></br>
       {messages.map(message => {
         return <Message
           key={message._id}

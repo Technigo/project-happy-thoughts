@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const messageUrl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
@@ -17,8 +17,7 @@ export const MessageInput = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ message: message })
-      }
-    )
+      })
       .then(() => {
         window.location.reload()
       })
@@ -31,8 +30,7 @@ export const MessageInput = () => {
         onChange={event => setMessage(event.target.value)}>
       </input>
       <input
-        type="submit"
-        value="Send">
+        type="submit">
       </input>
     </form>
   )

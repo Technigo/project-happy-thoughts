@@ -1,19 +1,12 @@
 import React from 'react'
 
-// import { Heart } from './Heart.js'
-
 export const Message = ({ id, message, created, likes }) => {
 
-  const handleClick = event => {
-
-    event.preventDefault()
-
+  const handleClick = () => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
       method: 'POST',
-      body: "",
       headers: { 'Content-Type': 'application/json' }
-    })
-      .then(() => likes += 1)
+    }) //fetch URL increases like with one like
       .then(() => {
         window.location.reload()
       })
