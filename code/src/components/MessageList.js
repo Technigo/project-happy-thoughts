@@ -11,7 +11,6 @@ export const MessageList = ({messageList, onLiked}) => {
   const handleSubmit = () => {
     console.log("messageId inside handleSubmit: " + messageId);
     onLiked(messageId);
-    //onLiked("5f9c803469d3ae00171aa29f");
   };
 
   // Render messages using map
@@ -27,9 +26,6 @@ export const MessageList = ({messageList, onLiked}) => {
             <div className="message-info">
               <button 
                 className="heart-button"
-                //onClick={handleSubmit}
-                //onClick={event => handleSubmit(event.target.value)}
-                //onChange={event => setMessageId(event.target.value)}
                 onClick={() => {
                     setMessageId(message._id)
                     handleSubmit()

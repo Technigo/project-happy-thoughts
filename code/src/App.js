@@ -7,29 +7,24 @@ import { MESSAGE_URL } from './urls';
 export const App = () => {
 
   const [messages, setMessages] = useState([]);
-  //const [postedMessage, setPostedMessage] = useState("");
 
   useEffect(() => {
     fetchMessages();
   }, []);
 
   const fetchMessages = () => {
-    //console.log("in fetchMessages");
     fetch(MESSAGE_URL)
       .then(res => res.json())
       .then(data => setMessages(data))
   }
 
   const reachMessageInput = (newMessage) => {
-    //console.log("in reachMessageInput");
     fetch(MESSAGE_URL,  {
       method: 'POST',
       headers: { 'Content-Type':'application/json' },
       body: JSON.stringify({ message: newMessage })
     })
     .then(() => fetchMessages())
-    //.then(() => setPostedMessage(newMessage));
-    //console.log("newMessage: " + newMessage);
   }
 
   const updateLikes = messageId => {    
@@ -44,7 +39,6 @@ export const App = () => {
   }
 
   const onLiked = (messageId) => {
-    //console.log("i'm here now!" + messageId);
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
       method: 'POST',
       headers: { 'Content-Type':'application/json' },
