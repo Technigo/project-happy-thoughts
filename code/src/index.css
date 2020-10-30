@@ -129,23 +129,18 @@ button:hover {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   h2 {
-    font-size: 23px;
+    font-size: 20px;
   }
 
   .message-card {
-    width: 320px;
+    width: 295px;
   }
 
   input.form-text {
-    width: 308px;
+    width: 290px;
   }
 
   .input-card {
-    width: 310px;
-  }
-
-  button {
-    align-items: center;
-    text-align: center;
+    width: 295px;
   }
 }
