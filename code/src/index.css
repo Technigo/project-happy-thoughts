@@ -143,4 +143,8 @@ button:hover {
   .input-card {
     width: 295px;
   }
+
+  button {
+    align-items: flex-end;
+  }
 }
