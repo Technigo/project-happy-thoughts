@@ -1,8 +1,8 @@
 body {
-  margin-top: 100px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: 'Cutive Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
@@ -13,15 +13,11 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.form-container {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
 
+/*The form*/
 
-.message {
-border:solid black 1px;
+.happy-form {
+border: solid gray 2px;
 width: 400px;
 padding-top: 20px;
 padding-bottom: 10px;
@@ -29,7 +25,11 @@ padding-left: 20px;
 padding-right: 20px ;
 background-color: #f1efef;
 box-shadow: 8px 8px black;
-margin-bottom: 30px;
+margin-bottom: 70px;
+}
+
+.happy-form h3 {
+  font-size: 20px;
 }
 
 .form {
@@ -41,6 +41,36 @@ margin-top:20px;
 margin-bottom:0px;
 width: 100%;
 }
+
+.form-text  {
+  width: 100%;
+  height: 90px;
+  font-size: 15px;
+}
+
+.form-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-button {
+  margin-top: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: #faafae;
+  padding: 5px 15px 5px 15px;
+  font-size: 15px;
+}
+
+.thought-length {
+  font-size: 11px;
+  color: grey;
+}
+
+/*The messages*/
 
 .like {
 display: flex;
@@ -54,33 +84,30 @@ border:none;
 }
 
 .total-likes {
-color: black;
+color: grey;
 margin-left: 5px;
+
 }
 
 .likes {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  align-items: center;
+  
 }
 
 .message-time {
-font-size: 11px;
+font-size: 15px;
 color: grey;
 margin-left: 10px;
 }
 
 
-.thought-container {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.thoughts {
-border:solid black 1px;
+.happy-thought {
+border:solid grey 1px;
 width: 400px;
 padding-top: 20px;
-padding-bottom: 15px;
+padding-bottom: 5px;
 padding-left: 10px;
 padding-right: 20px ;
 background-color: #f1efef;
@@ -88,43 +115,40 @@ box-shadow: 8px 8px black;
 margin-bottom: 30px;
 display: flex;
 flex-direction: column;
-
 }
 
-.form-text {
-  width: 100%;
-  height: 50px;
-  font-size: 15px;
+.message {
+  font-size: 20px;
+  margin-top: 20px;
+  padding-left: 10px;
 }
 
-.form-button {
-  margin-top: 10px;
-  border-radius: 20px;
-  border: none;
-  background-color: #faafae;
-  padding: 5px 15px 5px 15px;
-  font-size: 11px;
+
+.likes button {
+border:none;
 }
 
-.thought-length {
-  font-size: 11px;
-  color: grey;
-}
-
-.button-container {
+.thought-footer {
   display: flex;
-  flex-direction: row;
+  flex-direction: row ;
   justify-content: space-between;
   align-items: center;
+  margin-top:20px;
 }
 
-input[type="submit"]:disabled {
+button[type="submit"]:disabled {
   color: grey;
 }
 
-input[type="submit"]:enabled {
+button[type="submit"]:enabled {
   color: red;
 }
+
+
+.like[type="submit"]:focus {
+  background-color: #ffadad;
+}
+
 
 .rubrik {
 padding-bottom: 20px;
