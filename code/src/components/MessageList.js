@@ -19,7 +19,7 @@ const MessageList = ({ messages, setMessages }) => {
           setLoading(false);
         }, 3000);
       });
-  }, []);
+  }, [setMessages]);
 
   // adding a new like (updates)
   const onLiked = (messageId) => {
