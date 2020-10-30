@@ -1,31 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 
 export const ThoughtsList = ( { thoughtsList, onLiked, hearts, _id } ) => {
- // const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
- // const [thoughts, setThoughts] = useState([]);
-  const [likes, setLikes] = useState(0);
 
-  /*useEffect(() => {
-    fetch(THOUGHTS_URL)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
+  const [likes, setLikes] = useState(hearts);
 
-        setThoughts(data);
-        console.log(thoughts);
-      });
-
-  }, []); */
-
-  const handleClick = () => {
+  const handleClick = (_id) => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
       method: 'POST',
       body:'',
       headers: { 'Content-Type': 'application/json' }
-    }).then(() => onLiked(_id))
+    })
+    .then(() => onLiked(_id))
   }
 
 return (
@@ -42,7 +28,7 @@ return (
             <p className="like-text">
               <button className='liked-heartemoji'
                 type='button'
-                onClick={handleClick}
+                onClick={() => handleClick(item._id)}
                 style={{ background: hearts > 0 ? '#ffadad' : '#f3f1f1 '}}
                 >
                 <span role='img' aria-label='Heart'>{'❤️' }</span>

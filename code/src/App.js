@@ -27,7 +27,6 @@ export const App = () => {
   };
 
   const onLiked = (thoughtId) => {
-    //console.log('logging the API.js', thoughtId)
 
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
