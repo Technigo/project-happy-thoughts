@@ -1,13 +1,15 @@
 # Happy Thoughts
+The focus for this weeks project was to practice GET and POST request to an API and use React useState and useEffect hooks to update and handle the data. The challange was to build a Happy-thought app with a form and a list of the latest 20 thoughts added to the API.
+The design should be as close as possible to the design sketch provided in the project brief.
 
-Replace this readme with your own information about your project.
+## The project
+I have structured my project with three components, App.js as the parent component and ThoughtList.js and ThoughtMessage.js as children components. All the connections to the server, the GET and POST requests should go through App.js. The functions and data that is needed in the child components are passed as props. When a POST request is done a new GET request is done immediately to get the updated information from the server to show in the browser.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Every thought has a like-button that changes background color and counts nr of click when button is clicked. I had some issues with the alignment of the heart-emoji. I can't get the hearts to align 100% for all devices. It looks ok in google chrome desktop and iphone. When going back to this project I will add an svg instead of an emoji to make it easier to style. 
 
-## The problem
+The submit button is disabled when the nr of characters in thoughts message is less than 5 or more than 140. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://stoic-perlman-f413ec.netlify.app/
