@@ -1,47 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 
-import { MESSAGE_URL} from '.././urls';
+import './messageList.css';
 
-export const MessageList = () => {  
-  //const MESSAGE_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-  // Create state for messages
-  const [messages, setMessages] = useState([]);
+//import { MESSAGE_URL} from '.././urls';
 
-  // Use useEffect to fetch messages from backend
-  useEffect(() => {
-    // Fetch messages from backend
-    fetch(MESSAGE_URL)
-      .then(res => {
-          // Get the JSON of the response body
-          return res.json();
-      })
-      .then(data => {
-        // Set the state based on the response, data is an array of messages
-        // const filteredData = data.filter(message => {
-        //     // Do not send empty messages
-        //     return message.message;
-        // });
+export const MessageList = ({messageList, onLiked}) => {
 
-        // Sort the data based on date
-        // setMessages(filteredData.reverse());
-        setMessages(data);
-      });
-    
-  }, []);
+  const [message, setMessage] = useState(0);
+
+  const handleSubmit = () => {
+    console.log("Like handleSubmit" + _id);
+    //event.preventDefault();
+    onLiked(_id);  //newLike = 0
+  };
 
   // Render messages using map
   return (
     <div>
       {
         // Add a section for each message returned by the backend
-        messages.map(message => (
-          <p className="message" key={message.createdAt}>
-            {message.message}                
-            <span className="message-time">
-              {moment(message.createdAt).fromNow()}
-            </span>
+        messageList.map(message => (
+          <article className="message-card" key={message._id}>
+            <p className="message">
+              {message.message}                           
             </p>
+            <div className="message-info">
+              <button 
+                className="heart-button"
+                value={message._id}
+                onClick={handleSubmit}
+                style={{ background: message.hearts > 0 ? '#ffadad' : '#f3f1f1' }}
+              >
+                <span className="heart" role="img" aria-label="heart">❤️</span>
+              </button>
+              <p>{message.hearts}</p>
+              <p className="message-time">
+                {moment(message.createdAt).fromNow()}
+              </p>
+            </div>
+          </article>
         ))
       }
     </div>
