@@ -15,7 +15,6 @@ export const Thought = (props) => {
     setLiked(true);
   }
 
-  //const postLike = (thoughtID) =>{
     const postLike = () =>{
     var requestOptions = {
       method: 'POST',
@@ -31,7 +30,6 @@ export const Thought = (props) => {
 
   useEffect(() => {
     console.log("Thought Change!");
-    //if(liked) postLike(props.id);
      if(liked) postLike();
      // eslint-disable-next-line
   },[liked]); 
