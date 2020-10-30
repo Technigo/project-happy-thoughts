@@ -9,10 +9,10 @@ export const App = () => {
   const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
   useEffect(() => {
-    fetchMessage()
+    fetchThoughts()
   }, [])
 
-  const fetchMessage = () => {
+  const fetchThoughts = () => {
     /* fetch data from server, 20 latest thought posted and details for each post*/
     fetch(THOUGHTS_URL)
       .then((res)=>{
@@ -31,7 +31,7 @@ export const App = () => {
       body:JSON.stringify({message: thought})
     })
       .then(()=> {
-        fetchMessage()
+        fetchThoughts()
       })
   }
 
@@ -42,7 +42,7 @@ export const App = () => {
       headers: { 'Content-Type': 'application/json"'}
       })
       .then (() => {
-        fetchMessage()
+        fetchThoughts()
       });
   };
 
