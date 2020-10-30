@@ -143,4 +143,9 @@ button:hover {
   .input-card {
     width: 310px;
   }
+
+  button {
+    align-items: center;
+    text-align: center;
+  }
 }
