@@ -23,15 +23,21 @@
   margin: 20px;
 }
 
-.happy-form-text {
+.happy-form-text,
+.happy-form-text-too-long {
   margin-left: 20px;
   width: 90%;
   font-size: 18px;
 }
 
+.happy-form-text-too-long {
+  background: #f87979;
+}
+
 .form-footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .happy-form-input-button {
@@ -51,5 +57,5 @@
   font-family: 'Roboto', sans-serif;
   color: #707070; 
   font-weight: 500;
-  margin-left: 40px;
+  margin: 20px;
 }

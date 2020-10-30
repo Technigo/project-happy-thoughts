@@ -44,12 +44,17 @@ const HappyForm = ({ onMessageChange }) => {
           What is making you happy right now?
         </h3>
         <textarea
-        placeholder="Type your thought..."
+          placeholder="Type your happy thought..."
           tabIndex="0"
-          className="happy-form-text"
+          //className="happy-form-text"
           rows="3"
           value={newMessage}
           onChange={event => setNewMessage(event.target.value)} 
+          className={
+            newMessage.length > 140 
+            ? "happy-form-text-too-long" 
+            : "happy-form-text"
+          }
         >
         </textarea>
         <div className="form-footer"> 

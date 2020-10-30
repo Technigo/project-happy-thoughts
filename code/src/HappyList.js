@@ -24,7 +24,7 @@ const handleLikeClick = id => {
                 className="happy-like-button"
                 type="button"
                 onClick={() => handleLikeClick(message._id)}
-                //conditional classname depending on liked or not liked
+                //conditional classname depending on likes:
                 className={
                   message.hearts > 5 
                   ? "many-likes" 

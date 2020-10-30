@@ -45,6 +45,7 @@
   border-radius: 50%;
   border: none;
   margin-right: 10px;
+  position: relative;
 }
 
 .some-likes {
@@ -58,6 +59,13 @@
 .no-likes {
   background: #f3f1f1;
 }
+
+.like-heart {
+  position: absolute;
+  top: 9px;
+  left: 12px;
+}
+
 .happy-message-time {
   color: #7c7b7b;
 }
