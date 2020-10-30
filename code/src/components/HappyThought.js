@@ -4,7 +4,6 @@ import { HappyHeart } from './HappyHeart.js'
 import './happyThought.css'
 
 export const HappyThought = ({id, thought, onLiked, heart, createdAt}) => {
- 
   return(
     <article className="thought-container">
       <p key={id} className="text-message">

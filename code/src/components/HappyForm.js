@@ -20,7 +20,7 @@ export const HappyForm = ({onFormSubmit}) => {
       .catch(err => console.log('error:', err))
   }
 
-  const emptyMessage = message => message.replace(/\s/g, "").length === 0;
+  const emptyMessage = message => message.replace(/\s/g, "").length === 0; //make sure blank messages can't be sent
 
   return(
     <section className="form-section">

@@ -11,7 +11,7 @@ export const App = () => {
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
-      .then(json => setThoughts(json)) // - json.slice(0,10) slice will minimize the array & json.reverse() - if I wanted to reverse the order
+      .then(json => setThoughts(json.slice(0,10))) // slice is minimizing the array to 10
   }, [postedMessage])
 
   const onFormSubmit = message => {
@@ -30,7 +30,7 @@ export const App = () => {
 
   return (
     <main>
-      <h1 class="happy-thoughts-title">Sharing Happy Thoughts!</h1>
+      <h1 class="happy-thoughts-title">Share Happy Thoughts!</h1>
       <HappyForm onFormSubmit={onFormSubmit} />
       <section className="thoughts-section">
         {thoughts.map(thought => (
