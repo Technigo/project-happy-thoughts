@@ -2,7 +2,9 @@
 
 body {
   margin: 0;
-  font-family: "Inconsolata", -apple-system, monospace, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Inconsolata", -apple-system, monospace, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f4abc4;
@@ -37,8 +39,8 @@ p {
   display: flex;
   background: #e5dfdf;
   flex-direction: row;
-  border: 1px solid black ;
-  box-shadow: 10px 8px 0 -2px black; 
+  border: 1px solid black;
+  box-shadow: 10px 8px 0 -2px black;
 }
 
 input.form-text {
@@ -54,14 +56,24 @@ button {
   padding: 10px;
   border: 1px solid #999;
   background-color: #f4abc4;
-  color: #060930;
+  color: #000000;
   cursor: pointer;
-  font-weight: 800; 
+  font-weight: 800;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
+button:hover {
+  background-color: #e6739f;
+  -webkit-transform: scale(1.07);
+  transform: scale(1.07);
+}
 .heart {
   text-align: center;
   font-size: 15px;
@@ -76,13 +88,13 @@ button {
   background: white;
   margin: 20px 0;
   padding: 0 15px;
-  border: 1px solid black ;
+  border: 1px solid black;
   box-shadow: 10px 8px 0 -2px black;
 }
 
 .message-bottom {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .like-wrapper {
@@ -93,10 +105,10 @@ button {
 
 .heart-button {
   width: 40px;
-  height: 40px; 
+  height: 40px;
   border-radius: 50%;
   background-color: #cac2c2;
-  margin-top: 10px;
+  margin-bottom: 10px;
   border: none;
   cursor: pointer;
   display: flex;
@@ -119,6 +131,10 @@ button {
 /* MEDIA QUERIES */
 
 @media (max-width: 768px) {
+  h2 {
+    font-size: 23px;
+  }
+
   .message-card {
     width: 320px;
   }
