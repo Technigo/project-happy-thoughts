@@ -15,7 +15,8 @@ We also learned about how to pass data from the server to the main parent compon
 2. Used useState to store and update data as well as pass from the parent component, App.js, to the children components and vice versa by way of props.
 3. Create a button for the hearts which when pressed will update the number of heats in the hearts object property on the api. Done by way of a post request in App.js.
 4. Styled the page as closely as possible to the requested style including adding conditional statements for the heart button. Depending on how many likes it get's the bakground colour of the button will be different.
-6. Working with validation on the form and disabling the button if the amount of letters the user has inputted is below or above a certain amount. Otherwise it will be enabled and the user will be able to sumit their message.  
+6. Working with validation on the form and disabling the button if the amount of letters the user has inputted is below or above a certain amount. Otherwise it will be enabled and the user will be able to sumit their message. 
+7. Made the site responsive so it can be viewed on mobile, tablet and desktop devices. 
 
 ## What tools I used 🛠️
 1. NPM/Node.js
