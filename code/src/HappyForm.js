@@ -65,7 +65,7 @@ const HappyForm = ({ onMessageChange }) => {
             className="happy-form-input-button"
             value="Add Message"
           >
-          ❤️ Send Happy Thought! ❤️
+          <span>❤️ Send Happy Thought! ❤️</span>
           </button>
           <p>{newMessage.length} / 140</p>
         </div>

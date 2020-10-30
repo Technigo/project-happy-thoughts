@@ -21,7 +21,7 @@ const handleLikeClick = id => {
             <div className="happy-post-footer"> 
             <span className="happy-likes-wrapper"> 
               <button
-                className="happy-like-button"
+                //className="happy-like-button"
                 type="button"
                 onClick={() => handleLikeClick(message._id)}
                 //conditional classname depending on likes:
