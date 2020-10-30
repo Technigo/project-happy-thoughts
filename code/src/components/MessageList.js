@@ -3,16 +3,16 @@ import moment from 'moment';
 
 import './messageList.css';
 
-//import { MESSAGE_URL} from '.././urls';
-
 export const MessageList = ({messageList, onLiked}) => {
 
-  //const [message, setMessage] = useState(0);
+  const [messageId, setMessageId] = useState("");
+  console.log("lite message kanske?" + messageId)
 
   const handleSubmit = () => {
-    console.log("Like handleSubmit" + message._id);
+    console.log("Like handleSubmit" + messageId);
     //event.preventDefault();
-    onLiked(message._id);  //newLike = 0
+    // onLiked("5f9c661e69d3ae00171aa283");
+    onLiked(messageId);
   };
 
   // Render messages using map
@@ -28,8 +28,9 @@ export const MessageList = ({messageList, onLiked}) => {
             <div className="message-info">
               <button 
                 className="heart-button"
-                value={message._id}
                 onClick={handleSubmit}
+                value={messageId}
+                onChange={event => setMessageId(event.target.value)}
                 style={{ background: message.hearts > 0 ? '#ffadad' : '#f3f1f1' }}
               >
                 <span className="heart" role="img" aria-label="heart">❤️</span>
