@@ -31,7 +31,6 @@ p {
 }
 
 /* QUESTION CARD */
-
 .input-card {
   width: 400px;
   margin: 20px 0;
@@ -80,7 +79,6 @@ button:hover {
 }
 
 /* MESSAGE CARD */
-
 .message-card {
   display: flex;
   flex-direction: column;
@@ -129,7 +127,6 @@ button:hover {
 }
 
 /* MEDIA QUERIES */
-
 @media (max-width: 768px) {
   h2 {
     font-size: 23px;
