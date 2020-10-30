@@ -81,6 +81,12 @@ h1 {
   cursor: pointer;
 }
 
+.pixel-heart-button {
+  width: 30px;
+  height: 40px;
+  transform: translate(-8px, -7px);
+}
+
 /* FOOTER */
 
 footer {
@@ -129,7 +135,5 @@ footer img {
     font-size: 13px;
 
     }
-
-
 }
 

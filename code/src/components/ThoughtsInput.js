@@ -57,7 +57,7 @@ export const ThoughtsInput = () => {
                             Send Happy Thought
                         <span role="img" aria-label="Heart emoji"> {"❤️"} </span>
                     </button>
-                    <p className="thoughts-chars"> {thought.length} / 140 </p>
+                    <p className="thoughts-chars"> {thought.length} /140 </p>
                 </form>
             </div>
         </>

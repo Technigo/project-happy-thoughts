@@ -1,6 +1,8 @@
 import React from "react";
 import moment from "moment";
 
+import HeartButtonImage from "assets/heart.png";
+
 export const ThoughtCard = props => {
   const {message, createdAt, hearts, _id} = props.thought;
   const LikedThoughtUrl = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`;
@@ -21,9 +23,7 @@ export const ThoughtCard = props => {
       <button className="heart-button"
         onClick={handleClick}
         style={{background: hearts > 0 ? "#ffadad" : "#f3f1f1" }}>
-          <span role="img" aria-label="Heart">
-            {"❤️"}
-          </span>
+          <img className="pixel-heart-button" src={HeartButtonImage} alt= "heart" aria-label="Heart"/>
       </button>
       x {hearts}
       </p>
