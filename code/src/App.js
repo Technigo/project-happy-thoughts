@@ -11,7 +11,6 @@ export const App = () => {
 
   useEffect(() => {
     fetchMessages();
-    console.log("!!HO HO!!");
   }, []);
 
   const fetchMessages = () => {

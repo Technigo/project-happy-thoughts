@@ -10,9 +10,9 @@ export const MessageList = ({messageList, onLiked}) => {
   const [message, setMessage] = useState(0);
 
   const handleSubmit = () => {
-    console.log("Like handleSubmit" + _id);
+    console.log("Like handleSubmit" + message._id);
     //event.preventDefault();
-    onLiked(_id);  //newLike = 0
+    onLiked(message._id);  //newLike = 0
   };
 
   // Render messages using map
