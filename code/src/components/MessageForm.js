@@ -1,18 +1,19 @@
-/* eslint-disable jsx-quotes */
+/* eslint-disable */
 import React, { useState } from 'react';
 import './messageForm.css';
-// eslint-disable-next-line no-unused-vars
 
 // A component that takes the prop onMessageChange (the connection to App.js)
-// and returns new value to App.js.
+// and returns new value - a new message - to App.js.
 export const MessageForm = ({ onMessageChange }) => {
   const [newMessage, setNewMessage] = useState('');
   // The function handleSubmit allows us to control when new data is
-  // passed to App.js. We prevent the default action.
+  // passed to App.js. We prevent the default action of i.e a form.
+  // The function updates App.js with new message.
+  // setNewMessage allows us to change the state - add new message.
+  // And the empty string clears the input field in the form.
   const handleSubmit = (event) => {
     event.preventDefault();
     onMessageChange(newMessage);
-    // eslint-disable-next-line no-undef
     setNewMessage('');
   }
 
@@ -22,7 +23,6 @@ export const MessageForm = ({ onMessageChange }) => {
         <h3>Post a happy thought!</h3>
         <textarea
           rows="3"
-          // eslint-disable-next-line react/jsx-curly-brace-presence
           value={newMessage}
           onChange={(event) => setNewMessage(event.target.value)} />
         <div className="form-footer">
@@ -36,6 +36,5 @@ export const MessageForm = ({ onMessageChange }) => {
         </div>
       </form>
     </article>
-
   );
 };
