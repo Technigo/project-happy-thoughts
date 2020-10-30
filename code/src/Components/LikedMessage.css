@@ -5,7 +5,7 @@
 }
 
 .liked{
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   background: rgb(250, 168, 168);
   border-radius: 50%;
   border: none;
@@ -15,7 +15,7 @@
 }
 
 .not-liked{
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   background: rgb(230, 229, 229);
   border-radius: 50%;
   border: none;
@@ -25,7 +25,7 @@
 }
 
 .heart-like{
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   height: 20px;
   margin: 5px 1px 0px 0;
 }

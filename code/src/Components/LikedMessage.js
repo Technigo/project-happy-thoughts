@@ -6,33 +6,36 @@ import './LikedMessage.css'
 export const LikedMessage = ({ hearts, id }) => {
   const [likes, setLikes] = useState(hearts)
 
-  
+
   const handleLikes = () => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-    }).then(() => {setLikes(likes + 1)
-    window.location.reload()} 
-    )}
+    }).then(() => {
+      setLikes(likes + 1)
+      window.location.reload()
+    }
+    )
+  }
   return (
     <div className='heart-time'>
-			<button
-      className={hearts > 0 ? 'liked' : 'not-liked'}
-				type='button'
+      <button
+        className={hearts > 0 ? 'liked' : 'not-liked'}
+        type='button'
         onClick={handleLikes}
         aria-label="like button"
-        >
-          <span className='heart-image'>
-        <img 
-        className='heart-like' 
-        src={img} 
-        alt='Heart'>
-        </img>
+      >
+        <span className='heart-image'>
+          <img
+            className='heart-like'
+            src={img}
+            alt='Heart'>
+          </img>
         </span>
       </button>
       <span>
-      <p tabIndex='0' className='times-liked'>x {likes}</p>
+        <p tabIndex='0' className='times-liked'>x {likes}</p>
       </span>
-      </div>
+    </div>
   )
 }
