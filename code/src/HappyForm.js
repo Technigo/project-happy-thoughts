@@ -44,6 +44,7 @@ const HappyForm = ({ onMessageChange }) => {
           What is making you happy right now?
         </h3>
         <textarea
+        placeholder="Type your thought..."
           tabIndex="0"
           className="happy-form-text"
           rows="3"
