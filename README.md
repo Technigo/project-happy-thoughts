@@ -1,13 +1,27 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+Week 11's project was aimed at practising our React state skills while also being introduced to useEffect and thinking about a React components lifecycle.
+The goal was to build a **Happy Thoughts** app where we can fetch and post data using a working API.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## My process
 
-## The problem
+I built the app using 3 main components: App, ThoughtsList and ThoughtsForm. App component is where the intial fetch takes place, we create and then map over an array and send the data as props to the ThoughtsList component. This displays the already existing Thoughts in different cards.
+Here I created a function called handleClick which listens for a click on the heart icon (like button) which then envolkes the onLiked function to increase this value. This change in turn gets posted back to the API and the API is called again to update the page.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+As well as using the useEffect hook on the initial fetch (this is to control the amount of times the page refreshes and avoid an infinate loop), I also implementd a page refesh every 10 seconds using the setInterval function.
+
+I also implemented some validation for the Form: the Send button is disabled unless the amount of characters entered is between 5 - 140. I included a small character counter which displays in red when this number is outside of the accepted amount.
+
+## Tech
+
+- useEffect hook
+- useState hook
+- JSX
+- React
+- css
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Send some happy thoughts to our shared API!:
+
+https://think-happy-thoughts.netlify.app/

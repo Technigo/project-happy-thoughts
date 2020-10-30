@@ -11,7 +11,6 @@ body {
       rgba(0, 0, 0, 0.4)
     ),
     url("./background-image.jpg");
-  /*background: url("./background-image.jpg");*/
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -51,7 +50,7 @@ code {
   margin: 10px 0;
 }
 
-.send-thought-btn {
+.send-thought-button {
   width: 50%;
   height: 36px;
   border-radius: 20px;
@@ -64,7 +63,7 @@ code {
   left: 10px;
 }
 
-.send-thought-btn:hover {
+.send-thought-button:hover {
   background-color: rgb(250, 123, 123);
   cursor: pointer;
 }
@@ -116,14 +115,9 @@ code {
 .liked-heartemoji {
   padding: 6px;
   border-radius: 50%;
-  /*background-color: rgb(240, 236, 236);*/
   margin-right: 5px;
   cursor: pointer;
 }
-
-/*.liked-heartemoji:hover {
-  background-color: rgb(250, 123, 123);
-}*/
 
 .top-of-card {
   height: 70%;
