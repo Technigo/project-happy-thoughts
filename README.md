@@ -1,13 +1,12 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This project was an introduction to useEffect in React and using APIs and to do GET and POST requests with React.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with deciding on the components I wanted to use and thinking about the structure of the app. APIs, useState and useEffect were used to handle data, decide how and when to render the components. The App.js was used as the "parent" component where the GET and POST requests were done and then it was passed down as props from one "child" component to another. If I had more time I would have added a counter that counts how many characters are left and validation. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happythoughtsjessica.netlify.app/
