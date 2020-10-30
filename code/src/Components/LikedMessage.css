@@ -5,6 +5,9 @@
   height: 35px;
   width: 35px;
   margin: 4px 10px 10px 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .not-liked{
@@ -14,15 +17,15 @@
   height: 35px;
   width: 35px;
   margin: 4px 10px 10px 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .heart-like{
   height: 20px;
   /* margin-top: 5px; */
   margin: 5px 1px 0px 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 .times-liked{
