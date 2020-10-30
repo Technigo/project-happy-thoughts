@@ -1,13 +1,15 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Assignment was to create a twitter clone where user can post "thoughts", read other thoughts, and like thoughts.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Was a bit tricky to get sorted out where state should be. In the end I moved most of it to app.js.
+- both GET and POST are used for the API
+- useEffect to control when updates are being made to the API
+- using local storage to preserve which thoughts have been liked.
+- ended up building separate component for message card since I thought it was easier to manage in that way
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://olof-happythoughts.netlify.app/
