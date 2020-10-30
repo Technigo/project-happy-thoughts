@@ -15,7 +15,6 @@ export const App = () => {
     You need to use the empty array to only render on change, 
     otherwise it will contiue to do the fetch in an infinite loop */
   useEffect(() => {
-    console.log('UseEffect: ')
     getMessages();
   }, [])
 
@@ -38,6 +37,15 @@ export const App = () => {
     })
     .then(getMessages)
   }
+
+  const likeMessage = (id) => {  
+    const LIKE__URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
+    fetch(LIKE__URL, {
+      method: 'POST',
+      headers: { 'content-Type': 'application/json'}
+    })
+    .then(getMessages)
+  }
   
   return (
     <div className="app__grid">
@@ -48,6 +56,8 @@ export const App = () => {
       onMessageChange={saveNewMessage}
       />
       <Thoughts
+      likeMessage={likeMessage}
+      getMessages={getMessages}
       thoughts={thoughts}
       setThoughts={setThoughts}
       />

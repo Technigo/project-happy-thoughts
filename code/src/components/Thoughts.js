@@ -11,8 +11,8 @@ import './thoughts.css'
 
 /* This thought-component takes care of showing all messages that has been posted to the API.
 It uses a state that changes based on what the data from fetch is. */
-export const Thoughts = ({ thoughts, setThoughts }) => {
-    //Errormessage for nesting <p> at 27-29
+export const Thoughts = ({ thoughts, likeMessage }) => {
+
 
     /* Use map() to show things from the array of data 
     filter through array, if thought.message isn't an 
@@ -21,9 +21,9 @@ export const Thoughts = ({ thoughts, setThoughts }) => {
         <div className="thoughts__container">{thoughts.filter((thought) => thought.message !== undefined).map((thought) => {
             return (
                 <div className="thoughts__card" key={thought._id}>
-                    <div className="thoughts__message-and-like">
+                    <div className="thoughts__message-and-like" >
                         <p className="thoughts__message">{thought.message}</p>
-                        <Heart style={'heart__like'} text={'Like'} />
+                        <Heart styled={'heart__like'} text={'Like'} onClick={() => likeMessage(thought._id)}/>
                     </div>
                     <div className="thoughts__info-container">
                         {thought.hearts > 0 &&

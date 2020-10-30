@@ -42,7 +42,7 @@ export const Input = ({ onMessageChange, inputType }) => {
         </label>
         <Error message={error}/>
         <Heart
-        style={'heart__btn'}
+        styled={'heart__btn'}
         text={'Send thought!'}/>
         </form>
         </>
