@@ -7,7 +7,7 @@ import './messageList.css';
 
 export const MessageList = ({messageList, onLiked}) => {
 
-  const [message, setMessage] = useState(0);
+  //const [message, setMessage] = useState(0);
 
   const handleSubmit = () => {
     console.log("Like handleSubmit" + message._id);
