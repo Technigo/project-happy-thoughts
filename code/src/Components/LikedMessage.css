@@ -1,28 +1,25 @@
 .liked{
+  -webkit-appearance: none;
   background: rgb(250, 168, 168);
   border-radius: 50%;
   border: none;
   height: 35px;
   width: 35px;
   margin: 4px 10px 10px 12px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 .not-liked{
+  -webkit-appearance: none;
   background: rgb(230, 229, 229);
   border-radius: 50%;
   border: none;
   height: 35px;
   width: 35px;
   margin: 4px 10px 10px 12px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 .heart-like{
+  -webkit-appearance: none;
   height: 20px;
   /* margin-top: 5px; */
   margin: 5px 1px 0px 0;
