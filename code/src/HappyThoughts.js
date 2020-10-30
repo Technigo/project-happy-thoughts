@@ -1,50 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import { LikeButton } from './LikeButton';
-import moment from 'moment';
+import { CreatePost } from './CreatePost';
 import './HappyThoughts.css';
 
 
-export const HappyThoughts = (thought) => {
+export const HappyThoughts = props => {
   const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
   const [thoughts, setThoughts] = useState([]);
-  
 
   useEffect(() => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
-      .then(data => setThoughts(data.reverse()))
-      .catch(error => console.error(error));
-  }, [])
+      .then(data => {
+        setThoughts(data);
+      });
+  }, []);
 
-  const onLikedThought = (likedThoughtId) => {
+  const onLiked = (thoughtId) => {
     const thoughtsUpdated = thoughts.map((thought) => {
-      if (thought._id === likedThoughtId) {
-        thought.like += 1
+      if(thought._id === thoughtId) {
+        thought.heart +=1
       }
       return thought
-    })
+    });
     setThoughts(thoughtsUpdated)
-  }
+  };
 
   return (
     <div>
       {thoughts.map(thought => (
-          <div className='happy-thoughts' key={thought._id}>
-            <h2 className="thought-message">{thought.message}</h2>
-            <div className="thought-info">
-              <LikeButton
-                key={thought._id}
-                id={thought._id}
-                onLikedThought={onLikedThought}
-                likes={thought.like}
-              />
-              <span className='thoughts-time'>
-                {moment(thought.createdAt).fromNow()}
-              </span>
-            </div>
-          </div>
-        ))
+        <CreatePost
+          key={thought._id} 
+          thought={thought}
+          hearts={thought.hearts} 
+          onLiked={onLiked}
+        />
+      ))
       }
     </div>
-  )
-}
+  );
+};

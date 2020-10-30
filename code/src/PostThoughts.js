@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Emoji } from "./Emoji";
 import './PostThoughts.css';
 
 export const PostThoughts = () => {
   const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
   const [message, setMessage] = useState('');
-  const [name, setName] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -17,13 +15,14 @@ export const PostThoughts = () => {
         body: JSON.stringify({ message })
       }
     ).then(() => {
+      setMessage('')
       window.location.reload()
       })
     }    
 
     return (
       <form onSubmit={handleSubmit} className="post-contents">
-        <h1 className='happyheader-text'>What is making you happy right now?</h1>
+        <h1 className='happyheader-text' tabIndex='0'>What is making you happy right now?</h1>
         <textarea
           placeholder='Enter stoke here!'
           value={message}
@@ -35,24 +34,16 @@ export const PostThoughts = () => {
           required
         >
         </textarea>
-        <div className='letter-length'>
-          <p>{message.length}/140</p>
-        </div>
-        <input
-          type='text'
-          placeholder='Name'
-          value={name}
-          aria-label='input for text'
-          className='name-input'
-          onChange={event => setName(event.target.value)}
-          required
-        >
-        </input>
+        <p className={((message.length < 5 || message.length > 140) ? "text-invalid" : "text-valid")}>
+          {message.length} / 140
+        </p>
         <button
           className='submit-button'
           type='submit'
-          disabled={message.length < 5 && message.length > 140 ? true : false}>
-          <Emoji symbol ='♥' /> Send stoke now! <Emoji symbol='♥' />
+          onClick={handleSubmit}
+          disabled={message.length < 5 || message.length > 140 ? true : false}
+        >
+        <span role='img' aria-label='Send stoke here'>Send stoke here!</span>
         </button>
       </form>
     );

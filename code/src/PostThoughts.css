@@ -3,6 +3,7 @@
     height: 120px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin: 20px;
     padding: 20px;
     background: rgb(245, 241, 241);
@@ -18,39 +19,43 @@
     text-transform: uppercase;
   }
   
-  .letter-length {
-    font-size: 6px;
-    padding: 0;
-    margin: 0;
-  }
-  
   .form-input {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 10px;
+    font-size: 11px;
     border: 1px solid grey;
     padding: 5px;
     max-width: 300px;
   }
   
-  .name-input {
-    font-family: 'Courier New', Courier, monospace;
-    width: 150px;
-    height: 15px;
-    font-size: 10px;
-    padding: 3px;
-    border: 1px solid grey;
-  }
-  
   .submit-button {
-    width: 120px;
-    background: rgb(192, 145, 145);
+    width: 140px;
+    background: rgb(241, 161, 161);
+    color: black;
     border-radius: 5px;
-    border: 1px solid rgb(192, 145, 145);
-    padding: 4px 1px;
-    font-size: 9px;
+    border: none;
+    font-size: 11px;
     font-family: inherit;
     font-weight: 500;
-    margin-top: 5px;
+    padding: 4px 0;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background: white;
+    border: 1px solid black;
+  }
+  
+  .text-invalid {
+    font-size: 11px;
+    color: red;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .text-valid {
+    font-size: 11px;
+    padding: 0;
+    margin: 0;
   }
   
   @media (min-width: 669px) {

@@ -1,0 +1,11 @@
+.bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thoughts-time {
+  font-size: 11px;
+  max-width: 100px;
+  margin: 0;
+}
