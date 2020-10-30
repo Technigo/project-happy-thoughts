@@ -10,7 +10,7 @@ export const MessageCard = (props) => {
           <div
             className="hearts"
             style={{
-              background: props.likedThoughts.includes(props.message._id)
+              background: props.likedThoughts.includes(props.message._id) //compare if id is in array of liked thoughts => set color
                 ? "#FFADAD"
                 : "#EAEAEA",
             }}
