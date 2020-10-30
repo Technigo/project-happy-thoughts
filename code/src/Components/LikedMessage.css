@@ -1,5 +1,6 @@
 .heart-img{
-  display: -webkit-inline-box;
+  display: block;
+  line-height: 2.8;
 }
 
 .liked{
