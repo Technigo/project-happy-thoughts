@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+/**FOR THE INPUT AND MESSAGES*/
+
+.input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  margin: 20px;
+  font-size: 12px;
+  width: 90%;
+  background-color: #F2F0F0;
+  border: solid 1px #000000;
+  box-shadow: 13px 14px 0px -6px rgba(0,0,0,1);
+}
+
+.input-feauters {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,49 +1,46 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from "react";
 
-import {ThoughtsFeed} from './components/ThoughtsFeed.js'
-import {ThoughtsInput} from './components/ThoughtsInput.js'
-import {THOUGHTS_URL} from './urls.js'
+import { ThoughtsFeed } from "components/ThoughtsFeed.js";
+import { ThoughtsInput } from "components/ThoughtsInput.js";
+
+const URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
+  const [happyMessage, setHappyMessage] = useState("");
 
   useEffect(() => {
-    thoughtsMessage();
-  }, []);  
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => setThoughts(data));
+  }, [happyMessage]);
 
-  const thoughtsMessage = () => {
-    fetch(THOUGHTS_URL)
-    .then(res => res.json())
-    .then(data => setThoughts(data))
-    .catch(error => console.error(error));
-  }
+  const onFormSubmit = (message) => {
+    setHappyMessage(message);
+  };
 
-  const thoughtsInput = (newThoughts) => {
-    fetch(THOUGHTS_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ message: newThoughts })
-    })
-    .then(() =>
-    thoughtsMessage())
-    .catch(error => console.error(error));
-  }
-
-  const onLiked = thoughtId => {
-
-    const updatedThoughts = thoughts.map(thought => {
+  const onLiked = (thoughtId) => {
+    const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === thoughtId) {
-        thought.heart += 1
+        thought.hearts += 1;
       }
-      return thought
-    })
-    setThoughts(updatedThoughts)
-  }
-  
+      return thought;
+    });
+    setThoughts(updatedThoughts);
+  };
+
   return (
-    <>
-      <ThoughtsInput onThoughtsChange={thoughtsInput}/>
-      <ThoughtsFeed thoughtsFeed={thoughts} onLiked={onLiked}/>
-    </>
-  )
+    <main>
+      <ThoughtsInput onFormSubmit={onFormSubmit} />
+      {thoughts.map((thought) => (
+        <ThoughtsFeed
+          id={thought._id}
+          onLiked={onLiked}
+          heart={thought.hearts}
+          createdAt={thought.createdAt}
+          thought={thought.message}
+        />
+      ))}
+    </main>
+  );
 };
