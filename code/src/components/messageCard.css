@@ -2,12 +2,25 @@
   display: flex;
   flex-direction: column;
   border: 2px solid black;
+  background: #fff;
   justify-content: space-between;
   margin: 40px 0;
   min-height: 130px;
   max-height: 300px;
   box-shadow: 7px 7px;
   word-wrap: break-word;
+  transition: 0.15s ease-in-out;
+}
+
+.message-card-container:hover {
+  background: #f5f5f5;
+  transition: 0.15s ease-in-out;
+}
+
+.card-message {
+  margin: 20px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
 }
 
 .bottom-card-container {
@@ -22,12 +35,6 @@
   align-items: center;
 }
 
-.card-message {
-  margin: 20px;
-  font-family: "Roboto Mono", monospace;
-  font-weight: 500;
-}
-
 .smiley-btn {
   margin-right: 10px;
   width: 40px;
@@ -35,30 +42,41 @@
   border-radius: 50%;
   border: none;
   outline: none;
-  background: green;
+  cursor: pointer;
+}
+
+.smiley-btn:hover {
+  transition: 0.15s ease-in-out;
+  animation: mymove 1s;
+}
+
+@keyframes mymove {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .love-liked {
   background: url(../assets/love-happy2.svg);
+  transition: 0.15s ease-in-out;
 }
 
 .super-liked {
   background: url(../assets/super-happy2.svg);
+  transition: 0.15s ease-in-out;
 }
 
 .liked {
   background: url(../assets/happy-happy2.svg);
+  transition: 0.15s ease-in-out;
 }
 
 .not-liked {
   background: url(../assets/no-happy2.svg);
+  transition: 0.15s ease-in-out;
 }
 
 .moment {
   font-size: 14px;
-  color: #ccc;
+  color: #bfbfbf;
 }
-
-/* .smiley {
-  background: url(../assets/happy-happy2.svg);
-} */

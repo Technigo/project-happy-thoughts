@@ -21,7 +21,7 @@ export const MessageCard = ({ _id, createdAt, hearts, message, onLiked }) => {
         <div className="smiley-container">
           <button
             className={`smiley-btn ${
-              hearts > 10
+              hearts > 9
                 ? "love-liked"
                 : hearts > 4
                 ? "super-liked"

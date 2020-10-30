@@ -16,7 +16,7 @@ const MessageInput = ({ setMessages }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      // send the JSON as a string (object does not work here)
+      // send the json as a string (object does not work here)
       body: JSON.stringify({ message }), // = ({ message: message })
     })
       .then((res) => res.json())
@@ -31,14 +31,13 @@ const MessageInput = ({ setMessages }) => {
   return (
     <form className="message-input-container" onSubmit={handleSubmit}>
       <label className="input-heading">
-        What's making you happy right now?
+        What's making you happy right&nbsp;now?
       </label>
       <textarea
         value={message}
         type="text"
         rows="3"
         onChange={(event) => setMessage(event.target.value)}
-        // maxLength="140"
         className="form-text"
         placeholder="Give me at least 5 characters!"
       ></textarea>
@@ -62,7 +61,6 @@ const MessageInput = ({ setMessages }) => {
       >
         {" "}
         Send a happy thought!
-        {/* {message.length < 5 ? "Minimum 5 characters" : "Send a happy thought!"} */}
       </button>
     </form>
   );

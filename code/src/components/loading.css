@@ -1,3 +1,13 @@
 .loading {
-  color: pink;
+  height: 40px;
+  width: 40px;
+  padding: 30px 10px;
+  animation: mymove 1s infinite;
+  fill: #000;
+}
+
+@keyframes mymove {
+  100% {
+    transform: rotate(360deg);
+  }
 }

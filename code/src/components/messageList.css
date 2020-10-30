@@ -1,3 +1,10 @@
 .message-list-container {
   width: 404px;
 }
+
+/*** MOBILE ***/
+@media (max-width: 667px) {
+  .message-list-container {
+    width: 344px;
+  }
+}
