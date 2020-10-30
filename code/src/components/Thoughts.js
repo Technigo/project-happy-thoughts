@@ -20,18 +20,23 @@ export const Thoughts = ({ thoughts, setThoughts }) => {
     return (
         <div className="thoughts__container">{thoughts.filter((thought) => thought.message !== undefined).map((thought) => {
             return (
-            <div className="thoughts__card" key={thought._id}>
-                <p className="thoughts__message">{thought.message}
-                <span className="thoughts__info-container">
-                    <img className="thoughts__heart-icon" src='./heart.png' alt='Heart icon'/>
-                    {thought.hearts<10 ? <p className="thoughts__amount-of-likes">{thought.hearts>0 && thought.hearts}</p>
-                    :<p className="thoughts__ten-amount-of-likes">{thought.hearts>0 && thought.hearts}</p>}
-                    <p className="thoughts__time-posted"> {moment(thought.created).fromNow()}</p>
-                    <Heart style={'heart__like'}text={'Like'}/>
-                    </span>
-                </p>
-            </div>
-        )})}
+                <div className="thoughts__card" key={thought._id}>
+                    <div className="thoughts__message-and-like">
+                        <p className="thoughts__message">{thought.message}</p>
+                        <Heart style={'heart__like'} text={'Like'} />
+                    </div>
+                    <div className="thoughts__info-container">
+                        {thought.hearts > 0 &&
+                            <div className="thoughts__like-container">
+                                <img className="thoughts__heart-icon" src='./heart.png' alt='Heart icon' />
+                                <p className="thoughts__amount-of-likes">x{thought.hearts}
+                                </p>
+                            </div>}
+                        <p className="thoughts__time-posted"> {moment(thought.created).fromNow()}</p>
+                    </div>
+                </div>
+            )
+        })}
         </div>
     )
 }
