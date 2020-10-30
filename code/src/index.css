@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightyellow;
 }
 
 code {
@@ -12,12 +13,6 @@ code {
     monospace;
 }
 
-/*.thought-list {
-  display: grid;
-  grid-template-columns: 1fr 300px 1fr;
-  justify-content: space-between;
-  row-gap: 20px;
-}*/
 .header {
   display: grid;
   grid-template-columns: 1fr 300px 1fr;
@@ -42,6 +37,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: lightgrey;
 }
 
 .post-header {
@@ -51,12 +47,14 @@ h1 {
 input {
   margin-left: 5px;
   margin-right: 5px;
+  height: 50px;
 }
 
 .submit-button {
   margin-left: 5px;
   border-radius: 30px;
   cursor: pointer;
+  background-color: lightcoral;
 }
 
 .thought-list {
@@ -74,13 +72,20 @@ input {
   border: 1px solid;
   padding: 10px;
   box-shadow: 10px 10px;
+  background-color: lightcyan;
+}
+
+.message-details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .likes-container {
   display: flex;
 }
  
-.heart-button {
+.like-button {
   border: 1px solid black;
   border-radius: 50%;
   width: 30px;
@@ -88,7 +93,6 @@ input {
   padding: 3px;
   background-color: lightgray;
   display: flex;
-  margin-top: 10px;
   margin-right: 10px;
   cursor: pointer;
 }
@@ -104,4 +108,10 @@ input {
 
 .created-time {
   color: gray;
+  font-size: 11px;
+}
+
+.likes {
+  color: gray;
+  font-size: 11px;
 }

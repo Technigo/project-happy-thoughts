@@ -30,7 +30,9 @@ export const App = () => {
 }
 
 const postHearts = (messageId) => {
-  fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts${messageId}/like`,{
+  const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`;
+
+  fetch(LIKES_URL,{
     method:'POST',
     headers: { 'Content-Type': 'application/json' }
   })
