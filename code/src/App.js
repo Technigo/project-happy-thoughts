@@ -14,14 +14,14 @@ export const App = () => {
   }, []);
 
   const fetchMessages = () => {
-    console.log("in fetchMessages");
+    //console.log("in fetchMessages");
     fetch(MESSAGE_URL)
       .then(res => res.json())
       .then(data => setMessages(data))
   }
 
   const reachMessageInput = (newMessage) => {
-    console.log("in reachMessageInput");
+    //console.log("in reachMessageInput");
     fetch(MESSAGE_URL,  {
       method: 'POST',
       headers: { 'Content-Type':'application/json' },
@@ -44,9 +44,8 @@ export const App = () => {
   }
 
   const onLiked = (messageId) => {
-    console.log("i'm here now!" + messageId);
+    //console.log("i'm here now!" + messageId);
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
-    //fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/5f9c477e69d3ae00171aa23c/like`, {
       method: 'POST',
       headers: { 'Content-Type':'application/json' },
       body: ''

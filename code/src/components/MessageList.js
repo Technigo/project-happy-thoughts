@@ -6,13 +6,12 @@ import './messageList.css';
 export const MessageList = ({messageList, onLiked}) => {
 
   const [messageId, setMessageId] = useState("");
-  console.log("lite message kanske?" + messageId)
+  console.log("messageId: " + messageId);
 
   const handleSubmit = () => {
-    console.log("Like handleSubmit" + messageId);
-    //event.preventDefault();
-    // onLiked("5f9c661e69d3ae00171aa283");
+    console.log("messageId inside handleSubmit: " + messageId);
     onLiked(messageId);
+    //onLiked("5f9c803469d3ae00171aa29f");
   };
 
   // Render messages using map
@@ -23,14 +22,18 @@ export const MessageList = ({messageList, onLiked}) => {
         messageList.map(message => (
           <article className="message-card" key={message._id}>
             <p className="message">
-              {message.message}                           
+              {message.message}
             </p>
             <div className="message-info">
               <button 
                 className="heart-button"
-                onClick={handleSubmit}
-                value={messageId}
-                onChange={event => setMessageId(event.target.value)}
+                //onClick={handleSubmit}
+                //onClick={event => handleSubmit(event.target.value)}
+                //onChange={event => setMessageId(event.target.value)}
+                onClick={() => {
+                    setMessageId(message._id)
+                    handleSubmit()
+                }}
                 style={{ background: message.hearts > 0 ? '#ffadad' : '#f3f1f1' }}
               >
                 <span className="heart" role="img" aria-label="heart">❤️</span>
