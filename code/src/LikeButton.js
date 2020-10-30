@@ -24,23 +24,27 @@ export const LikeButton = props => {
 
 return (
   <div className='like-container'>
-    <button
-      className='like-button'
-      type='submit'
-      onClick={handleClick}
-    >
-      <span
-        role='img'
-        aria-label='heart'
+    <a>
+      <button
+        className='like-button'
+        type='submit'
+        onClick={handleClick}
       >
-        ❤️
-      </span>
-    </button> 
-    <p
-      className='like-text'
-      tabIndex='0'
-    >
-      x {clicks} (you liked it {localStorage[props.id]} times)
-    </p>
+        <span
+          className='heart'
+          role='img'
+          aria-label='heart'
+        >
+          ❤️
+        </span>
+      </button> 
+      </a>
+      <p
+        className='like-text'
+        tabIndex='0'
+      >
+        x {clicks} (you liked it {localStorage[props.id]} times)
+      </p>
+   
   </div>
 )};
