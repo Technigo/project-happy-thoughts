@@ -98,3 +98,15 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
+/* For smaller screens*/
+@media (max-width: 500px) {
+	.message-container {
+		width: 300px;
+	}
+
+	.happy-input-textarea {
+		height: 50px;
+		width: 274px;
+		margin: 10px;
+	}
+}
