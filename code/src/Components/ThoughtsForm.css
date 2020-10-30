@@ -1,3 +1,14 @@
+
+.message-container {
+    min-width: 50%;
+    max-width: 50%;
+}
+
+.form-message-footer {
+    flex-direction: column;
+    align-items: center;
+}
+
 .form-container {
     background-color: #f2f0f0;
 }
@@ -25,33 +36,55 @@
     font-size: 13px;
 }
 
-.form-message-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items:center ;
-}
-
 p {
     font-family: 'Montserrat', sans-serif;
+}
+
+.form-button {
+    background: #ffadad;
+    border-radius: 30px;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    /* width: 70%; */
 }
 
 .letter-counter {
     color: #8d8c8c;
     font-weight: 600;
     font-size: 16px; 
+    margin-left: 20px;
 }
 
-.form-button {
-    background: #ffadad;
-    padding: 12px 17px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 600;
-    border: none;
+@media (min-width: 436px) {
+    .form-button {
+        width: 100%;
+    }
 }
-
-.form-button:focus,
-.form-button:hover {
-    border: 2px solid #f04242;
+    
+@media (min-width: 600px) { 
+    
+    .message-container {
+        min-width: 30%;
+        max-width: 30%;
+    }
+    
+    .form-message-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+        
+    .form-button {        
+        padding: 12px 17px;
+        width: 65%;
+    }
+    
+    .form-button:focus,
+    .form-button:hover {
+        border: 2px solid #f04242;
+    }
 }

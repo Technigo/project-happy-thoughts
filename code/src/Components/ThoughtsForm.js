@@ -21,11 +21,10 @@ export const ThoughtsForm = ({onMessageChange}) => {
             <h3>What's making you happy right now?</h3>
             <form onSubmit={handleSubmit}>
                 <textarea
-                required
                 className="text-box"
                 id="happyThought"
                 name="happyThought"
-                rows="4"
+                rows="5"
                 cols="40"
                 placeholder="Write your happy thoughts.."
                 value={newMessages}
