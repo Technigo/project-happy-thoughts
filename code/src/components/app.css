@@ -4,7 +4,7 @@
 }
 
 .app__grid {
-    background: #F9F8EB;
+    background: #fff;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: min-content;

@@ -2,12 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    max-width: 250px;
     grid-column: span 3;
+    width: 80%;
     justify-self: center;
     align-items: center;
-    border: 2px solid #000;
+    border: 2px solid #969696;
+    background: #ebebeb;
     padding: 20px;
+    margin: 10px;
+    box-shadow: 5px 10px;
 }
 
 .input__user-input {
@@ -16,4 +19,5 @@
 
 .input__text-field {
     height: 100px;
+    width: 350px;
 }

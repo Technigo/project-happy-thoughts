@@ -34,8 +34,10 @@ never needs to re-run. This isn’t handled as a special case
 — it follows directly from how the dependencies array 
 always works.*/
 
-export const Heart = ({text, styled, onClick}) => {
+export const Heart = ({ text, styled, onClick }) => {
     return (
-            <button className={styled} type="submit" onClick={onClick}><img className="heart__btn-icon" src='./heart.png' alt='Heart icon'/>{text}</button>
+        <button className={styled} type="submit" onClick={onClick}>
+            {styled === 'heart__btn' && <span><img className="heart__btn-icon" src='./heart.png' alt='Heart icon' />{text}<img className="heart__btn-icon" src='./heart.png' alt='Heart icon' /></span>}
+            {styled === 'heart__like' && <img className="heart__btn-icon" src='./heart.png' alt='Heart icon' />}</button>
     )
 }

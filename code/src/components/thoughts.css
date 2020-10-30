@@ -1,13 +1,15 @@
 
 .thoughts__container {
-    background: #F9F8EB;
+    background: #fff;
     grid-column: span 3;
     display: grid;
     grid-template-columns: 1fr;
 }
 
 .thoughts__card {
-    background: #ECDEC6;
+    background: #fff;
+    border: 2px solid #969696;
+    box-shadow: 5px 5px;
     justify-self: center;
     padding: 10px;
     margin: 5px;
