@@ -3,10 +3,10 @@ import moment from 'moment'
 
 import './ThoughtMessage.css'
 
-export const ThoughtMessage = ({thought, postHearts}) => {
+export const ThoughtMessage = ({thought, onPostHearts}) => {
   
   const onHeartClick = () => {
-    postHearts(thought._id)
+    onPostHearts(thought._id)
   }
 
   return (

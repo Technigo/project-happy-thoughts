@@ -35,7 +35,7 @@ export const App = () => {
       })
   }
 
-  /*posts data when post is liked. Connected with onClick function in thoughtMessage. fetches again after the post to get updated information from server*/
+  /*posts data to the server when post is liked. Connected with onClick function in thoughtMessage. fetches again after the post to get the updated information from server*/
   const postHearts = messageId => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
       method: 'POST', 
@@ -50,9 +50,9 @@ export const App = () => {
   /*returning components and passing props - functions and the thoughtarray.*/ 
   return (
     <main>
-      <ThoughtInput postThought={postThought}/>
+      <ThoughtInput onPostThought={postThought}/>
       {thoughts.map(thought=> 
-      <ThoughtMessage key={thought._id} thought={thought} postHearts={postHearts}/>
+      <ThoughtMessage key={thought._id} thought={thought} onPostHearts={postHearts}/>
       )} 
     </main>
   )

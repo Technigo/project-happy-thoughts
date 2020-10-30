@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 
 import './ThoughtInput.css'
 
-export const ThoughtInput = ({ postThought }) => {
+export const ThoughtInput = ({ onPostThought }) => {
   const [newThought, setNewThought] = useState('')
   /*prevents default loading on submit. calls the postThought funtcion and updates the newThought state to an empty string so that the textarea is empty when user has submitted the form. */
   const handleSubmit = event => {
     event.preventDefault()
-    postThought(newThought)
+    onPostThought(newThought)
     setNewThought('');
   }
 
@@ -17,7 +17,7 @@ export const ThoughtInput = ({ postThought }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      
+
       <label htmlFor='happyQuestion'>
         <h1>
           What is making you happy right now?

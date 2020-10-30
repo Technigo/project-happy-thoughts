@@ -55,12 +55,15 @@ textarea {
   box-shadow: 0px 0px 5px 5px #e67687;
 }
 
+span {
+  font-size: 18px;
+}
+
 .text-length {
   font-family: 'Roboto', sans-serif;
 }
 
 @media (min-width: 667px) and (max-width: 1024px) {
-
   form {
     width: 50%;
   }
@@ -71,7 +74,6 @@ textarea {
 }
 
 @media (min-width: 1025px) {
-
   form {
     width: 30%;
   }
