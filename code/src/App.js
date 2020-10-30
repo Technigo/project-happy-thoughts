@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { ThoughtsHeader } from './Components/ThoughtsHeader.js'
 import { ThoughtsMessage } from './Components/ThoughtsMessage.js'
 import { ThoughtsForm } from './Components/ThoughtsForm.js'
+import { ThoughtsFooter } from './Components/ThoughtsFooter.js'
 
 export const App = () => {
 
@@ -79,6 +80,7 @@ export const App = () => {
     {messages.map((messageObject) => (
       <ThoughtsMessage key={messageObject._id} messageDetails={messageObject} onHeartsChange={postHearts}/>
     ))}
+    <ThoughtsFooter />
   </main>
   )
 }
