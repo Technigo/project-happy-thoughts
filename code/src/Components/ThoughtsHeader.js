@@ -1,10 +1,13 @@
 import React from 'react'
 
+import './ThoughtsHeader.css'
+
 export const ThoughtsHeader = () => {
 
     return (
         <header className="message-container header">
-            <h2 className="header-text"> <span role="img" aria-label="heart emoji">❤️ ❤️</span> Happy Thoughts <span role="img" aria-label="heart emoji"> ❤️ ❤️</span></h2>
+            <span role="img" aria-label="heart emoji" className="heart-letter-emoji">💌 </span>
+            <h3>Happy Thoughts</h3>
         </header>
     );    
 };

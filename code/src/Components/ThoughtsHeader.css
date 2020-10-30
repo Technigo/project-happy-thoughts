@@ -1,0 +1,21 @@
+.header {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.heart-letter-emoji {
+    font-size: 30px;
+}
+
+@media (min-width: 600px) {
+
+    .heart-letter-emoji {
+        font-size: 35px;
+    }
+
+    .header {
+        font-size: 23px;
+    }
+}
+  
