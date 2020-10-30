@@ -54,6 +54,7 @@ code {
   background-color: lightpink;
   font-size: 16px;
   cursor: pointer;
+  outline: none;
   padding: 5px 20px;
 }
 
@@ -80,6 +81,7 @@ code {
   margin-right: 5px;
   font-size: 16px;
   cursor: pointer;
+  outline: none;
   background-color: #dedede;
   transition: 1.2s;
 }
