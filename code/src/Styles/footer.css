@@ -9,9 +9,8 @@
     height: 250px;
     font-size: 12px;
     letter-spacing: 0.2px;
-    line-height: 2.0;
 }
 
 .footer-text {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Inconsolata', monospace;
 }

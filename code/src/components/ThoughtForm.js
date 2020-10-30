@@ -14,23 +14,25 @@ export const ThoughtForm = ({onThoughtChange}) => {
     return (
         <form onSubmit={handleSubmit} className='thoughts-form'>
             <h2>What's making you happy right now?</h2>
-                <textarea
+                <input
                     type='text'
                     rows='3'
-                    className='thoughts-form__textarea'
-                    placeholder='Write a happy thought'
+                    className='thoughts-form__input'
+                    placeholder='Write a happy thought...'
                     value={newThought}
                     onChange={event => setNewThought(event.target.value)}
-                > 
-                </textarea>
+                />
+                <p className='message-length'> {newThought.length} / 140</p> 
+
                 <div className='thoughts-form__submit'>
+
                     <button
+                        className='thoughts-form__button'
                         type='submit'
                         disabled={newThought.length < 5 || newThought.length > 140 ? true : false}
                     >
-                    <span role="img" aria-label="stars">✨ </span> Send Happy Thought <span role="img" aria-label="stars">✨ </span>
+                    <span role='img' aria-label='heart'> ❤️ </span> Send Happy Thought <span role='img' aria-label='heart'> ❤️ </span>
                     </button>
-                    <p> {newThought.length} / 140</p> 
                 </div>
         </form>
     );

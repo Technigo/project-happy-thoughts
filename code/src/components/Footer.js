@@ -6,7 +6,10 @@ export const Footer = () => {
    return (
     <footer className='footer'>
         <p className='footer-text'>
-           Week 11: Happy Thoughts Project by Emma Urman | Technigo fall bootcamp 2020 
+            Made with <span role='img' aria-label='heart'> ❤️ </span> by  Emma Urman
+        </p>
+        <p className='footer-text'>
+           Week 11: Happy Thoughts Project | Technigo fall bootcamp 2020 
         </p>
     </footer>
     );

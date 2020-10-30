@@ -1,0 +1,29 @@
+.thoughts-form {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: left;
+    background: #eeeeee;
+    border: 1px solid;
+    box-shadow: 5px 10px;
+}
+
+.thoughts-form__input {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+::placeholder {
+    font-family: 'Inconsolata', monospace;
+}
+
+.thoughts-form__button {
+    border-radius: 100px;
+    background: #ffc4c4;
+    padding: 10px;
+    border: none;
+    font-family: 'Inconsolata', monospace;
+}
+
+.message-length {
+    text-align: right;
+}

@@ -20,7 +20,7 @@ export const ThoughtsList = () => {
       .catch(error => console.error(error));
     }
 
-    const newThoughtInput = (newThought) => {
+    const postThoughts = (newThought) => {
       fetch(ThoughtsUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
@@ -31,9 +31,9 @@ export const ThoughtsList = () => {
     }
 
     return (
-    <div>
-        <ThoughtForm onThoughtChange={newThoughtInput}/>
+    <>
+        <ThoughtForm onThoughtChange={postThoughts}/>
         <Thought happyThoughts={thoughts}/>
-    </div>
+    </>
     );
 };
