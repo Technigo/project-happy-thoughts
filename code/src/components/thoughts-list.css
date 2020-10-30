@@ -7,7 +7,7 @@
 }
 
 .thought-container {
-  border: 3px solid #EFEFEF;
+  border: 2px solid grey;
   background-color: #FFFFFF;
   width: 500px;
   padding: 20px;
@@ -26,4 +26,12 @@ li {
 .time-stamp {
   font-size: 16px;
   color: grey;
+}
+
+button {
+  border: 1px solid rgb(236, 236, 236);
+  border-radius: 50%;
+  background-color: rgb(236, 236, 236);
+  padding: 10px;
+  margin-top: 10px;
 }

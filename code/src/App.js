@@ -33,8 +33,6 @@ export const App = () => {
     }).then(() => fetchThoughts());
   };
 
-
-
   return (
     <div className="app-container">
       <h1>Happy thoughts</h1>

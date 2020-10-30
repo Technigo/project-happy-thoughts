@@ -8,7 +8,7 @@ const ThoughtInput = ({ onNewThought }) => {
   const handleSubmit = event => {
     event.preventDefault();
     onNewThought(newThought);
-  }
+  };
   //We clear the input field by having the state 
   //with an empty string inside the handle submit function :p 
   return (
@@ -24,14 +24,12 @@ const ThoughtInput = ({ onNewThought }) => {
         value={newThought}
       >
       </input>
-
       <input
         type="submit"
         className="input-button"
         value="Send Happy Thought"
       >
       </input>
-
     </form>
   )
 
