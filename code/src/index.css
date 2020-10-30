@@ -79,3 +79,33 @@ textarea {
   background-color: #ffadad;
   font-weight: bold;
 }
+
+/*Media Queries*/
+/*Mobile*/
+@media (max-width: 666px) {
+  .thought-card, .thoughts-form {
+    width: 70%;
+    max-width: 500px;
+  }
+
+  textarea {
+    font-size: 14px;
+    width: 95%;
+    height: 80px;
+    /* max-width: 470px;
+    max-height: 150px; */
+  }
+
+  .form-button {
+    width: 220px;
+  }
+
+  .posts-liked-counter {
+    width: 70%;
+  }
+
+  .heart-time-container {
+    width: 95%;
+    font-size: 14px;
+  }
+}
