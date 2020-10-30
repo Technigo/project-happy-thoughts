@@ -13,7 +13,7 @@
   }
   
   .happyheader-text {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     margin: 0 0 5px 0;
     text-transform: uppercase;
@@ -67,5 +67,8 @@
     }
     .form-input {
       width: 430px;
+    }
+    .happyheader-text {
+      font-size: 14px;
     }
   }
