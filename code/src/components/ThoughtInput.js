@@ -9,7 +9,8 @@ const ThoughtInput = ({ onNewThought }) => {
     event.preventDefault();
     onNewThought(newThought);
   }
-
+  //We clear the input field by having the state 
+  //with an empty string inside the handle submit function :p 
   return (
     <form className="input-container" onSubmit={handleSubmit}>
       <label htmlFor="input-text">What's making you happy right now?</label>

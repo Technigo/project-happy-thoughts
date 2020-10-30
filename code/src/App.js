@@ -12,14 +12,15 @@ export const App = () => {
   useEffect(() => {
     fetchThoughts();
   }, []);
-
+  //server -> App.js -> ThoughtList
   const fetchThoughts = () => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
       //updating the state below-> that's why infinite loop
-      .then(data => setThoughts(data));
+      .then(data => setThoughts(data))
+      .catch(error => console.error(error));
   };
-
+  //ThoughtInput -> App.js -> server -> App.js -> ThoughtList
   const reachNewThought = (newThought) => {
     // console.log(newThought);
     //2nd argument = option; without it we send GET request
@@ -31,6 +32,8 @@ export const App = () => {
       body: JSON.stringify({ message: newThought })
     }).then(() => fetchThoughts());
   };
+
+
 
   return (
     <div className="app-container">

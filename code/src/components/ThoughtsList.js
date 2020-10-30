@@ -2,20 +2,10 @@ import React from "react";
 import moment from "moment";
 
 
-// import THOUGHTS_URL from "../urls";
-
 import "./thoughts-list.css";
+import image from "./red-heart.png";
 
 const ThoughtsList = ({ thoughtsArray }) => {
-  // const [thoughts, setThoughts] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(THOUGHTS_URL)
-  //     .then(res => res.json())
-  //     // .then(json => console.log(json))
-  //     .then(json => setThoughts(json));
-
-  // }, [])
 
   return (
     <div className="thoughts-list-container">
@@ -23,12 +13,12 @@ const ThoughtsList = ({ thoughtsArray }) => {
         {thoughtsArray.map(thought => (
           <div className="thought-container" key={thought._id}>
             <li>{thought.message} <span className="time-stamp">{moment(thought.createdAt).fromNow()}</span></li>
-            <button>a heart!</button>
+            <button><img src={image} alt="Red heart icon" /></button>
           </div>
         ))}
       </ul>
 
-    </div>
+    </div >
   )
 
 };
