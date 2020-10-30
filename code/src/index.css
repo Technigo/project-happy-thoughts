@@ -1,15 +1,74 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 50px;
+
+
+  font-family: 'Roboto', sans-serif;
+  padding: 40px 600px;
+  background-color: rgb(255, 144, 162);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+.card {
+  border: 2px solid black;  
+  margin: 20px;
+  padding: 0 20px;
+  box-shadow: 10px 10px 4px -4px black;
+  background-color: white;
+}
+
+input, textarea {
+ display: block;
+ margin-bottom: 20px;
+}
+
+.submit-button {
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  background-color: white;
+  font-size: 12px;
+}
+
+.text-input {
+  width: calc(100% - 10px);
+  height: 50px;
+  padding: 5px;
+  font-size: 12px;
+  background-color: rgb(243, 243, 243);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  color: grey;
+  font-size: 12px;
+}
+
+.likes {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+img {
+  height: 20px;
+  display: flex;
+}
+
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.likes-container {
+  display: flex;
+}
+
+
 

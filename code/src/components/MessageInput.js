@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-const messageUrl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+import { MessageUrl } from './Urls.js'
 
 export const MessageInput = () => {
 
@@ -10,29 +10,31 @@ export const MessageInput = () => {
 
     event.preventDefault()
 
-    fetch(messageUrl,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ message: message })
-      })
+    fetch(MessageUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: message })
+    })
       .then(() => {
         window.location.reload()
       })
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        onChange={event => setMessage(event.target.value)}>
-      </input>
-      <input
-        type="submit">
-      </input>
-    </form>
+    <div className="card">
+      <p>What's making you happy today?</p>
+      <form onSubmit={handleSubmit}>
+        <textarea
+          onChange={event => setMessage(event.target.value)}
+          className="text-input">
+        </textarea>
+        <input
+          type="submit"
+          value="Send"
+          className="submit-button">
+        </input>
+      </form>
+    </div>
   )
 }
 
