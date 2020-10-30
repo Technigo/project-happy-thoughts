@@ -4,7 +4,7 @@
 // import './Style.css';
 
 // const PostLiked = ({ hearts, id }) => {
-// 	// const [likes, setLikes] = useState(hearts);
+// 	const [likes, setLikes] = useState(hearts);
 
 // 	if (!localStorage[id]) {
 // 		localStorage.setItem(id, 0);

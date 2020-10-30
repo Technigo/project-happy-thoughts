@@ -4,16 +4,17 @@ import Button from './Button';
 import moment from 'moment';
 
 const PostList = ({ postList, onLikeChange }) => {
-	const [newLikes, setNewLikes] = useState(0); //added
+	const [newLikes, setNewLikes] = useState(0);
 
 	const handleLikeClick = id => {
 		if (!localStorage[id]) {
 			localStorage.setItem(id, 0);
+			//return localStorage[id];
 		}
 		setNewLikes(newLikes + 1);
 		onLikeChange(id);
 		localStorage[id] = Number(localStorage[id]) + 1;
-		console.log(`localstorage finns inte`);
+		//return localStorage[id];
 	};
 
 	return (
@@ -25,6 +26,7 @@ const PostList = ({ postList, onLikeChange }) => {
 					<Button
 						type="button"
 						click={() => handleLikeClick(post._id)}
+						//disabled={localStorage[id]}
 						className={
 							post.hearts > 5
 								? 'superLiked'
@@ -34,7 +36,8 @@ const PostList = ({ postList, onLikeChange }) => {
 						}
 						text={
 							<span className="heart-like" role="img" aria-label="Heart">
-								{'❤️'}
+								<img src="./assets/heart.svg" alt="heart icon" />
+								{/* {'❤️'} */}
 							</span>
 						}
 					/>

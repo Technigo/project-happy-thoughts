@@ -8,29 +8,30 @@ import './Style.css';
 
 export const App = () => {
 	const [messages, setMessages] = useState([]);
-	const [isLoading, setLoading] = useState(true); //to show a loading circle when waiting for the fetch
+	const [isLoading, setLoading] = useState(true);
+	// const [errorMessage, setErrorMessage] = useState(null);
 
 	useEffect(() => {
 		fetchPosts();
 		setInterval(fetchPosts, 5000);
 	}, []);
 
-	//fetch from backend API (From server to app)
 	const fetchPosts = () => {
 		fetch(MESSAGE_URL)
 			.then(res => res.json())
 			.then(data => {
+				// if (!res.ok) {
+				// 	setErrorMessage('Sorry, a problem occured!');
+				// }
 				const filteredData = data.filter(post => {
 					return post.message;
 				});
-				//filteredData.reverse(); //this will make the oldest shown first
 				setMessages(filteredData);
 				setLoading(false);
 			})
 			.catch(error => console.error(error));
 	};
 
-	//second fetch - when we post our message!
 	const postSingleMessage = message => {
 		fetch(MESSAGE_URL, {
 			method: 'POST',
@@ -41,7 +42,6 @@ export const App = () => {
 			.catch(error => console.error(error));
 	};
 
-	//POST likes
 	const postSingleLike = id => {
 		fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
 			method: 'POST',

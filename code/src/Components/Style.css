@@ -108,9 +108,18 @@ textarea {
 	width: 100%;
 }
 
-.heart-like {
-	margin-left: 4px;
+/*heart like button*/
+img {
+	position: relative;
+	height: 20px;
+	width: 20px;
+	top: 3px;
+	left: calc(50% - 20px);
 }
+
+/* .heart-like {
+	margin-left: 4px;
+} */
 
 .notLiked,
 .liked,
@@ -188,6 +197,9 @@ textarea {
 
 	.button-send-post {
 		width: 300px;
+	}
+	.heart-like {
+		margin-left: 0;
 	}
 }
 
