@@ -8,9 +8,3 @@ main {
   align-items: center;
   background-image: radial-gradient(#ffadad, #ffe2e2 );
 }
-
-.header {
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-}
