@@ -51,7 +51,7 @@ const HappyForm = ({ onMessageChange }) => {
                 {" 💚 "}
                 </span>
 
-                Send Happy Thougth
+                Send Happy Thought
 
                 <span className="green-heart"
                 role="img"
