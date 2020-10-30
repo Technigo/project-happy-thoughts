@@ -1,7 +1,7 @@
 .input-section {
   display: flex;
   justify-content: center;
-  padding-top: 60px;
+  padding: 40px 0 15px 0;
 }
 
 .form-container {
@@ -11,21 +11,24 @@
   background: #f2f0f0;
   border: 1px solid black;
   width: 80%;
-  box-shadow: 13px 14px 0px -6px rgba(0,0,0,1);
-  padding: 0px 10px;
+  box-shadow: 13px 14px 0px -6px rgba(0, 0, 0, 1);
+  padding: 15px;
 }
 
 label {
-  font-family: 'Inconsolata';
-  margin: 20px 0 20px 10px;
+  font-family: "Inconsolata";
+  margin: 10px 0;
 }
 
 textarea {
   margin-bottom: 20px;
   width: 90%;
-  margin-left: 10px;
   padding: 10px;
   resize: none;
+}
+
+textarea:focus {
+  outline: transparent;
 }
 
 .form-footer {
@@ -34,7 +37,6 @@ textarea {
   width: 100%;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .send-button {
@@ -43,15 +45,44 @@ textarea {
   font-weight: bold;
   border-radius: 25px;
   padding: 10px;
-  margin-left: 10px;
+  transition: 0.5s ease;
 }
 
 button:disabled {
   color: black;
   background: lightgrey;
+  opacity: 0.6;
 }
 
 .message-length {
+  color: #8f8f8f;
   font-size: 12px;
-  color: #8F8F8F;
+}
+
+/* Tablet */
+@media screen and (min-width: 667px) and (max-width: 1024px) {
+  .form-container {
+    width: 50%;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .form-container {
+    width: 40%;
+  }
+
+  label {
+    font-size: 24px;
+    padding: 5px 0;
+  }
+
+  .message-length {
+    font-size: 14px;
+  }
+
+  .send-button {
+    padding: 15px;
+    font-size: 14px;
+  }
 }

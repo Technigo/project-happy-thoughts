@@ -2,41 +2,64 @@ import React, { useState } from "react";
 
 import "../css/thoughtsInput.css";
 
-export const ThoughtsInput = ({ onThoughtsChange }) => {
-  const [newThought, setNewThought] = useState("");
+const URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+
+export const ThoughtsInput = ({ onFormSubmit }) => {
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onThoughtsChange(newThought);
+    fetch(URL, {
+      method: "POST",
+      body: JSON.stringify({ message }),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then(() => {
+        setMessage("");
+        onFormSubmit(message);
+      })
+      .catch((err) => console.log("error:", err));
   };
 
   return (
     <section className="input-section">
-      <form className="form-container" onSubmit={handleSubmit}>
-        <label>What's making you happy right now?</label>
+      <form className="form-container">
+        <label htmlFor="thoughts">What's making you happy right now?</label>
         <textarea
-          rows="3"
-          value={newThought}
-          onChange={(event) => setNewThought(event.target.value)}
+          id="thoughts"
+          name="thoughts"
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+          required
         ></textarea>
         <div className="form-footer">
           <button
             className="send-button"
             type="submit"
             onClick={handleSubmit}
-            disabled={
-              newThought.length < 3 || newThought.length > 140 ? true : false
-            }
+            disabled={message.length < 3 || message.length > 140 ? true : false}
           >
             <span role="img" aria-label="heart">
               ❤️
-            </span>{" "}
-            Send Happy Thought{" "}
+            </span>
+            Send Happy Thought
             <span role="img" aria-label="heart">
               ❤️
             </span>
           </button>
-          <p className="message-length">{newThought.length} / 140</p>
+          <p className="message-length">
+            <span
+              style={{
+                color:
+                  message.length < 3 || message.length > 140
+                    ? "#FF0000"
+                    : "#000000",
+              }}
+            >
+              {message.length}
+            </span>{" "}
+            / 140
+          </p>
         </div>
       </form>
     </section>

@@ -1,24 +1,30 @@
-import React from "react"
-import moment from "moment" 
+import React from "react";
+import moment from "moment";
 
-import { HeartButton } from "./HeartButton.js"
-import "../css/thoughtsFeed.css"
+import { HeartButton } from "../js/HeartButton.js";
+import "../css/thoughtsFeed.css";
 
-export const ThoughtsFeed = ( { _id, thought, onLiked, heart, createdAt, thoughtsFeed } ) => {
-
+export const ThoughtsFeed = ({
+  onLiked,
+  heart,
+  heartId,
+  thought,
+  createdAt,
+}) => {
   return (
     <section className="feed-section">
-      <article className="thought-container">
-        <p key={thought._id} className="thought-text">
-        {thought.message}
-        </p>
+      <article className="thoughts-container">
+        <p className="thought-text">{thought}</p>
         <div className="thought-footer">
-          <HeartButton onLiked={onLiked} thought={thought} heart={heart} _id={_id}/>
-          <p className="post-time">
-            {moment(thought.createdAt).fromNow()}
-          </p>
+          <HeartButton
+            onLiked={onLiked}
+            thought={thought}
+            heart={heart}
+            heartId={heartId}
+          />
+          <p className="post-time">{moment(createdAt).fromNow()}</p>
         </div>
       </article>
     </section>
-  )
-}
+  );
+};

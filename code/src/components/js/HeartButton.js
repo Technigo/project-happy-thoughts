@@ -1,28 +1,31 @@
-import React from "react"
+import React from "react";
 
-import "../css/heartButton.css"
+import "../css/heartButton.css";
 
-export const HeartButton = ({ onLiked, heart, id }) => {
+export const HeartButton = ({ onLiked, heart, heartId }) => {
   const handleClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/${id}/like`, {
-      method: "POST",
-      body: "",
-      headers: { "Content-Type": "application/json" },
-    }).then(() => onLiked(id));
+    fetch(
+      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${heartId}/like`,
+      {
+        method: "POST",
+        body: "",
+        headers: { "Content-Type": "application/json" },
+      }
+    ).then(() => onLiked(heartId));
   };
 
   return (
-    <div className="icon-wrapper">
+    <div className="like-container">
       <button
         className="heart-button"
         onClick={handleClick}
-        style ={{ background: heart > 0 ? "#FFADAD" : "#EAEAEA" }}
-        >
-          <span role="img" aria-label="heart">{'❤️'}</span>
-        </button>
-        <p className="counted-hearts">x {heart} </p>
+        style={{ background: heart > 0 ? "#FFADAD" : "#EAEAEA" }}
+      >
+        <span role="img" aria-label="heart">
+          {"❤️"}
+        </span>
+      </button>
+      <p className="heart-counting-text">x {heart}</p>
     </div>
-  )
-
-}
-
+  );
+};

@@ -1,23 +1,15 @@
-.icon-wrapper {
+.like-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   border: none;
 }
-  
-.counted-hearts {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto";
-  color: #8F8F8F;
-  font-size: 10px;
-  font-weight: 600;
-  margin-left: 4px;
-}
-  
+
 .heart-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
   cursor: pointer;
   border: none;
   width: 35px;
@@ -25,14 +17,26 @@
   border-radius: 50%;
 }
 
-.liked {
-  background: "#FFADAD"
+.heart-button:focus {
+  outline: transparent;
 }
 
-.superliked {
-  background: blue;
+.heart-counting-text {
+  color: #8f8f8f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto";
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 4px;
 }
 
-.noLikes {
-background: "#EAEAEA";
+/* Desktop */
+@media (min-width: 1025px) {
+  .heart-counting-text {
+    font-size: 14px;
+  }
+
+  .heart-button {
+    width: 40px;
+    height: 40px;
+  }
 }
