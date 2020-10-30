@@ -8,11 +8,10 @@ export const ThoughtList = ({messageList, onLike}) => {
         fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-          }).then(onLike)
-      }  
+        })
+        .then(onLike)
+    }  
     
-
-
     return (
         <section className="thought-list">
         {messageList.map(message => {
@@ -22,12 +21,12 @@ export const ThoughtList = ({messageList, onLike}) => {
                 <p className="thought-text">{message.message}</p>
                 <div className="details">
                     <div className="like-container">
-                    <button className={message.hearts === 0 ? "noLikes like-button": "like-button"} id="like-button" onClick={()=>likeThought(message._id)}>
-                        <span role="img" aria-label="heart-icon">❤️️</span>
-                    </button>
-                    <p className="thought-date"> x {message.hearts}</p>
+                        <button className={message.hearts === 0 ? "like-button noLikes": "like-button"} onClick={()=>likeThought(message._id)}>
+                            <span role="img" aria-label="heart-icon">❤️️</span>
+                        </button>
+                        <p className="thought-date"> x {message.hearts}</p>
                     </div>
-                    <p className="thought-date">{moment(message.createdAt).fromNow()}</p>
+                    <time className="thought-date">{moment(message.createdAt).fromNow()}</time>
                 </div>
             </div>
             )
