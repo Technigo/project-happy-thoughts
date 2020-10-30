@@ -46,7 +46,7 @@ export const App = () => {
           id={happyThought._id}
           message={happyThought.message}
           hearts={happyThought.hearts}
-          createdAt={happyThought.createdAT}
+          createdAt={happyThought.createdAt}
           onLikedThought={onLikedThought}
         />
       ))}

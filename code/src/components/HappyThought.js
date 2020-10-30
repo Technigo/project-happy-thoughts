@@ -25,7 +25,7 @@ export const HappyThought = ({
 
   return (
     <>
-      <article className="happy-thought-wrapper">
+      <article tabIndex="0" className="happy-thought-wrapper">
         <h3 className="happy-thought-title">{message}</h3>
         <p>
           <button type="button" className="button-heart" onClick={handleClick}>
