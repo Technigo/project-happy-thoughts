@@ -26,6 +26,7 @@ export const App = () => {
   }, []);
 
   const postThought = (newThought) => {
+    setLoading(true)
     
     fetch(ThoughtsURL, {
       method: 'POST',
@@ -40,13 +41,13 @@ export const App = () => {
       else {
         setErrorMessage('')
         setNewMessage('');
-        setLoading(true)
       }
     
       fetchThoughts()
       
     })
   }
+
 
  
   const onThoughtSubmit = (event) => {

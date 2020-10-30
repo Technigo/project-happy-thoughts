@@ -20,6 +20,24 @@ p {
   align-items: center;
 }
 
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heart-icon {
+  font-size: 11px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #ffd5d5;
+
+}
+
+/*Toughts from API*/
+
 .thought-container {
   display: flex;
   flex-direction: column;
@@ -32,28 +50,8 @@ p {
   background-color: white;
   border: 1px solid black;
   box-shadow: 5px 5px black;
-  
 }
 
-.new-thought {
-  width: 350px;
-  height: auto;
-  background-color: #F2F0F0;
-  border: 1px solid black;
-  box-shadow: 5px 5px black;
-  margin: 20px;
-  padding: 15px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.new-thought p {
-  font-size: 12px;
-  font-weight: bold;
-  margin: 0;
-}
 
 .thought-date {
   color: #d0d0d0;
@@ -67,21 +65,6 @@ p {
   margin: 0;
   margin-bottom: 10px;
   overflow-wrap: break-word;
-  
-  
-}
-
-.details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-}
-
-.heart-icon {
-  
-  font-size: 11px;
-  margin: 5px;
 }
 
 .like-container {
@@ -103,12 +86,32 @@ p {
   margin-right: 10px;
   font-size: 11px;
   cursor: pointer;
-
 }
 
-.like-button:hover {
-  background-color: #ffd5d5;
+.noLikes {
+  background-color: #e9e8e8;
+}
 
+/*New Thought*/
+
+.new-thought {
+  width: 350px;
+  height: auto;
+  background-color: #F2F0F0;
+  border: 1px solid black;
+  box-shadow: 5px 5px black;
+  margin: 20px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.new-thought p {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .submit-thought {
@@ -136,12 +139,13 @@ textarea {
   margin-bottom: 10px;
 }
 
+ /* LOADING */ 
+
 .loading-container {
   display: inline-flex;
   justify-content: center;
   width: 100px;
   height: auto;
-
 }
 
 .loading-circle {

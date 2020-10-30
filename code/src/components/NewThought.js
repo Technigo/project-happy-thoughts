@@ -12,8 +12,6 @@ export const NewThought = ({newThought, setNewThought, handleSubmit, errorMessag
         return characters
     }
 
-   
-
     return (
         <form className="new-thought" onSubmit={handleSubmit}>
             <label>
@@ -31,9 +29,9 @@ export const NewThought = ({newThought, setNewThought, handleSubmit, errorMessag
             
             <button type="submit" className="submit-thought">
                 <p>
-                    <span className="heart-icon" role="img">❤️️</span>
+                    <span className="heart-icon" role="img" aria-label="heart-icon">❤️️</span>
                     Send Happy Thought
-                    <span className="heart-icon" role="img">❤️️</span>
+                    <span className="heart-icon" role="img" aria-label="heart-icon">❤️️</span>
                 </p>
             </button>
 
