@@ -8,10 +8,16 @@ export const ThoughtsList = () => {
   const [thoughts, setThoughts] = useState([]);
   // Use [] in the useState since it is an array that we get in the get-request
   const [addThought] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
     fetch(THOUGHTS_URL)
     .then((res) => {
+      if(!res.ok) {
+        setErrorMessage("Sorry, some problem occured")
+        console.log(setErrorMessage);
+        return;
+      }
         return res.json();
     })
     .then((data) => {
@@ -35,7 +41,7 @@ export const ThoughtsList = () => {
         thought.hearts += 1;
       }
       return thought;
-    })
+    });
     setThoughts(updatedThoughts);
   };
 
@@ -57,6 +63,7 @@ export const ThoughtsList = () => {
               <p className="time-stamp" tabIndex="0"> 
                 {moment(thought.createdAt).fromNow()}
               </p> 
+              {errorMessage}
             </div>
           </div>
         );

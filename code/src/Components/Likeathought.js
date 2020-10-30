@@ -18,9 +18,8 @@ export const Likeathought = ({hearts , id, onThoughtLiked}) => {
   return (
     <div className="likes">
       <button
-        className="like-button"
         onClick={handleClick}
-        style={{ background: hearts > 0 ? "#FEACAC" : "#EAEAEA"}}
+        className={hearts > 0 ? "like-button liked" : "like-button unliked"}
         tabIndex="0"
       >
         <span role="img" aria-label="Red heart emoji">&#10084;&#65039;</span>

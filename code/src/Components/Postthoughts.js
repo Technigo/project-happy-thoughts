@@ -20,8 +20,7 @@ export const Postthoughts = ({id}) => {
       // And then reload the window so we see the new thought that was added
       ).then(() => {
         window.location.reload();
-        })
-      .catch(err => console.log("error:", err))
+        });
   };
 
   return (
@@ -42,7 +41,7 @@ export const Postthoughts = ({id}) => {
           disabled={addThought.length < 6 || addThought.length > 140 ? true : false}
         >
           <span role="img" aria-label="Red heart emoji">&#10084;&#65039; </span>
-            Send Happy Thought
+          Send Happy Thought
           <span role="img" aria-label="Red heart emoji"> &#10084;&#65039;</span>
         </button>
         <p className="counter" tabIndex="0">
