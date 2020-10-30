@@ -35,7 +35,7 @@ margin-bottom: 30px;
 .form {
 display: flex;
 flex-direction: row-reverse;
-justify-content: space-between;
+justify-content:space-between;
 align-items: center;
 margin-top:20px;
 margin-bottom:0px;
@@ -53,6 +53,15 @@ border-radius: 50%;;
 border:none;
 }
 
+.total-likes {
+color: black;
+margin-left: 5px;
+}
+
+.likes {
+  display: flex;
+  flex-direction: row-reverse;
+}
 
 .message-time {
 font-size: 11px;
