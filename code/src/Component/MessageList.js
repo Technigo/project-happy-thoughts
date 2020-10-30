@@ -18,7 +18,7 @@ const MessageList = ({ messages }) => {
                 message={message}
               />
               <span className="second-row-elements">
-                {moment(message.created).fromNow()}
+                {moment(message.createdAt).fromNow()}
               </span>
               </div>
             </div>

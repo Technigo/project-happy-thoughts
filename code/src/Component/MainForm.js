@@ -15,7 +15,8 @@ const MainForm = () => {
      return res.json();
     })
      .then((data) => {
-     data.reverse();
+    //  data.reverse();
+     console.log(data)
      setThoughts(data);
     });
   }, []);

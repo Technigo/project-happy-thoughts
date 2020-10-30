@@ -1,12 +1,10 @@
-.heart-icon {
-  margin: 5px;
-}
-
 .button-submit-thought {
   background-color: #8a5a44;
   border-radius: 20px;
   border: none;
   color: #ffffff;
+  display: flex;
+  align-items: center;
   font-family:  'Capriola', sans-serif;
   font-size: 13px;
   margin-top: 10px;
@@ -23,14 +21,37 @@
   font-family: 'Capriola', sans-serif;
 }
 
-.word-count {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
+.character-display {
+  display: flex;
+  align-items: flex-start;
 }
 
+.word-count {
+  color: blue;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  flex: 1;
+  text-align: end;
+}
+.count-turn-red {
+  color: darkmagenta;
+  font-weight: bold;
+}
+.alert-message {
+  font-size: 13px;
+  font-style: italic
+}
+
+.hidden {
+  display: hidden;
+}
+.cross-sign {
+  color: red;
+  margin-right: 5px;
+}
 @media screen and (min-width: 400px) {
   .button-submit-thought {
-    width: 65%;
+    width: 70%;
   }
 }
