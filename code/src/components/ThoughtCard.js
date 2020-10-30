@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-import HeartButtonImage from "assets/heart.png";
+import HeartButtonImage from "../assets/heart.png";
 
 export const ThoughtCard = props => {
   const {message, createdAt, hearts, _id} = props.thought;
