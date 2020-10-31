@@ -1,5 +1,5 @@
 .heart__btn {
-    width: 350px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -6,6 +6,7 @@
     width: 80%;
     justify-self: center;
     align-items: center;
+    align-content: center;
     border: 2px solid #969696;
     background: #ebebeb;
     padding: 20px;
@@ -19,5 +20,5 @@
 
 .input__text-field {
     height: 100px;
-    width: 350px;
+    max-width: 100%;
 }
