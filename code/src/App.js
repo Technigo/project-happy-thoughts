@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react'
 
-import { THOUGHTS_URL } from 'component/Urls';
-import { MessageInput } from './component/InputThoughts';
-import { MessageList } from './component/ListThoughts';
-import { Likes } from './component/Like'
+import { THOUGHTS_URL, likeUrlFor } from 'component/Urls';
+
+import { MessageInput } from './component/MessageInput';
+import { MessageList } from './component/MessageList';
 
 export const App = () => {
   const [messages, setMessages] = useState([]);
 
+
   useEffect(() => {
     fetchMessages();
   }, []);
+
 
   const fetchMessages = () => {
     fetch(THOUGHTS_URL)
@@ -20,7 +22,7 @@ export const App = () => {
   }
 
 
-  //POST text input new value to serever
+  //Post new value text input to server then fetch
   const postMessageInput = (newMessage) => {
     fetch(THOUGHTS_URL, {
       method: "POST",
@@ -31,11 +33,39 @@ export const App = () => {
       .catch(err => console.log("error:", err))
   }
 
+  // Post new heart value to server then fetch
+  const postHeart = event => {
+    const messageId = event._id
+    // if (!messageId) {
+    //   console.debug("Unable to post a blank messageId.", messageId)
+    //   return false;
+    // }
+
+    fetch(likeUrlFor(messageId),
+      {
+        method: 'POST',
+        body: "",
+        headers: { "Content-Type": "application/json" },
+      }).then(() => {
+        onMessageLiked(messageId)
+        fetchMessages();
+      });
+  };
+
+  const onMessageLiked = messageId => {
+    const updatedMessages = messages.map((message) => {
+      if (message._id === messageId) {
+        message.hearts += 1
+      }
+      return message
+    })
+    setMessages(updatedMessages)
+  }
+
   return (
     <div>
-      <MessageInput onMessageChange={postMessageInput} />
-      <MessageList messageList={messages} />
-      <Likes />
+      <MessageInput onCreateMessage={postMessageInput} />
+      <MessageList messageList={messages} onLike={postHeart} />
     </div>
   );
 }

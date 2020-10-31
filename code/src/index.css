@@ -13,41 +13,84 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
 .thoughts-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .message {
-  width: 450;
-  height: 250px;
+  width: 510px;
   height: min-content;
   background-color: white;
   color: black;
   box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 1);
   border: 1px solid black;
-  margin: 10px;
+  margin: 20px;
   display: inline-block;
-  box-sizing: border-box;
-  justify-content: left;
   text-align: left;
-  padding: 10px;
+  padding: 25px;
 }
 
-.new-thought {
-  color: black;
-  width: 300;
-  height: 250px;
-  color: rgb(242, 240, 240);
+.heart-button {
+  font-size: 30px;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  justify-content: center;
+  margin-bottom: -25px;
+  margin-left: -10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.heart-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.liked {
+  background-color: #ffadad;
+}
+
+.num-hearts {
+  margin-left: 80px;
+}
+
+.time-stamp {
+  font-size: 16px;
+  color: #bebebe;
+  font-weight: 900;
+  margin-left: 250px;
+}
+
+.input-container {
+  width: 510px;
+  height: 180px;
+  background-color: rgb(242, 240, 240);
   box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 1);
-  border: 1px solid black;
-  background-color: whitesmoke;
-  padding: 10px;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  font-family: "Commissioner", sans-serif;
+}
+
+#newMessage {
+  height: 50px;
 }
 
 .new-thought h3 {
@@ -55,16 +98,13 @@ code {
 }
 
 .form-button {
-  background-color: lightcoral;
-  width: 200px;
-  height: 35px;
+  background-color: rgb(255, 173, 173);
+  width: 250px;
+  height: 50px;
   border-radius: 30px;
   color: black;
-}
-
-.form-text {
-  width: 200px;
-  height: 70px;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
 .thought {
@@ -73,27 +113,4 @@ code {
   font-size: 20px;
   margin: 5px 5px 5px 15px;
   padding: 10px;
-}
-
-.time-stamp {
-  font-size: 16px;
-  color: #bebebe;
-  font-weight: 900;
-  margin: 5px 5px 5px 30px;
-  /* display: flex;
-  justify-content: flex-end; */
-  /* position: relative; */
-  /* margin-top: 40px;
-  margin-left: 80px;
-  display: inline-block; */
-}
-
-.heart-button {
-  font-size: 30px;
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
-  background-color: coral;
-  display: flex;
-  justify-content: center;
 }
