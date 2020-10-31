@@ -1,5 +1,7 @@
 import React from "react";
 
+import './like.css'
+
 export const Like = ({ onLiked, heart, heartId }) => {
   const handleClick = () => {
     fetch(
@@ -20,7 +22,7 @@ export const Like = ({ onLiked, heart, heartId }) => {
         style={{ background: heart > 0 ? "#FFADAD" : "#EAEAEA" }}
       >
         <span role="img" aria-label="heart">
-          {"❤️"}
+          {"❤️ "}
         </span>
       </button>
       <p className="like-text">x {heart}</p>

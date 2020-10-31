@@ -29,8 +29,6 @@ export const ThoughtsInput = ({ onFormSubmit }) => {
           name="thoughts"
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          required
-          autoFocus
         ></textarea>
         <div className="input-features">
           <button
@@ -42,7 +40,7 @@ export const ThoughtsInput = ({ onFormSubmit }) => {
             <span role="img" aria-label="heart">
               ❤️
             </span>
-            Send Happy Thought
+            Send a Happy Thought
             <span role="img" aria-label="heart">
               ❤️
             </span>

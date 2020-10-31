@@ -2,17 +2,16 @@ import React from "react";
 import moment from "moment";
 import { Like } from "./Like.js";
 
-export const ThoughtsFeed = ({ heartId, thought, onLiked, heart, createdAt }) => {
+export const ThoughtsFeed = ({ thought, createdAt, onLiked, heart, heartId }) => {
   return (
     <section className="input-section">
       <article className="input-container">
         <p className="text-message">
           {thought}
         </p>
-        <div className="input-feauters ">
+        <div className="input-feauters">
           <Like
             onLiked={onLiked}
-            thought={thought}
             heart={heart}
             heartId={heartId}
           />
