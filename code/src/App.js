@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { ThoughtsList } from 'components/ThoughtsList';
 import { ThoughtForm } from 'components/ThoughtForm';
+import { Header } from 'components/Header';
 import { Footer } from 'components/Footer';
 import { ThoughtsUrl } from 'Urls';
 
@@ -48,10 +49,13 @@ export const App = () => {
   
   return (
     <main className="main">
+      <Header />
+      <div className='thoughts-container'>
       <ThoughtForm onThoughtChange={postThoughts}/>
-      {thoughts.map(thought => (
-        <ThoughtsList key={thought._id} thought={thought} onLike={onLike}/>
-      ))}
+        {thoughts.map(thought => (
+          <ThoughtsList key={thought._id} thought={thought} onLike={onLike}/>
+        ))}
+      </div>
       <Footer />
     </main>
   );

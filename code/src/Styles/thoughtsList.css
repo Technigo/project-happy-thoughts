@@ -1,31 +1,49 @@
-.thoughts-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    width: 100%;
-}
-
-.thoughts-section__article {
+.thoughts-article {
     width: 100%;
     margin-top: 50px;
-    padding: 10px;
+    padding: 20px;
     text-align: left;
     background: #ffffff;
     border: 1px solid;
     box-shadow: 5px 10px;
 }
 
+.thoughts-article__info {
+    display: flex;
+}
+
+.thoughts-article__likes {
+    display: inline-flex;
+}
+
+.heart {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.number-of-hearts {
+    margin-left: 5px;
+    color: #575757;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
 .button-liked {
+    padding: 10px;
     background: #ffadad;
+    border: none;
+    border-radius: 50%;
 }
 
 .button-unliked {
+    padding: 10px;
     background: #f3f1f1;
+    border: none;
+    border-radius: 50%;
 }
 
-.thoughts-section__time {
-    float: right;
+.thoughts-article__time {
+    margin-left: auto;
     color: #808080;
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
