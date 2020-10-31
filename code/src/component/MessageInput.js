@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import './input.css';
 
 export const MessageInput = ({ onCreateMessage }) => {
   const [newMessage, setNewMessage] = useState('')
@@ -24,18 +25,23 @@ export const MessageInput = ({ onCreateMessage }) => {
         value={newMessage}
         onChange={event => setNewMessage(event.target.value)}
       />
-      <input
+      <button
         type="submit"
         id="submit"
         disabled={tooShortMessage || tooLongMessage}
         className="form-button"
-        value='❤️️ Send Happy Thought ❤️️'
-      />
+      >
+        <span role='img' aria-label='send message'>
+          {'❤️️ Send Happy Thought ❤️️'}
+        </span>
+      </button>
       <p className="char-counter">{newMessage.length}/140</p>
     </form >
 
   );
 }
+
+
 
 
 

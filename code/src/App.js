@@ -36,11 +36,6 @@ export const App = () => {
   // Post new heart value to server then fetch
   const postHeart = event => {
     const messageId = event._id
-    // if (!messageId) {
-    //   console.debug("Unable to post a blank messageId.", messageId)
-    //   return false;
-    // }
-
     fetch(likeUrlFor(messageId),
       {
         method: 'POST',
@@ -63,7 +58,7 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="container">
       <MessageInput onCreateMessage={postMessageInput} />
       <MessageList messageList={messages} onLike={postHeart} />
     </div>
