@@ -43,7 +43,7 @@ export const App = () => {
 
   //fetch POST like to the API's other endpoint and then fetch GET all messages
   const postLike = id => {
-    fetch(`MESSAGES_URL/${id}/like`, {
+    fetch(MESSAGES_URL + `/${id}/like`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
