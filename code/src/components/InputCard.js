@@ -26,7 +26,7 @@ export const InputCard = () => {
 				maxLength="130"
 				onChange={(event) => setNewThought(event.target.value)} />
 			<p className="text-counter"
-			   style={{color: newThought.length > 130 ? 'red' : 'black'}}
+			   style={{color: newThought.length > 130 ? "red" : "black"}}
 			> {140 - newThought.length} x characters left 
 			</p>
 

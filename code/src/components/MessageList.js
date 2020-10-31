@@ -1,7 +1,7 @@
 import moment from "moment"
 import React, { useState, useEffect } from "react"
 
-import { LikeButton } from './LikeButton'
+import { LikeButton } from "./LikeButton"
 
 export const MessageList = () => {
   const LIKES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
@@ -25,9 +25,9 @@ export const MessageList = () => {
   const onThoughtLiked = (id) => {
     const updatedThoughts = messages.map((thought) => {
       if (thought._id === id) {
-        thought.hearts += 1;
+        thought.hearts += 1
       }
-      return thought;
+      return thought
     })
     setMessages(updatedThoughts);
   }
@@ -51,5 +51,5 @@ export const MessageList = () => {
         )
       })}
     </div>
-  );
+  )
 }
