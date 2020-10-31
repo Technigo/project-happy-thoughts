@@ -19,7 +19,9 @@ const PostList = ({ postList, onLikeChange }) => {
 		<>
 			{postList.map(post => (
 				<article className="post" key={post._id}>
-					<h2 className="post-text">{post.message}</h2>
+					<h2 tabIndex="0" className="post-text">
+						{post.message}
+					</h2>
 					<Button
 						type="button"
 						click={() => handleLikeClick(post._id)}
@@ -34,8 +36,10 @@ const PostList = ({ postList, onLikeChange }) => {
 					/>
 
 					<div className="post-text-likes">
-						<p className="post-total-likes">x {post.hearts}</p>
-						<p className="post-my-likes">
+						<p tabIndex="0" className="post-total-likes">
+							x {post.hearts}
+						</p>
+						<p tabIndex="0" className="post-my-likes">
 							{!localStorage[post._id]
 								? ''
 								: localStorage[post._id] < 2
@@ -44,7 +48,7 @@ const PostList = ({ postList, onLikeChange }) => {
 						</p>
 					</div>
 
-					<time className="post-text-time">
+					<time tabIndex="0" className="post-text-time">
 						{moment(post.createdAt).fromNow()}
 					</time>
 				</article>

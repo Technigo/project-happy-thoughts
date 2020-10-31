@@ -16,7 +16,7 @@ const PostInput = ({ onMessageChange }) => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<label className="post-input">
-				<h1>What's making you happy right now?</h1>
+				<h1 tabIndex="0">What's making you happy right now?</h1>
 				<textarea
 					rows="4"
 					className="post-message"
