@@ -7,29 +7,40 @@ const ThoughtInput = ({ onNewThought }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    //clears the text field after submit
+    setNewThought("");
     onNewThought(newThought);
   };
-  //We clear the input field by having the state 
-  //with an empty string inside the handle submit function :p 
+
   return (
     <form className="input-container" onSubmit={handleSubmit}>
       <label htmlFor="input-text">What's making you happy right now?</label>
       <input
         className="input"
-        // id="input-text"
         type="text"
-        // name="thought"
         autoComplete="off"
         onChange={(event) => setNewThought(event.target.value)}
         value={newThought}
       >
       </input>
-      <input
+      <button
         type="submit"
         className="input-button"
-        value="Send Happy Thought"
+        disabled={newThought.length < 6 || newThought.length > 140 ? true : false}
       >
-      </input>
+        <span
+          aria-label="heart emoji"
+          role="img">
+          &#10084;&#65039;
+        </span>
+         Send Happy Thought
+        <span
+          aria-label="heart emoji"
+          role="img">
+          &#10084;&#65039;
+        </span>
+      </button>
+      <p>{newThought.length} / 140</p>
     </form>
   )
 };

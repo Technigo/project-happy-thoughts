@@ -20,6 +20,7 @@ export const App = () => {
       .then(data => setThoughts(data))
       .catch(error => console.error(error));
   };
+
   //ThoughtInput -> App.js -> server -> App.js -> ThoughtList
   const reachNewThought = (newThought) => {
     // console.log(newThought);
@@ -33,11 +34,12 @@ export const App = () => {
     }).then(() => fetchThoughts());
   };
 
-  const fetchHearts = () => {
-    fetch(THOUGHTS_URL)
-      .then(res => res.json())
-      .then(data => setHearts(data));
-  };
+  // const fetchHearts = () => {
+  //   fetch(THOUGHTS_URL)
+  //     .then(res => res.json())
+  //     .then(data => setHearts(data))
+
+  // };
 
   return (
     <div className="app-container">
