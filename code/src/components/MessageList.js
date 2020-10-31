@@ -14,7 +14,6 @@ export const MessageList = () => {
         return response.json()
       })
       .then((data) => {
-        console.log(data)
         // Filter out if any thoughts are empty
         const filteredData = data.filter((getMessage) => getMessage.message)
         setMessages(filteredData.slice(0, 20))
