@@ -1,6 +1,6 @@
 # Happy Thoughts
 
-On this Twitter like webpage you can post some Happy thoughts and see what other people are posting thank to the Happy Thoughts API. 
+On this Twitter like webpage you can post some Happy thoughts and see what other people are posting. This is done by using Happy Thoughts API. 
 A user can see when the previous posts were made and like them as well.
 The main goal of this project is to become comfortable with useEffect and getting and posting data from/to APIs with React.
 
