@@ -1,0 +1,32 @@
+.thoughts-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.thoughts-section__article {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid;
+    box-shadow: 5px 10px;
+}
+
+.button-liked {
+    background: #ffadad;
+}
+
+.button-unliked {
+    background: #f3f1f1;
+}
+
+.thoughts-section__time {
+    float: right;
+    color: #808080;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}

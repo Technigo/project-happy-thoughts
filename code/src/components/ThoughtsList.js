@@ -1,39 +1,31 @@
-import React, { useState, useEffect } from 'react';
-
-import { ThoughtForm } from 'components/ThoughtForm';
-import { Thought } from "components/Thought";
-import { ThoughtsUrl} from 'Urls';
+import React from 'react';
+import moment from 'moment';
 
 import "styles/thoughtsList.css";
 
-export const ThoughtsList = () => {
-    const [thoughts, setThoughts] = useState([]);
-
-  useEffect(() => {
-    fetchThoughts();
-  }, []);
-
-  const fetchThoughts = () => {
-    fetch(ThoughtsUrl)
-      .then(results => results.json())
-      .then(data => setThoughts(data))
-      .catch(error => console.error(error));
-    }
-
-    const postThoughts = (newThought) => {
-      fetch(ThoughtsUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ message: newThought })
-       })
-        .then(() => fetchThoughts())
-        .catch(error => console.error(error));
-    }
-
-    return (
-    <>
-        <ThoughtForm onThoughtChange={postThoughts}/>
-        <Thought happyThoughts={thoughts}/>
-    </>
-    );
+export const ThoughtsList = ({thought, onLike}) => {
+  
+  const handleLikes = () => {
+    onLike(thought._id);
+  };
+  
+  return (
+    <article className='thoughts-article' key={thought._id}>
+      <p className="thoughts-article__text">
+        {thought.message}
+      </p>
+      <div className="thoughts-article__info">
+        <button 
+          className= {thought.hearts > 0 ? 'button-liked' : 'button-unliked'}
+          onClick={handleLikes}
+        >
+          <span classname='heart-button' role='img' aria-label='heart'> ❤️ </span>
+        </button>
+        <p classname='thoughts-article__likes'> x {thought.hearts} </p>
+        <p className='thoughts-article__time'>
+          {moment(thought.createdAt).fromNow() /* Using moment to show time in a nice way */}
+        </p>
+      </div>
+    </article>
+  );
 };

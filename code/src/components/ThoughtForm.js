@@ -2,38 +2,47 @@ import React, { useState } from 'react';
 
 import "styles/thoughtform.css";
 
-
 export const ThoughtForm = ({onThoughtChange}) => {
-    const [newThought, setNewThought] = useState('');
 
+    /* State hooks for thoughts */
+    const [newThought, setNewThought] = useState(''); 
+
+    /*Function for handling input and posting of new happy thought */
     const handleSubmit = event => {
         event.preventDefault();
         onThoughtChange(newThought);
+        setNewThought('')
     }
 
+    /* Form for posting happy thoughts */
     return (
         <form onSubmit={handleSubmit} className='thoughts-form'>
-            <h2>What's making you happy right now?</h2>
+            <h3> 
+                What's making you happy right now?
+            </h3>
                 <input
                     type='text'
-                    rows='3'
                     className='thoughts-form__input'
                     placeholder='Write a happy thought...'
                     value={newThought}
                     onChange={event => setNewThought(event.target.value)}
                 />
-                <p className='message-length'> {newThought.length} / 140</p> 
-
-                <div className='thoughts-form__submit'>
-
-                    <button
-                        className='thoughts-form__button'
-                        type='submit'
-                        disabled={newThought.length < 5 || newThought.length > 140 ? true : false}
-                    >
-                    <span role='img' aria-label='heart'> ❤️ </span> Send Happy Thought <span role='img' aria-label='heart'> ❤️ </span>
-                    </button>
-                </div>
+                <p 
+                className={ /* If the message is >140 characters, a new class will turn the counter text red  */ 
+                newThought.length <= 140 ? 'message-length__ok' : 'message-length__error'}> 
+                {newThought.length} / 140 
+                </p>
+                
+                <button
+                    className='thoughts-form__button'
+                    type='submit'
+                    disabled={ /* If the input is empty, less than 6 characters or over 140 characters, the submit-button will be disabled */
+                    newThought.length < 6 || newThought.length > 140 ? true : false}
+                >
+                    <span role='img' aria-label='heart'> ❤️ </span> 
+                        Send Happy Thought 
+                    <span role='img' aria-label='heart'> ❤️ </span>
+                </button>
         </form>
     );
 };

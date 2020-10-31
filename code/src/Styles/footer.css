@@ -5,8 +5,9 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    height: 150px;
+    margin-top: 50px;
     color: #000000; 
-    height: 250px;
     font-size: 12px;
     letter-spacing: 0.2px;
 }
