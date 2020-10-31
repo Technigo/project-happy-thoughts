@@ -6,7 +6,7 @@ This week's project was to continue practicing React state by fetching and posti
 
 https://inspiring-lalande-9954d9.netlify.app/
 
-## What I have learnt
+# What I have learnt
 
 I have learnt: 
 
@@ -24,12 +24,12 @@ In sum, this week has taught me how to use APIs in React, and how to fire reques
 # Tools and methods I have used
 
 - npm Node.js
-- React - useState, useEffect
+- React - useState, useEffect and moment dependencies
 - fetch
 - GET and POST request to API-server
 - jsx, css, some html
 
-I structured elements in different component-files. Each component also has it's own css-file. I saved the URL in a separate file. I also saved some general css in a separate file (in index.css). In App.js I have both the GET and the POST requests. I also tried to keep the child-components as clean as possible - i.e. to put the logic in App.js.
+I structured elements in different React component-files (App.js, MessageList,js, MessagInut.js and Header.js). Each component also has its own css-file. I saved the URL in a separate file. I also saved some general css in a separate file (in index.css). In App.js I have both the GET and the POST requests. I also tried to keep the child-components as clean as possible - i.e. to put the logic in App.js.
 
 # Requirements for this week
 
