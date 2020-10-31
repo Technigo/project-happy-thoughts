@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+.header-text {
+  font-size: 30px;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
+.heart-icon-header {
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+}
+@media (min-width: 667px) and (max-width: 1024px) {
+  .header {
+    width: 60%;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    width: 30%;
+  }
+}

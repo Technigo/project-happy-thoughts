@@ -1,0 +1,49 @@
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button-like {
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: center;
+}
+
+.button-like:hover {
+  cursor: pointer;
+}
+.button-like {
+  margin-right: 0;
+}
+
+.heart-icon {
+  width: 15px;
+  height: 15px;
+}
+.numberOfHearts {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  margin-left: 7px;
+}
+/* .happy-thought button span {
+  margin-left: 2px;
+  line-height: 2.8;
+} */
+
+.liked {
+  background: orange;
+}
+
+.superLiked {
+  background: rgb(247, 98, 98);
+}
+
+.not-liked {
+  background: lightgrey;
+}

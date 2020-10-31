@@ -1,0 +1,40 @@
+.message {
+  background: #fff2e2;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  width: 70vw;
+  height: auto;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Courier New", Courier, monospace;
+  padding: 20px;
+  overflow-wrap: break-word;
+}
+.text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  margin: 0;
+}
+.message-time {
+  display: block;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+}
+.likes-and-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (min-width: 667px) and (max-width: 1024px) {
+  .message {
+    width: 60vw;
+  }
+}
+@media (min-width: 1024px) {
+  .message {
+    width: 30vw;
+  }
+}
