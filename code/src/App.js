@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import { MessageList } from './components/MessageList';
 import { MessageInput } from './components/MessageInput';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { MESSAGE_URL } from './urls';
+
+import './app.css'
 
 export const App = () => {
 
@@ -47,9 +51,13 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="main">
+      <Header headerText="Post a happy thought."/>
       <MessageInput onMessageChange={reachMessageInput}/>
-      <MessageList messageList={messages} onLiked={onLiked}/>
+      {messages.map(message => (
+        <MessageList key={message._id} message={message} onLiked={onLiked}/>
+      ))}
+      <Footer footerText="Petra Almgren for Technigo Bootcamp 2020"/>
     </div>
   )
 }

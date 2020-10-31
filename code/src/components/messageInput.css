@@ -1,0 +1,16 @@
+.form-text {
+  border: 1px solid lightgrey;
+  background: seashell;
+  width: 93%;
+  padding: 15px;
+  font-size: 18px;
+  font-family: 'Kalam', cursive;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 20px;
+  /* margin: 0 -20px; */
+}
+
+textarea {
+  resize: none;
+}

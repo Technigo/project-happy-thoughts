@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
+import './messageInput.css';
 
 export const MessageInput = ({onMessageChange}) => {
 
@@ -6,7 +8,6 @@ export const MessageInput = ({onMessageChange}) => {
 
   // A submit function which POSTs the text field
   const handleSubmit = event => {
-    console.log("Post handleSubmit");
     event.preventDefault();
     onMessageChange(newMessage);
     setNewMessage("");
@@ -14,11 +15,11 @@ export const MessageInput = ({onMessageChange}) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Post a happy thought!</h2>
       <textarea
-        rows="3"
+        rows="4"
+        maxLength="140"
         className="form-text"
-        placeholder="Write your message here"
+        placeholder="Write your happy thought here."
         value={newMessage}
         onChange={event => setNewMessage(event.target.value)}
       ></textarea>
@@ -26,9 +27,8 @@ export const MessageInput = ({onMessageChange}) => {
       <button
         type="submit"
         className="form-button"
-        //onClick={handleSubmit}
         disabled={newMessage.length < 6 || newMessage.length > 140}
-      > Send a happy thought
+      > <span role="img" aria-label="heart">💜</span> Send Happy Thought <span role="img" aria-label="heart">💜</span>
       </button>
       <p>{newMessage.length}/140</p>
     </form>
