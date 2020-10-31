@@ -1,13 +1,20 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is the Happy Thought Project. It's a website built in React that uses an API to show a feed of thoughts. You can also post a thought and like the thougths that are posted.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This project fulfills these requirements:
+**🔵  Blue Level **
+
+- Your page should follow the design as closely as possible
+- You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
+- Your thoughts should show the content of the message and how many likes they've received
+- You should have a form to post new thoughts
+- You should implement the heart button to send likes on a thought
+
+I had some difficulty making my like-button work at first, but after consulting my teammates about it we managed to solve it. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://epic-northcutt-bbbe21.netlify.app/ 
