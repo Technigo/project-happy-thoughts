@@ -1,9 +1,7 @@
+// This is all the material from the Monday lecture
+
 import React, { useEffect, useState } from 'react';
 import moment from "moment";
-
-// REMOVE THESE
-import ic_like_0 from '../assets/ic_like_0.svg';
-import ic_like_1 from '../assets/ic_like_1.svg';
 
 export const MessageList = () => {
   // Default method for fetch is GET.

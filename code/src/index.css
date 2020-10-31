@@ -1,19 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
-
 body {
   margin: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   background: url(./assets/background.svg) no-repeat center center fixed;
   background-size: cover;
-  background-color: #FF586D;
+  background-color: #ff586d;
 }
 
 main {
@@ -24,8 +23,6 @@ main {
   overflow: scroll;
 }
 
-
-
 p {
   font-size: 16px;
   line-height: 150%;
@@ -35,14 +32,13 @@ p {
 
 .p-subtle {
   font-size: 14px;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .semibold {
   font-weight: 600;
 }
 
-
 .red {
-  color: #FF586D;
+  color: #ff586d;
 }

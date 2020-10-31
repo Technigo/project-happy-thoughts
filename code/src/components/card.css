@@ -1,12 +1,11 @@
 .card {
   background: #ffffff;
-  box-shadow: 
-    0px 2px 4px rgba(0, 0, 0, 0.15),
-    0px 12px 24px rgba(255, 88, 108, .7),
-    inset 0px -2px 4px rgba(255, 255, 255, .7),
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15),
+    0px 12px 24px rgba(255, 88, 108, 0.7),
+    inset 0px -2px 4px rgba(255, 255, 255, 0.7),
     inset 0px -5px 16px rgba(255, 88, 108, 0.4);
   border-radius: 24px;
-  padding: 20px 20px 16px 20px;
+  padding: 24px 24px 20px 24px;
   margin-bottom: 24px;
   word-wrap: break-word;
 }
@@ -31,7 +30,7 @@
 button {
   border: 0;
   outline: 0;
-  /* Prevents zoom when clicking rapidly on heart */
+  /* Prevents zoom when clicking rapidly on heart on mobile (not Safari though :( ) */
   touch-action: manipulation;
 }
 
@@ -54,13 +53,5 @@ button svg {
 }
 
 .button-like:active {
-  background-color: rgba(255, 88, 109, 0.25);
-}
-
-.button-like-liked {
-  background-color: rgba(255, 88, 109, 1);
-}
-
-.button-like-notLiked {
-  background-color: rgba(255, 88, 109, 0.1);
+  background-color: rgba(255, 88, 109, 0.15);
 }
