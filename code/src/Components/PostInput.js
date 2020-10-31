@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Button from './Button';
+
 import './Style.css';
 
 const PostInput = ({ onMessageChange }) => {
@@ -24,24 +25,20 @@ const PostInput = ({ onMessageChange }) => {
 					onChange={event => setNewPost(event.target.value)}
 				/>
 			</label>
+
 			<Button
 				className="button-send-post"
 				type="submit"
 				text={
 					<p>
-						{/* <span className="heart-post" role="img" aria-label="Heart"> */}
 						<img src="./assets/heart.svg" alt="heart icon" />
-						{/* {'❤️ '} */}
-						{/* </span> */}
 						Send happy thought
-						{/* <span className="heart-post" role="img" aria-label="Heart"> */}
 						<img src="./assets/heart.svg" alt="heart icon" />
-						{/* {' ❤️'} */}
-						{/* </span> */}
 					</p>
 				}
 				disabled={newPost.length < 6 || newPost.length > 140 ? true : false}
 			/>
+
 			<p className="post-message-length">
 				<span
 					className={

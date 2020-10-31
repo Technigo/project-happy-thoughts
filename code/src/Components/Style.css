@@ -10,6 +10,12 @@ h1 {
 	font-weight: 400;
 }
 
+h2 {
+	grid-column: 1/4;
+	font-weight: 200;
+	font-size: 18px;
+}
+
 main {
 	width: 90%;
 	max-width: 500px;
@@ -53,8 +59,7 @@ textarea {
 	border: none;
 	border-radius: 25px;
 	background: #ffadad;
-	/* display: flex;
-	justify-content: center; */
+	cursor: pointer;
 }
 
 .button-send-post p {
@@ -64,21 +69,9 @@ textarea {
 	width: 100%;
 }
 
-.heart-post {
-	display: flex;
-}
-
-.heart-post img {
-	height: 20px;
-}
-
 .button-send-post img {
 	height: 20px;
 }
-
-/* .heart-post {
-	font-family: ui-rounded;
-} */
 
 .post-message-length {
 	text-align: end;
@@ -102,46 +95,19 @@ textarea {
 	padding: 20px;
 }
 
-.post-text {
-	grid-column: 1/4;
-}
-
 .post-text-likes {
 	font-size: 14px;
 	opacity: 0.5;
 	width: max-content;
 }
 
-.post-text-posted {
+.post-text-time {
 	font-size: 14px;
 	opacity: 0.5;
 	text-align: end;
 }
 
-.post-text-info {
-	display: grid;
-	grid-template-columns: repeat(3, auto);
-	grid-column-gap: 10px;
-	align-items: center;
-	justify-items: center;
-	width: 100%;
-}
-
 /*heart like button*/
-.notLiked img,
-.liked img,
-.superLiked img {
-	position: relative;
-	height: 20px;
-	width: 20px;
-	top: 3px;
-	left: calc(50% - 20px);
-}
-
-/* .heart-like {
-	margin-left: 4px;
-} */
-
 .notLiked,
 .liked,
 .superLiked {
@@ -151,6 +117,17 @@ textarea {
 	height: 40px;
 	font-size: 16px;
 	grid-column: 1/2;
+}
+
+.notLiked img,
+.liked img,
+.superLiked img {
+	position: relative;
+	height: 20px;
+	width: 20px;
+	top: 3px;
+	left: calc(50% - 20px);
+	cursor: pointer;
 }
 
 .notLiked {
@@ -222,7 +199,4 @@ textarea {
 	.heart-like {
 		margin-left: 0;
 	}
-}
-
-@media (min-width: 1024px) {
 }

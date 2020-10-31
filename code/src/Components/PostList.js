@@ -9,24 +9,20 @@ const PostList = ({ postList, onLikeChange }) => {
 	const handleLikeClick = id => {
 		if (!localStorage[id]) {
 			localStorage.setItem(id, 0);
-			//return localStorage[id];
 		}
 		setNewLikes(newLikes + 1);
 		onLikeChange(id);
 		localStorage[id] = Number(localStorage[id]) + 1;
-		//return localStorage[id];
 	};
 
 	return (
 		<>
 			{postList.map(post => (
 				<article className="post" key={post._id}>
-					<p className="post-text">{post.message}</p>
-
+					<h2 className="post-text">{post.message}</h2>
 					<Button
 						type="button"
 						click={() => handleLikeClick(post._id)}
-						//disabled={localStorage[id]}
 						className={
 							post.hearts > 5
 								? 'superLiked'
@@ -34,21 +30,21 @@ const PostList = ({ postList, onLikeChange }) => {
 								? 'liked'
 								: 'notLiked'
 						}
-						text=//{
-						// <span className="heart-like" role="img" aria-label="Heart">
-						{<img src="./assets/heart.svg" alt="heart icon" />}
-						//{/* {'❤️'} */}
-						// {/* </span> */}
-						//}
+						text={<img src="./assets/heart.svg" alt="heart icon" />}
 					/>
+
 					<div className="post-text-likes">
 						<p className="post-total-likes">x {post.hearts}</p>
 						<p className="post-my-likes">
-							x {!localStorage[post._id] ? 0 : localStorage[post._id]} my likes
+							{!localStorage[post._id]
+								? ''
+								: localStorage[post._id] < 2
+								? `x ${localStorage[post._id]} your like`
+								: `x ${localStorage[post._id]} your likes`}
 						</p>
 					</div>
 
-					<time className="post-text-posted">
+					<time className="post-text-time">
 						{moment(post.createdAt).fromNow()}
 					</time>
 				</article>

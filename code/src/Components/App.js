@@ -4,28 +4,22 @@ import PostInput from './PostInput';
 import PostList from './PostList';
 import { MESSAGE_URL } from '../Urls';
 import Loader from './Loader';
+
 import './Style.css';
 
 export const App = () => {
 	const [messages, setMessages] = useState([]);
 	const [isLoading, setLoading] = useState(true);
-	// const [errorMessage, setErrorMessage] = useState(null);
-
 	useEffect(() => {
-		fetchPosts();
-		setInterval(fetchPosts, 5000);
+		fetchMessages();
+		setInterval(fetchMessages, 5000);
 	}, []);
 
-	const fetchPosts = () => {
+	const fetchMessages = () => {
 		fetch(MESSAGE_URL)
 			.then(res => res.json())
 			.then(data => {
-				// if (!res.ok) {
-				// 	setErrorMessage('Sorry, a problem occured!');
-				// }
-				const filteredData = data.filter(post => {
-					return post.message;
-				});
+				const filteredData = data.filter(post => post.message);
 				setMessages(filteredData);
 				setLoading(false);
 			})
@@ -38,7 +32,7 @@ export const App = () => {
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ message }),
 		})
-			.then(() => fetchPosts())
+			.then(() => fetchMessages())
 			.catch(error => console.error(error));
 	};
 
@@ -47,7 +41,9 @@ export const App = () => {
 			method: 'POST',
 			body: '',
 			headers: { 'Content-Type': 'application/json' },
-		}).then(() => fetchPosts());
+		})
+			.then(() => fetchMessages())
+			.catch(error => console.error(error));
 	};
 
 	return (
