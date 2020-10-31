@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
@@ -23,6 +24,8 @@ main {
   overflow: scroll;
 }
 
+
+
 p {
   font-size: 16px;
   line-height: 150%;
@@ -37,4 +40,9 @@ p {
 
 .semibold {
   font-weight: 600;
+}
+
+
+.red {
+  color: #FF586D;
 }

@@ -58,7 +58,7 @@ export const App = () => {
           <Card
             key={message._id}
             message={message}
-            onLikeMessage={likeMessage} 
+            onLikeMessage={likeMessage}
           />
         )
       })}

@@ -8,6 +8,7 @@
   border-radius: 24px;
   padding: 20px 20px 16px 20px;
   margin-bottom: 24px;
+  word-wrap: break-word;
 }
 
 .card-bottom {
@@ -30,6 +31,8 @@
 button {
   border: 0;
   outline: 0;
+  /* Prevents zoom when clicking rapidly on heart */
+  touch-action: manipulation;
 }
 
 button svg {
@@ -46,7 +49,7 @@ button svg {
 }
 
 .button-like:hover {
-  background-color: rgba(255, 88, 109, 0.08);
+  background-color: rgba(0, 0, 0, 0.03);
   cursor: pointer;
 }
 
