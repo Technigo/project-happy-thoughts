@@ -6,7 +6,7 @@ import Button from './Button';
 const MessageList = ({ messageList, onLikeChange }) => {
   const [newLike, setNewLike] = useState(0);
 
-  //function to set localStorage and to post new lik
+  //function to set localStorage and to post new like
   const handleClick = id => {
     if (!localStorage[id]) {
       localStorage.setItem(id, 0);
