@@ -1,5 +1,5 @@
 .message-input-container {
-  height: 80px;
+  height: 96px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -11,7 +11,6 @@
     rgba(255, 88, 108, 0.5) 100%
   );
   margin: 0 auto;
-
 }
 
 .message-input-content {
@@ -32,6 +31,8 @@
   background: #ffffff;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25),
     0px 8px 24px rgba(255, 88, 108, 0.5);
+  -webkit-appearance: none;
+
   border: 0;
   border-radius: 100px;
   
@@ -45,80 +46,55 @@
 
 .message-field:active, .message-field:focus {
   outline: 0;
-  box-shadow: inset 0px 0px 0px 3px #7764E8;
+  box-shadow: inset 0px 0px 0px 3px #7764E8,
+  0px 2px 8px rgba(0, 0, 0, 0.25),
+    0px 8px 24px rgba(255, 88, 108, 0.5);
 }
 
-.btn-message-send {
+.button-send-message {
   margin-left: 8px;
   width: 48px;
   height: 48px;
   border: 0;
   border-radius: 50%;
+}
+
+.button-send-message img {
+  position: relative;
+  left: 2px;
+}
+
+
+
+.button-send-message-active {
   background: #7764e8;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25),
     0px 8px 24px rgba(255, 88, 108, 0.5);
 }
 
-.btn-message-send:hover {
+.button-send-message-active:hover {
   background: #7F6BF7;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25),
   0px 12px 32px rgba(255, 88, 108, 0.5);
 }
 
-.btn-message-send:active {
+.button-send-message-active:active {
   background: #7F6BF7;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.35),
   0px 4px 16px rgba(255, 88, 108, 0.6);
 }
 
 
-.btn-message-send img {
-  position: relative;
-  left: 2px;
+
+
+.button-send-message-inactive {
+  background: #BBB2F4;
 }
 
-/* .new-message-box {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  background: #fff;
-  box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.15), 0px -8px 24px rgba(255, 88, 108, 0.2);
-  border-radius: 16px 16px 0 0;
-  padding: 16px;
-  max-width: 760px;
-  margin: 0 auto;
+.button-send-message-inactive:hover {
+  cursor: not-allowed;
 }
 
-.composer {
-  display: flex;
-  align-items: stretch;
+.button-send-message-inactive img {
+  opacity: 0.5;
 }
-
-.composer input {
-  width: 100%;
-  height: 40px;
-
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 16px;
-  line-height: 100%;
-  color: rgba(0, 0, 0, 0.87);
-  overflow-y: auto;
-
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
-
-  margin: 4px 0 4px 0;
-  
-}
-
-.p-label {
-  font-size: 14px;
-  color: rgba(0,0,0,0.65);
-}
-
-.p-counter {
-  font-size: 14px;
-  color: rgba(0,0,0,0.3);
-} */
