@@ -1,13 +1,17 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This week's project was to dive deeper into React and create a Twitter-esque feed using a public API where all the messages are stored.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Had a hard time grasping the main concepts, so spent a lot of time just going through tutorials and the provided video material on useEffect. After that, I tried to de-structure the brief to find out what components I needed, and what I wanted them to do. Couldn't manage to split it up in the way I wanted, so most of the stuff is happening inside App.js. Oh well – back at it next week.
+
+
+### If I had more time
+
+There's very little validation at the moment. If I had more time, I would have tried to implement the word counter and disabling posting messages if the message is longer than 140 characters (or shorter than 5). Also, I really wanna learn how to animate with React. But we'll get there ✌️
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+[Happy Little Thoughts ❤️](http://happy-little-thoughts.netlify.app/).
