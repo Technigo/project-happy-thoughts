@@ -21,9 +21,14 @@
   font-family: 'Capriola', sans-serif;
 }
 
-.character-display {
+.error-display {
   display: flex;
   align-items: flex-start;
+}
+
+.error-message {
+  font-size: 13px;
+  font-style: italic
 }
 
 .word-count {
@@ -38,14 +43,7 @@
   color: darkmagenta;
   font-weight: bold;
 }
-.alert-message {
-  font-size: 13px;
-  font-style: italic
-}
 
-.hidden {
-  display: hidden;
-}
 .cross-sign {
   color: red;
   margin-right: 5px;
