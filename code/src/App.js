@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import MessageList from './components/MessageList';
 import MessageInput from './components/MessageInput';
+import MessageList from './components/MessageList';
 import Loader from './components/Loader';
 import { MESSAGES_URL } from './urls';
 
@@ -16,7 +16,7 @@ export const App = () => {
     setInterval(fetchMessages, 5000);
   }, []);
 
-  //fetch GET messages from the API
+  //fetch GET messages from the API, set messages and catch errors
   const fetchMessages = () => {
     fetch(MESSAGES_URL)
       .then(results => results.json())
@@ -30,9 +30,8 @@ export const App = () => {
       .catch(error => console.error(error));
   };
 
-  //fetch POST message to the API
+  //fetch POST message to the API and then fetch GET all messages
   const postMessage = message => {
-    console.log(message);
     fetch(MESSAGES_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -42,10 +41,9 @@ export const App = () => {
       .catch(error => console.error(error));
   };
 
-  //fetch POST like to the API's other endpoint
+  //fetch POST like to the API's other endpoint and then fetch GET all messages
   const postLike = id => {
-    console.log(id);
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+    fetch(`MESSAGES_URL/${id}/like`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -60,7 +58,7 @@ export const App = () => {
     <main className="App App__grid">
       <MessageInput onMessageChange={postMessage} />
       {isLoading ? (
-        <Loader className="loader" />
+        <Loader className="Loader" />
       ) : (
         <MessageList messageList={messages} onLikeChange={postLike} />
       )}

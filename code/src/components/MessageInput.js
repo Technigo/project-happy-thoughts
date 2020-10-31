@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 
 import Button from './Button';
 
-import './Styles.scss';
-
 const MessageInput = ({ onMessageChange }) => {
   const [newMessage, setNewMessage] = useState('');
 
+  //function to  post new message to API
   const handleSubmit = event => {
     event.preventDefault();
     onMessageChange(newMessage);
@@ -57,9 +56,6 @@ const MessageInput = ({ onMessageChange }) => {
               src="./assets/heart.svg"
               alt="heart icon"
             />
-            {/* <span role="img" aria-label="Heart">
-              {' ❤️'}
-            </span> */}
           </>
         }
       />
