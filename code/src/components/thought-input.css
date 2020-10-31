@@ -21,6 +21,11 @@ label {
   border: 3px solid #EFEFEF;
 }
 
+.input-button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .input-button {
   padding: 12px;
   margin-top: 10px;

@@ -23,24 +23,26 @@ const ThoughtInput = ({ onNewThought }) => {
         value={newThought}
       >
       </input>
-      <button
-        type="submit"
-        className="input-button"
-        disabled={newThought.length < 6 || newThought.length > 140 ? true : false}
-      >
-        <span
-          aria-label="heart emoji"
-          role="img">
-          &#10084;&#65039;
+      <div className="input-button-container">
+        <button
+          type="submit"
+          className="input-button"
+          disabled={newThought.length < 6 || newThought.length > 140 ? true : false}
+        >
+          <span
+            aria-label="heart"
+            role="img">
+            &#10084;&#65039;
         </span>
-        {" "}Send Happy Thought{" "}
-        <span
-          aria-label="heart emoji"
-          role="img">
-          &#10084;&#65039;
+          {" "}Send Happy Thought{" "}
+          <span
+            aria-label="heart"
+            role="img">
+            &#10084;&#65039;
         </span>
-      </button>
-      <p>{newThought.length} / 140</p>
+        </button>
+        <p>{newThought.length} / 140</p>
+      </div>
     </form>
   )
 };
