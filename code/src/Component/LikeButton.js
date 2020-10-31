@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import '../Style/LikeButton.css';
 import '../Style/HeartIcon.css';
 
@@ -12,12 +13,10 @@ const LikeButton = ({ thought, onLikeClick }) => {
       "like-button",
       ...(likeCount > 0 ? ["pink-button"] : [])
     ]);
-    console.log("hello!", likeCount)
   },[likeCount])
   
   const clickLikeButton = () => {
     setLikeCount(likeCount + 1)
-    console.log("oops", likeCount)
     onLikeClick(thought._id)
   }
 

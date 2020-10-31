@@ -15,8 +15,8 @@
   box-shadow: 4px 5px #8a5a44;
   color: rgb(2 ,2 ,2);
   display: flex;
-  padding: 15px;
   flex-direction: column;
+  padding: 15px;
 }
 
 @keyframes bganimation {

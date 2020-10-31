@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import '../Style/ThoughtSubmitForm.css';
 import '../Style/Container.css';
 import '../Style/HeartIcon.css';
@@ -27,8 +28,6 @@ const ThoughtSubmitForm = ({ thought, onThoughtChange, onSubmitThought, errorMes
       
       <textarea className="thought-box"
         id="thoughtBox"
-        // minLength="5"
-        // maxLength="140"
         onChange={(event) => onThoughtChange(event.target.value)}
         value={thought}
       />

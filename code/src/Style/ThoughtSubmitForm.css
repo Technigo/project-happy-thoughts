@@ -22,26 +22,26 @@
 }
 
 .error-display {
-  display: flex;
   align-items: flex-start;
+  display: flex;
 }
 
 .error-message {
+  font-style: italic;
   font-size: 13px;
-  font-style: italic
 }
 
 .word-count {
   color: blue;
+  flex: 1;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   font-size: 13px;
-  flex: 1;
   text-align: end;
 }
 .count-turn-red {
-  color: darkmagenta;
   font-weight: bold;
+  color: darkmagenta;
 }
 
 .cross-sign {

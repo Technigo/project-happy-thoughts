@@ -1,6 +1,5 @@
 import React from 'react';
 import  '../Style/Header.css';
-// import '../Style/FixedPosition.css'
 
 const Header = () => {
   return (
