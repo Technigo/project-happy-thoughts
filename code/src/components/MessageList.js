@@ -20,7 +20,9 @@ const MessageList = ({ messageList, onLikeChange }) => {
     <>
       {messageList.map(message => (
         <article className="Article" key={message._id}>
-          <p className="Article__text">{message.message}</p>
+          <p tabIndex="0" className="Article__text">
+            {message.message}
+          </p>
           <Button
             type="button"
             className={
@@ -41,7 +43,7 @@ const MessageList = ({ messageList, onLikeChange }) => {
               />
             }
           />
-          <div>
+          <div tabIndex="0">
             <p className="Article__text--likes">x {message.hearts}</p>
             <p className="Article__text--likes">
               {!localStorage[message._id]
@@ -51,7 +53,7 @@ const MessageList = ({ messageList, onLikeChange }) => {
                 : `x ${localStorage[message._id]} your likes`}
             </p>
           </div>
-          <p className="Article__text--time">
+          <p tabIndex="0" className="Article__text--time">
             {moment(message.createdAt).fromNow()}
           </p>
         </article>

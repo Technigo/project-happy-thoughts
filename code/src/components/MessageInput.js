@@ -15,7 +15,9 @@ const MessageInput = ({ onMessageChange }) => {
   return (
     <form onSubmit={handleSubmit} className="Form">
       <label className="Form__label">
-        <h1 className="Form__header">What's making you happy right now?</h1>
+        <h1 tabIndex="0" className="Form__header">
+          What's making you happy right now?
+        </h1>
         <textarea
           className="Form__textarea"
           rows="4"
@@ -25,7 +27,7 @@ const MessageInput = ({ onMessageChange }) => {
           placeholder="Write your happy thought..."
         ></textarea>
       </label>
-      <p className="Form__text">
+      <p tabIndex="0" className="Form__text">
         <span
           className={
             newMessage.length < 6 || newMessage.length > 140
@@ -38,11 +40,11 @@ const MessageInput = ({ onMessageChange }) => {
         / 140
       </p>
       <Button
-        type="submit"
-        className="Button Button__submit"
         disabled={
           newMessage.length < 6 || newMessage.length > 140 ? true : false
         }
+        type="submit"
+        className="Button Button__submit"
         text={
           <>
             <img
