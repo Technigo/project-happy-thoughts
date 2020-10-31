@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This site is connected to a server and we are fetching the api for GET and POST to develop this chat function of Happy Thoughts. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by collecting all the fetching in the app component, but I had to start again with a new approach because I lost myself when I had to solve the like button. Too bad, because I had something good going on.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happymessageappmoa.netlify.app/
