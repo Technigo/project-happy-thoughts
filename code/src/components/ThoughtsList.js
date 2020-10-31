@@ -18,11 +18,13 @@ const ThoughtsList = ({ thoughtsArray }) => {
   // }
 
   // const addNewHeart = () => {
-  //   fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like", {
+  //   fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like", {
   //     method: "POST",
   //     headers: { "Content-Type": "application/json" }
   //   }).then(() => fetchHearts());
   // };
+
+  // const identificationNumber = { thought._id }
 
   return (
     <div className="thoughts-list-container">
@@ -37,6 +39,7 @@ const ThoughtsList = ({ thoughtsArray }) => {
 
             <button
               className="heart-button"
+            // onClick={addNewHeart}
 
             //on click(call a function that): adds +1 to existing # of {thought.hearts}, 
             //post to API, fetch updated state and display it
@@ -44,10 +47,9 @@ const ThoughtsList = ({ thoughtsArray }) => {
               <span aria-label="heart emoji" role="img">&#10084;&#65039;</span>
             </button> x {thought.hearts}
           </div>
-        ))
-        }
-      </ul >
-    </div >
+        ))}
+      </ul>
+    </div>
   )
 };
 

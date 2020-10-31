@@ -6,7 +6,7 @@ import { THOUGHTS_URL } from "./urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [hearts, setHearts] = useState(0);
+  // const [hearts, setHearts] = useState(0);
 
   //perform useEffect and fetch() after mounting
   useEffect(() => {
@@ -24,7 +24,6 @@ export const App = () => {
   //ThoughtInput -> App.js -> server -> App.js -> ThoughtList
   const reachNewThought = (newThought) => {
     // console.log(newThought);
-    //2nd argument = option; without it we send GET request
     fetch(THOUGHTS_URL, {
       method: "POST",
       //obligatory to write headers in POST requests (to communicate to server what kind of info are you sending)
