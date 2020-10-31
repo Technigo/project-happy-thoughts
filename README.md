@@ -1,7 +1,7 @@
 # Happy Thoughts
 
 On this webpage you can post some Happy thoughts and see what other people are posting.
-You can also like the posts and see when they were posted and.
+A user can see when the previous posts were made and like them as well.
 
 ## The problem
 
