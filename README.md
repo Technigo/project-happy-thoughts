@@ -1,13 +1,22 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+A twitter like app to post your happy thoughts! The assignment was to create an app with React, using useState and useEffect to GET and POST messages and likes from and to an API.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Learning objectives
+
+## Tech used
+
+- CSS
+- SCSS
+- JSX
+- React
+- React Hooks
+- API
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The hardest part this week was to understand the waterfall concept and how to get access to the API from all components. In the end I managed to put all fetches in the App.js component, passing functions as props.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://determined-panini-dccc7a.netlify.app/
