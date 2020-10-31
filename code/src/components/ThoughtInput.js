@@ -33,7 +33,7 @@ const ThoughtInput = ({ onNewThought }) => {
           role="img">
           &#10084;&#65039;
         </span>
-         Send Happy Thought
+        {" "}Send Happy Thought{" "}
         <span
           aria-label="heart emoji"
           role="img">

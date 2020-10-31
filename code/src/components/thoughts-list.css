@@ -8,15 +8,11 @@
 
 .thought-container {
   border: 2px solid #000000;
-  background-color: #F2F0F0;
+  background-color: #FFFFFF;
   width: 500px;
   padding: 20px;
   margin-bottom: 40px;
   word-wrap: break-word;
-}
-
-.ul-container {
-  border: 1px solid blue;
 }
 
 li {
@@ -32,7 +28,7 @@ li {
   border: 1px solid #F2F0F0;
   border-radius: 50%;
   background-color: #F2F0F0;
-  /* when clicked: #FFADAD; */
   padding: 10px;
   margin-top: 10px;
+  cursor: pointer;
 }

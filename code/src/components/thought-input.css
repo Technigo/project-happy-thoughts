@@ -9,7 +9,7 @@
 }
 
 label {
-  border: 1px solid pink;
+  border: 1px solid green;
 }
 
 .input {
@@ -22,5 +22,10 @@ label {
 }
 
 .input-button {
-  border: 1px solid green;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background-color: #FFADAD;
+  color: #000;
+  cursor: pointer;
 }

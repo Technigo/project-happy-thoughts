@@ -42,7 +42,6 @@ export const App = () => {
 
   return (
     <div className="app-container">
-      <h1>Happy thoughts</h1>
       <ThoughtInput
         // inputText={input}
         onNewThought={reachNewThought}
