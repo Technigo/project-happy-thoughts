@@ -1,25 +1,28 @@
 # Happy Thoughts ❤️
-bla bla bala b
+
+This week's project was to continue practicing React state by fetching and posting data - happy thoughts - to an API. We have worked with an API with three endpoints. 
 
 # View it live
 
 https://inspiring-lalande-9954d9.netlify.app/
 
-## The problem
+## What I have achieved
 
-What component lifecycle means.
-How to use the useEffect hook in React to perform actions when components mount, unmount, or when state changes.
-How to call APIs from React and put the data into state.
+I have learnt: 
 
-This week you'll be practicing your React state skills by fetching and posting data to an API. 
+- what a component lifecycle means
+- how to use the useEffect hook in React to perform actions when components mount, unmount, or when state changes.
+- how to call APIs from React and put the data into state.
 
-We've built a simple API to collect 'happy thoughts'. 
+I have: 
+ -fetched message from the API using a GET request
+- have created and sent new messages using POST with a JSON body
+- sent likes back - when user like a message - to the API-server using another endpoint and the method POST but without a body
 
-To achieve this, we've built an API with three endpoints. N
 
-Fetch messages This will return the latest 20 thoughts from the API,
 
-Send a messageSend a POST request with a JSON body
+
+
 
 Like a message When the user clicks the heart button on a thought, send a POST request (with no body) to this URL. **Replace THOUGHT_ID with the `_id` parameter of the thought the user clicked on**
 
