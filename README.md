@@ -14,26 +14,18 @@ I have learnt:
 - how to use the useEffect hook in React to perform actions when components mount, unmount, or when state changes.
 - how to call APIs from React and put the data into state.
 
-I have: 
- -fetched message from the API using a GET request
+In this project, I have: 
+- fetched message from the API using a GET request
 - have created and sent new messages using POST with a JSON body
 - sent likes back - when user like a message - to the API-server using another endpoint and the method POST but without a body
 
+In sum, this week has taught me how to use APIs in React, and how to fire requests within 'useEffect'. I have also learned how to put the results from the API responses into React state to output in the browser. This week I have both sent and received data from an API-server.
 
+# Requirements for this week
 
+The page should follow the design - and it does. Further, the site should sort the most recent messages at the top and older ones at the bottom. The site should also show the content of the message and how many likes each message has received. There should also be a form in which a user can post a message. The heart button should be clickable and onclick send a like as a new message.
 
-
-
-Like a message When the user clicks the heart button on a thought, send a POST request (with no body) to this URL. **Replace THOUGHT_ID with the `_id` parameter of the thought the user clicked on**
-
-- How to use APIs in React, firing requests within `useEffect`.
-- How to put the result of API responses into React state to show in the page.
-- What it's like to work with an API which you both send and receive data from.
-
-- How to use APIs in React, firing requests within `useEffect`.
-- How to put the result of API responses into React state to show in the page.
-- What it's like to work with an API which you both send and receive data from.
-
+All this I have achieved. The site it also responsive and has a button that is validated and set to 'disable' if the validation fails.
 - Your page should follow the design as closely as possible
 - You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
 - Your thoughts should show the content of the message and how many likes they've received
