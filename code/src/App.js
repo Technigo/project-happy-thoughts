@@ -57,7 +57,7 @@ export const App = () => {
       {messages.map(message => (
         <MessageList key={message._id} message={message} onLiked={onLiked}/>
       ))}
-      <Footer footerText="Petra Almgren for Technigo Bootcamp 2020"/>
+      <Footer footerText="&copy;Petra Almgren for Technigo Bootcamp 2020"/>
     </div>
   )
 }

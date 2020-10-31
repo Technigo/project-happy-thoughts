@@ -14,7 +14,10 @@ export const MessageInput = ({onMessageChange}) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      className="happy-thought-form"
+      onSubmit={handleSubmit}>
+      <div className="textarea-container">
       <textarea
         rows="4"
         maxLength="140"
@@ -23,14 +26,26 @@ export const MessageInput = ({onMessageChange}) => {
         value={newMessage}
         onChange={event => setNewMessage(event.target.value)}
       ></textarea>
-
+      <p className="message-length">{newMessage.length}/140</p>
+      </div>
       <button
         type="submit"
         className="form-button"
         disabled={newMessage.length < 6 || newMessage.length > 140}
-      > <span role="img" aria-label="heart">💜</span> Send Happy Thought <span role="img" aria-label="heart">💜</span>
+      > <span
+          className="button-heart"
+          role="img" 
+          aria-label="heart">
+          💜
+        </span>
+        &nbsp;Send Happy Thought&nbsp;
+        <span
+          className="button-heart"
+          role="img" 
+          aria-label="heart">
+          💜
+        </span>
       </button>
-      <p>{newMessage.length}/140</p>
     </form>
   );
 }

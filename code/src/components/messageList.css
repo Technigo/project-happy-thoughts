@@ -3,7 +3,7 @@
   background-image: url("./img/paper-2500942_640.jpg");
   background-size: cover;
   background-position: center;
-  padding: 20px;
+  padding: 15px;
   margin-bottom: 30px;
   border: 1px solid lightgrey;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -19,7 +19,7 @@
   font-family: 'Kalam', cursive;
   font-weight: 300;
   letter-spacing: 1px;
-  font-size: 20px;
+  font-size: 16px;
   word-break: break-word;
 }
 
@@ -63,10 +63,29 @@ background: #ca9cc4;
 .nr-of-likes {
   margin-bottom: 0;
   color: #919191;
+  font-size: 14px;
 }
 
 .message-time {
   margin-bottom: 0;
   margin-left: auto;
   color: #aaaaaa;
+  font-size: 14px;
+}
+
+@media (min-width: 330px) {
+  .message-card {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 600px) {
+  .message {
+    font-size: 20px;
+  }
+
+  .nr-of-likes,
+  .message-time {
+    font-size: 16px;
+  }
 }

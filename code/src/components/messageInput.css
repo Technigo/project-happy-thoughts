@@ -1,16 +1,113 @@
+.happy-thought-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea-container {
+  position: relative;
+}
+
 .form-text {
-  border: 1px solid lightgrey;
+  border: 2px solid lightgrey;
+  border-style: inset;
   background: seashell;
-  width: 93%;
+  width: 87%;
+  margin-bottom: 10px;
   padding: 15px;
   font-size: 18px;
   font-family: 'Kalam', cursive;
   font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 20px;
-  /* margin: 0 -20px; */
+  /* letter-spacing: 1px; */
+  font-size: 16px;
+  resize: none;
 }
 
-textarea {
-  resize: none;
+.message-length {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  color: #919191;
+  font-size: 14px;
+}
+
+.form-button {
+  cursor: pointer;
+  margin: auto;
+  margin-bottom: 35px;
+  padding: 15px 10px;
+  /* -webkit-appearance: none; */
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  color: #fff;
+  background: linear-gradient(to right, #ca9cc4 0%, #e5cee2 50%, #58c2cf 100%);
+  background-size: 500%;  
+  font-family: 'Amatic SC', cursive;
+  font-size: 24px;
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+  letter-spacing: 1.4px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.form-button:disabled {
+  cursor: auto;
+  opacity: 0.7;
+}
+
+.form-button:enabled:hover {
+  animation-name: gradient;
+  /* -webkit-animation-name: gradient; */
+  animation-duration: 2s;
+  /* -webkit-animation-duration: s; */
+  animation-iteration-count: 1;
+  /* -webkit-animation-iteration-count: 1; */
+  animation-fill-mode: forwards;
+  /* -webkit-animation-fill-mode: forwards; */
+}
+
+.button-heart {
+  font-size: 18px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+@media (min-width: 330px) {
+  .form-text {    
+    width: 90%;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (min-width: 600px) {
+  .form-text {
+    width: 93%;
+  }
+  .message-length {
+    right: 10px;
+    bottom: 12px;
+  }
+  
+  .form-button {
+    font-size: 32px;
+  }
+
+  .button-heart {
+    /* font-size: 22px; */
+  }
 }
