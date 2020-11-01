@@ -13,11 +13,10 @@ export const HappyThoughts = () =>  {
         return res.json();
     })
     .then((data) => {
-        console.log(data);
         setThoughts(data);
     });
     }, []);
-
+//This function adds a heart to a happy thought (if button is clicked)
     const onThoughtLiked = (id) => {
         const updatedThoughts = thoughts.map((thought) => {
           if (thought._id === id) {
@@ -27,7 +26,7 @@ export const HappyThoughts = () =>  {
         })
         setThoughts(updatedThoughts);
       }
-
+      //This shows the actual message from the fetch on line 11 and also shows when it was posted. The props on line 40-43 are passed to the Like button component.
     return (
     <div className='thoughts-card'>{thoughts.map(message => {
         return (

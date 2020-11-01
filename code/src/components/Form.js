@@ -3,11 +3,11 @@ import React from 'react'
 import { useState } from 'react'
 
 const FORM_URL='https://happy-thoughts-technigo.herokuapp.com/thoughts'
-//states for the message so that we can change it
+//States for the message so that we can change it:
 export const Form = () => {
-    const [message, setMessage] = useState("")
+    const [message, setMessage] = useState('')
     
-//This function is for when we are creating a thought and posting it to the API
+//This function is for when we are creating a thought and posting it to the API:
     const handleSubmit = (event) => {
     event.preventDefault()
     fetch(FORM_URL, {
@@ -21,7 +21,7 @@ export const Form = () => {
         window.location.reload();
     })
     } 
-     //This is the form where we write our message 
+     //This is the form where we write our happy thought
     return (
     <form className='form'>
         <h3>What's making you happy right now?</h3>

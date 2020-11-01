@@ -48,13 +48,13 @@ form {
   float: right;
 }
 
-/*THOUGHTS STYLING*/
+/*THOUGHTS LIST AND LIKE BUTTON STYLING*/
 
 .message {
   font-family: 'Inconsolata', monospace;
   border: solid black 1px;
   box-shadow: 6px 6px black;
-  max-width: 350px;
+  width: 350px;
   padding: 10px;
   margin-bottom: 30px;
   background-color: #fff;
@@ -65,14 +65,11 @@ form {
   border: none;
   padding: 10px;
   margin: 5px;
-  display: block;
+  margin-top: 30px;
 }
 
 .message-time {
   color:darkgray;
-  padding-left: 40px;
-  padding-top: 40px;
+  margin-top: 60px;
   float: right;
 }
-
-
