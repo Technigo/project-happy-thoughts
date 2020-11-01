@@ -14,7 +14,7 @@ export const MessageInput = ({ onMessageChange }) => {
 
   return (
     <main className="new-message-container">
-      <h2>Give me a happy message plz!</h2>
+      <h1>Give me a happy message plz!</h1>
       <form onSubmit={handleSubmit}>
         <textarea
           className="input-text"
@@ -31,11 +31,11 @@ export const MessageInput = ({ onMessageChange }) => {
             newMessage.length < 6 || newMessage.lenght > 140 ? true : false
           }
         >
-          <span role="img" aria-label="heart">
-          {"❤️"}
-          </span> 
+          <span className="heart-icon" role="img" aria-label="heart">
+            {"❤️"}
+          </span>
           Send Happy Thought
-          <span role="img" aria-label="heart">
+          <span className="heart-icon" role="img" aria-label="heart">
             {"❤️"}
           </span>
         </button>
