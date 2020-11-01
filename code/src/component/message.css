@@ -6,19 +6,11 @@
 .message {
   width: 470px;
   height: min-content;
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap; */
-  /* justify-content: space-between;
-  align-content: flex-start;
-  align-items: flex-start; */
   background-color: rgb(255, 255, 255);
   color: black;
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
   border: 1px solid black;
   margin: 20px;
-  /* display: inline-block; */
-  /* text-align: left; */
   padding: 20px;
   font-family: monospace, sans-serif;
 }
@@ -64,11 +56,9 @@
   color: #bebebe;
   font-weight: 800;
   letter-spacing: 2px;
-  /* display: flex; */
 }
 
 .time-stamp {
-  /* font-size: 16px; */
   color: #bebebe;
   font-weight: 700;
   margin-left: 200px;

@@ -41,7 +41,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: 15px 0 -40px; */
   font-size: 17px;
   transition: all 0.3s ease-in-out;
 }
