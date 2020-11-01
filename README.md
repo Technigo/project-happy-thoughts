@@ -1,13 +1,16 @@
 # Happy Thoughts
+This is an app built with react, connected to an API. In here you can read happy thoughts or post your own. It's also possible to like posts by clicking on the like button.
 
-Replace this readme with your own information about your project.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+
+In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
 
 ## The problem
+I started with fetching the thoughts from the API and list them in the browser. After that I built a form to post a new thought to the API and then I implemented the like button.
+When I got this to work I decided to restructure my code and move all fetches in to App.js. That's where my problems started. It was tricky to access the right data but eventually I mangaed to get it right.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We had a design to follow but I wanted to deviate a bit from the original since I think a happy thought form needs some color 🌈
+If I had more time I would have done a loading animation that could run while waiting for the response from the API.
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-happy-thoughts.netlify.app/
