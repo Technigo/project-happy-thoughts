@@ -2,55 +2,54 @@ import React, { useEffect, useState } from 'react';
 
 import NewComment from './components/create/NewComment';
 import Comment from './components/preview/Comment';
-import { CommentUrl } from './URLS'
+import { baseAPI } from './config'
 
 export const App = () => {
   const [comments, setComments] = useState([]);
-  const [error, setError]= useState("")
-
-  const fetchComments = () => {
-    fetch(CommentUrl)
-      .then((res) => res.json())
-      .then((data) => setComments(data.slice(0,10)))
-  }
+  const [error, setError] = useState("")
 
   useEffect(() => {
     fetchComments();
   }, []);
 
-    const postComment = newComment =>{
-      fetch(CommentUrl, {
-        method:"POST",
-        headers:{ "Content-Type": "application/json" },
-        body: JSON.stringify({ message: newComment })
-      })
+  const fetchComments = () => {
+    fetch(`${baseAPI}/thoughts`)
+      .then((res) => res.json())
+      .then((data) => setComments(data.slice(0, 10)))
+  }
+
+  const postComment = (newComment) => {
+    fetch(`${baseAPI}/thoughts`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: newComment })
+    })
       .then((response) => {
         if (response.ok) {
           fetchComments();
-          setError('')
+          setError('');
         } else {
-         setError("Please write in text field")
+          setError("Please write in text field");
         }
       })
-    }
+  }
 
-    const handleLiked = (comment) => {
-      fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${comment._id}/like`,{
-             method:"POST",
-             headers:{ "Content-Type": "application/json" },
-             body: "",
-         })
-         .then(()=>fetchComments())
-    }
+  const handleLiked = (comment) => {
+    fetch(`${baseAPI}/thoughts/${comment._id}/like`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: "",
+    })
+      .then(() => fetchComments())
+  }
 
   return (
     <div className="container">
-      <NewComment onCommentChange={postComment} error={error}/>
+      <NewComment onCommentChange={postComment} error={error} />
 
-      {comments.map((comment)=>(
-        <Comment comment={comment} onLiked={()=> handleLiked(comment)} key={comment._id} />
+      {comments.map((comment) => (
+        <Comment comment={comment} onLiked={() => handleLiked(comment)} key={comment._id} />
       ))}
-
     </div>
   );
 };
