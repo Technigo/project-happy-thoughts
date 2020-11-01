@@ -1,5 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kalam:wght@300;400&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Indie+Flower&family=Kalam:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kalam:wght@300;400&display=swap');
 
 body {
   margin: 0;
@@ -10,8 +9,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./img/background-1696064_640.jpg");
-  /* background-image: url("./img/bokeh-2072271_640.jpg"); */
-  /* background-repeat: no-repeat; */
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;

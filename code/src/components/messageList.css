@@ -30,7 +30,7 @@
   align-items: flex-end;
 }
 
-.heart-button {
+.like-button {
   cursor: pointer;
   width: 45px;
   height: 45px;
@@ -48,8 +48,13 @@
   transition: all 300ms ease-in-out;
 }
 
-.heart-button:hover .heart{
+.like-button:hover .heart{
   transform: scale(1.6);
+}
+
+.like-button:active {
+  transform: translateY(1px);
+  box-shadow: none;
 }
 
 .no-likes {

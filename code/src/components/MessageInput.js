@@ -4,7 +4,7 @@ import './messageInput.css';
 
 export const MessageInput = ({onMessageChange}) => {
 
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
 
   // A submit function which POSTs the text field
   const handleSubmit = event => {
@@ -32,18 +32,18 @@ export const MessageInput = ({onMessageChange}) => {
         type="submit"
         className="form-button"
         disabled={newMessage.length < 6 || newMessage.length > 140}
-      > <span
+        ><span
           className="button-heart"
           role="img" 
-          aria-label="heart">
-          💜
+          aria-label="heart"
+          >💜
         </span>
         &nbsp;Send Happy Thought&nbsp;
         <span
           className="button-heart"
           role="img" 
-          aria-label="heart">
-          💜
+          aria-label="heart"
+          >💜
         </span>
       </button>
     </form>

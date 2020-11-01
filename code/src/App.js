@@ -6,10 +6,9 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { MESSAGE_URL } from './urls';
 
-import './app.css'
+import './app.css';
 
 export const App = () => {
-
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -35,7 +34,6 @@ export const App = () => {
     const updatedMessages = messages.map(message => {
       if (message._id === messageId) {
         message.hearts += 1;
-        console.log("message: " + message.message)
       }
       return message;
     })
@@ -43,7 +41,7 @@ export const App = () => {
   }
 
   const onLiked = (messageId) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
+    fetch(MESSAGE_URL+`${messageId}/like`, {
       method: 'POST',
       headers: { 'Content-Type':'application/json' },
       body: ''
@@ -57,7 +55,7 @@ export const App = () => {
       {messages.map(message => (
         <MessageList key={message._id} message={message} onLiked={onLiked}/>
       ))}
-      <Footer footerText="&copy;Petra Almgren for Technigo Bootcamp 2020"/>
+      <Footer author="Petra Almgren" />
     </div>
   )
 }

@@ -73,6 +73,11 @@
   /* -webkit-animation-fill-mode: forwards; */
 }
 
+.form-button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
 .button-heart {
   font-size: 18px;
 }
