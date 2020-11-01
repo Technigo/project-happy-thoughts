@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is an app in which the user can post a happy thought and see what other people are posting as well. The user can also like other peoples posts using a heart button. I have used an API in this project, it's built with react using state and hooks. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+My biggest problem was making the like button work correctly. Initially it posted the information but didn't fetch it back until I refreshed the page. After a while I manage to see the updated change, however I got a bad request 400 and it liked all the posts. After inspecting the code for a while I found the problem and was able to solve it.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://pensive-ritchie-543d02.netlify.app/ 
