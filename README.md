@@ -18,5 +18,5 @@ The focus for this weeks project was to learn about a React component's lifecycl
 - I'm very happy that we've gained more insights into working with API:s in React, and that we're starting to learn more about different hooks. One thing I will definietly take with me into the next project is to decide more clearly beforehand how I want to structure my project and components. I started out with a lot of code in App.js, and then began to break out code in smaller components: for example I tried one separate component for thought and another for the like-button, but this approach turned out to make the code difficult to follow and I wasn't able to get the like button to work. I then decided to go back to my initial approach with having all the GET and POST-requests in App.js, passing props to the two main-components Thoughtform and ThoughtsList, and finally adding two smaller components just for displaying a header and footer.
 
 ## View it live 👩‍💻
-
+https://happy-thoughts-project.netlify.app/
 
