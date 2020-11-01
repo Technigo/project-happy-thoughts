@@ -7,11 +7,9 @@ import { Like } from 'Like'
 export const Fetch = () => {
 
     const [messages, setMessages] = useState([])
-    
 
     useEffect(() => {
-
-        
+        // GET 20 latest messagess
         fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
         .then((response) => {
             return response.json();
@@ -23,7 +21,6 @@ export const Fetch = () => {
         .catch((error) => {
             console.error('Request failed', error)
         });
-
 
     }, [])
 
@@ -42,7 +39,7 @@ export const Fetch = () => {
                             </div>
                             <span className="message-time">
                                     {moment(message.createdAt).fromNow()}
-                                </span>
+                            </span>
                         </div>
                     </div>
                 ))
