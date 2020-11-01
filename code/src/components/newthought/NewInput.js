@@ -27,11 +27,11 @@ const NewInput = ({ onInputChange }) => {
           className="send-button"
           disabled={newThought.length < 6 || newThought.length > 140 ? true : false}
         >
-          <img className="heart" src={HeartIcon} alt="Pink heart"></img>
+          <img className="heart left" src={HeartIcon} alt="Pink heart"></img>
           Send Happy Thought
-          <img className="heart" src={HeartIcon} alt="Pink heart"></img>
+          <img className="heart right" src={HeartIcon} alt="Pink heart"></img>
         </button>
-        <p>{newThought.length}/140</p>
+        <p className="length">{newThought.length}/140</p>
       </div>
     </form>
   )

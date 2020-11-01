@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,9 +20,7 @@ p {
 .container {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 110px 1fr 85px;
-  /* display: flex;
-  flex-direction: column; */
+  grid-template-rows: 110px 1fr 110px;
 }
 
 header {
@@ -51,13 +50,15 @@ section {
 
 .new-message {
   margin: 10px;
-  font-size: 12px;
 }
 
 .input {
   margin: 0 10px;
   width: 90%;
   border: 1px solid #d0cfcf;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px;
 }
 
 .input-info {
@@ -65,17 +66,17 @@ section {
   justify-content: space-between;
   align-items: center;
   margin: 10px;
-  font-size: 12px;
 }
 
 .send-button {
-  width: 170px;
+  width: 180px;
   height: 30px;
   border: none;
   border-radius: 15px;
   padding: 0 5px;
   background: #ffadad;
-  font-size: 12px;
+  font-family: inherit;
+  font-size: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,6 +84,18 @@ section {
 
 .heart {
   width: 20px;
+}
+
+.left {
+  margin-right: 3px;
+}
+
+.right {
+  margin-left: 3px;
+}
+
+.length {
+  font-size: 10px;
 }
 
 .message {
@@ -119,4 +132,43 @@ section {
 
 .time {
   color: darkgrey;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
+  .thought, .new-thought {
+    width: 500px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    box-shadow: 5px 5px black;
+  }
+
+  .send-button {
+    width: 240px;
+    height: 40px;
+    border-radius: 20px;
+  }
+
+  .heart {
+    width: 30px;
+  }
+
+  .length {
+    font-size: 12px;
+  }
+
+
+  .info {
+    font-size: 12px;
+  }
+
+  .like-button {
+    width: 40px;
+    height: 40px;
+  }
 }
