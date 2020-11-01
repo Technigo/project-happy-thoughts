@@ -4,12 +4,14 @@ import { MessageList } from './components/MessageList';
 import { MessageInput } from './components/MessageInput';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { Loader } from './components/Loader';
 import { MESSAGE_URL } from './urls';
 
 import './app.css';
 
 export const App = () => {
   const [messages, setMessages] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     fetchMessages();
@@ -18,7 +20,13 @@ export const App = () => {
   const fetchMessages = () => {
     fetch(MESSAGE_URL)
       .then(res => res.json())
-      .then(data => setMessages(data))
+      .then(data => {
+        
+        setTimeout(() => {
+          setLoader(false);
+          setMessages(data);
+        }, 3000)
+      })
   }
 
   const reachMessageInput = (newMessage) => {
@@ -49,13 +57,16 @@ export const App = () => {
   }
 
   return (
-    <div className="main">
+    <>
       <Header headerText="Post a happy thought."/>
-      <MessageInput onMessageChange={reachMessageInput}/>
-      {messages.map(message => (
-        <MessageList key={message._id} message={message} onLiked={onLiked}/>
-      ))}
-      <Footer author="Petra Almgren" />
-    </div>
+      <div className="main">
+        <MessageInput onMessageChange={reachMessageInput}/>
+        {loader && <Loader />}
+        {messages.map(message => (
+          <MessageList key={message._id} message={message} onLiked={onLiked}/>
+        ))}
+      </div>
+      {!loader && <Footer author="Petra Almgren" />}
+    </>
   )
 }

@@ -17,7 +17,6 @@
   font-size: 18px;
   font-family: 'Kalam', cursive;
   font-weight: 300;
-  /* letter-spacing: 1px; */
   font-size: 16px;
   resize: none;
 }
@@ -35,7 +34,6 @@
   margin: auto;
   margin-bottom: 35px;
   padding: 15px 10px;
-  /* -webkit-appearance: none; */
   border: none;
   border-radius: 35px;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
@@ -44,14 +42,12 @@
   background-size: 500%;  
   font-family: 'Amatic SC', cursive;
   font-size: 24px;
-  /* -webkit-font-smoothing: antialiased; */
-  /* -moz-osx-font-smoothing: grayscale; */
   letter-spacing: 1.4px;
   outline: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  /* -webkit-tap-highlight-color: transparent; */
+  /* -webkit-user-select: none; */
+  /* -moz-user-select: none; */
+  /* -ms-user-select: none; */
   user-select: none;
   display: flex;
   align-items: center;
@@ -64,13 +60,9 @@
 
 .form-button:enabled:hover {
   animation-name: gradient;
-  /* -webkit-animation-name: gradient; */
   animation-duration: 2s;
-  /* -webkit-animation-duration: s; */
   animation-iteration-count: 1;
-  /* -webkit-animation-iteration-count: 1; */
   animation-fill-mode: forwards;
-  /* -webkit-animation-fill-mode: forwards; */
 }
 
 .form-button:active {
@@ -110,9 +102,5 @@
   
   .form-button {
     font-size: 32px;
-  }
-
-  .button-heart {
-    /* font-size: 22px; */
   }
 }
