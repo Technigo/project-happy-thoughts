@@ -13,8 +13,8 @@ export const App = () => {
   
   useEffect(() => { // Adding use effect hook to control the fetch of happy thoughts from API
     fetchThoughts();
-  }, []); /* Second argument is an empty array, to prevent the fetchThoughts function from happening again and again as soon App is mounted, 
-          we only want it to execute when the state changes, which we will control in the postThoughts function further down */
+  }, []); /* Second argument is an empty array, to prevent the fetchThoughts function from repeting itself, 
+          we only want it to execute on the initial mounting of App and if/when the state changes, which we will control in the postThoughts function further down */
 
   // Fetching happy thoughts from the API
   const fetchThoughts = () => {
@@ -33,7 +33,7 @@ export const App = () => {
     .then(() => fetchThoughts()) /* Excecute fetch thoughts again based on the changes in API */
   };
   
-  //Function for updating hearts/number of likes
+  //Function for updating the text about hearts/number of likes
   const updateLikes = (thoughtId) => {
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
