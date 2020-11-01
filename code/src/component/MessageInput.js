@@ -14,10 +14,11 @@ export const MessageInput = ({ onCreateMessage }) => {
 
   return (
     <form onSubmit={handleSubmit} className="input-container">
-      <h3> What's making you happy right now?</h3>
-      <div>
+      <h3 tabIndex="0"> What's making you happy right now?</h3>
+      <div className="text-input">
         <textarea
           type="text"
+          placeholder="Please enter happy thought"
           className="form-text"
           maxLength='140'
           id="newMessage"
@@ -25,6 +26,7 @@ export const MessageInput = ({ onCreateMessage }) => {
           onChange={event => setNewMessage(event.target.value)}
         >
         </textarea>
+        <p className="char-counter">{newMessage.length}/140</p>
       </div>
       <div>
         <button
@@ -36,7 +38,6 @@ export const MessageInput = ({ onCreateMessage }) => {
             {'❤️️ Send Happy Thought ❤️️'}
           </span>
         </button>
-        <p className="char-counter">{newMessage.length}/140</p>
       </div>
     </form>
 

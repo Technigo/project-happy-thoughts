@@ -7,22 +7,27 @@
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  /* flex-wrap: wrap; */
-  /* align-items: center; */
   justify-content: space-around;
   padding: 20px;
-  margin: 20px 0 20px 18px;
+  margin: 40px 0 20px 18px;
   font-family: "Commissioner";
+}
+
+h3 {
+  margin-top: 40px;
+}
+
+.text-input {
+  height: 90px;
 }
 
 .form-text {
   width: 100%;
   height: 50px;
-  /* flex-direction: column; */
   height: 50px;
   font-size: 18px;
   font-family: monospace;
-  /* margin-right: 4px; */
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }
@@ -36,7 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px 0 -40px;
+  /* margin: 15px 0 -40px; */
   font-size: 17px;
   transition: all 0.3s ease-in-out;
 }
@@ -51,7 +56,7 @@
 }
 
 .form-button:disabled {
-  background-color: black;
+  opacity: 0.4;
 }
 
 .char-counter {
@@ -67,8 +72,13 @@
   .input-container,
   .form-text,
   .form-button {
-    max-width: 300px;
-    margin-right: 20px;
+    max-width: 290px;
+    margin-left: -3px;
+  }
+
+  .text-input {
+    height: 70px;
+    margin-bottom: 5px;
   }
 
   .input-container {
@@ -80,9 +90,16 @@
 
 .form-button {
   display: inline;
-  margin-bottom: 20px;
+  margin: 4px 0 23px 3px;
 }
 
 .char-counter {
   display: none;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) {
+  .char-counter {
+    display: flex;
+  }
 }
