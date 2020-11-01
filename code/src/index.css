@@ -8,8 +8,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   background: #fff;
-  display: flex;
-  justify-content: center;
+  
 }
 
 code {
@@ -18,9 +17,20 @@ code {
 }
 
 /* find it in app.js------------- */
-/* .message-container{
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5px 20px 40px 50px;
+  padding: 10px 20px 20px 50px;
+  margin-top: 15px;
+  width: 500px;
+  height: 200px; 
+  
 
-} */
+}
 
 /* Styling MessageInput -----------------------------------------------*/
 
@@ -36,7 +46,7 @@ h1 {
 
 form {
   margin-top: 30px;
-  padding-top: 3px;
+  padding-top: 10px 10px;
   border: 2px solid #4d4d4d;
   background: #f2f0f0;
   box-shadow: 6px 7px;
@@ -72,39 +82,66 @@ form {
 
 /* Styling MessageList  -------------------------------- */
 
-.message-list-container {
+/* .message-list-container {
   width: 500px;
   height: 300px;
   border: 3px solid green;
-  display: flex;
-}
-
-.message-list {
- 
-  margin-top: 30px;
-  padding-top: 3px;
-  border: 2px solid #4d4d4d;
-  background: #f2f0f0;
-  box-shadow: 6px 7px;
-}
-
-/* .messages-stored {
 
 } */
 
 .message {
-  margin: 8px;
-  font-size: 26px;
+  padding: 10px;
+  border: 2px solid #4d4d4d;
+  background: #f2f0f0;
+  box-shadow: 6px 7px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border: 3px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+  width: 480px;
 }
+/* 
+.message-list-container {
+  padding: 10px;
+  border: 2px solid #4d4d4d;
+  background: #f2f0f0;
+  box-shadow: 6px 7px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: start; */
+/* } */ */
+
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 
 /* Not working */
 .heart-button {
   border: 50%;
 }
 
-/* .post-time{
+.messages-time {
+  display: flex;
+  flex-direction: column;
+} 
 
-} */
+.post-time{
+font-size: 15px;
+padding: 20px;
+display: flex;
+flex-direction: column;
+}
 
 /* Styling of heart ----------------------------------------------------------- */
 

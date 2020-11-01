@@ -1,4 +1,3 @@
-// import React, { useEffect, useState } from 'react';
 
 import React from "react";
 import moment from "moment";
@@ -12,7 +11,7 @@ export const MessageList = ({ messageList, hearts, message }) => {
     <section>
 
 <div className="message-list">
-//             {messageList.map(message => (
+          {messageList.map(message => (
             <p className="message" key={message.created}>
                         {message.message}
                 <span className="message-time">
@@ -44,37 +43,45 @@ export const MessageList = ({ messageList, hearts, message }) => {
           </button>
           x {hearts}
         </p>
-        {/* <p className="post-time">{moment(message.created).fromNow()}</p> */}
+        
       </article>
     </section>
   );
 };
 
-{
-  /* // original
-// export const MessageList = ({ messageList }) => {
+// import React from "react";
+// import moment from "moment";
 
-//     return (
-//         <div className="message-list">
-//             {messageList.map(message => (
-//             <p className="message" key={message.created}>
-//                         {message.message}
-//                 <span className="message-time">
-//                  {moment(message.created).fromNow()}
-//                 </span>
-//             </p>
-//                 ))
-//             }
+// export const MessageList = ({
+//   messageList,
+//   message,
+//   onHeartsChange
+// }) => {
+//   const onClickedHeart = () => {
+//     hearts(messageList._id);
+//   };
+
+//   return (
+//     <section className="message-list-container">
+//       <article>
+//         <div className="message">
+//           <h3>
+//             {message}
+//           </h3>
 //         </div>
-//     );
-// } */
-}
 
-
-  
-{/* <div className="message-list-container">
-<h3 className="message" key={message._id}>
-  {" "}
-  {message.message}{" "}
-</h3>
-</div> */}
+//           {messageList.map((message) => (
+//             <p className="message" key={message._id}  onHeartsChange={onHeartsChange}>
+//               {message.message}
+//               <span className="message-time">
+//                 <p className="post-time">
+//                   {moment(message.createdAt).fromNow()}
+//                 </p>
+//               </span>
+//             </p>
+//           ))}
+      
+//       </article>
+//     </section>
+//   );
+// };

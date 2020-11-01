@@ -13,7 +13,7 @@ export const MessageInput = ({ onMessageChange }) => {
   };
 
   return (
-    <main className="new-message-container">
+    <section className="new-message-container">
       <h1>Give me a happy message plz!</h1>
       <form onSubmit={handleSubmit}>
         <textarea
@@ -41,6 +41,6 @@ export const MessageInput = ({ onMessageChange }) => {
         </button>
         <p className="maximum-letters">{newMessage.length} / 140 </p>
       </form>
-    </main>
+    </section>
   );
 };

@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { MessageList } from 'components/MessageList';
 import { MessageInput } from 'components/MessageInput';
-
-
-// MIGHT PUT STYLING IN SEPARAT COMPONENTS IF TIME
-// import { messageList } from 'components/messageList.css';
-// import { messageInput } from 'components/messageInput.css';
+// import { Likes } from 'components/Likes';
 
 
 
@@ -26,11 +22,12 @@ export const App = () => {
   const fetchMessages = () => {
     fetch(MESSAGES_URL)
       .then(res => res.json())
-      .then(data => setMessages(data.reverse()))
+      .then(data => { 
+        setMessages(data)})
       .catch(error => console.error(error));
   }
 
-  // skickar nytt meddelande till API:n coh fånga det senaste meddelandet
+  // skickar nytt meddelande till API:n och fånga det senaste meddelandet
   const postSingleMessage = newMessage => {
     fetch(MESSAGES_URL, {
       method: 'POST',
@@ -43,33 +40,41 @@ export const App = () => {
   }
 
   // skickar in likes/ hjätan till APIn
-const onliked = messageId => {
-  fetch(LIKEDHEARTS_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-  }).then (() => {
-    hearts(messages._id);
-    fetchMessages();
-});
-};
 
-const hearts = messageId => {
-  const newMessage = messages.map(messages => {
-    if (messages._id === messageId) {
-      messages.hearts += 1
-    }
-    return messages    
-  })
-  setMessages(newMessage)
-};
+//   const postHearts = (messageId) =>
+
+//   fetch(LIKEDHEARTS_URL, {
+//     method: 'POST',
+//     body:'',
+//     headers: { 'Content-Type': 'application/json' },
+//   })
+
+//     .then (() => {
+//     onLiked(messageId);
+//     fetchMessages();
+// });
+// };
+
+// const onLiked = (messageId) => {
+//   const newMessage = messages.map(message => {
+//     if (message._id === messageId) {
+//       messages.hearts +=1
+//     } 
+//     return message
+//   })
+//   setMessages(newMessages);
+// }
+
 
 
 return (
-  <div className="message-container">
+  <main className="message-container">
+  
     <MessageInput onMessageChange={postSingleMessage} />
-    {/* <MessageList  message={fetchMessages} /> */}
     <MessageList messageList={messages}/>
+    {/* <Likes  onHeartsChange={postHearts}/> */}
 
-  </div>
+  </main>
 );
+
 }
