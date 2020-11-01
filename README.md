@@ -15,9 +15,9 @@ I started with the list of messages, fetching from the API and mapping through t
 The data is sorted and messages with no input are filtered out.
 I continued to create the input form in which the user can post their happy thoughts. The submit button is disabled if the user puts in too many/few characters and there is a counter to show the user how many characters they have used.
 Finally I added a counter for how many individual posts the user has liked. I did this using a state hook with an array that stores the id of the liked post.
-If I had more time I would make individual css files for the components and made it responsive.
+If I had more time I would make individual css files for the components and made it more responsive.
 
 ## View it live :tada:
 
-https://fetch-happy-thoughts.netlify.app/
+https://annas-happy-thoughts.netlify.app/
 
