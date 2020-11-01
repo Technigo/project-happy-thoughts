@@ -55,6 +55,7 @@
   border: none;
   margin-right: 10px;
   position: relative;
+  padding: 0;
 }
 
 .no-likes {
@@ -72,7 +73,7 @@
 .like-heart {
   position: absolute;
   top: 9px;
-  left: 14px;
+  left: 13px;
   margin: 0;
 }
 
