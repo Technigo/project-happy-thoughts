@@ -5,20 +5,17 @@ import MessageList from './Components/MessageList';
 import Footer from './Components/Footer';
 import { MESSAGES_URL } from './urls';
 
-// App is responsible for connection to server
-export const App = () => {
 
+export const App = () => {
   const [listOfMessages, setListOfMessages] = useState([]);
 
-  // after return jsx, after app mounted, useeffect will run, do a fetch
   useEffect(() => {
     fetchMessages();
   }, []); 
 
-
   const fetchMessages = () => {
     fetch(MESSAGES_URL)
-      .then((response) => {
+      .then((response) => { 
         return response.json();
       })
       .then((data) => {

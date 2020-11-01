@@ -3,7 +3,6 @@ import React from 'react';
 import moment from 'moment';
 
 const Message = ({ message, created, hearts, id, whenLiked }) => {
-
     const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
     
     // When user clicks heart, posts a like, then run whenLiked-function with current id
@@ -24,7 +23,7 @@ const Message = ({ message, created, hearts, id, whenLiked }) => {
                 <p>
                     <button
                         onClick={changeLikes}
-                        className={hearts > 0 ? 'likes-button got-likes' : 'likes-button no-likes'}
+                        className={`likes-button ${hearts > 0 ? 'got-likes' : 'no-likes'}`}
                     >
                         <span>
                             {'❤️'}

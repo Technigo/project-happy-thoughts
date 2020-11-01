@@ -54,7 +54,6 @@ const MessageList = ({ listOfMessages, setListOfMessages }) => {
             </article>
         </div>
     )
-
 }
 
 export default MessageList;

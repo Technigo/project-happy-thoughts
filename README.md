@@ -4,7 +4,6 @@ This project was to make a kind of Twitter App in React by fetching and posting 
 
 ## The problem
 
-I
 ### Tech I've used / What I've practiced
 - React.js / State and Effect hooks
 - JavaScript
