@@ -8,6 +8,7 @@ const LikeButton = ({ thought, onLikeClick }) => {
   const [classNames, setClassNames] = useState([]);
   const [likeCount, setLikeCount] = useState(thought.hearts)
 
+  //this function is to change the add the "pink-button" class when the likeCount is > 0
   useEffect(() => {
     setClassNames([
       "like-button",
