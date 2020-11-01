@@ -38,11 +38,10 @@ export const App = () => {
   }
 
   return (
-    <section className="thought-list">
-    
+    <>
       <NewThought 
-        newThought={newMessage} // post new thought
-        setNewThought={setNewMessage} // reset textarea
+        newMessage={newMessage} // write new thought
+        setNewMessage={setNewMessage} // reset textarea
         handleSubmit={postThought} // send new thought
         />
         
@@ -51,6 +50,6 @@ export const App = () => {
         allReplies={existingThoughts} // list of all posted thoughts
         onLike={()=>fetchThoughts()} // updates the list of posted thoughts
         />
-    </section>
+    </>
   )
 }

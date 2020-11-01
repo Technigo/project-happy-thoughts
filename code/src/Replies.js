@@ -3,7 +3,7 @@ import moment from 'moment'
 
 export const Replies = ({allReplies, onLike}) => {
 
-    // post a like to server and then update the DOM
+    // post a like to the server and then update the DOM
     const likeThought = (messageID) => {
         fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`, {
             method: 'POST',
@@ -20,14 +20,15 @@ export const Replies = ({allReplies, onLike}) => {
                     <p className="replyText">{message.message}</p>
                     <div className="details">
                         <div className="likeContainer">
-                            <button className={message.hearts === 0 ? 'button-liked' : 'button-unliked'}
+                            <button className={message.hearts === 0 ? 'button-unliked' : 'button-liked'}
                             onClick={()=>likeThought(message._id)}>
                                 <span className="likeHeartIcon" role="img" aria-label="heart icon">❤️️</span>
                             </button>
                             <p className="likeDetail"> x {message.hearts}</p>
+                            <p className="timeStamp">{ // displays what time thoughts has been sent
+                        moment(message.createdAt).fromNow()}</p> 
                         </div>
-                        <time className="timeStamp">{ // display what time thoughts has been sent
-                        moment(message.createdAt).fromNow()}</time> 
+                        
                     </div>
                 </div>
                 )

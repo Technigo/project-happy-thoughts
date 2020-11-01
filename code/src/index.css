@@ -1,13 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Trispace', sans-serif;
+  font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* Section for posting a new thought */
+.newThoughtContainer { 
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+  width: 350px;
+  height: auto;
+  background-color: rgb(237, 235, 235);
+  border: solid 1.5px  rgba(126, 125, 125, 0.892);
+  box-shadow: 6px 6px;
+}
+
+textarea {
+  font-family: 'Trispace', sans-serif;
+  font-size: 11px;
+  padding: 10px 0px 0px 10px;
+  width: 320px;
+}
+
+.characterCount {
+color:rgb(126, 125, 125);
+font-size: 10px;
+text-align: end;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+.sendThought {   /* how do I get the text centered in the button? */
+  background-color: rgb(252, 181, 181);
+  margin-bottom: 15px;
+  height: 35px;
+  width: 190px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.sendThought p {
+  font-size: 11px;
+  margin: auto;
+}
+
+.heartIcon {
+  padding: 10px;
+}
+
+/* Section for all replies */
+.allRepliesContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.replyContainer {
+  margin: auto;
+  margin-top: 30px;
+  padding: 5px 10px 10px 10px;
+  width: 330px;
+  min-height: auto;
+  border: solid 1.5px rgba(126, 125, 125, 0.892);
+  box-shadow: 6px 6px;
+}
+
+.likeContainer {
+  display: flex;
+  align-items: center;
+}
+
+.button-unliked {
+  background-color: rgb(237, 235, 235);
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.button-liked {
+  background-color: rgb(252, 181, 181);
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.likeDetail {
+  font-size: 11px;
+  color:rgb(172, 172, 172);
+  margin: 0px 5px;
+}
+
+.timeStamp {
+  font-size: 11px;
+  color:rgb(172, 172, 172);
+  margin-left: 140px;
 }
