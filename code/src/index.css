@@ -8,8 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./Components/assests/freestocks-Y9mWkERHYCU-unsplash.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  
   
 }
 
@@ -202,6 +201,12 @@ footer a:hover {
 }
 
 @media (min-width: 1024px) {
+
+  body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
   form {
     width: 400px;
   }
