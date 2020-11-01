@@ -10,7 +10,7 @@
 .pulse-heart {
     position: absolute;
     animation:pulse 1s infinite;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 @keyframes pulse {

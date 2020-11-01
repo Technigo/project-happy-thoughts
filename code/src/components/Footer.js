@@ -1,14 +1,14 @@
 import React from 'react';
 
-import "styles/footer.css";
+import 'styles/footer.css';
 
 export const Footer = () => {
    return (
         <footer className='footer'>
-            <p className='footer-text'>
+            <p>
                 Made with <span role='img' aria-label='heart'> ❤️ </span> by  Emma Urman
             </p>
-            <p className='footer-text'>
+            <p>
                 Week 11: Happy Thoughts Project | Technigo fall bootcamp 2020 
             </p>
         </footer>

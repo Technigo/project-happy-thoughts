@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import "styles/thoughtform.css";
+import 'styles/thoughtform.css';
 
 export const ThoughtForm = ({onThoughtChange}) => {
 
@@ -17,7 +17,7 @@ export const ThoughtForm = ({onThoughtChange}) => {
     // Form for posting happy thoughts
     return (
         <form onSubmit={handleSubmit} className='thoughts-form'>
-            <h2> 
+            <h2 className='thoughts-form__header'> 
                 What's making you happy right now?
             </h2>
                 <input

@@ -23,7 +23,6 @@ export const App = () => {
       .then(data => setThoughts(data))   
   };
 
-  
   // Posting a new happy thought to the API
   const postThoughts = (newThought) => {
     fetch(ThoughtsUrl, {
@@ -45,7 +44,7 @@ export const App = () => {
     setThoughts(updatedThoughts) // The state is changed with the updated thoughts, based on new number of likes
   };
 
-  // Post like to the API
+  // Post likes to the API
   const onLike = (thoughtId) => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: 'POST',

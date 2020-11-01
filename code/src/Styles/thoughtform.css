@@ -1,5 +1,4 @@
 /* Style for the form */
-
 .thoughts-form {
     margin-top: 20px;
     padding: 20px;
@@ -12,7 +11,8 @@
 
 .thoughts-form__input {
     width: 100%;
-    padding-bottom: 100px;
+    padding: 5px 0px 80px 5px;
+
 }
 
 ::placeholder {
@@ -38,3 +38,9 @@
     text-align: right;
     color: #ff0000;
 }
+
+@media only screen and (max-width: 400px) {
+    .thoughts-form__header {
+        font-size: 22px;
+    }
+  }

@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-import "styles/thoughtsList.css";
+import 'styles/thoughtsList.css';
 
 export const ThoughtsList = ({thought, onLike}) => {
   
@@ -14,10 +14,10 @@ export const ThoughtsList = ({thought, onLike}) => {
   hearts (number of likes) and time created for each thought from the API */
   return (
     <article className='thoughts-article' key={thought._id}>
-      <p className="thoughts-article__text">
+      <p className='thoughts-article__text'>
         {thought.message}
       </p>
-      <div className="thoughts-article__info">
+      <div className='thoughts-article__info'>
         <div className='thoughts-article__likes'>
           <button 
             className= {thought.hearts > 0 ? 'button-liked' : 'button-unliked'}

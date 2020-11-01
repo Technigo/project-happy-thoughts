@@ -1,8 +1,7 @@
 /* Style for thoughts / list of thoughts */
-
 .thoughts-article {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 70px;
     padding: 20px;
     text-align: left;
     background: #ffffff;
@@ -12,6 +11,7 @@
 
 .thoughts-article__info {
     display: flex;
+    margin-top: 20px;
 }
 
 .thoughts-article__likes {
@@ -24,21 +24,22 @@
 }
 
 .number-of-hearts {
-    margin-left: 5px;
+    margin-left: 8px;
+    margin-top: 10px;
     color: #575757;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
 }
 
 .button-liked {
-    padding: 10px;
+    padding: 8px;
     background: #ffadad;
     border: none;
     border-radius: 50%;
 }
 
 .button-unliked {
-    padding: 10px;
+    padding: 8px;
     background: #f3f1f1;
     border: none;
     border-radius: 50%;
@@ -46,6 +47,7 @@
 
 .thoughts-article__time {
     margin-left: auto;
+    margin-top: 10px;
     color: #808080;
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
