@@ -1,10 +1,10 @@
 import React from 'react';
 import moment from 'moment';
 
-const Time = (props) => {
+const Time = ({ created }) => {
   return (
     <div className="time">
-      <p>{moment(props.created).fromNow()}</p>
+      <p>{moment(created).fromNow()}</p>
     </div>
   )
 }
