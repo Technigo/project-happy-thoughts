@@ -15,6 +15,7 @@ export const HappyThought = props => {
     return (
         <article className="happy-thought">
             <h3>{message}</h3>
+            <span className="happy-footer">
             <p>
                 <button
                     onClick={handleClick}
@@ -27,6 +28,7 @@ export const HappyThought = props => {
                 x {hearts}
             </p>
     <p>{moment(createdAt).fromNow()}</p>
+    </span>
         </article>
     )
 }

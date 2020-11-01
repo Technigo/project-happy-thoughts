@@ -6,6 +6,15 @@
     box-shadow: 5px 10px;
     margin-top: 30px;
     padding: 20px;
+    font-family: 'Inconsolata', monospace;
+  
+}
+.happy-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    color: grey;
 }
 
     button {

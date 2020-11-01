@@ -17,3 +17,10 @@ main {
   align-items: center;
  
 }
+footer  {
+margin-top: 50px;
+color: #F4ACAC;
+font-size: large;
+display: flex;
+justify-content: center;
+}
