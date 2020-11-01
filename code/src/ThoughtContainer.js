@@ -1,28 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import moment from 'moment';
 
-import { LikesContainer } from 'LikesContainer';
 
-export const ThoughtContainer = ( {key, message, created, hearts, id, fetchThought} ) => {
+export const ThoughtContainer = ( {message, created, hearts, id, onThoughtLiked} ) => {
 
-    const postALike = id => {
-        console.log(id.target.id)
-        /*
+    const postALike = () => {
         fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: ''
         }).then(() => {
-            // fetchThought();
-            console.log('liked') 
+            onThoughtLiked(id);
           }).catch(error => console.error(error));
-          */
       }
 
     return (
         <div className="thought-container">
-            <p className="thought" key={key}>
-            {message}
+            <p className="thought">
+                {message}
             </p>
             <div className="like-container">
                 <span>
@@ -31,13 +26,15 @@ export const ThoughtContainer = ( {key, message, created, hearts, id, fetchThoug
                         id={id}
                         onClick={postALike}
                     >
-                        {'❤️'}
+                        <span 
+                            role='img' 
+                            aria-label='Heart'>
+                            ❤️
+                        </span>
                     </button> x {hearts}
                 </span>
                 <p className="created">{moment(created).fromNow()}</p>
             </div>
-            
-        </div>
-        
+        </div> 
     )
 }

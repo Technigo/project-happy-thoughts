@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
 export const Form = ({onThoughtChange} ) => {
-    const THOUGHT_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
     const [newThought, setNewThought] = useState('')
 
+    // When submiting a thought.
    const handleSubmit = event => {
        event.preventDefault();
        onThoughtChange(newThought);
@@ -28,7 +28,13 @@ export const Form = ({onThoughtChange} ) => {
                         onClick={handleSubmit}
                         disabled={newThought.length < 5 || newThought.length > 140 ? true : false}
                     > 
-                        Send a happy thought ❤️
+                        <span role='img' aria-label='Heart'>
+                            {'❤️ '}
+                        </span>
+                        Send a happy thought
+                        <span role='img' aria-label='Heart'>
+                            {' ❤️'}
+                        </span>
                     </button>
                 </div>
         </form>

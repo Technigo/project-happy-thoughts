@@ -5,41 +5,49 @@ import {ThoughtList} from './ThoughtList'
 import {Form} from './Form'
 
 export const App = () => {
-    const THOUGHT_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
-    const [thought, setThought] = useState([])
+    const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+    const [thoughts, setThoughts] = useState([])
 
     useEffect(() => {
-      fetchThought();
+      fetchThoughts();
     }, []);
 
-    const fetchThought = () => {
-      fetch(THOUGHT_URL)
+    // Fetch thoughts from api,
+    const fetchThoughts = () => {
+      fetch(THOUGHTS_URL)
           .then(res => res.json())
-          .then(data => setThought(data))
+          .then(data => setThoughts(data))
           .catch(error => console.error(error));
-          
     }
 
+    // Post a thought to the api.
     const postThought = newThought => {
-      fetch(THOUGHT_URL, {
+      fetch(THOUGHTS_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: newThought })
       })
-        .then(() => {
-          fetchThought(); 
-        })
+        .then(() => fetchThoughts())
         .catch(error => console.error(error));
     }
 
-
+    const onThoughtLiked = id => {
+      const updatedThoughts = thoughts.map((thoughts) => {
+        if (thoughts._id === id) {
+          thoughts.hearts += 1;
+        }
+        return thoughts;
+      });
+      setThoughts(updatedThoughts);
+    };
   
-
   return (
-    <div>
+    <>
       <Header />
       <Form onThoughtChange={postThought}/>
-      <ThoughtList thoughtList={thought} fetchThought={fetchThought}/>
-    </div>
+      <ThoughtList 
+        thoughtList={thoughts} 
+        onThoughtLiked={onThoughtLiked}/>
+    </>
   )
 }

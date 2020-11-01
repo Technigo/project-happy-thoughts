@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { ThoughtContainer } from 'ThoughtContainer';
 
-export const ThoughtList = ( {thoughtList} ) => {
-
+export const ThoughtList = ( {thoughtList, onThoughtLiked} ) => {
     return (
         <section className="thought-list">
             {thoughtList.map(thought => {
@@ -14,18 +13,10 @@ export const ThoughtList = ( {thoughtList} ) => {
                         created={thought.createdAt}
                         hearts={thought.hearts}
                         id={thought._id}
-                        // postALike={postALike}
+                        onThoughtLiked={onThoughtLiked}
                     />
                 )
             })}
         </section>
     )
 }
-
-            // data.sort((a,b) => a.created)
-
-            // const filteredThought = data.filter(thought => thought.message);
-            // const limitedThought = filteredThought.slice(1, 20);
-
-            // //save the data to state
-            // setThought(limitedThought);
