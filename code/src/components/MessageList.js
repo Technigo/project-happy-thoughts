@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
+import {HappyHeart} from 'components/HappyHeart';
 import './messageList.css';
 
 export const MessageList = () => {
@@ -24,7 +25,11 @@ return <div>{messages.map((message) => {
             <span className="message-time">
             {moment(message.createdAt).fromNow()}
             </span>
+            <span className="hearts">
+            
+            </span>
             </p>
+            
         );
         }
         )}

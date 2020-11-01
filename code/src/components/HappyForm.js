@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import "./happyForm.css"
+import "./happyForm.css";
+
 
 const messages_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 
@@ -34,6 +35,7 @@ export const HappyForm = props => {
                 disabled={message.length < 6 || message.length > 140 ? true : false}
                 >
                     Send a happy thought!
+                    <span role="img" aria-label="heart emoji"> ❤️ </span>
                 </button>
                 <p>{message.length} / 140 </p>
             </div>
