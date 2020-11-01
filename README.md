@@ -1,13 +1,18 @@
-# Happy Thoughts
+# Happy thoughts App
+A simple resonsive API to collect 'happy thoughts' built with react components, props and useEffects. Built with web accessibility in mind.
 
-Replace this readme with your own information about your project.
+## The process
+ My third project using React in the Technigo Bootcamp. I used a main component App where I show two diffrent components InputForm (where the user can input a happy tought) and a MessageList (where all messages are diplayed and  can be liked). The MessageList component is generating information using props and updating status using react hooks. I used the map method to iterate through the data to generate the all the messages.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Accessibility and cross-browser testing 
 
-## The problem
+Html validated with W3C validation service (http://validator.w3.org/) with no errors found.
+Chrome lighthouse report was generated with the result: 100% Accessibility, 100% Best Practices and 100% SEO. 
+Accessibility checked with Wave chrome plugin and no errors raised and with screenreader chromeVox with no errors.
+Testing has been done in different browsers such as Edge, FireFox and Chrome in mobile, tablet and desktop views.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Limitations
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+View the project live here: 
