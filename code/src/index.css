@@ -12,7 +12,125 @@ code {
     monospace;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .message-card {
+  border: 2px black solid;
+} */
+
+/* .form-button {
+  padding-right: 10px;
+  padding-left: 10px;
+} */
+
+
+.message-form {
+  background-color:#fbefea;
+  border:2px solid #d14040;
+  box-shadow: 5px 5px #f5c8b4;
+  width: 300px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+ h2{
+  margin: 0%;
+  padding: 20px;
+  text-align: center;
+}
+
+.message-form-text {
+  width: 100%;
+  padding: 30px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 10px 0;
+  
+}
+
+textarea{
+  border: 1px solid #f5c8b4;
+}
+
 .form-button {
-  width: 100px;
-  height: 25px;
+  margin-top: 20px;
+  height: 50px;
+  width: 70%;
+  background-color: #ffadad;
+  border: none;
+  font-size: 14px;
+  border-radius: 25px;
+  padding: 0px;
+  font-weight: 500;
+  color: #fbefea;
+}
+
+
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+
+
+
+.happy-message {
+  border:2px solid #d14040;
+  box-shadow: 5px 5px #f5c8b4;
+  background:white;
+  width: 300px;
+  height: 130px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+h3{
+  font-family: "Courier", monospace;
+}
+
+.happy-message p{
+  font-family: "Courier", monospace;
+
+}
+
+.heart {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  margin: 0;
+  margin-bottom: -100px;
+  background-color: #ffadad;
+  font-size: 15px;
+  
+  
+}
+
+.moment p {
+ float: right;
+ 
+  
+}
+
+.message{
+  width: 100%;
+  height: 130px;
+  text-align: center;
+  overflow-y: scroll;
+
+    
 }

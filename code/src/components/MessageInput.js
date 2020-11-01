@@ -10,19 +10,38 @@ export const MessageInput = ({ onMessageChange }) => {
 
   return (
     <form onSubmit={handleSubmit} className="message-form">
-      <input
+      <h3>What makes you happy right now?</h3>
+      <textarea
         type="text"
-        maxLength="140"
+        // maxLength="140"
+        rows="3"
         value={newMessage}
         onChange={(event) => setNewMessage(event.target.value)}
         className="message-form-text"
-      ></input>
-      <button type="submit" className="form-button">
-        {/* <span role="img" aria-label="heart emoji">
-          &#128151;
-        </span> */}
-        Send Message
+      ></textarea>
+      <span
+        className="message-length"
+        style={{ color: newMessage.length > 140 ? "red" : "black" }}
+      >
+        {newMessage.length} / 140
+      </span>
+
+      <button
+        type="submit"
+        className="form-button"
+        disabled={
+          newMessage.length < 6 || newMessage.length > 140 ? true : false
+        }
+      >
+        <span role="img" aria-label="heart emoji">
+          ❤️
+        </span>
+        Send Happy Thought
+        <span role="img" aria-label="heart emoji">
+          ❤️
+        </span>
       </button>
+      {/* </div> */}
     </form>
   );
 };

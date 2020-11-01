@@ -1,41 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
-export const MessageList = ({ messageList }) => {
-  //   const MESSAGES_URL = "https://wk11livesession.herokuapp.com/messages";
-  //   const [messages, setMessages] = useState([]);
-  //   //Possibility to create function, extract it and import it to the useEffect//
-  //   useEffect(() => {
-  //     fetch(MESSAGES_URL)
-  //       .then((res) => {
-  //         return res.json();
-  //       })
-  //       .then((data) => {
-  //         console.log(data);
-  //         //Reverses the messages, newest on top
-  //         data.reverse();
-  //         //Another method to reverse messages
+const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 
-  //         //data.sort((a, b) => a.created > b.created);
+export const MessageList = (props) => {
+  const { messageList, hearts } = props;
+  const [likes, setLikes] = useState(0);
 
-  //         //Function to sort out the blank messages
-  //         const filteredMessages = data.filter((message) => message.text);
-  //         //Save the data to state
-  //         setMessages(filteredMessages.slice(0, 10));
-  //       });
-  //   }, []);
+  const onHandleClick = (id, hearts) => {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+      method: "POST",
+      body: "",
+      headers: { "Content-Type": "application/json" },
+    }).then(setLikes(likes + 1));
+    console.log(likes);
+  };
 
   return (
     <div>
       {messageList.map((message) => {
         return (
-          <p className="message" key={message._id}>
-            {" "}
+          <div className="happy-message" key={message._id}>
             {message.message}
-            <span className="message-time">
-              {moment(message.createdAt).fromNow()}
+            <button
+              className="heart"
+              onClick={() => onHandleClick(message._id)}
+            >
+              <span role="img" aria-label="heart">
+                {"❤️"}
+              </span>
+              x {message.hearts}
+            </button>
+
+            <span className="moment">
+              <p>{moment(message.createdAt).fromNow()}</p>
             </span>
-          </p>
+          </div>
         );
       })}
     </div>

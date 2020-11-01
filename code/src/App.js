@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-import { MessageList } from "./components/MessageList";
-import { MessageInput } from "components/MessageInput";
-// import { FETCH_URL } from "./urls";
-// import { POST_URL } from "./urls";
+import { MessageList } from "./components/MessageList"; //happy thought
+import { MessageInput } from "components/MessageInput"; //HappyForm
 
 export const App = () => {
   const [messages, setMessages] = useState([]);
+
   const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 
   useEffect(() => {
@@ -16,7 +15,7 @@ export const App = () => {
   const fetchMessages = () => {
     fetch(MESSAGES_URL)
       .then((res) => res.json())
-      .then((data) => setMessages(data.reverse()));
+      .then((data) => setMessages(data));
   };
 
   const reachMessageInput = (newMessage) => {
@@ -24,13 +23,31 @@ export const App = () => {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ message: newMessage }),
-    }).then(() => fetchMessages());
+    })
+      .then(() => fetchMessages())
+      .catch((err) => console.log("error:", err));
   };
 
+  // const onLiked = (messageId) => {
+  //   const updatedMessage = () =>
+  //     messageList.map((message) => {
+  //       if (message._id === messageId) {
+  //         message.hearts += 1;
+  //       }
+  //       return message;
+  //     });
+  //   setMessages(updatedMessage);
+  // };
+
   return (
-    <div>
+    <div className="main-container">
       <MessageInput onMessageChange={reachMessageInput} />
-      <MessageList messageList={messages} />
+      {/* {messages.map((message) => ( */}
+      <MessageList
+        key={messages._id}
+        messageList={messages}
+        // onLiked={onLiked}
+      />
     </div>
   );
 };
