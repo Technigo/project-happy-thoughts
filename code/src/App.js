@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import { MessageList } from "./components/MessageList"; //happy thought
-import { MessageInput } from "components/MessageInput"; //HappyForm
+import { MessageList } from "./components/MessageList";
+import { MessageInput } from "components/MessageInput";
 
 export const App = () => {
   const [messages, setMessages] = useState([]);
@@ -28,25 +28,25 @@ export const App = () => {
       .catch((err) => console.log("error:", err));
   };
 
-  // const onLiked = (messageId) => {
-  //   const updatedMessage = () =>
-  //     messageList.map((message) => {
-  //       if (message._id === messageId) {
-  //         message.hearts += 1;
-  //       }
-  //       return message;
-  //     });
-  //   setMessages(updatedMessage);
-  // };
+  const onLiked = (messageId) => {
+    const updatedMessage = () =>
+      messages.map((message) => {
+        if (message._id === messageId) {
+          message.hearts += 1;
+        }
+        return message;
+      });
+    setMessages(updatedMessage);
+  };
 
   return (
     <div className="main-container">
       <MessageInput onMessageChange={reachMessageInput} />
-      {/* {messages.map((message) => ( */}
+
       <MessageList
         key={messages._id}
         messageList={messages}
-        // onLiked={onLiked}
+        onLiked={onLiked}
       />
     </div>
   );

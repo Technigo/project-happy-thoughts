@@ -6,6 +6,7 @@ export const MessageInput = ({ onMessageChange }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onMessageChange(newMessage);
+    setNewMessage("");
   };
 
   return (
@@ -13,7 +14,6 @@ export const MessageInput = ({ onMessageChange }) => {
       <h3>What makes you happy right now?</h3>
       <textarea
         type="text"
-        // maxLength="140"
         rows="3"
         value={newMessage}
         onChange={(event) => setNewMessage(event.target.value)}
@@ -41,7 +41,6 @@ export const MessageInput = ({ onMessageChange }) => {
           ❤️
         </span>
       </button>
-      {/* </div> */}
     </form>
   );
 };
