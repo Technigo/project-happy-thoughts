@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 
 import { LikeButton } from "./LikeButton"
-//This function makes all the happy-thought messages to appear
+//This function fetches all the happy thoughts:
 export const HappyThoughts = () =>  {
     const THOUGHTS_URL ='https://happy-thoughts-technigo.herokuapp.com/thoughts';
     const [thoughts, setThoughts] = useState([]);

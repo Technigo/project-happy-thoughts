@@ -21,7 +21,7 @@ export const Form = () => {
         window.location.reload();
     })
     } 
-     //This is the form where we write our happy thought
+     //This is the form where we write our happy thought:
     return (
     <form className='form'>
         <h3>What's making you happy right now?</h3>
