@@ -1,25 +1,14 @@
 import React, { useState } from 'react'
 
-export const MessageInput = () => {
-    const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
-    const [message, setMessage] = useState("");
+export const MessageInput = ({ onMessageChange }) => {
+    
+    const [newMessage, setNewMessage] = useState("");
 
     const handleSubmit = event => {
         event.preventDefault();
-
-        fetch(MESSAGES_URL,
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message })
-            }
-        ).then(() => {
-            window.location.reload();
-
-        })
-            .catch(err => console.log("error:, err"))
+        onMessageChange(newMessage);
     }
-
+        
     return (
         <section className="cards-container" >
             <form onSubmit={handleSubmit}>
@@ -29,19 +18,20 @@ export const MessageInput = () => {
                         rows="4"
                         className="input-text"
                         placeholder="Type your happy-message! (6-140 caharacters)"
-                        onChange={event => setMessage(event.target.value)}>
+                        onChange={event => setNewMessage(event.target.value)}>
                     </textarea>
                     <button
                         type="submit"
                         className="form-button"
-                        // value="new message"
-                        disabled={message.length < 6 || message.length > 140 ? true : false}
+                        value={newMessage}
+                        disabled={newMessage.length < 6 || newMessage.length > 140 ? true : false}
                     >
                         <span role="img" aria-label="Red heart emoji">&#10084;&#65039;</span>
                         Send Happy Thoughts
                        <span role="img" aria-label="Red heart emoji">&#10084;&#65039;</span>
                     </button>
-                    <p className="length">{message.length} / 140</p>
+                    <p className={newMessage.length <140 && newMessage.length >6 ? 'length black' :'length grey'}>{newMessage.length} / 140</p>
+                    {/* <p className={inputMessage.length > 140 ? 'red-style' : 'grey-style'}>{inputMessage.length} / 140</p> */}
                 </div>
             </form>
         </section>

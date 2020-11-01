@@ -22,7 +22,8 @@
   .message-time {
     font-size: 15px;
     margin-left: 10px;
-    color: #D3D3D3;
+    color: #A9A9A9;
+    /* color: #D3D3D3; */
   } 
  
    .message-card {
@@ -59,6 +60,14 @@
   .length {
     align-self: flex-end;
     margin-bottom: 10px;
+  }
+
+  .black{
+    color: #000;
+  }
+
+  .grey{
+    color:#A9A9A9;
   }
   
   .form-button{
