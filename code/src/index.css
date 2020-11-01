@@ -1,45 +1,36 @@
 body {
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-
-  font-family: 'Roboto', sans-serif;
-  padding: 40px 600px;
   background-color: rgb(255, 144, 162);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card {
-  border: 2px solid black;  
   margin: 20px;
-  padding: 0 20px;
   box-shadow: 10px 10px 4px -4px black;
+  border: 2px solid black;  
+  padding: 0 20px;
   background-color: white;
 }
 
 input, textarea {
- display: block;
- margin-bottom: 20px;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .submit-button {
-  border-radius: 20px;
-  padding: 10px 20px;
   border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px 20px;  
   background-color: white;
   font-size: 12px;
 }
 
 .text-input {
+  padding: 5px;
   width: calc(100% - 10px);
   height: 50px;
-  padding: 5px;
-  font-size: 12px;
   background-color: rgb(243, 243, 243);
+  font-size: 12px;
 }
 
 .card-footer {
@@ -55,14 +46,14 @@ input, textarea {
 }
 
 img {
-  height: 20px;
   display: flex;
+  height: 20px;
 }
 
 button {
+  margin: 0;
   border: none;
   padding: 0;
-  margin: 0;
   background-color: white;
 }
 
@@ -70,5 +61,24 @@ button {
   display: flex;
 }
 
+@media (min-width:768px) and (max-width: 1023px) {
+  body {
+    padding: 40px 0;
+  }
+  .card {
+    margin: 20px auto;
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 40px 0;
+  }
+  .card {
+    margin: 20px auto;
+    width: 30%;
+  }
+}
 
 
