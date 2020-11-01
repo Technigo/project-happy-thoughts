@@ -1,5 +1,6 @@
-/* To make the message line wrap you can use word-break: break-all; on that element */
-
+* {
+  box-sizing: border-box;
+}
 .happy-post-container {
   display: flex;
   flex-direction: column;
@@ -7,45 +8,56 @@
   align-items: center;
   margin: auto;
   width: 100vw;
-  /* border: 1px solid #000; */
 }
 
 .happy-post {
-  width: 520px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 92%;
   font-family: 'Inconsolata', monospace;
-  font-size: 20px;
+  font-size: 16px;
   border: 1px solid #000;
   box-shadow: 5px 5px #000000;
   margin: 15px 0;
 }
 
 .happy-message {
-  word-break: break-all;
-  margin: 20px;
+  overflow-wrap: break-word;
+  margin: 20px auto;
+  width: 90%;
   font-weight: 500;
+  font-size: 16px;
 }
 
 .happy-post-footer {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  width: 90%;
+  margin: 0 auto 20px auto;
 }
 
 .happy-likes-wrapper {
   display: flex;
   align-items: center;
+  color: #7c7b7b;
+  font-size: 16px;
 }
 
 .some-likes,
 .many-likes,
 .no-likes {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: none;
   margin-right: 10px;
   position: relative;
+}
+
+.no-likes {
+  background: #f3f1f1;
 }
 
 .some-likes {
@@ -56,16 +68,27 @@
   background: #f87979;
 }
 
-.no-likes {
-  background: #f3f1f1;
-}
-
 .like-heart {
   position: absolute;
   top: 9px;
-  left: 12px;
+  left: 14px;
+  margin: 0;
 }
 
-/* .happy-message-time {
+.happy-message-time {
   color: #7c7b7b;
-} */
+  font-size: 16px;
+}
+
+@media(min-width:500px) {
+  .happy-post {
+    width: 90%;
+    
+  }
+
+  .happy-message,
+  .happy-likes-wrapper,
+  .happy-message-time {
+    font-size: 18px;
+  }
+}
