@@ -14,8 +14,6 @@ export const MessageList = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
-        // data.reverse();
 
         // Sorts messages on message sent time 
         data.sort((a, b) => a.created > b.created)
@@ -42,17 +40,6 @@ export const MessageList = () => {
     })
     setMessages(updatedMessages);
   };
-
-  // const onMessageLiked = (id) => {
-
-  //     const updatedMessages = messages.map((message) => {
-  //         if (message._id === id) {
-  //             message.hearts += 1;
-  //         }
-  //         return message;
-  //     })
-  //       setMessages(updatedMessages);
-  // };
 
   return (
     <div>
