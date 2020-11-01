@@ -12,10 +12,10 @@ export const MessageList = ({ messageList, hearts, message }) => {
 
 <div className="message-list">
           {messageList.map(message => (
-            <p className="message" key={message.created}>
+            <p className="message" key={message.createdAt}>
                         {message.message}
                 <span className="message-time">
-                 {moment(message.created).fromNow()}
+                 {moment(message.createdAt).fromNow()}
                 </span>
             </p>
                 ))
