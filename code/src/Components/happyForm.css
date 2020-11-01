@@ -1,0 +1,70 @@
+.happy-form {
+  background-color: #F2F0F0;
+  border: 1px solid black;
+  width: 400px;
+  height: auto;
+  margin: 40px 0px;
+  box-shadow: 8px 8px black;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+}
+
+.happy-form h3 {
+  font-size: 16px;
+}
+
+.happy-form textarea {
+  font-family: 'Inconsolata', monospace;
+  font-size: 16px;
+}
+
+
+.form-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.form-button {
+  text-align: center;
+  background-color: #ffadad;
+  padding: 5px 15px;
+  border-radius: 25px;
+  border: none;
+  text-decoration: none;
+}
+
+.form-button span {
+  padding: 0 8px;
+}
+
+.form-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.form-button:focus {
+  outline: none !important;
+}
+
+.form-button:active {
+  border: 0.5px solid grey; 
+}
+
+.form-button:disabled {
+  cursor: not-allowed;
+}
+
+.form-footer p {
+  font-size: 12px;
+}
+
+
+@media (max-width: 500px) {
+  .happy-form {
+    width: 250px;
+  }
+}
