@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import "styles/thoughtform.css";
+import "styles/thoughtForm.css";
 
 export const ThoughtForm = ({onThoughtChange}) => {
 
