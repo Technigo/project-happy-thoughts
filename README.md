@@ -1,13 +1,10 @@
 # Happy Thoughts
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week we were suppose to do likw a twitter app but ofr happy thoughts with React.  
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Unfortunately I did not solve the problem with how to update the api with happy thoughts from my app or get the likes part to work. I have had a very stressful week so hav'nt had the time to really understand how to solve the problem. I had all the design in. But the code does not work as it should. Wish I had the time to really solve it and understand it. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+
