@@ -12,19 +12,19 @@
   border: 1px solid black;
   width: 80%;
   box-shadow: 13px 14px 0px -6px rgba(0, 0, 0, 1);
-  padding: 15px;
+  padding: 10px;
 }
 
 label {
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", monospace;
   margin: 10px 0;
 }
 
 textarea {
-  margin-bottom: 20px;
-  width: 90%;
-  padding: 10px;
   resize: none;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
 }
 
 textarea:focus {
@@ -33,19 +33,23 @@ textarea:focus {
 
 .form-footer {
   display: flex;
-  margin-bottom: 15px;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 .send-button {
   background: #ffadad;
   border: none;
-  font-weight: bold;
-  border-radius: 25px;
-  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  place-content: center;
   transition: 0.5s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto";
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 10px 6px;
 }
 
 button:disabled {
@@ -54,9 +58,14 @@ button:disabled {
   opacity: 0.6;
 }
 
+.post-span {
+  margin: 5px;
+}
+
 .message-length {
   color: #8f8f8f;
   font-size: 12px;
+  margin: 0;
 }
 
 /* Tablet */
@@ -69,7 +78,7 @@ button:disabled {
 /* Desktop */
 @media (min-width: 1025px) {
   .form-container {
-    width: 40%;
+    width: 30%;
   }
 
   label {
@@ -77,12 +86,17 @@ button:disabled {
     padding: 5px 0;
   }
 
+  .post-span {
+    margin: 10px;
+  }
+  
+
   .message-length {
     font-size: 14px;
   }
 
   .send-button {
     padding: 15px;
-    font-size: 14px;
+    font-size: 12px;
   }
 }

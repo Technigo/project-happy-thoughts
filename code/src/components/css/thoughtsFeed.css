@@ -1,7 +1,7 @@
 .feed-section {
   display: flex;
   justify-content: center;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .thoughts-container {
@@ -9,17 +9,18 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  width: 80%;
+  background: white;
   border: 1px solid black;
-  padding: 15px;
+  width: 80%;
+  padding: 15px 10px;
   margin: 10px;
   box-shadow: 13px 14px 0px -6px rgba(0, 0, 0, 1);
 }
 
 .thought-text {
-  font-family: "Inconsolata";
-  font-size: 16px;
+  font-family: "Inconsolata", monospace;
   word-break: break-word;
+  font-size: 16px;
 }
 
 .post-time {
@@ -48,7 +49,7 @@
 /* Desktop */
 @media (min-width: 1025px) {
   .thoughts-container {
-    width: 40%;
+    width: 30%;
   }
 
   .thought-text {

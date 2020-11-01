@@ -39,12 +39,12 @@ export const ThoughtsInput = ({ onFormSubmit }) => {
             onClick={handleSubmit}
             disabled={message.length < 3 || message.length > 140 ? true : false}
           >
-            <span role="img" aria-label="heart">
-              ❤️
+            <span role="img" aria-label="heart" className="post-span">
+            💌
             </span>
-            Send Happy Thought
-            <span role="img" aria-label="heart">
-              ❤️
+            Send Happy Thought 
+            <span role="img" aria-label="heart" className="post-span">
+            💌
             </span>
           </button>
           <p className="message-length">

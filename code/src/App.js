@@ -20,7 +20,7 @@ export const App = () => {
   };
 
   const onLiked = (thoughtId) => {
-    const updatedThoughts = thoughts.map(thought => {
+    const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === thoughtId) {
         thought.hearts += 1;
       }

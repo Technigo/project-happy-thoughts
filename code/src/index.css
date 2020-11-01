@@ -9,6 +9,7 @@ body {
     sans-serif, 'Inconsolata', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #ffadad;
 }
 
 code {
