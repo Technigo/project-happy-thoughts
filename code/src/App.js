@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import { ThoughtsFeed } from "./components/js/ThoughtsFeed.js";
 import { ThoughtsInput } from "./components/js/ThoughtsInput.js";
+import { Header } from "./components/js/Header";
+import { Footer } from "./components/js/Footer";
 
 const URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 
@@ -31,6 +33,7 @@ export const App = () => {
 
   return (
     <main>
+      <Header />
       <ThoughtsInput onFormSubmit={onFormSubmit} />
       {thoughts.map((thought) => (
         <ThoughtsFeed
@@ -42,6 +45,7 @@ export const App = () => {
           thought={thought.message}
         />
       ))}
+      <Footer />
     </main>
   );
 };

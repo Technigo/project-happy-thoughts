@@ -40,6 +40,8 @@ textarea:focus {
 }
 
 .send-button {
+  display: flex;
+  align-items: center;
   background: #ffadad;
   border: none;
   text-align: center;
@@ -58,7 +60,9 @@ button:disabled {
   opacity: 0.6;
 }
 
-.post-span {
+.send-button-icon {
+  width: 14px;
+  height: 14px;
   margin: 5px;
 }
 
@@ -66,6 +70,17 @@ button:disabled {
   color: #8f8f8f;
   font-size: 12px;
   margin: 0;
+}
+
+/* iPhone 5 + Galaxy Fold */
+@media screen and (max-width: 320px) {
+  .send-button {
+    font-size: 10px;
+  }
+
+  .message-length {
+    font-size: 8px;
+  }
 }
 
 /* Tablet */
@@ -82,14 +97,13 @@ button:disabled {
   }
 
   label {
-    font-size: 24px;
+    font-size: 18px;
     padding: 5px 0;
   }
 
   .post-span {
     margin: 10px;
   }
-  
 
   .message-length {
     font-size: 14px;
@@ -97,6 +111,6 @@ button:disabled {
 
   .send-button {
     padding: 15px;
-    font-size: 12px;
+    font-size: 14px;
   }
 }

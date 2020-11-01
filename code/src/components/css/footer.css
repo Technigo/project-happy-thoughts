@@ -1,0 +1,27 @@
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: #f2f0f0;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+
+.footer-text {
+  color: #ffadad;
+  font-family: "Inconsolata", monospace;
+  font-size: 12px;
+  margin: 6px;
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  footer {
+    padding: 60px 0;
+  }
+
+  .footer-text {
+    font-size: 16px;
+  }
+}

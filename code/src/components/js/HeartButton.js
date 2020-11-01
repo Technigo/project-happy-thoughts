@@ -17,8 +17,8 @@ export const HeartButton = ({ onLiked, heart, heartId }) => {
   return (
     <div className="like-container">
       <button
-        className="heart-button"
         onClick={handleClick}
+        className="heart-button"
         style={{ background: heart > 0 ? "#FFADAD" : "#EAEAEA" }}
       >
         <span role="img" aria-label="heart">
