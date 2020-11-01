@@ -8,4 +8,4 @@ I started out trying out the requests in postman to learn how to do them. Then I
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+karolin-happy-thoughts.netlify.app 
