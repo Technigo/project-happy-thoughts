@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A twitter like application built in React, where we have get messages, post messages and handle likes by using a happy thought API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with sketching the components and their content on paper, and built my application around that. I got a better overview keeping both API calls and JSX belonging to one component in that component, instead of having all API calls further up in the component structure. Am using State and Effect hooks, and played around with those to get a better understanding. Next I would like to have the getMessages API call in a separate fetch component, as three of the components are using this API call.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://laughing-haibt-fe11b3.netlify.app/
