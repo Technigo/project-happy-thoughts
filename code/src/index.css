@@ -12,17 +12,11 @@ body {
   background-color: white;
 }
 
-input, textarea {
+/*** MessageInput ***/
+
+textarea, input {
   display: block;
   margin-bottom: 20px;
-}
-
-.submit-button {
-  border: 2px solid black;
-  border-radius: 20px;
-  padding: 10px 20px;  
-  background-color: white;
-  font-size: 12px;
 }
 
 .text-input {
@@ -33,6 +27,16 @@ input, textarea {
   font-size: 12px;
 }
 
+.submit-button {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px 20px;  
+  background-color: white;
+  font-size: 12px;
+}
+
+/*** Message ***/
+
 .card-footer {
   display: flex;
   justify-content: space-between;
@@ -40,14 +44,8 @@ input, textarea {
   font-size: 12px;
 }
 
-.likes {
-  display: inline-block;
-  margin-left: 10px;
-}
-
-img {
+.likes-container {
   display: flex;
-  height: 20px;
 }
 
 button {
@@ -57,9 +55,17 @@ button {
   background-color: white;
 }
 
-.likes-container {
+img {
   display: flex;
+  height: 20px;
 }
+
+.likes {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/*** Media queries ***/
 
 @media (min-width:768px) and (max-width: 1023px) {
   body {
@@ -80,5 +86,3 @@ button {
     width: 30%;
   }
 }
-
-
