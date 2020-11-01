@@ -1,9 +1,5 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
 Create a twitter like application, fetching and posting to an API. Style according to given template.
 
 ## The problem
@@ -15,4 +11,4 @@ The onClick function was not firing the intended function which led to the like 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://upbeat-goldstine-ea13d0.netlify.app/.

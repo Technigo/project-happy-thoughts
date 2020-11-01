@@ -1,30 +1,30 @@
 .input-container {
-  width: 510px;
+  width: 470px;
   height: 180px;
-  align-self: flex-start;
   background-color: rgb(242, 240, 240);
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
   border: 2px solid black;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-content: center;
-  padding: 10px;
+  align-self: flex-start;
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
+  justify-content: space-around;
+  padding: 20px;
   margin: 20px 0 20px 18px;
-  font-family: "Commissioner", sans-serif;
-  box-sizing: content-box;
+  font-family: "Commissioner";
 }
 
 .form-text {
-  display: flex;
-  width: 90%;
+  width: 100%;
+  height: 50px;
+  /* flex-direction: column; */
   height: 50px;
   font-size: 18px;
-}
-
-.new-thought h3 {
-  color: black;
+  font-family: monospace;
+  /* margin-right: 4px; */
+  display: flex;
+  justify-content: center;
 }
 
 .form-button {
@@ -33,16 +33,27 @@
   height: 50px;
   border-radius: 30px;
   color: black;
-  margin-top: 10px;
-  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 -40px;
+  font-size: 17px;
   transition: all 0.3s ease-in-out;
+}
+
+.btn-text {
+  margin-right: 4px;
 }
 
 .form-button:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .char-counter {
-  margin: 80px 0 0 5px;
+  color: #bebebe;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  font-family: monospace, sans-serif;
 }

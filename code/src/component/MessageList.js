@@ -5,11 +5,11 @@ import './message.css';
 
 export const MessageList = ({ messageList, onLike }) => {
   return (
-    <div>
+    <div className="message-container">
       {
         messageList.map(message => (
           <article className="message" key={message._id}>
-            <p>{message.message}</p>
+            <p className="message-text">{message.message}</p>
             <button
               className={`heart-button ${message.hearts > 0 ? 'Liked' : 'Unliked'}`}
               onClick={() => onLike(message)}
