@@ -13,6 +13,8 @@ Testing has been done in different browsers such as Edge, FireFox and Chrome in 
 
 ## Limitations
 
+None aware of. 
+
 ## View it live
 
-View the project live here: 
+View the project live here: https://thehappythoughts.netlify.app/
