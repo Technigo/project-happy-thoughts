@@ -16,7 +16,8 @@ const Thoughts = () => {
       .then(response => response.json())
       .then(json => {
         const filteredThoughts = json.filter(thought => thought.message);
-        setThoughts(filteredThoughts);
+        const limitedThoughts = filteredThoughts.slice(0, 20);
+        setThoughts(limitedThoughts);
       })
       .catch(error => console.error(error));
   };

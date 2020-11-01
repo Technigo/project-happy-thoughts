@@ -17,13 +17,14 @@ p {
 }
 
 .container {
-  position: relative;
   min-height: 100vh;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 110px 1fr 85px;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 header {
-  box-sizing: border-box;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
@@ -31,7 +32,6 @@ header {
 }
 
 section {
-  box-sizing: border-box;
   padding: 0 30px;
   display: flex;
   flex-direction: column;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Heart from '../../assets/heart.svg';
+import HeartIcon from '../../assets/heart-icon.png';
 
 const NewInput = ({ onInputChange }) => {
   const [newThought, setNewThought] = useState('');
@@ -27,9 +27,9 @@ const NewInput = ({ onInputChange }) => {
           className="send-button"
           disabled={newThought.length < 6 || newThought.length > 140 ? true : false}
         >
-          <img className="heart" src={Heart} alt="Pink heart"></img>
+          <img className="heart" src={HeartIcon} alt="Pink heart"></img>
           Send Happy Thought
-          <img className="heart" src={Heart} alt="Pink heart"></img>
+          <img className="heart" src={HeartIcon} alt="Pink heart"></img>
         </button>
         <p>{newThought.length}/140</p>
       </div>

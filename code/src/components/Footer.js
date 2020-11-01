@@ -8,7 +8,7 @@ const Footer = () => {
         <p className="signature">&#169; 2020 Sandrine Elander</p>
       </div>
       <p className="attribution">
-        Icon made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://icons8.com/icons/set/red-heart">Red Heart icon</a> by <a target="_blank" rel="noopener noreferrer" href="https://icons8.com">Icons8</a>
       </p>
     </footer>
   )
