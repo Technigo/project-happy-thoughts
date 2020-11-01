@@ -17,18 +17,17 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 @media (min-width: 668px) {
   .message-box {
-      width: 370px;
+    width: 370px;
   }
 }
 
 @media (min-width: 1024px) {
   .message-box {
-      width: 400px;
+    width: 400px;
   }
 }

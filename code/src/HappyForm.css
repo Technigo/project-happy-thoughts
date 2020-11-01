@@ -12,7 +12,7 @@
 
 .happy-form textarea {
     width: 100%;
-    resize: none; 
+    resize: none;
     padding: 10px;
     font-size: 16px;
     margin: 10px 0;
@@ -53,4 +53,3 @@
         width: 500px;
     }
 }
-

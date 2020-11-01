@@ -1,21 +1,21 @@
 .heart {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .heart-button {
-    background: #ffaaaa;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 4px;
-    font-size: 16px;
-    border: 1px solid #ffaaaa;  
-  }
-  
-  .heart-button:hover {     
-    background: white;
-    cursor: pointer;
-    border: 1px solid black;
-  }
+  background: #ffaaaa;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 4px;
+  font-size: 16px;
+  border: 1px solid #ffaaaa;
+}
+
+.heart-button:hover {
+  background: white;
+  cursor: pointer;
+  border: 1px solid black;
+}
