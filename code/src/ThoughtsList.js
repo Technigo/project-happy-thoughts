@@ -14,7 +14,7 @@ export const ThoughtsList = ({ onLiked, message, hearts, _id, createdAt }) => {
   };
 
   return (
-    <section>
+    <section className="thoughts-section">
       <article className="thought-card">
         <div className="top-of-card">
           <p className="thought-text">{message}</p>
