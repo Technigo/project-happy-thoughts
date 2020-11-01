@@ -6,6 +6,7 @@ import { THOUGHTS_URL } from "./urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
+  const [heartCount, setHeartCount] = useState(0);
 
   //perform useEffect and fetch() after mounting
   useEffect(() => {
@@ -28,14 +29,18 @@ export const App = () => {
     }).then(() => fetchThoughts());
   };
 
-  const handleLiked = (thoughtId) => {
+  const handleLike = (thoughtId, heartNr) => {
 
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
         return thought.hearts += 1;
       }
-      return thought;
-    })
+      else {
+        return thought;
+      }
+    });
+    //issue below? 
+    setHeartCount(heartCount + heartNr);
     setThoughts(updatedThoughts);
   };
 
@@ -51,10 +56,9 @@ export const App = () => {
           happyThought={thought.message}
           timeStamp={thought.createdAt}
           nrOfLikes={thought.hearts}
-          onLiked={handleLiked}
+          onLike={handleLike}
         />
-      ))
-      }
+      ))}
     </div>
   )
-}
+};

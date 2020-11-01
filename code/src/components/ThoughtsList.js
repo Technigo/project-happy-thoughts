@@ -5,14 +5,20 @@ import moment from "moment";
 import "./thoughts-list.css";
 
 
-const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLiked }) => {
+const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLike }) => {
 
   const addNewHeart = () => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" }
-    }).then(() => onLiked(thought._id));
+    }).then(() => {
+      let heartNr = 0;
+      heartNr = heartNr + 1;
+      // onLiked(thought._id)
+      onLike(thought._id, heartNr);
+    })
   };
+
 
   return (
     <div className="thoughts-list-container">
