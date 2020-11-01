@@ -5,9 +5,7 @@ import { Message } from './Message.js'
 
 export const MessageList = ({ messages, getMessages }) => {
 
-  useEffect(() => {
-    getMessages()
-  }, [])
+  useEffect(getMessages, [])
   // with [] useEffect only listens to when the component is mounted 
   // without [] useEffect would listen to both when the component is mounted and state changes
   // with [messages] for example useEffect listens to when the component is mounted as well as the state updates of messages variable
