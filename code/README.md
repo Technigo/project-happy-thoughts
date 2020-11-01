@@ -1,19 +1,18 @@
-# Technigo React Starter App
+# Happy thoughts App
+A simple resonsive API to collect 'happy thoughts' built with react components, props and useEffects. Built with web accessibility in mind.
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+## The process
+ My third project using React in the Technigo Bootcamp. I used a main component App where I show two diffrent components InputForm (where the user can input a happy tought) and a MessageList (where all messages are diplayed and  can be liked). The MessageList component is generating information using props and updating status using react hooks. I used the map method to iterate through the data to generate the all the messages.
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+## Accessibility and cross-browser testing 
 
-## Usage
+Html validated with W3C validation service (http://validator.w3.org/) with no errors found.
+Chrome lighthouse report was generated with the result: 100% Accessibility, 100% Best Practices and 100% SEO. 
+Accessibility checked with Wave chrome plugin and no errors raised and with screenreader chromeVox with no errors.
+Testing has been done in different browsers such as Edge, FireFox and Chrome in mobile, tablet and desktop views.
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+## Limitations
 
-Alternatively, if you don't want a new git repo on your account;
+## View it live
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+View the project live here: 

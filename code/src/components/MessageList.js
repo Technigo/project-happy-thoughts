@@ -1,38 +1,49 @@
-import React, { useEffect, useState } from 'react'
+import React  from 'react'
 import moment from 'moment'
 
-const MessageList = () =>{
-const THOUGHT_URL='https://happy-thoughts-technigo.herokuapp.com/thoughts';
-const LIKE_URL='https://happy-thoughts-technigo.herokuapp.com/thoughts/{thought._id}/like'
-const [thoughts, setThoughts]= useState([]);
 
+export const MessageList = ({
+    id,
+    message,
+    timeCreated,
+    hearts,
+    likeHeart
+    }) => {
 
+    const handleLikes = () => {
 
-    useEffect(() =>{
-        fetch(THOUGHT_URL)
-            .then((res) => {
-                return res.json();
-            })
-            .then((data) => {
-                console.log(data);
-                setThoughts(data);
-            }); 
-        }, []);
-    return (
-        <div>
-            {thoughts.map((thought) =>{
-                return <article> 
-                        <p className="thought" key={thought._id}>
-                        {thought.message} </p> 
-                        <div className="hearts-container">
-                        <button className ="hearts-button" onClick="">&#10084;</button>
-                        <p className="hearts"> x {thought.hearts}</p>
-                            <p>{moment(thought.createdAt).fromNow()}</p>
-                        </div>
-                    </article>
-              
-            })}
-        </div>
+        let nrOfClicks = 0;
+        nrOfClicks += 1;
+        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+            method: "POST",
+            body: "",
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+        }).then(() => {
+            likeHeart(id, nrOfClicks);
+        });
+    };
+
+    return ( 
+            <article className = "message-container" > 
+                <p > {message} < /p> 
+                <div className = "heart-container" > 
+                    <p className = "heart-item" >
+                    <button onClick = {handleLikes}
+                        className = "heart-button"
+                        //If a heart has no clicks heart color i grey else pink
+                        style = {{backgroundColor: hearts > 0 ? "lightpink" : "lightgrey" }} >
+                        <span role = "img" aria-label = "Heart emoji" > &#128150;
+                        </span>
+                    </button>
+                    x {hearts} </p>
+                    {/* Using the imported Moment package to calculate the timestamp */}
+                    <p className= "time-created" > { moment(timeCreated).fromNow()} 
+                    </p> 
+                </div> 
+            </article>
     );
 };
-export default MessageList; 
+export default MessageList;
