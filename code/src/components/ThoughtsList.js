@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-import '../Styles/thoughtslist.css';
+import './Styles/thoughtslist.css';
 
 export const ThoughtsList = ({thought, onLike}) => {
   
