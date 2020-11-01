@@ -7,8 +7,8 @@ import {Create} from 'Create'
 export const App = () => {
   return (
     <div>
-      <Fetch />
       <Create />
+      <Fetch />
     </div>
   )
 }

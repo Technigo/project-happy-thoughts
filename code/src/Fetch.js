@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import moment from 'moment'
+
 import { Like } from 'Like'
 
 export const Fetch = () => {
@@ -27,18 +28,22 @@ export const Fetch = () => {
     }, [])
 
     return (
-        <div>
+        <div className="message-container">
             {
                 messages.map(message => (
-                    <div key={message.createdAt}>
-                    <p className="message" >
-                        {message.message}
-                        <span className="message-time">
-                            {moment(message.createdAt).fromNow()}
-                        </span>
-                        <span>{message.hearts}</span>  
-                    </p>
-                    <Like _id={message._id}/>
+                    <div key={message.createdAt} className="message">
+                        <p className="message-text">
+                            {message.message}
+                        </p>
+                        <div className="lower-container">
+                            <div className="like-container">
+                                <Like _id={message._id}/>
+                                <span className="likes">x{message.hearts}</span>
+                            </div>
+                            <span className="message-time">
+                                    {moment(message.createdAt).fromNow()}
+                                </span>
+                        </div>
                     </div>
                 ))
             }

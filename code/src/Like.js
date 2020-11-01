@@ -16,6 +16,8 @@ export const Like = ( {_id} ) => {
     
       }
 
- return   <button onClick={() => {handleLike(_id)}}></button>
+ return   <button onClick={() => {handleLike(_id)}} className="like-button">
+            <span role="img"> ❤️ </span>
+          </button>
 }
 

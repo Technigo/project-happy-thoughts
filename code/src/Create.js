@@ -25,17 +25,14 @@ export const Create = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="text" 
-                onChange={event => addMessage(event.target.value)}
-                className="form-text">
-             </input>
-            <input 
-                type="submit"
-                className="form-button"
-                value="Add Message">
-            </input>
-        </form>
+        <div className="submit-container">
+            <form onSubmit={handleSubmit} className="submit-form">
+                <p>What is making you happy?</p>
+                <input type="text" onChange={event => addMessage(event.target.value)} className="text-box">
+                </input>
+                <input type="submit" value="Send Happy Thought" className="submit-button">
+                </input>
+            </form>
+        </div>
     )
 }
