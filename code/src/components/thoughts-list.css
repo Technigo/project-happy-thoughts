@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
 .thoughts-list-container {
   font-family: 'Inconsolata', monospace;
-  border: 1px solid orange;
   display: flex;
   justify-content: center;
 }

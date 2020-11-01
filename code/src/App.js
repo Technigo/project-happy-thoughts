@@ -12,7 +12,7 @@ export const App = () => {
   useEffect(() => {
     fetchThoughts();
   }, []);
-  //server -> App.js -> ThoughtList
+
   const fetchThoughts = () => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
@@ -21,14 +21,12 @@ export const App = () => {
       .catch(error => console.error(error));
   };
 
-  //ThoughtInput -> App.js -> server -> App.js -> ThoughtList
+
   const reachNewThought = (newThought) => {
-    // console.log(newThought);
+
     fetch(THOUGHTS_URL, {
       method: "POST",
-      //obligatory to write headers in POST requests (to communicate to server what kind of info are you sending)
       headers: { "Content-Type": "application/json" },
-      //our value has to be in appropriate type -> JSON -> to be recognised by the backend server
       body: JSON.stringify({ message: newThought })
     }).then(() => fetchThoughts());
   };
@@ -43,7 +41,6 @@ export const App = () => {
   return (
     <div className="app-container">
       <ThoughtInput
-        // inputText={input}
         onNewThought={reachNewThought}
       />
       <ThoughtsList
