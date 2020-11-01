@@ -48,11 +48,7 @@ export const PostThoughts = () => {
           onClick={handleSubmit}
           disabled={message.length < 5 || message.length > 140 ? true : false}
         >
-        <span
-          role='button'
-          tabIndex='0'
-          aria-label='Send stoke here'
-        >
+        <span>
           Send stoke here!
         </span>
         </button>

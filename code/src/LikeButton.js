@@ -24,7 +24,7 @@ export const LikeButton = props => {
 
 return (
   <div className='like-container'>
-    <a>
+    <span>
       <button
         className='like-button'
         type='submit'
@@ -33,16 +33,15 @@ return (
         <p
           className='heart'
         >
-          ❤️
+          ♥
         </p>
       </button> 
-      </a>
+      </span>
       <p
         className='like-text'
         tabIndex='0'
       >
         x {clicks} (you liked it {localStorage[props.id]} times)
       </p>
-   
   </div>
 )};

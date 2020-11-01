@@ -1,13 +1,15 @@
 .like-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: rgb(241, 161, 161);
   border-radius: 50%;
   border: none;
   width: 30px;
   height: 30px;
-  font-size: 14px;
-  color: rgb(151, 82, 82);
-  margin-right: 8px;
   padding: 0;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .like-button:hover {
@@ -25,4 +27,10 @@
 .like-container {
   display: flex;
   flex-direction: row;
+}
+
+.heart {
+  font-size: 24px;
+  color: rgb(235, 53, 53);
+  align-self: center;
 }
