@@ -1,3 +1,5 @@
+/* Basic styling */
+
 /* Fonts imported from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Montserrat&display=swap');
 
@@ -16,11 +18,20 @@ code {
 }
 
 .main {
-padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .thoughts-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 70%;
+}
+
+@media only screen and (min-width: 700px) {
+  .thoughts-container {
+    width: 50%;
+  }
 }

@@ -4,22 +4,22 @@ import "styles/thoughtform.css";
 
 export const ThoughtForm = ({onThoughtChange}) => {
 
-    /* State hooks for thoughts */
+    //State hooks for new thoughts
     const [newThought, setNewThought] = useState(''); 
 
-    /*Function for handling input and posting of new happy thought */
+    // Function for handling input and posting of new happy thought
     const handleSubmit = event => {
         event.preventDefault();
         onThoughtChange(newThought);
         setNewThought('')
     }
 
-    /* Form for posting happy thoughts */
+    // Form for posting happy thoughts
     return (
         <form onSubmit={handleSubmit} className='thoughts-form'>
-            <h3> 
+            <h2> 
                 What's making you happy right now?
-            </h3>
+            </h2>
                 <input
                     type='text'
                     className='thoughts-form__input'

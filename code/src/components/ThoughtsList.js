@@ -5,10 +5,13 @@ import "styles/thoughtsList.css";
 
 export const ThoughtsList = ({thought, onLike}) => {
   
+  // Function for handling like-button
   const handleLikes = () => {
     onLike(thought._id);
   };
   
+  /* Returning an article with key=_id, message,
+  hearts (number of likes) and time created for each thought from the API */
   return (
     <article className='thoughts-article' key={thought._id}>
       <p className="thoughts-article__text">

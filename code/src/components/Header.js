@@ -6,10 +6,11 @@ import "styles/header.css";
 export const Header = () => {
 
     return (
-        <h1 className>
-            <span role='img' aria-label='heart'> ❤️ </span> 
+        <h1 className='header'>
                 Share your happy thoughts
-            <span role='img' aria-label='heart'> ❤️ </span>
+            <div>
+                <span className='pulse-heart' role='img' aria-label='heart'> ❤️ </span>
+            </div>
         </h1>
     );
 };
