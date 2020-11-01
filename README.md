@@ -1,13 +1,10 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was to build our own version of Twitter called Happy-thoughts, by fetching and posting data to an API. The app is built in React.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
+I started by identifing which components I needed. I started with two: one for the Form and one for the Happy thoughts. The tricky part was to get the like button to work and I soon realised I needed another component, so I created the LikeButton component. In this project I am using state and props. And using useEffect for the first time. I am happy with the result.
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+I am having some netlify problems. Will get back with the URL soon.
