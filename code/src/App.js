@@ -6,39 +6,38 @@ import { THOUGHTS_URL } from "./urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  // const [hearts, setHearts] = useState(0);
 
   //perform useEffect and fetch() after mounting
   useEffect(() => {
     fetchThoughts();
   }, []);
-  //server -> App.js -> ThoughtList
+
+  //ALL the FUNCTIONS
   const fetchThoughts = () => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
-      //updating the state below-> that's why infinite loop
       .then(data => setThoughts(data))
       .catch(error => console.error(error));
   };
 
-  //ThoughtInput -> App.js -> server -> App.js -> ThoughtList
   const reachNewThought = (newThought) => {
-    // console.log(newThought);
     fetch(THOUGHTS_URL, {
       method: "POST",
-      //obligatory to write headers in POST requests (to communicate to server what kind of info are you sending)
       headers: { "Content-Type": "application/json" },
-      //our value has to be in appropriate type -> JSON -> to be recognised by the backend server
       body: JSON.stringify({ message: newThought })
     }).then(() => fetchThoughts());
   };
 
-  // const fetchHearts = () => {
-  //   fetch(THOUGHTS_URL)
-  //     .then(res => res.json())
-  //     .then(data => setHearts(data))
+  const handleLiked = (thoughtId) => {
 
-  // };
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        return thought.hearts += 1;
+      }
+      return thought;
+    })
+    setThoughts(updatedThoughts);
+  };
 
   return (
     <div className="app-container">
@@ -48,9 +47,11 @@ export const App = () => {
       {thoughts.map(thought => (
         <ThoughtsList
           key={thought._id}
+          thought={thought}
           happyThought={thought.message}
           timeStamp={thought.createdAt}
-          likes={thought.hearts}
+          nrOfLikes={thought.hearts}
+          onLiked={handleLiked}
         />
       ))
       }
