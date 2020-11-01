@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 
 export const MessageInput = ({ onMessageChange }) => {
-    
+
     const [newMessage, setNewMessage] = useState("");
 
     const handleSubmit = event => {
         event.preventDefault();
         onMessageChange(newMessage);
     }
-        
+
     return (
         <section className="cards-container" >
             <form onSubmit={handleSubmit}>
@@ -30,8 +30,7 @@ export const MessageInput = ({ onMessageChange }) => {
                         Send Happy Thoughts
                        <span role="img" aria-label="Red heart emoji">&#10084;&#65039;</span>
                     </button>
-                    <p className={newMessage.length <140 && newMessage.length >6 ? 'length black' :'length grey'}>{newMessage.length} / 140</p>
-                    {/* <p className={inputMessage.length > 140 ? 'red-style' : 'grey-style'}>{inputMessage.length} / 140</p> */}
+                    <p className={newMessage.length < 140 && newMessage.length > 6 ? 'length black' : 'length grey'}>{newMessage.length} / 140</p>
                 </div>
             </form>
         </section>

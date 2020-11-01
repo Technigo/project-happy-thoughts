@@ -4,8 +4,6 @@ import { HeartButton } from './HeartButton';
 
 export const MessageList = ({ messageList, setMessageList }) => {
 
-    // const [messages, setMessages] = useState([])
-
     const onMessageLiked = (likedMessageId) => {
         const updatedLikes = messageList.map((likes) => {
             if (likes._id === likedMessageId) {

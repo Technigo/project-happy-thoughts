@@ -2,6 +2,8 @@ import React,  { useEffect, useState } from 'react'
 
 import { MessageList } from 'components/MessageList';
 import { MessageInput } from 'components/MessageInput';
+import { Footer } from 'components/Footer';
+
 
 const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 
@@ -39,8 +41,9 @@ const postMessage = newMessage => {
 
   return (
     <section className="wrapper">
-      <MessageInput onMessageChange={postMessage}/>
-      <MessageList messageList={messages} setMessagesList={setMessages}/> 
+      <MessageInput onMessageChange={postMessage} />
+      <MessageList messageList={messages} setMessagesList={setMessages} /> 
+      <Footer />
     </section>
   )
 }
