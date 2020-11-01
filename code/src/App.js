@@ -43,12 +43,17 @@ export const App = () => {
   return (
     <div className="app-container">
       <ThoughtInput
-        // inputText={input}
         onNewThought={reachNewThought}
       />
-      <ThoughtsList
-        thoughtsArray={thoughts}
-      />
+      {thoughts.map(thought => (
+        <ThoughtsList
+          key={thought._id}
+          happyThought={thought.message}
+          timeStamp={thought.createdAt}
+          likes={thought.hearts}
+        />
+      ))
+      }
     </div>
   )
 }
