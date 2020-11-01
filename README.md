@@ -9,4 +9,5 @@ I did not have a problem to set up the initial GET and POST comment.
 It took me a while to figure out the component to POST a like on a specific comment. My first iteration sent like on all 20 latest comments :)
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://sleepy-carson-4649f3.netlify.app
+https://github.com/monkeybusiness101/project-happy-thoughts
