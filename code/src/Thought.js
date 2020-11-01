@@ -15,8 +15,8 @@ export const Thought = (props) => {
     setLiked(true);
   }
 
-    const postLike = () =>{
-    var requestOptions = {
+  const postLike = () =>{
+    const requestOptions = {
       method: 'POST',
       redirect: 'follow'
     };
@@ -41,23 +41,39 @@ export const Thought = (props) => {
    
     {!liked && 
     <div>
-      <button className={numLikes === 0 ?  "no-likes-button" : (numLikes > 0 && numLikes < 3 ? "like-button" : "mega-like-button")} onClick=
-      {() => clickedLikeButton(props.id)}
-        ><span role="img" aria-label="heart emoji">
+      <button 
+      className={numLikes === 0 ?  "no-likes-button" : (numLikes > 0 && numLikes < 3 ? "like-button" : "mega-like-button")} 
+      onClick= {() => clickedLikeButton(props.id)}>
+          <span role="img" aria-label="heart emoji">
           ❤️</span>
-          </button> 
-      <span className="number-of-initial-likes">x {numLikes}</span>
+      </button> 
+      <span 
+      className="number-of-initial-likes">
+        x {numLikes}
+      </span>
     </div>}
 
     {liked && 
     <div>
-      <button disabled className="disabled-button"
-        ><span role="img" aria-label="heart emoji">
-        ❤️</span></button>
-      <span className="number-of-likes">x {numLikes}</span>
+      <button 
+      disabled 
+      className="disabled-button"
+      >
+        <span 
+        role="img" 
+        aria-label="heart emoji">
+          ❤️
+        </span>
+      </button>
+      <span 
+      className="number-of-likes">
+        x {numLikes}
+      </span>
     </div>}
     <p className="date">
-    <span>{moment(props.createdAt).fromNow()}</span>
+      <span>
+        {moment(props.createdAt).fromNow()}
+      </span>
     </p></div>
   </div>
   )

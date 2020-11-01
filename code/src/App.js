@@ -4,7 +4,6 @@ import { Loader } from "Loader";
 import { Thought } from "Thought";
 import { Form } from "./Form"
 
-
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [messageOK, setMessageOK] = useState(true);
@@ -16,28 +15,26 @@ export const App = () => {
     getThoughts();
   }, []);
 
- useEffect(()=>{
-   window.localStorage.setItem("count",likeCount);
- },[likeCount])
+  useEffect(()=>{
+    window.localStorage.setItem("count",likeCount);
+  },[likeCount])
 
   const getThoughts = () =>{
     fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
     .then((res) => res.json())
-      
-     .then((data) => {
-       setThoughts(data);
-       setLoading(false);
-      
-      });
+    .then((data) => {
+      setThoughts(data);
+      setLoading(false);
+    });
   }
 
   const handleLikes = () => {
     increaseLikeCount((likeCount) => likeCount+1);
   }
 
-const handleSubmit = (newMessage) => {
-  postThought(newMessage);
-}
+  const handleSubmit = (newMessage) => {
+    postThought(newMessage);
+  }
 
   const postThought = (message) => {
     const myHeaders = new Headers();
@@ -55,45 +52,42 @@ const handleSubmit = (newMessage) => {
       res.json()
     )
     .then((newThought) => { 
-       console.log(newThought);
-       if(newThought.errors !== undefined)
-       {
+      console.log(newThought);
+      if(newThought.errors !== undefined)
+        {
           setMessageOK(false);
           console.log(newThought.message);
-
-       } else {
-        setMessageOK(true);
-        getThoughts();
-        }
+        } else {
+          setMessageOK(true);
+          getThoughts();
+          }
       }
     ).catch((error) => console.log(error))
   }
 
-return(
-<section className="app-container">
-  <header className="header">
-  {likeCount > 0 && <LikeCounter numberOfLikes={likeCount}/>}
-  </header>
-  
-  <Form 
-    submitForm = {handleSubmit}
-  />
-
-  {!messageOK && <p>Couldn't save message, check the length (5-140) and try again.</p>}
-  {loading && <Loader />}
-  {!loading &&
-  <section className="thoughts-list">
-      {thoughts.map((thought) => (
-        <Thought 
-         key= {thought._id}
-          id = {thought._id}
-          message = {thought.message}
-          createdAt = {thought.createdAt}
-          hearts = {thought.hearts}
-          onLike = {handleLikes}
-        />
-        ))}
-  </section>}
-</section>
-)
+  return (
+  <section className="app-container">
+    <header className="header">
+    {likeCount > 0 && <LikeCounter numberOfLikes={likeCount}/>}
+    </header>
+    <Form 
+      submitForm = {handleSubmit}
+    />
+    {!messageOK && <p>Couldn't save message, check the length (5-140) and try again.</p>}
+    {loading && <Loader />}
+    {!loading &&
+    <section className="thoughts-list">
+        {thoughts.map((thought) => (
+          <Thought 
+          key= {thought._id}
+            id = {thought._id}
+            message = {thought.message}
+            createdAt = {thought.createdAt}
+            hearts = {thought.hearts}
+            onLike = {handleLikes}
+          />
+          ))}
+    </section>}
+  </section>
+  )
 }
