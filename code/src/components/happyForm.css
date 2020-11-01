@@ -1,11 +1,32 @@
+
+
 .happy-form {
-    border: 2px dotted green;
+    border: 1px solid black;
+    background: #F2F0F0;
+    width: 350px;
+    display: inline-block;
+    padding: 20px;
+    box-shadow: 5px 10px;
+}
+textarea {
+    width: 90%;
+    font-family: 'Inconsolata', monospace;
 }
 
 .form-footer {
-    border: 2px dotted palevioletred;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .form-footer button {
-    color: pink;
+    height: 35px;
+    border-radius: 25px;
+    border: none;
+    background-color:#F4ACAC;
+    color: black;
+}
+
+.form-footer button:hover {
+    box-shadow: 0px 0px 5px 5px #f2bfbf;
 }
