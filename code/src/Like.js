@@ -17,7 +17,7 @@ export const Like = ( {_id} ) => {
       }
 
  return   <button onClick={() => {handleLike(_id)}} className="like-button">
-            <span role="img"> ❤️ </span>
+            <span role="img" aria-label="Heart emoji"> ❤️ </span>
           </button>
 }
 

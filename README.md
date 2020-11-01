@@ -1,13 +1,12 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Project where you can POST comment, POST like on specific comment, GET the 20 latest comments
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
+There was a lack of time this week so I tried to manage the blue requirements
+I did not have a problem to set up the initial GET and POST comment. 
+It took me a while to figure out the component to POST a like on a specific comment. My first iteration sent like on all 20 latest comments :)
 ## View it live
 
 Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
