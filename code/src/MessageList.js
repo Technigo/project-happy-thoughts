@@ -21,7 +21,7 @@ export const MessageList = () => {
 
         // Filter empty messages
         const filteredMessages = data.filter((messages) => messages.message);
-        // setMessages(filteredMessages);
+  
         // Display only the 20 latest messages 
         const limitedMessages = filteredMessages.slice(0, 20);
 
