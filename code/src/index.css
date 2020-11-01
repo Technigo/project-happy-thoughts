@@ -25,7 +25,7 @@ code {
 }
 
 form {
-  width: 400px;
+  width: 80%;
   border: 1px solid #8e8d8d;
   box-shadow: 5px 5px;
   margin: 20px;
@@ -64,7 +64,7 @@ form {
 }
 
 .message {
-  width: 380px;
+  width: 80%;
   border: 1px solid #8e8d8d;
   box-shadow: 5px 5px;
   margin: 20px;
@@ -136,7 +136,7 @@ form {
 }
 
 .counter {
-  width: 400px;
+  width: 80%;
   border: 15px solid #ec4b4b;
   box-shadow: 5px 5px;
   margin: 20px;
@@ -151,7 +151,7 @@ form {
 footer {
   font-size: 12px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   padding: 30px 100px;
   background: rgba(209,127,109, 0.7);
@@ -177,4 +177,40 @@ footer a:hover {
 .reference {
   width: 100px;
   text-align: center;
+}
+
+/****** MEDIA QUEIRIES *******/
+
+@media (min-width: 667px) {
+  form {
+    width: 300px;
+  }
+
+  .message {
+    width: 300px;
+  }
+
+  .counter {
+    width: 300px;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  form {
+    width: 400px;
+  }
+
+  .message {
+    width: 380px;
+  }
+
+  .counter {
+    width: 400px;
+  }
 }
