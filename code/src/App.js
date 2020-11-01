@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { MessageList } from 'components/MessageList';
 import { MessageInput } from 'components/MessageInput';
-// import { MESSAGES_URL } from './Urls';
+
 
 // MIGHT PUT STYLING IN SEPARAT COMPONENTS IF TIME
 // import { messageList } from 'components/messageList.css';
@@ -17,10 +17,12 @@ export const App = () => {
   
   const [messages, setMessages] = useState([]);
 
+  // kommer sätta igång hämta nytt meddelande när messageinput är mounted
   useEffect(() => {
     fetchMessages();
   }, []);
 
+  // fångar in array av nya meddelanden från API och uppdaterar state
   const fetchMessages = () => {
     fetch(MESSAGES_URL)
       .then(res => res.json())
@@ -28,6 +30,7 @@ export const App = () => {
       .catch(error => console.error(error));
   }
 
+  // skickar nytt meddelande till API:n coh fånga det senaste meddelandet
   const postSingleMessage = newMessage => {
     fetch(MESSAGES_URL, {
       method: 'POST',
@@ -39,7 +42,8 @@ export const App = () => {
       .catch(error => console.error(error));
   }
 
-const Likedhearts = messageId => {
+  // skickar in likes/ hjätan till APIn
+const onliked = messageId => {
   fetch(LIKEDHEARTS_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -50,20 +54,21 @@ const Likedhearts = messageId => {
 };
 
 const hearts = messageId => {
-  const updatedMessage = messages.map(messages => {
+  const newMessage = messages.map(messages => {
     if (messages._id === messageId) {
       messages.hearts += 1
     }
     return messages    
   })
-  setMessages(updatedMessage)
+  setMessages(newMessage)
 };
 
 
 return (
   <div className="message-container">
     <MessageInput onMessageChange={postSingleMessage} />
-    <MessageList  message={fetchMessages} />
+    {/* <MessageList  message={fetchMessages} /> */}
+    <MessageList messageList={messages}/>
 
   </div>
 );
