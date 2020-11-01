@@ -8,4 +8,4 @@ I started out trying out the requests in postman to learn how to do them. Then I
 
 ## View it live
 
-karolin-happy-thoughts.netlify.app 
+https://karolin-happy-thoughts.netlify.app/
