@@ -50,10 +50,39 @@
   transform: scale(1);
 }
 
+.form-button:disabled {
+  background-color: black;
+}
+
 .char-counter {
   color: #bebebe;
   font-weight: bold;
   display: flex;
   justify-content: flex-end;
   font-family: monospace, sans-serif;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .input-container,
+  .form-text,
+  .form-button {
+    max-width: 300px;
+    margin-right: 20px;
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    align-self: center;
+  }
+}
+
+.form-button {
+  display: inline;
+  margin-bottom: 20px;
+}
+
+.char-counter {
+  display: none;
 }

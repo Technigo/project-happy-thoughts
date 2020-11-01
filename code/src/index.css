@@ -25,3 +25,13 @@ code {
   align-content: center;
   margin: auto;
 }
+
+/* Media queries  */
+
+@media only screen and (max-width: 420px) {
+  .container {
+    max-width: 300px;
+  }
+}
+
+/* Media queries  */

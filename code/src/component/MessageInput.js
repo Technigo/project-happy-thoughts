@@ -14,30 +14,29 @@ export const MessageInput = ({ onCreateMessage }) => {
 
   return (
     <form onSubmit={handleSubmit} className="input-container">
-        <h3> What's making you happy right now?</h3>
-        <div>
-      <textarea
-        type="text"
-        className="form-text"
-        maxLength='140'
-        id="newMessage"
-        value={newMessage}
-        onChange={event => setNewMessage(event.target.value)}
-      >
-      </textarea>
+      <h3> What's making you happy right now?</h3>
+      <div>
+        <textarea
+          type="text"
+          className="form-text"
+          maxLength='140'
+          id="newMessage"
+          value={newMessage}
+          onChange={event => setNewMessage(event.target.value)}
+        >
+        </textarea>
       </div>
       <div>
-      <button    
-        type="submit"
-        className="form-button"
-        id="submit"
-        disabled={newMessage.length <= 5 || newMessage.length >= 140 ?true : false}>
-      
-      <span className="btn-text"role='img' aria-label='send message'>
-        {'❤️️ Send Happy Thought ❤️️'}
-      </span>
-      </button>
-      <p className="char-counter">{newMessage.length}/140</p>
+        <button
+          type="submit"
+          className="form-button"
+          id="submit"
+          disabled={newMessage.length <= 5 || newMessage.length >= 140 ? true : false} >
+          <span className="btn-text" role='img' aria-label='send message'>
+            {'❤️️ Send Happy Thought ❤️️'}
+          </span>
+        </button>
+        <p className="char-counter">{newMessage.length}/140</p>
       </div>
     </form>
 
