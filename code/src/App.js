@@ -6,24 +6,22 @@ import { THOUGHTS_URL } from "./urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  // const [hearts, setHearts] = useState(0);
+  const [heartCount, setHeartCount] = useState(0);
 
   //perform useEffect and fetch() after mounting
   useEffect(() => {
     fetchThoughts();
   }, []);
 
+  //ALL the FUNCTIONS
   const fetchThoughts = () => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
-      //updating the state below-> that's why infinite loop
       .then(data => setThoughts(data))
       .catch(error => console.error(error));
   };
 
-
   const reachNewThought = (newThought) => {
-
     fetch(THOUGHTS_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -31,21 +29,36 @@ export const App = () => {
     }).then(() => fetchThoughts());
   };
 
-  // const fetchHearts = () => {
-  //   fetch(THOUGHTS_URL)
-  //     .then(res => res.json())
-  //     .then(data => setHearts(data))
+  const handleLike = (thoughtId, heartNr) => {
 
-  // };
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        return thought.hearts += 1;
+      }
+      else {
+        return thought;
+      }
+    });
+    //issue below? 
+    setHeartCount(heartCount + heartNr);
+    setThoughts(updatedThoughts);
+  };
 
   return (
     <div className="app-container">
       <ThoughtInput
         onNewThought={reachNewThought}
       />
-      <ThoughtsList
-        thoughtsArray={thoughts}
-      />
+      {thoughts.map(thought => (
+        <ThoughtsList
+          key={thought._id}
+          thought={thought}
+          happyThought={thought.message}
+          timeStamp={thought.createdAt}
+          nrOfLikes={thought.hearts}
+          onLike={handleLike}
+        />
+      ))}
     </div>
   )
-}
+};

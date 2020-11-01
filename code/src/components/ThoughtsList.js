@@ -1,47 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
 import moment from "moment";
 
 
 import "./thoughts-list.css";
 
 
+const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLike }) => {
 
-const ThoughtsList = ({ thoughtsArray }) => {
-
-
-  const addNewHeart = (e) => {
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts/" + e.currentTarget.value + "/like", {
+  const addNewHeart = () => {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" }
-    })//;//then(() => fetchHearts());
-    console.log("dlsa");
-    console.log(e.currentTarget.value);
+    }).then(() => {
+      let heartNr = 0;
+      heartNr = heartNr + 1;
+      // onLiked(thought._id)
+      onLike(thought._id, heartNr);
+    })
   };
-
 
   return (
     <div className="thoughts-list-container">
       <ul>
-        {thoughtsArray.map(thought => (
-          <div className="thought-container" key={thought._id}>
-            <li>
-              {thought.message}
-            </li>
-            <div className="heart-button-container">
-              <div>
-                <button
-                  className="heart-button"
-                  onClick={addNewHeart}
-                //on click(call a function that): adds +1 to existing # of {thought.hearts},
-                //post to API, fetch updated state and display it
-                >
-                  <span aria-label="heart" role="img">&#10084;&#65039;</span>
-                </button> x {thought.hearts}
-              </div>
-              <p className="time-stamp">{moment(thought.createdAt).fromNow()}</p>
+        <div className="thought-container">
+          <li>
+            {happyThought}
+          </li>
+          <div className="heart-button-container">
+            <div>
+              <button
+                className="heart-button"
+                onClick={addNewHeart}
+              >
+                <span aria-label="heart" role="img">&#10084;&#65039;</span>
+              </button> x {nrOfLikes}
             </div>
+            <p className="time-stamp">{moment(timeStamp).fromNow()}</p>
           </div>
-        ))}
+        </div>
       </ul>
     </div>
   )
