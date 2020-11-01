@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 .happy-post-container {
   display: flex;
   flex-direction: column;
@@ -86,9 +87,48 @@
     
   }
 
-  .happy-message,
+  .happy-message {
+    font-size: 20px;
+  }
+
   .happy-likes-wrapper,
   .happy-message-time {
     font-size: 18px;
+  }
+}
+
+@media(min-width:768px) {
+  .happy-post {
+    width: 80%;
+  }
+
+  .happy-message {
+    font-size: 22px;
+    margin: 25px auto;
+  }
+
+  .happy-likes-wrapper,
+  .happy-message-time {
+    font-size: 20px;
+  }
+
+  .some-likes,
+  .many-likes,
+  .no-likes {
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+  }
+
+  .like-heart {
+    font-size: 20px;
+    top: 11px;
+    left: 15px;
+  }
+}
+
+@media(min-width:1024px) {
+  .happy-post {
+    max-width: 850px;
   }
 }
