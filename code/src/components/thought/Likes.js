@@ -16,12 +16,13 @@ const Likes = ({ id, likes, onLiked }) => {
   return (
     <div className="likes">
       <button
+        aria-label="Click here to like this thought"
         onClick={handleClick}
         className={`like-button ${likes > 0 ? 'liked' : ''}`}
       >
         <img className="heart" src={HeartIcon} alt="Pink heart"></img>
       </button>
-      <p>x {likes}</p>
+      <p tabIndex="0" aria-describedby="likes"><span aria-hidden>x </span>{likes}<span className="hidden" id="likes">likes</span></p>
     </div>
   )
 }

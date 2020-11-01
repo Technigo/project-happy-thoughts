@@ -2,7 +2,7 @@ import React from 'react';
 
 const Message = ({ message }) => {
   return (
-    <p className="message">
+    <p tabIndex="0" className="message">
       {message}
     </p>
   )

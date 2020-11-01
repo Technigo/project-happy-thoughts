@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import Description from './Description';
 import Textarea from './Textarea';
 import InputInfo from './InputInfo';
 
@@ -15,7 +14,6 @@ const NewInput = ({ onInputChange }) => {
 
   return (
     <form className="new-thought" onSubmit={onHandleSubmit}>
-      <Description />
       <Textarea newThought={newThought} setNewThought={setNewThought} />
       <InputInfo newThought={newThought} />
     </form>

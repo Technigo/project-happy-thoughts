@@ -130,6 +130,10 @@ section {
   background-color:#ffadad;
 }
 
+.hidden {
+  display: none;
+}
+
 .time {
   color: darkgrey;
 }

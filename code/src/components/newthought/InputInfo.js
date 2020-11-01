@@ -6,6 +6,7 @@ const InputInfo = ({ newThought }) => {
   return (
     <div className="input-info">
       <button
+        aria-label="Click here to send your happy thought"
         className="send-button"
         disabled={newThought.length < 6 || newThought.length > 140 ? true : false}
       >
@@ -13,7 +14,7 @@ const InputInfo = ({ newThought }) => {
       Send Happy Thought
       <img className="heart right" src={HeartIcon} alt="Pink heart"></img>
       </button>
-      <p className="length">{newThought.length}/140</p>
+      <p tabIndex="0" className="length" aria-describedby="maxLength">{newThought.length}<span aria-hidden>/140</span><span className="hidden" id="maxLength">out of 140</span></p>
     </div>
   )
 }

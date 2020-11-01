@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header>Happy tweets</header>
+    <header tabIndex="0">Happy tweets</header>
   )
 }
 
