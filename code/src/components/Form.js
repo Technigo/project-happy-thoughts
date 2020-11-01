@@ -40,13 +40,13 @@ export const Form = () => {
             <span 
             role='img' 
             aria-label='heart'
-            >❤️ 
+            >{'❤️'} 
             </span>
             Send Happy thought!
             <span 
             role='img' 
             aria-label='heart'
-            >❤️ 
+            >{'❤️'}
             </span>
         </button>
             <p className='message-length'>{message.length} / 140</p>

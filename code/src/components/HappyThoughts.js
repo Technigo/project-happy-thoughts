@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-
 import moment from 'moment'
-//This function makes all the messages to appear in a list
+
+import { LikeButton } from "./LikeButton"
+//This function makes all the happy-thought messages to appear
 export const HappyThoughts = () =>  {
     const THOUGHTS_URL ='https://happy-thoughts-technigo.herokuapp.com/thoughts';
     const [thoughts, setThoughts] = useState([]);
@@ -17,25 +18,31 @@ export const HappyThoughts = () =>  {
     });
     }, []);
 
-    //to like a thought
+    const onThoughtLiked = (id) => {
+        const updatedThoughts = thoughts.map((thought) => {
+          if (thought._id === id) {
+            thought.hearts += 1
+          }
+          return thought
+        })
+        setThoughts(updatedThoughts);
+      }
 
-    /* https: *///happy-thoughts-technigo.herokuapp.com/thoughts/THOUGHT_ID/like
-
-
-    //the map function here makes every thought-card show each individual message and a heart button.
     return (
     <div className='thoughts-card'>{thoughts.map(message => {
         return (
-            <p className='message' key={message._id}>
+            <div className='message' key={message._id}>
             {message.message}
             <span className='message-time'>
             {moment(message.createdAt).fromNow()}
             </span>
-            <button
-            className='like-button'>            
-            <span role='img' aria-label='heart'>❤️ </span>
-            </button>
-            </p>
+            <LikeButton
+                key={message._id}
+                id={message._id}
+                onThoughtLiked={onThoughtLiked}
+                hearts={message.hearts}
+              />     
+            </div>
         );
         
         })};
