@@ -50,7 +50,7 @@ code {
 }
 
 .send-thought-button {
-  width: 50%;
+  width: 80%;
   height: 36px;
   border-radius: 20px;
   border: none;
@@ -151,5 +151,11 @@ code {
 
   .thoughts-section {
     width: 380px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .send-thought-button {
+    width: 50%;
   }
 }
