@@ -9,7 +9,7 @@ A Twitter like app with positive vibes. :sunny:
 - most recent thoughts are listed on top of the page
 - thoughts showing the message and the number of likes they received
 - controlled form to post new thoughts (between 5-140 characters)
-- implemented :heart: button for liking thoughts 
+- implemented :heart: button for liking thoughts that updates the # of hearts
 - thoughts liked by the user have changed colour of the :heart: button  
 
 ## :chart_with_upwards_trend: Future improvements
