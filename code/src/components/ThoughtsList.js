@@ -12,10 +12,7 @@ const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLike }) =
       method: "POST",
       headers: { "Content-Type": "application/json" }
     }).then(() => {
-      let heartNr = 0;
-      heartNr = heartNr + 1;
-      // onLiked(thought._id)
-      onLike(thought._id, heartNr);
+      onLike(thought._id);
     })
   };
 

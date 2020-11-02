@@ -6,7 +6,6 @@ import { THOUGHTS_URL } from "./urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [heartCount, setHeartCount] = useState(0);
 
   //perform useEffect and fetch() after mounting
   useEffect(() => {
@@ -29,7 +28,7 @@ export const App = () => {
     }).then(() => fetchThoughts());
   };
 
-  const handleLike = (thoughtId, heartNr) => {
+  const handleLike = (thoughtId) => {
 
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
@@ -40,7 +39,6 @@ export const App = () => {
       }
     });
     //issue below? 
-    setHeartCount(heartCount + heartNr);
     setThoughts(updatedThoughts);
   };
 
