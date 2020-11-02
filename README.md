@@ -11,6 +11,8 @@ The learning objectives for this project was to
 
 I've mainly structured my project according to the "Waterfall" approach, i.e the fetches and posting are made in the App cononent. I the MessageList component the input data and a timestamp is printed out. In the MessageInput component the input form is created, wehere the user can type a message. The heartButton component prints out the "hear-button" for likes. It also fetches a url with likes-id. It sends props to the MessageList component, where the number of likes are updated and printed out.
 
+One thing I didn't manage to do was to catch error. The site wouldn't update when I put that in. I didn't have time to fix it before the project was due, but I'll work on that.
+
 
 Tech I've used:
 -React.js 
