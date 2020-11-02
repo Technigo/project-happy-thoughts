@@ -26,7 +26,7 @@ const MessageList = ({ thoughts, onLikeClick }) => {
             </div>
           </div>
          );
-      })}
+      })};
     </div>
    );
 };

@@ -6,7 +6,6 @@ import '../Style/HeartIcon.css';
 
 //This component is for message input. The useState is set to this local component only
 const ThoughtSubmitForm = ({ thought, onThoughtChange, onSubmitThought, errorMessage }) => {
-  // const [thought, setThought] = useState("");
   const [wordCountClasses, setWordCountClasses] = useState([]);
 
   useEffect(() => {
@@ -14,7 +13,7 @@ const ThoughtSubmitForm = ({ thought, onThoughtChange, onSubmitThought, errorMes
       "word-count",
       ...(thought.length > 140 ? ["count-turn-red"] : [])
     ]);
-  },[thought])
+  },[thought]);
 
   return (
     <form 
@@ -53,6 +52,6 @@ const ThoughtSubmitForm = ({ thought, onThoughtChange, onSubmitThought, errorMes
       </button>
     </form>
     );
-}
+};
  
 export default ThoughtSubmitForm;

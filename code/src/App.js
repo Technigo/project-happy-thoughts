@@ -1,12 +1,12 @@
-import React,{ useState, useEffect} from 'react'
+import React,{ useState, useEffect } from 'react';
 
-import Header from './Component/Header'
+import Header from './Component/Header';
 import ThoughtSubmitForm from 'Component/ThoughtSubmitForm';
 import MessageList from 'Component/MessageList';
 import { API_URL } from './constants';
 import './index.css';
 
-//there are 3 erros found in the response relating to empty message, too short or too long message.
+//there are 3 erros found in the response relating to empty, too short or too long messages.
 const THOUGHT_ERRORS = [
   { kind: 'required', message: 'Please type in your happy thought' },
   { kind: 'minlength', message: 'Message should be longer than 5 characters' },
@@ -17,7 +17,6 @@ export const App = () => {
   const [thought, setThought] = useState(""); //the thought state needs to be here in the App.js instead in the child component to handle the erro update while hitting submit button.
   const [thoughts, setThoughts] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
-  // const [Likecount, setCount] = useState(thought.hearts)
 
 
   useEffect(() => {
@@ -30,19 +29,20 @@ export const App = () => {
         return res.json();
       })
       .then((data) => {
+        console.log('data', data)
         setThoughts(data)
       });
-  }
+  };
 
   const handleThoughtChange = (newThought) => {
     setThought(newThought);
-  }
+  };
 
   // errorMassage will be cleared and Textarea for thought input should be cleared too.
   const clearForm = () => {
     setErrorMessage(null);
     setThought("");
-  }
+  };
 
   const handleThoughtSubmit = (thought) => {
 
@@ -55,7 +55,7 @@ export const App = () => {
       method: "POST",
       body
       })
-      .then((res) => res.json())
+      .then(res => res.json())
       .then((json) => {
         // Catch any errors
         if (json.errors) {
@@ -65,7 +65,7 @@ export const App = () => {
           if (messageItem) {
             throw new Error(messageItem.message);
           } else {
-            //this else if is just to make sure if there is any error that are not the same with the three identified error
+            //this else if is just to make sure if there are any errors that are not the same with the three identified errors
             throw new Error("Something goes wrong. Call someone to share your thought then")
           }
         }
@@ -82,7 +82,7 @@ export const App = () => {
 
     // This component is to send the Like to the API
   const handleLikeClick = (thoughtId) => {
-    const url = `${API_URL}/${thoughtId}/like`
+    const url = `${API_URL}/${thoughtId}/like`;
 
     fetch(url, {
       headers: {
@@ -114,4 +114,4 @@ export const App = () => {
       </div>
     </div>
   );
-}
+};
