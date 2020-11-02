@@ -62,5 +62,5 @@ export const App = () => {
       <HappyForm onMessageChange={postHappyMessage} />
       <HappyList messageList={messages} handleThoughtLike={postThoughtLike} />
     </div>
-  )
+  );
 };

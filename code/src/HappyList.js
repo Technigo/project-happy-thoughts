@@ -46,6 +46,6 @@ const HappyList = ({ messageList, handleThoughtLike }) => {
         ))
       }
     </section>
-  )
+  );
 };
 export default HappyList;

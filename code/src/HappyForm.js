@@ -44,6 +44,6 @@ const HappyForm = ({ onMessageChange }) => {
         </div>
       </form>
     </section>
-  )
+  );
 };
 export default HappyForm;
