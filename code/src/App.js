@@ -51,9 +51,10 @@ export const App = () => {
   // };
 
   return (
-    <main className="message-container">
+    <main>
       <MessageInput onMessageChange={postSingleMessage} />
-      <MessageList messageList={messages} postHearts={postHearts} />
+      <MessageList messageList={messages} postHearts={postHearts}  />
+      <p>Made by Sabina de Maré Technigo bootcamp 2020</p>
     </main>
   );
 };

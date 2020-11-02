@@ -14,14 +14,15 @@ export const MessageInput = ({ onMessageChange }) => {
 
   return (
     <section className="new-message-container">
-      <h1>Give me a happy message plz!</h1>
       <form onSubmit={handleSubmit}>
+        <h1>Give me a happy message plz!</h1>
+
         <textarea
           className="input-text"
           id="happyMessage"
           name="happyMessage"
           value={newMessage}
-          rows="6"
+          rows="5"
           cols="35"
           onChange={(event) => setNewMessage(event.target.value)}
         />

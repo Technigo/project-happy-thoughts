@@ -8,8 +8,9 @@ body {
   font-weight: 500;
   font-size: 16px;
   background: #fff;
-  word-wrap: break-word
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 code {
@@ -18,7 +19,7 @@ code {
 }
 
 /* find it in app.js------------- */
-.message-container {
+main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,31 +28,30 @@ code {
   margin: 5px 20px 40px 50px;
   padding: 10px 20px 20px 50px;
   margin-top: 15px;
-  width: 500px;
-  height: 200px; 
+  width: 510px;
+  height: 200px;
   word-wrap: break-word;
-  
-
 }
 
 /* Styling MessageInput -----------------------------------------------*/
 
 h1 {
-  margin-top: 60px;
-  font-size: 32px;
+  margin-top: 10px;
+  font-size: 23px;
   text-align: center;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 .new-message-container {
   width: 500px;
   height: 400px;
   word-wrap: break-word;
-  
 }
 
 form {
   margin-top: 30px;
-  padding-top: 10px 10px;
-  border: 2px solid #4d4d4d;
+  padding: 10px 10px 10px 10px;
+  border: 3px solid #4d4d4d;
   background: #f2f0f0;
   box-shadow: 6px 7px;
 }
@@ -65,12 +65,11 @@ button {
   display: flex;
   align-items: baseline;
   border-radius: 60%;
-
-
+  cursor: pointer;
 }
 
 .message-button {
-  border-radius: 0%;
+  border-radius: 27px;
   margin: 10px;
   padding: 3px;
   font-size: 15px;
@@ -95,62 +94,73 @@ button {
 
 /* Styling MessageList  -------------------------------- */
 
+article {
+  display: flex;
+  word-wrap: break-word;
+}
+
 .message {
-  padding: 10px;
+  padding: 20px 15px 15px 10px;
   border: 2px solid #4d4d4d;
   background: #f2f0f0;
   box-shadow: 6px 7px;
   margin-bottom: 10px;
   font-size: 20px;
-  border: 3px black solid;
+  border: 1px black solid;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   height: 200px;
   width: 480px;
-  word-wrap: break-word;
+  justify-content: space-between;
 }
 
-article {
+.heart-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.heart-button {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  justify-content: space-evenly;
+  margin-right: 5px;
+}
+
+.liked-heart {
   display: flex;
   justify-content: center;
   align-items: center;
-  word-wrap: break-word;
+  padding-right: 4px;
+  padding-top: 4px;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
 }
 
-.messages-time {
+.message-time {
+  font-size: 15px;
+}
+
+.hearts-counted {
   display: flex;
-  flex-direction: column;
-} 
-
-.post-time{
-font-size: 15px;
-padding: 20px;
-display: flex;
-flex-direction: column;
+  padding-left: 10px;
+  flex-direction: row;
+  margin-right: 5px;
 }
 
-/* Styling of heart ----------------------------------------------------------- */
+/* Styling of heart color when liked ----------------------------------------------------------- */
 
 .notLiked {
-  background-color: grey;
+  background-color: rgb(216, 213, 213);
 }
-
 
 .liked {
-  background-color: lightgreen;
+  background-color: rgb(238, 144, 233);
 }
-/* 
-
-@media (min-width: 667px) and (max-width: 1024px) {
-  article {
-    width: 50%;
-  } 
-}
-
-@media (min-width: 1025px) {
-  article {
-    width: 30%;
-  }
-} */
