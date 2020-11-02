@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import moment from 'moment'
+
 
 import { Message } from './Message.js'
 
@@ -14,12 +14,8 @@ export const MessageList = ({ messages, getMessages }) => {
     <>
       {messages.map(message => {
         return <Message
-          key={message._id}
-          id={message._id}
-          //cannot use key as a prop in a child component, we need to have a separate id
-          message={message.message}
-          created={moment(message.createdAt).fromNow()}
-          likes={message.hearts}
+          key={message._id} //cannot use key as a prop in a child component, we need to have a separate id
+          {...message}
           getMessages={getMessages}
         />
       })}

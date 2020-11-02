@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
-import { MessageUrl } from './Urls.js'
-
 export const MessageInput = ({ getMessages }) => {
+
+  const MESSAGE_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
   const [message, setMessage] = useState("")
 
   const postMessage = message => {
-    fetch(MessageUrl, {
+    fetch(MESSAGE_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: message })
