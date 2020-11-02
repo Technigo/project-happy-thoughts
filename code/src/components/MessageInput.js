@@ -16,6 +16,7 @@ export const MessageInput = ({ onMessageChange }) => {
     <form className="happy-thought-form" onSubmit={handleSubmit}>
       <div className="textarea-container">
         <textarea
+          aria-label="Write your happy thought here."
           rows="4"
           maxLength="140"
           className="form-text"
@@ -26,6 +27,7 @@ export const MessageInput = ({ onMessageChange }) => {
         <p className="message-length">{newMessage.length}/140</p>
       </div>
       <button
+        aria-label="Click to post your happy thougt."
         type="submit"
         className="form-button"
         disabled={newMessage.length < 6 || newMessage.length > 140}

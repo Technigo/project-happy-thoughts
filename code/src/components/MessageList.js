@@ -13,7 +13,7 @@ export const MessageList = ({ messages, onLiked }) => {
     // Add a section for each message returned by the backend
     <>
       {messages.map((message) => (
-        <article className="message-card" key={message._id}>
+        <article className="message-card" key={message._id} tabIndex="0">
           <p className="message">{message.message}</p>
           <div className="message-info">
             <button
@@ -24,7 +24,7 @@ export const MessageList = ({ messages, onLiked }) => {
               }
               onClick={() => handleSubmit(message._id)}
             >
-              <span className="heart" role="img" aria-label="heart">
+              <span className="heart" role="img" aria-label="Click to like the post.">
                 💜
               </span>
             </button>
