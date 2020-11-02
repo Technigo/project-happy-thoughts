@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react"
 
-import { HappyThoughts } from './Components/HappyThoughts'
-import { HappyForm } from './Components/HappyForm'
+import { HappyThoughts } from "./Components/HappyThoughts"
+import { HappyForm } from "./Components/HappyForm"
 
 const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 
@@ -16,7 +16,11 @@ export const App = () => {
   }, [postedMessage])
 
   const handleFormSubmit = message => {
-    fetch (url, { method:"POST", body:JSON.stringify({message}), headers:{"Content-Type":"application/json"}})
+    fetch (url, { 
+      method:"POST", 
+      body:JSON.stringify({message}), 
+      headers:{"Content-Type":"application/json"
+  }})
     .then(() => setPostedMessage(message))
     .catch(err => console.log("error:", err))
   }

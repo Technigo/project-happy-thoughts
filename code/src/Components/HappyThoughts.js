@@ -1,18 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-import moment from 'moment'
+import moment from "moment"
 
-import './HappyThoughts.css'
+import "./HappyThoughts.css"
 
 export const HappyThoughts = props => {
     const {message, hearts, createdAt} = props.thought
     const [likes, setLikes] = useState(hearts)
     const handleClick = () => {
-        fetch ('https://happy-thoughts-technigo.herokuapp.com/thoughts', {
-            method: "POST", body: "", headers: { "Content-Type": "application/json" }
+        fetch ("https://happy-thoughts-technigo.herokuapp.com/thoughts", {
+            method: "POST", 
+            body: "", 
+            headers: { "Content-Type": "application/json" }
         })
         .then(setLikes(likes+1))
-        .catch(err => console.log('error', err))
+        .catch(err => console.log("error", err))
     }
 
     return (
@@ -20,7 +22,7 @@ export const HappyThoughts = props => {
             <h3>{message}</h3>
             <div className="heart-time">
             <p> 
-                <button className="happy-heart" onClick={handleClick}>
+                <button className="happy-heart" onClick={handleClick} style={{background: hearts > 0 ? "#ffadad" : "#f3f1f1" }}>
                     <span role="img" aria-label="Heart"> {"❤️"} </span>
                 </button>
                 x {likes}
