@@ -7,8 +7,7 @@ const ThoughtInput = ({ onNewThought }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    //clears the text field after submit
-    setNewThought("");
+    setNewThought("");  //clears the text field after submit
     onNewThought(newThought);
   };
 

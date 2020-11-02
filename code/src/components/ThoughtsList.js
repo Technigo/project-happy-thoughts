@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 
@@ -7,12 +7,16 @@ import "./thoughts-list.css";
 
 const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLike }) => {
 
+  const [heartColor, setHeartColor] = useState("heart-button");
+
   const addNewHeart = () => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" }
     }).then(() => {
       onLike(thought._id);
+      setHeartColor("pink-background");
+
     })
   };
 
@@ -26,7 +30,7 @@ const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLike }) =
           <div className="heart-button-container">
             <div>
               <button
-                className="heart-button"
+                className={heartColor}
                 onClick={addNewHeart}
               >
                 <span aria-label="heart" role="img">&#10084;&#65039;</span>

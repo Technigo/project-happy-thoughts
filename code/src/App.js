@@ -7,12 +7,11 @@ import { THOUGHTS_URL } from "./urls";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
 
-  //perform useEffect and fetch() after mounting
   useEffect(() => {
     fetchThoughts();
+    setInterval(fetchThoughts, 10000);
   }, []);
 
-  //ALL the FUNCTIONS
   const fetchThoughts = () => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
@@ -32,13 +31,11 @@ export const App = () => {
 
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
-        return thought.hearts += 1;
+        thought.hearts += 1;
       }
-      else {
-        return thought;
-      }
+      return thought;
     });
-    //issue below? 
+
     setThoughts(updatedThoughts);
   };
 
