@@ -1,13 +1,9 @@
 # Happy Thoughts
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this week's project, I was be able to practice my React state skills by fetching and posting data to an API.
+I've built a simple API to collect 'happy thoughts'. Think of it as my own version of Twitter, but with less negativity, and 100% fewer US presidents using it.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Using different methods like: POST, GET.
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-palinka.netlify.app/
