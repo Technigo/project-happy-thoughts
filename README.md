@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+We here have made a Twitter Clone using REACT.js where we can fetch messages posted on herokupp and also post them and add likes to the posts. Also we check how long back the post was made using MOMENT.js and added some validations depending on the length of the message.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Initially I was planning on breaking down the project into smaller components but then decided against it since they were not getting reused. I did however use a different component to make a like button which was quite a challenge as I was not able to post but after an almost frustrating half day I finally had a light- bulb moment and was able to get it working.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cuz-i-am-happy.netlify.app/

@@ -14,18 +14,8 @@ body {
   background-color: #f2f0f0;
 }
 
-.heart-image {
-  height: 20px;
-  width: 20px;
-}
-
 .message-text {
   word-wrap: break-word;
-}
-
-.message-heart {
-  display: flex;
-  flex-direction: column;
 }
 
 textarea {

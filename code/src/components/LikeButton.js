@@ -1,13 +1,6 @@
 import React from "react"
 
-
-// POST https://happy-thoughts-technigo.herokuapp.com/thoughts/{THOUGHT_ID}/like
-// Replace THOUGHT_ID with the _id parameter of the thought the user clicked on
-// Number of 'hearts' will increase when clicked
-
 export const LikeButton = ({hearts , id, onThoughtLiked}) => {
-  //const hearts = props.hearts
-  //const _id = props._id
 
   const handleClick = () => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
