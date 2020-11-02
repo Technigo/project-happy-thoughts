@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { MessageList } from './components/MessageList';
-import { MessageInput } from './components/MessageInput';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
-import { Loader } from './components/Loader';
-import { MESSAGE_URL } from './urls';
+import { MessageList } from "./components/MessageList";
+import { MessageInput } from "./components/MessageInput";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { Loader } from "./components/Loader";
+import { MESSAGE_URL } from "./urls";
 
-import './app.css';
+import "./app.css";
 
 export const App = () => {
   const [messages, setMessages] = useState([]);
@@ -19,54 +19,50 @@ export const App = () => {
 
   const fetchMessages = () => {
     fetch(MESSAGE_URL)
-      .then(res => res.json())
-      .then(data => {
-        
+      .then((res) => res.json())
+      .then((data) => {
         setTimeout(() => {
           setLoader(false);
           setMessages(data);
-        }, 3000)
-      })
-  }
+        }, 3000);
+      });
+  };
 
   const reachMessageInput = (newMessage) => {
-    fetch(MESSAGE_URL,  {
-      method: 'POST',
-      headers: { 'Content-Type':'application/json' },
-      body: JSON.stringify({ message: newMessage })
-    })
-    .then(() => fetchMessages())
-  }
+    fetch(MESSAGE_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: newMessage }),
+    }).then(() => fetchMessages());
+  };
 
-  const updateLikes = messageId => {    
-    const updatedMessages = messages.map(message => {
+  const updateLikes = (messageId) => {
+    const updatedMessages = messages.map((message) => {
       if (message._id === messageId) {
         message.hearts += 1;
       }
       return message;
-    })
+    });
     setMessages(updatedMessages);
-  }
+  };
 
   const onLiked = (messageId) => {
-    fetch(MESSAGE_URL+`${messageId}/like`, {
-      method: 'POST',
-      headers: { 'Content-Type':'application/json' },
-      body: ''
-    }).then(() => updateLikes(messageId))
-  }
+    fetch(MESSAGE_URL + `${messageId}/like`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: "",
+    }).then(() => updateLikes(messageId));
+  };
 
   return (
     <>
-      <Header headerText="Post a happy thought."/>
+      <Header headerText="Post a happy thought." />
       <div className="main">
-        <MessageInput onMessageChange={reachMessageInput}/>
+        <MessageInput onMessageChange={reachMessageInput} />
         {loader && <Loader />}
-        {messages.map(message => (
-          <MessageList key={message._id} message={message} onLiked={onLiked}/>
-        ))}
+        <MessageList messages={messages} onLiked={onLiked} />
       </div>
       {!loader && <Footer author="Petra Almgren" />}
     </>
-  )
-}
+  );
+};

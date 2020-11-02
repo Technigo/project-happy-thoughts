@@ -1,2 +1,2 @@
-export const MESSAGE_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts/";
-//export const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`;
+export const MESSAGE_URL =
+  "https://happy-thoughts-technigo.herokuapp.com/thoughts/";

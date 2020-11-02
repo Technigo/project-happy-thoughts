@@ -15,7 +15,7 @@
   margin-bottom: 10px;
   padding: 15px;
   font-size: 18px;
-  font-family: 'Kalam', cursive;
+  font-family: "Kalam", cursive;
   font-weight: 300;
   font-size: 16px;
   resize: none;
@@ -36,18 +36,14 @@
   padding: 15px 10px;
   border: none;
   border-radius: 35px;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   color: #fff;
   background: linear-gradient(to right, #ca9cc4 0%, #e5cee2 50%, #58c2cf 100%);
-  background-size: 500%;  
-  font-family: 'Amatic SC', cursive;
+  background-size: 500%;
+  font-family: "Amatic SC", cursive;
   font-size: 24px;
   letter-spacing: 1.4px;
   outline: none;
-  /* -webkit-tap-highlight-color: transparent; */
-  /* -webkit-user-select: none; */
-  /* -moz-user-select: none; */
-  /* -ms-user-select: none; */
   user-select: none;
   display: flex;
   align-items: center;
@@ -84,7 +80,7 @@
 }
 
 @media (min-width: 330px) {
-  .form-text {    
+  .form-text {
     width: 90%;
     font-size: 20px;
     letter-spacing: 1px;
@@ -99,7 +95,7 @@
     right: 10px;
     bottom: 12px;
   }
-  
+
   .form-button {
     font-size: 32px;
   }
