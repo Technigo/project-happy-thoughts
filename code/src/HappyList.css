@@ -71,9 +71,10 @@
 }
 
 .like-heart {
+  font-size: 14px;
   position: absolute;
-  top: 9px;
-  left: 13px;
+  top: 10px;
+  left: 12px;
   margin: 0;
 }
 
