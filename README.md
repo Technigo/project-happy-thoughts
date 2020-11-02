@@ -10,7 +10,6 @@ I started with fetching the thoughts from the API and list them in the browser. 
 When I got this to work I decided to restructure my code and move all fetches in to App.js. That's where my problems started. It was tricky to access the right data but eventually I mangaed to get it right.
 
 We had a design to follow but I wanted to deviate a bit from the original since I think a happy thought form needs some color 🌈
-If I had more time I would have done a loading animation that could run while waiting for the response from the API.
 
 ## View it live
 https://project-happy-thoughts.netlify.app/
