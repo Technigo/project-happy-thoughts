@@ -12,8 +12,8 @@ export const App = () => {
   const getMessages = () => {
 
     fetch(MESSAGE_URL)
-      .then(result => {
-        return result.json()
+      .then(response => {
+        return response.json()
       })
       .then(data => {
         setMessages(data) //storing the messages from the api in the state variable messages 
