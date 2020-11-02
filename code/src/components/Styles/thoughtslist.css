@@ -7,6 +7,7 @@
     background: #ffffff;
     border: 1px solid;
     box-shadow: 5px 10px;
+    word-wrap: break-word
 }
 
 .thoughts-article__info {
@@ -36,6 +37,7 @@
     background: #ffadad;
     border: none;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .button-unliked {
@@ -43,6 +45,7 @@
     background: #f3f1f1;
     border: none;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .thoughts-article__time {

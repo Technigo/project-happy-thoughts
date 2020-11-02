@@ -27,6 +27,7 @@
     border: none;
     font-family: 'Inconsolata', monospace;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .message-length__ok {
