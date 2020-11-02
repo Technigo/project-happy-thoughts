@@ -33,7 +33,7 @@ const HappyForm = ({ onMessageChange }) => {
         <div className="form-footer"> 
           <button
             type="submit"
-            onClick={handleSubmit} //Why not onSubmit? Difference?
+            onClick={handleSubmit} 
             disabled={newMessage.length < 6 || newMessage.length > 140 ? true : false} 
             className="happy-form-input-button"
             value="Add Message"

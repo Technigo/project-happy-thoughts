@@ -48,19 +48,19 @@ export const App = () => {
   };
 
   //fetch POST HappyLike:
-  const postSingleLike = id => {
+  const postThoughtLike = id => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' },
     })
-      .then(() => fetchMessages()) //What is the difference between writing like this and just: .then(fetchMessages)?
+      .then(() => fetchMessages()) //What is the difference between writing like this and just: .then(fetchMessages())?
   };
 
   return (
     <div className="app-wrapper">
       <HappyForm onMessageChange={postHappyMessage} />
-      <HappyList messageList={messages} onLikeChange={postSingleLike} />
+      <HappyList messageList={messages} handleThoughtLike={postThoughtLike} />
     </div>
   )
 };

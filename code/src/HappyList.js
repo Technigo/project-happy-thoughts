@@ -3,10 +3,8 @@ import moment from 'moment'
 
 import './HappyList.css'
 
-const HappyList = ({ messageList, onLikeChange }) => {
-  const handleLikeClick = id => {
-    onLikeChange(id);
-  };
+const HappyList = ({ messageList, handleThoughtLike }) => {
+  
   // Render messages using map: 
   return (
     <section className="happy-post-container">
@@ -20,7 +18,7 @@ const HappyList = ({ messageList, onLikeChange }) => {
               <span className="happy-likes-wrapper">
                 <button
                   type="button"
-                  onClick={() => handleLikeClick(message._id)}
+                  onClick={() => handleThoughtLike(message._id)}
                   //conditional classname depending on likes:
                   className={
                     message.hearts > 5
