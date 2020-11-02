@@ -28,7 +28,7 @@ export const MessageInput = ({ onMessageChange }) => {
         <button
           className="message-button"
           disabled={
-            newMessage.length < 6 || newMessage.lenght > 140 ? true : false
+            newMessage.length < 5 || newMessage.length > 140 ? true : false
           }
         >
           <span className="heart-icon" role="img" aria-label="heart">

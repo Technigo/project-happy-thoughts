@@ -8,6 +8,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   background: #fff;
+  word-wrap: break-word
   
 }
 
@@ -28,6 +29,7 @@ code {
   margin-top: 15px;
   width: 500px;
   height: 200px; 
+  word-wrap: break-word;
   
 
 }
@@ -42,6 +44,8 @@ h1 {
 .new-message-container {
   width: 500px;
   height: 400px;
+  word-wrap: break-word;
+  
 }
 
 form {
@@ -57,7 +61,16 @@ form {
   font-size: 20px;
 }
 
+button {
+  display: flex;
+  align-items: baseline;
+  border-radius: 60%;
+
+
+}
+
 .message-button {
+  border-radius: 0%;
   margin: 10px;
   padding: 3px;
   font-size: 15px;
@@ -82,13 +95,6 @@ form {
 
 /* Styling MessageList  -------------------------------- */
 
-/* .message-list-container {
-  width: 500px;
-  height: 300px;
-  border: 3px solid green;
-
-} */
-
 .message {
   padding: 10px;
   border: 2px solid #4d4d4d;
@@ -103,32 +109,14 @@ form {
   flex-direction: column;
   height: 200px;
   width: 480px;
+  word-wrap: break-word;
 }
-/* 
-.message-list-container {
-  padding: 10px;
-  border: 2px solid #4d4d4d;
-  background: #f2f0f0;
-  box-shadow: 6px 7px;
-  margin-bottom: 10px;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* text-align: start; */
-/* } */ */
 
 article {
   display: flex;
   justify-content: center;
   align-items: center;
-
-}
-
-
-/* Not working */
-.heart-button {
-  border: 50%;
+  word-wrap: break-word;
 }
 
 .messages-time {
@@ -149,10 +137,20 @@ flex-direction: column;
   background-color: grey;
 }
 
-.superLiked {
-  background-color: hotpink;
-}
 
 .liked {
   background-color: lightgreen;
 }
+/* 
+
+@media (min-width: 667px) and (max-width: 1024px) {
+  article {
+    width: 50%;
+  } 
+}
+
+@media (min-width: 1025px) {
+  article {
+    width: 30%;
+  }
+} */
