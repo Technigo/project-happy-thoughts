@@ -9,12 +9,12 @@ export const App = () => {
 
   const [messages, setMessages] = useState([]);
 
-  // kommer sätta igång hämta nytt meddelande när messageinput är mounted
+  // denna funktion sätter igång att hämta nytt meddelande när messageinput är mounted
   useEffect(() => {
     fetchMessages();
   }, []);
 
-  // fångar in array av nya meddelanden från API och uppdaterar state
+  // fångar in array av nya meddelanden från API och uppdaterar state, res=sesultat, data=rådata från arrayen
   const fetchMessages = () => {
     fetch(MESSAGES_URL)
       .then((res) => res.json())
@@ -24,7 +24,7 @@ export const App = () => {
       .catch((error) => console.error(error));
   };
 
-  // skickar nytt meddelande till API:n och fånga det senaste meddelandet
+  // skickar nytt meddelande till API:n och fångar det senaste meddelandet
   const postSingleMessage = (newMessage) => {
     fetch(MESSAGES_URL, {
       method: "POST",
@@ -35,7 +35,7 @@ export const App = () => {
       .catch((error) => console.error(error));
   };
 
-  // skickar in likes/ hjätan till APIn
+  // skickar in likes/ hjärtan till APIn
 
   const postHearts = (messageId) =>
     fetch(
@@ -54,7 +54,8 @@ export const App = () => {
     <main>
       <MessageInput onMessageChange={postSingleMessage} />
       <MessageList messageList={messages} postHearts={postHearts}  />
-      <p>Made by Sabina de Maré Technigo bootcamp 2020</p>
+      <p>Made by Sabina de Maré Technigo bootcamp 2020</p>     {/* // will be made into a Footer.js with more time // */}
+   
     </main>
   );
 };

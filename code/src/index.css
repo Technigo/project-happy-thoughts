@@ -40,7 +40,7 @@ h1 {
   font-size: 23px;
   text-align: center;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
+    monospace;
 }
 .new-message-container {
   width: 500px;
@@ -155,7 +155,7 @@ article {
   margin-right: 5px;
 }
 
-/* Styling of heart color when liked ----------------------------------------------------------- */
+/* Styling of heart color change on notliked/liked ----------------------------------------------------------- */
 
 .notLiked {
   background-color: rgb(216, 213, 213);
@@ -164,3 +164,18 @@ article {
 .liked {
   background-color: rgb(238, 144, 233);
 }
+
+/*  --------------will be finalised later on--------------------------  */
+
+/* @media (min-width: 667px) and (max-width: 1024px) {
+  
+
+
+}
+
+
+@media (min-width: 1025px) {
+
+
+
+}   */
