@@ -17,10 +17,10 @@ const Thoughts = ({ thoughts, onLiked, addNewThought }) => {
             message={thought.message}
             onLiked={onLiked}
           />
-        )
+        );
       })}
     </section>
-  )
-}
+  );
+};
 
 export default Thoughts;

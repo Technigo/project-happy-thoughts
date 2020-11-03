@@ -5,7 +5,7 @@ import ThoughtInfo from './ThoughtInfo';
 
 const Thought = ({ id, created, likes, message, onLiked }) => {
   return (
-    <article className="thought">
+    <article className='thought'>
       <Message message={message} />
       <ThoughtInfo
         id={id}
@@ -14,7 +14,7 @@ const Thought = ({ id, created, likes, message, onLiked }) => {
         onLiked={onLiked}
       />
     </article>
-  )
-}
+  );
+};
 
 export default Thought;

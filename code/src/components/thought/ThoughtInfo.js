@@ -5,7 +5,7 @@ import Time from './Time';
 
 const ThoughtInfo = ({ id, created, likes, onLiked }) => {
   return (
-    <div className="info">
+    <div className='info'>
       <Likes
         id={id}
         likes={likes}
@@ -13,7 +13,7 @@ const ThoughtInfo = ({ id, created, likes, onLiked }) => {
       />
       <Time created={created} />
     </div>
-  )
-}
+  );
+};
 
 export default ThoughtInfo;

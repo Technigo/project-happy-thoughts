@@ -13,11 +13,11 @@ const NewInput = ({ onInputChange }) => {
   };
 
   return (
-    <form className="new-thought" onSubmit={onHandleSubmit}>
+    <form className='new-thought' onSubmit={onHandleSubmit}>
       <Textarea newThought={newThought} setNewThought={setNewThought} />
       <InputInfo newThought={newThought} />
     </form>
-  )
-}
+  );
+};
 
 export default NewInput;
