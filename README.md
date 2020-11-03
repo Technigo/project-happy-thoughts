@@ -12,7 +12,7 @@ And there should a heart button implement to send likes for a message. I found t
 
 The challenge was to structure components and their responsibility. The state. The listing of the messages which are already in the API. Building a form to post a new message and then implement the heart button on an existing message. I aimed to have have the mor complex parts like fetches in the App.js and make a component for input messegaes and one for the list of messages that also includet the heart button implement to send likes for a message. I put the css in one file and commented out what parts of the css related to each component.
 
-If I had more time I would have add some animations/transitions to the button and like-heart, stucture in components and in a more DRY-way. Added a footer component and mabye a header as well!
+If I had more time I would have add some animations/transitions to the button and like-heart, stucture in components and in a more DRY-way. Added a footer component and mabye a header as well. Accessability testing.
 
 ## View it live
 
