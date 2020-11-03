@@ -29,7 +29,6 @@ export const App = () => {
         return res.json();
       })
       .then((data) => {
-        console.log('data', data)
         setThoughts(data)
       });
   };
