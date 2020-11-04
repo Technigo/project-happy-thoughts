@@ -1,18 +1,16 @@
 .happy-thought {
   background-color: white;
-  border: 1px solid black;
-  width: 400px;
   height: auto;
-  margin: 0 0 40px;
-  box-shadow: 8px 8px black;
-  padding: 12px;
+  padding: 0 12px;
   display: flex;
   flex-direction: column;
   font-family: 'Inconsolata', monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .thought {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .card-footer {
@@ -48,10 +46,4 @@
 
 .heart-button span {
   padding-left: 4px;
-}
-
-@media (max-width: 500px) {
-  .happy-thought {
-    width: 250px;
-  }
 }

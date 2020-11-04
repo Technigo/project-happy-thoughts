@@ -1,10 +1,6 @@
 .happy-form {
   background-color: #F2F0F0;
-  border: 1px solid black;
-  width: 400px;
   height: auto;
-  margin: 40px 0px;
-  box-shadow: 8px 8px black;
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -18,53 +14,61 @@
 .happy-form textarea {
   font-family: 'Inconsolata', monospace;
   font-size: 16px;
+  padding: 5px;
+  outline: none;
+  resize: none;
 }
 
 
-.form-footer {
+.happy-form .form-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 15px;
 }
 
-.form-button {
+.happy-form .form-button {
   text-align: center;
   background-color: #ffadad;
-  padding: 5px 15px;
+  padding: 0 15px;
   border-radius: 25px;
   border: none;
   text-decoration: none;
+  height: 35px;
+  line-height: 35px;
 }
 
-.form-button span {
-  padding: 0 8px;
+.happy-form .form-button .text {
+  padding: 0 10px;
 }
 
-.form-button:hover {
+.happy-form .form-button .emoji {
+  vertical-align: middle;
+}
+
+.happy-form .form-button:hover {
   opacity: 0.5;
   cursor: pointer;
 }
 
-.form-button:focus {
+.happy-form .form-button:focus {
   outline: none !important;
 }
 
-.form-button:active {
+.happy-form .form-button:active {
   border: 0.5px solid grey; 
 }
 
-.form-button:disabled {
+.happy-form .form-button:disabled {
   cursor: not-allowed;
+  color: inherit;
 }
 
-.form-footer p {
+.happy-form .form-footer p {
   font-size: 12px;
 }
 
-
-@media (max-width: 500px) {
-  .happy-form {
-    width: 250px;
-  }
+.happy-form .warn {
+  color: #f00;
+  font-weight: bold;
 }

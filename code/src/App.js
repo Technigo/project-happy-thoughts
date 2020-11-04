@@ -1,6 +1,6 @@
 import React from 'react';
-import { HappyForm } from 'Components/happyForm'
-import { HappyThought } from 'Components/happyThought'
+import { HappyForm } from 'components/HappyForm'
+import { HappyThought } from 'components/HappyThought'
 import './App.css'
 
 export const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
