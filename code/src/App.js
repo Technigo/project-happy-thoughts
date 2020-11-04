@@ -20,16 +20,15 @@ export const App = () => {
 
   const onLiked = thoughtId => {
     console.log("Logging in the APP.js", thoughtId)
-  
 
-  const updatedThoughts = thoughts.map(thought => {
-    if (thought._id === thoughtId) {
-      thought.hearts += 1
-    }
-    return thought
-  })
-  setThoughts(updatedThoughts)
-}
+    const updatedThoughts = thoughts.map(thought => {
+      if (thought._id === thoughtId) {
+        thought.hearts += 1
+      }
+      return thought
+    })
+    setThoughts(updatedThoughts)
+  }
   return (
     <main>
       <HappyForm onFormSubmit={onFormSubmit} />

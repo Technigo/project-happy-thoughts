@@ -1,11 +1,10 @@
 body {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  font-family: 'Cutive Mono', monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
+display: flex;
+justify-content: center;
+margin-top: 50px;
+font-family: 'Cutive Mono', monospace;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -13,9 +12,7 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
 /*The form*/
-
 .happy-form {
 border: solid gray 2px;
 width: 400px;
@@ -29,7 +26,7 @@ margin-bottom: 70px;
 }
 
 .happy-form h3 {
-  font-size: 20px;
+font-size: 20px;
 }
 
 .form {
@@ -43,31 +40,31 @@ width: 100%;
 }
 
 .form-text  {
-  width: 100%;
-  height: 90px;
-  font-size: 15px;
+width: 100%;
+height: 90px;
+font-size: 15px;
 }
 
 .form-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
 }
 
 .form-button {
-  margin-top: 10px;
-  border-radius: 20px;
-  border: none;
-  background-color: #faafae;
-  padding: 5px 15px 5px 15px;
-  font-size: 15px;
+margin-top: 10px;
+border-radius: 20px;
+border: none;
+background-color: #faafae;
+padding: 5px 15px 5px 15px;
+font-size: 15px;
 }
 
 .thought-length {
-  font-size: 11px;
-  color: grey;
+font-size: 11px;
+color: grey;
 }
 
 /*The messages*/
@@ -86,14 +83,12 @@ border:none;
 .total-likes {
 color: grey;
 margin-left: 5px;
-
 }
 
 .likes {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  
+display: flex;
+flex-direction: row;
+align-items: center;
 }
 
 .message-time {
@@ -101,7 +96,6 @@ font-size: 15px;
 color: grey;
 margin-left: 10px;
 }
-
 
 .happy-thought {
 border:solid grey 1px;
@@ -119,37 +113,34 @@ word-wrap: break-word;
 }
 
 .message {
-  font-size: 20px;
-  margin-top: 20px;
-  padding-left: 10px;
+font-size: 20px;
+margin-top: 20px;
+padding-left: 10px;
 }
-
 
 .likes button {
 border:none;
 }
 
 .thought-footer {
-  display: flex;
-  flex-direction: row ;
-  justify-content: space-between;
-  align-items: center;
-  margin-top:20px;
+display: flex;
+flex-direction: row ;
+justify-content: space-between;
+align-items: center;
+margin-top:20px;
 }
 
 button[type="submit"]:disabled {
-  color: grey;
+color: grey;
 }
 
 button[type="submit"]:enabled {
-  color: red;
+color: red;
 }
-
 
 .like[type="submit"]:focus {
-  background-color: #ffadad;
+background-color: #ffadad;
 }
-
 
 .rubrik {
 padding-bottom: 20px;
