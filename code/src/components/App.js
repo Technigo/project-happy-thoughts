@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 
-import { Thoughts } from 'components/Thoughts'
-import { Input } from 'components/Input'
+import { Thoughts } from './Thoughts'
+import { Input } from './Input'
 import { Header } from './Header'
+import { Footer } from './Footer'
 import { THOUGHTS__URL } from './urls'
 
 import './app.css'
@@ -24,7 +25,6 @@ export const App = () => {
         return res.json();
     })
     .then((data) => {
-        console.log(data);
         setThoughts(data);
     })
   } 
@@ -51,16 +51,13 @@ export const App = () => {
     <div className="app__grid">
       <Header/>
       <Input
-      input={'Hello'}
-      inputType={'text'}
       onMessageChange={saveNewMessage}
       />
       <Thoughts
       likeMessage={likeMessage}
-      getMessages={getMessages}
       thoughts={thoughts}
-      setThoughts={setThoughts}
       />
+      <Footer/>
     </div>
   )
 }

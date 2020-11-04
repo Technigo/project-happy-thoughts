@@ -1,9 +1,9 @@
-
 .thoughts__container {
     background: #fff;
-    grid-column: span 3;
     display: grid;
     grid-template-columns: 1fr;
+    max-width: 80%;
+    justify-self: center;
 }
 
 .thoughts__card {
@@ -13,19 +13,19 @@
     justify-self: center;
     padding: 10px;
     margin: 5px;
-    width: 80%;
+    width: 100%;
 }
 
-.thoughts__info-container, .thoughts__message-and-like {
+.thoughts__info-container {
     display: flex;
     justify-content: space-between;
     font-size: 16px;
 }
 
-/*How to solve when someone writes a really long word?*/
 .thoughts__message {
     font-size: 22px;
     white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .thoughts__heart-icon {
@@ -36,4 +36,10 @@
 
 .thoughts__like-container {
     display: flex;
+}
+
+@media screen and (min-width:768px) {
+    .thoughts__container {
+        max-width: 60%;
+    }
 }

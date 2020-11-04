@@ -1,0 +1,17 @@
+.footer__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer__container h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.footer__container h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 2px;
+}

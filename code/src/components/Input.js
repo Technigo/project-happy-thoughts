@@ -31,14 +31,13 @@ export const Input = ({ onMessageChange, inputType }) => {
 
     return (
         <>
-        <form onSubmit={handleSubmit} className="input__container">
+        <form onSubmit={handleSubmit} className="input__container" id="input__form">
         <h2>What's making you happy right now?</h2>
         <label className="input__user-input">
-            <input 
-            className="input__text-field"
-            type={inputType}
+            <textarea 
+            rows='4'
             value={newMessage}
-            onChange={event => setNewMessage(event.target.value)}/>
+            onChange={event => setNewMessage(event.target.value)}></textarea>
         </label>
         <Error message={error}/>
         <Heart

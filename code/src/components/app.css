@@ -6,7 +6,7 @@
 .app__grid {
     background: #fff;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: min-content;
     justify-content: center;
 }
