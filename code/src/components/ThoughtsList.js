@@ -33,10 +33,14 @@ const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLike }) =
                 className={heartColor}
                 onClick={addNewHeart}
               >
-                <span aria-label="heart" role="img">&#10084;&#65039;</span>
+                <span aria-label="heart" role="img">
+                  &#10084;&#65039;
+                </span>
               </button> x {nrOfLikes}
             </div>
-            <p className="time-stamp">{moment(timeStamp).fromNow()}</p>
+            <p className="time-stamp">
+              {moment(timeStamp).fromNow()}
+            </p>
           </div>
         </div>
       </ul>

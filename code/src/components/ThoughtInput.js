@@ -42,7 +42,9 @@ const ThoughtInput = ({ onNewThought }) => {
             &#10084;&#65039;
           </span>
         </button>
-        <p>{newThought.length} / 140</p>
+        <p>
+          {newThought.length} / 140
+        </p>
       </div>
     </form>
   )
