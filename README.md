@@ -2,7 +2,7 @@
 A Twitter like app with positive vibes. :sunny:
 
 ## :brain: Learning objectives
-- use useEffect hook in React when components mount, unmount, or when stage changes
+- use useEffect hook in React when components mount, unmount, or when state changes
 - call APIs from React and put the data into state
 
 ## :heavy_check_mark: Features
