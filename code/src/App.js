@@ -12,6 +12,7 @@ export const App = () => {
     setInterval(fetchThoughts, 10000);
   }, []);
 
+  //GET request (fetching the data from the server)
   const fetchThoughts = () => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
@@ -19,6 +20,7 @@ export const App = () => {
       .catch(error => console.error(error));
   };
 
+  //POST request (sending data to the server)
   const reachNewThought = (newThought) => {
     fetch(THOUGHTS_URL, {
       method: "POST",
@@ -40,7 +42,7 @@ export const App = () => {
   };
 
   return (
-    <div className="app-container">
+    <section className="app-container">
       <ThoughtInput
         onNewThought={reachNewThought}
       />
@@ -54,6 +56,6 @@ export const App = () => {
           onLike={handleLike}
         />
       ))}
-    </div>
+    </section>
   )
 };

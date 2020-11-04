@@ -13,7 +13,9 @@ const ThoughtInput = ({ onNewThought }) => {
 
   return (
     <form className="input-container" onSubmit={handleSubmit}>
-      <label htmlFor="input-text">What's making you happy right now?</label>
+      <label htmlFor="input-text">
+        What's making you happy right now?
+      </label>
       <input
         className="input"
         type="text"
@@ -32,13 +34,13 @@ const ThoughtInput = ({ onNewThought }) => {
             aria-label="heart"
             role="img">
             &#10084;&#65039;
-        </span>
+          </span>
           {" "}Send Happy Thought{" "}
           <span
             aria-label="heart"
             role="img">
             &#10084;&#65039;
-        </span>
+          </span>
         </button>
         <p>{newThought.length} / 140</p>
       </div>

@@ -13,7 +13,7 @@ A Twitter like app with positive vibes. :sunny:
 - thoughts liked by the user have changed colour of the :heart: button  
 
 ## :chart_with_upwards_trend: Future improvements
-- form input that updates as the user types and shows how many characters are remaining
+- form input that updates the counter as the user types and shows how many characters are remaining
 - show an error message to the user if the message was empty, too short or too long (when POSTing a new thought)
 
 ## :robot: Tech used 
