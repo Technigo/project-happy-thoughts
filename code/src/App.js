@@ -18,7 +18,6 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
 
-
   useEffect(() => {
     fetchMessages();
   }, []);
@@ -44,7 +43,6 @@ export const App = () => {
   };
 
   const handleThoughtSubmit = (thought) => {
-
     const body = JSON.stringify({ message: thought });
 
     fetch(API_URL, {

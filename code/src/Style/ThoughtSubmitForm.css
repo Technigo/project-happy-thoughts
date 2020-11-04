@@ -9,7 +9,6 @@
   font-size: 13px;
   margin-top: 10px;
   padding: 5px 15px;
-  
 }
 
 .thought-box {
@@ -17,6 +16,7 @@
   margin-top: 20px;
   font-size: 18px;
 }
+
 .thought-form-label {
   color: rgb(2, 2, 2);
   font-family: 'Capriola', sans-serif;
@@ -33,7 +33,7 @@
 }
 
 .word-count {
-  color: blue;
+  color:#0000ff;
   flex: 1;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
@@ -42,11 +42,11 @@
 }
 .count-turn-red {
   font-weight: bold;
-  color: darkmagenta;
+  color: #8b008b;
 }
 
 .cross-sign {
-  color: red;
+  color: #ff0000;
   margin-right: 5px;
 }
 @media screen and (min-width: 400px) {
