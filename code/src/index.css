@@ -45,6 +45,13 @@ height: 90px;
 font-size: 15px;
 }
 
+.form-text::placeholder {
+padding: 5px;
+color:grey;
+font-weight: 500;
+font-size: 13px;
+}
+
 .form-footer {
 display: flex;
 flex-direction: row;

@@ -25,6 +25,7 @@ export const HappyForm = props => {
             <h3>Post a happy thought!</h3>
             <textarea
                 className="form-text"
+                placeholder="Write your happy thoughts here..."
                 rows='3'
                 value={message}
                 onChange={event => setMessage(event.target.value)}>
