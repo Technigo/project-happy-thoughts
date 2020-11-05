@@ -19,12 +19,12 @@ export const MessageList = ({ messageList, setMessageList }) => {
             {messageList.map(message => (
                 <article className="message-card" key={message._id}>
                     <p className="message" tabIndex="0">
-                        {message.message} </p>
+                        {message.message} 
+                    </p>
                     <HeartButton liked={onMessageLiked} hearts={message.hearts} likesId={message._id} />
                     <p className="message-time" tabIndex="0">
                         {moment(message.createdAt).fromNow()}
                     </p>
-
                 </article>
             ))
             }

@@ -19,12 +19,9 @@ export const App = () => {
         return response.json()
       })
       .then((data) => {
-        console.log(data)
         const filteredMessages = data.filter((message) => message)
         setMessages(filteredMessages)
       })
-    // .catch(error => console.log("error:, error"))
-
   }
 
   const postMessage = newMessage => {

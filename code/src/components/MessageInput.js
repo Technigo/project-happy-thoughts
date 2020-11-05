@@ -23,7 +23,6 @@ export const MessageInput = ({ onMessageChange }) => {
                     <button
                         type="submit"
                         className="form-button"
-                        value={newMessage}
                         disabled={newMessage.length < 6 || newMessage.length > 140 ? true : false}
                     >
                         <span role="img" aria-label="Red heart emoji">&#10084;&#65039;</span>
