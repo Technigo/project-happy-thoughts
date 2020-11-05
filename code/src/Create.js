@@ -15,10 +15,9 @@ export const Create = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                
                 body: JSON.stringify({ message: text })
             }
-        ).then(()=>{
+        ).then(() => {
             window.location.reload()
         }).catch(e => {console.log(e)})
     }
@@ -27,8 +26,8 @@ export const Create = () => {
         <div className="submit-container">
             <form onSubmit={handleSubmit} className="submit-form">
                 <p>What is making you happy?</p>
-                <input type="text" onChange={event => addMessage(event.target.value)} className="text-box">
-                </input>
+                <textarea type="text" onChange={event => addMessage(event.target.value)} rows="4" className="text-box">
+                </textarea>
                 <input type="submit" value="Send Happy Thought" className="submit-button">
                 </input>
             </form>

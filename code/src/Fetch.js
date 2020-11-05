@@ -24,6 +24,16 @@ export const Fetch = () => {
 
     }, [])
 
+    const onLike = thoughtId => {
+        const updatedThoughts = messages.map(thought => {
+          if (thought._id === thoughtId) {
+            thought.hearts += 1
+          }
+          return thought
+        })
+        setMessages(updatedThoughts)
+      }
+
     return (
         <div className="message-container">
             {
@@ -34,7 +44,7 @@ export const Fetch = () => {
                         </p>
                         <div className="lower-container">
                             <div className="like-container">
-                                <Like _id={message._id}/>
+                                <Like _id={message._id} hearts={message.hearts} onLike={onLike} />
                                 <span className="likes">x{message.hearts}</span>
                             </div>
                             <span className="message-time">
