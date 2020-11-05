@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import HappyForm from "./HappyForm"
 import HappyThougthList from "./HappyThougthList";
 
-
-
 const Main = () => { 
 const [thoughts, setThoughts] = useState([]); 
 
@@ -60,7 +58,7 @@ const THOUGTHS_URL ="https://happy-thoughts-technigo.herokuapp.com/thoughts";
                  onLiked={onLiked} />
                 ))}
             </main>
-)}
+)};
 
 export default Main;
 
