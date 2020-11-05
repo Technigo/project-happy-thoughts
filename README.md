@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week we did a twitter-isch app but with happy thoughts! You can send your own happy thought and like others happy thoughts!
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I had problems understanding how everything worked together and got help from both Maks and Vanessa with how to solve the problems that's now solved! I really wanted to understand why it didn't work and understand how it worked. And now I know! Better late than never. 😄
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-happy-life.netlify.app/
