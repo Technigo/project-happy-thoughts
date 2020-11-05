@@ -1,9 +1,13 @@
 import React from 'react'
 
+import { MessageList } from './components/MessageList'
+import { NewThought } from './components/NewThought'
+
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <>
+      <NewThought />
+      <MessageList />
+    </>
   )
 }
