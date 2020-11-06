@@ -9,7 +9,7 @@ export const LikeButton = ({hearts, id, onThoughtLiked}) => {
           headers: { "Content-Type": "application/json"},
           body: ''
         }).then(() => {
-          onThoughtLiked(id);
+          onThoughtLiked(id)
         })
       }
   //This is the heart button icon, the background turns red when clicking on it:

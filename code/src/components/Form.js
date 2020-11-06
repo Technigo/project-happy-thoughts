@@ -18,7 +18,7 @@ export const Form = () => {
 
     .then(() => {
         setMessage('')
-        window.location.reload();
+        window.location.reload()
     })
     } 
      //This is the form where we write our happy thought:
@@ -37,17 +37,17 @@ export const Form = () => {
             onClick={handleSubmit}
             disabled={message.length < 6 || message.length > 140 ? true : false}
             >
-            <span 
-            role='img' 
-            aria-label='heart'
-            >{'❤️'} 
-            </span>
-            Send Happy thought!
-            <span 
-            role='img' 
-            aria-label='heart'
-            >{'❤️'}
-            </span>
+                <span 
+                role='img' 
+                aria-label='heart'
+                 >{'❤️'} 
+                </span>
+                Send Happy thought!
+                <span 
+                role='img' 
+                aria-label='heart'
+                >{'❤️'}
+                </span>
         </button>
             <p className='message-length'>{message.length} / 140</p>
         </div>

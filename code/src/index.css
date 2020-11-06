@@ -48,6 +48,10 @@ form {
   float: right;
 }
 
+.message {
+  word-break: break-all;
+}
+
 /*THOUGHTS LIST AND LIKE BUTTON STYLING*/
 
 .message {

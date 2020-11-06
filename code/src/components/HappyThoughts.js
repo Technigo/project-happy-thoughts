@@ -4,16 +4,16 @@ import moment from 'moment'
 import { LikeButton } from "./LikeButton"
 //This function fetches all the happy thoughts:
 export const HappyThoughts = () =>  {
-    const THOUGHTS_URL ='https://happy-thoughts-technigo.herokuapp.com/thoughts';
-    const [thoughts, setThoughts] = useState([]);
+    const THOUGHTS_URL ='https://happy-thoughts-technigo.herokuapp.com/thoughts'
+    const [thoughts, setThoughts] = useState([])
 
     useEffect(() => {
-    fetch(THOUGHTS_URL)
-    .then((res) => {
-        return res.json();
+      fetch(THOUGHTS_URL)
+      .then((res) => {
+        return res.json()
     })
-    .then((data) => {
-        setThoughts(data);
+      .then((data) => {
+        setThoughts(data)
     });
     }, []);
 //This function adds a heart to a happy thought (if button is clicked)
@@ -24,27 +24,28 @@ export const HappyThoughts = () =>  {
           }
           return thought
         })
-        setThoughts(updatedThoughts);
+        setThoughts(updatedThoughts)
       }
       //This shows the actual message from the fetch on line 11 and also shows when it was posted. The props on line 40-43 are passed to the Like button component.
     return (
     <div className='thoughts-card'>{thoughts.map(message => {
         return (
-            <div className='message' key={message._id}>
-            {message.message}
-            <span className='message-time'>
-            {moment(message.createdAt).fromNow()}
-            </span>
-            <LikeButton
-                key={message._id}
-                id={message._id}
-                onThoughtLiked={onThoughtLiked}
-                hearts={message.hearts}
+            <div className='message' 
+              key={message._id}>
+              {message.message}
+                <span className='message-time'>
+                  {moment(message.createdAt).fromNow()}
+                </span>
+                  <LikeButton
+                    key={message._id}
+                    id={message._id}
+                    onThoughtLiked={onThoughtLiked}
+                    hearts={message.hearts}
               />     
             </div>
-        );
+        )
         
-        })};
+        })}
     </div>
-    );
-    };
+    )
+    }
