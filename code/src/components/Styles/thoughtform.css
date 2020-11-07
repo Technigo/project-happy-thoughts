@@ -9,6 +9,10 @@
     width: 100%;
 }
 
+.thoughts-form__input {
+    width: 100%;
+}
+
 ::placeholder {
     font-family: 'Inconsolata', monospace;
 }
