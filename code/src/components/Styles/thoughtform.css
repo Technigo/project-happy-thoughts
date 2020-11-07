@@ -11,6 +11,7 @@
 
 .thoughts-form__input {
     width: 100%;
+    padding: 5px 0 80px 5px;
 }
 
 ::placeholder {
