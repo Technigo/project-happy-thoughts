@@ -20,13 +20,13 @@ export const ThoughtForm = ({onThoughtChange}) => {
             <h2 className='thoughts-form__header'> 
                 What's making you happy right now?
             </h2>
-                <input
-                    type='text'
+                <textarea
                     className='thoughts-form__input'
                     placeholder='Write a happy thought...'
                     value={newThought}
                     onChange={event => setNewThought(event.target.value)}
-                />
+                > 
+                </textarea>
                 <p 
                 className={ /* If the message is >140 characters, a new class will turn the counter text red  */ 
                 newThought.length <= 140 ? 'message-length__ok' : 'message-length__error'}> 

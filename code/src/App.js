@@ -30,7 +30,7 @@ export const App = () => {
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({ message: newThought })
     })
-    .then(() => fetchThoughts()) /* Excecute fetch thoughts again based on the changes in API */
+    .then(() => fetchThoughts()) /* Execute fetch thoughts again based on the changes in API */
   };
   
   //Function for updating the text about hearts/number of likes
