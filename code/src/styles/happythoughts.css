@@ -1,7 +1,7 @@
 .thoughts-box {
   border: 1px solid #000;
   box-shadow: 6px 6px #000;
-  width: 315px;
+  width: 310px;
   min-height: 100px;
   margin: 30px;
   padding: 12px 12px 0 10px;
@@ -31,7 +31,7 @@
 }
 
 /* Media queries*/
-@media (min-width: 668px) { /* Tablet device */
+@media (min-width: 668px) { /* Tablet & desktop device */
   .thoughts-box {
     width: 360px;
   }

@@ -3,9 +3,10 @@ import 'styles/likeathought.css';
 
 // Number of 'hearts' will increase when clicked
 export const Likeathought = ({hearts , id, onThoughtLiked}) => {
+  const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
 
   const handleClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+    fetch(LIKE_URL,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
