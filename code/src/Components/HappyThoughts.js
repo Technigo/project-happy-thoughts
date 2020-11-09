@@ -5,10 +5,10 @@ import moment from "moment"
 import "./HappyThoughts.css"
 
 export const HappyThoughts = props => {
-    const {message, hearts, createdAt} = props.thought
+    const {id, message, hearts, createdAt} = props.thought
     const [likes, setLikes] = useState(hearts)
     const handleClick = () => {
-        fetch ("https://happy-thoughts-technigo.herokuapp.com/thoughts", {
+        fetch (`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
             method: "POST", 
             body: "", 
             headers: { "Content-Type": "application/json" }
