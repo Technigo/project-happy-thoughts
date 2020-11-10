@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { ThoughtCard } from "./ThoughtCard"
 
 export const ThoughtsList = () => { 
-    const ThoughtsUrl= "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    const thoughtsurl= "https://happy-thoughts-technigo.herokuapp.com/thoughts";
     const [thoughts, setThoughts] = useState([]);
 
     // useEffect prevents the infinite looping of creating new arrays after the data is fetched. 
@@ -13,7 +13,7 @@ export const ThoughtsList = () => {
     }, []);
 
     const fetchThoughts = () => {
-      fetch(ThoughtsUrl)
+      fetch(thoughtsurl)
       .then ((response) => {
           return response.json()
       })
@@ -36,7 +36,6 @@ export const ThoughtsList = () => {
     }
 
     return (
-        <>
           <section className="thoughts-container">
             {thoughts.map((thought) => (
               <ThoughtCard 
@@ -45,7 +44,6 @@ export const ThoughtsList = () => {
                 onLiked={onLiked}/>
             ))}
           </section>
-        </>
       )
     };
 

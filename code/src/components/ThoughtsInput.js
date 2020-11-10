@@ -5,7 +5,7 @@ import HeartImage from "../assets/heart.png";
 
 
 export const ThoughtsInput = () => {
-    const ThoughtsUrl= "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    const thoughtsurl= "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 
     // state to save the message to send to the backend 
     const [thought, setThought] = useState("")
@@ -15,7 +15,7 @@ export const ThoughtsInput = () => {
     const handleSubmit = (event) => { 
         event.preventDefault();
         // submit function that POSTs the text field 
-        fetch(ThoughtsUrl, {
+        fetch(thoughtsurl, {
             method: "POST",
             headers:
             {"Content-Type":"application/json"},
