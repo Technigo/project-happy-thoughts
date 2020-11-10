@@ -22,7 +22,6 @@ const MessageInput = ({ setMessages }) => {
       .then((res) => res.json())
       .then((newMessage) => {
         // adding new message to start of messages array
-        console.log(newMessage);
         setMessages((previousMessages) => [newMessage, ...previousMessages]);
         setMessage("");
       });
