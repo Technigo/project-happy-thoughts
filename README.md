@@ -1,10 +1,18 @@
-# Happy Thoughts
+# Project Happy Thoughts App
 
 This project makes use of React state by fetching and posting data to an API.
 Focus of the project is:
 - How to use APIs in React, firing requests within `useEffect`.
 - How to put the result of API responses into React state to show in the page.
 - What it's like to work with an API which you both send and receive data from.
+The project was a part of Technigo Bootcamp.
+
+## Tech Used
+- React
+- Javascript
+- JSX
+- API
+- CSS
 
 ## The problem
 
