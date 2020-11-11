@@ -10,4 +10,4 @@ This week my biggest challenge were lack of time. I managed to get the project t
 
 ## View it live
 
-http://stayhappy.netlify.net/
+https://stayhappy.netlify.app/
