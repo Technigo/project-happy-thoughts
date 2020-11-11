@@ -24,7 +24,5 @@ export const HeartButton = ({ hearts, likesId, liked }) => {
             </button>
             <span className="nrOfLikes">x {hearts}</span>
         </div>
-       
     )
-
 }

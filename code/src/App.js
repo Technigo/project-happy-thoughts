@@ -19,7 +19,7 @@ export const App = () => {
         return response.json()
       })
       .then((data) => {
-        const filteredMessages = data.filter((message) => message)
+        const filteredMessages = data.filter((message) => message.message)
         setMessages(filteredMessages)
       })
   }

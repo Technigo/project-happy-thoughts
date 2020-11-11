@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-import { HeartButton } from './HeartButton';
+import { HeartButton } from './HeartButton'
 
 export const MessageList = ({ messageList, setMessageList }) => {
 
