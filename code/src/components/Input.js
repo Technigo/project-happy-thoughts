@@ -25,8 +25,8 @@ export const Input = ({ onMessageChange, inputType }) => {
     }
 
     const handleSubmit = event => {
-        event.preventDefault();
-        checkIfMessageLengthValid(newMessage) && onMessageChange(newMessage);
+        event.preventDefault()
+        checkIfMessageLengthValid(newMessage) && onMessageChange(newMessage)
     }
 
     return (

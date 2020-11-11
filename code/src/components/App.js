@@ -9,14 +9,14 @@ import { THOUGHTS__URL } from './urls'
 import './app.css'
 
 export const App = () => {
-  const [thoughts, setThoughts] = useState([]);
+  const [thoughts, setThoughts] = useState([])
 
   /* We need to use useEffect because we don't want this to rerender on 
   each refresh, only when it's neccessary and [] is updated.
   You need to use the empty array to only render on change, 
   otherwise it will contiue to do the fetch in an infinite loop */
   useEffect(() => {
-    getMessages();
+    getMessages()
   }, [])
 
   const getMessages = () => {
