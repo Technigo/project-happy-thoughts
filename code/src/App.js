@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { LikeCounter } from "LikeCounter";
-import { Loader } from "Loader";
-import { Thought } from "Thought";
+import { LikeCounter } from "./LikeCounter";
+import { Loader } from "./Loader";
+import { Thought } from "./Thought";
 import { Form } from "./Form"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [messageOK, setMessageOK] = useState(true);
   const [loading, setLoading] = useState(true);
-  const initialLikeCount = () => Number(window.localStorage.getItem("count")) || 0
+  const initialLikeCount = () => Number(window.localStorage.getItem("count")) || 0;
   const [likeCount, increaseLikeCount] = useState(initialLikeCount);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export const App = () => {
 
   useEffect(()=>{
     window.localStorage.setItem("count",likeCount);
-  },[likeCount])
+  },[likeCount]);
 
   const getThoughts = () =>{
     fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
@@ -26,20 +26,20 @@ export const App = () => {
       setThoughts(data);
       setLoading(false);
     });
-  }
+  };
 
   const handleLikes = () => {
     increaseLikeCount((likeCount) => likeCount+1);
-  }
+  };
 
   const handleSubmit = (newMessage) => {
     postThought(newMessage);
-  }
+  };
 
   const postThought = (message) => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    const messageToPost = JSON.stringify({"message": message});
+    const messageToPost = JSON.stringify({message: message});
     const requestOptions = {
       method: 'POST',
       headers: myHeaders,
@@ -56,7 +56,7 @@ export const App = () => {
       if(newThought.errors !== undefined)
         {
           setMessageOK(false);
-          console.log(newThought.message);
+          console.error(newThought.message);
         } else {
           setMessageOK(true);
           getThoughts();

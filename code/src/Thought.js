@@ -38,43 +38,31 @@ export const Thought = (props) => {
   <div className="thought-card">
     <p className="message">{props.message}</p>
     <div className="bottom-container">
-   
-    {!liked && 
-    <div>
-      <button 
-      className={numLikes === 0 ?  "no-likes-button" : (numLikes > 0 && numLikes < 3 ? "like-button" : "mega-like-button")} 
-      onClick= {() => clickedLikeButton(props.id)}>
-          <span role="img" aria-label="heart emoji">
-          ❤️</span>
-      </button> 
-      <span 
-      className="number-of-initial-likes">
-        x {numLikes}
-      </span>
-    </div>}
-
-    {liked && 
-    <div>
-      <button 
-      disabled 
-      className="disabled-button"
-      >
-        <span 
-        role="img" 
-        aria-label="heart emoji">
-          ❤️
-        </span>
-      </button>
-      <span 
-      className="number-of-likes">
-        x {numLikes}
-      </span>
-    </div>}
-    <p className="date">
-      <span>
-        {moment(props.createdAt).fromNow()}
-      </span>
-    </p></div>
+      {!liked && 
+        <div>
+          <button 
+          className={numLikes === 0 ?  "no-likes-button" : (numLikes > 0 && numLikes < 3 ? "like-button" : "mega-like-button")} 
+          onClick= {() => clickedLikeButton(props.id)}>
+            <span role="img" aria-label="heart emoji">❤️</span>
+          </button> 
+          <span className="number-of-initial-likes">x {numLikes}</span>
+        </div>
+      }
+      {liked && 
+        <div>
+          <button 
+            disabled 
+            className="disabled-button"
+          >
+            <span role="img" aria-label="heart emoji"> ❤️</span>
+          </button>
+          <span className="number-of-likes">x {numLikes}</span>
+        </div>
+      }
+      <p className="date">
+        <span>{moment(props.createdAt).fromNow()}</span>
+      </p>
+    </div>
   </div>
-  )
+)
 }
