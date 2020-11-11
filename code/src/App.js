@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
+
 import {NewThought} from './NewThought'
 import {Replies} from './Replies'
 
-const ThoughtsURL= "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const thoughtsURL= "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 
 export const App = () => {
   const [existingThoughts, setExistingThoughts] = useState([]) // the existing thoughts in the list
@@ -10,7 +11,7 @@ export const App = () => {
   
   // fetches the existing thoughts from the API 
   const fetchThoughts = () => {
-    fetch(ThoughtsURL)
+    fetch(thoughtsURL)
     .then (response => response.json())
     .then ((thoughts) => {
       setExistingThoughts(thoughts)
@@ -25,7 +26,7 @@ export const App = () => {
   const postThought = (event) => {
     event.preventDefault();
     
-    fetch(ThoughtsURL, {
+    fetch(thoughtsURL, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({message: newMessage})
@@ -48,7 +49,7 @@ export const App = () => {
 
       <Replies 
         allReplies={existingThoughts} // list of all posted thoughts
-        onLike={()=>fetchThoughts()} // updates the list of posted thoughts
+        onLike={fetchThoughts} // updates the list of posted thoughts
         />
     </>
   )

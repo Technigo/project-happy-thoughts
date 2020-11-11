@@ -16,8 +16,6 @@ export const NewThought = ({newMessage, setNewMessage, handleSubmit}) => {
             </label> 
 
             <p className="characterCount"> 
-                { // new message has to be at least 5 characters and maximum 140 characters
-                newMessage.length < 5 || newMessage.length > 140}  
                 {newMessage.length} / 140
             </p>
             
