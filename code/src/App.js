@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { MessageList } from "components/MessageList";
 import { MessageInput } from "components/MessageInput";
+import { Footer } from "components/Footer";
 
 
 export const App = () => {
@@ -9,12 +10,13 @@ export const App = () => {
 
   const [messages, setMessages] = useState([]);
 
-  // denna funktion sätter igång att hämta nytt meddelande när messageinput är mounted
+
+// this function starts to retrieve a new message when the message input is mounted
   useEffect(() => {
     fetchMessages();
   }, []);
 
-  // fångar in array av nya meddelanden från API och uppdaterar state, res=sesultat, data=rådata från arrayen
+ // captures array of new messages from API and updates state, res = results, data = raw data from the array
   const fetchMessages = () => {
     fetch(MESSAGES_URL)
       .then((res) => res.json())
@@ -24,7 +26,7 @@ export const App = () => {
       .catch((error) => console.error(error));
   };
 
-  // skickar nytt meddelande till API:n och fångar det senaste meddelandet
+ // sends a new message to the API and captures the most recent message
   const postSingleMessage = (newMessage) => {
     fetch(MESSAGES_URL, {
       method: "POST",
@@ -35,27 +37,25 @@ export const App = () => {
       .catch((error) => console.error(error));
   };
 
-  // skickar in likes/ hjärtan till APIn
+  // sends likes / hearts to APIn
 
   const postHearts = (messageId) =>
     fetch(
       `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`,
       {
         method: "POST",
-        body: "",
         headers: { "Content-Type": "application/json" },
       }
     ).then(() => {
       fetchMessages();
     });
-  // };
+
 
   return (
     <main>
       <MessageInput onMessageChange={postSingleMessage} />
       <MessageList messageList={messages} postHearts={postHearts}  />
-      <p>Made by Sabina de Maré Technigo bootcamp 2020</p>     {/* // will be made into a Footer.js with more time // */}
-   
+      <Footer />
     </main>
   );
 };

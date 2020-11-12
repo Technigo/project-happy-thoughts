@@ -27,10 +27,8 @@ main {
   justify-content: space-between;
   margin: 5px 20px 40px 50px;
   padding: 10px 20px 20px 50px;
-  margin-top: 15px;
   width: 510px;
   height: 200px;
-  word-wrap: break-word;
 }
 
 /* Styling MessageInput -----------------------------------------------*/
@@ -59,6 +57,8 @@ form {
 .input-text {
   margin: 8px;
   font-size: 20px;
+  resize: none;
+  overflow: auto;
 }
 
 button {
@@ -137,11 +137,12 @@ article {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 4px;
-  padding-top: 4px;
+  padding-right: 6px;
+  padding-top: 5px;
   width: 30px;
-  height: 30px;
+  height: 30px; 
   font-size: 18px;
+
 }
 
 .message-time {
@@ -163,6 +164,11 @@ article {
 
 .liked {
   background-color: rgb(238, 144, 233);
+}
+
+Footer:p {
+  margin: 30px;
+  border: green 2px;
 }
 
 /*  --------------will be finalised later on--------------------------  */

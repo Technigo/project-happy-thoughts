@@ -5,8 +5,8 @@ export const MessageList = ({ messageList, postHearts }) => {
   return (
     <div>
       {messageList.map((message) => (
-        <article>
-          <p className="message" key={message._id}>
+        <article key={message._id}>
+          <p className="message">
             {message.message}
 
             <div className="heart-button-wrapper">
