@@ -1,4 +1,4 @@
-## Project 9: Happy thoughts twitter likt page
+## Project 9: Happy thoughts twitter like app
 
 On this Twitter like webpage you can post some Happy thoughts and see what other people are posting. This is done by using Happy Thoughts API. 
 A user can see when the previous posts were made and like them as well.
