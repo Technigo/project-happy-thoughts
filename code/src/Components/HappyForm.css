@@ -10,28 +10,28 @@
   flex-direction: column;
 }
 
-form{
+form {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin: 5vh 0;
+  margin: 50px 0;
   background: rgb(230, 229, 229);
   border-style: solid;
   box-shadow: 5px 7px;
   font-family: 'Inconsolata', monospace;
 }
 
-h1{
+h1 {
   margin: 15px 15px 0 15px;
 }
 
-.post-message{
+.post-message {
   margin: 12px;
   padding: 10px;
 }
 
-.submit-button{
+.submit-button {
   font-family: 'Inconsolata', monospace;
   font-size: 1em;
   background-color: rgb(250, 168, 168);
@@ -41,17 +41,17 @@ h1{
   border: none;
 }
 
-.heart-button-left{
+.heart-button-left {
   height: 20px;
   margin-right: 5px;
 }
 
-.heart-button-right{
+.heart-button-right {
   height: 20px;
   margin-left: 5px;
 }
 
-.submit-length{
+.submit-length {
   text-align: end;
   margin-right: 5px;
 }
@@ -61,7 +61,7 @@ h1{
       width: 70%;
   }
 
-  .submit-button{
+  .submit-button {
     font-size: 1.2em;
   }
 }

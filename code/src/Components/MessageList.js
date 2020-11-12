@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import moment from 'moment'
 
-import { LikedMessage } from 'Components/LikedMessage'
+import { LikedMessage } from './LikedMessage'
 import './MessageList.css'
 
 export const MessageList = () => {
@@ -15,13 +15,12 @@ export const MessageList = () => {
         return res.json()
       })
       .then((data) => {
-        console.log(data)
         // filter out empty messages 
         const filteredMessages = data.filter((message) => message.message)
         // save data to state
         setMessages(filteredMessages)
       })
-  }, [messages]) // this updates the content of the page without reloading it!
+  }, [])
   return (
     <section className='message-wrapper'>
       {messages.map((message) => {
@@ -29,7 +28,7 @@ export const MessageList = () => {
           <article className='message' key={message._id}>
             <h2 tabIndex='0'>{message.message}</h2>
               <div className='heart-time'>
-              < LikedMessage 
+              <LikedMessage 
               hearts={message.hearts} 
               id={message._id} />
               <span className='span-time'>

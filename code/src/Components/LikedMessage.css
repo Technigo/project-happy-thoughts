@@ -1,11 +1,10 @@
-.heart-image{
+.heart-image {
   display: flex;
   justify-content: space-around;
   margin-bottom: 2.5px;
 }
 
-.liked{
-  /* -webkit-appearance: none; */
+.liked {
   background: rgb(250, 168, 168);
   border-radius: 50%;
   border: none;
@@ -14,7 +13,7 @@
   margin: 4px 10px 10px 12px;
 }
 
-.not-liked{
+.not-liked {
   background: rgb(230, 229, 229);
   border-radius: 50%;
   border: none;
@@ -23,17 +22,17 @@
   margin: 4px 10px 10px 12px;
 }
 
-.heart-like{
+.heart-like {
   height: 20px;
   margin: 5px 1px 0 0;
 }
 
-.times-liked{
+.times-liked {
   font-family: 'Inconsolata', monospace;
   color: rgb(126, 126, 126);
 }
 
-.time{
+.time {
   font-family: 'Inconsolata', monospace;
   margin-right: 5px;
   color: rgb(126, 126, 126);
