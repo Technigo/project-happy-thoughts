@@ -17,7 +17,7 @@ export const HappyForm = props => {
                 setMessage('')
                 props.onFormSubmit(message)
             })
-            .catch(err => console.log('error:', err))
+            console.error
     };
     return (
 
