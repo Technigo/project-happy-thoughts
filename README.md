@@ -8,9 +8,9 @@ Send Happy Thoughts is a web app where you can post, view and like happy thought
 
 - This project is built with JavaScript, using the React framework. It consists of 3 components and an App.js file, with a style sheet for each component.  
 - The view, like and post features is implemented by the API fetches, using GET method to receive data, and POST method to like and post. 
-- The app also have additional features build with JavaScript function, such as word count validation. 
+- The app has additional features built with JavaScript functions, such as word count validation. 
 - The layout is structured with CSS Flexbox. 
-- The app was built with the mobile first approach and works responsive in tablet and computer. 
+- The app was built with mobile first approach and has a responsive design in tablet and computer. 
 
 ## Tech 🛠
 
