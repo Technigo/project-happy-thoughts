@@ -23,9 +23,7 @@ export const App = () => {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ message: newMessage }),
-    })
-      .then(() => fetchMessages())
-      .catch((err) => console.log("error:", err));
+    }).then(() => fetchMessages());
   };
 
   const onLiked = (messageId) => {
@@ -43,11 +41,7 @@ export const App = () => {
     <div className="main-container">
       <MessageInput onMessageChange={reachMessageInput} />
 
-      <MessageList
-        key={messages._id}
-        messageList={messages}
-        onLiked={onLiked}
-      />
+      <MessageList messageList={messages} onLiked={onLiked} />
     </div>
   );
 };

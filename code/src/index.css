@@ -80,6 +80,7 @@ textarea {
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
+  word-wrap: break-word;
 }
 
 h3{
@@ -88,6 +89,12 @@ h3{
 
 .happy-message p{
   font-family: "Courier", monospace;
+}
+
+.heart-container {
+  display: flex;
+  align-items: baseline;
+  margin-top: 90px;
 }
 
 .heart {
@@ -103,6 +110,10 @@ h3{
 
 .moment p {
  float: right;
+}
+
+.moment {
+  margin-top: -30px;
 }
 
 .message{

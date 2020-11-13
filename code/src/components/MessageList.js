@@ -21,7 +21,7 @@ export const MessageList = (props) => {
         return (
           <div className="happy-message" key={message._id}>
             {message.message}
-            {/* <div className="button-container"> */}
+
             <button
               className="heart"
               onClick={() => onHandleClick(message._id)}
@@ -33,7 +33,7 @@ export const MessageList = (props) => {
             <span aria-label="likes" className="likes">
               x{message.hearts}
             </span>
-            {/* </div> */}
+
             <span className="moment">
               <p>{moment(message.createdAt).fromNow()}</p>
             </span>
