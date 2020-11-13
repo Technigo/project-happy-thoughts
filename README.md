@@ -1,4 +1,4 @@
-# Happy Thoughts
+# Happy Thoughts&ensp;|&ensp;[View Live &#10132;](https://happy-smiley-thoughts.netlify.app/)
 
 React site to post happy thoughts, read others and give them likes.
 
@@ -13,6 +13,10 @@ Time codes added using Moment library.
 - Fetch
 - Postman
 - CSS3
+
+## Screenshot
+
+![Screenshot](screenshot.jpg)
 
 ## View it live
 
