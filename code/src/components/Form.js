@@ -40,9 +40,7 @@ export const Form = () => {
         className="form-button"
         type="submit"
         /* Condition to enable the submit button only when the thought has right amount of characters */
-        disabled={
-          newThought.length < 6 || newThought.length > 140 ? true : false
-        }>
+        disabled={newThought.length < 6 || newThought.length > 140}>
         <span role="img" aria-label="Heart emoji">
           &#128151;
         </span>

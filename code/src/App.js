@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { ThoughtsCard } from "components/ThoughtsCard";
 import { Form } from "components/Form";
 

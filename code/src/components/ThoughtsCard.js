@@ -14,7 +14,6 @@ export const ThoughtsCard = ({ id, message, timeCreated, hearts, addLike }) => {
     clicks += 1;
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
       method: "POST",
-      body: "",
       headers: { "Content-Type": "application/json" },
       //addLike is a function we got from App sent as prop, and is responsible for visually
       //adding +1 to the amount of likes a thought has (it is explained in the App component)
@@ -40,7 +39,9 @@ export const ThoughtsCard = ({ id, message, timeCreated, hearts, addLike }) => {
           x {hearts}
         </p>
         {/* Using the Moment.js package to determine when thought was posted */}
-        <p className="time-created">{moment(timeCreated).fromNow()}</p>
+        <p className="time-created">
+          {moment(timeCreated).fromNow()}
+        </p>
       </div>
     </div>
   );
