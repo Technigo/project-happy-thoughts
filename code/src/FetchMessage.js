@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import moment from 'moment'
 
-import { Like } from 'Like'
+import { Like } from 'LikeMessage'
 
 export const Fetch = () => {
 
@@ -16,7 +16,6 @@ export const Fetch = () => {
         })
         .then((text) => {
             setMessages(text)
-            console.log('Request successful', text)
         })
         .catch((error) => {
             console.error('Request failed', error)

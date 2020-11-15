@@ -2,12 +2,11 @@ import React, { useState } from 'react'
 
 export const Create = () => {
     
-    const [text, addMessage] = useState("")
+    const [message, addMessage] = useState("")
 
     const handleSubmit = event => {
         
         event.preventDefault()
-        console.log(text)
         //POST message
         fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts',
             {
@@ -15,11 +14,11 @@ export const Create = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ message: text })
+                body: JSON.stringify({ message: message })
             }
         ).then(() => {
             window.location.reload()
-        }).catch(e => {console.log(e)})
+        }).catch(e => {console.error(e)})
     }
 
     return (
