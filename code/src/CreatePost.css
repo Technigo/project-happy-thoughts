@@ -9,3 +9,10 @@
   max-width: 100px;
   margin: 0;
 }
+
+.thought-message {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: courier;
+  word-wrap: break-word;
+}

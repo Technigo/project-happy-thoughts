@@ -11,7 +11,6 @@ export const CreatePost = props => {
     <div className="happy-thoughts">
       <h2
         className='thought-message'
-        tabIndex='0'
       >
         {message}
       </h2>

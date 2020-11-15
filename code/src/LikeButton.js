@@ -4,6 +4,7 @@ import './LikeButton.css';
 
 export const LikeButton = props => {
   const [clicks, setClicks] = useState((props.hearts));
+  const id = props.id;
 
   if(!localStorage[props.id]) {
     localStorage.setItem(props.id, 0)
@@ -11,7 +12,7 @@ export const LikeButton = props => {
 
   const handleClick = () => {
 
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts`, {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' }

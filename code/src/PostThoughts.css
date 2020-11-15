@@ -24,10 +24,7 @@
     font-size: 11px;
     border: 1px solid grey;
     padding: 5px;
-    max-width: 300px;
-    min-width: 300px;
-    min-height: 40px;
-    max-height: 40px;
+    resize: none;
   }
   
   .submit-button {

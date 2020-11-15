@@ -48,9 +48,7 @@ export const PostThoughts = () => {
           onClick={handleSubmit}
           disabled={message.length < 5 || message.length > 140 ? true : false}
         >
-        <span>
           Send stoke here!
-        </span>
         </button>
       </form>
     );

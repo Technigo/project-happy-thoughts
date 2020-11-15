@@ -12,19 +12,6 @@
   box-shadow: 2px 2px 0px 0px black;
 }
 
-.happy-thoughts h2 {
-  font-size: 15px;
-  font-weight: 500;
-  font-family: courier;
-  word-wrap: break-word;
-}
-
-.thought-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 @media (min-width: 669px) {
   .happy-thoughts {
     width: 510px;
