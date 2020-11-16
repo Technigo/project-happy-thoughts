@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { LikeMessage } from './LikeMessage'
-import moment from 'moment'
+import React, { useEffect, useState } from 'react';
+import { LikeMessage } from './LikeMessage';
+import moment from 'moment';
 
-import './Messagelist.css'
+import './Messagelist.css';
 
 export const MessageList = () => {
   const MESSAGES_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
@@ -17,7 +17,6 @@ export const MessageList = () => {
 
         // Sorts messages on message sent time 
         data.sort((a, b) => a.created > b.created)
-
 
         // Filter empty messages
         const filteredMessages = data.filter((messages) => messages.message);
@@ -52,7 +51,6 @@ export const MessageList = () => {
               {message.message}
 
               {/* How many have liked the post */}
-
               <LikeMessage
                 key={message._id}
                 id={message._id}
@@ -68,10 +66,6 @@ export const MessageList = () => {
           </div>
         );
       })}
-
     </div>
-
-  )
+  );
 };
-
-export default MessageList; 

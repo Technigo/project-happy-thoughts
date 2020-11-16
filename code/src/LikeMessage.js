@@ -1,6 +1,5 @@
-import React from 'react'
-
-import './LikeMessage.css'
+import React from 'react';
+import './LikeMessage.css';
 
 export const LikeMessage = ({ onMessageLiked, id, hearts }) => {
 
@@ -27,5 +26,4 @@ export const LikeMessage = ({ onMessageLiked, id, hearts }) => {
         x {hearts}
         </div>
     );
-
 };
