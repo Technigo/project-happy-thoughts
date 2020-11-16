@@ -28,6 +28,7 @@ button {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
+    word-wrap: break-word 
 }
 
 @media (min-width: 668px) {

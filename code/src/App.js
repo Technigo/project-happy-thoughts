@@ -1,6 +1,6 @@
-import React from 'react'
-import { MessageList } from 'MessageList'
-import { HappyForm } from 'HappyForm'
+import React from 'react';
+import { MessageList } from 'MessageList';
+import { HappyForm } from 'HappyForm';
 
 export const App = () => {
   return (
