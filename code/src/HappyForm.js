@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './HappyForm.css'
 
-const Happyform = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+const MESSAGE_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 
 export const HappyForm = props => {
     const [message, setMessage] = useState('')
@@ -10,20 +10,20 @@ export const HappyForm = props => {
         event.preventDefault();
 
         // Sending a POST request with the message state 
-        fetch(Happyform,
+        fetch(MESSAGE_URL,
             {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ message: message }),
+                body: JSON.stringify({ message }),
             }
         ).then(() => {
             setMessage('')
             // props.onFormSubmit(message)
             window.location.reload();
         })
-            .catch(err => console.log("error:", err))
+            .catch(err => console.error)
     }
 
     return (
