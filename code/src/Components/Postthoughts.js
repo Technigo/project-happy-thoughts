@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import 'styles/postthoughts.css';
+
 
 export const Postthoughts = ({id}) => {
   const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";

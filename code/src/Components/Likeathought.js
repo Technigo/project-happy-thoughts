@@ -1,5 +1,7 @@
 import React from 'react';
+
 import 'styles/likeathought.css';
+
 
 // Number of 'hearts' will increase when clicked
 export const Likeathought = ({hearts , id, onThoughtLiked}) => {

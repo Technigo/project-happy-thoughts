@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
+
 import { Likeathought } from 'Components/Likeathought';
+
 import 'styles/happythoughts.css';
+
 
 export const ThoughtsList = () => {
   const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
