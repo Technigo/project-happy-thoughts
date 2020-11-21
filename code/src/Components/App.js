@@ -12,7 +12,6 @@ export const App = () => {
 	const [isLoading, setLoading] = useState(true);
 	useEffect(() => {
 		fetchMessages();
-		setInterval(fetchMessages, 5000);
 	}, []);
 
 	const fetchMessages = () => {
