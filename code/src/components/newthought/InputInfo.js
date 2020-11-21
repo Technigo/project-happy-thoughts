@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HeartIcon from '../../assets/heart-icon.png';
+import heartIcon from '../../assets/heart-icon.png';
 
 const InputInfo = ({ newThought }) => {
   return (
@@ -10,9 +10,9 @@ const InputInfo = ({ newThought }) => {
         className='send-button'
         disabled={newThought.length < 6 || newThought.length > 140 ? true : false}
       >
-        <img className='heart left' src={HeartIcon} alt='Pink heart'></img>
-      Send Happy Thought
-      <img className='heart right' src={HeartIcon} alt='Pink heart'></img>
+        <img className='heart left' src={heartIcon} alt='Pink heart' />
+        Send Happy Thought
+        <img className='heart right' src={heartIcon} alt='Pink heart' />
       </button>
       <p tabIndex='0' className='length' aria-describedby='maxLength'>
         {newThought.length}

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import HeartIcon from '../../assets/heart-icon.png';
+import heartIcon from '../../assets/heart-icon.png';
 
 const Likes = ({ id, likes, onLiked }) => {
-  const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thougths/${id}/like`;
+  const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
 
   const handleClick = () => {
     fetch(LIKE_URL, {
@@ -20,7 +20,7 @@ const Likes = ({ id, likes, onLiked }) => {
         onClick={handleClick}
         className={`like-button ${likes > 0 ? 'liked' : ''}`}
       >
-        <img className='heart' src={HeartIcon} alt='Pink heart'></img>
+        <img className='heart' src={heartIcon} alt='Pink heart' />
       </button>
       <p tabIndex='0' aria-describedby='likes'>
         <span aria-hidden>x </span>
