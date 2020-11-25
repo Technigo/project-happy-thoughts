@@ -1,6 +1,6 @@
 # Happy Thoughts
 
-Week 11's project was aimed at practising our React state skills while also being introduced to useEffect and thinking about a React components lifecycle.
+Week 11's project was aimed at practising our React useState skills while also being introduced to useEffect and thinking about a React components lifecycle.
 The goal was to build a **Happy Thoughts** app where we can fetch and post data using a working API.
 
 ## My process
