@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ThoughtsList } from 'Components/ThoughtsList';
-import { Postthoughts } from 'Components/Postthoughts';
-import { Footer } from 'Components/Footer';
+import { ThoughtsList } from 'components/ThoughtsList';
+import { Postthoughts } from 'components/Postthoughts';
+import { Footer } from 'components/Footer';
 
 export const App = () => {
   

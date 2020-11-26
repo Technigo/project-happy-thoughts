@@ -27,7 +27,7 @@ export const Postthoughts = ({id}) => {
 
   return (
     <form className="post-box" onSubmit={handleSubmit} > 
-      <label id={id}>What's making you happy right now?</label>
+      <label htmlFor={id}>What's making you happy right now?</label>
       <textarea 
         className="thought-input"
         id={id} 
