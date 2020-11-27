@@ -5,12 +5,10 @@ import { Likeathought } from 'components/Likeathought';
 
 import 'styles/happythoughts.css';
 
-
 export const ThoughtsList = () => {
   const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
   const [thoughts, setThoughts] = useState([]);
   // Use [] in the useState since it is an array that we get in the get-request
-  const [addThought] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
@@ -35,7 +33,7 @@ export const ThoughtsList = () => {
       // Chooses to 'call' the filteredThoughts. 
       setThoughts(filteredThoughts);
     });
-  }, [addThought]);
+  }, []);
   
   // Updates the 'hearts' when thoughts are liked
   const onThoughtLiked = (id) => {
