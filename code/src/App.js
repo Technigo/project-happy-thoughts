@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 import MessageList from "components/MessageList"
-import InputForm from "components/InputForm"
+import InputFormContainer from "components/InputFormContainer"
 
 export const App = () => {
   const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
@@ -33,7 +33,7 @@ export const App = () => {
   };
   return (
     <>
-      <InputForm />
+      <InputFormContainer />
       <section className="thought-container">
         {thoughts.map((thought) => (
           <MessageList

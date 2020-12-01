@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const InputForm = () =>{
+const InputFormContainer = () =>{
     const [message, setMessage] = useState("");
     const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
     
@@ -10,7 +10,7 @@ const InputForm = () =>{
         fetch(THOUGHTS_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: message }),
+          body: JSON.stringify({ message }),
         })
             .then(() => {
             window.location.reload();
@@ -42,4 +42,4 @@ const InputForm = () =>{
     )
 };
 
-export default InputForm;
+export default InputFormContainer;
