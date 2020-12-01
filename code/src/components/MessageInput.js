@@ -30,7 +30,7 @@ const MessageInput = ({ onMessageChange }) => {
       <p tabIndex="0" className="Form__text">
         <span
           className={
-            newMessage.length < 6 || newMessage.length > 140
+            newMessage.length < 6 || newMessage.length === 140
               ? 'Form__text--red'
               : 'Form__text--green'
           }

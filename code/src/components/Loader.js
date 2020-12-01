@@ -3,7 +3,11 @@ import React from 'react';
 const Loader = ({ className }) => {
   return (
     <div className={className}>
-      <img src="./assets/heart.svg" alt="heart icon" />
+      <img
+        className="Loader__image"
+        src="./assets/heart.svg"
+        alt="heart icon"
+      />
     </div>
   );
 };

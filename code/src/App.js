@@ -13,7 +13,6 @@ export const App = () => {
 
   useEffect(() => {
     fetchMessages();
-    setInterval(fetchMessages, 5000);
   }, []);
 
   //fetch GET messages from the API, set messages and catch errors
@@ -21,10 +20,7 @@ export const App = () => {
     fetch(MESSAGES_URL)
       .then(results => results.json())
       .then(data => {
-        const filteredData = data.filter(post => {
-          return post.message;
-        });
-        setMessages(filteredData);
+        setMessages(data);
         setLoading(false);
       })
       .catch(error => console.error(error));
@@ -48,7 +44,6 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: '',
     })
       .then(() => fetchMessages())
       .catch(error => console.error(error));
