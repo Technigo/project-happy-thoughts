@@ -13,7 +13,7 @@ export const MessageInput = () => {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       // Send the JSON as a string 
-      body: JSON.stringify({ message: message })
+      body: JSON.stringify({ message })
     }
       ).then(()=>{
       // Reload the page after the request is complete
