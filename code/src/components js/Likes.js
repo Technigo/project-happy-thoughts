@@ -12,11 +12,11 @@ export const Likes = ({getMessage,hearts,id}) => {
   }
   const likesColored = () => {
     if (hearts > 5) {
-    return "superLiked"
+      return "superLiked"
     } else if ( hearts > 0) {
-    return "liked"
+      return "liked"
     } else {
-    return "not-liked"
+      return "not-liked"
   } 
 }
 return(
