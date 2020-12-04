@@ -25,13 +25,11 @@ return (
   <form className="happy-form" onSubmit={handleSubmit}>
     <input type="text" 
           onChange={event => setMessage(event.target.value)}
-          className="form-text">
-    </input>
+          className="form-text" />
     <input type="submit"
             className="form-button"
             value={"Send"} 
-            disabled={message.length < 6 || message.length > 140 ? true : false}>
-    </input>
+            disabled={message.length < 6 || message.length > 140 ? true : false} />
     <p className="count">{message.length} / 140</p>
   </form>
     )
