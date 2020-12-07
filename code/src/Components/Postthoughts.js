@@ -40,7 +40,7 @@ export const Postthoughts = ({id}) => {
         <button 
           type="submit" 
           className="send-thought"
-          disabled={addThought.length < 6 || addThought.length > 140 ? true : false}
+          disabled={addThought.length < 6 || addThought.length > 140}
         >
           <span role="img" aria-label="Red heart emoji">&#10084;&#65039; </span>
           Send Happy Thought
