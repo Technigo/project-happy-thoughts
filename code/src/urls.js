@@ -1,2 +1,3 @@
 export const MESSAGES_URL =
-  'https://happy-thoughts-technigo.herokuapp.com/thoughtsss';
+  //'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+  'https://saras-happy-thoughts.herokuapp.com/';
