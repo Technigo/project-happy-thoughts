@@ -38,7 +38,7 @@ export const MessageList = () => {
             <div className="message-list">
                 {messages.map((message) => {
                     return (
-                        <div key={message._id} className="message-section">
+                        <div className="message-section">
                             <p className="message" key={message._id}>
                                 {message.message}
                                 <br></br>
@@ -48,7 +48,6 @@ export const MessageList = () => {
                                     <button
                                         className="likeheart-button"
                                         id={`hearts-button${message._id}`}
-                                        key={message._id}
                                         onClick={() => likedHeart(message._id)}>
                                         <span role="img" aria-label="Heartimage">❤️</span>
                                     </button>
