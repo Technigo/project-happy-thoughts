@@ -36,7 +36,9 @@ export const App = () => {
 	};
 
 	const postSingleLike = id => {
-		fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+		fetch(`https://happy-thoughts.herokuapp.com/thoughts/${id}/like`
+			//`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
+			, {
 			method: 'POST',
 			body: '',
 			headers: { 'Content-Type': 'application/json' },
