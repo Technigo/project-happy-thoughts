@@ -6,17 +6,26 @@ import './Style.css';
 
 const PostInput = ({ onMessageChange }) => {
 	const [newPost, setNewPost] = useState('');
+	const [name, setName] = useState('');
 
 	const handleSubmit = event => {
 		event.preventDefault();
-		onMessageChange(newPost);
+		onMessageChange(newPost, name);
 		setNewPost('');
+		setName('');
 	};
 
 	return (
 		<form onSubmit={handleSubmit}>
 			<label className="post-input">
 				<h1 tabIndex="0">What's making you happy right now?</h1>
+				<input
+					className="post-message"
+					type="text"
+					placeholder="Type your name"
+					value={name}
+					onChange={event => setName(event.target.value)}
+				/>
 				<textarea
 					rows="4"
 					className="post-message"

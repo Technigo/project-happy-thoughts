@@ -25,11 +25,11 @@ export const App = () => {
 			.catch(error => console.error(error));
 	};
 
-	const postSingleMessage = message => {
+	const postSingleMessage = (message, name) => {
 		fetch(MESSAGE_URL, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ message }),
+			body: JSON.stringify({ message: message, name: name }),
 		})
 			.then(() => fetchMessages())
 			.catch(error => console.error(error));
