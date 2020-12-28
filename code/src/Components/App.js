@@ -13,8 +13,6 @@ export const App = () => {
 	const [isLoading, setLoading] = useState(true);
 	const [filter, setFilter] = useState('')
 
-	console.log(filter)
-
 	useEffect(() => {
 		fetchMessages();
 		//eslint-disable-next-line
@@ -62,7 +60,6 @@ export const App = () => {
 					<PostList postList={messages} onLikeChange={postSingleLike} />
 				</>
 			)}
-			{console.log(filter)}
 		</main>
 	);
 };

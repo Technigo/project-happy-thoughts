@@ -23,6 +23,7 @@ const Filter = ({ onClick }) => {
       button="button"
       click={onClick}
       text="Newest"
+      value=""
       />
     </div>
   )
