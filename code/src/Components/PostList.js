@@ -47,10 +47,13 @@ const PostList = ({ postList, onLikeChange }) => {
 								: `x ${localStorage[post._id]} your likes`}
 						</p>
 					</div>
-
-					<time tabIndex="0" className="post-text-time">
-						{moment(post.createdAt).fromNow()}
-					</time>
+					
+					<div className="created-info">
+						<time tabIndex="0" className="post-text-time">
+							{moment(post.createdAt).fromNow()}
+						</time>
+						<p className="post-text-time">{post.name}</p>
+					</div>
 				</article>
 			))}
 		</>

@@ -101,6 +101,10 @@ textarea {
   width: max-content;
 }
 
+.created-info {
+  text-align: end;
+}
+
 .post-text-time {
   font-size: 14px;
   opacity: 0.5;
