@@ -17,10 +17,11 @@ export const App = () => {
 
 	useEffect(() => {
 		fetchMessages();
+		//eslint-disable-next-line
 	}, [filter]);
 
 	const fetchMessages = () => {
-		fetch(MESSAGE_URL + `?sort=${filter}`)
+		fetch(`https://happy-thoughts.herokuapp.com/thoughts?sort=${filter}`)
 			.then(res => res.json())
 			.then(data => {
 				const filteredData = data.filter(post => post.message);
