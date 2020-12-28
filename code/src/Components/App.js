@@ -19,7 +19,7 @@ export const App = () => {
 	}, [filter]);
 
 	const fetchMessages = () => {
-		fetch(`https://happy-thoughts.herokuapp.com/thoughts?sort=${filter}`)
+		fetch(MESSAGE_URL + `?sort=${filter}`)
 			.then(res => res.json())
 			.then(data => {
 				const filteredData = data.filter(post => post.message);
