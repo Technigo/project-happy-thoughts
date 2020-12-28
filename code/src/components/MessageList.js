@@ -53,9 +53,14 @@ const MessageList = ({ messageList, onLikeChange }) => {
                 : `x ${localStorage[message._id]} your likes`}
             </p>
           </div>
-          <p tabIndex="0" className="Article__text--time">
-            {moment(message.createdAt).fromNow()}
-          </p>
+          <div>
+            <p tabIndex="0" className="Article__text--time">
+              {message.name}
+            </p>
+            <p tabIndex="0" className="Article__text--time">
+              {moment(message.createdAt).fromNow()}
+            </p>
+          </div>
         </article>
       ))}
     </>

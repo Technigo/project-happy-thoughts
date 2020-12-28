@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 import Button from './Button';
 
 const MessageInput = ({ onMessageChange }) => {
+  const [name, setName] = useState('');
   const [newMessage, setNewMessage] = useState('');
 
   //function to post new message to API
   const handleSubmit = event => {
     event.preventDefault();
     onMessageChange(newMessage);
+    setName('');
     setNewMessage('');
   };
 
@@ -18,15 +20,22 @@ const MessageInput = ({ onMessageChange }) => {
         <h1 tabIndex="0" className="Form__header">
           What's making you happy right now?
         </h1>
-        <textarea
-          className="Form__textarea"
-          rows="4"
-          maxLength="140"
-          value={newMessage}
-          onChange={event => setNewMessage(event.target.value)}
-          placeholder="Write your happy thought..."
-        ></textarea>
       </label>
+      <input
+        className="Form__input"
+        type="text"
+        placeholder="Write your name"
+        value={name}
+        onChange={event => setName(event.target.value)}
+      />
+      <textarea
+        className="Form__input"
+        rows="4"
+        maxLength="140"
+        value={newMessage}
+        onChange={event => setNewMessage(event.target.value)}
+        placeholder="Write your happy thought..."
+      ></textarea>
       <p tabIndex="0" className="Form__text">
         <span
           className={
@@ -37,7 +46,7 @@ const MessageInput = ({ onMessageChange }) => {
         >
           {140 - newMessage.length}
         </span>
-        / 140
+        /140
       </p>
       <Button
         disabled={
