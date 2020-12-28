@@ -32,11 +32,11 @@ export const App = () => {
   };
 
   //fetch POST message to the API and then fetch GET all messages
-  const postMessage = message => {
+  const postMessage = (message, name) => {
     fetch(MESSAGES_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message, name }),
     })
       .then(() => fetchMessages())
       .catch(error => console.error(error));

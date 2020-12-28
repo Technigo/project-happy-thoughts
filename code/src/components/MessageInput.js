@@ -5,11 +5,12 @@ import Button from './Button';
 const MessageInput = ({ onMessageChange }) => {
   const [name, setName] = useState('');
   const [newMessage, setNewMessage] = useState('');
+  console.log(name);
 
   //function to post new message to API
   const handleSubmit = event => {
     event.preventDefault();
-    onMessageChange(newMessage);
+    onMessageChange(newMessage, name);
     setName('');
     setNewMessage('');
   };
@@ -24,7 +25,7 @@ const MessageInput = ({ onMessageChange }) => {
       <input
         className="Form__input"
         type="text"
-        placeholder="Write your name"
+        placeholder="Write your name..."
         value={name}
         onChange={event => setName(event.target.value)}
       />
