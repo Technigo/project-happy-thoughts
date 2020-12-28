@@ -148,6 +148,21 @@ body {
     background: $pink;
     border-radius: 50px;
     padding: 0 10px;
+    font-family: menlo;
+  }
+
+  &__sort-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: -30px;
+  }
+
+  &__sort {
+    padding: 10px;
+    width: 120px;
+    border: 1px solid $black;
+    box-shadow: 5px 5px $black;
+    font-family: menlo;
   }
 
   &__round {
