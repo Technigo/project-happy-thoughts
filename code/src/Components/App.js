@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import PostInput from './PostInput';
 import PostList from './PostList';
+import Filter from './Filter';
 import { MESSAGE_URL } from '../Urls';
 import Loader from './Loader';
 
@@ -10,12 +11,16 @@ import './Style.css';
 export const App = () => {
 	const [messages, setMessages] = useState([]);
 	const [isLoading, setLoading] = useState(true);
+	const [filter, setFilter] = useState('')
+
+	console.log(filter)
+
 	useEffect(() => {
 		fetchMessages();
-	}, []);
+	}, [filter]);
 
 	const fetchMessages = () => {
-		fetch(MESSAGE_URL)
+		fetch(MESSAGE_URL + `?sort=${filter}`)
 			.then(res => res.json())
 			.then(data => {
 				const filteredData = data.filter(post => post.message);
@@ -36,9 +41,7 @@ export const App = () => {
 	};
 
 	const postSingleLike = id => {
-		fetch(`https://happy-thoughts.herokuapp.com/thoughts/${id}/like`
-			//`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
-			, {
+		fetch(`https://happy-thoughts.herokuapp.com/thoughts/${id}/like`, {
 			method: 'POST',
 			body: '',
 			headers: { 'Content-Type': 'application/json' },
@@ -53,8 +56,12 @@ export const App = () => {
 			{isLoading ? (
 				<Loader className="loader" />
 			) : (
-				<PostList postList={messages} onLikeChange={postSingleLike} />
+				<>
+					<Filter onClick={(event) => setFilter(event.target.value)} /> 
+					<PostList postList={messages} onLikeChange={postSingleLike} />
+				</>
 			)}
+			{console.log(filter)}
 		</main>
 	);
 };
