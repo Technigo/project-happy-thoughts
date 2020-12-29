@@ -8,7 +8,7 @@ export const Create = () => {
         
         event.preventDefault()
         //POST message
-        fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts',
+        fetch('https://mongo-thoughts-api.herokuapp.com/thoughts',
             {
                 method: 'POST',
                 headers: {

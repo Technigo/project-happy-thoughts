@@ -4,7 +4,7 @@ export const Like = ( {_id, hearts, onLike} ) => {
 
     const handleLike = (_id) => {
         //POST like on specific comment
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
+        fetch(`https://mongo-thoughts-api.herokuapp.com/thoughts/${_id}/like`, {
           method: "POST",
           headers: { "Content-Type":"application/json" },
           body:"",

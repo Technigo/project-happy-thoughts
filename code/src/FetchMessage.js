@@ -10,7 +10,7 @@ export const Fetch = () => {
 
     useEffect(() => {
         // GET 20 latest messagess
-        fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+        fetch('https://mongo-thoughts-api.herokuapp.com/thoughts')
         .then((response) => {
             return response.json();
         })
