@@ -1,16 +1,13 @@
 import React from "react";
 import moment from "moment";
 
-export const ThoughtsList = ({ onLiked, message, hearts, _id, createdAt }) => {
+export const ThoughtsList = ({ onLiked, message, hearts, id, createdAt }) => {
   const handleClick = _id => {
-    fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`,
-      {
-        method: "POST",
-        body: "",
-        headers: { "Content-Type": "application/json" },
-      }
-    ).then(() => onLiked(_id));
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+      method: "POST",
+      body: "",
+      headers: { "Content-Type": "application/json" },
+    }).then(() => onLiked(id));
   };
 
   return (
@@ -24,7 +21,7 @@ export const ThoughtsList = ({ onLiked, message, hearts, _id, createdAt }) => {
             <button
               className="liked-heartemoji"
               type="button"
-              onClick={() => handleClick(_id)}
+              onClick={() => handleClick(id)}
               style={{ background: hearts === 0 ? "#f3f1f1" : "#ffadad" }}
             >
               <span role="img" aria-label="Heart">

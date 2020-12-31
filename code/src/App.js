@@ -9,7 +9,6 @@ export const App = () => {
 
   useEffect(() => {
     fetchThoughts();
-    setInterval(fetchThoughts, 10000);
   }, []);
 
   const fetchThoughts = () => {
@@ -46,7 +45,7 @@ export const App = () => {
           message={thought.message}
           onLiked={onLiked}
           hearts={thought.hearts}
-          _id={thought._id}
+          id={thought._id}
           createdAt={thought.createdAt}
         />
       ))}
