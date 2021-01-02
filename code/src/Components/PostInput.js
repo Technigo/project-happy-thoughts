@@ -22,7 +22,7 @@ const PostInput = ({ onMessageChange }) => {
 				<input
 					className="post-message"
 					type="text"
-					placeholder="Type your name"
+					placeholder="Type your name..."
 					value={name}
 					onChange={event => setName(event.target.value)}
 				/>
@@ -30,7 +30,7 @@ const PostInput = ({ onMessageChange }) => {
 					rows="4"
 					className="post-message"
 					value={newPost}
-					placeholder="Type your happy thought...."
+					placeholder="Type your happy thought..."
 					onChange={event => setNewPost(event.target.value)}
 				/>
 			</label>
