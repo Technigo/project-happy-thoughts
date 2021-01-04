@@ -5,10 +5,11 @@ import HeartButtonImage from "../assets/heart.png";
 
 export const ThoughtCard = props => {
   const {message, createdAt, hearts, _id} = props.thought;
-  const likedthoughturl = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`;
+  // const likedthoughturl = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`;
+  const LIKE_URL = `https://happy-thoughts-sofia.herokuapp.com/${_id}/heart`;
 
   const handleClick = () => {
-    fetch(likedthoughturl, {
+    fetch(LIKE_URL, {
       method: "POST",
       headers: { "Content-Type":"application/json" },
       body:"",

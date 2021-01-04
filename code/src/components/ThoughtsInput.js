@@ -2,10 +2,9 @@ import React, { useState } from "react";
 
 import HeartImage from "../assets/heart.png";
 
-
-
 export const ThoughtsInput = () => {
-    const thoughtsurl= "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    //TECHNIGO API => const thoughtsurl= "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    const THOUGHTS_URL= 'https://happy-thoughts-sofia.herokuapp.com/thoughts';
 
     // state to save the message to send to the backend 
     const [thought, setThought] = useState("")
@@ -15,11 +14,11 @@ export const ThoughtsInput = () => {
     const handleSubmit = (event) => { 
         event.preventDefault();
         // submit function that POSTs the text field 
-        fetch(thoughtsurl, {
+        fetch(THOUGHTS_URL, {
             method: "POST",
             headers:
-            {"Content-Type":"application/json"},
-            body:JSON.stringify({message: thought})
+                {"Content-Type": "application/json"},
+            body: JSON.stringify({message: thought})
         }
         ).then(() => {
             // ask the page to refresh 

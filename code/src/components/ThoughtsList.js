@@ -4,7 +4,8 @@ import { useEffect } from "react"
 import { ThoughtCard } from "./ThoughtCard"
 
 export const ThoughtsList = () => { 
-    const thoughtsurl= "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    // TECHNIGO API => const thoughtsurl= "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    const THOUGHTS_URL= 'https://happy-thoughts-sofia.herokuapp.com/thoughts';
     const [thoughts, setThoughts] = useState([]);
 
     // useEffect prevents the infinite looping of creating new arrays after the data is fetched. 
@@ -13,7 +14,7 @@ export const ThoughtsList = () => {
     }, []);
 
     const fetchThoughts = () => {
-      fetch(thoughtsurl)
+      fetch(THOUGHTS_URL)
       .then ((response) => {
           return response.json()
       })
