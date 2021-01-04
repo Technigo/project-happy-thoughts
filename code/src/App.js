@@ -6,8 +6,10 @@ import { Form } from "components/Form";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [clickCounts, setClickCounts] = useState(0);
+  const [totalPages, setTotalPages] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
   // Technigo's API: const FETCH_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-  const FETCH_URL = "https://vane-happy-thoughts.herokuapp.com/thoughts";
+  const FETCH_URL = `https://vane-happy-thoughts.herokuapp.com/thoughts?page=${currentPage}`;
 
   useEffect(() => {
     //Fetches data from the API: an array including all Thoughts and
@@ -17,15 +19,24 @@ export const App = () => {
       .then((response) => response.json())
       //json is now the variable containing thoughts array we got from the API
       .then((json) => {
+        const thoughtsArray = json.thoughts;
         //Filter only Thoughts that have some text in it
-        const filteredThoughts = json.filter((thought) => {
+        const filteredThoughts = thoughtsArray.filter((thought) => {
           return thought.message !== "";
         });
         //We setThoughts again, this time after running the filter, so now the
         //thoughts array we work with is the filtered one with no empty thoughts
         setThoughts(filteredThoughts);
+
+        // After implementing Pagination in the Backend, my json object now includes
+        // properties for totalPages and currentPage which I'll be using in the UI
+        const totalPages = json.totalPages;
+        setTotalPages(totalPages);
+
+        const currentPage = json.currentPage;
+        setCurrentPage(currentPage);
       });
-  }, []);
+  }, [FETCH_URL]);
 
   const addLike = (id, clicks) => {
     //addLike gets an id as an argument which is the id we got from the function
@@ -49,12 +60,24 @@ export const App = () => {
     setClickCounts(clicks + clickCounts);
   };
 
+  // Function so that the user can move between Pages
+  const moveNextPage = () => {
+    setCurrentPage(parseInt(currentPage) + 1);
+  };
+
+  const movePreviousPage = () => {
+    setCurrentPage(parseInt(currentPage) - 1);
+  };
+
   return (
     <>
       <Form />
       <p className="posts-liked-counter">
         Amount of Hearts given out this session: {clickCounts}
       </p>
+      <p>Page {currentPage} / {totalPages}</p>
+      <button type="button" onClick={movePreviousPage} disabled={parseInt(currentPage) === 1}>Previous Page</button>
+      <button type="button" onClick={moveNextPage} disabled={parseInt(currentPage) === totalPages}>Next Page</button>
       <section className="though-cards-container">
         {/* map thru the thoughts array to generate the thoughts cards */}
         {/* Send the necessary data to the Thoughts Cards component as props */}
