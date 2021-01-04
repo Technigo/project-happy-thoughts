@@ -51,6 +51,24 @@ textarea {
   font-size: 12px;
 }
 
+.page-buttons-container {
+  margin: 20px auto;
+  width: 500px;
+  text-align: center;
+}
+
+.page-button {
+  margin: 0 10px;
+  width: 150px;
+  background-color: #ffadad;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  font-family: 'Trispace', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .heart-button {
   padding: 12px;
   margin-right: 7px;
@@ -83,7 +101,7 @@ textarea {
 /*Media Queries*/
 /*Mobile*/
 @media (max-width: 666px) {
-  .thought-card, .thoughts-form {
+  .thought-card, .thoughts-form, .posts-liked-counter, .page-buttons-container {
     width: 70%;
     max-width: 500px;
   }
@@ -97,12 +115,18 @@ textarea {
     width: 220px;
   }
 
-  .posts-liked-counter {
-    width: 70%;
+  .page-button {
+    width: 100px;
+    font-size: 12px;
+    margin-top: 10px;
   }
 
   .heart-time-container {
     width: 95%;
     font-size: 14px;
+  }
+
+  .time-created {
+    font-size: 12px;
   }
 }

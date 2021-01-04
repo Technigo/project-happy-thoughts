@@ -75,9 +75,11 @@ export const App = () => {
       <p className="posts-liked-counter">
         Amount of Hearts given out this session: {clickCounts}
       </p>
-      <p>Page {currentPage} / {totalPages}</p>
-      <button type="button" onClick={movePreviousPage} disabled={parseInt(currentPage) === 1}>Previous Page</button>
-      <button type="button" onClick={moveNextPage} disabled={parseInt(currentPage) === totalPages}>Next Page</button>
+      <div className="page-buttons-container">
+        <p>Page {currentPage} / {totalPages}</p>
+        <button className="page-button" type="button" onClick={movePreviousPage} disabled={parseInt(currentPage) === 1}>Recent Thoughts</button>
+        <button className="page-button" type="button" onClick={moveNextPage} disabled={parseInt(currentPage) === totalPages}>Older Thoughts</button>
+      </div>
       <section className="though-cards-container">
         {/* map thru the thoughts array to generate the thoughts cards */}
         {/* Send the necessary data to the Thoughts Cards component as props */}
