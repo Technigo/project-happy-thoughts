@@ -63,6 +63,7 @@ export const App = () => {
             key={thought._id}
             id={thought._id}
             message={thought.message}
+            username={thought.username}
             timeCreated={thought.createdAt}
             hearts={thought.hearts}
             addLike={addLike} />

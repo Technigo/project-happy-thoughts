@@ -3,7 +3,7 @@ import moment from "moment";
 
 //ThoughtsCard component needs a lot of data that was gathered in App component when
 //doing the main Fetch to get the initial thoughts array, so we get it passed here via props
-export const ThoughtsCard = ({ id, message, timeCreated, hearts, addLike }) => {
+export const ThoughtsCard = ({ id, message, username, timeCreated, hearts, addLike }) => {
   // Technigo's API: const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
   const LIKE_URL = `https://vane-happy-thoughts.herokuapp.com/thoughts/${id}/like`;
 
@@ -28,6 +28,7 @@ export const ThoughtsCard = ({ id, message, timeCreated, hearts, addLike }) => {
   return (
     <div className="thought-card">
       <p>{message}</p>
+      <p>Posted by: {username}</p>
       <div className="heart-time-container">
         <p>
           <button
