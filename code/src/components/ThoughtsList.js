@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-import { useEffect } from "react"
-import { ThoughtCard } from "./ThoughtCard"
+import { useEffect } from "react";
+import { ThoughtCard } from "./ThoughtCard";
 
 export const ThoughtsList = () => { 
     // TECHNIGO API => const thoughtsurl= "https://happy-thoughts-technigo.herokuapp.com/thoughts";
@@ -24,17 +24,17 @@ export const ThoughtsList = () => {
           });
           setThoughts(filteredThoughts);     
       });
-    }
+    };
 
     const onLiked = thoughtId => {
       const updatedThoughts = thoughts.map(thought => {
         if (thought._id === thoughtId) {
           thought.hearts += 1
-        }
+        };
         return thought
-      })
+      });
       setThoughts(updatedThoughts)
-    }
+    };
 
     return (
           <section className="thoughts-container">
@@ -45,7 +45,7 @@ export const ThoughtsList = () => {
                 onLiked={onLiked}/>
             ))}
           </section>
-      )
+      );
     };
 
     
