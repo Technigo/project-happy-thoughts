@@ -12,7 +12,8 @@ export const App = () => {
   const [errorMessage, setErrorMessage] = useState('')
   const [loading, setLoading] = useState(true)
 
-  const ThoughtsURL= "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+  //const ThoughtsURL= "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+  const ThoughtsURL= "https://sharing-happy-thoughts.herokuapp.com/thoughts"
   
   //Fetches existing thoughts from API and removes the loader when done
   const fetchThoughts = () => {
@@ -77,9 +78,11 @@ export const App = () => {
       {/* Shows loading animation if loading state is set to True */}
       {loading && <Loading />} 
 
+    {(messages.length > 0) &&
       <ThoughtList 
         messageList={messages} 
         onLike={()=>fetchThoughts()}/>
+      }
 
     </section>
   )

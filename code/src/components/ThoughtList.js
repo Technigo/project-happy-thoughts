@@ -6,7 +6,7 @@ export const ThoughtList = ({messageList, onLike}) => {
 
     //Function to post a like to server and then update the DOM
     const likeThought = (messageID) => {
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`, {
+        fetch(`https://sharing-happy-thoughts.herokuapp.com/thoughts/${messageID}/like`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
         })
