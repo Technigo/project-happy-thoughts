@@ -6,7 +6,8 @@ import { Form } from "components/Form";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [clickCounts, setClickCounts] = useState(0);
-  const FETCH_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  // Technigo's API: const FETCH_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  const FETCH_URL = "https://vane-happy-thoughts.herokuapp.com/thoughts";
 
   useEffect(() => {
     //Fetches data from the API: an array including all Thoughts and

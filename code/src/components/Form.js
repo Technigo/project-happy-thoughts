@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 export const Form = () => {
   const [newThought, setNewThought] = useState("");
-  const POST_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  // Technigo's API: const POST_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  const POST_URL = "https://vane-happy-thoughts.herokuapp.com/thoughts";
 
   const handleSubmit = (event) => {
     event.preventDefault();

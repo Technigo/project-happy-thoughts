@@ -4,6 +4,9 @@ import moment from "moment";
 //ThoughtsCard component needs a lot of data that was gathered in App component when
 //doing the main Fetch to get the initial thoughts array, so we get it passed here via props
 export const ThoughtsCard = ({ id, message, timeCreated, hearts, addLike }) => {
+  // Technigo's API: const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
+  const LIKE_URL = `https://vane-happy-thoughts.herokuapp.com/thoughts/${id}/like`;
+
   //handleLikes is the function that will add a heart to the specific thought in the API
   //by doing a POST request
   //using that thought's id we make sure we add the heart to the right thought
@@ -12,7 +15,7 @@ export const ThoughtsCard = ({ id, message, timeCreated, hearts, addLike }) => {
     //has been clicked and send that data in the callback function to App component
     let clicks = 0;
     clicks += 1;
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+    fetch(LIKE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       //addLike is a function we got from App sent as prop, and is responsible for visually
