@@ -19,5 +19,5 @@ This weeks project was to create a "twitter-like app", with less bullshit and mo
 
 ## View it live 💖
 
-Want to post some [Happy Thoughts](give-me-some-love.netlify.app)
+Want to post some [Happy Thoughts](https://give-me-some-love.netlify.app/)
 
