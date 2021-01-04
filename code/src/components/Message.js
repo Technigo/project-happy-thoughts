@@ -12,6 +12,7 @@ export const Message = ({ _id, message, createdAt, hearts, getMessages }) => {
       .then(() => {
         getMessages()
       })
+      .catch(err => console.log(err))
   }
 
   return (
@@ -19,7 +20,7 @@ export const Message = ({ _id, message, createdAt, hearts, getMessages }) => {
       <p>{message} </p>
       <div className="card-footer">
         <div className="likes-container">
-          <button onClick={postLike}><img src="https://cdn4.iconfinder.com/data/icons/basic-ui-2-line/32/heart-love-like-likes-loved-favorite-256.png" alt="heart"></img></button>
+          <button onClick={postLike}><img src="https://cdn4.iconfinder.com/data/icons/basic-ui-2-line/32/heart-love-like-likes-loved-favorite-256.png" alt="heart" /></button>
           <p className="likes">x {hearts}</p>
         </div>
         <p>{moment(createdAt).fromNow()}</p>

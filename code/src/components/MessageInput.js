@@ -10,7 +10,7 @@ export const MessageInput = ({ getMessages }) => {
     fetch(MESSAGE_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: message })
+      body: JSON.stringify({ message })
     })
       .then(() => {
         getMessages()
@@ -35,7 +35,8 @@ export const MessageInput = ({ getMessages }) => {
         <input
           type="submit"
           value="Send"
-          className="submit-button">
+          className="submit-button"
+          disabled={message.length < 5 || message.length > 140}>
         </input>
       </form>
     </div>

@@ -18,6 +18,7 @@ export const App = () => {
       .then(data => {
         setMessages(data) //storing the messages from the api in the state variable messages 
       })
+      .catch(err => console.log(err))
   }
 
   return (
