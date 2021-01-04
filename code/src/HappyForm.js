@@ -24,7 +24,7 @@ const HappyForm = ({ onMessageChange }) => {
           value={newMessage}
           onChange={event => setNewMessage(event.target.value)} 
           className={
-            newMessage.length > 140 
+            newMessage.length > 140
             ? "happy-form-text-too-long" 
             : "happy-form-text"
           }
@@ -34,8 +34,16 @@ const HappyForm = ({ onMessageChange }) => {
           <button
             type="submit"
             onClick={handleSubmit} 
-            disabled={newMessage.length < 6 || newMessage.length > 140 ? true : false} 
-            className="happy-form-input-button"
+            disabled={
+              newMessage.length < 6 || newMessage.length > 140 
+              ? true 
+              : false
+            } 
+            className={ 
+              newMessage.length < 6 || newMessage.length > 140 
+              ? "happy-form-input-button-disabled" 
+              : "happy-form-input-button"
+            }
             value="Add Message"
           >
           <span>❤️ Send Happy Thought! ❤️</span>
