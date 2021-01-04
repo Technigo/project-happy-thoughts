@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export const Form = () => {
   const [newThought, setNewThought] = useState("");
+  const [username, setUsername] = useState("");
   // Technigo's API: const POST_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
   const POST_URL = "https://vane-happy-thoughts.herokuapp.com/thoughts";
 
@@ -13,7 +14,7 @@ export const Form = () => {
       headers: { "Content-Type": "application/json" },
       //Adds new thought to the API's body in json format
       //newThought is the value we got from the input field
-      body: JSON.stringify({ message: newThought }),
+      body: JSON.stringify({ message: newThought, username: username }),
     }).then(() => {
       //Asks page to reload after the new thought has been POSTed
       //So the click should POST the thought to the API then refresh
@@ -37,6 +38,14 @@ export const Form = () => {
         style={{ color: newThought.length > 130 ? "red" : "black" }}>
         {140 - newThought.length} characters left
       </p>
+      <label className="form-title">
+        Sign as:
+        <input
+          type="text"
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
+          />
+      </label>
       <button
         className="form-button"
         type="submit"
