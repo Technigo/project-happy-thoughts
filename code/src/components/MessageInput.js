@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const MessageInput = ({ getMessages }) => {
 
-  const MESSAGE_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+  const MESSAGE_URL = 'https://happy-thoughts-annika.herokuapp.com/thoughts'
 
   const [message, setMessage] = useState("")
 

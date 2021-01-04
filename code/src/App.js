@@ -5,7 +5,7 @@ import { MessageList } from './components/MessageList.js'
 
 export const App = () => {
 
-  const MESSAGE_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+  const MESSAGE_URL = 'https://happy-thoughts-annika.herokuapp.com/thoughts'
 
   const [messages, setMessages] = useState([])
 

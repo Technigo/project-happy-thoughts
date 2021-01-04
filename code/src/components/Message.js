@@ -4,7 +4,7 @@ import moment from 'moment'
 export const Message = ({ _id, message, createdAt, hearts, getMessages }) => {
 
   const postLike = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
+    fetch(`https://happy-thoughts-annika.herokuapp.com/thoughts/${_id}/like`, {
       // the fetch URL line increases the likes with one like - built in functionality
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
