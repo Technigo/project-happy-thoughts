@@ -42,6 +42,7 @@ export const Form = () => {
         Sign as:
         <input
           type="text"
+          maxLength="20"
           value={username}
           onChange={(event) => setUsername(event.target.value)}
           />
