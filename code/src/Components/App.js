@@ -1,25 +1,29 @@
 import React, { useState, useEffect } from 'react';
+import InfiniteScroll from 'react-infinite-scroller';
 
 import PostInput from './PostInput';
 import PostList from './PostList';
 import Filter from './Filter';
 import { MESSAGE_URL } from '../Urls';
 import Loader from './Loader';
-
 import './Style.css';
 
 export const App = () => {
 	const [messages, setMessages] = useState([]);
-	const [isLoading, setLoading] = useState(true);
+	const [isLoading, setLoading] = useState(true); //loading when waiting for fetch
 	const [filter, setFilter] = useState('')
+	const [page, setPage] = useState(0) //start on page 1 ADDED
 
+	console.log(`page: ${page}`)
+	console.log(`number of messages: ${messages.length}`)
+	
 	useEffect(() => {
 		fetchMessages();
-		//eslint-disable-next-line
-	}, [filter]);
+		// eslint-disable-next-line
+	}, [filter, page]);
 
 	const fetchMessages = () => {
-		fetch(MESSAGE_URL + `?sort=${filter}`)
+		fetch(MESSAGE_URL + `?page=${page}&sort=${filter}`)
 			.then(res => res.json())
 			.then(data => {
 				const filteredData = data.filter(post => post.message);
@@ -57,7 +61,17 @@ export const App = () => {
 			) : (
 				<>
 					<Filter onClick={(event) => setFilter(event.target.value)} /> 
-					<PostList postList={messages} onLikeChange={postSingleLike} />
+					<InfiniteScroll
+						pageStart={0}
+						//loadMore={loadFunc}
+						loadMore={() => setPage(page+1)}
+						//hasMore={true || false}
+						hasMore={true}
+						loader={<div className="loader" key={0}>Loading ...</div>}
+						//loader={<Loader/>}
+					>
+						<PostList postList={messages} onLikeChange={postSingleLike} /> 
+					</InfiniteScroll>
 				</>
 			)}
 		</main>

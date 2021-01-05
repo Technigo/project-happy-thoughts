@@ -49,10 +49,10 @@ const PostList = ({ postList, onLikeChange }) => {
 					</div>
 					
 					<div className="created-info">
-						<time tabIndex="0" className="post-text-time">
+						<time tabIndex="0" className="post-information">
 							{moment(post.createdAt).fromNow()}
 						</time>
-						<p className="post-text-time">{post.name}</p>
+						<p className="post-information">{post.name}</p>
 					</div>
 				</article>
 			))}
