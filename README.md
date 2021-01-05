@@ -1,7 +1,12 @@
 # The project: Happy thoughts
 This weeks project was to learn about fetching data from the api by doing a GET request and posting data to the api by doing a POST request. The api in question was the Happy thoughts API 💌. We also learnt about using React useState and useEffect hooks to handle the data for the posting and fetching to happen as well as the lifecycle of a React component.
 
-We also learned about how to pass data from the server to the main parent component, App.js, which is then passed into the children components, ThoughtsMessage.js and ThoughtsForm.js, and then using these in the JSX elements. Then passing the any new data, such as if the user hearts a thought or enters a thought into the form, back to the parent component, App.js. Which is then postedk to the server and then doing a new fetch to update the client state.
+//Update 5th Jan 2021: As part of the happy-thoughts-API project I have now updated this project with my own api. This api has three endpoints: 
+1. GET endpoint that get's the collection of thoughts stored in the MongoDB database.
+2. POST endpoint that is used to allow for user inputted thought to be posted to the MongoDB database.
+3. POST endpoint that is used to updated the hearts property for the specific thought targeting it by id in the url.
+
+We also learned about how to pass data from the server to the main parent component, App.js, which is then passed into the children components, ThoughtsMessage.js and ThoughtsForm.js, and then using these in the JSX elements. Then passing the any new data, such as if the user hearts a thought or enters a thought into the form, back to the parent component, App.js. Which is then posted to the server and then doing a new fetch to update the client state.
 
 ## The main requirements:
 1. The page should follow the design as closely as possible.
