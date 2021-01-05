@@ -12,9 +12,9 @@ export const ThoughtCard = props => {
     fetch(LIKE_URL, {
       method: "POST",
       headers: { "Content-Type":"application/json" },
+      body:"",
     }).then(() => props.onLiked(_id));
-
-  }
+  };
 
   return (
     <div className="thought-card">
