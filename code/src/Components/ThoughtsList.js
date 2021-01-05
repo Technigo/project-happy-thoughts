@@ -63,7 +63,6 @@ export const ThoughtsList = () => {
               />
               <p className="time-stamp" tabIndex="0">
                 {moment(thought.createdAt).fromNow()}
-                {console.log(thought)}
               </p>
               {errorMessage}
             </div>

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import 'styles/postthoughts.css';
 
-
 export const Postthoughts = ({ id }) => {
   const MESSAGES_URL = "https://happythoughts-only.herokuapp.com/thoughts";
   const [addThought, setAddThought] = useState("");
