@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 
-import { Likeathought } from 'components/Likeathought';
+import { Likeathought } from 'Components/Likeathought';
 
 import 'styles/happythoughts.css';
 
