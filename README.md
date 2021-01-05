@@ -19,4 +19,4 @@ And it repository including Documentation here: https://github.com/VanessaSue27/
 - I had a lot of fun implementing these little extra features and gained a better understanding of how to add some conditioned inline styling in React ⚛
 
 ## View it live
-Share some **Happy Thoughts with Technigo's Fall 2020 Class** or see what's in our minds 💕 View this project live here: https://happy-vane-thoughts.netlify.app/
+💕 View this project live here: https://happy-vane-thoughts.netlify.app/
