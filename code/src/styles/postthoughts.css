@@ -20,6 +20,11 @@
   word-wrap: break-word;
 }
 
+.name-input {
+  margin: 10px 0;
+  font-family: 'Inconsolata', monospace;
+}
+
 .button-footer {
   display: flex;
 }
@@ -54,4 +59,9 @@
   .post-box {
     width: 360px;
   }
+
+  .name-input {
+    margin-left: 5px;
+  }
 }
+

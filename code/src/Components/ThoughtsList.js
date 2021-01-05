@@ -54,6 +54,9 @@ export const ThoughtsList = () => {
             <p className="thoughts" tabIndex="0">
               {thought.message}
             </p>
+            <p className="name" tabIndex="0">
+              Posted by: {thought.name}
+            </p>
             <div className="thoughts-footer">
               <Likeathought
                 key={thought._id}

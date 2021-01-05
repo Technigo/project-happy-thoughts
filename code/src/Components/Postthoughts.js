@@ -5,6 +5,7 @@ import 'styles/postthoughts.css';
 export const Postthoughts = ({ id }) => {
   const MESSAGES_URL = "https://happythoughts-only.herokuapp.com/thoughts";
   const [addThought, setAddThought] = useState("");
+  const [name, addName] = useState("Anonymous");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,7 +17,7 @@ export const Postthoughts = ({ id }) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ message: addThought })
+        body: JSON.stringify({ message: addThought, name: name })
       }
       // And then reload the window so we see the new thought that was added
     ).then(() => {
@@ -35,6 +36,15 @@ export const Postthoughts = ({ id }) => {
         value={addThought}
         onChange={event => setAddThought(event.target.value)}
       />
+      <label htmlFor={id}>Your name? (optional)
+      <input
+          className="name-input"
+          id={id}
+          type="text"
+          value={name}
+          onChange={event => addName(event.target.value)}
+        />
+      </label>
       <div className="button-footer">
         <button
           type="submit"

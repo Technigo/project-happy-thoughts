@@ -16,6 +16,11 @@
   font-weight: bold;
 }
 
+.name {
+  font-size: 12px;
+  margin-top: 0;
+}
+
 .thoughts-footer {
   display: flex;
   justify-content: space-between;
