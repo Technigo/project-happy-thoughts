@@ -52,7 +52,7 @@ const PostList = ({ postList, onLikeChange }) => {
 						<time tabIndex="0" className="post-information">
 							{moment(post.createdAt).fromNow()}
 						</time>
-						<p className="post-information">{post.name}</p>
+						<p className="post-information">{post.name ? post.name : "Anonymous"}</p>
 					</div>
 				</article>
 			))}

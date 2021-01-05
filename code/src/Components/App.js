@@ -1,37 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import InfiniteScroll from 'react-infinite-scroller';
+//import InfiniteScroll from 'react-infinite-scroller';
+import InfiniteScroll from 'react-infinite-scroll-component';
+
 
 import PostInput from './PostInput';
 import PostList from './PostList';
-import Filter from './Filter';
+import Sort from './Sort';
 import { MESSAGE_URL } from '../Urls';
 import Loader from './Loader';
 import './Style.css';
 
 export const App = () => {
 	const [messages, setMessages] = useState([]);
+	const [totalMessages, setTotalMessages] = useState();
 	const [isLoading, setLoading] = useState(true); //loading when waiting for fetch
-	const [filter, setFilter] = useState('')
-	const [page, setPage] = useState(0) //start on page 1 ADDED
+	const [sort, setSort] = useState('newest')
+	const [page, setPage] = useState(1) //start on page 1 ADDED
 
-	console.log(`page: ${page}`)
-	console.log(`number of messages: ${messages.length}`)
-	
 	useEffect(() => {
 		fetchMessages();
 		// eslint-disable-next-line
-	}, [filter, page]);
+	}, [page, sort]);
+
 
 	const fetchMessages = () => {
-		fetch(MESSAGE_URL + `?page=${page}&sort=${filter}`)
+		fetch(MESSAGE_URL + `?page=${page}&sort=${sort}`)
 			.then(res => res.json())
 			.then(data => {
-				const filteredData = data.filter(post => post.message);
-				setMessages(filteredData);
+				//const filteredData = data.filter(post => post.message);
+				//console.log("filteredData", filteredData)
+				setMessages(data.results);
+				setTotalMessages(data.total)
 				setLoading(false);
 			})
 			.catch(error => console.error(error));
 	};
+
+	console.log(`page: ${page}`)
+	console.log(`number of messages: ${messages.length}`)
+	console.log(`sorting: ${sort}`)
+	console.log(totalMessages)
 
 	const postSingleMessage = (message, name) => {
 		fetch(MESSAGE_URL, {
@@ -60,15 +68,24 @@ export const App = () => {
 				<Loader className="loader" />
 			) : (
 				<>
-					<Filter onClick={(event) => setFilter(event.target.value)} /> 
-					<InfiniteScroll
+					<Sort onClick={(event) => setSort(event.target.value)} /> 
+					{/* <InfiniteScroll
 						pageStart={0}
-						//loadMore={loadFunc}
 						loadMore={() => setPage(page+1)}
-						//hasMore={true || false}
-						hasMore={true}
-						loader={<div className="loader" key={0}>Loading ...</div>}
-						//loader={<Loader/>}
+						//loadMore={fetchMessages}
+						hasMore={messages.length < totalMessages ? true : false}
+						loader={<div className="loader" key={0}>Loading...</div>}
+						//loader={<Loader key={0}	/>}
+					> */}
+					<InfiniteScroll
+						dataLength={messages.length} //This is important field to render the next data
+						next={() => setPage(page+1)}
+						hasMore={messages.length < totalMessages ? true : false}
+						scrollThreshold={1}
+						//loader={<Loader className="post-loader"/>}
+						loader={<h4>Loading...</h4>}
+						//loader={isLoading && <Loader/>}
+						endMessage={<p>Nothing more to see!</p>}
 					>
 						<PostList postList={messages} onLikeChange={postSingleLike} /> 
 					</InfiniteScroll>

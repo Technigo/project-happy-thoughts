@@ -213,6 +213,17 @@ textarea {
   animation: spin 2s linear infinite;
 }
 
+.post-loader {
+  border: 5px solid #f2f0f0;
+  border-radius: 50%;
+  border-top: 6px solid #ffadad;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  animation: spin 2s linear infinite;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
