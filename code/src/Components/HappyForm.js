@@ -4,7 +4,7 @@ import img from './media/pixel_heart.png'
 import './HappyForm.css'
 
 export const HappyForm = () => {
-  const url = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+  const url = 'https://the-happy-thoughts.herokuapp.com/thoughts'
   const [message, setMessage] = useState('')
 
   // a submit function witch POSTs the text input

@@ -6,7 +6,7 @@ import { LikedMessage } from './LikedMessage'
 import './MessageList.css'
 
 export const MessageList = () => {
-  const MessagesUrl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+  const MessagesUrl = 'https://the-happy-thoughts.herokuapp.com/thoughts'
   const [messages, setMessages] = useState([])
 
   useEffect(() => {

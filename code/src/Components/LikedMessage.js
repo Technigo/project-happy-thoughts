@@ -8,7 +8,7 @@ export const LikedMessage = ({ hearts, id }) => {
 
 
   const handleLikes = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+    fetch(`https://the-happy-thoughts.herokuapp.com/thoughts/${id}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     }).then(() => {
