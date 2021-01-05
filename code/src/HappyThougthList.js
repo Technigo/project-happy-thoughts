@@ -3,9 +3,10 @@ import moment from "moment";
 
 const HappyThougthList  =  props  => { 
     const { message, hearts, _id, createdAt } = props.thought
+    const LIKE_URL = `https://nice-thoughts-api.herokuapp.com/thoughts/${_id}/like`;
     
     const handleClick = () => {
-        fetch(`https://nice-thoughts-api.herokuapp.com/thoughts/${_id}/like` , {
+        fetch(LIKE_URL, {
             method: "POST",
             headers:
             {"Content-Type":"application/json"},
