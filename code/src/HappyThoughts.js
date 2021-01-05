@@ -4,7 +4,7 @@ import './HappyThoughts.css';
 
 
 export const HappyThoughts = props => {
-  const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+  const THOUGHTS_URL = 'https://happythoughts-mats.herokuapp.com/thoughts';
   const [thoughts, setThoughts] = useState([]);
 
   useEffect(() => {

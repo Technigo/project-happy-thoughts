@@ -12,7 +12,7 @@ export const LikeButton = props => {
 
   const handleClick = () => {
 
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+    fetch(`https://happythoughts-mats.herokuapp.com/thoughts/${id}/like`, {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' }
