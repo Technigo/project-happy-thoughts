@@ -38,7 +38,7 @@
   padding: 10px;
   font-weight: 500;
   transition: 0.2s all; 
-  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  /*box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);*/
 }
 
 .happy-form button:hover {
@@ -51,7 +51,7 @@
 
 .happy-form button:active {
   transform: scale(0.98); 
-  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.24); 
+  /*box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.24); */
 }
 
 .happy-message {
@@ -70,7 +70,7 @@
   border: none;
   background-color:#f3f1f1;
   margin-right: 10px;
-  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  /*box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);*/
   transition: 0.2s all; 
 }
 
@@ -82,10 +82,11 @@
   outline:0 !important;
 }
 
-.happy-message button:active {
+/*.happy-message button:active {
   transform: scale(0.98); 
-  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.24); 
+  /*box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.24); 
 }
+*/
 
 .message-time {
   font-size: 12px;

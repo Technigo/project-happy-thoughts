@@ -45,8 +45,9 @@ export const App = () => {
   // via App.js
   // Matches the messageId with heart like.
   // After the post, a new GET request is activated via fetchMessage.
+  //`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`
   const postHearts = (messageId) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
+    fetch(`https://project-happy-thoughts-anna.herokuapp.com/messages/${messageId}/like`, {
       method: 'POST',
       body: '',
       headers: { 'Content-Type': 'application/json' }
