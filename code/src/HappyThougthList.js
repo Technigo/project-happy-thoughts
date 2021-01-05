@@ -5,7 +5,7 @@ const HappyThougthList  =  props  => {
     const { message, hearts, _id, createdAt } = props.thought
     
     const handleClick = () => {
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like` , {
+        fetch(`https://nice-thoughts-api.herokuapp.com/thoughts/${_id}/like` , {
             method: "POST",
             headers:
             {"Content-Type":"application/json"},

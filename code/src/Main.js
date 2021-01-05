@@ -6,7 +6,7 @@ import HappyThougthList from "./HappyThougthList";
 const Main = () => { 
 const [thoughts, setThoughts] = useState([]); 
 
-const THOUGTHS_URL ="https://https://nice-thoughts-api.herokuapp.com/thoughts";
+const THOUGTHS_URL ="https://nice-thoughts-api.herokuapp.com/thoughts";
 
     useEffect(() => {
         fetchThougths();
