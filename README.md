@@ -9,6 +9,13 @@ Every thought has a like-button that changes background color and counts nr of c
 
 The submit button is disabled when the nr of characters in thoughts message is less than 5 or more than 140. 
 
+## TECH 
+- React
+- JSX
+- Javascript
+- API 
+- CSS
+- HTML 
 
 ## View it live
 
