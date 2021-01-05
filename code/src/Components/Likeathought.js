@@ -4,18 +4,18 @@ import 'styles/likeathought.css';
 
 
 // Number of 'hearts' will increase when clicked
-export const Likeathought = ({hearts , id, onThoughtLiked}) => {
-  const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
+export const Likeathought = ({ hearts, id, onThoughtLiked }) => {
+  const LIKE_URL = `https://happythoughts-only.herokuapp.com/thoughts/${id}/like`
 
   const handleClick = () => {
     fetch(LIKE_URL,
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json'}
+        headers: { 'Content-Type': 'application/json' }
       }).then(() => {
         onThoughtLiked(id);
       });
-    };
+  };
 
   return (
     <div className="likes">
