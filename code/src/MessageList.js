@@ -3,7 +3,7 @@ import { HappyThought } from './HappyThought'
 import './MessageList.css'
 
 export const MessageList = () => {
-    const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+    const MESSAGES_URL = "https://happithoughts.herokuapp.com/thoughts"
     const [messages, setMessages] = useState([])
 
     useEffect(() => {

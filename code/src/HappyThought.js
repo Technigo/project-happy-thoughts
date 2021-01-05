@@ -12,8 +12,8 @@ export const HappyThought = props => {
     }
 
     const handleClick = () => {
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
-            method: "POST",
+        fetch(`https://happithoughts.herokuapp.com/thoughts/${_id}/like`, {
+            method: "PUT",
             headers: { "content-Type": "application/json" }
         }).then(() => onLiked())
     }

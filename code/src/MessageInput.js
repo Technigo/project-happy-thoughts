@@ -3,7 +3,7 @@ import './MessageInput.css'
 
 export const MessageInput = () => {
 
-    const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+    const MESSAGES_URL = "https://happithoughts.herokuapp.com/thoughts"
     const [message, setMessage] = useState('')
 
     const handleSubmit = event => {
