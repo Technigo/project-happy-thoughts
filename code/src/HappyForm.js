@@ -24,17 +24,16 @@ const HappyForm = ({ onMessageChange }) => {
 
     return (
     <>
-        <form onSubmit = {handleFormSubmit}>
-            <section className ="form-conatiner">
-                <h1>What's making you happy right now?</h1>
-                <textarea 
-                  rows="5"
-                  value={message} 
-                  onChange = {(event) => setMessage(event.target.value)}
-                ></textarea>  
+      <form onSubmit = {handleFormSubmit}>
+        <section className ="form-conatiner">
+          <h1>What's making you happy right now?</h1>
+             <textarea 
+                rows="5"
+                value={message} 
+                onChange = {(event) => setMessage(event.target.value)}>
+             </textarea> 
 
-                <div className ="send-happy">
-
+               <div className ="send-happy">
                 <button 
                   className ="form-button"
                   type="submit" 
@@ -60,9 +59,9 @@ const HappyForm = ({ onMessageChange }) => {
 
                 <p className="thoughts-length-left"> {message.length} / 140 </p>
                 </div> 
-            </section>
-        </form> 
-    </>
+        </section>
+      </form> 
+  </>
  )
 }
    
