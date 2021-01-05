@@ -6,7 +6,7 @@ import { ThoughtMessage } from 'components/ThoughtMessage'
 export const App = () => {
 
   const [thoughts, setThoughts] = useState([])
-  const THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+  const THOUGHTS_URL = 'https://share-happy-thought.herokuapp.com/thoughts'
 
   useEffect(() => {
     fetchThoughts()
@@ -24,7 +24,7 @@ export const App = () => {
   }
 
   /*posts message and then creates a new fetch to update the site with new information from the server*/ 
-  const postThought = (thought) => {
+  const postThought = thought => {
     fetch(THOUGHTS_URL, {
       method: 'POST',
       headers: { 'Content-Type':'application/json' },
@@ -37,7 +37,7 @@ export const App = () => {
 
   /*posts data to the server when post is liked. Connected with onClick function in thoughtMessage. fetches again after the post to get the updated information from server*/
   const postHearts = messageId => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
+    fetch(`https:/share-happy-thought.herokuapp.com/thoughts/${messageId}/like`, {
       method: 'POST', 
       headers: { 'Content-Type': 'application/json"'}
       })
