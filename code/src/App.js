@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
-import { ThoughtsHeader } from './Components/ThoughtsHeader.js'
-import { ThoughtsMessage } from './Components/ThoughtsMessage.js'
-import { ThoughtsForm } from './Components/ThoughtsForm.js'
-import { ThoughtsFooter } from './Components/ThoughtsFooter.js'
+import { ThoughtsHeader } from './Components/ThoughtsHeader.js';
+import { ThoughtsMessage } from './Components/ThoughtsMessage.js';
+import { ThoughtsForm } from './Components/ThoughtsForm.js';
+import { ThoughtsFooter } from './Components/ThoughtsFooter.js';
 
 export const App = () => {
 
-  const apiUrlMessages = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  const apiUrlMessages = "https://claireshappythoughts.herokuapp.com/thoughts";
 
   const [messages, setMessages] = useState([]);
 
@@ -52,7 +52,7 @@ export const App = () => {
   
   However we can also omit this if we want to just do a new fetch from the api as to fetch the updated data on the api which will also show these new hearts/likes. This is done by calling the fetchMesssages function again which houses the fetch from the api */
   const postHearts = messageId => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
+    fetch(`https://claireshappythoughts.herokuapp.com/thoughts/${messageId}/like`, {
             method: "POST", 
             headers: { "Content-Type": "application/json" }
         }).then (() => {

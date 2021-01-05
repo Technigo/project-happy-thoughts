@@ -1,7 +1,7 @@
-import React from 'react'
-import moment from 'moment'
+import React from 'react';
+import moment from 'moment';
 
-import './ThoughtsMessage.css'
+import './ThoughtsMessage.css';
 
 export const ThoughtsMessage = ({messageDetails, onHeartsChange}) => {
 

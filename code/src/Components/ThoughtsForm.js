@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
-import './ThoughtsForm.css'
+import './ThoughtsForm.css';
 
 export const ThoughtsForm = ({onMessageChange}) => {
     const [newMessages, setNewMessages] = useState("");
