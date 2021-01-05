@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const HappyForm = ({ onMessageChange }) => {
     const [message , setMessage] = useState ('');
-    const MESSAGES_URL ="https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    const MESSAGES_URL ="https://nice-thoughts-api.herokuapp.com/thoughts";
 
     const handleFormSubmit = (event) => {
     event.preventDefault(); 
