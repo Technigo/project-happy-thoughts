@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-export const MessageList = ({ messageList, onLikeChange }) => {
+export const MessageList = ({ messageList, onLikeChange, name }) => {
   const [likes, setLikes] = useState(0);
 
   const handleLike = (id) => {
     setLikes(likes + 1);
     onLikeChange(id);
-    console.log(likes);
   };
 
   return (
@@ -28,9 +27,12 @@ export const MessageList = ({ messageList, onLikeChange }) => {
               </button>
               <p className="likes">x {messages.hearts}</p>
             </div>
-            <span className="messageTime">
-              {moment(messages.createdAt).fromNow()}
-            </span>
+            <div className="message-bottom-wrapper">
+              <span className="messageTime">
+                {moment(messages.createdAt).fromNow()}
+              </span>
+              <p className="message-name">{messages.name}</p>
+            </div>
           </div>
         </article>
       ))}

@@ -1,11 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
   margin: 0;
-  font-family: "Inconsolata", -apple-system, monospace, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f4abc4;
@@ -19,6 +17,7 @@ body {
   min-height: 100%;
   z-index: -1;
 }
+
 main {
   display: flex;
   flex-direction: column;
@@ -40,7 +39,8 @@ p {
   margin: 10px;
 }
 
-/* QUESTION CARD */
+/* INPUT CARD */
+
 .input-card {
   color: #e81224;
   width: 400px;
@@ -53,15 +53,26 @@ p {
   box-shadow: 10px 8px 0 -2px black;
 }
 
-.input-characters {
-  display: flex;
-  width: 100%;
+input.form-name {
+  outline-color: #e81224;
+  background: #ffffffd6;
+  margin-bottom: 10px;
+  font-family: 'Gochi Hand', cursive;
+  height: 25px;
 }
 
 input.form-text {
   width: 380px;
   height: 60px;
-  outline-color: pink;
+  outline-color: #e81224;
+  background: #ffffffd6;
+  font-size: 18px;
+  font-family: 'Gochi Hand', cursive;
+}
+
+.input-characters {
+  display: flex;
+  width: 100%;
 }
 
 .input-min {
@@ -81,15 +92,16 @@ input.form-text {
   display: flex;
   justify-content: center;
 }
+
 button {
   width: 260px;
   height: 45px;
   border-radius: 30px;
   padding: 10px;
   margin: 10px;
-  border: 1px solid #999;
-  background-color: #f4abc4;
-  color: #000000;
+  border: 1px solid #928787;
+  background-color: #ffffffd6;
+  color: #e81224;
   cursor: pointer;
   font-weight: 800;
   display: flex;
@@ -103,9 +115,8 @@ button {
 }
 
 button:hover {
-  background-color: #e6739f;
-  -webkit-transform: scale(1.07);
-  transform: scale(1.07);
+  -webkit-transform: scale(1.04);
+  transform: scale(1.04);
 }
 
 button:disabled{
@@ -120,6 +131,7 @@ button:disabled{
 }
 
 /* MESSAGE CARD */
+
 .message {
   font-family: 'Gochi Hand', cursive;
   font-weight: normal;
@@ -148,6 +160,13 @@ button:disabled{
   align-items: baseline;
 }
 
+.message-bottom-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  color: #949393; 
+}
+
 .heart-button {
   width: 40px;
   height: 40px;
@@ -174,6 +193,7 @@ button:disabled{
 }
 
 /* MEDIA QUERIES */
+
 @media (max-width: 768px) {
   h2 {
     font-size: 20px;

@@ -25,11 +25,11 @@ export const App = () => {
       .catch((error) => console.error(error));
   };
 
-  const reachMessageInput = (newMessage) => {
+  const reachMessageInput = (newMessage, name) => {
     fetch(MESSAGE_URL, {
       method: "POST",
       headers: { "Content-type": "application/json" },
-      body: JSON.stringify({ message: newMessage }),
+      body: JSON.stringify({ message: newMessage, name }),
     }).then(() => fetchMessages());
   };
 
