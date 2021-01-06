@@ -2,7 +2,7 @@ import React from 'react'
 
 export const HeartButton = ({ hearts, likesId, liked }) => {
 
-    const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${likesId}/like`
+    const LIKES_URL = `https://sara-happy-thoughts.herokuapp.com/thoughts/${likesId}/like`
 
     const handleClick = () => {
         fetch(LIKES_URL, {
