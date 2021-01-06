@@ -4,7 +4,8 @@ import './LikeMessage.css';
 export const LikeMessage = ({ onMessageLiked, id, hearts }) => {
 
     const handleClick = () => {
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+        // https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like
+        fetch(`https://agnes-happy-thoughts.herokuapp.com/thoughts/${id}/like`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

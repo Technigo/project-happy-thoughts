@@ -5,7 +5,8 @@ import moment from 'moment';
 import './Messagelist.css';
 
 export const MessageList = () => {
-  const MESSAGES_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+  const MESSAGES_URL = "https://agnes-happy-thoughts.herokuapp.com/thoughts";
+  //const MESSAGES_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
