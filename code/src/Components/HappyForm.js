@@ -6,6 +6,7 @@ import './HappyForm.css'
 export const HappyForm = () => {
   const url = 'https://the-happy-thoughts.herokuapp.com/thoughts'
   const [message, setMessage] = useState('')
+  const [name, setName] = useState('')
 
   // a submit function witch POSTs the text input
   const handleSubmit = event => {
@@ -15,10 +16,11 @@ export const HappyForm = () => {
     fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message, name }),
     })
       .then(() => {
         setMessage('') // makes the text-area empy when reloaded
+        setName('')
       })
   }
 
@@ -26,6 +28,13 @@ export const HappyForm = () => {
     <article className='form-wrapper'>
       <form onSubmit={handleSubmit}>
         <h1 tabIndex='0'>What's making you happy right now?</h1>
+        <input
+					className="post-message"
+					type="text"
+					placeholder="What do you call yourself?"
+					value={name}
+					onChange={event => setName(event.target.value)}
+				/>
         <textarea
           className='post-message'
           rows='4'

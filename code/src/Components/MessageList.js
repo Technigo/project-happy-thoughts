@@ -33,6 +33,7 @@ export const MessageList = () => {
               id={message._id} />
               <span className='span-time'>
               <p tabIndex='0' className='time'>{moment(message.createdAt).fromNow()}</p>
+              <p tabIndex='0' className='time'>{message.name ? message.name : "Anonymous"}</p>
               </span>
               </div>
           </article>

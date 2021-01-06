@@ -29,6 +29,8 @@ h1 {
 .post-message {
   margin: 12px;
   padding: 10px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 1em;
 }
 
 .submit-button {
