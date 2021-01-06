@@ -1,1 +1,2 @@
-export const MESSAGE_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts/';
+export const MESSAGE_URL = 'https://api-thoughts.herokuapp.com/thoughts'
+//'https://happy-thoughts-technigo.herokuapp.com/thoughts/';

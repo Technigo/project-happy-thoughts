@@ -34,7 +34,7 @@ export const App = () => {
   };
 
   const reachSingleLike = (id) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+    fetch(`https://api-thoughts.herokuapp.com/thoughts/${id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-type": "application/json" },

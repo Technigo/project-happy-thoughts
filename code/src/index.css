@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 
 body {
   margin: 0;
@@ -10,6 +11,14 @@ body {
   background-color: #f4abc4;
 }
 
+.myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+}
 main {
   display: flex;
   flex-direction: column;
@@ -18,6 +27,7 @@ main {
 
 h2 {
   margin: 0 0 10px;
+  font-family: 'Gochi Hand', cursive;
 }
 
 h3 {
@@ -32,14 +42,20 @@ p {
 
 /* QUESTION CARD */
 .input-card {
+  color: #e81224;
   width: 400px;
   margin: 20px 0;
   padding: 15px 18px;
   display: flex;
-  background: #e5dfdf;
+  background: #e5dfdfd6;
   flex-direction: row;
   border: 1px solid black;
   box-shadow: 10px 8px 0 -2px black;
+}
+
+.input-characters {
+  display: flex;
+  width: 100%;
 }
 
 input.form-text {
@@ -48,11 +64,29 @@ input.form-text {
   outline-color: pink;
 }
 
+.input-min {
+  display: flex;
+  justify-content: flex-start;
+  font-style: italic;
+}
+
+.input-length {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-style: italic;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
 button {
   width: 260px;
   height: 45px;
   border-radius: 30px;
   padding: 10px;
+  margin: 10px;
   border: 1px solid #999;
   background-color: #f4abc4;
   color: #000000;
@@ -73,17 +107,30 @@ button:hover {
   -webkit-transform: scale(1.07);
   transform: scale(1.07);
 }
+
+button:disabled{
+  background-color: #e5dfdf;
+  cursor: not-allowed;
+  color: #928787;
+}
+
 .heart {
   text-align: center;
   font-size: 15px;
 }
 
 /* MESSAGE CARD */
+.message {
+  font-family: 'Gochi Hand', cursive;
+  font-weight: normal;
+  color: #e81224;
+}
+
 .message-card {
   display: flex;
   flex-direction: column;
   width: 400px;
-  background: white;
+  background: #ffffffd6;
   margin: 20px 0;
   padding: 0 15px;
   border: 1px solid black;
@@ -114,7 +161,7 @@ button:hover {
 
 .likes {
   display: flex;
-  color: #d6d0d0;
+  color: #949393;
 }
 
 .messageTime {
