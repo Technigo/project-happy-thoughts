@@ -22,7 +22,7 @@ export const Thoughts = ({ thoughts, likeMessage }) => {
                             {thought.hearts > 0 && <p className="thoughts__amount-of-likes">x{thought.hearts}
                             </p>
                             }</div>
-                        <p className="thoughts__time-posted"> {moment(thought.created).fromNow()}</p>
+                        <p className="thoughts__time-posted"> {moment(thought.createdAt).fromNow()}</p>
                     </div>
                 </div>
             )
