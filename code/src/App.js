@@ -5,7 +5,7 @@ import { HappyThoughts } from "./components/HappyThoughts"
 import "./components/app.css"
 
 //const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
-const url = "https://katarinas-happy-api.herokuapp.com/thoughts"
+//const url = "https://katarinas-happy-api.herokuapp.com/thoughts"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -13,7 +13,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(url)
+    fetch(`https://katarinas-happy-api.herokuapp.com/thoughts`)
       .then(res => res.json())
       .then(json => setThoughts(json))
     setLoading(false)
@@ -25,7 +25,7 @@ export const App = () => {
   }
 
   const onLiked = thoughtId => {
-    fetch(`https://katarinas-happy-api.herokuapp.com/thoughts`, {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" }
     }).then(res => res.json())
