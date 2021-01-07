@@ -14,11 +14,29 @@
 
 textarea {
     width: 500px;
-    max-width: 70%;
+    max-width: 100%;
     resize: none;
     padding: 10px;
     box-sizing: border-box;
     margin: 10px 0;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  max-width: 70%;
+}
+
+form p {
+  margin-left: auto;
+  font-size: 15px;
+  margin-top: -2px;
 }
 
 .heart-one {
