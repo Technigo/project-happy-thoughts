@@ -4,23 +4,23 @@ import Button from './Button';
 
 const Sort = ({ onClick }) => {
   return (
-    <div className="Button__sort-container">
+    <div className="button__sort-container">
       <Button
-        className="Button__sort"
+        className="button button__sort"
         button="button"
         onClick={onClick}
         text="Most likes"
         value="hearts"
       />
       <Button
-        className="Button__sort"
+        className="button button__sort"
         button="button"
         onClick={onClick}
         text="Oldest"
         value="oldest"
       />
       <Button
-        className="Button__sort"
+        className="button button__sort"
         button="button"
         onClick={onClick}
         text="Newest"

@@ -19,33 +19,33 @@ const MessageList = ({ messageList, onLikeChange }) => {
   return (
     <>
       {messageList.map(message => (
-        <article className="Article" key={message._id}>
-          <p tabIndex="0" className="Article__text">
+        <article className="article" key={message._id}>
+          <p tabIndex="0" className="article__text">
             {message.message}
           </p>
           <Button
             type="button"
             className={
               message.hearts === 0
-                ? 'Button Button__round Button__round--gray'
-                : 'Button Button__round Button__round--pink'
+                ? 'button button__round button__round--gray'
+                : 'button button__round button__round--pink'
             }
             onClick={() => handleClick(message._id)}
             text={
               <img
                 className={
                   message.hearts < 6
-                    ? 'Button__icon'
-                    : 'Button__icon Button__icon--pulse'
+                    ? 'button__icon'
+                    : 'button__icon button__icon--pulse'
                 }
-                src="./assets/heart.svg"
+                src="./assets/heart-640x640.png"
                 alt="heart icon"
               />
             }
           />
           <div tabIndex="0">
-            <p className="Article__text--likes">x {message.hearts}</p>
-            <p className="Article__text--likes">
+            <p className="article__text--likes">x {message.hearts}</p>
+            <p className="article__text--likes">
               {!localStorage[message._id]
                 ? ''
                 : localStorage[message._id] < 2
@@ -54,10 +54,10 @@ const MessageList = ({ messageList, onLikeChange }) => {
             </p>
           </div>
           <div>
-            <p tabIndex="0" className="Article__text--time">
-              {message.name}
+            <p tabIndex="0" className="article__text--time">
+              {message.name ? message.name : 'Anonymous'}
             </p>
-            <p tabIndex="0" className="Article__text--time">
+            <p tabIndex="0" className="article__text--time">
               {moment(message.createdAt).fromNow()}
             </p>
           </div>

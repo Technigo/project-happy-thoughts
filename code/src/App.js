@@ -63,10 +63,10 @@ export const App = () => {
   };
 
   return (
-    <main className="App App__grid">
+    <main className="app app__grid">
       <MessageInput onMessageChange={postMessage} />
       {isLoading ? (
-        <Loader className="Loader" />
+        <Loader className="loader" classNameImage="loader__image" />
       ) : (
         <>
           <Sort onClick={event => setSort(event.target.value)} />
@@ -75,7 +75,13 @@ export const App = () => {
             next={() => setPage(page + 1)}
             hasMore={messages.length < totalMessages ? true : false}
             scrollThreshold={1}
-            loader={<h4>Loading...</h4>}
+            //loader={<h4>Loading...</h4>}
+            loader={
+              <Loader
+                className="loader--small"
+                classNameImage="loader__image--small"
+              />
+            }
             endMessage={<p>No more thoughts to show</p>}
           >
             <MessageList messageList={messages} onLikeChange={postLike} />

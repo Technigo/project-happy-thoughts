@@ -22,7 +22,7 @@ body {
 
 /*** APP ***/
 
-.App {
+.app {
   margin: 50px auto;
   width: 90%;
   max-width: 500px;
@@ -30,16 +30,18 @@ body {
   &__grid {
     display: grid;
     row-gap: 50px;
+    justify-items: center;
   }
 }
 
 /*--- FORM ---*/
 
-.Form {
+.form {
   display: grid;
   grid-template-rows: min-content;
   grid-row-gap: 5px;
   align-items: center;
+  width: 90%;
   padding: 20px;
   border: 1px solid $black;
   box-shadow: 10px 10px $black;
@@ -85,19 +87,30 @@ body {
   }
 }
 
+.infinite-scroll-component__outerdiv {
+  width: 100%;
+}
+
+.infinite-scroll-component {
+  display: grid;
+  grid-gap: 30px;
+  justify-items: center;
+}
+
 /*--- ARTICLE ---*/
 
-.Article {
+.article {
   display: grid;
   grid-template-rows: min-content;
   grid-template-columns: min-content 1fr 1fr;
   grid-row-gap: 5px;
   grid-column-gap: 10px;
   align-items: center;
+  width: 90%;
   padding: 20px;
   border: 1px solid $black;
   box-shadow: 10px 10px $black;
-  word-wrap: break-word;
+  word-break: break-word;
 
   &__text {
     grid-column: 1/4;
@@ -123,20 +136,22 @@ body {
 
 /*--- BUTTON ---*/
 
-.Button {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease-in;
+  font-family: menlo;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   &__icon {
     height: 20px;
+    margin: 5px;
 
     &--pulse {
       animation: pulse 3s ease-in-out infinite;
@@ -148,13 +163,13 @@ body {
     background: $pink;
     border-radius: 50px;
     padding: 0 10px;
-    font-family: menlo;
   }
 
   &__sort-container {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: -30px;
+    width: 90%;
   }
 
   &__sort {
@@ -162,12 +177,12 @@ body {
     width: 120px;
     border: 1px solid $black;
     box-shadow: 5px 5px $black;
-    font-family: menlo;
   }
 
   &__round {
     border-radius: 50%;
     width: 40px;
+    height: 40px;
     padding: 10px;
     grid-column: 1/2;
 
@@ -183,13 +198,23 @@ body {
 
 /*--- LOADER ---*/
 
-.Loader {
+.loader {
   display: flex;
   justify-content: center;
+  margin-top: 50px;
   animation: pulse 3s linear infinite;
 
   &__image {
     width: 200px;
+  }
+
+  &--small {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image--small {
+    width: 50px;
   }
 }
 

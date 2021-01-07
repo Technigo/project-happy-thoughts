@@ -15,33 +15,33 @@ const MessageInput = ({ onMessageChange }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="Form">
-      <label className="Form__label">
-        <h1 tabIndex="0" className="Form__header">
+    <form onSubmit={handleSubmit} className="form">
+      <label className="form__label">
+        <h1 tabIndex="0" className="form__header">
           What's making you happy right now?
         </h1>
       </label>
       <input
-        className="Form__input"
+        className="form__input"
         type="text"
         placeholder="Write your name..."
         value={name}
         onChange={event => setName(event.target.value)}
       />
       <textarea
-        className="Form__input"
+        className="form__input"
         rows="4"
         maxLength="140"
         value={newMessage}
         onChange={event => setNewMessage(event.target.value)}
         placeholder="Write your happy thought..."
       ></textarea>
-      <p tabIndex="0" className="Form__text">
+      <p tabIndex="0" className="form__text">
         <span
           className={
             newMessage.length < 6 || newMessage.length === 140
-              ? 'Form__text--red'
-              : 'Form__text--green'
+              ? 'form__text--red'
+              : 'form__text--green'
           }
         >
           {140 - newMessage.length}
@@ -53,18 +53,18 @@ const MessageInput = ({ onMessageChange }) => {
           newMessage.length < 6 || newMessage.length > 140 ? true : false
         }
         type="submit"
-        className="Button Button__submit"
+        className="button button__submit"
         text={
           <>
             <img
-              className="Button__icon"
-              src="./assets/heart.svg"
+              className="button__icon"
+              src="./assets/heart-640x640.png"
               alt="heart icon"
             />
             <p>Send Happy Thought</p>
             <img
-              className="Button__icon"
-              src="./assets/heart.svg"
+              className="button__icon"
+              src="./assets/heart-640x640.png"
               alt="heart icon"
             />
           </>

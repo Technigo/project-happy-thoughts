@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Loader = ({ className }) => {
+const Loader = ({ className, classNameImage }) => {
   return (
     <div className={className}>
       <img
-        className="Loader__image"
-        src="./assets/heart.svg"
+        className={classNameImage}
+        src="./assets/heart-640x640.png"
         alt="heart icon"
       />
     </div>
