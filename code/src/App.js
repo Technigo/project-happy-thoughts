@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+
 import { HappyThought } from 'components/HappyThought.js'
 import { HappyForm } from 'components/HappyForm.js'
 
-const url = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+const url = 'https://lindas-project-happy-thoughts.herokuapp.com/thoughts'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])

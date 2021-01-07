@@ -1,9 +1,10 @@
 import React from 'react' 
+
 import './happyHeart.css'
 
 export const HappyHeart = ({onLiked, heart, messageId}) => {
   const handleClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`, {
+    fetch(`https://lindas-project-happy-thoughts.herokuapp.com/thoughts/${messageId}/like`, {
       method: 'POST', 
       body: '',
       headers: { 'Content-Type': 'application/json' }

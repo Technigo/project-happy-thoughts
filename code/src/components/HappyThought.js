@@ -1,6 +1,8 @@
 import React from 'react'
 import moment from 'moment'
+
 import { HappyHeart } from './HappyHeart.js'
+
 import './happyThought.css'
 
 export const HappyThought = ({id, thought, onLiked, heart, createdAt}) => {

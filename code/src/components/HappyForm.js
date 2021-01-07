@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+
 import './happyForm.css'
 
-const url = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+const url = 'https://lindas-project-happy-thoughts.herokuapp.com/thoughts'
 
 export const HappyForm = ({onFormSubmit}) => {
   const [message, setMessage] = useState('')
