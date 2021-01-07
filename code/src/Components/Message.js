@@ -2,7 +2,7 @@ import React from 'react';
 
 import moment from 'moment';
 
-const Message = ({ message, created, hearts, id, whenLiked }) => {
+const Message = ({ message, created, hearts, id, whenLiked, name }) => {
     //const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
     // Changed the url to my own API
     const LIKES_URL = `https://annas-thoughts-api.herokuapp.com/thoughts/${id}/like`;    
@@ -20,6 +20,7 @@ const Message = ({ message, created, hearts, id, whenLiked }) => {
     return (
         <article className="message">
             <h3 className="thought">{message}</h3>
+            <p>- {name}</p>
             <div className="message-footer grey-style">
                 <p>
                     <button

@@ -3,16 +3,18 @@ import React, {useState} from 'react';
 const InputMessage = ({onMessageChange}) => {
 
     const [inputMessage, setInputMessage] = useState('');
+    const [name, setName] = useState('Anonymous');
 
     const handleSubmit = event => {
         // Prevents the page from refreshing
         event.preventDefault();
 
         // Call onMessageChange function to POST new message and fetch messages again
-        onMessageChange(inputMessage);
+        onMessageChange(inputMessage, name);
 
-        // Clear the input field
+        // Clear the input field, set name to anonymous
         setInputMessage(''); 
+        setName('Anonymous')
     };
 
     return (
@@ -25,8 +27,15 @@ const InputMessage = ({onMessageChange}) => {
                     value={inputMessage}
                     onChange={event => setInputMessage(event.target.value)}>  
                 </textarea>
-                <p>Input your name:</p>
-                <input type="text" placeholder="Anonymous"></input>
+                <label htmlFor="nameInput">Input your name:</label>
+                <input
+                    id="nameInput"
+                    name="nameInput"
+                    type="text"
+                    placeholder="Anonymous"
+                    onChange={event => setName(event.target.value)}
+                >    
+                </input>
                 <div className="message-footer">
                     <button
                         className="submit-button"          

@@ -31,12 +31,12 @@ export const App = () => {
   }
 
   //Take value and pass it to server, POST request
-  const reachMessageInput = (newMessage) => {
+  const reachMessageInput = (newMessage, name) => {
     fetch(MESSAGES_URL,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: newMessage }) //data we want to post
+        body: JSON.stringify({ message: newMessage, name }) //data we want to post
       })
       .then(() => fetchMessages()); //after post run fetchmessages, component rerenders    
   }

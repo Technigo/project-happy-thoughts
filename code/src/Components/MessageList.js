@@ -34,6 +34,7 @@ const MessageList = ({ listOfMessages, setListOfMessages }) => {
                             created={message.createdAt}
                             hearts={message.hearts}
                             whenLiked={whenLiked}
+                            name={message.name}
                         />
                     )    
                 })
