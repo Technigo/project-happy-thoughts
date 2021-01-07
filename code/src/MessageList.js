@@ -50,6 +50,8 @@ export const MessageList = () => {
             <p className="message">
               {/* Message text */}
               {message.message}
+              <span className="written-by">{message.name}</span>
+              
 
               {/* How many have liked the post */}
               <LikeMessage

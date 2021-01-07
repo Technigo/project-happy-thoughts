@@ -16,6 +16,16 @@
     padding: 10px;
     font-size: 16px;
     margin: 10px 0;
+    cursor: pointer;
+}
+
+.name-input {
+    cursor: pointer; 
+    margin-left: 3px;
+}
+
+.name-input-box{
+    margin: 10px;
 }
 
 .happy-form h3 {

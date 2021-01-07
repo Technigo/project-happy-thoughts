@@ -6,6 +6,7 @@ const MESSAGE_URL = "https://agnes-happy-thoughts.herokuapp.com/thoughts";
 
 export const HappyForm = props => {
     const [message, setMessage] = useState('')
+    const [name, setName] = useState('');
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -17,10 +18,11 @@ export const HappyForm = props => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ message }),
+                body: JSON.stringify({ message, name }),
             }
             ).then(() => {
                 setMessage('')
+                setName('')
                 window.location.reload();
             })
                 .catch(err => console.error)
@@ -36,18 +38,27 @@ export const HappyForm = props => {
                 >
                 </textarea>
 
+                <label className="name-input-box">Your name 
+                <input
+                    className="name-input"
+                    value={name}
+                    type="text"
+                    onChange={event => setName(event.target.value)}
+                />
+                </label>
+
                 <div className="form-footer">
                     <button
                         type='submit'
                         onClick={handleSubmit}
                         disabled={message.lenght < 6 || message.lenght > 140 ? true : false}
                     >
-                        <span role="img" aria-label="Red heart"> &#10084;&#65039;
+                        <span tabIndex="0" role="img" aria-label="Red heart"> &#10084;&#65039;
                         </span>
                             Send a happy thought!
                     </button>
                         <p className="text-validation">
-                        <span style={{ color: message.length < 6 || message.length > 140 ? "red" : "#000" }}>
+                        <span tabIndex="0" style={{ color: message.length < 6 || message.length > 140 ? "red" : "#000" }}>
                             {message.length}
                         </span>
                         / 140
