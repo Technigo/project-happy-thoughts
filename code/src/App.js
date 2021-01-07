@@ -14,14 +14,12 @@ export const App = () => {
   const [totalMessages, setTotalMessages] = useState();
   const [isLoading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [sort, setSort] = useState('');
+  const [sort, setSort] = useState('newest');
 
   useEffect(() => {
     fetchMessages();
     //eslint-disable-next-line
   }, [page, sort]);
-
-  console.log(sort);
 
   //fetch GET messages from the API, set messages and catch errors
   const fetchMessages = () => {
@@ -29,14 +27,18 @@ export const App = () => {
       .then(results => results.json())
       .then(data => {
         console.log(data);
-        setMessages(data.thoughts);
+        setMessages(data.results);
         setTotalMessages(data.total);
         setLoading(false);
       })
       .catch(error => console.error(error));
   };
-  console.log(messages);
+
+  console.log(`page: ${page}`);
+  console.log(`number of messages: ${messages.length}`);
+  console.log(`sorting: ${sort}`);
   console.log(totalMessages);
+
   //fetch POST message to the API and then fetch GET all messages
   const postMessage = (message, name) => {
     fetch(MESSAGES_URL, {
@@ -74,7 +76,7 @@ export const App = () => {
             hasMore={messages.length < totalMessages ? true : false}
             scrollThreshold={1}
             loader={<h4>Loading...</h4>}
-            endMessage={<p>Nothing more to see!</p>}
+            endMessage={<p>No more thoughts to show</p>}
           >
             <MessageList messageList={messages} onLikeChange={postLike} />
           </InfiniteScroll>
