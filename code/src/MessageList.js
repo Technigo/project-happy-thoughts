@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { HappyThought } from './HappyThought'
+import { BASE_API } from './API'
 import './MessageList.css'
 
 export const MessageList = () => {
-    const MESSAGES_URL = "https://happithoughts.herokuapp.com/thoughts"
     const [messages, setMessages] = useState([])
 
     useEffect(() => {
-        fetch(MESSAGES_URL)
+        fetch(`${BASE_API}/thoughts`)
             .then((res) => {
                 return res.json()
             })

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import moment from 'moment'
 import './HappyThought.css'
+import { BASE_API } from 'API'
 
 
 export const HappyThought = props => {
@@ -12,7 +13,7 @@ export const HappyThought = props => {
     }
 
     const handleClick = () => {
-        fetch(`https://happithoughts.herokuapp.com/thoughts/${_id}/like`, {
+        fetch(`${BASE_API}/thoughts/${_id}/like`, {
             method: "PUT",
             headers: { "content-Type": "application/json" }
         }).then(() => onLiked())

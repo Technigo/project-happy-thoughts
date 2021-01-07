@@ -1,15 +1,16 @@
+import { BASE_API } from 'API'
 import React, { useState } from 'react'
+import { BASE_API } from './API'
 import './MessageInput.css'
 
 export const MessageInput = () => {
 
-    const MESSAGES_URL = "https://happithoughts.herokuapp.com/thoughts"
     const [message, setMessage] = useState('')
 
     const handleSubmit = event => {
         event.preventDefault()
 
-        fetch(MESSAGES_URL,
+        fetch(`${BASE_API}/thoughts`,
             {
                 method: "POST",
                 headers: {
