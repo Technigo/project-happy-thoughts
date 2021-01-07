@@ -1,4 +1,3 @@
-import { BASE_API } from 'API'
 import React, { useState } from 'react'
 import { BASE_API } from './API'
 import './MessageInput.css'
@@ -36,6 +35,7 @@ export const MessageInput = () => {
             <input
                 type="submit"
                 className="button"
+                disabled= {message.length < 5 || message.length > 140}
                 value="Send">
             </input>
         </form>
