@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 //import InfiniteScroll from 'react-infinite-scroller';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-
 import PostInput from './PostInput';
 import PostList from './PostList';
 import Sort from './Sort';
@@ -13,15 +12,14 @@ import './Style.css';
 export const App = () => {
 	const [messages, setMessages] = useState([]);
 	const [totalMessages, setTotalMessages] = useState();
-	const [isLoading, setLoading] = useState(true); //loading when waiting for fetch
+	const [isLoading, setLoading] = useState(true); 
 	const [sort, setSort] = useState('newest')
-	const [page, setPage] = useState(1) //start on page 1 ADDED
+	const [page, setPage] = useState(1) 
 
 	useEffect(() => {
 		fetchMessages();
 		// eslint-disable-next-line
 	}, [page, sort]);
-
 
 	const fetchMessages = () => {
 		fetch(MESSAGE_URL + `?page=${page}&sort=${sort}`)
@@ -36,10 +34,10 @@ export const App = () => {
 			.catch(error => console.error(error));
 	};
 
-	console.log(`page: ${page}`)
-	console.log(`number of messages: ${messages.length}`)
-	console.log(`sorting: ${sort}`)
-	console.log(totalMessages)
+	// console.log(`page: ${page}`)
+	// console.log(`number of messages: ${messages.length}`)
+	// console.log(`sorting: ${sort}`)
+	// console.log(totalMessages)
 
 	const postSingleMessage = (message, name) => {
 		fetch(MESSAGE_URL, {
@@ -78,14 +76,14 @@ export const App = () => {
 						//loader={<Loader key={0}	/>}
 					> */}
 					<InfiniteScroll
-						dataLength={messages.length} //This is important field to render the next data
+						dataLength={messages.length} 
 						next={() => setPage(page+1)}
 						hasMore={messages.length < totalMessages ? true : false}
 						scrollThreshold={1}
 						//loader={<Loader className="post-loader"/>}
 						loader={<h4>Loading...</h4>}
 						//loader={isLoading && <Loader/>}
-						endMessage={<p>Nothing more to see!</p>}
+						endMessage={<h5>All thoughts displayed!</h5>}
 					>
 						<PostList postList={messages} onLikeChange={postSingleLike} /> 
 					</InfiniteScroll>
