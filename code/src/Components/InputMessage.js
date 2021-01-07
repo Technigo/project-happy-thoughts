@@ -25,6 +25,8 @@ const InputMessage = ({onMessageChange}) => {
                     value={inputMessage}
                     onChange={event => setInputMessage(event.target.value)}>  
                 </textarea>
+                <p>Input your name:</p>
+                <input type="text" placeholder="Anonymous"></input>
                 <div className="message-footer">
                     <button
                         className="submit-button"          
