@@ -24,10 +24,10 @@ export const MessageInput = () => {
 
   return (
     <div className='form-container'>
+      <h3> Share a happy thought <span className='heart-one' role='img' aria-label='heart'>♥</span> </h3>
       <form onSubmit={handleSubmit}>
-        <h3> Share a happy thought <span className='heart-one' role='img' aria-label='heart'>♥</span> </h3>
         <textarea className="text-input"
-          rows='8'
+          rows='5'
           value={message}
           placeholder='Share something that made you smile today 🙂'
           onChange={event => setMessage(event.target.value)}>
