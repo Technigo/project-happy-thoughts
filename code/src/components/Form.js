@@ -2,7 +2,9 @@ import React from 'react'
 
 import { useState } from 'react'
 
-const FORM_URL='https://happy-thoughts-technigo.herokuapp.com/thoughts'
+const FORM_URL='https://happy-thoughts-ingela.herokuapp.com/thoughts'
+//Technigos API:/* 'https://happy-thoughts-technigo.herokuapp.com/thoughts' */
+
 //States for the message so that we can change it:
 export const Form = () => {
     const [message, setMessage] = useState('')
