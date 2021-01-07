@@ -4,8 +4,9 @@
 }
 
 .happy-thought {
-    background-color: rosybrown;
+    background-color: rgb(236, 191, 191);
     width: 500px;
+    max-width: 70%;
     border: 2px solid black;
     box-shadow: 4px 4px black;
     margin: 16px;

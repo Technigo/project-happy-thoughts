@@ -26,9 +26,9 @@ export const MessageInput = () => {
         <form onSubmit={handleSubmit}>
             <h3> Share a happy thought <span className='heart-one' role='img' aria-label='heart'>♥</span> </h3>
             <textarea className="text-input"
-                rows='5'
+                rows='8'
                 value={message}
-                placeholder='Your thought must contain a min of 5 and max of 140 caracters'
+                placeholder='Share something that made you smile today 🙂'
                 onChange={event => setMessage(event.target.value)}>
             </textarea>
             <p>{message.length} / 140 </p>
@@ -36,7 +36,7 @@ export const MessageInput = () => {
                 type="submit"
                 className="button"
                 disabled= {message.length < 5 || message.length > 140}
-                value="Send">
+                value="Share">
             </input>
         </form>
     )
