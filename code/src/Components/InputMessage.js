@@ -17,6 +17,7 @@ const InputMessage = ({onMessageChange}) => {
         setName('Anonymous')
     };
 
+
     return (
         <div className="input-message-wrapper">
             <form onSubmit={handleSubmit}>
@@ -33,6 +34,7 @@ const InputMessage = ({onMessageChange}) => {
                     name="nameInput"
                     type="text"
                     placeholder="Anonymous"
+                    value={name}
                     onChange={event => setName(event.target.value)}
                 >    
                 </input>
