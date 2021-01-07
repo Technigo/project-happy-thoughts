@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import MessageInput from './components/MessageInput';
 import MessageList from './components/MessageList';
@@ -10,27 +11,32 @@ import './components/Styles.scss';
 
 export const App = () => {
   const [messages, setMessages] = useState([]);
+  const [totalMessages, setTotalMessages] = useState();
   const [isLoading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
   const [sort, setSort] = useState('');
 
   useEffect(() => {
     fetchMessages();
     //eslint-disable-next-line
-  }, [sort]);
+  }, [page, sort]);
 
   console.log(sort);
 
   //fetch GET messages from the API, set messages and catch errors
   const fetchMessages = () => {
-    fetch(`${MESSAGES_URL}?sort=${sort}`)
+    fetch(`${MESSAGES_URL}?page=${page}&sort=${sort}`)
       .then(results => results.json())
       .then(data => {
-        setMessages(data);
+        console.log(data);
+        setMessages(data.thoughts);
+        setTotalMessages(data.total);
         setLoading(false);
       })
       .catch(error => console.error(error));
   };
-
+  console.log(messages);
+  console.log(totalMessages);
   //fetch POST message to the API and then fetch GET all messages
   const postMessage = (message, name) => {
     fetch(MESSAGES_URL, {
@@ -62,7 +68,16 @@ export const App = () => {
       ) : (
         <>
           <Sort onClick={event => setSort(event.target.value)} />
-          <MessageList messageList={messages} onLikeChange={postLike} />
+          <InfiniteScroll
+            dataLength={messages.length}
+            next={() => setPage(page + 1)}
+            hasMore={messages.length < totalMessages ? true : false}
+            scrollThreshold={1}
+            loader={<h4>Loading...</h4>}
+            endMessage={<p>Nothing more to see!</p>}
+          >
+            <MessageList messageList={messages} onLikeChange={postLike} />
+          </InfiniteScroll>
         </>
       )}
     </main>
