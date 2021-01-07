@@ -25,7 +25,7 @@ export const App = () => {
   }
 
   const onLiked = thoughtId => {
-    fetch(`https://katarinas-happy-api.herokuapp.com/thoughts${thoughtId}/like`, {
+    fetch(`https://katarinas-happy-api.herokuapp.com/thoughts`, {
       method: "POST",
       headers: { "Content-Type": "application/json" }
     }).then(res => res.json())
