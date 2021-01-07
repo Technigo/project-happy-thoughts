@@ -35,6 +35,10 @@ form {
   margin-bottom: 15px;
 }
 
+textarea {
+  resize: none
+}
+
 .send-button {
   font-family: 'Inconsolata', monospace;
   border-radius: 30px;
