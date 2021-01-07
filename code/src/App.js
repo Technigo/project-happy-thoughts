@@ -4,7 +4,7 @@ import { HappyForm } from "./components/HappyForm"
 import { HappyThoughts } from "./components/HappyThoughts"
 import "./components/app.css"
 
-//const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 //const url = "https://katarinas-happy-api.herokuapp.com/thoughts"
 
 export const App = () => {
@@ -13,7 +13,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`https://katarinas-happy-api.herokuapp.com/thoughts`)
+    fetch(url)
       .then(res => res.json())
       .then(json => setThoughts(json))
     setLoading(false)
