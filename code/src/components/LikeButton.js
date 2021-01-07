@@ -3,7 +3,8 @@ import React from 'react'
 export const LikeButton = ({hearts, id, onThoughtLiked}) => {
   //This function fetches every indivual happy thought and how many likes it has:
     const handleClick = () => {
-      fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+      fetch(`https://happy-thoughts-ingela.herokuapp.com/thoughts/${id}/like`,
+      //Technigos API: https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like
         {
           method: 'POST',
           headers: { "Content-Type": "application/json"},
