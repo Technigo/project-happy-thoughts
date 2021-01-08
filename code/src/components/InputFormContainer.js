@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const InputFormContainer = () =>{
     const [message, setMessage] = useState("");
-    const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+    const THOUGHTS_URL = "https://happy-thoughts-marjaana.herokuapp.com/thoughts";
     
     const submit = (event) => {
         event.preventDefault();

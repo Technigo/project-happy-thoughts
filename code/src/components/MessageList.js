@@ -14,7 +14,7 @@ export const MessageList = ({
 
         let nrOfClicks = 0;
         nrOfClicks += 1;
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+        fetch(`https://happy-thoughts-marjaana.herokuapp.com/thoughts/${id}/like`, {
             method: "POST",
             body: "",
             headers: {
@@ -28,7 +28,7 @@ export const MessageList = ({
 
     return ( 
             <article className = "message-container" > 
-                <p > {message} < /p> 
+                <p > {message} </p> 
                 <div className = "heart-container" > 
                     <p className = "heart-item" >
                     <button onClick = {handleLikes}

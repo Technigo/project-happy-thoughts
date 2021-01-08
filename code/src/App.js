@@ -4,7 +4,7 @@ import MessageList from "components/MessageList"
 import InputFormContainer from "components/InputFormContainer"
 
 export const App = () => {
-  const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  const THOUGHTS_URL = "https://happy-thoughts-marjaana.herokuapp.com/thoughts";
   const [thoughts, setThoughts] = useState([]);
 
 
