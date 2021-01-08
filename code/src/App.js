@@ -5,9 +5,7 @@ import { ThoughtsInput } from "./components/js/ThoughtsInput.js";
 import { Header } from "./components/js/Header";
 import { Footer } from "./components/js/Footer";
 
-const URL = "https://happy-thoughts-caroline.herokuapp.com/";
 const THOUGHTS_URL = "https://happy-thoughts-caroline.herokuapp.com/thoughts";
-const HEART_URL = "https://happy-thoughts-caroline.herokuapp.com/thoughts/:thoughtId/like";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
