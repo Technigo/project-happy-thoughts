@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ThoughtsFeed } from "components/ThoughtsFeed.js";
 import { ThoughtsInput } from "components/ThoughtsInput.js";
 
-const URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+const URL = "https://happy-project-moa.herokuapp.com/thoughts";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);

@@ -5,7 +5,7 @@ import './like.css'
 export const Like = ({ onLiked, heart, heartId }) => {
   const handleClick = () => {
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${heartId}/like`,
+      `https://happy-project-moa.herokuapp.com/thoughts/${heartId}/like`,
       {
         method: "POST",
         body: "",

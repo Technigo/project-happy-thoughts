@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-const URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+const URL = "https://happy-project-moa.herokuapp.com/thoughts";
 
 export const ThoughtsInput = ({ onFormSubmit }) => {
   const [message, setMessage] = useState("");
