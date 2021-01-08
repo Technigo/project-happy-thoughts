@@ -7,9 +7,16 @@ import 'styles/happythoughts.css';
 
 export const ThoughtsList = () => {
   const THOUGHTS_URL = "https://happythoughts-only.herokuapp.com/thoughts";
+
   const [thoughts, setThoughts] = useState([]);
+  const [queryThoughts, setQueryThoughts] = useState([]);
   // Use [] in the useState since it is an array that we get in the get-request
   const [errorMessage, setErrorMessage] = useState(null);
+  const [sortField, setSortField] = useState('hearts');
+  const [sortOrder] = useState('desc');
+  const THOUGHTS_QUERY_URL = `https://happythoughts-only.herokuapp.com/thoughts?sortField=hearts&sortOrder=desc`;
+  // Change to /thoughts?sortField=${sortField}&sortOrder=${sortOrder}
+
 
   useEffect(() => {
     fetch(THOUGHTS_URL)
@@ -35,6 +42,24 @@ export const ThoughtsList = () => {
       });
   }, []);
 
+  // Trying one more fetch with the URL that includes query parameters
+  useEffect(() => {
+    fetch(THOUGHTS_QUERY_URL)
+      .then((res) => {
+
+        return res.json();
+      })
+      .then(() => {
+        setSortField(false)
+        setQueryThoughts(queryThoughts);
+      });
+
+  }, [queryThoughts]);
+
+  const changeSortField = () => {
+    setSortField(true)
+  }
+
   // Updates the 'hearts' when thoughts are liked
   const onThoughtLiked = (id) => {
     const updatedThoughts = thoughts.map((thought) => {
@@ -46,32 +71,70 @@ export const ThoughtsList = () => {
     setThoughts(updatedThoughts);
   };
 
-  return (
-    <div>
-      {thoughts.map(thought => {
-        return (
-          <div className="thoughts-box" key={thought._id}>
-            <p className="thoughts" tabIndex="0">
-              {thought.message}
-            </p>
-            <p className="name" tabIndex="0">
-              Posted by: {thought.name}
-            </p>
-            <div className="thoughts-footer">
-              <Likeathought
-                key={thought._id}
-                id={thought._id}
-                onThoughtLiked={onThoughtLiked}
-                hearts={thought.hearts}
-              />
-              <p className="time-stamp" tabIndex="0">
-                {moment(thought.createdAt).fromNow()}
+  if (sortField === true) {
+    return (
+      <>
+        <p>hejhfjekwrgea</p>
+        {console.log(queryThoughts)}
+        {/* {queryThoughts.map(querythought => {
+          return (
+            <div className="thoughts-box" key={querythought._id}>
+              <p className="thoughts" tabIndex="0">
+                {querythought.message}
               </p>
-              {errorMessage}
+              <p className="name" tabIndex="0">
+                Posted by: {querythought.name}
+              </p>
+              <div className="thoughts-footer">
+                <Likeathought
+                  key={querythought._id}
+                  id={querythought._id}
+                  onThoughtLiked={onThoughtLiked}
+                  hearts={querythought.hearts}
+                />
+                <p className="time-stamp" tabIndex="0">
+                  {moment(querythought.createdAt).fromNow()}
+                </p>
+                {errorMessage}
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+          );
+        })
+        } */}
+      </>
+    );
+  } else {
+    return (
+      <div>
+        {/* <button type="button" onClick={changeSortField}>
+          Sort on number of hearts
+          <span role="img" aria-label="Red heart emoji">&#10084;&#65039;</span>
+        </button> */}
+        {thoughts.map(thought => {
+          return (
+            <div className="thoughts-box" key={thought._id}>
+              <p className="thoughts" tabIndex="0">
+                {thought.message}
+              </p>
+              <p className="name" tabIndex="0">
+                Posted by: {thought.name}
+              </p>
+              <div className="thoughts-footer">
+                <Likeathought
+                  key={thought._id}
+                  id={thought._id}
+                  onThoughtLiked={onThoughtLiked}
+                  hearts={thought.hearts}
+                />
+                <p className="time-stamp" tabIndex="0">
+                  {moment(thought.createdAt).fromNow()}
+                </p>
+                {errorMessage}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
 };
