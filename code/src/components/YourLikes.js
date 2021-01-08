@@ -11,7 +11,7 @@ export const YourLikes = ({ id, heart }) => {
     localStorage.setItem(id, JSON.stringify(previouslyLiked));
 
     const likePost = (event) => {
-        fetch(`https://perssons-happy-thoughts.herokuapp.com/${id}/like`, {
+        fetch(`https://katarinas-happy-api.herokuapp.com/${id}/like`, {
             method: "POST",
             body: "",
             headers: { "Content-Type": "application/json" },

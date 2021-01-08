@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { CharacterCount } from "./CharacterCount"
 import "./happyForm.css"
 
-const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const url = "https://katarinas-happy-api.herokuapp.com/thoughts"
 
 export const HappyForm = (props) => {
     const [message, setMessage] = useState("")
