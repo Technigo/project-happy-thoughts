@@ -7,7 +7,7 @@ export const ThoughtsList = ({ hearts, id, message, time }) => {
 	const [heartCount, setHearthCount] = useState(hearts);
 
 	const postId = id;
-	const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${postId}/like`;
+	const LIKES_URL = `https://my-happy-api.herokuapp.com/thoughts/${postId}/like`;
 
 	const handleLike = (event) => {
 		fetch(LIKES_URL, {
