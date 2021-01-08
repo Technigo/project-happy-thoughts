@@ -5,10 +5,10 @@ export const ThoughtBox = ({thought, getMessages}) => {
 
     //will send a like for the current message to the API
     const postLike = () => {
-        const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`;
+        const LIKE_URL = `https://happyhenrike.herokuapp.com/thoughts/${thought._id}/like`;
 
         fetch(LIKE_URL, {
-            method: "POST",
+            method: "PUT",
             body: "",
             headers: {
                 "Content-Type": "application/json"
