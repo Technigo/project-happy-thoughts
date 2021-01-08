@@ -4,7 +4,8 @@ This site is a simple message thread collecting positive vibes. The user is able
 
 ## What it does
 
-Following the requirements of the assignment, the site will fetch messages from an API that was specifically created for this project (not by me but those who set up the project as a bootcamp assignment). When the user sends a message, it will be added to that same API, data from the API is fetched again and the list of messages refreshes. The same is true for every like a user sends. 
+Following the requirements of the assignment, the site will fetch messages from an API that was specifically created for this project (not by me but those who set up the project as a bootcamp assignment). (Edit January 2021: I've now created my own API to store Happy Thoughts! Find the GitHub project here: https://github.com/HenrikeW/project-happy-thoughts-api )
+When the user sends a message, it will be added to that same API, data from the API is fetched again and the list of messages refreshes. The same is true for every like a user sends. 
 
 In line with the requirements, the messages can only be sent if they are between 6 and 140 characters long. This is also visually signalled to the user as the text on the "send"-button changes color if the message is valid to be sent. 
 
