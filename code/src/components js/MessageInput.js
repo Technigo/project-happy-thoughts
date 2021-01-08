@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "components css/messageInput.css"; 
 
 export const MessageInput = () => {
-  const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  const MESSAGES_URL = "https://happy-thoughts-liza.herokuapp.com/thoughts";
   const [message, setMessage] = useState("");
   const handleSubmit = event => {
     // Prevent page from refreshing automatically

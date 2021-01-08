@@ -3,7 +3,7 @@ import "components css/likes.css";
 import IconButton from "images/iconfinder_86_815175.png";
 
 export const Likes = ({getMessage,hearts,id}) => {
-  const URL_LIKES = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
+  const URL_LIKES = `https://happy-thoughts-liza.herokuapp.com/thoughts/${id}/like`
   const postLike = () => {
     fetch(URL_LIKES, {
       method: "POST",
