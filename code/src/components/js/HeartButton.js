@@ -5,7 +5,7 @@ import "../css/heartButton.css";
 export const HeartButton = ({ onLiked, heart, heartId }) => {
   const handleClick = () => {
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${heartId}/like`,
+      `https://happy-thoughts-caroline.herokuapp.com/thoughts/${heartId}/like`,
       {
         method: "POST",
         body: "",

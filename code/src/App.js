@@ -5,14 +5,16 @@ import { ThoughtsInput } from "./components/js/ThoughtsInput.js";
 import { Header } from "./components/js/Header";
 import { Footer } from "./components/js/Footer";
 
-const URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+const URL = "https://happy-thoughts-caroline.herokuapp.com/";
+const THOUGHTS_URL = "https://happy-thoughts-caroline.herokuapp.com/thoughts";
+const HEART_URL = "https://happy-thoughts-caroline.herokuapp.com/thoughts/:thoughtId/like";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [happyMessage, setHappyMessage] = useState("");
 
   useEffect(() => {
-    fetch(URL)
+    fetch(THOUGHTS_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data));
   }, [happyMessage]);
@@ -22,7 +24,7 @@ export const App = () => {
   };
 
   const onLiked = (thoughtId) => {
-    const updatedThoughts = thoughts.map((thought) => {
+    const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
         thought.hearts += 1;
       }
@@ -35,7 +37,7 @@ export const App = () => {
     <main>
       <Header />
       <ThoughtsInput onFormSubmit={onFormSubmit} />
-      {thoughts.map((thought) => (
+      {thoughts.map(thought => (
         <ThoughtsFeed
           key={thought._id}
           heartId={thought._id}

@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 import "../css/thoughtsInput.css";
 
-const URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+const THOUGHTS_URL = "https://happy-thoughts-caroline.herokuapp.com/thoughts";
 
 export const ThoughtsInput = ({ onFormSubmit }) => {
   const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(URL, {
+    fetch(THOUGHTS_URL, {
       method: "POST",
       body: JSON.stringify({ message }),
       headers: { "Content-Type": "application/json" },
@@ -37,7 +37,7 @@ export const ThoughtsInput = ({ onFormSubmit }) => {
             className="send-button"
             type="submit"
             onClick={handleSubmit}
-            disabled={message.length < 3 || message.length > 140 ? true : false}
+            disabled={message.length < 3 || message.length > 140}
           >
             <img
               src="./emoji.png"
