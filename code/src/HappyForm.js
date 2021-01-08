@@ -6,7 +6,7 @@ const MESSAGE_URL = "https://agnes-happy-thoughts.herokuapp.com/thoughts";
 
 export const HappyForm = props => {
     const [message, setMessage] = useState('')
-    const [name, setName] = useState('');
+    const [name, setName] = useState('Anonymous');
 
     const handleSubmit = event => {
         event.preventDefault();
