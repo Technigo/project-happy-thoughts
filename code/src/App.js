@@ -25,13 +25,15 @@ export const App = () => {
   }
 
   const onLiked = thoughtId => {
-    const updatedThoughts = thoughts.map(thought => {
-      if (thought._id === thoughtId) {
-        thought.hearts += 1
-      }
-      return thought
-    })
-    setThoughts(updatedThoughts)
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" }
+    }).then(res => res.json())
+      .then(() => {
+        fetch(url)
+          .then(res => res.json())
+          .then(json => setThoughts(json))
+      })
   }
 
   return (
