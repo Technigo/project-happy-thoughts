@@ -1,2 +1,2 @@
 
-export const baseAPI = 'https://happy-thoughts-technigo.herokuapp.com';
+export const baseAPI = `https://happy-thoughts-sandra.herokuapp.com`
