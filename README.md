@@ -1,10 +1,11 @@
 # Happy Thoughts
+Here's a app where you can share happy thoughts and small, or big, stuff that made you smile 🥳
+You can also take the oppertunity to read and like other peoples posts. 
 
-This is a little app where you can share a happy little thought and like others thoughts. 
+# Tech 
 
-## The problem
+Frontend made with React. 
+Backend made with Node.js and Express.
 
-Thee start is the hardest part. But I structured up how the different components would be built up. The problems where solved, all my question where answered in the material. 
 ## View it live
-
-https://koselige-tanker.netlify.app/
+https://happi-thoughts.netlify.app/
