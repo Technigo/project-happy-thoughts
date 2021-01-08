@@ -1,6 +1,6 @@
 import React from 'react';
 import "components css/header.css"
-import IconButton from "images/iconfinder_86_815175.png";
+import  IconButton from "images/iconfinder_86_815175.png";
 
 export const Header = () => {
   return(

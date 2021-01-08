@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import "components css/messageInput.css"; 
 
 export const MessageInput = () => {
@@ -12,7 +13,7 @@ export const MessageInput = () => {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       // Send the JSON as a string 
-      body: JSON.stringify({ message: message })
+      body: JSON.stringify({ message })
     }
       ).then(()=>{
       // Reload the page after the request is complete
@@ -24,13 +25,11 @@ return (
   <form className="happy-form" onSubmit={handleSubmit}>
     <input type="text" 
           onChange={event => setMessage(event.target.value)}
-          className="form-text">
-    </input>
+          className="form-text" />
     <input type="submit"
             className="form-button"
             value={"Send"} 
-            disabled={message.length < 6 || message.length > 140 ? true : false}>
-    </input>
+            disabled={message.length < 6 || message.length > 140 ? true : false} />
     <p className="count">{message.length} / 140</p>
   </form>
     )
