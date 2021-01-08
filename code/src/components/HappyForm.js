@@ -6,7 +6,7 @@ export const HappyForm = ({ onMessageSubmit }) => {
   const [messageOK, setMessageOK] = useState(true);
 
   const happyThoughtsURL =
-    'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+    'https://happy-thoughts-by-ylva.herokuapp.com/thoughts';
 
   const handleSubmit = (event) => {
     event.preventDefault(); // To prevent refresh of window at click of button
@@ -14,9 +14,9 @@ export const HappyForm = ({ onMessageSubmit }) => {
     fetch(happyThoughtsURL, {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json',
+        'Content-type': 'application/json'
       },
-      body: JSON.stringify({ message: message }),
+      body: JSON.stringify({ message: message })
     })
       .then((response) => {
         if (response.status >= 200 && response.status <= 299) {

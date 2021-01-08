@@ -7,9 +7,9 @@ export const HappyThought = ({
   message,
   hearts,
   createdAt,
-  onLikedThought,
+  onLikedThought
 }) => {
-  const likeThoughtURL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
+  const likeThoughtURL = `https://happy-thoughts-by-ylva.herokuapp.com/thoughts/${id}/like`;
 
   const handleClick = (event) => {
     event.preventDefault(); // To prevent refresh of window at click of button
@@ -17,8 +17,8 @@ export const HappyThought = ({
     fetch(likeThoughtURL, {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json',
-      },
+        'Content-type': 'application/json'
+      }
     }).then(() => {
       onLikedThought(id);
     });
