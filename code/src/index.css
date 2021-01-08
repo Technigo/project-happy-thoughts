@@ -50,6 +50,10 @@ input {
   height: 50px;
 }
 
+.counter {
+  margin-left: 10px;
+}
+
 .submit-button {
   margin-left: 5px;
   border-radius: 30px;

@@ -23,14 +23,14 @@ export const App = () => {
     fetch(THOUGHTS_URL, { 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: newThought})
+      body: JSON.stringify({ message: newThought })
   })
     .then(() => fetchThoughts())
     .catch(error => console.error(error));
 }
 
 const postHearts = (messageId) => {
-  const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`;
+  const LIKES_URL = `https://happy-thoughts-api-project.herokuapp.com/thoughts/${messageId}/like`;
 
   fetch(LIKES_URL,{
     method:'POST',

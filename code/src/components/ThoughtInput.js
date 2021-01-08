@@ -33,6 +33,7 @@ const ThoughtInput = ({ onThoughtChange }) => {
                     </span>
                 </button>
             </div>
+            <p className="counter">{newThought.length} /140</p>
         </form>
     )
 }
