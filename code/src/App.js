@@ -11,9 +11,13 @@ export const App = () => {
   const [newMessage, setNewMessage] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [loading, setLoading] = useState(true)
+  const [username, setUsername] = useState('')
+  const [tags, setTags] = useState()
 
   //const ThoughtsURL= "https://happy-thoughts-technigo.herokuapp.com/thoughts"
   const ThoughtsURL= "https://sharing-happy-thoughts.herokuapp.com/thoughts"
+  //const ThoughtsURL= "http://localhost:8080/thoughts"
+  
   
   //Fetches existing thoughts from API and removes the loader when done
   const fetchThoughts = () => {
@@ -29,15 +33,32 @@ export const App = () => {
     fetchThoughts();
   }, []);
 
+  //Fetches existing thoughts from API tagged with named parameter
+  const fetchTagsThoughts = (tag) => {
+    fetch(`${ThoughtsURL}/${tag}`)
+    .then (response => response.json())
+    .then ((thoughts) => {
+        setLoading(false)
+        setMessages(thoughts)
+    })
+  }
+
   //Posts a new thought from component NewThought to API (and catch the errors)
   const postThought = (event) => {
     event.preventDefault();
     setLoading(true)
+    let trimmedTagsArray = []
+    if (tags) {
+      const tagsArray = tags.split(',')
+      trimmedTagsArray = tagsArray.map(tag => tag.trim())
+    } else {
+      trimmedTagsArray = []
+    }
     
     fetch(ThoughtsURL, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({message: newMessage})
+      body: JSON.stringify({message: newMessage, username: username, tags: trimmedTagsArray})
     })
     .then (response => response.json())
     .then((message) => {
@@ -47,6 +68,7 @@ export const App = () => {
       else {
         setErrorMessage('') //removes the error text
         setNewMessage(''); //resets the textarea input
+        setUsername('')
       }
       fetchThoughts()
     })
@@ -73,7 +95,11 @@ export const App = () => {
         newThought={newMessage} 
         setNewThought={setNewMessage} 
         handleSubmit={postThought}
-        errorMessage={errorMessage}/>
+        errorMessage={errorMessage}
+        username={username}
+        setUsername={setUsername}
+        tags={tags}
+        setTags={setTags}/>
       
       {/* Shows loading animation if loading state is set to True */}
       {loading && <Loading />} 
@@ -81,7 +107,8 @@ export const App = () => {
     {(messages.length > 0) &&
       <ThoughtList 
         messageList={messages} 
-        onLike={()=>fetchThoughts()}/>
+        onLike={()=>fetchThoughts()}
+        fetchTagsThoughts = {fetchTagsThoughts}/>
       }
 
     </section>

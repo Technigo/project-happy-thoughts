@@ -93,6 +93,15 @@ button:hover {
   background-color: #e9e8e8;
 }
 
+.tags {
+  color: #d0d0d0;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /*New Thought*/
 
 .new-thought {
@@ -115,12 +124,20 @@ button:hover {
   margin: 0;
 }
 
+.new-thought .thought-details {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: right;
+  margin: 0;
+}
+
 .submit-thought {
   width: 200px;
   padding: 12px;
   background-color: #FFADAD;
   border: none;
   border-radius: 30px;
+  margin: 10px 0;
 }
 
 textarea {
@@ -130,8 +147,20 @@ textarea {
   resize: vertical;
 }
 
+input {
+  margin: 10px 0 5px 0;
+  min-height: 25px;
+  font-size: 15px;
+  font-family: monospace;
+}
 .warning {
   color: red;
+}
+
+.new-thought .warning {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 .character-count {
@@ -139,7 +168,13 @@ textarea {
 }
 
 .new-thought .details {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  
+}
+
+label {
+  margin: 0;
+  margin-top: 10px;
 }
 
  /* LOADING */ 
