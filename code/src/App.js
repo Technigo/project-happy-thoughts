@@ -4,43 +4,37 @@ import { HappyForm } from "./components/HappyForm"
 import { HappyThoughts } from "./components/HappyThoughts"
 import "./components/app.css"
 
-//const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
-const url = "https://katarinas-happy-api.herokuapp.com/thoughts"
+const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+//const url = "https://katarinas-happy-api.herokuapp.com/thoughts"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [postedMessage, setPostedMessage] = useState("")
   const [loading, setLoading] = useState(true)
-  const [page, setPage] = useState(1);
-  const [sort, setSort] = useState("default");
 
   useEffect(() => {
-    fetch(
-      `https://katarinas-happy-api.herokuapp.com/thoughts?page=${page}&sort=${sort}`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        setTotalPages(json.pages);
-        setThoughts(json.thoughts);
-        setLoading(false);
-      });
-  }, [page, sort]);
+    fetch(url)
+      .then(res => res.json())
+      .then(json => setThoughts(json))
+    setLoading(false)
+  }, [postedMessage, loading])
+
 
   const onFormSubmit = message => {
     setPostedMessage(message)
   }
 
-  // const onLiked = thoughtId => {
-  //   fetch(`https://katarinas-happy-api.herokuapp.com/thoughts/${thoughtId}/like`, {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" }
-  //   }).then(res => res.json())
-  //     .then(() => {
-  //       fetch(url)
-  //         .then(res => res.json())
-  //         .then(json => setThoughts(json))
-  //     })
-  // }
+  const onLiked = thoughtId => {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" }
+    }).then(res => res.json())
+      .then(() => {
+        fetch(url)
+          .then(res => res.json())
+          .then(json => setThoughts(json))
+      })
+  }
 
   return (
     <main>
