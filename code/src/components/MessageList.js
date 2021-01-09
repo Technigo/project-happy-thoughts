@@ -6,7 +6,7 @@ export const MessageList = (props) => {
 
   const onHandleClick = (_id) => {
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`,
+      `https://project-happy-thoughts-api-jh.herokuapp.com/thoughts/${_id}/like`,
       {
         method: "POST",
         body: "",
