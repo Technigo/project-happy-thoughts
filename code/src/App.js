@@ -45,7 +45,7 @@ export const App = () => {
   }
 
   const likeMessage = (messageID) => {
-    fetch(`https://happy-thoughts-axel.herokuapp.com/thoughts${messageID}/like`, {
+    fetch(`https://happy-thoughts-axel.herokuapp.com/thoughts/${messageID}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json"' }
     })
