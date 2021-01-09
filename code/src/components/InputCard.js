@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const LIKES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const LIKES_URL = "https://happy-thoughts-dummy-api.herokuapp.com/thoughts"
 
 export const InputCard = () => {
   const [newThought, setNewThought] = useState('')

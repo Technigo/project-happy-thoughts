@@ -3,7 +3,7 @@ import React from "react"
 export const LikeButton = ({hearts , id, onThoughtLiked}) => {
 
   const handleClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+    fetch(`https://happy-thoughts-dummy-api.herokuapp.com/thoughts/${id}/like`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json"},

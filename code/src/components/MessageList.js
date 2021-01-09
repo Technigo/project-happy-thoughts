@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react"
 import { LikeButton } from "./LikeButton"
 
 export const MessageList = () => {
-  const LIKES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+  const LIKES_URL = "https://happy-thoughts-dummy-api.herokuapp.com/thoughts"
   const [messages, setMessages] = useState([])
   // Use [] in the useState since it is an array that we get in the get-request
 
