@@ -9,7 +9,6 @@ export const App = () => {
 
   useEffect(() => {
     fetchThoughts();
-    setInterval(fetchThoughts, 10000);
   }, []);
 
   //GET request (fetching the data from the server)

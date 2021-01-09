@@ -17,6 +17,7 @@ const ThoughtInput = ({ onNewThought }) => {
         What's making you happy right now?
       </label>
       <input
+        id="input-text"
         className="input"
         type="text"
         autoComplete="off"
