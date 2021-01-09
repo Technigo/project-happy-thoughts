@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import cors from "cors";
+import cors from "cors";
 
 import { MessageList } from "components/MessageList";
 import { MessageInput } from "components/MessageInput";
@@ -8,8 +8,7 @@ import { Footer } from "components/Footer";
 
 export const App = () => {
   const MESSAGES_URL = "https://happy-thinking-api.herokuapp.com/thoughts";
-
-  // "https://happy-thoughts-technigo.herokuapp.com/thoughts"; the old API
+// "https://happy-thoughts-technigo.herokuapp.com/thoughts"; the old API
 
   const [messages, setMessages] = useState([]);
 
@@ -49,7 +48,7 @@ export const App = () => {
 
       {
         method: "POST",
-        headers: { "Content-Type": "application/json", 'Access-Control-Allow-Origin': '*'},
+        headers: { "Content-Type": "application/json"},
       }
     ).then(() => {
       fetchMessages();
