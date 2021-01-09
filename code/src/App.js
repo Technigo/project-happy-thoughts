@@ -14,8 +14,7 @@ export const App = () => {
           return res.json()
       })
       .then(data => {
-        
-        //setThoughts(data) /* data is an array of thoughts */
+        setThoughts(data) /* data is an array of thoughts */
         console.log(data)
       })
   }
@@ -47,13 +46,6 @@ export const App = () => {
       })
   }
 
-  const changeNextPage = () => {
-    setPageNr(pageNr + 1)
-  }
-
-  const changePreviousPage = () => {
-    setPageNr(pageNr - 1)
-  }
   /*returning components and passing props - functions and the thoughtarray.*/ 
   return (
     <main>
