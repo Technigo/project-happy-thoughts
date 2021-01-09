@@ -5,7 +5,8 @@ import { MessageInput } from 'components/MessageInput'
 
 export const App = () => {
   // App is responsible for fetching, listing, and posting the messages – as well as contains the like function (it's here because )
-  const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+  const MESSAGES_URL_TECHNIGOSERVER = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+  const MESSAGES_URL_AXELSERVER = "https://happy-thoughts-axel.herokuapp.com/thoughts"
   const [messages, setMessages] = useState([])
 
   useEffect(() => {
@@ -13,7 +14,7 @@ export const App = () => {
   }, [])
 
   const fetchMessages = () => {
-    fetch(MESSAGES_URL)
+    fetch(MESSAGES_URL_AXELSERVER)
       .then((res) => {
         // This is the response we're getting – but we need to transform it to JSON.
         return res.json()
@@ -32,7 +33,7 @@ export const App = () => {
 
   const postMessage = (message) => {
     // Fetches the messages URL, and does a post request containing the message part of the message (this is handled in the onPostMessage function which is being sent in with the MessageInput component).
-    fetch(MESSAGES_URL, {
+    fetch(MESSAGES_URL_AXELSERVER, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: message })
@@ -44,7 +45,7 @@ export const App = () => {
   }
 
   const likeMessage = (messageID) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`, {
+    fetch(`https://happy-thoughts-axel.herokuapp.com/thoughts${messageID}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json"' }
     })
