@@ -4,13 +4,8 @@ import { ThoughtInput } from 'components/ThoughtInput'
 import { ThoughtMessage } from 'components/ThoughtMessage'
 
 export const App = () => {
-
   const [thoughts, setThoughts] = useState([])
   const THOUGHTS_URL = 'https://share-happy-thought.herokuapp.com/thoughts'
-
-  useEffect(() => {
-    fetchThoughts()
-  }, [])
 
   const fetchThoughts = () => {
     /* fetch data from server, 20 latest thought posted and details for each post*/
@@ -19,9 +14,15 @@ export const App = () => {
           return res.json()
       })
       .then(data => {
-        setThoughts(data) /* data is an array of thoughts */
+        
+        //setThoughts(data) /* data is an array of thoughts */
+        console.log(data)
       })
   }
+
+  useEffect(() => {
+    fetchThoughts()
+  }, [])
 
   /*posts message and then creates a new fetch to update the site with new information from the server*/ 
   const postThought = thought => {
@@ -37,16 +38,22 @@ export const App = () => {
 
   /*posts data to the server when post is liked. Connected with onClick function in thoughtMessage. fetches again after the post to get the updated information from server*/
   const postHearts = messageId => {
-    fetch(`https:/share-happy-thought.herokuapp.com/thoughts/${messageId}/like`, {
+    fetch(`https://share-happy-thought.herokuapp.com/thoughts/${messageId}/like`, {
       method: 'POST', 
       headers: { 'Content-Type': 'application/json"'}
       })
       .then (() => {
         fetchThoughts()
-      });
-  };
+      })
+  }
 
+  const changeNextPage = () => {
+    setPageNr(pageNr + 1)
+  }
 
+  const changePreviousPage = () => {
+    setPageNr(pageNr - 1)
+  }
   /*returning components and passing props - functions and the thoughtarray.*/ 
   return (
     <main>
