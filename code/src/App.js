@@ -13,8 +13,8 @@ export const App = () => {
 
   useEffect(() => {
     fetch(THOUGHTS_URL)
-      .then((res) => res.json())
-      .then((data) => setThoughts(data));
+      .then(res => res.json())
+      .then(data => setThoughts(data));
   }, [happyMessage]);
 
   const onFormSubmit = (message) => {

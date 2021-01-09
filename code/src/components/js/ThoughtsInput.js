@@ -29,7 +29,7 @@ export const ThoughtsInput = ({ onFormSubmit }) => {
           id="thoughts"
           name="thoughts"
           value={message}
-          onChange={(event) => setMessage(event.target.value)}
+          onChange={event => setMessage(event.target.value)}
           required
         ></textarea>
         <div className="form-footer">
@@ -37,7 +37,7 @@ export const ThoughtsInput = ({ onFormSubmit }) => {
             className="send-button"
             type="submit"
             onClick={handleSubmit}
-            disabled={message.length < 3 || message.length > 140}
+            disabled={message.length < 5 || message.length > 140}
           >
             <img
               src="./emoji.png"
@@ -55,7 +55,7 @@ export const ThoughtsInput = ({ onFormSubmit }) => {
             <span
               style={{
                 color:
-                  message.length < 3 || message.length > 140
+                  message.length < 5 || message.length > 140
                     ? "#FF0000"
                     : "#000000",
               }}
