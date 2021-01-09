@@ -18,5 +18,4 @@ The submit button is disabled when the nr of characters in thoughts message is l
 - HTML 
 
 ## View it live
-
-https://stoic-perlman-f413ec.netlify.app/
+https://happyhappythoughts.netlify.app/
