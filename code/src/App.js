@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import cors from "cors";
 
 import { MessageList } from "components/MessageList";
 import { MessageInput } from "components/MessageInput";
@@ -6,7 +7,9 @@ import { Footer } from "components/Footer";
 
 
 export const App = () => {
-  const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  const MESSAGES_URL = "https://happy-thinking-api.herokuapp.com/thoughts";
+
+  // "https://happy-thoughts-technigo.herokuapp.com/thoughts"; the old API
 
   const [messages, setMessages] = useState([]);
 
@@ -30,7 +33,7 @@ export const App = () => {
   const postSingleMessage = (newMessage) => {
     fetch(MESSAGES_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",'Access-Control-Allow-Origin': '*'},
       body: JSON.stringify({ message: newMessage }),
     })
       .then(() => fetchMessages())
@@ -41,10 +44,12 @@ export const App = () => {
 
   const postHearts = (messageId) =>
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`,
+      `https://happy-thinking-api.herokuapp.com/thoughts/${messageId}/like`,
+      //  `https://happy-thoughts-technigo.herokuapp.com/thoughts/{messageId}/like`, old API
+
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", 'Access-Control-Allow-Origin': '*'},
       }
     ).then(() => {
       fetchMessages();
