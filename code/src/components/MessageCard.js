@@ -3,9 +3,9 @@ import React from "react";
 import Moment from "moment";
 import "./messageCard.css";
 
-export const MessageCard = ({ _id, createdAt, hearts, message, onLiked }) => {
+export const MessageCard = ({ _id, createdAt, likes, message, onLiked }) => {
   const handleClick = () => {
-    const MESSAGES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`;
+    const MESSAGES_URL = `https://jonnas-happy-thoughts.herokuapp.com/${_id}/like`;
 
     fetch(MESSAGES_URL, {
       method: "POST",
@@ -21,17 +21,17 @@ export const MessageCard = ({ _id, createdAt, hearts, message, onLiked }) => {
         <div className="smiley-container">
           <button
             className={`smiley-btn ${
-              hearts > 9
+              likes > 9
                 ? "love-liked"
-                : hearts > 4
+                : likes > 4
                 ? "super-liked"
-                : hearts > 0
+                : likes > 0
                 ? "liked"
                 : "not-liked"
             }`}
             onClick={handleClick}
           ></button>
-          <span className="hearts">x {hearts}</span>
+          <span className="hearts">x {likes}</span>
         </div>
         <span className="moment">{Moment(createdAt).fromNow()}</span>
       </div>

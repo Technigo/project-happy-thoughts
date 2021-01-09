@@ -6,7 +6,7 @@ import "./messageList.css";
 
 const MessageList = ({ messages, setMessages }) => {
   const [loading, setLoading] = useState(true);
-  const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  const MESSAGES_URL = "https://jonnas-happy-thoughts.herokuapp.com/";
 
   useEffect(() => {
     fetch(MESSAGES_URL)
@@ -25,7 +25,7 @@ const MessageList = ({ messages, setMessages }) => {
   const onLiked = (messageId) => {
     const updatedMessages = messages.map((message) => {
       if (message._id === messageId) {
-        message.hearts += 1;
+        message.likes += 1;
       }
       return message;
     });
