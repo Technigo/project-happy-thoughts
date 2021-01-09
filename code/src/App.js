@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import cors from "cors";
+// import cors from "cors";
 
 import { MessageList } from "components/MessageList";
 import { MessageInput } from "components/MessageInput";
