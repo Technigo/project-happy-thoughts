@@ -46,6 +46,7 @@ code {
 
 .send-thought textarea {
   margin: 10px 0;
+  font-size: 12px;
 }
 
 .send-thought-button {
@@ -69,11 +70,13 @@ code {
 .send-thought input {
   font-size: 12px;
   margin: 0 5px 10px;
+  font-family: Courier New, monospace;
 }
 
-.send-thought input::placeholder {
-  font-size: 12px;
-  /* font-family: Courier New, monospace; */
+.send-thought input::placeholder,
+.send-thought textarea::placeholder {
+  font-size: 14px;
+  font-family: Courier New, monospace;
 }
 
 .send-heartemoji {
@@ -116,6 +119,11 @@ code {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   font-size: 16px;
+  cursor: pointer;
+}
+
+.sort-button:hover {
+  background-color: darkgray;
 }
 
 .thoughts-section {
@@ -139,7 +147,7 @@ code {
 
 .thought-text {
   font-family: Courier New, monospace;
-  font-weight: 550;
+  font-weight: bold;
 }
 
 .username-text {

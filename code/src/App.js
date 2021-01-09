@@ -48,7 +48,7 @@ export const App = () => {
           Most Likes
         </button>
         <button className="sort-button" onClick={() => setSort("oldest")}>
-          Older
+          Oldest
         </button>
         <button className="sort-button" onClick={() => setSort("newest")}>
           Recent
