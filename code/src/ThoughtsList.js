@@ -1,9 +1,18 @@
 import React from "react";
 import moment from "moment";
 
-export const ThoughtsList = ({ onLiked, message, hearts, id, createdAt }) => {
-  const handleClick = _id => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+import { THOUGHTS_URL } from "./urls";
+
+export const ThoughtsList = ({
+  onLiked,
+  message,
+  username,
+  hearts,
+  id,
+  createdAt,
+}) => {
+  const handleClick = id => {
+    fetch(`${THOUGHTS_URL}/${id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" },
@@ -15,6 +24,9 @@ export const ThoughtsList = ({ onLiked, message, hearts, id, createdAt }) => {
       <article className="thought-card">
         <div className="top-of-card">
           <p className="thought-text">{message}</p>
+          <p className="username-text">
+            Sent by: {username ? username : "Anonymous"}
+          </p>
         </div>
         <div className="bottom-of-card">
           <p className="like-text">

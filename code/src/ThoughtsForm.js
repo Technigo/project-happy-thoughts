@@ -2,10 +2,12 @@ import React, { useState } from "react";
 
 export const ThoughtsForm = ({ onThoughtChange }) => {
   const [newThought, setNewThought] = useState("");
+  const [username, setUsername] = useState();
 
   const handleSubmit = event => {
     event.preventDefault();
-    onThoughtChange(newThought);
+    onThoughtChange(newThought, username);
+    setNewThought("");
   };
 
   return (
@@ -19,6 +21,16 @@ export const ThoughtsForm = ({ onThoughtChange }) => {
           placeholder="Type happy thought here..."
           rows="3"
         ></textarea>
+        <label className="form-input">
+          {" "}
+          Sent by:
+          <input
+            type="text"
+            placeholder="Anonymous"
+            value={username}
+            onChange={event => setUsername(event.target.value)}
+          />
+        </label>
         <button
           className="send-thought-button"
           type="submit"
