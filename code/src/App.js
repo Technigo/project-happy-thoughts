@@ -67,8 +67,9 @@ export const App = () => {
       } 
       else {
         setErrorMessage('') //removes the error text
-        setNewMessage(''); //resets the textarea input
+        setNewMessage('') //resets the textarea input
         setUsername('')
+        setTags('')
       }
       fetchThoughts()
     })

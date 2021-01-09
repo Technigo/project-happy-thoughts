@@ -11,7 +11,6 @@ export const NewThought = ({newThought, setNewThought, handleSubmit, errorMessag
         }
         return characters
     }
-    console.log(tags)
     return (
         <form className="new-thought" onSubmit={handleSubmit}>
           
