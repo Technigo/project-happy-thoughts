@@ -26,18 +26,12 @@ export const App = () => {
     fetch(`${MESSAGES_URL}?page=${page}&sort=${sort}`)
       .then(results => results.json())
       .then(data => {
-        console.log(data);
         setMessages(data.results);
         setTotalMessages(data.total);
         setLoading(false);
       })
       .catch(error => console.error(error));
   };
-
-  console.log(`page: ${page}`);
-  console.log(`number of messages: ${messages.length}`);
-  console.log(`sorting: ${sort}`);
-  console.log(totalMessages);
 
   //fetch POST message to the API and then fetch GET all messages
   const postMessage = (message, name) => {
@@ -74,15 +68,14 @@ export const App = () => {
             dataLength={messages.length}
             next={() => setPage(page + 1)}
             hasMore={messages.length < totalMessages ? true : false}
-            scrollThreshold={1}
-            //loader={<h4>Loading...</h4>}
+            scrollThreshold={0.8}
             loader={
               <Loader
                 className="loader--small"
                 classNameImage="loader__image--small"
               />
             }
-            endMessage={<p>No more thoughts to show</p>}
+            endMessage={<p>No more thoughts to show!</p>}
           >
             <MessageList messageList={messages} onLikeChange={postLike} />
           </InfiniteScroll>
