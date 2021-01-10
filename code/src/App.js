@@ -35,21 +35,21 @@ export const App = () => {
 
   // Post new heart value to server then fetch
   const postHeart = event => {
-    const messageId = event._id
-    fetch(likeUrlFor(messageId),
+    const thoughtId = event._id
+    fetch(likeUrlFor(thoughtId),
       {
         method: 'POST',
         body: "",
         headers: { "Content-Type": "application/json" },
       }).then(() => {
-        onMessageLiked(messageId)
+        onMessageLiked(thoughtId)
         fetchMessages();
       });
   };
 
-  const onMessageLiked = messageId => {
+  const onMessageLiked = thoughtId => {
     const updatedMessages = messages.map((message) => {
-      if (message._id === messageId) {
+      if (message._id === thoughtId) {
         message.hearts += 1
       }
       return message
