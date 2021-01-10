@@ -1,1 +1,1 @@
-export const ThoughtsUrl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+export const ThoughtsUrl = 'https://emma-happy-thoughts-api.herokuapp.com/thoughts';

@@ -46,7 +46,7 @@ export const App = () => {
 
   // Post likes to the API
   const onLike = (thoughtId) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
+    fetch(`https://emma-happy-thoughts-api.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
       body: ''
