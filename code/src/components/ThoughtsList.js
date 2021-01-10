@@ -10,7 +10,7 @@ const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLike }) =
   const [heartColor, setHeartColor] = useState("heart-button");
 
   const addNewHeart = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`, {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/heart`, {
       method: "POST",
       headers: { "Content-Type": "application/json" }
     }).then(() => {
