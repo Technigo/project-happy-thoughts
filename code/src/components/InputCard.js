@@ -34,7 +34,7 @@ export const InputCard = () => {
       <button 
         className="input-card-button" 
         type="submit"
-        disabled={newThought.length < 6 || newThought.length > 140 ? true : false}
+        disabled={newThought.length < 5 || newThought.length > 140 ? true : false}
       >
         <span role="img" aria-label="heart">&#10084;&#65039; </span>
         Send Happy Thoughts
