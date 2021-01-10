@@ -87,3 +87,9 @@ form {
 .time-created {
   margin-top: 22px;
 }
+
+.textarea-message {
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+
+}

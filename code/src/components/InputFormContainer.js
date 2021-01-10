@@ -20,7 +20,8 @@ const InputFormContainer = () =>{
 
     return (
     <form onSubmit={submit} className="inputform">
-        <h1>What is making you happy right now ?</h1>
+        <h1>What is making you happy right now ?  </h1>
+        <p className = "textarea-message" > Enter a thought with at least 5 characters </p>
         <textarea 
             className="thoughts-textarea"
             maxlenght="300" 
@@ -29,7 +30,8 @@ const InputFormContainer = () =>{
         </textarea>
         <button 
             className="input-button"
-            type="submit"> 
+            type="submit"
+            disabled={message.length < 5 || message.length > 140}> 
             <span role="img" aria-label="Heart emoji">
                 &#128150; &nbsp; 
             </span>
