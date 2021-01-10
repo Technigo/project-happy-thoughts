@@ -25,7 +25,13 @@ export const MessageInput = ({ onMessageChange }) => {
       >
         {newMessage.length} / 140
       </span>
-
+      <label for="username"></label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder=" enter username..."
+      ></input>
       <button
         type="submit"
         className="form-button"
