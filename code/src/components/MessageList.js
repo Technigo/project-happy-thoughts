@@ -17,7 +17,7 @@ const MessageList = ({ messages, setMessages }) => {
         setTimeout(() => {
           setMessages(data);
           setLoading(false);
-        }, 3000);
+        }, 0);
       });
   }, [setMessages]);
 
