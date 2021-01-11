@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-
 import "./thoughts-list.css";
+import { THOUGHTS_URL } from "../urls"
 
 
-const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLike }) => {
+const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLike, id }) => {
 
   const [heartColor, setHeartColor] = useState("heart-button");
 
   const addNewHeart = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/hearts`, {
+    fetch(`${THOUGHTS_URL}/${thought._id}/hearts`, {
       method: "POST",
+      body: "",
       headers: { "Content-Type": "application/json" }
     }).then(() => {
       onLike(thought._id);
