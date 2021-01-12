@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 import {NewThought} from './NewThought'
 import {Replies} from './Replies'
 
-const thoughtsURL= "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const thoughtsURL= "https://thessans-happythoughts-api.herokuapp.com/thoughts"
 
 export const App = () => {
   const [existingThoughts, setExistingThoughts] = useState([]) // the existing thoughts in the list

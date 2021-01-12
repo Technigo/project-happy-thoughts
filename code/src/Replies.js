@@ -5,7 +5,7 @@ export const Replies = ({allReplies, onLike}) => {
 
     // post a like to the server and then update the DOM
     const likeThought = (messageID) => {
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`, {
+        fetch(`https://thessans-happythoughts-api.herokuapp.com/thoughts/${messageID}/like`, { 
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
         })
