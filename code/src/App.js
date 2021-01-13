@@ -24,7 +24,7 @@ export const App = () => {
         setTimeout(() => {
           setLoader(false);
           setMessages(data);
-        }, 3000);
+        }, 1000);
       });
   };
 
@@ -39,7 +39,7 @@ export const App = () => {
   const updateLikes = (messageId) => {
     const updatedMessages = messages.map((message) => {
       if (message._id === messageId) {
-        message.hearts += 1;
+        message.likes += 1;
       }
       return message;
     });

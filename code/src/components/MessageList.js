@@ -18,7 +18,7 @@ export const MessageList = ({ messages, onLiked }) => {
           <div className="message-info">
             <button
               className={
-                message.hearts > 0
+                message.likes > 0
                   ? "like-button with-likes"
                   : "like-button no-likes"
               }
@@ -28,7 +28,7 @@ export const MessageList = ({ messages, onLiked }) => {
                 💜
               </span>
             </button>
-            <p className="nr-of-likes">{message.hearts}&nbsp;likes</p>
+            <p className="nr-of-likes">{message.likes}&nbsp;likes</p>
             <p className="message-time">
               {moment(message.createdAt).fromNow()}
             </p>
