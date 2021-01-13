@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
-import { THOUGHTS_URL, likeUrlFor } from 'component/Urls';
+import { THOUGHTS_URL, LIKE_URL } from 'component/Urls';
 
 import { MessageInput } from './component/MessageInput';
 import { MessageList } from './component/MessageList';
+
 
 export const App = () => {
   const [messages, setMessages] = useState([]);
@@ -36,9 +37,9 @@ export const App = () => {
   // Post new heart value to server then fetch
   const postHeart = event => {
     const thoughtId = event._id
-    fetch(likeUrlFor(thoughtId),
+    fetch(LIKE_URL(thoughtId),
       {
-        method: 'POST',
+        method: 'PUT',
         body: "",
         headers: { "Content-Type": "application/json" },
       }).then(() => {
