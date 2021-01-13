@@ -32,7 +32,7 @@ export const App = () => {
     fetch(MESSAGE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: newMessage }),
+      body: JSON.stringify({ text: newMessage }),
     }).then(() => fetchMessages());
   };
 
