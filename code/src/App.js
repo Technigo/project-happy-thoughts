@@ -31,7 +31,10 @@ export const App = () => {
   const reachMessageInput = (newMessage) => {
     fetch(MESSAGE_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({ text: newMessage }),
     }).then(() => fetchMessages());
   };
@@ -49,7 +52,10 @@ export const App = () => {
   const onLiked = (messageId) => {
     fetch(MESSAGE_URL + `${messageId}/like`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
       body: "",
     }).then(() => updateLikes(messageId));
   };
