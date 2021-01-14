@@ -14,7 +14,7 @@ export const MessageList = ({ messages, onLiked }) => {
     <>
       {messages.map((message) => (
         <article className="message-card" key={message._id} tabIndex="0">
-          <p className="message">{message.message}</p>
+          <p className="message">{message.text}</p>
           <div className="message-info">
             <button
               className={
