@@ -23,20 +23,28 @@ export const ThoughtsInput = ({ onFormSubmit }) => {
   return (
     <section className="input-section">
       <form className="input-container">
-        <label htmlFor="thoughts">Spread Some Happiness</label>
+        <label htmlFor="thoughts">SPRINKLE SOME HAPPINESS!</label>
         <textarea
           id="thoughts"
           name="thoughts"
           value={message}
-          onChange={(event) => setMessage(event.target.value)}
-        ></textarea>
+          onChange={(event) => setMessage(event.target.value)}>
+        </textarea>
+        <p className="text-length">
+          <span
+            style={{
+            color:message.length < 5 || message.length > 140
+            ? "#FF0000"
+            : "#000000",}}>
+            {message.length}
+            </span> {" "}/ 140
+        </p>
         <div className="input-features">
           <button
             className="thought-button"
             type="submit"
             onClick={handleSubmit}
-            disabled={message.length < 5 || message.length > 140 ? true : false}
-          >
+            disabled={message.length < 5 || message.length > 140 ? true : false}>
             <span role="img" aria-label="heart">
               ❤️
             </span>
@@ -45,19 +53,6 @@ export const ThoughtsInput = ({ onFormSubmit }) => {
               ❤️
             </span>
           </button>
-          <p className="text-length">
-            <span
-              style={{
-                color:
-                  message.length < 5 || message.length > 140
-                    ? "#FF0000"
-                    : "#000000",
-              }}
-            >
-              {message.length}
-            </span>{" "}
-            / 140
-          </p>
         </div>
       </form>
     </section>
