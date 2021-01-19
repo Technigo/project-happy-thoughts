@@ -6,7 +6,7 @@ export const MessageForm = (props) => {
 
   const handleFormSubmit = (event, input) => {
     event.preventDefault();  
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", {
+    fetch("https://project-happythoughts-api-olof.herokuapp.com/thoughts", {
       method: "POST",
       body: JSON.stringify({ message: input }),
       headers: { "Content-Type": "application/json" },

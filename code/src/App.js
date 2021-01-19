@@ -4,7 +4,7 @@ import { MessageForm } from "./MessageForm";
 import { MessageList } from "./MessageList";
 
 export const App = () => {
-  const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+  const MESSAGES_URL = "https://project-happythoughts-api-olof.herokuapp.com/thoughts";
   const [messages, setMessages] = useState([]);
   const [likes, setLikes] = useState(0);
 
@@ -17,7 +17,7 @@ export const App = () => {
   //post like to API, update likedthoughts array
 
   const messageLike = (id) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+    fetch(`https://project-happythoughts-api-olof.herokuapp.com/thoughts/${id}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     })
