@@ -42,7 +42,7 @@ export const App = () => {
       <section className="thoughts-container">
         <HappyForm onFormSubmit={onFormSubmit} />
         {loading && <div className="loader" />}
-        {thoughts.map(thought => (
+        {thoughts?.map(thought => (
           <HappyThoughts key={thought._id} thought={thought} onLiked={onLiked} />
         ))}
       </section>
