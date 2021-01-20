@@ -6,7 +6,7 @@ import "./messageList.css";
 
 const MessageList = ({ messages, setMessages }) => {
   const [loading, setLoading] = useState(true);
-  const MESSAGES_URL = "https://jonnas-happy-thoughts.herokuapp.com/";
+  const MESSAGES_URL = "https://jonnas-happy-thoughts.herokuapp.com/thoughts";
 
   useEffect(() => {
     fetch(MESSAGES_URL)

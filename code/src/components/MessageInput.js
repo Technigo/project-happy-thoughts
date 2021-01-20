@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./messageInput.css";
 
 const MessageInput = ({ setMessages }) => {
-  const MESSAGES_URL = "https://jonnas-happy-thoughts.herokuapp.com/";
+  const MESSAGES_URL = "https://jonnas-happy-thoughts.herokuapp.com/thoughts";
   const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
