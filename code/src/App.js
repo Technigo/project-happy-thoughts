@@ -39,7 +39,7 @@ export const App = () => {
     const thoughtId = event._id
     fetch(LIKE_URL(thoughtId),
       {
-        method: 'PUT',
+        method: 'POST',
         body: "",
         headers: { "Content-Type": "application/json" },
       }).then(() => {
