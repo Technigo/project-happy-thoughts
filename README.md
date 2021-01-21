@@ -4,8 +4,8 @@ I here have made a Twitter Clone using REACT.js where I can fetch messages poste
 
 In addition I have also created a backend using Express, NodeJS MongoDB and NodeJs
 
-https://happy-thoughts-dummy-api.herokuapp.com/thoughts
-https://github.com/karanmann/project-happy-thoughts-api.git
+- https://happy-thoughts-dummy-api.herokuapp.com/thoughts
+- https://github.com/karanmann/project-happy-thoughts-api.git
 
 ## The problem
 
