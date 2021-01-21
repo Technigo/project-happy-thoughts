@@ -1,6 +1,11 @@
 # Happy Thoughts
 
-We here have made a Twitter Clone using REACT.js where we can fetch messages posted on herokupp and also post them and add likes to the posts. Also we check how long back the post was made using MOMENT.js and added some validations depending on the length of the message.
+I here have made a Twitter Clone using REACT.js where I can fetch messages posted on herokupp and also post them and add likes to the posts. Also I can check how long back the post was made using MOMENT.js and added some validations depending on the length of the message.
+
+In addition I have also created a backend using Express, NodeJS MongoDB and NodeJs
+
+https://happy-thoughts-dummy-api.herokuapp.com/thoughts
+https://github.com/karanmann/project-happy-thoughts-api.git
 
 ## The problem
 
