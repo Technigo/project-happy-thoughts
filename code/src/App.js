@@ -4,8 +4,6 @@ import { MessageList } from 'components/MessageList';
 import { MessageInput } from 'components/MessageInput';
 import { Footer } from 'components/Footer';
 
-
-// const MESSAGES_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 const MESSAGES_URL = "https://sara-happy-thoughts.herokuapp.com/thoughts"
 
 export const App = () => {
