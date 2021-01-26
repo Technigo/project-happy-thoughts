@@ -10,7 +10,7 @@ const ThoughtsList = ({ happyThought, timeStamp, nrOfLikes, thought, onLike, id 
   const [heartColor, setHeartColor] = useState("heart-button");
 
   const addNewHeart = () => {
-    fetch(`${THOUGHTS_URL}/${thought._id}/hearts`, {
+    fetch(`${THOUGHTS_URL}/${thought._id}/like`, {
       method: "POST",
       body: "",
       headers: { "Content-Type": "application/json" }
