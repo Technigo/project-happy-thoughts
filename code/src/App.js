@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
+
 import { HappyThought } from 'components/HappyThought'
 import { HappyForm } from 'components/HappyForm';
 
-const url= "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const url= "https://happy-thoughts-claudia.herokuapp.com/thoughts"
+//"https://happy-thoughts-technigo.herokuapp.com/thoughts"
+
 
 export const App = () => {
   const [thoughts, setThoughts] = useState ([])
@@ -19,7 +22,6 @@ export const App = () => {
   }
 
   const onLiked = thoughtId => {
-    console.log("Logging in the APP.js" , thoughtId)
 
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {

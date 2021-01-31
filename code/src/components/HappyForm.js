@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./happyForm.css";
 
 
-const messages_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const messages_URL = "https://happy-thoughts-claudia.herokuapp.com/thoughts"
 
 export const HappyForm = props => {
     const [message, setMessage] = useState("")
