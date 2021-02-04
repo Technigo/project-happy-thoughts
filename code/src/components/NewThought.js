@@ -4,7 +4,7 @@ export const NewThought = () => {
   const [newThought, setNewThought] = useState("")
 
   const onChangeThought = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts`, {
+    fetch(`https://happy-thoughts-dess.herokuapp.com/thoughts`, {
       method: "POST",
       body: JSON.stringify({ message: newThought }),
       headers: { "Content-Type": "application/json" }
