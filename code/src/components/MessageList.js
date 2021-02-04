@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 
 export const MessageList = () => {
-    const MESSAGES_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+    const MESSAGES_URL = 'https://happy-thoughts-dess.herokuapp.com/thoughts'
     const [messages, setMessages] = useState([]);
 
 
