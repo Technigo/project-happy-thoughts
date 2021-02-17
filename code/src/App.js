@@ -18,7 +18,7 @@ export const App = () => {
   }, []);
 
   const fetchMessages = () => {
-    fetch(MESSAGE_URL)
+    fetch(MESSAGE_URL + "thoughts")
       .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
@@ -29,7 +29,7 @@ export const App = () => {
   };
 
   const reachMessageInput = (newMessage) => {
-    fetch(MESSAGE_URL, {
+    fetch(MESSAGE_URL + "thoughts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,15 +49,15 @@ export const App = () => {
     setMessages(updatedMessages);
   };
 
-  const onLiked = (messageId) => {
-    fetch(MESSAGE_URL + `${messageId}/like`, {
+  const onLiked = (thoughtId) => {
+    fetch(MESSAGE_URL + `thoughts/${thoughtId}/like`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
       body: "",
-    }).then(() => updateLikes(messageId));
+    }).then(() => updateLikes(thoughtId));
   };
 
   return (
