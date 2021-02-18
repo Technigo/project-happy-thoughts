@@ -4,6 +4,10 @@ import moment from 'moment';
 
 import './messageList.css';
 
+// Responsible for rendering the list of messages, inc nr of likes and when message was created.
+// Responsible for, on onClick, matching likes with correct message using messageList._id
+// Passing new likes back to App.js using props. For App.js to POST to server to update and save in db.
+// Access to messageList gives access to the hearts property.
 export const MessageList = ({ messageList, onHeartsChange }) => {
 
   const handleClick = () => {

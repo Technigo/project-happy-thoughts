@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import './messageForm.css';
 
-// A component that takes the prop onMessageChange (the connection to App.js)
-// and returns new value - a new message - to App.js.
+// Responsible for grabbing user input and passing messages back to App.js.
+// Using the prop onMessageChange (the connection to App.js) to send new data back.
+// First stores state locally in newMessage, and then pass it back to App.js.
 export const MessageForm = ({ onMessageChange }) => {
   const [newMessage, setNewMessage] = useState('');
+  
   // The function handleSubmit allows us to control when new data is
   // passed to App.js. We prevent the default action of i.e a form.
   // The function updates App.js with new message.
