@@ -10,14 +10,16 @@ export const MessageInput = () => {
     event.preventDefault()
 
     fetch(THOUGHTS_URL,
-      {
-        method: "post",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({message: thought})
-      }
-      )
+        {
+          method: "post",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({message: thought})
+        }
+      ).then(() => {
+        window.location.reload()
+      })
   }
 
   return(
