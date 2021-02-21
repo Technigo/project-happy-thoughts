@@ -1,0 +1,11 @@
+.form-text {
+  margin-left: 30px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.form-button {
+  font-size: 14px;
+  border-radius: 0%;
+  background-color: white;
+}
