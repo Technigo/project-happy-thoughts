@@ -11,30 +11,37 @@ export const MessageInput = () => {
 
     fetch(THOUGHTS_URL,
         {
-          method: "post",
+          method: "POST",
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({message: thought})
         }
       ).then(() => {
+        setThought("")
         window.location.reload()
       })
   }
 
-  return(
+  return (
     <form onSubmit={handleSubmit}>
+      <h3>Post a happy thought!</h3>
       <input
-        type="text"
         className="form-text"
+        type="text"
+        value={thought}
         onChange={event => setThought(event.target.value)}>
       </input>
-      <input 
-        type="submit"
+      <button 
         className="form-button"
+        type="submit"
         value="Add Message"
+        onClick={handleSubmit}
+        disabled={thought.length < 6 ? true : false}
         >
-      </input>
+        Send a happy thought
+      </button>
+      <p className="thought-length">{thought.length}/140</p>
     </form>
   )
 }
