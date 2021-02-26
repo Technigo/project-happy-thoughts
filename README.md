@@ -15,3 +15,6 @@ The hardest part was/is to understand the workflow of the API. How different com
 
 The site is deployed <a href="https://silly-carson-4bd53e.netlify.app">here.</a>  
 Share some happy thoughts, 2020 needs it badly.
+
+### RESTful API created for this project
+<a href="https://github.com/idsintehittapa/project-happy-thoughts-api">happy-thoughts-api</a>
