@@ -21,6 +21,7 @@ I also implemented some validation for the Form: the Send button is 
 
 ## View it live
 
-Send some happy thoughts to our shared API!:
+Frontend:
+Send some happy thoughts: https://think-happy-thoughts.netlify.app/
 
-https://think-happy-thoughts.netlify.app/
+View the backend: https://github.com/the-j-curl/project-happy-thoughts-api
