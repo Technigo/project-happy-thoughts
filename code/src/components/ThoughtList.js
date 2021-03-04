@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import moment from 'moment'
+import React, { useState, useEffect } from "react"
+import moment from "moment"
 
-import '../styling/MessageList.css'
+import "../styling/ThoughtList.css"
 
-export const MessageList = () => {
+export const ThoughtList = () => {
 
   const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
   const [thoughts, setThoughts] = useState([])
@@ -19,15 +19,15 @@ useEffect(() => {
       return thought.message
     })
     filteredData.reverse()
-    setThoughts(data)
+    setThoughts(data.slice(0, 20))
   })
 }, [])
 
   return (
     <div>
-      {
-        thoughts.map(thought => (
-          <p className="message">{thought.message}
+      {thoughts.map(thought => (
+          <p className="message" key={thought._id}>
+            {thought.message}
             <span className="timestamp">
               {moment(thought.createdAt).fromNow()}
             </span>

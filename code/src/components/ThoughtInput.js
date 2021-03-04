@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-import '../styling/MessageInput.css'
+import "../styling/ThoughtInput.css"
 
-export const MessageInput = () => {
+export const ThoughtInput = () => {
   const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
   const [thought, setThought] = useState("")
 
@@ -13,7 +13,7 @@ export const MessageInput = () => {
         {
           method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
           },
           body: JSON.stringify({message: thought})
         }
@@ -37,11 +37,12 @@ export const MessageInput = () => {
         type="submit"
         value="Add Message"
         onClick={handleSubmit}
-        disabled={thought.length < 6 ? true : false}
+        disabled={thought.length < 6 || thought.length > 140 ? true : false}
         >
         Send a happy thought
       </button>
-      <p className="thought-length">{thought.length}/140</p>
+      <p className="thought-length">{thought.length} / 140.</p>
+      <p className="characters">Min 5 characters.</p>
     </form>
   )
 }

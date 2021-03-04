@@ -8,7 +8,7 @@
 .form-button {
   font-size: 14px;
   border: 2px solid black;
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: lightgreen;
   color: black;
   padding: 7px;
@@ -20,4 +20,10 @@
 
 h3 {
   margin-left: 30px;
+}
+
+.characters {
+  margin-left: 30px;
+  margin-top: -10px;
+  font-size: 10px;
 }
