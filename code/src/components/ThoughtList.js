@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import moment from "moment"
+
+import { HappyThought } from "components/HappyThought"
 
 import "../styling/ThoughtList.css"
 
@@ -9,31 +10,41 @@ export const ThoughtList = () => {
   const [thoughts, setThoughts] = useState([])
 
 useEffect(() => {
+  fetchThoughts()
+}, [])
 
+const fetchThoughts = () => {
   fetch(THOUGHTS_URL)
   .then((res) => {
     return res.json()
   })
   .then(data => {
-    const filteredData = data.filter(thought => {
-      return thought.message
+    const filteredThoughts = data.filter(thought => {
+      return thought !== ''
     })
-    filteredData.reverse()
-    setThoughts(data.slice(0, 20))
+    setThoughts(filteredThoughts.slice(0, 20))
+    filteredThoughts.reverse()
   })
-}, [])
+}
 
-  return (
+const onLiked = thoughtId => {
+  const updatedThoughts = thoughts.map(thought => {
+    if (thought._id === thoughtId) {
+      thought.hearts += 1
+    }
+    return thought
+  })
+  setThoughts(updatedThoughts)
+}
+
+return (
     <div>
-      {thoughts.map(thought => (
-          <p className="message" key={thought._id}>
-            {thought.message}
-            <span className="timestamp">
-              {moment(thought.createdAt).fromNow()}
-            </span>
-          </p>
-        ))
-      }
+      {thoughts.map((thought) => (
+        <HappyThought 
+          key={thought._id}
+          thought={thought}
+          onLiked={onLiked} />
+      ))}
     </div>
   )
 }
