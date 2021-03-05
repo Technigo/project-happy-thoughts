@@ -26,7 +26,7 @@ export const ThoughtInput = () => {
   return (
     <div className="input-form">
       <form onSubmit={handleSubmit}>
-        <h4>What is making you happy right now?</h4>
+        <h3>What is making you happy right now?</h3>
         <div className="input-container">
           <textarea
             className="form-text"

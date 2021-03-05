@@ -11,11 +11,11 @@
   align-items: center;
   border: 2px black solid;
   box-shadow: 5px 5px;
-  padding: 10px;
+  padding: 20px;
   background-color:#ffccff;
 }
 
-h4 {
+h3 {
   color: #262626;
 }
 
@@ -32,6 +32,7 @@ h4 {
   background-color: #ff66d9;
   color: black;
   padding: 5px;
+  margin: 5px;
 }
 
 .thought-length {
