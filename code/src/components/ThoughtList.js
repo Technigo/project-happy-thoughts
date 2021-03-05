@@ -38,7 +38,7 @@ const onLiked = thoughtId => {
 }
 
 return (
-    <div>
+    <div className="thoughts-list">
       {thoughts.map((thought) => (
         <HappyThought 
           key={thought._id}
