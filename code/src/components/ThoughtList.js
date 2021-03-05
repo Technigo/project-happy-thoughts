@@ -40,11 +40,14 @@ const onLiked = thoughtId => {
 return (
     <div className="thoughts-container">
       {thoughts.map((thought) => (
-        <HappyThought 
+        <div className="thoughts">
+          <HappyThought 
           key={thought._id}
           thought={thought}
           onLiked={onLiked} />
+        </div>
       ))}
+      
     </div>
   )
 }
