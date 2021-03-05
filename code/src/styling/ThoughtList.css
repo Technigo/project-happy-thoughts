@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.thoughts {
+/* .thoughts {
   display: flex;
   flex-direction: row;
   width: fit-content;
@@ -16,4 +16,4 @@
   box-shadow: 5px 5px;
   padding: 20px;
   background-color:#ffccff;
-}
+} */

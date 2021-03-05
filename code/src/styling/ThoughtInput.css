@@ -4,7 +4,7 @@
 }
 
 .input-form {
-  width: fit-content;
+  width: 500px;
   margin: 1em auto;
   display: flex;
   justify-content: center;
@@ -33,6 +33,13 @@ h3 {
   color: black;
   padding: 5px;
   margin: 5px;
+}
+
+.form-button:disabled,
+form-button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
 
 .thought-length {

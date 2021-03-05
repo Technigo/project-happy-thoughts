@@ -37,8 +37,7 @@ export const ThoughtInput = () => {
           <button 
             className="form-button"
             type="submit"
-            value="Add Message"
-            onClick={handleSubmit}
+            value="thought"
             disabled={thought.length < 6 || thought.length > 140 ? true : false}
             >
             <span className="heart" role="img" arial-label="Heart">

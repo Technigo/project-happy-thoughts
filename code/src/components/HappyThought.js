@@ -18,12 +18,12 @@ const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/${_id}/like`
 
   return (
     <div className="happy-thought-container">
-      <p className="happy-thought">{message}</p>
+      <p>{message}</p>
       <p>
-        <button
+        <button className="heart-button"
           onClick={handleClick}
           style={{ background: hearts > 0 ? "#ffadad" : "#f3f1f1" }}>
-          <span role="img" arial-label="Heart">
+          <span className="heart-icon" role="img" arial-label="Heart">
             {"❤️ "}
           </span>
         </button>

@@ -1,12 +1,35 @@
-.timestamp {
-  font-size: 11px;
-  color: grey;
-  margin-left: 20px;
-}
 .happy-thought-container {
-display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  word-wrap: break-word;
+  width: 500px;
+  margin:auto;
+  padding: 20px 0px 20px 40px;
+  margin-top: 50px;
+  border:solid 2px #000;
+  background-color: #ffccff;
+  box-shadow: 5px 5px;
 }
 
-.happy-thought {
-  color: red;
+.heart-button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 7px 13px;
+  margin-right: 13px;
+  border-radius: 50%;
+  cursor: pointer;
 }
+
+.heart-icon {
+  width: 30px;
+  height: 40px;
+  transform: translate(-8px, -7px);
+}
+
+.timestamp {
+  text-align: right;
+  margin-right: 30px;
+}
+
