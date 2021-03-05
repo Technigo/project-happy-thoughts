@@ -17,8 +17,8 @@ const LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/${_id}/like`
   }
 
   return (
-    <div className="happy-thought">
-      <h3>{message}</h3>
+    <div className="happy-thought-container">
+      <p className="happy-thought">{message}</p>
       <p>
         <button
           onClick={handleClick}

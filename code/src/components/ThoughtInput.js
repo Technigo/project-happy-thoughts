@@ -26,22 +26,30 @@ export const ThoughtInput = () => {
   return (
     <div className="input-form">
       <form onSubmit={handleSubmit}>
-        <h3>What is making you happy right now?</h3>
-        <textarea
-          className="form-text"
-          rows="3"
-          placeholder="Write a happy thought!"
-          onChange={event => setThought(event.target.value)}>
-        </textarea>
-        <button 
-          className="form-button"
-          type="submit"
-          value="Add Message"
-          onClick={handleSubmit}
-          disabled={thought.length < 6 || thought.length > 140 ? true : false}
-          >
-          Send a happy thought
-        </button>
+        <h4>What is making you happy right now?</h4>
+        <div className="input-container">
+          <textarea
+            className="form-text"
+            rows="3"
+            placeholder="Write a happy thought!"
+            onChange={event => setThought(event.target.value)}>
+          </textarea>
+          <button 
+            className="form-button"
+            type="submit"
+            value="Add Message"
+            onClick={handleSubmit}
+            disabled={thought.length < 6 || thought.length > 140 ? true : false}
+            >
+            <span className="heart" role="img" arial-label="Heart">
+              {"❤️ "}
+            </span>
+            Send happy thought
+            <span className="heart" role="img" arial-label="Heart">
+              {"❤️ "}
+            </span>
+          </button>
+        </div>
         <p className="thought-length">{thought.length} / 140.</p>
         <p className="characters">Min 5 characters.</p>
       </form>
