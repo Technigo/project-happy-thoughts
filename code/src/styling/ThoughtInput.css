@@ -4,13 +4,15 @@
 }
 
 .input-form {
+  width: fit-content;
+  margin: 1em auto;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px black solid;
-  width: 300px;
+  box-shadow: 5px 5px;
   padding: 10px;
-  background-color: yellow;
+  background-color:#ffccff;
 }
 
 h4 {
