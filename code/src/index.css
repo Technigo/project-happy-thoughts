@@ -1,13 +1,72 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Trispace', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.tought-container {
+  max-width: 350px;
+  display: flex;
+}
+
+.tought-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.tought-message {
+  display: flex;
+  flex-direction: column;
+  max-height: 200px; 
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+  margin: 15px;
+  line-height: 20px;
+  padding: 0 11px;
+  word-break: break-word;
+}
+
+.test {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgb(61, 61, 61);
+
+}
+
+.tought-content {
+  display: inline;
+}
+
+.heart {
+  letter-spacing: 1px;
+}
+
+.heart-button {
+  background-color: #dbdbdb;  
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 10px;
+}
+
+.heart-button:hover {
+  background-color: #f09d9d;  
+}
+
+
+.test2 {
+  display: flex;
+  margin-bottom: 10px;
 }
