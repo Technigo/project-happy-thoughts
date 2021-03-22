@@ -5,8 +5,9 @@ import { Messages} from './components/Messages'
 
 export const App = () => {
 
-  const [messageList, setMessageList] = useState([])
   const [newMessage, setNewMessage] = useState('')
+  const [messageList, setMessageList] = useState([])
+
 
   return (
     <>

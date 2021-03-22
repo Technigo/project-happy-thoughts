@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { POST_API } from '../reusables/urls'
 
@@ -21,7 +21,9 @@ export const NewThoughts = ({ newMessage, setNewMessage, messageList, setMessage
     
         fetch(POST_API, options)
           .then(res => res.json())
-          .then(newThoughts => setMessageList([...messageList, newThoughts]))
+          .then((newThoughts) => {
+              setMessageList ((messageList)=> [newThoughts,...messageList])
+          })
           .catch(error => console.error(error))
       }
 
