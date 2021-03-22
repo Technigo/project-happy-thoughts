@@ -1,9 +1,11 @@
 import React from 'react'
 
+import MessageBoard from './components/MessageBoard'
+
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <MessageBoard />
     </div>
   )
 }
