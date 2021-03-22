@@ -7,6 +7,7 @@ export const App = () => {
   // STATES
   const [thoughts, setThoughts] = useState([])
   const [isPending, setIsPending] = useState(true)
+  const [newThought, setNewThought] = useState('')
 
   // useEffect HOOK
 
@@ -30,10 +31,24 @@ export const App = () => {
     .catch(err => console.error(err))
   }
 
+  const onNewThoughtChange = event => {
+    setNewThought(event.target.value)
+  }
+
   return (
     <main>
       <form>
-        
+        <label htmlFor='newThought'>
+          <h1>What's making you happy right now?</h1>
+          <input 
+            type='text'
+            id='newThought'
+            value={newThought}
+            onChange={onNewThoughtChange}
+            placeholder='Write your happy thought here ...'
+          />
+          <button type='submit'>Send Happy Thought</button>
+        </label>
       </form>
       {/* Conditional template that will show a loading message while the data is being fetched */}
       {isPending && <div className='loading-message'>Loading...</div>}
