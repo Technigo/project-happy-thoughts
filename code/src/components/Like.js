@@ -1,6 +1,6 @@
 import React from "react"
 
-const Like = ({ thought }) => {
+const Like = ({ thought, hearts, setHearts }) => {
 
     const onHeartChange = () => {
         const API_URL_ID = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`
@@ -10,6 +10,8 @@ const Like = ({ thought }) => {
         }
 
         fetch(API_URL_ID, config)
+            .then(res => res.json())
+            .then(receivedLike => (setHearts(receivedLike.hearts)))
     }
 
     return (
@@ -17,8 +19,9 @@ const Like = ({ thought }) => {
             <button
                 className="heart"
                 onClick={onHeartChange}
-            >❤</button>
-            <span>x {thought.hearts}</span>
+            >❤
+            </button>
+            <span>x {hearts}</span>
         </div>
     )
 }

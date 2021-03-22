@@ -1,20 +1,29 @@
 import moment from "moment"
-import React from "react"
+import React, { useState } from "react"
 
 import Like from "./Like"
 
-const Thought = ({ thoughts }) => {
+const Thought = ({ thought }) => {
+    const [hearts, setHearts] = useState(thought.hearts)
+
     return (
-        <div className="thought-container">
-            {thoughts.map(thought => (
-                <div key={thought._id} className="thought">
-                    <p className="thought-message">{thought.message}</p>
-                    <Like thought={thought} />
-                    <p className="thought-time">{moment(thought.createdAt).fromNow()}</p>
-                </div>
-            ))
-            }
-        </div >)
+        <div
+            key={thought._id}
+            className="thought"
+        >
+            <p className="thought-message">
+                {thought.message}
+            </p>
+            <Like
+                hearts={hearts}
+                setHearts={setHearts}
+                thought={thought}
+            />
+            <p className="thought-time">
+                {moment(thought.createdAt).fromNow()}
+            </p>
+        </div>
+    )
 }
 
 export default Thought

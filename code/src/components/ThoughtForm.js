@@ -19,8 +19,8 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
         }
 
         fetch(API_URL, config)
-            .then(res => res.json)
-            .then(receivedThought => setThoughts([...thoughts, receivedThought]))
+            .then(res => res.json())
+            .then(receivedThought => setThoughts([receivedThought, ...thoughts]))
             .catch(err => console.log(err))
     }
 
