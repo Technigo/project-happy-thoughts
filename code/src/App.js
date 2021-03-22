@@ -31,31 +31,14 @@ export const App = () => {
     .catch(err => console.error(err))
   }
 
-  //When the form is submitted save the newThought message on the server by using fetch post request
-  const onFormSubmit = event => {
-    event.preventDefault()
-
-    const postRequest = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: newThought })
-    }
-
-    fetch(FETCH_URL, postRequest)
-      .then(response => response.json())
-      .then(receivedThought => setThoughtsList([...thoughtsList, receivedThought]))
-      .catch(error => console.error(error))
-  }
-
   return (
     <main>
       {/* Form for sending new happy thought message */}
       <NewThoughtForm
-        onFormSubmit={onFormSubmit}
         newThought={newThought}
         setNewThought={setNewThought}
+        setThoughtsList={setThoughtsList}
+        thoughtsList={thoughtsList}
       />
 
       {/* Conditional template that will show a loading message while the data is being fetched */}
