@@ -9,7 +9,7 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault()
-        console.log(newThought)
+
         const config = {
             method: "POST",
             headers: {

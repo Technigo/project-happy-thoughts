@@ -9,7 +9,7 @@ const Thought = ({ thoughts }) => {
             {thoughts.map(thought => (
                 <div key={thought._id} className="thought">
                     <p className="thought-message">{thought.message}</p>
-                    <Like hearts={thought.hearts} />
+                    <Like thought={thought} />
                     <p className="thought-time">{moment(thought.createdAt).fromNow()}</p>
                 </div>
             ))
