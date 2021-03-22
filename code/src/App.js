@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Post from "./component/Post";
+
 import Grid from "@material-ui/core/Grid";
 
 export const App = () => {
