@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import moment from 'moment'
 
 import { FETCH_URL } from './reusable/urls'
+import NewThoughtForm from './components/NewThoughtForm'
 
 export const App = () => {
   // STATES
@@ -30,11 +31,6 @@ export const App = () => {
     .catch(err => console.error(err))
   }
 
-  //
-  const onNewThoughtChange = event => {
-    setNewThought(event.target.value)
-  }
-
   //When the form is submitted save the newThought message on the server by using fetch post request
   const onFormSubmit = event => {
     event.preventDefault()
@@ -56,19 +52,11 @@ export const App = () => {
   return (
     <main>
       {/* Form for sending new happy thought message */}
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor='newThought'>
-          <h1>What's making you happy right now?</h1>
-          <input 
-            type='text'
-            id='newThought'
-            value={newThought}
-            onChange={onNewThoughtChange}
-            placeholder='Write your happy thought here ...'
-          />
-          <button type='submit'>Send Happy Thought</button>
-        </label>
-      </form>
+      <NewThoughtForm
+        onFormSubmit={onFormSubmit}
+        newThought={newThought}
+        setNewThought={setNewThought}
+      />
 
       {/* Conditional template that will show a loading message while the data is being fetched */}
       {isPending && <div className='loading-message'>Loading...</div>}
