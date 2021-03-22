@@ -26,12 +26,12 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className='app-container'>
       <form className='form-container' onSubmit={onFormSubmit}>
         <Form  messageNew={messageNew} setMessageNew={setMessageNew} />
         <button className='button' type="submit">Send happy thoughts!</button>
       </form>
-      <div className='message-container'>
+      <div>
         <MessageList messageList={messageList} setMessageList={setMessageList} />
       </div>
     </div>

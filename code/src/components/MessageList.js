@@ -19,9 +19,12 @@ export const MessageList = ({messageList, setMessageList}) => {
     return (
         <>
         {messageList.map(thought => (
-        <div key={thought._id}>
+        <div className='message-container' key={thought._id}>
             <h4>{thought.message}</h4>
+            <div className='heart-date-container'>
+            <p>{thought.hearts}</p>
             <p className="date">- {moment(thought.createdAt).fromNow()}</p>
+            </div>
         </div>
         )
         )}
