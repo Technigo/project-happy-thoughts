@@ -11,3 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.main {
+  display: flex;
+  margin: 100px;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Courier New", monospace;
+}
+
+input,
+label {
+  width: 350px;
+  margin: 10px;
+}
+
+input {
+  height: 50px;
+}
+
+.submit-button {
+  border-radius: 20px;
+  border: 1px solid #ffadad;
+  width: 250px;
+  height: 40px;
+  background-color: #ffadad;
+  margin: 10px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.form,
+.message-container {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 7px 7px;
+}
+
+.message-container {
+  background-color: white;
+  margin-top: 30px;
+}
+
+.form {
+  background-color: #f2f0f0;
+}
+
+.time {
+  color: #cdcdcd;
+  text-align: right;
+}
