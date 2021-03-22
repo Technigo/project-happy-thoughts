@@ -36,12 +36,11 @@ export const App = () => {
 
     fetch(POST_API, options)
       .then(res => res.json())
-      .then(newThoughts => setMessageList(newThoughts))
+      .then(newThoughts => setMessageList([...messageList, newThoughts]))
       .catch(error => console.error(error))
   }
 
   return (
-    <>
       <div>
         <form onSubmit={handleSubmit}>
           <label htmlFor='newMessage'>New message</label>
@@ -63,7 +62,6 @@ export const App = () => {
             </div>
         ))}
       </div>
-      </>
   )
 }
 
