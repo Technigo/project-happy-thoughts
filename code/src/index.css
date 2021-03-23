@@ -95,3 +95,12 @@ p {
   background-color: pink;
 }
 
+.hearts:disabled {
+  background-color: pink;
+  color: black;
+}
+
+.hearts:disabled:hover {
+  transform: none;
+}
+

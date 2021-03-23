@@ -1,12 +1,12 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 const Like = ({ thought, hearts, setHearts }) => {
+    const [isLiked, setIsLiked] = useState(false)
 
-    let isLiked = false
 
     const onHeartChange = () => {
 
-        isLiked = true
+        setIsLiked(true)
 
         const API_URL_ID = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`
 

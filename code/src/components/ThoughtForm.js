@@ -38,6 +38,7 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
             <input
                 id="thought-form"
                 type="text"
+                maxLength="140"
                 value={newThought}
                 onChange={onNewThoughtChange}
             />
