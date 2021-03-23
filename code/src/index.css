@@ -12,10 +12,11 @@ code {
     monospace;
 }
 
+/* NEW MESSAGE FORM */
 .new-message-form {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80%;
   border: 2px solid black;
   padding: 20px;
   margin: 0 auto;
@@ -27,6 +28,7 @@ code {
 .new-message-input {
   margin: 10px;
   background-color: white;
+  /* overflow: hidden; */
 }
 
 .submit-btn {
@@ -38,6 +40,7 @@ code {
   padding: 10px;
 }
 
+/* THOUGHT CARD */
 .thought-div {
   border: 2px solid black;
   margin: 10px;
@@ -51,20 +54,38 @@ code {
   justify-content: space-between;
 }
 
+/* Likes */
+
+.likes {
+  display: flex;
+  flex-direction: row;
+}
+
 .fa-heart {
   color: red;
+  font-size: 20px;
 }
 
 .heart {
   background-color: #eaeaea;
-  padding: 10px;
+  padding: 18px;
   border-radius: 50px;
   margin-right: 4px;
+  border: none;
+}
+
+.heart:hover {
+  cursor: grabbing;
 }
 
 .multiple-hearts {
-   background-color: #ffaead;  
-  padding: 10px;
+  background-color: #ffaead;  
+  padding: 18px;
   border-radius: 50px;
   margin-right: 4px;
+  border: none;
  }
+
+.multiple-hearts:hover {
+  cursor: grabbing;
+}

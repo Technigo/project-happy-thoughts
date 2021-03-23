@@ -79,10 +79,12 @@ export const App = () => {
           >
             <h4>{message.message}</h4>
             <div className="heart-time-div">
-              <p>
-                <span className={message.hearts > 0 ? "multiple-hearts" : "heart"}><FontAwesomeIcon icon={['fa', 'heart']} /></span>
-                x {message.hearts}
-              </p>
+              <div className="likes"> 
+                <button className={message.hearts > 0 ? "multiple-hearts" : "heart"}><FontAwesomeIcon icon={['fa', 'heart']} /></button>
+                <p>
+                  x {message.hearts}
+                </p>
+              </div>
               <p>{moment(message.createdAt).fromNow()}</p>
             </div>
           </div> 
