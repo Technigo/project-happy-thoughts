@@ -45,6 +45,26 @@ code {
   box-shadow: 5px 5px 0px 0px #000000;
 }
 
+.heart-time-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .fa-heart {
   color: red;
 }
+
+.heart {
+  background-color: #eaeaea;
+  padding: 10px;
+  border-radius: 50px;
+  margin-right: 4px;
+}
+
+.multiple-hearts {
+   background-color: #ffaead;  
+  padding: 10px;
+  border-radius: 50px;
+  margin-right: 4px;
+ }

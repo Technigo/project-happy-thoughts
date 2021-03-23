@@ -1,10 +1,10 @@
 import moment from 'moment';
 import React, { useState, useEffect } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 
 // import{ Form } from './Components/Form';
 import { API_URL } from './reusable/urls';
-// const heart = <FontAwesomeIcon icon={faHeart} />
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -78,11 +78,13 @@ export const App = () => {
             key={message._id}
           >
             <h4>{message.message}</h4>
-            <p>
-              {/* <span>{heart}</span> */}
-              {message.hearts}
-            </p>
-            <p>{moment(message.createdAt).fromNow()}</p>
+            <div className="heart-time-div">
+              <p>
+                <span className={message.hearts > 0 ? "multiple-hearts" : "heart"}><FontAwesomeIcon icon={['fa', 'heart']} /></span>
+                x {message.hearts}
+              </p>
+              <p>{moment(message.createdAt).fromNow()}</p>
+            </div>
           </div> 
         ))}
       </div>
