@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import moment from 'moment'
 
 import { API_URL } from './reusable/urls'
-import { MessageList } from './components/MessageList'
 import { Form } from './components/Form'
 
 
@@ -9,8 +9,19 @@ export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState ('')
 
-  const onFormSubmit = (event) => {
-    event.preventDefault()
+  useEffect(() => {
+    fetchMessageList()
+  }, [])
+
+  const fetchMessageList = () => {
+    fetch(API_URL)
+    .then(response => response.json())
+    .then(messages => setMessageList(messages))
+    .catch(error => console.error(error))
+  }
+
+  const onFormSubmit = () => {
+    // event.preventDefault()
 
     const options = {
       method: 'POST',
@@ -32,7 +43,16 @@ export const App = () => {
         <button className='button' type="submit">Send happy thoughts!</button>
       </form>
       <div>
-        <MessageList messageList={messageList} setMessageList={setMessageList} />
+      {messageList.map(thought => (
+        <div className='message-container' key={thought._id}>
+            <h4>{thought.message}</h4>
+            <div className='heart-date-container'>
+            <p>{thought.hearts}</p>
+            <p className="date">- {moment(thought.createdAt).fromNow()}</p>
+            </div>
+        </div>
+        )
+        )}
       </div>
     </div>
   )
