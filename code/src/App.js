@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import moment from 'moment'
+import MyThought from './components/MyThought'
+import Form from './components/Form'
 
 import { API_URL } from './reusable/urls'
 
@@ -19,10 +20,6 @@ export const App = () => {
     .catch(err => console.error(err))
   }
 
-  const OnInputMessage = (event) => { // This one updates the data inside our fetched data with the text we are writing in the input box 
-    setMessageNew(event.target.value)
-  }
-
   const onFormSubmit = (event) => {
     event.preventDefault() // When we are going to post and argument and not only fetch, we need to add one argument next to our API 
     
@@ -39,26 +36,13 @@ export const App = () => {
     .then(receivedMessage => setMessageList([...messageList, receivedMessage])) // If we want to add a new element to array state property we need to create a new array like this
   }
 
-
-
-
   return (
     <div>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="newMessage">Write new message</label>
-        <input
-        id="newMessage"
-        type="text" 
-        value={messageNew}
-        onChange={OnInputMessage}
-        />
-        <button type="submit">Send Message!</button>
+        < Form messageNew={messageNew} setMessageNew={setMessageNew} />
       </form>
       {messageList.map(message => (
-        <div key={message._id}>
-          <h4>{message.message}</h4>
-          <p>{moment(message.createdAt).fromNow()}</p>
-        </div>
+        < MyThought message={message}/>
       ))}
     </div>
   )
