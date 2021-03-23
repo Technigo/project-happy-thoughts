@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import moment from 'moment'
 
 import { Fetch_API } from './reusable/urls'
 
@@ -21,6 +22,7 @@ export const App = () => {
       {thoughtsList.map(thoughts => (
         <div key={thoughts._id}>
           <h4>{thoughts.message}</h4>
+          <p>{moment(thoughts.created).fromNow()}</p>
         </div>
       ))}
     </div>
