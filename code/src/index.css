@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +7,117 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'B612 Mono', monospace;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* MessageList*/
+
+.message-list {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.messages-container {
+  width: 90%;
+  height: fit-content;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: white;
+  box-shadow: 2px 2px 2px 2px black;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.messages-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+}
+
+
+.messages-info__likes{
+display:flex;
+align-items: center;
+}
+
+.messages-info__likes-heart {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 50%;
+  background-color: rgb(242, 242, 243);
+}
+
+/*MessageForm */
+
+.message-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-form__container{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: rgb(242, 242, 243);
+  box-shadow: 2px 2px 2px 2px black;
+}
+
+.message-form__input {
+  height: 80px;
+  width: 90%;
+  margin: 10px 0;
+}
+
+/* SubmitButton */
+
+.message-form__submit {
+  margin-left: 5%;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 40px;
+  border-radius: 20px;
+  background-color: pink;
+  border: none;
+}
+
+.img-container {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+}
+
+.img-container {
+  object-fit: contain;
+}
+
