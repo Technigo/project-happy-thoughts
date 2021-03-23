@@ -3,11 +3,11 @@ import { API_URL } from '../reusable/urls'
 
 const MessageForm = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState('')
-  //const [counter, setCounter] = useState(140)
+  const [counter, setCounter] = useState(0)
 
   const onNewThoughtChanged = event => {
     setNewThought(event.target.value)
-    //setCounter(counter-1)
+    setCounter(newThought.length)
   
   }
 
@@ -48,9 +48,9 @@ const MessageForm = ({ thoughts, setThoughts }) => {
           onChange={onNewThoughtChanged}
           maxLength="140"
         />
-      {/* <div className="counter-wrapper">
-        <p>{counter} charachters left</p> 
-      </div> */}
+      <div className="counter-wrapper">
+        <p>{140-counter} charachters left</p> 
+      </div>
 
       <div className="button-wrapper">
       <button 
