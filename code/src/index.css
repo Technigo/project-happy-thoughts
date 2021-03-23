@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.message {
+  border: 2px solid rgb(77, 48, 48);
+  border-radius: 5%;
+  margin: 20px;
+  padding: 10px 20px;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+p {
+  font-size: 12px;
+}
