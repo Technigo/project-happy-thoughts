@@ -10,8 +10,8 @@ export const App = () => {
 //takes 2 arguments ---> 1.what we should call 2. when we should re-trigger the use effect: mounted / changes / unmounted
 //IF I want it to be triggered every time we do not need to specify the 2nd argument (line 16 between }, )
 //empty [] as second argument causes useEffect to ONLY listen to when the Component is mounted, and not to other changes***
+
   useEffect(() => {
-//    console.log('hej')
     fetchMessageList()
   }, [])
 
@@ -19,7 +19,7 @@ export const App = () => {
   const fetchMessageList = () => {
     fetch(HAPPY_THOUGHTS_URL)
       .then(res => res.json())
-      .then(messages => setMessageList(messages)) //update the state property only! :) 
+      .then(data => setMessageList(data)) //update the state property only! :) 
       .catch(err => console.error(err))
   }
 
@@ -37,7 +37,7 @@ export const App = () => {
         headers: {
           'Content-type': 'application/json'
         },
-        body: JSON.stringify({ text: messageNew })
+        body: JSON.stringify({ message: messageNew })
       }
 
     fetch(HAPPY_THOUGHTS_URL, options)
@@ -58,12 +58,12 @@ export const App = () => {
             value={messageNew}
             onChange={onMessageNewChange}
             />
-            <button type="submit"></button>
+            <button type="submit">Send Happy Thought</button>
       </form>
-      {messageList.map(message => (
-        <div key={message._id}>
-          <h4>{message.text}</h4>
-          <p className="date">- {moment(message.created).fromNow()}</p>
+      {messageList.map(sentmessage => (
+        <div key={sentmessage._id}>
+          <h4>{sentmessage.message}</h4>
+          <p className="date">- {moment(sentmessage.createdAt).fromNow()}</p>
         </div>
       ))}
     </div>
