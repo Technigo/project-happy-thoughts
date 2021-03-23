@@ -46,7 +46,12 @@ const NewThoughtForm = ({newThought, setNewThought, setThoughtsList, thoughtsLis
         <div className="the-count">
           <span className={newThought.length > 140 ? 'black-counter' : 'red-counter'}>{newThought.length} / 140</span>
         </div>
-        <button type='submit' className='form-button'><span role='img' aria-label='heart emoji'>❤️</span>Send Happy Thought<span role='img' aria-label='heart emoji'>❤️</span></button>
+        <button
+          type='submit'
+          className='form-button'
+          disabled={newThought.length === 0 || newThought.length > 140}>
+            <span role='img' aria-label='heart emoji'>❤️</span>Send Happy Thought<span role='img' aria-label='heart emoji'>❤️</span>
+        </button>
       </label>
     </form>
   )
