@@ -7,16 +7,26 @@ const Form = ({messageNew, setMessageNew}) => {
       }
 
     return (
-        <>
-        <label htmlFor="newMessage">Write new message</label>
-        <input
-        id="newMessage"
-        type="text" 
-        value={messageNew}
-        onChange={OnInputMessage}
-        />
-        <button type="submit">Send Message!</button>
-        </>
+        <div className="input-section">
+            <div className="input-section-box">
+                <div>
+                    <label htmlFor="newMessage">Write new message</label>
+                </div>
+                <div>
+                    <input
+                    id="newMessage"
+                    type="text" 
+                    value={messageNew}
+                    onChange={OnInputMessage}
+                    />
+                </div>
+                <div>
+                    <button className="sub-btn" type="submit">
+                    <span className="heart-icon">&#10084;</span> Send Gappy Thought! <span className="heart-icon">&#10084;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     )
 }
 

@@ -36,13 +36,35 @@ export const App = () => {
     .then(receivedMessage => setMessageList([...messageList, receivedMessage])) // If we want to add a new element to array state property we need to create a new array like this
   }
 
+  const AddinHeart = (event) => { // Precis lagt till denna
+    event.preventDefault() 
+    
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json' 
+      },
+    } 
+    
+    fetch(API_URL, options)
+    .then(res => res.json())
+    .then(receivedMessage => setMessageList([...messageList, receivedMessage])) 
+  }
+
   return (
     <div>
       <form onSubmit={onFormSubmit}>
         < Form messageNew={messageNew} setMessageNew={setMessageNew} />
       </form>
+
+      
+      
+      
       {messageList.map(message => (
+        <>
         < MyThought message={message}/>
+        
+        </>
       ))}
     </div>
   )
