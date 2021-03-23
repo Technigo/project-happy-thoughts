@@ -23,6 +23,7 @@
 .thoughts-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 /* styling with mobile first thinking */
 .user-input-textarea {
@@ -43,3 +44,6 @@
   font-weight: bold;
 }
 
+.add-new-thought-button {
+  background-color: #ffadad;
+}
