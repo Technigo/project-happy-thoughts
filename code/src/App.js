@@ -35,10 +35,9 @@ export const App = () => {
 
     fetch(Fetch_API, options)
     .then(res => res.json())
-    .then(data => console.log(data))
-  }
-
-  
+    .then(recivedThought => setThoughtsList([...thoughtsList, recivedThought]))
+    .catch(err => console.error(err))
+  }  
 
   return (
     <div>
@@ -50,10 +49,8 @@ export const App = () => {
           value={thoughtsNew}
           onChange={onThoughtsNew}
           />
-          <button>Submit</button>
+          <button type="submit">Submit</button>
       </form>
-
-
       {thoughtsList.map(thoughts => (
         <div key={thoughts._id}>
           <h4>{thoughts.message}</h4>
@@ -62,4 +59,4 @@ export const App = () => {
       ))}
     </div>
   )
- }
+}
