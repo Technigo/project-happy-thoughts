@@ -1,0 +1,8 @@
+Create: 
+POST https://happy-thoughts-technigo.herokuapp.com/thoughts
+
+Fetch:
+GET https://happy-thoughts-technigo.herokuapp.com/thoughts
+
+Like: 
+POST https://happy-thoughts-technigo.herokuapp.com/thoughts/THOUGHT_ID/like
