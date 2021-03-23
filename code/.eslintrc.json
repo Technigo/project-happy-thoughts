@@ -41,6 +41,7 @@
     "consistent-return": "off",
     "curly": "error",
     "eol-last": "off",
+    "no-underscore-dangle": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",

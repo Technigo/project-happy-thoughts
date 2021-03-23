@@ -1,0 +1,11 @@
+.button--like {
+  background-color: pink;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.button--like__none {
+  background-color: lightgray;  
+}
