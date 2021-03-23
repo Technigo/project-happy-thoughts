@@ -5,6 +5,7 @@ import { Fetch_API } from './reusable/urls'
 
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
+  const [thoughtsNew, setThoughtsNew] = useState('')
   
   useEffect(() => {
     fetchThoughtsList()
@@ -12,13 +13,47 @@ export const App = () => {
 
   const fetchThoughtsList = () => {
     fetch(Fetch_API)
-      .then(result => result.json())
+      .then(res => res.json())
       .then(thoughts => setThoughtsList(thoughts))
       .catch(err => console.error(err))          
   }
 
+  const onThoughtsNew = (event) =>  {
+    setThoughtsNew(event.target.value)
+    }
+
+  const onSubmitForm = (event) => {
+    event.preventDefault() 
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message: thoughtsNew }) 
+    }
+
+    fetch(Fetch_API, options)
+    .then(res => res.json())
+    .then(data => console.log(data))
+  }
+
+  
+
   return (
     <div>
+      <form onSubmit={onSubmitForm}>
+        <label htmlFor="newThougt">Write a thought</label>
+        <input 
+          id="newThougt"
+          type="text"
+          value={thoughtsNew}
+          onChange={onThoughtsNew}
+          />
+          <button>Submit</button>
+      </form>
+
+
       {thoughtsList.map(thoughts => (
         <div key={thoughts._id}>
           <h4>{thoughts.message}</h4>
@@ -27,4 +62,4 @@ export const App = () => {
       ))}
     </div>
   )
-}
+ }
