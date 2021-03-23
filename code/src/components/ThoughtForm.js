@@ -1,10 +1,16 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import API_URL from "utils/urls"
 
 const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
+    const [isOver140, setIsOver140] = useState(<p> {140 - newThought.length} characters remaining</p>)
 
     const onNewThoughtChange = (event) => {
         setNewThought(event.target.value)
+        if (newThought.length > 140) {
+            setIsOver140(<p className="red" >0 characters remaining</p >)
+        } else {
+            setIsOver140(<p> {140 - newThought.length} characters remaining</p>)
+        }
     }
 
     const onFormSubmit = (event) => {
@@ -35,6 +41,7 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
                 value={newThought}
                 onChange={onNewThoughtChange}
             />
+            {isOver140}
             <button>❤ Send Happy Thought ❤</button>
         </form>
     )

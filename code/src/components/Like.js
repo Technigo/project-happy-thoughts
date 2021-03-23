@@ -2,7 +2,12 @@ import React from "react"
 
 const Like = ({ thought, hearts, setHearts }) => {
 
+    let isLiked = false
+
     const onHeartChange = () => {
+
+        isLiked = true
+
         const API_URL_ID = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`
 
         const config = {
@@ -19,6 +24,7 @@ const Like = ({ thought, hearts, setHearts }) => {
     return (
         <div className="hearts-container">
             <button
+                disabled={isLiked}
                 className="hearts"
                 onClick={onHeartChange}
             >❤
