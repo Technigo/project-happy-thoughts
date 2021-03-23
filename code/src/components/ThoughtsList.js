@@ -5,8 +5,14 @@ const ThoughtsList = ({thought}) => {
 
   return (
     <div className='thought-card'>
-      <h2>{thought.message}</h2>
-      <p className='date'>-{moment(thought.createdAt).fromNow()}</p>
+      <p className='thought-message'>{thought.message}</p>
+      <div className='likes-time-wrapper'>
+        <p className='thought-time'>{moment(thought.createdAt).fromNow()}</p>
+        <div className='likes-heart-wrapper'>
+          <span className='likes-heart' role='img' aria-label='heart emoji'>❤️</span>
+          <p className='likes-counter'>x 10</p>
+        </div>
+      </div>
     </div>
   )
 }

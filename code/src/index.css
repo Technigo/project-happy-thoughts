@@ -67,4 +67,41 @@ body {
 .thought-card {
   height: 170px;
   word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.thought-message {
+  font-size: 20px;
+}
+
+.likes-time-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
+
+}
+
+.likes-heart-wrapper {
+  display: flex;
+}
+
+.likes-heart {
+  padding: 15px;
+  font-size: 20px;
+}
+
+/* if likes > 0 */
+.liked {
+  background-color: #ffadad;
+  border-radius: 50%;
+}
+
+.thought-time, .likes-counter {
+  font-size: 16px;
+  align-self: center;
+  color: #8a8a8a;
+  margin-left: 10px;
 }
