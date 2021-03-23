@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(238, 237, 237);
 }
 
 code {
@@ -12,10 +13,76 @@ code {
     monospace;
 }
 
+.content-container{
+  max-width: 700px;
+  margin: auto;
+}
+
 .board-container{
   margin: 40px
 }
 
+/* Form styling */
+
 .form-container {
   margin: 40px;
+  border: black 1px solid;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(240, 235, 235);
+  box-shadow: 10px 10px black;
+  padding: 10px;
+  font-family: Trispace;
+}
+
+.heading-wrapper, .button-wrapper, .counter-wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+.heading{
+  margin: 0 0 10px 0;
+  padding: none;
+  font-size: 16px;
+}
+
+.text-input{
+  width: 80%;
+  margin: auto;
+  height: 50px;
+  overflow-y: scroll;
+  font-family: Trispace;
+}
+
+.heart {
+  color: red;
+}
+
+.submit-button{
+  margin-top: 20px;
+  width: 60%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  background-color: pink;
+  border: none;
+  font-size: 12px;
+  font-family: Trispace;
+}
+
+/* Message board styling */
+
+.message-container{
+  margin: 40px;
+  border: black 1px solid;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 250, 250);
+  box-shadow: 10px 10px black;
+  padding: 10px;
+  font-family: Trispace;
+}
+.date{
+  text-align: right;
 }

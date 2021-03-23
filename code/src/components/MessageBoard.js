@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react'
+import moment from 'moment'
 
 
 import { API_URL } from '../reusable/urls'
 
 const MessageBoard = ({ thoughts, setThoughts }) => {
-  useEffect(() => {
-    fetchThoughts()
-  }, [thoughts]);
-
   const fetchThoughts = () => {
     fetch(API_URL)
       .then(response => response.json())
@@ -16,12 +13,18 @@ const MessageBoard = ({ thoughts, setThoughts }) => {
         setThoughts(data)
       })
   }
+  
+  useEffect(() => {
+    fetchThoughts()
+  }, [thoughts, setThoughts]);
+
+  
   return (
     <div>
       {thoughts.map(thought => (
-        <div className="board-container" key={thought._id}>
-          <div>{thought.message}</div>
-          <div>{thought.createdAt}</div>
+        <div className="message-container" key={thought._id}>
+          <p className="thought">{thought.message}</p>
+          <p className="date">{moment(thought.createdAt).fromNow()}</p>
         </div>
       ))}
     </div>
