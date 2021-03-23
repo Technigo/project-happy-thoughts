@@ -18,6 +18,10 @@ export const App = () => {
   }, []);
 
   // FUNCTIONS
+  const refreshPosts = () => {
+    window.location.reload();
+  };
+
   const postRequestPotion = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -35,6 +39,7 @@ export const App = () => {
         postFormValue={postFormValue}
         setPostFormValue={setPostFormValue}
         postRequest={postRequest}
+        refreshPosts={refreshPosts}
       />
       {apiFetch.map((post) => (
         <Post

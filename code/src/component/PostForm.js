@@ -4,8 +4,16 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import RefreshIcon from "@material-ui/icons/Refresh";
+import SendIcon from "@material-ui/icons/Send";
 
-const PostForm = ({ postFormValue, setPostFormValue, postRequest }) => {
+const PostForm = ({
+  postFormValue,
+  setPostFormValue,
+  postRequest,
+  refreshPosts,
+}) => {
   const postFormValueChange = (event) => {
     setPostFormValue(event.target.value);
   };
@@ -26,9 +34,24 @@ const PostForm = ({ postFormValue, setPostFormValue, postRequest }) => {
         </Grid>
         <Grid item xs={12}>
           <Grid container>
-            <Button variant="contained" color="primary" onClick={postRequest}>
-              Send
-            </Button>
+            <ButtonGroup variant="text" color="default" aria-label="">
+              <Button
+                startIcon={<SendIcon />}
+                variant="contained"
+                color="primary"
+                onClick={postRequest}
+              >
+                Send
+              </Button>
+              <Button
+                startIcon={<RefreshIcon />}
+                variant="contained"
+                color="primary"
+                onClick={refreshPosts}
+              >
+                Refresh
+              </Button>
+            </ButtonGroup>
           </Grid>
         </Grid>
       </Grid>

@@ -5,19 +5,29 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import Typography from "@material-ui/core/Typography";
+import { IconButton } from "@material-ui/core";
 
 const Post = ({ message, likes, timeStamp, key }) => {
   return (
     <Paper square elevation={10} className="postCard">
       <Grid container spacing={1} key={key}>
         <Grid item xs={12}>
-          <Typography variant="subtitle1" color="initial">
+          <Typography
+            className="break-line"
+            variant="subtitle1"
+            color="initial"
+          >
             {message}
           </Typography>
         </Grid>
         <Grid item xs={6}>
           <Grid container justify="flex-start">
-            {<FavoriteIcon className="heartIcon" />} x {likes}
+            {
+              <IconButton aria-label="like">
+                <FavoriteIcon className="heartIcon" />
+              </IconButton>
+            }
+            x {likes}
           </Grid>
         </Grid>
         <Grid item xs={6}>

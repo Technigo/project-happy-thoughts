@@ -18,9 +18,13 @@ code {
   margin-left: 15px;
   margin-right: 15px;
   margin-top: 15px;
-  width: 100%;
+  width: 400px;
 }
 
 .heartIcon {
   color: red;
+}
+
+.break-line {
+  overflow-wrap: break-word;
 }
