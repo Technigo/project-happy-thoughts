@@ -4,6 +4,7 @@ import { API_URL } from '../reusable/urls'
 const MessageForm = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState('')
   const [counter, setCounter] = useState(0)
+  const [error, setError] = useState(false)
 
   const onNewThoughtChanged = event => {
     setNewThought(event.target.value)
@@ -11,9 +12,9 @@ const MessageForm = ({ thoughts, setThoughts }) => {
   
   }
 
+ 
   const handleSubmit = event => {
     event.preventDefault()
-    
     const options = {
       method: 'POST',
       headers: {
@@ -24,15 +25,17 @@ const MessageForm = ({ thoughts, setThoughts }) => {
 
     fetch(API_URL, options)
       .then(res => res.json())
-      .then(data => setThoughts([...thoughts, data]))
-      .catch(err => {
-        console.log(err)
-        alert("Your message should be between 5 and 140 charachters!")
-      })
+      .then(data => setThoughts([data, ...thoughts]))
+      .catch(err =>{
+        console.log(err)//cannot see this message
+        setError(true)
+        })
 
   }
-
+  
   return (
+    <>
+    {error && <div>Hello;;</div>}
     <form
       className="form-container"
       onSubmit={handleSubmit}
@@ -63,7 +66,7 @@ const MessageForm = ({ thoughts, setThoughts }) => {
       </button>
       </div>
     </form>
-
+    </>
   )
 }
 export default MessageForm

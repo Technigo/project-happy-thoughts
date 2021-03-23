@@ -4,20 +4,25 @@ import moment from 'moment'
 
 import { API_URL } from '../reusable/urls'
 
-const MessageBoard = ({ thoughts, setThoughts }) => {
+const MessageBoard = ({ thoughts, setThoughts, setLoading }) => {
   
   const fetchThoughts = () => {
+    setLoading(true)
     fetch(API_URL)
       .then(response => response.json())
       .then(data => {
         //console.log(data)
         setThoughts(data)
       })
+      .catch(err => {
+        console.log("Error is:",err)
+      })
+    setLoading(false)
   }
   
   useEffect(() => {
     fetchThoughts()
-  }, [thoughts, setThoughts]);
+  }, []);
 
   const onThoughtLiked = (thoughtLiked) => {
     const updatedThoughts = thoughts.map((thought) => {
