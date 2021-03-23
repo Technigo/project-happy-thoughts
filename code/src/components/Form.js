@@ -46,22 +46,26 @@ export const Form = () => {
 
     return (
         <div>
-            <form onSubmit={onFormSubmit}>
-                <label htmlFor="newMessage">Write new message!</label>
-                <input
+            <form className="form" onSubmit={onFormSubmit}>
+                <label htmlFor="newMessage">What's make you happy right now?</label>
+                <input className="input"
                     id="newMessage"
                     type="text"
                     value={messageNew}
                     onChange={onMessageNewChange}
                 />    
-                <button type="submit">Send message!</button>
+                <button className="btn-submit" type="submit">💗 Send Happy Thought 💗</button>
 
             </form>
 
             {messageList.map(message => (
-                <div key={message._id}>
+                <div className="message-body" key={message._id}>
                     <h4>{message.message}</h4>
-                    <p className="time-from-now">posted {moment(message.createdAt).fromNow()}</p>
+                    <div className="like">
+                        <button className="btn-like">💗</button>
+                        <p>x {message.hearts}</p>
+                    </div>
+                    <p className="time-from-now">{moment(message.createdAt).fromNow()}</p>
                 </div>
             ))}
         </div>
