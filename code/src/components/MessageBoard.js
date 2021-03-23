@@ -1,23 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 
 
 import { API_URL } from '../reusable/urls'
 
-const MessageBoard = ({ thoughts, setThoughts, setLoading }) => {
+import Loading from '../components/Loading'
+
+const MessageBoard = ({ thoughts, setThoughts}) => {
+  const [loading, setLoading] = useState(false)
   
   const fetchThoughts = () => {
     setLoading(true)
     fetch(API_URL)
       .then(response => response.json())
       .then(data => {
-        //console.log(data)
         setThoughts(data)
+        setLoading(false)
       })
       .catch(err => {
+        setLoading(false)
         console.log("Error is:",err)
       })
-    setLoading(false)
+      
   }
   
   useEffect(() => {
@@ -50,7 +54,11 @@ const MessageBoard = ({ thoughts, setThoughts, setLoading }) => {
 //     })
 // }
 
-  
+  if (loading) {
+      return (
+        <Loading />
+      )
+  } else {
 
   return (
     <div>
@@ -87,6 +95,6 @@ const MessageBoard = ({ thoughts, setThoughts, setLoading }) => {
       ))}
     </div>
   )
-
+}
 }
 export default MessageBoard

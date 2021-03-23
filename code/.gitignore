@@ -18,6 +18,8 @@
 .env.test.local
 .env.production.local
 
+launch.json
+
 package-lock.json
 
 npm-debug.log*
