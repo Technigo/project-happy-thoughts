@@ -25,6 +25,7 @@ export const App = () => {
   }
 
   const onNewMessageChange = (event) => {
+    console.log(event.target.value);
     setNewMessage(event.target.value);
   }
 
@@ -56,17 +57,19 @@ export const App = () => {
             htmlFor="newMessage">
             Post your thought!
           </label>
-          <input
+          <textarea 
             id="newMessage"
-            type="text"
+            rows="2" 
+            cols="1"
             value={newMessage}
-            onChange={onNewMessageChange}
-            className="new-message-input"
-          />
+            type="text"
+              onChange={onNewMessageChange}
+              className="new-message-input"
+          ></textarea>
           <button 
             className="submit-btn" 
             type="submit"
-            >Post message!
+            >❤️ Send happy thought! ❤️
           </button>
         </form>
         {messageList.map(message => (
