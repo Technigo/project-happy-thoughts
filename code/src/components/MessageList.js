@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 
 import { API_URL } from '../reusable/urls'
 
@@ -20,12 +21,14 @@ const fetchMessageList = () => {
 }
 
   return (
-    <div>
+    <div className="message-list-container">
       {MessageList.map(message => (
-        <div key={message._id}>
-          <h4>{message.message}</h4>
-          <p>{message.createdAt}</p>
-          <p>Number of likes:{message.hearts}</p>
+        <div className= "thoughts-card" key={message._id}>
+          <h4 className="message-text">{message.message}</h4>
+        <div className="created-and-likes">
+          <p>heart x {message.hearts}</p>
+          <p className="created">{moment(message.createdAt).fromNow()}</p>
+          </div>
         </div>
       ))}
      </div>
