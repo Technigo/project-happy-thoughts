@@ -44,13 +44,13 @@ useEffect(()=> {
     <div>
 
       <form onSubmit={onFormSubmit}>
-        <label htmlFor='newMessage'>Write new mess!</label>
+        <label htmlFor='newMessage'>What makes you happy right now!</label>
         <input id='newMessage'
         type='text'
         value={newMessage}
         onChange={onNewMessageChange}
         />
-        <button type='submit'>Send Mess!</button>
+        <button type='submit'>Send happy thoughts!</button>
         </form>
 
       {happyList.map(message =>(
