@@ -34,14 +34,14 @@ export const App = () => {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json; charset=utf-8'
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ text: newMessage })
+      body: JSON.stringify({ message: newMessage })
     };
 
     fetch(API_URL, options)
       .then(res => res.json())
-      .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
+      .then(receivedMessage => setMessageList([receivedMessage, ...messageList]))
       .catch(err => console.error(err));
   };
 
