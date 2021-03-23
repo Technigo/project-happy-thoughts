@@ -30,12 +30,32 @@ export const App = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      },
+      body: JSON.stringify({ text: newMessage })
+    };
+
+    fetch(API_URL, options)
+      .then(res => res.json())
+      .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
+      .catch(err => console.error(err));
   };
 
   return (
     <div>
       {/* <Form /> */}
-        <form className="new-message-form" htmlFor="newMessage" onSubmit={onFormSubmit}>
+        <form 
+          className="new-message-form" 
+          onSubmit={onFormSubmit}
+        >
+          <label
+            htmlFor="newMessage">
+            Post your thought!
+          </label>
           <input
             id="newMessage"
             type="text"
@@ -43,10 +63,17 @@ export const App = () => {
             onChange={onNewMessageChange}
             className="new-message-input"
           />
-          <button className="submit-btn" type="submit">Post message!</button>
+          <button 
+            className="submit-btn" 
+            type="submit"
+            >Post message!
+          </button>
         </form>
         {messageList.map(message => (
-          <div className="thought-div" key={message._id}>
+          <div 
+            className="thought-div"
+            key={message._id}
+          >
             <h4>{message.message}</h4>
             <p>
               {/* <span>{heart}</span> */}
