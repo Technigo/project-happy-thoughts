@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Trispace&display=swap');
 
-.thoughts-container-grey {
+* {
   font-family: 'Trispace', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.thoughts-container-grey {
+  width: 100%; /*take this away? Would it be smarter to use border box up where the * {} starts ?? */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +16,17 @@
   box-shadow: 5px 5px;
   margin: 20px auto;
 }
+
+.title-question {
+  margin: 15px; 
+  font-weight: bold;
+}
+
+.counter-for-text {
+  margin: 15px;
+  font-size: 12px;
+}
+
 
 /* Move to index.css ?? belongs to App.js */
 .sent-messages {
@@ -27,23 +43,31 @@
 }
 /* styling with mobile first thinking */
 .user-input-textarea {
-  font-family: 'Trispace', sans-serif;
-  width: calc(50vw - 50px);
+  width: calc(100% - 10%);
   height: 60px;
   padding: 10px;
   margin: 10px auto 5px;
   resize: none;
+  outline-color: #ffadad;
 }
 
 .user-name-area {
+  margin: 15px;
   font-weight: bold;
 }
 
+.user-name-input {
+  outline-color: #ffadad;
+}
 /* move to a ButtonSubmit css later */
 .add-new-thought-button {
-  font-weight: bold;
-}
-
-.add-new-thought-button {
   background-color: #ffadad;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px 0 20px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  width: calc(100% - 45%);
 }

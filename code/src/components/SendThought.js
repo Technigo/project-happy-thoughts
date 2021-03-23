@@ -14,7 +14,7 @@ const SendThought = ({
   return (
   <div className="thoughts-container-grey">
     <form onSubmit={onFormSubmit} className="thoughts-container">
-    <label htmlFor="newThought">What's making you happy right now?</label>
+    <label htmlFor="newThought" className="title-question">What's making you happy right now?</label>
       <textarea
         className="user-input-textarea"
         id="newThought"
@@ -30,9 +30,11 @@ const SendThought = ({
       >
       {140 - newThought.length} characters left
       </p>
-      <label className="user-name-area"> 
+      <label htmlFor="postedBy" className="user-name-area"> 
         Sent by:
           <input
+            id="postedBy"
+            className="user-name-input"
             type="text"
             maxLength="30"
             value={username}

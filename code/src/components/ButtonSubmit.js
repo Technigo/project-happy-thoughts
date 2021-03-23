@@ -8,9 +8,9 @@ const SubmitButton = ({ onFormSubmit }) => {
       value="Submit" 
       onClick={onFormSubmit}
     >
-      <span role="img" aria-label="Red heart emoji">❤️</span>
+      <span role="img" aria-label="Red heart emoji"> ❤️ </span>
         Send Happy Thought
-      <span role="img" aria-label="Red heart emoji">❤️</span>
+      <span role="img" aria-label="Red heart emoji"> ❤️ </span>
     </button>
   )
 }
