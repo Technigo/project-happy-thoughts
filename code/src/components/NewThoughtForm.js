@@ -12,6 +12,7 @@ const NewThoughtForm = ({newThought, setNewThought, setThoughtsList, thoughtsLis
    //When the form is submitted save the newThought message on the server by using fetch post request
    const onFormSubmit = event => {
     event.preventDefault()
+    setNewThought('')
 
     const postRequest = {
       method: 'POST',
@@ -29,9 +30,9 @@ const NewThoughtForm = ({newThought, setNewThought, setThoughtsList, thoughtsLis
 
   //Returning JSX for the new thoughts form input
   return(
-    <form onSubmit={onFormSubmit}>
+    <form className='thought-form' onSubmit={onFormSubmit}>
       <label htmlFor='newThought'>
-        <h1>What's making you happy right now?</h1>
+        <h1 className='heading'>What's making you happy right now?</h1>
         <input 
           type='text'
           id='newThought'

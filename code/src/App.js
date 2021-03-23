@@ -26,13 +26,14 @@ export const App = () => {
       setThoughtsList(data);
       //Changing the state of isPending to false when the fetching is completed 
       setIsPending(false);
+      console.log(data)
     })
     //Catching errors during the fetch
     .catch(err => console.error(err))
   }
 
   return (
-    <main>
+    <main className='main-wrapper'>
       {/* Form for sending new happy thought message */}
       <NewThoughtForm
         newThought={newThought}
@@ -49,6 +50,7 @@ export const App = () => {
         thoughtsList.map(thought => 
           <ThoughtsList 
             thought={thought}
+            key={thought._id}
           />
         )
       }

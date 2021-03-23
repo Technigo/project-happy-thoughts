@@ -3,8 +3,8 @@ import moment from 'moment'
 
 const ThoughtsList = ({thought}) => {
 
-  return(
-    <div key={thought._id}>
+  return (
+    <div className='thought-card'>
       <h2>{thought.message}</h2>
       <p className='date'>-{moment(thought.createdAt).fromNow()}</p>
     </div>

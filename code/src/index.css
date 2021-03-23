@@ -1,13 +1,36 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  margin: 0 auto;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thought-form, .thought-card {
+  width: 500px;
+  border: 2px solid rgba(0, 0, 0, 0.479);
+  margin-bottom: 40px;
+  box-shadow: 5px 5px;
+  padding: 15px;
+}
+
+.thought-form {
+  height: 200px;
+  margin-top: 70px;
+}
+
+.thought-card {
+  height: 170px;
+  word-wrap: break-word;
 }
