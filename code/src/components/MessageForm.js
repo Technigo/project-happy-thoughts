@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { API_URL } from '../reusable/urls'
 
 const MessageForm = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState('')
@@ -16,7 +17,7 @@ const MessageForm = ({ thoughts, setThoughts }) => {
       body: JSON.stringify({ message: newThought })
     }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch(API_URL, options)
       .then(res => res.json())
       .then(data => setThoughts([...thoughts, data]))
       .catch(err => console.log(err))

@@ -1,21 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 
-//import { API_URL } from '../reusable/urls'
+import { API_URL } from '../reusable/urls'
 
 const MessageBoard = ({ thoughts, setThoughts }) => {
-  // useEffect(() => {
-  //   fetchThoughts()
-  // }, []);
+  useEffect(() => {
+    fetchThoughts()
+  }, [thoughts]);
 
-  // const fetchThoughts = () => {
-  //   fetch(API_URL)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data)
-  //       setThoughts(data)
-  //     })
-  //}
+  const fetchThoughts = () => {
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(data => {
+        //console.log(data)
+        setThoughts(data)
+      })
+  }
   return (
     <div>
       {thoughts.map(thought => (
