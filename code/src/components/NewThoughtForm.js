@@ -32,15 +32,16 @@ const NewThoughtForm = ({newThought, setNewThought, setThoughtsList, thoughtsLis
   return(
     <form className='thought-form' onSubmit={onFormSubmit}>
       <label htmlFor='newThought'>
-        <h1 className='heading'>What's making you happy right now?</h1>
+        <h1 className='form-title'>What's making you happy right now?</h1>
         <input 
           type='text'
+          className='form-input'
           id='newThought'
           value={newThought}
           onChange={onNewThoughtChange}
           placeholder='Write your happy thought here ...'
         />
-        <button type='submit'>Send Happy Thought</button>
+        <button type='submit' className='form-button'><span role='img' aria-label='heart emoji'>❤️</span>Send Happy Thought<span role='img' aria-label='heart emoji'>❤️</span></button>
       </label>
     </form>
   )
