@@ -41,7 +41,9 @@ export const App = () => {
 
     fetch(API_URL, options)
     .then(res => res.json())
-    .then(happyMessage => setMessageListArray([happyMessage,...MessageListArray]));
+    .then(happyMessage => {
+      setMessageListArray([happyMessage,...MessageListArray]);setNewMessage("");
+    });
 
   }
 
