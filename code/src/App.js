@@ -8,7 +8,6 @@ import SendThought from './components/SendThought'
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [newThought, setNewThought] = useState('')
-  const [username, setUsername] = useState('');
 
   useEffect(() => {
     fetchThoughtsList()
@@ -26,9 +25,9 @@ export const App = () => {
     setNewThought(e.target.value)
   }
 
-  const onUserNameChange = (e) => {
+/*   const onUserNameChange = (e) => {
     setUsername(e.target.value)
-  }
+  } */
   //POST request here: 
   const onFormSubmit = (e) => {
     e.preventDefault()
@@ -38,7 +37,7 @@ export const App = () => {
         headers: {
           'Content-type': 'application/json'
         },
-        body: JSON.stringify({ message: newThought, username: username })
+        body: JSON.stringify({ message: newThought })
       }
 
     fetch(HAPPY_THOUGHTS_URL, options)
@@ -56,12 +55,12 @@ export const App = () => {
         newThought={newThought}
         onNewThoughtChange={onNewThoughtChange}
         onFormSubmit={onFormSubmit}
-        onUserNameChange={onUserNameChange}
+/*         onUserNameChange={onUserNameChange} */
       />
       {thoughtsList.map(sentmessage => (
         <div key={sentmessage._id} className="sent-messages">
           <h4>{sentmessage.message}</h4>
-          <p className="message-created">- {moment(sentmessage.createdAt).fromNow()}</p>
+          <p className="message-created">{moment(sentmessage.createdAt).fromNow()}</p>
         </div>
         ))}
     </div>

@@ -7,8 +7,6 @@ const SendThought = ({
   onFormSubmit,
   newThought,
   onNewThoughtChange,
-  username,
-  onUserNameChange
 }) => {
   //<input/> and <textarea /> ----> add value and onChange to make it controlled. 
   return (
@@ -30,18 +28,17 @@ const SendThought = ({
       >
       {140 - newThought.length} characters left
       </p>
-      <label htmlFor="postedBy" className="user-name-area"> 
+{/*       <label htmlFor="postedBy" className="user-name-area"> 
         Sent by:
           <input
             id="postedBy"
             className="user-name-input"
             type="text"
             maxLength="30"
-            value={username}
             onChange={onUserNameChange}
             placeholder="Anonymous"
           />
-      </label>
+      </label> */}
       <ButtonSubmit
         onClick={(e) => {e.preventDefault()}}
         disabled={newThought.length < 5 || newThought.length >= 140 ? true : false}
