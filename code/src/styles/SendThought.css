@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace&display=swap');
+
+.thoughts-container-grey {
+  font-family: 'Trispace', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f0f0;
+  width: 500px;
+  border: 2px solid #000;
+  box-shadow: 5px 5px;
+  margin: 20px auto;
+}
+
+/* Move to index.css ?? belongs to App.js */
+.sent-messages {
+  font-family: 'Trispace', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thoughts-container {
+  display: flex;
+  flex-direction: column;
+}
+/* styling with mobile first thinking */
+.user-input-textarea {
+  font-family: 'Trispace', sans-serif;
+  width: calc(50vw - 50px);
+  height: 60px;
+  padding: 10px;
+  margin: 10px auto 5px;
+  resize: none;
+}
+
+.user-name-area {
+  font-weight: bold;
+}
+
+/* move to a ButtonSubmit css later */
+.add-new-thought-button {
+  font-weight: bold;
+}
+
