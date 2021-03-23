@@ -18,12 +18,23 @@ export const App = () => {
   }, []);
 
   // FUNCTIONS
+  const postRequestPotion = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: postFormValue }),
+  };
+  const postRequest = () => {
+    fetch(API_URL, postRequestPotion)
+      .then((response) => response.json())
+      .then((data) => setApiFetch([...apiFetch, data]));
+  };
 
   return (
     <Grid container spacing={1} justify="center">
       <PostForm
         postFormValue={postFormValue}
         setPostFormValue={setPostFormValue}
+        postRequest={postRequest}
       />
       {apiFetch.map((post) => (
         <Post

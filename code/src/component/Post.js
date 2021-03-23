@@ -23,7 +23,7 @@ const Post = ({ message, likes, timeStamp, key }) => {
         <Grid item xs={6}>
           <Grid container justify="flex-end">
             <Typography variant="body2" color="initial">
-              {moment({ timeStamp }).fromNow()}
+              {moment(timeStamp).fromNow()}
             </Typography>
           </Grid>
         </Grid>
