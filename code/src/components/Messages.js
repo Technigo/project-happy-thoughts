@@ -44,9 +44,9 @@ export const Messages = ({ messageList, setMessageList/* , likes, setLikes */ })
               <div className='heartAndTime'>
                 <div className='heartThings'>
                 <button className='heartButton'>
-                    HEART
+                <span className='heart'>&#128151;</span>
                 </button>
-              <h4 className>{thoughts.hearts}</h4>
+              <p className='nrOfLikes'>x {thoughts.hearts}</p>
               </div>
               <p className='time'>{moment(thoughts.createdAt).fromNow()}</p>
               </div>

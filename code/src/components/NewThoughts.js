@@ -6,6 +6,7 @@ export const NewThoughts = ({ newMessage, setNewMessage,/*  messageList, */ setM
 
     const onNewMessageChange = (e) => {
         setNewMessage(e.target.value)
+
       }
     
       const handleSubmit = (e) => {
@@ -25,22 +26,24 @@ export const NewThoughts = ({ newMessage, setNewMessage,/*  messageList, */ setM
               setMessageList ((messageList)=> [newThoughts,...messageList]) //kan messageList här vara vad som helst?
           })
           .catch(error => console.error(error))
+
+          window.location.reload()
       }
 
       return (
         <div className='newThoughtsContainer'>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='form'>
           <label htmlFor='newMessage' className='newMessage'>What's making you happy right now?</label>
-            <input
+            <textarea
               id='newMessage'
               type='text'
               minlength='5'
               maxlength='140'
               required
               value={newMessage}
-              onChange={onNewMessageChange}
-            />
-            <button type='submit'>Send Happy Thought</button>
+              onChange={onNewMessageChange}></textarea>
+
+            <button className='submitButton' type='submit'><span>&#128151;</span> Send Happy Thought <span>&#128151;</span></button>
           
         </form>
         </div>
