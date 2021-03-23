@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.thought-div {
+  border: 2px solid red;
+  margin: 10px;
+  padding: 10px;
+}
+
+.new-message-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.new-message-input {
+  margin-bottom: 10px;
+}
+
+.fa-heart {
+  color: red;
+}
