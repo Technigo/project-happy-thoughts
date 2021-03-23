@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import moment from 'moment'
 
 import { FETCH_URL } from './reusable/urls'
 import NewThoughtForm from './components/NewThoughtForm'
+import ThoughtsList from 'components/ThoughtsList'
 
 export const App = () => {
   // STATES
@@ -45,14 +45,13 @@ export const App = () => {
       {isPending && <div className='loading-message'>Loading...</div>}
 
       {/* Iterating over the array of thoughts and returning JSX for each thought  */}
-      {thoughtsList.map(thought => {
-        return(
-          <div key={thought._id}>
-            <h2>{thought.message}</h2>
-            <p className='date'>-{moment(thought.createdAt).fromNow()}</p>
-          </div>
+      {
+        thoughtsList.map(thought => 
+          <ThoughtsList 
+            thought={thought}
+          />
         )
-      })}
+      }
     </main>
   )
 }
