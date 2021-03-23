@@ -35,7 +35,7 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then(res => res.json())
-      .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
+      .then(receivedMessage => setMessageList([receivedMessage, ...messageList ]))
       .catch(err => console.error(err));
   }
 
