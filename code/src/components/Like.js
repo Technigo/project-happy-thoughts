@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 const Like = ({ thought, hearts, setHearts }) => {
     const [isLiked, setIsLiked] = useState(false)
@@ -27,7 +27,8 @@ const Like = ({ thought, hearts, setHearts }) => {
                 disabled={isLiked}
                 className="hearts"
                 onClick={onHeartChange}
-            >❤
+            >
+                <span role="img" aria-label="heart icon">💗</span>
             </button>
             <span>x {hearts}</span>
         </div>

@@ -7,7 +7,6 @@ import ThoughtForm from "./components/ThoughtForm"
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
-  const [hearts, setHearts] = useState()
 
   useEffect(() => {
     fetchThoughts()
@@ -30,8 +29,7 @@ export const App = () => {
       />
       {thoughts.map(thought => (
         <Thought
-          hearts={hearts}
-          setHearts={setHearts}
+          key={thought._id}
           thought={thought}
         />
       ))}

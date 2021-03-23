@@ -8,7 +8,6 @@ const Thought = ({ thought }) => {
 
     return (
         <div
-            key={thought._id}
             className="thought"
         >
             <p className="thought-message">
