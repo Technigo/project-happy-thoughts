@@ -41,18 +41,20 @@ export const App = () => {
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newMessage">Write new message!</label>
+      <form className="message-form" onSubmit={onFormSubmit}>
+        <label className="form-title" htmlFor="newMessage">Write a happy message below and click send!</label>
         <input
+          className="text-area"
           id="newMessage"
           type="text"
+          maxLength="140"
           value={messageNew}
           onChange={onMessageNewChange}
         />
         <button type="submit">Send message!</button>
       </form>
       {messageList.map(message => (
-        <div key={message._id}>
+        <div className="message-card" key={message._id}>
           <h4>{message.text}</h4>
           <p className="date">- {moment(message.created).fromNow()}</p>
         </div>
