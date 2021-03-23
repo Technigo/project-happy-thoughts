@@ -14,10 +14,12 @@ const Like = ({ thought, hearts, setHearts }) => {
             .then(receivedLike => (setHearts(receivedLike.hearts)))
     }
 
+
+
     return (
-        <div className="like-container">
+        <div className="hearts-container">
             <button
-                className="heart"
+                className="hearts"
                 onClick={onHeartChange}
             >❤
             </button>

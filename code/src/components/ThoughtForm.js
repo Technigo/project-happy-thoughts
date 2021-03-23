@@ -25,19 +25,19 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
     }
 
     return (
-        <div>
-            <form onSubmit={onFormSubmit}>
-                <label>
-                    What's making you happy right now?
-                    <input
-                        type="text"
-                        value={newThought}
-                        onChange={onNewThoughtChange}
-                    />
+        <form onSubmit={onFormSubmit}>
+            <label htmlFor="thought-form">
+                What's making you happy right now?
                 </label>
-                <button>Send Happy Thought</button>
-            </form>
-        </div>)
+            <input
+                id="thought-form"
+                type="text"
+                value={newThought}
+                onChange={onNewThoughtChange}
+            />
+            <button>❤ Send Happy Thought ❤</button>
+        </form>
+    )
 }
 
 export default ThoughtForm

@@ -14,14 +14,16 @@ const Thought = ({ thought }) => {
             <p className="thought-message">
                 {thought.message}
             </p>
-            <Like
-                hearts={hearts}
-                setHearts={setHearts}
-                thought={thought}
-            />
-            <p className="thought-time">
-                {moment(thought.createdAt).fromNow()}
-            </p>
+            <div className="hearts-and-time-container">
+                <Like
+                    hearts={hearts}
+                    setHearts={setHearts}
+                    thought={thought}
+                />
+                <p className="thought-time">
+                    {moment(thought.createdAt).fromNow()}
+                </p>
+            </div>
         </div>
     )
 }

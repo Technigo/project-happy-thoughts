@@ -28,15 +28,13 @@ export const App = () => {
         newThought={newThought}
         setNewThought={setNewThought}
       />
-      <div className="thoughts-container">
-        {thoughts.map(thought => (
-          <Thought
-            hearts={hearts}
-            setHearts={setHearts}
-            thought={thought}
-          />
-        ))}
-      </div>
+      {thoughts.map(thought => (
+        <Thought
+          hearts={hearts}
+          setHearts={setHearts}
+          thought={thought}
+        />
+      ))}
     </>
   )
 }
