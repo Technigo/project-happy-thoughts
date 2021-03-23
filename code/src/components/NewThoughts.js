@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { POST_API } from '../reusables/urls'
+import { API_URL } from '../reusables/urls'
 
-export const NewThoughts = ({ newMessage, setNewMessage, messageList, setMessageList }) => {
+export const NewThoughts = ({ newMessage, setNewMessage,/*  messageList, */ setMessageList }) => {
 
     const onNewMessageChange = (e) => {
         setNewMessage(e.target.value)
@@ -19,16 +19,16 @@ export const NewThoughts = ({ newMessage, setNewMessage, messageList, setMessage
           body: JSON.stringify({ message: newMessage })
         };
     
-        fetch(POST_API, options)
+        fetch(API_URL, options)
           .then(res => res.json())
           .then((newThoughts) => {
-              setMessageList ((messageList)=> [newThoughts,...messageList])
+              setMessageList ((messageList)=> [newThoughts,...messageList]) //kan messageList här vara vad som helst?
           })
           .catch(error => console.error(error))
       }
 
       return (
-        <div>
+        <div className='newThoughtsContainer'>
         <form onSubmit={handleSubmit}>
           <label htmlFor='newMessage'>New message</label>
             <input
@@ -37,7 +37,7 @@ export const NewThoughts = ({ newMessage, setNewMessage, messageList, setMessage
               value={newMessage}
               onChange={onNewMessageChange}
             />
-            <button type='submit'>Post message</button>
+            <button type='submit'>Send Happy Thought</button>
           
         </form>
         </div>
