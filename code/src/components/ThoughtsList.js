@@ -10,7 +10,7 @@ const ThoughtsList = ({thought}) => {
         <p className='thought-time'>{moment(thought.createdAt).fromNow()}</p>
         <div className='likes-heart-wrapper'>
           <span className='likes-heart' role='img' aria-label='heart emoji'>❤️</span>
-          <p className='likes-counter'>x 10</p>
+          <p className='likes-counter'>x {thought.hearts}</p>
         </div>
       </div>
     </div>

@@ -24,23 +24,28 @@ const NewThoughtForm = ({newThought, setNewThought, setThoughtsList, thoughtsLis
 
     fetch(FETCH_URL, postRequest)
       .then(response => response.json())
-      .then(receivedThought => setThoughtsList([...thoughtsList, receivedThought]))
+      .then(receivedThought => setThoughtsList([receivedThought, ...thoughtsList]))
       .catch(error => console.error(error))
   }
 
   //Returning JSX for the new thoughts form input
   return(
-    <form className='thought-form' onSubmit={onFormSubmit}>
+    <form className='thought-form' id='form' onSubmit={onFormSubmit}>
       <label htmlFor='newThought'>
         <h1 className='form-title'>What's making you happy right now?</h1>
-        <input 
-          type='text'
+        <textarea
           className='form-input'
           id='newThought'
           value={newThought}
           onChange={onNewThoughtChange}
           placeholder='Write your happy thought here ...'
-        />
+          form='form'
+        >
+        </textarea>
+        {/* Remaining characters counter */}
+        <div className="the-count">
+          <span className={newThought.length > 140 ? 'black-counter' : 'red-counter'}>{newThought.length} / 140</span>
+        </div>
         <button type='submit' className='form-button'><span role='img' aria-label='heart emoji'>❤️</span>Send Happy Thought<span role='img' aria-label='heart emoji'>❤️</span></button>
       </label>
     </form>
