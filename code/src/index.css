@@ -1,55 +1,66 @@
 body {
   margin: 0;
   font-family: 'Trispace', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
   display: flex;
   justify-content: center;
-}
-
-.tought-container {
-  max-width: 350px;
-  display: flex;
 }
 
 .tought-card {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
-
 
 .tought-message {
   display: flex;
   flex-direction: column;
-  max-height: 200px; 
+  height: 100%;
   border: 1px solid black;
   box-shadow: 5px 5px;
   margin: 15px;
   line-height: 20px;
   padding: 0 11px;
+}
+
+.form-container {
+  background-color: rgb(240, 239, 239);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.input {
+  line-height: 3em;
+  width: 90%;
+}
+
+.input-count {
+  background-color: #f09d9d;
+  border: inherit;
+}
+
+.send-btn {
+  width: 50%;
+  padding: 8px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  background-color: #f09d9d; 
+  font-family: 'Trispace', sans-serif;
+  font-size: 12px;
+}
+
+.message-content {
+  font-size: 14px;
   word-break: break-word;
 }
 
-.test {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: rgb(61, 61, 61);
-
-}
-
-.tought-content {
-  display: inline;
-}
-
-.heart {
-  letter-spacing: 1px;
-}
-
 .heart-button {
-  background-color: #dbdbdb;  
   width: 40px;
   height: 40px;
   border-radius: 100%;
@@ -57,16 +68,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
   margin-right: 10px;
 }
 
-.heart-button:hover {
+.heart-button-clicked {
   background-color: #f09d9d;  
 }
 
-
-.test2 {
-  display: flex;
-  margin-bottom: 10px;
+.heart-icon {
+  padding-left: 3px;
 }
+
+.time {
+  opacity: 0.5;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: rgba(61, 61, 61, 0.8);
+  padding: 5px 0;
+}
+
+.like-btn {
+  display: flex;
+  letter-spacing: 0.2em; 
+}
+
+

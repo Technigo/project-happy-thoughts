@@ -1,15 +1,12 @@
 import React  from 'react'
 
 
-const MessageList = ({ message, heart, time }) => {
+const MessageList = ({ message }) => {
 
   return (
-    <div>
-      <p>{message}</p>
-      <div className="test">
-        <p className="tought-content">{time}</p>
-      </div>
-    </div>
+    <>
+      <p className="message-content">{message}</p>
+    </>
   )
 }
 

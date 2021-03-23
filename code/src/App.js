@@ -33,9 +33,13 @@ export const App = () => {
     }
     fetch (API_URL, options) 
       .then (res => res.json())
-      .then (receivedMessage => setMessageList([...messageList, receivedMessage]))
-      .catch(err => console.error(err))
-  }
+      .then (receivedMessage => setMessageList([receivedMessage, ...messageList]))
+      .catch((err) => {
+
+      })
+  }  
+
+
 
   const onMessageLiked = (likedMessageID) => {
     const updateMessages = messageList.map((message) => {
@@ -48,24 +52,26 @@ export const App = () => {
   }
 
   return (
-    <section className="tought-container">
-        <div className="tought-card">
-        <MessageForm onSubmit={onFormSubmit} messageNew={messageNew} setMessageNew={setMessageNew} />
-        {messageList.map(tought => (
-          <div className="tought-message" key={tought._id}>
-            <MessageList 
-              message = {tought.message} 
-              time = {moment(tought.createdAt).fromNow()}
-            />
-             <LikeButton 
-              id={tought._id}
-              message = {tought}
-              heart = {tought.hearts}
-              onMessageLiked = {onMessageLiked}
-            />
+    <section className="tought-card">
+          <MessageForm 
+          onSubmit={onFormSubmit} 
+          messageNew={messageNew} 
+          setMessageNew={setMessageNew} 
+          />
+          {messageList.map(tought => (
+            <div className="tought-message" key={tought._id}>
+              <MessageList 
+                message = {tought.message} 
+              />
+              <LikeButton 
+                id={tought._id}
+                message = {tought}
+                heart = {tought.hearts}
+                onMessageLiked = {onMessageLiked}
+                time = {moment(tought.createdAt).fromNow()}
+              />
           </div>
         ))}
-        </div>
     </section>
   )
 }
