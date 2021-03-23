@@ -1,10 +1,11 @@
+import moment from 'moment';
 import React, { useState, useEffect } from 'react'
-// import moment from 'moment';
+
 import { API_URL } from './reusable/urls';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
-  // const [messageNew, setMessageNew] = useState('')
+  const [messageNew, setMessageNew] = useState('')
 
   useEffect(() => {
     fetchMessageList();
@@ -18,39 +19,43 @@ export const App = () => {
   }
   
 
+  const onMessageNewChange = (event) =>{
+    setMessageNew(event.target.value);
+  }
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
   
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: messageNew })
+      };
 
-  
-  // const onMessageNewChange = (event) =>{
-  //   setMessageNew(event.target.value);
-  // }
-
-  // const onFormSubmit = (event) => {
-  //   event.preventDefault();
-
-  //     const options = {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       },
-  //       body: JSON.stringify({ text: messageNew })
-  //     };
-
-  //     fetch(API_URL, options)
-  //       .then(res => res.json())
-  //       .then(receivedMessage => setMessageList([...messageList, recivedMessage]))
-  //       .catch(err => console.error(err));
-  // }
+      fetch(API_URL, options)
+      .then(res => res.json())
+      .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
+      .catch(err => console.error(err));
+  }
 
   return (
     <div>
-     
+      <form onSubmit={onFormSubmit}>
+        <label htmlFor="newMessage">Share your happy thoughts!</label>
+        <input
+          id="newMessage"
+          type="text"
+          value={messageNew}
+          onChange={onMessageNewChange}
+        />
+        <button type="submit">Spread the joy!</button>
+      </form>
         {messageList.map(message => [
-          <div key={message._id}>
-
-         
+          <div key={message._id}>  
             <h3>{message.message}</h3>
-            
+            <p>{moment(message.created).fromNow()} </p>
           </div>
         ])}
       
