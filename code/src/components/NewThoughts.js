@@ -30,10 +30,13 @@ export const NewThoughts = ({ newMessage, setNewMessage,/*  messageList, */ setM
       return (
         <div className='newThoughtsContainer'>
         <form onSubmit={handleSubmit}>
-          <label htmlFor='newMessage'>New message</label>
+          <label htmlFor='newMessage' className='newMessage'>What's making you happy right now?</label>
             <input
               id='newMessage'
               type='text'
+              minlength='5'
+              maxlength='140'
+              required
               value={newMessage}
               onChange={onNewMessageChange}
             />

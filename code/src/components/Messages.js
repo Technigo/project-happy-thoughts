@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import moment from 'moment'
 
-import { API_URL, LIKE_API } from '../reusables/urls'
+import { API_URL/* , LIKE_API  */} from '../reusables/urls'
 
 export const Messages = ({ messageList, setMessageList/* , likes, setLikes */ }) => {
 
@@ -41,11 +41,15 @@ export const Messages = ({ messageList, setMessageList/* , likes, setLikes */ })
         {messageList.map(thoughts => (
             <div className='messageContent' key={thoughts._id}>
               <h4 className='messageText'>{thoughts.message}</h4>
-              <p>{moment(thoughts.createdAt).fromNow()}</p>
-{/*                 <button onSubmit={handleSubmit}>
+              <div className='heartAndTime'>
+                <div className='heartThings'>
+                <button className='heartButton'>
                     HEART
-                </button> */}
-              <p>{thoughts.hearts}</p>
+                </button>
+              <h4 className>{thoughts.hearts}</h4>
+              </div>
+              <p className='time'>{moment(thoughts.createdAt).fromNow()}</p>
+              </div>
               </div>
           ))}
 
