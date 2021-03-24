@@ -1,21 +1,20 @@
 import React from 'react';
 import moment from 'moment';
 
-import Button from 'components/Button/Button'
-
-import './Thought.css';
+import Button from 'components/Button/Button';
+import Card from 'components/Styled/Card';
 
 const Thought = ({ message, hearts, createdAt }) => {
   return (
     <>
-      <div className="card">
-        <p className="card--message">{message}</p>
-        <div className="card--footer">
-          <Button isSubmit={false} />
-          <p aria-label="Amount of likes" className="card--footer-text card--like-count">x {hearts}</p>
-          <p className="card--footer-text card--post-time">{moment(createdAt).fromNow()}</p>
-        </div>
-      </div>
+      <Card>
+        <Card.Title>{message}</Card.Title>
+        <Button isSubmit={false} />
+        <Card.FooterText faded aria-label="Amount of likes">
+          x {hearts}
+        </Card.FooterText>
+        <Card.FooterText faded alignLeft>{moment(createdAt).fromNow()}</Card.FooterText>
+      </Card>
     </>
   );
 };

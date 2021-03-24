@@ -1,18 +1,18 @@
 import React from 'react';
 
 import Button from 'components/Button/Button';
-
-import './Fom.css'
+import Card from 'components/Styled/Card'
+import { TextArea } from 'components/Styled/Globals'
 
 const Form = () => {
   return (
-    <form className="card">
-      <label className="input--label" htmlFor="happyThought">
+    <Card as="form">
+      <Card.Title as="label" htmlFor="happyThought">
         What is making you happy right now?
-        <textarea className="input--textarea" id="happyThought" rows="5" cols="45" />
-      </label>
+        <TextArea id="happyThought" rows="5" cols="45" />
+      </Card.Title>
       <Button isSubmit />
-    </form>
+    </Card>
   );
 };
 

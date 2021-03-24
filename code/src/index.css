@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -9,11 +9,11 @@ body {
 /* ------------------------------- TYPOGRAPHY ------------------------------- */
 
 /* Setting the general element font-sizes and style */
-* {
+/* * {
   font-size: 16px;
-  font-family: 'Courier New', Courier, monospace;
+  
 }
 
 label, p {
   font-size: 1.4em;
-}
+} */
