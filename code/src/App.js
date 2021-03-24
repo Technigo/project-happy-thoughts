@@ -64,7 +64,7 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="main-container">
      <MessageForm 
      newMessage = {messageNew}
      onMessageNewChange = {handleMessageNewChange}
