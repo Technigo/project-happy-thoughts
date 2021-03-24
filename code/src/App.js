@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 
-import { API_URL } from './components/API_URL';
 import { FormInput } from './components/FormInput';
 import { MessageList } from './components/MessageList';
-import { PageLoader } from './components/PageLoader';
+import { LoadingSpinner } from './components/LoadingSpinner';
+
+import { API_URL, LIKES_URL } from './reusables/urls';
 
 export const App = () => {
   const [newMessage, setNewMessage] = useState('');
   const [messageList, setMessageList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
   
   useEffect(() => {
     fetchAllMessages();
@@ -22,29 +24,50 @@ export const App = () => {
         setMessageList(messages)
         setLoading(false)
       })
-      .catch(err => console.error(err));  
+    .catch(err => console.error(err));  
   }
 
   // Clicking the submit button, posting message
   const handleMessageSubmit = (e) => {
     e.preventDefault();
+    setLoading(true)
 
     fetch(API_URL, {
       method: "POST",
       body: JSON.stringify({ message: newMessage }),
       headers: { "Content-Type": "application/json" }
     })
-      .then(() => {
-        setLoading(true)
+    .then(res => res.json())
+      .then((message) => {
+        if (message.errors) {
+          handleErrors(message)
+        } else {
+            setNewMessage('')
+            setErrorMessage('')
+          }
         fetchAllMessages()
-        setNewMessage('')
-      })
-      .catch(err => console.log(err))
+      })  
+      .catch(err => console.error(err))
   }
+
+  // Function for setting error message
+  const handleErrors = (error) => {
+    const errorType = error.errors.message.kind;
+    if (errorType === "required") {
+      setErrorMessage("You can't send and empty thought!")
+    } else if (errorType === "minlength") {
+      setErrorMessage("Too short! You need a minimum of 5 characters")
+    } else if (errorType === "maxlength") {
+      setErrorMessage("Too long! You can have max 140 characters")
+    } else {
+      setErrorMessage(error.message)
+    }
+  }
+
 
   // Fetching likes
   const handleLikeClick = (id) => {
-    fetch(`${API_URL}/${id}/like`, {
+    fetch(LIKES_URL(id), {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
     })
@@ -53,19 +76,18 @@ export const App = () => {
     .catch(err => console.log(err))
   }
 
+
   return (
     <main className="main-container">
       <FormInput 
         newMessage={newMessage}
         setNewMessage={setNewMessage}
-        onMessageSubmit={handleMessageSubmit}/>
-      {loading ? 
-        <PageLoader /> 
-        :
-        <MessageList
-          messageList={messageList}
-          handleLikeClick={handleLikeClick} />
-      }
+        onMessageSubmit={handleMessageSubmit}
+        errorMessage={errorMessage} />
+      { loading && <LoadingSpinner /> }
+      <MessageList
+        messageList={messageList}
+        handleLikeClick={handleLikeClick} />
     </main>
   )
 }

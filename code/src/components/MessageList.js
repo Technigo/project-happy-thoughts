@@ -10,7 +10,7 @@ export const MessageList = ({ messageList, handleLikeClick }) => {
           key={message._id} 
           message={message}
           onLikeClick={handleLikeClick} />
-        ))}
+      ))}
     </>
   )
 }

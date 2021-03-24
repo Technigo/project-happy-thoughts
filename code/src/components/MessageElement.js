@@ -3,8 +3,8 @@ import moment from 'moment';
 
 export const MessageElement = ({ message, onLikeClick }) => {
   return (
-    <div className="thought-container">
-      <h4 className="thought-title">{message.message}</h4>
+    <div className="message-container">
+      <h4 className="message-title">{message.message}</h4>
       <div className="like-and-date">
         <p className="likes">
           <button 

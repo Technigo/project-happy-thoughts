@@ -1,12 +1,13 @@
 import React from 'react';
 
-export const FormButton = ({ disabled }) => {
+export const FormButton = () => {
   return (
     <button 
       type="submit"
-      className="button"
-      disabled={disabled}>
-      <span role="img" aria-label="heart">❤️</span> Send Happy Thought <span role="img" aria-label="heart">❤️</span>
+      className="button">
+      <span role="img" aria-label="heart" className="heart">❤️</span> 
+      Send Happy Thought 
+      <span role="img" aria-label="heart" className="heart">❤️</span>
     </button>
   )
 }

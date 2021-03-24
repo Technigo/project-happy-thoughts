@@ -19,13 +19,14 @@ code {
   align-items: center;
 }
 
-.loader-container {
-  width: 100px;
-  height: 100px;
-  margin-top: 200px;
-  border: 10px solid #C2C2C2;
+/* Loading spinner */
+.loading-container {
+  width: 70px;
+  height: 70px;
+  margin-top: 50px;
+  border: 10px solid #F2F0F0;
   border-radius: 50%;
-  border-top: 10px solid #FFADAD;
+  border-top: 10px solid #FFADAD;;
   animation: load 4s linear infinite;
 }
 
@@ -52,19 +53,29 @@ code {
 
 .form-title {
   margin: 15px;
-  font-size: 16px;
+  font-size: 14px;
   color: #2C2C2C;
+}
+
+.form-title:focus {
+  outline: 2px solid #868585; 
 }
 
 .text-area {
   margin: 0 15px 0 15px;
   border: 1px solid #C4C4C4;
   padding: 10px;
+  outline: none;
 }
 
-.message-number {
+.text-area:focus {
+  outline: 3px solid #868585;
+}
+
+/* Character counter */
+.character-number {
   text-align: right;
-  margin: 5px 15px 0 0;
+  margin: 5px 17px 0 0;
   color: #868585;
   font-size: 13px;
 }
@@ -73,18 +84,21 @@ code {
   color: red;
 }
 
-.error {
-  opacity: 0;
-  font-size: 9px;
+/* Error message under input */
+.error-message {
+  color: red;
+  font-size: 11px;
   position: absolute;
-  margin-left: 16px;
-  margin-top: 120px;
+  margin-left: 17px;
+  margin-top: 119px;
+  font-family: "Roboto", sans-serif;
 }
 
+/* Submit button */
 .button {
   margin: 0 0 15px 15px;
-  width: 55%;
-  height: 40px;
+  width: 60%;
+  height: 38px;
   border-radius: 50px;
   border: none;
   background-color: #FFADAD;
@@ -92,25 +106,12 @@ code {
   color: #2C2C2C;
   cursor: pointer;
   font-size: 12px;
+  outline: none;
 }
 
-.button:disabled {
-  opacity: 0.7;
-}
-
-.button:disabled + .error {
-  opacity: 1;
-}
-
-.error-message {
-  position: absolute;
-  border: 1px solid #868585;
-  color: #2C2C2C;
-  opacity: 0;
-}
-
-.display {
-  opacity: 1;
+.heart {
+  font-size: 15px;
+  margin: 0 4px;
 }
 
 /* Hover on button only when possible e.g. not on phones */
@@ -120,8 +121,12 @@ code {
   }
 }
 
+button:focus {
+  outline: 2px solid #EB5562;
+}
+
 /* All the thoughts */
-.thought-container {
+.message-container {
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -130,8 +135,9 @@ code {
   border: 1px solid #868585;
 }
 
-.thought-title {
-  font-size: 18px;
+.message-title {
+  font-size: 16px;
+  word-wrap: break-word;
   color: #2C2C2C;
   margin: 15px;
   font-family: Monospace, "Courier New";
@@ -142,17 +148,18 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 15px 10px 15px;
+  margin: 0 15px 5px 15px;
 }
 
 /* Like button with different backgrounds depending on liked or not */
 
 .like-button {
-  padding: 10px;
   border-radius: 50%;
+  width: 43px;
+  height: 43px;
   background-color: #EAEAEA;
-  font-size: 16px;
-  margin-right: 5px;
+  font-size: 15px;
+  margin-right: 10px;
   cursor: pointer;
   border: none;
 }
@@ -167,7 +174,8 @@ code {
 
 .likes {
   color: #8F8F8F;
-  font-size: 14px;
+  font-size: 12px;
+  font-family: "Roboto";
 }
 
 .dates {
@@ -183,10 +191,10 @@ code {
   }
 
   .button {
-    width: 40%;
+    width: 45%;
   }
 
-  .thought-container {
+  .message-container {
     width: 60%;
   }
 }
@@ -197,7 +205,11 @@ code {
     width: 30%;
   }
 
-  .thought-container {
+  .button {
+    font-size: 14px;
+  }
+
+  .message-container {
     width: 30%;
   }
 }
