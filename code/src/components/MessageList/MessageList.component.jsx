@@ -1,18 +1,20 @@
 import React from "react";
 
-import MessageListItem from "../MessageListItem/MessageListItem.component"
+import MessageListItem from "../MessageListItem/MessageListItem.component";
+
+import {MessageListContainer, MessageListItemContainer} from './MessageList.style'
 
 const MessageList = ({ messageList }) => {
   return (
-    <ul>
+    <MessageListContainer>
       {messageList.map((message) => {
         return (
-          <li key={message._id}>
+          <MessageListItemContainer key={message._id}>
             <MessageListItem message={message} /> 
-          </li>
+          </MessageListItemContainer>
         )
       })}
-    </ul>
+    </MessageListContainer>
   ) 
 }
 
