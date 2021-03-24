@@ -21,6 +21,26 @@ body > div {
   align-items: center;
 }
 
+.loader {
+  border: 10px solid white;
+  border-top: 10px solid pink;
+  border-bottom: 10px solid pink;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: 50px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 form,
 .thought {
   width: 80%;
@@ -39,7 +59,7 @@ form {
 
 form input {
   font-family: 'Roboto Mono', monospace;
-  margin: 15px 0;
+  margin-top: 15px;
   padding: 10px 10px 30px;
 }
 
@@ -52,6 +72,7 @@ form button {
   border: none;
   border-radius: 20px;
   padding: 10px;
+  margin-top: 15px;
   background-color: pink;
 }
 
@@ -65,6 +86,7 @@ p {
 
 .thought-message {
   font-family: 'Roboto Mono', monospace;
+  overflow-wrap: break-word;
 }
 
 .thought-time {
