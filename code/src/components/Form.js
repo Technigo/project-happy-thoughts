@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Form = ({messageNew ,setMessageNew}) => {
+export const Form = ({ messageNew ,setMessageNew, onFormSubmit }) => {
 
     const onMessageNewChange = (event) => {
         setMessageNew(event.target.value)
@@ -8,13 +8,16 @@ export const Form = ({messageNew ,setMessageNew}) => {
 
     return (
         <div className='input-form-container'>
-        <label htmlFor="newThought">What's making you happy right now?</label>
-        <input 
-            id="newThought"
-            type="text"
-            value={messageNew}
-            onChange={onMessageNewChange}
-        />
+            <form className='form-container' onSubmit={onFormSubmit}>
+                <label htmlFor="newMessage">What's making you happy right now?</label>
+                <input 
+                    id="newMessage"
+                    type="text"
+                    value={messageNew}
+                    onChange={onMessageNewChange}
+                />
+                <button className='button' type="submit">❤️️ Send happy thoughts! ❤️️</button>
+            </form>
         </div>
     )
 
