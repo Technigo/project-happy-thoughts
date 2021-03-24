@@ -22,13 +22,14 @@ export const App = () => {
     window.location.reload();
   };
 
-  const postRequestPotion = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message: postFormValue }),
-  };
   const postRequest = () => {
-    fetch(API_URL, postRequestPotion)
+    const postRequestOption = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: postFormValue }),
+    };
+
+    fetch(API_URL, postRequestOption)
       .then((response) => response.json())
       .then((data) => setApiFetch([...apiFetch, data]));
   };
