@@ -1,11 +1,13 @@
 export const URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
 
+export const URL_LIKE = (id) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
+
 export const options = (message) => {
-  return {
+  const opts = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ message })
+    }
   };
+  return message !== null ? { ...opts, body: JSON.stringify({ message }) } : opts;
 };

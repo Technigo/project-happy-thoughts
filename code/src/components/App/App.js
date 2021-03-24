@@ -1,29 +1,12 @@
-/** Component structure:
- * App
- * |--- Thought
- *      |--- Content
- *            |--- Button (type="button")
- * |--- Form
- *      |--- Button (type="submit")
- *
- *
- */
 import React, { useState, useEffect } from 'react';
 
 import Thought from 'components/Thought/Thought';
 import Form from 'components/Form/Form';
 import Main from 'components/Styled/Main';
 
-import { URL, options } from 'helpers/reusables';
+import { URL, URL_LIKE, options } from 'helpers/reusables';
 
 const App = () => {
-  // States: thoughts
-  // EFFECT: on mount (only empty state) => fetch the latest thoughts => set thoughts state
-  // render 2 components (Thoughts and Form)
-  // Thoughts.js renders only thoughts state (should be updated when thoughts state change)
-  // Form.js onSubmit => setToughts((..otherthoughts) => ...new, otherthoughts )
-  // since the thoughts state changed the THoughts.js should have updated
-  // EFFECT: onchange thoughts => (i.e. a new Thought is added) POST new Thought
   const [thoughts, setThoughts] = useState([]);
 
   const fetchThoughts = () => {
@@ -42,10 +25,14 @@ const App = () => {
       })
       .catch((err) => console.log(err));
   };
-
-  const handleRefresh = () => {
-    fetchThoughts();
-  };
+  const postLikes = (id) => {
+    fetch(URL_LIKE(id), options())
+      .then((res) => {
+        res.json();
+        fetchThoughts();
+      })
+      .catch((err) => console.log(err));
+  }
 
   useEffect(() => {
     fetchThoughts();
@@ -53,12 +40,9 @@ const App = () => {
 
   return (
     <Main>
-      <button type="button" onClick={handleRefresh}>
-        Refresh
-      </button>
       <Form handlePostNewThought={postThoughts} />
       {thoughts.map((thought) => (
-        <Thought key={thought._id} {...thought} />
+        <Thought key={thought._id} {...thought} handlePostLikes={postLikes} />
       ))}
     </Main>
   );
