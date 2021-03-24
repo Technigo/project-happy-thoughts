@@ -11,6 +11,9 @@ const Form = ({ handlePostNewThought }) => {
   const onSubmission = (event) => {
     event.preventDefault();
     handlePostNewThought(newThought);
+    // clean the form
+    setNewThought('');
+    setCharCount(0);
   };
 
   const onInputChange = (event) => {
@@ -18,15 +21,20 @@ const Form = ({ handlePostNewThought }) => {
     setNewThought(textVal);
     setCharCount(textVal.length);
   };
-
   return (
     <Card as="form" onSubmit={onSubmission}>
       <Card.Title as="label" htmlFor="happyThought">
         What is making you happy right now?
-        <TextArea id="happyThought" rows="5" cols="45" onChange={onInputChange} maxLength="140" />
-        <TextArea.Counter faded>
-          {charCount} / 140
-        </TextArea.Counter>
+        <TextArea
+          id="happyThought"
+          value={newThought}
+          rows="5"
+          cols="45"
+          onChange={onInputChange}
+          required
+          minLength="5"
+          maxLength="140" />
+        <TextArea.Counter faded>{charCount} / 140</TextArea.Counter>
       </Card.Title>
       <Button type="submit">
         <Button.Emoji role="img" aria-label="heart">
