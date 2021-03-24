@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
+import MessageForm from './components/MessageForm'
+
 import { API_URL } from './reusable/urls'
 import { HEART_URL } from './reusable/urls'
 
@@ -19,11 +21,11 @@ export const App = () => {
     .catch(err => console.error(err))
   }
 
-  const onNewMessageChange = (event) => {
+  const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value)
   }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -66,15 +68,12 @@ export const App = () => {
 
     return (
       <div>
-        <form onSubmit={onFormSubmit}>
-          <label htmlFor='newMessage'>What makes you happy right now!</label>
-          <input id='newMessage'
-            type='text'
-            value={newMessage}
-            onChange={onNewMessageChange}
-          />
-          <button type='submit'>Send happy thoughts!</button>
-        </form>
+        <MessageForm  
+          newMessage={newMessage}
+          onNewMessageChange={handleNewMessageChange}
+          onFormSubmit={handleFormSubmit}
+
+        />
         {happyList.map(message =>(
           <div key={message._id}>
             <h4>{message.message}</h4>
