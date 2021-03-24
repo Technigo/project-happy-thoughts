@@ -1,58 +1,78 @@
 import React, {useEffect} from 'react'
 import moment from 'moment'
 
-import { API_URL/* , LIKE_API  */} from '../reusables/urls'
+import { API_URL, LIKE_API } from '../reusables/urls'
 
-export const Messages = ({ messageList, setMessageList/* , likes, setLikes */ }) => {
+export const Messages = ({ messageList, setMessageList }) => {
 
     useEffect(() => {
         fetchList()
       }, []);
-    
+
+//fetch for list of messages    
+
       const fetchList = () => {
           fetch(API_URL)
             .then(res => res.json())
-            .then(thoughts => setMessageList(thoughts))
+            .then(messages => setMessageList(messages))
             .catch(error => console.error(error))
         }
-//likes
-/*         const handleSubmit = (e) => {
-            e.preventDefault()
+
+//fetch for increasing likes
+
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      };
+
+      const increaseLikes = (id) => {
+
+        fetch(LIKE_API(id), options)
+        .then(res => res.json())
+        .then(newLike => {
+          const updatedMessageList = messageList.map(message => {
+            if (message._id === newLike._id) {
+              message.hearts += 1;
+            }
+            return message
+            }) 
+            setMessageList(updatedMessageList)
+        })
+        .catch(error => console.error(error))
+      }
 
 
-        
-            const options = {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              }, */
-/*               body: JSON.stringify({ hearts: heart }) */
-/*             }
-
-            fetch(LIKE_API, options)
-            .then(res => res.json())
-            .then(likes => setMessageList([likes,...messageList]))
-            .catch(error => console.error(error))
-        } */
-//end likes
 
     return (
         <div className='messageContainer'>
-        {messageList.map(thoughts => (
-            <div className='messageContent' key={thoughts._id}>
-              <h4 className='messageText'>{thoughts.message}</h4>
+        {messageList.map(message => (
+            <div 
+              key={message._id}
+              className='messageContent'>
+              <h4 className='messageText'>
+                {message.message}
+              </h4>
               <div className='heartAndTime'>
                 <div className='heartThings'>
-                <button className='heartButton'>
-                <span className='heart'>&#128151;</span>
-                </button>
-              <p className='nrOfLikes'>x {thoughts.hearts}</p>
+                  <button
+                    className='heartButton'
+                    onClick={() => increaseLikes(message._id)}>
+                    <span className='heart' role='img' aria-label='heart emoji'>
+                      &#128151;
+                    </span>
+                  </button>
+                  <p className='nrOfLikes'>
+                    x {message.hearts}
+                  </p>
+                </div>
+                <p className='time'>
+                  {moment(message.createdAt).fromNow()}
+                </p>
               </div>
-              <p className='time'>{moment(thoughts.createdAt).fromNow()}</p>
-              </div>
-              </div>
+            </div>
           ))}
-
         </div>
     )
 }
