@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment'
 
-import { API_URL } from './urls';
+import { API_URL, API_LIKES_URL } from './urls';
 
 export const Form = () => {
     const[messageList, setMessageList] = useState([])
@@ -39,8 +39,33 @@ export const Form = () => {
         fetch(API_URL, options)
             .then(res => res.json())
             .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
+            .catch(err => console.error(err))
             
     }
+
+    const onLikesIncrease = (id) => {
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }
+
+        fetch(API_LIKES_URL(id), options)
+            .then(res => res.json())
+            .then(receivedMessage => {
+                const updatedMessageList = messageList.map(message => {
+                    if (message._id === receivedMessage._id) {
+                        message.hearts += 1
+                    }
+                    return message 
+                })
+                setMessageList(updatedMessageList)
+            })
+            .catch(err => console.error(err))
+    }
+
+    console.log(messageList);
 
 
 
@@ -51,6 +76,7 @@ export const Form = () => {
                 <input className="input"
                     id="newMessage"
                     type="text"
+                    
                     value={messageNew}
                     onChange={onMessageNewChange}
                 />    
@@ -62,7 +88,7 @@ export const Form = () => {
                 <div className="message-body" key={message._id}>
                     <h4>{message.message}</h4>
                     <div className="like">
-                        <button className="btn-like">💗</button>
+                        <button onClick={() => onLikesIncrease(message._id)} className="btn-like">💗</button>
                         <p>x {message.hearts}</p>
                     </div>
                     <p className="time-from-now">{moment(message.createdAt).fromNow()}</p>
