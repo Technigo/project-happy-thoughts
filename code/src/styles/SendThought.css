@@ -71,4 +71,25 @@
   border-radius: 25px;
   cursor: pointer;
   width: calc(100% - 45%);
+  outline-color: #ffadad;
 }
+
+/* Belongs to ThoughtsElement that could be styled together with ... ? */
+.heart-likes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.heart-button {
+  background-color: #f2f0f0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  outline-color: #f2f0f0;
+  /* padding: 10px 15px; */
+  /* margin: 10px 0 20px 15px; */
+  cursor: pointer;
+}
+

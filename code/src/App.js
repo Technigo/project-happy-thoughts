@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import moment from 'moment'
 
 // URLS
 import { HAPPY_THOUGHTS_URL, LIKE_THOUGHT_URL } from './reusable/urls'
 
 // Components
 import SendThought from './components/SendThought'
+import ThoughtsList from './components/ThoughtsList'
 
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
@@ -27,8 +27,8 @@ export const App = () => {
     setNewThought(e.target.value)
   }
 
-  //POST request here: 
-  const onFormSubmit = (e) => {
+  //POST requests here: 
+  const handleFormSubmit = (e) => {
     e.preventDefault()
 
     const options = {
@@ -41,26 +41,40 @@ export const App = () => {
 
     fetch(HAPPY_THOUGHTS_URL, options)
       .then(res => res.json())
-      .then(recievedThought => setThoughtsList([...thoughtsList, recievedThought]))
+      // .then(recievedThought => setThoughtsList([...thoughtsList, recievedThought]))
+      // Refetch data from the server & update local state at the same time.
+      .then(() => fetchThoughtsList())
       .then(() => {
-        window.location.reload();
+        window.location.reload()
       })
+      .catch(err => console.error(err))
+  }
+
+  const handleHeartsIncrease = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(LIKE_THOUGHT_URL(id), options)
+      .then( res => res.json())
+      .then(() => fetchThoughtsList())
+      .catch(err => console.error(err))
   }
 
 //need the type="submit" on button if we want the button to execute something. The event is attached to the form itself though. <form onSubmit={onFormSubmit}>
   return (
-    <div>
+    <>
       <SendThought 
         newThought={newThought}
         onNewThoughtChange={onNewThoughtChange}
-        onFormSubmit={onFormSubmit}
+        handleFormSubmit={handleFormSubmit}
       />
-      {thoughtsList.map(sentmessage => (
-        <div key={sentmessage._id} className="sent-messages">
-          <h4>{sentmessage.message}</h4>
-          <p className="message-created">{moment(sentmessage.createdAt).fromNow()}</p>
-        </div>
-        ))}
-    </div>
+      <ThoughtsList 
+        thoughtsList={thoughtsList}
+        handleHeartsIncrease={handleHeartsIncrease}  
+      />
+    </>
   )
 }

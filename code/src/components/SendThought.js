@@ -4,14 +4,14 @@ import ButtonSubmit from './ButtonSubmit'
 import '../styles/SendThought.css'
 
 const SendThought = ({
-  onFormSubmit,
+  handleFormSubmit,
   newThought,
   onNewThoughtChange,
 }) => {
-  //<input/> and <textarea /> ----> add value and onChange to make it controlled. 
+
   return (
   <div className="thoughts-container-grey">
-    <form onSubmit={onFormSubmit} className="thoughts-container">
+    <form onSubmit={handleFormSubmit} className="thoughts-container">
     <label htmlFor="newThought" className="title-question">What's making you happy right now?</label>
       <textarea
         className="user-input-textarea"
