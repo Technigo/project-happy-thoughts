@@ -32,6 +32,8 @@ export const App = () => {
     fetch(API_URL, postRequestOption)
       .then((response) => response.json())
       .then((data) => setApiFetch([...apiFetch, data]));
+
+    setTimeout(() => refreshPosts(), 2000);
   };
 
   const handlePostLike = (postID) => {
