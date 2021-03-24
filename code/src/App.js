@@ -9,6 +9,7 @@ import { API_URL } from './reusable/urls';
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
   const [newMessage, setNewMessage] = useState('')
+  const [addHeart, setAddHeart] = useState('')
 
   useEffect(() => {
     fetchMessages();
@@ -46,6 +47,22 @@ export const App = () => {
       .catch(err => console.error(err));
   };
 
+  const onHeartClick = (event) => {
+    event.preventDefault();
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ hearts: addHeart })
+    }
+
+    fetch(API_URL, options)
+      .then(res => res.json())
+      .then(clickedHeart => setAddHeart([clickedHeart, ...addHeart]))
+  }
+
   return (
     <div>
       {/* <Form /> */}
@@ -80,7 +97,11 @@ export const App = () => {
             <h4>{message.message}</h4>
             <div className="heart-time-div">
               <div className="likes"> 
-                <button className={message.hearts > 0 ? "multiple-hearts" : "heart"}><FontAwesomeIcon icon={['fa', 'heart']} /></button>
+                <button
+                  onClick={onHeartClick}
+                  className={message.hearts > 0 ? "multiple-hearts" : "heart"}>
+                  <FontAwesomeIcon icon={['fa', 'heart']} />
+                </button>
                 <p>
                   x {message.hearts}
                 </p>
