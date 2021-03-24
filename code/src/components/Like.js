@@ -1,12 +1,13 @@
 import React, { useState } from "react"
 
-const Like = ({ thought, hearts, setHearts }) => {
+const Like = ({ thought, hearts, setHearts, likeCounter, setLikeCounter }) => {
     const [isLiked, setIsLiked] = useState(false)
 
 
     const onHeartChange = () => {
 
         setIsLiked(true)
+        setLikeCounter(likeCounter + 1)
 
         const API_URL_ID = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`
 

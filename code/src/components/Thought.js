@@ -3,13 +3,11 @@ import React, { useState } from "react"
 
 import Like from "./Like"
 
-const Thought = ({ thought }) => {
+const Thought = ({ thought, likeCounter, setLikeCounter }) => {
     const [hearts, setHearts] = useState(thought.hearts)
 
     return (
-        <div
-            className="thought"
-        >
+        <div className="thought">
             <p className="thought-message">
                 {thought.message}
             </p>
@@ -18,6 +16,8 @@ const Thought = ({ thought }) => {
                     hearts={hearts}
                     setHearts={setHearts}
                     thought={thought}
+                    likeCounter={likeCounter}
+                    setLikeCounter={setLikeCounter}
                 />
                 <p className="thought-time">
                     {moment(thought.createdAt).fromNow()}
