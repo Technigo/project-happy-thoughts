@@ -35,20 +35,24 @@ export const App = () => {
 
   return (
     <Grid container spacing={1} justify="center">
-      <PostForm
-        postFormValue={postFormValue}
-        setPostFormValue={setPostFormValue}
-        postRequest={postRequest}
-        refreshPosts={refreshPosts}
-      />
-      {apiFetch.map((post) => (
-        <Post
-          key={post._id}
-          message={post.message}
-          likes={post.hearts}
-          timeStamp={post.createdAt}
+      <Grid item xs={12}>
+        <PostForm
+          postFormValue={postFormValue}
+          setPostFormValue={setPostFormValue}
+          postRequest={postRequest}
+          refreshPosts={refreshPosts}
         />
-      ))}
+      </Grid>
+      <Grid item xs={12}>
+        {apiFetch.map((post) => (
+          <Post
+            key={post._id}
+            message={post.message}
+            likes={post.hearts}
+            timeStamp={post.createdAt}
+          />
+        ))}
+      </Grid>
     </Grid>
   );
 };
