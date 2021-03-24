@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "moment": "^2.29.1",
+    "react-moment": "^1.1.1",
+    "timezone": "^1.0.23"
+  }
+}

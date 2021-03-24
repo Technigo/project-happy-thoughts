@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Styles/ListTextField.css'
+import ThoughtCard from './ThoughtCard'
 // import moment from 'moment';
 import { API_URL_THOUGHTS } from '../Reusables/urls';
 
@@ -20,17 +21,27 @@ const ListTextField = () => {
             .catch(err => console.error(err))
     }
 
+    const onLiked = thoughtId => {
+        const updateThoughtList = thoughtList.map(thought => {
+            if (thought._id === thoughtId) {
+                thought.hearts +=1
+            }
+            return thought
+        })
+        setThoughtList(updateThoughtList)
+    }
+
     return (
         <>
-           <div>
-                {thoughtList.map(thought => (
-                    <div key={thought._id}>
-                        <h4>{thought.message}</h4>
-                        <p>{thought.createdAt}</p>
-                        <p>number of likes{thought.hearts}</p>
+            {thoughtList.map(thought => (
+                <div>
+                    <ThoughtCard
+                    key={thought._id}
+                    thought={thought}
+                    onLiked={onLiked}
+                    />
                     </div>
-                ))}
-           </div>
+            ))}
         </>
     )
 }

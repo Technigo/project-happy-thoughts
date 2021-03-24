@@ -1,6 +1,7 @@
 import React from 'react'
-
-import ListTextField from './components/ListTextField'
+import InputThoughtField from './components/InputThoughtField'
+import ListOfThoughts from './components/ListOfThoughts'
+// import ThoughtCard from './components/ThoughtCard'
 import Header from './components/Header'
 import Footer from './components/Footer'
 // import Moment from 'react-moment';
@@ -10,7 +11,8 @@ export const App = () => {
   return (
     <div>
       <Header />
-      <ListTextField />
+      <InputThoughtField />
+      <ListOfThoughts />
       <Footer />
     </div>
   )
