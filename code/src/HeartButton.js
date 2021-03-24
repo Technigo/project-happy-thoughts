@@ -1,8 +1,15 @@
 import React from 'react';
 
-const HeartButton = () => {
+const HeartButton = ({ message, onHeartClick }) => {
   return (
     <>
+      <button>
+        <span 
+          role="img" 
+          aria-label="heart icon">
+            ❤️
+        </span>
+      </button>
     </>
   );
 };

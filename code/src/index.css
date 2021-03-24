@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.new-message-label {
+  font-family: Menlo;
+}
+
+/*** MESSAGES ***/
+.message-element-container {
+  border: solid 1px black;
+}
+
+.message-element-container .message {
+  overflow-wrap: break-word;
+}
+
+.heart-date-container {
+  display: flex;
+}

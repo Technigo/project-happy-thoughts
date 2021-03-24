@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';  
 
-import HeartButton from './HeartButton';
+import MessageForm from './MessageForm';
+import MessageList from './MessageList';
 
-import API_URL from './reusable/urls';
+import { API_URL, API_URL_GET_HEART } from './reusable/urls';
 
 const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -16,7 +16,7 @@ const App = () => {
   const fetchMessageList = () => {
     fetch(API_URL)
       .then(res => res.json())
-      .then(messages => setMessageList(messages))   // set this in a separate component
+      .then(messages => setMessageList(messages))   
       .catch(err => console.error(err));      
   };
 
@@ -24,10 +24,11 @@ const App = () => {
     setNewMessage(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
+    setNewMessage('');
 
-    const options = {   
+    const config = {   
         method: 'POST', 
         headers: {              //specific information for the backend application
           'Content-Type': 'application/json'
@@ -35,33 +36,49 @@ const App = () => {
         body: JSON.stringify({ message: newMessage })     //we are just sending an object with text
     };
 
-    fetch(API_URL, options)      
+    fetch(API_URL, config)      
       .then(res => res.json())
-      .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
+      // .then(receivedMessage => setMessageList([receivedMessage, ...messageList])) //Update local state
+      .then(() => fetchMessageList())     //refetch data from server
+      .catch(err => console.error(err));
+  };
+
+  const handleHeartClick = (id) => {
+    const config = {   
+      method: 'POST', 
+      headers: {              
+        'Content-Type': 'application/json'
+      }
+    };
+
+    fetch(API_URL_GET_HEART(id), config)
+      .then(res => res.json())
+      // .then(receivedHeart => {          //we get back updated object from server, this is the newest message of this. 
+      //   const updatedMessageList = messageList.map(message => {    //update local state
+      //     if (message._id === receivedHeart._id) {
+      //       message.hearts += 1;
+      //     } 
+      //     return message;
+      //   });
+      //   setMessageList(updatedMessageList);
+      // })
+      .then(() => fetchMessageList())     //refetch data from server
       .catch(err => console.error(err));
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="newMessage">What's making you happy right now?</label>
-        <input
-          id="newMessage"
-          type="text"
-          value={newMessage}
-          onChange={handleNewMessage}
-        />
-        <button type="submit">Send happy thought</button>
-      </form>
-
-      {messageList.map(message => (
-       <div key={message._id}>
-         <h4>{message.message}</h4>
-         <p>- {moment(message.createdAt).fromNow()}</p>
-       </div> 
-      ))}      
+      <MessageForm 
+        newMessage={newMessage}
+        onNewMessage={handleNewMessage}
+        onFormSubmit={handleFormSubmit}  
+      />
+      <MessageList 
+        messageList={messageList}
+        handleHeartClick={handleHeartClick}
+      />
     </>
-  )
+  );
 };
 
 export default App;
