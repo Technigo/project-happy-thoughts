@@ -8,9 +8,11 @@ export const App = () => {
 const [messageList, setMessageList] = useState([]);
 
   return (
-    <>
+    <main>
+    <div className="wrapper">
       < MessageForm setMessageList={setMessageList}/>
       < MessageList messageList={messageList} setMessageList={setMessageList}/>
-    </>
+    </div>
+    </main>
   )
 }

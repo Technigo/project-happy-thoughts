@@ -15,25 +15,45 @@ code {
     monospace;
 }
 
-/* MessageList*/
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- MessageList --- */
+
 .message-list {
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .message {
   width: 90%;
-  height: fit-content;
-  padding: 10px;
-  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 150px;
+  margin: 20px 0;
   background-color: white;
   box-shadow: 7px 7px 1px 1px black;
   border: solid rgb(158, 158, 158) 0.5px;
 }
 
 .message__post {
+  display: block;
+  margin: 20px 0 5px 0;
   width: 90%;
+  font-size: 16px;
 }
 
 .message-info {
@@ -44,7 +64,14 @@ align-items: center;
   color: rgb(158, 158, 158);
 }
 
-.message-info__likes-btn {
+.message-info__time,
+.like-btn__text {
+  font-size: 14px;
+}
+
+/* --- Like button --- */
+
+.like-btn {
   display: flex;
   align-items: center;
   border: none;
@@ -55,66 +82,90 @@ align-items: center;
   padding: 0;
 }
 
-.message-info__likes-btn p{
-  margin-left: 10px;
-}
-
-
-.message-info__likes-btn__heart {
+.like-btn__heart {
   height: 50px;
   width: 50px;
+  margin-right: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
   border-radius: 50%;
- 
 }
 
-.message-info__likes-btn__heart.false {
+.like-btn__heart.false {
   background-color: rgb(242, 242, 243);
 }
 
-.message-info__likes-btn__heart.true {
+.like-btn__heart.true {
   background-color: pink;
 }
 
-/*MessageForm */
+/* --- MessageForm --- */
 
-.message-form 
-  {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: fit-content;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: rgb(242, 242, 243);
-    box-shadow: 7px 7px 1px 1px black;
-    border:solid rgb(158, 158, 158) 0.5px;
-  }
-
-
-
-.message-form__input {
-  height: 80px;
+.message-form {
   width: 90%;
-  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  background-color: rgb(242, 242, 243);
+  box-shadow: 7px 7px 1px 1px black;
+  border: solid rgb(158, 158, 158) 0.5px;
 }
 
-/* SubmitButton */
+.message-form__heading {
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  width: 90%;
+  margin-top: 15px;
+}
 
-.message-form__submit {
+.message-form__input {
+  height: 50px;
+  word-break: break-word; 
+  word-wrap: normal;
+  width: 90%;
+  margin-bottom: 10px;
+  font-size: 14px;
+  overflow-y:auto;
+}
+
+.message-form__input-count {
+  font-size: 14px;
+  margin: 0;
+  text-align: right;
+  width: 90%;
+}
+
+.count-warning {
+ color: red;
+}
+
+/* --- SubmitButton --- */
+
+.submit-btn {
   margin-left: 5%;
   align-self: flex-start;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   width: fit-content;
   height: 40px;
+  padding: 0 20px;
+  margin-bottom: 10px;
   border-radius: 20px;
   background-color: pink;
   border: none;
+}
+
+.submit-btn__text {
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0 5px;
 }
 
 .img-container {
@@ -125,4 +176,72 @@ align-items: center;
 
 .img-container {
   object-fit: contain;
+}
+
+/*tablet*/
+@media screen and (min-width: 700px) {
+  .wrapper {
+    width: 500px;
+  }
+
+  /* --- MessageList --- */
+
+  .message-form__heading {
+    font-size: 16px;
+  }
+
+  .message__post {
+    font-size: 18px;
+  }
+
+  .message-info__time,
+  .like-btn__text {
+    font-size: 15px;
+  }
+
+  /* --- MessageForm --- */
+
+  .message-form__input {
+    font-size: 16px;
+  }
+
+  /* --- SubmitButton --- */
+
+  .submit-btn__text {
+    font-size: 15px;
+  }
+}
+
+/*desktop*/
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    width: 500px;
+  }
+
+  /* --- MessageList --- */
+
+  .message-form__heading {
+    font-size: 18px;
+  }
+
+  .message__post {
+    font-size: 20px;
+  }
+
+  .message-info__time,
+  .like-btn__text {
+    font-size: 16px;
+  }
+
+  /* --- MessageForm --- */
+
+  .message-form__input {
+    font-size: 19px;
+  }
+
+  /* --- SubmitButton --- */
+
+  .submit-btn__text {
+    font-size: 17px;
+  }
 }

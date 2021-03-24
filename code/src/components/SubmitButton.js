@@ -3,7 +3,6 @@ import React from "react";
 import { API_URL } from "../reusable/urls";
 
 export const SubmitButton = ({ setMessageList, userInput, setUserInput }) => {
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
     fetchNewMessage();
@@ -18,7 +17,6 @@ export const SubmitButton = ({ setMessageList, userInput, setUserInput }) => {
       },
       body: JSON.stringify({ message: userInput }),
     };
-    
 
     fetch(API_URL, post)
       .then((res) => res.json())
@@ -30,14 +28,14 @@ export const SubmitButton = ({ setMessageList, userInput, setUserInput }) => {
 
   return (
     <button
-      className="message-form__submit"
+      className="submit-btn"
       type="submit"
       onClick={handleFormSubmit}
     >
       <span role="img" aria-label="heart-emoji">
         &#10084;&#65039;
       </span>
-        Send Happy Thought
+      <p className="submit-btn__text">Send Happy Thought </p> 
       <span role="img" aria-label="heart-emoji">
         &#10084;&#65039;
       </span>

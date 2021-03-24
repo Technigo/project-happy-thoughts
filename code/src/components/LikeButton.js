@@ -24,33 +24,28 @@ export const LikeButton = ({ likes, id, messageList, setMessageList }) => {
       .then((likedMessage) => {
         const newMessageList = messageList.map((message) => {
           if (message._id === likedMessage._id) {
-            isLiked 
-            ? (message.hearts -= 1) 
-            : (message.hearts += 1);
+            isLiked ? (message.hearts -= 1) : (message.hearts += 1);
           }
-          return message
+          return message;
         });
 
-        setMessageList(newMessageList)
+        setMessageList(newMessageList);
       })
       .catch((error) => console.log(error));
   };
 
   return (
-    <button
-      className="message-info__likes-btn"
-      onClick={() => toggleLike(id)}
-    >
+    <button className="like-btn" onClick={() => toggleLike(id)}>
       <span
         role="img"
         /* by adding a state  to the className this element can change 
         background-color depending on if it has the class .true or .false */
-        className={`message-info__likes-btn__heart ${isLiked}`}
+        className={`like-btn__heart ${isLiked}`}
         aria-label="heart-emoji"
       >
         &#10084;&#65039;
       </span>
-      <p> x {likes}</p>
+      <p className="like-btn__text"> x {likes}</p>
     </button>
   );
 };
