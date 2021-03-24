@@ -32,6 +32,7 @@ code {
   flex-direction: column;
 
   width: 300px;
+  min-height: 120px;
   border: solid 1px #8f8d8d;
   box-shadow: 5px 5px black;
   background-color: #f2f0f0;
@@ -128,13 +129,12 @@ textarea {
 
 @media (min-width: 667px) {
 
-.newThoughtsContainer {
-  width: 400px;
-}
-
+.newThoughtsContainer,
 .messageContent {
   width: 400px;
+  min-height: 120px;
 }
+
 
 .heartButton {
   height: 38px;
