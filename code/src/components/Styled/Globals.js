@@ -13,4 +13,5 @@ export const TextArea = styled.textarea`
   resize: vertical;
   padding: 1em;
   margin: 1em 0;
+  width: calc(100% - 2em);
 `;

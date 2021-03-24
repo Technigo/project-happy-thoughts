@@ -12,8 +12,9 @@ import React, { useState, useEffect } from 'react';
 
 import Thought from 'components/Thought/Thought';
 import Form from 'components/Form/Form';
+import Main from 'components/Styled/Main';
 
-import './App.css';
+import { URL, options } from 'helpers/reusables';
 
 const App = () => {
   // States: thoughts
@@ -26,24 +27,18 @@ const App = () => {
   const [thoughts, setThoughts] = useState([]);
 
   const fetchThoughts = () => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch(URL)
       .then((res) => res.json())
       .then((data) => {
         setThoughts(data);
       })
       .catch((err) => console.log(err));
   };
-  const postThoughts = () => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: 'My test message' })
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+  const postThoughts = (message) => {
+    fetch(URL, options(message))
+      .then((res) => {
+        res.json();
+        fetchThoughts();
       })
       .catch((err) => console.log(err));
   };
@@ -57,18 +52,15 @@ const App = () => {
   }, []);
 
   return (
-    <main className="main-wrapper">
+    <Main>
       <button type="button" onClick={handleRefresh}>
         Refresh
       </button>
-      <button type="button" onClick={postThoughts}>
-        Post
-      </button>
-      <Form />
+      <Form handlePostNewThought={postThoughts} />
       {thoughts.map((thought) => (
         <Thought key={thought._id} {...thought} />
       ))}
-    </main>
+    </Main>
   );
 };
 

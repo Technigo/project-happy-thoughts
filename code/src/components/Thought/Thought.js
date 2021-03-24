@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-import Button from 'components/Button/Button';
+import Button from 'components/Styled/Button';
 import Card from 'components/Styled/Card';
 
 const Thought = ({ message, hearts, createdAt }) => {
@@ -9,7 +9,9 @@ const Thought = ({ message, hearts, createdAt }) => {
     <>
       <Card>
         <Card.Title>{message}</Card.Title>
-        <Button isSubmit={false} />
+        <Button type="button">
+          <Button.Emoji role="img" aria-label="heart">❤️</Button.Emoji>
+        </Button>
         <Card.FooterText faded aria-label="Amount of likes">
           x {hearts}
         </Card.FooterText>
