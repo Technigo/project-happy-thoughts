@@ -16,8 +16,9 @@ const LikeButton = (props) => {
     .then (() => {
       props.onMessageLiked(props.id)
     }) 
+
   }
-  
+
     return (
       <div className="button-container">
         <div className="like-btn">

@@ -11,7 +11,7 @@ const MessageForm = ({ onSubmit, messageNew, setMessageNew }) => {
         setMessageNew(count)
       } else if (characterCount > 140) {
         return setMessageNew(messageNew)
-    } 
+      } 
    }
 
   return (
@@ -33,8 +33,8 @@ const MessageForm = ({ onSubmit, messageNew, setMessageNew }) => {
               Send Happy Tought 
             <span className="heart-icon" role="img" aria-label="like">❤️</span>
           </button>   
-    </form>
-  </div>
+      </form>
+    </div>
   )
 }
 

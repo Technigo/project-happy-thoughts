@@ -1,11 +1,10 @@
-import React  from 'react'
-
+import React from 'react'
 
 const MessageList = ({ message }) => {
 
   return (
     <>
-      <p className="message-content">{message}</p>
+     <p className="message-content">{message}</p>
     </>
   )
 }

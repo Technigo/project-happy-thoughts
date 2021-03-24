@@ -19,7 +19,7 @@ body {
   height: 100%;
   border: 1px solid black;
   box-shadow: 5px 5px;
-  margin: 15px;
+  margin: 30px 15px;
   line-height: 20px;
   padding: 0 11px;
 }
@@ -94,6 +94,12 @@ body {
 .like-btn {
   display: flex;
   letter-spacing: 0.2em; 
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  
 }
 
 
