@@ -11,7 +11,7 @@ const ThoughtsElement = ({ sentmessage, handleHeartsIncrease}) => {
             className="heart-button" 
             onClick={() => handleHeartsIncrease(sentmessage._id)} 
             style={{ backgroundColor: sentmessage.hearts > 0 ? "#ffadad" : "#f2f0f0" }}>
-            ❤️
+            <span role="img" aria-label="heart">❤️</span>
           </button>
           <p className="heart-times-counter">x {sentmessage.hearts}</p>
         </div>

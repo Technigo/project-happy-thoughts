@@ -3,6 +3,7 @@ import React from 'react'
 import ButtonSubmit from './ButtonSubmit'
 import '../styles/SendThought.css'
 
+//add friendly Error message to user if message is too short or too long rather than just setting button to disabled
 const SendThought = ({
   handleFormSubmit,
   newThought,
