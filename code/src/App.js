@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
 import MessageForm from './components/MessageForm'
+import HappyMessageList from './components/HappyMessageList'
 
 import { API_URL } from './reusable/urls'
 import { HEART_URL } from './reusable/urls'
@@ -72,18 +73,8 @@ export const App = () => {
           newMessage={newMessage}
           onNewMessageChange={handleNewMessageChange}
           onFormSubmit={handleFormSubmit}
-
         />
-        {happyList.map(message =>(
-          <div key={message._id}>
-            <h4>{message.message}</h4>
-            <button onClick={ () => onHeartsIncrease(message._id)}>
-              {message.hearts}
-              ❤️
-            </button>
-            <p>-{moment(message.createdAt).fromNow()}</p>
-          </div>
-        ))}
+        <happyList happyList={happyList}/>
       </div>
     )
 }
