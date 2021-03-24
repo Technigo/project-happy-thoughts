@@ -21,13 +21,51 @@ code {
     monospace;
 }
 
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.logo {
+  height: 100px;
+}
+
+/* MAIN */
+
 .main {
   display: flex;
-  margin: 100px;
+  margin: 50px 100px;
   align-items: center;
   flex-direction: column;
   font-family: "Menlo Regular";
 }
+
+/* FORM & MESSAGE CONTAINER */
+
+.form,
+.message-container {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 15px;
+  box-shadow: 7px 7px;
+}
+
+.form {
+  background-color: #f2f0f0;
+}
+
+.message-container {
+  background-color: white;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+/* FORM ELEMENTS */
 
 textarea,
 label {
@@ -39,6 +77,11 @@ label {
 textarea {
   height: 60px;
   resize: none;
+  padding: 10px;
+}
+
+.counter {
+  margin: 12px;
 }
 
 .submit-button {
@@ -52,25 +95,11 @@ textarea {
   cursor: pointer;
 }
 
-.form,
-.message-container {
-  display: flex;
-  width: 500px;
-  flex-direction: column;
-  border: 1px solid black;
-  padding: 15px;
-  box-shadow: 7px 7px;
-}
-
 .error-msg {
   margin: 0;
 }
 
-.message-container {
-  background-color: white;
-  margin-top: 30px;
-  justify-content: space-between;
-}
+/* MESSAGE LIST ELEMENTS */
 
 .message {
   overflow-wrap: break-word;
@@ -102,10 +131,6 @@ textarea {
   text-align: center;
   margin: 0;
   cursor: pointer;
-}
-
-.form {
-  background-color: #f2f0f0;
 }
 
 .time {

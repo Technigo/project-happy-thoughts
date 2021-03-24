@@ -4,11 +4,13 @@ import { API_URL, HEART_URL } from './reusables/urls'
 
 import Form from './components/Form'
 import MessageList from './components/MessageList'
+import Header from './components/Header'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
   const [error, setError] = useState('')
+  const [characters, setCharacters] = useState(messageNew.length)
 
   useEffect(() => {
     fetchMessageList()
@@ -23,6 +25,7 @@ export const App = () => {
 
   const handleMessageNewChange = (event) => {
       setMessageNew(event.target.value)
+      setCharacters(messageNew.length)
   }
 
   const handleHeartClick = (id) => {
@@ -59,24 +62,27 @@ export const App = () => {
     fetch(API_URL, options)
     .then(res => res.json())
     .then(() => fetchMessageList())
-    .catch(() => setError('Please make sure you write at least 4 characters and maximum 140'))
+    .catch(error => console.error(error))
   }
 
   return (
-    <main className="main">
-      
-      <Form 
-        onFormSubmit={handleFormSubmit}
-        messageNew={messageNew}
-        onMessageNewChange={handleMessageNewChange}
-        error={error}
-      />
-      <MessageList 
-        messageList={messageList}
-        handleHeartClick={handleHeartClick}
-      />
+    <>
+      <Header />
 
-    </main>
+      <main className="main">
+        <Form 
+          onFormSubmit={handleFormSubmit}
+          messageNew={messageNew}
+          onMessageNewChange={handleMessageNewChange}
+          characters={characters}
+        />
+        <MessageList 
+          messageList={messageList}
+          handleHeartClick={handleHeartClick}
+        />
+      </main>
+
+    </>
 
     )
    
