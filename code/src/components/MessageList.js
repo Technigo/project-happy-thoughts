@@ -14,11 +14,16 @@ const MessageList = ({MessageListArray, handleMoreLikes}) => {
         <div className= "thoughts-card" key={message._id}>
           <h4 className="message-text">{message.message}</h4>
         <div className="created-and-likes">
-
-          <button onClick={() =>handleMoreLikes(message._id)}>
-          ❤ x {message.hearts}</button>
-
-          <p className="created">{moment(message.createdAt).fromNow()}</p>
+          <div className="like-container">
+            <button className="heart-button"
+            style={{ background: message.hearts > 0 ? "#ffadad" : "azure" }}
+              onClick={() =>handleMoreLikes(message._id)}>
+              <span role="img" aria-label="heart">
+                {"❤️"}</span>
+            </button>
+            <p>x {message.hearts}</p>
+          </div>
+            <p className="created">{moment(message.createdAt).fromNow()}</p>
           </div>
         </div>
       ))}

@@ -13,7 +13,11 @@ const MessageForm =({onFormSubmit, newMessage, newMessageChange}) => {
         value={newMessage}
         onChange={newMessageChange}
         />
-        <button className="button" type="submit">Send happy thought!</button>
+        <button className="button" type="submit"><span role="img" aria-label="heart">
+          {"❤️"}
+        </span> Send happy thought!<span role="img" aria-label="heart">
+          {"❤️"}
+        </span></button>
       </form>
     </section>
 

@@ -50,6 +50,8 @@ code {
 
 .button{
   border-radius:15px;
+  margin:10px;
+  background-color: #ffadad;
 }
 
 .message-list-container{
@@ -86,6 +88,19 @@ overflow-wrap: break-word;
   justify-content: space-between;
 }
 
+.like-container {
+  display: flex;
+  align-items: center;
+}
+
+.heart-button{
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: #e4d4d4;
+  cursor: pointer;
+  border: none;
+}
 
 
 /**** MEDIA QUERIES ***/
