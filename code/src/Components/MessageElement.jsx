@@ -14,7 +14,7 @@ export const MessageElement = ({ message, onHeartClick}) => {
                     <button
                         onClick={() => onHeartClick(message._id)}
                         className={message.hearts > 0 ? "multiple-hearts" : "heart"}>
-                        <FontAwesomeIcon icon={['fa', 'heart']} />
+                        <span><FontAwesomeIcon icon={['fa', 'heart']} /></span>
                     </button>
                     <p>
                         x {message.hearts}

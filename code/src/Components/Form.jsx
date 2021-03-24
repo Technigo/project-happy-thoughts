@@ -22,7 +22,7 @@ export const Form = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
           <button 
             className="submit-btn" 
             type="submit"
-            >❤️ Send happy thought! ❤️
+            ><span role="img" aria-label="heart emoji">❤️</span> Send happy thought! <span role="img" aria-label="heart emoji">❤️</span>
           </button>
         </form>
     )
