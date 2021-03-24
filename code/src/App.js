@@ -6,7 +6,8 @@ import { MessageList } from './components/MessageList';
 import { PageLoader } from './components/PageLoader';
 
 export const App = () => {
-  const [allMessages, setAllMessages] = useState([]);
+  const [newMessage, setNewMessage] = useState('');
+  const [messageList, setMessageList] = useState([]);
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
@@ -18,49 +19,54 @@ export const App = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(messages => {
-        setAllMessages(messages)
-        setLoading(false)})
+        setMessageList(messages)
+        setLoading(false)
+      })
       .catch(err => console.error(err));  
   }
 
   // Clicking the submit button, posting message
-  const onSubmit = (message) => {
+  const handleMessageSubmit = (e) => {
+    e.preventDefault();
+
     fetch(API_URL, {
       method: "POST",
-      body: JSON.stringify({ message: message }),
+      body: JSON.stringify({ message: newMessage }),
       headers: { "Content-Type": "application/json" }
     })
       .then(() => {
         setLoading(true)
-        fetchAllMessages()})
-      .catch(err => console.log("error:", err))
+        fetchAllMessages()
+        setNewMessage('')
+      })
+      .catch(err => console.log(err))
   }
 
-  // Button for likes
-  const onLikeClick = (id) => {
+  // Fetching likes
+  const handleLikeClick = (id) => {
     fetch(`${API_URL}/${id}/like`, {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
     })
+    .then(res => res.json())
     .then(() => fetchAllMessages())
-    .catch(err => console.log("error:", err))
+    .catch(err => console.log(err))
   }
 
-
   return (
-  
     <main className="main-container">
       <FormInput 
-        onNewMessage={onSubmit}/>
+        newMessage={newMessage}
+        setNewMessage={setNewMessage}
+        onMessageSubmit={handleMessageSubmit}/>
       {loading ? 
         <PageLoader /> 
         :
         <MessageList
-          messageList={allMessages}
-          onLikeClick={onLikeClick} />
+          messageList={messageList}
+          handleLikeClick={handleLikeClick} />
       }
     </main>
-
   )
 }
 

@@ -73,6 +73,14 @@ code {
   color: red;
 }
 
+.error {
+  opacity: 0;
+  font-size: 9px;
+  position: absolute;
+  margin-left: 16px;
+  margin-top: 120px;
+}
+
 .button {
   margin: 0 0 15px 15px;
   width: 55%;
@@ -87,7 +95,11 @@ code {
 }
 
 .button:disabled {
-  opacity: 0.5;
+  opacity: 0.7;
+}
+
+.button:disabled + .error {
+  opacity: 1;
 }
 
 .error-message {
