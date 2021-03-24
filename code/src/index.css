@@ -29,20 +29,22 @@ code {
   font-family: "Menlo Regular";
 }
 
-input,
+textarea,
 label {
-  width: 350px;
+  width: 450px;
   margin: 10px;
+  font-family: inherit;
 }
 
-input {
-  height: 50px;
+textarea {
+  height: 60px;
+  resize: none;
 }
 
 .submit-button {
   border-radius: 20px;
   border: 0px;
-  width: 250px;
+  width: 300px;
   height: 40px;
   background-color: #ffadad;
   margin: 10px;
@@ -53,16 +55,21 @@ input {
 .form,
 .message-container {
   display: flex;
-  width: 400px;
+  width: 500px;
   flex-direction: column;
   border: 1px solid black;
-  padding: 10px;
+  padding: 15px;
   box-shadow: 7px 7px;
+}
+
+.error-msg {
+  margin: 0;
 }
 
 .message-container {
   background-color: white;
   margin-top: 30px;
+  justify-content: space-between;
 }
 
 .message {
