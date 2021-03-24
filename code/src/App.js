@@ -11,8 +11,10 @@ export const App = () => {
   return (
     <div>
       <Header />
+      <div className="all-thoughts-wrapper">
       <InputThoughtField />
       <ListOfThoughts />
+      </div>
       <Footer />
     </div>
   )

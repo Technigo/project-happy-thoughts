@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './Styles/ListTextField.css'
+import './Styles/ListOfThoughts.css'
 import ThoughtCard from './ThoughtCard'
 // import moment from 'moment';
 import { API_URL_THOUGHTS } from '../Reusables/urls';

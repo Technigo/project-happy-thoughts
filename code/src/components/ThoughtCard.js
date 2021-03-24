@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import './Styles/ThoughtCard.css'
 import { API_URL_LIKE } from '../Reusables/urls';
 
  const ThoughtCard = (props) => {

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { API_URL_THOUGHTS } from '../Reusables/urls';
-import './Styles/MainTextField.css'
+import './Styles/InputThoughtField.css'
 
 const InputTextField = () => {
     const [thought, setThought] = useState('')
 
     useEffect(() => {
-        setThought("JavaScript sets the value")
+        setThought("")
     }, [])
 
     const handleSubmit = (event) =>{
@@ -28,24 +28,23 @@ const InputTextField = () => {
     }
 
     return ( 
-        <div>
+        <div className="input-thought-wrapper">
             <form onSubmit={handleSubmit}>
                 <textarea
-                className="text-area"
-                rows="3"
-                cols ="40"
-                placeholder="Write a thought"
+                className="input-text-area"
+                placeholder="Write a happy thought..."
                 onChange= {event => setThought(event.target.value)}
                 ></textarea>
-                <p>This is length of {thought.length} / 140</p>
+                <p className = "character-counting">{thought.length} / 140</p>
                 <button
                 type="submit"
                 className="submit-btn"
                 value="thought"
                 //if the imput is less than 6 characters submit button will not work.
-                >Send a happy thought</button>
+                > <span role='button' aria-label='heart'>❤️</span>
+                    Send a happy thought
+                  <span role='button' aria-label='heart'>❤️</span></button>
             </form>
-            <p>{thought}</p>
         </div>
     )
         

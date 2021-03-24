@@ -1,3 +1,7 @@
 .header-wrapper{
-    border: 2px solid blue; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 50px 0px;
+
 }
