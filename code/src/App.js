@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React, { useState, useEffect } from 'react'
 
-import { API_URL } from './reusable/urls';
+import { API_URL, API_URL_LIKES } from './reusable/urls';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -40,6 +40,21 @@ export const App = () => {
       .catch(err => console.error(err));
   }
 
+  const onLikesIncrease = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    fetch(API_URL_LIKES(id), options)
+      .then(res => res.json())
+  
+      .then(() => fetchMessageList())
+      .catch(err => console.erroe(err));
+  }
+
   return (
     <div className="main-forms-wrapper">
       <div className="submit-message-container">
@@ -55,16 +70,23 @@ export const App = () => {
           <button 
           className="button-submit"
           type="submit"
-          onClick={() => window.location.reload()}
           >
-            Spread the joy!
+            ❤️ Spread the joy ❤️
           </button>
         </form>
       </div>
         {messageList.reverse().map(message => [
           <div key={message._id} className="message-container">  
             <h3>{message.message}</h3>
-            <p className="date-posted">{moment(message.created).fromNow()} </p>
+            <div className="likes-date-container">
+              <div className="hearts-likes-wrapper">
+                <button className="button-likes" onClick={() =>onLikesIncrease(message._id)}>
+                  ❤️
+                </button>
+                <p> x{message.hearts}</p>
+              </div>
+              <p className="date-posted">{moment(message.created).fromNow()} </p>
+            </div>
           </div>
         ])}
       
