@@ -28,7 +28,7 @@ body {
 }
 
 .thought-form {
-  height: 230px;
+  height: 240px;
   margin-top: 70px;
 }
 
@@ -55,7 +55,7 @@ body {
   color: #000;
 }
 
-.black-counter {
+.red-counter {
   color: rgb(221, 0, 0);
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 .thought-card {
-  height: 170px;
+  height: 180px;
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
@@ -97,6 +97,7 @@ body {
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: flex-end;
+  margin-bottom: 8px;
 
 }
 
@@ -104,15 +105,23 @@ body {
   display: flex;
 }
 
-.likes-heart {
+.heart-button-no-likes {
   padding: 15px;
   font-size: 20px;
 }
 
 /* if likes > 0 */
-.liked {
+.heart-button-liked {
+  padding: 15px;
+  font-size: 20px;
   background-color: #ffadad;
   border-radius: 50%;
+}
+
+.heart-button {
+  border: none;
+  outline: none;
+  background-color: #f8f8f8;
 }
 
 .thought-time, .likes-counter {
@@ -120,4 +129,59 @@ body {
   align-self: center;
   color: #8a8a8a;
   margin-left: 10px;
+}
+
+/* Media queries */
+
+/* Mobile */
+@media (max-width: 668px) {
+  .thought-form, .thought-card {
+    width: 290px;
+  }
+
+  .thought-form {
+    height: 250px;
+  }
+
+  .form-button {
+    width: 230px;
+    height: 40px;
+    font-size: 14px;
+    align-self: center;
+  }
+
+  .form-title {
+    font-size: 16px;
+  }
+
+  .form-input {
+    font-size: 12px;
+  }
+
+  .new-thought {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .thought-card {
+    height: 200px;
+  }
+
+  .the-count {
+    font-size: 12px;
+  }
+
+  .thought-message {
+    font-size: 16px;
+  }
+
+  .likes-heart {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .thought-time, .likes-counter {
+    font-size: 13px;
+    margin-left: 7px;
+  }
 }

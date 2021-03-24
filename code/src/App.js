@@ -1,22 +1,18 @@
 import React, {useState, useEffect} from 'react'
 
-import { FETCH_URL } from './reusable/urls'
+import { FETCH_URL, LIKE_URL } from './reusable/urls'
 import NewThoughtForm from './components/NewThoughtForm'
 import ThoughtsList from 'components/ThoughtsList'
 
 export const App = () => {
-  // STATES
+
   const [thoughtsList, setThoughtsList] = useState([])
   const [isPending, setIsPending] = useState(true)
   const [newThought, setNewThought] = useState('')
 
-  // useEffect HOOK
-
   useEffect (() => {
     fetchThoughtsList()
   }, [])
-
-  // FUNCTIONS
 
   // Fetching data from an API
   const fetchThoughtsList = () => {
@@ -26,7 +22,6 @@ export const App = () => {
       setThoughtsList(data);
       //Changing the state of isPending to false when the fetching is completed 
       setIsPending(false);
-      console.log(data)
     })
     //Catching errors during the fetch
     .catch(err => console.error(err))
@@ -51,6 +46,9 @@ export const App = () => {
           <ThoughtsList 
             thought={thought}
             key={thought._id}
+            LIKE_URL={LIKE_URL}
+            thoughtsList={thoughtsList}
+            setThoughtsList={setThoughtsList}
           />
         )
       }
