@@ -36,26 +36,35 @@ export const App = () => {
 
       fetch(API_URL, options)
       .then(res => res.json())
-      .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
+      .then(receivedMessage => setMessageList([receivedMessage,...messageList]))
       .catch(err => console.error(err));
   }
 
   return (
-    <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newMessage">Share your happy thoughts!</label>
-        <input
-          id="newMessage"
-          type="text"
-          value={messageNew}
-          onChange={onMessageNewChange}
-        />
-        <button type="submit">Spread the joy!</button>
-      </form>
-        {messageList.map(message => [
-          <div key={message._id}>  
+    <div className="main-forms-wrapper">
+      <div className="submit-message-container">
+        <form onSubmit={onFormSubmit}>
+          <label htmlFor="newMessage" className="label-input-message">Share your happy thoughts!</label>
+          <input
+            className="message-input"
+            id="newMessage"
+            type="text"
+            value={messageNew}
+            onChange={onMessageNewChange}
+          />
+          <button 
+          className="button-submit"
+          type="submit"
+          onClick={() => window.location.reload()}
+          >
+            Spread the joy!
+          </button>
+        </form>
+      </div>
+        {messageList.reverse().map(message => [
+          <div key={message._id} className="message-container">  
             <h3>{message.message}</h3>
-            <p>{moment(message.created).fromNow()} </p>
+            <p className="date-posted">{moment(message.created).fromNow()} </p>
           </div>
         ])}
       
