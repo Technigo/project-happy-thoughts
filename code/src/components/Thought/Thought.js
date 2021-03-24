@@ -20,7 +20,7 @@ const Thought = ({ message, hearts, createdAt, _id, handlePostLikes }) => {
         <Card.FooterText faded aria-label="Amount of likes">
           x {hearts}
         </Card.FooterText>
-        <Card.FooterText faded alignLeft>
+        <Card.FooterText faded alignRight>
           {moment(createdAt).fromNow()}
         </Card.FooterText>
       </Card>
