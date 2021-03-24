@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import Moment from 'moment'
+import moment from 'moment'
 
 import { API_URL }  from './reuseable/api_endpoints.js'
-import moment from 'moment'
+
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([])   
+  const [thoughtNew, setThoughtNew] = useState('')
 
   useEffect(() => {
     fetchThoughtList()
@@ -18,14 +19,43 @@ export const App = () => {
       .catch(err => console.error(err))
   }
  
-console.log(thoughtList)
+  const onThoughtNewChange = (event) => {
+    setThoughtNew(event.target.value)
+  }
+
+  const onFormSubmit = (event) => {
+    event.preventDefault()
+    
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message: thoughtNew })
+    }
+    
+    fetch(API_URL, options)
+      .then(res => res.json())
+      .then(recievedThought => setThoughtList([...thoughtList, recievedThought]))
+  }
+
 
   return (
     <main>
+      <form onSubmit={onFormSubmit}>
+        <label htmlFor="newThought">Write new message!</label>
+        <input 
+          id="newThought"
+          type="text"
+          value={thoughtNew}  
+          onChange={onThoughtNewChange} 
+        />
+        <button type="submit">Send message!</button>
+      </form>
       {thoughtList.map(thought => (
         <div key={thought._id}>
           <h4>{thought.message}</h4>
-          <p>{moment(thought.createdAt).fromNow()}</p>
+          <p className='date-stamp'>{moment(thought.createdAt).fromNow()}</p>
         </div>
       ))}
     </main>
