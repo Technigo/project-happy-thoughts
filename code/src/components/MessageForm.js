@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { SubmitButton } from "./SubmitButton";
 
-export const MessageForm = ({ setMessage }) => {
+export const MessageForm = ({ setMessageList }) => {
   const [userInput, setUserInput] = useState("");
 
   const handleUserInput = (e) => {
@@ -11,7 +11,6 @@ export const MessageForm = ({ setMessage }) => {
 
   return (
       <form className="message-form">
-          <div className="message-form__container">
         <input
           className="message-form__input"
           type="text"
@@ -19,11 +18,10 @@ export const MessageForm = ({ setMessage }) => {
           onChange={handleUserInput}
         ></input>
         <SubmitButton
-          setMessage={setMessage}
+          setMessageList={setMessageList}
           setUserInput={setUserInput}
           userInput={userInput}
         />
-        </div>
       </form>
   );
 };

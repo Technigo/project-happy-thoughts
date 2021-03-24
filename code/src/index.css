@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=B612+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=B612+Mono&display=swap");
 
 body {
   margin: 0;
@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'B612 Mono', monospace;
+  font-family: "B612 Mono", monospace;
 }
 
 code {
@@ -16,51 +16,51 @@ code {
 }
 
 /* MessageList*/
-
 .message-list {
-  display: flex;
-  flex-direction: column-reverse;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-.messages-container {
+.message {
   width: 90%;
   height: fit-content;
   padding: 10px;
   margin: 10px 0;
   background-color: white;
-  box-shadow: 2px 2px 2px 2px black;
+  box-shadow: 7px 7px 1px 1px black;
+  border: solid rgb(158, 158, 158) 0.5px;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-li {
-  display: flex;
-  flex-direction: column;
+.message__post {
   width: 90%;
 }
 
-.messages-info {
-  width: 100%;
+.message-info {
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: gray;
+  color: rgb(158, 158, 158);
+}
+
+.message-info__likes-btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: rgba(165, 42, 42, 0);
+  color: rgb(158, 158, 158);
+  margin: 10px 0;
+  outline: none;
+  padding: 0;
+}
+
+.message-info__likes-btn p{
+  margin-left: 10px;
 }
 
 
-.messages-info__likes{
-display:flex;
-align-items: center;
-}
-
-.messages-info__likes-heart {
+.message-info__likes-btn__heart {
   height: 50px;
   width: 50px;
   display: flex;
@@ -68,28 +68,34 @@ align-items: center;
   align-items: center;
   font-size: 18px;
   border-radius: 50%;
+ 
+}
+
+.message-info__likes-btn__heart.false {
   background-color: rgb(242, 242, 243);
+}
+
+.message-info__likes-btn__heart.true {
+  background-color: pink;
 }
 
 /*MessageForm */
 
-.message-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.message-form 
+  {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgb(242, 242, 243);
+    box-shadow: 7px 7px 1px 1px black;
+    border:solid rgb(158, 158, 158) 0.5px;
+  }
 
-.message-form__container{
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: fit-content;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: rgb(242, 242, 243);
-  box-shadow: 2px 2px 2px 2px black;
-}
+
 
 .message-form__input {
   height: 80px;
@@ -120,4 +126,3 @@ align-items: center;
 .img-container {
   object-fit: contain;
 }
-

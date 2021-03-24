@@ -2,7 +2,8 @@ import React from "react";
 
 import { API_URL } from "../reusable/urls";
 
-export const SubmitButton = ({ setMessage, userInput, setUserInput }) => {
+export const SubmitButton = ({ setMessageList, userInput, setUserInput }) => {
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
     fetchNewMessage();
@@ -17,11 +18,12 @@ export const SubmitButton = ({ setMessage, userInput, setUserInput }) => {
       },
       body: JSON.stringify({ message: userInput }),
     };
+    
 
     fetch(API_URL, post)
       .then((res) => res.json())
       .then((newMessage) => {
-        setMessage((previousMessages) => [newMessage, ...previousMessages]);
+        setMessageList((previousMessages) => [newMessage, ...previousMessages]);
       })
       .catch((error) => console.log(error));
   };

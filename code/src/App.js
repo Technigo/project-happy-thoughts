@@ -5,12 +5,12 @@ import { MessageForm } from './components/MessageForm'
 
 
 export const App = () => {
-const [message, setMessage] = useState([])
+const [messageList, setMessageList] = useState([]);
 
   return (
-    <div>
-      < MessageForm setMessage={setMessage}/>
-      < MessageList message = {message}/>
-    </div>
+    <>
+      < MessageForm setMessageList={setMessageList}/>
+      < MessageList messageList={messageList} setMessageList={setMessageList}/>
+    </>
   )
 }

@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { API_URL } from "../reusable/urls";
 import { LikeButton } from "./LikeButton";
 
-export const MessageList = ({ message }) => {
-  const [messageList, setMessageList] = useState([]);
-
+export const MessageList = ({ messageList, setMessageList }) => {
   const fetchMessageList = () => {
     fetch(API_URL)
       .then((res) => res.json())
@@ -17,50 +15,52 @@ export const MessageList = ({ message }) => {
     fetchMessageList();
   }, []);
 
+
+  /*calculates time since the message was posted and displays the time in
+  a proper way depending on how long ago it was */
   const getTime = (time) => {
-    const now = new Date(Date.now());
-    const gtmTime = new Date(time);
-    const timeDiff = now - gtmTime;
+    const timeDiff = new Date(Date.now()) - new Date(time);
 
-    const seconds = Math.floor(timeDiff / 1000);
-    const minutes = Math.floor(seconds / 60);
+      const seconds = Math.floor(timeDiff / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const hours = Math.floor(minutes / 60);
+      const days = Math.floor(hours / 24);
+  
+      const timeDisplay = (number, type) => {
+        return number === 1
+          ? `${number.toFixed(0)} ${type} ago`
+          : `${number.toFixed(0)} ${type}s ago`;
+      }
+  
+      if (days >= 1) {
+        return timeDisplay(days, "day")
+      } else if (hours >= 1 && hours< 24) {
+        return timeDisplay(hours, "hour")
+      } else if (minutes >= 1 && minutes < 60) {
+        return timeDisplay(minutes, "minute")
+      } 
 
-    if (minutes >= 1 && minutes <= 60) {
-      return minutes !== 1
-        ? `${minutes.toFixed(0)} minutes ago`
-        : `${minutes.toFixed(0)} minute ago`;
-    } else if (seconds < 60) {
-      return seconds !== 1
-        ? `${seconds.toFixed(0)} seconds ago`
-        : `${seconds.toFixed(0)} second ago`;
-    }
-    return `>1 hour ago`;
-  };
-
-  const displayMessages = (type) => {
-    return (
-      <ul className="messages">
-        {type.map((post) => (
-          <div className="messages-container">
-            <li key={post._id}>
-              <span className="messages__post">{post.message}</span>
-              <div className="messages-info">
-                <LikeButton likes={post.hearts} />
-                <span className="messages-info__time">
-                  {getTime(post.createdAt)}
-                </span>
-              </div>
-            </li>
-          </div>
-        ))}
-      </ul>
-    );
+      return timeDisplay(seconds, "second")   
   };
 
   return (
-    <div className="message-list">
-      {displayMessages(message)}
-      {displayMessages(messageList)}
-    </div>
+    <>
+      {messageList.map((post) => (
+        <div key={post._id} className="message">
+          <span className="message__post">{post.message}</span>
+          <div className="message-info">
+            <LikeButton
+              likes={post.hearts}
+              id={post._id}
+              messageList={messageList}
+              setMessageList={setMessageList}
+            />
+            <span className="message-info__time">
+              {getTime(post.createdAt)}
+            </span>
+          </div>
+        </div>
+      ))}
+    </>
   );
 };
