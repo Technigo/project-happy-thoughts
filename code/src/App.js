@@ -11,11 +11,15 @@ export const App = () => {
 
   const API_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 
+  // const API_LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${postID}/like`;
+
   useEffect(() => {
     fetch(API_URL)
       .then((response) => response.json())
       .then((json) => setApiFetch(json));
   }, []);
+
+  console.log(apiFetch);
 
   // FUNCTIONS
   const refreshPosts = () => {
@@ -34,6 +38,18 @@ export const App = () => {
       .then((data) => setApiFetch([...apiFetch, data]));
   };
 
+  const handlePostLike = (postID) => {
+    const API_LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${postID}/like`;
+    const postRequestOption = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    };
+
+    fetch(API_LIKE_URL, postRequestOption)
+      .then((response) => response.json())
+      .then(() => refreshPosts());
+  };
+
   return (
     <Grid container spacing={1} justify="center">
       <Grid item xs={12}>
@@ -47,10 +63,11 @@ export const App = () => {
       <Grid item xs={12}>
         {apiFetch.map((post) => (
           <Post
-            key={post._id}
+            postID={post._id}
             message={post.message}
             likes={post.hearts}
             timeStamp={post.createdAt}
+            handlePostLike={handlePostLike}
           />
         ))}
       </Grid>

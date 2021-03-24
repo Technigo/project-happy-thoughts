@@ -7,10 +7,10 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import Typography from "@material-ui/core/Typography";
 import { IconButton } from "@material-ui/core";
 
-const Post = ({ message, likes, timeStamp, key }) => {
+const Post = ({ message, likes, timeStamp, postID, handlePostLike }) => {
   return (
     <Paper square elevation={10} className="postCard">
-      <Grid container spacing={1} key={key}>
+      <Grid container spacing={1} key={postID}>
         <Grid item xs={12}>
           <Typography
             className="break-line"
@@ -23,7 +23,10 @@ const Post = ({ message, likes, timeStamp, key }) => {
         <Grid item xs={6}>
           <Grid container justify="flex-start">
             {
-              <IconButton aria-label="like">
+              <IconButton
+                aria-label="like"
+                onClick={() => handlePostLike(postID)}
+              >
                 <FavoriteIcon className="heartIcon" />
               </IconButton>
             }
