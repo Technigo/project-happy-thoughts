@@ -26,7 +26,13 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
 
         fetch(API_URL, config)
             .then(res => res.json())
-            .then(receivedThought => setThoughts([receivedThought, ...thoughts]))
+            .then(receivedThought => {
+                if (receivedThought.message === "Could not save thought") {
+                    alert("Oops, your thought could not be saved. Remember that your post has be between 5 and 140 characters long. Try again!")
+                } else {
+                    setThoughts([receivedThought, ...thoughts])
+                }
+            })
             .catch(err => console.log(err))
 
         setNewThought("")
