@@ -4,7 +4,7 @@ const MessageForm =({onFormSubmit, newMessage, newMessageChange}) => {
 
   return (
     <section className="form-container">
-      <form onSubmit={ onFormSubmit }
+      <form onSubmit={ onFormSubmit}
         className="form-box">
         <label htmlFor="newMessage">What are you happy about today?</label>
         <textarea rows="4" cols="50" placeholder="Enter thought here.."
