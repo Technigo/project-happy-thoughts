@@ -12,7 +12,7 @@ export const App = () => {
   const fetchMessageList = () => {
     fetch(API_URL)
       .then((res) => res.json())
-      .then((messages) => setMessageList(messages.reverse()));
+      .then((messages) => setMessageList(messages));
   };
 
   useEffect(() => {

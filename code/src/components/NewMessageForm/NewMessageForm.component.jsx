@@ -21,7 +21,7 @@ const NewMessageForm = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ text: newMessage }),
+      body: JSON.stringify({ message: newMessage }),
     };
 
     fetch(API_URL, options)

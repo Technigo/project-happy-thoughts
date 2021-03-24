@@ -4,8 +4,8 @@ import moment from "moment";
 import { LIKES_URL } from '../../api/urls'
 
 const MessageListItem = ({ message }) => {
-  const [likes, setLikes] = useState(message.likes);
-  
+  const [likes, setLikes] = useState(message.hearts);
+
   const handleLikesIncrease = (id) => {
     const options = {
       method: "POST",
@@ -16,14 +16,14 @@ const MessageListItem = ({ message }) => {
 
     fetch(LIKES_URL(id), options)
       .then((res) => res.json())
-      .then((data) => setLikes(data.likes))
+      .then((data) => setLikes(data.hearts))
       .catch((err) => console.error(err));
   };
 
   return (
     <>
-      {message.text}
-      <p>{moment(message.created).fromNow()}</p>
+      {message.message}
+      <p>{moment(message.createdAt).fromNow()}</p>
       <button onClick={() => handleLikesIncrease(message._id)}>{likes}</button>
     </>
   )
