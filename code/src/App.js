@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import moment from 'moment'
 
 import { API_URL, LIKE_URL } from './reusable/urls'
 import { Form } from './components/Form'
-
+import MessageList from './components/MessageList'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([])
@@ -33,10 +32,10 @@ export const App = () => {
 
     fetch(API_URL, options)
     .then((response) => response.json())
-    .then((receivedMessage) => setMessageList([...messageList, receivedMessage]))
+    .then((receivedMessage) => setMessageList([receivedMessage, ...messageList]))
   }
 
-  const onLikesIncrease = (id) => {
+  const handleLikesIncrease = (id) => {
     const options = {
       method: 'POST',
       headers: {
@@ -60,24 +59,16 @@ export const App = () => {
     
   return (
     <div className='app-container'>
-      {/* <form className='form-container' onSubmit={onFormSubmit}> */}
-        <Form  messageNew={messageNew} setMessageNew={setMessageNew} onFormSubmit={handleFormSubmit}/>
-        {/* <button className='button' type="submit">❤️️ Send happy thoughts! ❤️️</button> */}
-      {/* </form> */}
+        <Form  
+          messageNew={messageNew} 
+          setMessageNew={setMessageNew} 
+          onFormSubmit={handleFormSubmit}
+        />
       <div>
-      {messageList.map(thought => (
-        <div className='message-container' key={thought._id}>
-            <h4>{thought.message}</h4>
-            <div className='heart-date-container'>
-              <div>
-                <button onClick={() => onLikesIncrease(thought._id)}>heart</button>
-                <p>{thought.hearts}</p>
-              </div>
-              <p className="date">- {moment(thought.createdAt).fromNow()}</p>
-            </div>
-        </div>
-        )
-        )}
+      <MessageList 
+          handleLikesIncrease={handleLikesIncrease} 
+          messageList={messageList} 
+        />
       </div>
     </div>
   )
