@@ -13,8 +13,12 @@ export const Form = ({ messageNew ,setMessageNew, onFormSubmit }) => {
                 <input 
                     id="newMessage"
                     type="text"
+                    rows='5'
                     value={messageNew}
+                    placeholder="Type message here :)"
                     onChange={onMessageNewChange}
+                    minlength= "5"
+                    maxlength = "140"
                 />
                 <button className='button' type="submit">❤️️ Send happy thoughts! ❤️️</button>
             </form>
