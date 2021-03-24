@@ -19,6 +19,7 @@ const PostForm = ({ postFormValue, setPostFormValue, postRequest }) => {
             <Grid container justify="center">
               <TextField
                 variant="outlined"
+                color="secondary"
                 id="input"
                 label="What's on your mind?"
                 value={postFormValue}
