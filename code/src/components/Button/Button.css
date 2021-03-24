@@ -1,11 +1,23 @@
-.button--like {
+.button {
   background-color: pink;
   border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  
 }
 
 .button--like__none {
   background-color: lightgray;  
+}
+
+.button[type="submit"] {
+  width: fit-content;
+  padding: 0 25px; 
+}
+
+.button[type="submit"]>span:first-of-type::after {
+  content: "Send Happy Thought";
+  margin: 0 10px;
+  /* font-size: 16px; */
 }

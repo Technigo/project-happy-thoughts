@@ -1,15 +1,20 @@
-import React from 'react'
+import React from 'react';
 
-import './Button.css'
+import './Button.css';
 
 const Button = ({ isSubmit }) => {
   return (
-    <button type={isSubmit ? 'submit' : 'button'} className="button--like">
+    <button type={isSubmit ? 'submit' : 'button'} className="button">
       <span role="img" aria-label="heart">
-              ❤️
+        ❤️
       </span>
+      {isSubmit && (
+        <span role="img" aria-label="heart">
+          ❤️
+        </span>
+      )}
     </button>
-  )
-}
+  );
+};
 
 export default Button;

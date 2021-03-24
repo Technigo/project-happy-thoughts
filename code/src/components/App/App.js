@@ -11,6 +11,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Thought from 'components/Thought/Thought';
+import Form from 'components/Form/Form';
 
 import './App.css';
 
@@ -32,6 +33,20 @@ const App = () => {
       })
       .catch((err) => console.log(err));
   };
+  const postThoughts = () => {
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message: 'My test message' })
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const handleRefresh = () => {
     fetchThoughts();
@@ -46,6 +61,10 @@ const App = () => {
       <button type="button" onClick={handleRefresh}>
         Refresh
       </button>
+      <button type="button" onClick={postThoughts}>
+        Post
+      </button>
+      <Form />
       {thoughts.map((thought) => (
         <Thought key={thought._id} {...thought} />
       ))}
