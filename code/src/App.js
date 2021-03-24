@@ -33,7 +33,7 @@ export const App = () => {
       .then((response) => response.json())
       .then((data) => setApiFetch([...apiFetch, data]));
 
-    setTimeout(() => refreshPosts(), 2000);
+    setTimeout(() => refreshPosts(), 500);
   };
 
   const handlePostLike = (postID) => {
