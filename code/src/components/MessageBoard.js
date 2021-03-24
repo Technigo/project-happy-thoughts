@@ -8,18 +8,19 @@ import Loading from '../components/Loading'
 
 const MessageBoard = ({ thoughts, setThoughts}) => {
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
   
   const fetchThoughts = () => {
     setLoading(true)
     fetch(API_URL)
       .then(response => response.json())
-      .then(data => {
-        setThoughts(data)
+      .then(receivedThoughts => {
+        setThoughts(receivedThoughts)
         setLoading(false)
       })
       .catch(err => {
         setLoading(false)
-        console.log("Error is:",err)
+        setError(true)
       })
       
   }
@@ -38,29 +39,24 @@ const MessageBoard = ({ thoughts, setThoughts}) => {
     setThoughts(updatedThoughts)
   }
 
-// const onHeartClicked = () => {
-//   const options = {
-//     method:"POST",
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body:""
-//   }
-//   const hearts_url = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`
+const onHeartClicked = (id) => {
+  const options = {
+    method:"POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body:""
+  }
+  const hearts_url = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
 
-//   fetch(hearts_url, options)
-//     .then(()=>{
-//       onThoughtLiked(thought._id)
-//     })
-// }
+  fetch(hearts_url, options)
+    .then(()=>{
+      onThoughtLiked(id)
+    })
+}
 
-  if (loading) {
-      return (
-        <Loading />
-      )
-  } else {
 
-  return (
+  return loading? <Loading /> : error? <div>Error occured during API call</div>: (
     <div>
       {thoughts.map(thought => (
         <div className="message-container" key={thought._id}>
@@ -70,21 +66,7 @@ const MessageBoard = ({ thoughts, setThoughts}) => {
             <button 
             id={thought._id}
             className={thought.hearts>0? "heart-button pink": "heart-button"}
-            onClick={() =>{
-              const options = {
-                method:"POST",
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                body:""
-              }
-              const hearts_url = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`
-            
-              fetch(hearts_url, options)
-                .then(()=>{
-                  onThoughtLiked(thought._id)
-                })
-            }}
+            onClick={() => onHeartClicked(thought._id)}
             >
             {'\u2764'}
             </button>
@@ -95,6 +77,5 @@ const MessageBoard = ({ thoughts, setThoughts}) => {
       ))}
     </div>
   )
-}
 }
 export default MessageBoard

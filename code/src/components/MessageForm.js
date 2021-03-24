@@ -30,12 +30,13 @@ const MessageForm = ({ thoughts, setThoughts }) => {
         console.log(err)//cannot see this message
         setError(true)
         })
-
+    setNewThought('')
+    setCounter(0)
   }
   
-  return (
+  return error? <div>An error occured while sending message</div>: (
     <>
-    {error && <div>Hello;;</div>}
+    
     <form
       className="form-container"
       onSubmit={handleSubmit}
