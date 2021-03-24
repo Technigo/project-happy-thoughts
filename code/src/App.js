@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import moment from 'moment'
+
 
 import MessageForm from './components/MessageForm'
 import HappyMessageList from './components/HappyMessageList'
@@ -42,7 +42,7 @@ export const App = () => {
     .then(receivedMessage => setHappyList([...happyList, receivedMessage]))  
   }
 
-  const onHeartsIncrease = (id) => {
+  const handleHeartsIncrease = (id) => {
 
     const options = {
       method: 'POST',
@@ -74,7 +74,10 @@ export const App = () => {
           onNewMessageChange={handleNewMessageChange}
           onFormSubmit={handleFormSubmit}
         />
-        <happyList happyList={happyList}/>
+        <HappyMessageList 
+          happyList={happyList}
+          handleHeartsIncrease={handleHeartsIncrease}
+        />
       </div>
     )
 }

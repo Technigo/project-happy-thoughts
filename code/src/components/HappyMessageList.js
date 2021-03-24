@@ -1,17 +1,16 @@
 import React from 'react'
 
-const HappyMessageList = ({ happyList }) => {
+import MessageElement from './MessageElement'
+
+const HappyMessageList = ({ happyList, handleHeartsIncrease }) => {
   return (
     <>
       {happyList.map(message =>(
-        <div key={message._id}>
-          <h4>{message.message}</h4>
-          <button onClick={ () => onHeartsIncrease(message._id)}>
-            {message.hearts}
-            ❤️
-          </button>
-          <p>-{moment(message.createdAt).fromNow()}</p>
-        </div>
+        <MessageElement 
+          key={message._id}
+          message={message} 
+          onHeartsIncrease={handleHeartsIncrease}
+        />
     ))}
     </>
   )
