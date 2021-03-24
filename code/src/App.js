@@ -1,20 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { API_URL }  from './reuseable/api_endpoints.js'
 
 export const App = () => {
-  const fetchMessageList = () => {
+  const [thoughtList, setThoughtList] = useState([])   
+
+  useEffect(() => {
+    fetchThoughtList()
+  }, [])
+  
+  const fetchThoughtList = () => {
     fetch (API_URL)
       .then(res => res.json())
-      .then(messages => console.log(messages))
+      .then(thoughts => setThoughtList(thoughts))
       .catch(err => console.error(err))
   }
  
-  fetchMessageList()
-  
+console.log(thoughtList)
+
   return (
     <main>
-      Find me in src/app.js!
+      {thoughtList.map(thought => (
+        <div key={thought._id}>
+          <h4>{thought.message}</h4>
+        </div>
+      ))}
     </main>
   )
 }
