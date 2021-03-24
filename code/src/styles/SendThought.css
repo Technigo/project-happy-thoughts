@@ -5,6 +5,7 @@
   text-rendering: optimizeLegibility;
 }
 
+/*chnage this so it is not called -grey ---> it should have a more explanatory name of WHAT is INSIDE */
 .thoughts-container-grey {
   width: 100%; /*take this away? Would it be smarter to use border box up where the * {} starts ?? */
   display: flex;

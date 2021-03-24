@@ -28,17 +28,6 @@ const SendThought = ({
       >
       {140 - newThought.length} characters left
       </p>
-{/*       <label htmlFor="postedBy" className="user-name-area"> 
-        Sent by:
-          <input
-            id="postedBy"
-            className="user-name-input"
-            type="text"
-            maxLength="30"
-            onChange={onUserNameChange}
-            placeholder="Anonymous"
-          />
-      </label> */}
       <ButtonSubmit
         onClick={(e) => {e.preventDefault()}}
         disabled={newThought.length < 5 || newThought.length >= 140 ? true : false}

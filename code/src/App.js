@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
-import { HAPPY_THOUGHTS_URL } from './reusable/Urls'
+// URLS
+import { HAPPY_THOUGHTS_URL, LIKE_THOUGHT_URL } from './reusable/urls'
 
+// Components
 import SendThought from './components/SendThought'
 
 export const App = () => {
@@ -25,9 +27,6 @@ export const App = () => {
     setNewThought(e.target.value)
   }
 
-/*   const onUserNameChange = (e) => {
-    setUsername(e.target.value)
-  } */
   //POST request here: 
   const onFormSubmit = (e) => {
     e.preventDefault()
@@ -55,7 +54,6 @@ export const App = () => {
         newThought={newThought}
         onNewThoughtChange={onNewThoughtChange}
         onFormSubmit={onFormSubmit}
-/*         onUserNameChange={onUserNameChange} */
       />
       {thoughtsList.map(sentmessage => (
         <div key={sentmessage._id} className="sent-messages">
