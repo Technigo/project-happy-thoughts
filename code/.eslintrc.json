@@ -1,7 +1,8 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "airbnb"
+    "airbnb",
+    "prettier"
   ],
   "globals": {
     "document": true,
@@ -25,6 +26,7 @@
     "react-hooks"
   ],
   "rules": {
+    "quotes": ["error", "double"],
     "arrow-body-style": "off",
     "class-methods-use-this": "off",
     "brace-style": [
@@ -53,7 +55,7 @@
       }
     ],
     "jsx-a11y/anchor-is-valid": "off",
-    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/label-has-for": "on",
     "jsx-a11y/href-no-hash": "off",
     "no-alert": "off",
     "no-console": "off",
