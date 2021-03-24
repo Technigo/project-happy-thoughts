@@ -45,10 +45,10 @@ export const NewMessageForm = ({ newMessage, setNewMessage, messageList, setMess
               onChange={onNewMessageChange}>
             </textarea>
 
-            <button className='submitButton' type='submit' role='img' aria-label='heart emoji'>
-              <span>&#128151;</span> 
+            <button className='submitButton' type='submit'>
+              <span role='img' aria-label='heart emoji'>&#128151;</span> 
               Send Happy Thought 
-              <span>&#128151;</span>
+              <span role='img' aria-label='heart emoji'>&#128151;</span>
             </button>
           
         </form>

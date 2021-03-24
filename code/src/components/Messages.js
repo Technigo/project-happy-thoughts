@@ -39,6 +39,7 @@ export const Messages = ({ messageList, setMessageList }) => {
             return message
             }) 
             setMessageList(updatedMessageList)
+
         })
         .catch(error => console.error(error))
       }
@@ -58,9 +59,13 @@ export const Messages = ({ messageList, setMessageList }) => {
                 <div className='heartThings'>
                   <button
                     className='heartButton'
+                    style={{ background: message.hearts >= 1 ? '#ffadad' : '#eaeaea'}}
                     onClick={() => increaseLikes(message._id)}>
-                    <span className='heart' role='img' aria-label='heart emoji'>
-                      &#128151;
+                    <span
+                      className='heart'
+                      role='img'
+                      aria-label='heart emoji'>
+                        &#128151;
                     </span>
                   </button>
                   <p className='nrOfLikes'>
