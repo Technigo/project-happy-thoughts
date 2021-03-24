@@ -16,6 +16,8 @@ export const App = () => {
     fetchThoughts()
   }, [])
 
+  // localStorage.setItem("totalLikes", likeCounter)
+
   const fetchThoughts = () => {
     fetch(API_URL)
       .then(res => res.json())

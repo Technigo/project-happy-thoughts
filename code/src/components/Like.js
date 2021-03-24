@@ -9,6 +9,8 @@ const Like = ({ thought, hearts, setHearts, likeCounter, setLikeCounter }) => {
         setIsLiked(true)
         setLikeCounter(likeCounter + 1)
 
+        // console.log(localStorage.getItem("totalLikes"))
+
         const API_URL_ID = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`
 
         const config = {
