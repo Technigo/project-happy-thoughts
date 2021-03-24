@@ -110,3 +110,9 @@ code {
   background: pink;
 }
 
+.spinner-container{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}

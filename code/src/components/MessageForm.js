@@ -4,7 +4,6 @@ import { API_URL } from '../reusable/urls'
 const MessageForm = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState('')
   const [counter, setCounter] = useState(0)
-  const [error, setError] = useState(false)
 
   const onNewThoughtChanged = event => {
     setNewThought(event.target.value)
@@ -24,19 +23,24 @@ const MessageForm = ({ thoughts, setThoughts }) => {
     }
 
     fetch(API_URL, options)
-      .then(res => res.json())
+      .then(res =>{
+        if(res.status === 201){
+        console.dir(res)  
+        return res.json()
+      } else {
+        throw new Error("Oops, something went wrong! Perhaps, your message is shorter than 5 characters!")
+      
+      }})
       .then(data => setThoughts([data, ...thoughts]))
       .catch(err =>{
-        console.log(err)//cannot see this message
-        setError(true)
+        alert(err.message)
         })
     setNewThought('')
     setCounter(0)
   }
   
-  return error? <div>An error occured while sending message</div>: (
+  return (
     <>
-    
     <form
       className="form-container"
       onSubmit={handleSubmit}

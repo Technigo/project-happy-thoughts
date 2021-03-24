@@ -10,24 +10,40 @@ const MessageBoard = ({ thoughts, setThoughts}) => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   
-  const fetchThoughts = () => {
-    setLoading(true)
-    fetch(API_URL)
-      .then(response => response.json())
-      .then(receivedThoughts => {
-        setThoughts(receivedThoughts)
-        setLoading(false)
-      })
-      .catch(err => {
-        setLoading(false)
-        setError(true)
-      })
-      
-  }
+  // const fetchThoughts = (url) => {
+  //   setLoading(true)
+  //   fetch(url)
+  //     .then(response => response.json())
+  //     .then(receivedThoughts => {
+  //       setThoughts(receivedThoughts)
+  //       setTimeout(()=>{
+  //          setLoading(false)}, 2000)
+  //     })
+  //     .catch(err => {
+  //       setLoading(false)
+  //       setError(true)
+  //     })
+  // }
   
+
   useEffect(() => {
-    fetchThoughts()
-  }, []);
+    const fetchThoughts = (url) => {
+      setLoading(true)
+      fetch(url)
+        .then(response => response.json())
+        .then(receivedThoughts => {
+          setThoughts(receivedThoughts)
+          setTimeout(()=>{
+             setLoading(false)}, 2000)
+        })
+        .catch(err => {
+          setLoading(false)
+          setError(true)
+        })
+    }  
+
+    fetchThoughts(API_URL)
+  }, [setThoughts]);
 
   const onThoughtLiked = (thoughtLiked) => {
     const updatedThoughts = thoughts.map((thought) => {
@@ -56,7 +72,7 @@ const onHeartClicked = (id) => {
 }
 
 
-  return loading? <Loading /> : error? <div>Error occured during API call</div>: (
+  return loading? <Loading loading={loading} /> : error? <div>Error occured during API call</div>: (
     <div>
       {thoughts.map(thought => (
         <div className="message-container" key={thought._id}>
