@@ -1,25 +1,22 @@
 import React from 'react';
 import moment from 'moment';
 
-// import HeartButton from './HeartButton';
+import HeartButton from './HeartButton';
 
-const MessageElement = ({ message, onHeartClick }) => {
+const MessageElement = ({ message, handleHeartClick }) => {
   return (
     <>
       <div className="message-element-container">
-        <p className="message">{message.message}</p>
+        <p className="message-text">{message.message}</p>
         
-        <div className="heart-date-container">
-          <button onClick={() => onHeartClick(message._id)}>
-            <span 
-              role="img" 
-              aria-label="heart icon">
-                ❤️
-            </span>
-          </button>
+        <div className="message-heart-date-container">
+          <HeartButton 
+            message={message}
+            onHeartClick={handleHeartClick}
+          />
 
-          <span>x {message.hearts}</span>
-          <p>{moment(message.createdAt).fromNow()}</p>
+          <span className="message-heart-counter">x {message.hearts}</span>
+          <p className="message-date">{moment(message.createdAt).fromNow()}</p>
         </div>
       </div> 
     </>

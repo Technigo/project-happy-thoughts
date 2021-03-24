@@ -38,7 +38,6 @@ const App = () => {
 
     fetch(API_URL, config)      
       .then(res => res.json())
-      // .then(receivedMessage => setMessageList([receivedMessage, ...messageList])) //Update local state
       .then(() => fetchMessageList())     //refetch data from server
       .catch(err => console.error(err));
   };
@@ -53,30 +52,23 @@ const App = () => {
 
     fetch(API_URL_GET_HEART(id), config)
       .then(res => res.json())
-      // .then(receivedHeart => {          //we get back updated object from server, this is the newest message of this. 
-      //   const updatedMessageList = messageList.map(message => {    //update local state
-      //     if (message._id === receivedHeart._id) {
-      //       message.hearts += 1;
-      //     } 
-      //     return message;
-      //   });
-      //   setMessageList(updatedMessageList);
-      // })
       .then(() => fetchMessageList())     //refetch data from server
       .catch(err => console.error(err));
   };
 
   return (
     <>
-      <MessageForm 
-        newMessage={newMessage}
-        onNewMessage={handleNewMessage}
-        onFormSubmit={handleFormSubmit}  
-      />
-      <MessageList 
-        messageList={messageList}
-        handleHeartClick={handleHeartClick}
-      />
+      <main>
+        <MessageForm 
+          newMessage={newMessage}
+          handleNewMessage={handleNewMessage}
+          onFormSubmit={handleFormSubmit}  
+        />
+        <MessageList 
+          messageList={messageList}
+          handleHeartClick={handleHeartClick}
+        />
+      </main>
     </>
   );
 };

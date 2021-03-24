@@ -12,20 +12,87 @@ code {
     monospace;
 }
 
-
-.new-message-label {
-  font-family: Menlo;
+p {
+  margin: 0;
 }
 
-/*** MESSAGES ***/
+/** MAIN **/
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/** FORM **/
+.form { 
+  border: solid 1px black;
+}
+
+/* Input field */
+.new-message-label {
+  font-family: sans-serif;
+}
+
+.new-message-input-field {
+
+}
+
+/* Submit button */
+.submit-button {  
+  display: flex;
+}
+
+.submit-button-text {
+
+}
+
+
+
+/** MESSAGE LIST **/
+.message-list {
+
+}
+
+/* Message element */
 .message-element-container {
   border: solid 1px black;
 }
 
-.message-element-container .message {
+.message-text {
+  font-family: 'Inconsolata', monospace;
   overflow-wrap: break-word;
 }
 
-.heart-date-container {
+.message-heart-date-container {
   display: flex;
 }
+
+.message-heart-counter {
+
+}
+
+.message-date {
+
+}
+
+/* Heart button */
+.heart-button {
+
+}
+
+
+
+/*** MEDIA QUERIES ***/
+
+/** TABLET **/
+@media (min-width: 768px) {
+
+
+}
+
+
+/** DESKTOP **/
+@media (min-width: 1025px) {
+
+}
+

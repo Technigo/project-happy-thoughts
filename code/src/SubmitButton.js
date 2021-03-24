@@ -3,13 +3,16 @@ import React from 'react';
 const SubmitButton = () => {
   return (
     <>
-      <button type="submit">
+      <button 
+        className="submit-button"
+        type="submit"
+      >
         <span 
           role="img" 
           aria-label="heart icon">
             ❤️
         </span> 
-        Send Happy Thought 
+        <p className="submit-button-text">Send Happy Thought</p>
         <span 
           role="img" 
           aria-label="heart icon">
