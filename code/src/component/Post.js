@@ -10,7 +10,7 @@ import { IconButton } from "@material-ui/core";
 const Post = ({ message, likes, timeStamp, postID, handlePostLike }) => {
   return (
     <Paper square elevation={10} className="postCard">
-      <Grid container spacing={1} key={postID}>
+      <Grid container spacing={1}>
         <Grid item xs={12}>
           <Typography
             className="break-line"
