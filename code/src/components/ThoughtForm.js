@@ -28,7 +28,7 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
             .then(res => res.json())
             .then(receivedThought => {
                 if (receivedThought.message === "Could not save thought") {
-                    alert("Oops, your thought could not be saved. Remember that your post has be between 5 and 140 characters long. Try again!")
+                    alert("Oops, your thought could not be posted. Remember that your post has be between 5 and 140 characters long. Try again!")
                 } else {
                     setThoughts([receivedThought, ...thoughts])
                 }
