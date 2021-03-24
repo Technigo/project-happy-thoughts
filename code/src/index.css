@@ -52,6 +52,16 @@ input[type=text]{
   transform:scale(1.1);
 }
 
+.submit-charcount-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-charcount-container > p {
+  font-size: 12px;
+  font-weight: 200;
+}
+
 .message-container {
   border: 1px solid black;
   background-color: white;
@@ -64,6 +74,7 @@ input[type=text]{
 .heart-date-container {
   display: flex;
   justify-content: space-between;
+  font-size: 12px;
 }
 
 .heart-button {

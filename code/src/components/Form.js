@@ -15,12 +15,23 @@ export const Form = ({ messageNew ,setMessageNew, onFormSubmit }) => {
                     type="text"
                     rows='5'
                     value={messageNew}
-                    placeholder="Type message here :)"
+                    placeholder="Tell us all about it :)"
                     onChange={onMessageNewChange}
                     minlength= "5"
                     maxlength = "140"
                 />
-                <button className='button' type="submit">❤️️ Send happy thoughts! ❤️️</button>
+                <div className='submit-charcount-container'>
+                    <button 
+                        className='button' 
+                        type="submit"
+                        value={messageNew}
+                        disabled={messageNew.length < 5}
+                    >
+                        ❤️️ Send happy thoughts! ❤️️
+                    </button>
+                    <p>{messageNew.length}/140</p>
+                </div>
+                
             </form>
         </>
     )
