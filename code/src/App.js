@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import MyThought from './components/MyThought'
 import Form from './components/Form'
 
-import { API_URL } from './reusable/urls'
+import { API_URL, LIKES_URL } from './reusable/urls'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]) 
@@ -20,7 +20,7 @@ export const App = () => {
     .catch(err => console.error(err))
   }
 
-  const onFormSubmit = (event) => {
+  const onFormSubmit = (event) => { // handleFormSubmit
     event.preventDefault() // When we are going to post and argument and not only fetch, we need to add one argument next to our API 
     
     const options = {
@@ -33,23 +33,26 @@ export const App = () => {
     
     fetch(API_URL, options)
     .then(res => res.json())
-    .then(receivedMessage => setMessageList([...messageList, receivedMessage])) // If we want to add a new element to array state property we need to create a new array like this
+    .then(() => fecthMessageList()) // Vår fetchMessageList är kodad så att ska posta vår input som vi skriver, därför så är denna kod på följande där vår input postas per automatik till vår API och därefter får vi den uppdaterade
+    .catch(err => console.error(err)) 
   }
 
-  const AddinHeart = (event) => { // Precis lagt till denna
-    event.preventDefault() 
-    
+  const onLikesIncrease = (id) => {
+
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json' 
       },
-    } 
+    }
     
-    fetch(API_URL, options)
+    fetch(LIKES_URL(id), options)
     .then(res => res.json())
-    .then(receivedMessage => setMessageList([...messageList, receivedMessage])) 
+    .then(() => fecthMessageList()) // The reason why its enough with this one is due to that our backend data is programmed so that everytime we click to it, it will increase
+    .catch(err => console.error(err))
   }
+
+ 
 
   return (
     <div>
@@ -62,7 +65,7 @@ export const App = () => {
       
       {messageList.map(message => (
         <>
-        < MyThought message={message}/>
+        < MyThought message={message} onLikesIncrease={onLikesIncrease}  />
         
         </>
       ))}
