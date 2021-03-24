@@ -1,15 +1,18 @@
-import moment from 'moment';
 import React, { useState, useEffect } from 'react';
 import './fontawesome'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 
-// import{ Form } from './Components/Form';
+
+// COMPONENTS
+import{ Form } from './Components/Form';
+import{ MessageList } from './Components/MessageList';
+
+// URLS
 import { API_URL } from './reusable/urls';
+import { HEART_URL } from './reusable/urls';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
   const [newMessage, setNewMessage] = useState('')
-  const [addHeart, setAddHeart] = useState('')
 
   useEffect(() => {
     fetchMessages();
@@ -47,69 +50,40 @@ export const App = () => {
       .catch(err => console.error(err));
   };
 
-  const onHeartClick = (event) => {
-    event.preventDefault();
+  const onHeartClick = (id) => {
 
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ hearts: addHeart })
+      }
     }
 
-    fetch(API_URL, options)
+    fetch(HEART_URL(id), options)
       .then(res => res.json())
-      .then(clickedHeart => setAddHeart([clickedHeart, ...addHeart]))
+      .then((receivedMessage) => {
+        const updatedMessageList = messageList.map(message => {
+          if (message._id === receivedMessage._id) {
+            message.hearts += 1;
+          }
+          return message;
+        });
+        setMessageList(updatedMessageList)
+      })
+      .catch(err => console.error(err));
   }
 
   return (
     <div>
-      {/* <Form /> */}
-        <form 
-          className="new-message-form" 
-          onSubmit={onFormSubmit}
-        >
-          <label
-            htmlFor="newMessage">
-            Post your thought!
-          </label>
-          <textarea 
-            id="newMessage"
-            rows="2" 
-            cols="1"
-            value={newMessage}
-            type="text"
-              onChange={onNewMessageChange}
-              className="new-message-input"
-          ></textarea>
-          <button 
-            className="submit-btn" 
-            type="submit"
-            >❤️ Send happy thought! ❤️
-          </button>
-        </form>
-        {messageList.map(message => (
-          <div 
-            className="thought-div"
-            key={message._id}
-          >
-            <h4>{message.message}</h4>
-            <div className="heart-time-div">
-              <div className="likes"> 
-                <button
-                  onClick={onHeartClick}
-                  className={message.hearts > 0 ? "multiple-hearts" : "heart"}>
-                  <FontAwesomeIcon icon={['fa', 'heart']} />
-                </button>
-                <p>
-                  x {message.hearts}
-                </p>
-              </div>
-              <p>{moment(message.createdAt).fromNow()}</p>
-            </div>
-          </div> 
-        ))}
-      </div>
+      <Form 
+        newMessage={newMessage}
+        onNewMessageChange={onNewMessageChange}
+        onFormSubmit={onFormSubmit}
+      />
+      <MessageList 
+        messageList={messageList}
+        onHeartClick={onHeartClick}
+      />
+    </div>
   )
 }
