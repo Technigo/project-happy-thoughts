@@ -72,10 +72,24 @@ code {
   outline: 3px solid #868585;
 }
 
+/* Container with error message and character count */
+.error-character-div {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 17px;
+}
+
+/* Error message under input */
+.error-message {
+  color: red;
+  font-size: 11px;
+  font-family: "Roboto", sans-serif;
+}
+
 /* Character counter */
 .character-number {
   text-align: right;
-  margin: 5px 17px 0 0;
+  margin: 0;
   color: #868585;
   font-size: 13px;
 }
@@ -84,19 +98,9 @@ code {
   color: red;
 }
 
-/* Error message under input */
-.error-message {
-  color: red;
-  font-size: 11px;
-  position: absolute;
-  margin-left: 17px;
-  margin-top: 119px;
-  font-family: "Roboto", sans-serif;
-}
-
 /* Submit button */
 .button {
-  margin: 0 0 15px 15px;
+  margin: 2px 0 15px 15px;
   width: 60%;
   height: 38px;
   border-radius: 50px;

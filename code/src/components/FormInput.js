@@ -23,12 +23,14 @@ export const FormInput = ({ newMessage, setNewMessage, onMessageSubmit, errorMes
         value={newMessage} 
         onChange={handleNewMessage}>
       </textarea>
-      <span className="error-message">{errorMessage}</span>
-      <p className="character-number">
-        <span 
-          className={newMessage.length > 140 ? "red" : ""}>{newMessage.length}</span> 
-        / 140
-      </p>
+      <div className="error-character-div">
+        <span className="error-message">{errorMessage}</span>
+        <p className="character-number">
+          <span 
+            className={newMessage.length > 140 ? "red" : ""}>{newMessage.length}</span> 
+          / 140
+        </p>
+      </div>
       <FormButton />
     </form>
   )
