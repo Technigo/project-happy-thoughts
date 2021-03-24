@@ -24,13 +24,18 @@ import { API_URL_LIKE } from '../Reusables/urls';
 
     return (
         <div className="thought-card"> 
-                <h4>{message}</h4>
-                <button className="heart-button"
-                    onClick={() => onLikesIncrease(_id)}
-                >
-                    ❤️ number of likes{hearts}
-                </button>
-                <p className="created-at">{moment(createdAt).fromNow()}</p>
+                <h4 className="thought-message">{message}</h4>
+                <div className="thought-card-info">
+                    <div className="likes-container">
+                        <button className={hearts > 0 ? 'button-liked' : 'button-unliked'}
+                            onClick={() => onLikesIncrease(_id)}
+                        >
+                            <span className="heart" role="button" aria-label="heart"> ❤️ </span>
+                            
+                        </button> <p className='number-of-hearts'> X {hearts}</p>
+                    </div>
+                    <p className="created-at">{moment(createdAt).fromNow()}</p>
+                </div>
         </div>
     )
 }

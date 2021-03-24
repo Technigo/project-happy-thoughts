@@ -1,5 +1,5 @@
 .input-thought-wrapper{
-    width: 100%;
+    width: 500px;
     margin-top: 20px;
     padding: 20px;
     text-align: left;
@@ -11,10 +11,20 @@
 .input-text-area{
     width: 100%; 
     padding: 5px 0 80px 5px;
+    font-family: 'Inconsolata','Courier New', Courier, monospace;
 }
 
 .character-counting{
     text-align: right; 
+}
+
+.thought-length-long{
+    text-align: right;
+    color: #ff0000;
+
+}
+.thought-length-ok{
+    text-align: right;
 }
 
 .submit-btn{
@@ -23,6 +33,8 @@
     cursor: pointer; 
     border: none; 
     border-radius: 100px;
-
-
+    font-family: 'Inconsolata','Courier New', Courier, monospace;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.7;
 }

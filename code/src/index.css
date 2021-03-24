@@ -17,6 +17,7 @@ body {
   align-items: center;
   font-family: 'Inconsolata','Courier New', Courier, monospace;
   line-height: 1.7;
+  font-size: 17px;
   background: #ffe9e9;
 }
 
@@ -24,11 +25,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+/* 
 .all-thoughts-wrapper{
   display: flex;
   justify-content: center;
   align-items: center; 
   flex-direction: column;
-  width: 500px
-}
+  width: 500px;
+} */

@@ -35,7 +35,7 @@ const InputTextField = () => {
                 placeholder="Write a happy thought..."
                 onChange= {event => setThought(event.target.value)}
                 ></textarea>
-                <p className = "character-counting">{thought.length} / 140</p>
+                <p className ={thought.length >= 140 ? 'thought-length-long': 'thought-length-ok'}>{thought.length} / 140</p>
                 <button
                 type="submit"
                 className="submit-btn"

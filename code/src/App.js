@@ -11,9 +11,9 @@ export const App = () => {
   return (
     <div>
       <Header />
-      <div className="all-thoughts-wrapper">
-      <InputThoughtField />
-      <ListOfThoughts />
+      <div>
+        <InputThoughtField />
+        <ListOfThoughts />
       </div>
       <Footer />
     </div>
