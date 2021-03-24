@@ -20,7 +20,7 @@ export const Form = () => {
         fetch(API_URL)
             .then(res => res.json())
             .then(messages => setMessageList(messages))
-            .catch(err => console.error(err))
+            .catch(err => console.log(err))
     }
 
     const handleMessageNewChange = (event) => {
@@ -41,7 +41,7 @@ export const Form = () => {
         fetch(API_URL, options)
             .then(res => res.json())
             .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
-            .catch(err => console.error(err))
+            .catch(err => console.log(err))
             
     }
 
