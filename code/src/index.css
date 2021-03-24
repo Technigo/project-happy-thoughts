@@ -36,8 +36,9 @@ code {
   border: none;
   border-radius: 50px;
   justify-content: left;
-  width: 70%;
+  width: 60%;
   padding: 10px;
+  margin-left: 2%;
 }
 
 /* THOUGHT CARD */
@@ -90,4 +91,15 @@ code {
 
 .multiple-hearts:hover {
   cursor: grabbing;
+}
+
+@media (min-width: 768px) {
+  .submit-btn {
+    /* background-color: #ffaead;
+    border: none;
+    border-radius: 50px;
+    justify-content: left;
+    padding: 10px; */
+    width: 35%;
+  }
 }
