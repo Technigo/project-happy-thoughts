@@ -27,8 +27,7 @@ export const FormInput = ({ newMessage, setNewMessage, onMessageSubmit, errorMes
         <span className="error-message">{errorMessage}</span>
         <p className="character-number">
           <span 
-            className={newMessage.length > 140 ? "red" : ""}>{newMessage.length}</span> 
-          / 140
+            className={newMessage.length > 140 ? "red" : ""}>{newMessage.length}</span> / 140
         </p>
       </div>
       <FormButton />

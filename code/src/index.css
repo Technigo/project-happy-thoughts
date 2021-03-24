@@ -76,7 +76,7 @@ code {
 .error-character-div {
   display: flex;
   justify-content: space-between;
-  margin: 5px 17px;
+  margin: 3px 17px 6px 17px;
 }
 
 /* Error message under input */
@@ -158,6 +158,9 @@ button:focus {
 /* Like button with different backgrounds depending on liked or not */
 
 .like-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   width: 43px;
   height: 43px;
@@ -177,8 +180,10 @@ button:focus {
 }
 
 .likes {
+  display: flex;
+  align-items: center;
   color: #8F8F8F;
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Roboto";
 }
 
