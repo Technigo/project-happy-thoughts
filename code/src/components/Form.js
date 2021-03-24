@@ -2,7 +2,9 @@
 /* eslint-disable*/
 
 import React, { useState, useEffect } from 'react';
-import moment from 'moment'
+
+import SubmissionForm from './SubmissionForm'
+import MessageList from './MessageList'
 
 import { API_URL, API_LIKES_URL } from './urls';
 
@@ -21,11 +23,11 @@ export const Form = () => {
             .catch(err => console.error(err))
     }
 
-    const onMessageNewChange = (event) => {
+    const handleMessageNewChange = (event) => {
         setMessageNew(event.target.value)
     }
 
-    const onFormSubmit = (event) => {
+    const handleFormSubmit = (event) => {
         event.preventDefault()
 
         const options = {
@@ -43,7 +45,7 @@ export const Form = () => {
             
     }
 
-    const onLikesIncrease = (id) => {
+    const handleLikesIncrease = (id) => {
         const options = {
             method: 'POST',
             headers: {
@@ -55,6 +57,7 @@ export const Form = () => {
             .then(res => res.json())
             .then(receivedMessage => {
                 const updatedMessageList = messageList.map(message => {
+                    
                     if (message._id === receivedMessage._id) {
                         message.hearts += 1
                     }
@@ -67,33 +70,18 @@ export const Form = () => {
 
     console.log(messageList);
 
-
-
     return (
         <div>
-            <form className="form" onSubmit={onFormSubmit}>
-                <label htmlFor="newMessage">What's make you happy right now?</label>
-                <input className="input"
-                    id="newMessage"
-                    type="text"
-                    
-                    value={messageNew}
-                    onChange={onMessageNewChange}
-                />    
-                <button className="btn-submit" type="submit">💗 Send Happy Thought 💗</button>
-
-            </form>
-
-            {messageList.map(message => (
-                <div className="message-body" key={message._id}>
-                    <h4>{message.message}</h4>
-                    <div className="like">
-                        <button onClick={() => onLikesIncrease(message._id)} className="btn-like">💗</button>
-                        <p>x {message.hearts}</p>
-                    </div>
-                    <p className="time-from-now">{moment(message.createdAt).fromNow()}</p>
-                </div>
-            ))}
+            <SubmissionForm 
+                messageNew={messageNew}
+                onMessageNewChange={handleMessageNewChange}
+                onFormSubmit= {handleFormSubmit}
+            />
+            
+            <MessageList 
+                messageList={messageList}
+                handleLikesIncrease={handleLikesIncrease}
+            />
         </div>
     )
 
