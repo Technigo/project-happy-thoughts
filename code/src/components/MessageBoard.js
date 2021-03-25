@@ -53,8 +53,7 @@ const onHeartClicked = (id) => {
     })
 }
 
-
-  return loading? <Loading loading={loading} /> : error? <div>Error occured during API call</div>: (
+  return loading? <Loading loading={loading} /> : error? <div className="api-error"> Oops, an error occured during API call!</div>: (
     <div className="message-board">
       {thoughts.map(thought => (
         <div className="message-container" key={thought._id}>
