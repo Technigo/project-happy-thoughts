@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
-import { API_URL } from './reusable/urls'
+import { API_URL, LIKES_URL } from './reusable/urls'
 
 export const App = () => {
   const [toughtList, setToughtList] = useState([])
@@ -43,7 +43,15 @@ export const App = () => {
     fetch(API_URL, options)
       .then(res => res.json())
       .then(receivedTought => setToughtList([...toughtList, receivedTought]))
+      .catch(err => console.error(err))
   }
+  
+  const onLikesIncrease = () => {
+    fetch(LIKES_URL())
+  }
+
+
+
   
   return (
     <div>
@@ -65,6 +73,9 @@ export const App = () => {
       {toughtList.map(tought => (
         <div key={tought._id}>
           <h4>{tought.message}</h4>
+          <button onClick={onLikesIncrease._id}>
+            {tought.hearts}
+          </button>
           <p>- {moment(tought.createdAt).fromNow()}</p>
         </div>
       ))}
