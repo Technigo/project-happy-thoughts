@@ -11,7 +11,7 @@ const MyTought = ({message, onLikesIncrease}) => {
         <div>
             <h4>{message.message}</h4>
         </div>
-            <div>
+            <div className="like-moment-section">
                 <div className="likes-section">
                     <button 
                     className="likes-btn"
@@ -20,7 +20,9 @@ const MyTought = ({message, onLikesIncrease}) => {
                     </button>
                     <p>x {message.hearts}</p>
                 </div>
-                <p>{moment(message.createdAt).fromNow()}</p>
+                <div className="moment-section">
+                    <p>{moment(message.createdAt).fromNow()}</p>
+                </div>
             </div>
             <div></div>
         </div>

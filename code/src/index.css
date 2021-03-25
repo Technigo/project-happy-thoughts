@@ -14,13 +14,29 @@ code {
 
 
 
+/* HERO Section */
+
+
+
+
+/* HERO Section */
+
+
+
+
+
+.container {
+  font-style: 'Ubuntu', sans-serif;
+}
+
+
 /* ** Form Section ** */
 
 .form-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-top: 10px; */
+  margin-top: 10px; 
 }
 
 
@@ -79,10 +95,18 @@ input {
   display: flex;
   justify-content: start;
   align-items: center;
+  /*background: green;*/
 }
 
 .likes-section p {
   margin-left: 10px;
+  font-size: 9px;
+  color: #c0bdbd;
+}
+
+.moment-section p {
+  font-size: 9px;
+  color: #c0bdbd;
 }
 
 .post-container {
@@ -90,6 +114,7 @@ input {
   padding: 10px;
   box-shadow: 10px 10px;
   width: 80%;
+  background: white;
 }
 
 .likes-btn {
@@ -101,4 +126,62 @@ input {
 
 .likes-btn:hover {
   background:  #ff8080;
+}
+
+
+.like-moment-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /*background: wheat;*/
+}
+
+.moment-section {
+ /* background: violet;*/
+  text-align: right;
+}
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+  .input {
+    font-size: 20px;
+  }
+
+  .moment-section p, .likes-section p {
+    font-size: 14px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .input-section, .post-container {
+    width: 60%;
+  }
+}
+
+
+@media (min-width: 1300px) {
+  .input-section, .post-container {
+    width: 40%;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+  }
+
+  .container-body {
+    background: blue;
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 25px;
+  }
+
+  
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Form from './components/Form'
 import Map from './components/Map'
+import Hero from './components/Hero'
 
 import { API_URL, LIKES_URL } from './reusable/urls'
 
@@ -9,8 +10,18 @@ export const App = () => {
   const [messageList, setMessageList] = useState([]) 
   const [messageNew, setMessageNew] = useState("") // The state that takes the input from our submit button
 
+  const WordCount =  () => {
+
+    if ( messageNew.length   > 140) {
+        return (
+            <div></div>
+        )
+    }
+}
+
   useEffect(() => {
     fecthMessageList()
+    //WordCount()
   }, [])
 
   const fecthMessageList = () => {
@@ -59,17 +70,23 @@ export const App = () => {
   
 
   return (
-    <div className="container">
-      < Form 
-      messageNew={messageNew} 
-      OnInputMessage={OnInputMessage}
-      onFormSubmit={onFormSubmit}
-      />
-      < Map 
-        messageList={messageList}
-        onLikesIncrease={onLikesIncrease}
-      />
-      
-    </div>
+
+    <> 
+      <Hero />
+      <div className="container">
+        <div className="container-body">
+          < Form 
+          messageNew={messageNew} 
+          OnInputMessage={OnInputMessage}
+          onFormSubmit={onFormSubmit}
+          />
+          < Map 
+            messageList={messageList}
+            onLikesIncrease={onLikesIncrease}
+          />
+        
+        </div>
+      </div>
+    </>
   )
 }
