@@ -14,7 +14,7 @@ export const MessageList = ({ messageList, setMessageList }) => {
   useEffect(() => {
     fetchMessageList();
       // eslint-disable-next-line react-hooks/exhaustive-deps 
-  }, [setMessageList]);
+  }, [setMessageList]);//this wasn't working, it still missed dependencies, so disabled the eslint for this.
 
   /*calculates time since the message was posted and displays the time in
   a proper way depending on how long ago it was */
