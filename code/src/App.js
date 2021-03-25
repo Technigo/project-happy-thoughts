@@ -80,7 +80,7 @@ export const App = () => {
           <button 
             type ="submit"
             className="submit-button">
-            <span>&nbsp; &#10084;&#65039; &nbsp; Upload happiness&nbsp; &#10084;&#65039; &nbsp;</span>
+            <span role="image">&nbsp; &#10084;&#65039; &nbsp; Upload happiness&nbsp; &#10084;&#65039; &nbsp;</span>
           </button> 
         </div>
       </form>
@@ -88,7 +88,7 @@ export const App = () => {
        <div className="received-message-container" key={thought._id}>
          <h4 className="received-message" >{thought.message}</h4>
          <button className="heart-like-button" onClick={() => onHeartLikeIncrease(thought._id)}>  {/* i want to understand whats happening here, why 2 arrow functions?? and can i place (thought._id) somewhere else? */}
-          <span aria-label="heart-icon">&#10084;&#65039;</span>
+          <span role="image" aria-label="heart-icon">&#10084;&#65039;</span>
          </button> 
          {/* <div> */}
           <span aria-label="number of likes" className="like-counter">x {thought.hearts} </span>
