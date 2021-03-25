@@ -11,6 +11,7 @@ Take a look at the project here: https://tender-poitras-167886.netlify.app/
 
 
 
-PLAN
-- Images import https://create-react-app.dev/docs/adding-images-fonts-and-files
-- reverse array so newest message in the top
+PLAN/things to fix
+- change text input to text area?
+- Change color of like button when having likes/not having likes
+- add animation when pushing like button

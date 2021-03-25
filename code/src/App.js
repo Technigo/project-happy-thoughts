@@ -3,19 +3,20 @@ import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 
 //Local dependencies
-import { API_URL, POST_URL } from './Constants/urls'
+import { API_URL, POST_URL, POST_HEART_URL } from './Constants/urls'
+
+import { Form } from './components/Form'
 
 export const App = () => {
 
+
+//constants & functions
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
 
 
-//call a function each time somthing changes.
-//Second argument: nothing if you want the function to run everytime something chnages, and when its mounted [] if only whne its mounted. Or if when some specific state property changes: type that property in the array [stateproperty ex currentStep]
-//if when its unmounted only then write return function
-
   useEffect(() => {
+    fetchMessageList()
   }, [])
 
   const fetchMessageList = () => {
@@ -25,7 +26,6 @@ export const App = () => {
     .catch(error => console.error(error))
   }
 
-  fetchMessageList()
 
   const onMessageNewChange = (event) => {
     setMessageNew(event.target.value)
@@ -33,6 +33,7 @@ export const App = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault()
+    setMessageNew('')
 
     const options = {
       method: 'POST',
@@ -44,37 +45,56 @@ export const App = () => {
 
     fetch(POST_URL, options)
       .then (response => response.json())
-      .then(recievedMessage => setMessageList([...messageList, recievedMessage]))
+      .then (()=> fetchMessageList())
+      .catch(error => console.error(error))
   }
 
-  return (
+  const onLikesIncrease = (messageID) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
 
+    // const onCatchError = (error) => {
+
+    // }
+
+    fetch(POST_HEART_URL(messageID), options)
+    .then (response => response.json())
+    .then (()=> fetchMessageList())
+    .catch(error => console.error(error))
+  }
+
+//mounting
+  return (
     <div className="content">
 
-      <form onSubmit={onFormSubmit} className="form">
-        <label>
-          <h3>What's making you happy right now?</h3>
-          <input
-            type="text"
-            value={messageNew}
-            onChange={onMessageNewChange}
-          />
-        </label>
-        <button type="submit">❤ Send Happy Thought! ❤</button>
-      </form>
-
+      <Form 
+        onFormSubmit = {onFormSubmit}
+        messageNew = {messageNew}
+        onMessageNewChange = {onMessageNewChange}
+     />
 
       {messageList.map(message => ( 
         <div key={message._id} className="thought-card">
           <h4>
             {message.message}
           </h4>
-          <p>
-            <span role="img" aria-label="heart emoji">💟</span> x {message.hearts}
-          </p>
-          <p>
-            {moment(message.createdAt).fromNow()}
-          </p>       
+          <div className="card-info">
+            <div className="likes">
+              <button 
+                className={`like-button ${message.hearts > 0 ? 'liked' : ''} ${message.hearts > 10 ? 'super-liked' : ''}`}
+                onClick={() => onLikesIncrease(message._id)}>
+                <span role="img" aria-label="heart emoji">💓</span>
+              </button>
+              <p>x {message.hearts}</p>
+            </div>
+            <p className="post-time">
+              {moment(message.createdAt).fromNow()}
+            </p>
+          </div>       
         </div>
       ))}
     </div>
