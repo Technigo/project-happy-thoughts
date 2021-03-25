@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Form = ({ messageNew ,setMessageNew, onFormSubmit }) => {
+export const Form = ({ messageNew ,setMessageNew, onFormSubmit, unvalidCharacter, validCharacter }) => {
 
     const onMessageNewChange = (event) => {
         setMessageNew(event.target.value)
@@ -18,7 +18,7 @@ export const Form = ({ messageNew ,setMessageNew, onFormSubmit }) => {
                     placeholder='Tell us all about it :)'
                     onChange={onMessageNewChange}
                     minlength= '5'
-                    maxlength = '140'
+                    style = {messageNew.length > 140 ? {color: unvalidCharacter} : {color: validCharacter}}
                 />
                 <div className='submit-charcount-container'>
                     <button 

@@ -63,6 +63,8 @@ export const App = () => {
           messageNew={messageNew} 
           setMessageNew={setMessageNew} 
           onFormSubmit={handleFormSubmit}
+          unvalidCharacter='red'
+          validCharacter='black'
         />
       <div>
       <MessageList 
