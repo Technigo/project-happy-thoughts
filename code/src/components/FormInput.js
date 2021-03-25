@@ -25,7 +25,7 @@ export const FormInput = ({ newMessage, setNewMessage, onMessageSubmit, errorMes
         onChange={handleNewMessage}>
       </textarea>
       <div className="error-character-div">
-        <p className="error-message">{errorMessage}</p>
+        <span className="error-message">{errorMessage}</span>
         <p className="character-counter">
           <span 
             className={newMessage.length > 140 ? "counter-red" : ""}>{newMessage.length}</span> / 140
