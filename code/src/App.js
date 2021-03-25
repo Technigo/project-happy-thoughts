@@ -32,7 +32,7 @@ export const App = () => {
   }
 
     
- //Function that will prevent the form to refresh and that will send the POST request
+  //Function that will prevent the form to refresh and that will send the POST request
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -47,8 +47,7 @@ export const App = () => {
   
       fetch(API_URL, options)
         .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.error(err));
+        .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
   }
    
 
