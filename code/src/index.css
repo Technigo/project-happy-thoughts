@@ -27,6 +27,7 @@ code {
   box-shadow: black 0 2px 5px 0;
   font-family: "Courier New";
   font-size: 18px;
+  overflow: scroll;
 }
 
 
@@ -46,7 +47,7 @@ code {
 .button-submit {
   background-color: rgb(255, 149, 149);
   border: none;
-  border-radius: 20px;
+  border-radius: 45px;
   width: 50%;
   height: 35px;
   margin: 10px;

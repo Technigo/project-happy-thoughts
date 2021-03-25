@@ -1,7 +1,9 @@
-import moment from 'moment';
 import React, { useState, useEffect } from 'react'
 
 import { API_URL, API_URL_LIKES } from './reusable/urls';
+
+import { MessageList } from './components/MessageList'
+import { MessageForm } from './components/MessageForm'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -35,10 +37,10 @@ export const App = () => {
       };
 
       fetch(API_URL, options)
-      .then(res => res.json())
-      .then(receivedMessage => setMessageList([receivedMessage,...messageList]))
-      .catch(err => console.error(err));
-  }
+        .then(res => res.json())
+        .then(() => fetchMessageList())
+        .catch(err => console.error(err));
+    }
 
   const onLikesIncrease = (id) => {
     const options = {
@@ -50,7 +52,6 @@ export const App = () => {
 
     fetch(API_URL_LIKES(id), options)
       .then(res => res.json())
-  
       .then(() => fetchMessageList())
       .catch(err => console.erroe(err));
   }
@@ -58,38 +59,15 @@ export const App = () => {
   return (
     <div className="main-forms-wrapper">
       <div className="submit-message-container">
-        <form onSubmit={onFormSubmit}>
-          <label htmlFor="newMessage" className="label-input-message">Share your happy thoughts!</label>
-          <input
-            className="message-input"
-            id="newMessage"
-            type="text"
-            value={messageNew}
-            onChange={onMessageNewChange}
-          />
-          <button 
-          className="button-submit"
-          type="submit"
-          >
-            ❤️ Spread the joy ❤️
-          </button>
-        </form>
+        <MessageForm 
+          messageNew={messageNew} 
+          onMessageNewChange={onMessageNewChange} 
+          onFormSubmit={onFormSubmit} />
       </div>
-        {messageList.reverse().map(message => [
-          <div key={message._id} className="message-container">  
-            <h3>{message.message}</h3>
-            <div className="likes-date-container">
-              <div className="hearts-likes-wrapper">
-                <button className="button-likes" onClick={() =>onLikesIncrease(message._id)}>
-                  ❤️
-                </button>
-                <p> x{message.hearts}</p>
-              </div>
-              <p className="date-posted">{moment(message.created).fromNow()} </p>
-            </div>
-          </div>
-        ])}
-      
+      <MessageList 
+        messageList={messageList} 
+        onLikesIncrease={onLikesIncrease}
+      />
     </div>
   )
 }
