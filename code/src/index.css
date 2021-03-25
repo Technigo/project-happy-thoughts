@@ -32,7 +32,7 @@ code {
   align-items: center;
   padding: 10px;
   margin: 10px;
-  width: 60%;
+  width: 80%;
   border: 2px solid black;
   box-shadow: 6px 6px;
   padding: 10px;
@@ -42,8 +42,8 @@ code {
 }
 
 .happy-card {
-  width: 60%;
-  height: auto;
+  width: 80%;
+  height:130px;
   border: 2px solid black;
   box-shadow: 6px 6px;
   padding: 10px;
@@ -69,23 +69,27 @@ code {
 }
 
 .heart-button {
+  position: absolute;
+  left: 18%;
   border: none;
   outline:none;
   background: white;
 }
 
 .heart-button-active {
+  position: absolute;
+  left: 18%;
   border-radius: 100%;
-  width: 40px;
-  height: 40px;
   background: rgb(248, 143, 143);
   padding: 12px;
 }
 
 .heart-button-not-active {
-border-radius: 100%;
-padding: 12px;
-background: lightgray;
+  position: absolute;
+  left: 18%;
+  border-radius: 100%;
+  padding: 12px;
+  background: lightgray;
 }
 
 .button-wrapper {
