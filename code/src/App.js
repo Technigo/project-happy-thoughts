@@ -26,6 +26,7 @@ export const App = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+    console.log('Form submitted', newThought)
 
     const options = {
       method: 'POST',
@@ -40,9 +41,28 @@ export const App = () => {
       .then(recivedThought => setThoughtsList([...thoughtsList, recivedThought]))
   }
 
-  const onLikesIncrease = () => {
-    fetch(LIKE_URL())
+  const onLikesIncrease = (id) => {
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    };
+    fetch(LIKE_URL(id), options)
+      .then(res => res.json())
+      .then(recivedThought => {
+        const updatedThoughtsList = thoughtsList.map(thought => {
+          if (thought._id === recivedThought._id) {
+            thought.hearts += 1;
+          }
+          return thought;
+        });
+        setThoughtsList(updatedThoughtsList);
+      })
   }
+
+
 
   return (
 
@@ -65,6 +85,10 @@ export const App = () => {
         <div
           key={thought._id}>
           <h4>{thought.message}</h4>
+          <button onClick={() => onLikesIncrease(thought._id)}>
+            {thought.hearts}
+            <span role="img" aria-label="heart-icon">❤️</span>
+          </button>
           <p>{moment(thought.createdAt).fromNow()}</p>
         </div>
       ))}
