@@ -9,12 +9,13 @@ export const SubmitButton = (props) => {
     setUserInput,
     setKeypressCount,
     isOutsideCharRange,
+    setIsOutsideCharRange,
   } = props;
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
     return isValidated()
-      ? (fetchNewMessage(), setUserInput(""), setKeypressCount(0))
+      ? (fetchNewMessage(), clearAllInputs(), console.log(isOutsideCharRange))
       : alert("The message should be between 5 and 140 characters");
   };
 
@@ -24,6 +25,13 @@ export const SubmitButton = (props) => {
       return false;
     }
     return true;
+  };
+
+  //clears all
+  const clearAllInputs = () => {
+    setUserInput("");
+    setKeypressCount(0);
+    setIsOutsideCharRange(true);
   };
 
   const fetchNewMessage = () => {

@@ -57,8 +57,8 @@ export const MessageForm = ({ setMessageList }) => {
       <textarea
         className="message-form__input"
         value={userInput}
-        onChange={handleUserInput}
         onKeyDown={handleCharInput}
+        onChange={handleUserInput}
       ></textarea>
 
       {/*if characters is above 140 or under 5, the warning class is added which makes the counter-text red*/}
@@ -68,7 +68,7 @@ export const MessageForm = ({ setMessageList }) => {
           <p>/140</p>
         </div>
       ) : (
-        <div class="message-form__input-count">
+        <div className="message-form__input-count">
           <p>{keypressCount}</p>
           <p>/140</p>
         </div>
@@ -77,6 +77,7 @@ export const MessageForm = ({ setMessageList }) => {
       <SubmitButton
         setKeypressCount={setKeypressCount}
         isOutsideCharRange={isOutsideCharRange}
+        setIsOutsideCharRange={setIsOutsideCharRange}
         setMessageList={setMessageList}
         setUserInput={setUserInput}
         userInput={userInput}
