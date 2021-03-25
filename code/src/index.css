@@ -111,7 +111,7 @@ textarea {
 
 .heart {
   font-size: 11px;
-  /* margin: auto; */
+  text-align: center;
 }
 
 .nrOfLikes {
