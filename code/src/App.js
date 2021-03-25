@@ -9,13 +9,11 @@ import Footer from './components/Footer'
 
 export const App = () => {
   return (
-    <div>
-      <Header />
-      <div>
+    <div className="page-wrapper">
+        <Header />
         <InputThoughtField />
         <ListOfThoughts />
-      </div>
-      <Footer />
+        <Footer />
     </div>
   )
 }
