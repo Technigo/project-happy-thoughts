@@ -71,6 +71,11 @@ input[type=text]{
   margin: 30px 0;
 }
 
+.message-text {
+  overflow-wrap: break-word;
+}
+
+
 .heart-date-container {
   display: flex;
   justify-content: space-between;

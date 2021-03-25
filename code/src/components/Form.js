@@ -9,25 +9,25 @@ export const Form = ({ messageNew ,setMessageNew, onFormSubmit }) => {
     return (
         <>
             <form className='form-container' onSubmit={onFormSubmit}>
-                <label htmlFor="newMessage">What's making you happy right now?</label>
+                <label htmlFor='newMessage'>What's making you happy right now?</label>
                 <input 
-                    id="newMessage"
-                    type="text"
+                    id='newMessage'
+                    type='text'
                     rows='5'
                     value={messageNew}
-                    placeholder="Tell us all about it :)"
+                    placeholder='Tell us all about it :)'
                     onChange={onMessageNewChange}
-                    minlength= "5"
-                    maxlength = "140"
+                    minlength= '5'
+                    maxlength = '140'
                 />
                 <div className='submit-charcount-container'>
                     <button 
                         className='button' 
-                        type="submit"
+                        type='submit'
                         value={messageNew}
                         disabled={messageNew.length < 5}
                     >
-                        ❤️️ Send happy thoughts! ❤️️
+                        <span role='img' aria-label='heart emoji'>❤️️</span> Send happy thoughts! <span role='img' aria-label='heart emoji'>❤️️</span>
                     </button>
                     <p>{messageNew.length}/140</p>
                 </div>
