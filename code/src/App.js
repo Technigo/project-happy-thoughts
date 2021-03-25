@@ -10,7 +10,6 @@ import ThoughtsList from './components/ThoughtsList'
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [newThought, setNewThought] = useState('')
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetchThoughtsList()
@@ -20,7 +19,6 @@ export const App = () => {
   const fetchThoughtsList = () => {
     fetch(HAPPY_THOUGHTS_URL)
       .then(results => results.json())
-        setLoading(false)
       .then(thoughts => setThoughtsList(thoughts))
       .catch(error => console.error(error))
   }
