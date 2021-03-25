@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
+
+
 /* ** Form Section ** */
 
 .form-section {
@@ -25,8 +27,8 @@ code {
 .input-section {
     border: 1px solid;
     padding: 10px;
-    box-shadow: 5px 5px;
-    width: 85%;
+    box-shadow: 10px 10px;
+    width: 80%;
     background: #D3D3D3;
 }
 
@@ -64,3 +66,39 @@ input {
 
 /* ** Form Section ** */
 
+.post-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+}
+
+.likes-section {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.likes-section p {
+  margin-left: 10px;
+}
+
+.post-container {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 10px;
+  width: 80%;
+}
+
+.likes-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 0;
+}
+
+.likes-btn:hover {
+  background:  #ff8080;
+}

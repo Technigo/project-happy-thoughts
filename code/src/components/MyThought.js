@@ -6,20 +6,24 @@ const MyTought = ({message, onLikesIncrease}) => {
 
     
     return (
-        <div key={message._id}>
+        <div className="post-section">
+            <div key={message._id} className="post-container">
         <div>
             <h4>{message.message}</h4>
         </div>
             <div>
-                <button 
-                className="likes-btn"
-                onClick={() => onLikesIncrease(message._id)}>
-                    <span className="likes">&#10084;</span>
-                    {message.hearts}
-                </button>
+                <div className="likes-section">
+                    <button 
+                    className="likes-btn"
+                    onClick={() => onLikesIncrease(message._id)}>
+                        <span className="likes">&#10084;</span>  
+                    </button>
+                    <p>x {message.hearts}</p>
+                </div>
                 <p>{moment(message.createdAt).fromNow()}</p>
             </div>
             <div></div>
+        </div>
         </div>
     )
 }

@@ -12,14 +12,16 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
                     <label htmlFor="newMessage">What's making you happy right now?</label>
                 </div>
                 <div className="input-container">
-                    <input
+                    <textarea
                     className="input"
                     id="newMessage"
                     type="text" 
                     value={messageNew}
                     onChange={OnInputMessage}
+                    cols="40" 
+                    rows="8"
                     />
-                </div>
+                    </div>
                 <div>
                     <button className="submit-btn" type="submit">
                     <span className="likes">&#10084;</span> Send Gappy Thought! <span className="likes">&#10084;</span>
@@ -32,3 +34,12 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
 }
 
 export default Form
+
+
+/*<input
+                    className="input"
+                    id="newMessage"
+                    type="text" 
+                    value={messageNew}
+                    onChange={OnInputMessage}
+                    />*/

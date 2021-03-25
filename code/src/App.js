@@ -59,7 +59,7 @@ export const App = () => {
   
 
   return (
-    <div>
+    <div className="container">
       < Form 
       messageNew={messageNew} 
       OnInputMessage={OnInputMessage}
