@@ -44,20 +44,20 @@ export const App = () => {
       <form onSubmit={onFormSubmit}>
         <label htmlFor="newMessage">write your happy thoughts</label>
         <input 
-        id="newMessage" 
-        type="text" 
-        value={newMessage}
-        onChange={onNewMessageChange}
+          id="newMessage" 
+          type="text" 
+          value={newMessage}
+          onChange={onNewMessageChange}
         >  
         </input>
         <button type="submit">Send HAPPY thought!</button>
       </form>
       {messageList.map(message => (
-          <div key={message._id}>
-            <h4>{message.message}</h4>
-            <p>-{moment(message.createdAt).fromNow()}</p>
-          </div>
-        ))} 
+        <div key={message._id}>
+          <h4>{message.message}</h4>
+          <p className="date">- {moment(message.createdAt).fromNow()}</p> 
+        </div>
+      ))} 
     </div>
   )
 }
