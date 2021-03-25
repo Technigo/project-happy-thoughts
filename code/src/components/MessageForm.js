@@ -8,10 +8,8 @@ const MessageForm = ({ thoughts, setThoughts }) => {
   const onNewThoughtChanged = event => {
     setNewThought(event.target.value)
     setCounter(newThought.length)
-  
   }
 
- 
   const handleSubmit = event => {
     event.preventDefault()
     const options = {
@@ -21,56 +19,60 @@ const MessageForm = ({ thoughts, setThoughts }) => {
       },
       body: JSON.stringify({ message: newThought })
     }
-
     fetch(API_URL, options)
-      .then(res =>{
-        if(res.status === 201){
-        console.dir(res)  
-        return res.json()
-      } else {
-        throw new Error("Oops, something went wrong! Perhaps, your message is shorter than 5 characters!")
-      
-      }})
+      .then(res => {
+        if (res.status === 201) {
+          return res.json()
+        } else {
+          throw new Error("Oops, something went wrong! Perhaps, your message is shorter than 5 characters!")
+        }
+      })
       .then(data => setThoughts([data, ...thoughts]))
-      .catch(err =>{
+      .catch(err => {
         alert(err.message)
-        })
+      })
     setNewThought('')
     setCounter(0)
   }
-  
+
   return (
     <>
-    <form
-      className="form-container"
-      onSubmit={handleSubmit}
-    >
-      <div className="heading-wrapper">
-        <h1 className="heading">What is making you happy right now?</h1>
-      </div>
-        <input
+      <form
+        className="form-container"
+        onSubmit={handleSubmit}
+      >
+        <div className="heading-wrapper">
+          <label
+            htmlFor="message-input" 
+            className="heading"
+          >
+              What is making you happy right now?
+          </label>
+        </div>
+        <textarea
+          id="message-input"
           className="text-input"
           type='text'
           value={newThought}
           placeholder="Your message should be between 5 and 140 charachters!"
           onChange={onNewThoughtChanged}
           maxLength="140"
-        />
-      <div className="counter-wrapper">
-        <p>{140-counter} charachters left</p> 
-      </div>
+          rows="5"/>
+        <div className="counter-wrapper">
+          <p>{140 - counter} charachters left</p>
+        </div>
 
-      <div className="button-wrapper">
-      <button 
-        type='submit'
-        className="submit-button"
-      > 
-          <span className="heart">{'\u2764'}</span> 
-          Send happy thought 
-          <span className="heart">{'\u2764'}</span> 
-      </button>
-      </div>
-    </form>
+        <div className="button-wrapper">
+          <button
+            type='submit'
+            className="submit-button"
+          >
+            <span className="heart">{'\u2764'}</span>
+            Send happy thought
+            <span className="heart">{'\u2764'}</span>
+          </button>
+        </div>
+      </form>
     </>
   )
 }

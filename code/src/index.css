@@ -35,7 +35,7 @@ code {
   font-family: Trispace;
 }
 
-.heading-wrapper, .button-wrapper, .counter-wrapper {
+.heading-wrapper, .button-wrapper, .counter-wrapper, .likes-container, .thought-date-wrapper  {
   width: 80%;
   margin: auto;
 }
@@ -44,14 +44,19 @@ code {
   margin: 0 0 10px 0;
   padding: none;
   font-size: 16px;
+  font-weight: 600;
 }
 
 .text-input{
   width: 80%;
-  margin: auto;
+  margin: 20px auto 0 auto;
   height: 50px;
   overflow-y: scroll;
   font-family: Trispace;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  
 }
 
 .heart {
@@ -104,6 +109,7 @@ code {
   border: none;
   border-radius: 50%;
   margin-right: 10px;
+  outline: none;
 }
 
 .pink {

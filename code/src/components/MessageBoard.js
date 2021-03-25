@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 
-
 import { API_URL } from '../reusable/urls'
 
 import Loading from '../components/Loading'
@@ -10,22 +9,7 @@ const MessageBoard = ({ thoughts, setThoughts}) => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   
-  // const fetchThoughts = (url) => {
-  //   setLoading(true)
-  //   fetch(url)
-  //     .then(response => response.json())
-  //     .then(receivedThoughts => {
-  //       setThoughts(receivedThoughts)
-  //       setTimeout(()=>{
-  //          setLoading(false)}, 2000)
-  //     })
-  //     .catch(err => {
-  //       setLoading(false)
-  //       setError(true)
-  //     })
-  // }
   
-
   useEffect(() => {
     const fetchThoughts = (url) => {
       setLoading(true)
@@ -41,7 +25,6 @@ const MessageBoard = ({ thoughts, setThoughts}) => {
           setError(true)
         })
     }  
-
     fetchThoughts(API_URL)
   }, [setThoughts]);
 
@@ -61,7 +44,6 @@ const onHeartClicked = (id) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body:""
   }
   const hearts_url = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
 
@@ -73,11 +55,13 @@ const onHeartClicked = (id) => {
 
 
   return loading? <Loading loading={loading} /> : error? <div>Error occured during API call</div>: (
-    <div>
+    <div className="message-board">
       {thoughts.map(thought => (
         <div className="message-container" key={thought._id}>
-          <p className="thought">{thought.message}</p>
-          <p className="date">{moment(thought.createdAt).fromNow()}</p>
+          <div className="thought-date-wrapper">
+            <p className="thought">{thought.message}</p>
+            <p className="date">{moment(thought.createdAt).fromNow()}</p>
+          </div>
           <div className="likes-container">
             <button 
             id={thought._id}
