@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { FormInput } from './components/FormInput';
 import { MessageList } from './components/MessageList';
 import { LoadingSpinner } from './components/LoadingSpinner';
+import { Animation } from './components/Animation';
 
 import { API_URL, LIKES_URL } from './reusables/urls';
 
@@ -10,6 +11,7 @@ export const App = () => {
   const [newMessage, setNewMessage] = useState('');
   const [messageList, setMessageList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [animate, setAnimation] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   
   useEffect(() => {
@@ -23,6 +25,7 @@ export const App = () => {
       .then(messages => {
         setMessageList(messages)
         setLoading(false)
+        setAnimation(false)
       })
     .catch(err => console.error(err));  
   }
@@ -42,6 +45,7 @@ export const App = () => {
         if (message.errors) {
           handleErrors(message)
         } else {
+            setAnimation(true)
             setNewMessage('')
             setErrorMessage('')
           }
@@ -54,7 +58,7 @@ export const App = () => {
   const handleErrors = (error) => {
     const errorType = error.errors.message.kind;
     if (errorType === "required") {
-      setErrorMessage("You can't send and empty thought!")
+      setErrorMessage("You can't send an empty thought!")
     } else if (errorType === "minlength") {
       setErrorMessage("Too short! You need a minimum of 5 characters")
     } else if (errorType === "maxlength") {
@@ -63,7 +67,6 @@ export const App = () => {
       setErrorMessage(error.message)
     }
   }
-
 
   // Fetching likes
   const handleLikeClick = (id) => {
@@ -84,6 +87,7 @@ export const App = () => {
         setNewMessage={setNewMessage}
         onMessageSubmit={handleMessageSubmit}
         errorMessage={errorMessage} />
+      { animate && <Animation /> }
       { loading && <LoadingSpinner /> }
       <MessageList
         messageList={messageList}

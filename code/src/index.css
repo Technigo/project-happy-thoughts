@@ -21,8 +21,8 @@ code {
 
 /* Loading spinner */
 .loading-container {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   margin-top: 50px;
   border: 10px solid #F2F0F0;
   border-radius: 50%;
@@ -39,8 +39,23 @@ code {
   }
 }
 
-/* Form with textarea to send message */
+/* Animation for when submitting message */
+.message-animation {
+  animation: sending 0.3s ease-out;
+  margin-top: -200px;
+  z-index: 1;
+}
 
+@keyframes sending {
+  from {
+    font-size: 50px;
+  }
+  to {
+    font-size: 350px;
+  }
+}
+
+/* Form with textarea to send message */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -91,7 +106,8 @@ code {
   text-align: right;
   margin: 0;
   color: #868585;
-  font-size: 13px;
+  font-size: 12px;
+  font-family: "Roboto";
 }
 
 .red {
@@ -102,7 +118,7 @@ code {
 .button {
   margin: 2px 0 15px 15px;
   width: 60%;
-  height: 38px;
+  height: 40px;
   border-radius: 50px;
   border: none;
   background-color: #FFADAD;
@@ -129,7 +145,7 @@ button:focus {
   outline: 2px solid #EB5562;
 }
 
-/* All the thoughts */
+/* All the messages */
 .message-container {
   display: flex;
   flex-direction: column;
@@ -190,7 +206,7 @@ button:focus {
 .dates {
   color: #C2C2C2;
   font-size: 12px;
-  font-family: Monospace, "Courier New";
+  font-family: "Roboto";
 }
 
 /* Media queries for tablets and desktops*/
@@ -199,12 +215,31 @@ button:focus {
     width: 60%;
   }
 
+  .error-message {
+    font-size: 13px;
+  }
+
   .button {
-    width: 45%;
+    width: 50%;
+    height: 45px;
+    font-size: 14px;
   }
 
   .message-container {
     width: 60%;
+  }
+
+  .message-title {
+    font-size: 18px;
+  }
+
+  .like-button {
+    width: 46px;
+    height: 46px;
+  }
+
+  .dates {
+    font-size: 13px;
   }
 }
 
@@ -212,10 +247,6 @@ button:focus {
 @media ( min-width: 1025px) {
   .form-container {
     width: 30%;
-  }
-
-  .button {
-    font-size: 14px;
   }
 
   .message-container {

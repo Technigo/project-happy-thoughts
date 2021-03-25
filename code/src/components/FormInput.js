@@ -20,6 +20,7 @@ export const FormInput = ({ newMessage, setNewMessage, onMessageSubmit, errorMes
         rows="3"
         className="text-area"
         placeholder="Type your happy thought here.."
+        aria-multiline="true"
         value={newMessage} 
         onChange={handleNewMessage}>
       </textarea>
