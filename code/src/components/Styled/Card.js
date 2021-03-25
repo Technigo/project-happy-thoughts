@@ -11,6 +11,7 @@ const Card = styled.div`
   flex-flow: row wrap;
   align-items: center; 
   word-break: break-word;
+  position: relative;
 `;
 
 Card.Title = styled(H3)`
@@ -26,6 +27,26 @@ Card.FooterText = styled(P)`
 Card.Footer = styled.div`
   display: flex;
   align-items: center;
+`;
+
+Card.ErrorWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: pink;
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  justify-content: center;
+  
+  
+  & > * {
+    color: red;
+    margin: 0;
+  }
 `;
 
 export default Card;

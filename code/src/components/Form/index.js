@@ -1,47 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import Button from 'components/Styled/Button';
 import Card from 'components/Styled/Card';
-import { TextArea } from 'components/Styled/Globals';
+import TextArea from 'components/TextArea';
 
 import { URL, options } from 'helpers/reusables';
 
 const Form = ({ fetchThoughts }) => {
   const [newThought, setNewThought] = useState('');
-  const [charCount, setCharCount] = useState(0);
+
+  const textArea = useRef();
 
   const onSubmission = (event) => {
     event.preventDefault();
     fetch(URL, options(newThought))
       .then((res) => {
+        if (!res.ok) throw res;
         res.json();
         fetchThoughts();
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        err.json().then((errMessage) => {
+          textArea.current.handleNewError({
+            title: errMessage.message,
+            message: errMessage.errors.message.message
+          });
+        });
+      });
     // clean the form
     setNewThought('');
-    setCharCount(0);
+    textArea.current.resetField();
   };
 
-  const onInputChange = (event) => {
-    const textVal = event.target.value;
-    setNewThought(textVal);
-    setCharCount(textVal.length);
-  };
   return (
     <Card as="form" onSubmit={onSubmission}>
       <Card.Title as="label" htmlFor="happyThought">
         What is making you happy right now?
         <TextArea
-          id="happyThought"
-          value={newThought}
-          rows="5"
-          cols="45"
-          onChange={onInputChange}
-          required
-          minLength="5"
-          maxLength="140" />
-        <TextArea.Counter faded>{charCount} / 140</TextArea.Counter>
+          ref={textArea}
+          handleNewThought={(value) => setNewThought(value)}
+          fieldValue={newThought} />
       </Card.Title>
       <Button type="submit">
         <Button.Emoji role="img" aria-label="heart">

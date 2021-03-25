@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import update from 'immutability-helper';
 
-import Thought from 'components/Thought/Thought';
-import Form from 'components/Form/Form';
+import Thought from 'components/Thought';
+import Form from 'components/Form';
 import Main from 'components/Styled/Main';
 
 import { URL } from 'helpers/reusables';

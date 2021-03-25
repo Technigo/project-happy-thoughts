@@ -9,6 +9,13 @@ const Button = styled.button`
   ${(props) => props.type === 'submit'
     && `width: fit-content;
   padding: 0 25px;`}
+
+  ${(props) => props.position === 'top-right'
+    && `
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  `}
 `;
 
 Button.Emoji = styled.span`
