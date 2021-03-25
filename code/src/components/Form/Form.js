@@ -4,13 +4,20 @@ import Button from 'components/Styled/Button';
 import Card from 'components/Styled/Card';
 import { TextArea } from 'components/Styled/Globals';
 
-const Form = ({ handlePostNewThought }) => {
+import { URL, options } from 'helpers/reusables';
+
+const Form = ({ fetchThoughts }) => {
   const [newThought, setNewThought] = useState('');
   const [charCount, setCharCount] = useState(0);
 
   const onSubmission = (event) => {
     event.preventDefault();
-    handlePostNewThought(newThought);
+    fetch(URL, options(newThought))
+      .then((res) => {
+        res.json();
+        fetchThoughts();
+      })
+      .catch((err) => console.log(err));
     // clean the form
     setNewThought('');
     setCharCount(0);

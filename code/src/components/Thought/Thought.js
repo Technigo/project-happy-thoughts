@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 
 import Button from 'components/Styled/Button';
 import Card from 'components/Styled/Card';
 
-const Thought = ({ message, hearts, createdAt, _id, handlePostLikes }) => {
+import { URL_LIKE, options } from 'helpers/reusables';
+
+const Thought = ({ message, hearts, createdAt, _id, index, updateThought }) => {
+  const [clickedHeart, setClickedHeart] = useState(false);
+
   const onClickLike = () => {
-    handlePostLikes(_id);
-  }
+    fetch(URL_LIKE(_id), options())
+      .then((res) => {
+        res.json();
+        setClickedHeart(true);
+        // Instead of calling fetch method, we update
+        // the heart key value in the thoughts state array
+        updateThought(hearts + 1, index, 'hearts');
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <>
       <Card>
         <Card.Title>{message}</Card.Title>
-        <Button type="button" faded={hearts <= 0} onClick={onClickLike}>
+        <Button
+          type="button"
+          faded={!clickedHeart}
+          disabled={clickedHeart}
+          onClick={onClickLike}>
           <Button.Emoji role="img" aria-label="heart">
             ❤️
           </Button.Emoji>
