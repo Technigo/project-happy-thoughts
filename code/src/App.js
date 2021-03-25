@@ -9,7 +9,7 @@ export const App = () => {
   
   const storage = window.localStorage.getItem('myLikes')
   const array = (initialCount) => initialCount.split(",")
-  const initialCount = array(storage) || 0
+  const initialCount = (array(storage) || 0)
   
   const [thoughts, setThoughts] = useState([])
   const [myLikes, setMyLikes] = useState(initialCount)
