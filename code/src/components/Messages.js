@@ -6,17 +6,17 @@ import { API_URL, LIKE_API } from '../reusables/urls'
 export const Messages = ({ messageList, setMessageList }) => {
 
     useEffect(() => {
-        fetchList()
-      }, []);
+      //fetch for list of messages    
+      const fetchList = (url) => {
+        fetch(url)
+          .then(res => res.json())
+          .then(messages => setMessageList(messages))
+          .catch(error => console.error(error))
+      }
+        fetchList(API_URL)
+      }, [setMessageList]);
 
-//fetch for list of messages    
 
-      const fetchList = () => {
-          fetch(API_URL)
-            .then(res => res.json())
-            .then(messages => setMessageList(messages))
-            .catch(error => console.error(error))
-        }
 
 //fetch for increasing likes
 
