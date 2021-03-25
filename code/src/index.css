@@ -141,13 +141,17 @@ main {
 }
 
 .message-form__input-count {
+  display: flex;
+  justify-content: flex-end;
   font-size: 14px;
-  margin: 0;
-  text-align: right;
   width: 90%;
 }
 
-.count-warning {
+.message-form__input-count p {
+  margin: 0;
+}
+
+.count-warning{
  color: red;
 }
 

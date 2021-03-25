@@ -57,13 +57,15 @@ export const MessageForm = ({ setMessageList }) => {
 
       {/*if characters is above 140 or under 5, the warning class is added which makes the counter-text red*/}
       {isOutsideCharRange ? (
-        <p className="message-form__input-count count-warning">
-          {keypressCount}/140
-        </p>
+        <div class="message-form__input-count">
+          <p className="count-warning">{keypressCount}</p>
+          <p>/140</p>
+        </div>
       ) : (
-        <p className="message-form__input-count">
-          {keypressCount}/140
-        </p>
+        <div class="message-form__input-count">
+          <p>{keypressCount}</p>
+          <p>/140</p>
+        </div>
       )}
 
       <SubmitButton
