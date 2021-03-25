@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import API_URL from "./utils/urls"
+import { API_URL } from "./utils/urls"
 import Thought from "./components/Thought"
 import ThoughtForm from "./components/ThoughtForm"
 import Loader from "./components/Loader"
@@ -15,8 +15,6 @@ export const App = () => {
   useEffect(() => {
     fetchThoughts()
   }, [])
-
-  // localStorage.setItem("totalLikes", likeCounter)
 
   const fetchThoughts = () => {
     fetch(API_URL)

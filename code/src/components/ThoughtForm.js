@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import API_URL from "utils/urls"
+import { API_URL } from "utils/urls"
 
 const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
     const [isOver140, setIsOver140] = useState(false)
