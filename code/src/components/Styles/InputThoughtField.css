@@ -1,5 +1,5 @@
 .input-thought-wrapper{
-    width: 500px;
+    width: 300px;
     margin-top: 20px;
     padding: 20px;
     text-align: left;
@@ -37,4 +37,10 @@
     font-size: 17px;
     font-weight: 700;
     line-height: 1.7;
+}
+
+@media (min-width: 768px){
+    .input-thought-wrapper{
+        width: 500px;
+    }
 }

@@ -1,6 +1,6 @@
 .thought-card{
-    width: 500px;
-    margin-top: 20px;
+    width: 300px;
+    margin-top: 30px;
     padding: 20px;
     text-align: left;
     background: #eeeeee;
@@ -64,3 +64,8 @@
     display: flex;
 }
 
+@media (min-width: 768px){
+    .thought-card{
+        width: 500px;
+    }
+}
