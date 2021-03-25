@@ -82,6 +82,10 @@ code {
   width: 100%;
 }
 
+.message-content {
+  word-break: break-word;
+}
+
 input {
   text-align: left;
 }
@@ -92,13 +96,17 @@ input {
   border: 0;
 }
 
-.submit-btn:hover {
+/*.submit-btn:hover {
   background:  #ff8080;
-}
+}*/
 
 .likes {
   color: red;
   border-radius: 50px;
+}
+
+.liked {
+  background:  #ff8080;
 }
 
 /* ** Form Section ** */

@@ -21,7 +21,7 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
                     className="input"
                     id="newMessage"
                     type="text" 
-                    value={messageNew}
+                    value={messageNew} // kanske en ternary operator?
                     onChange={OnInputMessage}
                     cols="40" 
                     rows="6"
@@ -32,7 +32,7 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
                     <button className="submit-btn" type="submit">
                     <span className="likes">&#10084;</span> Send Happy Thought! <span className="likes">&#10084;</span>
                     </button>
-                    <p>Words: {words}</p>
+                    <p>Character: {words}</p>
                 </div>
             </div>
         </div>

@@ -14,10 +14,12 @@ export const App = () => {
 
     if ( messageNew.length   > 140) {
         return (
-            <div></div>
+            alert("you have passed 140 characters")
         )
     }
 }
+
+WordCount()
 
   useEffect(() => {
     fecthMessageList()

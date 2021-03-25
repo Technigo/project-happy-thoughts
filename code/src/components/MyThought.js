@@ -9,12 +9,13 @@ const MyTought = ({message, onLikesIncrease}) => {
         <div className="post-section">
             <div key={message._id} className="post-container">
         <div>
-            <h4>{message.message}</h4>
+            <h4 className="message-content">{message.message}</h4>
         </div>
             <div className="like-moment-section">
                 <div className="likes-section">
                     <button 
-                    className="likes-btn"
+                    className={message.hearts > 0 ? "likes-btn liked" : "likes-btn"}
+                    //className="likes-btn"
                     onClick={() => onLikesIncrease(message._id)}>
                         <span className="likes">&#10084;</span>  
                     </button>
