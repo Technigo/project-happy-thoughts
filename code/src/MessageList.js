@@ -5,7 +5,7 @@ import MessageElement from './MessageElement';
 const MessageList = ({ messageList, handleHeartClick }) => {
   return (
     <>
-      <div className="message-list">
+      <div>
         {messageList.map(message => (
           <MessageElement 
             key={message._id}
