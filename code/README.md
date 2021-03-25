@@ -1,8 +1,6 @@
-# Technigo React Starter App
+# Happy Thoughts Project
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
-
-Add components in the `src` folder and use them in `src/app.js` to get started.
+In this week's project, I built a website in React. Which enables users to post their happy thoughts, this data is posted to an API. The focus was useStates to determine when and what will happen when the components are mounted. 
 
 ## Usage
 
