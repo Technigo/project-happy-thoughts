@@ -8,7 +8,7 @@
 
 .wrapper-heart {
   position: absolute;
-  margin-top: 60px;
+  margin-top: 60cdpx;
   animation: pulse 1s infinite;
 }
 

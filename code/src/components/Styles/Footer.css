@@ -1,3 +1,24 @@
 .footer-wrapper{
-    border: 2px solid orange; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding:0;
+    font-size: 14px;
+}
+
+.footer-paragraphs{
+    margin: 0;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    margin: 0;
+}
+
+a{
+    color: #aa0000;
 }
