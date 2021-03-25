@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 
 import API_URL from './reusable/urls';
 
@@ -26,7 +27,7 @@ export const App = () => {
         <div
           key={thought._id}>
           <h4>{thought.message}</h4>
-          <p>{thought.createdAt}</p>
+          <p>{moment(thought.createdAt).fromNow()}</p>
         </div>
       ))}
     </div>
