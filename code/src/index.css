@@ -13,7 +13,10 @@ code {
 }
 
 .date {
+  position: absolute;
+  right: 25%;
   font-style: italic;
+  
 }
 
 .main-container {
@@ -29,16 +32,18 @@ code {
   align-items: center;
   padding: 10px;
   margin: 10px;
-  width: 80%;
+  width: 60%;
   border: 2px solid black;
   box-shadow: 6px 6px;
   padding: 10px;
   margin: 10px;
+  background: lightgray;
 
 }
 
 .happy-card {
-  width: 80%;
+  width: 60%;
+  height: auto;
   border: 2px solid black;
   box-shadow: 6px 6px;
   padding: 10px;
@@ -59,13 +64,14 @@ code {
 .message-field {
   margin: 10px;
   padding: 10px;
+  height: 50px;
+  width: 70%;
 }
 
 .heart-button {
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
-  background: lightgray;
+  border: none;
+  outline:none;
+  background: white;
 }
 
 .heart-button-active {
@@ -73,6 +79,13 @@ code {
   width: 40px;
   height: 40px;
   background: rgb(248, 143, 143);
+  padding: 12px;
+}
+
+.heart-button-not-active {
+border-radius: 100%;
+padding: 12px;
+background: lightgray;
 }
 
 .button-wrapper {

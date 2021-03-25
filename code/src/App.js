@@ -27,6 +27,7 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    event.target.reset();
 
     const options = {
       method: 'POST',
@@ -40,6 +41,7 @@ export const App = () => {
     .then(res => res.json())
     .then(receivedMessage => setMessageList([receivedMessage,...messageList]));
   }
+  
 
   const handleLikesIncrease = (id) => {
     const options = {

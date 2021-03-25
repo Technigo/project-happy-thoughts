@@ -4,7 +4,7 @@ const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
     return (
         <form className ="happy-form" onSubmit={onFormSubmit}>
         <label className="message-field" htmlFor="newMessage">Share your most happy thoughts!</label>
-        <input 
+        <input className="message-field" 
         id="newMessage"
         type="text"
         value={messageNew}

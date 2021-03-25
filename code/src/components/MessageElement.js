@@ -7,11 +7,12 @@ const MessageElement = ({ message, onLikesIncrease }) => {
               <h4>{message.message}</h4>
               <div className="button-wrapper">
               <button className="heart-button" onClick={() => onLikesIncrease(message._id)}>
-              <span className={message.hearts > 0 ? 'heart-button-active' : 'heart-button'} role='img' aria-label='heart icon'>❤</span>
+              <span className={message.hearts > 0 ? 'heart-button-active' : 'heart-button-not-active'} role='img' aria-label='heart icon'>❤</span>
               </button>
               <p className="heart-count">x {message.hearts}</p>
-              </div>
+              
               <p className="date">- {moment(message.createdAt).fromNow()}</p>
+              </div>
             </div>
     )
 }
