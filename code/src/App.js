@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import MyThought from './components/MyThought'
 import Form from './components/Form'
+import Map from './components/Map'
 
 import { API_URL, LIKES_URL } from './reusable/urls'
 
@@ -18,6 +18,10 @@ export const App = () => {
     .then(res => res.json())
     .then(message => setMessageList(message))
     .catch(err => console.error(err))
+  }
+
+  const OnInputMessage = (event) => { // This one updates the data inside our fetched data with the text we are writing in the input box 
+    setMessageNew(event.target.value)
   }
 
   const onFormSubmit = (event) => { // handleFormSubmit
@@ -52,23 +56,20 @@ export const App = () => {
     .catch(err => console.error(err))
   }
 
- 
+  
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        < Form messageNew={messageNew} setMessageNew={setMessageNew} />
-      </form>
-
+      < Form 
+      messageNew={messageNew} 
+      OnInputMessage={OnInputMessage}
+      onFormSubmit={onFormSubmit}
+      />
+      < Map 
+        messageList={messageList}
+        onLikesIncrease={onLikesIncrease}
+      />
       
-      
-      
-      {messageList.map(message => (
-        <>
-        < MyThought message={message} onLikesIncrease={onLikesIncrease}  />
-        
-        </>
-      ))}
     </div>
   )
 }

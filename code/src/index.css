@@ -12,44 +12,55 @@ code {
     monospace;
 }
 
-.input-section {
-  border: 5px solid black;
-  padding: 50px; /* I just add this to be able to see difference, remove it after */
+/* ** Form Section ** */
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 10px; */
 }
 
-.sub-btn {
+
+.input-section {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 5px;
+    width: 85%;
+    background: #D3D3D3;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  height: 200%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input {
+  text-align: left;
+}
+
+.submit-btn {
   border-radius: 25px;
   padding: 10px; /* I just add this to be able to see difference, remove it after */
+  border: 0;
 }
 
-.heart-icon {
-  color: red;
-}
-
-.likes-button{
-  border-radius: 50%;
-  border: 0px;
-  width: 50px;
-  height: 50px;
-}
-
-.likes-button:hover {
-  background-color: red;
-  opacity: 0.5;
+.submit-btn:hover {
+  background:  #ff8080;
 }
 
 .likes {
-  color: blue;
+  color: red;
   border-radius: 50px;
 }
 
-/*.input-section {
-  background-color: red;
-  display: flex;
-  justify-content: center;
-}
+/* ** Form Section ** */
 
-.input-section-box {
-  background-color: blue;
-  width: 50%;
-} */

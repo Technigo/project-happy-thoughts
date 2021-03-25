@@ -11,7 +11,9 @@ const MyTought = ({message, onLikesIncrease}) => {
             <h4>{message.message}</h4>
         </div>
             <div>
-                <button onClick={() => onLikesIncrease(message._id)}>
+                <button 
+                className="likes-btn"
+                onClick={() => onLikesIncrease(message._id)}>
                     <span className="likes">&#10084;</span>
                     {message.hearts}
                 </button>

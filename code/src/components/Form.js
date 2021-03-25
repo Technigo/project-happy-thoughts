@@ -1,19 +1,19 @@
 import React from 'react'
 
-const Form = ({messageNew, setMessageNew}) => {
+const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
 
-    const OnInputMessage = (event) => { // This one updates the data inside our fetched data with the text we are writing in the input box 
-        setMessageNew(event.target.value)
-      }
+   
 
     return (
-        <div className="input-section">
+        <form className="form-section" onSubmit={onFormSubmit}>
+            <div className="input-section">
             <div className="input-section-box">
                 <div>
-                    <label htmlFor="newMessage">Write new message</label>
+                    <label htmlFor="newMessage">What's making you happy right now?</label>
                 </div>
-                <div>
+                <div className="input-container">
                     <input
+                    className="input"
                     id="newMessage"
                     type="text" 
                     value={messageNew}
@@ -21,12 +21,13 @@ const Form = ({messageNew, setMessageNew}) => {
                     />
                 </div>
                 <div>
-                    <button className="sub-btn" type="submit">
-                    <span className="heart-icon">&#10084;</span> Send Gappy Thought! <span className="heart-icon">&#10084;</span>
+                    <button className="submit-btn" type="submit">
+                    <span className="likes">&#10084;</span> Send Gappy Thought! <span className="likes">&#10084;</span>
                     </button>
                 </div>
             </div>
         </div>
+        </form>
     )
 }
 
