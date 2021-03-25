@@ -12,6 +12,7 @@ const NewMessageForm = () => {
   const handleNewMessageChange = (e) => {
     setNewMessage(e.target.value);
   };
+  // console.log(newMessage.length)
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +41,10 @@ const NewMessageForm = () => {
         type="text"
         onChange={handleNewMessageChange}
       />
-      <button type="submit">Send message!</button>
+      <p style={{color: newMessage.length > 130 ? "red" : "black"}}>
+        {140 - newMessage.length} 
+      </p>
+      <button type="submit" disabled={newMessage.length < 6 || newMessage.length > 140}>Send message!</button>
     </form>
   );
 }
