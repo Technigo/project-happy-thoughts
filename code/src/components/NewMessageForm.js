@@ -25,7 +25,9 @@ export const NewMessageForm = ({ newMessage, setNewMessage, messageList, setMess
           .then(res => res.json())
           .then(newPost => setMessageList([...messageList, newPost]))
           .catch(error => console.error(error))
+          
           setTimeout(() => handleSubmit(), 2000)
+          
           window.location.reload()
       }
 
@@ -47,7 +49,7 @@ export const NewMessageForm = ({ newMessage, setNewMessage, messageList, setMess
 
             <button className='submitButton' type='submit'>
               <span role='img' aria-label='heart emoji'>&#128151;</span> 
-              Send Happy Thought 
+              &nbsp; Send Happy Thought &nbsp;
               <span role='img' aria-label='heart emoji'>&#128151;</span>
             </button>
           

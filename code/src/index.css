@@ -43,7 +43,7 @@ code {
 
 .newMessage {
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -52,7 +52,7 @@ textarea {
   height: 50px;
   border: solid 1px #d2d2d2;
   font-family: 'Inconsolata', monospace;
-  font-size: 13px;
+  font-size: 16px;
   resize: none;
   padding: 5px;
   margin: 10px 0;
@@ -64,7 +64,7 @@ textarea {
   padding: 10px 15px;
   border: none;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -85,7 +85,7 @@ textarea {
 .messageText {
   font-family: 'Inconsolata', monospace;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .heartAndTime {
@@ -104,13 +104,14 @@ textarea {
   height: 32px;
   width: 32px;
   border: none;
+  text-align: center;
   border-radius: 50%;
   margin-right: 5px;
 }
 
 .heart {
   font-size: 11px;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .nrOfLikes {
