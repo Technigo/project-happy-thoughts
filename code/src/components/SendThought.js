@@ -25,7 +25,7 @@ const SendThought = ({
         placeholder="Write your thoughts here, you will contribute to our database 😊">
       </textarea>
       <p 
-      className="counter-for-text" 
+      className="counter-for-text-input" 
       style={{ color: newThought.length > 130 ? "red" : "black "}}
       >
       {140 - newThought.length} characters left

@@ -10,6 +10,7 @@ import ThoughtsList from './components/ThoughtsList'
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [newThought, setNewThought] = useState('')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetchThoughtsList()
@@ -18,17 +19,19 @@ export const App = () => {
   //GET request here:
   const fetchThoughtsList = () => {
     fetch(HAPPY_THOUGHTS_URL)
-      .then(res => res.json())
+      .then(results => results.json())
+        setLoading(false)
       .then(thoughts => setThoughtsList(thoughts))
-      .catch(err => console.error(err))
+      .catch(error => console.error(error))
   }
 
   const onNewThoughtChange = (e) => {
     setNewThought(e.target.value)
   }
 
+  //Take away window location reload nedan om jag märker att sidan refreshar i alla fall****** !!! TODO
   //POST requests here: 
-  const handleFormSubmit = (e) => {
+    const handleFormSubmit = (e) => {
     e.preventDefault()
 
     const options = {
@@ -40,17 +43,18 @@ export const App = () => {
       }
 
     fetch(HAPPY_THOUGHTS_URL, options)
-      .then(res => res.json())
+      .then(results => results.json())
       // .then(recievedThought => setThoughtsList([...thoughtsList, recievedThought]))
       // Refetch data from the server & update local state at the same time.
       .then(() => fetchThoughtsList())
-      .then(() => {
+/*       .then(() => {
         window.location.reload()
-      })
-      .catch(err => console.error(err))
-  }
+      }) */
+      .catch(error => console.error(error))
+  } 
 
   const handleHeartsIncrease = (id) => {
+
     const options = {
       method: 'POST',
       headers: {
@@ -78,3 +82,4 @@ export const App = () => {
     </>
   )
 }
+

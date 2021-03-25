@@ -9,7 +9,7 @@ const ThoughtsList = ({ thoughtsList, handleHeartsIncrease }) => {
       <ThoughtsElement
       key={sentmessage._id}
       sentmessage={sentmessage}
-      LikesIncrease={handleHeartsIncrease}
+      handleHeartsIncrease={handleHeartsIncrease}
       />
       ))}
   </>
