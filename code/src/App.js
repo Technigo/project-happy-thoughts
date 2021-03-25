@@ -57,9 +57,10 @@ export const App = () => {
       </form>
 
       {messageList.map(message => (
-       <div key={message._id} className='message'>  
-         <h3>{message.message}</h3>
-         <p>Posted: {new Date(message.createdAt).toLocaleDateString()} at {new Date(message.createdAt).toLocaleTimeString()}  </p>
+        <div key={message._id} className='message'>  
+          <h3>{message.message}</h3>
+          <p>Posted: {new Date(message.createdAt).toLocaleDateString()} at {new Date(message.createdAt).toLocaleTimeString()}  </p>
+          <button>❤</button> <p> {message.hearts} loved this</p>
        </div>
       ))}
      

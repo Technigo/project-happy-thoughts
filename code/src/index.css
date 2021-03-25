@@ -18,6 +18,10 @@ code {
   border-radius: 5%;
   margin: 20px;
   padding: 10px 20px;
+  overflow-wrap: break-word;
+
+  /* background-image: url('../public/images/dialogue-window-148174_640.png'); */
+
 }
 
 h3 {
