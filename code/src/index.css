@@ -54,6 +54,8 @@ main {
   margin: 20px 0 5px 0;
   width: 90%;
   font-size: 16px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .message-info {
