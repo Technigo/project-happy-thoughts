@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { SubmitButton } from "./SubmitButton";
 
 export const MessageForm = ({ setMessageList }) => {
-  const [isOutsideCharRange, setIsOutsideCharRange] = useState(false);
+  const [isOutsideCharRange, setIsOutsideCharRange] = useState(true);
   const [userInput, setUserInput] = useState("");
   const [keypressCount, setKeypressCount] = useState(0);
 
