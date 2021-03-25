@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import MessageBoard from './components/MessageBoard'
 import MessageForm from './components/MessageForm'
@@ -6,8 +6,18 @@ import MessageForm from './components/MessageForm'
 
 
 export const App = () => {
+  
+  const storage = window.localStorage.getItem('myLikes')
+  const array = (initialCount) => initialCount.split(",")
+  const initialCount = array(storage)
+  
   const [thoughts, setThoughts] = useState([])
-  const [myLikes, setMyLikes] = useState([])
+  const [myLikes, setMyLikes] = useState(initialCount)
+  
+  
+  useEffect(()=> {
+    window.localStorage.setItem('myLikes', myLikes) 
+  }, [myLikes])
 
   return (
     <div className="content-container">
