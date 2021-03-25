@@ -58,16 +58,18 @@ const App = () => {
 
   return (
     <>
-      <main>
-        <MessageForm 
-          newMessage={newMessage}
-          handleNewMessage={handleNewMessage}
-          onFormSubmit={handleFormSubmit}  
-        />
-        <MessageList 
-          messageList={messageList}
-          handleHeartClick={handleHeartClick}
-        />
+      <main className="main">
+        <div className="container">
+          <MessageForm 
+            newMessage={newMessage}
+            handleNewMessage={handleNewMessage}
+            onFormSubmit={handleFormSubmit}  
+          />
+          <MessageList 
+            messageList={messageList}
+            handleHeartClick={handleHeartClick}
+          />
+        </div>
       </main>
     </>
   );
