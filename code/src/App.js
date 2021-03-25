@@ -6,7 +6,6 @@ import { API_URL, API_URL_LIKES } from './reusable/url'
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [newMessage, setNewMessage] = useState('')
-  
 
   useEffect(() => {//when mounted or when unmounted
     fetchMessageList()
@@ -53,11 +52,11 @@ export const App = () => {
             if (thought._id === receivedMessage._id) {
               thought.hearts += 1
             } 
-            return thought 
+            return thought //isnt thought and refreshedMessageList the same here?
           })
           setMessageList(refreshedMessageList)
        })   
-        .catch(error => alert('sorry something went wrong here', error))  
+        .catch(error => alert('Try typing less or more characters (min 5, max 140)', error))  
   }
 
 
@@ -67,7 +66,7 @@ export const App = () => {
         <div className="send-message-card">What makes you happy right now?
           <div>
             <label htmlFor="newMessage"></label>
-            <input
+            <textarea aria-label="write your happy thoughts here"
               className="input-field"
               placeholder="Your happy thoughts here"
               id="newMessage"
@@ -75,24 +74,27 @@ export const App = () => {
               value={newMessage}
               onChange={onNewMessageChange}
             >
-            </input>
+            </textarea>
+            {/* <textarea className="input-field" type="text" rows="3">Your happy thoughts here"</textarea> */}
           </div>
           <button 
             type ="submit"
             className="submit-button">
-            &#10084;&#65039; &nbsp; Upload happiness&nbsp; &#10084;&#65039;
+            &nbsp; &#10084;&#65039; &nbsp; Upload happiness&nbsp; &#10084;&#65039; &nbsp;
           </button> 
         </div>
       </form>
       {messageList.map(thought => (  // add reverse() after .map if reverse order of messages. 
-       <div className="GET-message" key={thought._id}>
-         <h4>{thought.message}</h4>
+       <div className="received-message-container" key={thought._id}>
+         <h4 className="received-message" >{thought.message}</h4>
          <button className="heart-like-button" onClick={() => onHeartLikeIncrease(thought._id)}>  {/* i want to understand whats happening here, why 2 arrow functions?? and can i place (thought._id) somewhere else? */}
-          {thought.hearts} 
-          &#10084;&#65039;
-         </button>
-         <p className="date"> {moment(thought.createdAt).fromNow()}</p>
-       </div>
+          <span aria-label="heart-icon">&#10084;&#65039;</span>
+         </button> 
+         {/* <div> */}
+          <span aria-label="number of likes" className="like-counter">x {thought.hearts} </span>
+          <span className="date"> {moment(thought.createdAt).fromNow()}</span>
+         {/* </div> */}
+        </div>
       ))}
       {/* <form onSubmit={onFormSubmit}>
         <label htmlFor="newMessage"></label>
