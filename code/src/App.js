@@ -7,6 +7,7 @@ import API_URL from './reusable/urls';
 export const App = () => {
 
   const [thoughtsList, setThoughtsList] = useState([]);
+  const [newThought, setNewThought] = useState('');
 
   useEffect(() => {
     fetchThoughtList()
@@ -19,10 +20,37 @@ export const App = () => {
       .catch(err => console.error(err));
   }
 
+  const onNewThoughtChange = (event) => {
+    setNewThought(event.target.value);
+  }
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/jason'
+      },
+      body: JSON.stringify({ text: newThought })
+    })
+  }
 
   return (
 
     <div>
+      <form onSubmit={onFormSubmit}>
+        <label htmlFor="thoughts">What's making you happy right now? </label>
+        <input
+          id="thoughts"
+          type="text"
+          value={newThought}
+          onChange={onNewThoughtChange}
+        />
+        <button type="submit">
+          <img src="./assets/heart.svg" alt="heart-icon" />
+          <p>Send Happy Thought</p>
+        </button>
+      </form>
       {thoughtsList.map(thought => (
         <div
           key={thought._id}>
