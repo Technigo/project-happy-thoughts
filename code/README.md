@@ -15,5 +15,5 @@ In this week's project, I built a website in React. Which enables users to post 
 
 The Challanges included Send a POST request with a JSON body. And to truly understand what is happens here. Further to then use components in a structured way, and using props to feed information between the components in a nice way. Another challange was to understand and find out: how to   send a POST request (with no body) to a new URL when user clicks the heart button on a thought.This I beleive will take some more time to fully grasp🤯. I have used youtube this time a lot trying to graps the different theoretical and pratical concepts of Props and useStates and useEffect.
 
-### The built and challanges
+### View the project live
 The project kan be viewed live here 👉 https://only-happy-thoughts.netlify.app/
