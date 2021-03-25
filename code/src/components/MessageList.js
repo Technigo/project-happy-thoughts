@@ -13,7 +13,8 @@ export const MessageList = ({ messageList, setMessageList }) => {
 
   useEffect(() => {
     fetchMessageList();
-  }, [{setMessageList}]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps 
+  }, [setMessageList]);
 
   /*calculates time since the message was posted and displays the time in
   a proper way depending on how long ago it was */
