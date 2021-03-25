@@ -80,7 +80,7 @@ export const App = () => {
           <button 
             type ="submit"
             className="submit-button">
-            &nbsp; &#10084;&#65039; &nbsp; Upload happiness&nbsp; &#10084;&#65039; &nbsp;
+            <span>&nbsp; &#10084;&#65039; &nbsp; Upload happiness&nbsp; &#10084;&#65039; &nbsp;</span>
           </button> 
         </div>
       </form>
