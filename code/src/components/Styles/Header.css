@@ -2,11 +2,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  
 }
 
 .wrapper-heart {
-  display: flex;
   position: absolute;
   margin-top: 88px;
   animation: pulse 1s infinite;
