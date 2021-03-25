@@ -7,8 +7,7 @@ import '../styles/SendThought.css'
 const SendThought = ({
   handleFormSubmit,
   newThought,
-  onNewThoughtChange,
-  message
+  onNewThoughtChange
 }) => {
 
   return (
@@ -33,7 +32,6 @@ const SendThought = ({
       <ButtonSubmit
         onClick={(e) => {e.preventDefault()}}
         disabled={newThought.length < 5 || newThought.length >= 140 ? true : false}
-        message={message}
       />
     </form>
   </div>

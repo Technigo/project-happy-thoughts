@@ -19,4 +19,3 @@ const SubmitButton = ({ onFormSubmit}) => {
 }
 
 export default SubmitButton
-
