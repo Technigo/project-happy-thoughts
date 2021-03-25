@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 
 import { API_URL } from "../reusable/urls";
 import { LikeButton } from "./LikeButton";
 
 export const MessageList = ({ messageList, setMessageList }) => {
-  const fetchMessageList = () => {
+  const fetchMessageList = useCallback(()  => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((messages) => setMessageList(messages))
       .catch((error) => console.log(error));
-  };
+  }, [setMessageList]);
+
 
   useEffect(() => {
     fetchMessageList();
-      // eslint-disable-next-line react-hooks/exhaustive-deps 
-  }, [setMessageList]);//this wasn't working, it still missed dependencies, so disabled the eslint for this.
+  }, [fetchMessageList]);//had problem with dependecies, so used callback to not get re-renders in useEffect dependecies
 
   /*calculates time since the message was posted and displays the time in
   a proper way depending on how long ago it was */
