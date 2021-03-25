@@ -29,7 +29,7 @@ code {
   align-items: center;
   padding: 10px;
   margin: 10px;
-  width: 500px;
+  width: 40%;
   border: 2px solid black;
   box-shadow: 6px 6px;
   padding: 10px;
@@ -38,7 +38,7 @@ code {
 }
 
 .happy-card {
-  width: 500px;
+  width: 40%;
   border: 2px solid black;
   box-shadow: 6px 6px;
   padding: 10px;
