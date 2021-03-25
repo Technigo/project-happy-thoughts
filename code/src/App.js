@@ -8,7 +8,7 @@ import MessageForm from './components/MessageForm'
 export const App = () => {
   
   const storage = window.localStorage.getItem('myLikes')
-  const array = (initialCount) => initialCount.split(",")
+  const array = (count) => count.split(",")
   const initialCount = (array(storage) || [])
   
   const [thoughts, setThoughts] = useState([])
