@@ -26,6 +26,7 @@ export const App = () => {
         <div
           key={thought._id}>
           <h4>{thought.message}</h4>
+          <p>{thought.createdAt}</p>
         </div>
       ))}
     </div>
