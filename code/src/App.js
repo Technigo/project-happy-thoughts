@@ -26,13 +26,18 @@ export const App = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    fetch(API_URL, {
+
+    const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/jason'
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ text: newThought })
-    })
+      body: JSON.stringify({ message: newThought })
+    };
+
+    fetch(API_URL, options)
+      .then(res => res.json())
+      .then(recivedThought => setThoughtsList([...thoughtsList, recivedThought]))
   }
 
   return (
@@ -47,8 +52,9 @@ export const App = () => {
           onChange={onNewThoughtChange}
         />
         <button type="submit">
-          <img src="./assets/heart.svg" alt="heart-icon" />
-          <p>Send Happy Thought</p>
+          <span role="img" aria-label="heart-icon">❤️</span>
+          Send Happy Thought
+          <span role="img" aria-label="heart-icon">❤️</span>
         </button>
       </form>
       {thoughtsList.map(thought => (
