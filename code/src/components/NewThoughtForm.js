@@ -10,9 +10,8 @@ const NewThoughtForm = ({newThought, setNewThought, setThoughtsList, thoughtsLis
   }
 
    //When the form is submitted save the newThought (message the user sumbit) on the server by using fetch post request and update the list of all happy thoughts
-   const onFormSubmit = event => {
+  const onFormSubmit = event => {
     event.preventDefault()
-    setNewThought('')
 
     const postRequest = {
       method: 'POST',
@@ -26,6 +25,9 @@ const NewThoughtForm = ({newThought, setNewThought, setThoughtsList, thoughtsLis
       .then(response => response.json())
       .then(receivedThought => setThoughtsList([receivedThought, ...thoughtsList]))
       .catch(error => console.error(error))
+
+    //Clear the textinput field from the form
+    setNewThought('')
   }
 
   return(

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 import { FETCH_URL, LIKE_URL } from './reusable/urls'
+
 import NewThoughtForm from './components/NewThoughtForm'
 import ThoughtsList from 'components/ThoughtsList'
 
@@ -44,8 +45,8 @@ export const App = () => {
       {
         thoughtsList.map(thought => 
           <ThoughtsList 
-            thought={thought}
             key={thought._id}
+            thought={thought}
             LIKE_URL={LIKE_URL}
             thoughtsList={thoughtsList}
             setThoughtsList={setThoughtsList}

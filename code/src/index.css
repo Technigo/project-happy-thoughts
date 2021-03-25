@@ -9,7 +9,7 @@
 body {
   margin: 0 auto;
   font-family: 'Roboto Mono', monospace;
-  background: #fde5e5;
+  background: #fcf2f2;
 }
 
 .main-wrapper {
@@ -122,6 +122,7 @@ body {
   border: none;
   outline: none;
   background-color: #f8f8f8;
+  cursor: pointer;
 }
 
 .thought-time, .likes-counter {
