@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+
+import MessageForm from './components/MessageForm'
+import MessageList from './components/MessageList'
 
 import { API_URL, LIKES_URL } from './reuseable/urls';
 
@@ -19,11 +21,11 @@ export const App = () => {
       .catch(err => console.error(err)); //Catch handler showing error message if something breaks
   }
 
-  const onNewMessageChange = (event) => {
+  const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value)
   }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -39,7 +41,7 @@ export const App = () => {
       .catch(err => console.error(err)); 
   }
 
-  const onLikesIncrease = (id) => {
+  const handleLikesIncrease = (id) => {
     
     const options = {
       method: 'POST',
@@ -64,27 +66,15 @@ export const App = () => {
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newMessage">write your happy thoughts</label>
-        <input 
-          id="newMessage" 
-          type="text" 
-          value={newMessage}
-          onChange={onNewMessageChange}
-        >  
-        </input>
-        <button type="submit">Send HAPPY thought!</button>
-      </form>
-      {messageList.map(message => (
-        <div key={message._id}>
-          <h4>{message.message}</h4>
-          <button onClick={() => onLikesIncrease(message._id)}>
-            ❤
-            {message.hearts}
-          </button>
-          <p className="date">- {moment(message.createdAt).fromNow()}</p> 
-        </div>
-      ))} 
+      <MessageForm 
+        newMessage={newMessage} 
+        onNewMessageChange={handleNewMessageChange}
+        onFormSubmit={handleFormSubmit}
+      />
+      <MessageList 
+        messageList={messageList} 
+        handleLikesIncrease={handleLikesIncrease}
+      />
     </div>
   )
 }
