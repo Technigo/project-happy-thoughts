@@ -24,9 +24,14 @@ export const App = () => {
       setNewMessage(event.target.value)
     }
 
+    const onFormSubmit = (event) => {
+      event.preventDefault()
+      console.log('Form submitted!', newMessage)
+    }
+
     return (
     <div>
-       <form>
+       <form onSubmit={onFormSubmit}>
         <label htmlFor="newMessage">Write new message!</label>
         <input
           id="newMessage"
@@ -34,7 +39,7 @@ export const App = () => {
           value={newMessage}
           onChange={onNewMessageChange}
         />
-        <button>Send message!</button>
+        <button type="onSubmit">Send message!</button>
       </form> 
       
       {messageList.map(message => (
