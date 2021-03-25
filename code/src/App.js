@@ -11,7 +11,7 @@ export const App = () => {
     fetchThoughtList()
   }, [])  
   
-  const fetchThoughtList = () => {  // fetch request for resent thoughts
+  const fetchThoughtList = () => {  // GET fetch request for resent thoughts
     fetch(API_URL_THOUGHTS)
       .then(res => res.json()) // response unpacked
       .then(thoughts => setThoughtList(thoughts)) // data recieved and applied
@@ -22,11 +22,22 @@ export const App = () => {
     setThoughtNew(event.target.value)
   }
 
+  const onFormSubmit = (event) => {
+    event.preventDefault()
+    fetch(API_URL_THOUGHTS, {
+      method: 'POST',  // POST fetch request
+      headers: {
+        'Content-Type': 'application/json' // text message for a new thought in json format is going to be sent
+      },
+      body: JSON.stringify({ message: thoughtNew }) // "message" equals to the name in the json, wrapped in stringify to pack in JSON format
+    })
+  }
+
   fetchThoughtList()
 
   return (
     <div>  
-      <form>
+      <form onSubmit={onFormSubmit}>
         <label htmlFor="newThought">What's making you happy right now?</label>
         <input
         id="newThought"
@@ -34,6 +45,7 @@ export const App = () => {
         value={thoughtNew}
         onChange={onThoughtNewChanged}
         />
+        <button type="submit">Send Happy Thought</button>
       </form>
       {thoughtList.map(thought => (
         <div key={thought._id}>
