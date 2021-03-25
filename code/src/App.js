@@ -1,12 +1,12 @@
 import React, { useState, useEffect} from 'react'
 import moment from 'moment';
-
-import { API_URL } from './reusable/url'
+//import { HeartLike } from "./components/HeartLike";
+import { API_URL, API_URL_LIKES } from './reusable/url'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [newMessage, setNewMessage] = useState('')
-  // const [heart, setHeart] = useState (0)
+  
 
   useEffect(() => {//when mounted or when unmounted
     fetchMessageList()
@@ -17,7 +17,6 @@ export const App = () => {
       .then(res => res.json())
       .then(messages => setMessageList(messages))
       .catch(err => console.error(err));
-  
   }
 
   const onNewMessageChange = (event) => {
@@ -34,16 +33,38 @@ export const App = () => {
       },
       body: JSON.stringify({ message: newMessage }) 
     })
-    .then((res) => res.json ()) //what happens here, object text showing in input field, messages are not updating in real time
+    .then((res) => res.json ()) //what happens in this section? how is it making real time after submit
     .then((messageList) =>{
       setMessageList((previousMessage) => [messageList, ...previousMessage])
     })
   }
 
+  const onHeartLikeIncrease = (id) => {
+    const options = {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'
+      } 
+    };
+       fetch(API_URL_LIKES(id), (options))
+        .then(res => res.json())
+        .then(receivedMessage => { //newest code received from server updated with likes
+          const refreshedMessageList = messageList.map(thought => {
+            if (thought._id === receivedMessage._id) {
+              thought.hearts += 1
+            } 
+            return thought 
+          })
+          setMessageList(refreshedMessageList)
+       })   
+        .catch(error => alert('sorry something went wrong here', error))  
+  }
+
+
   return (
     <div className="form-wrapper">
        <form onSubmit={onFormSubmit}> {/*why a form? is it due to a submit button?  */}
-        <div className="send-message-card">What makes you happy right now
+        <div className="send-message-card">What makes you happy right now?
           <div>
             <label htmlFor="newMessage"></label>
             <input
@@ -56,13 +77,21 @@ export const App = () => {
             >
             </input>
           </div>
-          <button className="submit-button"type="submit">&hearts;  Upload happiness &hearts;</button>
+          <button 
+            type ="submit"
+            className="submit-button">
+            &#10084;&#65039; &nbsp; Upload happiness&nbsp; &#10084;&#65039;
+          </button> 
         </div>
       </form>
-      {messageList.map(text => (  // add reverse() after .map if reverse order of messages. 
-       <div key={text._id}>
-         <h4 className="GET-message">{text.message}</h4>
-         <p className="date">&#9716; {moment(text.createdAt).fromNow()}</p>
+      {messageList.map(thought => (  // add reverse() after .map if reverse order of messages. 
+       <div className="GET-message" key={thought._id}>
+         <h4>{thought.message}</h4>
+         <button className="heart-like-button" onClick={() => onHeartLikeIncrease(thought._id)}>  {/* i want to understand whats happening here, why 2 arrow functions?? and can i place (thought._id) somewhere else? */}
+          {thought.hearts} 
+          &#10084;&#65039;
+         </button>
+         <p className="date"> {moment(thought.createdAt).fromNow()}</p>
        </div>
       ))}
       {/* <form onSubmit={onFormSubmit}>
@@ -70,7 +99,7 @@ export const App = () => {
         <input
           placeholder="&hearts; Your happy thoughts here &hearts;"
           id="newMessage"
-          type="text"
+          type="type"
           value={newMessage}
           onChange={onNewMessageChange}
         >
