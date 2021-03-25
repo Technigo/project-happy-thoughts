@@ -4,17 +4,17 @@ import { API_URL } from "../reusable/urls";
 import { LikeButton } from "./LikeButton";
 
 export const MessageList = ({ messageList, setMessageList }) => {
-  const fetchMessageList = useCallback(()  => {
+  const fetchMessageList = useCallback(() => {
+    //had problem with dependecies, so used callback to not get re-renders in useEffect dependecies
     fetch(API_URL)
       .then((res) => res.json())
       .then((messages) => setMessageList(messages))
       .catch((error) => console.log(error));
   }, [setMessageList]);
 
-
   useEffect(() => {
     fetchMessageList();
-  }, [fetchMessageList]);//had problem with dependecies, so used callback to not get re-renders in useEffect dependecies
+  }, [fetchMessageList]);
 
   /*calculates time since the message was posted and displays the time in
   a proper way depending on how long ago it was */

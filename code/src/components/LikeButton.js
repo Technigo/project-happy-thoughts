@@ -24,7 +24,9 @@ export const LikeButton = ({ likes, id, messageList, setMessageList }) => {
       .then((likedMessage) => {
         const newMessageList = messageList.map((message) => {
           if (message._id === likedMessage._id) {
-            isLiked ? (message.hearts -= 1) : (message.hearts += 1);
+            isLiked 
+            ? (message.hearts -= 1) 
+            : (message.hearts += 1);
           }
           return message;
         });

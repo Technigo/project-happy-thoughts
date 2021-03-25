@@ -3,13 +3,27 @@ import React from "react";
 import { API_URL } from "../reusable/urls";
 
 export const SubmitButton = (props) => {
-  const { setMessageList, userInput, setUserInput, setKeypress } = props;
-  
+  const {
+    setMessageList,
+    userInput,
+    setUserInput,
+    setKeypressCount,
+    isOutsideCharRange,
+  } = props;
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    fetchNewMessage();
-    setUserInput("");
-    setKeypress(0);
+    return isValidated()
+      ? (fetchNewMessage(), setUserInput(""), setKeypressCount(0))
+      : alert("The message should be between 5 and 140 characters");
+  };
+
+  //checks if the characters are above 5 and under 140
+  const isValidated = () => {
+    if (isOutsideCharRange) {
+      return false;
+    }
+    return true;
   };
 
   const fetchNewMessage = () => {
