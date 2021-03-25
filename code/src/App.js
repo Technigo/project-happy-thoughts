@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
-import API_URL from './reusable/urls';
+import { API_URL, LIKE_URL } from './reusable/urls';
 
 
 export const App = () => {
@@ -38,6 +38,10 @@ export const App = () => {
     fetch(API_URL, options)
       .then(res => res.json())
       .then(recivedThought => setThoughtsList([...thoughtsList, recivedThought]))
+  }
+
+  const onLikesIncrease = () => {
+    fetch(LIKE_URL())
   }
 
   return (
