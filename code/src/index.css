@@ -1,6 +1,9 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  
+  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -9,5 +12,111 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    monospace;*/
+}
+
+.main {
+  margin:20px;
+}
+
+.form-container {
+border: 1px solid black;
+background-color: rgb(241, 241, 241);
+height: 130px;
+width: 90%;
+padding: 15px;
+box-shadow:  8px 8px black;
+}
+
+.form-text {
+font-size: 13px;
+font-weight: bold;
+}
+
+.form-input {
+height: 45px;
+width: 95%;
+border: 2px solid rgb(214, 214, 214);
+margin-top: 10px;
+}
+
+.button-counter-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 13px;
+
+}
+.form-submit-button {
+height: 40px;
+border: none;
+border-radius: 20px;
+background-color: rgb(252, 188, 188);
+padding: 5px 20px;
+margin-top: 10px;
+font-weight: bold;
+}
+
+.characters-counter {
+  display:flex;
+  text-align: end;
+  margin-top: 15px;
+}
+
+.thought-list {
+  border: 1px solid black;
+  margin: 30px 0px;
+  height: 110px;
+  width: 90%;
+  padding: 15px;
+  font-size: 14px;
+  box-shadow:  8px 8px black;
+}
+
+.thought-message{
+  margin: 0px;
+  height: 70px;
+ 
+}
+
+.heart-date-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.heart-button {
+  border: none;
+  background-color: white;
+  
+  padding: 0;
+  color: grey;
+  display: flex;
+  flex-direction: row;
+}
+
+.heart {
+  padding: 12px;
+  margin-right: 10px;
+  background-color: rgb(252, 188, 188);
+  border-radius: 50%;
+}
+
+.date {
+  font-size: 13px;
+  color: rgb(153, 153, 153);
+}
+
+/****MEDIA QUERIES TABLET****/
+@media (min-width: 767px){
+  .main {
+    margin:50px 80px;
+  }
+}
+
+/****MEDIA QUERIES LAPTOP****/
+@media (min-width: 1024px){
+  .main {
+    margin:50px 220px;
+  }
 }
