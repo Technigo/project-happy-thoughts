@@ -11,7 +11,7 @@ const MessageForm = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
           value={newMessage}
           onChange={onNewMessageChange}
         />
-        <button type='submit' className='input-send-btn'><span role="img" aria-label="Red heart emoji">❤️</span> Send Happy Thought<span role="img" aria-label="Red heart emoji">❤️</span></button>
+        <button type='submit' className='input-send-btn'><span role="img" aria-label="Red heart emoji">❤️ </span> Send Happy Thought<span role="img" aria-label="Red heart emoji"> ❤️</span></button>
     </form>
   )
 }

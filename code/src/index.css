@@ -39,7 +39,6 @@ body {
   font-weight: 500;
   margin-top: 5px;
   margin-bottom: 15px;
-
 }
 
 .input-text {
@@ -60,6 +59,7 @@ body {
   padding: 5px;
   border-radius: 20px;
   font-family: "Trispace", sans-serif;
+  font-size: 14px;
   color: #1D1D1D;
   margin: 15px 0px;
 }
@@ -71,6 +71,7 @@ body {
 
 h4 {
   font-family: 'Menlo', sans-serif;
+  font-size: 16px;
   font-weight: 300;
   margin: 10px;
 }
@@ -90,6 +91,7 @@ p {
 
 .numbers {
 margin-left: 5px;
+font-size: 12px;
 } 
 
 .heart-little-box {
@@ -108,3 +110,56 @@ margin-left: 5px;
   width: 30px;
 }
 
+/* MEDIA TABLETT & DESKTOP */
+
+@media (min-width: 768px) {
+  .message-card,
+  .input-card {
+    display: flex;
+    flex-direction: column;
+    margin:20px auto;
+    width: 500px;
+    height: auto;
+  }
+
+  .input-title{
+    font-size: 20px;
+  }
+
+  .input-text {
+    font-size: 18px;
+    width: 470px;
+    height: 80px;
+    max-width: 470px;
+  }
+
+  .input-send-btn {
+    font-size: 18px;
+    width: 250px;
+    padding: 10px;
+  }
+
+  h4 {
+    font-family: 'Menlo', sans-serif;
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .numbers {
+    font-size: 14px;
+    margin-left: 10px;
+  } 
+
+  .heart-little-box {
+    width: 60px;
+    padding-left: 2px;
+  }
+
+  .heart-btn {
+    height: 35px;
+    width: 35px;
+  }
+}
