@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
-import moment from 'moment'
 
 import { Fetch_API, like_url } from './reusable/urls'
+
+import { CardContainer } from './components/CardContainer'
+
 
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [thoughtsNew, setThoughtsNew] = useState('')
-  const [loader, setLoader] = useState (true)
-  
+  const [loader, setLoader] = useState (true)  
 
   useEffect(() => {
     fetchThoughtsList()
@@ -42,7 +43,7 @@ export const App = () => {
     .catch(err => console.error(err))
   }  
 
-  const onLikesIncrease = (id) => { 
+  const HandleLikesIncrease = (id) => {     
     const option = {
       method: 'POST',
       headers: {
@@ -59,7 +60,7 @@ export const App = () => {
       } 
       return thoughts
     }) 
-    setThoughtsList(updatedThoughtsList)
+    setThoughtsList(updatedThoughtsList)      
   })
   .catch(err => console.error(err))
 }
@@ -70,26 +71,26 @@ export const App = () => {
     <div className="main">
       {loader === true && <div className="lds-heart"><div></div></div>}   
       
-        <form onSubmit={onSubmitForm}>
-          <label htmlFor="newThougt">Write a thought</label>
+        <form className="happy-thought-form" onSubmit={onSubmitForm}>
+          <label htmlFor="newThougt">What´s making you happy right now?</label>
           <input 
             id="newThougt"
             type="text"
             value={thoughtsNew}
             onChange={onThoughtsNew}
-            />
-            <button type="submit">Submit</button>
+          />
+          <button className="send-thought-button" type="submit">
+            <span role="img" aria-label="Heart">💗</span>
+              Send Happy Thought 
+            <span role="img" aria-label="Heart">💗</span>
+          </button>
         </form>
 
-        {thoughtsList.map(thoughts => (
-          <div className="card-container" key={thoughts._id}>
-            <h4>{thoughts.message}</h4>
-            <p>{moment(thoughts.created).fromNow()}</p>
 
-            <button onClick= {() => onLikesIncrease(thoughts._id)}>{thoughts.hearts}</button>
-            
-          </div>
-        ))}      
+        <CardContainer 
+          thoughtsList={thoughtsList}
+          HandleLikesIncrease={HandleLikesIncrease}
+        />
     </div>
   )
 }
