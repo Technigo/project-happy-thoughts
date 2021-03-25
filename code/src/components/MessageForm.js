@@ -4,7 +4,6 @@ import { API_URL } from '../reusable/urls'
 const MessageForm = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState('')
   const [counter, setCounter] = useState(0)
-  console.log(newThought)
   const onNewThoughtChanged = event => {
     setNewThought(event.target.value)
     setCounter(event.target.value.length)
@@ -67,9 +66,9 @@ const MessageForm = ({ thoughts, setThoughts }) => {
             type='submit'
             className="submit-button"
           >
-            <span className="heart">{'\u2764'}</span>
+            <span className="heart">{'\u2665'}</span>
             Send happy thought
-            <span className="heart">{'\u2764'}</span>
+            <span className="heart">{'\u2665'}</span>
           </button>
         </div>
       </form>

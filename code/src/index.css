@@ -35,10 +35,11 @@ code {
   font-family: Trispace;
 }
 
-.heading-wrapper, .button-wrapper, .counter-wrapper, .likes-container, .thought-date-wrapper  {
+.heading-wrapper, .button-wrapper, .counter-wrapper, .likes-container, .thought-date-wrapper, .mylikes-wrapper {
   width: 80%;
   margin: auto;
 }
+
 
 .heading{
   margin: 0 0 10px 0;
@@ -74,6 +75,16 @@ code {
   border: none;
   font-size: 12px;
   font-family: Trispace;
+}
+
+/* My likes */
+.mylikes-container{
+  margin: 40px;
+}
+
+.mylikes {
+  font-family: Trispace;
+  color: red;
 }
 
 /* Message board styling */
