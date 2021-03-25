@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import moment from "moment"
 
-import { API_URL } from "./reusable/urls"
+import MessageForm from "./components/MessageForm"
+import MessageList from "./components/MessageList"
+
+import { API_URL, LIKES_URL } from "./reusable/urls"
 
 export const App = () => {
   const [messageList, setMessageList] = useState([])
@@ -18,11 +20,11 @@ export const App = () => {
       .catch(err => console.error(err))
   }
 
-  const onMessageNewChange = (event) => {
+  const handleMessageNewChange = (event) => {
     setMessageNew(event.target.value)
   }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -35,28 +37,44 @@ export const App = () => {
 
     fetch(API_URL, options)
     .then(res => res.json())
-    .then(recievedMessage => setMessageList([...messageList, recievedMessage]))
+    .then(recievedMessage => setMessageList([recievedMessage, ...messageList]))
+  
+    setMessageNew("")
+  }
+
+  const handleLikesIncrease = (id) => {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(LIKES_URL(id), options)
+      .then(res => res.json())
+      .then(recievedMessage => {
+        const updatedMessageList = messageList.map(message => {
+          if (message._id === recievedMessage._id) {
+            message.hearts += 1
+          }
+          return message
+        })
+        setMessageList(updatedMessageList)
+      })
+      .catch(err => console.error(err))
   }
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newMessage">What's making you happy right now?</label> 
-        <input 
-        id="newMessage"
-        type="text"
-        value={messageNew}
-        onChange={onMessageNewChange}
-        />
-        <button type="submit">Send Happy Thought</button>
-      </form>
-      {messageList.map(message => (
-        <div key={message._id}>
-          <h4>{message.message}</h4>
-          <p>x {message.hearts}</p>
-          <p>{moment(message.createdAt).fromNow()}</p>
-        </div>
-      ))}
+      <MessageForm 
+      messageNew={messageNew}
+      onMessageNewChange={handleMessageNewChange}
+      onFormSubmit={handleFormSubmit}
+      />
+      <MessageList 
+      messageList={messageList} 
+      handleLikesIncrease={handleLikesIncrease}
+      />
     </div>
   )
 }
