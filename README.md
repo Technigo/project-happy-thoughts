@@ -1,13 +1,18 @@
 # Happy Thoughts
+This project was to build a twitter-like app and using useState, useEffect and also both GET and POST from an API.
+We were also to copy a finished design as close as possible.
 
-Replace this readme with your own information about your project.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+# My project
+I divided my app in three components: Header, MessageForm & MessageList. At first I put the hooks and fetch'es in the components, but realised that wouldn't be a good idea because one of my components needed information from another which was not possible (to my knowledge) with that kind of structure. So I moved most of the logic to app.js and by doing so I got to practise a bit more on props :-)
 
-## The problem
+I used flexbox for the layout and moment to change the way the time on the message is viewed in the app.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+# Tech used
+HTML/JSX
+CSS
+JavaScript
+React
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-2021.netlify.app/

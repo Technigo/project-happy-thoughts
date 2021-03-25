@@ -36,8 +36,9 @@ code {
 }
 
 .form-container{
-  background-color: #ffadad; ;
+  background-color: #ffadad;
 }
+
  .form-box {
   flex-direction: column;
   border: 1px solid #000;
@@ -97,7 +98,7 @@ overflow-wrap: break-word;
   border-radius: 50%;
   width: 35px;
   height: 35px;
-  background-color: #e4d4d4;
+  background-color: ffe9e9;
   cursor: pointer;
   border: none;
 }
@@ -121,5 +122,4 @@ overflow-wrap: break-word;
   .thoughts-card, .form-box {
     width: 20%;
   }
-
 }

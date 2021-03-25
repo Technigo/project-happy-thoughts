@@ -6,10 +6,11 @@ import MessageForm from 'components/MessageForm'
 
 import { API_URL, API_LIKES} from './reusable/urls'
 
+
 export const App = () => {
 
   const [newMessage, setNewMessage] = useState('')
-  const [MessageListArray, setMessageListArray] = useState([])
+  const [messageListArray, setMessageListArray] = useState([])
 
   useEffect(() => {
     fetchMessageList();
@@ -32,7 +33,6 @@ export const App = () => {
  //SECOND FETCH TO POST NEW MESSAGE
   const onFormSubmit = (event) => {
     event.preventDefault();
-    console.log('form submitted', newMessage)
 
     const options = {
       method: 'POST',
@@ -45,12 +45,13 @@ export const App = () => {
     fetch(API_URL, options)
     .then(res => res.json())
     .then(happyMessage => {
-      setMessageListArray([happyMessage,...MessageListArray]);setNewMessage("");
+      setMessageListArray([happyMessage,...messageListArray]);
+      setNewMessage("");
     });
   }
 
 
- //FETCH AND TO POST AND UPDATE THE LIKES
+ //FETCH TO POST AND UPDATE THE LIKES
 
  const handleMoreLikes = (id) => {
   const options = {
@@ -63,7 +64,7 @@ export const App = () => {
    fetch(API_LIKES(id),options)
    .then(res => res.json())
     .then(()=>{
-   const NewMessageArray= MessageListArray.map(thought =>{
+   const NewMessageArray= messageListArray.map(thought =>{
         if (thought._id === id){
           thought.hearts +=1
         }
@@ -86,7 +87,7 @@ export const App = () => {
       />
 
       <MessageList
-        MessageListArray={MessageListArray}
+        messageListArray={messageListArray}
         handleMoreLikes={handleMoreLikes}
       />
 
