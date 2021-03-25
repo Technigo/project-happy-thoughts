@@ -3,7 +3,7 @@ import moment from 'moment';
 
 export const MessageElement = ({ message, onLikeClick }) => {
   return (
-    <div className="message-container">
+    <section className="message-container">
       <h4 className="message-title" tabIndex="0">{message.message}</h4>
       <div className="like-and-date">
         <p className="likes">
@@ -19,6 +19,6 @@ export const MessageElement = ({ message, onLikeClick }) => {
         </p>
         <p className="dates">{moment(message.createdAt).fromNow()}</p>
       </div>
-    </div>
+    </section>
   )
 }

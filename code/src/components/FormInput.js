@@ -12,7 +12,7 @@ export const FormInput = ({ newMessage, setNewMessage, onMessageSubmit, errorMes
       onSubmit={onMessageSubmit}
       className="form-container">
       <label htmlFor="message">
-        <h3 className="form-title" tabIndex="0">What's making you happy right now?</h3>
+        <h1 className="form-title" tabIndex="0">What's making you happy right now?</h1>
       </label>
       <textarea 
         id="message" 
@@ -25,10 +25,10 @@ export const FormInput = ({ newMessage, setNewMessage, onMessageSubmit, errorMes
         onChange={handleNewMessage}>
       </textarea>
       <div className="error-character-div">
-        <span className="error-message">{errorMessage}</span>
-        <p className="character-number">
+        <p className="error-message">{errorMessage}</p>
+        <p className="character-counter">
           <span 
-            className={newMessage.length > 140 ? "red" : ""}>{newMessage.length}</span> / 140
+            className={newMessage.length > 140 ? "counter-red" : ""}>{newMessage.length}</span> / 140
         </p>
       </div>
       <FormButton />

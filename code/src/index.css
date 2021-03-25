@@ -20,38 +20,22 @@ code {
 }
 
 /* Loading spinner */
-.loading-container {
+.loading-spinner {
   width: 100px;
   height: 100px;
-  margin-top: 50px;
+  margin: 50px 0;
   border: 10px solid #F2F0F0;
   border-radius: 50%;
   border-top: 10px solid #FFADAD;;
-  animation: load 4s linear infinite;
+  animation: loading 4s linear infinite;
 }
 
-@keyframes load {
+@keyframes loading {
   from {
     transform: rotate(0deg)
   }
   to {
     transform: rotate(360deg)
-  }
-}
-
-/* Animation for when submitting message */
-.message-animation {
-  animation: sending 0.3s ease-out;
-  margin-top: -200px;
-  z-index: 1;
-}
-
-@keyframes sending {
-  from {
-    font-size: 50px;
-  }
-  to {
-    font-size: 350px;
   }
 }
 
@@ -102,7 +86,7 @@ code {
 }
 
 /* Character counter */
-.character-number {
+.character-counter {
   text-align: right;
   margin: 0;
   color: #868585;
@@ -110,22 +94,25 @@ code {
   font-family: "Roboto";
 }
 
-.red {
+.counter-red {
   color: red;
 }
 
 /* Submit button */
 .button {
+  display: flex;
+  align-items: center;
   margin: 2px 0 15px 15px;
-  width: 60%;
-  height: 40px;
+  width: fit-content;
+  padding: 10px 15px;
+  height: fit-content;
   border-radius: 50px;
   border: none;
   background-color: #FFADAD;
   font-weight: bold;
   color: #2C2C2C;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
   outline: none;
 }
 
@@ -143,6 +130,59 @@ code {
 
 button:focus {
   outline: 2px solid #EB5562;
+}
+
+/* Animation for when posting message */
+.message-animation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  z-index: 1;
+  animation: sending 1s 1s;
+}
+
+@keyframes sending {
+  from {
+    transform: translateY(0)
+  }
+  to {
+    transform: translateY(1000px)
+  }
+}
+
+.fa-heart {
+  color: #EB5562;
+  position: absolute;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 60px;
+  opacity: 0;
+  animation: heart 1.5s 0.5s;
+}
+
+@keyframes heart {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fa-envelope-open {
+  font-size: 100px;
+  animation: letter 0.5s;
+}
+
+@keyframes letter {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1.0);
+  }
 }
 
 /* All the messages */
@@ -172,7 +212,6 @@ button:focus {
 }
 
 /* Like button with different backgrounds depending on liked or not */
-
 .like-button {
   display: flex;
   align-items: center;
@@ -200,7 +239,6 @@ button:focus {
   align-items: center;
   color: #8F8F8F;
   font-size: 13px;
-  font-family: "Roboto";
 }
 
 .dates {
@@ -220,8 +258,7 @@ button:focus {
   }
 
   .button {
-    width: 50%;
-    height: 45px;
+    padding: 12px 15px;
     font-size: 14px;
   }
 

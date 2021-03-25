@@ -16,7 +16,7 @@ export const App = () => {
   
   useEffect(() => {
     fetchAllMessages();
-  }, [])
+  }, []);
 
   // Fetching all the thoughts
   const fetchAllMessages = () => {
@@ -33,7 +33,6 @@ export const App = () => {
   // Clicking the submit button, posting message
   const handleMessageSubmit = (e) => {
     e.preventDefault();
-    setLoading(true)
 
     fetch(API_URL, {
       method: "POST",
@@ -42,16 +41,21 @@ export const App = () => {
     })
     .then(res => res.json())
       .then((message) => {
+        // If error -> set loading spinner, error function and then fetch messages
         if (message.errors) {
+          setLoading(true)
           handleErrors(message)
+          fetchAllMessages()
         } else {
+            // No error -> set animation instead of loading spinner, reset textarea and error message and delay fetching so animation can play out :)
+            setLoading(false)
             setAnimation(true)
             setNewMessage('')
             setErrorMessage('')
+            setTimeout(() => fetchAllMessages(), 1500)
           }
-        fetchAllMessages()
       })  
-      .catch(err => console.error(err))
+      .catch(err => console.error(err));
   }
 
   // Function for setting error message
@@ -76,7 +80,7 @@ export const App = () => {
     })
     .then(res => res.json())
     .then(() => fetchAllMessages())
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
   }
 
 
