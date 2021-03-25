@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 
+import MessageForm from './components/MessageForm'
+
 import { THOUGHTS_URL, LIKES_URL  } from './reusable/urls'
 
 
@@ -19,11 +21,11 @@ export const App = () => {
       .catch(err => console.error(err))
   }
 
-  const onNewmessageChange = (event) => {
+  const handleNewmessageChange = (event) => {
     setNewMessage(event.target.value)
   }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault()
     setNewMessage('')
 
@@ -62,16 +64,11 @@ export const App = () => {
   
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor='newMessage'>Write your happy thought here</label>
-        <input 
-        id='newMessage' 
-        type='text' 
-        value={newMessage}
-        onChange={onNewmessageChange}
+      <MessageForm 
+        newMessage={newMessage}
+        onNewmessageChange={handleNewmessageChange}
+        onFormSubmit={handleFormSubmit}
         />
-        <button type='submit'>Send Happy Thought</button>
-      </form>
       {messageList.map(message => (
         <div key={message._id}>
           <h4>{message.message}</h4>
