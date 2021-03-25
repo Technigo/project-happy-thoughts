@@ -6,11 +6,12 @@ const HappyMessageList = ({ happyList, handleHeartsIncrease }) => {
   return (
     <>
       {happyList.map(message =>(
-        <MessageElement 
-          key={message._id}
-          message={message} 
-          onHeartsIncrease={handleHeartsIncrease}
-        />
+        <div className='message-card' key={message._id}>
+          <MessageElement 
+            message={message} 
+            onHeartsIncrease={handleHeartsIncrease}
+          />
+        </div>
     ))}
     </>
   )

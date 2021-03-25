@@ -1,13 +1,110 @@
 body {
-  margin: 40px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  margin: 0px;
+  background: #e4d3cf;
+   
+   /*-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; 
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;*/
+
+  /* #F2F0F0 input bg 
+  #E0DEDE BODY BG
+  #FFADAD send happy thought field
+  #EAEAEA bg hearts 
+  #C5C5C5 time text 
+  #1D1D1D TEXT
+  */
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+.message-card,
+.input-card {
+  border: 2px solid black;
+  margin:20px auto;
+  width: 300px;
+  height: auto;
+  box-shadow: 5px 5px;
+  padding: 20px;
+  background-color: #F2F0F0;
 }
+
+.input-title{
+  font-size: 17px;
+  font-family: "Trispace", sans-serif;
+  color: #1D1D1D;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 15px;
+
+}
+
+.input-text {
+  font-size: 16px;
+  font-family: 'Menlo', sans-serif;
+  color: #1D1D1D;
+  word-wrap: break-word;
+  border: 1px solid gray;
+  width: 270px;
+  height: 50px;
+  max-width: 270px;
+}
+
+.input-send-btn {
+  background-color:#FFADAD;
+  border: none;
+  width: 200px;
+  padding: 5px;
+  border-radius: 20px;
+  font-family: "Trispace", sans-serif;
+  color: #1D1D1D;
+  margin: 15px 0px;
+}
+
+.heart-time-container {
+  display: flex;
+  flex-direction: column;
+}
+
+h4 {
+  font-family: 'Menlo', sans-serif;
+  font-weight: 300;
+  margin: 10px;
+}
+
+p {
+  font-size: 12px;
+  color: #ADADAD;
+  font-family: "Trispace", sans-serif;
+}
+
+.heart-time-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.numbers {
+margin-left: 5px;
+} 
+
+.heart-little-box {
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #ADADAD;
+}
+
+.heart-btn {
+  border: none;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+}
+

@@ -3,13 +3,19 @@ import moment from'moment'
 
 const MessageElement = ({ message, onHeartsIncrease }) => {
   return (
-    <div>
+    <div className='heart-time-container'>
         <h4>{message.message}</h4>
-        <button onClick={ () => onHeartsIncrease(message._id)}>
-          {message.hearts}
-          ❤️
-        </button>
-        <p>-{moment(message.createdAt).fromNow()}</p>
+        <div className='heart-time-box'>
+          <button className='heart-btn'
+            onClick={ () => onHeartsIncrease(message._id)}
+            style={{ background: message.hearts > 0 ? '#FFADAD' : '#D4D4D4'}}>
+            <div className='heart-little-box'>
+              <span role="img" aria-label="Red heart emoji">❤️</span>
+              <div className='numbers'>x {message.hearts}</div>
+            </div>
+          </button>
+          <p>{moment(message.createdAt).fromNow()}</p>
+        </div>
       </div>
 
   )
