@@ -1,18 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-import { MessageList } from './components/MessageList'
-import { MessageForm } from './components/MessageForm'
-
+import { MessageList } from "./components/MessageList";
+import { MessageForm } from "./components/MessageForm";
 
 export const App = () => {
-const [messageList, setMessageList] = useState([]);
+  const [messageList, setMessageList] = useState([]);
 
   return (
     <main>
-    <div className="wrapper">
-      < MessageForm setMessageList={setMessageList}/>
-      < MessageList messageList={messageList} setMessageList={setMessageList}/>
-    </div>
+      <div className="wrapper">
+        <MessageForm setMessageList={setMessageList} />
+        <MessageList
+          messageList={messageList}
+          setMessageList={setMessageList}
+        />
+      </div>
     </main>
-  )
-}
+  );
+};

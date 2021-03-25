@@ -39,8 +39,8 @@ export const LikeButton = ({ likes, id, messageList, setMessageList }) => {
       <span
         role="img"
         /* by adding a state  to the className this element can change 
-        background-color depending on if it has the class .true or .false */
-        className={`like-btn__heart ${isLiked}`}
+        background-color depending on if it has the class .heart-is-true or .heart-is-false */
+        className={`like-btn__heart heart-is-${isLiked}`}
         aria-label="heart-emoji"
       >
         &#10084;&#65039;

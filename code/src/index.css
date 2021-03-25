@@ -78,8 +78,13 @@ main {
   background-color: rgba(165, 42, 42, 0);
   color: rgb(158, 158, 158);
   margin: 10px 0;
-  outline: none;
   padding: 0;
+  outline: none;
+}
+
+.like-btn:focus .like-btn__heart,
+.like-btn:active .like-btn__heart {
+  border: solid rgb(250, 143, 161);
 }
 
 .like-btn__heart {
@@ -93,11 +98,11 @@ main {
   border-radius: 50%;
 }
 
-.like-btn__heart.false {
+.heart-is-false {
   background-color: rgb(242, 242, 243);
 }
 
-.like-btn__heart.true {
+.heart-is-true {
   background-color: pink;
 }
 
@@ -159,6 +164,12 @@ main {
   border-radius: 20px;
   background-color: pink;
   border: none;
+  outline:none;
+}
+
+.submit-btn:focus, 
+.submit-btn:active {
+  background-color: rgb(250, 143, 161);
 }
 
 .submit-btn__text {

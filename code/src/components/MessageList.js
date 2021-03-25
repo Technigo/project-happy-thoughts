@@ -13,7 +13,7 @@ export const MessageList = ({ messageList, setMessageList }) => {
 
   useEffect(() => {
     fetchMessageList();
-  }, []);
+  }, [setMessageList]);
 
   /*calculates time since the message was posted and displays the time in
   a proper way depending on how long ago it was */
@@ -54,9 +54,7 @@ export const MessageList = ({ messageList, setMessageList }) => {
               messageList={messageList}
               setMessageList={setMessageList}
             />
-            <p className="message-info__time">
-              {getTime(post.createdAt)}
-            </p>
+            <p className="message-info__time">{getTime(post.createdAt)}</p>
           </div>
         </div>
       ))}
