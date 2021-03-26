@@ -16,6 +16,28 @@ p {
   margin: 0;
 }
 
+/** HEADER **/
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 40px 0px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-heading {
+  font-family: 'Inconsolata', monospace;
+}
+
+.love-letter {
+  margin-left: 10px;
+}
+
+
 /** MAIN **/
 .main {
   display: flex;
@@ -45,17 +67,29 @@ p {
 
 /* Input field */
 .new-message-label {
-  font-family: sans-serif;
+  font-family: 'Inconsolata', monospace;
   font-size: 14px;
 }
 
-.new-message-input-field {
+.new-message-textarea {
   border: solid 1px rgb(201,201,201);
   width: auto;
   padding: 10px 10px 30px 10px;
   margin: 15px 0px;
   font-family: 'Inconsolata', monospace;
   font-size: 16px;
+  resize: none;
+}
+
+/* Character counter */
+.character-counter {
+  margin-left: auto;
+  font-family: 'Inconsolata', monospace;
+  font-size: 14px;
+}
+
+.character-counter-limit {
+  color: red;
 }
 
 /* Submit button */
@@ -66,11 +100,11 @@ p {
   background: rgb(255,173,173);
   border: rgb(255,173,173);
   border-radius: 25px;
+  cursor: pointer;
 }
 
 .submit-button:hover, .submit-button:focus {
   background: rgb(252, 200, 200);
-  cursor: pointer;
 }
 
 .submit-button-text {
@@ -105,14 +139,14 @@ p {
 }
 
 .message-heart-counter {
-  font-family: sans-serif;
+  font-family: 'Inconsolata', monospace;
   font-size: 14px;
   color: rgb(153,153,153);
   padding: 15px;
 }
 
 .message-date {
-  font-family: sans-serif;
+  font-family: 'Inconsolata', monospace;
   font-size: 14px;
   color: rgb(153,153,153);
   padding: 15px 0px;
@@ -122,7 +156,8 @@ p {
 /* Heart button */
 .heart-button {
   border-radius: 25px; 
-  padding: 15px; 
+  padding: 15px;
+  cursor: pointer; 
 }
 
 .no-hearts {
@@ -130,16 +165,29 @@ p {
   border: rgb(234,234,234);
 }
 
+.no-hearts:hover, .no-hearts:focus {
+  background: rgb(179, 177, 177);
+}
+
 .received-heart {
   background: rgb(255,173,173);
   border: rgb(255,173,173);
 }           
+
+.received-heart:hover, .no-hearts:focus {
+  background: rgb(252, 200, 200);
+}      
 
 
 /*** MEDIA QUERIES ***/
 
 /** TABLET **/
 @media (min-width: 768px) {
+  /* Header */
+  .main-heading {
+    font-size: 40px;
+  }
+
   /* Main */
   .main .container {
     width: 65%;
@@ -152,6 +200,11 @@ p {
 
   .new-message-input-field {
     font-size: 18px;
+  }
+
+  /* Character counter */
+  .character-counter {
+    font-size: 16px;
   }
 
   /* Submit button */
@@ -176,6 +229,11 @@ p {
 
 /** DESKTOP **/
 @media (min-width: 1025px) {
+  /* Header */
+  .main-heading {
+    font-size: 46px;
+  }
+
   /* Main */
   .main .container {
     width: 50%;
@@ -188,6 +246,10 @@ p {
 
   .new-message-input-field {
     font-size: 20px;
+  }
+
+  .character-counter {
+    font-size: 18px;
   }
 
   /* Submit button */

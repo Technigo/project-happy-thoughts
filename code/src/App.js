@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import Header from './Header';
 import MessageForm from './MessageForm';
 import MessageList from './MessageList';
 
@@ -53,12 +54,14 @@ const App = () => {
 
     fetch(API_URL_HEART(id), config)
       .then(res => res.json())
-      .then(() => fetchMessageList())     //refetch data from server
+      .then(() => fetchMessageList())    
       .catch(err => console.error(err));
   };
 
   return (
     <>
+      <Header />
+      
       <main className="main">
         <div className="container">
           <MessageForm 

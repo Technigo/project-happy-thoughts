@@ -3,7 +3,7 @@ import moment from 'moment';
 
 import HeartButton from './HeartButton';
 
-const MessageElement = ({ message, handleHeartClick }) => {
+const MessageContent = ({ message, handleHeartClick }) => {
   return (
     <>
       <div className="message-element-container">
@@ -23,4 +23,4 @@ const MessageElement = ({ message, handleHeartClick }) => {
   );
 };
 
-export default MessageElement; 
+export default MessageContent; 

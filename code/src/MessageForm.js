@@ -1,6 +1,7 @@
 import React from 'react';
 
-import InputField from './InputField';
+import InputTextField from './InputTextField';
+import CharacterCounter from './CharacterCounter';
 import SubmitButton from 'SubmitButton';
 
 const MessageForm = ({ newMessage, handleNewMessage, onFormSubmit }) => {
@@ -10,9 +11,13 @@ const MessageForm = ({ newMessage, handleNewMessage, onFormSubmit }) => {
         className="form" 
         onSubmit={onFormSubmit}
       >
-        <InputField 
+        <InputTextField 
           newMessage={newMessage}
           onNewMessage={handleNewMessage}  
+        />
+
+        <CharacterCounter 
+          newMessage={newMessage}
         />
 
         <SubmitButton />

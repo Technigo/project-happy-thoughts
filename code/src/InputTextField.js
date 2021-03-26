@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputField = ({ newMessage, onNewMessage }) => {
+const InputTextField = ({ newMessage, onNewMessage }) => {
   return (
     <>
       <label 
@@ -8,15 +8,15 @@ const InputField = ({ newMessage, onNewMessage }) => {
         htmlFor="newMessage">
           What's making you happy right now?
       </label>
-      <input
-        className="new-message-input-field"
+      <textarea
+        className="new-message-textarea"
         id="newMessage"
         type="text"
         value={newMessage}
         onChange={onNewMessage}
-      />
+      ></textarea>
     </>
   );
 };
 
-export default InputField;
+export default InputTextField;

@@ -9,14 +9,16 @@ const SubmitButton = () => {
       >
         <span 
           role="img" 
-          aria-label="heart icon">
-            ❤️
+          aria-label="heart icon"
+        >
+          ❤️
         </span> 
         <p className="submit-button-text">Send Happy Thought</p>
         <span 
           role="img" 
-          aria-label="heart icon">
-            ❤️
+          aria-label="heart icon"
+        >
+          ❤️
         </span>
       </button>
     </>
