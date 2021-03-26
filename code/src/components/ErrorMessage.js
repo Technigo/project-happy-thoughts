@@ -9,7 +9,7 @@ const ErrorMessage = () => {
         <div className='error-message'>
         <p>
             Oops! Something went wrong. Your happy thought must be "lagom" as we say in Sweden. Between 5 and 140 characters
-            to be exact. No more, no less :). 
+            to be exact. No more, no less :) 
         </p>
         <button
             className='try-again-button' 

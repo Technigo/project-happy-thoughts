@@ -8,6 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:  rgba(255, 0, 0, 0.1);;
 }
 
 code {
@@ -38,6 +39,11 @@ textarea {
   padding:10px;
   margin: 15px 0;
   resize:none;
+}
+
+textarea:focus {
+  outline-color:palevioletred;
+  border: 1px solid;
 }
 
 .textarea-invalid {
@@ -85,7 +91,6 @@ textarea {
   overflow-wrap: break-word;
 }
 
-
 .heart-date-container {
   display: flex;
   justify-content: space-between;
@@ -98,7 +103,7 @@ textarea {
   border-radius: 50%;
   background-color:rgba(208, 203, 203, 0.3);
   border:none;
-  font-size:14px;
+  font-size:16px;
 }
 
 .heart-button:hover{
