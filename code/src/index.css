@@ -36,7 +36,7 @@ p {
 .form { 
   display: flex;
   flex-direction: column;
-  border: solid 2px rgb(120,119,119);
+  border: solid 2px #000000;
   padding: 20px 15px 20px 15px;
   -webkit-box-shadow: 9px 10px 0px -3px #000000; 
   box-shadow: 9px 10px 0px -3px #000000;
@@ -68,6 +68,11 @@ p {
   border-radius: 25px;
 }
 
+.submit-button:hover, .submit-button:focus {
+  background: rgb(252, 200, 200);
+  cursor: pointer;
+}
+
 .submit-button-text {
   font-family: 'Inconsolata', monospace;
   font-size: 16px;
@@ -79,7 +84,7 @@ p {
 /** MESSAGE LIST **/
 /* Message element */
 .message-element-container {
-  border: solid 2px rgb(120,119,119);
+  border: solid 2px #000000;
   padding: 20px 15px 20px 15px;
   margin: 40px 0px;
   -webkit-box-shadow: 9px 10px 0px -3px #000000; 
@@ -116,11 +121,19 @@ p {
 
 /* Heart button */
 .heart-button {
+  border-radius: 25px; 
+  padding: 15px; 
+}
+
+.no-hearts {
   background: rgb(234,234,234);
   border: rgb(234,234,234);
-  border-radius: 25px;
-  padding: 15px;
 }
+
+.received-heart {
+  background: rgb(255,173,173);
+  border: rgb(255,173,173);
+}           
 
 
 /*** MEDIA QUERIES ***/

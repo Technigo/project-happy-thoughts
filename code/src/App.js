@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import MessageForm from './MessageForm';
 import MessageList from './MessageList';
 
-import { API_URL, API_URL_GET_HEART } from './reusable/urls';
+import { API_URL, API_URL_HEART } from './reusable/urls';
 
 const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -26,7 +26,6 @@ const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    setNewMessage('');
 
     const config = {   
         method: 'POST', 
@@ -40,6 +39,8 @@ const App = () => {
       .then(res => res.json())
       .then(() => fetchMessageList())     //refetch data from server
       .catch(err => console.error(err));
+
+    setNewMessage('');
   };
 
   const handleHeartClick = (id) => {
@@ -50,7 +51,7 @@ const App = () => {
       }
     };
 
-    fetch(API_URL_GET_HEART(id), config)
+    fetch(API_URL_HEART(id), config)
       .then(res => res.json())
       .then(() => fetchMessageList())     //refetch data from server
       .catch(err => console.error(err));

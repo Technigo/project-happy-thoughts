@@ -4,7 +4,7 @@ const HeartButton = ({ message, onHeartClick }) => {
   return (
     <>
       <button 
-        className="heart-button"
+        className={`heart-button ${message.hearts === 0 ? "no-hearts" : "received-heart"}`}
         onClick={() => onHeartClick(message._id)}>
         <span 
           role="img" 
