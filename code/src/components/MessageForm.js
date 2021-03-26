@@ -10,7 +10,7 @@ const MessageForm = ({ messsageNew, onMessageNewChange, onFormSubmit }) => {
                 value={messsageNew}
                 onChange={onMessageNewChange}>
             </textarea>
-            <p>{messsageNew.length} / 140</p>
+            <p className ='counter'>{messsageNew.length} / 140</p>
             <button 
                 className='submit-button' 
                 type='submit'

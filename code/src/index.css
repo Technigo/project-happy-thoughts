@@ -42,6 +42,12 @@ body {
 .text-area-input{
   height: 80px;
 }
+
+.counter {
+ display: flex;
+ justify-content: flex-end;
+}
+
 .submit-button {
   padding: 15px 15px;
   margin: 15px 0;
