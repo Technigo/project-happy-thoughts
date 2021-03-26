@@ -1,16 +1,20 @@
 import React from 'react'
 
-const Popup = ({ setError }) => {
+//() => setError(prev => !prev) ---> equal to setting it to ----> onClick={() => setError(false), hide ErrorPopup (set it to false) whenever user clicks OK!
+const ErrorPopup = () => {
   return (
     <span className="error-popup-container">
       <p className="error-popup">
-        Oops, your message needs to be more than 4 characters. Please give it one more try! 
-        <button className="error-button-to-resume" onClick={() => setError('hide')}>
+        Please give it one more try!
+      </p>
+      <p className="error-popup">
+        Your message needs to be more than 4 characters.
+{/*         <button className="error-button-to-resume" onClick={() => setError(prev => !prev)}> 
           OK!
-        </button>
+        </button> */}
       </p>
     </span>
   )
 }
 
-export default Popup
+export default ErrorPopup

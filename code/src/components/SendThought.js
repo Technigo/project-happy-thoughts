@@ -3,15 +3,14 @@ import React from 'react'
 import ButtonSubmit from './ButtonSubmit'
 import '../styles/SendThought.css'
 
-//add friendly Error message to user if message is too short or too long rather than just setting button to disabled
 const SendThought = ({
   handleFormSubmit,
   newThought,
-  onNewThoughtChange
+  onNewThoughtChange,
+  setError
 }) => {
-
   return (
-  <div className="thoughts-container-grey">
+  <div className="thoughts-container-whitesmoke">
     <form onSubmit={handleFormSubmit} className="thoughts-container">
     <label htmlFor="newThought" className="title-question">What's making you happy right now?</label>
       <textarea
@@ -30,7 +29,7 @@ const SendThought = ({
       {140 - newThought.length} characters left
       </p>
       <ButtonSubmit
-        onClick={(e) => {e.preventDefault()}}
+        onClick={() => setError(prev => !prev)} //I am not sure this is correct submitFunction={submitNewThought}
         disabled={newThought.length < 5 || newThought.length >= 140 ? true : false}
       />
     </form>

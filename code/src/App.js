@@ -1,37 +1,27 @@
 import React, { useState, useEffect } from 'react'
 
-// URLS
 import { HAPPY_THOUGHTS_URL, LIKE_THOUGHT_URL } from './reusable/urls'
 
-// Components
 import SendThought from './components/SendThought'
 import ThoughtsList from './components/ThoughtsList'
-import Loader from './components/Loader'
 import ErrorPopup from './components/ErrorPopup'
 
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [newThought, setNewThought] = useState('')
-  const [error, setError] = useState('hide')
-  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false) //hide ErrorPopup on application start
+
   
   useEffect(() => {
     fetchThoughtsList()
   }, [])
 
-  //GET:
+  //GET
   const fetchThoughtsList = () => {
     fetch(HAPPY_THOUGHTS_URL)
       .then(response => response.json())
-  //    .then(thoughts => setThoughtsList(thoughts))
-      .then((thoughts => {
-        if (thoughts.ok) {  //if loading is true it should "turn off" setLoading 
-          setLoading(false)
-        } else { // ? 
-          setThoughtsList(thoughts)
-        }
-      })) 
-      .catch(error => console.error(error))
+      .then(thoughts => setThoughtsList(thoughts))
+      .catch(err => console.error(err))
   }
 
   const onNewThoughtChange = (e) => {
@@ -39,49 +29,32 @@ export const App = () => {
   }
 
   //POST: 
-    const handleFormSubmit = (e) => {
-    e.preventDefault()
+  const handleFormSubmit = (e) => {
+  e.preventDefault()
 
-    const options = {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json'
-        },
-        body: JSON.stringify({ message: newThought })
+  const options = {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ message: newThought })
+  }
+
+  fetch(HAPPY_THOUGHTS_URL, options)
+    .then(response => {
+      //console.log('actual ok value', response.ok)
+      console.log(response) //take away before sending it in
+      console.dir(response) //take away before sending it in
+      if (!response.ok) {
+        setError(true)
+        throw new Error ('Ups, something went wrong') //prints error message in Console for the use case: unspecified backend error
+      } else { 
+        setNewThought('') //clears textarea on submit
+        return response.json()
       }
-
-    fetch(HAPPY_THOUGHTS_URL, options)
-      .then(response => {
-        if (!response.ok) { 
-          setError('show');
-          setNewThought('')
-            return null;
-        } 
-        return response.json();
-      }) 
-      
-      .then(response => {
-        if (response) {
-          fetchThoughtsList()
-        }
-      })
-      .catch(error => console.error(error))
-      
-/*       fetch(HAPPY_THOUGHTS_URL, options)
-        .then(response => {
-          if (response.ok) { 
-            fetchThoughtsList()
-          } else { 
-            setError('show')
-            setNewThought('')
-          }
-        })
-        .catch(error => console.error(error)) */
-
-      // .then(recievedThought => setThoughtsList([...thoughtsList, recievedThought]))
-      // Refetch data from the server & update local state at the same time.
-
-//      .then(() => fetchThoughtsList())
+    })
+    .then(recievedThought => setThoughtsList([recievedThought, ...thoughtsList]))
+    .catch(err => console.error(err))
   } 
 
   const handleHeartsIncrease = (id) => {
@@ -109,23 +82,7 @@ export const App = () => {
         thoughtsList={thoughtsList}
         handleHeartsIncrease={handleHeartsIncrease}  
       />
-{/*       {error === 'show' &&
-        <ErrorPopup
-          message="Oops, your message needs to be more than 4 characters. Please give it one more try!" 
-          setError={setError} 
-        />
-      } */}
-      { error ? 
-      <ErrorPopup
-        message="Oops, your message needs to be more than 4 characters. Please give it one more try!" 
-        setError={setError} 
-      /> : 
-      null 
-      }
-
-      {loading === true && 
-        <Loader />
-      }
+      {error && <ErrorPopup/>}
     </>
   )
 }

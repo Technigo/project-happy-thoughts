@@ -2,7 +2,7 @@ import React from 'react'
 
 import ThoughtsElement from './ThoughtsElement'
 
-const ThoughtsList = ({ thoughtsList, handleHeartsIncrease }) => {
+const ThoughtsList = ({ handleHeartsIncrease, thoughtsList }) => {
   return (
     <>
     {thoughtsList.map(sentmessage => (

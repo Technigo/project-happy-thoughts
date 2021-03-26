@@ -5,9 +5,8 @@
   text-rendering: optimizeLegibility;
 }
 
-/*chnage this so it is not called -grey ---> it should have a more explanatory name of WHAT is INSIDE */
-.thoughts-container-grey {
-  width: 100%; /*take this away? Would it be better to use border box up where the * {} starts ? */
+.thoughts-container-whitesmoke {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,8 +27,6 @@
   font-size: 12px;
 }
 
-
-/* Move to index.css ?? belongs to App.js */
 .sent-messages {
   font-family: 'Trispace', sans-serif;
   display: flex;
@@ -41,8 +38,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-/* styling with mobile first thinking */
+} 
+
 .user-input-textarea {
   width: calc(100% - 10%);
   height: 60px;
@@ -60,7 +57,7 @@
 .user-name-input {
   outline-color: #ffadad;
 }
-/* move to a ButtonSubmit css later */
+/* move to a ButtonSubmit css later? */
 .add-new-thought-button {
   background-color: #ffadad;
   font-size: 15px;
@@ -74,9 +71,9 @@
   outline-color: #ffadad;
 }
 
-/* Belongs to ThoughtsElement that could be styled together with ... ? */
+/* ThoughtsElement */
 .sent-message-container {
-  width: 100%; /*take this away? Would it be smarter to use border box up where the * {} starts ?? */
+  width: 100%;
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -117,4 +114,24 @@
 
 .message-created {
   color: #a09993;
+}
+
+.error-popup-container {
+    background: #ffadad;
+    color: #fff;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    position: absolute;
+    left: calc(54% - 155px);
+    top: calc(65% - 16%);
+    z-index: 1;
+}
+
+.error-popup {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin: 10px; 
+  padding: 10px;
 }
