@@ -5,6 +5,7 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
 
 
     console.log(messageNew.length)
+
    
 
     return (
@@ -25,16 +26,16 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
                     onChange={OnInputMessage}
                     cols="40" 
                     rows="6"
-                    minLength="5"
                     maxLength="140"
                     placeholder="Please type your thought here, maximum 140 charachters"
+                    
                     />
                     </div>
                 <div>
-                    <button className="submit-btn" type="submit">
+                    <button className="submit-btn" type="submit" >
                     <span className="likes">&#10084;</span> Send Happy Thought! <span className="likes">&#10084;</span>
                     </button>
-                    <p>Charachter: {words} of 140</p>
+                    <p>Characters : {words} of 140 <span>(minimum 4 characters )</span></p>
                 </div>
             </div>
         </div>

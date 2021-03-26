@@ -27,6 +27,8 @@ WordCount()*/
     //WordCount()
   }, [])
 
+
+
   const fecthMessageList = () => {
     fetch(API_URL)
     .then(res => res.json())
@@ -87,7 +89,8 @@ WordCount()*/
             messageList={messageList}
             onLikesIncrease={onLikesIncrease}
           />
-        
+      
+
         </div>
       </div>
     </>
