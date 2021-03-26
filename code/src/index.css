@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Menlo';
+  src: local('Menlo'), url(./fonts/Menlo\ Regular\ 400.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url(./fonts/Lato-Regular.ttf) format('truetype');
+}
+
 body {
   margin: 0 30px;
   background-color: lightgreen;
@@ -8,6 +18,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,11 +37,19 @@ code {
   margin-bottom: 30px;
   box-sizing: border-box;
   background-color: #EAEAEA;
+  font-family: 'Lato';
+}
+
+.thoughts-form-label {
+  position: relative;
+  bottom: 5px;
 }
 
 .thoughts-input {
   width: 300px;
   height: 40px;
+  font-family: 'Menlo';
+  font-size: 10px;
 }
 
 .send-thought-button {
@@ -40,6 +59,27 @@ code {
   border: none;
   background-color:#FFADAD;
   margin-top: 10px;
+  font-family: 'Lato';
+  font-size: 11px;
+}
+
+.send-thought-button-text {
+  position: relative;
+  bottom: 3px;
+}
+
+.heart-left {
+  width: 14px;
+  position: relative;
+  right: 5px;
+  top: 2px;
+}
+
+.heart-right {
+  width: 14px;
+  position: relative;
+  left: 5px;
+  top: 2px;
 }
 
 .thoughts-card {
@@ -47,14 +87,20 @@ code {
   height: 100px;
   border: 1px solid black;
   box-shadow: 5px 5px black;
-  padding: 10px;
+  padding: 15px 12px;
   margin-bottom: 30px;
   box-sizing: border-box;
   background-color: white;
+  font-family: 'Menlo';
+  font-size: 10px;
+  color: #afaeae;
 }
 
 .message {
-  font-size: 16px;
+  height: 40px;
+  font-family: 'Menlo';
+  font-size: 12px;
+  color: black;
   margin: 0;
 }
 
@@ -62,6 +108,8 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: 'Lato';
+  font-size: 11px;
 }
 
 .outer-heart-container {
@@ -81,8 +129,22 @@ code {
   justify-content: center;
   align-items: center;
   border: none;
+  margin-right: 5px;
+}
+
+.inner-heart-container-button-liked {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background-color: #FFADAD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin-right: 5px;
 }
 
 .heart-icon {
   width: 14px;
 }
+
