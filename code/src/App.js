@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-/* import moment from 'moment'  */
+import moment from 'moment'
 
-import { API_URL } from './reusable/url'
+import { API_URL, LIKES_URL } from './reusable/url'
  
 export const App = () => {
 
@@ -11,9 +11,6 @@ export const App = () => {
   const [newMessage, setNewMessage] = useState(' ')
 
   
-  const onNewMessageChange = (event) => {
-    setNewMessage(event.target.value);
-  }
 
   // Hook that will call the function after component is mounted
 
@@ -21,6 +18,9 @@ export const App = () => {
     fetchMessageList();
 
   },[])
+
+  
+  
 
   //Function to fetch message list from outer API
 
@@ -31,7 +31,10 @@ export const App = () => {
     .catch(err => console.error(err)) 
   }
 
-    
+  const onNewMessageChange = (event) => {
+    setNewMessage(event.target.value);
+  }  
+
   //Function that will prevent the form to refresh and that will send the POST request
 
   const onFormSubmit = (event) => {
@@ -48,7 +51,12 @@ export const App = () => {
       fetch(API_URL, options)
         .then(res => res.json())
         .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
-  }
+  
+    /* const onLikesIncrease = (id) => {
+      fetch(LIKES_URL(id))
+    } */
+  
+    }
    
 
     return (
@@ -64,12 +72,16 @@ export const App = () => {
           <button type="onSubmit">Send message!</button>
         </form> 
         
-        {/* Iterating over the array of messages */}
+        {/* Iterating over the array of messages. This is a representation of asingle message */}
 
         {messageList.map(message => (
           <div key={message._id}>
             <h4>{message.message}</h4>
-            <p className ="date-created">-{new Date(message.createdAt).toDateString()}</p> 
+            {/* <button onClick= { () => onLikesIncrease(message._id)}>
+              {message.likes}
+              ♥️
+            </button> */}
+            <p className ="date-created">-{moment(message.createdAt).fromNow()}</p> 
           </div>  
         ))}
       </div>
