@@ -1,5 +1,4 @@
 # Happy Thoughts
-TODO: clean text input after submitting!!!
 
 Replace this readme with your own information about your project.
 
