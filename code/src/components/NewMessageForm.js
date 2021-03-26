@@ -27,6 +27,7 @@ export const NewMessageForm = ({ newMessage, setNewMessage, messageList, setMess
           .catch(error => console.error(error))
           
           /* setTimeout(() => window.location.reload(), 2000) */
+          window.location.reload()
       
       }
 
