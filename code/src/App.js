@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'material-react-toastify'
 import 'material-react-toastify/dist/ReactToastify.css'
-
 import { API_URL, LIKES_URL } from './reusable/urls'
 import MessageForm from './components/MessageForm'
 import MessageList from './components/MessageList'
 import Loading from './components/Loading'
-
-
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
   const [isLoading, setIsLoading] = useState(true)
   const [dark, setDark] = useState(localStorage.getItem('dark-mode') === 'true')
   const [buttonText, setButtonText] = useState('Send Happy Tought')
-
   const likeCount =() => JSON.parse(localStorage.getItem('countList') || "[]")
   const [countedList, setCountedList] = useState(likeCount)
-  
-
   //Adding animation on the form when user submits 
   const handleAnimation = () => {
     if (dark === false && messageNew.length > 5) {
@@ -29,23 +23,16 @@ export const App = () => {
       setButtonText('Send A New One')
     } 
   }
-
   useEffect(() => {
     fetchMessageList()
     localStorage.setItem('dark-mode', dark)
-    localStorage.clear()
-    
-
     setTimeout (() => {
       setDark(false)
     }, 2000)
-
     setTimeout(() => { //Setting time for the loader to stop 
       setIsLoading(false)
     }, 1500)
-  }, [dark, countedList]) 
-
-
+  }, [dark]) 
   const fetchMessageList = () => {
     fetch (API_URL)
       .then(res => res.json ())
@@ -58,14 +45,15 @@ export const App = () => {
           }
           return countItem
         }) 
-        localStorage.setItem('countList', JSON.stringify(countList))
+        if (!countedList.length) {
+          setCountedList(countList)
+          localStorage.setItem('countList', JSON.stringify(countList))
+        }
       })
       .catch(err => console.error(err))
   }
-
   const handleFormSubmit = (event) => {
     event.preventDefault()
-
     const options = {
       method: 'POST',
       headers: {
@@ -85,14 +73,11 @@ export const App = () => {
       .then(receivedMessage => {
         const id = receivedMessage._id;
         const updatedList = [receivedMessage, ...messageList]
-
         updatedList.find(el => el._id === id).animate = true;
         setMessageList(updatedList)
-
         updatedList.find(el => el._id === id).animate = false;
         setMessageList(updatedList)
       })
-      
       .catch((err) => {
          //adds notification snackbar, makes it look better than an regular alert message
         toast.error(err.message, {
@@ -102,7 +87,6 @@ export const App = () => {
       //Clearing the form after user submits their message 
       setMessageNew('')
     }  
-
     const handleLikesIncrease = (id) => {
       const options = {
         method: 'POST', 
@@ -110,7 +94,6 @@ export const App = () => {
           'Content-type': 'application/json'
         }
       }
-
       fetch(LIKES_URL(id), options)
       .then(res => res.json())
       .then(receivedMessage => {
@@ -121,31 +104,28 @@ export const App = () => {
           }
           return message
         })
-
-        const updatedCountedList = countedList.map(count => {
+        const updatedCountedList = countedList.map(count => {
           if (count.id === receivedMessage._id) {
             count.count += 1
           }
           return count
         })
         setMessageList(updatedMessageList)
+        setCountedList(updatedCountedList);
         localStorage.setItem('countList', JSON.stringify(updatedCountedList))
        })
       .catch (err => console.error(err))
     }
-
   //If user add more than 140 characters, the input box gets red. I add the validation here and send it trough props. 
   const HandleMessageNewChange = (event) => {
     const count = event.target.value
     const characterCount = count.length 
-
     if (characterCount <= 140) {
       setMessageNew(count)
     } else if (characterCount > 140) {
       return setMessageNew(messageNew)
     } 
   }
-
   return (
     <main>
       <div>

@@ -15,7 +15,7 @@ const MessageElement = ({ message, onLikesIncrease, count }) => {
             <span className="heart-icon" role="img" aria-label="like">❤️</span>
           </button>
           <p>x{message.hearts}</p>
-         {/* <p> You have liked {count.count}</p> */} 
+         <p> You have liked {count.count}</p> 
         </div> 
         <p className="time">{moment(message.createdAt).fromNow()}</p>
       </div>
@@ -24,3 +24,4 @@ const MessageElement = ({ message, onLikesIncrease, count }) => {
 }
 
 export default MessageElement
+
