@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
-import { API_URL, LIKES_URL } from './reusable/url'
+import { API_URL } from './reusable/url' 
  
 export const App = () => {
 
