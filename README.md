@@ -1,13 +1,12 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The goal of this project was to get to know useEffect and how to make use of it with API calls.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I approached this project by sketching out what components I was going to need and what their dependencies would be. I focused on fulfilling the blue goals first and made sure that everything was working as expected (from the user's perspective), like for example that the like button could only be clicked once.
+After that, I added the functionalities for the red and some black goals one at a time.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://hearts-project-happy-thoughts.netlify.app/
