@@ -67,22 +67,35 @@ export const App = () => {
   return (
     <div>
 
-      <form onSubmit={onSubmitForm}>
-        <label htmlFor='newMessage'>Your message:</label>
+      <form onSubmit={onSubmitForm} className='form-container'>
+
+        <label htmlFor='newMessage' className='form-label'>Add your happy thought: </label>
         <input
           id='newMessage'
           type='text'
           value={newMessage}
           onChange={onNewMessage}
+          className='form-input'
         />
-        <button type='submit'>SEND</button>
+        <button type='submit' className='form-btn'>SEND HAPPY THOUGHT</button>
       </form>
 
       {messageList.map(message => (
-        <div key={message._id} className='message'>  
-          <h3>{message.message}</h3>
-          <p>Posted: {new Date(message.createdAt).toLocaleDateString()} at {new Date(message.createdAt).toLocaleTimeString()}  </p>
-          <button onClick={() => onAddHeart(message._id)}>❤</button> <p> {message.hearts} web developers loved this</p>
+        <div key={message._id} className='message'> 
+
+          <div>
+            <h3>{message.message}</h3>
+          </div>
+          <div className='btn-container'> 
+
+            <div className='btn-counter'>
+              <button className='heart-btn' onClick={() => onAddHeart(message._id)}>❤️</button> 
+              <p> {message.hearts} web developers loved this</p>
+            </div>
+            <div>
+              <p>Posted: {new Date(message.createdAt).toLocaleDateString()} at {new Date(message.createdAt).toLocaleTimeString()}  </p>
+            </div>
+          </div>
        </div>
       ))}
      
