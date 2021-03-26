@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-const MessageElements = ({ onLikesIncrease, message, backgroundColorClicked, backgroundColorInactive }) => {
+const MessageElements = ({ onLikesIncrease, message }) => {
 
     return (
         <div className='message-container'>
@@ -9,9 +9,8 @@ const MessageElements = ({ onLikesIncrease, message, backgroundColorClicked, bac
             <div className='heart-date-container'>
               <div className="likes-icon-count">
                 <button 
-                  className='heart-button' 
                   onClick={() => onLikesIncrease(message._id)}
-                  style={(message.hearts > 0) ? { backgroundColor: backgroundColorClicked } : { backgroundColor: backgroundColorInactive } }
+                  className={`heart-button ${message.hearts > 0 ? 'heart-active' : 'heart-inactive'}`}
                 >
                     <span role='img' aria-label='heart emoji'>❤️</span>
                 </button>

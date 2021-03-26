@@ -34,9 +34,19 @@ code {
   font-weight: 700;
 }
 
-input[type=text]{
+textarea {
   padding:10px;
   margin: 15px 0;
+  resize:none;
+}
+
+.textarea-invalid {
+  color: red;
+  font-weight: bold;
+}
+
+.textarea-valid {
+  color: black;
 }
 
 .button {
@@ -95,6 +105,15 @@ input[type=text]{
   cursor: pointer;
   transform: scale(1.1);
 }
+
+.heart-active {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.heart-inactive {
+  background-color:rgba(208, 203, 203, 0.3);
+}
+
 
 .likes-icon-count {
   display: flex;

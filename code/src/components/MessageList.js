@@ -10,9 +10,6 @@ const MessageList = ({ handleLikesIncrease, messageList }) => {
                     onLikesIncrease={handleLikesIncrease} 
                     key={message._id} 
                     message={message} 
-                    backgroundColorClicked='rgba(255, 0, 0, 0.3)'
-                    backgroundColorInactive='rgba(208, 203, 203, 0.3)'
-
                 />
             ))}
         </>

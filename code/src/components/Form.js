@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Form = ({ messageNew ,setMessageNew, onFormSubmit, unvalidCharacter, validCharacter }) => {
+export const Form = ({ messageNew ,setMessageNew, onFormSubmit }) => {
 
     const onMessageNewChange = (event) => {
         setMessageNew(event.target.value)
@@ -10,22 +10,22 @@ export const Form = ({ messageNew ,setMessageNew, onFormSubmit, unvalidCharacter
         <>
             <form className='form-container' onSubmit={onFormSubmit}>
                 <label htmlFor='newMessage'>What's making you happy right now?</label>
-                <input 
+                <textarea 
                     id='newMessage'
                     type='text'
                     rows='5'
                     value={messageNew}
                     placeholder='Tell us all about it :)'
                     onChange={onMessageNewChange}
-                    minlength= '5'
-                    style = {messageNew.length > 140 ? {color: unvalidCharacter} : {color: validCharacter}}
+                    // minLength= '5'
+                    className = {messageNew.length > 140 ? 'textarea-invalid' : 'textarea-valid'}
                 />
                 <div className='submit-charcount-container'>
                     <button 
                         className='button' 
                         type='submit'
                         value={messageNew}
-                        disabled={messageNew.length < 5}
+                        // disabled={messageNew.length < 5 || messageNew.length > 140}
                     >
                         <span role='img' aria-label='heart emoji'>❤️️</span> Send happy thoughts! <span role='img' aria-label='heart emoji'>❤️️</span>
                     </button>

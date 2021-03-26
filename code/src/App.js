@@ -31,8 +31,15 @@ export const App = () => {
     }
 
     fetch(API_URL, options)
-    .then((response) => response.json())
+    .then(response => {
+      if (response.ok) {
+       return response.json()
+      } else {
+        throw new Error ('Something went wrong!')
+      }
+    })
     .then((receivedMessage) => setMessageList([receivedMessage, ...messageList]))
+    .catch(error => console.error(error))
   }
 
   const handleLikesIncrease = (id) => {
@@ -44,7 +51,11 @@ export const App = () => {
     }
 
     fetch(LIKE_URL(id), options)
-    .then(response => response.json())
+    .then(response => {
+      console.log(response) //remove later
+      return response.json()
+    })
+      
     .then(receivedMessage => {
       const updatedMessageList = messageList.map(message => {
         if (message._id === receivedMessage._id) {
@@ -63,8 +74,6 @@ export const App = () => {
           messageNew={messageNew} 
           setMessageNew={setMessageNew} 
           onFormSubmit={handleFormSubmit}
-          unvalidCharacter='red'
-          validCharacter='black'
         />
       <div>
       <MessageList 
