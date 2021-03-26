@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
-import { API_URL }  from './reuseable/api_endpoints.js'
+import { API_URL, HEARTS_URL }  from './reuseable/api_endpoints.js'
 
 
 export const App = () => {
@@ -39,6 +39,19 @@ export const App = () => {
       .then(recievedThought => setThoughtList([...thoughtList, recievedThought]))
   }
 
+  const onHeartsIncrease = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    fetch(HEARTS_URL(id), options)
+      .then(res => res.json())
+      .then((data) => console.log(data))
+      .catch(err => console.error(err))
+  }
 
   return (
     <main>
@@ -55,6 +68,10 @@ export const App = () => {
       {thoughtList.map(thought => (
         <div key={thought._id}>
           <h4>{thought.message}</h4>
+          <button onClick={() => onHeartsIncrease(thought._id)}>
+            {thought.hearts}
+            ❤️
+          </button>
           <p className='date-stamp'>{moment(thought.createdAt).fromNow()}</p>
         </div>
       ))}
