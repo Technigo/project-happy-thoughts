@@ -1,4 +1,5 @@
 import React from 'react'
+import { MessageList } from './MessageList';
 
 
 export const MessageForm = ({ onFormSubmit, messageNew, onMessageNewChange}) => {
@@ -13,6 +14,8 @@ export const MessageForm = ({ onFormSubmit, messageNew, onMessageNewChange}) => 
                 type="text"
                 value={messageNew}
                 onChange={onMessageNewChange}
+                rows="4"
+                cols="60"
             />
             <button 
                 className="button-submit"

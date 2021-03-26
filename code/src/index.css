@@ -50,9 +50,13 @@ code {
   border-radius: 45px;
   width: 50%;
   height: 35px;
-  margin: 10px;
+  margin: 10pxessage;
   font-family:  "Courier New";
   font-weight: 600;
+}
+
+.button-submit:hover {
+  background-color: rgb(250, 221, 221);
 }
 
 .button-likes{
@@ -63,6 +67,10 @@ code {
   height: 35px;
   padding: 5px;
   margin-right: 5px;
+}
+
+.button-likes:hover {
+  background-color: rgb(255, 149, 149);
 }
 
 
@@ -79,6 +87,14 @@ code {
   align-items: center;
   justify-content: space-between;
   
+}
+
+.heart-black {
+  color: black;
+}
+
+.heart-red {
+  color: red;
 }
 
 .hearts-likes-wrapper {

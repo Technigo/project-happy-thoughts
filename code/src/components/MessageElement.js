@@ -12,7 +12,8 @@ export const MessageElement = ({ message, onLikesIncrease }) => {
                 <div className="likes-date-container">
                     <div className="hearts-likes-wrapper">
                         <button className="button-likes" onClick={() =>onLikesIncrease(message._id)}>
-                        <span>❤️</span>  
+                        <span className={message.likes === 0 ? "heart-black" : "heart-red"}
+                        >❤️</span>  
                         </button>
                         <p> x{message.hearts}</p>
                     </div>

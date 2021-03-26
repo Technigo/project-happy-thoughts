@@ -7,7 +7,7 @@ export const MessageList = ({ messageList, onLikesIncrease }) => {
 
     return (
         <>
-            {messageList.reverse().map(message => (
+            {messageList.map(message => (
                 <MessageElement
                     key={message._id}
                     message={message}
