@@ -27,6 +27,7 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    setMessageNew('');
 
     const options = {
       method: 'POST',
