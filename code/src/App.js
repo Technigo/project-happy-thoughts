@@ -16,6 +16,7 @@ export const App = () => {
   const [formAnimation, setformAnimation] = useState(localStorage.getItem('red-color') === 'true')
   const [buttonText, setButtonText] = useState('Send Happy Tought')
 
+  //States that count likes and storage it 
   const likeCount =() => JSON.parse(localStorage.getItem('countList') || "[]")
   const [countedList, setCountedList] = useState(likeCount)
 

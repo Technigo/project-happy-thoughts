@@ -75,9 +75,11 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   color: rgba(61, 61, 61, 0.8);
   padding: 5px 0;
 }
+
 
 .like-btn {
   display: flex;
@@ -103,8 +105,13 @@ main {
   padding-left: 3px;
 }
 
+.likes {
+  margin: 2px;
+}
+
 .time {
   opacity: 0.5;
+  margin: 2px;
 }
 
 /*** Animation when message is submitted and adds to message list ***/
@@ -135,8 +142,5 @@ main {
   display: flex;
   justify-content: center;
 }
-
-
-
 
 
