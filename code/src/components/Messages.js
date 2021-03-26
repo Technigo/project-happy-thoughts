@@ -14,7 +14,7 @@ export const Messages = ({ messageList, setMessageList }) => {
           .catch(error => console.error(error))
       }
         fetchList(API_URL)
-      }, [setMessageList]);
+      }, [messageList]);
 
 
 

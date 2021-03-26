@@ -2,7 +2,7 @@ import React from 'react'
 
 import { API_URL } from '../reusables/urls'
 
-export const NewMessageForm = ({ newMessage, setNewMessage, messageList, setMessageList }) => {
+export const NewMessageForm = ({ newMessage, setNewMessage, messageList, setMessageList, handleMessageList }) => {
 
     const onNewMessageChange = (e) => {
         setNewMessage(e.target.value)
@@ -23,11 +23,15 @@ export const NewMessageForm = ({ newMessage, setNewMessage, messageList, setMess
     
         fetch(API_URL, options)
           .then(res => res.json())
-          .then(newPost => setMessageList([...messageList, newPost]))
+          .then(newPost => {
+            console.log(messageList, setMessageList)
+            handleMessageList(newPost)
+            setNewMessage('')
+            /* setMessageList([...messageList, newPost]) */})
           .catch(error => console.error(error))
           
           /* setTimeout(() => window.location.reload(), 2000) */
-          window.location.reload()
+        /*   window.location.reload() */
       
       }
 
