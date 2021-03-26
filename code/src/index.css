@@ -6,7 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -27,6 +26,7 @@ code {
   padding: 15px; 
   font-size: 20px;
   margin: 10px;
+  resize: none;
 }
 .input-field { 
   width: 100%;
@@ -38,6 +38,7 @@ code {
   font-size: 20px; 
   box-sizing: border-box;
   margin-top: 10px;
+  resize: none;
 }
 .submit-button {
   background-color: #FFADAD;
@@ -47,6 +48,9 @@ code {
   font-size: 15px;
   margin: 10px 0 30px 0;
   padding: 5px;
+}
+.submit-button:hover {
+  opacity: 0.7 ;
 }
 .received-message-container {
   margin: 20px 10px;
@@ -77,12 +81,17 @@ code {
   /* padding-right: 10px; */
 }
 .heart-like-button {
-  background-color: #EAEAEA;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: none;
+  border: none; 
+  background-color: #EAEAEA;
 }
+.pink-heart {
+  background-color: #FFADAD;
+}
+
+
 .like-counter {
   font-size: 12px;
   padding-left: 10px;
