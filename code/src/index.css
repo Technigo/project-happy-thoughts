@@ -1,17 +1,121 @@
+:root {
+  font-size: 14px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*********** NEW MESSAGE FORM ***********/
+
+.message-box {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  border: 1.6px solid #6d6c6c;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 22rem;
+  box-shadow: 6.5px 6.5px black;
+  background: #F2F0F0;
+  padding: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #313131;
+}
+
+.input-field {
+  margin: 1rem 0 1rem 0;
+  height: 3.5rem;
+  border: 1px solid #adadab;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #585757;
+  padding-left: 10px;
+}
+
+.send-button {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #313131;
+  width: 13rem;
+  height: 2.5rem;
+  border-radius: 40px;
+  border-style: hidden;
+  background: #fbb0b3;
+}
+
+.post-heart {
+  margin: 4px;
+} 
+
+/*********** MESSAGES LIST ***********/
+
+.messagelist-box {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.8rem;
+  border: 1.5px solid #6d6c6c;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 22rem;
+  /* height: 7rem; */
+  box-shadow: 6.5px 6.5px black;
+  background: #FFFFFF;
+  padding: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #313131;
+}
+
+.posted-text {
+  margin: 0;
+}
+
+.hearts-and-time-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.like-button {
+  border-radius: 50%;
+  border-style: hidden;
+  background: #e8e8e8;
+  height: 40px;
+  width: 40px;
+  margin: 2rem 0 0 0;
+  display: flex;
+  align-items: center;
+  color: #8c8b8b
+}
+
+.like-heart {
+  margin-left: 0.4rem;
+}
+
+.x-operator {
+  margin: 0 0.2rem 0 1.5rem; 
+  font-size: 0.8rem;
+  color: #8c8b8b
 }
 
 .date {
-  font-style: italic;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  color: #c3c3c3;
+  /* position: absolute;
+  margin: 4rem 0 0 13rem; */
 }

@@ -3,13 +3,17 @@ import moment from 'moment'
 
 const MessageElement = ({ message, onLikesIncrease }) => {
   return (
-    <div>
-      <h4>{message.message}</h4>
-      <button onClick={() => onLikesIncrease(message._id)}>
-        ❤
+    <div className="messagelist-box">
+      <h4 className="posted-text">{message.message}</h4>
+
+      <div className="hearts-and-time-box">
+      <button className="like-button" onClick={() => onLikesIncrease(message._id)}>
+        <span className="like-heart">❤️</span>
+        <span className="x-operator">x</span> 
         {message.hearts}
       </button>
-      <p className="date">- {moment(message.createdAt).fromNow()}</p> 
+      <p className="date">{moment(message.createdAt).fromNow()}</p> 
+      </div>
     </div>
   )
 }

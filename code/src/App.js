@@ -65,7 +65,7 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="page-wrapper">
       <MessageForm 
         newMessage={newMessage} 
         onNewMessageChange={handleNewMessageChange}
