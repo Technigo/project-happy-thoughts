@@ -1,15 +1,14 @@
 import React from 'react'
-
 import MessageElement from './MessageElement'
-
 const MessageList = ({ messageList, handleLikesIncrease, count }) => {
+  console.log(count, messageList)
   return (
     <>
       {messageList.map((message, index) => (
         <div className={`tought-message ${message.animate ? 'yolo' : ''}`}  key={message._id}>
-          <MessageElement 
+          <MessageElement
           message = {message}
-          count = {count[index]}
+          count = {count[index] || {}}
           onLikesIncrease = {handleLikesIncrease}
           />
         </div>
@@ -17,5 +16,4 @@ const MessageList = ({ messageList, handleLikesIncrease, count }) => {
     </>
   )
 }
-
-export default MessageList 
+export default MessageList

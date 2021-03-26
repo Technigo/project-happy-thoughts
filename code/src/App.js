@@ -38,14 +38,29 @@ export const App = () => {
       .then(res => res.json ())
       .then(messages => {
         setMessageList(messages)
-        const countList = messages.map(item => {
-          const countItem = {
-            id: item._id,
-            count: 0  
-          }
-          return countItem
-        }) 
         if (!countedList.length) {
+          const countList = messages.map(item => {
+            const countItem = {
+              id: item._id,
+              count: 0  
+            }
+            return countItem
+          })
+          setCountedList(countList)
+          localStorage.setItem('countList', JSON.stringify(countList))
+        } else {
+          const countList = messages.map((item, index) => {
+            const existingElement = countedList.find(countItem => countItem.id === item._id);
+            if (existingElement) {
+              return existingElement;
+            } else {
+              const countItem = {
+                id: item._id,
+                count: 0  
+              }
+              return countItem 
+            }
+          })
           setCountedList(countList)
           localStorage.setItem('countList', JSON.stringify(countList))
         }
@@ -77,6 +92,9 @@ export const App = () => {
         setMessageList(updatedList)
         updatedList.find(el => el._id === id).animate = false;
         setMessageList(updatedList)
+        const updatedCountedList = [{ id: receivedMessage._id, count: 0 }, ...countedList];
+        setCountedList(updatedCountedList);
+        localStorage.setItem('countList', JSON.stringify(updatedCountedList))
       })
       .catch((err) => {
          //adds notification snackbar, makes it look better than an regular alert message
