@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import { ToastContainer, toast } from 'material-react-toastify'
 import 'material-react-toastify/dist/ReactToastify.css'
+import { useSpring, animated as a } from "react-spring";
 import { API_URL } from './reusable/urls'
 
 import MessageForm from './components/MessageForm'
@@ -14,11 +15,17 @@ export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
   const [isLoading, setIsLoading] = useState(true)
+  /* const [greetingStatus, displayGreeting] = useState(false);
+
+  const contentProps = useSpring({
+    opacity: greetingStatus ? 1 : 0,
+    marginTop: greetingStatus ? 0 : -500
+  }) */
    
   useEffect(() => {
     fetchMessageList()
-    //Setting time for the loader to stop 
-    setTimeout(() => {
+    
+    setTimeout(() => { //Setting time for the loader to stop 
       setIsLoading(false)
     }, 1500)
   }, []) 
@@ -73,13 +80,12 @@ export const App = () => {
       {isLoading === true ? 
         <Loading/> : 
         <div>
-        <ToastContainer />
+        <ToastContainer />          
         <MessageForm 
           onSubmit={onFormSubmit} 
           messageNew={messageNew} 
           setMessageNew={setMessageNew} 
         /> 
-       
       {messageList.map(tought => (
         <div className="tought-message" key={tought._id}>
           <MessageList 

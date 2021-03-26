@@ -1,8 +1,6 @@
 import React from 'react'
-
-
 const MessageForm = ({ onSubmit, messageNew, setMessageNew }) => {
-
+  
   const onMessageNewChange = (event) => {
       const count = event.target.value
       const characterCount = count.length 
@@ -17,7 +15,7 @@ const MessageForm = ({ onSubmit, messageNew, setMessageNew }) => {
   return (
     <div className="tought-message form-container">
       <form className="form" onSubmit={onSubmit}>
-        <p>What's making you happy right now?</p>
+           <p>What's making you happy right now?</p>
           <label htmlFor="newMessage">
             <input 
               className={messageNew.length < 140 ? "input" : "input input-count"}
@@ -32,7 +30,7 @@ const MessageForm = ({ onSubmit, messageNew, setMessageNew }) => {
             <span className="heart-icon" role="img" aria-label="like">❤️</span>
               Send Happy Tought 
             <span className="heart-icon" role="img" aria-label="like">❤️</span>
-          </button>   
+          </button> 
       </form>
     </div>
   )
