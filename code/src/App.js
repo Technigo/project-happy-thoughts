@@ -9,7 +9,7 @@ import Header from './components/Header'
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
-  const [error, setError] = useState('')
+  // const [error, setError] = useState('')
   const [characters, setCharacters] = useState(messageNew.length)
 
   useEffect(() => {
@@ -63,6 +63,7 @@ export const App = () => {
     .then(res => res.json())
     .then(() => fetchMessageList())
     .catch(error => console.error(error))
+    setMessageNew('')
   }
 
   return (
