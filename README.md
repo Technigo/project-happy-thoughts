@@ -16,4 +16,5 @@ Take a look at the project here: https://tender-poitras-167886.netlify.app/
 PLAN/things to fix
 - add animation when pushing like button
 - change style of border active
-- Chnage functions between on and handle. 
+- try to use an error code
+- work a bit on responsiveness

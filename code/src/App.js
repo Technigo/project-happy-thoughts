@@ -1,17 +1,18 @@
 //Global dependencies
 import React, { useEffect, useState } from 'react'
-import moment from 'moment'
 
 //Local dependencies
-import { API_URL, POST_URL, POST_HEART_URL } from './constants/urls'
+import { API_URL, POST_HEART_URL } from './constants/urls'
 
-import { Form } from './components/Form'
-import { List } from './components/List'
+//Components
+import { MessageForm } from './components/MessageForm'
+import { MessageList } from './components/MessageList'
 
 export const App = () => {
 
 
-//constants & functions
+//Constants & Functions
+
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
 
@@ -24,7 +25,7 @@ export const App = () => {
     .then(response => response.json())
     .then (messages => setMessageList(messages))
     .catch(error => console.error(error))
-  }
+   }
 
   const handleMessageNewChange = (event) => {
     setMessageNew(event.target.value)
@@ -42,7 +43,7 @@ export const App = () => {
       body: JSON.stringify({message: messageNew})
     }
 
-    fetch(POST_URL, options)
+    fetch(API_URL, options)
       .then (response => response.json())
       .then (()=> fetchMessageList())
       .catch(error => console.error(error))
@@ -56,29 +57,26 @@ export const App = () => {
       }
     }
 
-    // const onCatchError = (error) => {
-
-    // }
-
     fetch(POST_HEART_URL(messageID), options)
     .then (response => response.json())
     .then (()=> fetchMessageList())
     .catch(error => console.error(error))
   }
 
-//mounting
+
+// Mounting
   return (
     <div className="content">
 
-      <Form 
+      <MessageForm 
         messageNew = {messageNew}
         onFormSubmit = {handleFormSubmit}
         onMessageNewChange = {handleMessageNewChange}
       />
 
-      < List 
+      < MessageList 
         messageList = {messageList}
-        onLikesIncrease = {handleLikesIncrease}
+        handleLikesIncrease = {handleLikesIncrease}
       />
       
     </div>

@@ -1,7 +1,8 @@
 import React from 'react'
 import moment from 'moment'
+import { LikeButton } from './LikeButton'
 
-export const List = ({ messageList, onLikesIncrease }) => {
+export const MessageList = ({ messageList, handleLikesIncrease }) => {
   return (
     <>
       {messageList.map(message => ( 
@@ -11,12 +12,11 @@ export const List = ({ messageList, onLikesIncrease }) => {
           </h4>
           <div className="card-info">
             <div className="likes">
-              <button 
-                className={`like-button ${message.hearts > 0 ? 'liked' : ''} ${message.hearts > 10 ? 'super-liked' : ''}`}
-                onClick={() => onLikesIncrease(message._id)}>
-                <span role="img" aria-label="heart emoji">💓</span>
-              </button>
-              <p>x {message.hearts}</p>
+              < LikeButton 
+                message = {message}
+                onLikesIncrease = {handleLikesIncrease}
+              />
+              <p> x {message.hearts}</p>
             </div>
             <p className="post-time">
               {moment(message.createdAt).fromNow()}
