@@ -6,8 +6,7 @@ import '../styles/SendThought.css'
 const SendThought = ({
   handleFormSubmit,
   newThought,
-  onNewThoughtChange,
-  setError
+  onNewThoughtChange
 }) => {
   return (
   <div className="thoughts-container-whitesmoke">
@@ -29,7 +28,7 @@ const SendThought = ({
       {140 - newThought.length} characters left
       </p>
       <ButtonSubmit
-        onClick={() => setError(prev => !prev)} //I am not sure this is correct submitFunction={submitNewThought}
+        handleFormSubmit={handleFormSubmit}
         disabled={newThought.length < 5 || newThought.length >= 140 ? true : false}
       />
     </form>

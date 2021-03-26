@@ -9,8 +9,7 @@ import ErrorPopup from './components/ErrorPopup'
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [newThought, setNewThought] = useState('')
-  const [error, setError] = useState(false) //hide ErrorPopup on application start
-
+  const [error, setError] = useState(false)
   
   useEffect(() => {
     fetchThoughtsList()
@@ -82,7 +81,7 @@ export const App = () => {
         thoughtsList={thoughtsList}
         handleHeartsIncrease={handleHeartsIncrease}  
       />
-      {error && <ErrorPopup/>}
+      {error && <ErrorPopup setError={setError}/>}
     </>
   )
 }
