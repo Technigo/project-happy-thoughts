@@ -23,4 +23,4 @@ I had a huge problem with connecting my heart button and the amount of likes, an
 
 ## View it live
 
-Write your lovely happy thoughts here:  
+Write your lovely happy thoughts here:  Write your lovely 💌 happy thoughts 💌 here: https://happy-tought.netlify.app/ 
