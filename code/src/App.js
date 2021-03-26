@@ -56,6 +56,7 @@ export const App = () => {
           }
           return thought
         })
+        setThoughtList(updatedThoughtList)
       })
       .catch(err => console.error(err))
   }
