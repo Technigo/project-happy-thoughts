@@ -2,16 +2,16 @@
 import React, { useState, useEffect } from "react";
 
 /*Local Dependency*/
-import { API_FETCH } from "./reusable/urls";
-// import { API_POST } from "./reusable/urls";
+import Form from "./components/Form";
+import List from "./components/List";
+
+import { URL } from "./reusable/urls";
+import { URL_HEARTS } from "./reusable/urls";
 
 /* Main App*/
 export const App = () => {
   /*States*/
-  const [messageList, setMessageList] = useState(
-    []
-  ); /*Should be empty array as it will be non empty-array later*/
-
+  const [messageList, setMessageList] = useState([]);
   const [messageNew, setMessageNew] = useState("");
 
   /*UseEffect*/
@@ -22,55 +22,66 @@ export const App = () => {
 
   /*fetch for happy thoughts already posted*/
   const fetchMessageList = () => {
-    fetch(API_FETCH)
+    fetch(URL)
       .then((res) => res.json())
       .then((messages) => setMessageList(messages)) /*WHAT*/
       .catch((err) => console.error(err));
   };
 
   /*Set the content of new message*/
-  const onMessageNewChange = (event) => {
+  const handleMessageNewChange = (event) => {
     setMessageNew(event.target.value);
   };
 
   /*Submit of new message*/
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: messageNew }),
+      body: JSON.stringify({ message: messageNew }),
     };
 
-    console.log(messageNew);
     /*fetch for frame of new posts*/
-    fetch(API_FETCH, options)
+    fetch(URL, options)
       .then((response) => response.json())
       .then((receivedMessage) =>
-        setMessageList([...messageList, receivedMessage])
+        setMessageList([receivedMessage, ...messageList])
       );
+  };
+  const handleHeartsIncrease = (id) => {
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    };
+
+    fetch(URL_HEARTS(id), options)
+      .then((res) => res.json())
+      .then((receivedMessage) => {
+        const updatedMessageList = messageList.map((message) => {
+          if (message._id === receivedMessage._id) {
+            message.hearts += 1;
+          }
+          return message;
+        });
+        setMessageList(updatedMessageList);
+      })
+      .catch((err) => console.error(err));
   };
 
   /*What the app returns*/
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newMessage">Write new message!</label>
-        <input
-          id="newMessage"
-          type="text"
-          value={messageNew}
-          onChange={onMessageNewChange}
-        />
-        <button type="submit">Send Message!</button>
-      </form>
-      {messageList.map((message) => (
-        <div key={message._id}>
-          <h4>{message.message}</h4>
-          {/* <p className="date"> - {moment(message.created).fromNow()}</p> */}
-        </div>
-      ))}
+      <Form
+        messageNew={messageNew}
+        onMessageNewChange={handleMessageNewChange}
+        onFormSubmit={handleFormSubmit}
+      />
+      <List
+        handleHeartsIncrease={handleHeartsIncrease}
+        messageList={messageList}
+      />
     </div>
   );
 };
