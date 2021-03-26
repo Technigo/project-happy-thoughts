@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+import Header from './components/Header'
 import MessageForm from './components/MessageForm'
 import MessageList from './components/MessageList'
 
@@ -67,6 +68,7 @@ export const App = () => {
 
   return (
     <div className="page-wrapper">
+      <Header />
       <MessageForm 
         newMessage={newMessage} 
         onNewMessageChange={handleNewMessageChange}
