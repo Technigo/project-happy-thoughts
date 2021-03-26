@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { SubmitButton } from './SubmitButton'
+
 export const Form = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
     return (
         <form 
@@ -8,7 +10,7 @@ export const Form = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
         >
           <label
             htmlFor="newMessage">
-            Post your thought!
+            What's making you happy right now?
           </label>
           <textarea 
             id="newMessage"
@@ -16,14 +18,10 @@ export const Form = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
             cols="1"
             value={newMessage}
             type="text"
-              onChange={onNewMessageChange}
-              className="new-message-input"
+            onChange={onNewMessageChange}
+            className="new-message-input"
           ></textarea>
-          <button 
-            className="submit-btn" 
-            type="submit"
-            ><span role="img" aria-label="heart emoji">❤️</span> Send happy thought! <span role="img" aria-label="heart emoji">❤️</span>
-          </button>
+          <SubmitButton />
         </form>
     )
 }
