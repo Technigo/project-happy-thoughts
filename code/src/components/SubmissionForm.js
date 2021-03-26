@@ -17,7 +17,7 @@ const SubmissionForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
       >    
       </textarea>
       <p className="time-from-now">you can type {140 - messageNew.length} characters more</p>
-      <button className="btn-submit" type="submit"><span role="img">💗</span> Send Happy Thought <span role="img">💗</span></button>
+      <button className="btn-submit" type="submit"><span role="img" aria-label="emoji">💗</span> Send Happy Thought <span role="img" aria-label="emoji">💗</span></button>
     </form>
   )
 }
