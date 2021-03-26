@@ -65,7 +65,7 @@ export const App = () => {
   }
   
   return (
-    <div>
+    <main>
       <MessageForm 
         newMessage={newMessage}
         onNewmessageChange={handleNewmessageChange}
@@ -75,6 +75,6 @@ export const App = () => {
         messageList={messageList} 
         handleLikesIncrease={handleLikesIncrease}
       />
-    </div>
+    </main>
   )
 }

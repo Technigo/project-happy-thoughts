@@ -5,7 +5,7 @@ import MessageElement from './MessageElement'
 
 const MessageList = ({ messageList, handleLikesIncrease }) => {
   return (
-    <>
+    <div>
       {messageList.map(message => (
         <MessageElement
           key={message._id} 
@@ -13,7 +13,7 @@ const MessageList = ({ messageList, handleLikesIncrease }) => {
           onLikesIncrease={handleLikesIncrease}
         />
       ))}
-    </>  
+    </div>  
   )
 }
 

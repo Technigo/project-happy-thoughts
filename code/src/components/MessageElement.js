@@ -3,7 +3,7 @@ import moment from 'moment'
 
 const MessageElement = ( {message, onLikesIncrease} ) => {
   return (
-    <div>
+    <div className="chat-box message-container">
       <h4>{message.message}</h4>
       <button onClick={() => onLikesIncrease(message._id)}>
         {message.hearts}

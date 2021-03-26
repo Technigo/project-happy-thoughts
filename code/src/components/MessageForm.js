@@ -4,14 +4,15 @@ import React from 'react'
  const MessageForm = ({ newMessage, onNewmessageChange, onFormSubmit}) => {
   return (
     
-    <form onSubmit={onFormSubmit}>
+    <form className="chat-box form-container" onSubmit={onFormSubmit}>
         <label htmlFor='newMessage'>What´s making you happy right now?</label>
-        <input 
+        <textarea
           id='newMessage' 
-          type='text' 
+          name='newMessage' 
           value={newMessage}
           onChange={onNewmessageChange}
-        />
+          >
+        </textarea> 
         <button type='submit'>
           <span role="img" aria-label="heart">❤️</span>
           Send Happy Thought
