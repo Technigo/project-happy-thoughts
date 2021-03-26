@@ -3,10 +3,12 @@ import React, { useState, useEffect } from 'react'
 import { API_URL, LIKE_URL } from './reusable/urls'
 import { Form } from './components/Form'
 import MessageList from './components/MessageList'
+import ErrorMessage from './components/ErrorMessage'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState ('')
+  const [errorMessage, setErrorMessage] = useState(false)
 
   useEffect(() => {
     fetchMessageList()
@@ -33,13 +35,17 @@ export const App = () => {
     fetch(API_URL, options)
     .then(response => {
       if (response.ok) {
+        console.log(response)
        return response.json()
       } else {
         throw new Error ('Something went wrong!')
       }
     })
-    .then((receivedMessage) => setMessageList([receivedMessage, ...messageList]))
-    .catch(error => console.error(error))
+    .then((receivedMessage) => {
+      setMessageList([receivedMessage, ...messageList])
+      setMessageNew('')
+    })
+    .catch(() => setErrorMessage(prev => !prev))
   }
 
   const handleLikesIncrease = (id) => {
@@ -70,17 +76,22 @@ export const App = () => {
     
   return (
     <div className='app-container'>
-        <Form  
-          messageNew={messageNew} 
-          setMessageNew={setMessageNew} 
-          onFormSubmit={handleFormSubmit}
-        />
-      <div>
-      <MessageList 
-          handleLikesIncrease={handleLikesIncrease} 
-          messageList={messageList} 
-        />
-      </div>
+        {!errorMessage && (
+        <div>
+          <Form  
+            messageNew={messageNew} 
+            setMessageNew={setMessageNew} 
+            onFormSubmit={handleFormSubmit}
+          />
+          <div>
+          <MessageList 
+              handleLikesIncrease={handleLikesIncrease} 
+              messageList={messageList} 
+            />
+          </div>
+        </div>
+        )}
+        {errorMessage && <ErrorMessage />}
     </div>
   )
 }

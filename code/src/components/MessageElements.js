@@ -9,6 +9,9 @@ const MessageElements = ({ onLikesIncrease, message }) => {
             <div className='heart-date-container'>
               <div className="likes-icon-count">
                 <button 
+                  tabIndex='0'
+                  aria-pressed='false'
+                  aria-label='Add like'
                   onClick={() => onLikesIncrease(message._id)}
                   className={`heart-button ${message.hearts > 0 ? 'heart-active' : 'heart-inactive'}`}
                 >
