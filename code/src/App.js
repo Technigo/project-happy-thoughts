@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import FormContext from "./components/FormContext/FormContext.component";
-import MessageForm from "./components/NewMessageForm/NewMessageForm.component";
+import NewMessageForm from "./components/NewMessageForm/NewMessageForm.component";
 import MessageList from "./components/MessageList/MessageList.component";
 
 import { MainWrapper } from "../src/assets/styles/style";
@@ -24,7 +24,7 @@ export const App = () => {
   return (
     <FormContext.Provider value={{ messageList, setMessageList }}>
       <MainWrapper>
-        <MessageForm />
+        <NewMessageForm />
         <MessageList />
       </MainWrapper>
     </FormContext.Provider>
