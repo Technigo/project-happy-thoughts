@@ -5,7 +5,6 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
 
 
     console.log(messageNew.length)
-
    
 
     return (
@@ -18,21 +17,23 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
                 </div>
                 <div className="input-container">
                     <textarea
-                    className="input"
+                    //className="input"
+                    className={words === 140 ? "input-red" : "input"}
                     id="newMessage"
                     type="text" 
-                    value={messageNew} // kanske en ternary operator?
+                    value={messageNew} // kanske en ternary operator? {messageNew}
                     onChange={OnInputMessage}
                     cols="40" 
                     rows="6"
-                    
+                    maxLength="140"
+                    placeholder="Please type your thought here, maximum 140 charachters"
                     />
                     </div>
                 <div>
                     <button className="submit-btn" type="submit">
                     <span className="likes">&#10084;</span> Send Happy Thought! <span className="likes">&#10084;</span>
                     </button>
-                    <p>Character: {words}</p>
+                    <p>Charachter: {words} of 140</p>
                 </div>
             </div>
         </div>

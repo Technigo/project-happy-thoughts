@@ -10,16 +10,17 @@ export const App = () => {
   const [messageList, setMessageList] = useState([]) 
   const [messageNew, setMessageNew] = useState("") // The state that takes the input from our submit button
 
-  const WordCount =  () => {
+  /*const WordCount =  () => {
 
     if ( messageNew.length   > 140) {
+      const overLimit = messageNew.length - 140
         return (
-            alert("you have passed 140 characters")
+            alert(`you have passed 140 characters, you are ${overLimit} over the limit`)
         )
     }
 }
 
-WordCount()
+WordCount()*/
 
   useEffect(() => {
     fecthMessageList()

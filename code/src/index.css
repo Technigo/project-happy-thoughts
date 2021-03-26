@@ -80,15 +80,28 @@ code {
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
+  resize: none;
+}
+
+.input-red {
+  height: 200%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  resize: none;
+  background: #ff8080;
 }
 
 .message-content {
   word-break: break-word;
+  height: 100px;
 }
 
 input {
   text-align: left;
 }
+
+
 
 .submit-btn {
   border-radius: 25px;
@@ -177,7 +190,7 @@ input {
 @media (min-width: 768px) {
 
   .input {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .moment-section p, .likes-section p {
