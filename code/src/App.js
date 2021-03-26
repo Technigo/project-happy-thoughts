@@ -19,7 +19,6 @@ export const App = () => {
       .then(messages => setMessageList(messages))
       .catch(err => console.error(err));
   }
-  
 
   const onMessageNewChange = (event) =>{
     setMessageNew(event.target.value);

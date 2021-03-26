@@ -26,12 +26,8 @@ code {
   margin: 20px;
   box-shadow: black 0 2px 5px 0;
   font-family: "Courier New";
-  font-size: 18px;
-  overflow: scroll;
+  font-size: 16px;
 }
-
-
-
 
 .submit-message-container {
   background-color: rgb(241, 239, 239);
@@ -42,15 +38,16 @@ code {
 
 .label-input-message {
   margin: 10px;
+  font-size: 14px;
 }
 
 .button-submit {
   background-color: rgb(255, 149, 149);
   border: none;
   border-radius: 45px;
-  width: 50%;
+  width: 70%;
   height: 35px;
-  margin: 10pxessage;
+  margin: 10px;
   font-family:  "Courier New";
   font-weight: 600;
 }
@@ -73,20 +70,21 @@ code {
   background-color: rgb(255, 149, 149);
 }
 
-
 .message-input {
   width: 90%;
   min-height: 40px;
   margin: 10px;
   font-family: "Courier New";
-  
+  cursor: text;
+  font-size: 16px;
+  resize: none;
 }
 
 .likes-date-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+  font-size: 14px;
 }
 
 .heart-black {
@@ -107,4 +105,16 @@ code {
   color: grey;
   font-family: "Courier New";
   margin: 10px;
+}
+
+@media (min-width: 768px ) {
+
+.label-input-message {
+  font-size: 16px;
+}
+
+.button-submit {
+  width: 50%;
+}
+
 }
