@@ -16,6 +16,12 @@ const Button = styled.button`
     top: 25px;
     right: 25px;
   `}
+  
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    border: 2px solid grey;
+  }
 `;
 
 Button.Emoji = styled.span`

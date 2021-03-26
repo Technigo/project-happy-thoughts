@@ -9,15 +9,12 @@ import { URL } from 'helpers/reusables';
 
 const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const fetchThoughts = () => {
-    setLoading(true);
     fetch(URL)
       .then((res) => res.json())
       .then((data) => {
         setThoughts(data);
-        setLoading(false);
       })
       .catch((err) => console.log(err));
   };
@@ -37,7 +34,6 @@ const App = () => {
   return (
     <Main>
       <Form fetchThoughts={fetchThoughts} />
-      <div>{loading && 'Loading'}</div>
       {thoughts.map((thought, index) => (
         <Thought
           key={thought._id}
