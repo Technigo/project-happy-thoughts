@@ -12,13 +12,13 @@ export const App = () => {
  
   useEffect(() => {
     fetchMessageList() 
-  }, []) // Calling the component only when it´s mounted
+  }, []) 
 
   const fetchMessageList = () => {
     fetch(API_URL)
-      .then(res => res.json()) //Unpacking the data
+      .then(res => res.json()) 
       .then(message => setMessageList(message))
-      .catch(err => console.error(err)) //Catch handler showing error message if something breaks
+      .catch(err => console.error(err)) 
   }
 
   const handleNewMessageChange = (event) => {
