@@ -14,9 +14,9 @@ code {
 }
 
 .form-container, .thought-container {
-  border: 1px solid black;
+  border: 2px solid #797878;
   margin: 20px;
-  box-shadow: 6px 6px black;
+  box-shadow: 6px 6px #060606;
   padding: 10px;
   font-family: source-code-pro;
   margin-left: auto;
@@ -34,10 +34,10 @@ code {
 }
 
 .input-style {
-  padding: 10px 112px 20px 10px;
   margin-top: 10px;
   border-color: #DEDEDE;
   border-style: solid;
+  resize: none;
 }
 
 .submit-button {
@@ -46,6 +46,7 @@ code {
   background-color: #F0ACAC;
   padding: 10px;
   border: none;
+  cursor: pointer;
 }
 
 .thought-container {
@@ -67,6 +68,7 @@ code {
   padding: 10px;
   border-radius: 50px;
   border: none;
+  cursor: pointer;
 }
 
 

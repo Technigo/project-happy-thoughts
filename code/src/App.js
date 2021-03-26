@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import Form from './components/Form'
 import ThoughtList from './components/ThoughtList'
-
 import './index.css'
 
 import { URL } from './reusable/url'
