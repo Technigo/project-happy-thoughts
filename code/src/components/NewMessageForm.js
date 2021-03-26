@@ -23,7 +23,10 @@ export const NewMessageForm = ({ newMessage, setNewMessage, messageList, setMess
     
         fetch(API_URL, options)
           .then(res => res.json())
-          .then(newPost => setMessageList([...messageList, newPost]))
+          .then((newPost => {
+            setMessageList((messageList) => [newPost, ...messageList])
+          }))
+          /* .then(newPost => setMessageList([...messageList, newPost])) */
           .catch(error => console.error(error))
           
          /*  setTimeout(() => handleSubmit(), 2000) */
