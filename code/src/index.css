@@ -13,12 +13,28 @@ code {
     monospace;
 }
 
-.content-container{
+.content-container {
   max-width: 700px;
   margin: auto;
 }
 
-.board-container{
+.error-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.api-error {
+  text-align: center;
+  font-size: 30px;
+  color: palevioletred;
+  font-style: Trispace;
+}
+.sad-face {
+  width: 200px;
+}
+
+.board-container {
   margin: 40px
 }
 

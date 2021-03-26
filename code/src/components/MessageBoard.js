@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 
-import { API_URL } from '../reusable/urls'
+import { API_URL, HEARTS_URL } from '../reusable/urls'
 
 import Loading from '../components/Loading'
+import ErrorBoard from '../components/ErrorBoard'
 
 const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
   const [loading, setLoading] = useState(false)
@@ -32,15 +33,13 @@ const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
     const updatedThoughts = thoughts.map((thought) => {
       if (thought._id === thoughtLiked) {
         thought.hearts += 1
-      }
+      } 
       return thought
     })
     setThoughts(updatedThoughts)
-
     if (myLikes.indexOf(thoughtLiked) === -1) {
       setMyLikes([thoughtLiked, ...myLikes])
     }
-
   }
 
   const onHeartClicked = (id) => {
@@ -50,15 +49,15 @@ const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
         'Content-Type': 'application/json'
       },
     }
-    const hearts_url = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
 
-    fetch(hearts_url, options)
+    fetch(HEARTS_URL(id), options)
+      .then(res => res.json())
       .then(() => {
         onThoughtLiked(id)
       })
   }
 
-  return loading ? <Loading loading={loading} /> : error ? <div className="api-error"> Oops, an error occured during API call!</div> : (
+  return loading ? <Loading loading={loading} /> : error ? <ErrorBoard /> : (
     <div className="message-board">
       {thoughts.map(thought => (
         <div className="message-container" key={thought._id}>
@@ -76,7 +75,6 @@ const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
             </button>
             <p>x{thought.hearts}</p>
           </div>
-
         </div>
       ))}
     </div>

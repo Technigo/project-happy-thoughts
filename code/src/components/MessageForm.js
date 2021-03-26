@@ -20,7 +20,7 @@ const MessageForm = ({ thoughts, setThoughts }) => {
     }
     fetch(API_URL, options)
       .then(res => {
-        if (res.status === 201) {
+        if (res.ok) {
           return res.json()
         } else {
           throw new Error("Oops, something went wrong! Perhaps, your message is shorter than 5 characters!")
@@ -45,7 +45,7 @@ const MessageForm = ({ thoughts, setThoughts }) => {
             htmlFor="message-input" 
             className="heading"
           >
-              What is making you happy right now?
+            What is making you happy right now?
           </label>
         </div>
         <textarea
