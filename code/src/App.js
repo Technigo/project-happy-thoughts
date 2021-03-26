@@ -41,7 +41,8 @@ export const App = () => {
     fetch(API_URL, options)
     .then(response => response.json())
     .then(() => fetchThoughts())
-    .catch(err => console.error(err));
+    .catch(err => console.error(err))
+    setNewThought("");
   }
 
   const onLikesIncrease = (id) => {
@@ -70,7 +71,11 @@ export const App = () => {
         thoughts={thoughts}
         onLikesIncrease={onLikesIncrease}
         />
-      <div>Icons made by Good Ware from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      <footer className="footer">
+        <p>Icons made by Good Ware from 
+        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+        <p>© Linnéa Helén 2021</p>
+      </footer>
     </>
   )
 }

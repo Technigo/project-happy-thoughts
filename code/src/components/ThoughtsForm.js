@@ -10,6 +10,7 @@ const ThoughtsForm = (props) => {
         id="thoughtsInput"
         value={props.newThought}
         onChange={props.onNewThoughtChange}
+        maxLength = "120"
       />
       <button type="submit" className="send-thought-button">
         <img className="heart-left" src="./assets/heart.svg" alt="heart icon"/>

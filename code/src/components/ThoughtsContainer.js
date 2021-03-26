@@ -14,7 +14,7 @@ const ThoughtsContainer = (props) => {
         time ={thought.createdAt}
         onLikesIncrease={onLikesIncrease}
       />
-      )};
+      )}
     </div>
   );
 };
