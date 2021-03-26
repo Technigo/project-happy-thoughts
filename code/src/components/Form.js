@@ -1,19 +1,27 @@
-import React from "react";
+import React from 'react'
 
-import "../index.css";
+import '../index.css'
 
-const Form = () => {
+const Form = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
   return (
-    <>
-      <div className="form-container">
-        <h1 className="main-title">What's making you happy right now?</h1>
-        <div className="submit-container">
-          <input type="text" />
-          <button type="submit">Send Happy Thought</button>
-        </div>
-      </div>
-    </>
-  );
-};
+    <form onSubmit={onFormSubmit} className="form-container">
+      <label htmlFor="newMessage" className="main-title">
+        What's making you happy right now?
+      </label>
 
-export default Form;
+      <input
+        id="newMessage"
+        type="text"
+        placeholder="React is making me happy!"
+        value={messageNew}
+        onChange={onMessageNewChange}
+        className="input-style"
+      />
+      <button type="submit" className="submit-button">
+      <span role="img" aria-label="heart icon">&#10084;&#65039;</span> Send Happy Thought <span role="img" aria-label="heart icon">&#10084;&#65039;</span> 
+      </button>
+    </form>
+  )
+}
+
+export default Form

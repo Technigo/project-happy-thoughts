@@ -1,21 +1,23 @@
-import React from "react";
+import React from 'react'
+import moment from 'moment'
 
-import "../index.css";
-
-const Thought = ({ messageList }) => {
+const Thought = ({ message }) => {
   return (
     <>
-      {messageList.map((message) => (
-        <div key={message._id} className="thought-container">
-          <p className="happy-thought">{message.message}</p>
-          <div className="icon-time-container">
-            <p>img</p>
-            <p>time</p>
+      <div className="thought-container">
+        <p className="happy-thought">{message.message}</p>
+        <div className="icon-time-container">
+          <div>
+            <button className="like-button"><span role="img" aria-label="heart icon">&#10084;&#65039;</span></button>
+            <span> x {message.hearts}</span>
           </div>
+          <span className="created-time">
+            {moment(message.createdAt).fromNow()}
+          </span>
         </div>
-      ))}
+      </div>
     </>
-  );
-};
+  )
+}
 
-export default Thought;
+export default Thought
