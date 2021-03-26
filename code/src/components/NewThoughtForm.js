@@ -51,7 +51,7 @@ const NewThoughtForm = ({newThought, setNewThought, setThoughtsList, thoughtsLis
           type='submit'
           className='form-button'
           // Conditionally disable submit button if there are more than 140 characters
-          disabled={newThought.length === 0 || newThought.length > 140}>
+          disabled={newThought.length < 5 || newThought.length > 140}>
             <span role='img' aria-label='heart emoji'>❤️</span>Send Happy Thought<span role='img' aria-label='heart emoji'>❤️</span>
         </button>
       </label>

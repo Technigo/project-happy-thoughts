@@ -21,7 +21,7 @@ export const App = () => {
     .then (response => response.json())
     .then(data => {
       setThoughtsList(data);
-      //Changing the state of isPending to false when the fetching is completed 
+      //Changing the state of isPending to false and hiding the Loading message when the fetching is completed 
       setIsPending(false);
     })
     //Catching errors during the fetch
