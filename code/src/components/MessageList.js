@@ -2,7 +2,7 @@ import React from 'react';
 
 import MessageElement from './MessageElement';
 
-const MessageList =  ({ messageList, onHeartLikes }) = {
+const MessageList =  ({ messageList, onHeartLikes }) => {
   return (
     <>
       {messageList.map(message => (
@@ -12,7 +12,7 @@ const MessageList =  ({ messageList, onHeartLikes }) = {
           onHeartLikes={onHeartLikes}
         />
       ))}
- 
+    </>
   )
 }
 
