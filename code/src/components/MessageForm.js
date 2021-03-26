@@ -1,11 +1,14 @@
 import React from 'react'
 
+
+
 const MessageForm = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
   return (
     <form className="message-box" onSubmit={onFormSubmit}>
       <label htmlFor="newMessage">What´s making you happy right now?</label>
-      <input 
+      <textarea 
         className="input-field"
+        rows="4"
         id="newMessage" 
         type="text" 
         value={newMessage}

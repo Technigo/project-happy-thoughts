@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
 import MessageForm from './components/MessageForm'
 import MessageList from './components/MessageList'
 
-import { API_URL, LIKES_URL } from './reuseable/urls';
+import { API_URL, LIKES_URL } from './reuseable/urls'
 
 export const App = () => {
 
@@ -11,14 +11,14 @@ export const App = () => {
   const [newMessage, setNewMessage] = useState('')
  
   useEffect(() => {
-    fetchMessageList(); 
-  }, []); // Calling the component only when it´s mounted
+    fetchMessageList() 
+  }, []) // Calling the component only when it´s mounted
 
   const fetchMessageList = () => {
     fetch(API_URL)
       .then(res => res.json()) //Unpacking the data
       .then(message => setMessageList(message))
-      .catch(err => console.error(err)); //Catch handler showing error message if something breaks
+      .catch(err => console.error(err)) //Catch handler showing error message if something breaks
   }
 
   const handleNewMessageChange = (event) => {
@@ -27,7 +27,7 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    setNewMessage('');
+    setNewMessage('')
 
     const options = {
       method: 'POST', 
@@ -39,7 +39,7 @@ export const App = () => {
     fetch(API_URL, options)
       .then(res => res.json()) 
       .then(postMessage => setMessageList([postMessage,...messageList]))
-      .catch(err => console.error(err)); 
+      .catch(err => console.error(err)) 
   }
 
   const handleLikesIncrease = (id) => {
@@ -60,7 +60,7 @@ export const App = () => {
           } 
           return message;
         });
-        setMessageList(updatedMessageList);
+        setMessageList(updatedMessageList)
       })
       .catch(err => console.err(err))
   }
