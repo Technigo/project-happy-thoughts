@@ -8,12 +8,12 @@ import { API_URL } from './reusable/urls'
 import { HEART_URL } from './reusable/urls'
 
 export const App = () => {
-  const [happyList, setHappyList] = useState([])   //state properties
+  const [happyList, setHappyList] = useState([])   
   const [newMessage, setNewMessage] = useState ('')
   
   useEffect(()=> {
     fetchHappyThoughtList()
-  }, []) //only for when the component is mounted. add empty string.Sending request to fetch funct
+  }, []) 
 
   const fetchHappyThoughtList = () => {
     fetch (API_URL)

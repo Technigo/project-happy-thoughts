@@ -1,26 +1,7 @@
 body {
   margin: 0px;
   background: #e4d3cf;
-   
-   /*-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif; 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;*/
-
-  /* #F2F0F0 input bg 
-  #E0DEDE BODY BG
-  #FFADAD send happy thought field
-  #EAEAEA bg hearts 
-  #C5C5C5 time text 
-  #1D1D1D TEXT
-  */
 }
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
 
 .input-card {
   border: 2px solid black;
@@ -123,14 +104,6 @@ font-size: 12px;
   width: 30px;
   cursor: pointer;
 }
-
-/* .heart-bg-gray {
-  background-color: #D4D4D4 ;
-}
-
-.heart-bg-pink {
-  background-color: #FFADAD;
-} */
 
 /* MEDIA TABLETT & DESKTOP */
 
