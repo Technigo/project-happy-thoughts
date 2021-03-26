@@ -35,6 +35,7 @@ label {
   font-weight: bold;
 }
 
+
 .chat-containers {
   position: relative;
   display: flex;
@@ -61,8 +62,8 @@ margin-top: 70px;
 }
 
 .send-message-button {
-  display: flex;
-  justify-content: space-around;
+  display: inline-flex;
+  vertical-align: top;
   align-items: baseline;
   border: none;
   background-color: #ffadae;
@@ -78,7 +79,11 @@ margin-top: 70px;
 
 .message-container {
 background-color: khaki;
+word-wrap: break-word;
+
 }
+
+
 
 
 .send-like-button {
