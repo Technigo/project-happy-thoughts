@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import ThoughtForm from './components/ThoughtForm'
 import ThoughtList from './components/ThoughtList'
 
-import { API_URL, HEARTS_URL } from 'reusable/urls'
+import { API_URL, HEARTS_URL } from './reusable/urls'
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([])
