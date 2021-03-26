@@ -26,7 +26,7 @@ export const NewMessageForm = ({ newMessage, setNewMessage, messageList, setMess
           .then(newPost => setMessageList([...messageList, newPost]))
           .catch(error => console.error(error))
           
-          setTimeout(() => window.location.reload(), 2000)
+          /* setTimeout(() => window.location.reload(), 2000) */
       
       }
 
