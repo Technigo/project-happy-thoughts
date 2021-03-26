@@ -59,7 +59,7 @@ export const App = () => {
       {happyThoughtsList.map(thought => (
         <div key={thought._id}>
         <h5 className="thought-message">{thought.message}</h5>
-        <button>❤️</button>
+        <button><span role="img" aria-label="heart emoji">❤️</span></button>
         <p className="thought-date">{moment(thought.createdAt).fromNow()}</p>
         </div>
       ))}
