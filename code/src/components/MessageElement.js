@@ -8,7 +8,7 @@ const MessageElement = ({ message, onLikesIncrease }) => {
 
       <div className="hearts-and-time-box">
       <button className="like-button" onClick={() => onLikesIncrease(message._id)}>
-        <span className="like-heart">❤️</span>
+        <span className="like-heart" role="img" aria-label="heart emoji">❤️</span>
         <span className="x-operator">x</span> 
         {message.hearts}
       </button>

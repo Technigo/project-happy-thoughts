@@ -13,7 +13,7 @@ const MessageForm = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
       />
       <button 
         className="send-button" 
-        type="submit"><span className="post-heart">❤️</span> Send Happy Thought<span className="post-heart">❤️</span> 
+        type="submit"><span className="post-heart" role="img" aria-label="heart emoji">❤️</span> Send Happy Thought<span className="post-heart" role="img" aria-label="heart emoji">❤️</span> 
       </button>
     </form>
   )
