@@ -1,10 +1,19 @@
 import React from 'react'
 
-const MessageList = ({ message }) => {
+import MessageElement from './MessageElement'
 
+const MessageList = ({ messageList, handleLikesIncrease, count }) => {
   return (
     <>
-     <p className="message-content">{message}</p>
+      {messageList.map((message, index) => (
+        <div className={`tought-message ${message.animate ? 'yolo' : ''}`}  key={message._id}>
+          <MessageElement 
+          message = {message}
+          count = {count[index]}
+          onLikesIncrease = {handleLikesIncrease}
+          />
+        </div>
+      ))}
     </>
   )
 }

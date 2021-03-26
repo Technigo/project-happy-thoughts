@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import moment from 'moment'
 import { ToastContainer, toast } from 'material-react-toastify'
 import 'material-react-toastify/dist/ReactToastify.css'
-import { useSpring, animated as a } from "react-spring";
-import { API_URL } from './reusable/urls'
 
+import { API_URL, LIKES_URL } from './reusable/urls'
 import MessageForm from './components/MessageForm'
 import MessageList from './components/MessageList'
-import LikeButton from './components/LikeButton'
 import Loading from './components/Loading'
 
 
@@ -15,29 +12,58 @@ export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
   const [isLoading, setIsLoading] = useState(true)
-  /* const [greetingStatus, displayGreeting] = useState(false);
+  const [dark, setDark] = useState(localStorage.getItem('dark-mode') === 'true')
+  const [buttonText, setButtonText] = useState('Send Happy Tought')
 
-  const contentProps = useSpring({
-    opacity: greetingStatus ? 1 : 0,
-    marginTop: greetingStatus ? 0 : -500
-  }) */
-   
+  const likeCount =() => JSON.parse(localStorage.getItem('countList') || "[]")
+  const [countedList, setCountedList] = useState(likeCount)
+  
+
+  //Adding animation on the form when user submits 
+  const handleAnimation = () => {
+    if (dark === false && messageNew.length > 5) {
+      setDark(!dark)
+      setButtonText('Send A New One')
+    } 
+    if (dark === false && messageNew.length > 5) {
+      setButtonText('Send A New One')
+    } 
+  }
+
   useEffect(() => {
     fetchMessageList()
+    localStorage.setItem('dark-mode', dark)
+    localStorage.clear()
     
+
+    setTimeout (() => {
+      setDark(false)
+    }, 2000)
+
     setTimeout(() => { //Setting time for the loader to stop 
       setIsLoading(false)
     }, 1500)
-  }, []) 
+  }, [dark, countedList]) 
+
 
   const fetchMessageList = () => {
     fetch (API_URL)
       .then(res => res.json ())
-      .then(messages => setMessageList(messages))
+      .then(messages => {
+        setMessageList(messages)
+        const countList = messages.map(item => {
+          const countItem = {
+            id: item._id,
+            count: 0  
+          }
+          return countItem
+        }) 
+        localStorage.setItem('countList', JSON.stringify(countList))
+      })
       .catch(err => console.error(err))
   }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -48,7 +74,7 @@ export const App = () => {
       body: JSON.stringify({ message: messageNew })
     }
     fetch (API_URL, options) 
-      .then (res => {
+      .then(res => {
         if (res.status === 201) { //Catching the error with status: 201 
           return res.json()
         } else {
@@ -56,52 +82,91 @@ export const App = () => {
             ('Something went wrong! 🤯 Please enter more than 5 characters and try again.')
         }
       })
-      .then (receivedMessage => setMessageList([receivedMessage, ...messageList]))
+      .then(receivedMessage => {
+        const id = receivedMessage._id;
+        const updatedList = [receivedMessage, ...messageList]
+
+        updatedList.find(el => el._id === id).animate = true;
+        setMessageList(updatedList)
+
+        updatedList.find(el => el._id === id).animate = false;
+        setMessageList(updatedList)
+      })
+      
       .catch((err) => {
          //adds notification snackbar, makes it look better than an regular alert message
         toast.error(err.message, {
           position: "top-left"
         })
       })
-  }  
+      //Clearing the form after user submits their message 
+      setMessageNew('')
+    }  
 
-  const onMessageLiked = (likedMessageID) => {
-    const updateMessages = messageList.map((message) => {
-      if (message._id === likedMessageID) {
-        message.hearts += 1
+    const handleLikesIncrease = (id) => {
+      const options = {
+        method: 'POST', 
+        headers: {
+          'Content-type': 'application/json'
+        }
       }
-      return message
-    })
-    setMessageList(updateMessages)
+
+      fetch(LIKES_URL(id), options)
+      .then(res => res.json())
+      .then(receivedMessage => {
+        //Increasing hearts when user likes a message with map and returning the new value
+        const updatedMessageList = messageList.map(message => {
+          if (message._id === receivedMessage._id) {
+              message.hearts += 1
+          }
+          return message
+        })
+
+        const updatedCountedList = countedList.map(count => {
+          if (count.id === receivedMessage._id) {
+            count.count += 1
+          }
+          return count
+        })
+        setMessageList(updatedMessageList)
+        localStorage.setItem('countList', JSON.stringify(updatedCountedList))
+       })
+      .catch (err => console.error(err))
+    }
+
+  //If user add more than 140 characters, the input box gets red. I add the validation here and send it trough props. 
+  const HandleMessageNewChange = (event) => {
+    const count = event.target.value
+    const characterCount = count.length 
+
+    if (characterCount <= 140) {
+      setMessageNew(count)
+    } else if (characterCount > 140) {
+      return setMessageNew(messageNew)
+    } 
   }
 
   return (
-    <section className="tought-card">
-      {isLoading === true ? 
-        <Loading/> : 
-        <div>
-        <ToastContainer />          
+    <main>
+      <div>
+        <ToastContainer />     
         <MessageForm 
-          onSubmit={onFormSubmit} 
+          onFormSubmit={handleFormSubmit} 
           messageNew={messageNew} 
-          setMessageNew={setMessageNew} 
-        /> 
-      {messageList.map(tought => (
-        <div className="tought-message" key={tought._id}>
+          onMessageNewChange = {HandleMessageNewChange}
+          onAnimationChange = {handleAnimation}
+          dark = {dark}
+          buttonText={buttonText}
+        />
+        {isLoading === true ? 
+          <Loading/> : 
           <MessageList 
-            message = {tought.message} 
+            messageList ={messageList} 
+            handleLikesIncrease = {handleLikesIncrease}
+            count = {countedList}
           />
-          <LikeButton 
-            id={tought._id}
-            message = {tought}
-            heart = {tought.hearts}
-            onMessageLiked = {onMessageLiked}
-            time = {moment(tought.createdAt).fromNow()}
-          />
-        </div>
-      ))}
+        }
       </div> 
-      }
-    </section>
+    </main>
   )
 }

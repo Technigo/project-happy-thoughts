@@ -1,16 +1,16 @@
 import React from 'react'
 //react-spinner-loader to get hearts when API is loading 
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner"
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
  
 
 const Loading = () => {
   return (
-    <div className="loader" align="center">
+    <div className="loader">
       <Loader 
        type="Hearts"
        color="#f09d9d"
-       height={500}
+       height={100}
        width={100}
        timeout={3000}
       />
