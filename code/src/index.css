@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+body {
+  background: #eee9e6;
+}
+
+/* Form container  */
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -25,14 +31,26 @@ code {
   box-shadow: 6px 6px #000;
   font-family: cursive,'Source Code Pro', monospace;
 }
+
+.label-header {
+  font-family: cursive;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.text-area-input{
+  height: 80px;
+}
 .submit-button {
-  padding: 15px 25px;
+  padding: 15px 15px;
   margin: 15px 0;
   border-radius: 30px;
   border: none;
   background-color: #FFADAD;
   font-family: cursive,'Source Code Pro', monospace;
   font-size: 16px;
+  width: 50%;
 }
 
 /* Element container */
@@ -55,7 +73,6 @@ code {
 .thought {
   font-family: cursive;
   font-size: 18px;
-  /* padding: 20px 10px; */
 }
 
 .like-container {
@@ -69,4 +86,5 @@ code {
   height: 40px;
   border-radius: 50%;
   border: none;
+  background:#FFADAD;
 }
