@@ -7,8 +7,9 @@ const ThoughtElement = ({thought, onHeartsIncrease}) => {
     <div className="thought-list">
       <h4 className="thought-message">{thought.message}</h4>
       <div className="heart-date-row">
-        <button className="heart-button" onClick={() => onHeartsIncrease(thought._id)}>
-        <span className="heart" role="img" aria-label="heart">❤️</span>
+        <button className="heart-button" 
+          onClick={() => onHeartsIncrease(thought._id)}>
+        <span className={`heart ${thought.hearts === 0 ? "heart-background-grey" : "heart-background-pink"}`} role="img" aria-label="heart">❤️</span>
         <p> x {thought.hearts}</p>
         </button>
         <p className="date">{moment(thought.createdAT).fromNow()}</p>

@@ -14,16 +14,18 @@ export const App = () => {
     fetchThoughtList()
   }, [])
 
+  //FETCH TO IMPORT THOUGHTS
   const fetchThoughtList = () => {
     fetch (API_URL)
-      .then(res => res.json())
+      .then(response => response.json())
       .then(thought => setThoughtList(thought))
       .catch(err => console.error(err))
   }
 
+  //FETCH TO POST NEW MESSAGE
   const handleThoughtNewChanged = (event) => {
   setThoughtNew(event.target.value)
-}
+  }
 
   const reloadPage = () => {
     window.location.reload()
@@ -40,14 +42,14 @@ export const App = () => {
       body: JSON.stringify ({ message: thoughtNew })
     }
     fetch(API_URL, options)
-      .then(result => result.json())
-      /*.then(() => fetchThoughtList)*/
+      .then(response => response.json())
       .then(receivedThought => setThoughtList([...thoughtList, receivedThought]))
+      //.then(() => fetchThoughtList)
       .catch(err => console.error(err))
       setTimeout(() => reloadPage(), 1000)
       
   }
-
+  //FETCH HANDLE HEARTS
   const handleHeartsIncrease =(thoughtID) => {
     const options = {
       method: 'POST',
@@ -56,7 +58,7 @@ export const App = () => {
       }
     }
     fetch(HEARTS_URL(thoughtID), options)
-    .then(result => result.json())
+    .then(response => response.json())
     .then(receivedThought => {
       const updatedThoughtList = thoughtList.map(thought =>{
         if (thought._id === receivedThought._id) {
@@ -66,7 +68,6 @@ export const App = () => {
       })
       setThoughtList(updatedThoughtList)
     })
-    
     .catch(err => console.error(err))
   }
 
@@ -81,7 +82,6 @@ export const App = () => {
       thoughtList={thoughtList}
       handleHeartsIncrease={handleHeartsIncrease}
       />
-     
     </div>
    
   )
