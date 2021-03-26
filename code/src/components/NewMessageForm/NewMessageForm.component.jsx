@@ -44,9 +44,13 @@ const NewMessageForm = () => {
         onChange={handleNewMessageChange}
       />
       <ButtonContainer>
-        <SendButton type="submit" disabled={newMessage.length < 6 || newMessage.length > 140}>❤️ Send message! ❤️ </SendButton>
-        <LimitedCharacters style={{color: newMessage.length > 130 ? "red" : "black"}}>
-          {140 - newMessage.length} 
+        <SendButton type="submit"  length={newMessage.length} disabled={newMessage.length < 6 || newMessage.length > 140}> 
+          <span role="img" aria-label="heart">❤️</span>
+          Send message!
+          <span role="img" aria-label="heart">❤️</span>
+        </SendButton>
+        <LimitedCharacters length={newMessage.length}>
+          { newMessage.length } / 140
         </LimitedCharacters>
       </ButtonContainer>
     </Form>

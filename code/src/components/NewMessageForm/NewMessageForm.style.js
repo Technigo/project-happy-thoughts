@@ -23,14 +23,17 @@ const FormInput = styled.input`
 
 const SendButton = styled.button`
   border: none;
-  background-color: #ffadad;
+  background-color: ${({ length }) =>
+    length < 6 || length > 140 ? "#d8d8d8" : "#ffadad"};
   color: #000;
-  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 5);
   border-radius: 50px;
+  display: flex;
+  gap: calc(var(--spacing) * 2);
 `;
 
 const LimitedCharacters = styled.span`
-  background-color: #aeaeae;
+  color: ${({ length }) => (length > 130 ? "red" : "#7a7a7a")};
 `;
 
 export { Form, FormLabel, FormInput, SendButton, LimitedCharacters };
