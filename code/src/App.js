@@ -45,11 +45,6 @@ export const App = () => {
       .catch(err => console.error(err));
   }
 
-
- 
-  
-
-
   const onHeartsIncrease = (id) => {
     const options = {
       method: 'POST',
@@ -66,14 +61,10 @@ export const App = () => {
           }
           return thought;
         });
-            setThoughtsList(updatedthoughtsList);
-          })
-      .catch(err => console.error(err));
+        setThoughtsList(updatedthoughtsList);
+      })
+    .catch(err => console.error(err));
   }
-
- 
-
-
 
   return (
     <div className="content-container">
