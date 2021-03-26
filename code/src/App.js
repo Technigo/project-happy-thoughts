@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
-
 import { API_URL_THOUGHTS } from './reusable/urls'
+import { API_URL_HEARTS } from './reusable/urls'
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([]) // state properties initialized as an empty array
@@ -23,17 +23,44 @@ export const App = () => {
   }
 
   const onFormSubmit = (event) => {
-    event.preventDefault()
-    fetch(API_URL_THOUGHTS, {
+      event.preventDefault()
+      //console.log('Form Submitted!', thoughtNew)
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: thoughtNew })
+      };
+  
+      fetch(API_URL_THOUGHTS, options)
+        .then(res => res.json())
+        .then(receivedThought => setThoughtList([...thoughtList, receivedThought]))
+        .catch(err => console.error(err));
+    } 
+  const onHeartsIncrease = (id) => {
+    const options = {
       method: 'POST',  // POST fetch request
       headers: {
-        'Content-Type': 'application/json' // text message for a new thought in json format is going to be sent
-      },
-      body: JSON.stringify({ message: thoughtNew }) // "message" equals to the name in the json, wrapped in stringify to pack in JSON format
-    })
+      'Content-Type': 'application/json' // text message for a new thought in json format is going to be sent
+    }
   }
 
-  fetchThoughtList()
+    fetch(API_URL_HEARTS(id), options)
+      .then(res => res.json())
+      .then(recievedThought => {
+        const updateThoughtList = thoughtList.map(thought => {
+          if (thought._id === recievedThought._id) {// only id could be used of instead recievedThought._id
+            thought.hearts += 1  // The if statement will only work for the thought clicked on
+          } 
+          return thought      
+        })
+        setThoughtList(updateThoughtList)
+      })
+      .catch(err => console.error(err))
+  }
+
+  //fetchThoughtList()
 
   return (
     <div>  
@@ -50,6 +77,9 @@ export const App = () => {
       {thoughtList.map(thought => (
         <div key={thought._id}>
           <h4>{thought.message}</h4>
+          <button onClick={() => onHeartsIncrease(thought._id)}>
+          * {thought.hearts}
+          </button>
           <p>{moment(moment.createdAt).fromNow()}</p>
         </div>
       ))}
