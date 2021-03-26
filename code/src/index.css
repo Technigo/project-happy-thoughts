@@ -67,14 +67,14 @@ code {
 
 /* FORM ELEMENTS */
 
-textarea,
-label {
+.new-message,
+.form-heading {
   width: 450px;
   margin: 10px;
   font-family: inherit;
 }
 
-textarea {
+.new-message {
   height: 60px;
   resize: none;
   padding: 10px;
@@ -93,6 +93,10 @@ textarea {
   margin: 10px;
   font-family: inherit;
   cursor: pointer;
+}
+
+.heart-icon {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .error-msg {
@@ -126,11 +130,31 @@ textarea {
   background-color: #eaeaea;
   border: 0px;
   border-radius: 50%;
-  width: 33px;
-  height: 33px;
+  width: 43px;
+  height: 43px;
   text-align: center;
   margin: 0;
   cursor: pointer;
+  transition: font-size 2s ease-in-out 1s;
+}
+
+.heart-red {
+  background-color: #ffadad;
+  border: 0px;
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+}
+
+.heart:hover > .heart-like {
+  font-size: 18px;
+}
+
+.heart-red:hover > .heart-like {
+  font-size: 18px;
 }
 
 .time {
