@@ -7,9 +7,9 @@ import { API_URL, LIKES_URL } from './reuseable/urls';
 
 export const App = () => {
 
-  const [newMessage, setNewMessage] = useState('')
   const [messageList, setMessageList] = useState([])
-
+  const [newMessage, setNewMessage] = useState('')
+ 
   useEffect(() => {
     fetchMessageList(); 
   }, []); // Calling the component only when it´s mounted
@@ -27,6 +27,7 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
+    setNewMessage('');
 
     const options = {
       method: 'POST', 
@@ -37,7 +38,7 @@ export const App = () => {
     }
     fetch(API_URL, options)
       .then(res => res.json()) 
-      .then(postMessage => setMessageList([...messageList, postMessage]))
+      .then(postMessage => setMessageList([postMessage,...messageList]))
       .catch(err => console.error(err)); 
   }
 
