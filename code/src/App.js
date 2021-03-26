@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
-import { API_URL } from './reusable/url' 
+import { API_URL, LIKES_URL } from './reusable/url' 
  
 export const App = () => {
 
@@ -52,12 +52,27 @@ export const App = () => {
         .then(res => res.json())
         .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
   
-    /* const onLikesIncrease = (id) => {
-      fetch(LIKES_URL(id))
-    } */
+      }
+
+    const onLikesIncrease = (id) => {
+
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+       
+      };
+
+      fetch(LIKES_URL(id), options)
+        .then(res => res.json())
+        .then((data)=> console.log(data))
+        .catch(err => console.error(err));
+
+    } 
   
-    }
    
+   /* console.log(messageList) */
 
     return (
       <div>
@@ -77,10 +92,10 @@ export const App = () => {
         {messageList.map(message => (
           <div key={message._id}>
             <h4>{message.message}</h4>
-            {/* <button onClick= { () => onLikesIncrease(message._id)}>
-              {message.likes}
+            <button onClick= { () => onLikesIncrease(message._id)}>
+              {message.hearts}
               ♥️
-            </button> */}
+            </button> 
             <p className ="date-created">-{moment(message.createdAt).fromNow()}</p> 
           </div>  
         ))}
