@@ -9,7 +9,7 @@ const Card = styled.div`
   padding: 20px;
   display: flex;
   flex-flow: row wrap;
-  align-items: center; 
+  align-items: center;
   word-break: break-word;
   position: relative;
 `;
@@ -21,7 +21,7 @@ Card.Title = styled(H3)`
 
 Card.FooterText = styled(P)`
   margin: 0 10px;
-  margin-left: ${(props) => (props.alignRight ? 'auto' : '')}
+  margin-left: ${(props) => (props.alignRight ? 'auto' : '')};
 `;
 
 Card.Footer = styled.div`
@@ -41,8 +41,7 @@ Card.ErrorWrapper = styled.div`
   flex-flow: column nowrap;
   text-align: center;
   justify-content: center;
-  
-  
+
   & > * {
     color: red;
     margin: 0;

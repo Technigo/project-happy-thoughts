@@ -13,7 +13,6 @@ const TextAreaStyled = styled.textarea`
 
 TextAreaStyled.Counter = styled(P)`
   float: right;
-  
 `;
 
 export default TextAreaStyled;
