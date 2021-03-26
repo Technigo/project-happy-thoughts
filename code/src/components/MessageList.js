@@ -1,53 +1,39 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import { API_URL } from "../reusable/urls";
 import { LikeButton } from "./LikeButton";
+import { DisplayTime } from "./DisplayTime";
 
-export const MessageList = ({ messageList, setMessageList }) => {
+export const MessageList = ({ messageList, setMessageList, newMessage }) => {
+  const [loading, setLoading] = useState(true);
+
   const fetchMessageList = useCallback(() => {
     //had problem with dependecies, so used callback to not get re-renders in useEffect dependecies
     fetch(API_URL)
-      .then((res) => res.json())
-      .then((messages) => setMessageList(messages))
+      .then((res) => res.json(), setLoading(true))
+      .then((messages) => {
+        setLoading(false);
+        setMessageList(messages);
+      })
       .catch((error) => console.log(error));
-  }, [setMessageList]);
+  }, [setMessageList, setLoading]);
 
   useEffect(() => {
     fetchMessageList();
   }, [fetchMessageList]);
 
-  /*calculates time since the message was posted and displays the time in
-  a proper way depending on how long ago it was */
-  const getTime = (time) => {
-    const timeDiff = new Date(Date.now()) - new Date(time);
-
-    const seconds = Math.floor(timeDiff / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-
-    const timeDisplay = (number, type) => {
-      return number === 1
-        ? `${number.toFixed(0)} ${type} ago`
-        : `${number.toFixed(0)} ${type}s ago`;
-    };
-
-    if (days >= 1) {
-      return timeDisplay(days, "day");
-    } else if (hours >= 1 && hours < 24) {
-      return timeDisplay(hours, "hour");
-    } else if (minutes >= 1 && minutes < 60) {
-      return timeDisplay(minutes, "minute");
-    }
-
-    return timeDisplay(seconds, "second");
-  };
-
   return (
     <>
+      {/*shows a loading symbol when posts are loading*/}
+      {loading && <div className="loading-symbol"></div>}
       {messageList.map((post) => (
-        <div key={post._id} className="message">
-          <p className="message__post">{post.message}</p>
+        <div
+          key={post._id}
+          className={`${
+            post === newMessage ? "message message-new" : "message" //makes the just submitted post have a special class (for animation)
+          }`}
+        >
+          <p className="message__post"> {post.message} </p>
           <div className="message-info">
             <LikeButton
               likes={post.hearts}
@@ -55,7 +41,7 @@ export const MessageList = ({ messageList, setMessageList }) => {
               messageList={messageList}
               setMessageList={setMessageList}
             />
-            <p className="message-info__time">{getTime(post.createdAt)}</p>
+            <DisplayTime messageTime={post.createdAt} />
           </div>
         </div>
       ))}

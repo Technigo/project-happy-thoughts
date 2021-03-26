@@ -1,87 +1,41 @@
 import React, { useState } from "react";
 
 import { SubmitButton } from "./SubmitButton";
+import { TextInput } from "./TextInput";
+import { DisplayCharCounter } from "./DisplayCharCounter";
 
-export const MessageForm = ({ setMessageList }) => {
-  const [isOutsideCharRange, setIsOutsideCharRange] = useState(true);
+
+export const MessageForm = ({ setMessageList, setNewMessage }) => {
+  const [charRange, setCharRange] = useState(false);
   const [userInput, setUserInput] = useState("");
   const [keypressCount, setKeypressCount] = useState(0);
-
-  const handleUserInput = (e) => {
-    setUserInput(e.target.value);
-    onPaste(e);
-  };
-
-  //counts characters when text is pasted
-  const onPaste = (content) => {
-    setKeypressCount(content.target.value.length);
-  };
-
-  const handleCharInput = (e) => {
-    //checks if keys should be counted as a character towards character limit
-    const validKeys = () => {
-      if (
-        e.ctrlKey === false && //shouldn't count if ctrl key is pressed
-        (e.keyCode === 32 || // spacebar
-          (e.keyCode > 47 && e.keyCode < 58) || // number keys
-          (e.keyCode > 64 && e.keyCode < 91) || // letter keys
-          (e.keyCode > 95 && e.keyCode < 112) || // numpad keys
-          (e.keyCode > 185 && e.keyCode < 193) || // ;=,-./`
-          (e.keyCode > 218 && e.keyCode < 223)) //[\]'
-      ) {
-        return true;
-      } else {
-        return false;
-      }
-    };
-
-    //counter should change class (and therefore, text become red) under 5 or over 140 chars
-    keypressCount < 5 || keypressCount > 140
-      ? setIsOutsideCharRange(true)
-      : setIsOutsideCharRange(false);
-
-    if (e.keyCode === 8) {
-      return keypressCount === 0
-        ? keypressCount
-        : setKeypressCount(keypressCount - 1); //removes from counter if backspace is pressed
-    } else if (validKeys()) {
-      return setKeypressCount(keypressCount + 1);
-    }
-  };
 
   return (
     <form className="message-form">
       <h1 className="message-form__heading">
         What's making you happy right now?
       </h1>
-      <textarea
-        className="message-form__input"
-        value={userInput}
-        onKeyDown={handleCharInput}
-        onChange={handleUserInput}
-      ></textarea>
-
-      {/*if characters is above 140 or under 5, the warning class is added which makes the counter-text red*/}
-      {isOutsideCharRange ? (
-        <div className="message-form__input-count">
-          <p className="count-warning">{keypressCount}</p>
-          <p>/140</p>
-        </div>
-      ) : (
-        <div className="message-form__input-count">
-          <p>{keypressCount}</p>
-          <p>/140</p>
-        </div>
-      )}
-
-      <SubmitButton
+      <TextInput
+        setCharRange={setCharRange}
+        userInput={userInput}
+        setUserInput={setUserInput}
+        keypressCount={keypressCount}
         setKeypressCount={setKeypressCount}
-        isOutsideCharRange={isOutsideCharRange}
-        setIsOutsideCharRange={setIsOutsideCharRange}
+      />
+      <DisplayCharCounter 
+        keypressCount={keypressCount}
+        charRange={charRange}
+      />
+      <SubmitButton
         setMessageList={setMessageList}
+        setCharRange={setCharRange}
+        charRange={charRange}
         setUserInput={setUserInput}
         userInput={userInput}
+        setNewMessage = {setNewMessage}
+        setKeypressCount = {setKeypressCount}
       />
+        
     </form>
   );
 };

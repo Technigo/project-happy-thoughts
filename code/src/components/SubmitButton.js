@@ -5,34 +5,35 @@ import { API_URL } from "../reusable/urls";
 export const SubmitButton = (props) => {
   const {
     setMessageList,
-    userInput,
     setUserInput,
-    setKeypressCount,
-    isOutsideCharRange,
-    setIsOutsideCharRange,
+    userInput,
+    setCharRange,
+    charRange,
+    setNewMessage,
+    setKeypressCount
   } = props;
 
   const handleFormSubmit = (event) => {
+    
     event.preventDefault();
     return isValidated()
-      ? (fetchNewMessage(), clearAllInputs(), console.log(isOutsideCharRange))
+      ? (fetchNewMessage())
       : alert("The message should be between 5 and 140 characters");
   };
 
   //checks if the characters are above 5 and under 140
   const isValidated = () => {
-    if (isOutsideCharRange) {
-      return false;
+    if (charRange) {
+      return true;
     }
-    return true;
+    return false;
   };
 
-  //clears all
-  const clearAllInputs = () => {
-    setUserInput("");
-    setKeypressCount(0);
-    setIsOutsideCharRange(true);
-  };
+  const clearAll = () => {
+    setUserInput("")
+    setCharRange(false)
+    setKeypressCount("0")
+  }
 
   const fetchNewMessage = () => {
     const post = {
@@ -46,13 +47,15 @@ export const SubmitButton = (props) => {
     fetch(API_URL, post)
       .then((res) => res.json())
       .then((newMessage) => {
-        setMessageList((previousMessages) => [newMessage, ...previousMessages]);
+        setNewMessage(newMessage)
+        setMessageList((previousMessages) => [newMessage, ...previousMessages]); 
+        clearAll()
       })
       .catch((error) => console.log(error));
   };
 
   return (
-    <button className="submit-btn" type="submit" onClick={handleFormSubmit}>
+   <button className="submit-btn" type="submit" onClick={handleFormSubmit}>
       <span role="img" aria-label="heart-emoji">
         &#10084;&#65039;
       </span>
@@ -61,5 +64,6 @@ export const SubmitButton = (props) => {
         &#10084;&#65039;
       </span>
     </button>
+ 
   );
 };
