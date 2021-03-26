@@ -3,7 +3,8 @@ import React, {useEffect, useState} from 'react';
 
 import ThoughtsForm from './components/ThoughtsForm';
 import ThoughtsContainer from './components/ThoughtsContainer';
-import {API_URL} from './reusable/urls';
+import {API_URL, LIKE_URL} from './reusable/urls';
+
 
 
 export const App = () => {
@@ -39,9 +40,23 @@ export const App = () => {
 
     fetch(API_URL, options)
     .then(response => response.json())
-    .then(receivedThought => setThoughts([...thoughts, receivedThought]));
+    .then(() => fetchThoughts())
+    .catch(err => console.error(err));
   }
 
+  const onLikesIncrease = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    fetch(LIKE_URL(id), options)
+      .then(response => response.json())
+      .then(() => fetchThoughts())
+      .catch((err) => console.error(err));
+  }
 
   return (
     <>
@@ -51,7 +66,10 @@ export const App = () => {
         onNewThoughtChange={onNewThoughtChange}
         onFormSubmit={onFormSubmit}
         /> 
-      <ThoughtsContainer thoughts={thoughts}/>
+      <ThoughtsContainer 
+        thoughts={thoughts}
+        onLikesIncrease={onLikesIncrease}
+        />
       <div>Icons made by Good Ware from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </>
   )

@@ -1,12 +1,15 @@
 import React from 'react';
 
 const Heart = (props) => {
+
+  const {hearts, id, onLikesIncrease} = props;
+  
   return (
     <div className="outer-heart-container">
-      <div className="inner-heart-container">
+      <button onClick={() => onLikesIncrease(id)} className="inner-heart-container-button">
         <img className="heart-icon" src="./assets/heart.svg" alt="heart icon"/>
-      </div>
-      <p> x {props.hearts}</p>
+      </button>
+      <p> x {hearts}</p>
     </div>
   )
 };

@@ -2,14 +2,17 @@ import React from 'react'
 import ThoughtsCard from './ThoughtsCard';
 
 const ThoughtsContainer = (props) => {
+   const {thoughts, onLikesIncrease} = props;
   return (
     <div className="thoughts-container"> {
-      props.thoughts.map((props) => 
+      thoughts.map((thought) => 
       <ThoughtsCard
-        key = {props._id}
-        message = {props.message}
-        hearts = {props.hearts}
-        time ={props.createdAt}
+        key = {thought._id}
+        id = {thought._id}
+        message = {thought.message}
+        hearts = {thought.hearts}
+        time ={thought.createdAt}
+        onLikesIncrease={onLikesIncrease}
       />
       )};
     </div>
