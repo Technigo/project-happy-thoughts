@@ -10,10 +10,12 @@ export const ThoughtsFetched = (props) => {
                     return (
                         <Thought
                             key={thought._id}
+                            id={thought._id}
                             message={thought.message}
                             hearts={thought.hearts}
                             createdAt={thought.createdAt}
                             __v={thought.__v}
+                            like={props.like}
                         />
                     )
                 })

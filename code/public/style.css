@@ -65,6 +65,11 @@
     resize: none;
 }
 
+.character-counter {
+    margin-top: -12px;
+    text-align: right;
+}
+
 .send-button {
     display: flex;
     align-items: center;

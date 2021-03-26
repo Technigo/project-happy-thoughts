@@ -9,9 +9,11 @@ export const Thought = (props) => {
             </p>
             <div className="info-wrapper">
                 <div className="heart-wrapper">
-                    <div className="heart">
-                        <label>❤️</label>
-                    </div>
+                    <button 
+                        className="heart"
+                        onClick={() => props.like(props.id)}>
+                        ❤️
+                    </button>
                     <div className="heart-counter">
                         x {props.hearts}
                     </div>

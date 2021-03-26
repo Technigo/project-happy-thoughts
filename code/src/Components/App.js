@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import ThoughtsFetched from './ThoughtsFetched'
 import PostingForm from './PostingForm'
+import { API_URL }  from '../utilities/urls'
+import { LIKES_URL }  from '../utilities/urls'
+
 
 //TO-DO:
 //[_] Rename newMessage to newThought etc. for consistency
+//[_] Make heart icon also be a button, just like post message button, because accessability
 
 
 export const App = () => {
@@ -14,9 +18,6 @@ export const App = () => {
   //testing using dummy fetch:
   const [latestThoughts, setLatestThoughts] = useState([])
   const [newMessage, setNewMessage] = useState("")
-
-  //MOVE THIS SOON:
-  const url = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 
   //onChange functions
   const onNewMessageChange = (event) => {
@@ -30,12 +31,12 @@ export const App = () => {
 
   const fetchMessages = () => {
     console.log(newMessage)
-    fetch(url, {
+    fetch(API_URL, {
       method: 'GET'}
     )
     .then(res => res.json())
     .then(messages => setLatestThoughts(messages))
-    .catch(err => console.log(err))
+    .catch(err => console.error(err))
   }
 
   const submitThought = (event) => {
@@ -50,10 +51,37 @@ export const App = () => {
       body: JSON.stringify({ message: newMessage })
     }
 
-    fetch(url, options)
+    fetch(API_URL, options)
       .then(res => res.json())
       .then(returnedMessage => setLatestThoughts([returnedMessage, ...latestThoughts]))
-      .catch(err => console.log(err))
+      .catch(err => console.error(err))
+
+    setNewMessage('')
+  }
+
+  const onHeartsIncrease = (thoughtID) => {
+    //console.log(event.target.value)
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    fetch(LIKES_URL(thoughtID), options)
+      .then(res => res.json())
+      .then((likedThought) => {
+        const updatedThoughts = latestThoughts.map(thought => {
+          if (thought._id === likedThought._id) {
+            thought.hearts += 1
+            console.log(`HEARTED thought id: ${thought._id}`)
+          }
+          return thought
+        }) 
+        setLatestThoughts(updatedThoughts)
+      })
+      .catch(err => console.error(err))
 
     setNewMessage('')
   }
@@ -72,6 +100,7 @@ export const App = () => {
       />
       <ThoughtsFetched 
         latestThoughts={latestThoughts}
+        like={onHeartsIncrease}
       />
     </>
   )
