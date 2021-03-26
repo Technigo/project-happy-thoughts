@@ -155,33 +155,39 @@ button:focus {
 .fa-heart {
   color: #EB5562;
   position: absolute;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   margin-left: 20px;
   font-size: 60px;
   opacity: 0;
-  animation: heart 1.5s 0.5s;
+  animation: heart 1.5s 0.4s;
 }
 
 @keyframes heart {
-  from {
-    opacity: 0.5;
+  0% {
+    opacity: 0.7;
   }
-  to {
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
     opacity: 1;
-  }
+;  }
 }
 
 .fa-envelope-open {
   font-size: 100px;
-  animation: letter 0.5s;
+  animation: letter 0.6s;
 }
 
 @keyframes letter {
-  from {
+  0% {
     transform: scale(1.5);
   }
-  to {
+  50% {
     transform: scale(1.0);
+  }
+  100% {
+    transform: rotateX(50deg);
   }
 }
 

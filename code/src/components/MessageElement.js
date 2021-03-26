@@ -9,10 +9,7 @@ export const MessageElement = ({ message, onLikeClick }) => {
         <p className="likes">
           <button 
             onClick={() => onLikeClick(message._id)}
-            className={
-              message.hearts > 0
-              ? "like-button pink" 
-              : "like-button gray"}>
+            className={`like-button ${message.hearts > 0 ? "pink" : "gray"}`}>
             <span role="img" aria-label="heart">❤️</span>
           </button> 
           x {message.hearts}
