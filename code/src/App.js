@@ -21,7 +21,7 @@ export const App = () => {
   }
 
   const onNewThoughtChange = (event) => {
-    setNewThought(event.target.value);
+    setNewThought(event.target.value)
   }
 
   const onFormSubmit = (event) => {
@@ -39,6 +39,8 @@ export const App = () => {
     fetch(API_URL, options)
       .then(res => res.json())
       .then(recivedThought => setThoughtsList([...thoughtsList, recivedThought]))
+      .catch(err => console.error(err));
+
   }
 
   const onLikesIncrease = (id) => {
@@ -66,23 +68,26 @@ export const App = () => {
 
   return (
 
-    <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="thoughts">What's making you happy right now? </label>
-        <input
+    <div className="form-container">
+      <form className="form" onSubmit={onFormSubmit}>
+        <label className="thoughts-label"
+          htmlFor="thoughts">
+          What's making you happy right now?
+        </label>
+        <input className="input-thought"
           id="thoughts"
           type="text"
           value={newThought}
           onChange={onNewThoughtChange}
         />
-        <button type="submit">
+        <button className="send-button" type="submit">
           <span role="img" aria-label="heart-icon">❤️</span>
           Send Happy Thought
           <span role="img" aria-label="heart-icon">❤️</span>
         </button>
       </form>
       {thoughtsList.map(thought => (
-        <div
+        <div className="thoughts-container"
           key={thought._id}>
           <h4>{thought.message}</h4>
           <button onClick={() => onLikesIncrease(thought._id)}>
