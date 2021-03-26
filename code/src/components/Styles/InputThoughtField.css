@@ -12,6 +12,7 @@
     width: 100%; 
     padding: 5px 0 80px 5px;
     font-family: 'Inconsolata','Courier New', Courier, monospace;
+    word-wrap: break-word;
 }
 
 .character-counting{

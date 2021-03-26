@@ -9,9 +9,9 @@
 }
 
 .thought-message{
-    display: flex;
     flex-wrap: wrap;
-    width: 500px;
+    word-wrap: break-word;
+    width: 300px;
 }
 
 .thought-card-info{
@@ -66,6 +66,9 @@
 
 @media (min-width: 768px){
     .thought-card{
+        width: 500px;
+    }
+    .thought-message{
         width: 500px;
     }
 }
