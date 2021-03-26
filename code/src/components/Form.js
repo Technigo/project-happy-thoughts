@@ -18,13 +18,14 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
                 <div className="input-container">
                     <textarea
                     //className="input"
-                    className={words === 140 ? "input-red" : "input"}
+                    className={words === 140 ? "input red" : "input"}
                     id="newMessage"
                     type="text" 
                     value={messageNew} // kanske en ternary operator? {messageNew}
                     onChange={OnInputMessage}
                     cols="40" 
                     rows="6"
+                    minLength="5"
                     maxLength="140"
                     placeholder="Please type your thought here, maximum 140 charachters"
                     />

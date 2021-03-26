@@ -83,6 +83,10 @@ code {
   resize: none;
 }
 
+.red {
+  background: #ff8080;
+}
+
 .input-red {
   height: 200%;
   margin-top: 10px;
