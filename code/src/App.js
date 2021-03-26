@@ -49,21 +49,28 @@ export const App = () => {
 
     fetch(HEARTS_URL(id), options)
       .then(res => res.json())
-      .then((data) => console.log(data))
+      .then(recievedThought => {
+        const updatedThoughtList = thoughtList.map(thought => {
+          if (thought._id === recievedThought._id) {
+            thought.likes += 1
+          }
+          return thought
+        })
+      })
       .catch(err => console.error(err))
   }
 
   return (
     <main>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">Write new message!</label>
+        <label htmlFor="newThought">Send a happy thought!</label>
         <input 
           id="newThought"
           type="text"
           value={thoughtNew}  
           onChange={onThoughtNewChange} 
         />
-        <button type="submit">Send message!</button>
+        <button type="submit">Send thought!</button>
       </form>
       {thoughtList.map(thought => (
         <div key={thought._id}>
