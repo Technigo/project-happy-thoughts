@@ -43,10 +43,7 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
                 value={newThought}
                 onChange={onNewThoughtChange}
             />
-            {newThought.length > 140
-                ? <p className="red" >{newThought.length} / 140</p>
-                : <p>{newThought.length} / 140</p>
-            }
+            <p className={newThought.length > 140 ? "red" : ""} >{newThought.length} / 140</p>
             <button>
                 <span role="img" aria-label="heart icon">💗</span>
                 Send Happy Thought
