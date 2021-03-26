@@ -1,38 +1,40 @@
 import React, { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'material-react-toastify'
 import 'material-react-toastify/dist/ReactToastify.css'
+
 import { API_URL, LIKES_URL } from './reusable/urls'
 import MessageForm from './components/MessageForm'
 import MessageList from './components/MessageList'
 import Loading from './components/Loading'
+
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
   const [isLoading, setIsLoading] = useState(true)
-  const [dark, setDark] = useState(localStorage.getItem('dark-mode') === 'true')
+
+  //States that changes color & text in the form when submitted
+  const [formAnimation, setformAnimation] = useState(localStorage.getItem('red-color') === 'true')
   const [buttonText, setButtonText] = useState('Send Happy Tought')
+
   const likeCount =() => JSON.parse(localStorage.getItem('countList') || "[]")
   const [countedList, setCountedList] = useState(likeCount)
-  //Adding animation on the form when user submits 
-  const handleAnimation = () => {
-    if (dark === false && messageNew.length > 5) {
-      setDark(!dark)
-      setButtonText('Send A New One')
-    } 
-    if (dark === false && messageNew.length > 5) {
-      setButtonText('Send A New One')
-    } 
-  }
+
+
   useEffect(() => {
     fetchMessageList()
-    localStorage.setItem('dark-mode', dark)
+    localStorage.setItem('red-color', formAnimation)
+
     setTimeout (() => {
-      setDark(false)
+      setformAnimation(false)
     }, 2000)
-    setTimeout(() => { //Setting time for the loader to stop 
+
+    setTimeout(() => {
       setIsLoading(false)
     }, 1500)
-  }, [dark]) 
+
+  }, [formAnimation]) 
+
+  //fetching MessageList 
   const fetchMessageList = () => {
     fetch (API_URL)
       .then(res => res.json ())
@@ -49,7 +51,7 @@ export const App = () => {
           setCountedList(countList)
           localStorage.setItem('countList', JSON.stringify(countList))
         } else {
-          const countList = messages.map((item, index) => {
+          const countList = messages.map((item) => {
             const existingElement = countedList.find(countItem => countItem.id === item._id);
             if (existingElement) {
               return existingElement;
@@ -67,6 +69,8 @@ export const App = () => {
       })
       .catch(err => console.error(err))
   }
+
+  //posting new mesagge to the API, fetching the new message 
   const handleFormSubmit = (event) => {
     event.preventDefault()
     const options = {
@@ -86,15 +90,14 @@ export const App = () => {
         }
       })
       .then(receivedMessage => {
+        //finding id from the new mesagge thats posts in the list and shows the message list
+        //from this id the animation on the latest message can appear.
         const id = receivedMessage._id;
         const updatedList = [receivedMessage, ...messageList]
         updatedList.find(el => el._id === id).animate = true;
         setMessageList(updatedList)
         updatedList.find(el => el._id === id).animate = false;
         setMessageList(updatedList)
-        const updatedCountedList = [{ id: receivedMessage._id, count: 0 }, ...countedList];
-        setCountedList(updatedCountedList);
-        localStorage.setItem('countList', JSON.stringify(updatedCountedList))
       })
       .catch((err) => {
          //adds notification snackbar, makes it look better than an regular alert message
@@ -102,9 +105,10 @@ export const App = () => {
           position: "top-left"
         })
       })
-      //Clearing the form after user submits their message 
-      setMessageNew('')
+      setMessageNew('') //clearing the form after user submits their message 
     }  
+
+  //fetching likes from api and adding a counter to show the amount of likes
     const handleLikesIncrease = (id) => {
       const options = {
         method: 'POST', 
@@ -134,7 +138,8 @@ export const App = () => {
        })
       .catch (err => console.error(err))
     }
-  //If user add more than 140 characters, the input box gets red. I add the validation here and send it trough props. 
+
+  //if user adds more than 140 characters, the input box gets red. I add the validation here and send it trough props 
   const HandleMessageNewChange = (event) => {
     const count = event.target.value
     const characterCount = count.length 
@@ -144,16 +149,28 @@ export const App = () => {
       return setMessageNew(messageNew)
     } 
   }
+
+  //Adding animation on the form when user submits message 
+  const handleAnimation = () => {
+    if (formAnimation === false && messageNew.length > 5) {
+      setformAnimation(!formAnimation)
+      setButtonText('Send A New One')
+    } 
+    if (formAnimation === false && messageNew.length > 5) {
+      setButtonText('Send A New One')
+    } 
+  }
+
   return (
     <main>
-      <div>
+      <div className="wrapper">
         <ToastContainer />     
         <MessageForm 
           onFormSubmit={handleFormSubmit} 
           messageNew={messageNew} 
           onMessageNewChange = {HandleMessageNewChange}
           onAnimationChange = {handleAnimation}
-          dark = {dark}
+          formAnimation = {formAnimation}
           buttonText={buttonText}
         />
         {isLoading === true ? 

@@ -1,81 +1,39 @@
 body {
-  margin: 0;
   font-family: 'Trispace', sans-serif;
   font-size: 12px;
   font-weight: 300;
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
 }
 
 main {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
 }
 
-.yolo {
-  animation: yolo 2s;
+/*** Container for form & messagelist ***/ 
+.wrapper {
+  width: 70%;
 }
-
-
-@keyframes yolo {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-.dark {
-  background-color: #f09d9d;
-  animation: mymove 2s;
-}
-
-@keyframes mymove {
-  from {background-color: rgb(240, 239, 239);}
-  to {background-color: #f09d9d;}
-}
-
-.button-after {
-  width: 50%;
-  padding: 8px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 20px;
-  background-color: rgb(240, 239, 239);
-  font-family: 'Trispace', sans-serif;
-  font-size: 12px;
-}
-
 
 .tought-message {
   border: 1px solid black;
   box-shadow: 5px 5px;
   margin: 30px 15px;
-  line-height: 20px;
+  line-height: 1.5em;
   padding: 0 11px;
-  resize: none;
 }
 
+/*** Form ***/ 
 .form-container {
   background-color: rgb(240, 239, 239);
 }
 
 .input {
   line-height: 3em;
-  resize: none;
+  width: 80%;
 }
 
-.input-count {
+.input-error {
   background-color: #f09d9d;
   border: inherit;
 }
@@ -87,13 +45,43 @@ main {
   border: none;
   border-radius: 20px;
   background-color: #f09d9d; 
-  font-family: 'Trispace', sans-serif;
   font-size: 12px;
 }
 
+.button-after {
+  background-color: rgb(240, 239, 239);
+}
+
+/* Animation styling when user submits message */
+.form-animation {
+  background-color: #f09d9d;
+  animation: backgroundchange 2s ease-out;
+  animation-direction: alternate-reverse; 
+}
+
+@keyframes backgroundchange {
+  from {background-color: rgb(240, 239, 239);}
+  to {background-color: #f09d9d;}
+}
+
+/*** Messagelist ***/ 
 .message-content {
   font-size: 14px;
   overflow-wrap: break-word;
+}
+
+/*** Heart button, amount of likes & time ***/ 
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: rgba(61, 61, 61, 0.8);
+  padding: 5px 0;
+}
+
+.like-btn {
+  display: flex;
+  letter-spacing: 0.2em; 
 }
 
 .heart-button {
@@ -119,22 +107,36 @@ main {
   opacity: 0.5;
 }
 
-.button-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  color: rgba(61, 61, 61, 0.8);
-  padding: 5px 0;
+/*** Animation when message is submitted and adds to message list ***/
+.message-animation {
+  animation: shake 2s;
 }
 
-.like-btn {
-  display: flex;
-  letter-spacing: 0.2em; 
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
+/*** Loader in the middle of the page ***/
 .loader {
   display: flex;
   justify-content: center;
 }
+
+
+
 
 
