@@ -39,7 +39,7 @@ export const App = () => {
 
     fetch(API_URL, options)
     .then(res => res.json())
-    .then(receivedMessage => setHappyList([ receivedMessage, ...happyList]))  
+    .then(() => fetchHappyThoughtList())     
   }
 
   const handleHeartsIncrease = (id) => {

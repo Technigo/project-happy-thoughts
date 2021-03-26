@@ -1,13 +1,19 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This is a project where I learnt to fetch and post messages via API.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I didnt have to many major problem this week, but a few once occured ofcourse. I did solve the minor situation by googeling and talking to my team.
+
+I enjoyed this project and the structure of learning it. I did get a lot of help from Technigo Bootcamps lectures and that made me feel more secure and confident in trying some more things and also to have the time to acctually reflect over what the code and functions do and how they works. 
+
+Next step in this project would be to add some more cool features, like animation and characters count.
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://angry-curran-00f336.netlify.app/
+
+

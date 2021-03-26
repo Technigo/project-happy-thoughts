@@ -21,7 +21,7 @@ body {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 } */
-.message-card,
+
 .input-card {
   border: 2px solid black;
   margin:20px auto;
@@ -29,7 +29,17 @@ body {
   height: auto;
   box-shadow: 5px 5px;
   padding: 20px;
-  background-color: #F2F0F0;
+  background-color:  #D4D4D4; 
+}
+
+.message-card {
+  border: 2px solid black;
+  margin:20px auto;
+  width: 300px;
+  height: auto;
+  box-shadow: 5px 5px;
+  padding: 20px;
+  background-color: #F2F0F0; 
 }
 
 .input-title{
@@ -47,9 +57,11 @@ body {
   color: #1D1D1D;
   word-wrap: break-word;
   border: 1px solid gray;
+  padding:10px;
   width: 270px;
   height: 50px;
   max-width: 270px;
+  cursor: pointer;
 }
 
 .input-send-btn {
@@ -62,6 +74,7 @@ body {
   font-size: 14px;
   color: #1D1D1D;
   margin: 15px 0px;
+  cursor: pointer;
 }
 
 .heart-time-container {
@@ -108,7 +121,16 @@ font-size: 12px;
   border-radius: 30px;
   height: 30px;
   width: 30px;
+  cursor: pointer;
 }
+
+/* .heart-bg-gray {
+  background-color: #D4D4D4 ;
+}
+
+.heart-bg-pink {
+  background-color: #FFADAD;
+} */
 
 /* MEDIA TABLETT & DESKTOP */
 
