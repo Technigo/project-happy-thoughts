@@ -12,7 +12,7 @@ main {
 
 /*** Container for form & messagelist ***/ 
 .wrapper {
-  width: 70%;
+  width: 100%;
 }
 
 .tought-message {
@@ -141,6 +141,13 @@ main {
 .loader {
   display: flex;
   justify-content: center;
+}
+
+/*** Responsive ***/
+@media (min-width: 768px) {
+  .wrapper {
+    width: 70%;
+  }
 }
 
 
