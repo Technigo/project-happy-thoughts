@@ -8,7 +8,7 @@ export const MessageList = ({ messageList, handleLikesIncrease }) => {
       {messageList.map(message => ( 
         <div key={message._id} className="thought-card">
           <h4>
-            {message.message}
+            {message.message} 
           </h4>
           <div className="card-info">
             <div className="likes">
