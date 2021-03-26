@@ -51,13 +51,14 @@ main {
 }
 /**/
 
-.message-list {
+.message-list, .message-list__new-message  {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
-.message {
+.message{
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -72,7 +73,7 @@ main {
 
 /* class for the post just submitted.
 With animations*/
-.message-new {
+.message-list__new-message .message:first-of-type {
   align-self: flex-start;
   width: 0;
   opacity: 0;
@@ -87,8 +88,8 @@ With animations*/
   }
 }
 
-.message-new .message-info,
-.message-new .message__post {
+.message-list__new-message .message:first-of-type .message-info,
+.message-list__new-message .message:first-of-type  .message__post {
   opacity: 0;
   animation: appear 2s forwards;
 }

@@ -1,23 +1,12 @@
 import React from "react";
 
-import { API_URL } from "../reusable/urls";
-
-export const SubmitButton = (props) => {
-  const {
-    setMessageList,
-    setUserInput,
-    userInput,
-    setCharRange,
-    charRange,
-    setNewMessage,
-    setKeypressCount
-  } = props;
+export const SubmitButton = ({ fetchNewMessage, charRange }) => {
 
   const handleFormSubmit = (event) => {
-    
     event.preventDefault();
+    
     return isValidated()
-      ? (fetchNewMessage())
+      ? fetchNewMessage()
       : alert("The message should be between 5 and 140 characters");
   };
 
@@ -29,33 +18,8 @@ export const SubmitButton = (props) => {
     return false;
   };
 
-  const clearAll = () => {
-    setUserInput("")
-    setCharRange(false)
-    setKeypressCount("0")
-  }
-
-  const fetchNewMessage = () => {
-    const post = {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ message: userInput }),
-    };
-
-    fetch(API_URL, post)
-      .then((res) => res.json())
-      .then((newMessage) => {
-        setNewMessage(newMessage)
-        setMessageList((previousMessages) => [newMessage, ...previousMessages]); 
-        clearAll()
-      })
-      .catch((error) => console.log(error));
-  };
-
   return (
-   <button className="submit-btn" type="submit" onClick={handleFormSubmit}>
+    <button className="submit-btn" type="submit" onClick={handleFormSubmit}>
       <span role="img" aria-label="heart-emoji">
         &#10084;&#65039;
       </span>
@@ -64,6 +28,5 @@ export const SubmitButton = (props) => {
         &#10084;&#65039;
       </span>
     </button>
- 
   );
 };

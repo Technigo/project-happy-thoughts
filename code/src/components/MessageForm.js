@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { SubmitButton } from "./SubmitButton";
 import { TextInput } from "./TextInput";
 import { DisplayCharCounter } from "./DisplayCharCounter";
 
-
-export const MessageForm = ({ setMessageList, setNewMessage }) => {
-  const [charRange, setCharRange] = useState(false);
-  const [userInput, setUserInput] = useState("");
-  const [keypressCount, setKeypressCount] = useState(0);
+export const MessageForm = (props) => {
+  const {
+    fetchNewMessage,
+    charRange,
+    setCharRange,
+    userInput,
+    setUserInput,
+    keypressCount,
+    setKeypressCount,
+  } = props;
 
   return (
     <form className="message-form">
@@ -22,20 +27,8 @@ export const MessageForm = ({ setMessageList, setNewMessage }) => {
         keypressCount={keypressCount}
         setKeypressCount={setKeypressCount}
       />
-      <DisplayCharCounter 
-        keypressCount={keypressCount}
-        charRange={charRange}
-      />
-      <SubmitButton
-        setMessageList={setMessageList}
-        setCharRange={setCharRange}
-        charRange={charRange}
-        setUserInput={setUserInput}
-        userInput={userInput}
-        setNewMessage = {setNewMessage}
-        setKeypressCount = {setKeypressCount}
-      />
-        
+      <DisplayCharCounter keypressCount={keypressCount} charRange={charRange} />
+      <SubmitButton fetchNewMessage={fetchNewMessage} charRange={charRange} />
     </form>
   );
 };
