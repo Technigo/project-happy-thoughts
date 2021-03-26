@@ -14,7 +14,7 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
             <div className="input-section">
             <div className="input-section-box">
                 <div>
-                    <label htmlFor="newMessage">What's making you happy right now?</label>
+                    <label htmlFor="newMessage"><h4 className="question">What's making you happy right now?</h4></label>
                 </div>
                 <div className="input-container">
                     <textarea
@@ -27,15 +27,15 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
                     cols="40" 
                     rows="6"
                     maxLength="140"
-                    placeholder="Please type your thought here, maximum 140 charachters"
+                    placeholder="Please type your thoughts here. Maximum 140 characters allowed."
                     
                     />
                     </div>
-                <div>
+                <div className="bottom-section">
                     <button className="submit-btn" type="submit" >
                     <span className="likes">&#10084;</span> Send Happy Thought! <span className="likes">&#10084;</span>
                     </button>
-                    <p>Characters : {words} of 140 <span>(minimum 4 characters )</span></p>
+                    <p>Characters : {words} of 140 <span>(minimum 4 characters)</span></p>
                 </div>
             </div>
         </div>

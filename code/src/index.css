@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #cfdac8;
+  font-family: 'Montserrat', sans-serif;
 }
 
 code {
@@ -52,6 +53,10 @@ code {
 
 
 /* ** Form Section ** */
+
+.question {
+  font-size: 24px;
+}
 
 .form-section {
   display: flex;
@@ -124,6 +129,16 @@ input {
 
 .liked {
   background:  #ff8080;
+}
+
+.bottom-section p{
+  font-size: 11px;
+  font-style: italic;
+}
+
+.bottom-section p span {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* ** Form Section ** */
@@ -211,6 +226,12 @@ input {
 
 
 @media (min-width: 1300px) {
+  
+  .question {
+    font-size: 24px;
+    margin: 0px;
+  }
+
   .input-section, .post-container {
     width: 40%;
   }
