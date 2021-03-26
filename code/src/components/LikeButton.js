@@ -10,6 +10,8 @@ export const LikeButton = ({ likes, id, fetchLikes }) => {
     liked ? setLiked(false) : setLiked(true);
     fetchLikes(messageID, liked);
   };
+
+  
   return (
     <button className="like-btn" onClick={() => toggleLike(id)}>
       <span

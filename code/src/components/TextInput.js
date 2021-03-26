@@ -4,31 +4,20 @@ export const TextInput = (props) => {
   const {
     setUserInput,
     userInput,
-    setCharRange,
-    keypressCount,
-    setKeypressCount,
+    setKeypressCount
   } = props;
 
+  // sets userInput to the text entered and get the length 
   const handleUserInput = (e) => {
     setUserInput(e.target.value);
-    onPaste(e);
-
-    //charRange should become false if outside the range limit
-    keypressCount > 5 && keypressCount <= 140
-      ? setCharRange(true)
-      : setCharRange(false);
-  };
-
-  //counts characters when text is pasted
-  const onPaste = (content) => {
-    setKeypressCount(content.target.value.length);
-  };
+    setKeypressCount(e.target.value.length);
+  }
 
   return (
     <textarea
       className="message-form__input"
       value={userInput}
-      onChange={handleUserInput}
+      onChange= {handleUserInput}
     ></textarea>
   );
 };

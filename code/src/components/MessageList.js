@@ -12,7 +12,6 @@ export const MessageList = (props) => {
     loading,
   } = props;
 
-  console.log(newMessage);
   return (
     <>
       {/*sets a different class if there is a new post (to be able to add animation)*/}

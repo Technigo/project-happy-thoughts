@@ -2,7 +2,7 @@ import React from "react";
 
 import { SubmitButton } from "./SubmitButton";
 import { TextInput } from "./TextInput";
-import { DisplayCharCounter } from "./DisplayCharCounter";
+import { CharacterCounter } from "./CharacterCounter";
 
 export const MessageForm = (props) => {
   const {
@@ -21,13 +21,15 @@ export const MessageForm = (props) => {
         What's making you happy right now?
       </h1>
       <TextInput
-        setCharRange={setCharRange}
         userInput={userInput}
         setUserInput={setUserInput}
-        keypressCount={keypressCount}
         setKeypressCount={setKeypressCount}
       />
-      <DisplayCharCounter keypressCount={keypressCount} charRange={charRange} />
+      <CharacterCounter
+        keypressCount={keypressCount}
+        charRange={charRange}
+        setCharRange={setCharRange}
+      />
       <SubmitButton fetchNewMessage={fetchNewMessage} charRange={charRange} />
     </form>
   );

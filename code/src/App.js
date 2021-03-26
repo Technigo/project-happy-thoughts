@@ -11,13 +11,12 @@ export const App = () => {
   const [charRange, setCharRange] = useState(false);
   const [userInput, setUserInput] = useState("");
   const [keypressCount, setKeypressCount] = useState(0);
-  const thisRef = useRef();
-
+  const messageRef = useRef();
 
   /*fetches the list of all tweets*/
 
   const fetchMessageList = useCallback(() => {// callback to avoid re-rendering of dependencies
-    let previousMessage;
+    
 
     fetch(API_URL)
       .then(setLoading(true)) //to show loading symbol
@@ -28,14 +27,14 @@ export const App = () => {
         /*checks if the newest message is a new message, if so 
         setNewMessage to true (to be able to use different css class 
           and do animation on the new message when appearing)*/
-        thisRef.current = messages[0].message;
-        previousMessage === thisRef.current
+          messageRef.current ===messages[0].message
           ? setNewMessage(false)
           : setNewMessage(true);
 
         setMessageList(messages);
+        return messages
       })
-      .then((previousMessage = thisRef.current)) //useRef to store last message
+      .then(messages => messageRef.current = messages[0].message) //useRef to store last message
       .catch((error) => console.log(error));
   }, [setMessageList]);
 
@@ -66,6 +65,7 @@ export const App = () => {
       .then((res) => res.json())
       .then((newMessage) => {
         setNewMessage(true);
+        messageRef.current = newMessage.message;//set ref to this so that it wont be seen as a new one when messageList is rendered again
         setMessageList((previousMessages) => [newMessage, ...previousMessages]);
         clearAll();
       })
@@ -99,6 +99,7 @@ export const App = () => {
       })
       .catch((error) => console.log(error));
   };
+
 
   //clears all needed input
   const clearAll = () => {
