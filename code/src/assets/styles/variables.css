@@ -1,6 +1,4 @@
 :root {
-  --primaryFont: "Roboto", sans-serif;
-
+  --primaryFont: "Roboto Mono", monospace;
   --spacing: 4px;
-
 }
