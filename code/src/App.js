@@ -63,20 +63,21 @@ export const App = () => {
 
   return (
     <main>
-      <form onSubmit={onFormSubmit}>
+      <form className="thought-card" onSubmit={onFormSubmit}>
         <label htmlFor="newThought">Send a happy thought!</label>
         <input 
+          className="send-thought_input-field"
           id="newThought"
           type="text"
           value={thoughtNew}  
           onChange={onThoughtNewChange} 
         />
-        <button type="submit">Send thought!</button>
+        <button className="send-thought_button" type="submit">Send Happy Thought!</button>
       </form>
       {thoughtList.map(thought => (
-        <div key={thought._id}>
+        <div className="thought-card" key={thought._id}>
           <h4>{thought.message}</h4>
-          <button onClick={() => onHeartsIncrease(thought._id)}>
+          <button className="thought-heart_button" onClick={() => onHeartsIncrease(thought._id)}>
             {thought.hearts}
             ❤️
           </button>
