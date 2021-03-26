@@ -24,6 +24,14 @@ code {
 }
 
 .input {
+  background-color: whitesmoke;
+  width: 97%;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.input-error {
+  background-color: red;
   width: 97%;
   height: 40px;
   margin-top: 5px;

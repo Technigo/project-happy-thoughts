@@ -21,14 +21,19 @@ export const Form = () => {
             .then(res => res.json())
             .then(messages => setMessageList(messages))
             .catch(err => console.log(err))
+            
     }
 
     const handleMessageNewChange = (event) => {
         setMessageNew(event.target.value)
+        
+        
     }
 
+
+
     const handleFormSubmit = (event) => {
-        event.preventDefault()
+       event.preventDefault()
 
         const options = {
             method: 'POST',
@@ -36,14 +41,21 @@ export const Form = () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ message: messageNew })
+            
         }
+
 
         fetch(API_URL, options)
             .then(res => res.json())
-            .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
-            .catch(err => console.log(err))
+            .then(receivedMessage => setMessageList([receivedMessage, ...messageList]))
             
+            .catch(err => console.log(err))
+        setMessageNew('')       
     }
+
+    
+    
+
 
     const handleLikesIncrease = (id) => {
         const options = {
