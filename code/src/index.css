@@ -14,8 +14,6 @@ code {
     monospace;
 }
 
-
-
 /* HERO Section */
 
 .hero{
@@ -40,17 +38,11 @@ code {
   align-items: center;
 }
 
-
 /* HERO Section */
-
-
-
-
 
 .container {
   font-style: 'Ubuntu', sans-serif;
 }
-
 
 /* ** Form Section ** */
 
@@ -64,7 +56,6 @@ code {
   align-items: center;
   margin-top: 40px; 
 }
-
 
 .input-section {
     border: 1px solid;
@@ -110,17 +101,11 @@ input {
   text-align: left;
 }
 
-
-
 .submit-btn {
   border-radius: 25px;
   padding: 10px; /* I just add this to be able to see difference, remove it after */
   border: 0;
 }
-
-/*.submit-btn:hover {
-  background:  #ff8080;
-}*/
 
 .likes {
   color: red;
@@ -149,14 +134,12 @@ input {
   align-items: center;
   margin-top: 25px;
   margin-bottom: 25px;
-
 }
 
 .likes-section {
   display: flex;
   justify-content: start;
   align-items: center;
-  /*background: green;*/
 }
 
 .likes-section p {
@@ -193,19 +176,13 @@ input {
 .like-moment-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /*background: wheat;*/
 }
 
 .moment-section {
- /* background: violet;*/
   text-align: right;
 }
 
-
-
-
-
-
+/* Tablet Devices */
 @media (min-width: 768px) {
 
   .input {
@@ -217,6 +194,7 @@ input {
   }
 }
 
+/* Small Desktop Devices */
 
 @media (min-width: 1024px) {
   .input-section, .post-container {
@@ -224,9 +202,9 @@ input {
   }
 }
 
+/* Big Desktop Devices */
 
 @media (min-width: 1300px) {
-  
   .question {
     font-size: 24px;
     margin: 0px;
@@ -255,6 +233,4 @@ input {
     width: 10%; /*10% */
     left: 5%; /* 5% */
   }
-
-  
 }

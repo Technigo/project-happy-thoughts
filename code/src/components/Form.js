@@ -2,12 +2,6 @@ import React from 'react'
 
 const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
     let words = messageNew.length
-
-
-    console.log(messageNew.length)
-
-   
-
     return (
         
         <form className="form-section" onSubmit={onFormSubmit}>
@@ -18,19 +12,17 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
                 </div>
                 <div className="input-container">
                     <textarea
-                    //className="input"
                     className={words === 140 ? "input red" : "input"}
                     id="newMessage"
                     type="text" 
-                    value={messageNew} // kanske en ternary operator? {messageNew}
+                    value={messageNew}
                     onChange={OnInputMessage}
                     cols="40" 
                     rows="6"
                     maxLength="140"
                     placeholder="Please type your thoughts here. Maximum 140 characters allowed."
-                    
                     />
-                    </div>
+                </div>
                 <div className="bottom-section">
                     <button className="submit-btn" type="submit" >
                     <span className="likes">&#10084;</span> Send Happy Thought! <span className="likes">&#10084;</span>
@@ -44,12 +36,3 @@ const Form = ({messageNew, OnInputMessage, onFormSubmit}) => {
 }
 
 export default Form
-
-
-/*<input
-                    className="input"
-                    id="newMessage"
-                    type="text" 
-                    value={messageNew}
-                    onChange={OnInputMessage}
-                    />*/ 
