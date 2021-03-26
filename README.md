@@ -1,4 +1,4 @@
-# Happy Thoughts
+# Happy Thinking
 
 **Mission:** 
 
