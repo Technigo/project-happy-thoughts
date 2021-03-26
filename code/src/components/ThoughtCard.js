@@ -5,16 +5,13 @@ import { API_URL_LIKE } from '../Reusables/urls';
 
  const ThoughtCard = (props) => {
 
-    //Props ot be sent into ListTextField
+    //Props to get information from the ListTextField
 
     const _id = props.thought._id
     const message = props.thought.message
     const createdAt = props.thought.createdAt
     const hearts = props.thought.hearts
 
-    console.log(props.thought)
-
-   
         const onLikesIncrease = () =>{
             fetch(API_URL_LIKE(_id), {
                 method: "POST",

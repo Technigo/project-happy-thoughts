@@ -43,7 +43,8 @@ const InputTextField = () => {
                 //if the imput is less than 6 characters submit button will not work.
                 > <span role='button' aria-label='heart'>❤️</span>
                     Send a happy thought
-                  <span role='button' aria-label='heart'>❤️</span></button>
+                  <span role='button' aria-label='heart'>❤️</span>
+                </button>
             </form>
         </div>
     )

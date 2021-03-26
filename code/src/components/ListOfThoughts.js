@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import ThoughtCard from './ThoughtCard'
-// import moment from 'moment';
 import { API_URL_THOUGHTS } from '../Reusables/urls';
 
 const ListTextField = () => {
@@ -8,7 +7,7 @@ const ListTextField = () => {
     const [thoughtList, setThoughtList] = useState([]);
     console.log (thoughtList)
 
-    //useEffect descides when and what should render (at what point of mounting the)
+    //useEffect descides when and what should render (at what point of mounting the component)
     useEffect(() => {
         fetchThoughtList();
     }, []);
@@ -39,7 +38,7 @@ const ListTextField = () => {
                     thought={thought}
                     onLiked={onLiked}
                     />
-                    </div>
+                </div>
             ))}
         </>
     )
