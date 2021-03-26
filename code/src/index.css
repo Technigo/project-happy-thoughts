@@ -77,3 +77,16 @@ h4 {
   line-height: 1.5;
   font-weight: lighter;
 }
+
+.heart-button {
+  background-color: white;
+  border:none;
+}
+
+.heart-button-span {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  background-color: rgb(234, 234, 234);
+  border-radius: 50%;
+}

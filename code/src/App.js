@@ -40,7 +40,6 @@ export const App = () => {
       .then(res => res.json())
       .then(recivedThought => setThoughtsList([...thoughtsList, recivedThought]))
       .catch(err => console.error(err));
-
   }
 
   const onLikesIncrease = (id) => {
@@ -64,8 +63,6 @@ export const App = () => {
       })
   }
 
-
-
   return (
 
     <div className="form-container">
@@ -73,7 +70,7 @@ export const App = () => {
         <label className="thoughts-label"
           htmlFor="thoughts">
           What's making you happy right now?
-        </label>
+            </label>
         <input className="input-thought"
           id="thoughts"
           type="text"
@@ -82,17 +79,18 @@ export const App = () => {
         />
         <button className="send-button" type="submit">
           <span role="img" aria-label="heart-icon">❤️</span>
-          Send Happy Thought
-          <span role="img" aria-label="heart-icon">❤️</span>
+              Send Happy Thought
+              <span role="img" aria-label="heart-icon">❤️</span>
         </button>
       </form>
       {thoughtsList.map(thought => (
         <div className="thoughts-container"
           key={thought._id}>
           <h4>{thought.message}</h4>
-          <button onClick={() => onLikesIncrease(thought._id)}>
-            {thought.hearts}
-            <span role="img" aria-label="heart-icon">❤️</span>
+          <button className="heart-button" onClick={() => onLikesIncrease(thought._id)}>
+
+            <span className="heart-button-span" role="img" aria-label="heart-icon">❤️</span>
+             x {thought.hearts}
           </button>
           <p>{moment(thought.createdAt).fromNow()}</p>
         </div>
@@ -100,3 +98,6 @@ export const App = () => {
     </div>
   )
 }
+
+
+
