@@ -20,23 +20,23 @@ export const App = () => {
 
   // happy thoughts //
   //here is something going wrong
-  const onNewThoughtChange = (e) => {
-    setNewThought(e.target.value);
+  const onNewThoughtChange = (event) => {
+    setNewThought(event.target.value);
   }
-  const onSubmitThought = (e) => {
-    e.preventDefault()
+  const onSubmitThought = (event) => {
+    event.preventDefault()
 
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ text: newThought })
+      body: JSON.stringify({ message: newThought })
     };
 
     fetch(API_URL, options)
-      .then(res => res.json())
-      .then(receivedThought => setThoughtList([receivedThought, ...thoughtList]))
+      .then(response => response.json())
+      .then(receivedNewThought => setThoughtList([receivedNewThought, ...thoughtList]))
       .catch(err => console.error(err))
   }
 
@@ -53,6 +53,9 @@ export const App = () => {
         .then(res => res.json())
         .then(receivedThought => {
           const updatedThoughtList = thoughtList.map(thought => {
+            if (thought._id === receivedThought._id){
+              thought.likes += 1
+            }
               return thought
           })
           setThoughtList(updatedThoughtList)
