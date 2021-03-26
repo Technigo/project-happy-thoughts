@@ -21,8 +21,6 @@ export const App = () => {
       .catch(err => console.error(err));
   }
 
-  console.log(thoughtsList);
-
   const onnewThoughtChange = (event) => {
     setNewThought(event.target.value);
     setThoughtLength(event.target.value.length);
