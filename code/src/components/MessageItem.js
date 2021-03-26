@@ -9,7 +9,7 @@ const MessageItem = ( {message, onHeartClick} ) => {
           <div className="time-hearts-container">
           <div className="likes-container">
             <button onClick={() => onHeartClick(message._id)} className={message.hearts === 0 ? "heart" : "heart-red"}>
-              <span className="heart-like">❤️</span>
+              <span role="img" aria-label="Heart" className="heart-like">❤️</span>
             </button>
             <p>x {message.hearts}</p>
           </div>

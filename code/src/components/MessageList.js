@@ -7,6 +7,7 @@ const MessageList = ( {messageList, handleHeartClick} ) => {
     <>
     {messageList.map(message => (
       <MessageItem 
+      key={message._id}
       message={message}
       onHeartClick={handleHeartClick}
       />
