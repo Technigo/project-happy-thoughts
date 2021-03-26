@@ -9,13 +9,13 @@ export const App = () => {
 
   useEffect(() => {    // useEffect hook
     fetchThoughtList()
-  }, [])  
-  
+  }, [])
+
   const fetchThoughtList = () => {  // GET fetch request for resent thoughts
     fetch(API_URL_THOUGHTS)
       .then(res => res.json()) // response unpacked
       .then(thoughts => setThoughtList(thoughts)) // data recieved and applied
-      .catch(err => console.error(err)) 
+      .catch(err => console.error(err))
   }
 
   const onThoughtNewChanged = (event) => {
@@ -23,28 +23,30 @@ export const App = () => {
   }
 
   const onFormSubmit = (event) => {
-      event.preventDefault()
-      //console.log('Form Submitted!', thoughtNew)
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ message: thoughtNew })
-      };
-  
-      fetch(API_URL_THOUGHTS, options)
-        .then(res => res.json())
-        .then(receivedThought => setThoughtList([...thoughtList, receivedThought]))
-        .catch(err => console.error(err));
-    } 
+    event.preventDefault()
+    window.location.reload()
+    event.target.reset()
+    //console.log('Form Submitted!', thoughtNew)
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message: thoughtNew })
+    };
+
+    fetch(API_URL_THOUGHTS, options)
+      .then(res => res.json())
+      .then(receivedThought => setThoughtList([...thoughtList, receivedThought]))
+      .catch(err => console.error(err));
+  }
   const onHeartsIncrease = (id) => {
     const options = {
       method: 'POST',  // POST fetch request
       headers: {
-      'Content-Type': 'application/json' // text message for a new thought in json format is going to be sent
+        'Content-Type': 'application/json' // text message for a new thought in json format is going to be sent
+      }
     }
-  }
 
     fetch(API_URL_HEARTS(id), options)
       .then(res => res.json())
@@ -52,8 +54,8 @@ export const App = () => {
         const updateThoughtList = thoughtList.map(thought => {
           if (thought._id === recievedThought._id) {// only id could be used of instead recievedThought._id
             thought.hearts += 1  // The if statement will only work for the thought clicked on
-          } 
-          return thought      
+          }
+          return thought
         })
         setThoughtList(updateThoughtList)
       })
@@ -63,24 +65,26 @@ export const App = () => {
   //fetchThoughtList()
 
   return (
-    <div>  
+    <div>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="newThought">What's making you happy right now?</label>
         <input
-        id="newThought"
-        type="text"
-        value={thoughtNew}
-        onChange={onThoughtNewChanged}
+          id="newThought"
+          type="text"
+          value={thoughtNew}
+          onChange={onThoughtNewChanged}
         />
         <button type="submit">Send Happy Thought</button>
       </form>
       {thoughtList.map(thought => (
         <div key={thought._id}>
           <h4>{thought.message}</h4>
-          <button onClick={() => onHeartsIncrease(thought._id)}>
-          * {thought.hearts}
+          <button className={thought.hearts > 0 ? 'heart-button-clicked' : 'heart-button-unclicked'} onClick={() => onHeartsIncrease(thought._id)}>
+            <div className="heart">❤️
+          </div>
           </button>
-          <p>{moment(moment.createdAt).fromNow()}</p>
+          <p> x {thought.hearts}</p>
+          <p>{moment(thought.createdAt).fromNow()}</p>
         </div>
       ))}
     </div>
