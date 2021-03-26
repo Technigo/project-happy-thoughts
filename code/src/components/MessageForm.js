@@ -7,7 +7,11 @@ const MessageForm =({onFormSubmit, newMessage, newMessageChange}) => {
       <form onSubmit={ onFormSubmit}
         className="form-box">
         <label htmlFor="newMessage">What are you happy about today?</label>
-        <textarea rows="4" cols="50" placeholder="Enter thought here.."
+        <textarea
+          className="new-message"
+          rows="4"
+          cols="50"
+          placeholder="Enter thought here.."
           id="newMessage"
           type="text"
           value={newMessage}

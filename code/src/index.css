@@ -49,6 +49,9 @@ code {
   margin:10px;
 }
 
+.new-message{
+  resize: none;
+}
 .button{
   border-radius:15px;
   margin:10px;
