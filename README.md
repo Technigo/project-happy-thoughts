@@ -1,13 +1,47 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+Modern React app to share your thoughts with your friends.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Technologies
 
-## The problem
+- React (modern lovely hooks)
+- Styled-Components (to dress it up)
+- React context (easy state management)
+- momentjs (Who likes to work with directly dates!)
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Project structure
+
+```
+├── public
+└── src
+    ├── api
+    ├── assets
+    │   └── styles
+    └── components
+        ├── FormContext
+        ├── MessageList
+        ├── MessageListItem
+        └── NewMessageForm
+```
+
+`public`: Contains public files such as `index.html` <br>
+`src`: Whole application source code. <br>
+`api`: All api endpoints . <br>
+`assets`: Holds global/shared styles. If there is any images or static file, it should be added here. <br>
+`components`: All react components. <br>
+`FormContext`: Apps only context which is responsible for holding the thought list. <br>
+`MessageList`: Component for showing messages list. <br>
+`MessageListItem`: Component for each message item. <br>
+`NewMessageForm`: New Message form which contains an input to type and a submit button. <br>
+
+## Up & Running
+
+1. Clone the project (unless you can run the code inside your head)
+2. Open up `code` directory.
+3. `npm install` to install packages.
+4. `npm start` to run the project.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+This is the deployed version on Netlify:<br>
+https://angry-fermi-1f9eb6.netlify.app
