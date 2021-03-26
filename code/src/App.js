@@ -6,18 +6,17 @@ import { MessageForm } from "./components/MessageForm";
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [newMessage, setNewMessage] = useState(false);
-  const [charRange, setCharRange] = useState(false);
   const [userInput, setUserInput] = useState("");
   const [keypressCount, setKeypressCount] = useState(0);
+  const [charRange, setCharRange] = useState(false);
+  const [loading, setLoading] = useState(true);
   const messageRef = useRef();
 
-  /*fetches the list of all tweets*/
+  /*-------------fetches the list of all tweets--------------*/
 
   const fetchMessageList = useCallback(() => {// callback to avoid re-rendering of dependencies
     
-
     fetch(API_URL)
       .then(setLoading(true)) //to show loading symbol
       .then((res) => res.json())
@@ -38,19 +37,20 @@ export const App = () => {
       .catch((error) => console.log(error));
   }, [setMessageList]);
 
-  /*setting interval in callback + using useEffect because of multiple re-render problems*/
-  const refreshMessageList = useCallback(() => {
-    const refresh = setInterval(fetchMessageList, 5000);
-    setInterval(fetchMessageList, 5000);
-    clearInterval(refresh);
-  }, [fetchMessageList]);
+    /*setting interval in callback + using useEffect because of multiple re-render problems*/
+    const refreshMessageList = useCallback(() => {
+      const refresh = setInterval(fetchMessageList, 5000);
+  
+      setInterval(fetchMessageList, 5000);
+      clearInterval(refresh);
+    }, [fetchMessageList]);
+  
+    useEffect(() => {
+      refreshMessageList();
+    }, [refreshMessageList]);
+  
 
-  useEffect(() => {
-    refreshMessageList();
-  }, [refreshMessageList]);
-
-
-  /* fetches+post the message user puts in the textarea */
+  /* --------fetches+post the message user puts in the textarea ---------*/
 
   const fetchNewMessage = () => {
     const post = {
@@ -65,7 +65,11 @@ export const App = () => {
       .then((res) => res.json())
       .then((newMessage) => {
         setNewMessage(true);
-        messageRef.current = newMessage.message;//set ref to this so that it wont be seen as a new one when messageList is rendered again
+
+        /*set ref to newMessage so that it wont run newMessage = true 
+        again and add another anmation through css class */
+        messageRef.current = newMessage.message;
+
         setMessageList((previousMessages) => [newMessage, ...previousMessages]);
         clearAll();
       })
@@ -73,7 +77,7 @@ export const App = () => {
   };
 
 
-  /*fetches+post amount of likes */
+  /*------------fetches+post amount of likes -----------*/
 
   const fetchLikes = (messageID, liked) => {
     const post = {
@@ -99,7 +103,6 @@ export const App = () => {
       })
       .catch((error) => console.log(error));
   };
-
 
   //clears all needed input
   const clearAll = () => {

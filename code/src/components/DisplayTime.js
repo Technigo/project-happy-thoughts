@@ -1,6 +1,7 @@
 import React from "react";
 
 export const DisplayTime = ({ messageTime }) => {
+  
   /*calculates time since the message was posted and displays the time in
   a proper way depending on how long ago it was */
   const getTime = (time) => {
