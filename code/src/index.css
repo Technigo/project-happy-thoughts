@@ -14,7 +14,7 @@ code {
 
 .date {
   position: absolute;
-  right: 25%;
+  right: 18%;
   font-style: italic;
   
 }
@@ -43,7 +43,7 @@ code {
 
 .happy-card {
   width: 80%;
-  height:130px;
+  height:auto;
   border: 2px solid black;
   box-shadow: 6px 6px;
   padding: 10px;
@@ -69,24 +69,18 @@ code {
 }
 
 .heart-button {
-  position: absolute;
-  left: 18%;
   border: none;
   outline:none;
   background: white;
 }
 
 .heart-button-active {
-  position: absolute;
-  left: 18%;
   border-radius: 100%;
   background: rgb(248, 143, 143);
   padding: 12px;
 }
 
 .heart-button-not-active {
-  position: absolute;
-  left: 18%;
   border-radius: 100%;
   padding: 12px;
   background: lightgray;
