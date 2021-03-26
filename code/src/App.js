@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
+import ThoughtForm from './components/ThoughtForm'
+
 import { API_URL, LIKES_URL } from './reusable/urls'
+
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState ([])
@@ -19,11 +22,10 @@ export const App = () => {
   }
 
   // happy thoughts //
-  //here is something going wrong
-  const onNewThoughtChange = (event) => {
+  const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value);
   }
-  const onSubmitThought = (event) => {
+  const handleSubmitThought = (event) => {
     event.preventDefault()
 
     const options = {
@@ -63,21 +65,13 @@ export const App = () => {
         .catch(err => console.error(err))
   }
 
-  console.log(thoughtList)
-
   return (
     <>
-      <form onSubmit={onSubmitThought}>
-        <label htmlFor="newThought"></label>
-        <input
-          id="newThought"
-          type="text"
-          value={newThought}
-          onChange={onNewThoughtChange}
-          placeholder="type here"
-        /> 
-        <button type="submit">send</button> 
-      </form>
+      < ThoughtForm 
+          newThought={newThought}
+          onNewThoughtChange={handleNewThoughtChange}
+          onSubmitThought={handleSubmitThought}
+      />
       {thoughtList.map(thought => (
         <div key={thought._id}>
           <h4>{thought.message}</h4>
