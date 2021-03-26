@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './fontawesome'
 
 import MessageList from './components/MessageList';
 import MessageForm from './components/MessageForm';
@@ -7,7 +6,7 @@ import { API_URL, LIKES_URL } from './reusable/urls';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
+  const [messageNew, setMessageNew] = useState('');
 
   useEffect(() => {
     fetchMessageList();
@@ -16,15 +15,12 @@ export const App = () => {
   const fetchMessageList = () => {
     fetch(API_URL)
       .then(res => res.json())
-      .then(messages => {
-        setMessageList(messages)
-        console.log(messages);
-  })
+      .then(messages => setMessageList(messages))
       .catch(err => console.error(err));
   }
 
   const onMessageNewChange = (event) => {
-    setNewMessage(event.target.value);
+    setMessageNew(event.target.value);
 }
 
 const onFormSubmit = (event) => {
@@ -35,7 +31,7 @@ const onFormSubmit = (event) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ message: newMessage })
+    body: JSON.stringify({ message: messageNew })
   };
   
 fetch(API_URL, options)
@@ -56,7 +52,7 @@ const onHeartLikes = (id) => {
   .then(receivedMessage => {
     const updatedMessageList = messageList.map(message => {
       if (message._id === receivedMessage._id) {
-        message.hearts += 1;
+        message.likes += 1;
       }
       return message;
     });
@@ -69,7 +65,7 @@ const onHeartLikes = (id) => {
   return (
     <div>
       <MessageForm
-        newMessage={newMessage}
+        messageNew={messageNew}
         onMessageNewChange={onMessageNewChange}
         onFormSubmit={onFormSubmit}
       />

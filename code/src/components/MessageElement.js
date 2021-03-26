@@ -1,11 +1,11 @@
 import React from 'react';
 import moment from 'moment';
 
-const MessageElement = ({ message, onLikesIncrease}) => {
+const MessageElement = ({ message, onHeartLikes}) => {
   return (
     <div>
       <h4>{message.message}</h4>
-      <button onClick={() => onLikesIncrease(message._id)}>
+      <button onClick={() => onHeartLikes(message._id)}>
         {message.likes}
         ♥
       </button>
