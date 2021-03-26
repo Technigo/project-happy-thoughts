@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import './fontawesome'
 
-import moment from 'moment';
-
+import MessageList from './components/MessageList';
+import MessageForm from './components/MessageForm';
 import { API_URL, LIKES_URL } from './reusable/urls';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
-  const [messageNew, setMessageNew] = useState('');
+  const [newMessage, setNewMessage] = useState('');
 
   useEffect(() => {
     fetchMessageList();
@@ -15,12 +16,15 @@ export const App = () => {
   const fetchMessageList = () => {
     fetch(API_URL)
       .then(res => res.json())
-      .then(messages => setMessageList(messages))
+      .then(messages => {
+        setMessageList(messages)
+        console.log(messages);
+  })
       .catch(err => console.error(err));
   }
 
   const onMessageNewChange = (event) => {
-    setMessageNew(event.target.value);
+    setNewMessage(event.target.value);
 }
 
 const onFormSubmit = (event) => {
@@ -31,7 +35,7 @@ const onFormSubmit = (event) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ message: messageNew })
+    body: JSON.stringify({ message: newMessage })
   };
   
 fetch(API_URL, options)
@@ -39,7 +43,7 @@ fetch(API_URL, options)
   .then(receivedMessage => setMessageList([...messageList, receivedMessage]));
 }
 
-const onLikesIncrease = (id) => {
+const onHeartLikes = (id) => {
   const options = {
     method: 'POST',
     headers: {
@@ -49,10 +53,10 @@ const onLikesIncrease = (id) => {
 
   fetch(LIKES_URL(id), options)
   .then(res => res.json())
-  .then(recievedMessage => {
+  .then(receivedMessage => {
     const updatedMessageList = messageList.map(message => {
-      if (message._id === recievedMessage._id) {
-        message.likes += 1;
+      if (message._id === receivedMessage._id) {
+        message.hearts += 1;
       }
       return message;
     });
@@ -61,30 +65,19 @@ const onLikesIncrease = (id) => {
   .catch(err => console.error(err));
 }
 
-console.log(messageList);
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor='newMessage'>Write new message!</label>
-        <input
-          id='newMessage'
-          type='text'
-          value={messageNew}
-          onChange={onMessageNewChange}
-        />
-        <button type='submit'>Send message!</button>
-      </form>
-      {messageList.map(message => (
-        <div key={message._id}>
-          <h4>{message.message}</h4>
-          <button onClick={() => onLikesIncrease(message._id)}>
-            {message.likes}
-            ♥
-          </button>
-          <p className="date">- {moment(message.created).fromNow()}</p>
-        </div>
-      ))}
+      <MessageForm
+        newMessage={newMessage}
+        onMessageNewChange={onMessageNewChange}
+        onFormSubmit={onFormSubmit}
+      />
+      <MessageList
+        messageList={messageList}
+        onHeartLikes={onHeartLikes}
+      />
+
     </div>
   )
 }

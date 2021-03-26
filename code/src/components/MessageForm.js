@@ -1,18 +1,31 @@
 import React from 'react';
 
-const MessageForm =() => {
+const MessageForm =({ newMessage, onMessageNewChange, onFormSubmit }) => {
   return (
-    <form onSubmit={onFormSubmit}>
-        <label htmlFor='newMessage'>Write new message!</label>
-        <input
+    
+    <form
+    className='new-message-form'
+    onSubmit={onFormSubmit}>
+        <label
+        htmlFor='newMessage'>
+          Write new message!
+        </label>
+        <textarea>
           id='newMessage'
+          rows='2'
+          cold='1'
           type='text'
-          value={messageNew}
+          value={newMessage}
           onChange={onMessageNewChange}
-        />
-        <button type='submit'>Send message!</button>
+          className='new-message-input'
+        </textarea>
+        <button
+          type='submit'
+          className='submit-button'
+          ><span role="img" aria-label="heart emoji">❤️</span> Send happy thought! <span role="img" aria-label="heart emoji">❤️</span>
+        </button>
       </form>
   );
 }
 
-export default MessageForm;
+export default MessageForm
