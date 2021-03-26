@@ -44,7 +44,6 @@ export const App = () => {
     fetch(API_URL, options)
       .then(response => response.json())
       .then(receivedThought => setThoughtList([...thoughtList, receivedThought]))
-      //.then(() => fetchThoughtList)
       .catch(err => console.error(err))
       setTimeout(() => reloadPage(), 1000)
       
@@ -58,13 +57,13 @@ export const App = () => {
       }
     }
     fetch(HEARTS_URL(thoughtID), options)
-    .then(response => response.json())
-    .then(receivedThought => {
-      const updatedThoughtList = thoughtList.map(thought =>{
-        if (thought._id === receivedThought._id) {
-          thought.hearts += 1
-        }    
-        return thought 
+      .then(response => response.json())
+      .then(receivedThought => {
+        const updatedThoughtList = thoughtList.map(thought =>{
+          if (thought._id === receivedThought._id) {
+            thought.hearts += 1
+          }    
+          return thought 
       })
       setThoughtList(updatedThoughtList)
     })
@@ -83,7 +82,6 @@ export const App = () => {
       handleHeartsIncrease={handleHeartsIncrease}
       />
     </div>
-   
   )
 }
 

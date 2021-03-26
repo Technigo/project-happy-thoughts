@@ -10,7 +10,8 @@ const ThoughtForm =({ thoughtNew, onThoughtNewChanged, onFormSubmit }) => {
         id="thoughtNew"
         type="text"
         value={thoughtNew}
-        onChange={onThoughtNewChanged}/>
+        onChange={onThoughtNewChanged}
+        />
 
         <div className="button-counter-row">
           <button type="submit"
@@ -25,7 +26,7 @@ const ThoughtForm =({ thoughtNew, onThoughtNewChanged, onFormSubmit }) => {
               {thoughtNew.length}
             </span>
             /140
-				</p>
+				  </p>
         </div>
       </form>
   </>
