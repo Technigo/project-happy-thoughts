@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import moment from 'moment'
+
 
 import MessageForm from './components/MessageForm'
+import MessageList from './components/MessageList'
 
 import { THOUGHTS_URL, LIKES_URL  } from './reusable/urls'
 
@@ -27,8 +28,7 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    setNewMessage('')
-
+    
     const options = {
       method: 'POST',
       headers: {
@@ -38,10 +38,12 @@ export const App = () => {
     }
     fetch(THOUGHTS_URL, options)
     .then(res => res.json())
-    .then(postMessage => setMessageList([...messageList, postMessage]))
+    .then(postMessage => setMessageList([postMessage, ...messageList]))
+
+    setNewMessage('')
   }
 
-  const onLikesIncrease = (id) => {
+  const handleLikesIncrease = (id) => {
     const options = {
       method: 'POST',
       headers: {
@@ -68,18 +70,11 @@ export const App = () => {
         newMessage={newMessage}
         onNewmessageChange={handleNewmessageChange}
         onFormSubmit={handleFormSubmit}
-        />
-      {messageList.map(message => (
-        <div key={message._id}>
-          <h4>{message.message}</h4>
-          <button onClick={() => onLikesIncrease(message._id)}>
-            {message.hearts}
-            ❤️
-          </button>
-          <p className="date">{moment(message.createdAt).fromNow()}</p>
-        </div>
-      )
-        )}
+      />
+      <MessageList 
+        messageList={messageList} 
+        handleLikesIncrease={handleLikesIncrease}
+      />
     </div>
   )
 }

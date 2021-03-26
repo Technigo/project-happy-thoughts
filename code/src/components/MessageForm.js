@@ -5,14 +5,18 @@ import React from 'react'
   return (
     
     <form onSubmit={onFormSubmit}>
-        <label htmlFor='newMessage'>Write your happy thought here</label>
+        <label htmlFor='newMessage'>What´s making you happy right now?</label>
         <input 
           id='newMessage' 
           type='text' 
           value={newMessage}
           onChange={onNewmessageChange}
         />
-        <button type='submit'>Send Happy Thought</button>
+        <button type='submit'>
+          <span role="img" aria-label="heart">❤️</span>
+          Send Happy Thought
+          <span role="img" aria-label="heart">❤️</span>
+        </button>
     </form>
     
   )
