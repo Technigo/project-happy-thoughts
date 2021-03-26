@@ -4,7 +4,7 @@ import Form from './components/Form'
 import ThoughtList from './components/ThoughtList'
 import './index.css'
 
-import { URL } from './reusable/url'
+import { URL, LIKES_URL } from './reusable/url'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([])
@@ -31,15 +31,29 @@ export const App = () => {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ message: messageNew })
+      body: JSON.stringify({ message: messageNew }),
     }
 
     fetch(URL, options)
-    .then(res => res.json())
+      .then((res) => res.json())
+      .then(() => fetchMessageList())
+      .catch((err) => console.error(err))
+  }
+
+  const handleLikesIncrease = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    fetch(LIKES_URL(id), options)
+    .then((res) => res.json())
     .then(() => fetchMessageList())
-    .catch(err => console.error(err))
+    .catch((err) => console.error(err))
   }
 
   return (
@@ -49,7 +63,7 @@ export const App = () => {
         onMessageNewChange={handleMessageNewChange}
         onFormSubmit={handleFormSubmit}
       />
-      <ThoughtList messageList={messageList} />
+      <ThoughtList messageList={messageList} handleLikesIncrease={handleLikesIncrease} />
     </>
   )
 }

@@ -1,14 +1,21 @@
 import React from 'react'
 import moment from 'moment'
 
-const Thought = ({ message }) => {
+const Thought = ({ message, onLikesIncrease }) => {
   return (
     <>
       <div className="thought-container">
         <p className="happy-thought">{message.message}</p>
         <div className="icon-time-container">
           <div>
-            <button className="like-button"><span role="img" aria-label="heart icon">&#10084;&#65039;</span></button>
+            <button
+              onClick={() => onLikesIncrease(message._id)}
+              className="like-button"
+            >
+              <span role="img" aria-label="heart icon">
+                &#10084;&#65039;
+              </span>
+            </button>
             <span> x {message.hearts}</span>
           </div>
           <span className="created-time">
