@@ -12,7 +12,7 @@ const MessageList =  ({ messageList, onHeartLikes }) = {
           onHeartLikes={onHeartLikes}
         />
       ))}
-    </>
+ 
   )
 }
 
