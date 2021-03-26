@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { MessageElement } from './MessageElement';
+import { MessageElement } from "./MessageElement";
 
 export const MessageList = ({ messageList, handleLikeClick }) => {
   return ( 

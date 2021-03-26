@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import { FormButton } from './FormButton';
+import { FormButton } from "./FormButton";
 
 export const FormInput = ({ newMessage, setNewMessage, onMessageSubmit, errorMessage }) => {
   const handleNewMessage = (e) => {
-    setNewMessage(e.target.value)
+    setNewMessage(e.target.value);
   }
 
   return (
