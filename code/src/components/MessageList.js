@@ -1,17 +1,21 @@
 import React from 'react'
 
-import MessageElement from './MessageElement'
+import moment from 'moment'
 
-const MessageList = ({ messageList, handleLikesIncrease }) => {
+const MessageList = ({ messageList, onLikesIncrease }) => {
     return (
-        <>
+        <div>
           {messageList.map(message => (
-            <MessageElement
-            key = { message._id }
-            message= { message } 
-            onLikesIncrease = {handleLikesIncrease}  />
+            <div key={message._id}>
+            <h4>{message.message}</h4>
+                <button onClick= { () => onLikesIncrease(message._id)}>
+                {message.hearts}
+                ♥️
+                </button> 
+                <p className ="date-created">-{moment(message.createdAt).fromNow()}</p> 
+            </div>
           ))}          
-        </>
+        </div>
     )
 }
 

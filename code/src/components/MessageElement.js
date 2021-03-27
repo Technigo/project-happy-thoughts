@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import moment from 'moment'
 
 const MessageElement = ({ message, onLikesIncrease } ) => {
@@ -15,3 +15,4 @@ const MessageElement = ({ message, onLikesIncrease } ) => {
 }
 
 export default MessageElement
+ */

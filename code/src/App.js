@@ -5,6 +5,7 @@ import { API_URL, LIKES_URL } from './reusable/url'
 import MessageForm from 'components/MessageForm'
 import MessageList from 'components/MessageList'
 
+
 export const App = () => {
   
   //State variables 
@@ -72,9 +73,7 @@ export const App = () => {
     } 
 
    
-    /* console.log(messageList) */
-    
-    return (
+      return (
       <div>
         <MessageForm
         newMessage = {newMessage}
