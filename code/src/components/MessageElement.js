@@ -11,6 +11,7 @@ const MessageElement = ({thought, onHeartLikeIncrease}) => {
           onClick={() => onHeartLikeIncrease(thought._id)}  /* i want to understand whats happening here, why 2 arrow functions??  */
         >
           <span 
+            className="heart"
             role="img" 
             aria-label="heart"
           > 

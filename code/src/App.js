@@ -68,7 +68,7 @@ export const App = () => {
 
 
   return (
-    <div className="form-wrapper">
+    <div className="message-wrapper">
       <MessageForm 
         newMessage= {newMessage}
         onNewMessageChange= {handleNewMessageChange} //when child component passed to function in App, change on to handle. 

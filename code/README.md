@@ -1,19 +1,13 @@
-# Technigo React Starter App
+# Happy Thoughts Project Week 11
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+A project to practice React state skills fetching and posting data to an API. To copy a design s closely as possible, have the most recent messages posted from the top down. Also needed to implement a like button for the posted messages. 
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
 
-## Usage
+## The problem
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+It has been challenging understanding how to divide content into different components, most of my issues was solved using StackOverflow and together with the team. 
+I have a better understanding of React after doing this project as React is done in a very detailed and structued way. 
 
-Alternatively, if you don't want a new git repo on your account;
+## View it live
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+https://happy-thoughts-maria-sparre.netlify.app/
