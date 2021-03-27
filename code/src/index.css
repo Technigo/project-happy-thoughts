@@ -19,10 +19,11 @@ code {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  margin-top: 30px;
   padding: 10px;
-  border: 2px solid rgb(133, 133, 133);
+  border: 2px solid rgb(116, 116, 116);
   background-color: #f1efeff6;
-  box-shadow: 6px 6px 0px 0px black;
+  box-shadow: 6px 6px black;
 }
 
 .message-area {
@@ -30,16 +31,31 @@ code {
   background: white;
   border-color: rgb(228, 227, 227);
   height: 40px;
-  
+  font-family: "Arimo", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .chat-section {
   max-width: 330px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 30px;
-  padding: 20px;
-  border: 2px solid rgb(133, 133, 133);
-  box-shadow: 6px 6px 0px 0px black;
+  padding: 5px 20px 10px 20px;
+  border: 2px solid rgb(116, 116, 116);
+  box-shadow: 6px 6px black;
+  overflow-wrap: break-word;
+}
+
+h2 {
+  font-size: 12px;
+  font-family: "Inconsolata", monospace;
+  margin-left: 10px;
+}
+
+h4 {
+  font-size: 12px;
+  font-family: "Inconsolata", monospace;
 }
 
 .likes-section {
@@ -49,60 +65,40 @@ code {
 }
 
 .likes {
-  border: 5px solid transparent;
-  border-radius: 50%;
+  position: aboslute;
 }
-
-
 
 .time {
  margin-left: 10px;
  margin-top: 20px;
+ font-size: small;
+ font-family: "Inconsolata", monospace;
+ font-weight: 100;
+ display: flex;
+ color: rgb(180, 180, 180);
 }
 
-h2 {
-  font-size: 15px;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-}
-
-p {
+.counter {
   font-size: small;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
+  font-family: "Arimo", sans-serif;
+  font-weight: 500;
   display: flex;
-  font-size: small;
   color: rgb(167, 165, 165);
+  margin-top: 20px;
+  margin-left: 60px;;
+  position: absolute;
 }
 
-h4 {
-  font-size: 15px;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-}
-/*
-.new-message {
-  resize: none;
-}
-
-heart-black {
-  color: black;
-}
-
-heart-red {
-  color: red;
-}
-*/
 .submit-button {
-  background-color: #f09896;
+  background-color: rgb(255, 170, 184);
   border: none;
   border-radius: 50px;
-  width: 60%;
+  width: 65%;
   height: 35px;
   margin-left: 10px;
   padding: 10px 0 30px 0;
   font-size: 12px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Arimo", sans-serif;
   font-weight: bold;
 }
 
@@ -116,18 +112,13 @@ heart-red {
   border: 1px solid transparent;
   border-radius: 50px;
   padding: 15px;
-  
 }
 
 .button-pink {
-  background-color: #b37d7d;
+  background-color: rgb(255, 170, 184);
   border: 1px solid transparent;
   border-radius: 50px;
   padding: 15px;
-  
 }
 
-/*
-.likes:hover {
-  background-color: #f09896;
-}*/
+

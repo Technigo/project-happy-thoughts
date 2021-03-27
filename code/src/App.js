@@ -36,6 +36,9 @@ const onFormSubmit = (event) => {
   
 fetch(API_URL, options)
   .then(res => res.json())
+  .then(() => {
+    window.location.reload()
+  })
   .then(receivedMessage => setMessageList([receivedMessage, ...messageList]));
 }
 
@@ -49,6 +52,9 @@ const onHeartLikes = (id) => {
 
   fetch(LIKES_URL(id), options)
   .then(res => res.json())
+  .then(() => {
+    window.location.reload()
+  })
   .then(receivedMessage => {
     const updatedMessageList = messageList.map(message => {
       if (message._id === receivedMessage._id) {
@@ -60,7 +66,7 @@ const onHeartLikes = (id) => {
     })
   .catch(err => console.error(err));
 }
-console.log(messageList)
+
 
   return (
     <div>

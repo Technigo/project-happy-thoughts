@@ -20,7 +20,7 @@ const MessageForm =({ messageNew, onMessageNewChange, onFormSubmit }) => {
         className='submit-button'
         type='submit'>
           <span className='heart-icons' role="img" aria-label="heart-icon">❤️</span> 
-            Send happy thought! 
+            Send Happy Thought! 
           <span className='heart-icons' role="img" aria-label="heart-icon">❤️</span>
         </button>
       </form>
