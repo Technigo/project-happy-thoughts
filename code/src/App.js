@@ -85,7 +85,7 @@ export const App = () => {
 
         <MessageList 
         messageList = {messageList}
-        onLikesIncrease = {handleLikesIncrease}
+        handleLikesIncrease = {handleLikesIncrease}
         />
       </div>
   )
