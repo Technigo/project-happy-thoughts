@@ -4,13 +4,20 @@ const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
   return (
     <form onSubmit={onFormSubmit}>
       <label htmlFor="newMessage">What's making you happy right now?</label> 
-      <input 
+      <textarea 
         id="newMessage"
+        className="text-input"
         type="text"
         value={messageNew}
         onChange={onMessageNewChange}
-      />
-      <button type="submit">Send Happy Thought</button>
+        cols="37"
+        rows="2"
+      > </textarea>
+      <button 
+      className="send-button"
+      type="submit">
+        <img src="assets/heart-icon.png"/>Send Happy Thought<img src="assets/heart-icon.png"/>
+      </button>
     </form>
   )
 }

@@ -26,7 +26,6 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-
     const options = {
       method: "POST",
       headers: {
@@ -34,11 +33,9 @@ export const App = () => {
       },
       body: JSON.stringify({ message: messageNew })
     }
-
     fetch(API_URL, options)
     .then(res => res.json())
     .then(recievedMessage => setMessageList([recievedMessage, ...messageList]))
-  
     setMessageNew("")
   }
 
@@ -49,7 +46,6 @@ export const App = () => {
         "Content-Type": "application/json"
       },
     }
-
     fetch(LIKES_URL(id), options)
       .then(res => res.json())
       .then(recievedMessage => {
@@ -65,7 +61,7 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="form-container">
       <MessageForm 
       messageNew={messageNew}
       onMessageNewChange={handleMessageNewChange}
