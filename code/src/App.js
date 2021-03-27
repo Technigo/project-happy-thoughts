@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { THOUGHTS_URL } from 'reusable/urls'
+import { THOUGHTS_URL, HEART_URL } from 'reusable/urls'
 import moment from 'moment'
 
 
@@ -37,9 +37,38 @@ export const App = () => {
       },
       body: JSON.stringify({ message: newHappyThought})
     }
+
     fetch(THOUGHTS_URL, options)
       .then(response => response.json())
       .then(receivedHappyThought => setHappyThougthsList([receivedHappyThought,...happyThoughtsList]))
+  }
+
+  //2nd POST Request - pass messageID as id to the fetch request
+  //Any request we send to backend - we can ask server to get, send, update, delete
+  //Default is get - if you want to add you need POST request to send information on increase hearts
+  const onHeartsIncrease = (id) => {
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    fetch(HEART_URL(id), options)
+      .then(response => response.json())
+      .then(receivedHappyThought => {
+        const updatedHappyThougthsList = happyThoughtsList.map(thought => {
+          if (thought._id === receivedHappyThought._id){
+            thought.hearts +=1
+          }
+          return thought
+        })
+        setHappyThougthsList(updatedHappyThougthsList)
+      })
+      .catch(err => console.error(err))
+
+      
   }
 
   return (
@@ -57,9 +86,10 @@ export const App = () => {
         <button type="submit"><span role="img" aria-label="heart emoji">❤️</span>Send Happy Thought<span role="img" aria-label="heart emoji">❤️</span></button>
       </form>
       {happyThoughtsList.map(thought => (
-        <div key={thought._id}>
+        <div key={thought._id} className="excisting-thought-card">
         <h5 className="thought-message">{thought.message}</h5>
-        <button><span role="img" aria-label="heart emoji">❤️</span></button>
+        <button onClick={() => onHeartsIncrease(thought._id)}><span role="img" aria-label="heart emoji">❤️</span></button>
+        <p>{thought.hearts}</p>
         <p className="thought-date">{moment(thought.createdAt).fromNow()}</p>
         </div>
       ))}
