@@ -68,6 +68,7 @@ code {
   box-shadow: 5px 5px #000000;
   padding: 15px;
   font-size: 20px;
+  word-wrap: break-word;
 }
 .received-message{
   margin: 0;
@@ -109,7 +110,7 @@ code {
   color: rgb(210, 70, 70);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .received-message-container {
   width: 300px;
   }
