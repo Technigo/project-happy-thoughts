@@ -43,8 +43,10 @@ export const App = () => {
 
     fetch(THOUGHTS_URL, options)
       .then(response => response.json())
-      .then(receivedHappyThought => setHappyThougthsList([receivedHappyThought,...happyThoughtsList]))
+      .then(() => fetchHappyThoughtList())
       .catch(err => console.error(err))
+
+      event.target.reset()
   }
 
   //2nd POST Request - pass messageID as id to the fetch request
@@ -61,15 +63,8 @@ export const App = () => {
 
     fetch(HEART_URL(id), options)
       .then(response => response.json())
-      .then(receivedHappyThought => {
-        const updatedHappyThougthsList = happyThoughtsList.map(thought => {
-          if (thought._id === receivedHappyThought._id){
-            thought.hearts +=1
-          }
-          return thought
-        })
-        setHappyThougthsList(updatedHappyThougthsList)
-      })
+      // refetch data
+      .then(() => fetchHappyThoughtList())
       .catch(err => console.error(err))
   }
 
