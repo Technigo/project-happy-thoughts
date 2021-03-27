@@ -12,6 +12,146 @@ code {
     monospace;
 }
 
+.site-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-container {
+}
+
+.form-container {
+  background-color: rgb(243, 242, 242);
+  border: solid 1px black;
+  width: 300px;
+  padding-top: 10px;
+  margin-top: 15px;
+  box-shadow: 10px 10px;
+}
+
+.thought-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-text {
+  font-size: 14px;
+  margin: 10px;
+}
+
+.input-bar {
+  margin: 10px;
+  padding: 10px;
+  width: 250px;
+}
+
+.send-button {
+  border: none;
+  background: rgb(248, 205, 213);
+  margin: 10px;
+  border-radius: 20px;
+  width: 70%;
+}
+
+.send-heart-emoji {
+  margin: 0px 5px 0px 5px;
+}
+
+.message-container {
+  border: solid 1px black;
+  width: 300px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px;
+}
+
+.happy-thought {
+  margin: 10px;
+}
+
+.hearts-and-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heart-and-counter {
+  display: flex;
+}
+
+.hearts-button {
+  display: flex;
+  margin-top: 10px;
+  background-color: white;
+  border: none;
+}
+
+.date {
+  margin: 10px;
+}
+
+.heart-emoji {
+  background-color: rgb(223, 219, 219);
+  padding: 0px 5px 0px 5px;
+  border-radius: 10px;
+}
+
+.counter {
+  color: rgb(189, 185, 185);
+}
+
 .date {
   font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    width: 600px;
+  }
+
+  .form-text {
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  .input-bar {
+    margin: 10px;
+    padding: 10px;
+    width: 550px;
+  }
+
+  .send-button {
+    width: 40%;
+  }
+
+  .message-container {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .form-container {
+    width: 800px;
+  }
+
+  .form-text {
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  .input-bar {
+    margin: 10px;
+    padding: 10px;
+    width: 700px;
+  }
+
+  .send-button {
+    width: 40%;
+  }
+
+  .message-container {
+    width: 800px;
+  }
 }

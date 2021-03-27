@@ -4,7 +4,7 @@ import SingleMessage from "./SingleMessage";
 
 const List = ({ handleHeartsIncrease, messageList }) => {
   return (
-    <>
+    <div className="list-container">
       {messageList.map((message) => (
         <SingleMessage
           key={message._id}
@@ -12,7 +12,7 @@ const List = ({ handleHeartsIncrease, messageList }) => {
           onHeartsIncrease={handleHeartsIncrease}
         />
       ))}
-    </>
+    </div>
   );
 };
 

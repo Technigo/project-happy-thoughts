@@ -12,7 +12,7 @@ import { URL_HEARTS } from "./reusable/urls";
 export const App = () => {
   /*States*/
   const [messageList, setMessageList] = useState([]);
-  const [messageNew, setMessageNew] = useState("");
+  const [newMessage, setNewMessage] = useState("");
 
   /*UseEffect*/
   useEffect(() => {
@@ -24,13 +24,13 @@ export const App = () => {
   const fetchMessageList = () => {
     fetch(URL)
       .then((res) => res.json())
-      .then((messages) => setMessageList(messages)) /*WHAT*/
+      .then((messages) => setMessageList(messages))
       .catch((err) => console.error(err));
   };
 
   /*Set the content of new message*/
-  const handleMessageNewChange = (event) => {
-    setMessageNew(event.target.value);
+  const handleNewMessage = (event) => {
+    setNewMessage(event.target.value);
   };
 
   /*Submit of new message*/
@@ -40,7 +40,7 @@ export const App = () => {
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: messageNew }),
+      body: JSON.stringify({ message: newMessage }),
     };
 
     /*fetch for frame of new posts*/
@@ -48,8 +48,10 @@ export const App = () => {
       .then((response) => response.json())
       .then((receivedMessage) =>
         setMessageList([receivedMessage, ...messageList])
-      );
+      )
+      .then(() => setNewMessage(""));
   };
+
   const handleHeartsIncrease = (id) => {
     const options = {
       method: "POST",
@@ -72,10 +74,10 @@ export const App = () => {
 
   /*What the app returns*/
   return (
-    <div>
+    <div className="site-container">
       <Form
-        messageNew={messageNew}
-        onMessageNewChange={handleMessageNewChange}
+        messageNew={newMessage}
+        onNewMessageChange={handleNewMessage}
         onFormSubmit={handleFormSubmit}
       />
       <List
