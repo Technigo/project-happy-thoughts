@@ -1,0 +1,36 @@
+.toughts-form {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   border: 1px solid black;
+   padding: 20px 20px;
+   width: 400px;
+   margin: 30px auto;
+   background-color: #F2F0F0;
+   box-shadow: 4px 10px #000;
+}
+
+.toughts-form label {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.toughts-form textarea {
+    height:50px;
+    word-break: break-word;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.toughts-form button {
+    height: 40px;
+    width: 50%;
+    background-color: #ffadad;
+    border: none;
+    font-family: 'Inconsolata', monospace;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 5px 5px;
+    font-weight: 500;
+    border: 1px solid #f5f5f1; 
+}

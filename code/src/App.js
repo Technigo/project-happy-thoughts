@@ -33,7 +33,7 @@ export const App = () => {
 
   //Form submitted
   const handleFormSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault('')
 
     const options = {
       method: 'POST',
@@ -45,8 +45,10 @@ export const App = () => {
     //Sending POST request 
     fetch(API_URL, options)
       .then(res => res.json())
-      .then(receivedThought => setThoughtList([receivedThought, ...thoughtList])) 
+      .then(() => fetchThoughtList()) 
       .catch(err => console.error(err))
+
+    setThoughtNew('')
   }
   
   //POST request, when like button is clicked
@@ -60,15 +62,7 @@ export const App = () => {
 
     fetch(LIKES_URL(id), options)
       .then(res => res.json())
-      .then(receivedThought => {
-        const updatedThoughtList = thoughtList.map(thought => {
-          if(thought._id === receivedThought._id) {
-            thought.hearts += 1
-          }
-          return thought
-        })
-        setThoughtList(updatedThoughtList)
-      })
+      .then(() => fetchThoughtList())
       .catch(err=> console.error(err))
   }
 
@@ -76,7 +70,7 @@ export const App = () => {
 
   
   return (
-    <div>
+    <div className='main'>
       <ThoughtForm 
         thoughtNew={thoughtNew}
         onFormSubmit={handleFormSubmit}

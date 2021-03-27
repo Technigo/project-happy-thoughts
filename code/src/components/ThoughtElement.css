@@ -1,0 +1,9 @@
+.thought-element {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+    padding: 20px 20px;
+    width: 300px;
+    margin: 20px;
+ }

@@ -1,11 +1,13 @@
 import React from 'react'
 
+import './ThoughtList.css'
+
 
 import ThoughtElement from './ThoughtElement'
 
 const ThoughtList = ( {thoughtList, handleLikesIncrease} ) => {
   return (
-    <>
+    <div className='thought-list'>
       {thoughtList.map(thought => (
         <ThoughtElement 
           key={thought._id}
@@ -13,7 +15,7 @@ const ThoughtList = ( {thoughtList, handleLikesIncrease} ) => {
           onLikesIncrease={handleLikesIncrease}
         />
       ))}
-    </>
+    </div>
   )
 }
 
