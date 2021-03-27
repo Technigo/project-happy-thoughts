@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Lato&family=Love+Ya+Like+A+Sister&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
 
 body {
   margin: 0;
@@ -103,7 +102,7 @@ textarea {
 .heartButton {
   border: none;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 100%;
   padding: 10px;
   margin-right: 5px;
 }
@@ -133,7 +132,11 @@ textarea {
 .newThoughtsContainer,
 .messageContent {
   width: 400px;
-  min-height: 120px;
+  min-height: 160px;
+}
+
+textarea {
+  height: 70px;
 }
 
 .heart {
@@ -141,8 +144,4 @@ textarea {
   height: 16px;
 }
 
-}
-
-@media (min-width: 1024px) {
-  
 }

@@ -12,21 +12,21 @@ export const App = () => {
 
   useEffect(() => {
     fetchList()
-    }, []);//OK
+  }, []);
 
-    const fetchList = () => {
-      fetch(API_URL)
-        .then(res => res.json())
-        .then(messages => setMessageList(messages))
-        .catch(error => console.error(error))
-    }//OK
+  const fetchList = () => {
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(messages => setMessageList(messages))
+      .catch(error => console.error(error))
+  }
 
-    const handleNewMessageChange = (e) => {
-      setNewMessage(e.target.value)
-    }//OK
+  const handleNewMessageChange = (e) => {
+    setNewMessage(e.target.value)
+  }
 
-    const handleSubmit = (e) => {
-      e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault()
     
       const options = {
         method: 'POST',
@@ -41,31 +41,30 @@ export const App = () => {
         .then(() => fetchList())
         .catch(error => console.error(error))
         setNewMessage('')
-    } //OK
+  }
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    };
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  };
 
-    const handleIncreaseLikes = (id) => {
+  const handleIncreaseLikes = (id) => {
 
-      fetch(LIKE_API(id), options)
-      .then(res => res.json())
-      .then(newLike => {
-        const updatedMessageList = messageList.map(message => {
-          if (message._id === newLike._id) {
-            message.hearts += 1;
-          }
-          return message
-          }) 
-          setMessageList(updatedMessageList)
-      })
-      .catch(error => console.error(error))
-    } //OK
-
+    fetch(LIKE_API(id), options)
+    .then(res => res.json())
+    .then(newLike => {
+      const updatedMessageList = messageList.map(message => {
+        if (message._id === newLike._id) {
+          message.hearts += 1;
+        }
+        return message
+        }) 
+        setMessageList(updatedMessageList)
+    })
+    .catch(error => console.error(error))
+  }
 
   return (
     <div className='main'>
@@ -81,7 +80,6 @@ export const App = () => {
         handleIncreaseLikes={handleIncreaseLikes}
       />
     </div>
-
   )
 }
 
