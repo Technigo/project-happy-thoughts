@@ -11,7 +11,10 @@ const Header = () => {
         </h2>
         <h2 className="twitter-info" tabIndex="0">Simply 140 characters to...
         </h2> 
-          <h3 className="summoning" tabIndex="0">Release Your Happy Thoughts!
+          <h3 className="summoning" tabIndex="0">
+            <span className="thought-bubble" role="img" aria-label="thought bubble emoji">💭</span>
+            Release Your Happy Thoughts!
+            <span className="thought-bubble" role="img" aria-label="thought bubble emoji">💭</span>
           </h3> 
     </header>
   )

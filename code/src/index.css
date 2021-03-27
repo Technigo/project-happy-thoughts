@@ -34,8 +34,13 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
+.thought-bubble {
+  margin: 0.6rem;
+}
+
 .summoning {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+  color: #f87175;
 }
 
 /*********** NEW MESSAGE FORM ***********/
@@ -196,8 +201,13 @@ body {
     font-size: 1.3rem;
   }
 
+  .thought-bubble {
+    margin: 0.8rem;
+    font-size: 2.3rem;
+  }
+
   .summoning {
-    font-size: 2.2rem;
+    font-size: 2rem;
   } 
 
   .message-box, .messagelist-box {
