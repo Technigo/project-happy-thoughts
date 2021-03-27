@@ -17,8 +17,9 @@ The project "Happy Thoughts" is amed at practice React state skills by fetching 
 - Handle loading states
 - Keep count of how many different posts you have liked (different from how many times a post has been liked). Keep count and display it in some way.
 - Store this number in localStorage so that when the page is reloaded, the initial state can be set from the number you've stored.
+- Add animation when message is sent.
 
-To implement the project I used two react hooks types useState and useEffect. The data was received from the API using the fetch() method.  
+To implement the project I used two react hooks types useState and useEffect. The data was received from the API using the fetch() method. 
 
 ## View it live
 

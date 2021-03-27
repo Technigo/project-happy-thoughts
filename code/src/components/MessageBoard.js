@@ -11,13 +11,11 @@ const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
 
-
-  const fetchThoughts = (url) => {
+  const updateBoard = (url) => {
     setLoading(true)
     fetch(url)
       .then(response => response.json())
       .then(receivedThoughts => {
-        console.log(receivedThoughts)
         setThoughts(receivedThoughts)
         setTimeout(() => {
           setLoading(false)
@@ -30,8 +28,23 @@ const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
   }
 
   useEffect(() => {
+    const fetchThoughts = (url) => {
+      setLoading(true)
+      fetch(url)
+        .then(response => response.json())
+        .then(receivedThoughts => {
+          setThoughts(receivedThoughts)
+          setTimeout(() => {
+            setLoading(false)
+          }, 2000)
+        })
+        .catch(err => {
+          setLoading(false)
+          setError(true)
+        })
+    }
     fetchThoughts(API_URL)
-  },[]);
+  },[setThoughts]);
 
   const onThoughtLiked = (thoughtLiked) => {
     const updatedThoughts = thoughts.map((thought) => {
@@ -53,7 +66,6 @@ const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
         'Content-Type': 'application/json'
       },
     }
-
     fetch(HEARTS_URL(id), options)
       .then(res => res.json())
       .then(() => {
@@ -64,12 +76,10 @@ const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
   return loading ? <Loading loading={loading} /> : error ? <ErrorBoard /> : (
     <div className="message-board">
       <MyLikes 
-      fetchThoughts= {fetchThoughts}
+      fetchThoughts= {updateBoard}
       numberOfMyLikes = {myLikes.length}
       API_URL = {API_URL}
       />
-
-      {/* <button onClick={() => fetchThoughts(API_URL)} >Update board</button> */}
       {thoughts.map(thought => (
         <div className="message-container" key={thought._id}>
           <div className="thought-date-wrapper">

@@ -13,34 +13,14 @@ code {
     monospace;
 }
 
-.animated{
-  animation: fade-out-right 1s ;
-}
-@keyframes fade-out-right {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-}
 
-.red {
-  color: red;
-}
 
-.envelope {
-  width: 50px;
-  margin-top: 10px;
-}
 
 .content-container {
   max-width: 700px;
   margin: auto;
 }
-
+/* Error board */
 .error-board {
   display: flex;
   flex-direction: column;
@@ -56,9 +36,11 @@ code {
 .sad-face {
   width: 200px;
 }
+/* Shared styling to keep elements alligned */
 
-.board-container {
-  margin: 40px
+.heading-wrapper, .button-wrapper, .counter-wrapper, .likes-container, .thought-date-wrapper, .mylikes-wrapper {
+  width: 80%;
+  margin: auto;
 }
 
 /* Form styling */
@@ -73,12 +55,6 @@ code {
   padding: 10px;
   font-family: Trispace;
 }
-
-.heading-wrapper, .button-wrapper, .counter-wrapper, .likes-container, .thought-date-wrapper, .mylikes-wrapper {
-  width: 80%;
-  margin: auto;
-}
-
 
 .heading{
   margin: 0 0 10px 0;
@@ -96,7 +72,6 @@ code {
   outline: none;
   resize: none;
   overflow: auto;
-  
 }
 
 .heart {
@@ -108,7 +83,7 @@ code {
   align-items: center;
 }
 
-.submit-button{
+.submit-button {
   margin-top: 20px;
   width: 60%;
   border-radius: 20px;
@@ -119,8 +94,27 @@ code {
   border: none;
   font-size: 12px;
   font-family: Trispace;
+  cursor: pointer;
 }
 
+.envelope {
+  width: 50px;
+  margin-top: 10px;
+}
+
+.animated{
+  animation: fade-out-right 1s ;
+}
+@keyframes fade-out-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
 
 /* My likes */
 .mylikes-container{
@@ -133,6 +127,10 @@ code {
 }
 
 /* Message board styling */
+
+.board-container {
+  margin: 40px
+}
 .mylikes-wrapper {
   display: flex;
   justify-content: space-between;
@@ -174,6 +172,7 @@ code {
   margin-right: 10px;
   outline: none;
   font-family: Trispace;
+  cursor: pointer;
 }
 
 .pink {
@@ -194,4 +193,7 @@ code {
   padding: 10px;
   font-family: Trispace;
   cursor: pointer;
+}
+.red {
+  color: red;
 }

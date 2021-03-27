@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 import MessageBoard from './components/MessageBoard'
 import MessageForm from './components/MessageForm'
-// import MyLikes from './components/MyLikes'
 
 export const App = () => {
   const storage = window.localStorage.getItem('myLikes')
@@ -29,8 +28,6 @@ export const App = () => {
         thoughts={thoughts}
         setThoughts={setThoughts} 
       />
-
-      {/* <MyLikes numberOfMyLikes={myLikes.length} /> */}
 
       <MessageBoard
         myLikes={myLikes} 
