@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Roboto&display=swap');
 
 body {
   margin: 0;
@@ -14,50 +15,61 @@ code {
     monospace;
 }
 
-/* .form-container {
+.form-container {
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-} */
+}
 
 .form {
   width: 500px;
   height: 180px;
   background-color: rgb(242, 240, 240);
-  border: 2px solid black;
+  border: 2px solid rgb(161, 160, 160);
   display: flex;
   flex-direction: column;
-  font-family: 'Source Sans Pro', sans-serif;
-  line-height: 1.5;
-  font-weight: bolder;
-  letter-spacing: 1px;
-  box-shadow: 10px 10px;
+  
+  
+  
+  box-shadow: 8px 8px;
   margin: 20px;
   
 }
 
 .thoughts-label {
   margin: 10px 30px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  font-weight: bolder;
+  /* letter-spacing: -1px; */
   
 }
 
 .input-thought {
+  
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  padding: 2px 10px 30px;
   width: 85%;
   height: 60px;
   margin: 0  30px 2px;
-  border-color: rgb(211, 207, 207);
+  border: 2px solid rgb(211, 207, 207);
 }
 
 .send-button {
-  width: 200px;
+  width: 225px;
   padding: 12px 0px;
   border-radius: 20px;
   border: none;
-  
+  font-family: 'Courier Prime', monospace;
+  font-weight: bolder;
   background-color: rgb(255, 173, 173);
   margin: 8px 30px;
+  cursor: pointer;
+  outline: none;
 }
 
 span {
@@ -66,27 +78,83 @@ span {
 
 .thoughts-container {
   width: 500px;
+  overflow-wrap: break-word;
   height: 150px;
-  border: 2px solid rgb(71, 71, 71);
+  border: 2px solid rgb(161, 160, 160);
   margin: 20px;
-  box-shadow: 10px 10px;
+  box-shadow: 8px 8px;
+}
+
+.like-time-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
 }
 
 h4 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Courier Prime', monospace;
+  font-weight: bolder;
   line-height: 1.5;
-  font-weight: lighter;
-}
+  margin: 20px 15px 0px;
+ }
 
 .heart-button {
+  outline: none;
+  font-family: 'Courier Prime', monospace;
   background-color: white;
   border:none;
+  color:rgb(211, 207, 207);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ 
+  /* margin: 20px 5px; */
 }
 
-.heart-button-span {
-  width: 100px;
-  height: 100px;
-  padding: 10px;
+.heart-grey {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 5px; 
   background-color: rgb(234, 234, 234);
   border-radius: 50%;
+  
 }
+
+.heart-pink {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background-color: rgb(255, 173, 173);
+  border-radius: 50%;
+}
+
+p {
+  font-family: 'Courier Prime', monospace;
+  font-size: small;
+  color:rgb(211, 207, 207);
+  margin-right: 10px;
+}
+
+@media (max-width: 667px) {
+  .form,
+  .thoughts-container {
+   width: 300px;
+  }
+  .input-thought{
+    width: 225px;
+  }
+}
+    
+    
+    
+    

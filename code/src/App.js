@@ -88,12 +88,14 @@ export const App = () => {
         <div className="thoughts-container"
           key={thought._id}>
           <h4>{thought.message}</h4>
-          <button className="heart-button" onClick={() => onLikesIncrease(thought._id)}>
-            <img src="./public/assets/heart.svg" alt="heart-icon" />
-            <span className="heart-button-span" role="img" aria-label="heart-icon">❤️</span>
+          <div className="like-time-container">
+            <button className="heart-button" onClick={() => onLikesIncrease(thought._id)}>
+
+              <span className={thought.hearts === 0 ? "heart-grey" : "heart-pink"} role="img" aria-label="heart-icon">❤️</span>
              x {thought.hearts}
-          </button>
-          <p>{moment(thought.createdAt).fromNow()}</p>
+            </button>
+            <p>{moment(thought.createdAt).fromNow()}</p>
+          </div>
         </div>
       ))}
     </div>
