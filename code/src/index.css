@@ -149,9 +149,9 @@ textarea:focus {
   align-items: center;
 }
 
-.likes-icon-count > p {
+/* .likes-icon-count > p {
   margin-left: 8px;
-}
+} */
 
 .date {
   font-style: italic;
