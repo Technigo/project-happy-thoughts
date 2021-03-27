@@ -31,6 +31,7 @@ code {
   flex-direction: column;
   box-shadow: 8px 8px;
   margin: 20px;
+  border-radius: 2px;
 }
 
 .thoughts-label {
@@ -70,6 +71,7 @@ code {
   border: 2px solid rgb(161, 160, 160);
   margin: 20px;
   box-shadow: 8px 8px;
+  border-radius: 2px;
 }
 
 h4 {
