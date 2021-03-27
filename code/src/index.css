@@ -47,6 +47,7 @@ code {
   padding: 10px;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 
 .thought-container {
@@ -69,6 +70,16 @@ code {
   border-radius: 50px;
   border: none;
   cursor: pointer;
+  outline: none;
+}
+
+.button-color {
+  background-color: #F0ACAC;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 
 

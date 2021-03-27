@@ -10,7 +10,7 @@ const Thought = ({ message, onLikesIncrease }) => {
           <div>
             <button
               onClick={() => onLikesIncrease(message._id)}
-              className="like-button"
+              className={message.hearts === 0 ? "like-button" : "button-color"}
             >
               <span role="img" aria-label="heart icon">
                 &#10084;&#65039;

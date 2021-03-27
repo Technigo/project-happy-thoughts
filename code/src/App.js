@@ -46,14 +46,14 @@ export const App = () => {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     }
 
     fetch(LIKES_URL(id), options)
-    .then((res) => res.json())
-    .then(() => fetchMessageList())
-    .catch((err) => console.error(err))
+      .then((res) => res.json())
+      .then(() => fetchMessageList())
+      .catch((err) => console.error(err))
   }
 
   return (
@@ -63,7 +63,10 @@ export const App = () => {
         onMessageNewChange={handleMessageNewChange}
         onFormSubmit={handleFormSubmit}
       />
-      <ThoughtList messageList={messageList} handleLikesIncrease={handleLikesIncrease} />
+      <ThoughtList
+        messageList={messageList}
+        handleLikesIncrease={handleLikesIncrease}
+      />
     </>
   )
 }

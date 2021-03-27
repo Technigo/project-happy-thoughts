@@ -18,7 +18,7 @@ const Form = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
           onChange={onMessageNewChange}
           className="input-style"
           rows="2"
-          cols="34"
+          cols="36"
         />
 
         <button type="submit" className="submit-button">
