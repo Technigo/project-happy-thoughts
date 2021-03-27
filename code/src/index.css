@@ -111,8 +111,16 @@ heart-red {
   border: none;
 }
 
-.button {
+.button-grey {
   background-color: #eaeaea;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  padding: 15px;
+  
+}
+
+.button-pink {
+  background-color: #b37d7d;
   border: 1px solid transparent;
   border-radius: 50px;
   padding: 15px;

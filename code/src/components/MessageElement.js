@@ -10,7 +10,7 @@ const MessageElement = ({ message, onHeartLikes}) => {
       <h4>{message.message}</h4>
       <div className='likes-section'>
         <div className='likes'>
-        <button className='button'
+        <button className={message.hearts === 0 ? 'button-grey' : 'button-pink'}
           onClick={() => onHeartLikes(message._id)}>
           <span className='heart' role="img" aria-label="heart-icon">❤️</span>
         </button>
