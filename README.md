@@ -12,4 +12,4 @@ For the styling I used simple color picker to get the right colors from the orig
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts8.netlify.app/
