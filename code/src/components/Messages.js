@@ -2,7 +2,7 @@ import React from 'react'
 
 import { MessageElement } from './MessageElement'
 
-export const Messages = ({ messageList, handleIncreaseLikes}) => {
+export const Messages = ({ messageList, handleIncreaseLikes }) => {
 
   return (
     <div className='messageContainer'>

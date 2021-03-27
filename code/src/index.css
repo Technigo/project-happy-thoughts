@@ -25,7 +25,6 @@ code {
   align-items: center;
 }
 
-
 .newThoughtsContainer {
   display: flex;
   flex-direction: column;
@@ -110,7 +109,6 @@ textarea {
 .heart {
   width: 11px;
   height: 11px;
-
 }
 
 .nrOfLikes {
