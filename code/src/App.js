@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { THOUGHTS_URL, HEART_URL } from 'reusable/urls'
 import moment from 'moment'
+
+import { ThougthForm } from './components/ThoughtForm'
+
+import { THOUGHTS_URL, HEART_URL } from 'reusable/urls'
 
 
 export const App = () => {
@@ -22,12 +25,12 @@ export const App = () => {
   }
 
   //Add new thought to state 
-  const onNewHappyThoughtChange = (event) => {
+  const handleNewHappyThoughtChange = (event) => {
     setNewHappyThought(event.target.value)
   }
 
   //POST - request
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -41,6 +44,7 @@ export const App = () => {
     fetch(THOUGHTS_URL, options)
       .then(response => response.json())
       .then(receivedHappyThought => setHappyThougthsList([receivedHappyThought,...happyThoughtsList]))
+      .catch(err => console.error(err))
   }
 
   //2nd POST Request - pass messageID as id to the fetch request
@@ -67,13 +71,11 @@ export const App = () => {
         setHappyThougthsList(updatedHappyThougthsList)
       })
       .catch(err => console.error(err))
-
-      
   }
 
   return (
     <div>
-      <form onSubmit={onFormSubmit} className="new-thought-form">
+      {/* <form onSubmit={onFormSubmit} className="new-thought-form">
         <label htmlFor="newThought">What´s making you happy right now? </label>
         <textarea 
           id="newThought" 
@@ -84,7 +86,13 @@ export const App = () => {
           placeholder="Type your happy thoughts here :)"
         />
         <button type="submit"><span role="img" aria-label="heart emoji">❤️</span>Send Happy Thought<span role="img" aria-label="heart emoji">❤️</span></button>
-      </form>
+      </form> */}
+      <ThougthForm 
+        newHappyThought={newHappyThought}
+        onNewHappyThoughtChange={handleNewHappyThoughtChange}
+        onFormSubmit={handleFormSubmit}
+
+      />
       {happyThoughtsList.map(thought => (
         <div key={thought._id} className="excisting-thought-card">
         <h5 className="thought-message">{thought.message}</h5>
