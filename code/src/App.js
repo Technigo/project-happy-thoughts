@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+
+import ThoughtForm from './components/ThoughtForm';
+import ThoughtList from './components/ThoughtList';
 
 import { API_URL, LIKE_URL } from './reusable/urls';
 
-
 export const App = () => {
-
   const [thoughtsList, setThoughtsList] = useState([]);
   const [newThought, setNewThought] = useState('');
 
@@ -17,16 +17,15 @@ export const App = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(thoughts => setThoughtsList(thoughts))
-      .catch(err => console.error(err));
+      .catch(err => (console.error(err)));
   }
 
-  const onNewThoughtChange = (event) => {
+  const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value)
   }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log('Form submitted', newThought)
 
     const options = {
       method: 'POST',
@@ -39,11 +38,11 @@ export const App = () => {
     fetch(API_URL, options)
       .then(res => res.json())
       .then(recivedThought => setThoughtsList([...thoughtsList, recivedThought]))
-      .catch(err => console.error(err));
+      .catch(err => (console.error(err)));
     setNewThought('')
   }
 
-  const onLikesIncrease = (id) => {
+  const handleLikesIncrease = (id) => {
 
     const options = {
       method: 'POST',
@@ -62,12 +61,22 @@ export const App = () => {
         });
         setThoughtsList(updatedThoughtsList);
       })
+      .catch(err => (console.log(err)))
   }
 
   return (
 
     <div className="form-container">
-      <form className="form" onSubmit={onFormSubmit}>
+      <ThoughtForm
+        newThought={newThought}
+        onNewThoughtChange={handleNewThoughtChange}
+        onFormSubmit={handleFormSubmit}
+      />
+      <ThoughtList
+        thoughtsList={thoughtsList}
+        handleLikesIncrease={handleLikesIncrease}
+      />
+      {/* <form className="form" onSubmit={onFormSubmit}>
         <label className="thoughts-label"
           htmlFor="thoughts">
           What's making you happy right now?
@@ -83,8 +92,8 @@ export const App = () => {
               Send Happy Thought
               <span role="img" aria-label="heart-icon">❤️</span>
         </button>
-      </form>
-      {thoughtsList.map(thought => (
+      </form> */}
+      {/* {thoughtsList.map(thought => (
         <div className="thoughts-container"
           key={thought._id}>
           <h4>{thought.message}</h4>
@@ -97,7 +106,7 @@ export const App = () => {
             <p>{moment(thought.createdAt).fromNow()}</p>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   )
 }

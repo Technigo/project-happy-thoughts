@@ -58,7 +58,7 @@ code {
   font-family: 'Courier Prime', monospace;
   font-weight: bolder;
   background-color: rgb(255, 173, 173);
-  margin: 8px 30px;
+  margin: 8px 30px 15px;
   cursor: pointer;
   outline: none;
 }
