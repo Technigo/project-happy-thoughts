@@ -26,6 +26,7 @@ h4 {
 p {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
 }
 
 label {
@@ -45,17 +46,17 @@ label {
   margin-bottom: 25px;
   box-shadow: 7px 7px #000;
   padding: 15px;
+  max-width: 668px;
 }
 
 .form-container {
-background-color: rgb(240, 240, 240);
-margin-top: 70px;
+  background-color: rgb(240, 240, 240);
+  margin-top: 70px;
 }
 
 .message-input-aria {
  resize: none;
  outline: none;
- height: 15vw;
  box-sizing: border-box;
  padding: 10px;
 
@@ -64,45 +65,55 @@ margin-top: 70px;
 .send-message-button {
   display: inline-flex;
   vertical-align: top;
-  align-items: baseline;
+  align-items: center;
   border: none;
+  justify-content: space-evenly;
   background-color: #ffadae;
   border-radius: 25px;
   font-family: 'Courier New', Courier, monospace;
   padding: 10px;
   margin-top: 15px;
-  width: 70%;
+  width: 200px;
   font-size: 12px;
   font-weight: bold;
-  
 }
 
 .message-container {
-background-color: khaki;
-word-wrap: break-word;
-
+  word-wrap: break-word;
+  padding: 15px 15px 0 15px;
 }
 
+.likes-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+}
 
+.number-of-likes {
+  width: 20%;
+}
 
+.date {
+  width: 65%;
+  text-align: right;
+}
 
 .send-like-button {
   border: none;
   display: inline-block;
-  height: 45px;
-  width: 45px;
-  margin: 10px;
+  height: 35px;
+  width: 35px;
+  margin: 10px 3px 10px 0;
   border-radius: 50%;
   background-color:  #ffadae;
-  padding-left: 13px;
-  
+  padding-left: 8px;
 }
 
 .like-heart {
   display: table-cell;
   vertical-align: middle; 
   text-align: center; 
-  
 }
 
 
