@@ -44,8 +44,9 @@ export const App = () => {
   
       fetch(API_URL, options)
         .then(res => res.json())
-        .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
-  
+        /* .then(receivedMessage => setMessageList([...messageList, receivedMessage])) */
+        .then(() => fetchMessageList ())
+        .catch(err => console.error(err))
       }
 
     const handleLikesIncrease = (id) => {
@@ -59,7 +60,8 @@ export const App = () => {
 
       fetch(LIKES_URL(id), options)
         .then(res => res.json())
-        .then(receivedMessage => {
+        .then(() => fetchMessageList())
+        /* .then(receivedMessage => {
           const updatedMessageList = messageList.map(message => {
             if (message._id === receivedMessage._id){
               message.hearts += 1;
@@ -67,7 +69,7 @@ export const App = () => {
             return message
           })
           setMessageList(updatedMessageList) 
-        })  
+        })   */
 
         .catch(err => console.error(err))
     } 
