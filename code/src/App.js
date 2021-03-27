@@ -66,8 +66,17 @@ export const App = () => {
 
       fetch(LIKES_URL(id), options)
         .then(res => res.json())
-        .then((data)=> console.log(data))
-        .catch(err => console.error(err));
+        .then(receivedMessage => {
+          const updatedMessageList = messageList.map(message => {
+            if (message._id === receivedMessage._id){
+              message.hearts += 1;
+            }
+            return message
+          })
+          setMessageList(updatedMessageList) 
+        })  
+        
+        .catch(err => console.error(err))
 
     } 
   
