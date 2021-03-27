@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
 
-import { API_URL } from './urls';
+import MessageForm from './components/MessageForm';
+import MessageList from './components/MessageList';
+
+import { API_URL, LIKES_URL } from './urls';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -18,11 +20,11 @@ export const App = () => {
       .catch(err => console.error(err));
   }
 
-  const onMessageNewChange = (event) => {
+  const handleMessageNewChange = (event) => {
     setMessageNew(event.target.value);
   }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
@@ -30,35 +32,41 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ text: messageNew })
+      body: JSON.stringify({ message: messageNew })
     };
 
     fetch(API_URL, options)
       .then(res => res.json())
-      .then(receivedMessage => setMessageList([receivedMessage, ...messageList ]))
+      .then(() => fetchMessageList())
       .catch(err => console.error(err));
   }
 
+  const handleLikesIncrease = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+  
+    fetch(LIKES_URL(id), options)
+      .then(res => res.json())
+      .then(() => fetchMessageList())
+      .catch(err => console.error(err));
+  }
+
+
   return (
     <div>
-      <form className="message-form" onSubmit={onFormSubmit}>
-        <label className="form-title" htmlFor="newMessage">Write a happy message below and click send!</label>
-        <input
-          className="text-area"
-          id="newMessage"
-          type="text"
-          maxLength="140"
-          value={messageNew}
-          onChange={onMessageNewChange}
-        />
-        <button type="submit">Send message!</button>
-      </form>
-      {messageList.map(message => (
-        <div className="message-card" key={message._id}>
-          <h4>{message.text}</h4>
-          <p className="date">- {moment(message.created).fromNow()}</p>
-        </div>
-      ))}
+      <MessageForm
+        messageNew={messageNew}
+        onMessageNewChange={handleMessageNewChange}
+        onFormSubmit={handleFormSubmit}
+      />
+      <MessageList
+        messageList={messageList}
+        handleLikesIncrease={handleLikesIncrease}
+      />
     </div>
   )
 }
