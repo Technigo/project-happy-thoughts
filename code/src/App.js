@@ -88,7 +88,7 @@ export const App = () => {
         <div className="thoughts-container"
           key={thought._id}>
           <h4>{thought.message}</h4>
-          <div className="like-time-container">
+          <div className="likes-and-time-container">
             <button className="heart-button" onClick={() => onLikesIncrease(thought._id)}>
 
               <span className={thought.hearts === 0 ? "heart-grey" : "heart-pink"} role="img" aria-label="heart-icon">❤️</span>
