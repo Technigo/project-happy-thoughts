@@ -12,15 +12,187 @@ code {
     monospace;
 }
 
+* {
+  font-family: 'Inconsolata', monospace;
+  font-weight: bold;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+
+
+/**** HEADER ***/
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+}
+
+h1 {
+  font-family: 'Inconsolata', monospace;
+  font-size: 32px;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  color: #ffadad;
+  text-shadow: 1px 1px #000;
+}
+
+h1 span {
+  font-size: 22px;
+  text-shadow: none;
+}
+
+
+
+/**** MAIN CONTAINER (contains "form-container" & "happy-thought-container") ****/
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #f7c1c1;
+  }
+
+
+
+/**** FORM ****/
+
 .form-container {
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
-  background-color: rgb(212, 211, 211);
-  box-shadow: 3px 3px #000;
+  width: 90%;
+  padding: 16px;
+  margin-top: 45px;
+  border: 2px ridge #8a8a8a;
+  background: #f2f0f0;
+  box-shadow: 7px 7px #000;
 }
 
 .input-box {
-  border-color: grey;
+  border-radius: 1px;
+  border: 2px ridge #f2f0f0;
+  width: 100%;
+  height: 60px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  outline: none;
 }
 
+.submit-button {
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #ffadad;
+}
+
+.submit-button:hover {
+  transform: scale(1.1);
+}
+
+
+
+/**** THOUGHT ****/
+
+.happy-thought-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+  width: 90%;
+  padding: 16px;
+  background: #fff;
+  border: 2px ridge #8a8a8a;
+  box-shadow: 7px 7px #000;
+}
+
+.happy-thought-container:last-child {
+  margin-bottom: 45px;
+}
+
+.thought-message {
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  width: 80%;
+}
+
+.heart-likes-time-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.heart-likes-container {
+  display: flex;
+  flex-wrap: nowrap;
+  color: #9e9d9d;
+}
+
+.heart-likes-container button {
+  padding: 12px;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  margin-right: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.heart-button-liked {
+  background: #ffadad;
+}
+
+.date {
+  color: #c5c2c2;
+}
+
+
+
+
+
+/**** MEDIA QUERIES ***/
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .form-container, .happy-thought-container {
+    width: 55%;
+  }
+
+  h1 {
+    font-size: 46px;
+    margin-top: 52px;
+    margin-bottom: 52px;
+  }
+  
+  h1 span {
+    font-size: 34px;
+  }
+  
+ }
+ 
+ 
+ /*Desktop*/
+ @media (min-width: 1025px) {
+ 
+   .form-container, .happy-thought-container {
+     width: 30%;
+   }
+
+   h1 {
+    font-size: 50px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  
+  h1 span {
+    font-size: 38px;
+  }
+
+ }

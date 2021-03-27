@@ -1,17 +1,26 @@
 import React from 'react'
 
-const Form = () => {
+const Form = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
     return (
         <div className="form-container">
-            <form>
+            <form onSubmit={onFormSubmit}>
                 <label htmlFor="input-box">What's making you happy right now?</label>
-                <input className="input-box" id="input-box"></input>
-                <button type="submit" onClick=""><span>❤️</span> Send Happy Thought <span>❤️</span></button>
+                <textarea
+                    className="input-box" 
+                    id="input-box" 
+                    type="text"
+                    value={messageNew} 
+                    onChange={onMessageNewChange}
+                />
+                <button 
+                    className="submit-button" 
+                    type="submit">
+                        <span role="img" aria-label="heart">❤️</span> Send Happy Thought <span role="img" aria-label="heart">❤️</span>
+                </button>
             </form>
         </div>
     )
 }
-
 
 
 export default Form;

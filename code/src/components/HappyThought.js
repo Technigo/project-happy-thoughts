@@ -1,24 +1,28 @@
 import React from 'react'
 import moment from 'moment'
 
-const HappyThought = ({ thought }) => {
-
-    const handleLike = () => {
-
-    }
+const HappyThought = ({ thought, onIncreaseLikes }) => {
     return (
          <div className="happy-thought-container">
-            <p>{thought.message}</p>
-                <div className="heart-and-likes-container">
-                    <button className="heart-button"
-                        onClick={() =>handleLike(thought.id)}>
-                        <span role="img" aria-label="heart">{"❤️"}</span>
-                    </button>
-                    <p>x {thought.hearts}</p>
-                    <p className="date">- {moment(thought.created).fromNow()}</p>
-                </div>
+                <p className="thought-message">{thought.message}</p>
+                    <div className="heart-likes-time-container">
+                        <div className="heart-likes-container">
+                        <button className = {thought.hearts > 0 ? "heart-button-liked" : "heart-button"}
+                            onClick={() => {
+                                onIncreaseLikes(thought._id)
+                                }
+                            }>
+                            <span role="img" aria-label="heart">{"❤️"}</span>
+                        </button>
+                         
+                        <p>x {thought.hearts}</p>
+                        </div>
+                        <p className="date">- {moment(thought.createdAt).fromNow()}</p>
+                    </div>
          </div>
     )
 }
 
 export default HappyThought;
+
+
