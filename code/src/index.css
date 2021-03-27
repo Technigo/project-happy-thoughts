@@ -133,6 +133,11 @@ code {
 }
 
 /* Message board styling */
+.mylikes-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .message-container {
   margin: 40px;
@@ -180,4 +185,13 @@ code {
   margin: auto;
   display: flex;
   justify-content: center;
+}
+
+.update-button {
+  background-color: pink;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  font-family: Trispace;
+  cursor: pointer;
 }

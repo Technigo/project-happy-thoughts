@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import MessageBoard from './components/MessageBoard'
 import MessageForm from './components/MessageForm'
-import MyLikes from './components/MyLikes'
+// import MyLikes from './components/MyLikes'
 
 export const App = () => {
   const storage = window.localStorage.getItem('myLikes')
@@ -15,6 +15,7 @@ export const App = () => {
   const initialCount = (splittingStorageIntoArray(storage))
   
   const [thoughts, setThoughts] = useState([])
+
   const [myLikes, setMyLikes] = useState(initialCount)
   
   useEffect(()=> {
@@ -29,7 +30,7 @@ export const App = () => {
         setThoughts={setThoughts} 
       />
 
-      <MyLikes numberOfMyLikes={myLikes.length} />
+      {/* <MyLikes numberOfMyLikes={myLikes.length} /> */}
 
       <MessageBoard
         myLikes={myLikes} 

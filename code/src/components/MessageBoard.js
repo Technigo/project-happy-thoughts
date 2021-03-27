@@ -5,29 +5,33 @@ import { API_URL, HEARTS_URL } from '../reusable/urls'
 
 import Loading from '../components/Loading'
 import ErrorBoard from '../components/ErrorBoard'
+import MyLikes from './MyLikes'
 
 const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
 
-  useEffect(() => {
-    const fetchThoughts = (url) => {
-      setLoading(true)
-      fetch(url)
-        .then(response => response.json())
-        .then(receivedThoughts => {
-          setThoughts(receivedThoughts)
-          setTimeout(() => {
-            setLoading(false)
-          }, 2000)
-        })
-        .catch(err => {
+
+  const fetchThoughts = (url) => {
+    setLoading(true)
+    fetch(url)
+      .then(response => response.json())
+      .then(receivedThoughts => {
+        console.log(receivedThoughts)
+        setThoughts(receivedThoughts)
+        setTimeout(() => {
           setLoading(false)
-          setError(true)
-        })
-    }
+        }, 2000)
+      })
+      .catch(err => {
+        setLoading(false)
+        setError(true)
+      })
+  }
+
+  useEffect(() => {
     fetchThoughts(API_URL)
-  }, [setThoughts]);
+  },[]);
 
   const onThoughtLiked = (thoughtLiked) => {
     const updatedThoughts = thoughts.map((thought) => {
@@ -59,6 +63,13 @@ const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
 
   return loading ? <Loading loading={loading} /> : error ? <ErrorBoard /> : (
     <div className="message-board">
+      <MyLikes 
+      fetchThoughts= {fetchThoughts}
+      numberOfMyLikes = {myLikes.length}
+      API_URL = {API_URL}
+      />
+
+      {/* <button onClick={() => fetchThoughts(API_URL)} >Update board</button> */}
       {thoughts.map(thought => (
         <div className="message-container" key={thought._id}>
           <div className="thought-date-wrapper">
