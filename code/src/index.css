@@ -100,17 +100,14 @@ label {
 
 .send-like-button {
   border: none;
-  display: inline-block;
   height: 35px;
   width: 35px;
-  margin: 10px 3px 10px 0;
+  margin: 10px 5px 10px 0;
   border-radius: 50%;
-  background-color:  #ffadae;
-  padding-left: 8px;
+  background-color: #ffadae; 
 }
 
 .like-heart {
-  display: table-cell;
   vertical-align: middle; 
   text-align: center; 
 }
