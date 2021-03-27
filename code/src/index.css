@@ -12,15 +12,14 @@ code {
     monospace;
 }
 
+/*Entire site styling*/
 .site-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.list-container {
-}
-
+/*Form styling*/
 .form-container {
   background-color: rgb(243, 242, 242);
   border: solid 1px black;
@@ -58,6 +57,7 @@ code {
   margin: 0px 5px 0px 5px;
 }
 
+/*Styling for each displayed message*/
 .message-container {
   border: solid 1px black;
   width: 300px;
@@ -106,6 +106,7 @@ code {
   font-style: italic;
 }
 
+/*media-queries for tablet and desktop*/
 @media (min-width: 768px) {
   .form-container {
     width: 600px;

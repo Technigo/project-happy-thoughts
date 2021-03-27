@@ -4,7 +4,7 @@ import SingleMessage from "./SingleMessage";
 
 const List = ({ handleHeartsIncrease, messageList }) => {
   return (
-    <div className="list-container">
+    <div>
       {messageList.map((message) => (
         <SingleMessage
           key={message._id}

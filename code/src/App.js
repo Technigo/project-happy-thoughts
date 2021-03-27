@@ -43,7 +43,7 @@ export const App = () => {
       body: JSON.stringify({ message: newMessage }),
     };
 
-    /*fetch for frame of new posts*/
+    /*fetch for object of new posts*/
     fetch(URL, options)
       .then((response) => response.json())
       .then((receivedMessage) =>
@@ -52,6 +52,7 @@ export const App = () => {
       .then(() => setNewMessage(""));
   };
 
+  /*updating the message-object with +1 heart for each click*/
   const handleHeartsIncrease = (id) => {
     const options = {
       method: "POST",
