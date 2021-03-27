@@ -55,11 +55,10 @@ label {
 }
 
 .message-input-aria {
- resize: none;
- outline: none;
- box-sizing: border-box;
- padding: 10px;
-
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .send-message-button {
