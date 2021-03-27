@@ -11,7 +11,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchThoughtList()
-  }, []);
+  }, [thoughtsList]);
 
   const fetchThoughtList = () => {
     fetch(API_URL)
