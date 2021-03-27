@@ -1,13 +1,18 @@
-# Happy Thoughts
+# Happy Thoughts Project Week 11
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A project to practice React state skills fetching and posting data to an API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+-Follow the provided design as closely as possible
+-List the most recent thoughts at the top and older thoughts at the bottom of the page (sorted)
+-The thoughts should show the content of the message and how many likes they've received
+-It need to have a form to post new thoughts
+-Implement a heart button to send likes on a thought
+
+Personal stretch goal:
+- Show a count below the form input that updates as the user types and shows how many characters are remaining. Make it go red when the user has typed over 140 characters
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-maria-sparre.netlify.app/
