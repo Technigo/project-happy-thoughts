@@ -4,6 +4,7 @@ import { API_URL, LIKE_URL } from './reusable/urls'
 import { Form } from './components/Form'
 import MessageList from './components/MessageList'
 import ErrorMessage from './components/ErrorMessage'
+import Header from './components/Header'
 import Footer from './components/Footer'
 
 export const App = () => {
@@ -72,6 +73,7 @@ export const App = () => {
     
   return (
     <div className='app-container'>
+        <Header />
         {!errorMessage && (
         <div>
           <Form  
