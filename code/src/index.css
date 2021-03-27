@@ -129,10 +129,13 @@ textarea:focus {
 
 .heart-button {
   width: 30px;
-  height: 30px;
+  height:30px;
   border-radius: 50%;
   background-color:rgba(208, 203, 203, 0.3);
   border:none;
+}
+
+.heart-icon {
   font-size:16px;
 }
 
@@ -149,9 +152,9 @@ textarea:focus {
   align-items: center;
 }
 
-/* .likes-icon-count > p {
+.likes-icon-count > p {
   margin-left: 8px;
-} */
+}
 
 .date {
   font-style: italic;
