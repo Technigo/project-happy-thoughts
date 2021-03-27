@@ -4,6 +4,8 @@ import { API_URL } from '../reusable/urls'
 const MessageForm = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState('')
   const [counter, setCounter] = useState(0)
+  const [animation, setAnimation] = useState(false)
+
   const onNewThoughtChanged = event => {
     setNewThought(event.target.value)
     setCounter(event.target.value.length)
@@ -26,14 +28,14 @@ const MessageForm = ({ thoughts, setThoughts }) => {
           throw new Error("Oops, something went wrong! Perhaps, your message is shorter than 5 characters!")
         }
       })
-      .then(data => setThoughts([data, ...thoughts]))
+      .then(sentThought => setThoughts([sentThought, ...thoughts]))
       .catch(err => {
         alert(err.message)
       })
     setNewThought('')
     setCounter(0)
+    setTimeout(() => setAnimation(false), 3000)
   }
-
   return (
     <>
       <form
@@ -65,11 +67,16 @@ const MessageForm = ({ thoughts, setThoughts }) => {
           <button
             type='submit'
             className="submit-button"
+            onClick={(event) => {
+              setAnimation(true)
+              console.log(animation)
+            }}
           >
             <span className="heart">{'\u2665'}</span>
             Send happy thought
             <span className="heart">{'\u2665'}</span>
           </button>
+          <img className={`envelope ${animation ? "animated" : null}`} src="./assests/envelope.svg" alt="Envelope with heart!"/>
         </div>
       </form>
     </>

@@ -63,7 +63,7 @@ const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
         <div className="message-container" key={thought._id}>
           <div className="thought-date-wrapper">
             <p className="thought">{thought.message}</p>
-            <p className="date">{moment(thought.createdAt).fromNow()}</p>
+            <p className={`date ${moment(thought.createdAt).fromNow()=== "a few seconds ago"? `red`: null}`}>{moment(thought.createdAt).fromNow()=== "a few seconds ago"? "New message": moment(thought.createdAt).fromNow()} </p>
           </div>
           <div className="likes-container">
             <button

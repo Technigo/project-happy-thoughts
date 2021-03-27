@@ -13,6 +13,29 @@ code {
     monospace;
 }
 
+.animated{
+  animation: fade-out-right 1s ;
+}
+@keyframes fade-out-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+.red {
+  color: red;
+}
+
+.envelope {
+  width: 50px;
+  margin-top: 10px;
+}
+
 .content-container {
   max-width: 700px;
   margin: auto;
@@ -79,6 +102,11 @@ code {
 .heart {
   color: red;
 }
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .submit-button{
   margin-top: 20px;
@@ -92,6 +120,7 @@ code {
   font-size: 12px;
   font-family: Trispace;
 }
+
 
 /* My likes */
 .mylikes-container{
