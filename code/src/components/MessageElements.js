@@ -22,7 +22,6 @@ const MessageElements = ({ onLikesIncrease, message }) => {
               <p className='date'>- {moment(message.createdAt).fromNow()}</p>
             </div>
         </div>
-
     )
 }
 
