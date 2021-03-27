@@ -56,9 +56,8 @@ code {
 
 
 .time {
-  display: flex;
-  flex-direction: row-reverse;
-  align-content: center;
+ margin-left: 10px;
+ margin-top: 20px;
 }
 
 h2 {
@@ -107,8 +106,17 @@ heart-red {
   font-weight: bold;
 }
 
-.hearts {
-  padding: 5px;
+.heart-icons {
+  padding: 10px 5px 10px 5px;
+  border: none;
+}
+
+.button {
+  background-color: #eaeaea;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  padding: 15px;
+  
 }
 
 /*

@@ -10,13 +10,13 @@ const MessageElement = ({ message, onHeartLikes}) => {
       <h4>{message.message}</h4>
       <div className='likes-section'>
         <div className='likes'>
-        <button
+        <button className='button'
           onClick={() => onHeartLikes(message._id)}>
-          <span className='hearts' role="img" aria-label="heart-icon">❤️</span>
+          <span className='heart' role="img" aria-label="heart-icon">❤️</span>
         </button>
         </div>
         <p>
-          x {message.likes}
+          x {message.hearts}
         </p>
         <p className='time'>{moment(message.createdAt).fromNow()}</p>
       </div>

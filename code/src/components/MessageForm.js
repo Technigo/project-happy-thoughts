@@ -6,14 +6,12 @@ const MessageForm =({ messageNew, onMessageNewChange, onFormSubmit }) => {
     className='message-section'
     onSubmit={onFormSubmit}>
         <label
-          htmlFor='newMessage'>
+          htmlFor='messageNew'>
           <h2>What's making you happy right now?</h2>
         </label>
         <input
           className='message-area'
           id='newMessage'
-          rows="2" 
-          cols="1"
           type='text'
           value={messageNew}
           onChange={onMessageNewChange}
@@ -21,9 +19,9 @@ const MessageForm =({ messageNew, onMessageNewChange, onFormSubmit }) => {
         <button
         className='submit-button'
         type='submit'>
-          <span className='hearts' role="img" aria-label="heart-icon">❤️</span> 
+          <span className='heart-icons' role="img" aria-label="heart-icon">❤️</span> 
             Send happy thought! 
-          <span className='hearts' role="img" aria-label="heart-icon">❤️</span>
+          <span className='heart-icons' role="img" aria-label="heart-icon">❤️</span>
         </button>
       </form>
   );
