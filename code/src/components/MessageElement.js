@@ -11,9 +11,8 @@ const MessageElement = ({ message, onHeartLikes}) => {
       <div className='likes-section'>
         <div className='likes'>
         <button
-          onClick={() => onHeartLikes(message._id)}
-          className={message.likes > 0 ? 'many-likes' : 'likes'}>
-          <span role="img" aria-label="heart emoji">❤️</span>
+          onClick={() => onHeartLikes(message._id)}>
+          <span className='hearts' role="img" aria-label="heart-icon">❤️</span>
         </button>
         </div>
         <p>

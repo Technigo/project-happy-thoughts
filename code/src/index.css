@@ -13,14 +13,14 @@ code {
 }
 
 .message-section {
-  max-width: 300px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
   padding: 10px;
-  border: 1px solid black;
+  border: 2px solid rgb(133, 133, 133);
   background-color: #f1efeff6;
   box-shadow: 6px 6px 0px 0px black;
 }
@@ -28,14 +28,17 @@ code {
 .message-area {
   margin: 10px;
   background: white;
+  border-color: rgb(228, 227, 227);
+  height: 40px;
+  
 }
 
 .chat-section {
-  max-width: 300px;
+  max-width: 330px;
   margin: auto;
   margin-top: 30px;
   padding: 20px;
-  border: 2px solid black;
+  border: 2px solid rgb(133, 133, 133);
   box-shadow: 6px 6px 0px 0px black;
 }
 
@@ -50,9 +53,7 @@ code {
   border-radius: 50%;
 }
 
-.likes:hover {
-  background-color: #f3a8a7;
-}
+
 
 .time {
   display: flex;
@@ -61,7 +62,7 @@ code {
 }
 
 h2 {
-  font-size: small;
+  font-size: 15px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
 }
@@ -76,7 +77,7 @@ p {
 }
 
 h4 {
-  font-size: small;
+  font-size: 15px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
 }
@@ -94,8 +95,23 @@ heart-red {
 }
 */
 .submit-button {
-  background-color: #f3a8a7;
+  background-color: #f09896;
   border: none;
   border-radius: 50px;
-  width: 50%;  
+  width: 60%;
+  height: 35px;
+  margin-left: 10px;
+  padding: 10px 0 30px 0;
+  font-size: 12px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 }
+
+.hearts {
+  padding: 5px;
+}
+
+/*
+.likes:hover {
+  background-color: #f09896;
+}*/

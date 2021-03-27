@@ -21,9 +21,9 @@ const MessageForm =({ messageNew, onMessageNewChange, onFormSubmit }) => {
         <button
         className='submit-button'
         type='submit'>
-          <span role="img" aria-label="heart emoji">❤️</span> 
+          <span className='hearts' role="img" aria-label="heart-icon">❤️</span> 
             Send happy thought! 
-          <span role="img" aria-label="heart emoji">❤️</span>
+          <span className='hearts' role="img" aria-label="heart-icon">❤️</span>
         </button>
       </form>
   );
