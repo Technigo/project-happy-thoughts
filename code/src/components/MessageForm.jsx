@@ -16,7 +16,7 @@ const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
       <button 
       className="send-button"
       type="submit">
-        <img src="assets/heart-icon.png"/>Send Happy Thought<img src="assets/heart-icon.png"/>
+        <img src="assets/heart-icon.png" alt="heart" />Send Happy Thought<img src="assets/heart-icon.png" alt="heart"/>
       </button>
     </form>
   )
