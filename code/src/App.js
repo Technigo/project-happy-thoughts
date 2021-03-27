@@ -40,6 +40,7 @@ export const App = () => {
       .then(res => res.json())
       .then(recivedThought => setThoughtsList([...thoughtsList, recivedThought]))
       .catch(err => console.error(err));
+    setNewThought('')
   }
 
   const onLikesIncrease = (id) => {
@@ -88,7 +89,7 @@ export const App = () => {
           key={thought._id}>
           <h4>{thought.message}</h4>
           <button className="heart-button" onClick={() => onLikesIncrease(thought._id)}>
-
+            <img src="./public/assets/heart.svg" alt="heart-icon" />
             <span className="heart-button-span" role="img" aria-label="heart-icon">❤️</span>
              x {thought.hearts}
           </button>
