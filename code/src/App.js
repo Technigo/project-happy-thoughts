@@ -1,11 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-
 import ThoughtsForm from './components/ThoughtsForm';
 import ThoughtsContainer from './components/ThoughtsContainer';
 import {API_URL, LIKE_URL} from './reusable/urls';
-
-
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -25,7 +22,7 @@ export const App = () => {
 
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value)
-  }
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -73,7 +70,7 @@ export const App = () => {
         />
       <footer className="footer">
         <p>Icons made by Good Ware from 
-        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+        <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
         <p>© Linnéa Helén 2021</p>
       </footer>
     </>

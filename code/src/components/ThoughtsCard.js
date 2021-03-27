@@ -1,6 +1,7 @@
 import React from 'react';
-import Heart from './Heart'
-import Time from './Time'
+
+import Heart from './Heart';
+import Time from './Time';
 const ThoughtsCard = (props) => {
   
   return (
@@ -16,6 +17,6 @@ const ThoughtsCard = (props) => {
       </div>
     </div>
   )
-}
+};
 
 export default ThoughtsCard;
