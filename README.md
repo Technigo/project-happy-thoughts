@@ -8,3 +8,4 @@ Everything was built in one App.js file initially and then divided into differen
 
 ## View it live
 
+https://happy-thoughts-sn.netlify.app/
