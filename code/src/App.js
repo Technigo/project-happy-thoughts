@@ -12,7 +12,7 @@ import { HEART_URL } from './reusable/urls';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
-  const [newMessage, setNewMessage] = useState('')
+  const [newMessage, setNewMessage] = useState('');
 
   useEffect(() => {
     fetchMessages();
@@ -23,7 +23,7 @@ export const App = () => {
       .then(res => res.json())
       .then(messages => {
         console.log(messages);
-        setMessageList(messages)
+        setMessageList(messages);
       })
       .catch(err => console.error(err));
   }
@@ -47,6 +47,7 @@ export const App = () => {
     fetch(API_URL, options)
       .then(res => res.json())
       .then(receivedMessage => setMessageList([receivedMessage, ...messageList]))
+      .then(() => setNewMessage(''))
       .catch(err => console.error(err));
   };
 
