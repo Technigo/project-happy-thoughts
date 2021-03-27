@@ -2,28 +2,21 @@ import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
 import { API_URL, LIKES_URL } from './reusable/url' 
- 
+
+import MessageForm from 'components/MessageForm'
+
 export const App = () => {
-
+  
   //State variables 
-
   const [messageList, setMessageList] = useState([])
   const [newMessage, setNewMessage] = useState(' ')
-
   
-
   // Hook that will call the function after component is mounted
-
   useEffect(() => {
     fetchMessageList();
-
   },[])
-
   
-  
-
   //Function to fetch message list from outer API
-
   const fetchMessageList = () => {
     fetch(API_URL)
     .then(res => res.json())
@@ -31,15 +24,15 @@ export const App = () => {
     .catch(err => console.error(err)) 
   }
 
-  const onNewMessageChange = (event) => {
+  const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
   }  
 
+
   //Function that will prevent the form to refresh and that will send the POST request
-
-  const onFormSubmit = (event) => {
+  
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-
       const options = {
         method: 'POST',
         headers: {
@@ -55,7 +48,6 @@ export const App = () => {
       }
 
     const onLikesIncrease = (id) => {
-
       const options = {
         method: 'POST',
         headers: {
@@ -75,29 +67,24 @@ export const App = () => {
           })
           setMessageList(updatedMessageList) 
         })  
-        
+
         .catch(err => console.error(err))
-
     } 
-  
-   
-   /* console.log(messageList) */
 
+   
+    /* console.log(messageList) */
+    
     return (
       <div>
-        <form onSubmit={onFormSubmit}>
-          <label htmlFor="newMessage">Write new message!</label>
-          <input
-            id="newMessage"
-            type="text"
-            value={newMessage}
-            onChange={onNewMessageChange}
-          />
-          <button type="onSubmit">Send message!</button>
-        </form> 
+        <MessageForm
+        newMessage = {newMessage}
+        onFormSubmit = {handleFormSubmit}
+        onNewMessageChange = {handleNewMessageChange}
+        />
+        
         
         {/* Iterating over the array of messages. This is a representation of asingle message */}
-
+        
         {messageList.map(message => (
           <div key={message._id}>
             <h4>{message.message}</h4>
