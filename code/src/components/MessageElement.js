@@ -10,7 +10,7 @@ const MessageElement = ({ message, onLikesIncrease }) => {
           <button className={`like-button ${message.hearts > 0 ? 'liked' : ''}`} onClick={() => onLikesIncrease(message._id)} aria-label="click here to like post">
             <span className="like-heart" role="img" aria-label="heart emoji">❤️</span>
             <span className="x-operator">x</span> 
-            {message.hearts}
+            <span className="counter">{message.hearts}</span>
           </button>
             <p className="date" tabIndex="0" aria-label="when post was sent">{moment(message.createdAt).fromNow()}</p> 
         </div>

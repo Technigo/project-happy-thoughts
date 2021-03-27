@@ -49,7 +49,7 @@ body {
   margin: 1rem;
   width: 22rem;
   box-shadow: 6.5px 6.5px black;
-  background: #F2F0F0;
+  background: #f2f2f3;
   padding: 1rem;
   font-weight: bold;
   letter-spacing: 1px;
@@ -63,7 +63,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   font-size: 0.8rem;
   font-weight: bold;
-  color: #585757;
+  color: #3f3e3e;
   padding: 8px 0 0 10px;
   outline: none;
   resize: vertical;
@@ -160,26 +160,99 @@ body {
 
 .messagelist-box {
 	-webkit-animation: messagelist-box 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: messagelist-box 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: messagelist-box 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 @-webkit-keyframes messagelist-box {
   0% {
     -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    transform: scale(0.5);
   }
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 @keyframes messagelist-box {
   0% {
     -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    transform: scale(0.5);
   }
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/*********** MEDIA QUARY DESKTOP ***********/
+
+@media only screen and (min-width: 1200px) {
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .twitter-info {  
+    font-size: 1.3rem;
+  }
+
+  .summoning {
+    font-size: 2.2rem;
+  } 
+
+  .message-box, .messagelist-box {
+    width: 32rem;
+    font-size: 1.1rem;
+    border: 2.5px solid #8f8f91;
+    box-shadow: 7.5px 7.5px black;
+  }
+
+  label {
+    margin: 0.2rem;
+  }
+
+  .input-field {
+    font-size: 1.1rem;
+    border: 2px solid #c9c9c7;
+    margin-left: 0.2rem; 
+    margin-right: 0.2rem;
+  }
+
+  .send-button {
+    height: 3.2rem;
+    font-size: 1rem;
+    width: 17rem;
+    padding: 0 1rem 0 1rem;
+    margin: 0 0 0.4rem 0.2rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .posted-text {
+    font-size: 1.2rem;
+    color: rgb(80, 80, 80);
+    margin-left: 0.2rem;
+  }
+
+  .like-button {
+    margin-left: 0.2rem;
+    width: 45px;
+    height: 45px;
+  }
+
+  .like-heart {
+    margin-left: 0.5rem;
+  }
+
+  .x-operator {
+    font-size: 1rem;
+  }
+
+  .counter {
+    font-size: 1.1rem;
+    margin: 0.1rem;
+  }
+
+  .date {
+    font-size: 0.9rem;
   }
 }
