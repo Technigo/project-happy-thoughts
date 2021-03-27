@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import moment from 'moment'
 
 import ThoughtForm from './components/ThoughtForm'
+import ThoughtList from './components/ThoughtList'
 
 import { API_URL, LIKES_URL } from './reusable/urls'
 
@@ -38,12 +38,13 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then(response => response.json())
-      .then(receivedNewThought => setThoughtList([receivedNewThought, ...thoughtList]))
+  //  .then(receivedNewThought => setThoughtList([receivedNewThought, ...thoughtList]))
+      .then(() => fetchThoughtList)
       .catch(err => console.error(err))
   }
 
 // likes //
-  const onLikesIncrease = (id) => {
+  const handleLikesIncrease = (id) => {
       const options = {
         method: 'POST',
         headers: {
@@ -53,15 +54,16 @@ export const App = () => {
 
       fetch(LIKES_URL(id), options)
         .then(res => res.json())
-        .then(receivedThought => {
-          const updatedThoughtList = thoughtList.map(thought => {
-            if (thought._id === receivedThought._id){
-              thought.likes += 1
-            }
-              return thought
-          })
-          setThoughtList(updatedThoughtList)
-        })
+//        .then(receivedThought => {
+//         const updatedThoughtList = thoughtList.map(thought => {
+//         if (thought._id === receivedThought._id){
+//       thought.likes += 1
+//       }
+//              return thought
+//          })
+//          setThoughtList(updatedThoughtList)
+//        })
+        .then(() => fetchThoughtList)     
         .catch(err => console.error(err))
   }
 
@@ -72,16 +74,10 @@ export const App = () => {
           onNewThoughtChange={handleNewThoughtChange}
           onSubmitThought={handleSubmitThought}
       />
-      {thoughtList.map(thought => (
-        <div key={thought._id}>
-          <h4>{thought.message}</h4>
-            <button onClick={() => onLikesIncrease(thought._id)}>
-              {thought.hearts}
-              ❤️
-            </button>
-          <p className="time">{moment(thought.createdAt).fromNow()}</p>
-        </div>
-      ))}
+      < ThoughtList 
+          thoughtList={thoughtList}
+          handleLikesIncrease={handleLikesIncrease}
+      />
     </>
   )
 }
