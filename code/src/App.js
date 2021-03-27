@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-/* import moment from 'moment' */
 
 import { API_URL, LIKES_URL } from './reusable/url' 
 
@@ -87,19 +86,6 @@ export const App = () => {
         messageList = {messageList}
         onLikesIncrease = {handleLikesIncrease}
         />
-
-        {/* Iterating over the array of messages. This is a representation of asingle message */}
-        
-        {/* {messageList.map(message => (
-          <div key={message._id}>
-            <h4>{message.message}</h4>
-            <button onClick= { () => onLikesIncrease(message._id)}>
-              {message.hearts}
-              ♥️
-            </button> 
-            <p className ="date-created">-{moment(message.createdAt).fromNow()}</p> 
-          </div>  
-        ))} */}
       </div>
   )
 }
