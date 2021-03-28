@@ -7,7 +7,7 @@ const MessageElement = ({ message, onHeartLikes}) => {
       className='chat-section'
       key={message._id}
       >
-      <h4>{message.message}</h4>
+      <h4  tabindex="0">{message.message}</h4>
       <div className='likes-section'>
         <div className='likes'>
         <button className={message.hearts === 0 ? 'button-grey' : 'button-pink'}
@@ -15,10 +15,10 @@ const MessageElement = ({ message, onHeartLikes}) => {
           <span className='heart' role="img" aria-label="heart-icon">❤️</span>
         </button>
         </div>
-        <p className='counter' aria-label="likes">
+        <p className='counter'  tabindex="0">
           x {message.hearts}
         </p>
-        <p className='time'>{moment(message.createdAt).fromNow()}</p>
+        <p className='time'  tabindex="0">{moment(message.createdAt).fromNow()}</p>
       </div>
     </div>
   )
