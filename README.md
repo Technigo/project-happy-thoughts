@@ -1,13 +1,13 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This assignment was about fetching and posting data to an API. It's a "happy thoughts" -app where you can post happy thoughts and let other people read them. The app was created using React, API GET and POST methods, useStates and useEffects.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Hard part of this project was to keep all the things together and separate elements succesfully to different components.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://epic-panini-e991cd.netlify.app/
+
+/Sari-Anne Peltola
