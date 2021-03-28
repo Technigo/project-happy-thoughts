@@ -9,13 +9,15 @@ const LikePost = ({ name, hearts, messageList, setMessageList, fetchMessageList 
   }
 
   const postHearts = (messageId) => {
-    fetch(LIKE_URL(messageId), {
+    fetch(LIKE_URL(messageId),{
       method: 'POST',
       headers: { "Content-Type": "application/json" }
-    }) .then (() => {
+    }) 
+      .then (() => {
       onLiked(messageId)
       fetchMessageList()
-    }) .catch(err => console.error(err))
+    }) 
+      .catch(err => console.error(err))
   }
 
   const onLiked = (messageId) => {

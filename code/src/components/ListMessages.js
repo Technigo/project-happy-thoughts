@@ -6,10 +6,6 @@ import LikePost from './LikePost'
 
 const ListMessages = ({ messageList, setMessageList }) => {
 
-  useEffect(() => {
-    fetchMessageList()
-  }, [])
-
   const fetchMessageList = () => {
     fetch(HAPPY_THOUGHTS_API)
       .then(response => response.json())
@@ -17,11 +13,13 @@ const ListMessages = ({ messageList, setMessageList }) => {
       .catch(err => console.error(err))
   }
 
+  useEffect(fetchMessageList, [])
+
   return (
     <>
       {messageList.map(post => (
         <article key={post._id} className="message-container">
-          <div className="message-container-div" >
+          <div className="message-container-div">
             <h3 className="message-text">{post.message}</h3>
             <div className="message-container-footer">
               <LikePost 
