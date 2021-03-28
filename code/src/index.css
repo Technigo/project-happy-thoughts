@@ -105,7 +105,7 @@ With animations*/
 /**/
 
 .message__post {
-  display: block;
+  display: inline-block;
   margin: 20px 0 5px 0;
   width: 90%;
   font-size: 16px;

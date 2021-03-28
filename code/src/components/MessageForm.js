@@ -16,8 +16,8 @@ export const MessageForm = (props) => {
   } = props;
 
   return (
-    <form className="message-form">
-      <h1 className="message-form__heading">
+    <form className="message-form" aria-labelledby="happy-thoughts">
+      <h1 className="message-form__heading" id="happy-thoughts">
         What's making you happy right now?
       </h1>
       <TextInput
