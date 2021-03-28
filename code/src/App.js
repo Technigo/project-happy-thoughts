@@ -12,7 +12,7 @@ export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [newMessage, setNewMessage] = useState(' ')
   
-  // Hook that will call the function after component is mounted
+  // Hook that will call the function after component is mounted.
   useEffect(() => {
     fetchMessageList();
   },[])
@@ -29,7 +29,6 @@ export const App = () => {
     setNewMessage(event.target.value);
   }  
 
-
   //Function that will prevent the form to refresh and that will send the POST request
   
   const handleFormSubmit = (event) => {
@@ -44,9 +43,9 @@ export const App = () => {
   
       fetch(API_URL, options)
         .then(res => res.json())
-        /* .then(receivedMessage => setMessageList([...messageList, receivedMessage])) */
         .then(() => fetchMessageList ())
         .catch(err => console.error(err))
+        setNewMessage('')
       }
 
     const handleLikesIncrease = (id) => {
@@ -61,32 +60,22 @@ export const App = () => {
       fetch(LIKES_URL(id), options)
         .then(res => res.json())
         .then(() => fetchMessageList())
-        /* .then(receivedMessage => {
-          const updatedMessageList = messageList.map(message => {
-            if (message._id === receivedMessage._id){
-              message.hearts += 1;
-            }
-            return message
-          })
-          setMessageList(updatedMessageList) 
-        })   */
-
         .catch(err => console.error(err))
     } 
 
    
       return (
-      <div>
-        <MessageForm
-        newMessage = {newMessage}
-        onFormSubmit = {handleFormSubmit}
-        onNewMessageChange = {handleNewMessageChange}
-        />
+        <main className="main-container">
+          <MessageForm
+          newMessage = {newMessage}
+          onFormSubmit = {handleFormSubmit}
+          onNewMessageChange = {handleNewMessageChange}
+          />
 
-        <MessageList 
-        messageList = {messageList}
-        handleLikesIncrease = {handleLikesIncrease}
-        />
-      </div>
+          <MessageList 
+          messageList = {messageList}
+          handleLikesIncrease = {handleLikesIncrease}
+          />
+        </main>
   )
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 import MessageElement from './MessageElement'
 
 const MessageList = ({ messageList, handleLikesIncrease }) => {
@@ -9,6 +8,7 @@ const MessageList = ({ messageList, handleLikesIncrease }) => {
           {messageList.map(message => (
             
               <MessageElement
+              key={message._id}
               message={message}
               onLikesIncrease={handleLikesIncrease}
               />

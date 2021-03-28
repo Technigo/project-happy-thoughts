@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/** @format */
+
+* {
+	font-family: "Trispace", sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.main-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid black;
+	margin: 20px;
+}
+
+.form-container {
+	border: 1px solid black;
+	background-color: #f2f0f0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 15px;
+	padding: 20px;
+}
+
+.form-title {
+	font-weight: 500;
+}
+
+.input-box {
+	width: 100%;
+	padding: 15px, 15px;
+	resize: none;
+	margin: 10px auto 10px auto;
+}
+
+.send-message-btn {
+	background-color: #f9adae;
+	border: none;
+	border-radius: 25px;
+	font-size: 16px;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+.send-message-btn:active {
+	background: #f9adae;
+}
+.heart {
+	margin: 10px;
+}
+
+.printed-message-container {
+	border: 1px solid black;
+}
+
+.likes-button {
+	border: none;
+	border-radius: 25px;
 }
