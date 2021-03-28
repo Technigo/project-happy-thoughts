@@ -14,7 +14,7 @@ I also added a character counter and by using states, if-statements and css-clas
 
 I had some issues with dependencies in useEffect when fetching message list even though I did put a dependency there. I think it was the problem of to many re-renders. To avoid this I ended up using callback which - if I understand it correctly - makes a "copy" of the fetch and then uses the effect on that. This was also needed for the interval updates. If I didn't use callback for this the interval would not clear properly (even though I used clearInterval) but just iterate and refresh faster and faster. As I had added an loading symbol this was very easy to spot.
 
-Last I added a animation for when any new post is submitted. I found this a bit challenging, but got it working nicely using useRef to compare the latest post in the previous message list to the lastest post in the current message list. If theses did not match - then the post is new and I then made the message list get another CSS-class where the first child (latest post) has an animation. 
+Last I added a animation for when any new post is submitted. I found this a bit challenging, but got it working nicely using useRef to compare the latest post in the previous message list to the lastest post in the current message list. If theses did not match - then the post is new and I then made that new message get a specific css class that has an animation.
 
 If I had more time I would add some more functions to the project, work with the code to make it as optimal as possible and do more logs and tests to understanding the flow of useEffect, useCallback and mounts properly.
 

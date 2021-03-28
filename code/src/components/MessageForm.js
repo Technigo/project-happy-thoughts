@@ -16,10 +16,8 @@ export const MessageForm = (props) => {
   } = props;
 
   return (
-    <form className="message-form" aria-labelledby="happy-thoughts">
-      <h1 className="message-form__heading" id="happy-thoughts">
-        What's making you happy right now?
-      </h1>
+    <section className="send-message">
+    <form className="send-message-form">
       <TextInput
         userInput={userInput}
         setUserInput={setUserInput}
@@ -32,5 +30,6 @@ export const MessageForm = (props) => {
       />
       <SubmitButton fetchNewMessage={fetchNewMessage} charRange={charRange} />
     </form>
+    </section>
   );
 };

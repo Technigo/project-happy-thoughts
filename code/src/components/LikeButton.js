@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const LikeButton = ({ likes, id, fetchLikes }) => {
   const [liked, setLiked] = useState(false);
 
-  /*first this function checks if the state isLiked is true or false 
+  /*first this function checks if the state liked is true or false 
   (meaning - has this button already been pressed by the user?). 
   If it's false a fetch-post is executed */
   const toggleLike = (messageID) => {

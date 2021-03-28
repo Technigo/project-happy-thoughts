@@ -17,12 +17,12 @@ export const CharacterCounter = (props) => {
     <>
       {/*if characters is above 140 or under 5, the warning class is added which makes the counter-text red*/}
       {charRange ? (
-        <div className="message-form__input-count">
+        <div className="send-message-form__counter">
           <p>{keypressCount}</p>
           <p>/140</p>
         </div>
       ) : (
-        <div className="message-form__input-count">
+        <div className="send-message-form__counter">
           <p className="count-warning">{keypressCount}</p>
           <p>/140</p>
         </div>

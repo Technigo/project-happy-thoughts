@@ -13,18 +13,12 @@ export const MessageList = (props) => {
   } = props;
 
   return (
-    <>
-      {/*sets a different class if there is a new post (to be able to add animation)*/}
-      <div
-        className={`${
-          newMessage ? "message-list__new-message" : "message-list"
-        }`}
-      >
+    <section className="display-messages">
         {/*shows a loading symbol when posts are loading*/}
         {loading && <div className="loading-symbol"></div>}
-
-        {messageList.map((post) => (
-          <div key={post._id} className="message">
+        
+        {messageList.map((post) => (  
+          <div key={post._id} className={newMessage===post?"new-message":"message"}> {/*sets a different class if there is a new post (to be able to add animation)*/}  
             <p className="message__post"> {post.message} </p>
             <div className="message-info">
               <LikeButton
@@ -38,7 +32,6 @@ export const MessageList = (props) => {
             </div>
           </div>
         ))}
-      </div>
-    </>
+    </section>
   );
 };
