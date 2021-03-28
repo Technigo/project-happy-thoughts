@@ -24,9 +24,14 @@ export const App = () => {
     setMessageNew(event.target.value);
   }
 
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    console.log('form submitted!', messageNew);
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={onFormSubmit}>
         <label htmlFor="newMessage">Write new message!</label>
         <input
           id="newMessage"
