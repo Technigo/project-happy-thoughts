@@ -65,28 +65,35 @@ export const App = () => {
   //fetchThoughtList()
 
   return (
-    <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">What's making you happy right now?</label>
-        <input
+    <section className="section">
+      <form className="form" onSubmit={onFormSubmit}>
+        <label className="form-title" htmlFor="newThought">What's making you happy right now?</label>
+        <textarea
+          className="input"
+          maxlength="140"
           id="newThought"
           type="text"
           value={thoughtNew}
           onChange={onThoughtNewChanged}
         />
-        <button type="submit">Send Happy Thought</button>
+        <button className="thought-button" type="submit"><span className="heart" role="img" aria-label="heart">❤️</span>  Send Happy Thought  <span className="heart" role="img" aria-label="heart">❤️</span></button>
       </form>
       {thoughtList.map(thought => (
-        <div key={thought._id}>
-          <h4>{thought.message}</h4>
-          <button className={thought.hearts > 0 ? 'heart-button-clicked' : 'heart-button-unclicked'} onClick={() => onHeartsIncrease(thought._id)}>
-            <div className="heart">❤️
+        <article className="article" key={thought._id}>
+          <p className="thought-message">{thought.message}</p>
+          <div className="thought-info">
+            <div className="thought-hearts">
+              <button className={thought.hearts > 0 ? 'heart-button-clicked' : 'heart-button-unclicked'} onClick={() => onHeartsIncrease(thought._id)}>
+                <div className="heart-button">
+                  <span className="heart" role="img" aria-label="heart">❤️</span>
+                </div>
+              </button>
+              <p className="number-of-hearts"> x {thought.hearts}</p>
+            </div>
+            <p className="post-time">{moment(thought.createdAt).fromNow()}</p>
           </div>
-          </button>
-          <p> x {thought.hearts}</p>
-          <p>{moment(thought.createdAt).fromNow()}</p>
-        </div>
+        </article>
       ))}
-    </div>
+    </section>
   )
 }
