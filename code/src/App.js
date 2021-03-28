@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import MessageForm from "./components/MessageForm"
-import MessageList from "./components/MessageList"
+import ThoughtsForm from "./components/ThoughtsForm"
+import ThoughtsList from "./components/ThoughtsList"
 
 import { API_URL, LIKES_URL } from "./reusable/urls"
 
@@ -35,7 +35,7 @@ export const App = () => {
     }
     fetch(API_URL, options)
     .then(res => res.json())
-    .then(recievedMessage => setMessageList([recievedMessage, ...messageList]))
+    .then(recievedMessage => setMessageList([recievedMessage, ...messageList])) //Switched the position of recievedMessage and messageList to make the new messages come first in the list
     setMessageNew("")
   }
 
@@ -62,12 +62,12 @@ export const App = () => {
 
   return (
     <div className="form-container">
-      <MessageForm 
+      <ThoughtsForm 
       messageNew={messageNew}
       onMessageNewChange={handleMessageNewChange}
       onFormSubmit={handleFormSubmit}
       />
-      <MessageList 
+      <ThoughtsList 
       messageList={messageList} 
       handleLikesIncrease={handleLikesIncrease}
       />

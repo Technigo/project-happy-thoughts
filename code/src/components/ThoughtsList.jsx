@@ -1,12 +1,12 @@
 import React from "react"
 
-import MessageElement from "./MessageElement"
+import ThoughtsCard from "./ThoughtsCard"
 
-const MessageList = ({ messageList, handleLikesIncrease }) => {
+const ThoughtsList = ({ messageList, handleLikesIncrease }) => {
   return (
     <>
     {messageList.map(message => (
-      <MessageElement 
+      <ThoughtsCard 
         key={message._id}
         message={message}
         onLikesIncrease={handleLikesIncrease}
@@ -16,4 +16,4 @@ const MessageList = ({ messageList, handleLikesIncrease }) => {
   )
 }
 
-export default MessageList
+export default ThoughtsList

@@ -1,7 +1,7 @@
 import React from "react"
 import moment from "moment"
 
-const MessageElement = ({ message, onLikesIncrease }) => {
+const ThoughtsCard = ({ message, onLikesIncrease }) => {
   return (
     <div className="thought-card">
       <h4>{message.message}</h4>
@@ -20,4 +20,4 @@ const MessageElement = ({ message, onLikesIncrease }) => {
   )
 }
 
-export default MessageElement
+export default ThoughtsCard

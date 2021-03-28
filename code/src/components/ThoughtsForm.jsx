@@ -1,6 +1,6 @@
 import React from "react"
 
-const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
+const ThoughtsForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
   return (
     <form onSubmit={onFormSubmit}>
       <label htmlFor="newMessage">What's making you happy right now?</label> 
@@ -10,7 +10,7 @@ const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
         type="text"
         value={messageNew}
         onChange={onMessageNewChange}
-        cols="37"
+        cols="36"
         rows="2"
       > </textarea>
       <button 
@@ -22,4 +22,4 @@ const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
   )
 }
 
-export default MessageForm
+export default ThoughtsForm
