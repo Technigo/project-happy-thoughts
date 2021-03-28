@@ -10,7 +10,7 @@ const ThoughtsElement = ({ message, onHeartLikes}) => {
       <h4 tabIndex="0">{message.message}</h4>
       <div className='likes-section'>
         <div className='likes'>
-        <button className={message.hearts === 0 ? 'button-grey' : 'button-pink'}
+        <button tabIndex="0" className={message.hearts === 0 ? 'button-grey' : 'button-pink'}
           onClick={() => onHeartLikes(message._id)}>
           <span className='heart' role="img" aria-label="heart-icon">❤️</span>
         </button>

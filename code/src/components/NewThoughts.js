@@ -3,9 +3,9 @@ import React from 'react';
 const NewThoughts =({ newMessage, onNewMessageChange, onFormSubmit }) => {
   return (
     <label>
-    <form
-    className='message-section'
-    onSubmit={onFormSubmit}>
+      <form
+        className='message-section'
+        onSubmit={onFormSubmit}>
         <label
           htmlFor='newMessage'>
           <h2>What's making you happy right now?</h2>
@@ -25,7 +25,7 @@ const NewThoughts =({ newMessage, onNewMessageChange, onFormSubmit }) => {
           <span className='heart-icons' role="img" aria-label="heart-icon">❤️</span>
         </button>
       </form>
-      </label>
+    </label>
   );
 }
 
