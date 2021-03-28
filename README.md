@@ -15,3 +15,4 @@ As per Maria Pogosjan's recommendation, I used the NPM library Toastify for noti
 ## View it live
  
 Netlify Build: 
+https://confident-dijkstra-e73913.netlify.app/
