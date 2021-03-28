@@ -10,14 +10,10 @@ export const App = () => {
   const [thoughtList, setThoughtList] = useState([])
   const [thoughtNew, setThoughtNew] = useState('')
 
-  //Detect when component is being mounted
-  //First argument - what should happen, second - when
   useEffect(() => {
     fetchThoughtList()
   }, [])
-
-  
-  
+ 
   //Fetching the API data 
   const fetchThoughtList = () => {
     fetch(API_URL)
@@ -66,9 +62,6 @@ export const App = () => {
       .catch(err=> console.error(err))
   }
 
-
-
-  
   return (
     <div className='main'>
       <ThoughtForm 
