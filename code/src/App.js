@@ -42,10 +42,20 @@ export const App = () => {
   }
 
   const onLikesIncrease = (messageID) => {
-    fetch(LIKES_URL(messageID))
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    fetch(LIKES_URL(messageID), options)
+      .then(res => res.json())
+      .then((data) => console.log(data))
+      .catch(err => console.error(err));
   }
 
-  console.log(messageList);
+  
 
   return (
     <div>
