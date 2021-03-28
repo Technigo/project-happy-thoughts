@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import moment from 'moment';
 
+import Form from './components/Form'
+import Message from './components/Message'
 import { API_URL, APIHEARTS_URL } from './components/Urls'
+
+
 
 export const App = () => {
 
@@ -29,7 +32,7 @@ export const App = () => {
     body: JSON.stringify({message: newMessage})
   }
 
-  const onSubmitForm = (event) => {  /* This function posts a new msg from the form to server */
+  const handleSubmitForm = (event) => {  /* This function posts a new msg from the form to server */
     event.preventDefault()
 
     fetch(API_URL, options)
@@ -38,11 +41,11 @@ export const App = () => {
     .catch(error => console.log(error))
   }
  
-  const onNewMessage = (event) => {
+  const handleNewMessage = (event) => {
       setNewMessage(event.target.value)
   }
 
-  const onAddHeart = (id) => { /* When clicking on a heart, send post request to server */  
+  const handleAddHeart = (id) => { /* When clicking on a heart, send post request to server */  
     const options = {
       method: 'POST',
       headers: {
@@ -67,39 +70,16 @@ export const App = () => {
 
   return (
     <div>
-
-      <form onSubmit={onSubmitForm} className='form-container'>
-
-        <label htmlFor='newMessage' className='form-label'>Add your happy thought: </label>
-        <input
-          id='newMessage'
-          type='text'
-          value={newMessage}
-          onChange={onNewMessage}
-          className='form-input'
-        />
-        <button type='submit' className='form-btn'>SEND HAPPY THOUGHT</button>
-      </form>
-
-      {messageList.map(message => (
-        <div key={message._id} className='message'> 
-
-          <div>
-            <h3>{message.message}</h3>
-          </div>
-          <div className='btn-container'> 
-
-            <div className='btn-counter'>
-              <button className= { `heart-btn ${message.hearts === 0 ? "heart-btn-unliked" : "heart-btn-liked"}`} 
-              onClick={() => onAddHeart(message._id)}> <span>❤️</span></button> 
-              <p> {message.hearts} web developers loved this</p>
-            </div>
-            <div>
-              <p>Posted: {moment(message.createdAt).fromNow()} </p>
-            </div>
-          </div>
-       </div>
-      ))}
+      <Form 
+        newMessage={newMessage}
+        onNewMessage={handleNewMessage}
+        onSubmitForm={handleSubmitForm}
+      />
+      
+      <Message 
+        messageList={messageList}
+        onAddHeart={handleAddHeart}
+      />
      
     </div>
   )
