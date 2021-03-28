@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import moment from 'moment';
 
 import { API_URL, APIHEARTS_URL } from './components/Urls'
 
@@ -89,11 +90,12 @@ export const App = () => {
           <div className='btn-container'> 
 
             <div className='btn-counter'>
-              <button className='heart-btn' onClick={() => onAddHeart(message._id)}>❤️</button> 
+              <button className= { `heart-btn ${message.hearts === 0 ? "heart-btn-unliked" : "heart-btn-liked"}`} 
+              onClick={() => onAddHeart(message._id)}> <span>❤️</span></button> 
               <p> {message.hearts} web developers loved this</p>
             </div>
             <div>
-              <p>Posted: {new Date(message.createdAt).toLocaleDateString()} at {new Date(message.createdAt).toLocaleTimeString()}  </p>
+              <p>Posted: {moment(message.createdAt).fromNow()} </p>
             </div>
           </div>
        </div>
