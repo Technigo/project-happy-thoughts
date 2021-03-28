@@ -66,6 +66,11 @@ export const App = () => {
 
   return (
     <div>
+      <h1>
+        <i class="far fa-grin-hearts"></i>
+        Happy Thoughts
+        <i class="far fa-envelope"></i>
+      </h1>
       <MessageForm 
         messageNew={messageNew} 
         onMessageNewChange={handleMessageNewChange} 
