@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react'
-/* local dependencies */
+/*Outer Dependencies */
+import React, { useState, useEffect } from 'react';
+import moment from 'moment';
+
+/* Local Dependencies */
 import { API_URL } from './reusable/urls';
 
 export const App = () => {
