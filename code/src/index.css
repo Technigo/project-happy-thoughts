@@ -48,6 +48,7 @@ body {
   background: #FFADAD;
   border: none;
   border-radius: 25px;
+  outline: none;
 }
 
 .submit-button-text{
@@ -81,6 +82,7 @@ span{
   resize: none;
   font-size: 11px;
   margin-bottom: 20px;
+  outline: none;
 }
 
 /* PREVIOUS THOUGHTS */
@@ -105,6 +107,7 @@ span{
   height: 30px;
   border-radius: 50%;
   border: none;
+  outline: none;
 }
 
 .heart{
@@ -117,7 +120,6 @@ span{
   .maincontainer{
     margin: 100px 200px 0;
   }
-
 }
 
 @media(min-width: 1200px){
@@ -128,6 +130,7 @@ span{
 
   .previous-thoughts-container{
     margin-bottom: 30px;
+    width: 320px;
     height: 150px;  
     padding: 20px;
   }
@@ -148,6 +151,7 @@ span{
   .input-container{
     padding: 20px;
     height: 200px;
+    width: 320px;
     margin-bottom: 60px;
   }
 
