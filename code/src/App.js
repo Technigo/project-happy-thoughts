@@ -1,5 +1,7 @@
 import React, {useState, useEffect } from 'react'
-import moment from 'moment'
+
+import MessageForm from './components/MessageForm'
+import MessageList from './components/MessageList'
 
 import { API_URL, LIKES_URL } from './reusable/urls'
 
@@ -18,11 +20,11 @@ export const App = () => {
       .catch(err => console.error(err))
   }
 
-  const onMessageNewChange= (event) => {
+  const handleMessageNewChange= (event) => {
     setMessageNew(event.target.value)
   }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -40,7 +42,7 @@ export const App = () => {
       setMessageNew('')
     }
 
-  const onLikesIncrease = (id) => {
+  const handleLikesIncrease = (id) => {
     const options = {
       method: 'POST',
       headers: {
@@ -64,30 +66,15 @@ export const App = () => {
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor='messageForm'>Write a message</label>
-        <input 
-          id='messageForm'
-          type='text'
-          value={messageNew}
-          onChange={onMessageNewChange}
-          minLength='5'
-          maxLength='140'
-        />
-        <button type='submit'>Send Happy Thought<span role='img' aria-label='heart-emoji'>❤️</span></button>
-      </form>
-      {messageList.map(message => (
-        <div key={message._id}>
-          <h4>{message.message}</h4>
-          <button 
-            onClick={() => onLikesIncrease(message._id)} 
-            className='likes-button'>
-            <span role='img' aria-label='heart-emoji'>❤️</span>
-          </button>
-          <span className='amount-likes'>x {message.hearts}</span>
-          <p className='date'>{moment(message.createdAt).fromNow()}</p>
-        </div>
-      ))}
+      <MessageForm 
+        messageNew={messageNew} 
+        onMessageNewChange={handleMessageNewChange} 
+        onFormSubmit={handleFormSubmit}
+      />
+      <MessageList 
+        messageList={messageList} 
+        handleLikesIncrease={handleLikesIncrease}
+      />
     </div>
   )
 }
