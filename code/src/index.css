@@ -46,7 +46,7 @@ h1 span {
 
 
 
-/**** MAIN CONTAINER (contains "form-container" & "happy-thought-container") ****/
+/**** MAIN CONTAINER (main styling of "form-container" & "happy-thought-container") ****/
 
 .page-wrapper {
     display: flex;
@@ -88,6 +88,10 @@ h1 span {
   text-align: right;
 }
 
+.thought-length-long {
+  color: #ff0000;
+}
+
 .submit-button {
   padding: 12px 18px;
   border-radius: 30px;
@@ -124,7 +128,7 @@ h1 span {
 .thought-message {
   flex-wrap: wrap;
   word-wrap: break-word;
-  width: 80%;
+  margin-top: 4px;
 }
 
 .heart-likes-time-container {
@@ -140,9 +144,9 @@ h1 span {
 }
 
 .heart-likes-container button {
-  padding: 12px;
   width: 45px;
   height: 45px;
+  padding: 12px;
   border-radius: 100%;
   margin-right: 8px;
   border: none;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Form = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
     return (
@@ -22,6 +22,5 @@ const Form = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
         </div>
     )
 }
-
 
 export default Form;

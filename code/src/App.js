@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-import Form from './components/Form'
-import Header from './components/Header'
-import MessageBoard from './components/MessageBoard'
+import Form from './components/Form';
+import Header from './components/Header';
+import MessageBoard from './components/MessageBoard';
 
 import {API_URL, API_LIKES} from './reusable/urls';
 
 export const App = () => {
     // Declaring useStates:
-    const [happyThoughtsList, setHappyThoughtsList] = useState([])
-    const [messageNew, setMessageNew] = useState("")
+    const [happyThoughtsList, setHappyThoughtsList] = useState([]);
+    const [messageNew, setMessageNew] = useState("");
     
     // useEffect to control when we fetch from API:
   useEffect(() => {
     fetchHappyThoughts();
-  }, [])
+  }, []);
 
     // Function to fetch all the thoughts with API:
     const fetchHappyThoughts = () => {
@@ -22,11 +22,11 @@ export const App = () => {
         .then(response => response.json())
         .then(data => setHappyThoughtsList(data))
         .catch(err => console.error(err));
-    }
+    };
 
     const handleMessageNewChange = (e) => {
       setMessageNew(e.target.value);
-    }
+    };
 
     const handleFormSubmit = (e) => {
       e.preventDefault();
@@ -43,9 +43,9 @@ export const App = () => {
       fetch(API_URL, options)
          .then(response => response.json())
          .then(() => fetchHappyThoughts())
-         .catch(err => console.error(err));
-      setMessageNew('')
-    }
+         .catch(err => console.error(err))
+      setMessageNew('');
+    };
 
     const handleIncreaseLikes = (id) => {
       // Options for fetch when we POST new likes thought to server.
@@ -55,13 +55,13 @@ export const App = () => {
             'Content-Type': 'application/json'
           },
         };
+        
         fetch(API_LIKES(id), options)
          .then(response => response.json())
          .then(() => fetchHappyThoughts())
          .catch(err => console.error(err));
-    }
+    };
 
-    console.log(happyThoughtsList)
   return (
     <div className="page-wrapper">
       < Header
@@ -76,5 +76,5 @@ export const App = () => {
           handleIncreaseLikes = {handleIncreaseLikes}
       />
     </div>
-  )
-}
+  );
+};

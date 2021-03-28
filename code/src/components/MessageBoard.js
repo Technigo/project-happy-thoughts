@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 
 import HappyThought from './HappyThought'
-
 
 const MessageBoard = ({ happyThoughtsList, handleIncreaseLikes }) => { 
     return (
