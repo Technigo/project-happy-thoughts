@@ -1,21 +1,21 @@
 import React from 'react';
 
-const MessageForm =({ messageNew, onMessageNewChange, onFormSubmit }) => {
+const NewThoughts =({ newMessage, onNewMessageChange, onFormSubmit }) => {
   return (
     <label>
     <form
     className='message-section'
     onSubmit={onFormSubmit}>
         <label
-          htmlFor='messageNew'>
+          htmlFor='newMessage'>
           <h2>What's making you happy right now?</h2>
         </label>
         <input
           className='message-area'
-          id='newMessage'
+          id='messageNew'
           type='text'
-          value={messageNew}
-          onChange={onMessageNewChange}
+          value={newMessage}
+          onChange={onNewMessageChange}
         />
         <button
         className='submit-button'
@@ -29,4 +29,4 @@ const MessageForm =({ messageNew, onMessageNewChange, onFormSubmit }) => {
   );
 }
 
-export default MessageForm;
+export default NewThoughts;

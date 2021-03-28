@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
 
-import MessageList from './components/MessageList';
-import MessageForm from './components/MessageForm';
+import ThoughtsList from './components/ThoughtsList';
+import NewThoughts from './components/NewThoughts';
 import { API_URL, LIKES_URL } from './reusable/urls';
 
 export const App = () => {
-  const [messageList, setMessageList] = useState([]);
-  const [messageNew, setMessageNew] = useState('');
+  const [thoughtsList, setThoughtsList] = useState([]);
+  const [newMessage, setNewMessage] = useState('');
 
   useEffect(() => {
-    fetchMessageList();
+    fetchThoughtsList();
   }, []);
 
-  const fetchMessageList = () => {
+  const fetchThoughtsList = () => {
     fetch(API_URL)
       .then(res => res.json())
-      .then(messages => setMessageList(messages))
+      .then(messages => setThoughtsList(messages))
       .catch(err => console.error(err));
   }
 
-  const onMessageNewChange = (event) => {
-    setMessageNew(event.target.value);
+  const onNewMessageChange = (event) => {
+    setNewMessage(event.target.value);
 }
 
 const onFormSubmit = (event) => {
@@ -31,7 +31,7 @@ const onFormSubmit = (event) => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ message: messageNew })
+    body: JSON.stringify({ message: newMessage })
   };
   
 fetch(API_URL, options)
@@ -39,7 +39,7 @@ fetch(API_URL, options)
   .then(() => {
     window.location.reload()
   })
-  .then(receivedMessage => setMessageList([receivedMessage, ...messageList]));
+  .then(receivedMessage => setThoughtsList([receivedMessage, ...thoughtsList]));
 }
 
 const onHeartLikes = (id) => {
@@ -56,13 +56,13 @@ const onHeartLikes = (id) => {
     window.location.reload()
   })
   .then(receivedMessage => {
-    const updatedMessageList = messageList.map(message => {
+    const updatedThoughtsList = thoughtsList.map(message => {
       if (message._id === receivedMessage._id) {
         message.likes += 1;
       }
       return message;
     });
-        setMessageList(updatedMessageList);
+        setThoughtsList(updatedThoughtsList);
     })
   .catch(err => console.error(err));
 }
@@ -70,13 +70,13 @@ const onHeartLikes = (id) => {
 
   return (
     <div>
-      <MessageForm
-        messageNew={messageNew}
-        onMessageNewChange={onMessageNewChange}
+      <NewThoughts
+        newMessage={newMessage}
+        onNewMessageChange={onNewMessageChange}
         onFormSubmit={onFormSubmit}
       />
-      <MessageList
-        messageList={messageList}
+      <ThoughtsList
+        thoughtsList={thoughtsList}
         onHeartLikes={onHeartLikes}
       />
 
