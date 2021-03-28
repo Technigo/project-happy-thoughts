@@ -58,9 +58,9 @@ export const App = () => {
     const post = {
       method: "POST",
       headers: {
-        "content-type": "application/json",
+        "content-type": "application/json"   
       },
-      body: JSON.stringify({ message: userInput }),
+      body: JSON.stringify({ message: userInput })
     };
 
     fetch(API_URL, post)
@@ -86,7 +86,7 @@ export const App = () => {
     const post = {
       method: "POST",
       headers: {
-        "content-type": "application/json",
+        "content-type": "application/json"
       },
     };
 
@@ -107,7 +107,7 @@ export const App = () => {
       .catch((error) => console.log(error));
   };
 
-  
+
   //clears all needed input
   const clearAll = () => {
     setUserInput("");
