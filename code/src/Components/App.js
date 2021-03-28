@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from 'react'
-import moment from 'moment'
 import ThoughtsFetched from './ThoughtsFetched'
 import PostingForm from './PostingForm'
 import { API_URL }  from '../utilities/urls'
-import { LIKES_URL }  from '../utilities/urls'
-
+import { HEARTS_URL }  from '../utilities/urls'
+import Toastify from 'toastify-js'
 
 //TO-DO:
-//[_] Rename newMessage to newThought etc. for consistency
-//[_] Make heart icon also be a button, just like post message button, because accessability
-
+//[X] Rename newMessage to newThought etc. for consistency
+//[X] Rename like to heart everywhere for consistency
+//[X] Make heart icon also be a button, just like post message button, because accessability
+//[X] Make the user only able to heart once!
+//[X] check out npm React toast or toastify
+//[X] make it impossible to hit send button if message is less than 5 or more than 140 characters!
+//[_] create loading State and install npm react loader spiining thingy
+//[_] update css attribute hyphen so it works more reliably!
+//[_] style using likedThoughts state and window.localStorage.setItem('myLikes', likedThoughts)
 
 export const App = () => {
 
-  //------------------ STATE PROPERTIES ------------------
-
-  //testing using dummy fetch:
+  //State hooks
   const [latestThoughts, setLatestThoughts] = useState([])
-  const [newMessage, setNewMessage] = useState("")
+  const [newThought, setNewThought] = useState("")
+  const [heartedThoughts, setHeartedThoughts] = useState([])
 
   //onChange functions
-  const onNewMessageChange = (event) => {
+  const onNewThoughtChange = (event) => {
     console.log(`inside PostingForm: ${event.target.value}`)
-    setNewMessage(event.target.value)
+    setNewThought(event.target.value)
   }
 
   useEffect (() => {
@@ -30,7 +34,6 @@ export const App = () => {
   }, [])
 
   const fetchMessages = () => {
-    console.log(newMessage)
     fetch(API_URL, {
       method: 'GET'}
     )
@@ -41,92 +44,87 @@ export const App = () => {
 
   const submitThought = (event) => {
     event.preventDefault()
-    //console.log(event.target.value)
 
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newMessage })
+      body: JSON.stringify({ message: newThought })
     }
 
     fetch(API_URL, options)
       .then(res => res.json())
-      .then(returnedMessage => setLatestThoughts([returnedMessage, ...latestThoughts]))
-      .catch(err => console.error(err))
-
-    setNewMessage('')
-  }
-
-  const onHeartsIncrease = (thoughtID) => {
-    //console.log(event.target.value)
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
-
-    fetch(LIKES_URL(thoughtID), options)
-      .then(res => res.json())
-      .then((likedThought) => {
-        const updatedThoughts = latestThoughts.map(thought => {
-          if (thought._id === likedThought._id) {
-            thought.hearts += 1
-            console.log(`HEARTED thought id: ${thought._id}`)
+      .then(returnedMessage => {
+        if (returnedMessage.hasOwnProperty('errors')) {
+          const errorType = returnedMessage.errors.message.kind
+          let errorText = 'An unexpected error occured! Please try again later.'
+          if (errorType === 'required' || errorType === 'minlength' || errorType === 'maxlength') {
+            errorText = 'Your Thought must be between 5 to 140 characters long!'
           }
-          return thought
-        }) 
-        setLatestThoughts(updatedThoughts)
+            Toastify({
+              text: errorText,
+              duration: 3000,
+              close: true,
+              gravity: 'top', // `top` or `bottom`
+              position: 'center', // `left`, `center` or `right`
+              backgroundColor: '#ffadad',
+              stopOnFocus: true, // Prevents dismissing of toast on hover
+            }).showToast()
+          
+        } else {
+          setLatestThoughts([returnedMessage, ...latestThoughts])
+          setNewThought('')
+        }
       })
-      .catch(err => console.error(err))
-
-    setNewMessage('')
+      .catch(err => console.log(err))
   }
+
+  const onHeartsIncrease = (thoughtID, event) => {
+
+    if (heartedThoughts.find(heartedThoughtID => heartedThoughtID === thoughtID) === undefined) {
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
   
+      fetch(HEARTS_URL(thoughtID), options)
+        .then(res => res.json())
+        .then((heartedThought) => {
+          const updatedThoughts = latestThoughts.map(thought => {
+            if (thought._id === heartedThought._id) {
+              thought.hearts += 1
+              console.log(`HEARTED thought id: ${thought._id}`)
+              setHeartedThoughts([...heartedThoughts, thought._id])
+            }
+            return thought
+          })
+          setLatestThoughts(updatedThoughts)
+        })
+        .catch(err => console.error(err))
   
-  
-  //real default state:
-  //const [latestThoughts, setLatestThoughts] = useState([])
+      setNewThought('')
+
+    } else {
+
+    }
+  }
 
   return (
-    <>
+    <div className='main-wrapper'>
       <PostingForm 
-        newMessage={newMessage}
-        onNewMessageChange={onNewMessageChange}
+        newThought={newThought}
+        onNewThoughtChange={onNewThoughtChange}
         send={submitThought}
       />
       <ThoughtsFetched 
         latestThoughts={latestThoughts}
-        like={onHeartsIncrease}
+        heart={onHeartsIncrease}
+        heartedThoughts={heartedThoughts}
       />
-    </>
+    </div>
   )
-
-  
-
 }
-
-
-
-//a dummy fetch of the thoughts
-const testThoughts = [
-  {
-    "_id": "5dd671c864cc480017f40979",
-    "message": "I'm happy because we're starting a fun new project",
-    "hearts": 0,
-    "createdAt": "2018-11-21T11:15:20.888Z",
-    "__v": 0
-  },
-  {
-    "_id": "5dd6759064cc480017f4097a",
-    "message": "I just ate a super tasty lunch",
-    "hearts": 0,
-    "createdAt": "2019-11-21T11:31:28.547Z",
-    "__v": 0
-  }
-]
-
   
