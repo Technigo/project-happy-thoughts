@@ -38,6 +38,7 @@ code {
   border-color: #DEDEDE;
   border-style: solid;
   resize: none;
+  width: 97%;
 }
 
 .submit-button {
