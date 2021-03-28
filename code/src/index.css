@@ -16,10 +16,26 @@ code {
     monospace;
 }
 
+.fa-grin-hearts {
+  margin-right: 10px;
+}
+
+.fa-envelope {
+  margin-left: 10px;  
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  font-weight: 400;
+  color: #bfbfe8;
+}
+
 .message-container {
   width: 90%;
+  max-width: 375px;
   margin: 20px auto;
-  margin-bottom: 30px;;
+  margin-bottom: 25x;
   border: 1px #000 solid;
   padding: 10px;
   box-shadow: 5px 5px 0 #000;
@@ -54,6 +70,15 @@ code {
   padding: 8px 15px;
   font-size: 12px;
   outline: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: rgb(250, 141, 141);
+}
+
+.submit-button:active {
+    transform: translateY(2px);
 }
 
 /* MessageElement */
@@ -61,6 +86,7 @@ code {
 .message {
   margin: 3px 0 13px 0;
   font-weight: 500;
+  overflow-wrap: break-word;
 }
 
 .flex-wrapper {
@@ -73,6 +99,15 @@ code {
   border: none;
   padding: 12px;
   outline: none;
+  cursor: pointer;
+}
+
+.likes-button:hover {
+  background-color: rgb(255,173,173);
+}
+
+.likes-button:active {
+  transform: translateY(2px);
 }
 
 .amount-likes {
@@ -84,4 +119,15 @@ code {
 .date {
   color:rgba(153, 153, 153, 0.671);
   font-size: 13px;
+}
+
+@media (min-width: 768px) {
+  .message-container {
+    max-width: 500px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
 }
