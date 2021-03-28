@@ -3,7 +3,7 @@ import moment from 'moment';
 
 const MessageElement = ({ messagePost, onLikesIncrease }) => {
     return (
-        <div key={messagePost._id}>
+        <div>
               <h4>{messagePost.message}</h4>
               <button onClick={() => onLikesIncrease(messagePost._id)}>
                     {messagePost.hearts}

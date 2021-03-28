@@ -7,6 +7,7 @@ const MessageList = ({ messageList, handleLikesIncrease }) => {
         <>
             {messageList.map(messagePost => (
                 <MessageElement 
+                    key={messagePost._id}
                     messagePost={messagePost} 
                     onLikesIncrease={handleLikesIncrease}    
                 />
