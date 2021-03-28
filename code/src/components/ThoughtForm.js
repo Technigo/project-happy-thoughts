@@ -14,7 +14,7 @@ const ThoughtForm = ({onSubmitThought, newThought, onNewThoughtChange}) => {
                     placeholder="type here"
                 /> 
                 <button className="submit-button" type="submit">
-                    <p className="submit-button-text">❤️ <span>Send Happy Thought</span> ❤️</p>
+                    <p className="submit-button-text"><span role="img" aria-label="heart-emoji">❤️</span><span>Send Happy Thought</span><span role="img" aria-label="heart-emoji">❤️</span></p>
                 </button> 
             </form>
         </div>

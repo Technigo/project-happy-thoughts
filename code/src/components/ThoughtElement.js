@@ -9,7 +9,7 @@ const ThoughtElement = ({thought, onLikesIncrease}) => {
                 <div className="likes-time-container">
                     <div className="likes-button-container">
                         <button className="likes-button" onClick={() => onLikesIncrease(thought._id)}>
-                            <p className="heart">❤️</p>
+                            <p className="heart"><span role="img" aria-label="heart-emoji">❤️</span></p>
                         </button>
                         <p className="background-info">x {thought.hearts}</p>
                     </div>    
