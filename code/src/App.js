@@ -12,16 +12,16 @@ export const App = () => {
   const fetchMessageList = () => {
     fetch(API_URL)
       .then(res => res.json())
-      .then(messages => setMessageList(messages))
+      .then(recievedMessages => setMessageList(recievedMessages))
       .catch(err => console.error(err));
   }
 
 
   return (
     <div>
-      {messageList.map(message => (
-        <div key={message._id}>
-          <h4>{message.message}</h4>
+      {messageList.map(recievedMessage => (
+        <div key={recievedMessage._id}>
+          <h4>{recievedMessage.message}</h4>
         </div>
       ))}
     </div>
