@@ -3,14 +3,6 @@
 * {
 	box-sizing: border-box;
 	font-family: "Trispace", sans-serif;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
-body {
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 .main-container {
@@ -39,7 +31,7 @@ body {
 
 .input-box {
 	width: 100%;
-	padding: 15px, 15px;
+	padding: 15px, 10px;
 	resize: none;
 	margin: 10px auto 10px auto;
 	height: 100px;
@@ -49,7 +41,7 @@ body {
 	background-color: #f9adae;
 	border: none;
 	border-radius: 25px;
-	font-size: 16px;
+	font-size: 14px;
 	padding: 10px 15px;
 	cursor: pointer;
 	margin-top: 10px;
@@ -69,13 +61,13 @@ body {
 }
 
 .printed-message {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .heart-counting-date-wrapper {
 	display: flex;
 	flex-direction: row-reverse;
-	align-items: flex-end; /* baseline */
+	align-items: baseline;
 	justify-content: space-between;
 }
 
@@ -98,7 +90,7 @@ body {
 }
 
 .counting-likes {
-	margin-left: 10px;
+	margin-left: 5px;
 }
 
 @media (min-width: 667px) {
