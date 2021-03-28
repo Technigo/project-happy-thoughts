@@ -1,6 +1,5 @@
 import React from 'react'
 
-//() => setError(prev => !prev) --> equal to --> onClick={() => setError(false)
 const ErrorPopup = ({ setError }) => {
   return (
     <span className="error-popup-container">

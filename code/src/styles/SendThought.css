@@ -27,6 +27,14 @@
   font-size: 12px;
 }
 
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
+}
+
 .sent-messages {
   font-family: 'Trispace', sans-serif;
   display: flex;
@@ -57,7 +65,7 @@
 .user-name-input {
   outline-color: #ffadad;
 }
-/* move to a ButtonSubmit css later? */
+/* ButtonSubmit */
 .add-new-thought-button {
   background-color: #ffadad;
   font-size: 15px;
@@ -102,6 +110,14 @@
   cursor: pointer;
 }
 
+.heart-button-unclicked {
+  background-color: #f2f0f0;
+}
+
+.heart-button-clicked {
+  background-color: #ffadad;
+}
+
 .heart-button-and-messagecreated-container {
   margin: 15px;
   display: flex;
@@ -116,6 +132,7 @@
   color: #a09993;
 }
 
+/* ErrorPopup */
 .error-popup-container {
     background: #ffadad;
     color: #fff;

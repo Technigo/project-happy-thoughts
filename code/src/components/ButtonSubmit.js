@@ -4,6 +4,8 @@ const SubmitButton = () => {
   return (
     <>
       <button 
+        tabIndex="0"
+        aria-label="add your happy thought"
         className="add-new-thought-button" 
         type="submit" 
         value="Submit" 

@@ -41,14 +41,11 @@ export const App = () => {
 
   fetch(HAPPY_THOUGHTS_URL, options)
     .then(response => {
-      //console.log('actual ok value', response.ok)
-      console.log(response) //take away before sending it in
-      console.dir(response) //take away before sending it in
       if (!response.ok) {
         setError(true)
         throw new Error ('Ups, something went wrong') //prints error message in Console for the use case: unspecified backend error
       } else { 
-        setNewThought('') //clears textarea on submit
+        setNewThought('')
         return response.json()
       }
     })
