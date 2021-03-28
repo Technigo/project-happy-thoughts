@@ -19,9 +19,15 @@ const ErrorMessage = () => {
                 aria-label='return to start page'
                 onClick ={backToStart}
             >
-                <span role='img' aria-label='heart emoji'>❤️️</span> 
+                <img className='heart-img' 
+                     src={process.env.PUBLIC_URL + './icons/favourite.png'}
+                     alt='heart' 
+                /> 
                 Try again!
-                <span role='img' aria-label='heart emoji'>❤️️</span>
+                <img className='heart-img' 
+                     src={process.env.PUBLIC_URL + './icons/favourite.png'}
+                     alt='heart' 
+                /> 
             </button>
         </div>
     )
