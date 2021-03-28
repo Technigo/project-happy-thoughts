@@ -26,7 +26,18 @@ export const App = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    console.log('form submitted!', messageNew);
+
+    const options = {      
+        method: 'POST',
+        headers: {
+          'Content-Type':  'application/json'
+        },
+        body: JSON.stringify({ message: messageNew })
+      };    
+    
+    fetch(API_URL, options)
+      .then(res => res.json())
+      .then(recievedMessage => setMessageList([...messageList, recievedMessage]));
   }
 
   return (
@@ -41,12 +52,12 @@ export const App = () => {
         />
         <button type="submit">Send message!</button>
       </form>
-      {messageList.map(recievedMessage => (
-        <div key={recievedMessage._id}>
-          <h4>{recievedMessage.message}</h4>
-          <p className="date">-{moment(recievedMessage.created).fromNow()}</p>
+      {messageList.map(message => (
+        <div key={message._id}>
+          <h4>{message.message}</h4>
+          <p className="date">-{moment(message.created).fromNow()}</p>
         </div>
       ))}
     </div>
   )
-}
+  }
