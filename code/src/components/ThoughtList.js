@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import ThoughtElement from './ThoughtElement'
 
@@ -13,7 +13,7 @@ const ThoughtList = ({ thoughtsList, handleLikesIncrease }) => {
                 />
             ))}
         </>
-    );
+    )
 }
 
-export default ThoughtList;
+export default ThoughtList

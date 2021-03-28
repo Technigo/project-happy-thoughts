@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
-import ThoughtForm from './components/ThoughtForm';
-import ThoughtList from './components/ThoughtList';
+import ThoughtForm from './components/ThoughtForm'
+import ThoughtList from './components/ThoughtList'
 
-import { API_URL, LIKE_URL } from './reusable/urls';
+import { API_URL, LIKE_URL } from './reusable/urls'
 
 export const App = () => {
-  const [thoughtsList, setThoughtsList] = useState([]);
-  const [newThought, setNewThought] = useState('');
+  const [thoughtsList, setThoughtsList] = useState([])
+  const [newThought, setNewThought] = useState('')
 
   useEffect(() => {
     fetchThoughtList()
-  }, [thoughtsList]);
+  }, [thoughtsList])
 
   const fetchThoughtList = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(thoughts => setThoughtsList(thoughts))
-      .catch(err => (console.error(err)));
+      .catch(err => (console.error(err)))
   }
 
   const handleNewThoughtChange = (event) => {
@@ -25,7 +25,7 @@ export const App = () => {
   }
 
   const handleFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const options = {
       method: 'POST',
@@ -33,7 +33,7 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ message: newThought })
-    };
+    }
 
     fetch(API_URL, options)
       .then(res => res.json())
@@ -49,7 +49,7 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-    };
+    }
     fetch(LIKE_URL(id), options)
       .then(res => res.json())
       .then(recivedThought => {
@@ -58,14 +58,13 @@ export const App = () => {
             thought.hearts += 1;
           }
           return thought;
-        });
+        })
         setThoughtsList(updatedThoughtsList);
       })
       .catch(err => (console.log(err)))
   }
 
   return (
-
     <div className="form-container">
       <ThoughtForm
         newThought={newThought}
@@ -76,40 +75,11 @@ export const App = () => {
         thoughtsList={thoughtsList}
         handleLikesIncrease={handleLikesIncrease}
       />
-      {/* <form className="form" onSubmit={onFormSubmit}>
-        <label className="thoughts-label"
-          htmlFor="thoughts">
-          What's making you happy right now?
-            </label>
-        <input className="input-thought"
-          id="thoughts"
-          type="text"
-          value={newThought}
-          onChange={onNewThoughtChange}
-        />
-        <button className="send-button" type="submit">
-          <span role="img" aria-label="heart-icon">❤️</span>
-              Send Happy Thought
-              <span role="img" aria-label="heart-icon">❤️</span>
-        </button>
-      </form> */}
-      {/* {thoughtsList.map(thought => (
-        <div className="thoughts-container"
-          key={thought._id}>
-          <h4>{thought.message}</h4>
-          <div className="likes-and-time-container">
-            <button className="heart-button" onClick={() => onLikesIncrease(thought._id)}>
-
-              <span className={thought.hearts === 0 ? "heart-grey" : "heart-pink"} role="img" aria-label="heart-icon">❤️</span>
-             x {thought.hearts}
-            </button>
-            <p>{moment(thought.createdAt).fromNow()}</p>
-          </div>
-        </div>
-      ))} */}
     </div>
   )
 }
+
+
 
 
 

@@ -1,10 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
     return (
         <form className="form" onSubmit={onFormSubmit}>
-            <label className="thoughts-label"
-                htmlFor="thoughts">
+            <label className="thoughts-label" htmlFor="thoughts">
                 What's making you happy right now?
             </label>
             <input className="input-thought"
@@ -19,7 +18,7 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
               <span role="img" aria-label="heart-icon">❤️</span>
             </button>
         </form>
-    );
-};
+    )
+}
 
-export default ThoughtForm;
+export default ThoughtForm

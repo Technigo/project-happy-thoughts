@@ -1,5 +1,5 @@
-import React from 'react';
-import moment from "moment";
+import React from 'react'
+import moment from "moment"
 
 const ThoughtElement = ({ thought, onLikesIncrease }) => {
     return (
@@ -10,8 +10,8 @@ const ThoughtElement = ({ thought, onLikesIncrease }) => {
                 <button className="heart-button" onClick={() => onLikesIncrease(thought._id)}>
                     <span className={thought.hearts === 0 ? "heart-grey" : "heart-pink"} role="img" aria-label="heart-icon">
                         ❤️
-                </span>
-             x {thought.hearts}
+                   </span>
+                        x {thought.hearts}
                 </button>
                 <p>{moment(thought.createdAt).fromNow()}</p>
             </div>
@@ -19,4 +19,4 @@ const ThoughtElement = ({ thought, onLikesIncrease }) => {
     )
 }
 
-export default ThoughtElement;
+export default ThoughtElement
