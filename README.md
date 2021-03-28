@@ -1,13 +1,17 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+https://react-happy-thoughts.netlify.app/
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a project built in React where short messages are posted to a server and rendered on the website in a list.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The App.js file fetches data from an API. 
+Component Form posts a  message to the API.
+Component Message renders new messages on website using useState.
+A button on each message enables liking a message and counts how many likes it reveices.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+
+
