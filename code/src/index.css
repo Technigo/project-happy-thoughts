@@ -8,7 +8,7 @@ body {
 
 /* POSITIONING */
 .maincontainer{
-  margin: 30px 30px 0;
+  margin: 50px 30px 0;
   display: flex;
   flex-direction: column;
 }
@@ -41,6 +41,7 @@ body {
   font-size: 11px;
   margin: 0;
 }
+
 .submit-button{
   background: #FFADAD;
   border: none;
@@ -48,9 +49,9 @@ body {
 }
 
 .submit-button-text{
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
-  font-size: 8px;
-  padding: 4px 8px
+  padding: 4px 4px
 }
 
 span{
@@ -59,16 +60,24 @@ span{
 }
 
 .input-container{
-  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  height: 150px;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 3px 10px;
   background-color: #F2F0F0;
   box-shadow: 5px 5px  black;
   border: 1px solid black;  
 }
 
-.input{
-  height: 30%;
+.text-input-field{
+  width: 100%;
+  height: 35px;
+  overflow-wrap: break-word;
+  resize: none;
+  font-size: 11px;
+  margin-bottom: 20px;
 }
 
 /* PREVIOUS THOUGHTS */
@@ -82,6 +91,7 @@ span{
   font-family: 'Roboto Mono', monospace;
   font-size: 10px;
   color: #BFBFBF;
+  padding-left: 3px;
 }
 
 .likes-button{
@@ -98,5 +108,65 @@ span{
   margin: 0;
   padding: 0;
   font-size: 8px;
+}
+
+@media(min-width: 768px){
+  .maincontainer{
+    margin: 100px 200px 0;
+  }
+}
+
+@media(min-width: 1200px){
+  /* POSITIONING */
+.maincontainer{
+  margin: 100px 400px 0;
+}
+
+.previous-thoughts-container{
+  margin-bottom: 30px;
+  height: 150px;  
+  padding: 20px;
+}
+
+/* INPUTCARD */
+.inputcard-text{
+  font-size: 15px;
+}
+
+.submit-button{
+  border-radius: 25px;
+}
+
+span{
+  font-size: 13px;
+}
+
+.input-container{
+  padding: 20px;
+  height: 200px;
+  margin-bottom: 60px;
+}
+
+.text-input-field{
+  font-size: 15px;
+  height: 100px;
+}
+
+/* PREVIOUS THOUGHTS */
+.previous-thoughts-text{
+  font-size: 15px;
+}
+
+.background-info{
+  font-size: 13px;
+  padding-left: 3px;
+}
+
+.likes-button{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+}
 }
 

@@ -39,7 +39,6 @@ export const App = () => {
     fetch(API_URL, options)
       .then(response => response.json())
       .then(receivedNewThought => setThoughtList([receivedNewThought, ...thoughtList]))
-//    .then(() => fetchThoughtList)
       .catch(error => console.error(error))
       setNewThought('')
   }

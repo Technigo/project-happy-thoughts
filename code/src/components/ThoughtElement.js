@@ -11,7 +11,7 @@ const ThoughtElement = ({thought, onLikesIncrease}) => {
                         <button className="likes-button" onClick={() => onLikesIncrease(thought._id)}>
                             <p className="heart"><span role="img" aria-label="heart-emoji">❤️</span></p>
                         </button>
-                        <p className="background-info">x {thought.hearts}</p>
+                        <p className="background-info">    x {thought.hearts}</p>
                     </div>    
                     <p className="background-info">{moment(thought.createdAt).fromNow()}</p>
                 </div>
