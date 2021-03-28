@@ -7,10 +7,10 @@ const ThoughtsElement = ({ message, onHeartLikes}) => {
       className='chat-section'
       key={message._id}
       >
-      <h4 tabIndex="0">{message.message}</h4>
+      <h4>{message.message}</h4>
       <div className='likes-section'>
         <div className='likes'>
-        <button aria-label="send happy thoughts" className={message.hearts === 0 ? 'button-grey' : 'button-pink'}
+        <button className={message.hearts === 0 ? 'button-grey' : 'button-pink'}
           onClick={() => onHeartLikes(message._id)}>
           <span className='heart' role="img" aria-label="heart-icon">❤️</span>
         </button>
