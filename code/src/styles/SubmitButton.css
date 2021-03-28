@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace&display=swap');
+
+* {
+  font-family: 'Trispace', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.submit-button {
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #ffadad;
+}

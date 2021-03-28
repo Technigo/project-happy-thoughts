@@ -1,17 +1,23 @@
 import React from 'react';
 
+import SubmitButton from './SubmitButton'
+import '../styles/MessageForm.css'
+
 const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
     return (
-        <form onSubmit={onFormSubmit}>
-            <label htmlFor="newMessage">Write new message!</label>
-            <input
+        <>
+        <form className="new-message-form" onSubmit={onFormSubmit}>
+            <label htmlFor="newMessage">What's making you happy right now?</label>
+            <textarea
+                className="new-message"
                 id="newMessage"
                 type="text"
                 value={messageNew}
                 onChange={onMessageNewChange}
-            />
-            <button type="submit">Send message!</button>
+            ></textarea>
+            <SubmitButton />
       </form>
+      </>
     );
 }
 

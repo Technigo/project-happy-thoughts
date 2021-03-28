@@ -19,8 +19,8 @@ export const App = () => {
   const fetchMessageList = () => {
     fetch(API_URL)
       .then(res => res.json())
-      .then(recievedMessages => setMessageList(recievedMessages))
-      .catch(err => console.error(err));
+        .then(recievedMessages => setMessageList(recievedMessages))
+        .catch(err => console.error(err));
   }
 
   const handleMessageNewChange = (event) => {
@@ -41,9 +41,9 @@ export const App = () => {
     fetch(API_URL, options)
       .then(res => res.json())
       // .then(recievedMessage => setMessageList([...messageList, recievedMessage]))
-      .then(() => fetchMessageList())
-      .catch(err => console.error(err));
-  }
+        .then(() => fetchMessageList())
+        .catch(err => console.error(err));
+    }
 
   const handleLikesIncrease = (messageID) => {
     const options = {
@@ -54,14 +54,13 @@ export const App = () => {
     };
 
     fetch(LIKES_URL(messageID), options)
-      .then(res => res.json())
-     
-      .then(() => fetchMessageList())
-      .catch(err => console.error(err));
+      .then(res => res.json())     
+        .then(() => fetchMessageList())
+        .catch(err => console.error(err));
   }  
 
   return (
-    <div>
+    <div className="happy-thoughts-container">
       <MessageForm 
         onFormSubmit={handleFormSubmit}
         messageNew={messageNew}
@@ -72,5 +71,5 @@ export const App = () => {
         handleLikesIncrease={handleLikesIncrease}
       />
     </div>
-  )
+  );
   }

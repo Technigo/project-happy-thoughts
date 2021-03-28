@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
-.date {
-  font-style: italic;
+* {
+  border: 1px solid red;
+}
+
+.happy-thoughts-container {
+  width: 500px;
+ 
 }

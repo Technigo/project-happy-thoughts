@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace&display=swap');
+
+* {
+  font-family: 'Trispace', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+ 
+  .recieved-message-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    box-shadow: 5px 5px;
+    margin-top: 35px;
+    box-sizing: border-box;
+  }
+  
+  .like-button-and-date-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .date {
+    font-style: italic;
+  }
+  
