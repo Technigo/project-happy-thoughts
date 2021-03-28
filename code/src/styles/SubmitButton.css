@@ -9,5 +9,8 @@
     border-radius: 20px;
     padding: 5px;
     background-color: #ffadad;
-    border: 1px solid #ffadad;
+    border: 1px solid #ffadad; 
+    cursor: pointer;
+    outline: inherit;
+    font-weight: bold;
 }
