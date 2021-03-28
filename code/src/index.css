@@ -42,6 +42,9 @@ code {
 }
 
 .happy-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 80%;
   height:auto;
   border: 2px solid black;
@@ -62,25 +65,28 @@ code {
 }
 
 .message-field {
-  margin: 10px;
+  margin: 15px;
   padding: 10px;
   height: 50px;
   width: 70%;
 }
 
 .heart-button {
+  
   border: none;
   outline:none;
   background: white;
 }
 
 .heart-button-active {
+  
   border-radius: 100%;
   background: rgb(248, 143, 143);
   padding: 12px;
 }
 
 .heart-button-not-active {
+  
   border-radius: 100%;
   padding: 12px;
   background: lightgray;
@@ -91,10 +97,10 @@ code {
   flex-direction: row;
   padding: 10px;
   margin: 10px;
-  align-items: left;
 }
 
 .heart-count {
   margin: 10px;
-  padding: 10px;
+  padding: 10px;  
 }
+
