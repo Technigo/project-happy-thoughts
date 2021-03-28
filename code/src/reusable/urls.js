@@ -1,5 +1,3 @@
-export const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+export const HAPPY_THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
 
-export const API_URL_POST = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-
-export const API_URL_LIKES = (messageID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/_id/like`
+export const HEARTS_URL = (message_id) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${message_id}/like`;

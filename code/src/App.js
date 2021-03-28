@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
 
-import { API_URL, API_URL_POST, API_URL_LIKES } from './reusable/urls';
+import { HAPPY_THOUGHTS_URL, HEARTS_URL } from './reusable/urls';
+
+import MessageForm from 'components/MessageForm';
+import MessageList from 'components/MessageList';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -13,63 +15,70 @@ export const App = () => {
   }, []);
 
   const fetchMessageList = () => {
-    fetch(API_URL)
+    fetch(HAPPY_THOUGHTS_URL)
       .then(res => res.json())
-      .then(messages => setMessageList(messages))
+      .then(inputs => setMessageList(inputs))
       .catch(err => console.error(err));
   }
 
-  const onMessageNewChange = (event) => {
-    setMessageNew(event.target.value);
+  const handleMessageNewChange = (e) => {
+    setMessageNew(e.target.value);
   }
 
-  const onFormSubmit = (event) => {
-    event.preventDefault();
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
 
-    const options ={
+    const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ text: messageNew })
+      body: JSON.stringify({ message: messageNew })
     }
 
-    fetch(API_URL_POST, options)
+    fetch(HAPPY_THOUGHTS_URL, options)
       .then(res => res.json())
-      .then(recievedMessage => setMessageList([...messageList, recievedMessage]));
+      .then(recievedMessage => setMessageList([...messageList, recievedMessage]))
+      .catch(err => console.log(err));
+
+// set empty string here. Update value of a state property
+      e.target.reset()
   }
 
-  const onLikesIncrease = () => {
-    fetch(API_URL_LIKES())
-  }
+  const handleLikesIncrease = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    };
 
-  console.log(messageList);
+    fetch(HEARTS_URL(id), options)
+      .then(res => res.json())
+      //fetch data
+      .then(recievedMessage => {
+        const updatedMessageList = messageList.map(input => {
+          if (input._id === recievedMessage._id) {
+            input.hearts += 1;
+          } 
+          return input;
+        });
+        setMessageList(updatedMessageList);
+      })
+      .catch(err => console.error(err));
+  }
 
   return (
-    <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newMessage">write new message</label>
-        <input
-          id="newMessage"
-          type="text"
-          value={messageNew}
-          onChange={onMessageNewChange}
+    <div className="message-container">
+        <MessageForm 
+          messageNew={messageNew}
+          onMessageNewChange={handleMessageNewChange}
+          onFormSubmit={handleFormSubmit}
+         />
+         <MessageList 
+          messageList={messageList}
+          handleLikesIncrease={handleLikesIncrease}
           />
-          <button type="submit">Send Message!</button>
-      </form>
-      {messageList.map(message => (
-        <div key={message._id}>
-          <h4>{message.text}</h4>
-          <button onClick={onLikesIncrease(message._id)}>
-            {message.message}
-            ❤️
-          </button>
-          <p className="date">-{moment(message.createdAt).fromNow()}</p>
-        </div>
-
-
-      ))}
-     
     </div>
   )
 }
