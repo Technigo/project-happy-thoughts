@@ -11,7 +11,6 @@ export const App = () => {
 
   useEffect(() => {
     fetchMessageList();
-
   }, []);
 
   const fetchMessageList = () => {
@@ -39,7 +38,7 @@ export const App = () => {
     fetch(HAPPY_THOUGHTS_URL, options)
       .then(res => res.json())
       .then(recievedMessage => setMessageList([...messageList, recievedMessage]))
-      .catch(err => console.log(err));
+      .catch(err => console.error(err));
 
 // set empty string here. Update value of a state property
       e.target.reset()
