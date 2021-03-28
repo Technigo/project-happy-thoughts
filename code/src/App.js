@@ -69,7 +69,7 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="container">
       <ThougthForm 
         newHappyThought={newHappyThought}
         onNewHappyThoughtChange={handleNewHappyThoughtChange}

@@ -4,7 +4,7 @@ export const ThougthForm = ({ newHappyTought, onNewHappyThoughtChange, onFormSub
     return (
         <div>
             <form onSubmit={onFormSubmit} className="new-thought-form">
-            <label htmlFor="newThought">What´s making you happy right now? </label>
+            <label htmlFor="newThought" className="new-thought-label">What´s making you happy right now? </label>
                 <textarea 
                     id="newThought" 
                     cols="20" 
@@ -14,9 +14,9 @@ export const ThougthForm = ({ newHappyTought, onNewHappyThoughtChange, onFormSub
                     className="thought-message-text-area" 
                     placeholder="Type your happy thoughts here :)"
                 />
-                <button type="submit">
+                <button type="submit" className="new-thought-button">
                     <span role="img" aria-label="heart emoji">❤️</span>
-                        Send Happy Though 
+                        Send Happy Thought 
                     <span role="img" aria-label="heart emoji">❤️</span>
                 </button>
             </form>
