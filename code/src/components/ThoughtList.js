@@ -1,8 +1,5 @@
 import React from 'react'
 
-import './ThoughtList.css'
-
-
 import ThoughtElement from './ThoughtElement'
 
 const ThoughtList = ( {thoughtList, handleLikesIncrease} ) => {

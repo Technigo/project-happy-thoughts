@@ -1,9 +1,41 @@
 .thought-element {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     border: 1px solid black;
     padding: 20px 20px;
-    width: 300px;
+    width: 400px;
     margin: 20px;
+    box-shadow: 4px 10px #000;
  }
+
+ .thought-element h4 {
+    overflow-wrap: break-word
+ }
+
+ .heart {
+     background-color: #F2F0F0;
+     border-radius: 50%;
+     padding: 10px;
+     margin-right: 5px;
+ }
+
+ .thought-element button {
+     border: none;
+     background-color: white;
+ }
+
+.heart-and-time {
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+ }
+
+ .heart-and-time button {
+     color: #686868;
+ }
+
+.time {
+    color: #686868;
+    font-size: 13px;
+}
+
