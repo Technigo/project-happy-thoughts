@@ -83,9 +83,9 @@ p {
 
 /* Character counter */
 .character-counter {
-  margin-left: auto;
   font-family: 'Inconsolata', monospace;
   font-size: 14px;
+  margin: 15px 0px 15px auto;
 }
 
 .character-counter-limit {
@@ -116,8 +116,11 @@ p {
 
 /* Error message */
 .error-message {
+  font-family: 'Inconsolata', monospace;
+  font-size: 14px;
   color: red;
 }
+
 
 /** MESSAGE LIST **/
 /* Message element */
@@ -216,6 +219,11 @@ p {
     font-size: 18px;
   }
 
+  /* Error message */
+  .error-message {
+    font-size: 16px;
+  }
+
   /* Message element */
   .message-text {
     font-size: 18px;
@@ -259,6 +267,10 @@ p {
   /* Submit button */
   .submit-button-text {
     font-size: 20px;
+  }
+
+  .error-message {
+    font-size: 18px;
   }
 
   /* Message element */

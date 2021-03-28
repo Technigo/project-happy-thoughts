@@ -46,7 +46,7 @@ const App = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    if(!validateFormInput()){
+    if (!validateFormInput()) {
       return;
     }
 
