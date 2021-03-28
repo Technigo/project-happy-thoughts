@@ -19,8 +19,7 @@ const NewThoughts =({ newMessage, onNewMessageChange, onFormSubmit }) => {
         />
         <button
           className='submit-button'
-          type='submit'
-          aria-label="heart-icon">
+          type='submit'>
           <span className='heart-icons' role="img" aria-label="heart-icon">❤️</span> 
             Send Happy Thought! 
           <span className='heart-icons' role="img" aria-label="heart-icon">❤️</span>
