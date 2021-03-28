@@ -30,6 +30,7 @@ form {
   margin: 30px auto;
   padding: 20px 25px 5px;
   position: relative;
+  word-break: break-all;
 }
 
 .send-thought_input-field {
@@ -72,7 +73,7 @@ form {
 }
 
 .date-stamp {
-  font-size: .7rem;
+  font-size: .8rem;
   font-style: italic;
   text-align: right;
 }

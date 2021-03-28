@@ -15,6 +15,10 @@ If I had given myself more time I would of course wanted to fix above mentioned 
 
 React still feels good, it's a great tool offering tons of oportunities and do have a quite logical approach. Some of the functionalty is complex and will require more training :)
 
+## View it live
+
+Url - https://epic-bassi-2d5a3d.netlify.app/
+
 
 
 
