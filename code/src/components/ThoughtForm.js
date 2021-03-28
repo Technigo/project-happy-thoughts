@@ -15,12 +15,15 @@ const ThoughtForm = ({onSubmitThought, newThought, onNewThoughtChange}) => {
                     form="form"
                 >
                 </textarea>
-                <button className="submit-button" type="submit">
+                <button 
+                    className="submit-button" 
+                    type="submit"
+                    disabled={newThought.length < 5 || newThought.length > 140}
+                >
                     <p className="submit-button-text"><span role="img" aria-label="heart-emoji">❤️</span><span>Send Happy Thought</span><span role="img" aria-label="heart-emoji">❤️</span></p>
                 </button> 
             </form>
         </div>
-
     )
 }
 
