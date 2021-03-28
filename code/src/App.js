@@ -22,6 +22,7 @@ export const App = () => {
       {messageList.map(recievedMessage => (
         <div key={recievedMessage._id}>
           <h4>{recievedMessage.message}</h4>
+          <p>{new Date(recievedMessage.createdAt).toDateString()}</p>
         </div>
       ))}
     </div>
