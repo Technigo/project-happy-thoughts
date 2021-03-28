@@ -1,10 +1,10 @@
 /** @format */
 
 * {
+	box-sizing: border-box;
 	font-family: "Trispace", sans-serif;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
 body {
@@ -16,20 +16,22 @@ body {
 .main-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	border: 1px solid black;
 	margin: 20px;
 }
 
-.form-container {
+.form-container,
+.printed-message-container {
 	border: 1px solid black;
 	background-color: #f2f0f0;
-	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	margin: 15px;
 	padding: 20px;
+	width: 300px;
+	box-shadow: 5px 5px;
+	word-wrap: break-word;
 }
 
 .form-title {
@@ -52,18 +54,42 @@ body {
 	cursor: pointer;
 }
 
-.send-message-btn:active {
-	background: #f9adae;
+.input-box {
+	outline-color: #f9adae;
 }
-.heart {
+
+.heart-emoji {
 	margin: 10px;
 }
 
 .printed-message-container {
-	border: 1px solid black;
+	background: white;
 }
 
-.likes-button {
+.printed-message {
+	font-size: 16px;
+}
+.heart-counting-date-wrapper {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: flex-end; /* baseline */
+	justify-content: space-between;
+}
+
+.button-counting-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.heart-button {
 	border: none;
-	border-radius: 25px;
+	border-radius: 50%;
+	padding: 16px;
+	color: gray;
+}
+
+.date-created {
+	color: gray;
+	align-self: flex-end;
 }
