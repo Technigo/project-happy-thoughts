@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .happy-post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100vw;
+  }
+  
+  .happy-post {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 92%;
+    font-family: 'Inconsolata', monospace;
+    font-size: 16px;
+    border: 1px solid #000;
+    box-shadow: 5px 5px #000000;
+    margin: 15px 0;
+  }
+  
+  .happy-message {
+    overflow-wrap: break-word;
+    margin: 20px auto;
+    width: 90%;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .happy-post-footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto 20px auto;
+  }
+  
+  .happy-likes-wrapper {
+    display: flex;
+    align-items: center;
+    color: #7c7b7b;
+    font-size: 16px;
+  }
+  
+  .some-likes,
+  .many-likes,
+  .no-likes {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    margin-right: 10px;
+    position: relative;
+    padding: 0;
+  }
+  
+  .no-likes {
+    background: #f3f1f1;
+  }
+  
+  .some-likes {
+    background: #f8cccc;
+  }
+  
+  .many-likes {
+    background: #f87979;
+  }
+  
+  .like-heart {
+    font-size: 14px;
+    position: absolute;
+    top: 11px;
+    left: 12px;
+    margin: 0;
+  }
+  
+  .happy-message-time {
+    color: #7c7b7b;
+    font-size: 16px;
+  }
+  
+  @media(min-width:500px) {
+    .happy-post {
+      width: 90%;
+    }
+  
+    .happy-message {
+      font-size: 20px;
+    }
+  
+    .happy-likes-wrapper,
+    .happy-message-time {
+      font-size: 18px;
+    }
+  }
+  
+  @media(min-width:768px) {
+    .happy-post {
+      width: 80%;
+    }
+  
+    .happy-message {
+      font-size: 22px;
+      margin: 25px auto;
+    }
+  
+    .happy-likes-wrapper,
+    .happy-message-time {
+      font-size: 20px;
+    }
+  
+    .some-likes,
+    .many-likes,
+    .no-likes {
+      width: 50px;
+      height: 50px;
+      margin-right: 25px;
+    }
+  
+    .like-heart {
+      font-size: 20px;
+      top: 11px;
+      left: 15px;
+    }
+  }
+  
+  @media(min-width:1024px) {
+    .happy-post {
+      max-width: 850px;
+    }
+  }

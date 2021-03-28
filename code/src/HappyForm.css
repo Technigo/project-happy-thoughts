@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .happy-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100vw;
+  }
+  
+  .happy-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 92%;
+    border: 1px solid #000;
+    font-family: 'Inconsolata', monospace;
+    font-size: 18px;
+    color: #000;
+    background: #f2f0f0;
+    box-shadow: 5px 5px #000000;
+    margin: 20px 0 15px 0;
+  }
+  
+  .happy-form-heading {
+    margin: 20px;
+    font-size: 18px;
+  }
+  
+  .happy-form-text,
+  .happy-form-text-too-long {
+    margin: auto;
+    width: 90%;
+    height: 110px;
+    font-size: 16px;
+    border: 1px solid #7c7b7b;
+  }
+  
+  .happy-form-text-too-long {
+    background: #f87979;
+  }
+  
+  .form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 15px;
+    width: 90%;
+  }
+  
+  .happy-form-input-button {
+    color: #000000;
+    padding: 6px 12px 8px 12px;
+    background: #f9adae;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 40px;
+    font-family: 'Inconsolata', monospace;
+    border: none;
+  }
+  
+  .happy-form-input-button-disabled {
+    background: #f7dcdd;
+    color: #a3a2a2;
+    padding: 6px 12px 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 40px;
+    font-family: 'Inconsolata', monospace;
+    border: none;
+  }
+  
+  .form-footer p {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: #707070; 
+    font-weight: 500;
+  }
+  
+  @media(min-width:500px) {
+    .happy-form {
+      width: 90%;
+    }
+  
+    .happy-form-heading {
+      font-size: 20px;
+    }
+  
+    .happy-form-text,
+    .happy-form-text-too-long {
+      width: 92%;
+      font-size: 18px;
+    }
+  
+    .form-footer {
+      margin: 20px;
+    }
+    
+    .happy-form-input-button,
+    .happy-form-input-button-disabled {
+      font-size: 18px;
+      padding: 8px 15px 10px 15px;
+    }
+  
+    .form-footer p {
+      font-size: 16px;
+    }
+  }
+  
+  @media(min-width:768px) {
+    .happy-form {
+      width: 80%;
+    }
+  
+    .happy-form-heading {
+      font-size: 24px;
+      width: 92%;
+      margin: 25px auto;
+    }
+  
+    .happy-form-text,
+    .happy-form-text-too-long {
+      width: 92%;
+      font-size: 22px;
+    }
+  
+    .form-footer {
+      width: 92%;
+      margin: 25px auto;
+    }
+    
+    .happy-form-input-button,
+    .happy-form-input-button-disabled {
+      font-size: 20px;
+      padding: 12px 18px 14px 18px;
+    }
+  
+    .form-footer p {
+      font-size: 18px;
+    }
+  }
+  
+  @media(min-width:1024px) {
+    .happy-form {
+      max-width: 850px;
+    }
+  }
