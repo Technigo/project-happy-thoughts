@@ -1,4 +1,4 @@
-# Project Happy Thoughts
+Happy Thoughts
 
 By Maria Bergman
 
@@ -6,12 +6,14 @@ By Maria Bergman
 - How to put the result of API responses into React state to show in the page.
 - What it's like to work with an API which you both send and receive data from.
 
-## Usage
+The Problem
 
 - Your page should follow the design as closely as possible
 - You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
 - Your thoughts should show the content of the message and how many likes they've received
 - You should have a form to post new thoughts
 - You should implement the heart button to send likes on a thought
+
+Veiw it live
 
 https://fervent-shannon-446b60.netlify.app/
