@@ -109,6 +109,10 @@ code {
 .red-counter {
   color: rgb(210, 70, 70);
 }
+.page-container {
+  background-color: #858585;
+
+}
 
 @media (max-width: 1200px) {
   .received-message-container {
