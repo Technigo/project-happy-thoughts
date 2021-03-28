@@ -73,9 +73,9 @@ export const App = () => {
     
   return (
     <div className='app-container'>
-        <Header />
         {!errorMessage && (
         <div>
+          <Header />
           <Form  
             messageNew={messageNew} 
             setMessageNew={setMessageNew} 
