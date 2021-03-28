@@ -17,7 +17,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border: 1px solid black;
 	margin: 20px;
 }
 
@@ -43,6 +42,7 @@ body {
 	padding: 15px, 15px;
 	resize: none;
 	margin: 10px auto 10px auto;
+	height: 100px;
 }
 
 .send-message-btn {
@@ -52,6 +52,7 @@ body {
 	font-size: 16px;
 	padding: 10px 15px;
 	cursor: pointer;
+	margin-top: 10px;
 }
 
 .input-box {
@@ -64,11 +65,13 @@ body {
 
 .printed-message-container {
 	background: white;
+	margin-top: 30px;
 }
 
 .printed-message {
 	font-size: 16px;
 }
+
 .heart-counting-date-wrapper {
 	display: flex;
 	flex-direction: row-reverse;
@@ -92,4 +95,64 @@ body {
 .date-created {
 	color: gray;
 	align-self: flex-end;
+}
+
+.counting-likes {
+	margin-left: 10px;
+}
+
+@media (min-width: 667px) {
+	.form-container,
+	.printed-message-container {
+		width: 500px;
+	}
+
+	.form-title {
+		font-size: 25px;
+	}
+
+	.input-box,
+	.printed-message,
+	.counting-likes,
+	.send-message-btn {
+		font-size: 20px;
+	}
+
+	.date-created {
+		font-size: 18px;
+	}
+
+	.input-box {
+		height: 120px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.form-container,
+	.printed-message-container {
+		width: 1000px;
+	}
+
+	.form-title {
+		font-size: 30px;
+	}
+
+	.input-box,
+	.printed-message,
+	.counting-likes,
+	.send-message-btn {
+		font-size: 30px;
+	}
+
+	.date-created {
+		font-size: 25px;
+	}
+
+	.input-box {
+		height: 130px;
+	}
+
+	.heart-button {
+		font-size: 30px;
+	}
 }

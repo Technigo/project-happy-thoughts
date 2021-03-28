@@ -10,15 +10,16 @@ const MessageForm = ({ newMessage, onFormSubmit, onNewMessageChange }) => {
           className="form-title">What's making you happy right now?</label>
         <textarea
           className="input-box"
+          form="form"
           placeholder="Write your happy thought here..."
           id="newMessage"
-          type="text"
           value={newMessage}
           onChange={onNewMessageChange}
-          maxLength="140"
+          
         />
         <button type="onSubmit"className="send-message-btn">
           <span className="heart-emoji" role="img" aria-label="heart-symbol">❤️</span> 
+            {/* <p className="text-btn">Send Happy Thought</p> */}
             Send Happy Thought
           <span className="heart-emoji" role="img" aria-label="heart-symbol">❤️</span>
         </button>
