@@ -1,13 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto Mono', monospace;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+
+/* POSITIONING */
+.maincontainer{
+  margin: 30px 30px 0;
+  display: flex;
+  flex-direction: column;
 }
+
+.previous-thoughts-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black;
+  overflow-wrap: break-word;
+  margin-bottom: 20px;
+  padding: 10px 10px 0;
+  font-family: Inconsolatat;
+  box-shadow: 5px 5px  black;
+  height: 100px;  
+}
+
+.likes-time-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.likes-button-container{
+  display: flex;
+  flex-direction: row;
+}
+
+/* INPUTCARD */
+.inputcard-text{
+  font-size: 11px;
+  margin: 0;
+}
+.submit-button{
+  background: #FFADAD;
+  border: none;
+  border-radius: 25px;
+}
+
+.submit-button-text{
+  margin: 0;
+  font-size: 8px;
+  padding: 4px 8px
+}
+
+span{
+  font-size: 10px;
+  padding: 0 3px;
+}
+
+.input-container{
+  height: 120px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #F2F0F0;
+  box-shadow: 5px 5px  black;
+  border: 1px solid black;  
+}
+
+.input{
+  height: 30%;
+}
+
+/* PREVIOUS THOUGHTS */
+.previous-thoughts-text{
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  font-size: 11px;
+}
+
+.background-info{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10px;
+  color: #BFBFBF;
+}
+
+.likes-button{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+
+.heart{
+  margin: 0;
+  padding: 0;
+  font-size: 8px;
+}
+

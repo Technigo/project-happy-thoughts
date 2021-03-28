@@ -4,12 +4,18 @@ import moment from 'moment'
 const ThoughtElement = ({thought, onLikesIncrease}) => {
     return(
         <>
-            <h4>{thought.message}</h4>
-                <button onClick={() => onLikesIncrease(thought._id)}>
-                    {thought.hearts}
-                    ❤️
-                </button>
-            <p className="time">{moment(thought.createdAt).fromNow()}</p>
+            <div className="previous-thoughts-container">
+                <p className="previous-thoughts-text">{thought.message}</p>
+                <div className="likes-time-container">
+                    <div className="likes-button-container">
+                        <button className="likes-button" onClick={() => onLikesIncrease(thought._id)}>
+                            <p className="heart">❤️</p>
+                        </button>
+                        <p className="background-info">x {thought.hearts}</p>
+                    </div>    
+                    <p className="background-info">{moment(thought.createdAt).fromNow()}</p>
+                </div>
+            </div>
         </>
     )
 }
