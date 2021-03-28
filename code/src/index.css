@@ -109,7 +109,7 @@ With animations*/
   margin: 20px 0 5px 0;
   width: 90%;
   font-size: 16px;
-  word-break: keep-all;
+  word-break: break-word;
   word-wrap: break-word;
 }
 
