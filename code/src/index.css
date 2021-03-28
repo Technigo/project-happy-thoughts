@@ -11,6 +11,7 @@ body {
   margin: 50px 30px 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .previous-thoughts-container{
@@ -23,7 +24,8 @@ body {
   padding: 10px 10px 0;
   font-family: Inconsolatat;
   box-shadow: 5px 5px  black;
-  height: 100px;  
+  height: 100px;
+  width: 240px;  
 }
 
 .likes-time-container{
@@ -64,6 +66,7 @@ span{
   flex-direction: column;
   justify-content:space-evenly;
   height: 150px;
+  width: 240px;
   margin-bottom: 20px;
   padding: 3px 10px;
   background-color: #F2F0F0;
@@ -114,59 +117,58 @@ span{
   .maincontainer{
     margin: 100px 200px 0;
   }
+
 }
 
 @media(min-width: 1200px){
   /* POSITIONING */
-.maincontainer{
-  margin: 100px 400px 0;
-}
+  .maincontainer{
+    margin: 100px 400px 0;
+  }
 
-.previous-thoughts-container{
-  margin-bottom: 30px;
-  height: 150px;  
-  padding: 20px;
-}
+  .previous-thoughts-container{
+    margin-bottom: 30px;
+    height: 150px;  
+    padding: 20px;
+  }
 
-/* INPUTCARD */
-.inputcard-text{
-  font-size: 15px;
-}
+  /* INPUTCARD */
+  .inputcard-text{
+    font-size: 15px;
+  }
 
-.submit-button{
-  border-radius: 25px;
-}
+  .submit-button{
+    border-radius: 25px;
+  }
 
-span{
-  font-size: 13px;
-}
+  span{
+    font-size: 13px;
+  }
 
-.input-container{
-  padding: 20px;
-  height: 200px;
-  margin-bottom: 60px;
-}
+  .input-container{
+    padding: 20px;
+    height: 200px;
+    margin-bottom: 60px;
+  }
 
-.text-input-field{
-  font-size: 15px;
-  height: 100px;
-}
+  .text-input-field{
+    font-size: 15px;
+    height: 100px;
+  }
 
-/* PREVIOUS THOUGHTS */
-.previous-thoughts-text{
-  font-size: 15px;
-}
+  /* PREVIOUS THOUGHTS */
+  .previous-thoughts-text{
+    font-size: 15px;
+  }
 
-.background-info{
-  font-size: 13px;
-  padding-left: 3px;
-}
+  .background-info{
+    font-size: 13px;
+    padding-left: 3px;
+  }
 
-.likes-button{
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-}
+  .likes-button{
+    width: 40px;
+    height: 40px;
+  }
 }
 
