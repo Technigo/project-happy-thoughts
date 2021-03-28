@@ -52,10 +52,10 @@ const App = () => {
 
     const config = {   
         method: 'POST', 
-        headers: {              //specific information for the backend application
+        headers: {              
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ message: newMessage })     //we are just sending an object with text
+        body: JSON.stringify({ message: newMessage })     
     };
 
     fetch(API_URL, config)      
@@ -65,7 +65,7 @@ const App = () => {
         } 
         throw new Error('Error! Something went wrong. Try again!')
       })
-      .then(() => fetchMessageList())     //refetch data from server
+      .then(() => fetchMessageList())     
       .catch(err => {
         setErrorMessage(err.message);
       });      
