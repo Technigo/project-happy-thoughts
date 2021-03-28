@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 import { Fetch_API, like_url } from './reusable/urls'
 
 import { CardContainer } from './components/CardContainer'
-
+import { Form } from './components/Form'
 
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
@@ -12,7 +12,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchThoughtsList()
-  }, [])
+  }, [thoughtsList])
 
   const fetchThoughtsList = () => {
     fetch(Fetch_API)
@@ -22,13 +22,12 @@ export const App = () => {
     .catch(err => console.error(err))          
   }
 
-  const onThoughtsNew = (event) =>  {
+  const HandleThoughtsNew = (event) =>  {
     setThoughtsNew(event.target.value)
-    }  
+    }
 
-  const onSubmitForm = (event) => {
+  const HandleSubmitForm = (event) => {
     event.preventDefault() 
-
     const options = {
       method: 'POST',
       headers: {
@@ -41,6 +40,8 @@ export const App = () => {
     .then(res => res.json())
     .then(recivedThought => setThoughtsList([...thoughtsList, recivedThought]))
     .catch(err => console.error(err))
+    
+    setThoughtsNew('')    
   }  
 
   const HandleLikesIncrease = (id) => {     
@@ -50,10 +51,10 @@ export const App = () => {
         'Content-Type': 'application/json'
       }       
     }    
+
       fetch(like_url(id),option)
       .then(res => res.json())
-      .then(recivedLike => {      
-        
+      .then(recivedLike => {
     const updatedThoughtsList = thoughtsList.map(thoughts => { 
       if (thoughts._id === recivedLike._id) {
         thoughts.hearts += 1 
@@ -65,28 +66,14 @@ export const App = () => {
   .catch(err => console.error(err))
 }
 
-  console.log(thoughtsList)
-
   return (
     <div className="main">
-      {loader === true && <div className="lds-heart"><div></div></div>}   
-      
-        <form className="happy-thought-form" onSubmit={onSubmitForm}>
-          <label htmlFor="newThougt">What´s making you happy right now?</label>
-          <input 
-            id="newThougt"
-            type="text"
-            value={thoughtsNew}
-            onChange={onThoughtsNew}
-          />
-          <button className="send-thought-button" type="submit">
-            <span role="img" aria-label="Heart">💗</span>
-              Send Happy Thought 
-            <span role="img" aria-label="Heart">💗</span>
-          </button>
-        </form>
-
-
+        {loader === true && <div className="lds-heart"><div></div></div>}
+        <Form 
+          thoughtsNew={thoughtsNew}
+          OnThoughtsNew={HandleThoughtsNew}
+          OnSubmitForm={HandleSubmitForm}
+        />
         <CardContainer 
           thoughtsList={thoughtsList}
           HandleLikesIncrease={HandleLikesIncrease}

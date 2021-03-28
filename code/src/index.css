@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -29,12 +35,18 @@ code {
   padding: 20px; 
   width: 300px;
   background-color: #f2f0f0;
+  font-weight: bold;  
 }
 
-.happy-thought-form input[type="text"] {
-  height: 44px;
+.new-message {
+  margin: 10px;
+  resize: none;
+  width: 100%;
+}
+
+.new-message {
   margin: 10px 0;
-  width: 100%;  
+  resize: none;
 }
 
 .send-thought-button {
@@ -46,6 +58,7 @@ code {
   background-color: #ffadad ;
   margin: 10px 0;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .card-container {
@@ -53,21 +66,25 @@ code {
   width: 300px;  
   border: 1px solid #000; 
   box-shadow: 10px 10px #000;
-  margin: 25px;
+  margin: 30px 0;
   padding: 20px;
+  overflow-wrap: break-word;
 }
 
 .container-bottom-card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: auto;    
+  grid-auto-rows: auto; 
+  color: rgb(166, 166, 166);   
 }
 
 .thought-text {
   grid-column-start: 1;
   grid-column-end: -1;
-  width: 100%;
+  max-width: 260px;
   overflow-wrap: break-word;
+  color: #000;
+  font-weight: bold;
 }
 
 .like-button {
@@ -80,7 +97,6 @@ code {
   padding: 20px;
   margin: 16px 0;
   border: none;
-  background-color: #eaeaea;
   cursor: pointer;
   grid-column-start: 1;
   grid-column-end: 2;  
@@ -90,9 +106,13 @@ code {
   background-color: #ffadad ;
 }
 
+.not-liked {
+  background-color: #eaeaea;  
+}
+
 .thought-post-time {
   grid-column-start: -1;
-  /* grid-column-end: -1;  */
+  grid-column-end: -1; 
   margin-top: 25px;
 }
 
@@ -102,6 +122,8 @@ code {
   margin-top: 25px;
 }
 
+/* LOADER ANIMATION */
+
 .lds-heart {
   display: inline-block;
   position: relative;
@@ -110,6 +132,7 @@ code {
   transform: rotate(45deg);
   transform-origin: 40px 40px;
 }
+
 .lds-heart div {
   top: 32px;
   left: 32px;
@@ -119,6 +142,7 @@ code {
   background: #000;
   animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
 .lds-heart div:after,
 .lds-heart div:before {
   content: " ";
@@ -128,10 +152,12 @@ code {
   height: 32px;
   background: #000;
 }
+
 .lds-heart div:before {
   left: -24px;
   border-radius: 50% 0 0 50%;
 }
+
 .lds-heart div:after {
   top: -24px;
   border-radius: 50% 50% 0 0;
