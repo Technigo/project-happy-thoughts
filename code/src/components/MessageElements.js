@@ -15,7 +15,7 @@ const MessageElements = ({ onLikesIncrease, message }) => {
                   onClick={() => onLikesIncrease(message._id)}
                   className={`heart-button ${message.hearts > 0 ? 'heart-active' : 'heart-inactive'}`}
                 >
-                    <span role='img' aria-label='heart emoji'>❤️</span>
+                    <span className='heart-icon' role='img' aria-label='heart emoji'>❤️</span>
                 </button>
                 <p>x {message.hearts}</p>
               </div>
