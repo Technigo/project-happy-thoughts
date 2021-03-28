@@ -28,7 +28,15 @@ export const Form = ({ messageNew ,setMessageNew, onFormSubmit }) => {
                         aria-pressed='false'
                         aria-label='Submit message'
                     >
-                        <span role='img' aria-label='heart emoji'>❤️️</span> Send happy thoughts! <span role='img' aria-label='heart emoji'>❤️️</span>
+                        <img className='heart-img' 
+                             src={process.env.PUBLIC_URL + './icons/favourite.png'}
+                             alt='heart' 
+                        />
+                        Send happy thoughts!
+                        <img className='heart-img' 
+                             src={process.env.PUBLIC_URL + './icons/favourite.png'}
+                             alt='heart' 
+                        /> 
                     </button>
                     <p>{messageNew.length}/140</p>
                 </div>

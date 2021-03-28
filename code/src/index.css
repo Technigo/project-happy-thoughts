@@ -88,6 +88,9 @@ textarea:focus {
 }
 
 .button {
+  display:flex;
+  justify-content: center;
+  align-items: center;
   width: fit-content;
   border-radius: 20px;
   background-color: rgba(255, 0,	0, 0.3);
@@ -130,11 +133,14 @@ textarea:focus {
 }
 
 .heart-button {
+  display:flex;
+  justify-content: center;
   width: 30px;
   height:30px;
   border-radius: 50%;
   background-color:rgba(208, 203, 203, 0.3);
   border:none;
+  align-items: center;
 }
 
 .heart-icon {

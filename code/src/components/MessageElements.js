@@ -15,7 +15,10 @@ const MessageElements = ({ onLikesIncrease, message }) => {
                   onClick={() => onLikesIncrease(message._id)}
                   className={`heart-button ${message.hearts > 0 ? 'heart-active' : 'heart-inactive'}`}
                 >
-                    <span className='heart-icon' role='img' aria-label='heart emoji'>❤️</span>
+                    <img className='heart-img' 
+                    src={process.env.PUBLIC_URL + './icons/favourite.png'}
+                    alt='heart' 
+                    /> 
                 </button>
                 <p>x {message.hearts}</p>
               </div>
