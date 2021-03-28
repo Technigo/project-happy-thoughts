@@ -11,7 +11,7 @@ export const TextInput = (props) => {
 
   return (
     <>
-      <label for="user-input">
+      <label htmlFor="user-input">
         <h1 className="send-message-form__heading">
           What's making you happy right now?
         </h1>
