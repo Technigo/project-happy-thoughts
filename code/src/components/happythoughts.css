@@ -1,0 +1,116 @@
+textarea {
+  font-size: 18px;
+  border: black solid 1px;
+  resize: none;
+  width: 440px;
+  height: 50px;
+}
+
+.highlight-grey {
+  color: rgb(148, 146, 146);
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
+.post-thought-card {
+  width: 450px;
+  background: #e5dfdf;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+  padding: 15px 15px 15px 15px;
+  border: 1px solid black;
+  -webkit-box-shadow: 10px 8px 0px -2px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 8px 0px -2px rgba(0, 0, 0, 1);
+  box-shadow: 10px 8px 0px -2px rgba(0, 0, 0, 1);
+}
+
+.thought-card {
+  width: 450px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  padding: 18px 15px 15px 15px;
+  border: 1px solid black;
+  -webkit-box-shadow: 10px 8px 0px -2px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 8px 0px -2px rgba(0, 0, 0, 1);
+  box-shadow: 10px 8px 0px -2px rgba(0, 0, 0, 1);
+}
+
+.message {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.elapsed-time {
+  display: flex;
+  justify-self: right;
+  align-items: center;
+  color: rgb(148, 147, 147);
+}
+
+.heart-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 0px;
+  cursor: pointer;
+  /* display: flex; */
+}
+
+.heart-btn span {
+  margin-left: 5px;
+  font-size: 17px;
+}
+
+.send-btn {
+  height: 40px;
+  width: 250px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  background: #fd7792;
+  cursor: pointer;
+}
+
+.send-btn:disabled, .send-btn[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+@media (max-width: 667px) {
+  .post-thought-card, .thought-card {
+      width: 80%;
+  }
+  textarea {
+      width: 94%;
+  }
+  .send-btn {
+      width: 100%;
+      border-radius: 5px;
+  }
+  h3 {
+      font-size: 22px;
+  }
+  .heart-btn {
+      height: 60px;
+      width: 60px;
+      padding-left: 5px;
+      padding-top: 5px;
+  }
+  .heart-btn span {
+      font-size: 30px;
+      text-align: left;
+  }
+}
