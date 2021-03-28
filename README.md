@@ -1,13 +1,18 @@
-# Happy Thoughts
+# Happy Thoughts App
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The project for this week was to build a Twitter like happy thoughts app using React, where messages and likes were fetched and posted from/to an API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This week, I started with looking at the design, in order to know what to achieve. I also watched Monday lecture before putting my hands into it. I started with putting everything inside the form component, and after everything was in there, I separated it into separate components. Working with an API has so far been a favourite of mine, and this week didn't make me disappointed. This was the first time I tried posting something to an API and that worked out well. 
+
+The technologies used this week has been React, JavaScript, CSS and API.
+
+If I had more time, I would have added the characters counter, which I will most likely do later on. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+My happy thoughts app can be seen here:
+
+https://therese-happy-thoughts.netlify.app/
+
