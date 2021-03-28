@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
-import { API_URL, API_URL_POST } from './reusable/urls';
+import { API_URL, API_URL_POST, API_URL_LIKES } from './reusable/urls';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -39,6 +39,12 @@ export const App = () => {
       .then(recievedMessage => setMessageList([...messageList, recievedMessage]));
   }
 
+  const onLikesIncrease = () => {
+    fetch(API_URL_LIKES())
+  }
+
+  console.log(messageList);
+
   return (
     <div>
       <form onSubmit={onFormSubmit}>
@@ -49,12 +55,16 @@ export const App = () => {
           value={messageNew}
           onChange={onMessageNewChange}
           />
-          <button type="submit">Send Message</button>
+          <button type="submit">Send Message!</button>
       </form>
       {messageList.map(message => (
         <div key={message._id}>
           <h4>{message.text}</h4>
-          <p className="date">{moment(message.created).fromNow()}</p>
+          <button onClick={onLikesIncrease(message._id)}>
+            {message.message}
+            ❤️
+          </button>
+          <p className="date">-{moment(message.createdAt).fromNow()}</p>
         </div>
 
 
