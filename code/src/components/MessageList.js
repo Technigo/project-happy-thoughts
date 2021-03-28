@@ -1,20 +1,18 @@
 import React from 'react'
 
-const MessageList = ({ messageList }) => {
+import MessageElement from './MessageElement';
+
+const MessageList = ({ messageList, handleLikesIncrease }) => {
     return (
         <>
-        {messageList.map(messagePost => (
-            <div key={messagePost._id}>
-              <h4>{messagePost.message}</h4>
-              <button onClick={() => onLikesIncrease(messagePost._id)}>
-                {messagePost.hearts}
-                ❤
-              </button>
-              <p className="date">-{moment(messagePost.created).fromNow()}</p>
-            </div>
-        ))}
+            {messageList.map(messagePost => (
+                <MessageElement 
+                    messagePost={messagePost} 
+                    onLikesIncrease={handleLikesIncrease}    
+                />
+            ))}
         </>
     );
 };
 
-export default MessageList
+export default MessageList;

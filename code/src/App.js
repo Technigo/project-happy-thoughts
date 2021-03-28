@@ -5,6 +5,7 @@ import moment from 'moment';
 /* Local Dependencies */
 import MessageForm from './components/MessageForm';
 import MessageList from './components/MessageList';
+import MessageElement from './components/MessageElement';
 
 import { API_URL, LIKES_URL } from './reusable/urls';
 
@@ -44,7 +45,7 @@ export const App = () => {
       .catch(err => console.error(err));
   }
 
-  const onLikesIncrease = (messageID) => {
+  const handleLikesIncrease = (messageID) => {
     const options = {
       method: 'POST',
       headers: {
@@ -64,9 +65,7 @@ export const App = () => {
         setMessageList(updatedMessageList);
       })
       .catch(err => console.error(err));
-  }
-
-  
+  }  
 
   return (
     <div>
@@ -75,7 +74,10 @@ export const App = () => {
         messageNew={messageNew}
         onMessageNewChange={handleMessageNewChange}        
       />
-      <MessageList messageList={messageList} />
+      <MessageList 
+        messageList={messageList} 
+        handleLikesIncrease={handleLikesIncrease}
+      />
     </div>
   )
   }
