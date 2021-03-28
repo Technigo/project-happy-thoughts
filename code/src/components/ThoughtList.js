@@ -4,7 +4,7 @@ import { ThoughtElement } from './ThoughtElement'
 
 export const ThoughtList = ({ happyThoughtsList, handleHeartsIncrease}) => {
     return(
-        <>
+        <div className="posted-thoughts-container">
             {happyThoughtsList.map(thought => (
                 <ThoughtElement 
                     thought={thought}
@@ -12,6 +12,6 @@ export const ThoughtList = ({ happyThoughtsList, handleHeartsIncrease}) => {
                     key={thought._id}
                 />
             ))}
-        </>
+        </div>
     )
 }

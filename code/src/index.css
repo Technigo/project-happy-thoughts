@@ -28,6 +28,8 @@ code {
   margin: 50px 10px;
 }
 
+
+/* NEW THOUGHT STYLING */
 .new-thought-form-container {
   margin: 0 auto;
 }
@@ -36,25 +38,28 @@ code {
   display: flex;
   flex-direction: column;
   width: 280px;
-  margin: 0 10px 50px 10px;
-  border: 1px solid #000000;
-  background-color: rgba(228, 227, 226, 0.781);
+  margin: 0 10px 50px 15px;
+  border: 1px solid #222222;
+  background-color: rgba(235, 235, 235, 0.781);
   box-shadow: 6px 6px #000000;
 }
 
 .new-thought-label {
-  margin: 10px;
-  font-size: 12px;
-  font-weight: bold;
+  margin: 15px;
+  font-size: 11px;
 }
 
 .thought-message-text-area {
   height: 50px;
   padding: 5px;
-  margin: 0 10px 10px 10px;
+  margin: 0 10px 10px 15px;
   border: 1px solid #7c7b7b;
   resize: none;
-  font-size: 12px;
+  font-size: 11px;
+}
+
+.thought-message-text-area::placeholder {
+  font-size: 11px
 }
 
 .thought-message-text-area:focus {
@@ -63,32 +68,67 @@ code {
 
 .new-thought-button {
   width: 200px;
-  height: 30px;
-  margin: 0 10px 10px 10px;
+  height: 40px;
+  margin: 0 10px 30px 15px;
   padding: 5px;
   border: 0;
   border-radius: 30px;
   background-color: rgba(235, 87, 87, 0.486);
-  font-size: 12px;
-  font-weight: bold
+  font-size: 11px;
+  text-align: center;
 }
 
 .new-thought-button:focus, .new-thought-button:hover {
   outline: none;
+}
+
+.new-thought-button:hover {
   background-color: rgba(235, 87, 87, 0.966);
 }
 
-.thought-date {
-  font-style: italic;
+.posted-thoughts-container {
+  margin: 0 auto;
+}
+
+/* POSTED THOUGHT STYLING */
+.posted-thought-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 40px 0;
+  width: 280px;
+  height: auto;
+  border: 1px solid #222222;
+  background-color: #ffffff;
+  box-shadow: 6px 6px #000000;
+}
+
+.thought-message {
+  margin: 20px 10px 30px 15px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.hearts-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 10px 20px 15px;
+  max-width: 260px;
+}
+
+.thought-date, .heart-count-text {
+  font-size: 11px;
+  color: #979797;
 }
 
 .hearts-button {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  padding: 3px;
-  background-color: rgb(197, 195, 195);
+  width: 35px;
+  height: 35px;
+  margin: 0 10px 0 0;
+  padding: 7px;
+  background-color: rgb(226, 224, 224);
   border: 0;
+  border-radius: 50%;
   text-decoration: none;
 }
 
@@ -97,10 +137,49 @@ code {
 }
 
 .hearts-inactive {
-  background-color: rgb(197, 195, 195);
+  background-color: rgb(226, 224, 224);
 }
+
 .hearts-active {
   background-color: rgba(235, 87, 87, 0.486);
+}
+
+.thought-date-container {
+  margin-left: auto;
+}
+
+
+/* MEDIA QUERIES - TABLET */
+@media (min-width: 768px) {
+
+  .new-thought-form {
+    width: 400px;
+  }
+
+  .posted-thought-card {
+    width: 400px;
+  }
+
+  .hearts-container {
+    max-width: 350px;
+  }
+
+  .new-thought-label, .thought-message-text-area, .thought-message-text-area::placeholder, .new-thought-button {
+  font-size: 16px;
+ }
+
+ .new-thought-button {
+   width: 250px;
+ }
+
+ .thought-message {
+   font-size: 18px;
+ }
+
+ .thought-date, .heart-count-text {
+   font-size: 14px
+ }
+
 }
 
 
