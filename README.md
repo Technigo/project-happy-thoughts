@@ -1,13 +1,15 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this project, I practiced my React skills by fetching and posting data to a Twitter-like API with 'happy thoughts'. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by writing all my functions in the app.js file. Then I added the styling. Lastly, I divided app.js into components. 
+
+When I have time, I want to make the app more user-friendly by adding error messages when the user writes more than 140 characters, less than five, or leaves the field empty. Moreover,  I could handle loading states, keep track of the number of posts the user has liked, and store that number. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Deployed at Netlify: 
+
+https://reverent-heisenberg-de7807.netlify.app/
