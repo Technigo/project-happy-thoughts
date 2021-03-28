@@ -214,7 +214,7 @@ body {
     width: 32rem;
     font-size: 1.1rem;
     border: 2.5px solid #8f8f91;
-    box-shadow: 7.5px 7.5px black;
+    box-shadow: 14px 14px 0 -5px #000;
   }
 
   label {
