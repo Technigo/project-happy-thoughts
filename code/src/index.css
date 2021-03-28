@@ -1,3 +1,8 @@
+:root {
+  font-size: 10px;
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +10,122 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: radial-gradient(#ffadad, #ffe2e2);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.message-container {
+  background-color: #fff;
+  border: 2px solid black;
+  width: 50%;
+  display: flex;
+  padding: 30px;
+  margin: 30px 0;
+  box-shadow: 8px 6px #000;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  background-color: #F2F0F0;
+}
+
+.heart-letter-emoji {
+  font-size: 5rem;
+}
+
+.header-container-heading {
+  font-size: 3rem;
+}
+
+.post-message-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.post-message-label {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.post-message-textarea {
+  width: 99%;
+  height: 70px;
+  margin: 30px 0;
+  padding: 10px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-message-btn {
+  max-width: 65%;
+  height: 45px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  background-color: #FFADAD;
+}
+
+.btn-container p {
+  font-size: 1.8rem;
+  color: #afafaf;
+}
+
+.message-container-div {
+  width: 100%;
+}
+
+.message-text {
+  font-family: 'Inconsolata', monospace;
+  font-size: 2.4rem;
+}
+
+.message-container-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #afafaf;
+}
+
+.like-btn {
+  border-radius: 50%;
+  border: none;
+  height: 50px;
+  width: 50px;
+  background-color: #FFADAD;
+  margin-right: 20px;
+}
+
+.like-btn.zero {
+  background-color: #EAEAEA;
+}
+
+.heart-emoji {
+  font-size: 2rem;
 }
