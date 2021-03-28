@@ -7,6 +7,7 @@ import { API_URL } from './reusable/urls';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
+  const [messageNew, setMessageNew] = useState('');
 
   useEffect(() => {
     fetchMessageList();
@@ -19,13 +20,26 @@ export const App = () => {
       .catch(err => console.error(err));
   }
 
+  const onMessageNewChange = (event) => {
+    setMessageNew(event.target.value);
+  }
 
   return (
     <div>
+      <form>
+        <label htmlFor="newMessage">Write new message!</label>
+        <input
+          id="newMessage"
+          type="text"
+          value={messageNew}
+          onChange={onMessageNewChange}
+        />
+        <button type="submit">Send message!</button>
+      </form>
       {messageList.map(recievedMessage => (
         <div key={recievedMessage._id}>
           <h4>{recievedMessage.message}</h4>
-          <p>{new Date(recievedMessage.createdAt).toDateString()}</p>
+          <p className="date">-{moment(recievedMessage.created).fromNow()}</p>
         </div>
       ))}
     </div>
