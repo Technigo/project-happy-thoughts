@@ -13,7 +13,7 @@ const ThoughtForm = ( { thoughtNew, onFormSubmit, onThoughtNewChange } ) => {
                 onChange={onThoughtNewChange}
                 rows="3" 
                 cols="30"
-                maxlength="180"
+                maxLength="180"
             >
             </textarea>
             <button type='submit'><span>&#10084;&#65039; </span>Send happy thoughts<span> &#10084;&#65039;</span></button>  
