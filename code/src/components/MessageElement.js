@@ -15,7 +15,7 @@ const MessageElement = ({ message, onHeartLikes}) => {
           <span className='heart' role="img" aria-label="heart-icon">❤️</span>
         </button>
         </div>
-        <p className='counter'>
+        <p className='counter' aria-label="likes">
           x {message.hearts}
         </p>
         <p className='time'>{moment(message.createdAt).fromNow()}</p>

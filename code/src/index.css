@@ -48,13 +48,13 @@ code {
 }
 
 h2 {
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Inconsolata", monospace;
   margin-left: 10px;
 }
 
 h4 {
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Inconsolata", monospace;
 }
 
@@ -80,7 +80,7 @@ h4 {
 
 .counter {
   font-size: small;
-  font-family: "Arimo", sans-serif;
+  font-family: "Inconsolata", monospace;
   font-weight: 500;
   display: flex;
   color: rgb(167, 165, 165);

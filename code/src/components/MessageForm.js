@@ -2,6 +2,7 @@ import React from 'react';
 
 const MessageForm =({ messageNew, onMessageNewChange, onFormSubmit }) => {
   return (
+    <label>
     <form
     className='message-section'
     onSubmit={onFormSubmit}>
@@ -24,6 +25,7 @@ const MessageForm =({ messageNew, onMessageNewChange, onFormSubmit }) => {
           <span className='heart-icons' role="img" aria-label="heart-icon">❤️</span>
         </button>
       </form>
+      </label>
   );
 }
 
