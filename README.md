@@ -1,13 +1,13 @@
 # Happy Thoughts
+This project was part of Technigo bootcamp. This weeks asignment was to create a site where you can post and see others happy thoughts. 
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This was a really fun project and I feel like I'm starting to get the hang of React now. It was very interesting to learn about POST requests which was new to me. I started by building everything in App.js to make it all work before breaking it out into components. 
+
+If I had more time I would implement some animations when a message is posted!
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+See it here: https://awesome-murdock-ef4ca9.netlify.app/
