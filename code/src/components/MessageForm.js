@@ -7,7 +7,7 @@ export const MessageForm = ({onFormSubmit, messageNew, onMessageNewChange }) => 
     <label>
       <h3>What's making you happy right now?</h3>
       <textarea
-        rows="2"
+        rows="6"
         value={messageNew}
         onChange={onMessageNewChange}
       />

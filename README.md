@@ -10,12 +10,4 @@ If I had more time I would have explored animations a bit more, I would have wan
 
 ## View it live
 Take a look at the project here: https://tender-poitras-167886.netlify.app/
-//Does not deplot the lastest from GitHub
 
-
-PLAN/things to fix
-- add animation when pushing like button
-- change style of border active
-- try to use an error code
-- work a bit on responsiveness
-- complete övningar on edabit

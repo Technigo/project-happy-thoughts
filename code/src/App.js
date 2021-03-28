@@ -2,17 +2,16 @@
 import React, { useEffect, useState } from 'react'
 
 //Local dependencies
-import { API_URL, POST_HEART_URL } from './Constants/urls'
+import { API_URL, POST_HEART_URL } from './constants/urls'
 
 //Components
-import { MessageForm } from './components/MessageForm'
-import { MessageList } from './components/MessageList'
+import { MessageForm } from './Components/MessageForm'
+import { MessageList } from './Components/MessageList'
 
 export const App = () => {
 
 
 //Constants & Functions
-
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
 
@@ -66,7 +65,8 @@ export const App = () => {
 
 // Mounting
   return (
-    <div className="content">
+
+    <main className="content">
 
       <MessageForm 
         messageNew = {messageNew}
@@ -79,7 +79,7 @@ export const App = () => {
         handleLikesIncrease = {handleLikesIncrease}
       />
       
-    </div>
+    </main>
   )
 }
  

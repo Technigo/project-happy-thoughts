@@ -6,7 +6,7 @@ export const LikeButton = ({message, onLikesIncrease}) => {
       className={`like-button ${message.hearts > 0 ? 'liked' : ''} 
        ${message.hearts > 10 ? 'super-liked' : ''}`}
       onClick={() => onLikesIncrease(message._id)}>
-      <span role="img" aria-label="heart emoji">💓</span>
+      <span className="heart-emoji" role="img" aria-label="heart emoji">💓</span>
     </button>
   )
 }
