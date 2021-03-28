@@ -9,6 +9,7 @@ import { API_URL, API_URL_HEART } from './reusable/urls';
 const App = () => {
   const [messageList, setMessageList] = useState([]);
   const [newMessage, setNewMessage] = useState(''); 
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     fetchMessageList();
@@ -18,15 +19,36 @@ const App = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(messages => setMessageList(messages))   
-      .catch(err => console.error(err));      
+      .catch(err => console.error(err));
   };
 
   const handleNewMessage = (event) => {
     setNewMessage(event.target.value);
   };
 
+  const validateFormInput = () => {
+    let isFormValid = true;
+
+    if (newMessage.length < 5) {
+      setErrorMessage('You can only send a message containing a minimum of 5 characters.'); 
+      isFormValid = false;
+    } else if (newMessage.length > 140) {
+      setErrorMessage('You can only send a message containing a maximum of 140 characters.');
+      isFormValid = false;
+    } else {
+      setErrorMessage('');
+      isFormValid = true;
+    }
+
+    return isFormValid;
+  };
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
+    if(!validateFormInput()){
+      return;
+    }
 
     const config = {   
         method: 'POST', 
@@ -37,9 +59,16 @@ const App = () => {
     };
 
     fetch(API_URL, config)      
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } 
+        throw new Error('Error! Something went wrong. Try again!')
+      })
       .then(() => fetchMessageList())     //refetch data from server
-      .catch(err => console.error(err));
+      .catch(err => {
+        setErrorMessage(err.message);
+      });      
 
     setNewMessage('');
   };
@@ -61,12 +90,13 @@ const App = () => {
   return (
     <>
       <Header />
-      
+
       <main className="main">
         <div className="container">
           <MessageForm 
             newMessage={newMessage}
             handleNewMessage={handleNewMessage}
+            errorMessage={errorMessage}
             onFormSubmit={handleFormSubmit}  
           />
           <MessageList 

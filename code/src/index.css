@@ -114,6 +114,10 @@ p {
   margin: 0px 3px;
 }
 
+/* Error message */
+.error-message {
+  color: red;
+}
 
 /** MESSAGE LIST **/
 /* Message element */

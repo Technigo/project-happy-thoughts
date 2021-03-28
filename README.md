@@ -1,6 +1,6 @@
 # Happy Thoughts ❤️
 
-I've built an app containing happy thoughts fetched from an API using React.
+I've built a Twitter like app where users can post and read happy thoughts. Using React.js, get and post requests and the React hooks useState and useEffect.
 
 
 ## The problem
