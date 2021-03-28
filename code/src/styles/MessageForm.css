@@ -6,11 +6,13 @@
 }
 
 .new-message-form {
+  width: 500px;
   padding: 16px;
   border: 1px solid #000;
   box-shadow: 5px 5px;
   box-sizing: border-box;
   background-color: #f2f0f0;
+  margin: 20px auto;
 }
 
 .new-message-form label {

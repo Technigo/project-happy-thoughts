@@ -1,13 +1,15 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Practice using React state skills by fetching and posting data to an API, in this case in the form of a happy-thought message posting app.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The big problem is I didn't really finish the previous project and I was feeling incredibly behind, underprepared, and very over-whelmed. I didn't think I was going to understand anything and fall further behind. I had to rewatch the code sessions mutiple times as well as practice on outside sources like codecademy and read through alot of the React documentation.
+
+However I did get every working and I am proud of myself for that! I even managed to make more components than we did in the code sessions on my own. While I don't understand everything 100% I didn't end this project feeling the same sense of dread as when I started. In fact I think i even found React a bit fun to do now. 
+
+If I had more time, I'd add proper accessibility and try to accomplish some of the red or black level goals. I think I could figure them out if I tried now. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://elaines-happy-thoughts.netlify.app/
