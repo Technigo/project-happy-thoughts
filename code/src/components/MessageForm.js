@@ -19,7 +19,6 @@ const MessageForm = ({ newMessage, onFormSubmit, onNewMessageChange }) => {
         />
         <button type="onSubmit"className="send-message-btn">
           <span className="heart-emoji" role="img" aria-label="heart-symbol">❤️</span> 
-            {/* <p className="text-btn">Send Happy Thought</p> */}
             Send Happy Thought
           <span className="heart-emoji" role="img" aria-label="heart-symbol">❤️</span>
         </button>

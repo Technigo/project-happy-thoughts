@@ -12,7 +12,8 @@ export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [newMessage, setNewMessage] = useState(' ')
   
-  // Hook that will call the function after component is mounted, this is indicated in the second argument.
+
+  // Hook that will call the function after component is mounted, this is indicated in the second argument.It is placed under the state initialization.
   useEffect(() => {
     fetchMessageList();
   },[])

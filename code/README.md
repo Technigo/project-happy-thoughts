@@ -1,23 +1,22 @@
 <!-- @format -->
 
-# Technigo React Starter App
+# A Twitter-like form using React
 
-https://vibrant-knuth-129096.netlify.app/
+This week's project consisted on creating a Twitter-like form by learning React's components life cycle and how to react to changes in state or a component mounting using useEffect.
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+# Learning objectives
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+- What component lifecycle means.
+- How to use the useEffect hook in React to perform actions when components mount, unmount, or when state changes.
+- How to call APIs from React and put the data into state.
 
-## Usage
+# How I built it
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+With this project I confirmed even more the importance of planning ahead before starting coding as it reduces the amount of corrections and changes.
+As last week I started by setting all the elements in the parent container and when all the code was working as it should then I started created the smaller components.
 
-Alternatively, if you don't want a new git repo on your account;
+If I've had more time I would have added the counter for characters in the input field and also had added a changing colour when the like button is clicked. I also would like to experiment passing states as props.
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+# View it live
+
+https://happy-thoughts-by-dannuzak.netlify.app/
