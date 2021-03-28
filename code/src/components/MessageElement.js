@@ -13,11 +13,11 @@ const MessageElement = ({ messagePost, onLikesIncrease }) => {
                     <button className="like-button" onClick={() => onLikesIncrease(messagePost._id)}>
                         <div className="heart-container">
                             <Emoji symbol="❤️" />
-                            x
-                            {messagePost.hearts}   
-                        </div>                                     
+                        </div>
+                        x
+                        {messagePost.hearts}                                                               
                     </button>
-                    <p className="date">-{moment(messagePost.created).fromNow()}</p>
+                    <p className="date">{moment(messagePost.created).fromNow()}</p>
                 </div>
             </div>
         </>

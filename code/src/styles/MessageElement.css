@@ -13,12 +13,31 @@
     box-shadow: 5px 5px;
     margin-top: 35px;
     box-sizing: border-box;
+    
   }
   
   .like-button-and-date-container {
     display: flex;
     flex-direction: row;
   }
+
+  .like-button {
+    width: 200px;
+  }
+
+  .heart-container {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f2f0f0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+    
   
   .date {
     font-style: italic;
