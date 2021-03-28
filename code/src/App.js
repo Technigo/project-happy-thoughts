@@ -63,25 +63,58 @@ export const App = () => {
 
   return (
     <main>
-      <form className="thought-card" onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">Send a happy thought!</label>
-        <input 
+      <form 
+        className="thought-card" 
+        onSubmit={onFormSubmit}>
+        <label 
+          htmlFor="newThought"
+          >What is making you happy right now?
+        </label>
+        <textarea 
           className="send-thought_input-field"
           id="newThought"
           type="text"
+          placeholder="Type your thoughts here..."
+          maxLength="140"
           value={thoughtNew}  
           onChange={onThoughtNewChange} 
-        />
-        <button className="send-thought_button" type="submit">Send Happy Thought!</button>
+        ></textarea>
+        <button 
+          className="send-thought_button" 
+          type="submit"> 
+            <span 
+              role="img" 
+              aria-label="Heart emoji"
+              className="send-heart_button"
+            >❤️</span>
+            Send Happy Thought! 
+            <span 
+              role="img" 
+              aria-label="Heart emoji"
+              className="send-heart_button"
+            >❤️</span>
+        </button>
       </form>
       {thoughtList.map(thought => (
-        <div className="thought-card" key={thought._id}>
+        <div 
+          className="thought-card" 
+          key={thought._id}>
           <h4>{thought.message}</h4>
-          <button className="thought-heart_button" onClick={() => onHeartsIncrease(thought._id)}>
+          <button 
+            className="thought-heart_button" 
+            onClick={() => onHeartsIncrease(thought._id)}>
+              <span 
+                role="img" 
+                aria-label="Heart emoji"
+                className="thought-heart_emoji"
+              >❤️</span>
+            <span> x </span>
             {thought.hearts}
-            ❤️
           </button>
-          <p className='date-stamp'>{moment(thought.createdAt).fromNow()}</p>
+          <p 
+            className='date-stamp'
+            >{moment(thought.createdAt).fromNow()}
+          </p>
         </div>
       ))}
     </main>

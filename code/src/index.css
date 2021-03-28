@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
+
 body {
   font-size: 16px;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "New Tegomin",-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,6 +15,13 @@ code {
     monospace;
 }
 
+* {
+  font-family: New Tegomin;
+}
+
+form {
+  background-color: #F2F0F0;
+}
 
 .thought-card {
   border: 1px solid #000;
@@ -38,29 +47,32 @@ code {
   background: #ffadad;
   padding: 10px 15px;
   margin: 0 0 15px 0;
+  cursor: pointer;
 }
 
-
-.thought-heart_button {
-  cursor: pointer;
+.send-thought_button span {
+  padding-right: 5px;
 }
 
 .thought-heart_button {
   border: none;
+  background: none;
+}
+
+.thought-heart_emoji {
+  border: none;
   border-radius: 25px;
-  font-size: 16px;
-  padding: 10px 5px;
+  padding: 10px 10px;
+  background-color: #EAEAEA;
+  cursor: pointer;
 }
 
-.thought-heart_button:hover {
+.thought-heart_emoji:hover {
   box-shadow: 0 0 10px rgba(255, 173, 173, 0.8);
-}
-
-.thought-heart_button:active {
-  background: rgba(255, 173, 173, 0.8);
 }
 
 .date-stamp {
   font-size: .7rem;
   font-style: italic;
+  text-align: right;
 }
