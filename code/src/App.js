@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 
+import MessageForm from "./components/MessageForm";
+import MessageList from "./components/MessageList"
+
 import { API_URL, LIKES_URL } from "./reusable/urls";
 
 export const App = () => {
@@ -19,11 +22,11 @@ export const App = () => {
       .catch((err) => console.error(err));
   };
 
-  const onMessageNewChange = (event) => {
+  const handelMessageNewChange = (event) => {
     setMessageNew(event.target.value);
   };
 
-  const onFormSubmit = (event) => {
+  const handelFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
@@ -43,7 +46,8 @@ export const App = () => {
       .catch((err) => console.error(err));
   };
 
-  const onLikeIncreas = (id) => {
+  // likes 
+  const handleLikeIncreas = (id) => {
     const options = {
       method: "POST",
       headers: {
@@ -67,26 +71,15 @@ export const App = () => {
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newMessage">Write a message</label>
-        <input
-          id="newMessage"
-          type="text"
-          value={messageNew}
-          onChange={onMessageNewChange}
-        />
-        <button type="submit">send</button>
-      </form>
-      {messageList.map((message) => (
-        <div key={message._id}>
-          <h4>{message.message}</h4>
-          <button onClick={() => onLikeIncreas(message._id)}>
-            {message.hearts}
-            ❤️
-          </button>
-          <p>{moment(message.createdAt).fromNow()}</p>
-        </div>
-      ))}
+      <MessageForm 
+        messageNew={messageNew}
+        onMessageNewChange={handelMessageNewChange}
+        onFormSubmit={handelFormSubmit}
+      />
+      <MessageList 
+        messageList={messageList}
+        handleLikeIncreas={handleLikeIncreas}
+      />
     </div>
   );
 };
