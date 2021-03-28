@@ -1,8 +1,13 @@
+* {
+  font-family: 'IBM Plex Mono', monospace;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", */
+    /* "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", */
+    /* sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +15,113 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.thoughtForm {
+  min-height: 200px;
+  background: #F2F0F0;
+}
+
+.thoughtForm, .thought {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid black;
+  margin-top: 60px;
+  padding: 20px;
+  box-shadow: 10px 10px 0 black;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+#newThought {
+  /* margin-top: 8px; */
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  resize: none;
+  font-weight: 500;
+  border: 2px solid grey;
+
+}
+
+button {
+  height: 44px;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 22px;
+  border: none;
+  /* margin-top: 20px; */
+}
+
+.submit-btn {
+  width: fit-content;
+  padding: 0 20px;
+  margin-top: 8px;
+  background: none;
+  background: #FFADAD;
+  outline: none;
+}
+
+.submit-btn:hover {
+  background: #ffc4c4;
+}
+
+.submit-btn:active {
+  background: #ff9d9d;
+}
+
+.pink {
+  background: #FFADAD;
+}
+
+.thought {
+  min-height: 120px;
+}
+
+.thought > h4 {
+  margin-top: 8px;
+  overflow-wrap: break-word;
+}
+
+.message-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: grey;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.character-count {
+  color: grey;
+  font-weight: 500;
+  font-size: 14px;
+
+}
+
+.heart-btn {
+  height: 44px;
+  width: 44px;
+}
+
+.heart-btn span {
+  text-align: center;
+  /* background: coral; */
+  margin-right: -4px;
+  /* width: 44px; */
+}
+
+.hearts-amount {
+  margin-left: 8px;
+  margin-right: auto;
 }
