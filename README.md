@@ -1,5 +1,5 @@
 # Happy Thoughts
-In this week's project we created a site similar to Twitter, named ‘happy thoughts’💌. We practice React state skills by fetching and posting data to an API.
+In this week's project we created a site similar to Twitter, named ‘happy thoughts’ 💌. We practice React state skills by fetching and posting data to an API.
 
 ## The problem
 I started with fetching the api to get the existing data in App.js After that I created two more components, one for the message list and one for the form where the users can post their messages. When I had built the structure of the app I styled it according to the guidelines and built methods to post messages and likes to the API. 
@@ -23,4 +23,8 @@ I had a huge problem with connecting my heart button and the amount of likes, an
 
 ## View it live
 
+<<<<<<< HEAD
 Write your lovely happy thoughts here:  Write your lovely 💌 happy thoughts 💌 here: https://happy-tought.netlify.app/ 
+=======
+Write your lovely happy thoughts here: 
+>>>>>>> 763a5c202599fb059f3a0f17273f96350f5324e8

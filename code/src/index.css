@@ -80,7 +80,6 @@ main {
   padding: 5px 0;
 }
 
-
 .like-btn {
   display: flex;
   letter-spacing: 0.2em; 
@@ -95,6 +94,7 @@ main {
   justify-content: center;
   align-items: center;
   margin-right: 10px;
+  background-color: rgb(207, 204, 204);
 }
 
 .heart-button-clicked {
