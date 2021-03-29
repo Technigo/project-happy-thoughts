@@ -73,7 +73,7 @@ export const Form = () => {
   }
 
   return (
-    <div className="outline">
+    <div>
       <SubmissionForm
         messageNew={messageNew}
         onMessageNewChange={handleMessageNewChange}
