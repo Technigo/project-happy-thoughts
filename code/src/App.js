@@ -1,23 +1,22 @@
 /*Outer Dependencies*/
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 /*Local Dependency*/
-import Form from "./components/Form";
-import List from "./components/List";
+import Form from './components/Form';
+import List from './components/List';
 
-import { URL } from "./reusable/urls";
-import { URL_HEARTS } from "./reusable/urls";
+import { URL } from './reusable/urls';
+import { URL_HEARTS } from './reusable/urls';
 
 /* Main App*/
 export const App = () => {
   /*States*/
   const [messageList, setMessageList] = useState([]);
-  const [newMessage, setNewMessage] = useState("");
+  const [newMessage, setNewMessage] = useState('');
 
   /*UseEffect*/
   useEffect(() => {
     fetchMessageList();
-    console.log("hi!");
   }, []);
 
   /*fetch for happy thoughts already posted*/
@@ -38,8 +37,8 @@ export const App = () => {
     event.preventDefault();
 
     const options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newMessage }),
     };
 
@@ -49,14 +48,14 @@ export const App = () => {
       .then((receivedMessage) =>
         setMessageList([receivedMessage, ...messageList])
       )
-      .then(() => setNewMessage(""));
+      .then(() => setNewMessage(''));
   };
 
   /*updating the message-object with +1 heart for each click*/
   const handleHeartsIncrease = (id) => {
     const options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
     };
 
     fetch(URL_HEARTS(id), options)
@@ -75,7 +74,7 @@ export const App = () => {
 
   /*What the app returns*/
   return (
-    <div className="site-container">
+    <div className='site-container'>
       <Form
         messageNew={newMessage}
         onNewMessageChange={handleNewMessage}

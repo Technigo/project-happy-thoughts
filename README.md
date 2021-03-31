@@ -1,13 +1,12 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Using both GET and POST we were instructed to use API-requests to create a site where the user could both post their own happy thoughts as well as view others happy thought. These thoughts should be "like-able" with a heart-button.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+As this weeks lectures where very code-along friendly I adopted the solutions that Maks used. The remaining time I used to really understand his solutions as well as style the project.
+If I had more time I would have tried for the red and black levels.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+happy-thoughts-hj.netlify.app
