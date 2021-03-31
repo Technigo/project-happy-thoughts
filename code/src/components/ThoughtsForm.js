@@ -18,7 +18,6 @@ const ThoughtsForm = (props) => {
         <img className="heart-right" src="./assets/heart.svg" alt="heart icon"/>
       </button>
     </form>
-
   )
 };
 

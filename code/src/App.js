@@ -17,7 +17,6 @@ export const App = () => {
     .then(response => response.json())
     .then(thoughts => setThoughts(thoughts))
     .catch(err => console.error(err));
-    
   }
 
   const onNewThoughtChange = (event) => {
