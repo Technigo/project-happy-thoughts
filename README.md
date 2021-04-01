@@ -12,6 +12,6 @@ Main problem is passing data between different components. Some issues with CSS 
 ## View it live
 
 The application can be viewed live on Netlify server:
-https://elated-thompson-c0e3cd.netlify.app/
+https://upbeat-goldberg-10694f.netlify.app/
 
 
