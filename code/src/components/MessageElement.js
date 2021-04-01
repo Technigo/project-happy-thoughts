@@ -1,15 +1,24 @@
 import React from "react";
-import moment from "moment"
+import moment from "moment";
 
-const MessageElement = ({message, onLikeIncreas}) => {
+const MessageElement = ({ message, onLikeIncreas }) => {
   return (
-    <div key={message._id}>
-      <h4>{message.message}</h4>
-      <button onClick={() => onLikeIncreas(message._id)}>
-        {message.hearts}
-        ❤️
-      </button>
-      <p>{moment(message.createdAt).fromNow()}</p>
+    <div className="message-element">
+      <p className="message-text">{message.message}</p>
+      <div className="heart-date">
+        <button
+          onClick={() => onLikeIncreas(message._id)}
+          className="heart-button"
+        >
+          <div className="heart-container">
+            <span role="img" aria-label="heart" className="heart-emoji">
+              ❤️
+            </span>
+          </div>
+          x {message.hearts}
+        </button>
+        <p>{moment(message.createdAt).fromNow()}</p>
+      </div>
     </div>
   );
 };

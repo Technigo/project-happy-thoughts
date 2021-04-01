@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import moment from "moment";
 
 import MessageForm from "./components/MessageForm";
-import MessageList from "./components/MessageList"
+import MessageList from "./components/MessageList";
 
 import { API_URL, LIKES_URL } from "./reusable/urls";
 
@@ -14,7 +13,6 @@ export const App = () => {
     fetchMessageList();
   }, []);
 
-  // fetch message List
   const fetchMessageList = () => {
     fetch(API_URL)
       .then((res) => res.json())
@@ -37,16 +35,12 @@ export const App = () => {
       body: JSON.stringify({ message: messageNew }),
     };
 
-    // fetch message list with recived message
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((receivedMessage) =>
-        setMessageList([...messageList, receivedMessage])
-      )
+      .then(() => fetchMessageList())
       .catch((err) => console.error(err));
   };
 
-  // likes 
   const handleLikeIncreas = (id) => {
     const options = {
       method: "POST",
@@ -57,29 +51,25 @@ export const App = () => {
 
     fetch(LIKES_URL(id), options)
       .then((res) => res.json())
-      .then((receivedMessage) => {
-        const uppdatedMessageList = messageList.map((message) => {
-          if (message._id === receivedMessage._id) {
-            message.hearts += 1;
-          }
-          return message
-        });
-        setMessageList(uppdatedMessageList);
-      })
+      .then(() => fetchMessageList())
       .catch((err) => console.error(err));
   };
 
   return (
-    <div>
-      <MessageForm 
-        messageNew={messageNew}
-        onMessageNewChange={handelMessageNewChange}
-        onFormSubmit={handelFormSubmit}
-      />
-      <MessageList 
-        messageList={messageList}
-        handleLikeIncreas={handleLikeIncreas}
-      />
+    <div className="happy-thoughts-container">
+      <div className="message-form-container">
+        <MessageForm
+          messageNew={messageNew}
+          onMessageNewChange={handelMessageNewChange}
+          onFormSubmit={handelFormSubmit}
+        />
+      </div>
+      <div className="message-list-container">
+        <MessageList
+          messageList={messageList}
+          handleLikeIncreas={handleLikeIncreas}
+        />
+      </div>
     </div>
   );
 };
