@@ -22,7 +22,6 @@ export const App = () => {
     fetch(API_URL)
     .then(res => res.json())
     .then(messages => setMessageListArray(messages))
-    .catch(err => console.log(err));
   }
 
   const newMessageChange = (event) =>{
@@ -72,7 +71,6 @@ export const App = () => {
       })
       setMessageListArray(NewMessageArray);
     })
-   .catch(err => console.log(err));
  }
 
   return (
