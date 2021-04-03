@@ -18,7 +18,6 @@ export const Form = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(messages => setMessageList(messages))
-      .catch(err => console.log(err))
   }
 
   const handleMessageNewChange = (event) => {
@@ -34,7 +33,6 @@ export const Form = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ message: messageNew })
-
     }
 
     fetch(API_URL, options)
@@ -69,7 +67,6 @@ export const Form = () => {
         })
         setMessageList(updatedMessageList)
       })
-      .catch(err => console.error(err))
   }
 
   return (
