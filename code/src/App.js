@@ -16,8 +16,7 @@ export const App = () => {
     fetch(API_URL)
     .then(response => response.json())
     .then(thoughts => setThoughts(thoughts))
-    .catch(err => console.error(err));
-  }
+  };
 
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value)
@@ -37,7 +36,6 @@ export const App = () => {
     fetch(API_URL, options)
     .then(response => response.json())
     .then(() => fetchThoughts())
-    .catch(err => console.error(err))
     setNewThought("");
   }
 
@@ -51,8 +49,7 @@ export const App = () => {
 
     fetch(LIKE_URL(id), options)
       .then(response => response.json())
-      .then(() => fetchThoughts())
-      .catch((err) => console.error(err));
+      .then(() => fetchThoughts());
   }
 
   return (
