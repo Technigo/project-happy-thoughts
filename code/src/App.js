@@ -19,7 +19,7 @@ export const App = () => {
     fetch(THOUGHTS_URL)
       .then(res => res.json())
       .then(message => setMessageList(message))
-      .catch(err => console.error(err))
+      .catch(err => (err))
   }
 
   const handleNewmessageChange = (event) => {
