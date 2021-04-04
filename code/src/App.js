@@ -15,13 +15,9 @@ export const App = () => {
     fetch(API_URL)
       .then((response) => response.json())
       .then((json) => setApiFetch(json));
-  }, []);
+  }, [apiFetch]);
 
   // FUNCTIONS
-  const refreshPosts = () => {
-    window.location.reload();
-  };
-
   const postRequest = () => {
     const postRequestOption = {
       method: "POST",
@@ -33,7 +29,7 @@ export const App = () => {
       .then((response) => response.json())
       .then((data) => setApiFetch([...apiFetch, data]));
 
-    setTimeout(() => refreshPosts(), 500);
+    setPostFormValue("");
   };
 
   const handlePostLike = (postID) => {
@@ -43,9 +39,7 @@ export const App = () => {
       headers: { "Content-Type": "application/json" },
     };
 
-    fetch(API_LIKE_URL, postRequestOption)
-      .then((response) => response.json())
-      .then(() => refreshPosts());
+    fetch(API_LIKE_URL, postRequestOption).then((response) => response.json());
   };
 
   return (
@@ -55,7 +49,6 @@ export const App = () => {
           postFormValue={postFormValue}
           setPostFormValue={setPostFormValue}
           postRequest={postRequest}
-          refreshPosts={refreshPosts}
         />
       </Grid>
       <Grid item xs={12}>
