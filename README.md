@@ -1,13 +1,13 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This is a project built during Technigo Bootcamp. The site is a twitter-like page where the user can post happy thoughts.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The focuse of the project was to practice how to use the useEffect hook in React to perform actions when components mount, unmount, or when state changes and how to call APIs from React and put the data into state.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started building the logic in App.js where i put states, useEffect and fetch requests. Later I decided to divide the site into components, one for input and one for the message list.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://friendly-agnesi-2a229e.netlify.app/
