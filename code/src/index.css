@@ -82,18 +82,11 @@ p {
   padding: 0;
 }
 .heart-container {
-  border-radius: 45px;
-  background: rgb(235, 234, 234);
-  padding: 8px 10px;
   display: inline;
-  margin-right: 8px;
+  margin-right: 6px;
 
 }
 
 .heart-container:focus {
   background: rgb(247, 202, 210);
-}
-
-.heart-emoji {
-  margin-right: 2px;
 }

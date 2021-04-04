@@ -11,7 +11,7 @@ const MessageElement = ({ message, onLikeIncreas }) => {
           className="heart-button"
         >
           <div className="heart-container">
-            <span role="img" aria-label="heart" className="heart-emoji">
+            <span role="img" aria-label="heart">
               ❤️
             </span>
           </div>
