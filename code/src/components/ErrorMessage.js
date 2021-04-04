@@ -1,9 +1,5 @@
 import React from 'react'
 
-// const backToStart = () => {
-//     document.location.reload()
-//   };
-
 const ErrorMessage = ({ setErrorMessage }) => {
     return (
         <div className='error-message'>
