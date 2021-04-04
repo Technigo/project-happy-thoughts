@@ -57,6 +57,7 @@ code {
 
 .happy-thought {
   font-weight: 600;
+  word-wrap: break-word;
 }
 
 .icon-time-container {

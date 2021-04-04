@@ -18,7 +18,6 @@ export const App = () => {
     fetch(URL)
       .then((res) => res.json())
       .then((messages) => setMessageList(messages))
-      .catch((err) => console.error(err))
       setMessageNew('')
   }
 
@@ -40,7 +39,6 @@ export const App = () => {
     fetch(URL, options)
       .then((res) => res.json())
       .then(() => fetchMessageList())
-      .catch((err) => console.error(err))
   }
 
   const handleLikesIncrease = (id) => {
@@ -54,7 +52,6 @@ export const App = () => {
     fetch(LIKES_URL(id), options)
       .then((res) => res.json())
       .then(() => fetchMessageList())
-      .catch((err) => console.error(err))
   }
 
   return (
