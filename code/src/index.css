@@ -280,7 +280,9 @@ textarea:focus {
 
   .error-message {
     width:450px;
-    font-size:20px;
+    font-size: 20px;
+    position: absolute;
+    top: 22%;
   }
 
   .try-again-button:hover {

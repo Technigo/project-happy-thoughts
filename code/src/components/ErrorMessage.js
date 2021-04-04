@@ -1,10 +1,10 @@
 import React from 'react'
 
-const backToStart = () => {
-    document.location.reload()
-  };
+// const backToStart = () => {
+//     document.location.reload()
+//   };
 
-const ErrorMessage = () => {
+const ErrorMessage = ({ setErrorMessage }) => {
     return (
         <div className='error-message'>
             <p>
@@ -17,7 +17,7 @@ const ErrorMessage = () => {
                 tabIndex='0'
                 aria-pressed='false'
                 aria-label='return to start page'
-                onClick ={backToStart}
+                onClick ={() => setErrorMessage(prev => !prev)} 
             >
                 <img className='heart-img' 
                      src={process.env.PUBLIC_URL + './icons/favourite.png'}

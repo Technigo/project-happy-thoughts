@@ -20,7 +20,6 @@ export const App = () => {
     fetch(API_URL)
     .then(response => response.json())
     .then(messages => setMessageList(messages))
-    .catch(error => console.error(error))
   }
 
   const handleFormSubmit = (event) => {
@@ -39,6 +38,7 @@ export const App = () => {
       if (response.ok) {
         return response.json()
       } else {
+        setErrorMessage(true) //added this
         throw new Error ('Something went wrong!')
       }
     })
@@ -46,7 +46,9 @@ export const App = () => {
       setMessageList([receivedMessage, ...messageList])
       setMessageNew('')
     })
-    .catch(() => setErrorMessage(prev => !prev))
+    .catch(error => console.log(error))
+    // .catch(() => setErrorMessage(prev => !prev))
+    //change this to error = console.error(error))?
   }
 
   const handleLikesIncrease = (id) => {
@@ -68,12 +70,10 @@ export const App = () => {
       })
       setMessageList(updatedMessageList)
       }) 
-    .catch(error => console.error(error))
     }
     
   return (
-    <div className='app-container'>
-        {!errorMessage && (  
+    <div className='app-container'> 
         <div>
           <Header />
           <Form  
@@ -81,6 +81,7 @@ export const App = () => {
             setMessageNew={setMessageNew} 
             onFormSubmit={handleFormSubmit}
           />
+          {errorMessage && <ErrorMessage setErrorMessage={setErrorMessage} />}
           <div>
           <MessageList 
               handleLikesIncrease={handleLikesIncrease} 
@@ -88,8 +89,6 @@ export const App = () => {
           />
           </div>
         </div>
-        )}
-        {errorMessage && <ErrorMessage />}
         <Footer />
     </div>
   )
