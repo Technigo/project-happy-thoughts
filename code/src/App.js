@@ -22,14 +22,12 @@ export const App = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(messages => {
-        console.log(messages);
         setMessageList(messages);
       })
       .catch(err => console.error(err));
   }
 
   const onNewMessageChange = (event) => {
-    console.log(event.target.value);
     setNewMessage(event.target.value);
   }
 
