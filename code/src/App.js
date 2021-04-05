@@ -38,7 +38,6 @@ export const App = () => {
       if (response.ok) {
         return response.json()
       } else {
-        setErrorMessage(true)
         throw new Error ('Something went wrong!')
       }
     })
@@ -46,7 +45,9 @@ export const App = () => {
       setMessageList([receivedMessage, ...messageList])
       setMessageNew('')
     })
-    .catch(error => console.log(error))
+    .catch(() => {
+      setErrorMessage(true);
+  })
   }
 
   const handleLikesIncrease = (id) => {
