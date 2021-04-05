@@ -17,26 +17,27 @@ export const App = () => {
   /*-------------fetches the list of all tweets--------------*/
 
   const fetchMessageList = useCallback(() => {// callback to avoid re-rendering of dependencies
-    
+    messageList===""
+    ?setLoading(true)
+    :setLoading(false)//to show loading symbol when loading page
+
     fetch(API_URL)
-      .then(setLoading(true)) //to show loading symbol
       .then((res) => res.json())
       .then((messages) => {
-        setLoading(false);
-
+        
         /*checks if the newest message is a new message, if so 
         setNewMessage to that message (to be able to use different css class 
           and do animation on the new message when appearing)*/
           messageRef.current === messages[0].message
           ? setNewMessage("")
-          : setNewMessage(messages[0]);
+          : setNewMessage(messages[0])
 
         setMessageList(messages);
         return messages
       })
       .then(messages => messageRef.current = messages[0].message) //useRef to store last message
-      .catch((error) => console.log(error));
-  }, [setMessageList]);
+      .catch((error) => alert(`Error while loading messages:${error}`));
+  }, [setMessageList, messageList]);
 
     /*setting interval in callback + using useEffect because of multiple re-render problems*/
     const refreshMessageList = useCallback(() => {
@@ -68,14 +69,12 @@ export const App = () => {
       .then((newMessage) => {
         setNewMessage(newMessage);
 
-        /*set ref to newMessage to avoid it getting the new-message class
-        and run animation again when fetchMessageList is being executed*/
-        messageRef.current = newMessage.message;
+      /*   messageRef.current=newMessage //to avoid double animation of this new post */
 
         setMessageList((previousMessages) => [newMessage, ...previousMessages]);
         clearAll();
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert(`Error while loading messages:${error}`));
   };
 
 
@@ -104,7 +103,7 @@ export const App = () => {
 
         setMessageList(newMessageList);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert(`Error while loading messages:${error}`));
   };
 
 
