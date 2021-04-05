@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
+import { Header } from './components/Header'
 import { ThougthForm } from './components/ThoughtForm'
 import { ThoughtList} from './components/ThoughtList'
 
@@ -21,7 +22,6 @@ export const App = () => {
     fetch(THOUGHTS_URL)
       .then(response => response.json())
       .then(thoughts => setHappyThougthsList(thoughts))
-      .catch(err => console.error(err))
   }
 
   //Add new thought to state 
@@ -44,7 +44,6 @@ export const App = () => {
     fetch(THOUGHTS_URL, options)
       .then(response => response.json())
       .then(() => fetchHappyThoughtList())
-      .catch(err => console.error(err))
 
       event.target.reset()
   }
@@ -65,11 +64,11 @@ export const App = () => {
       .then(response => response.json())
       // refetch data
       .then(() => fetchHappyThoughtList())
-      .catch(err => console.error(err))
   }
 
   return (
     <div className="container">
+      <Header />
       <ThougthForm 
         newHappyThought={newHappyThought}
         onNewHappyThoughtChange={handleNewHappyThoughtChange}

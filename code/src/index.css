@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +15,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color:black
+  color:black;
+  background-color: #e2c6ca;
 }
 
 code {
@@ -25,9 +28,16 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: 50px 10px;
 }
 
+.header-title {
+  margin: 0 0 40px 0;
+  font-size: 28px;
+  font-family: 'Nerko One', cursive, "Courier New";
+  color: #ff1b41da;
+}
 
 /* NEW THOUGHT STYLING */
 .new-thought-form-container {
@@ -52,7 +62,7 @@ code {
 .thought-message-text-area {
   height: 50px;
   padding: 5px;
-  margin: 0 10px 10px 15px;
+  margin: 0 10px 20px 15px;
   border: 1px solid #7c7b7b;
   resize: none;
   font-size: 11px;
@@ -70,7 +80,7 @@ code {
   width: 200px;
   height: 40px;
   margin: 0 10px 30px 15px;
-  padding: 5px;
+  padding: 10px 10px;
   border: 0;
   border-radius: 30px;
   background-color: rgba(235, 87, 87, 0.486);
@@ -100,6 +110,7 @@ code {
   border: 1px solid #222222;
   background-color: #ffffff;
   box-shadow: 6px 6px #000000;
+  word-wrap: break-word;
 }
 
 .thought-message {
@@ -151,6 +162,10 @@ code {
 
 /* MEDIA QUERIES - TABLET */
 @media (min-width: 768px) {
+
+  .header-title {
+    font-size: 32px;
+  }
 
   .new-thought-form {
     width: 400px;
