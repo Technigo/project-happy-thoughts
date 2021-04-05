@@ -12,12 +12,12 @@ import { API_URL_LIKE } from '../Reusables/urls';
     const createdAt = props.thought.createdAt
     const hearts = props.thought.hearts
 
-        const onLikesIncrease = () =>{
-            fetch(API_URL_LIKE(_id), {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-            }).then(() => props.onLiked(_id))
-            }
+    const onLikesIncrease = () =>{
+        fetch(API_URL_LIKE(_id), {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+        }).then(() => props.onLiked(_id))
+        }
 
     return (
         <div className="thought-card"> 

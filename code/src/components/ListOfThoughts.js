@@ -5,7 +5,6 @@ import { API_URL_THOUGHTS } from '../Reusables/urls';
 const ListTextField = () => {
     // use states as variables. first is default seconds sets the value
     const [thoughtList, setThoughtList] = useState([]);
-    console.log (thoughtList)
 
     //useEffect descides when and what should render (at what point of mounting the component)
     useEffect(() => {

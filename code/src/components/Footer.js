@@ -9,7 +9,7 @@ const Footer = () => {
                 <p className="footer-paragraphs">&copy; developed 2020 by Sara Carlstein </p> 
                 <p className="footer-paragraphs">Week 11: Happy thoughts project ❤️ | Technigo bootcamp</p>
                 <p className="footer-paragraphs"><a href="https://www.linkedin.com/in/sara-carlstein-532b2737/"target="_blank" rel="noopener noreferrer">Linkedin</a>
-                |<a href="https://github.com/sofiavazs" target="_blank" rel="noopener noreferrer" >GitHub</a></p>
+                |<a href="https://github.com/Sartish" target="_blank" rel="noopener noreferrer" >GitHub</a></p>
             </div>
         </>
     )
