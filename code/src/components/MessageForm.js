@@ -13,7 +13,11 @@ const MessageForm = ({onFormSubmit, thoughtNew, onThoughtNewChange}) => {
           onChange={onThoughtNewChange}
         />
         <p className="character-count">{thoughtNew.length}/140</p>
-        <button className="submit-btn" type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought<span role="img" aria-label="heart">❤️</span></button>
+        <button className="submit-btn" type="submit">
+          <span role="img" aria-label="heart">❤️</span>
+          Send Happy Thought
+          <span role="img" aria-label="heart">❤️</span>
+        </button>
       </form>
     </>
   )

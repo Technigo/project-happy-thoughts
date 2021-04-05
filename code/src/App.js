@@ -26,8 +26,6 @@ const [thoughtNew, setThoughtNew] = useState('')
       }
     }
     fetch(LIKES_URL(id), options)
-      // .then(fetchThoughtList())
-      // .catch(err => console.log(err))
     fetch(LIKES_URL(id), options)
       .then(res => res.json())
       .then(receivedThought => {
@@ -46,8 +44,6 @@ const [thoughtNew, setThoughtNew] = useState('')
     if (thoughtNew.length < 4 || thoughtNew.length > 140) {
       alert('Your messsage needs to be between 5 and 140 characters!')
     } else {
-
-      console.log('submit')
       event.preventDefault()
       const options = {
         method: 'POST',
@@ -64,13 +60,9 @@ const [thoughtNew, setThoughtNew] = useState('')
       setThoughtNew('')
     }
   } 
-  console.log(thoughtNew.length > 4 && thoughtNew.length < 140)
   const onThoughtNewChange = (event) => {
     setThoughtNew(event.target.value)
-    console.log(thoughtNew)
   }
-
-  console.log(thoughtList)
 
   useEffect(() => {
     fetchThoughtList()
