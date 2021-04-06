@@ -18,7 +18,6 @@ export const App = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(messages => setMessageList(messages))
-      .catch(error => console.error(error))
   }
 
   const handleNewMessageChange = (e) => {
@@ -39,7 +38,6 @@ export const App = () => {
       fetch(API_URL, options)
         .then(res => res.json())
         .then(() => fetchList())
-        .catch(error => console.error(error))
         setNewMessage('')
   }
 
@@ -63,7 +61,6 @@ export const App = () => {
         }) 
         setMessageList(updatedMessageList)
     })
-    .catch(error => console.error(error))
   }
 
   return (
