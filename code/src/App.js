@@ -12,12 +12,12 @@ export const App = () => {
   const [charRange, setCharRange] = useState(false);
   const [loading, setLoading] = useState(true);
   const messageRef = useRef();
-  let refresh;
+  const refresh = useRef();
 
   /*-------------fetches the list of all tweets--------------*/
 
   const fetchMessageList = useCallback(() => {// callback to avoid re-rendering of dependencies
-    clearInterval(refresh);
+    clearInterval(refresh.current);
     messageList === "" ? setLoading(true) : setLoading(false); //to show loading symbol when loading page
 
     fetch(API_URL)
@@ -35,11 +35,12 @@ export const App = () => {
       })
       .then((messages) => (messageRef.current = messages[0].message)) //useRef to store last message
       .catch((error) => alert(`Error while loading messages:${error}`));
-  }, [setMessageList, messageList, refresh]);
+  }, [setMessageList, messageList]);
 
   useEffect(() => {
-    refresh = setInterval(fetchMessageList, 5000);
+    refresh.current = setInterval(fetchMessageList, 5000);
   }, [fetchMessageList]);
+  
 
   /* --------fetches+post the message user puts in the textarea ---------*/
 
