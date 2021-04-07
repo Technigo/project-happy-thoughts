@@ -41,7 +41,6 @@ export const App = () => {
     fetch(API_URL, options)
       .then(response => response.json())
       .then(addThought => setThoughtsList([addThought,...thoughtsList]))
-      .catch(err => console.error(err));
   }
 
   const handleHeartsIncrease = (id) => {
@@ -62,7 +61,6 @@ export const App = () => {
         });
         setThoughtsList(updatedthoughtsList);
       })
-    .catch(err => console.error(err));
   }
 
   return (
