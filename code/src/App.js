@@ -19,7 +19,6 @@ const App = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(messages => setMessageList(messages))   
-      .catch(err => console.error(err));
   };
 
   const handleNewMessage = (event) => {
@@ -84,7 +83,6 @@ const App = () => {
     fetch(API_URL_HEART(id), config)
       .then(res => res.json())
       .then(() => fetchMessageList())    
-      .catch(err => console.error(err));
   };
 
   return (
