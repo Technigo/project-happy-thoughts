@@ -21,7 +21,7 @@ export const App = () => {
         fetch(API_URL)
         .then(response => response.json())
         .then(data => setHappyThoughtsList(data))
-        .catch(err => console.error(err));
+        .catch((err) => alert(`Error while loading messages:${err}`))
     };
 
     const handleMessageNewChange = (e) => {
@@ -43,7 +43,7 @@ export const App = () => {
       fetch(API_URL, options)
          .then(response => response.json())
          .then(() => fetchHappyThoughts())
-         .catch(err => console.error(err))
+         .catch((err) => alert(`Error while updating messages:${err}`))
       setMessageNew('');
     };
 
@@ -59,7 +59,7 @@ export const App = () => {
         fetch(API_LIKES(id), options)
          .then(response => response.json())
          .then(() => fetchHappyThoughts())
-         .catch(err => console.error(err));
+         .catch((err) => alert(`Error while updating messages and likes:${err}`))
     };
 
   return (
@@ -78,3 +78,7 @@ export const App = () => {
     </div>
   );
 };
+
+
+
+

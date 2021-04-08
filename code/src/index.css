@@ -158,10 +158,13 @@ h1 span {
   background: #ffadad;
 }
 
+.heart-button:hover, .heart-button-liked:hover {
+  transform: scale(1.1);
+}
+
 .date {
   color: #c5c2c2;
 }
-
 
 
 

@@ -11,6 +11,7 @@ const Form = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
                     type="text"
                     value={messageNew} 
                     onChange={onMessageNewChange}
+                    maxLength={140}  
                 />
                 <p className={messageNew.length >= 140 ? 'thought-length-long': 'thought-length-ok'} > {messageNew.length} / 140 </p>
                 <button 
