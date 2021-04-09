@@ -27,7 +27,7 @@ export const App = () => {
         setLoading(false);
         setAnimation(false);
       })
-    .catch(err => console.error(err));  
+    .catch(err => alert(`Error: ${err}`));  
   }
 
   // Clicking the submit button, posting message
@@ -55,7 +55,7 @@ export const App = () => {
           setTimeout(() => fetchAllMessages(), 1500);
         }
     })  
-    .catch(err => console.error(err));
+    .catch(err => alert(`Error: ${err}`));
   }
 
   // Function for setting error message
@@ -80,7 +80,7 @@ export const App = () => {
     })
     .then(res => res.json())
     .then(() => fetchAllMessages())
-    .catch(err => console.log(err));
+    .catch(err => alert(`Error: ${err}`));
   }
 
 
