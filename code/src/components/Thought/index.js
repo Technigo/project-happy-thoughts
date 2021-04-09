@@ -10,16 +10,15 @@ const Thought = ({ message, hearts, createdAt, _id, index, updateThought }) => {
   const [clickedHeart, setClickedHeart] = useState(false);
 
   const onClickLike = () => {
-    fetch(URL_LIKE(_id), options())
-      .then((res) => {
-        res.json();
-        setClickedHeart(true);
-        // Instead of calling fetch method, we update
-        // the heart key value in the thoughts state array
-        updateThought(hearts + 1, index, 'hearts');
-      })
-      .catch((err) => console.log(err));
+    fetch(URL_LIKE(_id), options()).then((res) => {
+      res.json();
+      setClickedHeart(true);
+      // Instead of calling fetch method, we update
+      // the heart key value in the thoughts state array
+      updateThought(hearts + 1, index, 'hearts');
+    });
   };
+
   return (
     <>
       <Card>

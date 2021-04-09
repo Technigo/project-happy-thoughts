@@ -15,8 +15,7 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => {
         setThoughts(data);
-      })
-      .catch((err) => console.log(err));
+      });
   };
 
   // This function updates a specific thought key value based on index
