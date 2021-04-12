@@ -69,7 +69,6 @@ const MessageForm = ({ thoughts, setThoughts }) => {
             className="submit-button"
             onClick={(event) => {
               setAnimation(true)
-              console.log(animation)
             }}
           >
             <span className="heart">{'\u2665'}</span>
