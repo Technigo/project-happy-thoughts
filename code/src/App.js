@@ -4,6 +4,8 @@ import Form from './components/Form'
 import Map from './components/Map'
 import Hero from './components/Hero'
 
+import Error from './components/ErrorPage'
+
 import { API_URL, LIKES_URL } from './reusable/urls'
 
 export const App = () => {
@@ -19,7 +21,6 @@ export const App = () => {
     fetch(API_URL)
     .then(res => res.json())
     .then(message => setMessageList(message))
-    .catch(err => console.error(err))
   }
 
   const onInputMessage = (event) => { 
@@ -40,7 +41,6 @@ export const App = () => {
     fetch(API_URL, options)
     .then(res => res.json())
     .then(() => fecthMessageList()) 
-    .catch(err => console.error(err)) 
   }
 
   const onLikesIncrease = (id) => {
@@ -55,7 +55,6 @@ export const App = () => {
     fetch(LIKES_URL(id), options)
     .then(res => res.json())
     .then(() => fecthMessageList()) 
-    .catch(err => console.error(err))
   }
   return (
     <> 
