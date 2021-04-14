@@ -12,8 +12,9 @@ const MyTought = ({message, onLikesIncrease}) => {
                 <div className="like-moment-section">
                     <div className="likes-section">
                         <button 
-                        className={message.hearts > 0 ? "likes-btn liked" : "likes-btn"}
-                        onClick={() => onLikesIncrease(message._id)}>
+                            className={message.hearts > 0 ? "likes-btn liked" : "likes-btn"}
+                            onClick={() => onLikesIncrease(message._id)}
+                        >
                             <span className="likes">&#10084;</span>  
                         </button>
                         <p>x {message.hearts}</p>

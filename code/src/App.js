@@ -22,7 +22,7 @@ export const App = () => {
     .catch(err => console.error(err))
   }
 
-  const OnInputMessage = (event) => { 
+  const onInputMessage = (event) => { 
     setMessageNew(event.target.value)
   }
 
@@ -64,7 +64,7 @@ export const App = () => {
         <div className="container-body">
           < Form 
           messageNew={messageNew} 
-          OnInputMessage={OnInputMessage}
+          onInputMessage={onInputMessage}
           onFormSubmit={onFormSubmit}
           />
           < Map 

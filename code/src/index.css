@@ -182,6 +182,17 @@ input {
   text-align: right;
 }
 
+@media (min-width: 500px) { 
+
+  .hero-title {
+    top: 20%; /* 10% */
+    width: 30%; /*10% */
+    left: 35%; /* 5% */
+
+  }
+
+}
+
 /* Tablet Devices */
 @media (min-width: 768px) {
 
