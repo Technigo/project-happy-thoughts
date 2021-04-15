@@ -62,7 +62,8 @@ export const App = () => {
         <MessageForm 
           messageNew={messageNew} 
           onMessageNewChange={onMessageNewChange} 
-          onFormSubmit={onFormSubmit} />
+          onFormSubmit={onFormSubmit} 
+          />
       </div>
       <MessageList 
         messageList={messageList} 
