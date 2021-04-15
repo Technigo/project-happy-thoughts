@@ -22,7 +22,7 @@ export const MessageElement = ({ message, onLikesIncrease }) => {
                         </button>
                         <p> x{message.hearts}</p>
                     </div>
-                    <p className="date-posted">{moment(message.created).fromNow()} </p>
+                    <p className="date-posted">{moment(message.createdAt).fromNow()} </p>
                 </div>
             </div>
         </> 
