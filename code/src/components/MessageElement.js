@@ -4,10 +4,10 @@ import moment from 'moment'
 const MessageElement = ({thought, onHeartLikeIncrease}) => {
   return (
     <>
-      <div className="received-message-container">  {/*key={thought._id} */}
+      <div className="received-message-container">  
         <h4 className="received-message" >{thought.message}</h4>
         <button 
-          className={` ${thought.hearts === 0 ? "heart-like-button" : "heart-like-button pink-heart"}`} 
+          className={thought.hearts === 0 ? "heart-like-button" : "heart-like-button pink-heart"} 
           onClick={() => onHeartLikeIncrease(thought._id)}  /* i want to understand whats happening here, why 2 arrow functions??  */
         >
           <span 

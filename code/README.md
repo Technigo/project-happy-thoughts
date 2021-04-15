@@ -1,4 +1,4 @@
-# Happy Thoughts Project Week 11
+# Project Week 11, Technigo bootcamp - Happy Thoughts 
 
 A project to practice React state skills fetching and posting data to an API.
 
@@ -10,7 +10,7 @@ A project to practice React state skills fetching and posting data to an API.
 -It need to have a form to post new thoughts
 -Implement a heart button to send likes on a thought
 
-Personal stretch goal:
+Stretch goal:
 - Show a count below the form input that updates as the user types and shows how many characters are remaining. Make it go red when the user has typed over 140 characters
 
 ## View it live
