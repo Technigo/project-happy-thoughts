@@ -154,7 +154,6 @@ p {
   border-top: 1px solid black;
   background-color: rgb(235, 235, 235);
   padding: 10px 0;
-  /* box-sizing: border-box; */
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -169,8 +168,7 @@ p {
   .thought {
     margin: 20px;
   }
-}
-@media (min-width: 667px) {
+
   .like-counter {
     max-width: 480px;
     padding-right: 8px;
