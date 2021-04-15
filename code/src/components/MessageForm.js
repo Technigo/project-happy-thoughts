@@ -4,7 +4,7 @@ const MessageForm = ({newMessage, onNewMessageChange, onFormSubmit}) => {
   return (
       <form onSubmit={onFormSubmit}> 
         <div className="send-message-card">What makes you happy right now?
-          <div>
+          <div class="textarea-container">
             <label htmlFor="newMessage"></label>
             <textarea aria-label="write your happy thoughts here"
               className="input-field"
