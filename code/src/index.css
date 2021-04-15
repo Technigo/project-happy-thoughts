@@ -63,7 +63,6 @@ code {
 }
 .received-message-container {
   margin: 20px 10px;
-  width: 100%;
   height: auto;
   overflow-wrap: break-word; /* here too? */
   background-color: #ffffff;
