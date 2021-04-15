@@ -18,7 +18,7 @@ const MessageForm = ({newMessage, onNewMessageChange, onFormSubmit}) => {
             </textarea>
           </div>
           <div className="characters-counter">
-            <span className={newMessage.length < 140 ? "character-counter" : "character-counter red-counter"}>{140-newMessage.length} /140</span> 
+            <span className={newMessage.length < 140 && newMessage.length > 4 ? "character-counter" : "character-counter red-counter"}>{newMessage.length} /140</span> 
           </div>
           <button 
             type ="submit"
