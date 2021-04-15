@@ -13,7 +13,6 @@ const Like = ({ thought, hearts, setHearts, likeCounter, setLikeCounter }) => {
         const config = {
             method: "POST"
         }
-
         fetch(LIKES_URL(thought._id), config)
             .then(res => res.json())
             .then(receivedMessage => (setHearts(receivedMessage.hearts)))

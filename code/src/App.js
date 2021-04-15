@@ -20,7 +20,6 @@ export const App = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(data => setThoughts(data))
-      .catch(err => (console.log(err)))
 
     setLoading(false)
   }
