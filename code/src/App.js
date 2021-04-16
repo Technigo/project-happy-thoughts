@@ -20,7 +20,6 @@ export const App = () => {
     fetch(HAPPY_THOUGHTS_URL)
       .then(response => response.json())
       .then(thoughts => setThoughtsList(thoughts))
-      .catch(err => console.error(err))
   }
 
   const onNewThoughtChange = (e) => {
@@ -42,7 +41,6 @@ export const App = () => {
   fetch(HAPPY_THOUGHTS_URL, options)
     .then(response => {
       if (!response.ok) {
-        setError(true)
         throw new Error ('Ups, something went wrong') //prints error message in Console for the use case: unspecified backend error
       } else { 
         setNewThought('')
@@ -50,8 +48,10 @@ export const App = () => {
       }
     })
     .then(recievedThought => setThoughtsList([recievedThought, ...thoughtsList]))
-    .catch(err => console.error(err))
-  } 
+    .catch(() => {
+      setError(true)
+    })
+  }
 
   const handleHeartsIncrease = (id) => {
 
@@ -64,7 +64,6 @@ export const App = () => {
     fetch(LIKE_THOUGHT_URL(id), options)
       .then(res => res.json())
       .then(() => fetchThoughtsList())
-      .catch(err => console.error(err))
   }
 
   return (
