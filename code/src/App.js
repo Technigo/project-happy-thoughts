@@ -18,8 +18,7 @@ export const App = () => {
     fetch(Fetch_API)
     .then(res => res.json())
     .then(thoughts => setThoughtsList(thoughts))
-    .then(setLoader(false))
-    .catch(err => console.error(err))          
+    .then(setLoader(false))            
   }
 
   const HandleThoughtsNew = (event) =>  {
@@ -39,8 +38,6 @@ export const App = () => {
     fetch(Fetch_API, options)
     .then(res => res.json())
     .then(recivedThought => setThoughtsList([...thoughtsList, recivedThought]))
-    .catch(err => console.error(err))
-    
     setThoughtsNew('')    
   }  
 
@@ -62,8 +59,7 @@ export const App = () => {
       return thoughts
     }) 
     setThoughtsList(updatedThoughtsList)      
-  })
-  .catch(err => console.error(err))
+  }) 
 }
 
   return (
