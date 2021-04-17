@@ -68,7 +68,6 @@ export const App = () => {
           localStorage.setItem('countList', JSON.stringify(countList))
         }
       })
-      .catch(err => console.error(err))
   }
 
   //posting new mesagge to the API, fetching the new message 
