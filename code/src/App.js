@@ -11,13 +11,12 @@ export const App = () => {
 
   useEffect(() => {
     fetchThoughtsList();
-  }, []);
+  }, [thoughtsList]);
 
   const fetchThoughtsList = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(messages => setThoughtsList(messages))
-      .catch(err => console.error(err));
   }
 
   const onNewMessageChange = (event) => {
@@ -37,9 +36,6 @@ export const App = () => {
     
   fetch(API_URL, options)
     .then(res => res.json())
-    .then(() => {
-      window.location.reload()
-    })
     .then(receivedMessage => setThoughtsList([receivedMessage, ...thoughtsList]));
   }
 
@@ -53,9 +49,6 @@ export const App = () => {
 
     fetch(LIKES_URL(id), options)
     .then(res => res.json())
-    .then(() => {
-      window.location.reload()
-    })
     .then(receivedMessage => {
       const updatedThoughtsList = thoughtsList.map(message => {
         if (message._id === receivedMessage._id) {
@@ -65,7 +58,6 @@ export const App = () => {
       });
         setThoughtsList(updatedThoughtsList);
       })
-    .catch(err => console.error(err));
   }
 
   return (

@@ -15,10 +15,10 @@ const ThoughtsElement = ({ message, onHeartLikes}) => {
           <span className='heart' role="img" aria-label="heart-icon">❤️</span>
         </button>
         </div>
-        <p className='counter' tabIndex="0">
+        <p className='counter'>
           x {message.hearts}
         </p>
-        <p className='time' tabIndex="0">{moment(message.createdAt).fromNow()}</p>
+        <p className='time'>{moment(message.createdAt).fromNow()}</p>
       </div>
     </div>
   )

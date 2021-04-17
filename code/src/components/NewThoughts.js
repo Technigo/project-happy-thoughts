@@ -7,12 +7,12 @@ const NewThoughts =({ newMessage, onNewMessageChange, onFormSubmit }) => {
         className='message-section'
         onSubmit={onFormSubmit}>
         <label
-          htmlFor='newMessage'>
+          htmlFor='messages'>
           <h2>What's making you happy right now?</h2>
         </label>
         <input
           className='message-area'
-          id='messageNew'
+          id='messages'
           type='text'
           value={newMessage}
           onChange={onNewMessageChange}
