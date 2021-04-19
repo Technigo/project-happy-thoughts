@@ -17,7 +17,6 @@ export const App = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(thoughts => setThoughtsList(thoughts))
-      .catch(err => (console.error(err)))
   }
 
   const handleNewThoughtChange = (event) => {
@@ -61,7 +60,6 @@ export const App = () => {
         })
         setThoughtsList(updatedThoughtsList);
       })
-      .catch(err => (console.log(err)))
   }
 
   return (
