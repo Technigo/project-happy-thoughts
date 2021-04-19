@@ -23,8 +23,7 @@ export const App = () => {
   const fetchMessageList = () => {
     fetch(URL)
       .then((res) => res.json())
-      .then((messages) => setMessageList(messages))
-      .catch((err) => console.error(err));
+      .then((messages) => setMessageList(messages));
   };
 
   /*Set the content of new message*/
@@ -68,8 +67,7 @@ export const App = () => {
           return message;
         });
         setMessageList(updatedMessageList);
-      })
-      .catch((err) => console.error(err));
+      });
   };
 
   /*What the app returns*/
