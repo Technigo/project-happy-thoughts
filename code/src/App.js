@@ -23,7 +23,6 @@ export const App = () => {
     fetch(API_URL)
     .then(response => response.json())
     .then (messages => setMessageList(messages))
-    .catch(error => console.error(error))
    }
 
   const handleMessageNewChange = (event) => {
@@ -45,7 +44,6 @@ export const App = () => {
     fetch(API_URL, options)
       .then (response => response.json())
       .then (()=> fetchMessageList())
-      .catch(error => console.error(error))
   }
 
   const handleLikesIncrease = (messageID) => {
@@ -59,7 +57,6 @@ export const App = () => {
     fetch(POST_HEART_URL(messageID), options)
     .then (response => response.json())
     .then (()=> fetchMessageList())
-    .catch(error => console.error(error))
   }
 
 

@@ -14,16 +14,16 @@ export const MessageForm = ({onFormSubmit, messageNew, onMessageNewChange }) => 
     </label>
     <p className={`${messageNew.length <= 141 ? 'too-long' : ''}`}>
       Your thought is too long!
-      <span role="img" aria-label="think-bubble emoji">💭</span>
+      <span role="img" aria-label="think-bubble emoji"> 💭 </span>
     </p>
     <p className={`${messageNew.length >= 5 ? 'too-short' : ''}`}>
       Type at least 5 characters 
-      <span role="img" aria-label="think-bubble emoji">💭</span>
+      <span role="img" aria-label="think-bubble emoji"> 💭 </span>
     </p>
     <p className={`${140-messageNew.length <= 0 ? 'counter' : ''}`}>
       Remaining characters: 
-      <span>{140-messageNew.length}</span>
-      <span role="img" aria-label="writing hand emoji">✍</span> 
+      <span> {140-messageNew.length}</span>
+      <span role="img" aria-label="writing hand emoji"> ✍ </span> 
     </p>
     < SubmitButton/>
   </form>

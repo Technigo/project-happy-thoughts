@@ -15,6 +15,10 @@ code {
 .content {
   font-family: 'Inconsolata', monospace;
   font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /**********FORM***********/
@@ -24,7 +28,7 @@ code {
 {
   border: 3px solid darkgray;
   margin: 30px;
-  max-width: 400px;
+  width: 400px;
   padding: 16px;
   box-shadow: 8px 8px black;
 }
