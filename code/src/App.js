@@ -18,7 +18,6 @@ export const App = () => {
     fetch(API_URL_THOUGHTS)
       .then(res => res.json()) // response unpacked
       .then(thoughts => setThoughtList(thoughts)) // data recieved and applied
-      .catch(err => console.error(err))
   }
 
   const handleThoughtNewChanged = (event) => { // handle indicates that this handler will be passed to a component and used there.
@@ -27,22 +26,23 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    window.location.reload()
-    event.target.reset()
+    
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ message: thoughtNew })
-    };
+    }
 
     fetch(API_URL_THOUGHTS, options)
       .then(res => res.json())
-      //.then(receivedThought => setThoughtList([...thoughtList, receivedThought]))
-      .then(() => fetchThoughtList())
-      .catch(err => console.error(err));
+      .then(receivedThought => {
+        setThoughtList([receivedThought, ...thoughtList ])
+      })
+      setThoughtNew('') // refreshes the input field
   }
+
   const handleHeartsIncrease = (id) => {
     const options = {
       method: 'POST',  // POST fetch request
@@ -53,7 +53,6 @@ export const App = () => {
 
     fetch(API_URL_HEARTS(id), options)
       .then(() => fetchThoughtList())
-      .catch(err => console.error(err))
   }
 
   return (

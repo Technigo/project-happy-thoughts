@@ -17,4 +17,3 @@ const thoughtList = ({ thoughtList, handleHeartsIncrease }) => {
 }
 
 export default thoughtList
-
