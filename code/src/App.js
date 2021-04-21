@@ -24,7 +24,6 @@ export const App = () => {
       .then(messages => {
         setMessageList(messages);
       })
-      .catch(err => console.error(err));
   }
 
   const onNewMessageChange = (event) => {
