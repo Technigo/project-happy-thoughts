@@ -45,7 +45,6 @@ export const App = () => {
       .then(res => res.json())
       .then(receivedMessage => setMessageList([receivedMessage, ...messageList]))
       .then(() => setNewMessage(''))
-      .catch(err => console.error(err));
   };
 
   const onHeartClick = (id) => {
