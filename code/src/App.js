@@ -52,6 +52,7 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
+    setMessageNew('')
     const options = {
       method: 'POST', 
       headers: {
@@ -62,8 +63,6 @@ export const App = () => {
     fetch(API_URL, options)
     .then(res => res.json())
     .then(() => fetchMessageList())
-    .catch(error => console.error(error))
-    setMessageNew('')
   }
 
   return (
