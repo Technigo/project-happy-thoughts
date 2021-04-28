@@ -1,8 +1,9 @@
 import React from 'react';
 
+
 const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
     return (
-        <div>
+        <div className="form">
             <form onSubmit={onFormSubmit}>
             <label htmlFor="newMessage">What's making you happy right now?</label>
             <input
@@ -14,7 +15,11 @@ const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
                 minLength="5"
                 maxLength="140"
             />
-            <button type="submit">❤️ Send Happy Thought! ❤️</button>
+            <button type="submit">
+                <span role="img" aria-label="heart">❤️</span> 
+                Send Happy Thought!
+                <span role="img" aria-label="heart">❤️</span>
+            </button>
             </form>
         </div>
 
