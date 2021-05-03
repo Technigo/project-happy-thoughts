@@ -1,13 +1,17 @@
 # Happy Thoughts
 
-The assignment was to build "Happy Thoughts" version of Twitter. The site had to follow the given design. 
+This project is "Happy Thoughts" version of Twitter. 
 
 
-## The problem
+## Learning goals
 
-This week's goal was to learn how to use useEffect hook in React and also how to call APIs from React and put the data into state.
+How to:
+-use APIs in React
+-use useEffect hook
+-put the result of API responses into React state to show in the page
+-work with an API which you send and receive data from. 
 
-I started this project by sketching the project on paper and planning how to divide the components. First I had App, Form and ThoughtList components. After Wednesday's lecture I created also Thought component. Then I did the fetch requests and all needed functionalities. I did the styling with CSS and flexbox alongside building the project.
+I started this project by sketching the project on paper and planning how to divide the components. First I had App, Form and ThoughtList components. Later I created also the Thought component. Then I did the fetch requests and all needed functionalities. I did the styling with CSS and flexbox alongside building the project.
 
 If I would have hade more time I would have made the counter which calculates characters which user types to textarea. Also I would have made some hover effects etc.
 
