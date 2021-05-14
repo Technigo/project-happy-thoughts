@@ -4,24 +4,20 @@ import Form from './components/Form'
 import Message from './components/Message'
 import { API_URL, APIHEARTS_URL } from './components/Urls'
 
-
-
 export const App = () => {
 
   const [messageList, setMessageList] = useState([])
   const [newMessage, setNewMessage] = useState('')
 
-
   useEffect(() => {
     fetchMessageList()
   }, [])
-
 
   const fetchMessageList = () => { 
     fetch(API_URL)
       .then(response => response.json())
       .then(messages => setMessageList(messages))
-      .catch(error => console.log(error))
+      .catch(error => error)
   }
 
   const options = {
@@ -37,8 +33,11 @@ export const App = () => {
 
     fetch(API_URL, options)
     .then(response => response.json())
-    .then(receivedMessage => setMessageList([...messageList, receivedMessage]))
-    .catch(error => console.log(error))
+    .then(receivedMessage => {
+      setMessageList([...messageList, receivedMessage])
+      fetchMessageList()
+      setNewMessage('')
+    })
   }
  
   const handleNewMessage = (event) => {
@@ -64,7 +63,7 @@ export const App = () => {
       }) 
       setMessageList(updatedMessageList)
     })
-    .catch(error => console.log(error))
+    .catch(error => error)
   }
 
 

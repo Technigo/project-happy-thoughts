@@ -15,7 +15,7 @@ const Message = ({messageList, onAddHeart}) => {
 
             <div className='btn-counter'>
               <button className= { `heart-btn ${message.hearts === 0 ? "heart-btn-unliked" : "heart-btn-liked"}`} 
-              onClick={() => onAddHeart(message._id)}> <span>❤️</span></button> 
+              onClick={() => onAddHeart(message._id)}> <span role='img' aria-label='heart'>❤️</span></button> 
               <p> {message.hearts} web developers loved this</p>
             </div>
             <div>
