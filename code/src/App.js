@@ -48,13 +48,8 @@ export const App = () => {
     fetch(LIKES_URL(id), options)
       .then(res => res.json())
       .then(recievedMessage => {
-        const updatedMessageList = messageList.map(message => {
-          if (message._id === recievedMessage._id) {
-            message.hearts += 1
-          }
-          return message
-        })
-        setMessageList(updatedMessageList)
+        const updatedMessageList = messageList.filter(message => (message._id !== id))
+        setMessageList([recievedMessage.updatedThought, ...updatedMessageList])
       })
   }
 
