@@ -1,6 +1,6 @@
-export const URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+export const URL = 'https://happy-thinking.herokuapp.com/thoughts';
 
-export const URL_LIKE = (id) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
+export const URL_LIKE = (id) => `https://happy-thinking.herokuapp.com/thoughts/${id}/like`;
 
 export const options = (message) => {
   const opts = {
