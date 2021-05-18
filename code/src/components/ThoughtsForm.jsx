@@ -1,8 +1,18 @@
 import React from "react"
 
-const ThoughtsForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
+const ThoughtsForm = ({ userName, onUserName, messageNew, onMessageNewChange, onFormSubmit }) => {
   return (
     <form onSubmit={onFormSubmit}>
+      <div className="user-container">
+        <label htmlFor="userName">Name: <span className="faded-text">(optional)</span></label>
+        <input
+          id="userName"
+          type="text"
+          className="username-input"
+          value={userName}
+          onChange={onUserName}
+        />
+      </div>
       <label htmlFor="newMessage">What's making you happy right now?</label> 
       <textarea 
         id="newMessage"

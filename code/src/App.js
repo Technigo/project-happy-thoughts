@@ -8,6 +8,7 @@ import { API_URL, LIKES_URL } from "./reusable/urls"
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState("")
+  const [userName, setUserName] = useState("")
 
   useEffect(() => {
     fetchMessageList()
@@ -17,6 +18,10 @@ export const App = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(messages => setMessageList(messages))
+  }
+
+  const handleUserName = (event) => {
+    setUserName(event.target.value)
   }
 
   const handleMessageNewChange = (event) => {
@@ -30,12 +35,13 @@ export const App = () => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ message: messageNew })
+      body: JSON.stringify({ message: messageNew, userName: userName })
     }
     fetch(API_URL, options)
     .then(res => res.json())
     .then(recievedMessage => setMessageList([recievedMessage, ...messageList])) //Switched the position of recievedMessage and messageList to make the new messages come first in the list
     setMessageNew("")
+    setUserName("")
   }
 
   const handleLikesIncrease = (id) => {
@@ -56,6 +62,8 @@ export const App = () => {
   return (
     <div className="form-container">
       <ThoughtsForm 
+      userName={userName}
+      onUserName={handleUserName}
       messageNew={messageNew}
       onMessageNewChange={handleMessageNewChange}
       onFormSubmit={handleFormSubmit}

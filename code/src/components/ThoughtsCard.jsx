@@ -4,6 +4,7 @@ import moment from "moment"
 const ThoughtsCard = ({ message, onLikesIncrease }) => {
   return (
     <div className="thought-card">
+      <p className="username-text">{message.userName}</p>
       <h4>{message.message}</h4>
       <div className="bottom-info-container">
         <div className="likes-container">

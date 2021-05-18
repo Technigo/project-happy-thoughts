@@ -44,6 +44,21 @@ form {
   margin-bottom: 30px;
 }
 
+.user-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.faded-text {
+  color: #a0a0a0
+}
+
+.username-input {
+  margin: 10px 0px 10px 0px;
+  font-family: "Inconsolata", monospace;
+  padding: 5px 10px 5px 10px;
+}
+
 .text-input {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -82,6 +97,10 @@ img {
   box-shadow: 5px 6px #000;
   padding: 10px;
   overflow-wrap: break-word;
+}
+
+.username-text {
+  margin: 0;
 }
 
 h4 {
