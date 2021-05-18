@@ -25,7 +25,7 @@ const Button = styled.button`
 `;
 
 Button.Emoji = styled.span`
-  font-size= 14px;
+  font-size: 14px;
 `;
 
 Button.Text = styled.span`

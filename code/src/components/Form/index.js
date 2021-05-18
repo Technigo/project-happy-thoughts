@@ -2,18 +2,22 @@ import React, { useState, useRef } from 'react';
 
 import Button from 'components/Styled/Button';
 import Card from 'components/Styled/Card';
+import Radio from 'components/Styled/Radio';
 import TextArea from 'components/TextArea';
 
 import { URL, options } from 'helpers/reusables';
 
+const categories = ['happy', 'funny'];
+
 const Form = ({ fetchThoughts }) => {
-  const [newThought, setNewThought] = useState('');
+  const [message, setMessage] = useState('');
+  const [category, setCategory] = useState('happy');
 
   const textArea = useRef();
 
   const onSubmission = (event) => {
     event.preventDefault();
-    fetch(URL, options(newThought))
+    fetch(URL, options({ message, category }))
       .then((res) => {
         if (!res.ok) throw res;
         res.json();
@@ -28,7 +32,7 @@ const Form = ({ fetchThoughts }) => {
         });
       });
     // clean the form
-    setNewThought('');
+    setMessage('');
     textArea.current.resetField();
   };
 
@@ -38,18 +42,34 @@ const Form = ({ fetchThoughts }) => {
         What is making you happy right now?
         <TextArea
           ref={textArea}
-          handleNewThought={(value) => setNewThought(value)}
-          fieldValue={newThought} />
+          handleMessage={(value) => setMessage(value)}
+          fieldValue={message} />
       </Card.Title>
-      <Button type="submit">
-        <Button.Emoji role="img" aria-label="heart">
-          ❤️
-        </Button.Emoji>
-        <Button.Text>Send Happy Thoughts</Button.Text>
-        <Button.Emoji role="img" aria-label="heart">
-          ❤️
-        </Button.Emoji>
-      </Button>
+      <Card.Actions>
+        {categories.map((cat) => (
+          <Radio key={cat}>
+            <Radio.Input
+              type="radio"
+              checked={category === cat}
+              name="categoriesThought"
+              id={cat}
+              value={cat}
+              onChange={(e) => setCategory(e.target.value)} />
+            <Radio.Label htmlFor={cat}>{cat}</Radio.Label>
+          </Radio>
+        ))}
+      </Card.Actions>
+      <Card.Footer>
+        <Button type="submit">
+          <Button.Emoji role="img" aria-label="heart">
+            ❤️
+          </Button.Emoji>
+          <Button.Text>Send Happy Thoughts</Button.Text>
+          <Button.Emoji role="img" aria-label="heart">
+            ❤️
+          </Button.Emoji>
+        </Button>
+      </Card.Footer>
     </Card>
   );
 };

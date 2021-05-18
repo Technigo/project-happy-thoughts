@@ -23,21 +23,24 @@ const Thought = ({ message, hearts, createdAt, _id, index, updateThought }) => {
     <>
       <Card>
         <Card.Title>{message}</Card.Title>
-        <Button
-          type="button"
-          faded={!clickedHeart}
-          disabled={clickedHeart}
-          onClick={onClickLike}>
-          <Button.Emoji role="img" aria-label="heart">
-            ❤️
-          </Button.Emoji>
-        </Button>
-        <Card.FooterText faded aria-label="Amount of likes">
-          x {hearts}
-        </Card.FooterText>
-        <Card.FooterText faded alignRight>
-          {moment(createdAt).fromNow()}
-        </Card.FooterText>
+        <Card.Pills>Happy</Card.Pills>
+        <Card.Footer>
+          <Button
+            type="button"
+            faded={!clickedHeart}
+            disabled={clickedHeart}
+            onClick={onClickLike}>
+            <Button.Emoji role="img" aria-label="heart">
+              ❤️
+            </Button.Emoji>
+          </Button>
+          <Card.FooterText faded aria-label="Amount of likes">
+            x {hearts}
+          </Card.FooterText>
+          <Card.FooterText faded alignRight>
+            {moment(createdAt).fromNow()}
+          </Card.FooterText>
+        </Card.Footer>
       </Card>
     </>
   );

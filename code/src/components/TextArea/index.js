@@ -4,7 +4,7 @@ import CardError from 'components/CardError';
 
 import TextAreaStyled from './style';
 
-const TextArea = forwardRef(({ fieldValue, handleNewThought }, ref) => {
+const TextArea = forwardRef(({ fieldValue, handleMessage }, ref) => {
   const [charCount, setCharCount] = useState(0);
   const [error, setError] = useState();
 
@@ -19,7 +19,7 @@ const TextArea = forwardRef(({ fieldValue, handleNewThought }, ref) => {
 
   const onInputChange = (event) => {
     const textVal = event.target.value;
-    handleNewThought(textVal);
+    handleMessage(textVal);
     setCharCount(textVal.length);
   };
   return (

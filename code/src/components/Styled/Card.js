@@ -19,6 +19,11 @@ Card.Title = styled(H3)`
   width: 100%;
 `;
 
+Card.Actions = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
 Card.FooterText = styled(P)`
   margin: 0 10px;
   margin-left: ${(props) => (props.alignRight ? 'auto' : '')};
@@ -26,7 +31,16 @@ Card.FooterText = styled(P)`
 
 Card.Footer = styled.div`
   display: flex;
+  width: 100%;
+  justify-content: center;
   align-items: center;
+`;
+
+Card.Pills = styled.div`
+  margin: 1em 0.5em 1em 0;
+  padding: 0.5em;
+  background-color: pink;
+  border-radius: 15px;
 `;
 
 Card.ErrorWrapper = styled.div`
