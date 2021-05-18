@@ -9,6 +9,7 @@ import LikeCounter from './components/LikeCounter'
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
+  const [username, setUsername] = useState("")
   const [loading, setLoading] = useState(true)
   const [likeCounter, setLikeCounter] = useState(0)
 
@@ -31,6 +32,8 @@ export const App = () => {
         setThoughts={setThoughts}
         newThought={newThought}
         setNewThought={setNewThought}
+        username={username}
+        setUsername={setUsername}
       />
       {loading && <Loader />}
       {loading === false &&

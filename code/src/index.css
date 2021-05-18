@@ -72,6 +72,16 @@ form input {
   line-break: loose;
 }
 
+.username-label {
+  font-size: 16px;
+  font-weight: 200;
+  margin-top: 15px;
+}
+
+.username-input {
+  padding: 10px;
+}
+
 .red {
   color: red;
 }

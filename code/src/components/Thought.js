@@ -20,7 +20,7 @@ const Thought = ({ thought, likeCounter, setLikeCounter }) => {
                     setLikeCounter={setLikeCounter}
                 />
                 <p className="thought-time">
-                    {moment(thought.createdAt).fromNow()}
+                    {thought.userName} – {moment(thought.createdAt).fromNow()}
                 </p>
             </div>
         </div>

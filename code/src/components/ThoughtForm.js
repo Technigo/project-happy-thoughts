@@ -1,11 +1,7 @@
 import React from "react"
 import { API_URL } from "utils/urls"
 
-const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
-
-    const onNewThoughtChange = (event) => {
-        setNewThought(event.target.value)
-    }
+const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought, username, setUsername }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault()
@@ -15,21 +11,21 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ message: newThought })
+            body: JSON.stringify({ message: newThought, userName: username })
         }
 
         fetch(API_URL, config)
             .then(res => res.json())
             .then(receivedThought => {
-                if (receivedThought.message === "Could not save thought") {
-                    alert("Oops, your thought could not be posted. Remember that your post has to be between 5 and 140 characters long. Try again!")
+                if (receivedThought.error) {
+                    alert(receivedThought.error)
                 } else {
                     setThoughts([receivedThought, ...thoughts])
                 }
             })
-            .catch(err => console.log(err))
 
         setNewThought("")
+        setUsername("")
     }
 
     return (
@@ -41,9 +37,19 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought }) => {
                 id="thought-form"
                 type="text"
                 value={newThought}
-                onChange={onNewThoughtChange}
+                onChange={(e) => setNewThought(e.target.value)}
             />
             <p className={newThought.length > 140 ? "red" : ""} >{newThought.length} / 140</p>
+            <label htmlFor="username-form" className="username-label">
+                Username (optional)
+                </label>
+            <input
+                id="username-form"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="username-input"
+            />
             <button>
                 <span role="img" aria-label="heart icon">💗</span>
                 Send Happy Thought
