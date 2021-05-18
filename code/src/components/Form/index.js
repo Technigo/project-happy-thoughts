@@ -22,8 +22,8 @@ const Form = ({ fetchThoughts }) => {
       .catch((err) => {
         err.json().then((errMessage) => {
           textArea.current.handleNewError({
-            title: errMessage.message,
-            message: errMessage.errors.message.message
+            title: errMessage.error,
+            message: errMessage.message
           });
         });
       });
