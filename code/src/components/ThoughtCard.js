@@ -16,7 +16,6 @@ import { API_URL_LIKE } from '../Reusables/urls';
         fetch(API_URL_LIKE(_id), {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body:"",
         }).then(() => props.onLiked(_id))
         }
 
