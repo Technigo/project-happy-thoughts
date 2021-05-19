@@ -10,6 +10,8 @@ const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
         type="text"
         placeholder="Write happy thoughts here :)"
         value={messageNew}
+        minLength="5"
+        maxLength="140"
         onChange={onMessageNewChange}    
       />
       
