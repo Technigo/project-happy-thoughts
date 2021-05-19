@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-
 import ThoughtForm from './components/ThoughtForm'
 import ThoughtList from './components/ThoughtList'
 
@@ -14,26 +13,24 @@ export const App = () => {
     fetchThoughtList()
   }, [])
 
-  //FETCH TO IMPORT THOUGHTS
+  // FETCH TO IMPORT THOUGHTS
   const fetchThoughtList = () => {
-    fetch (API_URL)
-      .then(response => response.json())
-      .then(thought => setThoughtList(thought))
-      .catch(err => console.error(err))
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((thought) => setThoughtList(thought))
   }
 
-  //FETCH TO POST NEW MESSAGE
+  // FETCH TO POST NEW MESSAGE
   const handleThoughtNewChanged = (event) => {
-  setThoughtNew(event.target.value)
+    setThoughtNew(event.target.value)
   }
 
-  const reloadPage = () => {
-    window.location.reload()
-  }
+  // const reloadPage = () => {
+  //   window.location.reload()
+  // }
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-  
     const options = {
       method: 'POST',
       headers: {
@@ -42,14 +39,13 @@ export const App = () => {
       body: JSON.stringify ({ message: thoughtNew })
     }
     fetch(API_URL, options)
-      .then(response => response.json())
-      .then(receivedThought => setThoughtList([...thoughtList, receivedThought]))
-      .catch(err => console.error(err))
-      setTimeout(() => reloadPage(), 1000)
-      
+      .then((response) => response.json())
+      .then((receivedThought) => setThoughtList([...thoughtList, receivedThought]))
+      // setTimeout(() => reloadPage(), 1000)
+    setThoughtNew('')
   }
-  //FETCH HANDLE HEARTS
-  const handleHeartsIncrease =(thoughtID) => {
+  // FETCH HANDLE HEARTS
+  const handleHeartsIncrease = (thoughtID) => {
     const options = {
       method: 'POST',
       headers: {
@@ -57,32 +53,29 @@ export const App = () => {
       }
     }
     fetch(HEARTS_URL(thoughtID), options)
-      .then(response => response.json())
-      .then(receivedThought => {
-        const updatedThoughtList = thoughtList.map(thought =>{
+      .then((response) => response.json())
+      .then((receivedThought) => {
+        const updatedThoughtList = thoughtList.map((thought) => {
           if (thought._id === receivedThought._id) {
             thought.hearts += 1
-          }    
-          return thought 
+          }
+          return thought
+        })
+        setThoughtList(updatedThoughtList)
       })
-      setThoughtList(updatedThoughtList)
-    })
-    .catch(err => console.error(err))
   }
 
   return (
     <div className="main">
-      <ThoughtForm 
+      <ThoughtForm
       thoughtNew={thoughtNew}
       onThoughtNewChanged={handleThoughtNewChanged}
       onFormSubmit={handleFormSubmit}
       />
-      <ThoughtList 
+      <ThoughtList
       thoughtList={thoughtList}
       handleHeartsIncrease={handleHeartsIncrease}
       />
     </div>
   )
 }
-
-
