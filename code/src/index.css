@@ -85,6 +85,7 @@ code {
   cursor: text;
   font-size: 16px;
   resize: none;
+  border-radius: 10px;
 }
 
 .likes-date-container {
