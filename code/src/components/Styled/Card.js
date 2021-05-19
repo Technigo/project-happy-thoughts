@@ -22,6 +22,7 @@ Card.Title = styled(H3)`
 Card.Actions = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 `;
 
 Card.FooterText = styled(P)`

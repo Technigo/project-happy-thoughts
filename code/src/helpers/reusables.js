@@ -4,7 +4,7 @@ export const URL = `${mainURL}/thoughts`;
 export const URL_LIKE = (id) => `${mainURL}/thoughts/${id}/like`;
 
 export const options = (newThought) => {
-  const { message, category } = newThought;
+  const { message, category, name } = newThought;
   const opts = {
     method: 'POST',
     headers: {
@@ -12,6 +12,6 @@ export const options = (newThought) => {
     }
   };
   return newThought !== null
-    ? { ...opts, body: JSON.stringify({ message, category }) }
+    ? { ...opts, body: JSON.stringify({ message, category, name }) }
     : opts;
 };

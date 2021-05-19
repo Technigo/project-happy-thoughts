@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import Button from 'components/Styled/Button';
 import Card from 'components/Styled/Card';
 import Radio from 'components/Styled/Radio';
+import InputText from 'components/Styled/InputText';
 import TextArea from 'components/TextArea';
 
 import { URL, options } from 'helpers/reusables';
@@ -12,12 +13,13 @@ const categories = ['Happy', 'Food', 'Home', 'Project'];
 const Form = ({ fetchThoughts }) => {
   const [message, setMessage] = useState('');
   const [category, setCategory] = useState('Happy');
+  const [name, setName] = useState('Anonymous');
 
   const textArea = useRef();
 
   const onSubmission = (event) => {
     event.preventDefault();
-    fetch(URL, options({ message, category }))
+    fetch(URL, options({ message, category, name }))
       .then((res) => {
         if (!res.ok) throw res;
         res.json();
@@ -44,6 +46,14 @@ const Form = ({ fetchThoughts }) => {
           ref={textArea}
           handleMessage={(value) => setMessage(value)}
           fieldValue={message} />
+        <InputText htmlFor="name">
+          Username:
+          <InputText.Field
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)} />
+        </InputText>
       </Card.Title>
       <Card.Actions>
         {categories.map((cat) => (

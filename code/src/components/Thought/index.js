@@ -6,7 +6,7 @@ import Card from 'components/Styled/Card';
 
 import { URL_LIKE } from 'helpers/reusables';
 
-const Thought = ({ message, category, hearts, createdAt, _id, index, updateThought }) => {
+const Thought = ({ message, category, name, hearts, createdAt, _id, index, updateThought }) => {
   const [clickedHeart, setClickedHeart] = useState(false);
 
   const onClickLike = () => {
@@ -40,6 +40,12 @@ const Thought = ({ message, category, hearts, createdAt, _id, index, updateThoug
           <Card.FooterText faded alignRight>
             {moment(createdAt).fromNow()}
           </Card.FooterText>
+        </Card.Footer>
+        <Card.Footer>
+          <Card.FooterText faded alignRight>
+            by {name}
+          </Card.FooterText>
+
         </Card.Footer>
       </Card>
     </>
