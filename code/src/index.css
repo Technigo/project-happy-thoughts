@@ -21,9 +21,10 @@ code {
 
 }
 
-.message-containe {
+.message-container {
   background: whitesmoke;
 }
+
 .message-container,
 .submit-message-container {
   border: black solid 1px;
@@ -35,7 +36,7 @@ code {
 }
 
 .submit-message-container {
-  background-color: rgb(241, 239, 239);
+  background-color: rgb(240, 255, 255);
   font-family: "Courier New";
   font-weight: 600;
   font-size: 16px;
@@ -47,7 +48,7 @@ code {
 }
 
 .button-submit {
-  background-color: rgb(255, 149, 149);
+  background-color: rgba(207, 255, 160, 0.969);
   border: none;
   border-radius: 45px;
   width: 70%;
@@ -58,7 +59,7 @@ code {
 }
 
 .button-submit:hover {
-  background-color: rgb(250, 221, 221);
+  background-color: rgb(237, 255, 231);
 }
 
 .button-likes{
