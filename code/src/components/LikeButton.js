@@ -3,17 +3,13 @@ import React, { useState } from "react";
 export const LikeButton = ({ likes, id, fetchLikes }) => {
   const [liked, setLiked] = useState(false);
 
-  /*first this function checks if the state liked is true or false 
-  (meaning - has this button already been pressed by the user?). 
-  If it's false a fetch-post is executed */
-  const toggleLike = (messageID) => {
-    liked ? setLiked(false) : setLiked(true);
-    fetchLikes(messageID, liked);
+  const onLikeClick = (messageID) => {
+    setLiked(true);
+    fetchLikes(messageID);
   };
-
   
   return (
-    <button className="like-btn" onClick={() => toggleLike(id)}>
+    <button className="like-btn" onClick={() => onLikeClick(id)}>
       <span
         role="img"
         /* by adding a state  to the className this element can change 
