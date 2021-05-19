@@ -50,7 +50,7 @@ form {
 }
 
 .faded-text {
-  color: #a0a0a0
+  color: #a4a4a4
 }
 
 .username-input {
@@ -101,6 +101,7 @@ img {
 
 .username-text {
   margin: 0;
+  color: #a4a4a4;
 }
 
 h4 {
