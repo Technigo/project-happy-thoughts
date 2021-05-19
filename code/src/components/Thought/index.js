@@ -4,13 +4,13 @@ import moment from 'moment';
 import Button from 'components/Styled/Button';
 import Card from 'components/Styled/Card';
 
-import { URL_LIKE, options } from 'helpers/reusables';
+import { URL_LIKE } from 'helpers/reusables';
 
-const Thought = ({ message, hearts, createdAt, _id, index, updateThought }) => {
+const Thought = ({ message, category, hearts, createdAt, _id, index, updateThought }) => {
   const [clickedHeart, setClickedHeart] = useState(false);
 
   const onClickLike = () => {
-    fetch(URL_LIKE(_id), options()).then((res) => {
+    fetch(URL_LIKE(_id), { method: 'POST' }).then((res) => {
       res.json();
       setClickedHeart(true);
       // Instead of calling fetch method, we update
@@ -23,7 +23,7 @@ const Thought = ({ message, hearts, createdAt, _id, index, updateThought }) => {
     <>
       <Card>
         <Card.Title>{message}</Card.Title>
-        <Card.Pills>Happy</Card.Pills>
+        <Card.Pills>{category}</Card.Pills>
         <Card.Footer>
           <Button
             type="button"

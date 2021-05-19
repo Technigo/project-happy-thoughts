@@ -11,7 +11,9 @@ const CardError = ({ handleConfirm, ...error }) => {
         X
       </Button>
       <Card.Title>{error.title}</Card.Title>
-      <P>{error.message}</P>
+      {error.message.map((m) => (
+        <P key={m}>{m}</P>
+      ))}
     </Card.ErrorWrapper>
   );
 };

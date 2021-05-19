@@ -7,11 +7,11 @@ import TextArea from 'components/TextArea';
 
 import { URL, options } from 'helpers/reusables';
 
-const categories = ['happy', 'funny'];
+const categories = ['Happy', 'Food', 'Home', 'Project'];
 
 const Form = ({ fetchThoughts }) => {
   const [message, setMessage] = useState('');
-  const [category, setCategory] = useState('happy');
+  const [category, setCategory] = useState('Happy');
 
   const textArea = useRef();
 
@@ -26,7 +26,7 @@ const Form = ({ fetchThoughts }) => {
       .catch((err) => {
         err.json().then((errMessage) => {
           textArea.current.handleNewError({
-            title: errMessage.error,
+            title: errMessage.type,
             message: errMessage.message
           });
         });
