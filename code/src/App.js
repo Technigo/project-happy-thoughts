@@ -55,7 +55,7 @@ export const App = () => {
       .then((receivedMessage) => {
         const updatedMessageList = messageList.map(message => {
           if (message._id === receivedMessage._id) {
-            message.likes += 1
+            message.like += 1
           } 
           return message
         })
