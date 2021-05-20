@@ -53,7 +53,10 @@ export const App = () => {
         return response.json()
       }
     })
-    .then(recievedThought => setThoughtsList([recievedThought, ...thoughtsList])) // also setUserName here?? 
+    .then(recievedThought => {
+      setThoughtsList([recievedThought, ...thoughtsList])) // also setUserName here?? 
+      setUsername(username)
+    }
     .catch(() => {
       setError(true)
     })
