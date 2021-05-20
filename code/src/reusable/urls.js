@@ -3,3 +3,4 @@
 
 export const API_URL = 'https://sofias-happy-thought-api.herokuapp.com/thoughts'
 export const LIKE_URL = (_id) => `https://sofias-happy-thought-api.herokuapp.com/thoughts/${_id}/like`
+export const DELETE_URL = (_id) => `https://sofias-happy-thought-api.herokuapp.com/thoughts/${_id}`

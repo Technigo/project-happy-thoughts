@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { API_URL, LIKE_URL } from './reusable/urls'
+import { API_URL, LIKE_URL, DELETE_URL } from './reusable/urls'
 import { Form } from './components/Form'
 import MessageList from './components/MessageList'
 import ErrorMessage from './components/ErrorMessage'
@@ -70,6 +70,23 @@ export const App = () => {
       setMessageList(updatedMessageList)
       }) 
     }
+
+    // Handle delete
+    const handleClickDelete = (id) => {
+      const options = {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+
+      fetch(DELETE_URL(id), options)
+        .then(response => response.json())
+        .then(deletedMessage => {
+          const updatedList = messageList.filter((item) => item._id !== deletedMessage._id)
+          setMessageList(updatedList)
+        })
+    }
     
   return (
     <div className='app-container'> 
@@ -85,6 +102,7 @@ export const App = () => {
           <MessageList 
               handleLikesIncrease={handleLikesIncrease} 
               messageList={messageList} 
+              handleClickDelete={handleClickDelete}
           />
           </div>
         </div>

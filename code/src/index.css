@@ -122,9 +122,26 @@ textarea:focus {
   margin: 30px auto;
 }
 
+.message-delete-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
 .message-text {
   overflow-wrap: break-word;
   font-size: 12px;
+}
+
+.delete-button {
+  font-size: 16px;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height:30px;
+  cursor: pointer;
 }
 
 .heart-date-container {
