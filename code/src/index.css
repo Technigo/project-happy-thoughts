@@ -22,7 +22,9 @@ code {
 }
 
 .message-container {
-  background:rgb(234, 255, 253);
+  background-color:rgb(234, 255, 253);
+  background-image: linear-gradient(bottom to left, rgb(253, 213, 255), rgb(176, 254, 203), rgb(143, 253, 255));
+
 }
 
 .message-container,
