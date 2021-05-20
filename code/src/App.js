@@ -39,10 +39,10 @@ export const App = () => {
 
     fetch(URL, options)
       .then((res) => res.json())
-      .then((newMessage) => setMessageList([newMessage,...messageList]))
+      .then(() => fetchMessageList())
   }
 
- /* const handleLikesIncrease = (id) => {
+  const handleLikesIncrease = (id) => {
     const options = {
       method: 'POST',
       headers: {
@@ -52,8 +52,16 @@ export const App = () => {
 
     fetch(LIKES_URL(id), options)
       .then((res) => res.json())
-      .then(() => fetchMessageList())
-  } */
+      .then((receivedMessage) => {
+        const updatedMessageList = messageList.map(message => {
+          if (message._id === receivedMessage._id) {
+            message.likes += 1
+          } 
+          return message
+        })
+        setMessageList(updatedMessageList)
+      })
+  } 
 
   return (
     <>
@@ -64,7 +72,7 @@ export const App = () => {
       />
       <ThoughtList
         messageList={messageList}
-       // handleLikesIncrease={handleLikesIncrease}
+        handleLikesIncrease={handleLikesIncrease}
       />
     </>
   )

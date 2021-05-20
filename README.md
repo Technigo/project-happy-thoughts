@@ -18,4 +18,8 @@ If I would have hade more time I would have made the counter which calculates ch
 
 ## View it live
 
-https://happy-thoughts-honkoan.netlify.app/
+Frontend:  
+https://happy-thoughts-honkoan.netlify.app/  
+
+Backend:  
+https://honkoan-happy-thoughts-api.herokuapp.com/  
