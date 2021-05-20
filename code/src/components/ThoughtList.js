@@ -3,10 +3,10 @@ import InfiniteScroll from 'react-infinite-scroller';
 
 import Thought from "./Thought"
 
-let items = []
-
 const ThoughtList = ({ thoughts, likeCounter, setLikeCounter, hasMoreMessages, fetchThoughts }) => {
-  thoughts.map(thought => (
+  let items = []
+
+  for (const thought of thoughts) {
     items.push(
       <Thought
         key={thought._id}
@@ -15,16 +15,14 @@ const ThoughtList = ({ thoughts, likeCounter, setLikeCounter, hasMoreMessages, f
         setLikeCounter={setLikeCounter}
       />
     )
-  ))
+  }
 
   return (
     <InfiniteScroll
       pageStart={0}
       loadMore={fetchThoughts}
       hasMore={hasMoreMessages}
-      loader={<div className="loader" key={0}>Loading ...</div>}
-      threshold={250}
-      useWindow={true}
+      loader={<div className="loader" key={0}></div>}
     >
       <div className="thought-container">
         {items}

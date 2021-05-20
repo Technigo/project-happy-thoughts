@@ -20,7 +20,7 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought, usernam
                 if (receivedThought.error) {
                     alert(receivedThought.error)
                 } else {
-                    setThoughts([receivedThought])
+                    setThoughts([receivedThought, ...thoughts])
                 }
             })
 
