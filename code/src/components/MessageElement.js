@@ -1,21 +1,31 @@
-import React from "react";
-import moment from "moment";
+import React from 'react';
+import moment from 'moment';
+
+import { 
+  DateText, 
+  LikeAndDateContainer, 
+  LikeButton, 
+  LikesText, 
+  MessageContainer, 
+  MessageName, 
+  MessageTitle } from './Styling';
 
 export const MessageElement = ({ message, onLikeClick }) => {
   return (
-    <section className="message-container">
-      <h4 className="message-title" tabIndex="0">{message.message}</h4>
-      <div className="like-and-date">
-        <p className="likes">
-          <button 
+    <MessageContainer>
+      <MessageTitle tabIndex='0'>{message.message}</MessageTitle>
+      <MessageName tabIndex='0'>{message.name}</MessageName>
+      <LikeAndDateContainer>
+        <LikesText>
+          <LikeButton 
             onClick={() => onLikeClick(message._id)}
-            className={`like-button ${message.hearts > 0 ? "pink" : "gray"}`}>
-            <span role="img" aria-label="heart">❤️</span>
-          </button> 
+            liked={message.hearts > 0}>
+            <span role='img' aria-label='heart'>❤️</span>
+          </LikeButton> 
           x {message.hearts}
-        </p>
-        <p className="dates">{moment(message.createdAt).fromNow()}</p>
-      </div>
-    </section>
+        </LikesText>
+        <DateText>{moment(message.createdAt).fromNow()}</DateText>
+      </LikeAndDateContainer>
+    </MessageContainer>
   )
-}
+};

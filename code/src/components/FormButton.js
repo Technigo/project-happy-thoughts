@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
+
+import { SubmitButton, Heart } from './Styling';
 
 export const FormButton = () => {
   return (
-    <button 
-      type="submit"
-      className="button">
-      <span role="img" aria-label="heart" className="heart">❤️</span> 
+    <SubmitButton type='submit'>
+      <Heart><span role='img' aria-label='heart'>❤️</span></Heart> 
       Send Happy Thought 
-      <span role="img" aria-label="heart" className="heart">❤️</span>
-    </button>
+      <Heart><span role='img' aria-label='heart'>❤️</span></Heart> 
+    </SubmitButton>
   )
-}
+};

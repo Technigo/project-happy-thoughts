@@ -1,37 +1,59 @@
-import React from "react";
+import React from 'react';
 
 import { FormButton } from "./FormButton";
+import { 
+  FormContainer, 
+  FormTitle, 
+  NameInput, 
+  MessageInput, 
+  ErrorContainer, 
+  ErrorMessage, 
+  CharacterCount } from './Styling';
 
-export const FormInput = ({ newMessage, setNewMessage, onMessageSubmit, errorMessage }) => {
+export const FormInput = ({ 
+  newMessage, 
+  setNewMessage, 
+  newName, 
+  setNewName, 
+  onMessageSubmit, 
+  errorMessage }) => {
+
   const handleNewMessage = (e) => {
     setNewMessage(e.target.value);
-  }
+  };
+
+  const handleNewName = (e) => {
+    setNewName(e.target.value);
+  };
 
   return (
-    <form 
-      onSubmit={onMessageSubmit}
-      className="form-container">
-      <label htmlFor="message">
-        <h1 className="form-title" tabIndex="0">What's making you happy right now?</h1>
+    <FormContainer
+      onSubmit={onMessageSubmit}>
+      <label htmlFor='message'>
+        <FormTitle tabIndex='0'>What's making you happy right now?</FormTitle>
       </label>
-      <textarea 
-        id="message" 
-        type="text" 
-        rows="3"
-        className="text-area"
-        placeholder="Type your happy thought here.."
-        aria-multiline="true"
+      <NameInput 
+        type='text' 
+        placeholder='Your name (optional)'
+        maxLength='20'
+        value={newName}
+        onChange={handleNewName} />
+      <MessageInput
+        id='message' 
+        type='text'
+        rows='3'
+        placeholder='Type your happy thought here..'
+        aria-multiline='true'
         value={newMessage} 
         onChange={handleNewMessage}>
-      </textarea>
-      <div className="error-character-div">
-        <span className="error-message">{errorMessage}</span>
-        <p className="character-counter">
-          <span 
-            className={newMessage.length > 140 ? "counter-red" : ""}>{newMessage.length}</span> / 140
-        </p>
-      </div>
+      </MessageInput>
+      <ErrorContainer>
+        <ErrorMessage>{errorMessage}</ErrorMessage>
+        <CharacterCount counter={newMessage.length > 140}>
+          {newMessage.length} / 140
+        </CharacterCount>
+      </ErrorContainer>
       <FormButton />
-    </form>
+    </FormContainer>
   )
-}
+};
