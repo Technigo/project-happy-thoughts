@@ -17,7 +17,7 @@ const onLikesIncrease = (id) => {
   }
   fetch(LIKES_URL(id), options)
     .then(res => res.json())
-    .then(receivedMessage => (setHearts(receivedMessage.updatedThought.hearts)))
+    .then(receivedMessage => (setHearts(receivedMessage.hearts)))
 }
 
   return (

@@ -3,8 +3,8 @@ import InfiniteScroll from 'react-infinite-scroller'
 
 import ThoughtsCard from "./ThoughtsCard"
 
-let items = []
 const ThoughtsList = ({ messageList, fetchMessageList, hasMoreMessages }) => {
+  let items = []
   messageList.map(message => (
     items.push(
 
@@ -26,7 +26,9 @@ const ThoughtsList = ({ messageList, fetchMessageList, hasMoreMessages }) => {
     threshold={250}
     useWindow={true}
     >
-    {items}
+      <div>
+        {items}
+      </div>
     </InfiniteScroll>
   )
 }

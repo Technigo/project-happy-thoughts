@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import ThoughtsForm from "./components/ThoughtsForm"
 import ThoughtsList from "./components/ThoughtsList"
@@ -10,24 +10,19 @@ let page = 0
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState("")
-  const [userName, setUserName] = useState(undefined) //Fix this
+  const [userName, setUserName] = useState("") //Fix this
   const [hasMoreMessages, setHasMoreMessages] = useState(true)
-
-  // useEffect(() => {
-  //   fetchMessageList()
-  // }, [])
 
   const fetchMessageList = () => {
     fetch(API_URL(page))
       .then(res => res.json())
       .then(messages => { 
-        setMessageList(messages.thoughts)
-        if (messages.amountOfThoughts < page * 1) {
+        setMessageList([...messageList, ...messages.thoughts])
+        if (page * 5 >= messages.amountOfThoughts) {
           setHasMoreMessages(false)
         }
       })
       page ++
-      console.log(page)
   }
 
   const handleUserName = (event) => {
@@ -47,7 +42,7 @@ export const App = () => {
       },
       body: JSON.stringify({ message: messageNew, userName: userName })
     }
-    fetch(API_URL, options)
+    fetch(API_URL(null), options)
     .then(res => res.json())
     .then(recievedMessage => {
       if (recievedMessage.error) {
@@ -56,26 +51,9 @@ export const App = () => {
         setMessageList([recievedMessage, ...messageList])
       }
     })
-    // .then(recievedMessage => setMessageList([recievedMessage, ...messageList])) //Switched the position of recievedMessage and messageList to make the new messages come first in the list
     setMessageNew("")
     setUserName("")
   }
-
-  // const handleLikesIncrease = (id) => {
-  //   const options = {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //   }
-  //   fetch(LIKES_URL(id), options)
-  //     .then(res => res.json())
-  //     // .then(recievedMessage => {
-  //     //   const updatedMessageList = messageList.filter(message => (message._id !== id))
-  //     //   setMessageList([recievedMessage.updatedThought, ...updatedMessageList].sort((a, b) => a.createdAt - b.createdAt))
-  //     // })
-  //     .then(receivedMessage => (setHearts(receivedMessage.updatedThought.hearts)))
-  // }
 
   return (
     <div className="form-container">
@@ -90,7 +68,6 @@ export const App = () => {
       messageList={messageList} 
       fetchMessageList={fetchMessageList}
       hasMoreMessages={hasMoreMessages}
-      // handleLikesIncrease={handleLikesIncrease}
       />
     </div>
   )
