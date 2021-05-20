@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Header from './Header';
 import MessageForm from './MessageForm';
 import MessageList from './MessageList';
+import LoadingState from './LoadingState';
 
 import { API_URL, API_URL_HEART, API_URL_DELETE } from './reusable/urls';
 
@@ -12,6 +13,9 @@ const App = () => {
   const [newUser, setNewUser] = useState(''); 
   const [newTag, setNewTag] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const textareaRef = useRef(null);
 
   useEffect(() => {
     fetchMessageList();
@@ -56,20 +60,19 @@ const App = () => {
     event.preventDefault();
 
     if (!validateFormInput()) {
+      textareaRef.current.focus();
       return;
     }
-
-    if (newUser.length < 1) {
-      setNewUser('Anonymous');
-    } 
 
     const config = {   
         method: 'POST', 
         headers: {              
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ message: newMessage, user: newUser, tag: newTag })     
+        body: JSON.stringify({ message: newMessage, user: newUser ? newUser : 'Anonymous', tag: newTag })     
     };
+
+    setLoading(true);
 
     fetch(API_URL, config)      
       .then(res => {
@@ -81,9 +84,12 @@ const App = () => {
       .then(() => fetchMessageList())     
       .catch(err => {
         setErrorMessage(err.message);
-      });      
+      })
+      .finally(() => setLoading(false));
 
     setNewMessage('');
+    setNewUser('');
+    setNewTag('');
   };
 
   const handleHeartClick = (id) => {
@@ -96,7 +102,7 @@ const App = () => {
 
     fetch(API_URL_HEART(id), config)
       .then(res => res.json())
-      .then(() => fetchMessageList())    
+      .then(() => fetchMessageList());    
   };
 
   const handleDeleteMessage = (id) => {
@@ -107,9 +113,12 @@ const App = () => {
       }
     };
 
+    setLoading(true);
+
     fetch(API_URL_DELETE(id), config)
       .then(res => res.json())
       .then(() => fetchMessageList())
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -121,11 +130,15 @@ const App = () => {
           <MessageForm 
             newMessage={newMessage}
             handleNewMessage={handleNewMessage}
+            newUser={newUser}
             handleNewUser={handleNewUser} 
+            newTag={newTag}
             handleNewTag={handleNewTag}
             errorMessage={errorMessage}
             onFormSubmit={handleFormSubmit}  
+            textareaRef={textareaRef}
           />
+          {loading && <LoadingState />}
           <MessageList 
             messageList={messageList}
             handleHeartClick={handleHeartClick}

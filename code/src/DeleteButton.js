@@ -6,9 +6,11 @@ const DeleteButton = ({ message, onDeleteMessage }) => {
     <button 
       className="delete-button"
       onClick={() => onDeleteMessage(message._id)}
+      aria-label="delete message"
     >
       <GoTrashcan 
         size="16px"
+        aria-hidden="true"
       />
     </button>
   );

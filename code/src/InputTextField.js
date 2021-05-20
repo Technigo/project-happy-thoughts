@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputTextField = ({ newMessage, onNewMessage }) => {
+const InputTextField = ({ newMessage, onNewMessage, textareaRef }) => {
   return (
     <>
       <label 
@@ -11,9 +11,12 @@ const InputTextField = ({ newMessage, onNewMessage }) => {
       <textarea
         className="new-message-textarea"
         id="newMessage"
+        ref={textareaRef}
         type="text"
         value={newMessage}
         onChange={onNewMessage}
+        aria-required="true"
+        aria-describedby="errorMessage"
       ></textarea>
     </>
   );

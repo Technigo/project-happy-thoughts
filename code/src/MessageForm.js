@@ -7,7 +7,7 @@ import SubmitButton from 'SubmitButton';
 import UserInputTextField from 'UserInputTextField';
 import TagInputTextField from 'TagInputTextField';
 
-const MessageForm = ({ newMessage, handleNewMessage, errorMessage, onFormSubmit, handleNewUser, handleNewTag }) => {
+const MessageForm = ({ newMessage, handleNewMessage, errorMessage, onFormSubmit, newUser, handleNewUser, newTag, handleNewTag, textareaRef }) => {
   return (
     <form 
       className="form" 
@@ -16,21 +16,24 @@ const MessageForm = ({ newMessage, handleNewMessage, errorMessage, onFormSubmit,
       <InputTextField 
         newMessage={newMessage}
         onNewMessage={handleNewMessage}  
+        textareaRef={textareaRef}
       />
-
-      <div className="user-tag-input">
-      <UserInputTextField
-        onNewUser={handleNewUser}
-      />
-
-      <TagInputTextField 
-        onNewTag={handleNewTag}
-      />
-      </div>
 
       <ErrorMessage 
         errorMessage={errorMessage}
       />
+
+      <div className="user-tag-input">
+        <UserInputTextField
+          newUser={newUser}
+          onNewUser={handleNewUser}
+        />
+
+        <TagInputTextField 
+          newTag={newTag}
+          onNewTag={handleNewTag}
+        />
+      </div>
 
       <CharacterCounter 
         newMessage={newMessage}
