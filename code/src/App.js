@@ -27,7 +27,6 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    event.target.reset()
 
     const options = {
       method: 'POST',
@@ -52,15 +51,7 @@ export const App = () => {
 
     fetch(LIKES_URL(id), options)
       .then((res) => res.json())
-      .then((receivedMessage) => {
-        const updatedMessageList = messageList.map(message => {
-          if (message._id === receivedMessage._id) {
-            message.like += 1
-          } 
-          return message
-        })
-        setMessageList(updatedMessageList)
-      })
+      .then(() => fetchMessageList())
   } 
 
   return (
