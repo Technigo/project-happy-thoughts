@@ -27,7 +27,8 @@ const onLikesIncrease = (id) => {
       <div className="bottom-info-container">
         <div className="likes-container">
           <button 
-            className={message.hearts === 0 ? "heart-button" : "liked-heart-button"}
+            // className={message.hearts === 0 ? "heart-button" : "liked-heart-button"}
+            className="heart-button"
             onClick={() => onLikesIncrease(message._id)}
             disabled={isLiked}
             >

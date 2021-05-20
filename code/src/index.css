@@ -144,7 +144,7 @@ p {
   margin-right: 5px;
 }
 
-.liked-heart-button {
+/* .liked-heart-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,6 +153,10 @@ p {
   border-radius: 50%;
   border: none;
   margin-right: 5px;
+  background-color: #ffadad;
+} */
+
+button:disabled {
   background-color: #ffadad;
 }
 
