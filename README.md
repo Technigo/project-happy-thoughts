@@ -4,8 +4,9 @@ The aim was to display uniquely created user messages in a list of cards, using 
 
 ## The problem
 
-Everything was built in one App.js file initially and then divided into different component files. 
+Everything was built in one App.js file with React initially and then divided into different component files. A custom API was created in week19 of the bootcamp using Mongoose, Express and MongoDB which can be viewed here: API: https://happy-thoughts-api-sn.herokuapp.com/
 
-## View it live
+## View the Site live
 
-https://happy-thoughts-sn.netlify.app/
+Live Site: https://happy-thoughts-sn.netlify.app/
+
