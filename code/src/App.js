@@ -19,7 +19,7 @@ export const App = () => {
   const fetchThoughtsList = () => {
     fetch(HAPPY_THOUGHTS_URL)
       .then(response => response.json())
-      .then(thoughts => setThoughtsList(thoughts.data))
+      .then(thoughts => setThoughtsList(thoughts))
   }
 
   const onNewThoughtChange = (e) => {
