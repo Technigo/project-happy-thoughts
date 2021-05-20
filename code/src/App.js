@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import { API_URL, LIKES_URL } from './reusables/urls';
 import { FormInput } from './components/FormInput';
@@ -18,22 +18,22 @@ export const App = () => {
   const [animate, setAnimation] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   
+    // Fetching all the thoughts
+    const fetchAllMessages = useCallback(() => {
+      fetch(`${API_URL}?sort=${sort}&page=${page}`)
+        .then(res => res.json())
+        .then(messages => {
+          setMessageList(messages.allThoughts);
+          setLoading(false);
+          setAnimation(false);
+          setTotalPages(messages.pagesTotal);
+        })
+      .catch(err => alert(`Error: ${err}`));  
+    }, [sort, page])
+    
   useEffect(() => {
     fetchAllMessages();
-  }, [sort, page]);
-
-  // Fetching all the thoughts
-  const fetchAllMessages = () => {
-    fetch(`${API_URL}?sort=${sort}&page=${page}`)
-      .then(res => res.json())
-      .then(messages => {
-        setMessageList(messages.allThoughts);
-        setLoading(false);
-        setAnimation(false);
-        setTotalPages(messages.pagesTotal);
-      })
-    .catch(err => alert(`Error: ${err}`));  
-  };
+  }, [fetchAllMessages]);
 
   // Clicking the submit button, posting message
   const handleMessageSubmit = (e) => {
