@@ -14,13 +14,13 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought, usernam
             body: JSON.stringify({ message: newThought, userName: username })
         }
 
-        fetch(API_URL, config)
+        fetch(API_URL(0), config)
             .then(res => res.json())
             .then(receivedThought => {
                 if (receivedThought.error) {
                     alert(receivedThought.error)
                 } else {
-                    setThoughts([receivedThought, ...thoughts])
+                    setThoughts([receivedThought])
                 }
             })
 
@@ -41,7 +41,7 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought, usernam
             />
             <p className={newThought.length > 140 ? "red" : ""} >{newThought.length} / 140</p>
             <label htmlFor="username-form" className="username-label">
-                Username (optional)
+                Name (optional)
                 </label>
             <input
                 id="username-form"

@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 
 import { API_URL } from "./utils/urls"
-import Thought from "./components/Thought"
 import ThoughtForm from "./components/ThoughtForm"
+import ThoughtList from "./components/ThoughtList"
 import Loader from "./components/Loader"
 import LikeCounter from './components/LikeCounter'
+
+let page = 0
+let hasMoreMessages = true
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
-  const [username, setUsername] = useState("")
+  // const [hasMoreMessages, setHasMoreMessages] = useState(true)
+  const [username, setUsername] = useState(undefined)
   const [loading, setLoading] = useState(true)
   const [likeCounter, setLikeCounter] = useState(0)
 
@@ -18,10 +22,19 @@ export const App = () => {
   }, [])
 
   const fetchThoughts = () => {
-    fetch(API_URL)
+    fetch(API_URL(page))
       .then(res => res.json())
-      .then(data => setThoughts(data))
-
+      .then(data => {
+        setThoughts(data.thoughts)
+        // setThoughts([data.thoughts, ...thoughts])
+        console.log(`${page} / ${data.amountOfThoughts}`)
+        // if (data.amountOfThoughts < (page * 1) + 1) {
+        if (page * 1 > data.amountOfThoughts - 2) {
+          // setHasMoreMessages(false)
+          hasMoreMessages = false
+        }
+      })
+    page++
     setLoading(false)
   }
 
@@ -37,15 +50,13 @@ export const App = () => {
       />
       {loading && <Loader />}
       {loading === false &&
-        thoughts.map(thought => (
-          <Thought
-            key={thought._id}
-            thought={thought}
-            likeCounter={likeCounter}
-            setLikeCounter={setLikeCounter}
-          />
-        ))
-      }
+        <ThoughtList
+          thoughts={thoughts}
+          fetchThoughts={fetchThoughts}
+          likeCounter={likeCounter}
+          setLikeCounter={setLikeCounter}
+          hasMoreMessages={hasMoreMessages}
+        />}
       <LikeCounter likeCounter={likeCounter} />
     </>
   )

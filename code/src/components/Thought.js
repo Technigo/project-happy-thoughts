@@ -1,6 +1,7 @@
 import moment from "moment"
 import React, { useState } from "react"
 
+
 import Like from "./Like"
 
 const Thought = ({ thought, likeCounter, setLikeCounter }) => {

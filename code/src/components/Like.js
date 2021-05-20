@@ -15,8 +15,8 @@ const Like = ({ thought, hearts, setHearts, likeCounter, setLikeCounter }) => {
         }
         fetch(LIKES_URL(thought._id), config)
             .then(res => res.json())
-            .then(receivedMessage => (setHearts(receivedMessage.updatedThought.hearts)))
-            .catch(err => console.error(err))
+            // .then(data => console.log(data))
+            .then(receivedMessage => (setHearts(receivedMessage.hearts)))
     }
 
     return (
