@@ -1,2 +1,2 @@
-export const FETCH_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-export const LIKE_URL = thoughtID => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtID}/like`
+export const FETCH_URL = 'https://app-happy-thoughts.herokuapp.com/thoughts'
+export const LIKE_URL = thoughtID => `https://app-happy-thoughts.herokuapp.com/thoughts/${thoughtID}/likes`
