@@ -10,7 +10,8 @@ export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [newThought, setNewThought] = useState('')
   const [error, setError] = useState(false)
-  
+  const [username, setUsername] = useState("")
+
   useEffect(() => {
     fetchThoughtsList()
   }, [])
@@ -26,6 +27,10 @@ export const App = () => {
     setNewThought(e.target.value)
   }
 
+  const onUserNameChange = (e) => {
+    setUsername(e.target.value)
+  }
+
   //POST: 
   const handleFormSubmit = (e) => {
   e.preventDefault()
@@ -35,7 +40,7 @@ export const App = () => {
       headers: {
         'Content-type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought })
+      body: JSON.stringify({ message: newThought, author: username })
   }
 
   fetch(HAPPY_THOUGHTS_URL, options)
@@ -44,10 +49,11 @@ export const App = () => {
         throw new Error ('Ups, something went wrong') //prints error message in Console for the use case: unspecified backend error
       } else { 
         setNewThought('')
+        setUsername('')
         return response.json()
       }
     })
-    .then(recievedThought => setThoughtsList([recievedThought, ...thoughtsList]))
+    .then(recievedThought => setThoughtsList([recievedThought, ...thoughtsList])) // also setUserName here?? 
     .catch(() => {
       setError(true)
     })
@@ -72,6 +78,7 @@ export const App = () => {
         newThought={newThought}
         onNewThoughtChange={onNewThoughtChange}
         handleFormSubmit={handleFormSubmit}
+        onUserNameChange={onUserNameChange}
       />
       <ThoughtsList 
         thoughtsList={thoughtsList}

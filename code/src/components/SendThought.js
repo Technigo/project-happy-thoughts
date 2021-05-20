@@ -6,7 +6,9 @@ import '../styles/SendThought.css'
 const SendThought = ({
   handleFormSubmit,
   newThought,
-  onNewThoughtChange
+  onNewThoughtChange,
+  username,
+  onUserNameChange
 }) => {
   return (
   <div className="thoughts-container-whitesmoke">
@@ -26,7 +28,7 @@ const SendThought = ({
           type="text"
           maxLength="20"
           value={username}
-          onChange={(event) => setUsername(event.target.value)}
+          onChange={onUserNameChange}
           />
       <p
         className={`counter-for-text-input ${newThought.length > 130 ? "red" : "black"}`}
