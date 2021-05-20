@@ -89,6 +89,7 @@ code {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   background-color: #FFADAD;
+  cursor: pointer;
 }
 
 .btn-container p {
@@ -122,6 +123,7 @@ code {
   width: 50px;
   background-color: #FFADAD;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .like-btn.zero {

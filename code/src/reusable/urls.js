@@ -1,3 +1,3 @@
-export const HAPPY_THOUGHTS_API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+export const HAPPY_THOUGHTS_API = 'https://sandra-project-happy-thoughts.herokuapp.com/thoughts'
 
-export const LIKE_URL = (messageId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageId}/like`
+export const LIKE_URL = (messageId) => `https://sandra-project-happy-thoughts.herokuapp.com/thoughts/${messageId}/likes`
