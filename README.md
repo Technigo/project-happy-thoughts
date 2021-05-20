@@ -9,6 +9,16 @@ But when I got to adding the error message and animation it got a bit harder. I 
 
 If I had more time I would have tried out the localStorage to save all my likes. 
 
+## UPDATED WITH MY OWN API
+
+I created my own API to use for this projects so did some updates on the frontend as well. Added the possibility to sort the messages by most liked, newest or oldest. I also added a pagination from material UI in the bottom (since I set the limit to 20 per page).
+And I changed from normal CSS to Styled components. 
+
+## BACKEND
+
+Link: https://jessikas-happy-thoughts.herokuapp.com/thoughts
+Repo: https://github.com/jessika-hage/project-happy-thoughts-api
+
 ## View it live
 
 https://jessikas-happy-thoughts.netlify.app/
