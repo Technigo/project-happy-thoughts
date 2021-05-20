@@ -4,11 +4,13 @@ import Header from './Header';
 import MessageForm from './MessageForm';
 import MessageList from './MessageList';
 
-import { API_URL, API_URL_HEART } from './reusable/urls';
+import { API_URL, API_URL_HEART, API_URL_DELETE } from './reusable/urls';
 
 const App = () => {
   const [messageList, setMessageList] = useState([]);
-  const [newMessage, setNewMessage] = useState(''); 
+  const [newMessage, setNewMessage] = useState('');
+  const [newUser, setNewUser] = useState(''); 
+  const [newTag, setNewTag] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
@@ -23,6 +25,14 @@ const App = () => {
 
   const handleNewMessage = (event) => {
     setNewMessage(event.target.value);
+  };
+
+  const handleNewUser = (event) => {
+    setNewUser(event.target.value);
+  };
+
+  const handleNewTag = (event) => {
+    setNewTag(event.target.value);
   };
 
   const validateFormInput = () => {
@@ -49,12 +59,16 @@ const App = () => {
       return;
     }
 
+    if (newUser.length < 1) {
+      setNewUser('Anonymous');
+    } 
+
     const config = {   
         method: 'POST', 
         headers: {              
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ message: newMessage })     
+        body: JSON.stringify({ message: newMessage, user: newUser, tag: newTag })     
     };
 
     fetch(API_URL, config)      
@@ -85,6 +99,19 @@ const App = () => {
       .then(() => fetchMessageList())    
   };
 
+  const handleDeleteMessage = (id) => {
+    const config = {   
+      method: 'DELETE', 
+      headers: {              
+        'Content-Type': 'application/json'
+      }
+    };
+
+    fetch(API_URL_DELETE(id), config)
+      .then(res => res.json())
+      .then(() => fetchMessageList())
+  };
+
   return (
     <>
       <Header />
@@ -94,12 +121,15 @@ const App = () => {
           <MessageForm 
             newMessage={newMessage}
             handleNewMessage={handleNewMessage}
+            handleNewUser={handleNewUser} 
+            handleNewTag={handleNewTag}
             errorMessage={errorMessage}
             onFormSubmit={handleFormSubmit}  
           />
           <MessageList 
             messageList={messageList}
             handleHeartClick={handleHeartClick}
+            handleDeleteMessage={handleDeleteMessage}
           />
         </div>
       </main>

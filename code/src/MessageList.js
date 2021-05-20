@@ -2,7 +2,7 @@ import React from 'react';
 
 import MessageContent from './MessageContent'
 
-const MessageList = ({ messageList, handleHeartClick }) => {
+const MessageList = ({ messageList, handleHeartClick, handleDeleteMessage }) => {
   return (
     <div>
       {messageList.map(message => (
@@ -10,6 +10,7 @@ const MessageList = ({ messageList, handleHeartClick }) => {
           key={message._id}
           message={message}
           handleHeartClick={handleHeartClick}
+          handleDeleteMessage={handleDeleteMessage}
         />
       ))}
     </div>
