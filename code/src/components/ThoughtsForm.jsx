@@ -22,10 +22,11 @@ const ThoughtsForm = ({ userName, onUserName, messageNew, onMessageNewChange, on
         onChange={onMessageNewChange}
         cols="36"
         rows="2"
-      > </textarea>
+      >
+      </textarea>
       <button 
-      className="send-button"
-      type="submit">
+        className="send-button"
+        type="submit">
         <img src="assets/heart-icon.png" alt="heart" />Send Happy Thought<img src="assets/heart-icon.png" alt="heart"/>
       </button>
     </form>

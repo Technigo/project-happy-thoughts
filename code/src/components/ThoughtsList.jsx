@@ -7,24 +7,21 @@ const ThoughtsList = ({ messageList, fetchMessageList, hasMoreMessages }) => {
   let items = []
   messageList.map(message => (
     items.push(
-
       <ThoughtsCard 
-      key={message._id}
-      message={message}
-      // onLikesIncrease={handleLikesIncrease}
+        key={message._id}
+        message={message}
       />
-      )
+    )
   ))
 
   return (
-
     <InfiniteScroll
-    pageStart={0}
-    loadMore={fetchMessageList}
-    hasMore={hasMoreMessages}
-    loader={<div className="loader" key={0}>Loading ...</div>}
-    threshold={250}
-    useWindow={true}
+      pageStart={0}
+      loadMore={fetchMessageList}
+      hasMore={hasMoreMessages}
+      loader={<div className="loader" key={0}>Loading ...</div>}
+      threshold={250}
+      useWindow={true}
     >
       <div>
         {items}

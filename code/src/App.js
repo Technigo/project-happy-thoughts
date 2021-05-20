@@ -10,7 +10,7 @@ let page = 0
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState("")
-  const [userName, setUserName] = useState("") //Fix this
+  const [userName, setUserName] = useState()
   const [hasMoreMessages, setHasMoreMessages] = useState(true)
 
   const fetchMessageList = () => {
@@ -58,16 +58,16 @@ export const App = () => {
   return (
     <div className="form-container">
       <ThoughtsForm 
-      userName={userName}
-      onUserName={handleUserName}
-      messageNew={messageNew}
-      onMessageNewChange={handleMessageNewChange}
-      onFormSubmit={handleFormSubmit}
+        userName={userName}
+        onUserName={handleUserName}
+        messageNew={messageNew}
+        onMessageNewChange={handleMessageNewChange}
+        onFormSubmit={handleFormSubmit}
       />
       <ThoughtsList 
-      messageList={messageList} 
-      fetchMessageList={fetchMessageList}
-      hasMoreMessages={hasMoreMessages}
+        messageList={messageList} 
+        fetchMessageList={fetchMessageList}
+        hasMoreMessages={hasMoreMessages}
       />
     </div>
   )
