@@ -31,12 +31,13 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
+
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify ({ message: thoughtNew })
+      body: JSON.stringify({ message: thoughtNew })
     }
     fetch(API_URL, options)
       .then((response) => response.json())
@@ -68,13 +69,13 @@ export const App = () => {
   return (
     <div className="main">
       <ThoughtForm
-      thoughtNew={thoughtNew}
-      onThoughtNewChanged={handleThoughtNewChanged}
-      onFormSubmit={handleFormSubmit}
+        thoughtNew={thoughtNew}
+        onThoughtNewChanged={handleThoughtNewChanged}
+        onFormSubmit={handleFormSubmit}
       />
       <ThoughtList
-      thoughtList={thoughtList}
-      handleHeartsIncrease={handleHeartsIncrease}
+        thoughtList={thoughtList}
+        handleHeartsIncrease={handleHeartsIncrease}
       />
     </div>
   )
