@@ -27,6 +27,7 @@ export const App = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
+    event.target.reset()
 
     const options = {
       method: 'POST',
@@ -38,10 +39,10 @@ export const App = () => {
 
     fetch(URL, options)
       .then((res) => res.json())
-      .then(() => fetchMessageList())
+      .then((newMessage) => setMessageList([newMessage,...messageList]))
   }
 
-  const handleLikesIncrease = (id) => {
+ /* const handleLikesIncrease = (id) => {
     const options = {
       method: 'POST',
       headers: {
@@ -52,7 +53,7 @@ export const App = () => {
     fetch(LIKES_URL(id), options)
       .then((res) => res.json())
       .then(() => fetchMessageList())
-  }
+  } */
 
   return (
     <>
@@ -63,7 +64,7 @@ export const App = () => {
       />
       <ThoughtList
         messageList={messageList}
-        handleLikesIncrease={handleLikesIncrease}
+       // handleLikesIncrease={handleLikesIncrease}
       />
     </>
   )
