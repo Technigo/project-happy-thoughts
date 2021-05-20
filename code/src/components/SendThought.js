@@ -21,6 +21,13 @@ const SendThought = ({
         onChange={onNewThoughtChange}
         placeholder="Write your thoughts here, you will contribute to our database 😊">
       </textarea>
+      Sent by:
+        <input
+          type="text"
+          maxLength="20"
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
+          />
       <p
         className={`counter-for-text-input ${newThought.length > 130 ? "red" : "black"}`}
       >
