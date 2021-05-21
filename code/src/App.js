@@ -14,6 +14,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchThoughtsList()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   //GET
