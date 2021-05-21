@@ -23,13 +23,14 @@ const SendThought = ({
         onChange={onNewThoughtChange}
         placeholder="Write your thoughts here, you will contribute to our database 😊">
       </textarea>
-      <h5 className="author-name">Sent by:</h5>
+      <h5 className="author-name">Your name:</h5>
         <input
           className="author-name-input"
           type="text"
           maxLength="25"
           value={username}
           onChange={onUserNameChange}
+          placeholder="Anonymous"
         />
       <p
         className={`counter-for-text-input ${newThought.length > 130 ? "red" : "black"}`}

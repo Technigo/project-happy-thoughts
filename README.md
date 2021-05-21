@@ -13,12 +13,12 @@ What took most time this week was the fetch post request to add an error message
 If I had more time I would implement a loading spinner to show to the user whilst waiting for the response by the API. 
 
 ## Tech
-React
-JSX
-API
-useState
-useEffect
-CSS
+- React
+- JSX
+- useState
+- useEffect
+- API
+- CSS
 ## View it live
 FrontEnd: https://caro-happy-thoughts.netlify.app/   Backend: https://caroline-happy-thoughts-api.herokuapp.com/
 
