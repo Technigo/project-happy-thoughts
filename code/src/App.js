@@ -18,13 +18,14 @@ export const App = () => {
 
   useEffect(() => {
     fetchMessageList()
-  }, [page, perPage, fetchMessageList])
+  }, [page, perPage])
 
   const fetchMessageList = () => {
     fetch(API_URL(page, perPage))
     .then(response => response.json())
     .then(messages => setMessageList(messages))
   }
+
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
@@ -48,8 +49,8 @@ export const App = () => {
         throw new Error ('Something went wrong!')
       }
     })
-    .then(() =>
-      fetchMessageList(),
+    .then(
+      fetchMessageList,
       setMessageNew(''),
       setUserName('')
       )
