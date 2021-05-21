@@ -44,7 +44,7 @@ export const App = () => {
     .then((receivedMessage) => {
       setMessageList([receivedMessage, ...messageList])
       setMessageNew('')
-      window.location.reload()
+      // window.location.reload()
     })
     .catch(() => {
       setErrorMessage(true);
