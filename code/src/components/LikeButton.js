@@ -1,5 +1,4 @@
 import React from 'react'
-import lottie from 'lottie-web'
 
 export const LikeButton = (props) => {    
 
