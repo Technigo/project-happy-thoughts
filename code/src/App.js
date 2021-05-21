@@ -89,7 +89,6 @@ export const App = () => {
         messageList = {messageList}
         handleLikesIncrease = {handleLikesIncrease}
         onDeleteThought = {handleDeleteThought}
-        onEditThought = {handleEditThought}
       />
       
     </main>
