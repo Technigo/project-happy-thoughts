@@ -10,15 +10,14 @@ const ThoughtForm = ({ thoughtNew, onThoughtNewChanged, onFormSubmit }) => {
           id="thoughtNew"
           type="text"
           value={thoughtNew}
-          onChange={onThoughtNewChanged}
-        />
-
+          onChange={onThoughtNewChanged} />
         <div className="button-counter-row">
-          <button 
+          <button
             type="submit"
             className="form-submit-button"
             disabled={
-              thoughtNew.length < 5 || thoughtNew.length > 140 ? true : false }>
+              thoughtNew.length < 5 || thoughtNew.length > 140 ? true : false
+            }>
             <span role="img" aria-label="heart">❤️</span> Send Happy Thought <span role="img" aria-label="heart">❤️</span>
           </button>
           <p className="characters-counter">

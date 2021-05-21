@@ -42,18 +42,18 @@ export const App = () => {
     fetch(API_URL, options)
       .then((response) => response.json())
       .then((receivedThought) => setThoughtList([...thoughtList, receivedThought]))
-      // setTimeout(() => reloadPage(), 1000)
+    // setTimeout(() => reloadPage(), 1000)
     setThoughtNew('')
   }
   // FETCH HANDLE HEARTS
-  const handleHeartsIncrease = (thoughtID) => {
+  const handleHeartsIncrease = (thoughtId) => {
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    fetch(HEARTS_URL(thoughtID), options)
+    fetch(HEARTS_URL(thoughtId), options)
       .then((response) => response.json())
       .then((receivedThought) => {
         const updatedThoughtList = thoughtList.map((thought) => {
@@ -71,12 +71,10 @@ export const App = () => {
       <ThoughtForm
         thoughtNew={thoughtNew}
         onThoughtNewChanged={handleThoughtNewChanged}
-        onFormSubmit={handleFormSubmit}
-      />
+        onFormSubmit={handleFormSubmit} />
       <ThoughtList
         thoughtList={thoughtList}
-        handleHeartsIncrease={handleHeartsIncrease}
-      />
+        handleHeartsIncrease={handleHeartsIncrease} />
     </div>
   )
 }
