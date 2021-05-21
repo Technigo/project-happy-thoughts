@@ -17,14 +17,15 @@ export const App = () => {
 
 
   useEffect(() => {
+    fetchMessageList()
+    // eslint-disable-next-line
+  }, [page, perPage])
+
   const fetchMessageList = () => {
     fetch(API_URL(page, perPage))
     .then(response => response.json())
     .then(messages => setMessageList(messages))
   }
-  fetchMessageList()
-}, [page, perPage])
-
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
