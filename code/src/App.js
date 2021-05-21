@@ -36,8 +36,8 @@ export const App = () => {
     
   fetch(API_URL, options)
     .then(res => res.json())
-    .then(receivedMessage => setThoughtsList([receivedMessage, ...thoughtsList]));
-  
+    //.then(receivedMessage => setThoughtsList([receivedMessage, ...thoughtsList]));
+    .then(() => fetchMessageList())
     setNewMessage('')
   }
 
