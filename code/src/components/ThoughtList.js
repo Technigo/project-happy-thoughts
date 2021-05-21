@@ -23,6 +23,7 @@ const ThoughtList = ({ thoughts, likeCounter, setLikeCounter, hasMoreMessages, f
       loadMore={fetchThoughts}
       hasMore={hasMoreMessages}
       loader={<div className="loader" key={0}></div>}
+      className="scrolling-container"
     >
       <div className="thought-container">
         {items}
