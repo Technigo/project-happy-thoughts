@@ -18,7 +18,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchMessageList()
-  }, [])
+  }, [page, perPage, fetchMessageList])
 
   const fetchMessageList = () => {
     fetch(API_URL(page, perPage))
