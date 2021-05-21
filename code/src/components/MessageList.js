@@ -23,7 +23,7 @@ export const MessageList = ({ messageList, handleLikesIncrease, onDeleteThought 
             <p className="post-time">
               {moment(message.createdAt).fromNow()}
             </p>
-            <button className="delete-btn" onClick={() => onDeleteThought(message._id)}>🗑</button>
+            <button className="delete-btn" onClick={() => onDeleteThought(message._id)}><span role="img" aria-label="bin emoji">🗑</span></button>
           </div>       
         </div>
       ))}
