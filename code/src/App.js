@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 
 //Local dependencies
-import { API_URL, POST_HEART_URL } from './constants/urls'
+import { API_URL, POST_HEART_URL, DELETE_THOUGHT_URL } from './constants/urls'
 
 //Components
 import { MessageForm } from './Components/MessageForm'
@@ -46,6 +46,20 @@ export const App = () => {
       .then (()=> fetchMessageList())
   }
 
+  const handleDeleteThought = (messageID) => {
+
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    fetch(DELETE_THOUGHT_URL(messageID), options)
+      .then (response => response.json())
+      .then (()=> fetchMessageList())
+  }
+
   const handleLikesIncrease = (messageID) => {
     const options = {
       method: 'POST',
@@ -74,6 +88,8 @@ export const App = () => {
       < MessageList 
         messageList = {messageList}
         handleLikesIncrease = {handleLikesIncrease}
+        onDeleteThought = {handleDeleteThought}
+        onEditThought = {handleEditThought}
       />
       
     </main>

@@ -1,8 +1,10 @@
 import React from 'react'
 import moment from 'moment'
+
 import { LikeButton } from './LikeButton'
 
-export const MessageList = ({ messageList, handleLikesIncrease }) => {
+
+export const MessageList = ({ messageList, handleLikesIncrease, onDeleteThought }) => {
   return (
     <>
       {messageList.map(message => ( 
@@ -21,6 +23,7 @@ export const MessageList = ({ messageList, handleLikesIncrease }) => {
             <p className="post-time">
               {moment(message.createdAt).fromNow()}
             </p>
+            <button className="delete-btn" onClick={() => onDeleteThought(message._id)}>🗑</button>
           </div>       
         </div>
       ))}
