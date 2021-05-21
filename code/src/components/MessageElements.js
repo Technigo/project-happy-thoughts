@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-const MessageElements = ({ onLikesIncrease, message, onClickDelete }) => {
+const MessageElements = ({ onLikesIncrease, message, userName, onClickDelete }) => {
 
     return (
         <div className='message-container'>
@@ -17,6 +17,7 @@ const MessageElements = ({ onLikesIncrease, message, onClickDelete }) => {
               x
             </button>
           </div>
+          <p className='username-text'>Posted by: {message.userName}</p>
           <div className='heart-date-container'>
             <div className="likes-icon-count">
               <button 

@@ -11,6 +11,7 @@ export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState ('')
   const [errorMessage, setErrorMessage] = useState(false)
+  const [userName, setUserName] = useState('')
 
   useEffect(() => {
     fetchMessageList()
@@ -30,7 +31,10 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: messageNew })
+      body: JSON.stringify({ 
+        message: messageNew, 
+        userName: userName 
+      })
     }
 
     fetch(API_URL, options)
@@ -47,7 +51,8 @@ export const App = () => {
     // })
     .then(
       fetchMessageList,
-      setMessageNew('')
+      setMessageNew(''),
+      setUserName('')
       )
     .catch(() => {
       setErrorMessage(true);
@@ -99,6 +104,8 @@ export const App = () => {
           <Form  
             messageNew={messageNew} 
             setMessageNew={setMessageNew} 
+            userName={userName}
+            setUserName={setUserName}
             onFormSubmit={handleFormSubmit}
           />
           {errorMessage && <ErrorMessage setErrorMessage={setErrorMessage} />}
@@ -106,6 +113,7 @@ export const App = () => {
           <MessageList 
               handleLikesIncrease={handleLikesIncrease} 
               messageList={messageList} 
+              userName={userName}
               handleClickDelete={handleClickDelete}
           />
           </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 import MessageElements from './MessageElements'
 
-const MessageList = ({ handleLikesIncrease, messageList, handleClickDelete }) => {
+const MessageList = ({ handleLikesIncrease, messageList, userName, handleClickDelete }) => {
     return (
         <>
             {messageList.map(message => (
@@ -11,6 +11,7 @@ const MessageList = ({ handleLikesIncrease, messageList, handleClickDelete }) =>
                     onClickDelete={handleClickDelete}
                     key={message._id} 
                     message={message} 
+                    userName={userName}
                 />
             ))}
         </>

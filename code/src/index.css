@@ -69,7 +69,7 @@ code {
 
 textarea {
   padding:10px;
-  margin: 15px 0;
+  margin: 10px 0;
   resize:none;
   font-size:14px;
 }
@@ -84,6 +84,11 @@ textarea:focus {
   font-weight: bold;
 }
 
+input {
+  margin: 0 0 20px 10px;
+  width: fit-content;
+}
+
 .textarea-valid {
   color: black;
 }
@@ -95,19 +100,22 @@ textarea:focus {
   width: fit-content;
   border-radius: 20px;
   background-color: rgba(255, 0,	0, 0.3);
-  border:none;
+  border: none;
   padding: 4px;
   font-size: 10px;
+  margin: 0 auto;
 }
 
-.submit-charcount-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.submit-charcount-container > p {
-  font-size: 8px;
+.char-counter {
+  font-size: 12px;
   font-weight: 200;
+  text-align: right;
+  margin: 0;
+}
+
+.sign-label {
+  font-size: 16px;
+  margin-right: 15px;
 }
 
 /*Styling message container*/
@@ -126,11 +134,14 @@ textarea:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .message-text {
   overflow-wrap: break-word;
+  font-size: 12px;
+}
+
+.username-text {
   font-size: 12px;
 }
 
@@ -147,6 +158,7 @@ textarea:focus {
 .heart-date-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 10px;
 }
 
@@ -184,6 +196,7 @@ textarea:focus {
 
 .date {
   font-style: italic;
+  font-size: 14px;
 }
 
 /*Styling error message*/

@@ -1,9 +1,13 @@
 import React from 'react'
 
-export const Form = ({ messageNew ,setMessageNew, onFormSubmit }) => {
+export const Form = ({ messageNew ,setMessageNew, userName, setUserName, onFormSubmit }) => {
 
     const onMessageNewChange = (event) => {
         setMessageNew(event.target.value)
+      }
+
+      const onUserNameChange = (event) => {
+        setUserName(event.target.value)
       }
 
     return (
@@ -19,27 +23,34 @@ export const Form = ({ messageNew ,setMessageNew, onFormSubmit }) => {
                     onChange={onMessageNewChange}
                     className = {messageNew.length > 140 ? 'textarea-invalid' : 'textarea-valid'}
                 />
-                <div className='submit-charcount-container'>
-                    <button 
-                        className='button' 
-                        type='submit'
-                        value={messageNew}
-                        tabIndex='0'
-                        aria-pressed='false'
-                        aria-label='Submit message'
-                    >
-                        <img className='heart-img' 
-                             src={process.env.PUBLIC_URL + './icons/favourite.png'}
-                             alt='heart' 
-                        />
-                        Send happy thoughts!
-                        <img className='heart-img' 
-                             src={process.env.PUBLIC_URL + './icons/favourite.png'}
-                             alt='heart' 
-                        /> 
-                    </button>
-                    <p>{messageNew.length}/140</p>
-                </div>
+                <p className='char-counter'>{messageNew.length}/140</p>
+                <label tabIndex='0' htmlFor='newUser' className='sign-label'>
+                    Sign as:
+                    <input 
+                        id='newUser'
+                        type='text'
+                        value={userName}
+                        onChange={onUserNameChange}
+                        className = {userName.length > 20 ? 'textarea-invalid' : 'textarea-valid'}
+                    />
+                </label>
+                <button 
+                    className='button' 
+                    type='submit'
+                    tabIndex='0'
+                    aria-pressed='false'
+                    aria-label='Submit message'
+                >
+                    <img className='heart-img' 
+                        src={process.env.PUBLIC_URL + './icons/favourite.png'}
+                        alt='heart' 
+                    />
+                    Send happy thoughts!
+                    <img className='heart-img' 
+                        src={process.env.PUBLIC_URL + './icons/favourite.png'}
+                        alt='heart' 
+                    /> 
+                </button>
             </form>
         </>
     )
