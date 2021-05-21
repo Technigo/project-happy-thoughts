@@ -22,6 +22,19 @@
   font-weight: bold;
 }
 
+.author-name {
+  margin: 15px;
+  font-size: 14px;
+}
+
+.author-name-input {
+  width: calc(100% - 50%);
+  height: 10px;
+  margin: 15px;
+  resize: none;
+  outline-color: #ffadad;
+}
+
 .counter-for-text-input {
   margin: 15px;
   font-size: 12px;
@@ -92,6 +105,10 @@
 
 .sent-message {
   word-wrap: break-word;
+  margin: 15px;
+}
+
+.sent-message-author {
   margin: 15px;
 }
 

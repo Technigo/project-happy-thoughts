@@ -10,7 +10,7 @@ export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [newThought, setNewThought] = useState('')
   const [error, setError] = useState(false)
-  const [username, setUsername] = useState("")
+  const [username, setUsername] = useState('')
 
   useEffect(() => {
     fetchThoughtsList()
@@ -20,7 +20,10 @@ export const App = () => {
   const fetchThoughtsList = () => {
     fetch(HAPPY_THOUGHTS_URL)
       .then(response => response.json())
-      .then(thoughts => setThoughtsList(thoughts))
+      .then(thoughts => {
+        setThoughtsList(thoughts)
+        setUsername(username) // added username here
+      })
   }
 
   const onNewThoughtChange = (e) => {
@@ -40,7 +43,7 @@ export const App = () => {
       headers: {
         'Content-type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought, author: username })
+      body: JSON.stringify({ message: newThought, author: username === '' ? 'Anonymous' : username }) // change to author : author 
   }
 
   fetch(HAPPY_THOUGHTS_URL, options)
@@ -48,15 +51,15 @@ export const App = () => {
       if (!response.ok) {
         throw new Error ('Ups, something went wrong') //prints error message in Console for the use case: unspecified backend error
       } else { 
+        setUsername('') // denna fungerar inte
         setNewThought('')
-        setUsername('')
         return response.json()
       }
     })
     .then(recievedThought => {
-      setThoughtsList([recievedThought, ...thoughtsList])) // also setUserName here?? 
-      setUsername(username)
-    }
+      setThoughtsList([recievedThought, ...thoughtsList]) 
+      setUsername(username) // added setUserName(username) here
+    })
     .catch(() => {
       setError(true)
     })
@@ -82,10 +85,12 @@ export const App = () => {
         onNewThoughtChange={onNewThoughtChange}
         handleFormSubmit={handleFormSubmit}
         onUserNameChange={onUserNameChange}
+        //username={username} // username ? 
       />
       <ThoughtsList 
         thoughtsList={thoughtsList}
-        handleHeartsIncrease={handleHeartsIncrease}  
+        handleHeartsIncrease={handleHeartsIncrease}
+        //username={username} // username ? 
       />
       {error && <ErrorPopup setError={setError}/>}
     </>

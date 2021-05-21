@@ -5,6 +5,7 @@ const ThoughtsElement = ({ sentmessage, handleHeartsIncrease}) => {
   return (
     <div className="sent-message-container">
       <h4 className="sent-message">{sentmessage.message}</h4>
+      <h5 className="sent-message-author">{sentmessage.author}</h5> 
       <div className="heart-button-and-messagecreated-container">
         <div className="heart-likes-container">
           <button

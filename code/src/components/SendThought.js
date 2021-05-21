@@ -2,7 +2,7 @@ import React from 'react'
 
 import ButtonSubmit from './ButtonSubmit'
 import '../styles/SendThought.css'
-
+// added another label with input for 
 const SendThought = ({
   handleFormSubmit,
   newThought,
@@ -23,13 +23,14 @@ const SendThought = ({
         onChange={onNewThoughtChange}
         placeholder="Write your thoughts here, you will contribute to our database 😊">
       </textarea>
-      Sent by:
+      <h5 className="author-name">Sent by:</h5>
         <input
+          className="author-name-input"
           type="text"
-          maxLength="20"
+          maxLength="25"
           value={username}
           onChange={onUserNameChange}
-          />
+        />
       <p
         className={`counter-for-text-input ${newThought.length > 130 ? "red" : "black"}`}
       >

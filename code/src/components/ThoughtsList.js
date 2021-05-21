@@ -5,7 +5,7 @@ import ThoughtsElement from './ThoughtsElement'
 const ThoughtsList = ({ handleHeartsIncrease, thoughtsList }) => {
   return (
     <>
-    {thoughtsList.map(sentmessage => (
+    {thoughtsList.map(sentmessage => ( 
       <ThoughtsElement
       key={sentmessage._id}
       sentmessage={sentmessage}
