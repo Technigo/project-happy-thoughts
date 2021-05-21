@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Form from './components/Form'
 import Message from './components/Message'
-import { API_URL, APIHEARTS_URL } from './components/Urls'
+import { API_URL, APIHEARTS_URL, APIDELETE_URL } from './components/Urls'
 
 export const App = () => {
 
@@ -28,7 +28,8 @@ export const App = () => {
     body: JSON.stringify({message: newMessage})
   }
 
-  const handleSubmitForm = (event) => {  /* This function posts a new msg from the form to server */
+/* This function posts a new msg from the form to server */
+  const handleSubmitForm = (event) => {  
     event.preventDefault()
 
     fetch(API_URL, options)
@@ -44,14 +45,14 @@ export const App = () => {
       setNewMessage(event.target.value)
   }
 
-  const handleAddHeart = (id) => { /* When clicking on a heart, send post request to server */  
+/* When clicking on a heart, send post request to server, updates heart count */ 
+  const handleAddHeart = (id) => {  
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    
     fetch(APIHEARTS_URL(id), options)
     .then(response => response.json())
     .then(receivedMessage => {
@@ -66,6 +67,20 @@ export const App = () => {
     .catch(error => error)
   }
 
+  const handleDeleteMsg = (id) => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(APIDELETE_URL(id), options)
+    .then(response => response.json())
+    .then(receivedMessage => {
+      const updatedMessageList = messageList.filter(message => message._id !== receivedMessage._id)
+      setMessageList(updatedMessageList)
+    })
+  }
 
   return (
     <div>
@@ -78,6 +93,7 @@ export const App = () => {
       <Message 
         messageList={messageList}
         onAddHeart={handleAddHeart}
+        onDeleteMsg={handleDeleteMsg}
       />
      
     </div>
