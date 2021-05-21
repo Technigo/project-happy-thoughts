@@ -61,7 +61,7 @@ export const App = () => {
         })
         setMessageList(updatedMessageList)
       })
-      .catch((err) => console.error(err))
+      .catch((err) => (err))
   }
   
   return (
