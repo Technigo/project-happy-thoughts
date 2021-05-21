@@ -41,11 +41,14 @@ export const App = () => {
         throw new Error ('Something went wrong!')
       }
     })
-    .then((receivedMessage) => {
-      setMessageList([receivedMessage, ...messageList])
+    // .then((receivedMessage) => {
+    //   setMessageList([receivedMessage, ...messageList])
+    //   setMessageNew('')
+    // })
+    .then(
+      fetchMessageList,
       setMessageNew('')
-      // window.location.reload()
-    })
+      )
     .catch(() => {
       setErrorMessage(true);
   })
