@@ -20,4 +20,5 @@ useState
 useEffect
 CSS
 ## View it live
-Write your happy thoughts here: https://caro-happy-thoughts.netlify.app/
+FrontEnd: https://caro-happy-thoughts.netlify.app/   Backend: https://caroline-happy-thoughts-api.herokuapp.com/
+
