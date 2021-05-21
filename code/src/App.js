@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 
 //Local dependencies
-import { API_URL, POST_HEART_URL, DELETE_THOUGHT_URL } from './constants/urls'
+import { API_URL, POST_HEART_URL, DELETE_THOUGHT_URL } from './constants/urls.js'
 
 //Components
 import { MessageForm } from './Components/MessageForm'
