@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import MessageForm from './components/MessageForm'
 import MessageList from './components/MessageList'
 
-import { THOUGHTS_URL, LIKES_URL  } from './reusable/urls'
+import { THOUGHTS_URL, LIKES_URL, DELETE_THOUGHT_URL  } from './reusable/urls'
 
 
 export const App = () => {
@@ -63,6 +63,19 @@ export const App = () => {
       })
       .catch((err) => (err))
   }
+
+  const handleDeleteMessage = (id) => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+      fetch(DELETE_THOUGHT_URL(id), options)
+      .then(res => res.json())
+      .then(() => fetchMessageList())
+      .catch((err) => (err))
+  }
   
   return (
     <main>
@@ -74,6 +87,7 @@ export const App = () => {
       <MessageList 
         messageList={messageList} 
         handleLikesIncrease={handleLikesIncrease}
+        handleDeleteMessage={handleDeleteMessage}
       />
     </main>
   )
