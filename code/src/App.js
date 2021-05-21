@@ -2,14 +2,13 @@
 import React, { useEffect, useState } from 'react'
 
 //Local dependencies
-import { API_URL, POST_HEART_URL, DELETE_THOUGHT_URL } from './constants/urls.js'
+//import { API_URL, POST_HEART_URL, DELETE_THOUGHT_URL } from './constants/urls.js'
 
 //Components
 import { MessageForm } from './Components/MessageForm'
 import { MessageList } from './Components/MessageList'
 
 export const App = () => {
-
 
 //Constants & Functions
   const [messageList, setMessageList] = useState([])
@@ -20,7 +19,7 @@ export const App = () => {
   }, [])
 
   const fetchMessageList = () => {
-    fetch(API_URL)
+    fetch('https://a-lenksjo-happy-thoughts-api.herokuapp.com/thoughts')
     .then(response => response.json())
     .then (messages => setMessageList(messages))
    }
@@ -41,7 +40,7 @@ export const App = () => {
       body: JSON.stringify({message: messageNew})
     }
 
-    fetch(API_URL, options)
+    fetch('https://a-lenksjo-happy-thoughts-api.herokuapp.com/thoughts', options)
       .then (response => response.json())
       .then (()=> fetchMessageList())
   }
@@ -55,7 +54,7 @@ export const App = () => {
       }
     }
 
-    fetch(DELETE_THOUGHT_URL(messageID), options)
+    fetch(`https://a-lenksjo-happy-thoughts-api.herokuapp.com/thoughts/${messageID}`, options)
       .then (response => response.json())
       .then (()=> fetchMessageList())
   }
@@ -68,11 +67,10 @@ export const App = () => {
       }
     }
 
-    fetch(POST_HEART_URL(messageID), options)
+    fetch(`https://a-lenksjo-happy-thoughts-api.herokuapp.com/thoughts/${messageID}/likes`, options)
     .then (response => response.json())
     .then (()=> fetchMessageList())
   }
-
 
 // Mounting
   return (
