@@ -115,6 +115,17 @@ p {
   margin: 0;
 }
 
+.thought-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thought {
+  max-width: 380px;
+}
+
 .thought-message {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;

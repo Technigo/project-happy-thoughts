@@ -11,7 +11,10 @@ const ThoughtForm = ({ thoughts, setThoughts, newThought, setNewThought, usernam
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ message: newThought, userName: username })
+            body: JSON.stringify({
+                message: newThought,
+                userName: username === "" ? undefined : username
+            })
         }
 
         fetch(API_URL(0), config)

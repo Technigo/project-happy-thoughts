@@ -11,7 +11,7 @@ let hasMoreMessages = true
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
-  const [username, setUsername] = useState()
+  const [username, setUsername] = useState("")
   const [likeCounter, setLikeCounter] = useState(0)
 
   const fetchThoughts = () => {
