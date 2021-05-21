@@ -298,16 +298,26 @@ p {
   margin-left: auto;
 }
 
-/* Delete button */
-.delete-button {
+/* Edit input field */
+.edit-input-field {
+  border: solid 1px rgb(201,201,201);
+  width: 50%;
+  padding: 10px;
+  margin: 0px auto 0px 0px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 16px;
+}
+
+/* Buttons on message */
+.btn {
   border: none;
   background: transparent;
   padding: 15px;
   border-radius: 25px;
 }
 
-.delete-button:hover, .delete-button:focus {
-  background: rgb(234,234,234);
+.btn:hover, .btn:focus {
+  background: rgb(252, 200, 200);
 }
 
 /* Heart button */
@@ -418,6 +428,11 @@ p {
   .message-date {
     font-size: 16px;
   }
+
+  /* Edit input field */
+  .edit-input-field {
+    font-size: 18px;
+  }
 }
 
 
@@ -493,6 +508,11 @@ p {
 
   .message-date {
     font-size: 18px;
+  }
+
+  /* Edit input field */
+  .edit-input-field {
+    font-size: 20px;
   }
 }
 

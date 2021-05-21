@@ -4,7 +4,7 @@ import { GoTrashcan } from 'react-icons/go';
 const DeleteButton = ({ message, onDeleteMessage }) => {
   return (
     <button 
-      className="delete-button"
+      className="btn"
       onClick={() => onDeleteMessage(message._id)}
       aria-label="delete message"
     >

@@ -5,7 +5,7 @@ import MessageForm from './MessageForm';
 import MessageList from './MessageList';
 import LoadingState from './LoadingState';
 
-import { API_URL, API_URL_HEART, API_URL_DELETE } from './reusable/urls';
+import { API_URL, API_URL_HEART, API_URL_DELETE, API_URL_PATCH } from './reusable/urls';
 
 const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -121,6 +121,23 @@ const App = () => {
       .finally(() => setLoading(false));
   };
 
+  const handleUpdateMessage = (message) => {
+    const config = {   
+      method: 'PATCH', 
+      headers: {              
+        'Content-Type': 'application/json'
+      },       
+      body: JSON.stringify({ message: message.message })   
+    };
+
+    setLoading(true);
+
+    fetch(API_URL_PATCH(message._id), config)
+      .then(res => res.json())
+      .then(() => fetchMessageList())
+      .finally(() => setLoading(false));
+  };
+
   return (
     <>
       <Header />
@@ -143,6 +160,7 @@ const App = () => {
             messageList={messageList}
             handleHeartClick={handleHeartClick}
             handleDeleteMessage={handleDeleteMessage}
+            handleUpdateMessage={handleUpdateMessage}
           />
         </div>
       </main>
