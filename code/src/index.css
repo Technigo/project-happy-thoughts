@@ -61,6 +61,10 @@ code {
   font-weight: bold;
 }
 
+.send-thought-button:hover {
+  transform: scale(1.2);
+}
+
 .card-container {
   display: grid;  
   width: 300px;  
