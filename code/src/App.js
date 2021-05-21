@@ -12,13 +12,16 @@ export const App = () => {
   const [messageNew, setMessageNew] = useState ('')
   const [errorMessage, setErrorMessage] = useState(false)
   const [userName, setUserName] = useState('')
+  const [page, setPage] = useState(1)
+  const [perPage, setPerPage] = useState(20)
+
 
   useEffect(() => {
     fetchMessageList()
-  }, [])
+  }, [page, perPage])
 
   const fetchMessageList = () => {
-    fetch(API_URL)
+    fetch(API_URL(page, perPage))
     .then(response => response.json())
     .then(messages => setMessageList(messages))
   }
@@ -45,12 +48,8 @@ export const App = () => {
         throw new Error ('Something went wrong!')
       }
     })
-    // .then((receivedMessage) => {
-    //   setMessageList([receivedMessage, ...messageList])
-    //   setMessageNew('')
-    // })
-    .then(
-      fetchMessageList,
+    .then(() =>
+      fetchMessageList(),
       setMessageNew(''),
       setUserName('')
       )
@@ -110,12 +109,46 @@ export const App = () => {
           />
           {errorMessage && <ErrorMessage setErrorMessage={setErrorMessage} />}
           <div>
-          <MessageList 
-              handleLikesIncrease={handleLikesIncrease} 
-              messageList={messageList} 
-              userName={userName}
-              handleClickDelete={handleClickDelete}
-          />
+            <div className='pagination-container'>
+              <div>
+                <label tabIndex='0' htmlFor='pagination'>
+                  Thoughts per page
+                  <select 
+                    id='pagination' 
+                    value={perPage} 
+                    onChange={(event) => setPerPage(Number(event.target.value))}
+                    className='pagination-select'
+                  >
+                    <option value={5}>5</option>
+                    <option value={10}>10</option>
+                    <option value={20}>20</option>
+                    <option value={30}>30</option>
+                  </select>
+                </label>
+              </div>
+              <div className='buttons-container'>
+                {page !== 1 && (
+                  <button 
+                    onClick={() => setPage(page - 1)}
+                    className='pagination-button'
+                  >
+                    Previous page
+                  </button>
+                )} 
+                <button 
+                  onClick={() => setPage(page + 1)}
+                  className='pagination-button'
+                >
+                  Next page
+                </button>
+              </div>
+            </div>
+            <MessageList 
+                handleLikesIncrease={handleLikesIncrease} 
+                messageList={messageList} 
+                userName={userName}
+                handleClickDelete={handleClickDelete}
+            />
           </div>
         </div>
         <Footer />

@@ -8,11 +8,11 @@ const MessageElements = ({ onLikesIncrease, message, userName, onClickDelete }) 
           <div className='message-delete-container'>
             <p className='message-text'>{message.message}</p>
             <button 
-                  tabIndex='0'
-                  aria-pressed='false'
-                  aria-label='Remove thought'
-                  className='delete-button'
-                  onClick={() => onClickDelete(message._id)}
+              tabIndex='0'
+              aria-pressed='false'
+              aria-label='Remove thought'
+              className='delete-button'
+              onClick={() => onClickDelete(message._id)}
             >
               x
             </button>

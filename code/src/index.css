@@ -86,7 +86,7 @@ textarea:focus {
 
 input {
   margin: 0 0 20px 10px;
-  width: fit-content;
+  width: 50%;
 }
 
 .textarea-valid {
@@ -102,7 +102,7 @@ input {
   background-color: rgba(255, 0,	0, 0.3);
   border: none;
   padding: 4px;
-  font-size: 10px;
+  font-size: 14px;
   margin: 0 auto;
 }
 
@@ -114,8 +114,39 @@ input {
 }
 
 .sign-label {
-  font-size: 16px;
+  font-size: 14px;
   margin-right: 15px;
+}
+
+.sign-container {
+  width: 100%;
+}
+
+/* Styling pagination section */
+
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+
+}
+.pagination-select{ 
+  margin-left: 10px;
+}
+
+.buttons-container {
+  display: flex;  
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  border-radius: 20px;
+  background-color: rgba(255, 0,	0, 0.3);
+  border: none;
+  padding: 4px;
+  margin: 0 10px;
 }
 
 /*Styling message container*/
@@ -138,7 +169,7 @@ input {
 
 .message-text {
   overflow-wrap: break-word;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .username-text {
@@ -196,7 +227,7 @@ input {
 
 .date {
   font-style: italic;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /*Styling error message*/
@@ -292,7 +323,7 @@ input {
   }
 
   .heart-date-container {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .heart-button:hover{

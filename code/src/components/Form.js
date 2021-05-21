@@ -24,7 +24,8 @@ export const Form = ({ messageNew ,setMessageNew, userName, setUserName, onFormS
                     className = {messageNew.length > 140 ? 'textarea-invalid' : 'textarea-valid'}
                 />
                 <p className='char-counter'>{messageNew.length}/140</p>
-                <label tabIndex='0' htmlFor='newUser' className='sign-label'>
+                <div className='sign-container'>
+                    <label tabIndex='0' htmlFor='newUser' className='sign-label'>
                     Sign as:
                     <input 
                         id='newUser'
@@ -33,7 +34,8 @@ export const Form = ({ messageNew ,setMessageNew, userName, setUserName, onFormS
                         onChange={onUserNameChange}
                         className = {userName.length > 20 ? 'textarea-invalid' : 'textarea-valid'}
                     />
-                </label>
+                    </label>
+                </div>
                 <button 
                     className='button' 
                     type='submit'
