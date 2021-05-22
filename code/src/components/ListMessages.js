@@ -1,37 +1,38 @@
 import React, { useEffect } from 'react'
 import moment from 'moment'
 
-import { HAPPY_THOUGHTS_API } from '../reusable/urls'
 import LikePost from './LikePost'
 
-const ListMessages = ({ messageList, setMessageList }) => {
-
-  const fetchMessageList = () => {
-    fetch(HAPPY_THOUGHTS_API)
-      .then(response => response.json())
-      .then(messages => setMessageList(messages))
-      .catch(err => console.error(err))
-  }
-
+const ListMessages = ({ messageList, setMessageList, fetchMessageList }) => {
   useEffect(fetchMessageList, [])
 
   return (
     <>
       {messageList.map(post => (
-        <article key={post._id} className="message-container">
+        <div key={post._id} className="message-container">
           <div className="message-container-div">
-            <h3 className="message-text">{post.message}</h3>
-            <div className="message-container-footer">
-              <LikePost 
+          <p className="message-user">{post.user ? post.user: 'Anonymous'}</p>
+          <p className="message-hashtag">
+            {post.hashtag && post.hashtag.charAt(0) === '#' && (post.hashtag)}
+            {post.hashtag && post.hashtag.charAt(0) !== '#' && ('#' + post.hashtag)}
+          </p>
+          <p className="message-text">{post.message}</p>
+          <div className="message-container-footer">
+            <LikePost 
               name={post._id} 
               hearts={post.hearts} 
               messageList={messageList}
               setMessageList={setMessageList} 
-              fetchMessageList={fetchMessageList}/>
-              <p className="message-posted-when">{moment(post.createdAt).fromNow()}</p>
-            </div>
+              fetchMessageList={fetchMessageList}
+            />
+            <p 
+              className="message-posted-when"
+            >
+              {moment(post.createdAt).fromNow()}
+            </p>
           </div>
-        </article>
+          </div>
+        </div>
       ))}
     </>
   )

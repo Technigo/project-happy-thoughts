@@ -14,8 +14,8 @@ const LikePost = ({ name, hearts, messageList, setMessageList, fetchMessageList 
       headers: { "Content-Type": "application/json" }
     }) 
       .then (() => {
-      onLiked(messageId)
-      fetchMessageList()
+        onLiked(messageId)
+        fetchMessageList()
     }) 
       .catch(err => console.error(err))
   }
@@ -33,13 +33,16 @@ const LikePost = ({ name, hearts, messageList, setMessageList, fetchMessageList 
   return (
     <p>
       <button 
-      name={name} 
-      className={hearts === 0 ? 'like-btn zero' : 'like-btn'}
-      onClick={handleClick}>
+        name={name} 
+        className={hearts === 0 ? 'like-btn zero' : 'like-btn'}
+        onClick={handleClick}
+      >
         <span 
-        className="heart-emoji" 
-        role="img" 
-        aria-label="heart-emoji">❤️
+          className="heart-emoji" 
+          role="img" 
+          aria-label="heart-emoji"
+        >
+          ❤️
         </span>
       </button>
       x {hearts}
