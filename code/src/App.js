@@ -50,7 +50,7 @@ export const App = () => {
       }
     })
     .then(() => {
-      fetchMessageList,
+      fetchMessageList(),
       setMessageNew(''),
       setUserName('')
     })
