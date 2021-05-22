@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { LIKE_URL } from '../reusable/urls'
+import { HAPPY_THOUGHTS_API, LIKE_URL } from '../reusable/urls'
 
 const LikePost = ({ name, hearts, messageList, setMessageList, fetchMessageList }) => {
 
@@ -15,7 +15,7 @@ const LikePost = ({ name, hearts, messageList, setMessageList, fetchMessageList 
     }) 
       .then (() => {
         onLiked(messageId)
-        fetchMessageList()
+        fetchMessageList(HAPPY_THOUGHTS_API)
     }) 
       .catch(err => console.error(err))
   }
@@ -34,7 +34,7 @@ const LikePost = ({ name, hearts, messageList, setMessageList, fetchMessageList 
     <p>
       <button 
         name={name} 
-        className={hearts === 0 ? 'like-btn zero' : 'like-btn'}
+        className={hearts === 0 ? 'like-btn no-hearts' : 'like-btn'}
         onClick={handleClick}
       >
         <span 

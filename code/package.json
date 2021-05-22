@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "babel-eslint": "^10.1.0",
+    "emoji-mart": "^3.0.1",
+    "emoji-picker-react": "^3.4.5",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.1",

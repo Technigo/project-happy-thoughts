@@ -13,8 +13,8 @@ export const App = () => {
   const [messageNew, setMessageNew] = useState('')
   const [chars, setChars] = useState(0)
 
-  const fetchMessageList = () => {
-    fetch(HAPPY_THOUGHTS_API)
+  const fetchMessageList = (url) => {
+    fetch(url)
       .then(response => response.json())
       .then(messages => setMessageList(messages))
       .catch(err => console.error(err))
@@ -36,7 +36,7 @@ export const App = () => {
         setHashtag('')
         setMessageNew('')
         setChars(0)
-        fetchMessageList()})
+        fetchMessageList(HAPPY_THOUGHTS_API)})
   }
 
   return (
