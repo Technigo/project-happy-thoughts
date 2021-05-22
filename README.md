@@ -1,6 +1,7 @@
 # Happy Thoughts
 
 This project was about making our own "twitter-version" by practice React State and fetch and posting data from en API.
+EDIT: Now it is my own API from week 19 that is used in this project.
 
 ## The problem
 
