@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ButtonSubmit from './ButtonSubmit'
-import '../styles/SendThought.css'
+import '../styles/index.css'
 
 const SendThought = ({
   handleFormSubmit,
