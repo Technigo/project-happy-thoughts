@@ -19,7 +19,7 @@ export const App = () => {
       .then(res => res.json())
       .then(data => {
         setThoughts([...thoughts, ...data.thoughts])
-        if (page * 5 >= data.amountOfThoughts) {
+        if (page * 10 >= data.amountOfThoughts) {
           hasMoreMessages = false
         } else {
           page++
