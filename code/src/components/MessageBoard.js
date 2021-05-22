@@ -61,7 +61,7 @@ const MessageBoard = ({ thoughts, setThoughts, myLikes, setMyLikes }) => {
 
   const onHeartClicked = (id) => {
     const options = {
-      method: "POST",
+      method: "PATCH",
       headers: {
         'Content-Type': 'application/json'
       },

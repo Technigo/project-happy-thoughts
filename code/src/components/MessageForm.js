@@ -25,11 +25,12 @@ const MessageForm = ({ thoughts, setThoughts }) => {
         if (res.ok) {
           return res.json()
         } else {
-          throw new Error("Oops, something went wrong! Perhaps, your message is shorter than 5 characters!")
+          throw new Error("Oops, something went wrong. Perhaps, the message is too short or contains bad language")
         }
       })
       .then(sentThought => setThoughts([sentThought, ...thoughts]))
       .catch(err => {
+        console.log(err)
         alert(err.message)
       })
     setNewThought('')
