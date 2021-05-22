@@ -49,14 +49,14 @@ export const App = () => {
         throw new Error ('Something went wrong!')
       }
     })
-    .then(
+    .then(() => {
       fetchMessageList,
       setMessageNew(''),
       setUserName('')
-      )
+    })
     .catch(() => {
       setErrorMessage(true);
-  })
+    })
   }
 
   const handleLikesIncrease = (id) => {
