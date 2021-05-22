@@ -2,7 +2,7 @@ import React from 'react'
 
 import ButtonSubmit from './ButtonSubmit'
 import '../styles/SendThought.css'
-// added another label with input for 
+
 const SendThought = ({
   handleFormSubmit,
   newThought,

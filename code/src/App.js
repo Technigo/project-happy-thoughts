@@ -23,7 +23,6 @@ export const App = () => {
       .then(response => response.json())
       .then(thoughts => {
         setThoughtsList(thoughts)
-        setUsername(username) // added username here
       })
   }
 
@@ -44,7 +43,7 @@ export const App = () => {
       headers: {
         'Content-type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought, author: username === '' ? 'Anonymous' : username }) // change to author : author 
+      body: JSON.stringify({ message: newThought, author: username === '' ? 'Anonymous' : username })
   }
 
   fetch(HAPPY_THOUGHTS_URL, options)
@@ -52,8 +51,6 @@ export const App = () => {
       if (!response.ok) {
         throw new Error ('Ups, something went wrong') //prints error message in Console for the use case: unspecified backend error
       } else { 
-/*         setUsername('') // denna fungerar inte
-        setNewThought('') */
         return response.json()
       }
     })
@@ -65,11 +62,6 @@ export const App = () => {
       setNewThought(''),
       setUsername('')
     )
-/*  .then( 
-      fetchThoughtsList
-      setNewThought('') 
-      setUsername('')
-      */
     .catch(() => {
       setError(true)
     })
@@ -95,12 +87,12 @@ export const App = () => {
         onNewThoughtChange={onNewThoughtChange}
         handleFormSubmit={handleFormSubmit}
         onUserNameChange={onUserNameChange}
-        //username={username} // username ? 
+        //username={username}
       />
       <ThoughtsList 
         thoughtsList={thoughtsList}
         handleHeartsIncrease={handleHeartsIncrease}
-        //username={username} // username ? 
+        username={username} 
       />
       {error && <ErrorPopup setError={setError}/>}
     </>
