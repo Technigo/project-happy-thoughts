@@ -87,12 +87,11 @@ export const App = () => {
         onNewThoughtChange={onNewThoughtChange}
         handleFormSubmit={handleFormSubmit}
         onUserNameChange={onUserNameChange}
-        //username={username}
+        username={username}
       />
       <ThoughtsList 
         thoughtsList={thoughtsList}
         handleHeartsIncrease={handleHeartsIncrease}
-        username={username} 
       />
       {error && <ErrorPopup setError={setError}/>}
     </>
