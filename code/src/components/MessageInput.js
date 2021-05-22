@@ -12,7 +12,8 @@ const MessageInput = ({ messageNew, setMessageNew, setChars }) => {
     setChars(event.target.value.length)
   }
 
-  const handlePickerToggle = () => {
+  const handlePickerToggle = (event) => {
+    event.preventDefault()
     setShowPicker(!showPicker)
   }
 
