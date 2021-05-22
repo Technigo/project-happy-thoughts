@@ -49,11 +49,11 @@ export const App = () => {
         throw new Error ('Something went wrong!')
       }
     })
-    .then(() => {
-      fetchMessageList(),
+    .then(
+      fetchMessageList,
       setMessageNew(''),
       setUserName('')
-    })
+    )
     .catch(() => {
       setErrorMessage(true);
     })
