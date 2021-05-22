@@ -12,7 +12,8 @@ import { HEART_URL } from './reusable/urls';
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState(null);
+  const [name, setName] = useState(null);
 
   useEffect(() => {
     fetchMessages();
@@ -30,6 +31,10 @@ export const App = () => {
     setNewMessage(event.target.value);
   }
 
+  const onNameChange = (event) => {
+    setName(event.target.value);
+  }
+
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -38,13 +43,16 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newMessage })
+      body: JSON.stringify({ message: newMessage, name })
     };
 
     fetch(API_URL, options)
       .then(res => res.json())
       .then(receivedMessage => setMessageList([receivedMessage, ...messageList]))
-      .then(() => setNewMessage(''))
+      .then(() => {
+        setNewMessage('');
+        setName('');
+      })
   };
 
   const onHeartClick = (id) => {
@@ -73,7 +81,9 @@ export const App = () => {
     <div>
       <Form 
         newMessage={newMessage}
+        name={name}
         onNewMessageChange={onNewMessageChange}
+        onNameChange={onNameChange}
         onFormSubmit={onFormSubmit}
       />
       <MessageList 

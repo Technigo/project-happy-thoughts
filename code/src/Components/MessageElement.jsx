@@ -2,13 +2,14 @@ import React from 'react';
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 
-export const MessageElement = ({ message, onHeartClick}) => {
+export const MessageElement = ({ message, onHeartClick }) => {
     return (
         <div 
             className="thought-div"
             key={message._id}
         >
             <h4>{message.message}</h4>
+            <h5>{message.name}</h5>
             <div className="heart-time-div">
                 <div className="likes"> 
                     <button

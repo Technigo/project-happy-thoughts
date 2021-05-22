@@ -1,7 +1,7 @@
 import React from 'react';
 import { MessageElement } from './MessageElement';
 
-export const MessageList = ({ messageList, onHeartClick }) => {
+export const MessageList = ({ messageList, onHeartClick, name }) => {
 
   return (
     <>
@@ -11,6 +11,7 @@ export const MessageList = ({ messageList, onHeartClick }) => {
             key={message._id}
             message={message}
             onHeartClick={onHeartClick}
+            name={name}
           />
         ))
       }
