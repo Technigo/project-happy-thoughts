@@ -1,4 +1,4 @@
-export const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+export const API_URL = 'https://marielles-happy-thoughts-api.herokuapp.com/thoughts'
 
-export const LIKE_URL = (thoughtsID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtsID}/like`
+export const LIKE_URL = (thoughtsID) => ` https://marielles-happy-thoughts-api.herokuapp.com/thoughts/${thoughtsID}/like`
 
