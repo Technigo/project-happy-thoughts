@@ -52,15 +52,24 @@ export const App = () => {
       if (!response.ok) {
         throw new Error ('Ups, something went wrong') //prints error message in Console for the use case: unspecified backend error
       } else { 
-        setUsername('') // denna fungerar inte
-        setNewThought('')
+/*         setUsername('') // denna fungerar inte
+        setNewThought('') */
         return response.json()
       }
     })
-    .then(recievedThought => {
+   /*  .then(recievedThought => {
       setThoughtsList([recievedThought, ...thoughtsList]) 
       setUsername(username) // added setUserName(username) here
-    })
+    }) */
+    .then(fetchThoughtsList,
+      setNewThought(''),
+      setUsername('')
+    )
+/*  .then( 
+      fetchThoughtsList
+      setNewThought('') 
+      setUsername('')
+      */
     .catch(() => {
       setError(true)
     })
