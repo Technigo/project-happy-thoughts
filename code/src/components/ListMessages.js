@@ -8,7 +8,7 @@ import Hashtag from './Hashtag'
 import { HAPPY_THOUGHTS_API } from '../reusable/urls'
 
 const ListMessages = ({ messageList, setMessageList, fetchMessageList }) => {
-  useEffect(() => fetchMessageList(HAPPY_THOUGHTS_API), [fetchMessageList])
+  useEffect(() => fetchMessageList(HAPPY_THOUGHTS_API), [])
 
   return (
     <>
