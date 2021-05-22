@@ -45,7 +45,7 @@ const MessageInput = ({ messageNew, setMessageNew, setChars }) => {
           <Picker 
             title=''
             emoji=''
-            perLine='6'
+            perLine={6}
             style={{ marginTop: 10,  }}
             onSelect={emoji => setMessageNew(messageNew + emoji.native)}
           />
