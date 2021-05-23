@@ -1,12 +1,16 @@
 import React from 'react'
 import moment from 'moment'
 
-const MessageList = ({thoughtList, onLikesIncrease}) => {
+const MessageList = ({thoughtList, onLikesIncrease, onDeleteThought}) => {
   return (
     <>
+      <h6>{thoughtList.length} thoughts:</h6>
       {
       thoughtList.map(thought => (
         <div key={thought._id} className="thought">
+          <button className="delete-btn" onClick={() => onDeleteThought(thought._id)}>
+          ✖️
+          </button>
           <h4>{thought.message}</h4>
           <div className="message-info">
             <button 

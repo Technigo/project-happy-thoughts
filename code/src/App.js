@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { THOUGHTS_URL, LIKES_URL } from './reusable/urls'
+import { THOUGHTS_URL, LIKES_URL, DELETE_URL } from './reusable/urls'
 import MessageList from './components/MessageList'
 import MessageForm from './components/MessageForm'
 
@@ -10,6 +10,7 @@ const [thoughtNew, setThoughtNew] = useState('')
 
   
   const fetchThoughtList = () => {
+    console.log('fetching thoughts')
     fetch(THOUGHTS_URL)
       .then(res => res.json())
       .then(thoughts => {
@@ -25,7 +26,7 @@ const [thoughtNew, setThoughtNew] = useState('')
         'Content-type': 'application/json'
       }
     }
-    fetch(LIKES_URL(id), options)
+    // fetch(LIKES_URL(id), options)
     fetch(LIKES_URL(id), options)
       .then(res => res.json())
       .then(receivedThought => {
@@ -41,10 +42,10 @@ const [thoughtNew, setThoughtNew] = useState('')
   }
 
   const onFormSubmit = (event) => {
+    event.preventDefault()
     if (thoughtNew.length < 4 || thoughtNew.length > 140) {
       alert('Your messsage needs to be between 5 and 140 characters!')
     } else {
-      event.preventDefault()
       const options = {
         method: 'POST',
         headers: {
@@ -54,16 +55,24 @@ const [thoughtNew, setThoughtNew] = useState('')
       }
       fetch(THOUGHTS_URL, options)
       .then(res => res.json())
-      .then(receivedThought => setThoughtList([receivedThought, ...thoughtList]))
+      .then(fetchThoughtList)
       .catch(err => console.log(err))
       
       setThoughtNew('')
     }
   } 
+  
+  const onDeleteThought = (id) => {
+    const options = {
+      method: 'DELETE',
+    }
+    fetch(DELETE_URL(id), options)
+    .then(fetchThoughtList)
+  } 
   const onThoughtNewChange = (event) => {
     setThoughtNew(event.target.value)
   }
-
+  
   useEffect(() => {
     fetchThoughtList()
   }, [])
@@ -78,6 +87,7 @@ const [thoughtNew, setThoughtNew] = useState('')
     <MessageList 
       thoughtList={thoughtList}
       onLikesIncrease={onLikesIncrease}
+      onDeleteThought={onDeleteThought}
     />
     </>
   )
