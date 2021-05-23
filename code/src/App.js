@@ -6,20 +6,22 @@ import { API_URL, LIKES_URL } from './reusable/urls'
 import MessageForm from './components/MessageForm'
 import MessageList from './components/MessageList'
 import Loading from './components/Loading'
+import Pagination from './components/Pagination'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
+  const [username, setUsername] = useState('')
+  const [page, setPage] = useState(1)
+  const [perPage] = useState(5)
   const [isLoading, setIsLoading] = useState(true)
-
-  //States that changes color & text in the form when submitted
+  // States that changes color & text in the form when submitted
   const [formAnimation, setformAnimation] = useState(localStorage.getItem('red-color') === 'true')
   const [buttonText, setButtonText] = useState('Send Happy Tought')
 
   //States that count likes and storage it 
   const likeCount =() => JSON.parse(localStorage.getItem('countList') || "[]")
   const [countedList, setCountedList] = useState(likeCount)
-
 
   useEffect(() => {
     fetchMessageList()
@@ -31,18 +33,17 @@ export const App = () => {
 
     setTimeout(() => {
       setIsLoading(false)
-    }, 1500)
+    }, 2500)
 
-  }, [formAnimation]) 
+  }, [formAnimation, page, perPage]) 
 
-  //fetching MessageList 
   const fetchMessageList = () => {
-    fetch (API_URL)
+    fetch (API_URL(page, perPage))
       .then(res => res.json ())
       .then(messages => {
-        setMessageList(messages)
+        setMessageList(messages.data)
         if (!countedList.length) {
-          const countList = messages.map(item => {
+          const countList = messages.data.map(item => {
             const countItem = {
               id: item._id,
               count: 0  
@@ -52,8 +53,8 @@ export const App = () => {
           setCountedList(countList)
           localStorage.setItem('countList', JSON.stringify(countList))
         } else {
-          const countList = messages.map((item) => {
-            const existingElement = countedList.find(countItem => countItem.id === item._id);
+          const countList = messages.data.map((item) => {
+          const existingElement = countedList.find(countItem => countItem.id === item._id);
             if (existingElement) {
               return existingElement;
             } else {
@@ -70,7 +71,6 @@ export const App = () => {
       })
   }
 
-  //posting new mesagge to the API, fetching the new message 
   const handleFormSubmit = (event) => {
     event.preventDefault()
     const options = {
@@ -78,11 +78,11 @@ export const App = () => {
       headers: {
         'Content-type': 'application/json'
       }, 
-      body: JSON.stringify({ message: messageNew })
+      body: JSON.stringify({ message: messageNew,  username: username  })
     }
-    fetch (API_URL, options) 
+    fetch (API_URL (page, perPage), options) 
       .then(res => {
-        if (res.status === 201) { //Catching the error with status: 201 
+        if (res.status === 200) { 
           return res.json()
         } else {
           throw new Error 
@@ -90,7 +90,7 @@ export const App = () => {
         }
       })
       .then(receivedMessage => {
-        //finding id from the new mesagge thats posts in the list and shows the message list
+        //finding id from the new message thats posts in the list and shows the message list
         //from this id the animation on the latest message can appear.
         const id = receivedMessage._id;
         const updatedList = [receivedMessage, ...messageList]
@@ -100,15 +100,14 @@ export const App = () => {
         setMessageList(updatedList)
       })
       .catch((err) => {
-         //adds notification snackbar, makes it look better than an regular alert message
         toast.error(err.message, {
           position: "top-left"
         })
       })
-      setMessageNew('') //clearing the form after user submits their message 
+      setMessageNew('')
+      setUsername('')
     }  
 
-  //fetching likes from api and adding a counter to show the amount of likes
     const handleLikesIncrease = (id) => {
       const options = {
         method: 'POST', 
@@ -116,31 +115,31 @@ export const App = () => {
           'Content-type': 'application/json'
         }
       }
-      fetch(LIKES_URL(id), options)
-      .then(res => res.json())
-      .then(receivedMessage => {
-        //Increasing hearts when user likes a message with map and returning the new value
-        const updatedMessageList = messageList.map(message => {
-          if (message._id === receivedMessage._id) {
-              message.hearts += 1
-          }
-          return message
-        })
-        const updatedCountedList = countedList.map(count => {
-          if (count.id === receivedMessage._id) {
-            count.count += 1
-          }
-          return count
-        })
-        setMessageList(updatedMessageList)
-        setCountedList(updatedCountedList);
-        localStorage.setItem('countList', JSON.stringify(updatedCountedList))
-       })
-      .catch (err => console.error(err))
-    }
+    fetch(LIKES_URL(id), options)
+    .then(res => res.json())
+    .then(receivedMessage => {
+      //Increasing hearts when user likes a message with map and returning the new value
+      const updatedMessageList = messageList.map(message => {
+        if (message._id === receivedMessage.data._id) {
+            message.hearts += 1
+        }
+        return message
+      })
+      const updatedCountedList = countedList.map(count => {
+        if (count.id === receivedMessage.data._id) {
+          count.count += 1
+        }
+        return count
+      })
+      setMessageList(updatedMessageList)
+      setCountedList(updatedCountedList);
+      localStorage.setItem('countList', JSON.stringify(updatedCountedList))
+      })
+    .catch (err => console.error(err))
+  }
 
-  //if user adds more than 140 characters, the input box gets red. I add the validation here and send it trough props 
-  const HandleMessageNewChange = (event) => {
+  // If user adds more than 140 characters, the input box gets red. I add the validation here and send it trough props 
+  const handleMessageNewChange = (event) => {
     const count = event.target.value
     const characterCount = count.length 
     if (characterCount <= 140) {
@@ -148,6 +147,10 @@ export const App = () => {
     } else if (characterCount > 140) {
       return setMessageNew(messageNew)
     } 
+  }
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value)
   }
 
   //Adding animation on the form when user submits message 
@@ -168,18 +171,27 @@ export const App = () => {
         <MessageForm 
           onFormSubmit={handleFormSubmit} 
           messageNew={messageNew} 
-          onMessageNewChange = {HandleMessageNewChange}
+          username = {username}
+          handleUsernameChange = {handleUsernameChange}
+          onMessageNewChange = {handleMessageNewChange}
           onAnimationChange = {handleAnimation}
           formAnimation = {formAnimation}
           buttonText={buttonText}
         />
         {isLoading === true ? 
           <Loading/> : 
-          <MessageList 
-            messageList ={messageList} 
-            handleLikesIncrease = {handleLikesIncrease}
-            count = {countedList}
-          />
+          <>
+            <Pagination 
+              page={page}
+              setPage={setPage}
+              messageList ={messageList} 
+            />
+            <MessageList 
+              messageList ={messageList} 
+              handleLikesIncrease = {handleLikesIncrease}
+              count = {countedList}
+            />
+          </>
         }
       </div> 
     </main>

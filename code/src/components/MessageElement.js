@@ -6,6 +6,8 @@ const MessageElement = ({ message, onLikesIncrease, count }) => {
   return (
     <>
       <p className="message-content">{message.message}</p>
+      <p>{message.username === '' ? 'Anonymous' : message.username}</p>
+      <p className="time">{message.hashtag.reduce((a,b) => { return a.length > b.length ? a : b})}</p>
       <div className="button-container">
         <div className="like-btn">
           <button 
@@ -17,7 +19,7 @@ const MessageElement = ({ message, onLikesIncrease, count }) => {
           <p>x{message.hearts}</p>
         </div> 
         <div>
-          <p className="likes"> You <span role="img" aria-label="like">❤️</span>{count.count} times</p> 
+          <p className="likes"> You <span role="img" aria-label="like"> ❤️</span>{count.count} times</p> 
           <p className="time">{moment(message.createdAt).fromNow()}</p>
         </div>
       </div>

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const MessageForm = ({ onFormSubmit, messageNew, onMessageNewChange, onAnimationChange, formAnimation, buttonText}) => {
+const MessageForm = ({ onFormSubmit, messageNew, username, onMessageNewChange, handleUsernameChange, onAnimationChange, formAnimation, buttonText}) => {
   
   return (
     <form 
-    className={`tought-message ${formAnimation ? 'form-animation' : 'form-container'}`} 
-    onSubmit={onFormSubmit}
+      className={`tought-message ${formAnimation ? 'form-animation' : 'form-container'}`} 
+      onSubmit={onFormSubmit}
     >
       <p>What's making you happy right now?</p>
       <label htmlFor="newMessage" >
@@ -18,6 +18,18 @@ const MessageForm = ({ onFormSubmit, messageNew, onMessageNewChange, onAnimation
         />
       </label>
       <p>{messageNew.length} of 140</p>
+
+      <label htmlFor="userName" >
+        <input
+          className="name-input"
+          placeholder="Username (optional)"
+          id="userName" 
+          type="text" 
+          value={username}
+          onChange={handleUsernameChange}
+        />
+      </label>
+
       <button 
         onClick={onAnimationChange} 
         className={`send-btn ${formAnimation ? 'button-after' : ''}`} 
