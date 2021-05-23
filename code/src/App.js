@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import Header from './Header';
-import MessageForm from './MessageForm';
-import MessageList from './MessageList';
-import LoadingState from './LoadingState';
+import Header from './components/Header';
+import MessageForm from './components/MessageForm';
+import MessageList from './components/MessageList';
+import LoadingState from './components/LoadingState';
 
 import { API_URL, API_URL_HEART, API_URL_DELETE, API_URL_PATCH } from './reusable/urls';
 

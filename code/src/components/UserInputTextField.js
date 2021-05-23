@@ -7,7 +7,7 @@ const UserInputTextField = ({ newUser, onNewUser }) => {
         className="new-user-label"
         htmlFor="newUser"
       >
-        User
+        Name
       </label>
       <input
         className="new-user-text-field"

@@ -3,9 +3,9 @@ import React from 'react';
 import InputTextField from './InputTextField';
 import ErrorMessage from './ErrorMessage';
 import CharacterCounter from './CharacterCounter';
-import SubmitButton from 'SubmitButton';
-import UserInputTextField from 'UserInputTextField';
-import TagInputTextField from 'TagInputTextField';
+import SubmitButton from 'components/SubmitButton';
+import UserInputTextField from 'components/UserInputTextField';
+import TagInputTextField from 'components/TagInputTextField';
 
 const MessageForm = ({ newMessage, handleNewMessage, errorMessage, onFormSubmit, newUser, handleNewUser, newTag, handleNewTag, textareaRef }) => {
   return (
