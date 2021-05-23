@@ -7,7 +7,7 @@ const NameInput = ({ userName, setUserName }) => {
   }
 
   return (
-    <>
+    <div className="name-input-wrapper">
       <label 
         className="name-input-label" 
         htmlFor="name"
@@ -21,7 +21,7 @@ const NameInput = ({ userName, setUserName }) => {
         value={userName} 
         onChange={handleNewName}
       />
-    </> 
+    </div> 
   )
 }
 

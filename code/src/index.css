@@ -64,9 +64,39 @@ code {
 }
 
 .post-message-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto minmax(230px, 230px) auto;
+  grid-template-areas: 
+    "name . ."
+    "tag . ."
+    "label label label"
+    "textarea textarea picker"
+    "send send picker"
+  ;
+  width: 100%;
+}
+
+.post-message-form.picker-hidden {
+  grid-template-areas: 
+    "name . ."
+    "tag . ."
+    "label label label"
+    "textarea textarea textarea"
+    "send send send"
+  ;
+}
+
+.name-input-wrapper {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  grid-area: name;
+}
+
+.hashtag-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  grid-area: tag;
 }
 
 .name-input-label, .hashtag-input-label {
@@ -74,10 +104,9 @@ code {
 }
 
 .name-input, .hashtag-input {
-  width: 40%;
-  height: 30px;
+  height: 25px;
   margin: 5px 0 20px 0;
-  padding: 5px;
+  padding: 10px;
   font-size: 2rem;
   font-family: 'Inconsolata', monospace;
 }
@@ -85,6 +114,7 @@ code {
 .post-message-label {
   margin: 0;
   font-size: 2.4rem;
+  grid-area: label;
 }
 
 .message-wrapper {
@@ -92,16 +122,27 @@ code {
 }
 
 .picker-wrapper {
+  grid-area: picker;
+  justify-self: center;
   margin-top: 10px;
   margin-left: 5px;
   border: 1px solid black;
   z-index: 1;
 }
 
+.emoji-mart {
+  width: 100%;
+}
+
+.emoji-mart-search input, .emoji-mart-search-icon {
+  display: none;
+}
+
 .textarea-wrapper {
+  grid-area: textarea;
+  align-self: stretch;
   position: relative;
-  width: 95%;
-  min-width: 65%;
+  width: 100%;
 }
 
 
@@ -135,6 +176,7 @@ code {
 }
 
 .btn-container {
+  grid-area: send;
   display: flex;
   justify-content: space-between;
 }
@@ -225,6 +267,12 @@ code {
   font-size: 2rem;
 }
 
+@media (max-width: 1024px) {
+  .message-container {
+    width: 85%;
+  }
+}
+
 @media (max-width: 767px) {
   .header-container-heading, .message-text {
     font-size: 2rem;
@@ -239,12 +287,35 @@ code {
   }
 
   .message-container {
-    width: 70%;
+    width: 80%;
+  }
+
+  .form-container {
+    height: auto;
+  }
+
+  .post-message-form {
+    grid-template-areas: 
+      "name name ."
+      "tag tag ."
+      "label label label"
+      "textarea textarea textarea"
+      "send send send"
+    ;
+    grid-template-rows: auto;
+  }
+
+  .post-message-textarea {
+    padding: 10px;
   }
 
   .post-message-btn {
     font-size: 1.2rem;
     max-width: 100%;
+  }
+
+  .picker-wrapper {
+    margin-top: 0;
   }
 
   .btn-container p {
@@ -255,3 +326,5 @@ code {
     font-size: 1.6rem;
   }
 }
+
+

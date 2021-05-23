@@ -1,13 +1,13 @@
-import React, { useState, useRef } from 'react'
+import React, { useRef } from 'react'
 
-import "emoji-mart/css/emoji-mart.css";
+
 import { Picker } from "emoji-mart"
 
 import PostBtn from './PostBtn'
 
-const MessageInput = ({ messageNew, setMessageNew, chars, setChars }) => {
+const MessageInput = ({ messageNew, setMessageNew, setChars, showPicker, setShowPicker }) => {
   const ref = useRef(null)
-  const [showPicker, setShowPicker] = useState(false)
+  
 
   const handleNewMessage = (event) => {
     setMessageNew(event.target.value)
@@ -27,7 +27,6 @@ const MessageInput = ({ messageNew, setMessageNew, chars, setChars }) => {
       >
         What's making you happy right now?
       </label>
-      <div className="message-wrapper">
         <div className="textarea-wrapper">
           <textarea 
             className="post-message-textarea" 
@@ -37,30 +36,27 @@ const MessageInput = ({ messageNew, setMessageNew, chars, setChars }) => {
             ref={ref}
             onChange={handleNewMessage}
           />
-          <button 
-            className="emoji-btn" 
-            onClick={handlePickerToggle}
-          >
-            {!showPicker ? '🤩' : '😎'} 
-          </button>
-          <div className="btn-container">
-            <PostBtn />
-            <p><span className={chars > 150 ? 'chars-overstep' : ''}>{chars}</span>/150</p>
+          {window.innerWidth >= 768 && (
+            <button 
+              className="emoji-btn" 
+              onClick={handlePickerToggle}
+            >
+              {!showPicker ? '🤩' : '😎'} 
+            </button>
+          )}
         </div>
-        </div>
-        {showPicker && (
+        {showPicker && window.innerWidth >= 768 && (
           <div className="picker-wrapper">
             <Picker 
               title='pick emoji!'
               emoji='point_up'
               native={true}
-              perLine={6}
+              perLine={7}
               style={{}}
               onSelect={emoji => setMessageNew(messageNew + emoji.native)}
             />
           </div>
         )}
-      </div> 
     </>
   )
 }

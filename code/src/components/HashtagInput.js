@@ -7,7 +7,7 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
   }
 
   return (
-    <>
+    <div className="hashtag-input-wrapper">
       <label 
         className="hashtag-input-label" 
         htmlFor="hashtag"
@@ -21,7 +21,7 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
         value={hashtag}
         onChange={handleNewHashtag}
       />
-    </> 
+    </div> 
   )
 }
 
