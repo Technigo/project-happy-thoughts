@@ -43,7 +43,6 @@ export const App = () => {
     <>
       <Header />
       <main className="main">
-        
         <PostMessage
           messageNew={messageNew}
           setMessageNew={setMessageNew}
@@ -56,7 +55,6 @@ export const App = () => {
           hashtag={hashtag}
           setHashtag={setHashtag}
         />
-
         <ListMessages
           messageList={messageList}
           setMessageList={setMessageList}

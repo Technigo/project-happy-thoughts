@@ -32,10 +32,10 @@ const PostMessage = ({ messageNew, setMessageNew, chars, setChars, postMessage, 
           showPicker={showPicker}
           setShowPicker={setShowPicker}
         />
-        <div className="btn-container">
-          <PostBtn />
-          <p><span className={chars > 150 ? 'chars-overstep' : ''}>{chars}</span>/150</p>
-        </div>
+        
+          <PostBtn
+            chars={chars} 
+          />
       </form>
     </div>
   )

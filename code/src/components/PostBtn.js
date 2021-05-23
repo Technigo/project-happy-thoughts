@@ -1,24 +1,34 @@
 import React from 'react'
 
-const PostBtn = () => {
+const PostBtn = ({ chars }) => {
   return (
-    <button 
-      className="post-message-btn" 
-      type="submit">
+    <div className="btn-container">
+      <button 
+        className="post-message-btn" 
+        type="submit">
+          <span 
+            className="heart-emoji" 
+            role="img" 
+            aria-label="heart-emoji">
+              ❤️
+          </span>
+            Send happy thought 
+          <span 
+            className="heart-emoji" 
+            role="img" 
+            aria-label="heart-emoji">
+              ❤️
+          </span>
+      </button>
+      <p>
         <span 
-          className="heart-emoji" 
-          role="img" 
-          aria-label="heart-emoji">
-            ❤️
+          className={chars > 140 ? 'chars-overstep' : ''}
+        >
+          {chars}
         </span>
-          Send happy thought 
-        <span 
-          className="heart-emoji" 
-          role="img" 
-          aria-label="heart-emoji">
-            ❤️
-        </span>
-    </button>
+        /140
+      </p>
+    </div>
   )
 }
 

@@ -1,15 +1,18 @@
 # Happy Thoughts
 
-The purpose of this twitter-ish project called "Happy Thoughts" was to continue learning React and to use useEffect to do an API fetch.
+In this project I built a website where you can post your happy thoughts and see others happy thoughts! The project was built in week 11 of the Technigo bootcamp and updated with some new content and functionality in week 19.
 
 ## The project
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This project was started when React was still pretty new to me. Initially I wrote all the content and functionality in App.js and then divided it to four components: Header, ListMessages, PostMessage and LikePost. The application was posting to and getting from an API set up by the Technigo team.
 
-Building the Happy Thoughts project went pretty good, I started writing all the code in the App component and then devided things to different components. I didn't encounter any big problems but I am uncertain about how to think when deviding code in different components. I instinctly want to move functions to the components where they are being used, I feel that that makes the code more clean and readable. But I have noticed that this is causing trouble sometimes. As an example, I wanted to do a new GET fetch inside the POST fetch, but the fetches were in different components and not related to each other in a way that I could pass the fetch over as props. To handle this I made a copy of the function inside the other component, which I'm sure is not a good way to do it. 
+In week 19 of the Technigo bootcamp I created my own API and mongo database for the Happy Thoughts project and decided to go through the frontend project again to improve the code and add some functionalites. 
+I added functionality for the user to also include their name and a hashtag with the happy thought and the API now also offers endpoints for getting thoughts by a specific hashtag or user. When clicking on a name or a hashtag on a thought in the list, the app is sending a new get request for that specific name or hashtag, and the API returns all results that match.
 
-All and all I'm pleased with the project I've built but I know I could have made a lot more with it if I had dedicated more time to it this week. For instance I wanted to make error messages related to the validation in the form input. I would have also wanted to research how to keep track of the specific users likes on posts and implement that.
+Another new feature in the app is the emoji picker from emoji-mart that I have implemented in the form, use the picker to insert some happy emojis to your thought. The picker is hidden by default, to show it click the button with the 🤩 emoji, to hide it click the same button.
+
+Other changes I've made to the app is devided the functionality into more components, adjusted some styling and exchanged some html tags into some more semantic ones. Continuing the work on a project made earlier in the bootcamp was really fun and rewarding, it really gave some perspective on the progress I've made since and it shed some light on the things I'm able to do with code now, that I wasn't at that point.
 
 ## View it live
 
-You can see my project live at https://frosty-heyrovsky-0bfc89.netlify.app/
+You can check out my project live at https://sandras-happythoughts.netlify.app/

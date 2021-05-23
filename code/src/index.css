@@ -27,6 +27,7 @@ code {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Container for header, form and each thought */
 .message-container {
   background-color: #fff;
   border: 2px solid black;
@@ -37,6 +38,7 @@ code {
   box-shadow: 12px 13px 0px -4px #000;
 }
 
+/* Header */
 .header {
   width: 100%;
   display: flex;
@@ -50,17 +52,18 @@ code {
   justify-content: center;
 }
 
-.form-container {
-  background-color: #F2F0F0;
-  height: 500px;
-}
-
 .heart-letter-emoji {
   font-size: 5rem;
 }
 
 .header-container-heading {
   font-size: 3rem;
+}
+
+/* Post thought */
+.form-container {
+  background-color: #F2F0F0;
+  height: 500px;
 }
 
 .post-message-form {
@@ -70,7 +73,6 @@ code {
   grid-template-areas: 
     "name . ."
     "tag . ."
-    "label label label"
     "textarea textarea picker"
     "send send picker"
   ;
@@ -81,7 +83,6 @@ code {
   grid-template-areas: 
     "name . ."
     "tag . ."
-    "label label label"
     "textarea textarea textarea"
     "send send send"
   ;
@@ -111,31 +112,14 @@ code {
   font-family: 'Inconsolata', monospace;
 }
 
+/* Textarea */
 .post-message-label {
   margin: 0;
   font-size: 2.4rem;
-  grid-area: label;
 }
 
 .message-wrapper {
   display: flex;
-}
-
-.picker-wrapper {
-  grid-area: picker;
-  justify-self: center;
-  margin-top: 10px;
-  margin-left: 5px;
-  border: 1px solid black;
-  z-index: 1;
-}
-
-.emoji-mart {
-  width: 100%;
-}
-
-.emoji-mart-search input, .emoji-mart-search-icon {
-  display: none;
 }
 
 .textarea-wrapper {
@@ -144,7 +128,6 @@ code {
   position: relative;
   width: 100%;
 }
-
 
 .post-message-textarea {
   box-sizing: border-box;
@@ -157,10 +140,26 @@ code {
   font-family: 'Inconsolata', monospace;
 }
 
+.picker-wrapper {
+  grid-area: picker;
+  justify-self: center;
+  align-self: start;
+  margin-top: 40px;
+  margin-left: 5px;
+  border: 1px solid black;
+  z-index: 1;
+}
+
+/* Custom style to emoji picker */
+.emoji-mart-search input, .emoji-mart-search-icon {
+  display: none;
+}
+
+/* Show emoji picker */
 .emoji-btn {
   position: absolute;
   z-index: 1;
-  top: 15px;
+  top: 45px;
   right: 5px;
   height: 50px;
   width: 50px;
@@ -175,6 +174,7 @@ code {
   background-color: #fcc8c8
 }
 
+/* Send thought */
 .btn-container {
   grid-area: send;
   display: flex;
@@ -202,6 +202,7 @@ code {
   color: #afafaf;
 }
 
+/* Thought */
 .message-container-div {
   width: 100%;
 }
@@ -227,6 +228,7 @@ code {
   font-weight: 600;
 }
 
+/* Indicate that there are too many chars in the thought */
 .chars-overstep {
   color: red;
 }
@@ -241,6 +243,7 @@ code {
   color: #afafaf;
 }
 
+/* Like button */
 .like-btn {
   border-radius: 50%;
   border: none;
@@ -267,12 +270,14 @@ code {
   font-size: 2rem;
 }
 
+/* Media query tablet */
 @media (max-width: 1024px) {
   .message-container {
     width: 85%;
   }
 }
 
+/* Media query mobile */
 @media (max-width: 767px) {
   .header-container-heading, .message-text {
     font-size: 2rem;
@@ -287,7 +292,7 @@ code {
   }
 
   .message-container {
-    width: 80%;
+    width: 75%;
   }
 
   .form-container {
@@ -298,7 +303,6 @@ code {
     grid-template-areas: 
       "name name ."
       "tag tag ."
-      "label label label"
       "textarea textarea textarea"
       "send send send"
     ;

@@ -4,10 +4,6 @@ import { HAPPY_THOUGHTS_API, LIKE_URL } from '../reusable/urls'
 
 const LikePost = ({ name, hearts, messageList, setMessageList, fetchMessageList }) => {
 
-  const handleClick = () => {
-    postHearts(name)
-  }
-
   const postHearts = (messageId) => {
     fetch(LIKE_URL(messageId),{
       method: 'POST',
@@ -35,7 +31,7 @@ const LikePost = ({ name, hearts, messageList, setMessageList, fetchMessageList 
       <button 
         name={name} 
         className={hearts === 0 ? 'like-btn no-hearts' : 'like-btn'}
-        onClick={handleClick}
+        onClick={() => postHearts(name)}
       >
         <span 
           className="heart-emoji" 
