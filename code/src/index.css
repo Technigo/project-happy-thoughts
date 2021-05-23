@@ -52,6 +52,7 @@ code {
 
 .form-container {
   background-color: #F2F0F0;
+  height: 500px;
 }
 
 .heart-letter-emoji {
@@ -88,6 +89,13 @@ code {
 
 .message-wrapper {
   display: flex;
+}
+
+.picker-wrapper {
+  margin-top: 10px;
+  margin-left: 5px;
+  border: 1px solid black;
+  z-index: 1;
 }
 
 .textarea-wrapper {

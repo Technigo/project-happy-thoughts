@@ -26,12 +26,9 @@ const PostMessage = ({ messageNew, setMessageNew, chars, setChars, postMessage, 
         <MessageInput
           messageNew={messageNew}
           setMessageNew={setMessageNew}
+          chars={chars}
           setChars={setChars}
         />
-        <div className="btn-container">
-          <PostBtn />
-          <p><span className={chars > 150 ? 'chars-overstep' : ''}>{chars}</span>/150</p>
-        </div>
       </form>
     </div>
   )

@@ -3,7 +3,9 @@ import React, { useState, useRef } from 'react'
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart"
 
-const MessageInput = ({ messageNew, setMessageNew, setChars }) => {
+import PostBtn from './PostBtn'
+
+const MessageInput = ({ messageNew, setMessageNew, chars, setChars }) => {
   const ref = useRef(null)
   const [showPicker, setShowPicker] = useState(false)
 
@@ -41,15 +43,22 @@ const MessageInput = ({ messageNew, setMessageNew, setChars }) => {
           >
             {!showPicker ? '🤩' : '😎'} 
           </button>
+          <div className="btn-container">
+            <PostBtn />
+            <p><span className={chars > 150 ? 'chars-overstep' : ''}>{chars}</span>/150</p>
+        </div>
         </div>
         {showPicker && (
-          <Picker 
-            title=''
-            emoji=''
-            perLine={6}
-            style={{ marginTop: 10,  }}
-            onSelect={emoji => setMessageNew(messageNew + emoji.native)}
-          />
+          <div className="picker-wrapper">
+            <Picker 
+              title='pick emoji!'
+              emoji='point_up'
+              native={true}
+              perLine={6}
+              style={{}}
+              onSelect={emoji => setMessageNew(messageNew + emoji.native)}
+            />
+          </div>
         )}
       </div> 
     </>
