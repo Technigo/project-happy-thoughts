@@ -8,12 +8,12 @@ export const App = () => {
   const [postedMessage, setPostedMessage] = useState("");
 
   useEffect(() => {
-    fetch("https://happy-thoughts.herokuapp.com/thoughts", {
+    fetch("https://happy-thoughts-by-nazanin.herokuapp.com/api/thoughts", {
       method: "GET",
     })
       .then((res) => res.json())
       .then((json) => {
-        setThoughts(json.results);
+        setThoughts(json);
       })
       .catch((error) => console.error("Error:", error));
   }, [postedMessage]);

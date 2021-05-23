@@ -5,9 +5,12 @@ export const ThoughtList = (props) => {
   const { _id, message, hearts } = props.thought;
 
   const handleHeartClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts${_id}/like`, {
-      method: "POST",
-    })
+    fetch(
+      `https://happy-thoughts-by-nazanin.herokuapp.com/api/thought/${_id}/like`,
+      {
+        method: "POST",
+      }
+    )
       .then(() => props.onLiked(_id))
       .catch((error) => console.error("Error:", error));
   };
