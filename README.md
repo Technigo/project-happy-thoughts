@@ -10,4 +10,4 @@ I started building the logic in App.js where i put states, useEffect and fetch r
 
 ## View it live
 
-https://friendly-agnesi-2a229e.netlify.app/
+https://happy-thoughts-fll.netlify.app/
