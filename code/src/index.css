@@ -56,7 +56,7 @@ p {
 }
 
 .message-list-container {
-  max-width: 350px;
+  width: 350px;
 }
 
 .message-element {
