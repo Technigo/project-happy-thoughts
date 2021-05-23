@@ -1,3 +1,4 @@
-export const API_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-export const API_LIKES = (id) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
-
+export const API_URL =
+  "https://carolinef-happy-thoughts-api.herokuapp.com/thoughts";
+export const API_LIKES = (id) =>
+  `https://carolinef-happy-thoughts-api.herokuapp.com/thoughts/${id}/like`;
