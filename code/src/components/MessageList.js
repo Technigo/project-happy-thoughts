@@ -4,17 +4,17 @@ import MessageElement from './MessageElement'
 
 const MessageList = ({ messageList, handleLikesIncrease }) => {
 
-    return (
+	return (
 		<section className="message-list">
-            {messageList.map(message => (
+			{messageList.map(message => (
 				<MessageElement
 					key={message._id}
 					message={message}
 					onLikesIncrease={handleLikesIncrease} 
 				/>    
-    	    ))}
+			))}
 		</section>
-    )
+	)
 }
 
 export default MessageList
