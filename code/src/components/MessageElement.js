@@ -3,7 +3,7 @@ import moment from 'moment'
 
 const MessageElement = ( {onLikesIncrease, message}) => {
   return (
-    <div class='message-container'>
+    <div className='message-container'>
       <p className='message'>{message.message}</p>
       <div className='flex-wrapper'>
         <div>

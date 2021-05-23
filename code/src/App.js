@@ -7,8 +7,6 @@ import { API_URL, LIKES_URL } from './reusable/urls'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([])
-  const [page, setPage] = useState(1)
-  const [perPage, setPerPage] = useState(3)
   const [messageNew, setMessageNew] = useState('')
 
   useEffect(() => {
@@ -16,7 +14,7 @@ export const App = () => {
   }, [])
   
   const fetchMessageList = () => {
-    fetch(API_URL(page, perPage))
+    fetch(API_URL)
       .then(res => res.json())
       .then(messages => setMessageList(messages))
       .catch(err => console.error(err))
@@ -29,19 +27,22 @@ export const App = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: messageNew })
+    if (messageNew.length < 5) {
+      window.alert("The message must be at least 5 characters");
+    } else {
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: messageNew })
+      }
+  
+      fetch(API_URL, options)   
+        .then(res => res.json())
+        .then(() => fetchMessageList())
+        setMessageNew('')
     }
-
-    fetch(API_URL, options)   
-      .then(res => res.json())
-      .then(receivedMessage => setMessageList([receivedMessage, ...messageList]))
-    
-      setMessageNew('')
     }
 
   const handleLikesIncrease = (id) => {
@@ -69,9 +70,9 @@ export const App = () => {
   return (
     <div>
       <h1>
-        <i class="far fa-grin-hearts"></i>
+        <i className="far fa-grin-hearts"></i>
         Happy Thoughts
-        <i class="far fa-envelope"></i>
+        <i className="far fa-envelope"></i>
       </h1>
       <MessageForm 
         messageNew={messageNew} 
