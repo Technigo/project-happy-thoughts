@@ -13,7 +13,7 @@ const ThoughtElement = ({ thought, onHeartsIncrease }) => {
           <span className={`heart ${thought.hearts === 0 ? "heart-background-grey" : "heart-background-pink"}`} role="img" aria-label="heart">❤️</span>
           <p> x {thought.hearts}</p>
         </button>
-        <p className="date">{moment(thought.createdAT).fromNow()}</p>
+        <p className="date">{moment(thought.createdAt).fromNow()}</p>
       </div>
     </div>
   )
