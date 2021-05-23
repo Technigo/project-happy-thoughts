@@ -7,6 +7,8 @@ import { API_URL, LIKES_URL } from './reusable/urls'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([])
+  const [page, setPage] = useState(1)
+  const [perPage, setPerPage] = useState(3)
   const [messageNew, setMessageNew] = useState('')
 
   useEffect(() => {
@@ -14,7 +16,7 @@ export const App = () => {
   }, [])
   
   const fetchMessageList = () => {
-    fetch(API_URL)
+    fetch(API_URL(page, perPage))
       .then(res => res.json())
       .then(messages => setMessageList(messages))
       .catch(err => console.error(err))
