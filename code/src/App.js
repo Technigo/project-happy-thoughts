@@ -9,6 +9,8 @@ export const App = () => {
   const [messageList, setMessageList] = useState([]);
   const [messageNew, setMessageNew] = useState([]);
 
+
+  //Messages
   useEffect(() => {
     fetchMessageList();
   }, []);
@@ -41,6 +43,7 @@ export const App = () => {
       .catch((err) => console.error(err));
   };
 
+  // Likes
   const handleLikeIncreas = (id) => {
     const options = {
       method: "POST",
