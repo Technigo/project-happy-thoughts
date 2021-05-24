@@ -27,15 +27,15 @@ export const App = () => {
   //   .then(messages => setMessageList(messages))
   // }
 
+  useEffect(() => {
+    fetchMessageList()
+  }, [fetchMessageList])
+
   const fetchMessageList = useCallback(() => {
     fetch(API_URL(page, perPage))
     .then(response => response.json())
     .then(messages => setMessageList(messages))
   }, [page, perPage])
-
-useEffect(() => {
-    fetchMessageList()
-  }, [fetchMessageList])
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
