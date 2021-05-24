@@ -16,16 +16,26 @@ export const App = () => {
   const [perPage, setPerPage] = useState(20)
 
 
-  useEffect(() => {
-    fetchMessageList()
-    // eslint-disable-next-line
-  }, [page, perPage])
+  // useEffect(() => {
+  //   fetchMessageList()
+  //   // eslint-disable-next-line
+  // }, [page, perPage])
 
-  const fetchMessageList = () => {
+  // const fetchMessageList = () => {
+  //   fetch(API_URL(page, perPage))
+  //   .then(response => response.json())
+  //   .then(messages => setMessageList(messages))
+  // }
+
+  const fetchMessageList = useCallback(() => {
     fetch(API_URL(page, perPage))
     .then(response => response.json())
     .then(messages => setMessageList(messages))
-  }
+  }, [page, perPage])
+
+useEffect(() => {
+    fetchMessageList()
+  }, [fetchMessageList])
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
