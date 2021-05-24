@@ -15,20 +15,9 @@ export const App = () => {
   const [page, setPage] = useState(1)
   const [perPage, setPerPage] = useState(20)
 
-
-  // useEffect(() => {
-  //   fetchMessageList()
-  //   // eslint-disable-next-line
-  // }, [page, perPage])
-
-  // const fetchMessageList = () => {
-  //   fetch(API_URL(page, perPage))
-  //   .then(response => response.json())
-  //   .then(messages => setMessageList(messages))
-  // }
-
+  // Fetching all thoughts 
   const fetchMessageList = useCallback(() => {
-    fetch(API_URL(page, perPage))
+    fetch(`${API_URL}?page=${page}&perPage=${perPage}`)
     .then(response => response.json())
     .then(messages => setMessageList(messages))
   }, [page, perPage])
