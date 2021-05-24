@@ -30,7 +30,7 @@ export const App = () => {
   const fetchMessageList = useCallback(() => {
     fetch(API_URL(page, perPage))
     .then(response => response.json())
-    .then(messages => setMessageList(messages.newThought))
+    .then(messages => setMessageList(messages))
   }, [page, perPage])
 
   useEffect(() => {
