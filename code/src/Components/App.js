@@ -5,17 +5,6 @@ import { API_URL }  from '../utilities/urls'
 import { HEARTS_URL }  from '../utilities/urls'
 import Toastify from 'toastify-js'
 
-//TO-DO:
-//[X] Rename newMessage to newThought etc. for consistency
-//[X] Rename like to heart everywhere for consistency
-//[X] Make heart icon also be a button, just like post message button, because accessability
-//[X] Make the user only able to heart once!
-//[X] check out npm React toast or toastify
-//[X] make it impossible to hit send button if message is less than 5 or more than 140 characters!
-//[_] create loading State and install npm react loader spiining thingy
-//[_] update css attribute hyphen so it works more reliably!
-//[_] style using likedThoughts state and window.localStorage.setItem('myLikes', likedThoughts)
-
 export const App = () => {
 
   //State hooks
@@ -25,7 +14,6 @@ export const App = () => {
 
   //onChange functions
   const onNewThoughtChange = (event) => {
-    console.log(`inside PostingForm: ${event.target.value}`)
     setNewThought(event.target.value)
   }
 
@@ -62,14 +50,15 @@ export const App = () => {
           if (errorType === 'required' || errorType === 'minlength' || errorType === 'maxlength') {
             errorText = 'Your Thought must be between 5 to 140 characters long!'
           }
+            //Toastify library allows the creation of a styled alert/notification pop-up
             Toastify({
               text: errorText,
               duration: 3000,
               close: true,
-              gravity: 'top', // `top` or `bottom`
-              position: 'center', // `left`, `center` or `right`
+              gravity: 'top',
+              position: 'center', 
               backgroundColor: '#ffadad',
-              stopOnFocus: true, // Prevents dismissing of toast on hover
+              stopOnFocus: true,
             }).showToast()
           
         } else {
@@ -96,7 +85,6 @@ export const App = () => {
           const updatedThoughts = latestThoughts.map(thought => {
             if (thought._id === heartedThought._id) {
               thought.hearts += 1
-              console.log(`HEARTED thought id: ${thought._id}`)
               setHeartedThoughts([...heartedThoughts, thought._id])
             }
             return thought
