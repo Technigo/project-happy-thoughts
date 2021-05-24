@@ -1,5 +1,7 @@
 # Happy Thoughts
 
+*UPDATE 2021-05-24: Now I have added my own API endpoints to this project. Se my backend project project-happy-thoughts-api.
+
 The goal of this project was to practice React states by fetching and posting data to an API. The API was already created. We were also given a design to implement. The result, Happy Thoughts, lets you post your happy thought for others to read and like. 
 
 ## The problem
