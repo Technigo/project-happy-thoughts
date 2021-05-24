@@ -24,7 +24,7 @@ export const App = () => {
   const fetchMessageList = () => {
     fetch(API_URL(page, perPage))
     .then(response => response.json())
-    .then(messages => setMessageList(messages))
+    .then(messages => setMessageList(messages.newThought))
   }
 
   // const fetchMessageList = useCallback(() => {
