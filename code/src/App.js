@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { API_URL, LIKE_URL, DELETE_URL } from './reusable/urls'
 import { Form } from './components/Form'
