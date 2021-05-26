@@ -71,6 +71,7 @@ export const App = () => {
 
   const onHeartsIncrease = (thoughtID, event) => {
 
+    //Check if thought has already been hearted by the user
     if (heartedThoughts.find(heartedThoughtID => heartedThoughtID === thoughtID) === undefined) {
       const options = {
         method: 'POST',
@@ -78,6 +79,7 @@ export const App = () => {
           'Content-Type': 'application/json'
         }
       }
+      console.log(`allegedly, id of hearted thought is: ${thoughtID}`)
   
       fetch(HEARTS_URL(thoughtID), options)
         .then(res => res.json())
