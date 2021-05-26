@@ -4,7 +4,7 @@ import MessageElement from './MessageElement'
 
 const MessageList = ({ messageList, handleLikesIncrease }) => {
     return (
-        <>
+      <>
         {/*Maping through the message list to generate the single messages*/}
           {messageList.map(message => (
             <MessageElement
@@ -13,7 +13,7 @@ const MessageList = ({ messageList, handleLikesIncrease }) => {
               onLikesIncrease={handleLikesIncrease}
             />  
           ))}          
-        </>
+      </>
     )
 }
 
