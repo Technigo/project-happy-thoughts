@@ -50,7 +50,7 @@ export const App = () => {
       },
     };
 
-    fetch(HEARTS_URL(id), options)
+    fetch(HEARTS_URL(_id), options)
       .then(res => res.json())
       //fetch data
       .then(recievedMessage => {
