@@ -1,13 +1,22 @@
-# Happy Thoughts
+<!-- @format -->
 
-Replace this readme with your own information about your project.
+# A Twitter-like form using React
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week's project consisted on creating a Twitter-like form by learning React's components life cycle and how to react to changes in state or a component mounting using useEffect.
 
-## The problem
+# Learning objectives
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- What component lifecycle means.
+- How to use the useEffect hook in React to perform actions when components mount, unmount, or when state changes.
+- How to call APIs from React and put the data into state.
 
-## View it live
+# How I built it
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+With this project I confirmed even more the importance of planning ahead before starting coding as it reduces the amount of corrections and changes.
+As last week I started by setting all the elements in the parent container and when all the code was working as it should then I started created the smaller components.
+
+If I've had more time I would have added the counter for characters in the input field and also had added a changing colour when the like button is clicked. I also would like to experiment passing states as props.
+
+# View it live
+
+https://happy-thoughts-by-dannuzak.netlify.app/
