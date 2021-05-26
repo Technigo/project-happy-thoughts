@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
     return (
         <div className="form">
@@ -22,7 +21,6 @@ const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
             </button>
             </form>
         </div>
-
     )
 }
 

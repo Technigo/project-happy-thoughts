@@ -17,7 +17,6 @@ export const App = () => {
     fetch(HAPPY_THOUGHTS_URL)
       .then(res => res.json())
       .then(inputs => setMessageList(inputs))
-      .catch(err => console.error(err));
   }
 
   const handleMessageNewChange = (e) => {
@@ -38,7 +37,6 @@ export const App = () => {
     fetch(HAPPY_THOUGHTS_URL, options)
       .then(res => res.json())
       .then(recievedMessage => setMessageList([...messageList, recievedMessage]))
-      .catch(err => console.error(err));
 
 // set empty string here. Update value of a state property
       e.target.reset()
@@ -69,6 +67,7 @@ export const App = () => {
 
   return (
     <div className="message-container">
+      <section class="message-section">
         <MessageForm 
           messageNew={messageNew}
           onMessageNewChange={handleMessageNewChange}
@@ -78,6 +77,7 @@ export const App = () => {
           messageList={messageList}
           onLikesIncrease={handleLikesIncrease}
           />
+      </section>
     </div>
   )
 }
