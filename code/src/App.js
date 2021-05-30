@@ -19,6 +19,7 @@ export const App = () => {
     fetch(API_URL)
       .then(res => res.json()) 
       .then(message => setMessageList(message))
+      .catch(err => (err))
   }
 
   const handleNewMessageChange = (event) => {
@@ -39,6 +40,7 @@ export const App = () => {
     fetch(API_URL, options)
       .then(res => res.json()) 
       .then(postMessage => setMessageList([postMessage,...messageList]))
+      .catch(err => (err))
   }
 
   const handleLikesIncrease = (id) => {
@@ -61,11 +63,11 @@ export const App = () => {
         });
         setMessageList(updatedMessageList)
       })
-      .catch(err => console.err(err))
+      .catch(err => (err))
   }
 
   return (
-    <div className="page-wrapper">
+    <main className="page-wrapper">
       <Header />
       <MessageForm 
         newMessage={newMessage} 
@@ -76,6 +78,6 @@ export const App = () => {
         messageList={messageList} 
         handleLikesIncrease={handleLikesIncrease}
       />
-    </div>
+    </main>
   )
 }
