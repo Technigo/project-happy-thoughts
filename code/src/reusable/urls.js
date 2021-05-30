@@ -1,3 +1,3 @@
-export const URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+export const URL = 'https://happy-thoughts-hannahj.herokuapp.com/thoughts';
 export const URL_HEARTS = (messageID) =>
-  `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`;
+  `https://happy-thoughts-hannahj.herokuapp.com/thoughts/${messageID}/likes`;
