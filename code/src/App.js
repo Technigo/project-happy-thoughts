@@ -9,7 +9,6 @@ import Header from './components/Header'
 export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
-  // const [error, setError] = useState('')
   const [characters, setCharacters] = useState(messageNew.length)
 
   useEffect(() => {
@@ -40,15 +39,6 @@ export const App = () => {
     .then(() => fetchMessageList())
     .catch(err => console.group.error(err))
   }
-
-
-  // const isValidMessage = () => {
-  //   if (messageNew.length > 4 && messageNew.length < 140) {
-  //     return true
-  //   } else {
-  //     return false
-  //   }
-  // }
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
