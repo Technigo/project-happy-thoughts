@@ -30,6 +30,7 @@
 
 .character-counter {
   font-size: 14px;
-  
+  margin: 0;
+  text-align: right;
 }
   
