@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import MessageForm from "./components/MessageForm";
 import MessageList from "./components/MessageList";
 
-import { API_URL, LIKES_URL, POST_URL } from "./reusable/urls";
+import { API_URL, LIKES_URL } from "./reusable/urls";
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -42,7 +42,7 @@ export const App = () => {
       .then(() => fetchMessageList())
   };
 
-  const handleLikesIncrease = (messageID) => {
+  const handleLikesIncrease = (_id) => {
     const options = {
       method: "POST",
       headers: {
