@@ -10,6 +10,7 @@ import { API_URL, LIKES_URL } from "./reusable/urls";
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
   const [messageNew, setMessageNew] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     fetchMessageList();
@@ -38,8 +39,21 @@ export const App = () => {
     };
 
     fetch(API_URL, options)
-      .then((res) => res.json())
-      .then(() => fetchMessageList())
+      .then((res) => {
+        if (res.ok) {
+          return res.json()
+        } else {
+          throw new Error ('Something went wrong!')
+        }
+      })
+      .then(() =>
+        fetchMessageList(),
+        setMessageNew('')
+      )
+      .catch(() => {
+        setErrorMessage(true);
+      })
+    }
   };
 
   const handleLikesIncrease = (_id) => {
