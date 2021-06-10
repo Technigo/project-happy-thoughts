@@ -10,7 +10,6 @@ import { API_URL, LIKES_URL } from "./reusable/urls";
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
   const [messageNew, setMessageNew] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     fetchMessageList();
@@ -50,11 +49,7 @@ export const App = () => {
         fetchMessageList(),
         setMessageNew('')
       )
-      .catch(() => {
-        setErrorMessage(true);
-      })
-    }
-  };
+    };
 
   const handleLikesIncrease = (_id) => {
     const options = {
