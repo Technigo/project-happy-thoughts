@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import MessageForm from "./components/MessageForm";
 import MessageList from "./components/MessageList";
 
-import { API_URL, LIKES_URL } from "./reusable/urls";
+import { API_URL, LIKES_URL, POST_URL } from "./reusable/urls";
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]);
@@ -50,7 +50,7 @@ export const App = () => {
       },
     };
 
-    fetch(LIKES_URL(messageID), options)
+    fetch(LIKES_URL(_id), options)
       .then((res) => res.json())
       .then(() => fetchMessageList())
   };
