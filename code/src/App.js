@@ -9,6 +9,7 @@ import { API_URL, LIKES_URL } from './reusable/urls'
 export const App = () => {
   const [thoughtList, setThoughtList] = useState ([])
   const [newThought, setNewThought] = useState('')
+  const [error, setError] = useState('')
 
   useEffect(() => {
     fetchThoughtList()
@@ -18,7 +19,7 @@ export const App = () => {
     fetch (API_URL)
       .then(response => response.json())
       .then(thoughts => setThoughtList(thoughts))
-      .catch(error => console.error(error))
+      .catch(error => setError(error))
   }
 
   const handleNewThoughtChange = (event) => {
@@ -37,11 +38,21 @@ export const App = () => {
     };
 
     fetch(API_URL, options)
-      .then(response => response.json())
-      .then(receivedNewThought => setThoughtList([receivedNewThought, ...thoughtList]))
-  //  .then(() => fetchThoughtList)     
-      .catch(error => console.error(error))
-      setNewThought('')
+      .then(response => {
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw new Error('something went wrong')
+        }
+
+      })
+      // .then(receivedNewThought => setThoughtList([receivedNewThought, ...thoughtList]))
+      .then(() => fetchThoughtList())     
+      .catch(error => {
+        console.error('this is my error', error)
+        setError(error)
+      })
+      .finally(() => setNewThought(''))
   }
 
   const handleLikesIncrease = (id) => {
@@ -54,21 +65,22 @@ export const App = () => {
 
   fetch(LIKES_URL(id), options)
     .then(response => response.json())
-    .then(receivedThought => {
-      const updatedThoughtList = thoughtList.map(thought => {
-        if (thought._id === receivedThought._id){
-        thought.hearts += 1
-      }
-        return thought
-      })
-      setThoughtList(updatedThoughtList)
-    })
-//  .then(() => fetchThoughtList)     
-    .catch(error => console.error(error))
+    // .then(receivedThought => {
+    //   const updatedThoughtList = thoughtList.map(thought => {
+    //     if (thought._id === receivedThought._id){
+    //     thought.hearts += 1
+    //   }
+    //     return thought
+    //   })
+    //   setThoughtList(updatedThoughtList)
+    // })
+    .then(() => fetchThoughtList())     
+    .catch(error => setError(error))
   }
 
   return (
     <main className="maincontainer">
+        {error && <p>Something went wrong. Sorry about that.</p>}
         < ThoughtForm
             newThought={newThought}
             onNewThoughtChange={handleNewThoughtChange}
