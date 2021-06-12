@@ -17,7 +17,7 @@ export const App = () => {
 
   const fetchThoughtList = () => {
     fetch (API_URL)
-      .then(response => response.json())
+      .then(res => res.json())
       .then(thoughts => setThoughtList(thoughts))
       .catch(error => setError(error))
   }
@@ -44,18 +44,14 @@ export const App = () => {
         } else {
           throw new Error('something went wrong')
         }
-
       })
       // .then(receivedNewThought => setThoughtList([receivedNewThought, ...thoughtList]))
       .then(() => fetchThoughtList())     
-      .catch(error => {
-        console.error('this is my error', error)
-        setError(error)
-      })
+      .catch(error => {setError(error)})
       .finally(() => setNewThought(''))
   }
 
-  const handleLikesIncrease = (id) => {
+  const handleLikesIncrease = (thoughtId) => {
     const options = {
       method: 'POST',
       headers: {
@@ -63,7 +59,7 @@ export const App = () => {
       },
   };
 
-  fetch(LIKES_URL(id), options)
+  fetch(LIKES_URL(thoughtId), options)
     .then(response => response.json())
     // .then(receivedThought => {
     //   const updatedThoughtList = thoughtList.map(thought => {
