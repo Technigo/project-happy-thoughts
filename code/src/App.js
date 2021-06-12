@@ -59,7 +59,7 @@ export const App = () => {
       },
   };
 
-  fetch(LIKES_URL(thoughtId), options)
+  fetch(LIKES_URL(thoughtId), (options))
     .then(response => response.json())
     // .then(receivedThought => {
     //   const updatedThoughtList = thoughtList.map(thought => {
