@@ -1,4 +1,4 @@
-This is a project made during the Technigo Bootcamp. 
+Project week 11 of Technigo bootcamp
 
 # Happy Thoughts
 
