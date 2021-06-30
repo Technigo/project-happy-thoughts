@@ -36,7 +36,7 @@ export const App = () => {
     
     fetch(API_URL, options)
       .then(res => res.json())
-      .then(recievedThought => setThoughtList([...thoughtList, recievedThought]))
+      .then(recievedThought => setThoughtList([recievedThought,...thoughtList]))
   }
 
   const onHeartsIncrease = (id) => {
@@ -54,7 +54,7 @@ export const App = () => {
           if (thought._id === recievedThought._id) {
             thought.likes += 1
           }
-          return thought
+          return thought;
         });
         setThoughtList(updatedThoughtList)
       })
