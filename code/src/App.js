@@ -55,10 +55,10 @@ export const App = () => {
             thought.likes += 1
           }
           return thought
-        })
+        });
         setThoughtList(updatedThoughtList)
       })
-      .catch(err => console.error(err))
+      .catch(err => (err))
   }
 
   return (
