@@ -13,13 +13,11 @@ code {
 }
 
 * {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   font-weight: bold;
   font-size: 16px;
   box-sizing: border-box;
 }
-
-
 
 /**** HEADER ***/
 
@@ -31,7 +29,7 @@ header {
 }
 
 h1 {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   font-size: 32px;
   margin-top: 45px;
   margin-bottom: 45px;
@@ -44,20 +42,16 @@ h1 span {
   text-shadow: none;
 }
 
-
-
 /**** MAIN CONTAINER (main styling of "form-container" & "happy-thought-container") ****/
 
 .page-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background: #f7c1c1;
-  }
-
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #f7c1c1;
+}
 
 /**** FORM ****/
 
@@ -102,10 +96,9 @@ h1 span {
 }
 
 .submit-button:hover {
-  transform: scale(1.1);
+  filter: brightness(120%);
+  transition: 0.3s;
 }
-
-
 
 /**** THOUGHT ****/
 
@@ -158,23 +151,22 @@ h1 span {
   background: #ffadad;
 }
 
-.heart-button:hover, .heart-button-liked:hover {
+.heart-button:hover,
+.heart-button-liked:hover {
   transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .date {
   color: #c5c2c2;
 }
 
-
-
-
 /**** MEDIA QUERIES ***/
 
 /*Tablet*/
 @media (min-width: 768px) and (max-width: 1024px) {
-
-  .form-container, .happy-thought-container {
+  .form-container,
+  .happy-thought-container {
     width: 55%;
   }
 
@@ -183,35 +175,26 @@ h1 span {
     margin-top: 52px;
     margin-bottom: 52px;
   }
-  
+
   h1 span {
     font-size: 34px;
   }
-  
- }
- 
- 
- /*Desktop*/
- @media (min-width: 1025px) {
- 
-   .form-container, .happy-thought-container {
-     width: 30%;
-   }
+}
 
-   h1 {
+/*Desktop*/
+@media (min-width: 1025px) {
+  .form-container,
+  .happy-thought-container {
+    width: 30%;
+  }
+
+  h1 {
     font-size: 50px;
     margin-top: 60px;
     margin-bottom: 60px;
   }
-  
+
   h1 span {
     font-size: 38px;
   }
-
- }
-
-
-
-
-
- 
+}
