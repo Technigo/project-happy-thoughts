@@ -53,6 +53,7 @@ p {
   border: none;
   padding: 5px;
   background: rgb(247, 202, 210);
+  cursor: pointer;
 }
 
 .message-list-container {
@@ -81,6 +82,7 @@ p {
   background: none;
   border:none;
   padding: 0;
+  cursor: pointer;
 }
 .heart-container {
   display: inline;

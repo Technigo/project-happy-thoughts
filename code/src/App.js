@@ -15,6 +15,7 @@ export const App = () => {
     fetchMessageList();
   }, []);
 
+  // Fetch messages
   const fetchMessageList = () => {
     fetch(API_URL)
       .then((res) => res.json())
@@ -26,6 +27,7 @@ export const App = () => {
     setMessageNew(event.target.value);
   };
 
+  // Post messages 
   const handelFormSubmit = (event) => {
     event.preventDefault();
 
@@ -43,7 +45,7 @@ export const App = () => {
       .catch((err) => console.error(err));
   };
 
-  // Likes
+  // Post likes
   const handleLikeIncreas = (id) => {
     const options = {
       method: "POST",
@@ -62,6 +64,7 @@ export const App = () => {
     <div className="happy-thoughts-container">
       <div className="message-form-container">
         <MessageForm
+          // send as props to child compontent
           messageNew={messageNew}
           onMessageNewChange={handelMessageNewChange}
           onFormSubmit={handelFormSubmit}
@@ -69,6 +72,7 @@ export const App = () => {
       </div>
       <div className="message-list-container">
         <MessageList
+          // send as props to child compontent
           messageList={messageList}
           handleLikeIncreas={handleLikeIncreas}
         />

@@ -7,11 +7,11 @@ const MessageForm = ({ messageNew, onMessageNewChange, onFormSubmit }) => {
         What's making you happy right now?
       </label>
       <input
+        className="input-message"
         id="newMessage"
         type="text"
         value={messageNew}
         onChange={onMessageNewChange}
-        className="input-message"
       />
       <button type="submit" className="submit-button">
         <span role="img" aria-label="heart">
