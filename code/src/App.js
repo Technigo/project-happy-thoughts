@@ -1,27 +1,24 @@
-//Global dependencies
 import React, { useEffect, useState } from 'react'
 
-//Local dependencies
-//import { API_URL, POST_HEART_URL, DELETE_THOUGHT_URL } from './constants/urls.js'
-
-//Components
+import { API_URL, POST_HEART_URL, DELETE_THOUGHT_URL } from './constants/urls.js'
 import { MessageForm } from './Components/MessageForm'
 import { MessageList } from './Components/MessageList'
+import { Header } from './Components/Header'
 
 export const App = () => {
-
-//Constants & Functions
   const [messageList, setMessageList] = useState([])
   const [messageNew, setMessageNew] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    fetchMessageList()
-  }, [])
-
+  
   const fetchMessageList = () => {
-    fetch('https://a-lenksjo-happy-thoughts-api.herokuapp.com/thoughts')
+    fetch(API_URL)
     .then(response => response.json())
     .then (messages => setMessageList(messages))
+    .catch(error => console.error(error))
+    .finally(() => {
+      setLoading(false)
+    })    
    }
 
   const handleMessageNewChange = (event) => {
@@ -39,14 +36,22 @@ export const App = () => {
       },
       body: JSON.stringify({message: messageNew})
     }
-
-    fetch('https://a-lenksjo-happy-thoughts-api.herokuapp.com/thoughts', options)
+    
+    fetch(API_URL, options)
       .then (response => response.json())
-      .then (()=> fetchMessageList())
+      .then (() => {
+        fetchMessageList(API_URL)
+      })
+      .catch((error) => console.error(error))
   }
 
-  const handleDeleteThought = (messageID) => {
+  useEffect(() => {
+    setLoading(true)
+    fetchMessageList()
+  }, [])
 
+
+  const handleDeleteThought = (messageID) => {
     const options = {
       method: 'DELETE',
       headers: {
@@ -54,9 +59,9 @@ export const App = () => {
       }
     }
 
-    fetch(`https://a-lenksjo-happy-thoughts-api.herokuapp.com/thoughts/${messageID}`, options)
+    fetch(DELETE_THOUGHT_URL(messageID), options)
       .then (response => response.json())
-      .then (()=> fetchMessageList())
+      .then (() => fetchMessageList())
   }
 
   const handleLikesIncrease = (messageID) => {
@@ -67,28 +72,31 @@ export const App = () => {
       }
     }
 
-    fetch(`https://a-lenksjo-happy-thoughts-api.herokuapp.com/thoughts/${messageID}/likes`, options)
+    fetch(POST_HEART_URL(messageID), options)
     .then (response => response.json())
     .then (()=> fetchMessageList())
   }
 
-// Mounting
   return (
-
     <main className="content">
-
+      <Header/>
       <MessageForm 
         messageNew = {messageNew}
         onFormSubmit = {handleFormSubmit}
         onMessageNewChange = {handleMessageNewChange}
       />
-
-      < MessageList 
-        messageList = {messageList}
-        handleLikesIncrease = {handleLikesIncrease}
-        onDeleteThought = {handleDeleteThought}
-      />
-      
+      {loading? 
+        <>
+          <h3>Loading thoughts...</h3>
+        </>
+        :
+        <MessageList 
+          messageList = {messageList}
+          handleLikesIncrease = {handleLikesIncrease}
+          onDeleteThought = {handleDeleteThought}
+        />   
+      }
+       
     </main>
   )
 }
