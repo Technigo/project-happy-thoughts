@@ -60,7 +60,9 @@ export const App = () => {
 
     fetch(LIKES_URL(id), options)
       .then((res) => res.json())
-      .then(() => fetchThoughtList())
+      .then(() => {
+        setLoading(false), fetchThoughtList();
+      })
       .catch((err) => console.error(err));
   };
 
