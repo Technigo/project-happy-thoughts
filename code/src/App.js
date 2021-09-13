@@ -4,10 +4,12 @@ import ThoughtForm from "./components/ThoughtsForm";
 import ThoughtList from "./components/ThoughtList";
 
 import { API_URL, LIKES_URL } from "./reusable/urls";
+import { Loading } from "./Loading";
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([]);
   const [thoughtNew, setThoughtNew] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchThoughtList();
@@ -17,7 +19,10 @@ export const App = () => {
   const fetchThoughtList = () => {
     fetch(API_URL)
       .then((res) => res.json())
-      .then((thoughts) => setThoughtList(thoughts))
+      .then((thoughts) => {
+        setLoading(false);
+        setThoughtList(thoughts);
+      })
       .catch((err) => console.error(err));
   };
 
@@ -70,6 +75,7 @@ export const App = () => {
         onFormSubmit={handleFormSubmit}
         onThoughtNewChange={handleThoughtNewChange}
       />
+      {loading && <Loading />}
       <ThoughtList
         thoughtList={thoughtList}
         handleLikesIncrease={handleLikesIncrease}
