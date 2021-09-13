@@ -4,7 +4,7 @@ import ThoughtForm from "./components/ThoughtsForm";
 import ThoughtList from "./components/ThoughtList";
 
 import { API_URL, LIKES_URL } from "./reusable/urls";
-import { Loading } from "./Loading";
+import { Loading } from "./components/Loading";
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([]);
