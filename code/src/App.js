@@ -9,7 +9,9 @@ export const App = () => {
   const [thougths, setThougths] = useState([]);
   const [message, setMessage] = useState("")
 
+
   useEffect(() => {
+    console.log("primer fecth")
     fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
       .then(res => res.json())
       .then(json => {
@@ -19,11 +21,15 @@ export const App = () => {
       });
   }, [])
 
+
   return (
     <div className="main-container">
       <Header />
-      <Card message={message} setMessage={setMessage} />
-      {thougths && thougths.map(thougth => <Message thougth={thougth} />)}
+      {<Card message={message} setMessage={setMessage} thougths={thougths} setThougths={setThougths} />}
+
+      {thougths && thougths.map((thougth, i) => {
+        return <div key={"key" + i}><Message thougth={thougth} /></div>
+      })}
       <Footer />
     </div>
 

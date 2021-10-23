@@ -12,7 +12,7 @@ export const Message = ({ thougth }) => {
             <h3 className="message">{message}</h3>
             <div className="message-botton-container">
                 <Like hearts={hearts} />
-                <p className="message-date">23 minutes ago</p>
+                <p className="message-date">{date}</p>
             </div>
         </div>
     )
