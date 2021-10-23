@@ -1,0 +1,23 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.form-input{
+    background: rgb(196, 235, 235);
+    margin: 10px auto;
+    width: 95%;
+    height: 50px;
+}
+
+.form_button{
+    background: rgb(226, 169, 183);
+    color: black;
+    margin: 10px auto;
+    height: 40px;
+    border-radius: 27px;
+    width: 60%;
+
+}
