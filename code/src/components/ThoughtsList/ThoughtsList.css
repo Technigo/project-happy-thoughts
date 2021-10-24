@@ -1,0 +1,35 @@
+.thoughts__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thoughts__thought-container {
+  width: 400px;
+  height: 120px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  box-shadow: 8px 8px black;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.thoughts__likes-time {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.icon__heart {
+  color: red;
+  background-color: rgb(228, 226, 226);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
