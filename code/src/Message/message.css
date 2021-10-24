@@ -1,5 +1,5 @@
 .message-container{
-    width: 50%;
+    width: 90%;
     height: auto;
     margin: 50px auto;
     background:rgb(246, 215, 167);
@@ -30,4 +30,16 @@
 
 .message-date{
     margin: 10px 0px;
+}
+
+@media (min-width: 768px) {
+.message-container{
+    width: 75%;
+    }
+}
+
+@media (min-width: 992px) {
+.message-container{
+    width: 50%;
+    }
 }

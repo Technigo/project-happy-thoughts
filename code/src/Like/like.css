@@ -5,14 +5,17 @@
 }
 
 .heart-circle{
-    background: rgb(196, 208, 213);
     padding: 7px;
     border-radius: 50%;
 }
 
-/* .red{
+.red {
      background: rgb(236, 193, 209);
-} */
+}
+
+.gray {
+ background: rgb(196, 208, 213);
+}
 
 .fa-heart {
     color: red;

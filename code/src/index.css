@@ -14,10 +14,21 @@ code {
     monospace;
 }
 
-
 .main-container{
   background: rgb(200, 227, 212);
-  width: 70%;
+  width: 95%;
   margin: 0 auto;
   height: auto;
+}
+
+@media (min-width: 768px) {
+ .main-container{
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+.main-container{
+        width: 70%;
+    }
 }

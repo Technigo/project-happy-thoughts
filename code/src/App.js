@@ -5,10 +5,10 @@ import { Header } from 'Header'
 import { Footer } from 'Footer'
 
 
+
 export const App = () => {
   const [thougths, setThougths] = useState([]);
   const [message, setMessage] = useState("")
-
 
   useEffect(() => {
     console.log("primer fecth")
@@ -26,9 +26,8 @@ export const App = () => {
     <div className="main-container">
       <Header />
       {<Card message={message} setMessage={setMessage} thougths={thougths} setThougths={setThougths} />}
-
       {thougths && thougths.map((thougth, i) => {
-        return <div key={"key" + i}><Message thougth={thougth} /></div>
+        return <div key={"key" + i}><Message thougth={thougth} setThougths={setThougths} /></div>
       })}
       <Footer />
     </div>
