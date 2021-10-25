@@ -6,7 +6,7 @@ import { API_URL } from './utils/urls'
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
-  //const [heart, setHeart] = useState()
+  const [count, setCount] = useState(0); //for counting characters used in textarea
 
   useEffect (() => {
     fetch(API_URL)
@@ -40,8 +40,11 @@ export const App = () => {
             type="text"
             maxLength="140"
             value={newThought} 
-            onChange={(e) => setNewThought(e.target.value)}
+            onChange={(e) => setNewThought(e.target.value) || setCount(e.target.value.length)}
           />
+
+          <p>{count}/140</p>
+
           <button className="send-button" type="submit">
             <span className="heart" role="img" aria-label="heart">❤️  </span>  
               Send Happy Thought  
@@ -56,7 +59,7 @@ export const App = () => {
           <div className="thought-info">
             <div className="thought-heart">
               <button className="heart-button"><span className="heart" role="img" aria-label="heart">❤️</span></button>
-              <span> x {thought.hearts}</span>
+              <span>  x {thought.hearts}</span>
             </div>
             <p className="date"> {moment(thought.createdAt).fromNow()} </p>
           </div>
