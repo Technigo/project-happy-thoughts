@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import Header from 'components/Header';
+import PostAThought from 'components/PostAThought';
+import Footer from 'components/Footer';
+import RecentThoughtsList from './components/RecentThoughtsList';
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <>
+      <Header />
+      <PostAThought />
+      <RecentThoughtsList />
+      <Footer />
+    </>
+  );
+};
