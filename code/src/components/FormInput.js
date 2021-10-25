@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { API_URL } from '../utils/urls';
 
-const FormInput = () => {
+const FormInput = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState('');
 
   //   console.log(newThought);
@@ -8,7 +9,18 @@ const FormInput = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    // console.log('Form submitted', newThought);
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message: newThought }),
+    };
+
+    fetch(API_URL, options)
+      .then((res) => res.json())
+      .then((data) => setThoughts([data, ...thoughts]));
+    // newThought = ''; How to make the input field blank after submitting
   };
 
   return (
