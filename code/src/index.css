@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.thought-container{
+  width: 660px;
+  height: 260 px;
+  margin: 30px;
+  border: 1px solid black;
+}
+
+.button-row{
+  display: flex;
+  flex-direction: row;
+}
+.heart-button-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.heart {
+  color: red;
+}
+.heart-button{
+  color: #EAEAEA;
+  border-radius: 50%;
+  width: 67px;
+  height: 67px;
+ 
+}
+
