@@ -26,8 +26,8 @@ const Form = ({ thoughts, setThoughts }) => {
       <div>
         <form onSubmit={onFormSubmit}>
           <label htmlfor="newThought"> Write a happy thought </label>
-          <input
-            type="textarea"
+          <textarea
+            type="text"
             rows="3"
             id="newThought"
             value={newThought}
