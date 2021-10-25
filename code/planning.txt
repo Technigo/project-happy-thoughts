@@ -1,0 +1,3 @@
+- add heart as a icon in bar
+- add og-tags
+- add 
