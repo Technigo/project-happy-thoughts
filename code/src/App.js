@@ -35,7 +35,7 @@ export const App = () => {
 
 	return (
 		<div>
-			<form onSubmit={onFormSubmit}>
+			<form className="new-thought-container" onSubmit={onFormSubmit}>
 				<label htmlFor="newThought">Type your thought</label>
 				{/*prettier-ignore*/}
 				<input
@@ -48,11 +48,17 @@ export const App = () => {
 			</form>
 
 			{thoughts.map((thought) => (
-				<div key={thought._id}>
+				<div className="thought-container" key={thought._id}>
 					<p>{thought.message}</p>
-					{/* Change the heart icon (&hearts;) to a nicer one */}
-					<button> &hearts; {thought.hearts}</button>
-					<p>Created at: {moment(thought.createdAt).fromNow()}</p>
+					<div className="info-text-container">
+						<button className="like-btn">
+							<div className="heart-icon-container">
+								<span className="heart-icon">❤️</span>
+							</div>
+							<span className="like-counter"> x {thought.hearts}</span>
+						</button>
+						<p>{moment(thought.createdAt).fromNow()}</p>
+					</div>
 				</div>
 			))}
 		</div>

@@ -1,10 +1,77 @@
-body {
+/* body {
 	margin: 10px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	font-family: "Roboto Mono", monospace;
+	font-weight: 400;
+} */
+
+/* code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+} */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+body {
+	font-family: "Roboto Mono", monospace;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.thought-container,
+.new-thought-container {
+	max-width: 520px;
+	margin: 45px 45px;
+	padding: 20px;
+	border: solid #000000 2px;
+	box-shadow: 10px 10px 0px -2px #000000;
+	min-height: 160px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.info-text-container,
+.like-counter {
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	color: #adadad;
+}
+
+.info-text-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.like-btn {
+	border: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	margin-top: 8px;
+}
+
+.heart-icon-container {
+	font-size: 20px;
+	background-color: #e9e9e9;
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 7px;
+}
+
+.heart-icon {
+	font-size: 21px;
 }
