@@ -38,7 +38,7 @@ export const App = () => {
           value={newThought} 
           onChange={(event) => setNewThought(event.target.value)}
         />
-        <button type="submit" className="send-thought">❤️ Send Happy Thought ❤️</button>
+        <button type="submit" className="send-thought"><span>❤️</span> Send Happy Thought <span>❤️</span></button>
       </form>
 
       {thoughts.map(thought =>
