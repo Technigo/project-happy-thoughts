@@ -8,12 +8,29 @@ import { API_URL } from './utils/urls';
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThoughts] = useState('');
+  const [newHearts, setNewHearts] = useState('');
 
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data));
   }, []);
+
+  const onHeartClick = (event) => {
+    event.preventDefault();
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message: newHearts }),
+    };
+
+    fetch(API_URL, options)
+      .then((res) => res.json())
+      .then((data) => setThoughts([data, ...newHearts]));
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -32,22 +49,26 @@ export const App = () => {
   };
 
   return (
-    <div>
+    <div className="mainContainer">
       <form className="newThought" onSubmit={onFormSubmit}>
         <label>What is making you happy right now?</label>
-        <input
+        <textarea
           id="newThought"
           type="text"
           value={newThought}
           onChange={(e) => setNewThoughts(e.target.value)}
+          placeholder="Write your happy thought here.."
         />
-        <button type="submit">&hearts; Send happy thought! &hearts;</button>
+        <button type="submit"><img src="./images/red-heart.png" alt="Red heart emoji"/> Send happy thought! <img src="./images/red-heart.png" alt="Red heart emoji"/></button>
       </form>
       {thoughts.map((thought) => (
-        <div className="posted-thoughts" key={thought._id}>
-          <p>{thought.message}</p>
-          <button> &hearts; {thought.hearts}</button>
-          <p className="dage">Created at: {moment(thought.createdAt).fromNow()}</p>
+        <div className="posted-thoughts" key={thought._id} onSubmit={onHeartClick}>
+          <p className="thought-message">{thought.message}</p>
+          <button type="submit" onClick={(f) => setNewHearts(f.target.value)}>
+          <img src="images/red-heart.png" alt="Red heart emoji"/>
+          </button>
+          <span className="thoughts-likes"> x {thought.hearts}</span>
+          <p className="date">Created at: {moment(thought.createdAt).fromNow()}</p>
         </div>
       ))}
     </div>
