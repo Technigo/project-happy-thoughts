@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.date {
+  font-style: italic;
+}
+
+.thought-input-container,
+.thought-card {
+  width: 350px;
+  padding: 10px;
+  background-color:white;
+  border: black 1px solid;
+  margin: 40px auto;
+  box-shadow: 8px 8px;
+}
+
+.thought-input-container {
+  background-color: lightgray;
+}
+
+.send-thought {
+  background-color: salmon;
+  color: white;
+  padding: 5px 10px;
+  margin: 10px 0px;
+  border-radius: 10px;
+  border: none;
+}
