@@ -26,7 +26,7 @@ export const App = () => {
         handleThoughtsToggle();
         setActive(!isActive);
       });
-  }, []);
+  }, [setActive, handleThoughtsToggle]);
 
   const onLikeButtonClick = (thought) => {
     fetch(API_LIKES(thought), { method: "POST" })
