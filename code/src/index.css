@@ -1,10 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'PT Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffd5d5;
+}
+
+.container {
+  margin: 0 auto;
+  width: 320px;
 }
 
 code {
@@ -12,6 +16,143 @@ code {
     monospace;
 }
 
+h1 {
+  font-size: 16px;
+}
+
+label {
+  margin: 10px 0px;
+}
+
 .date {
   font-style: italic;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  width: 280px;
+  padding: 8px;
+  box-shadow: 5px 5px #000;
+  background-color: #f2f0f0;
+  margin-top: 20px;
+}
+
+.message-container {
+  width: 280px;
+  border: 1px solid #000;
+  margin: 20px 0px;
+  padding: 8px;
+  box-shadow: 5px 5px #000;
+  background-color: #fff;
+}
+
+.submit-button {
+  border-radius: 20px;
+  border: none;
+  background-color: #ffadad;
+  font-family: 'PT Mono', monospace;
+  color: #000;
+  width: 70%;
+  padding: 4px 0px;
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.submit-text {
+  margin: 0;
+}
+
+.like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffadad;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.likes-number {
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #d0d0d0;
+}
+
+@media (min-width: 420px) and (max-width: 719px) {
+  .container {
+    width: 410px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  form {
+    width: 380px;
+    padding: 12px;
+  }
+
+  .message-container {
+    width: 380px;
+
+    padding: 12px;
+  }
+
+  .submit-button {
+    width: 50%;
+    padding: 7px 0px;
+  }
+}
+
+@media (min-width: 720px) {
+  .container {
+    width: 710px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  form {
+    width: 480px;
+    padding: 15px;
+  }
+
+  .message-container {
+    width: 480px;
+    padding: 15px;
+  }
+
+  .submit-button {
+    width: 45%;
+    padding: 8px 0px;
+  }
 }

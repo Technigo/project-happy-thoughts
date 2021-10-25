@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 import { API_URL } from 'urls'
+import { LIKE_URL } from 'urls'
+import { Form } from 'Form'
 
-export const App = () => {
+export const App = ({ username }) => {
   const [thoughts, setThoughts] = useState([])
-  const [newThought, setNewThought] = useState('')
-
-  const onNewThoughtChange = (event) => {
-    setNewThought(event.target.value)
-  }
 
   useEffect(() => {
     fetch(API_URL)
@@ -16,43 +13,37 @@ export const App = () => {
       .then((data) => setThoughts(data))
   }, [])
 
-  const onFormSubmit = (event) => {
-    event.preventDefault()
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message: newThought }),
-    }
-    fetch(API_URL, options)
-      .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]))
-  }
-
   return (
-    <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor='newThought'>Type your thought</label>
-        <input
-          id='newThought'
-          type='text'
-          value={newThought}
-          onChange={onNewThoughtChange}
+    <div className='container'>
+      <div className='main'>
+        <Form
+          thoughts={thoughts}
+          setThoughts={setThoughts}
+          username={username}
         />
-        <button type='submit'>Send thought!</button>
-      </form>
 
-      {thoughts.map((thought) => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          <button> &hearts; {thought.hearts} </button>
-          <p className='date'>
-            - Created at: {moment(thought.createdAt).fromNow()}
-          </p>
-        </div>
-      ))}
+        {thoughts.map((thought) => (
+          <div className='message-container' key={thought._id}>
+            <p>{thought.message}</p>
+            <div className='icon-container'>
+              <div className='button-container'>
+                <button className='like-button'>
+                  <span
+                    className='heart-icon'
+                    role='img'
+                    aria-label='heart-icon'
+                  >
+                    ❤️️
+                  </span>{' '}
+                </button>
+                <p className='likes-number'>x {thought.hearts} </p>
+              </div>
+              <p>{username}</p>
+              <p className='date'>{moment(thought.createdAt).fromNow()}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
