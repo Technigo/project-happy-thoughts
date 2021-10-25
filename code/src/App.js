@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 import { API_URL } from 'urls'
-import { LIKE_URL } from 'urls'
 import { Form } from 'Form'
 
 export const App = ({ username }) => {
