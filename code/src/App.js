@@ -57,7 +57,7 @@ export const App = () => {
 							</div>
 							<span className="like-counter"> x {thought.hearts}</span>
 						</button>
-						<p>{moment(thought.createdAt).fromNow()}</p>
+						<p className="time-info">{moment(thought.createdAt).fromNow()}</p>
 					</div>
 				</div>
 			))}
