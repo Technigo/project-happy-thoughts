@@ -12,13 +12,72 @@ code {
     monospace;
 }
 
-.btn {
-  border-radius: 100%;
-  border-color: salmon;
-  color: salmon;
-  width: 50px;
-  height: 50px;
+.p {
+  font-size: 14px;
 }
 
-.date {
+.send-btn {
+  border-radius: 50%;
+  width: 50%;
+  height: 40px;
+  display: block;
+  border-radius: 3em;
+  font-weight: 700;
+  color: rgb(63, 62, 62);
+  background-color: rgb(255, 173, 173);
+  text-align: center;
+  font-size: 10px;
+}
+
+.send-heart {
+  color: rgb(255, 64, 50);
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.input {
+  width: 90%;
+  height: 40px;
+  border-color: rgb(207, 207, 207);
+  border: 2px;
+}
+button {
+  -webkit-appearance: none;
+  border: none;
+}
+
+.btn {
+  border-radius: 100%;
+  color: salmon;
+  width: 40px;
+  height: 80px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 150px;
+  background-color: rgb(242, 240, 240);
+  padding: 1rem;
+  border: 1px solid rgb(2, 2, 2);
+  box-shadow: 7px 7px rgb(2, 2, 2);
+
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.thoughts {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  border: 1px solid #333;
+  margin-bottom: 1rem;
+  height: 140px;
+  border: 1px solid rgb(63, 62, 62);
+  box-shadow: 7px 7px rgb(63, 62, 62);
+}
+
+.btn-heart {
+  color: red;
 }
