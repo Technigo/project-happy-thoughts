@@ -1,51 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./ThoughtsList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeartBroken } from "@fortawesome/free-solid-svg-icons";
+import moment from "moment";
 
-export const ThoughtsList = () => {
-  const [thoughtList, setThoughtList] = useState([]);
+export const ThoughtsList = ({ API_URL, onSetThoughtList, thoughtList }) => {
   console.log(thoughtList);
 
-  function timeSince(date) {
-    const seconds = Math.floor((new Date() - date) / 1000);
-    let interval = seconds / 31536000;
-
-    if (interval > 1) {
-      return Math.floor(interval) + " years";
-    }
-    interval = seconds / 2592000;
-    if (interval > 1) {
-      return Math.floor(interval) + " months";
-    }
-    interval = seconds / 86400;
-    if (interval > 1) {
-      return Math.floor(interval) + " days";
-    }
-    interval = seconds / 3600;
-    if (interval > 1) {
-      return Math.floor(interval) + " hours";
-    }
-    interval = seconds / 60;
-    if (interval > 1) {
-      return Math.floor(interval) + " minutes";
-    }
-    return Math.floor(seconds) + " seconds";
-  }
-
   useEffect(() => {
-    const api20thoughts =
-      "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-    fetch(api20thoughts)
+    fetch(API_URL)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setThoughtList(data);
+        onSetThoughtList(data);
       })
       .catch((err) => {});
-  }, []);
+  }, [API_URL, onSetThoughtList]);
 
   return (
     <div className="thoughts__container">
@@ -54,16 +26,18 @@ export const ThoughtsList = () => {
           <div className="thoughts__thought-container" key={thought._id}>
             <span>{thought.message}</span>
             <div className="thoughts__likes-time">
-              <span
+              <button
                 className="icon__heart"
                 style={{
-                  backgroundColor: thought.hearts > 0 ? "pink" : "lightgray",
+                  backgroundColor: thought.hearts > 0 ? "#fbabab" : "#f3f2f2",
                 }}
               >
-                <FontAwesomeIcon icon={faHeart} />
-              </span>
+                <FontAwesomeIcon
+                  icon={thought.hearts > 0 ? faHeart : faHeartBroken}
+                />
+              </button>
               <span> x {thought.hearts} </span>
-              <span>{timeSince(new Date(thought.createdAt))} ago</span>
+              <span>{moment(thought.createdAt).fromNow()}</span>
             </div>
           </div>
         );
