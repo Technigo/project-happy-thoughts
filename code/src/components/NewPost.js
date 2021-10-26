@@ -17,7 +17,13 @@ export const NewPost = ({ onFormSubmit, newThought, setNewThought }) => {
         className="form-button"
         disabled={newThought.length < 6 || newThought.length > 140}
       >
-        💓 Send Happy Thought! 💓
+        <span role="img" aria-label="heart icon">
+          💓
+        </span>{" "}
+        Send Happy Thought!{" "}
+        <span role="img" aria-label="heart icon">
+          💓
+        </span>
       </button>
     </form>
   );

@@ -4,7 +4,7 @@ import moment from "moment";
 import { NewPost } from "./components/NewPost";
 // import Posts from "./components/Posts";
 import { API_URL } from "./utils/urls";
-import { LIKES_URL } from "./utils/urls";
+// import { LIKES_URL } from "./utils/urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -53,7 +53,9 @@ export const App = () => {
           <p>{thought.message}</p>
           <div className="like-div">
             <button className="heart-button">
-              <span role="img">💗 </span>
+              <span role="img" aria-label="heart icon">
+                💗
+              </span>
             </button>
             x{thought.hearts}
           </div>
