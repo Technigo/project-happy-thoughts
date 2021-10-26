@@ -3,14 +3,11 @@ import { API_URL } from 'urls'
 
 export const Form = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState([])
-  const [username, setUserName] = useState('')
+  const [counter, setCounter] = useState(0)
 
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value)
-  }
-
-  const onNewUsernameChange = (event) => {
-    setUserName(event.target.value)
+    setCounter(event.target.value.length)
   }
 
   const onFormSubmit = (event) => {
@@ -21,12 +18,16 @@ export const Form = ({ thoughts, setThoughts }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ message: newThought, username: username }),
+      body: JSON.stringify({ message: newThought }),
     }
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => setThoughts([data, ...thoughts]))
+
+    setNewThought('')
+    setCounter(0)
   }
+
   return (
     <form onSubmit={onFormSubmit}>
       <label htmlFor='newThought'>
@@ -40,8 +41,8 @@ export const Form = ({ thoughts, setThoughts }) => {
         onChange={onNewThoughtChange}
         placeholder='Minimum 6 characters and maximum 140 characters'
       />
-      <label>Your name:</label>
-      <input type='text' value={username} onChange={onNewUsernameChange} />
+      <p>{140 - counter} / 140 characters left</p>
+
       <button
         className='submit-button'
         type='submit'
