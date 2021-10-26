@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react';
 
-// const LikeButton = ({ thought }) => {
+// const LikeButton = ({ id }) => {
 //   const [likes, setLikes] = useState(0);
 
 //   useEffect(() => {

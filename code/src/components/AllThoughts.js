@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import { API_URL } from '../utils/urls';
 
+import Header from './Header';
 import FormInput from './FormInput';
 // import LikeButton from './LikeButton';
 
@@ -16,20 +17,29 @@ const AllThoughts = () => {
   console.log(thoughts);
 
   return (
-    <div>
+    <div className='thoughts-container'>
+      <Header />
       <FormInput thoughts={thoughts} setThoughts={setThoughts} />
       {thoughts.map((thought) => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          {/* <LikeButton thought={thought} /> */}
-          <button
-            type='button'
-            // onClick={(event) => onLikeButtonClick(event)}
-          >
-            &hearts; {thought.hearts}
-          </button>
+        <div key={thought._id} className='thought-card'>
+          <p className='thought-text'>{thought.message}</p>
+          {/* <LikeButton id={thought._id} /> */}
+          <div className='thought-card-info'>
+            <div className='like-info'>
+              <button
+                type='button'
+                className='like-button'
+                // onClick={(event) => onLikeButtonClick(event)}
+              >
+                <span className='like-heart'>❤️</span>
+              </button>
+              <p className='thought-card-info-text'>x {thought.hearts}</p>
+            </div>
 
-          <p>Posted: {moment(thought.createdAt).fromNow()}</p>
+            <p className='thought-card-info-text'>
+              Posted: {moment(thought.createdAt).fromNow()}
+            </p>
+          </div>
         </div>
       ))}
     </div>

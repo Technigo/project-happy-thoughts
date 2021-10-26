@@ -19,20 +19,30 @@ const FormInput = ({ thoughts, setThoughts }) => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]));
-    // newThought = ''; How to make the input field blank after submitting
+      .then((data) => setThoughts([data, ...thoughts], setNewThought('')));
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit} className='form-container'>
       <label htmlFor='newThought'>What makes you happy right now?</label>
-      <input
+      <textarea
         id='newThought'
-        type='text'
-        value={newThought}
         onChange={(event) => setNewThought(event.target.value)}
+        className='text-input'
+        value={newThought} //I need this to clear the input... why?
+        autoComplete='off'
+        rows='3'
+        cols='30'
+        placeholder='Write your happy thought here'
+        minLength='5'
+        maxLength='140'
+        required
       />
-      <button type='submit'>Share</button>
+      <button type='submit' className='share-button'>
+        <span className='btn-heart'>❤️</span>
+        <span>Send happy thought</span>
+        <span className='btn-heart'>❤️</span>
+      </button>
     </form>
   );
 };
