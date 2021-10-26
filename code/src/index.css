@@ -1,13 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
+  /* background-color: #fbe8ef; */
+  font-family: 'Roboto Mono', monospace;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+* {
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-form, .thought-card {
+  border: 2px solid black;
+  margin-bottom: 40px;
+  box-shadow: 5px 5px;
+}
+
+.input-form {
+  height: 220px;
+  margin-top: 50px;
+  width: 300px;
+  background-color: #f2f0f0;
+  padding: 15px;
+}
+
+.thought-card {
+  width: 300px;
+  padding: 15px;
+}
+.new-thought {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+.header-form {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.input-message {
+  width: 100%;
+  height: 60px;
+  border: 1px solid grey;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-button {
+  width: 220px;
+  height: 40px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  color: black;
+  padding: 0 10px;
+  background-color: #ffadad;
+}
+.thought-title {
+  font-size: 16px;
+  overflow-wrap: break-word;
+  color: black;
+}
+.send-thought-button {
+  margin: 0px 7px;
+  font-size: 15px;
+}
+.like-time-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.date {
+  font-size: 15px;
+  align-items: center;
+  color: #a6a6a6;
+}
+.likes-amount-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.liked-heart, .unliked-heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.heart {
+  border: none;
+  display: flex;
+  font-size: 16px;
+  padding: 5px;
+}
+::placeholder{
+  font-size: 14px;
+}
+.unliked-heart{
+  background-color: #eaeaea;
+}
+.liked-heart{
+  background-color: #ffadad;
+}
+.likes-counter {
+  color: #a6a6a6;
+  font-size: 13px;
+  margin-left: 10px;
+}
+.count {
+  text-align: right;
+  font-size: 10px;
+}
+.black-color-counter {
+  color: black;
+}
+.red-color-counter {
+  color: #cb3532;
+}
+
+@media (min-width: 768px) {
+  .input-form, .thought-card {
+    width: 500px;
+  }
+}
+
+@media (min-width: 992px) {
+  .input-form, .thought-card {
+    width: 650px;
+  }
+  .input-form{
+    height: 250px;
+    padding: 40px;
+  }
+  ::placeholder{
+    font-size: 18px;
+  }
 }
