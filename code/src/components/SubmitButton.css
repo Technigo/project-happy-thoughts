@@ -1,0 +1,29 @@
+@import url(//db.onlinewebfonts.com/c/395410b1fd4cca8cfb17bd78a9c34889?family=Helvetica+Monospaced);
+
+
+* {
+  font-family: Helvetica Monospaced;
+  text-rendering: optimizeLegibility;
+}
+
+.submit-button {
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #ffadad;
+    border: 1px solid #ffadad; 
+    cursor: pointer;
+    outline: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit-button:hover {
+  transform: scale(1.1);
+}
+
+.emoji {
+padding-right: 5px;
+}
