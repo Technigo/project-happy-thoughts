@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [newThoughts, setNewThoughts] = useState("");
+  const [newThought, setNewThought] = useState("");
 
   useEffect(() => {
     fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
@@ -15,10 +15,10 @@ export const App = () => {
     event.preventDefault();
     const options = {
       method: "POST",
-      Headers: {
+      headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ message: newThoughts }),
+      body: JSON.stringify({ message: newThought }),
     };
     fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", options)
       .then((res) => res.json())
@@ -27,22 +27,29 @@ export const App = () => {
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newThoughts">Type your thought</label>
+      <form className="form-box" onSubmit={onFormSubmit}>
+        <label className="label-text" htmlFor="newThought">
+          What´s making you happy right know?
+        </label>
         <input
-          id="newThoughts"
+          className="input-text"
+          id="newThought"
           type="text"
-          value={newThoughts}
-          onChange={(event) => setNewThoughts(event.target.value)}
+          value={newThought}
+          onChange={(event) => setNewThought(event.target.value)}
         />
-        <button type="submit">Send a thought!</button>
+        <button className="submit-button" type="submit">
+          <p className="happy-thought">
+            &#128151;Send a happy thought&#128151;
+          </p>
+        </button>
       </form>
-      {thoughts.map((thoughts) => (
-        <div key={thoughts._id}>
-          <p>{thoughts.message}</p>
-          <button>&hearts;{thoughts.hearts}</button>
+      {thoughts.map((thought) => (
+        <div key={thought._id}>
+          <p>{thought.message}</p>
+          <button>&hearts;{thought.hearts}</button>
           <p className="date">
-            - Created at {moment(thoughts.createdAt).fromNow}
+            - Created at: {moment(thought.createdAt).fromNow()}
           </p>
         </div>
       ))}

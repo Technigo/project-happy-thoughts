@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -10,4 +10,33 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.date {
+  font-style: italic;
+}
+
+.submit-button {
+  display: flex;
+  background-color: pink;
+  border-radius: 50px;
+}
+.happy-thought {
+  display: flex;
+  margin: 0;
+}
+.label-text {
+  font-display: flex;
+}
+
+.input-text {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 30px;
+  width: 100%;
+}
+.form-box {
+  border: solid black 1px;
+  padding: 10px;
 }
