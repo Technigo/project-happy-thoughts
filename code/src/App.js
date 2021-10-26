@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
 
 import { API_URL } from "./utils/urls";
+import Thoughts from "./components/Thoughts";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
+  const [likeCounter, setLikeCounter] = useState("");
+
+  const onLikeCounterChange = (event) => {
+    setLikeCounter(event.target.value);
+  };
 
   useEffect(() => {
     fetch(API_URL)
@@ -30,27 +35,33 @@ export const App = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">Type your thought</label>
+    <div className="main-container">
+      <form className="input-container" onSubmit={onFormSubmit}>
+        <label htmlFor="newThought">What's making you happy right now?</label>
         <input
+          className="input"
           id="newThought"
           type="text"
           value={newThought}
           onChange={(e) => setNewThought(e.target.value)}
         />
-        <button type="submit">Send thought!</button>
+        <button className="submit-button" type="submit">
+          <span className="heart-emoji" role="img" aria-label="Heart-emoji">
+            ❤️
+          </span>
+          <p className="submit-button-text"> Send Happy Thought </p>
+          <span className="heart-emoji" role="img" aria-label="Heart-emoji">
+            ❤️
+          </span>
+        </button>
       </form>
-
-      {thoughts.map((thought) => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          <button> &hearts; {thought.hearts}</button>
-          <p className="date">
-            - Created at: {moment(thought.createdAt).fromNow()}
-          </p>
-        </div>
-      ))}
+      <div className="thought-container">
+        <Thoughts
+          thoughts={thoughts}
+          likeCounter={likeCounter}
+          onLikeCounterChange={onLikeCounterChange}
+        />
+      </div>
     </div>
   );
 };
