@@ -11,3 +11,94 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+header {
+  background-color: #ffadad; 
+  border-bottom: 5px dotted;
+}
+header h1 {
+  font-family: "Courier New",
+    monospace;
+  margin: 0;
+  padding: 50px;
+  text-align: center;
+}
+footer {
+  background-color: #ffadad; 
+  border-top: 5px dotted;
+  font-family: "Courier New",
+    monospace;
+
+  padding: 50px;
+  text-align: center;
+}
+
+p {
+/* font-family: 'Inconsolata', monospace;; */
+font-family: "Courier New",
+    monospace;
+    margin: 10px;
+}
+
+.newThought {
+  background-color: #f2f0f0;
+  box-shadow: 8px 8px black;
+}
+
+input {
+  width: 80%;
+  height: 30px;
+  margin: 8px;
+}
+.container {
+display:flex;
+flex-direction: column;
+min-width: 334px;
+max-width: 500px;
+margin: 0 auto;
+}
+
+.form-container {
+  margin: 10px;
+}
+.thoughts {
+  width: 80%;
+  margin: 0 auto;
+  border:1px solid black;
+  margin-top: 30px;
+  box-shadow: 8px 8px black;
+}
+
+.grid {
+  display:grid;
+  Grid-template-columns: 1fr 1fr;
+}
+.message {
+  grid-column: span 2;
+}
+
+.heart {
+  border-radius: 50%;
+  margin: 10px;
+  border: none;
+}
+
+.button {
+  border:none;
+}
+
+.send-button{
+  background-color: #ffadad;
+  margin: 8px;
+  border: none;
+  border-radius: 25px;
+}
+.date {
+  text-align: right;
+  margin: 10px;
+  color: #c4c1c1;
+  font-family: Roboto;
+  /* Inte rätt */
+  grid-column: span 1;
+  justify-self: center;
+  align-self: center;
+}
