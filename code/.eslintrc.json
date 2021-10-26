@@ -53,8 +53,18 @@
       }
     ],
     "jsx-a11y/anchor-is-valid": "off",
-    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/label-has-associated-control": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }],
+    "jsx-a11y/label-has-for": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }],
     "jsx-a11y/href-no-hash": "off",
+    "jsx-quotes": ["error", "prefer-single"],
     "no-alert": "off",
     "no-console": "off",
     "no-debugger": "off",
@@ -85,8 +95,8 @@
     "react/jsx-closing-bracket-location": [
       "error",
       {
-        "selfClosing": "after-props",
-        "nonEmpty": "after-props"
+        "selfClosing": "tag-aligned",
+        "nonEmpty": "tag-aligned"
       }
     ],
     "react/jsx-curly-spacing": [
@@ -102,7 +112,6 @@
     "react/jsx-wrap-multilines": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/no-array-index-key": "off",
     "react/no-danger": "off",
     "react/no-did-mount-set-state": "error",
     "react/no-did-update-set-state": "error",
