@@ -3,15 +3,16 @@ import React from 'react'
 const MessageForm =({ newThought, onFormSubmit, onNewThoughtChange }) => {
 
 return (
-<form onSubmit={onFormSubmit}>
-<label htmlFor="newThought">Type your thought</label>
+<form className="form" onSubmit={onFormSubmit}>
+<label className="input-label" htmlFor="newThought">Type your thought</label>
 <input
+    className="input"
     id="newThought"
     type="text"
     value={newThought}
     onChange={onNewThoughtChange}
 />
-<button type="submit">Send thought!</button>
+<button className="send-button" type="submit">Send thought!</button>
 </form>
     )
 }

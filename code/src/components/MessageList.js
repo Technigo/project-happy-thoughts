@@ -3,16 +3,18 @@ import moment from 'moment'
 
 const MessageList = ({ thoughts }) => {
     return (
-        <section className="messagelist">
+        <section className="message-section">
         {thoughts.map((thought) => (
-            <div key={thought._id}>
-                <p>{thought.message}</p>
-                <button> &hearts; {thought.hearts}</button>
+            <div className="thoughts-card" key={thought._id}>
+                <p className="thought-message">{thought.message}</p>
+                <div className="like-date">
+                <button className="like-button"> &hearts; {thought.hearts}</button>
                 <p className="date">
                     - Created at: {moment(thought.createdAt).fromNow()}
                 </p>
                 </div>
-            ))}
+            </div>
+         ))}
             
         </section>
 

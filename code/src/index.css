@@ -11,3 +11,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  background-color: #f2f0f0;
+  padding: 1rem;
+  border: 1px solid #333;
+  box-shadow: 8px 8px #333;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+.input {
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  border: none;
+  min-height: 56px;
+  border: 1px solid #c7c7c7;
+  border-radius: 2px;
+  padding-left: 0.5rem;
+}
+
+.input-label {
+  margin-bottom: 0.5rem;
+}
+
+.send-button {
+  background-color: #f3b1af;
+  border-radius: 24px;
+  height: 48px;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.message-section {
+  background-color: blueviolet;
+  margin: 5px;
+}
+
+.thoughts-card {
+  padding: 5px solid green;
+}
