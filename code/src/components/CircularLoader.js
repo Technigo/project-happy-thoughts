@@ -9,6 +9,8 @@ export const CircularLoader = ({ isLoading }) => {
           sx={{
             color: "pink",
           }}
+          size={100}
+          thickness={1}
         />
       </div>
     );

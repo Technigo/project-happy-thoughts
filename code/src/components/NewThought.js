@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import { API_URL } from "../utils/links";
 
 export const NewThought = ({ thoughts, setThoughts }) => {
-  const [newThought, setNewThought] = useState("Share positive vibes");
+  const [newThought, setNewThought] = useState("");
 
   const onButtonClick = (e) => {
+    e.preventDefault();
     if (newThought === "") {
       alert("Ops , you forgot to type your thought.");
     } else if (newThought.length <= 4) {
       alert(`Your thought is only ${newThought.length}. Please be more descriptive;)`);
     } else {
-      onFormSubmit(e);
+      onFormSubmit();
     }
   };
 
-  const onFormSubmit = (e) => {
-    e.preventDefault();
-
+  const onFormSubmit = () => {
+    setNewThought("");
     const options = {
       method: "POST",
       headers: {
@@ -29,12 +29,11 @@ export const NewThought = ({ thoughts, setThoughts }) => {
       .then((data) => setThoughts([data, ...thoughts]));
   };
   return (
-    <form>
+    <form onSubmit={onButtonClick}>
       <label htmlFor="newThought">Type your thought</label>
-      <input id="newThought" type="text" placeholder="Share positive vibes" value={newThought} onChange={(e) => setNewThought(e.target.value)} />
-      <button type="submit" onClick={onButtonClick}>
-        Send thought!
-      </button>
+      <textarea id="newThought" type="text" placeholder="Share positive vibes" value={newThought} onChange={(e) => setNewThought(e.target.value)} />
+      <button type="submit">Send thought!</button>
+      <p style={{ color: newThought.length >= 140 ? "red" : "inherit" }}>{newThought.length}</p>
     </form>
   );
 };
