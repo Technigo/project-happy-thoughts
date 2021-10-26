@@ -20,7 +20,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Roboto Mono",
+    fontFamily: "Fira Code",
   },
 });
 
@@ -65,8 +65,10 @@ export const App = () => {
       <div>
         <CircularLoader isLoading={isLoading} />
         <div className={isVisible ? null : "hide-content"}>
-          <div className="grid">
-            <h1>Happy Thoughts App</h1>
+          <div className="grid heading-container">
+            <span className="heading-style">
+              <p className="heading">Happy Thoughts App</p>
+            </span>
             <div>
               You liked <span className="highlight">{myLikes}</span> thoughts
             </div>

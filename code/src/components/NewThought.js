@@ -6,7 +6,6 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
-// import Typography from "@mui/material/Typography";
 import Icon from "@mui/material/Icon";
 
 import { API_URL } from "../utils/links";
@@ -40,7 +39,7 @@ export const NewThought = ({ thoughts, setThoughts }) => {
   };
 
   return (
-    <div className="grid ">
+    <div className="grid new-thought-card">
       <Box sx={{ minWidth: 275 }}>
         <Card variant="outlined">
           <CardContent>
@@ -60,7 +59,7 @@ export const NewThought = ({ thoughts, setThoughts }) => {
                 {newThought.length} out of 140
               </p>
               <CardActions>
-                <div className="move">
+                <div className="move-btn">
                   <Button type="submit" variant="contained" startIcon={<Icon>favorite</Icon>} endIcon={<Icon>favorite</Icon>}>
                     Send Happy Thought!
                   </Button>
