@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+
+import MessageForm from 'components/MessageForm';
+import MessageList from 'components/MessageList'
 
 import { API_URL } from './utils/urls';
 
@@ -12,6 +14,11 @@ export const App = () => {
 			.then((res) => res.json())
 			.then((data) => setThoughts(data));
 	}, []);
+
+
+  const handleNewThoughtChange = (event) => {
+    setNewThought(event.target.value)
+  }
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
@@ -30,27 +37,16 @@ export const App = () => {
 	};
 
 	return (
-		<div>
-			<form onSubmit={onFormSubmit}>
-				<label htmlFor="newThought">Type your thought</label>
-				<input
-					id="newThought"
-					type="text"
-					value={newThought}
-					onChange={(e) => setNewThought(e.target.value)}
-				/>
-				<button type="submit">Send thought!</button>
-			</form>
-
-			{thoughts.map((thought) => (
-				<div key={thought._id}>
-					<p>{thought.message}</p>
-					<button> &hearts; {thought.hearts}</button>
-					<p className="date">
-						- Created at: {moment(thought.createdAt).fromNow()}
-					</p>
-				</div>
-			))}
-		</div>
+    <main>
+      <MessageForm 
+       newThought={newThought}
+       onNewThoughtChange={handleNewThoughtChange} 
+       onFormSubmit={onFormSubmit}
+      />
+      <MessageList 
+        thoughts={thoughts}
+      />
+    </main>
+		
 	);
 };
