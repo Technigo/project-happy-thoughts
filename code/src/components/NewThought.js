@@ -44,7 +44,7 @@ export const NewThought = ({ thoughts, setThoughts }) => {
         <Card variant="outlined">
           <CardContent>
             <form className="new-thought-container" onSubmit={onButtonClick}>
-              <label class="new-thought-label" htmlFor="newThought">
+              <label className="new-thought-label" htmlFor="newThought">
                 What's making you happy right now?
               </label>
               <textarea

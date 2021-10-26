@@ -51,7 +51,7 @@ export const App = () => {
           ...thoughts.map((d) => {
             /*https://www.pluralsight.com/guides/manipulating-arrays-and-objects-in-state-with-react*/
             if (d._id === newThought._id) {
-              return newThought;
+              return { ...newThought, liked: true };
             } else {
               return d;
             }
@@ -64,28 +64,30 @@ export const App = () => {
     <ThemeProvider theme={theme}>
       <div>
         <CircularLoader isLoading={isLoading} />
-        <div className={isVisible ? null : "hide-content"}>
-          <div className="grid heading-container">
-            <span className="heading-style">
-              <p className="heading">Happy Thoughts App</p>
-            </span>
-            <div>
-              You liked <span className="highlight">{myLikes}</span> thoughts
-            </div>
-            <div className="new-thought-space">
-              <NewThought thoughts={thoughts} setThoughts={setThoughts} />
-            </div>
-            {thoughts.map((thought) => (
-              <div key={thought._id}>
-                <p>{thought.message}</p>
-                <div>
-                  <LikeButton onLikeButtonClick={onLikeButtonClick} thought={thought} />
-                </div>
-                <p className="date">{moment(thought.createdAt).fromNow()}</p>
+        {isVisible && (
+          <div>
+            <div className="grid heading-container">
+              <span className="heading-style">
+                <p className="heading">Happy Thoughts App</p>
+              </span>
+              <div>
+                You liked <span className="highlight">{myLikes}</span> thoughts
               </div>
-            ))}
+              <div className="new-thought-space">
+                <NewThought thoughts={thoughts} setThoughts={setThoughts} />
+              </div>
+              {thoughts.map((thought) => (
+                <div key={thought._id}>
+                  <p>{thought.message}</p>
+                  <div>
+                    <LikeButton onLikeButtonClick={onLikeButtonClick} thought={thought} />
+                  </div>
+                  <p className="date">{moment(thought.createdAt).fromNow()}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </ThemeProvider>
   );
