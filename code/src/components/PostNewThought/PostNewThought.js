@@ -18,7 +18,15 @@ export const PostNewThought = ({ API_URL, onSetThoughtList, thoughtList }) => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => onSetThoughtList([...thoughtList, data]));
+      .then((data) => {
+        if (data.errors) {
+          console.log("Somthing is wrong");
+        } else {
+          console.log("hello", data);
+          onSetThoughtList([data, ...thoughtList]);
+          setNewThought("");
+        }
+      });
   };
 
   return (

@@ -8,7 +8,7 @@ import moment from "moment";
 export const ThoughtsList = ({ API_URL, onSetThoughtList, thoughtList }) => {
   console.log(thoughtList);
 
-  useEffect(() => {
+  const getThougthList = () => {
     fetch(API_URL)
       .then((res) => {
         return res.json();
@@ -17,6 +17,26 @@ export const ThoughtsList = ({ API_URL, onSetThoughtList, thoughtList }) => {
         onSetThoughtList(data);
       })
       .catch((err) => {});
+  };
+
+  const postALike = (id) => {
+    const options = {
+      method: "POST",
+    };
+
+    fetch(
+      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+      options
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        getThougthList();
+      });
+  };
+
+  useEffect(() => {
+    getThougthList();
   }, [API_URL, onSetThoughtList]);
 
   return (
@@ -27,6 +47,7 @@ export const ThoughtsList = ({ API_URL, onSetThoughtList, thoughtList }) => {
             <span>{thought.message}</span>
             <div className="thoughts__likes-time">
               <button
+                onClick={() => postALike(thought._id)}
                 className="icon__heart"
                 style={{
                   backgroundColor: thought.hearts > 0 ? "#fbabab" : "#f3f2f2",
