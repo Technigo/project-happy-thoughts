@@ -31,3 +31,5 @@ export const Messages = ({ thoughts, onLikeClick }) => {
     </>
   )
 }
+
+//className={message.hearts > 0 ? "like-button like-button-clicked" : "like-button" }

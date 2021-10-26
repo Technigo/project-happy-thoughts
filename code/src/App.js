@@ -5,7 +5,6 @@ import { Messages } from 'Messages'
 
 export const App = ({ thought }) => {
   const [thoughts, setThoughts] = useState([])
-  const [newLikes, setNewLikes] = useState('')
 
   //Fetches the messages from the API
   useEffect(() => {
@@ -47,7 +46,6 @@ export const App = ({ thought }) => {
           thoughts={thoughts}
           setThoughts={setThoughts}
           onLikeClick={onLikeClick}
-          setNewLikes={setNewLikes}
         />
       </div>
     </div>
