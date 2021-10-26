@@ -2,15 +2,22 @@ import React from "react";
 import moment from "moment";
 
 const Posts = (thoughts) => {
-  return thoughts.map((thought) => (
-    <div key={thought._id}>
-      <p>{thought.message}</p>
-      <button>💗 {thought.hearts}</button>
-      <p className="date">
-        - Created at: {moment(thought.createdAt).fromNow()}
-      </p>
-    </div>
-  ));
+  {
+    thoughts.map((thought) => (
+      <div key={thought._id} className="post-container">
+        <p>{thought.message}</p>
+        <div className="like-div">
+          <button className="heart-button">
+            <span role="img" aria-label="heart icon">
+              💗
+            </span>
+          </button>
+          x{thought.hearts}
+        </div>
+        <p className="date">{moment(thought.createdAt).fromNow()}</p>
+      </div>
+    ));
+  }
 };
 
-// export default Posts;
+export default Posts;

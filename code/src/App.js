@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
 
 import { NewPost } from "./components/NewPost";
-// import Posts from "./components/Posts";
+import Posts from "./components/Posts";
 import { API_URL } from "./utils/urls";
 // import { LIKES_URL } from "./utils/urls";
 
@@ -47,8 +46,8 @@ export const App = () => {
         newThought={newThought}
         setNewThought={setNewThought}
       />
-      {/* <Posts thoughts={thoughts} /> */}
-      {thoughts.map((thought) => (
+      <Posts thoughts={thoughts} />
+      {/* {thoughts.map((thought) => (
         <div key={thought._id} className="post-container">
           <p>{thought.message}</p>
           <div className="like-div">
@@ -61,7 +60,7 @@ export const App = () => {
           </div>
           <p className="date">{moment(thought.createdAt).fromNow()}</p>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };
