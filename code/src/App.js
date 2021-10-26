@@ -55,13 +55,12 @@ export const App = () => {
           </span>
         </button>
       </form>
-      <div className="thought-container">
-        <Thoughts
-          thoughts={thoughts}
-          likeCounter={likeCounter}
-          onLikeCounterChange={onLikeCounterChange}
-        />
-      </div>
+
+      <Thoughts
+        thoughts={thoughts}
+        likeCounter={likeCounter}
+        onLikeCounterChange={onLikeCounterChange}
+      />
     </div>
   );
 };

@@ -1,6 +1,19 @@
+.thought-container {
+  padding: 10px;
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+  margin: 30px;
+}
+
+.thoughts-text {
+  margin: 0;
+}
+
 .input-section {
   display: flex;
   align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .like-button {
@@ -13,9 +26,12 @@
   margin-right: 5px;
 }
 
+.likes {
+  color: grey;
+}
+
 .date {
-  justify-content: right;
-  align-items: right;
-  align-self: right;
+  position: absolute;
+  margin-left: 150px;
   color: lightgray;
 }
