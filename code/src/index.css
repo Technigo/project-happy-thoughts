@@ -11,3 +11,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-thought-container {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px;
+  padding: 10px;
+  box-shadow: 5px 5px;
+  background-color: rgb(235, 233, 228);
+  width: 310px;
+  margin: 20px;
+}
+.new-thought-label {
+  padding-bottom: 10px;
+  font-size: 17px;
+}
+.new-thought-input {
+  height: 35px;
+}
+.new-thought-button {
+  margin-top: 10px;
+  border: none;
+  border-radius: 25px;
+  width: 190px;
+  height: 35px;
+  background-color: rgb(245, 169, 169);
+}
+
+.thought-container {
+  border: solid 1px;
+  width: 310px;
+  padding: 10px;
+  box-shadow: 5px 5px;
+  margin: 20px;
+}
+.message {
+  margin-top: 0;
+}
+.like-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.like-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+.number-of-likes {
+  display: inline-block;
+  margin: 5px;
+}
+.date {
+  position: absolute;
+  right: 5px;
+}
