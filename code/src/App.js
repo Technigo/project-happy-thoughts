@@ -6,6 +6,10 @@ import { API_URL } from "./utils/urls";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
+  const [count, setCount] = useState(0); /**varijabla za timer */
+
+  const handleIncrement = () =>
+    setTimeout(() => setCount((currentCount) => currentCount + 1), 500);
 
   useEffect(() => {
     fetch(API_URL)
@@ -44,10 +48,13 @@ export const App = () => {
             value={newThought}
             onChange={(e) => setNewThought(e.target.value)}
           />
-          <button type="submit" className="send-btn">
-            <span className="send-heart">❤</span>Send happy thought
+          <button onClick={handleIncrement} type="submit" className="send-btn">
             <span className="send-heart">❤</span>
+            Send happy thought
+            <span className="send-heart">❤</span>
+            {count}times
           </button>
+          {/* <h3>{count}</h3> */}
         </form>
 
         {/* <button type="submit" className="send-btn">

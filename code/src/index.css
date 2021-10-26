@@ -16,6 +16,10 @@ code {
   font-size: 14px;
 }
 
+.h3 {
+  font-size: 12px;
+}
+
 .send-btn {
   border-radius: 50%;
   width: 50%;
