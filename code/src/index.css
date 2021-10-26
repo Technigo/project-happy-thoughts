@@ -10,31 +10,49 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  font-family: 'Roboto Mono', monospace;
 }
 
-.thought-container{
+.message-container{
   width: 660px;
-  height: 260 px;
-  margin: 30px;
+  height: 260px;
+  margin: 40px;
   border: 1px solid black;
+  box-shadow: 13px 13px black;
+  
 }
-
+.thought-message {
+  margin: 70px 25px;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: 'Roboto Mono', monospace;
+}
 .button-row{
   display: flex;
   flex-direction: row;
+  width: 100%;
+  align-items: center;
 }
 .heart-button-wrapper {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  width: 80%;
 }
 .heart {
   color: red;
+  font-size: 40px;
 }
 .heart-button{
   color: #EAEAEA;
   border-radius: 50%;
+  border: none;
   width: 67px;
   height: 67px;
+  margin: 0 15px 0 25px;
  
 }
 
+.date {
+  display: inline;
+}

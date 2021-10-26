@@ -47,15 +47,17 @@ export const App = () => {
 
       {thoughts.map(thought => (
 
-        <div key={thought._id} className="thought-container">
+        <div key={thought._id} className="message-container">
           <p className="thought-message">{thought.message}</p>
-          <div classNamen="button-row">
+          <div className="button-row">
             <div className="heart-button-wrapper">
-              <button className="heart-button"><span className="heart">&hearts;</span> </button>
+              <button 
+                className="heart-button"><span className="heart">&hearts;</span> </button>
               <p> x {thought.hearts}</p>
-              <p className="date">{moment(thought.createdAt).fromNow()}</p>
             </div>
            
+            <p className="date">{moment(thought.createdAt).fromNow()}</p>
+          
           </div>
           
         </div>
