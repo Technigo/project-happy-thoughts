@@ -10,23 +10,19 @@ import { API_LIKES } from "./utils/links";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [myLikes, setMyLikes] = useState(parseInt(localStorage.getItem("likes") || 0));
-  const [isActive, setActive] = useState("true");
-  const [isVisible, setVisible] = useState("false");
-
-  const handleThoughtsToggle = () => {
-    setVisible(!isVisible);
-  };
+  const [isLoading, setIsLoading] = useState(true);
+  const [isVisible, setVisible] = useState(false);
 
   useEffect(() => {
-    setActive(isActive);
+    setIsLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
         setThoughts(data);
-        handleThoughtsToggle();
-        setActive(!isActive);
+        setVisible(true);
+        setIsLoading(false);
       });
-  }, [setActive, handleThoughtsToggle]);
+  }, [setIsLoading]);
 
   const onLikeButtonClick = (thought) => {
     fetch(API_LIKES(thought), { method: "POST" })
@@ -50,9 +46,9 @@ export const App = () => {
   return (
     <div>
       <div>
-        <CircularLoader isActive={isActive} />
+        <CircularLoader isLoading={isLoading} />
       </div>
-      <div className={isVisible ? "hide-content" : null}>
+      <div className={isVisible ? null : "hide-content"}>
         <div>
           You liked <span className="highlight">{myLikes}</span> thoughts
         </div>

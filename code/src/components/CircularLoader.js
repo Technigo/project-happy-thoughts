@@ -1,8 +1,8 @@
 import React from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 
-export const CircularLoader = ({ isActive }) => {
-  if (isActive) {
+export const CircularLoader = ({ isLoading }) => {
+  if (isLoading) {
     return (
       <div className="loading-screen">
         <CircularProgress
@@ -13,6 +13,6 @@ export const CircularLoader = ({ isActive }) => {
       </div>
     );
   } else {
-    return <div></div>;
+    return null;
   }
 };
