@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 20px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -10,4 +10,53 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* All post containers  */
+.post-container {
+  width: 80%;
+  height: 100px;
+  margin: 20px auto;
+  padding: 30px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px black;
+  /* font-family: ; */
+}
+
+/* Form, new post */
+.post-container h1 {
+  font-size: 14px;
+}
+
+.form {
+  background-color: #f2f0f0;
+}
+
+#newThought {
+  font-family: Consolas;
+  padding: 10px;
+  border: 1.5px solid #c8c7c7;
+}
+
+.form-button {
+  margin-top: 10px;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  background-color: #ffadad;
+}
+
+.heart-button {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+}
+
+.date {
+  font-style: italic;
 }
