@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import moment from 'moment';
 
 import { API_URL } from './../utils/urls.js';
 
-const GetThought = () => {
-  const [thoughts, setThoughts] = useState([]);
-
+const GetThought = ({ thoughts, setThoughts }) => {
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data));
-  }, []);
+  }, [setThoughts]);
 
   return (
     <div>

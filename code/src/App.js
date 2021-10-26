@@ -41,7 +41,7 @@ export const App = () => {
         newThought={newThought}
         onNewThoughtsInputChange={onNewThoughtsInputChange}
       />
-      <GetThought />
+      <GetThought thoughts={thoughts} setThoughts={setThoughts} />
     </div>
   );
 };
