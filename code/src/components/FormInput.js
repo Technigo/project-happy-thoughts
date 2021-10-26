@@ -39,9 +39,13 @@ const FormInput = ({ thoughts, setThoughts }) => {
         required
       />
       <button type='submit' className='share-button'>
-        <span className='btn-heart'>❤️</span>
+        <span className='btn-heart' role='img' aria-label='heart'>
+          ❤️
+        </span>
         <span>Send happy thought</span>
-        <span className='btn-heart'>❤️</span>
+        <span className='btn-heart' role='img' aria-label='heart'>
+          ❤️
+        </span>
       </button>
     </form>
   );

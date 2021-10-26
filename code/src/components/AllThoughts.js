@@ -31,7 +31,9 @@ const AllThoughts = () => {
                 className='like-button'
                 // onClick={(event) => onLikeButtonClick(event)}
               >
-                <span className='like-heart'>❤️</span>
+                <span className='like-heart' role='img' aria-label='heart'>
+                  ❤️
+                </span>
               </button>
               <p className='thought-card-info-text'>x {thought.hearts}</p>
             </div>
