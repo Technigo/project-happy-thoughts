@@ -64,7 +64,7 @@
       }
     }],
     "jsx-a11y/href-no-hash": "off",
-    "jsx-quotes": ["error", "prefer-single"],
+    "jsx-quotes": [2, "prefer-single"],
     "no-alert": "off",
     "no-console": "off",
     "no-debugger": "off",
