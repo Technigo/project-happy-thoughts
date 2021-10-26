@@ -1,32 +1,59 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
+import { API_URL } from "./utils/urls";
+// import Like from "Components/Like";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
+
   useEffect(() => {
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data));
   }, []);
-  console.log(thoughts);
+
+  const onFormSubmitt = (event) => {
+    event.preventDefault();
+
+    const thoughts = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: newThought }),
+    };
+    fetch(API_URL, thoughts)
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div>
+      {/* <Like onStepChange={onStepChange} /> */}
       <div className="form">
-        <p>What's making you happy right now?</p>
-        <form>
-          <label></label>
+        {/* <p>What's making you happy right now?</p> */}
+        <form onSubmit={onFormSubmitt}>
+          <label htmlFor="newThought">
+            What's is making you happy right now?
+          </label>
           <input
+            id="newThought"
             className="input"
             type="text"
             value={newThought}
             onChange={(e) => setNewThought(e.target.value)}
           />
+          <button type="submit" className="send-btn">
+            <span className="send-heart">❤</span>Send happy thought
+            <span className="send-heart">❤</span>
+          </button>
         </form>
-        <button className="send-btn">
+
+        {/* <button type="submit" className="send-btn">
           <span className="send-heart">❤</span>Send happy thought
           <span className="send-heart">❤</span>
-        </button>
+        </button> */}
       </div>
 
       {thoughts.map((thought) => (
@@ -40,5 +67,12 @@ export const App = () => {
         </div>
       ))}
     </div>
-  );
+  ); // const [step, setStep] = useState(0);
+  // const onStepChange = () => {
+  //   setStep(step + 1);
+  // };
+
+  // const onNewThoughInputChange = (event) => {
+  //   setNewThought(event.target.value);
+  // };
 };
