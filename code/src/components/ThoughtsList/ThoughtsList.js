@@ -8,17 +8,6 @@ import moment from "moment";
 export const ThoughtsList = ({ API_URL, onSetThoughtList, thoughtList }) => {
   console.log(thoughtList);
 
-  const getThougthList = () => {
-    fetch(API_URL)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        onSetThoughtList(data);
-      })
-      .catch((err) => {});
-  };
-
   const postALike = (id) => {
     const options = {
       method: "POST",
@@ -31,12 +20,26 @@ export const ThoughtsList = ({ API_URL, onSetThoughtList, thoughtList }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        getThougthList();
+        fetch(API_URL)
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            onSetThoughtList(data);
+          })
+          .catch((err) => {});
       });
   };
 
   useEffect(() => {
-    getThougthList();
+    fetch(API_URL)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        onSetThoughtList(data);
+      })
+      .catch((err) => {});
   }, [API_URL, onSetThoughtList]);
 
   return (

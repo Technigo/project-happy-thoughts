@@ -20,7 +20,7 @@ export const PostNewThought = ({ API_URL, onSetThoughtList, thoughtList }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.errors) {
-          console.log("Somthing is wrong");
+          console.log("Something is wrong");
         } else {
           console.log("hello", data);
           onSetThoughtList([data, ...thoughtList]);
@@ -38,6 +38,14 @@ export const PostNewThought = ({ API_URL, onSetThoughtList, thoughtList }) => {
         type="text"
         id="inputThoughts"
       ></input>
+      <span
+        style={{
+          color:
+            newThought.length > 4 && newThought.length < 141 ? "black" : "red",
+        }}
+      >
+        {newThought.length} / 140 characters
+      </span>
       <div>
         <button className="submit-button">
           <FontAwesomeIcon icon={faHeart} className="icon__heart--red" />
