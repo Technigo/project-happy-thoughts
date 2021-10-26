@@ -4,13 +4,13 @@ import CircularProgress from "@mui/material/CircularProgress";
 export const CircularLoader = ({ isLoading }) => {
   if (isLoading) {
     return (
-      <div className="loading-screen">
+      <div className="loading-screen grid">
         <CircularProgress
           sx={{
             color: "pink",
           }}
-          size={100}
-          thickness={1}
+          size={120}
+          thickness={8}
         />
       </div>
     );

@@ -13,11 +13,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--font-color);
+  font-family: "Roboto Mono";
 }
 
 .loading-screen {
   width: 100vw;
   height: 100vh;
+}
+
+.grid {
+  display: grid;
+  place-items: center;
 }
 
 .hide-content {
@@ -29,8 +35,52 @@ body {
   font-weight: 500;
 }
 
-input {
+button {
+  border-radius: 50%;
+}
+
+.move {
+  margin-left: -8px;
+}
+
+.symbols-counter {
+  font-size: 12px;
+}
+
+.new-thought-container {
+  width: 320px;
+}
+
+.new-thought-label {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.new-thought-space {
+  margin: 10px;
+}
+
+@media (min-width: 768px) {
+  .symbols-counter {
+    font-size: 16px;
+  }
+  .new-thought-container {
+    width: 550px;
+  }
+  .new-thought-label {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+  }
+  .new-thought-space {
+    margin: 40px;
+  }
+}
+
+/* 
+textarea {
   outline: none;
   text-decoration: none;
-  color: var(--fancy);
-}
+  color: var(--theme-color);
+} */

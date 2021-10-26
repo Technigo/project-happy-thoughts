@@ -1,11 +1,28 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { NewThought } from "components/NewThought";
 import { LikeButton } from "components/LikeButton";
 import { CircularLoader } from "components/CircularLoader";
 import { API_URL } from "./utils/links";
 import { API_LIKES } from "./utils/links";
-// CircularLoader
+
+// material UI theme modification
+
+const theme = createTheme({
+  palette: {
+    type: "light",
+    primary: {
+      main: "#f53536",
+    },
+    secondary: {
+      main: "#f50057",
+    },
+  },
+  typography: {
+    fontFamily: "Roboto Mono",
+  },
+});
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -44,27 +61,30 @@ export const App = () => {
   };
 
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <div>
         <CircularLoader isLoading={isLoading} />
-      </div>
-      <div className={isVisible ? null : "hide-content"}>
-        <div>
-          You liked <span className="highlight">{myLikes}</span> thoughts
-        </div>
-        <div>
-          <NewThought thoughts={thoughts} setThoughts={setThoughts} />
-        </div>
-        {thoughts.map((thought) => (
-          <div key={thought._id}>
-            <p>{thought.message}</p>
+        <div className={isVisible ? null : "hide-content"}>
+          <div className="grid">
+            <h1>Happy Thoughts App</h1>
             <div>
-              <LikeButton onLikeButtonClick={onLikeButtonClick} thought={thought} />
+              You liked <span className="highlight">{myLikes}</span> thoughts
             </div>
-            <p className="date">{moment(thought.createdAt).fromNow()}</p>
+            <div className="new-thought-space">
+              <NewThought thoughts={thoughts} setThoughts={setThoughts} />
+            </div>
+            {thoughts.map((thought) => (
+              <div key={thought._id}>
+                <p>{thought.message}</p>
+                <div>
+                  <LikeButton onLikeButtonClick={onLikeButtonClick} thought={thought} />
+                </div>
+                <p className="date">{moment(thought.createdAt).fromNow()}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
