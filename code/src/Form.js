@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { API_URL } from 'urls'
 
 export const Form = ({ thoughts, setThoughts }) => {
-  const [newThought, setNewThought] = useState('')
+  const [newThought, setNewThought] = useState([])
   const [username, setUserName] = useState('')
 
   const onNewThoughtChange = (event) => {
@@ -20,9 +20,6 @@ export const Form = ({ thoughts, setThoughts }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        formData: {
-          username: '',
-        },
       },
       body: JSON.stringify({ message: newThought, username: username }),
     }

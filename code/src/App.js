@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import moment from 'moment'
-import { API_URL } from 'urls'
+import React from 'react'
+
 import { Form } from 'Form'
+import { Messages } from 'Messages'
 
-export const App = ({ username }) => {
-  const [thoughts, setThoughts] = useState([])
-
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => setThoughts(data))
-  }, [])
-
+export const App = ({ username, thoughts, setThoughts }) => {
   return (
     <div className='container'>
       <div className='main'>
@@ -20,28 +12,11 @@ export const App = ({ username }) => {
           setThoughts={setThoughts}
           username={username}
         />
-
-        {thoughts.map((thought) => (
-          <div className='message-container' key={thought._id}>
-            <p>{thought.message}</p>
-            <div className='icon-container'>
-              <div className='button-container'>
-                <button className='like-button'>
-                  <span
-                    className='heart-icon'
-                    role='img'
-                    aria-label='heart-icon'
-                  >
-                    ❤️️
-                  </span>{' '}
-                </button>
-                <p className='likes-number'>x {thought.hearts} </p>
-              </div>
-              <p>{username}</p>
-              <p className='date'>{moment(thought.createdAt).fromNow()}</p>
-            </div>
-          </div>
-        ))}
+        <Messages
+          thoughts={thoughts}
+          setThoughts={setThoughts}
+          username={username}
+        />
       </div>
     </div>
   )
