@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+// import moment from 'moment';
 import NewThoughtInput from './Components/NewThoughtInput';
 import GetThought from 'Components/GetThoughts';
 
@@ -41,16 +41,7 @@ export const App = () => {
         newThought={newThought}
         onNewThoughtsInputChange={onNewThoughtsInputChange}
       />
-
-      {thoughts.map((thought) => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          <button> &hearts; {thought.hearts}</button>
-          <p className="date">
-            -Created at: {moment(thought.createdAt).fromNow()}
-          </p>
-        </div>
-      ))}
+      <GetThought />
     </div>
   );
 };
@@ -58,3 +49,12 @@ export const App = () => {
 // move onchange as in project survey?
 
 /* <FontAwesomeIcon icon="fa-solid fa-heart" /> */
+// {
+//   thoughts.map((thought) => (
+//     <div>
+//       <p>{thought.message}</p>
+//       <button> &hearts; {thought.hearts}</button>
+//       <p className="date">-Created at: {moment(thought.createdAt).fromNow()}</p>
+//     </div>
+//   ));
+// }
