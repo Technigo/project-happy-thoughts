@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 
-import { API_URL } from "utils/urls";
+import { API_URL, LIKES_URL } from "utils/urls";
 
 export const App = () => {
 	const [thoughts, setThoughts] = useState([]);
 	const [newThought, setNewThought] = useState("");
 
 	useEffect(() => {
+		fetchThoughts();
+	}, []);
+
+	const fetchThoughts = () => {
 		fetch(API_URL)
 			.then((response) => response.json())
 			.then((data) => setThoughts(data));
-	}, []);
+	};
 
 	// console.log("Our data (thoughts)", thoughts);
 
@@ -30,7 +34,36 @@ export const App = () => {
 
 		fetch(API_URL, options)
 			.then((response) => response.json())
-			.then((data) => setThoughts([data, ...thoughts]));
+			.then((data) => {
+				fetchThoughts();
+			});
+	};
+
+	const onLikesIncrease = (thoughtId) => {
+		const options = {
+			method: "POST",
+			// headers: {
+			// 	"Content-Type": "application/json",
+			// },
+		};
+
+		fetch(LIKES_URL(thoughtId), options)
+			.then((response) => response.json())
+			.then((data) => {
+				// v1 increase likes only
+				const updatedThoughts = thoughts.map((item) => {
+					if (item._id === data._id) {
+						item.hearts += 1;
+						return item;
+					} else {
+						return item;
+					}
+				});
+				setThoughts(updatedThoughts);
+
+				//v2 fetch all the 20 thoughts (all updates)
+				//fetchThoughts();
+			});
 	};
 
 	return (
@@ -60,7 +93,8 @@ export const App = () => {
 				<div className="thought-container" key={thought._id}>
 					<p>{thought.message}</p>
 					<div className="info-text-container">
-						<button className="like-btn">
+						<button className="like-btn" onClick={() => onLikesIncrease(thought._id)}>
+							{" "}
 							<div className="heart-icon-container">
 								<span className="heart-icon" aria-label="heart icon">
 									❤️
