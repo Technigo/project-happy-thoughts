@@ -1,9 +1,9 @@
 import React from 'react'
 import { Like } from 'Like'
 import './message.css'
-const moment = require('moment')
+import moment from 'moment';
 
-export const Message = ({ thougth, setThougths }) => {
+export const Message = ({ thougth, thougths, setThougths, fetchThougths }) => {
     const message = thougth.message;
     const date = thougth.createdAt;
     const hearts = thougth.hearts;
@@ -13,8 +13,8 @@ export const Message = ({ thougth, setThougths }) => {
         <div className="message-container">
             <h3 className="message">{message}</h3>
             <div className="message-botton-container">
-                <Like hearts={hearts} id={id} thougth={thougth} setThougths={setThougths} />
-                <p className="message-date">{moment(date).startOf('minute').fromNow()}</p>
+                <Like hearts={hearts} id={id} thougths={thougths} setThougths={setThougths} fetchThougths={fetchThougths} />
+                <p className="message-date">{moment(date).fromNow()}</p>
             </div>
         </div>
     )

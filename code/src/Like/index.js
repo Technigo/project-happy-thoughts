@@ -1,26 +1,34 @@
 import React from 'react'
 import './like.css'
+import { LIKE_URL } from '../utils/urls'
 
-export const Like = ({ hearts, id, thougth, setThougths }) => {
+export const Like = ({ hearts, id, thougths, setThougths, fetchThougths }) => {
 
     const handleOnClickLike = () => {
-        console.log("enviar tercer fetch")
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+        const options = {
             method: 'POST'
-        })
+        }
+        fetch(LIKE_URL(id), options)
             .then((res) => res.json())
             .catch(error => console.error('Error:', error))
-            .then((newTLike) => {
-                console.log("newTLike", newTLike)
-                console.log(thougth)
-                // const updateLike = thougth.find(thougth._id === id)
-                thougth.hearts++
-                console.log(thougth)
-                //la pregunta aqui es como actualizar el like cuando la persona lo da like sin tener que cargar la pagina
-                //probablemente es con useeffect pero no se como 
+            .then((newLike) => {
+                //1. here is updated only locally but it don't update the latest likes
+                //important to keep this code as example
+
+                // const updatedThogths = thougths.map(item => {
+                //     if (item._id === newLike._id) {
+                //         item.hearts += 1;
+                //         return item;
+                //     } else {
+                //         return item;
+                //     }
+                // })
+                // setThougths(updatedThogths)
+
+                //2. here I update all the thoghts fethcing every time, which affects performance in bigger apps
+                fetchThougths();
             })
     }
-
 
     return (
         <div className="like-content">

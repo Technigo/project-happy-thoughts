@@ -12,6 +12,20 @@
     height: 50px;
 }
 
+.red_form_border{
+    border: 2px solid red;
+}
+
+.form_counter{
+    font-size: 13px;
+    color: gray;
+    margin: 5px;
+}
+
+.red_form_counter{
+    color:red;
+}
+
 .form_button{
     background: rgb(226, 169, 183);
     color: black;
