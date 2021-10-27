@@ -4,18 +4,55 @@
   box-sizing: border-box;
 }
 
+:root {
+  --fieldset-border-color: #000;
+  --h1-text-color: #fff;
+  --h1-bg-color: #000;
+  --border-color: #7c7b7b;
+  --box-shadow-color: #000;
+  --textarea-border-color: #c9c8c8;
+  --data-text-color: #d2d2d2;
+  --invalid-text-color: red;
+  --valid-text-color: #000;
+  --button-bg-color: #ffadad;
+  --heart-bg-color: #a4a4a4;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+fieldset {
+  border: 8px solid var(--fieldset-border-color);
+  margin: 12px;
+}
+
+legend {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+h1 {
+  font-family: 'Monoton', cursive;
+  text-transform: uppercase;
+  color: var(--h1-text-color);
+  background: var(--h1-bg-color);
+  font-size: 54px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+  border: none;
+  border-radius: 20px;
 }
 
 .recent-thoughts-section {
@@ -25,14 +62,14 @@ code {
 
 .post-a-thought-container,
 .thought-card {
-  border: 2px solid #7c7b7b;
+  border: 2px solid var(--border-color);
   font-family: 'Courier New';
   font-weight: 700;
   margin: 16px auto;
   padding: 20px 16px;
   grid-column: span 1;
   width: 38%;
-  box-shadow: 10px 10px #000;
+  box-shadow: 10px 10px var(--box-shadow-color);
 }
 
 .post-a-thought-container h2 {
@@ -53,22 +90,22 @@ code {
 /* disable the resizing of textarea */
 textarea {
   resize: none;
-  border: 2px solid #c9c8c8;
+  border: 2px solid var(--textarea-border-color);
   width: 100%;
   height: 62px;
   font-size: 16px;
 }
 
 textarea:invalid {
-  color: red;
+  color: var(--invalid-text-color);
 }
 
 textarea:valid {
-  color: black;
+  color: var(--valid-text-color);
 }
 
 .remaining-chars {
-  color: #d2d2d2;
+  color: var(--data-text-color);
   font-size: 16px;
   margin: 0;
   display: flex;
@@ -81,13 +118,18 @@ textarea:valid {
   font-weight: 700;
   margin-top: 10px;
   padding: 12px 24px;
-  background: #ffadad;
+  background: var(--button-bg-color);
   border: none;
   border-radius: 30px;
   cursor: pointer;
 }
 
-.post-a-thought-container button:hover {
+.post-a-thought-container button:disabled {
+  cursor: not-allowed;
+}
+
+/* when button is not disabled -> show the rainbow animation when hover */
+.post-a-thought-container button:not(:disabled):hover {
   background-image: linear-gradient(
     90deg,
     #00c0ff 0%,
@@ -102,14 +144,14 @@ textarea:valid {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #d2d2d2;
+  color: var(--data-text-color);
 }
 
 .hearts-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: #a4a4a4;
+  color: var(--heart-bg-color);
   font-size: 16px;
 }
 
@@ -118,16 +160,26 @@ textarea:valid {
 }
 
 .hearts-container button:hover {
-  background: #ffadad;
+  /* background: #ffadad; */
   animation: heartbeat 2s infinite;
 }
 
 .heart-emoji {
-  background: #eaeaea;
+  /* background: #eaeaea; */
   border: none;
   border-radius: 50%;
   width: fit-content;
   padding: 8px 16px 8px 12px;
+}
+
+footer {
+  margin: 12px;
+  font-size: 16px;
+  /* font-style: italic; */
+}
+
+footer p {
+  margin: 0;
 }
 
 @keyframes rainbow {

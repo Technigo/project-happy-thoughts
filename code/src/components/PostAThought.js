@@ -1,38 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import { API_URL } from 'utils/urls';
+// import { API_URL } from 'utils/urls';
 
-const PostAThought = () => {
-  const [thoughts, setThoughts] = useState([]);
-  const [newThought, setNewThought] = useState('');
+const PostAThought = ({
+  newThought,
+  onNewThoughtChange,
+  onSubmit,
+  title,
+  placeholder,
+}) => {
+  //   const [thoughts, setThoughts] = useState([]);
+  //   const [newThought, setNewThought] = useState('');
 
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => setThoughts(data));
-  }, []);
+  //   useEffect(() => {
+  //     fetch(API_URL)
+  //       .then((res) => res.json())
+  //       .then((data) => setThoughts(data));
+  //   }, []);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  //   const handleSubmit = (event) => {
+  //     event.preventDefault();
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message: newThought }),
-    };
+  //     const options = {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ message: newThought }),
+  //     };
 
-    fetch(API_URL, options)
-      .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]));
-  };
+  //     fetch(API_URL, options)
+  //       .then((res) => res.json())
+  //       .then((data) => setThoughts([data, ...thoughts]));
+  //   };
 
   return (
     <div className='post-a-thought-container'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onSubmit}>
         <label htmlFor='newThought'>
-          <h2>What&apos;s making you happy right now?</h2>
+          <h2>{title}</h2>
           <textarea
             id='newThought'
             name='newThought'
@@ -43,9 +49,9 @@ const PostAThought = () => {
             // empty textarea is considered valid even if you have a minlength
             // added required to prevent valid empty textarea
             required
-            placeholder='React is making me happy!'
+            placeholder={placeholder}
             value={newThought}
-            onChange={(e) => setNewThought(e.target.value)}
+            onChange={onNewThoughtChange}
             // eslint-disable-next-line react/jsx-closing-bracket-location
           />
         </label>
@@ -54,7 +60,8 @@ const PostAThought = () => {
         </p>
         <button
           type='submit'
-          disabled={newThought.length < 6 || newThought.length > 140}
+          disabled={newThought.length < 5 || newThought.length > 140}
+          // eslint-disable-next-line react/jsx-closing-bracket-location
         >
           <span role='img' aria-label='heart emoji'>
             ❤️

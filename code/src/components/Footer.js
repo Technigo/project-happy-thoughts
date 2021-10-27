@@ -1,7 +1,12 @@
 import React from 'react';
 
-const Footer = () => {
-  return <p>&#169; by Katie Wu</p>;
+const Footer = (props) => {
+  return (
+    <footer>
+      <p>{props.textLineOne}</p>
+      <p>{props.textLineTwo}</p>
+    </footer>
+  );
 };
 
 export default Footer;
