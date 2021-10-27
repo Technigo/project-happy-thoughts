@@ -22,13 +22,15 @@ body {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 25px;
+	background-color: #f3b1af;
 }
 
 .thought-container,
-.new-thought-container {
+.form-container {
 	box-sizing: border-box;
 	max-width: 520px;
-	margin: 40px 25px;
+	margin: auto; /* Change this when I add flex to the main container */
+	margin-top: 40px;
 	padding: 20px;
 	border: solid #000000 2px;
 	box-shadow: 10px 10px 0px -2px #000000;
@@ -36,6 +38,54 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+
+.thought-container {
+	background-color: #ffffff;
+}
+
+.form-container {
+	background-color: #f2f0f0;
+	font-size: 15px;
+	line-height: 21px;
+}
+
+.form-container,
+.btn-text,
+.input-field {
+	font-family: "Roboto Mono", monospace;
+	font-weight: 400;
+}
+
+.submit-btn {
+	width: 265px;
+	height: 45px;
+	background-color: #f3b1af;
+	cursor: pointer;
+	border: none;
+	border-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-text {
+	font-size: 15px;
+	line-height: 21px;
+	padding: 0 5px;
+}
+
+.input-field {
+	font-size: 14px;
+	line-height: 20px;
+	min-height: 60px;
+	margin: 12px 0 20px 0;
+	padding: 0 12px;
+	/* display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column; */
 }
 
 .info-text-container,
@@ -67,7 +117,6 @@ body {
 }
 
 .heart-icon-container {
-	font-size: 21px;
 	background-color: #e9e9e9;
 	width: 52px;
 	height: 52px;
@@ -78,6 +127,12 @@ body {
 	margin-right: 7px;
 }
 
+.heart-icon {
+	font-size: 21px;
+}
+
 /* .time-info {
 	margin-top: 10px;
 } */
+
+/* #f2f0f0 */

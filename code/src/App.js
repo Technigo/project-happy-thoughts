@@ -34,17 +34,26 @@ export const App = () => {
 	};
 
 	return (
-		<div>
-			<form className="new-thought-container" onSubmit={onFormSubmit}>
-				<label htmlFor="newThought">Type your thought</label>
+		<main className="main-section">
+			<form className="form-container" onSubmit={onFormSubmit}>
+				<label htmlFor="newThought">What's making you happy right now?</label>
 				{/*prettier-ignore*/}
 				<input
+					className="input-field"
 					id="newThought"
 					type="text"
 					value={newThought}
 					onChange={(event) => setNewThought(event.target.value)}>
 				</input>
-				<button type="submit">Send thought!</button>
+				<button className="submit-btn" type="submit">
+					<span className="heart-icon" aria-label="heart icon">
+						❤️
+					</span>
+					<span className="btn-text">Send Happy Thought</span>
+					<span className="heart-icon" aria-label="heart icon">
+						❤️
+					</span>
+				</button>
 			</form>
 
 			{thoughts.map((thought) => (
@@ -53,7 +62,9 @@ export const App = () => {
 					<div className="info-text-container">
 						<button className="like-btn">
 							<div className="heart-icon-container">
-								<span className="heart-icon">❤️</span>
+								<span className="heart-icon" aria-label="heart icon">
+									❤️
+								</span>
 							</div>
 							<span className="like-counter"> x {thought.hearts}</span>
 						</button>
@@ -61,6 +72,6 @@ export const App = () => {
 					</div>
 				</div>
 			))}
-		</div>
+		</main>
 	);
 };
