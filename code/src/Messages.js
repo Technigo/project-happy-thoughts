@@ -14,7 +14,11 @@ export const Messages = ({ thoughts, onLikeClick }) => {
           <div className='icon-container'>
             <div className='button-container'>
               <button
-                className='like-button'
+                className={
+                  thought.hearts > 0
+                    ? 'like-button like-button-clicked'
+                    : 'like-button'
+                }
                 onClick={() => onLikeClick(thought._id)}
               >
                 <span className='heart-icon' role='img' aria-label='heart-icon'>

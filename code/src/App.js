@@ -26,7 +26,7 @@ export const App = ({ thought }) => {
       .catch((error) => error)
 
   const onLikeClick = async (likedId) => {
-    const updatedThought = await likedThoughts(likedId)
+    //const updatedThought = await likedThoughts(likedId)
 
     const updatedMessage = thoughts.map((thought) => {
       if (thought._id === likedId) {

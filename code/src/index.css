@@ -76,6 +76,7 @@ form {
   margin: 0;
 }
 
+/*Default styling and color when not cliked*/
 .like-button {
   display: flex;
   justify-content: center;
@@ -86,17 +87,19 @@ form {
   height: 35px;
   border: none;
   border-radius: 50%;
-  background-color: #ffadad;
+  background-color: #f2f0f0;
   font-size: 11px;
   cursor: pointer;
+}
+
+/*Colors the like button pink on click */
+.like-button-clicked {
+  background-color: #ffadad;
 }
 
 .button-container {
   display: flex;
   align-items: center;
-}
-
-.likes-number {
 }
 
 .icon-container {
