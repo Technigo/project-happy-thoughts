@@ -7,18 +7,20 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Icon from "@mui/material/Icon";
+import Alert from "@mui/material/Alert";
 
 import { API_URL } from "../utils/links";
 
 export const NewThought = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState("");
+  const [alertShown, setAlertShown] = useState("");
 
   const onButtonClick = (e) => {
     e.preventDefault();
     if (newThought === "") {
-      alert("Ops , you forgot to type your thought.");
-    } else if (newThought.length <= 4) {
-      alert(`Your thought is only ${newThought.length}. Please be more descriptive;)`);
+      setAlertShown("Ops , you forgot to type your thought.");
+    } else if (newThought.length <= 5) {
+      setAlertShown(`Your thought has only ${newThought.length} characters. Please add at least 5 symbols.`);
     } else {
       onFormSubmit();
     }
@@ -55,6 +57,11 @@ export const NewThought = ({ thoughts, setThoughts }) => {
                 onChange={(e) => setNewThought(e.target.value)}
                 style={{ borderColor: newThought.length >= 140 ? "red" : "inherit" }}
               />
+              {alertShown !== "" && (
+                <div style={{ marginLeft: -2 }}>
+                  <Alert severity="error">{alertShown}</Alert>
+                </div>
+              )}
               <p className="symbols-counter" style={{ color: newThought.length >= 140 ? "red" : "inherit" }}>
                 {newThought.length} out of 140
               </p>

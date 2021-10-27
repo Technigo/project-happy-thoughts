@@ -1,12 +1,13 @@
 import React from "react";
+import Icon from "@mui/material/Icon";
 
 export const LikeButton = ({ onLikeButtonClick, thought }) => {
   return (
     <div>
       <button disabled={thought.liked} onClick={() => onLikeButtonClick(thought)}>
-        &hearts;
+        &nbsp;<Icon>favorite</Icon>&nbsp;
       </button>
-      <button> x {thought.hearts}</button>
+      <span> x {thought.hearts}</span>
     </div>
   );
 };

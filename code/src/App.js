@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
+// MUI components import
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+// Internal components
 import { NewThought } from "components/NewThought";
-import { LikeButton } from "components/LikeButton";
+import { ThoughtItem } from "components/ThoughtItem";
+import { Heading } from "components/Heading";
+import { UpdateButton } from "components/UpdateButton";
+import { LikesCounter } from "components/LikesCounter";
 import { CircularLoader } from "components/CircularLoader";
 import { API_URL } from "./utils/links";
 import { API_LIKES } from "./utils/links";
@@ -30,8 +35,8 @@ export const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isVisible, setVisible] = useState(false);
 
-  useEffect(() => {
-    setIsLoading(true);
+  // if you want to see a loader , comment out lines 36-42 and line 47 (fetch and fetch function call)
+  const handleFetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
@@ -39,24 +44,28 @@ export const App = () => {
         setVisible(true);
         setIsLoading(false);
       });
+  };
+
+  useEffect(() => {
+    setIsLoading(true);
+    handleFetchThoughts();
   }, [setIsLoading]);
 
-  const onLikeButtonClick = (thought) => {
+  const handleLikeButtonClick = (thought) => {
     fetch(API_LIKES(thought), { method: "POST" })
       .then((res) => res.json())
       .then((newThought) => {
         setMyLikes(myLikes + 1);
         localStorage.setItem("likes", myLikes + 1);
-        setThoughts([
-          ...thoughts.map((d) => {
-            /*https://www.pluralsight.com/guides/manipulating-arrays-and-objects-in-state-with-react*/
-            if (d._id === newThought._id) {
+        setThoughts(
+          thoughts.map((item) => {
+            if (item._id === newThought._id) {
               return { ...newThought, liked: true };
             } else {
-              return d;
+              return item;
             }
-          }),
-        ]);
+          })
+        );
       });
   };
 
@@ -65,27 +74,22 @@ export const App = () => {
       <div>
         <CircularLoader isLoading={isLoading} />
         {isVisible && (
-          <div>
-            <div className="grid heading-container">
-              <span className="heading-style">
-                <p className="heading">Happy Thoughts App</p>
-              </span>
-              <div>
-                You liked <span className="highlight">{myLikes}</span> thoughts
-              </div>
-              <div className="new-thought-space">
-                <NewThought thoughts={thoughts} setThoughts={setThoughts} />
-              </div>
+          <div className="grid">
+            <Heading text={"Happy Thoughts App"} />
+            <LikesCounter myLikes={myLikes} />
+            <div className="new-thought-space">
+              <NewThought thoughts={thoughts} setThoughts={setThoughts} />
+            </div>
+            <div className="all-thoughts-container">
               {thoughts.map((thought) => (
-                <div key={thought._id}>
-                  <p>{thought.message}</p>
-                  <div>
-                    <LikeButton onLikeButtonClick={onLikeButtonClick} thought={thought} />
-                  </div>
-                  <p className="date">{moment(thought.createdAt).fromNow()}</p>
+                <div className="uploaded-thought-container" key={thought._id}>
+                  <Box sx={{ minWidth: 275 }}>
+                    <ThoughtItem thought={thought} onLikeButtonClick={handleLikeButtonClick} />
+                  </Box>
                 </div>
               ))}
             </div>
+            <UpdateButton onFetchThought={handleFetchThoughts} />
           </div>
         )}
       </div>

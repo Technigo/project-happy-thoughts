@@ -10,7 +10,7 @@ export const CircularLoader = ({ isLoading }) => {
             color: "pink",
           }}
           size={120}
-          thickness={8}
+          thickness={6}
         />
       </div>
     );
