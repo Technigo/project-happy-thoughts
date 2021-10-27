@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import ThoughtForm from './components/ThoughtForm'
 import ThoughtItem from './components/ThoughtItem'
-import Emoji from './Emoji'
-import Loading from './components/Loading'
+import LoadingItem from './components/Loading'
 
 import { API_URL, LIKES_URL } from './utils/urls'
 
@@ -64,7 +63,7 @@ export const App = () => {
         setNewThought={setNewThought}
       />
 
-      {thoughts.map((thoughts) => (
+      {thoughts.map((thought) => (
       <ThoughtItem
         key={thoughts._id}
         thought={thought}
