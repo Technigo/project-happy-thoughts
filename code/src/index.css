@@ -19,6 +19,7 @@ code {
 
 main {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 }
@@ -27,6 +28,7 @@ main {
 .thoughts-card {
   display: flex;
   flex-direction: column;
+  overflow-wrap: break-word;
   width: 330px;
   background-color: var(--primary);
   padding: 1rem;
@@ -35,6 +37,14 @@ main {
   margin-bottom: 1rem;
   border-radius: 2px;
   margin-bottom: 2rem;
+}
+
+.thoughts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 20px;
 }
 
 .input {
