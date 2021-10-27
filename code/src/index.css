@@ -1,8 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Open Sans" "Segoe UI", "Roboto", "Oxygen","Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,6 +11,57 @@ code {
     monospace;
 }
 
+.container {
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 450px;
+  border: solid black 1px;
+  box-shadow: 3px;
+  margin: 30px auto;
+  box-shadow: 7px 7px;
+}
+
+.container:first-of-type {
+  background-color: rgb(242,240,240);
+}
+
+.container:hover {
+  background-color: rgb(242,240,240);
+}
+
+
+.inner-container {
+  margin: 10px;
+}
+
+.loading-container {
+  display: inline-block;
+  height: 25px;
+}
+
+.loader {  
+  background: linear-gradient(-45deg, white 49%, rgb(255, 21, 0) 51%);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
 .date {
-  font-style: italic;
+  color: rgb(199,199,199);
+}
+
+.heart-container {
+  display: flex;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
