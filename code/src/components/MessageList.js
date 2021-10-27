@@ -10,7 +10,7 @@ const MessageList = ({ thoughts, onLikesIncrease }) => {
                 <div className="like-date">
                 <button className="like-button" onClick={() => onLikesIncrease(thought._id)}>
                     {' '} 
-                    ❤️ 
+                    <span aria-label="heart" role="img">❤️</span>
                     </button> x{thought.hearts}
                 <p className="date">
                     {moment(thought.createdAt).fromNow()}
