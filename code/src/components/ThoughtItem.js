@@ -14,7 +14,7 @@ export const ThoughtItem = ({ thought, onLikeButtonClick }) => {
       <Card variant="outlined">
         <CardContent>
           <div className="inner-uploaded-thought-container">
-            <p>{thought.message}</p>
+            <p className="thought-text">{thought.message}</p>
             <CardActions>
               <div>
                 <LikeButton onLikeButtonClick={onLikeButtonClick} thought={thought} />

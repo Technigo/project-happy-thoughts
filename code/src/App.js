@@ -80,7 +80,7 @@ export const App = () => {
             <div className="new-thought-space">
               <NewThought thoughts={thoughts} setThoughts={setThoughts} />
             </div>
-            <div className="all-thoughts-container">
+            <div>
               {thoughts.map((thought) => (
                 <div className="uploaded-thought-container" key={thought._id}>
                   <Box sx={{ minWidth: 275 }}>

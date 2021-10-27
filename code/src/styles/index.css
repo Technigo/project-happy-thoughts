@@ -17,10 +17,10 @@ body {
   background-color: var(--background-color);
 }
 
-.loading-screen {
+/* .loading-screen {
   width: 100vw;
   height: 100vh;
-}
+} */
 
 .grid {
   display: grid;
@@ -47,7 +47,8 @@ body {
   width: 300px;
 }
 
-.new-thought-label {
+.new-thought-label,
+.thought-text {
   display: flex;
   flex-wrap: wrap;
   font-size: 14px;
@@ -93,10 +94,6 @@ textarea:focus {
   margin: 30px;
 }
 
-.all-thoughts-container {
-  margin-top: 30px;
-}
-
 .uploaded-thought-container {
   width: 334px;
   border-radius: 2px;
@@ -133,11 +130,5 @@ textarea:focus {
   }
   .like-counter {
     font-size: 20px;
-  }
-  .all-thoughts-container {
-    margin-top: 40px;
-  }
-  .all-thoughts-container {
-    margin-top: 40px;
   }
 }
