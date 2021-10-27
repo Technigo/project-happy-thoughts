@@ -3,29 +3,37 @@ import { API_URL } from 'urls'
 import { Form } from 'Form'
 import { Messages } from 'Messages'
 
-export const App = ({ thought }) => {
+export const App = () => {
   const [thoughts, setThoughts] = useState([])
 
   //Fetches the messages from the API
   useEffect(() => {
+    fetchThoughts()
+  }, [])
+
+  const fetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
-  }, [])
+  }
 
   //POST likes into the API and fetches it
-  const likedThoughts = async (id) =>
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+  const handleLikedThoughts = (id) => {
+    const options = {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    }
+    fetch(
+      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+      options
+    )
       .then((res) => res.json())
-      .then((data) => data)
+      .then(() => {
+        fetchThoughts()
+      })
       .catch((error) => error)
+  }
 
-  const onLikeClick = async (likedId) => {
+  /*const onLikeClick = async (likedId) => {
     //const updatedThought = await likedThoughts(likedId)
 
     const updatedMessage = thoughts.map((thought) => {
@@ -36,7 +44,7 @@ export const App = ({ thought }) => {
     })
 
     setThoughts(updatedMessage)
-  }
+  }*/
 
   return (
     <div className='container'>
@@ -45,7 +53,7 @@ export const App = ({ thought }) => {
         <Messages
           thoughts={thoughts}
           setThoughts={setThoughts}
-          onLikeClick={onLikeClick}
+          onLikeClick={handleLikedThoughts}
         />
       </div>
     </div>
