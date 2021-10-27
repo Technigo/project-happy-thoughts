@@ -9,7 +9,7 @@ export const ThoughtItem = ({ thought, onLikesIncrease }) => {
 				<button className="like-btn" onClick={() => onLikesIncrease(thought._id)}>
 					{" "}
 					<div className="heart-icon-container">
-						<span className="heart-icon" aria-label="heart icon">
+						<span role="img" className="heart-icon" aria-label="heart icon">
 							❤️
 						</span>
 					</div>
