@@ -1,42 +1,63 @@
-import React, {useState, useEffect} from 'react'
-import moment from 'moment'
-import {Form} from './components/Form'
+import React, { useState, useEffect } from 'react'
+
+import {Form} from './components/Form';
+import { ThoughtCard } from 'components/ThoughtCard';
+
+import { API_URL, LIKES_URL} from './utils/urls';
 
 export const App = () => {
+  //useState is like container, that contains a variable and a function
+  //you can uppdate variable with function. This function exist somewhere in React and do update variable
+  //if useState() is empty it gives undefined
+	const [thoughts, setThoughts] = useState([]);
 
-  const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
-
-  /*useState, saves data. 
-  Why is state an empty array? are we going to put messages in there?
-  Are we creating an array and later we will put things in it?
-  if useState() is empty it gives underfined*/
-  const [message, setMessage] = useState([])
- 
-
-
+    /* useEffect is like reaction to componenet behavior*/ 
+  // it can be a couple of useEffect in one componenet, and you can apply useEffect to different fases of componenet live 
   useEffect(() => {
+    fetchRequest()
+  }, []);
+
+  /* fetching api function */
+  const fetchRequest = () => {
     fetch(API_URL)
       .then((res) => res.json())
       /*json is an array with 20 object in it, 
       here we passing json object to setMessage function. So now state is updated
-      and message has a value of json object?*/
-      .then((json) => setMessage(json))
+      and message has a value of json object?
+      saving data from json to thoughts*/
+      .then((json) => setThoughts(json))
+  }
 
-  }, []);
+
+  const handleLikesIncrease = (thoughtId) => {
+    console.log(thoughtId)
+		const options = {
+			method: 'POST',
+		};
+
+		fetch(LIKES_URL(thoughtId), options)
+			.then((res) => res.json())
+			.then((data) => {
+
+				fetchRequest();
+			});
+	};
 
 
 
   return (
      <div>
-      <Form apiUrl={API_URL} message={message}/> 
-     {message.map((messageObj) => ( 
-       <div key={messageObj._id}>
-         <p>{messageObj.message}</p>
-         <button key={messageObj}>&#x2665; {messageObj.hearts}</button>
-         {/*Formation date object with help of moment.js library*/}
-         <p className="date">Created at: {moment(messageObj.createdAt).fromNow()}</p>
-       </div>
-       ))}
+      <Form /> 
+      {thoughts.map(thought => (
+        <ThoughtCard 
+          key={thought._id}
+          id={thought._id}
+          message={thought.message}
+          date={thought.createdAt}
+          hearts={thought.hearts}
+          onLikesIncrease={handleLikesIncrease}
+          />
+      ))}
      </div>
 
   );

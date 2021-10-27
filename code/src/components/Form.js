@@ -1,42 +1,47 @@
+import React, { useState } from 'react';
+import { API_URL } from '../utils/urls';
 
-import React, {useState} from 'react';
+export const Form = () => {
 
-export const Form = (props) => {
+    /*new thought is the value from input*
+    setNewThought function, sets value to the newThought*/
+	const [newThought, setNewThought] = useState("");
 
-    const [newMessage, setNewMessage] = useState('')
-
-    const onFormSubmit = (event) => {
-        event.preventDefault()
-
+    const fetchRequest = () => {
         const options = {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
             }, 
-            body: JSON.stringify({message: newMessage})
+            body: JSON.stringify({message: newThought})
         }
 
         /* Fetch to post a new message*/
-        fetch(props.apiUrl, options)
+        fetch(API_URL, options)
         .then(res => res.json())
-        .then(() => {
-            /*spread*/
-            window.location.reload();
-        })
-      }
+        /* publishes new message and then reaload page*/
+        .then(() => { window.location.reload()});
+    }
+
+    const onFormSubmit = (event) => {
+        event.preventDefault()
+        fetchRequest()
+    };
+
 
     return (
-        <form onSubmit={onFormSubmit}>
-            <p>What makes you happy?</p>
+        <form onSubmit={onFormSubmit} className="form" >
+            <label htmlFor="newThought">What makes you happy?</label>
             <textarea 
+                id="newThought"
                 type="text" 
-                value={newMessage}
-                onChange={e => setNewMessage(e.target.value)}
+                maxLength="140"
+                value={newThought}
+                onChange={(e) => setNewThought(e.target.value)}
                 />
             <button type="submit">Send</button>
         </form>
     )
-    
-}
+};
 
 
