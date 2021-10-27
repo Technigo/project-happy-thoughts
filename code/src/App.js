@@ -6,6 +6,7 @@ export const App = () => {
 
   const [thoughts, setThoughts] = useState ([])
   const [newThought, setNewThought] = useState ('')
+ 
 
   useEffect(()=> {
     fetch (API_URL)
@@ -29,18 +30,47 @@ export const App = () => {
     .then((data) => setThoughts([data, ...thoughts]))
   }
 
-  return (
-    <div>
+  const onLikesIncrease = (thoughtid) => {
+    
+    const options = {
+      method: 'POST'
+    }
+      fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtid}/like`, options)
+      .then((res) => res.json())
+      .then((data) => {
 
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">Type your thought</label>
+        const updatedThoughts = thoughts.map((item) => {
+          if (item._id === data._id){
+            item.hearts += 1;
+            return item;
+          } else {
+            return item;
+          }
+        })
+        setThoughts(updatedThoughts)
+      })
+    }
+
+  return (
+    <div className="body">
+
+      <form onSubmit={onFormSubmit} className="form-container">
+        <label htmlFor="newThought" className="label-form">What's making you Happy right now?</label>
         <input 
+          className="thought-input"
           id="newThought"
           type="text" 
           value={newThought}
           onChange= {(e) => setNewThought(e.target.value)}
-          />
-          <button type="submit">Send Thought</button>
+          ></input>
+          <button type="submit" className="submit-button">
+            <div className="send-wrapper">
+              <span className="heart">&hearts;</span> 
+              <span className="send-happy">Send Happy Thought</span>
+              <span className="heart">&hearts;</span> 
+            </div>
+            
+            </button>
       </form>
 
 
@@ -51,8 +81,10 @@ export const App = () => {
           <p className="thought-message">{thought.message}</p>
           <div className="button-row">
             <div className="heart-button-wrapper">
-              <button 
-                className="heart-button"><span className="heart">&hearts;</span> </button>
+              <button onClick = {() => onLikesIncrease(thought._id)}
+                className="heart-button">
+                  <span className="heart">&hearts;</span> 
+                </button>
               <p> x {thought.hearts}</p>
             </div>
            

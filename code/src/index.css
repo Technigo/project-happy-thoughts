@@ -13,14 +13,65 @@ code {
   font-family: 'Roboto Mono', monospace;
 }
 
+.body{
+  width: 100%;
+}
+/*Containers*/
+
+.form-container{
+  width: 660px;
+  height: 260px;
+  margin: 40px auto;
+  border: 1px solid black;
+  box-shadow: 13px 13px black;
+  display: flex;
+  flex-direction: column;
+  background-color: #F3F0F0;
+
+}
 .message-container{
   width: 660px;
   height: 260px;
-  margin: 40px;
+  margin: 20px auto;
   border: 1px solid black;
   box-shadow: 13px 13px black;
   
 }
+/*Form for thought-submission*/
+
+.label-form {
+  
+  margin: 25px;
+  font-weight: 600;
+}
+.thought-input {
+  border: 1px solid #D5D2D2;
+  margin: 0 auto;
+  width: 90%;
+  height: 70px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.submit-button {
+width: 50%;
+height: 67px;
+margin: 20px auto 25px 25px;
+border-radius: 40px;
+background-color: #FDAEAD;
+border:none;
+align-items: center;
+
+}
+.send-wrapper {
+  align-items: center;
+}
+.send-happy {
+  margin: 0 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+/*New thought*/
+
 .thought-message {
   margin: 70px 25px;
   font-size: 20px;
@@ -50,6 +101,7 @@ code {
   width: 67px;
   height: 67px;
   margin: 0 15px 0 25px;
+  cursor: pointer;
  
 }
 
