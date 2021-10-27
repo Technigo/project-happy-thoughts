@@ -11,21 +11,19 @@ body {
     monospace;
 } */
 
-form {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-}
-
-.input-container {
-  background: maroon;
-  display: inline;
+h1 {
+  margin-left: 4%;
+  font-size: 24px;
 }
 
 textarea {
   resize: none;
-  margin: 3%;
-  width: 300px;
+  width: 90%;
+}
+
+.message-box {
+  display: flex;
+  margin: 0 4% auto;
 }
 
 button {
@@ -33,16 +31,24 @@ button {
   border: none;
 }
 
-.input-text {
+.input-container {
   margin: 20px auto;
   border: solid 2px black;
   width: 30%;
   box-shadow: 6px 6px black;
   text-align: left;
+  background: lightgray;
 }
 
 .submit-button {
-  background: rgb(246, 153, 153);
+  border-radius: 20px;
+  background-color: #ffadad;
+  font-family: "PT Mono", monospace;
+  width: 40%;
+  padding: 4px 0px;
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .likes-button {
@@ -65,6 +71,7 @@ button {
   width: 30%;
   box-shadow: 6px 6px black;
   text-align: left;
+  word-wrap: break-word;
 }
 
 .container p {
