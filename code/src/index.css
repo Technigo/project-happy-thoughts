@@ -15,6 +15,7 @@ code {
   font-family: 'Inconsolata', monospace;
   display: flex;
   flex-direction: column;
+  height: 152px;
   width: 80%;
   max-width: 450px;
   border: solid black 1px;
@@ -25,28 +26,69 @@ code {
 
 .container:first-of-type {
   background-color: rgb(242,240,240);
+  margin-top: 45px;
+  margin-bottom: 45px;
 }
 
 .container:hover {
-  background-color: rgb(242,240,240);
+  background-color: rgb(246, 246, 246);
 }
 
-
-.inner-container {
+.inner-container, .inner-container-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 132px;
   margin: 10px;
 }
 
+.inner-container-form {
+  align-items: flex-start;
+}
+
+.thought-input {
+  height: 50px;
+  width: 90%;
+}
+
+.thought-btn {
+  background-color: rgb(255, 173, 173);
+  border-width: 0;
+  border-radius: 15px;
+  height: 38px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.heart-btn-loved:hover, .thought-btn:hover {
+  background-color: rgb(255, 122, 122);
+  cursor: pointer;
+}
+
 .loading-container {
-  display: inline-block;
-  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+  background-color: rgba(246, 246, 246, 0.5);
 }
 
 .loader {  
-  background: linear-gradient(-45deg, white 49%, rgb(255, 21, 0) 51%);
+  background: linear-gradient(-45deg, rgba(255, 255, 255, 0) 49%, rgb(255, 21, 0) 51%);
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 450px;
+  height: 450px;
   animation: spin 2s linear infinite;
+}
+
+.heart-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .date {
@@ -55,6 +97,28 @@ code {
 
 .heart-container {
   display: flex;
+  align-items: center;
+}
+
+.heart-btn-unloved, .heart-btn-loved {
+  border-radius: 50%;
+  border-width: 0;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+.heart-btn-loved {
+  background-color: rgb(255, 173, 173);
+}
+
+.heart-btn-unloved {
+  background-color: rgb(234, 234, 234);
+}
+
+.heart-btn-unloved:hover {
+  background-color: rgb(165, 165, 165);
+  cursor: pointer;
 }
 
 @keyframes spin {
@@ -63,5 +127,20 @@ code {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 756px) {
+  .container {
+    height: 200px;
+  }
+
+  .inner-container, .inner-container-form {
+    height: 180px;
+  }
+
+  .loader {  
+    width: 150px;
+    height: 150px;
   }
 }

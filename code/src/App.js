@@ -16,6 +16,7 @@ export const App = () => {
     fetch(API_URL)
     .then((res) => res.json())
     .then((data) => setThoughts(data))
+    .finally(() => setLoading(false))
   }
 
   const onFormSubmit = (event) => {
@@ -42,25 +43,24 @@ export const App = () => {
 
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought_id}/like`, options)
     .then(res => res.json())
-    .then((data) => {
-      fetchThoughts()
-    })
+    .then(fetchThoughts())
     .finally(() => setLoading(false))
   }
 
   return (
     <main className="main-container">
       <div className="container">
-        <form className="inner-container" onSubmit={onFormSubmit}>
+        <form className="inner-container-form" onSubmit={onFormSubmit}>
           <label htmlFor="newThought">What's making you happy right now?</label>
-          <input 
+          <textarea 
             id="newThought"
             type="text"
             value={newThought}
+            className="thought-input"
             onChange={(e) => setNewThought(e.target.value)}/>
           <button 
             type="submit"
-            disabled={newThought.length < 5 || newThought.length > 149}
+            disabled={newThought.length < 5 || newThought.length > 140}
             className="thought-btn">
               <span role="img" aria-label="heart-emoji">&#10084;&#65039;</span> 
               Send happy thought 
@@ -75,16 +75,18 @@ export const App = () => {
         <div className="container" key={thought._id}>
           <div className="inner-container">
             <p>{thought.message}</p>
-            <div className="heart-container">
-              <button onClick={() => onLikesIncreased(thought._id)} className="heart-btn"> 
-                <span role="img" aria-label="heart-emoji">&#10084;&#65039;</span> 
-              </button>
-              <p>x {thought.hearts}</p>
-            </div>
 
-            <p className="date">
-              {moment(thought.createdAt).fromNow()}
-            </p>
+            <div className="heart-time">
+              <div className="heart-container">
+                <button onClick={() => onLikesIncreased(thought._id)} className={(thought.hearts === 0) ? "heart-btn-unloved"  : "heart-btn-loved"}>
+                  <span role="img" aria-label="heart-emoji">&#10084;&#65039;</span>
+                </button>
+                <p>x {thought.hearts}</p>
+              </div>
+              <p className="date">
+                {moment(thought.createdAt).fromNow()}
+              </p>
+            </div>
           </div>
         </div>
 
