@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import moment from 'moment';
 
-import { API_URL } from './src/utils/url';
+import { API_URL } from '../API/url';
 
 export const Comments = () => {
     const [thoughts, setThoughts] = useState([]);
@@ -29,4 +29,4 @@ return (
   );
 };
 
-export default Comments;
+export default HappyComments;

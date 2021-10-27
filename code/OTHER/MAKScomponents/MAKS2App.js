@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import HappyForm from 'components/HappyForm';
-import HappyHeart from 'components/HappyHeart';
-import HappyLoading from 'components/HappyLoading';
+import ThoughtForm from './components/ThoughtForm';
+import ThoughtItem from './components/ThoughtItem';
+import LoadingItem from './components/Loading';
 
-import { API_URL, HEART_URL } from './API/url';
+import { API_URL, LIKES_URL } from './utils/urls';
 
 export const App = () => {
 	const [thoughts, setThoughts] = useState([]);
@@ -37,6 +37,10 @@ export const App = () => {
 		fetch(API_URL, options)
 			.then((res) => res.json())
 			.then((data) => {
+				//v1
+				// setThoughts([data, ...thoughts]);
+
+				//v2
 				fetchThoughts();
 			});
 	};
@@ -44,33 +48,43 @@ export const App = () => {
 	const handleLikesIncrease = (thoughtId) => {
 		const options = {
 			method: 'POST',
-		}
+		};
 
-		fetch(HEART_URL(thoughtId), options)
+		fetch(LIKES_URL(thoughtId), options)
 			.then((res) => res.json())
 			.then((data) => {
+				//v1 increase likes only
+				// const updatedThoughts = thoughts.map((item) => {
+				// 	if (item._id === data._id) {
+				// 		item.hearts += 1;
+				// 		return item;
+				// 	} else {
+				// 		return item;
+				// 	}
+				// });
+
+				// setThoughts(updatedThoughts);
+
+				//v2
 				fetchThoughts();
-			})
+			});
 	};
-
-
 
 	return (
 		<div>
-			{loading && <HappyLoading />}
-			<HappyForm
-			onFormSubmit={handleFormSubmit} 
-			newThought={newThought}
-			setNewThought={setNewThought}
+			{loading && <LoadingItem />}
+			<ThoughtForm
+				onFormSubmit={handleFormSubmit}
+				newThought={newThought}
+				setNewThought={setNewThought}
 			/>
-			
+
 			{thoughts.map((thought) => (
-				<HappyHeart
-				key={thought._id}
-				thought={thought}
-				onLikesIncreased={handleLikesIncrease}
+				<ThoughtItem
+					key={thought._id}
+					thought={thought}
+					onLikesIncrease={handleLikesIncrease}
 				/>
-				
 			))}
 		</div>
 	);
