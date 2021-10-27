@@ -7,8 +7,8 @@ const ThoughtForm = ({
   handleKeyPress,
 }) => {
   return (
-    <section className="input-container">
-      <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit}>
+      <div className="input-container">
         <div className="input-text">
           <label htmlFor="newThought">
             <h1>Type your thought</h1>
@@ -16,7 +16,9 @@ const ThoughtForm = ({
           <textarea
             rows="3"
             id="newThought"
+            className="new-thought-input"
             type="text"
+            placeholder="type here.."
             value={newThought}
             onChange={e => setNewThought(e.target.value)}
             onSubmit={event => event.target.reset()}
@@ -28,10 +30,10 @@ const ThoughtForm = ({
           disabled={newThought.length < 5}
           type="submit"
         >
-          &#10084;&#65039; Send thought! &#10084;&#65039;
+          &#10084;&#65039; Send happy thought! &#10084;&#65039;
         </button>
-      </form>
-    </section>
+      </div>
+    </form>
   );
 };
 
