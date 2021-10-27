@@ -5,6 +5,7 @@ import { API_URL } from './utils/commons'
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
+  const [countChars, setCountChars] = useState(0)
 
   useEffect(() => {
     fetch(API_URL)
@@ -28,24 +29,43 @@ export const App = () => {
       .then((data) => setThoughts([data, ...thoughts])))
   }
 
+  const numberOfChars = (event) => {
+    const chars = event.target.value
+    console.log(chars.length)
+    return chars.length
+  } 
+
   return (
     <div>
       <form onSubmit={onFormSubmit} className="thought-input-container">
-        <label htmlFor="newThought">Type your thought</label>
-        <input
+        <label htmlFor="newThought">What's making you happy right now?</label>
+        <textarea
           id="newThought"
           type="text"
+          rows="2"
           value={newThought} 
-          onChange={(event) => setNewThought(event.target.value)}
-        />
+          onChange={(event) => {
+            setNewThought(event.target.value)
+            numberOfChars(event)
+          }}>
+        </textarea>
+        <p className="char-counter">{countChars} characters</p>
         <button type="submit" className="send-thought"><span role="img" aria-label="heart">❤️</span> Send Happy Thought <span role="img" aria-label="heart">❤️</span></button>
       </form>
 
       {thoughts.map(thought =>
         <div key={thought._id} className="thought-card">
           <p>{thought.message}</p>
-          <button>&hearts; {thought.hearts}</button>
-          <p className="date">- {moment(thought.createdAt).fromNow()}</p>
+          <div className="message-card-bottom-row">
+            <div className="heart-likes-container">
+              <button className="heart-button">
+                <span role="img" aria-label="heart">❤️</span>
+              </button>
+              <div className="likes-text"> x {thought.hearts}</div>
+            </div>
+            <p className="date-text">{moment(thought.createdAt).fromNow()}</p>
+          </div>
+          
         </div>)}
     </div>
   )

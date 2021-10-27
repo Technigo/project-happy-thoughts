@@ -1,24 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inconsolata', monospace;
   font-size: 18px;
+  line-height: 23px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.date {
-  font-style: italic;
+.date-text,
+.likes-text {
+  color: grey;
+  font-size: 15px;
 }
 
 .thought-input-container,
 .thought-card {
-  width: 350px;
-  padding: 10px;
+  width: 87%;
+  max-width: 350px;
+  padding: 20px;
   background-color:white;
   border: black 1px solid;
   margin: 40px auto;
@@ -26,14 +29,56 @@ code {
 }
 
 .thought-input-container {
-  background-color: lightgray;
+  background-color: #F3F0F0;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
 }
 
 .send-thought {
-  background-color: salmon;
-  color: white;
-  padding: 5px 10px;
-  margin: 10px 0px;
-  border-radius: 10px;
+  width: 210px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 15px;
+  background-color: #F5AAAD;
+  padding: 5px 10px 8px;
+  margin: 8px 0px;
+  border-radius: 20px;
   border: none;
+}
+
+textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: lightgray 1.5px solid;
+  font-family: 'Inconsolata', monospace;
+}
+
+.message-card-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heart-likes-container {
+  display: flex;
+  align-items: center;
+}
+
+.heart-button {
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+  padding: 0 0 2.5px 4px;
+  background-color: lightgray;
+  border-radius: 50%;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+}
+
+p {
+  margin: 10px 0;
 }
