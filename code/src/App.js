@@ -39,8 +39,19 @@ export const App = () => {
   const handleFetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => {
-        setThoughts(data);
+      .then((newData) => {
+        /* cross checking incoming state vs current state to find cross matched thoughts by ids and mark them as liked to prevent double liking  */
+        setThoughts((oldData) =>
+          newData.map((newThought) => {
+            const oldThough = oldData.find((t) => t._id === newThought._id);
+            if (oldThough) {
+              if (oldThough.liked) {
+                newThought.liked = true;
+              }
+            }
+            return newThought;
+          })
+        );
         setVisible(true);
         setIsLoading(false);
       });
