@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
+import NewPost from "components/NewPost";
+import Posts from "components/Posts";
+import Loading from "components/Loading";
 
-import { API_URL } from "./utils/urls";
+import { API_URL, LIKE_URL } from "./utils/urls";
 
 export const App = () => {
   const [post, setPost] = useState([]);
   const [newPost, setNewPost] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  const fetchPosts = () => {
+    setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setPost(data));
-  }, []);
+      .then((data) => setPost(data))
+      .finally(() => setLoading(false));
+  };
 
   console.log(post);
 
-  const onSubmitForm = (event) => {
+  const handleSubmitForm = (event) => {
     event.preventDefault();
 
     const options = {
@@ -28,85 +37,44 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setPost([data, ...post]));
+      .then((data) => {
+        fetchPosts();
+      });
   };
 
-  const onNewPostChange = (event) => {
-    setNewPost(event.target.value);
+  const handleNewPostChange = (event) => setNewPost(event.target.value);
+
+  const handleSendLike = (postId) => {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    fetch(LIKE_URL(postId), options)
+      .then((res) => res.json())
+      .then(() => {
+        fetchPosts();
+      });
   };
-
-  // const SendLike = (id) => {
-  //   const options = {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   };
-
-  //   fetch(
-  //     API_URL_LIKE(id),
-  //     options
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => setLike([data, ...like]));
-  // };
 
   return (
     <div>
-      <form className="container" onSubmit={onSubmitForm}>
-        <label htmlFor="thought" className="thought">
-          What's making you happy right now?
-        </label>
-        <input
-          required
-          minLength="5"
-          maxLength="140"
-          id="thought"
-          type="text"
-          value={newPost}
-          onChange={onNewPostChange}
-        />
-        <button type="submit">Send Happy Thought</button>
-      </form>
-
-      {/* <NewPost
+      {loading && <Loading />}
+      <NewPost
         newPost={newPost}
-        submitForm={SubmitForm}
-        onNewPostChange={onNewPostChange}
-      /> */}
+        onSubmitForm={handleSubmitForm}
+        setNewPost={handleNewPostChange}
+      />
 
-      <div>
-        {post.map((thought) => (
-          <div key={thought._id} className="container">
-            <p className="message">{thought.message}</p>
-            <div className="inner-container">
-              <div>
-                <button
-                  onClick={() => {
-                    const options = {
-                      method: "POST",
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                    };
-                    fetch(
-                      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`,
-                      options
-                    )
-                      .then((res) => res.json())
-                      .then((data) => console.log(data));
-                  }}
-                  className="like"
-                >
-                  <span className="hearts">&hearts;</span>
-                </button>
-                x {thought.hearts}
-              </div>
-              <div> {moment(thought.createdAt).fromNow()}</div>
-            </div>
-          </div>
-        ))}
-      </div>
+      {post.map((thought) => (
+        <Posts
+          key={thought._id}
+          thought={thought}
+          onSendLike={handleSendLike}
+        />
+      ))}
     </div>
   );
 };

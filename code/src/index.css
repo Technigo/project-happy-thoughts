@@ -1,8 +1,6 @@
 body {
   margin: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Oxygen", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -13,6 +11,44 @@ code {
     monospace;
 }
 
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.loading-container {
+  width: 200px;
+  border: 3px solid black;
+}
+.loading {
+  height: 10px;
+  width: 200px;
+
+  background: blue;
+  animation: loader infinite 0.5s;
+}
+
+@keyframes loader {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -20,29 +56,64 @@ code {
   margin-bottom: 30px;
   padding: 10px;
   box-shadow: 5px 5px black;
+  background: #f2f2f2;
 }
 
 .thought {
   padding-bottom: 10px;
 }
 
-input[type="text"] {
-  height: 30px;
-  margin-bottom: 10px;
-  text-overflow: hidden;
+.button-container {
+  display: flex;
+  justify-content: space-between;
 }
+
+.characters-left {
+  margin-top: 15px;
+}
+
+.submit {
+  margin-top: 10px;
+  width: 60%;
+  height: 30px;
+  background-color: #ffb3b3;
+  border-radius: 15px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .message {
   font-size: 18px;
 }
 
+.posts {
+  background: #fff;
+}
+
+.hearts-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .like {
+  height: 25px;
+  width: 25px;
   border: none;
   border-radius: 50%;
   background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 4px;
 }
+
 .hearts {
+  font-size: 20px;
   color: red;
-  padding: 2px;
+  padding: 6px;
 }
 
 .inner-container {
