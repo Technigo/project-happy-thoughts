@@ -45,6 +45,10 @@ body {
 	background-color: #ffffff;
 }
 
+.thoughts-messages {
+	overflow-wrap: break-word; /* Maybe change this so it only happens to words longer than 44 character*/
+}
+
 .form-container {
 	background-color: #f2f0f0;
 	font-size: 15px;
@@ -79,14 +83,8 @@ body {
 .input-field {
 	font-size: 14px;
 	line-height: 20px;
-	min-height: 60px;
 	margin: 12px 0 20px 0;
-	padding: 0 12px;
-	/* display: flex;
-	flex-wrap: wrap;
-	align-items: flex-start;
-	justify-content: flex-start;
-	flex-direction: column; */
+	padding: 8px 12px 12px 12px;
 }
 
 .info-text-container,
@@ -176,3 +174,24 @@ body {
 		transform: rotate(360deg);
 	}
 }
+
+/* .like-counter {
+	animation: falling;
+	animation-timing-function: ease-out;
+	animation-delay: 5s;
+}
+
+@keyframes falling {
+	0% {
+		opacity: 0;
+		transform: translateY(-10);
+	}
+	50% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+} */

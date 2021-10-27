@@ -4,7 +4,7 @@ import moment from "moment";
 export const ThoughtItem = ({ thought, onLikesIncrease }) => {
 	return (
 		<div className="thought-container">
-			<p>{thought.message}</p>
+			<p className="thoughts-messages">{thought.message}</p>
 			<div className="info-text-container">
 				<button className="like-btn" onClick={() => onLikesIncrease(thought._id)}>
 					{" "}

@@ -5,11 +5,15 @@ export const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 		<form className="form-container" onSubmit={onFormSubmit}>
 			<label htmlFor="newThought">What's making you happy right now?</label>
 			{/*prettier-ignore*/}
-			<input
+			<textarea
         className="input-field"
-        id="newThought" type="text"
+        id="newThought"
+        name="happy-thought"
+        rows="3"
+        cols="50" // Change this
+        // wrap="hard"
         value={newThought} onChange={(event) => setNewThought(event.target.value)}>
-      </input>
+      </textarea>
 			<button className="submit-btn" disabled={newThought.length < 5} type="submit">
 				<span className="heart-icon" aria-label="heart icon">
 					❤️
