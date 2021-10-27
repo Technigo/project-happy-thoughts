@@ -1,0 +1,9 @@
+.input-box {
+  width: 300px;
+  border: 1px solid;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  background: white;
+  display: flex;
+}
