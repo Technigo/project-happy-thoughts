@@ -62,16 +62,24 @@ h1 {
   justify-content: center;
 }
 
-.thought-card {
-  box-sizing: border-box;
-  border: 2px solid black;
-  box-shadow: 5px 5px;
-  padding: 10px 14px;
-  height: 135px;
+.thought-cards-container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 90%;
+  gap: 25px;
+}
+
+.thought-card {
+  box-sizing: border-box;
+  border: 2px solid black;
+  box-shadow: 5px 5px;
+  padding: 5px 14px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .thought-card-info {
@@ -98,13 +106,14 @@ h1 {
   width: 40px;
   border-radius: 50%;
   background-color: rgb(239, 239, 239);
+  cursor: pointer;
 }
 
 .like-heart {
   height: 22px;
   width: 22px;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .thought-card-info > p,
@@ -113,4 +122,16 @@ h1 {
   font-size: 14px;
   font-weight: 400;
   color: rgb(160, 156, 156);
+}
+
+@media (min-width: 768px) {
+  .thought-cards-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .thought-card {
+    width: 48%;
+  }
 }

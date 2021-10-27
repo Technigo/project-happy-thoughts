@@ -20,30 +20,33 @@ const AllThoughts = () => {
     <div className='thoughts-container'>
       <Header />
       <FormInput thoughts={thoughts} setThoughts={setThoughts} />
-      {thoughts.map((thought) => (
-        <div key={thought._id} className='thought-card'>
-          <p className='thought-text'>{thought.message}</p>
-          {/* <LikeButton id={thought._id} /> */}
-          <div className='thought-card-info'>
-            <div className='like-info'>
-              <button
-                type='button'
-                className='like-button'
-                // onClick={(event) => onLikeButtonClick(event)}
-              >
-                <span className='like-heart' role='img' aria-label='heart'>
-                  ❤️
-                </span>
-              </button>
-              <p className='thought-card-info-text'>x {thought.hearts}</p>
-            </div>
+      <div className='thought-cards-container'>
+        {thoughts.map((thought) => (
+          <div key={thought._id} className='thought-card'>
+            <p className='thought-text'>{thought.message}</p>
+            {/* <LikeButton id={thought._id} /> */}
 
-            <p className='thought-card-info-text'>
-              Posted: {moment(thought.createdAt).fromNow()}
-            </p>
+            <div className='thought-card-info'>
+              <div className='like-info'>
+                <button
+                  type='button'
+                  className='like-button'
+                  // onClick={(event) => onLikeButtonClick(event)}
+                >
+                  <span className='like-heart' role='img' aria-label='heart'>
+                    ❤️
+                  </span>
+                </button>
+                <p className='thought-card-info-text'>x {thought.hearts}</p>
+              </div>
+
+              <p className='thought-card-info-text'>
+                Posted: {moment(thought.createdAt).fromNow()}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
