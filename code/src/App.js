@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import { API_URL } from "./utils/urls";
+import { API_URL, API_HEART } from "./utils/urls";
 
 function App() {
   // * * * * * states * * * * *
   const [newThought, setNewThought] = useState("");
   const [thoughts, setThoughts] = useState([]);
-  console.log("här kan jag skriva uaf");
-  console.log(newThought);
+
+  console.log("this is newThought", newThought);
 
   // * * * * * useEffect * * * * *
   useEffect(() => {
@@ -36,10 +36,40 @@ function App() {
         console.log("this is fetch2 with POST", data);
         setThoughts([data, ...thoughts]);
       });
+
+    setNewThought("");
   };
 
   const onSetThoughtChange = e => {
     setNewThought(e.target.value);
+  };
+
+  const heartCounter = thought_id => {
+    console.log("this is thought_id", thought_id);
+
+    const options = {
+      method: "POST",
+      // if there is no body we dont need a header
+    };
+
+    fetch(API_HEART(thought_id), options)
+      .then(res => res.json())
+      .then(data => {
+        console.log("this is fetch3 HEART with POST", data);
+
+        const updatedThoughts = thoughts.map(item => {
+          if (thought_id === item._id) {
+            console.log("this is the one", item._id);
+            item.hearts += 1;
+            return item;
+          } else {
+            console.log("this is no new");
+            return item;
+          }
+        });
+        console.log(updatedThoughts);
+        setThoughts(updatedThoughts);
+      });
   };
 
   return (
@@ -58,20 +88,32 @@ function App() {
           ></input>
         </div>
         <button className="submit-btn" type="submit">
-          <span className="icon-btn">&hearts;</span>Send Happy Thought
-          <span className="icon-btn">&hearts;</span>
+          <span role="img" aria-label="heart-emoji" className="icon-btn">
+            ❤️
+          </span>
+          Send Happy Thought
+          <span role="img" aria-label="heart-emoji" className="icon-btn">
+            ❤️
+          </span>
         </button>
       </form>
+      {/* * * * * * * * * * * * CARDS * * * * * * * * * */}
 
       {thoughts.map(thought => {
         return (
           <>
-            <div className="answer-card">
+            <div key={thought._id} className="answer-card">
               <div className="answer">
                 <p>{thought.message}</p>
-                <button className="heart-btn">
+                <button
+                  onClick={() => heartCounter(thought._id)}
+                  className="heart-btn"
+                >
                   {" "}
-                  <span className="heart">&hearts;</span> x {thought.hearts}
+                  <span role="img" aria-label="heart-emoji" className="heart">
+                    ❤️
+                  </span>{" "}
+                  x{thought.hearts}
                 </button>
                 <p className="date">
                   -Created at: {moment(thought.createdAt).fromNow()}
@@ -81,8 +123,6 @@ function App() {
           </>
         );
       })}
-
-      <div> icon</div>
     </>
   );
 }
