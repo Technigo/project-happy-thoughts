@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: 'Courier New', monospace;
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,26 +14,29 @@ code {
 
 p, label, button {
   letter-spacing: 0.1em;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 img {
   width:18px;
 }
 
+textarea {
+  padding:10px;
+  max-width: 480px;
+  min-height: 100px;
+}
 .mainContainer {
-  min-width:992px;
-  width:60vw;
-  margin:0 auto;
-  margin-top:20px;
+  width:100%;
+  padding:10px;
+  margin:0px;
 }
 
 .newThought, .posted-thoughts {
   border:1px solid black;
-  width:500px;
-  margin:0 auto;
-  padding:20px;
-  margin-bottom:40px;
+  padding:10px;
+  margin-bottom:20px;
   border-radius: 2px;
   box-shadow:8px 8px 0px black;
 }
@@ -42,6 +45,7 @@ img {
   display:flex;
   flex-direction: column;
   background:#E1DCDC;
+  min-height: 180px;
 }
 
 .newThought label {
@@ -54,14 +58,17 @@ img {
   border:none;
   padding:10px 10px;
   border-radius: 20px;
-  margin-top:20px;
   cursor: pointer;
-  width:250px;
+  width:auto;
 }
 
 .newThought button:hover {
   background:#d87474;
   transition: .2s;
+}
+
+.posted-thoughts {
+  position:relative;
 }
 
 .posted-thoughts button {
@@ -71,4 +78,106 @@ img {
   border-radius: 25px;
   text-align: center;
   cursor: pointer;
+}
+
+.errorMessage {
+  color:red;
+  font-size: 14px;
+}
+
+.date {
+  position:absolute;
+  right:10px;
+  bottom:0px;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.thought-message {
+  font-weight: 400;
+  text-transform: capitalize;
+  min-height: 150px;
+}
+
+.thoughts-likes {
+  font-size: 12px;
+  font-weight: 300;
+  color:#939393;
+}
+
+.like-button {
+  margin-bottom:30px;
+}
+
+.new-thought-button-container {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  margin-top:10px;
+}
+
+.new-thought-button-container p {
+  padding:5px;
+  margin-left:10px;
+}
+
+.loading-overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loading-heart {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border-left: 5px solid #fff;
+	animation: spinner infinite 0.5s;
+}
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@media only screen and (min-width:599px) {
+
+  h1 {text-align:center}
+
+  .like-button {
+    margin-bottom:0px;
+  }
+
+  .thought-message {
+    min-height: 100px;
+  }
+  
+  .mainContainer {
+    min-width:992px;
+    width:60vw;
+    margin:0 auto;
+    margin-top:20px;
+  }
+
+  .newThought, .posted-thoughts {
+    width:500px;
+    margin:0 auto;
+    padding:20px;
+    margin-bottom:40px;
+    border-radius: 2px;
+  }
 }

@@ -1,21 +1,28 @@
-import React from 'react';
-import moment from 'moment'; // getting moment to be able to format the time
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import heart from './images/red-heart.png'; // Getting the red heart emoji
 
-import { API_URL } from './utils/urls'; // The URL to the API
+import { API_URL, LIKES_URL } from './utils/urls'; // The URL to the API
+import NewThought from 'components/NewThought';
+import AllThoughts from 'components/AllThoughts';
+import LoadingItem from 'components/Loading';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThoughts] = useState('');
+  const [loadingPage, setLoadingPage] = useState(false);
 
   // Getting the posts
   useEffect(() => {
+    fetchThoughts();
+  }, []);
+
+  const fetchThoughts = () => {
+    setLoadingPage(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data));
-  }, []);
+      .then((data) => setThoughts(data))
+      .finally(() => setLoadingPage(false));
+  };
 
   // Posting a new happy thought
   const onFormSubmit = (event) => {
@@ -38,48 +45,25 @@ export const App = () => {
     const options = {
       method: 'POST',
     };
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
+    fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((data) => {
-        // vanilla JS map function that iterates through the items
-        const updatedThoughts = thoughts.map((item) => {
-          if (item._id === data._id) {
-            item.hearts += 1;
-            return item;
-          } else {
-            return item;
-          }
-        });
-
-        setThoughts(updatedThoughts);
+        fetchThoughts();
       });
   };
 
   return (
     <div className="mainContainer">
-      <form className="newThought" onSubmit={onFormSubmit}>
-        <label>What is making you happy right now?</label>
-        <textarea
-          id="newThought"
-          type="text"
-          value={newThought}
-          onChange={(e) => setNewThoughts(e.target.value)}
-          placeholder="Write your happy thought here.."
-        />
-        <button type="submit">
-          <img src={heart} alt="Red heart emoji" /> Send happy thought!{' '}
-          <img src={heart} alt="Red heart emoji" />
-        </button>
-      </form>
+      <h1>Welcome to my happy thoughts generator!</h1>
+      {loadingPage && <LoadingItem />}
+      <NewThought
+        onFormSubmit={onFormSubmit}
+        newThought={newThought}
+        heart={heart}
+        setNewThoughts={setNewThoughts}
+      />
       {thoughts.map((thought) => (
-        <div className="posted-thoughts" key={thought._id}>
-          <p className="thought-message">{thought.message}</p>
-          <button onClick={() => onLikesIncrease(thought._id)}>
-            <img src={heart} alt="Red heart emoji" />
-          </button>
-          <span className="thoughts-likes"> x {thought.hearts}</span>
-          <p className="date">Created at: {moment(thought.createdAt).fromNow()}</p>
-        </div>
+        <AllThoughts thought={thought} onLikesIncrease={onLikesIncrease} heart={heart} />
       ))}
     </div>
   );
