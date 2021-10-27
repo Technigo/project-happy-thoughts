@@ -30,7 +30,7 @@ export const App = ({ thought }) => {
 
     const updatedMessage = thoughts.map((thought) => {
       if (thought._id === likedId) {
-        thought.hearts = updatedThought.hearts
+        thought.hearts += 1
       }
       return thought
     })
