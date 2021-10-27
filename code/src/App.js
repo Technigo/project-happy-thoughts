@@ -1,41 +1,27 @@
 import React from 'react';
-import moment from 'moment';
+import moment from 'moment'; // getting moment to be able to format the time
 import { useEffect } from 'react';
 import { useState } from 'react';
+import heart from './images/red-heart.png'; // Getting the red heart emoji
 
-import { API_URL } from './utils/urls';
+import { API_URL } from './utils/urls'; // The URL to the API
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThoughts] = useState('');
-  const [newHearts, setNewHearts] = useState('');
 
+  // Getting the posts
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data));
   }, []);
 
-  const onHeartClick = (event) => {
-    event.preventDefault();
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message: newHearts }),
-    };
-
-    fetch(API_URL, options)
-      .then((res) => res.json())
-      .then((data) => setThoughts([data, ...newHearts]));
-  };
-
+  // Posting a new happy thought
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    const options = {
+    const optionsThoughts = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,9 +29,30 @@ export const App = () => {
       body: JSON.stringify({ message: newThought }),
     };
 
-    fetch(API_URL, options)
+    fetch(API_URL, optionsThoughts)
       .then((res) => res.json())
       .then((data) => setThoughts([data, ...thoughts]));
+  };
+
+  const onLikesIncrease = (thoughtId) => {
+    const options = {
+      method: 'POST',
+    };
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
+      .then((res) => res.json())
+      .then((data) => {
+        // vanilla JS map function that iterates through the items
+        const updatedThoughts = thoughts.map((item) => {
+          if (item._id === data._id) {
+            item.hearts += 1;
+            return item;
+          } else {
+            return item;
+          }
+        });
+
+        setThoughts(updatedThoughts);
+      });
   };
 
   return (
@@ -59,13 +66,16 @@ export const App = () => {
           onChange={(e) => setNewThoughts(e.target.value)}
           placeholder="Write your happy thought here.."
         />
-        <button type="submit"><img src="./images/red-heart.png" alt="Red heart emoji"/> Send happy thought! <img src="./images/red-heart.png" alt="Red heart emoji"/></button>
+        <button type="submit">
+          <img src={heart} alt="Red heart emoji" /> Send happy thought!{' '}
+          <img src={heart} alt="Red heart emoji" />
+        </button>
       </form>
       {thoughts.map((thought) => (
-        <div className="posted-thoughts" key={thought._id} onSubmit={onHeartClick}>
+        <div className="posted-thoughts" key={thought._id}>
           <p className="thought-message">{thought.message}</p>
-          <button type="submit" onClick={(f) => setNewHearts(f.target.value)}>
-          <img src="images/red-heart.png" alt="Red heart emoji"/>
+          <button onClick={() => onLikesIncrease(thought._id)}>
+            <img src={heart} alt="Red heart emoji" />
           </button>
           <span className="thoughts-likes"> x {thought.hearts}</span>
           <p className="date">Created at: {moment(thought.createdAt).fromNow()}</p>

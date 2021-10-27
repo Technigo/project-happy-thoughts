@@ -17,6 +17,10 @@ p, label, button {
   font-weight: 600;
 }
 
+img {
+  width:18px;
+}
+
 .mainContainer {
   min-width:992px;
   width:60vw;
@@ -66,4 +70,5 @@ p, label, button {
   width:50px;
   border-radius: 25px;
   text-align: center;
+  cursor: pointer;
 }
