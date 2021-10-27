@@ -1,15 +1,29 @@
+@import url(//db.onlinewebfonts.com/c/3c607a384582ce9e879008881a86351c?family=PrimaSans+BT);
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'PrimaSans BT';
+  font-style: roman;
+
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+::placeholder {
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .date {

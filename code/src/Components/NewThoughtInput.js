@@ -1,4 +1,5 @@
 import React from 'react';
+import './newThoughtInput.css';
 
 const NewThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
   return (
@@ -7,6 +8,7 @@ const NewThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
         What's making you happy right now?
         <input
           type="text"
+          placeholder="happy thought"
           value={newThought}
           onChange={(event) => setNewThought(event.target.value)} // skapa function (se förra veckan!)
         />
