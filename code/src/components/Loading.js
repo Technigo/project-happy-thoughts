@@ -1,6 +1,7 @@
 import React from 'react';
 import heart from '../images/red-heart.png';
 
+// This is a function that runs when the page gets data from the API
 const LoadingItem = () => {
 	return (
 		<div className="loading-overlay">

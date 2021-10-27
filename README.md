@@ -1,13 +1,15 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This project has been made using:
+HTML5, CSS3, React (useEffect, useState, props, form validation etc)
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this app you can post a happy thought and you can like others posts. When you enter your post what you write must be more than 5 characters or less than 140 characters long. When you are either below or above these numbers the button will deactivate and the error message will show. 
+You can also press the heart on others/your own post to show them support and like them. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I found this project very fun to work with. It took me a while to get the hang of but when I did I really liked it. I think that React is really fun to work with but when mixing it with Vanilla JS it can be hard sometimes. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://alisebrink-react-project-happy-thoughts.netlify.app/
