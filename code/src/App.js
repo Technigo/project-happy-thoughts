@@ -1,27 +1,31 @@
 import React, { useEffect, useState } from "react"
-// import moment from "moment"
 
 import ThoughtsInput from "components/ThoughtsInput"
 import ThoughtsList from "components/ThoughtsList"
 
-import { API_URL, API_URL_LIKE } from "reusables/urls"
+import { API_URL, LIKES_URL } from "reusables/urls"
 
+//These state properties stores and keeps track of current state  in thought list and thought input
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
-  // const [like, setNewLike] = useState("")
 
+  // This UseEffect hook in vorder to make a get req to get all thought when the app starts and is mounted
   useEffect(() => {
+    getThoughts()
+  }, [])
+
+  const getThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
-  }, [])
-
-  const onThoughtsInputChange = (e) => {
-    setNewThought(e.target.value)
   }
 
-  const onThoughtsInputSubmit = (event) => {
+  const onNewThoughtChange = (event) => {
+    setNewThought(event.target.value)
+  }
+
+  const handleInputSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -34,46 +38,40 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]))
+      .then((data) => {
+        getThoughts()
+      })
+  }
 
-    // fetch(API_URL_LIKE)
-    //   .then((res) => res.json())
-    //   .then((data) => setNewLike([data, ...thoughts]))
+  const handleLikesIncrease = (thoughtId) => {
+    const options = {
+      method: "POST",
+    }
+
+    fetch(LIKES_URL(thoughtId), options)
+      .then((res) => res.json())
+      .then((data) => {
+        getThoughts()
+      })
   }
 
   return (
     <div>
       <ThoughtsInput
-        onThoughtsInputSubmit={onThoughtsInputSubmit}
-        onThoughtsInputChange={onThoughtsInputChange}
+        handleInputSubmit={handleInputSubmit}
         newThought={newThought}
+        setNewThought={setNewThought}
+        onNewThoughtChange={onNewThoughtChange}
       />
-
-      <ThoughtsList thoughts={thoughts} setThoughts={setThoughts} />
+      {thoughts.map((thoughts) => (
+        <ThoughtsList
+          key={thoughts._id}
+          thoughts={thoughts}
+          setThoughts={setThoughts}
+          handleLikesIncrease={handleLikesIncrease}
+          onNewThoughtChange={onNewThoughtChange}
+        />
+      ))}
     </div>
   )
-}
-
-{
-  /* <form onSubmit={onThoughtSubmit}>
-<label htmlFor="NewThought">Write your thought</label>
-<input
-  id="newThought"
-  type="text"
-  value={newThought}
-  onChange={(e) => setNewThought(e.target.value)}
-/>
-<button type="submit">Send!</button>
-</form>
-
-{thoughts.map((thought) => (
-<div key={thought._id}>
-  {" "}
-  <p>{thought.message}</p>
-  <button>&hearts; {thought.hearts}</button>
-  <p className="date">
-    - Created at: {moment(thought.createdAt).fromNow()}
-  </p>
-</div>
-))} */
 }

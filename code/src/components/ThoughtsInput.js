@@ -2,20 +2,25 @@ import React from "react"
 
 const ThoughtsInput = ({
   onThoughtsInputSubmit,
-  onThoughtsInputChange,
+  setNewThought,
   newThought,
 }) => {
   return (
     <div>
       <form onSubmit={onThoughtsInputSubmit}>
-        <label htmlFor="NewThought">Write your thought</label>
+        <label htmlFor="NewThought">Share a kind thought:</label>
         <input
           id="newThought"
           type="text"
           value={newThought}
-          onChange={onThoughtsInputChange}
+          onChange={(e) => setNewThought(e.target.value)}
         />
-        <button type="submit">Send!</button>
+        <button
+          disabled={newThought.length < 5 || newThought.length > 140}
+          type="submit"
+        >
+          Send!
+        </button>
       </form>
     </div>
   )

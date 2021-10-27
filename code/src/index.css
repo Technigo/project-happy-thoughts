@@ -12,6 +12,30 @@ code {
     monospace;
 }
 
+p {
+  font-family: "Trispace", sans-serif;
+}
+
 .date {
-  text-decoration: italic;
+  color: lightgray;
+  float: right;
+  margin: 20px 20px 20px 0px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.thoughts-wrapper {
+  border: 1px solid black;
+  width: 500px;
+}
+
+button {
+  border-radius: 50%;
+  padding: 1%;
 }
