@@ -35,9 +35,7 @@ textarea {
 }
 .send-button:hover {
   background-color: lightsalmon;
-  transform: scale(1.05);
 }
-
 .thought-container {
   border: 1px solid black;
   max-width: 500px;
@@ -55,7 +53,7 @@ textarea {
 .heart-button {
   background-color: lightpink;
   border: none;
-  border-radius: 100%;
+  border-radius: 50%;
   height: 40px;
   width: 40px;
 }
@@ -68,4 +66,36 @@ span {
 }
 .date {
   color: grey;
+}
+
+.heart-animation {
+  height: 100px;
+  width: auto;
+}
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-animation {
+  animation: spinner infinite 1s;
+}
+
+@keyframes spinner {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
 }
