@@ -54,19 +54,22 @@ const Form = () => {
 
   return (
     <div className="main-container">
-      <ThoughtInput
-        onFormSubmit={handleFormSubmit}
-        newThought={newThought}
-        setNewThought={setNewThought}
-      />
-
-      {thoughts.map((thought) => (
-        <Thoughts
-          key={thought._id}
-          thought={thought}
-          onHeartClick={handleHeartClick}
+      <div className="input-container">
+        <ThoughtInput
+          onFormSubmit={handleFormSubmit}
+          newThought={newThought}
+          setNewThought={setNewThought}
         />
-      ))}
+      </div>
+      <div className="thougths-container">
+        {thoughts.map((thought) => (
+          <Thoughts
+            key={thought._id}
+            thought={thought}
+            onHeartClick={handleHeartClick}
+          />
+        ))}
+      </div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import "./thoughtInput.css";
 const ThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
   return (
     <form className="input-box" onSubmit={onFormSubmit}>
-      <label htmlFor="newThought">Type your thought: </label>
+      <label htmlFor="newThought">What's making you happy right now? </label>
       <input
         id="newThought"
         type="text"

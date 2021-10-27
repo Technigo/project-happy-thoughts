@@ -1,0 +1,17 @@
+.happy-header {
+  height: 200px;
+  background: rgb(252, 178, 206, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
+
+.happy-header-title {
+  margin: 0;
+}
+
+.happy-header-text {
+  font-style: italic;
+}

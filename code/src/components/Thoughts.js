@@ -7,11 +7,14 @@ const Thoughts = ({ thought, onHeartClick }) => {
     <div>
       <div className="happy-thoughts-list" key={thought._id}>
         <p>{thought.message}</p>
-        <p>Created: {moment(thought.createdAt).fromNow()}</p>
-        <button onClick={() => onHeartClick(thought._id)}>
-          {" "}
-          &hearts; {thought.hearts}
-        </button>
+        <div className="heart-and-created">
+          <button className="button" onClick={() => onHeartClick(thought._id)}>
+            {" "}
+            <p className="heart"> &hearts;</p>
+            <p className="hearts-count"> x {thought.hearts}</p>
+          </button>
+          <p className="created-text">{moment(thought.createdAt).fromNow()}</p>
+        </div>
       </div>
     </div>
   );

@@ -6,4 +6,5 @@
   box-shadow: 5px 10px;
   background: white;
   display: flex;
+  flex-direction: column;
 }
