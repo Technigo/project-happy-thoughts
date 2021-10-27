@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import moment from "moment";
+
+import { ThoughtForm } from "components/ThoughtForm";
+import { ThoughtItem } from "components/ThoughtItem";
 
 import { API_URL, LIKES_URL } from "utils/urls";
 
@@ -19,7 +21,7 @@ export const App = () => {
 
 	// console.log("Our data (thoughts)", thoughts);
 
-	const onFormSubmit = (event) => {
+	const handleFormSubmit = (event) => {
 		event.preventDefault();
 
 		// console.log("Form submitted", { newThought });
@@ -39,7 +41,7 @@ export const App = () => {
 			});
 	};
 
-	const onLikesIncrease = (thoughtId) => {
+	const handleLikesIncrease = (thoughtId) => {
 		const options = {
 			method: "POST",
 			// headers: {
@@ -68,44 +70,40 @@ export const App = () => {
 
 	return (
 		<main className="main-section">
-			<form className="form-container" onSubmit={onFormSubmit}>
-				<label htmlFor="newThought">What's making you happy right now?</label>
-				{/*prettier-ignore*/}
-				<input
-					className="input-field"
-					id="newThought"
-					type="text"
-					value={newThought}
-					onChange={(event) => setNewThought(event.target.value)}>
-				</input>
-				<button className="submit-btn" type="submit">
-					<span className="heart-icon" aria-label="heart icon">
-						❤️
-					</span>
-					<span className="btn-text">Send Happy Thought</span>
-					<span className="heart-icon" aria-label="heart icon">
-						❤️
-					</span>
-				</button>
-			</form>
+			{/*prettier-ignore*/}
+			<ThoughtForm
+				onFormSubmit={handleFormSubmit}
+				newThought={newThought}
+				setNewThought={setNewThought}
+			/>
 
-			{thoughts.map((thought) => (
-				<div className="thought-container" key={thought._id}>
-					<p>{thought.message}</p>
-					<div className="info-text-container">
-						<button className="like-btn" onClick={() => onLikesIncrease(thought._id)}>
-							{" "}
-							<div className="heart-icon-container">
-								<span className="heart-icon" aria-label="heart icon">
-									❤️
-								</span>
-							</div>
-							<span className="like-counter"> x {thought.hearts}</span>
-						</button>
-						<p className="time-info">{moment(thought.createdAt).fromNow()}</p>
-					</div>
-				</div>
-			))}
+			{/*prettier-ignore*/}
+			{thoughts.map((thought) =>
+				/*prettier-ignore*/
+				<ThoughtItem
+					key={thought._id}
+					thought={thought}
+					onLikesIncrease={handleLikesIncrease}
+				/>
+			)}
 		</main>
 	);
 };
+
+// {thoughts.map((thought) => (
+// 		<div className="thought-container" key={thought._id}>
+// 			<p>{thought.message}</p>
+// 			<div className="info-text-container">
+// 				<button className="like-btn" onClick={() => onLikesIncrease(thought._id)}>
+// 					{" "}
+// 					<div className="heart-icon-container">
+// 						<span className="heart-icon" aria-label="heart icon">
+// 							❤️
+// 						</span>
+// 					</div>
+// 					<span className="like-counter"> x {thought.hearts}</span>
+// 				</button>
+// 				<p className="time-info">{moment(thought.createdAt).fromNow()}</p>
+// 			</div>
+// 		</div>
+// 	));}

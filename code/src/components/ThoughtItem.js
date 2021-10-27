@@ -1,0 +1,22 @@
+import React from "react";
+import moment from "moment";
+
+export const ThoughtItem = ({ thought, onLikesIncrease }) => {
+	return (
+		<div className="thought-container">
+			<p>{thought.message}</p>
+			<div className="info-text-container">
+				<button className="like-btn" onClick={() => onLikesIncrease(thought._id)}>
+					{" "}
+					<div className="heart-icon-container">
+						<span className="heart-icon" aria-label="heart icon">
+							❤️
+						</span>
+					</div>
+					<span className="like-counter"> x {thought.hearts}</span>
+				</button>
+				<p className="time-info">{moment(thought.createdAt).fromNow()}</p>
+			</div>
+		</div>
+	);
+};
