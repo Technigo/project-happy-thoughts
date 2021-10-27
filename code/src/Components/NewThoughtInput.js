@@ -1,10 +1,6 @@
 import React from 'react';
 
-const NewThoughtInput = ({
-  onFormSubmit,
-  onNewThoughtsInputChange,
-  newThought,
-}) => {
+const NewThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
   return (
     <form onSubmit={onFormSubmit}>
       <label>
@@ -12,15 +8,18 @@ const NewThoughtInput = ({
         <input
           type="text"
           value={newThought}
-          onChange={onNewThoughtsInputChange}
+          onChange={(event) => setNewThought(event.target.value)} // skapa function (se förra veckan!)
         />
-        <button type="submit">
+        <button
+          disabled={newThought.length < 5 || newThought.length > 140}
+          type="submit"
+        >
           <span role="img" aria-label="heart">
-            ❤️
+            ❤️&emsp;
           </span>
           Send Happy Thought
           <span role="img" aria-label="heart">
-            ❤️
+            &ensp;❤️
           </span>
         </button>
       </label>

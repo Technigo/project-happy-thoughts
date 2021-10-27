@@ -1,28 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import moment from 'moment';
 
-import { API_URL } from './../utils/urls.js';
-
-const GetThought = ({ thoughts, setThoughts }) => {
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => setThoughts(data));
-  }, [setThoughts]);
-
+const GetThought = ({ thought, onLikesIncrease }) => {
   return (
     <div>
-      {thoughts.map((thought) => {
-        return (
-          <div key={thought._id}>
-            <p>{thought.message}</p>
-            <button> &hearts; {thought.hearts}</button>
-            <p className="date">
-              -Created at: {moment(thought.createdAt).fromNow()}
-            </p>
-          </div>
-        );
-      })}
+      <p>{thought.message}</p>
+      <button onClick={() => onLikesIncrease(thought._id)}>
+        <span role="img" aria-label="heart">
+          ❤️&ensp;{thought.hearts}
+        </span>
+      </button>
+      <p className="date">-Created at: {moment(thought.createdAt).fromNow()}</p>
     </div>
   );
 };

@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from 'react';
-// import moment from 'moment';
-import NewThoughtInput from './Components/NewThoughtInput';
-import GetThought from 'Components/GetThoughts';
 
-import { API_URL } from './utils/urls';
+import NewThoughtInput from './Components/NewThoughtInput';
+import GetThought from './Components/GetThoughts';
+import LoadingItem from './Components/LoadingItem';
+
+import { API_URL, LIKES_URL } from './utils/urls';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    fetchThoughts();
+  }, []);
+
+  const fetchThoughts = () => {
+    setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data));
-  }, []);
-  //fetch request should start when the component is mounted or whenever anything gets updated
-  const onNewThoughtsInputChange = (event) => {
-    setNewThought(event.target.value);
+      .then((data) => setThoughts(data))
+      .finally(() => setLoading(false));
   };
-  const onFormSubmit = (event) => {
+  //fetch request should start when the component is mounted or whenever anything gets updated
+
+  //if its going to be called by a child it is named handle instead of on
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
@@ -31,17 +38,50 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]));
+      .then((data) => {
+        fetchThoughts();
+      });
+  };
+
+  const handleLikesIncrease = (thoughtId) => {
+    const options = {
+      method: 'POST',
+    };
+
+    fetch(LIKES_URL(thoughtId), options)
+      .then((res) => res.json())
+      .then((data) => {
+        // //v1 increase likes only
+
+        // const UpdatedThoughts = thoughts.map((item) => {
+        //   if (item._id === data._id) {
+        //     item.hearts += 1;
+        //     return item;
+        //   } else {
+        //     return item;
+        //   }
+        // });
+
+        // setThoughts(UpdatedThoughts);
+        fetchThoughts();
+      });
   };
 
   return (
     <div>
+      {loading && <LoadingItem />}
       <NewThoughtInput
-        onFormSubmit={onFormSubmit}
+        onFormSubmit={handleFormSubmit}
         newThought={newThought}
-        onNewThoughtsInputChange={onNewThoughtsInputChange}
+        setNewThought={setNewThought}
       />
-      <GetThought thoughts={thoughts} setThoughts={setThoughts} />
+      {thoughts.map((thought) => (
+        <GetThought
+          key={thought._id}
+          thought={thought}
+          onLikesIncrease={handleLikesIncrease}
+        />
+      ))}
     </div>
   );
 };
