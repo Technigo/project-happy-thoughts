@@ -66,7 +66,7 @@ export const App = () => {
       {thoughts.map((thought) => (
         <div className="thoughts" key={thought._id}>
           <p>{thought.message}</p>
-          <button className="btn">
+          <button type="submit" className="btn">
             <span>❤</span>
           </button>
           <p>x{thought.hearts} </p>
