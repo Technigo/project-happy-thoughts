@@ -7,20 +7,39 @@
 .heart-circle{
     padding: 7px;
     border-radius: 50%;
+    border: none;
 }
 
 .red {
-     background: rgb(236, 193, 209);
+    background: rgb(236, 193, 209);
 }
 
 .gray {
- background: rgb(196, 208, 213);
+    background: rgb(196, 208, 213);
+}
+
+.red:hover {
+    background: rgb(236, 168, 193);
+}
+
+.gray:hover {
+    background: rgb(170, 200, 212);
 }
 
 .fa-heart {
     color: red;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+
+}
+
+.fa-heart:hover {
+    color: rgb(212, 22, 149);
+    transform: scale(1.1);
+
 }
 
 .like-counter{
-    margin: 0 10px
+    margin: 0 10px;
 }

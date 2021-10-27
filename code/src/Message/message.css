@@ -16,9 +16,8 @@
     color: black;
     text-align: justify;
     line-height: 20px;
-    margin: 0;
-    margin: 10px 0;
-
+    margin: 20px 0 10px 0;
+    word-wrap: break-word;
 }
 
 .message-botton-container{
