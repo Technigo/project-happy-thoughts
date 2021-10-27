@@ -1,14 +1,17 @@
 import React from 'react'
 import moment from 'moment'
 
-const MessageList = ({ thoughts }) => {
+const MessageList = ({ thoughts, onLikesIncrease }) => {
     return (
-        <section className="message-section">
+        <section>
         {thoughts.map((thought) => (
             <div className="thoughts-card" key={thought._id}>
                 <p className="thought-message">{thought.message}</p>
                 <div className="like-date">
-                <button className="like-button"> &hearts; {thought.hearts}</button>
+                <button className="like-button" onClick={() => onLikesIncrease(thought._id)}>
+                    {' '} 
+                    ❤️ {thought.hearts}
+                    </button>
                 <p className="date">
                     - Created at: {moment(thought.createdAt).fromNow()}
                 </p>
