@@ -1,5 +1,5 @@
 import React from 'react'
-/* import moment from 'moment' */
+import moment from 'moment' //a function, npm install moment
 
 const ThoughtItem = ({ thought, onLikesIncrease }) => {
     return (
@@ -7,11 +7,11 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
             <p>{thought.message}</p>
             <button className="likebtn" onClick={() => onLikesIncrease(thought._id)}>
                 {' '}
-                &hearts; {thought.hearts}
+                &hearts; {thought.hearts} {/* HTML heart entity */}
             </button>
 
             <p className="date">
-                - Created at: {/* {moment(thought.createdAt).fromNow()} */}
+                {moment(thought.createdAt).fromNow()}
             </p>
         </div>
     )

@@ -67,6 +67,12 @@ form {
   max-width: 350px;
 }
 
+.date {
+  color: grey;
+  /* display: flex;
+  text-align: end; */
+}
+
 .loading-overlay {
 	position: absolute;
 	top: 0;

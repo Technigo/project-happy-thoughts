@@ -13,7 +13,8 @@ export const App = () => {
   
   useEffect(() => {
     fetchThoughts()
-  }, [])
+  }, [])  //An empty array, as a second argument to the useEffect hook. 
+          //It make the useEffect happen only when the component gets mounted.
 
   const fetchThoughts = () => {
     setLoading(true)
@@ -26,7 +27,7 @@ export const App = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
-    const options = {
+    const options = { //const option to make the fetch more readable
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
