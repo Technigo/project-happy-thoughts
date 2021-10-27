@@ -2,21 +2,25 @@ import React, { useState, useEffect } from "react";
 
 import { ThoughtForm } from "components/ThoughtForm";
 import { ThoughtItem } from "components/ThoughtItem";
+import { LoadingItem } from "components/LoadingItem";
 
 import { API_URL, LIKES_URL } from "utils/urls";
 
 export const App = () => {
 	const [thoughts, setThoughts] = useState([]);
 	const [newThought, setNewThought] = useState("");
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		fetchThoughts();
 	}, []);
 
 	const fetchThoughts = () => {
+		setLoading(true);
 		fetch(API_URL)
 			.then((response) => response.json())
-			.then((data) => setThoughts(data));
+			.then((data) => setThoughts(data))
+			.finally(() => setLoading(false));
 	};
 
 	// console.log("Our data (thoughts)", thoughts);
@@ -70,6 +74,7 @@ export const App = () => {
 
 	return (
 		<main className="main-section">
+			{loading && <LoadingItem />}
 			{/*prettier-ignore*/}
 			<ThoughtForm
 				onFormSubmit={handleFormSubmit}
