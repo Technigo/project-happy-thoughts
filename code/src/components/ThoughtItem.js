@@ -3,9 +3,9 @@ import React from 'react'
 
 const ThoughtItem = ({ thought, onLikesIncrease }) => {
     return (
-        <div>
+        <div className="thought-container">
             <p>{thought.message}</p>
-            <button onClick={() => onLikesIncrease(thought._id)}>
+            <button className="likebtn" onClick={() => onLikesIncrease(thought._id)}>
                 {' '}
                 &hearts; {thought.hearts}
             </button>

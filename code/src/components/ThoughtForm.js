@@ -3,6 +3,7 @@ import Emoji from './Emoji'
 
 const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
     return (
+    <main>
         <form onSubmit={onFormSubmit}>
             <label htmlFor="newThought">What's making you happy right now?</label>
             <input
@@ -12,12 +13,12 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
                 onChange={(event) => setNewThought(event.target.value)}
             />
 
-            <button disabled={newThought.length < 5} type="submit">
-            <Emoji symbol=":heart:" label="heart"/> Send happy thought <Emoji symbol=":heart:" label="heart"/>
+            <button className="sendbtn" disabled={newThought.length < 5} type="submit">
+            <Emoji symbol=":heart:" label="heart"/> Send Happy Thought <Emoji symbol=":heart:" label="heart"/>
             </button>
 
-
         </form>
+    </main>
     )
 }
 
