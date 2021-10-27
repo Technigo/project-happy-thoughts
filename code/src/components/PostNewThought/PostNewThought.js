@@ -3,9 +3,14 @@ import "./PostNewThought.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-export const PostNewThought = ({ API_URL, onSetThoughtList, thoughtList }) => {
+export const PostNewThought = ({
+  API_URL,
+  onSetThoughtList,
+  thoughtList,
+  likedPostValue,
+}) => {
   const [newThought, setNewThought] = useState("");
-  console.log(newThought);
+  const [inputValue, setInputValue] = useState("");
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -34,24 +39,35 @@ export const PostNewThought = ({ API_URL, onSetThoughtList, thoughtList }) => {
       <label htmlFor="inputThoughts">What makes you happy right now?</label>
       <input
         value={newThought}
-        onChange={(event) => setNewThought(event.target.value)}
+        onChange={(event) => {
+          setNewThought(event.target.value);
+          setInputValue(event.target.value.length);
+        }}
         type="text"
         id="inputThoughts"
       ></input>
       <span
         style={{
-          color:
-            newThought.length > 4 && newThought.length < 141 ? "black" : "red",
+          color: inputValue > 4 && inputValue < 141 ? "black" : "red",
         }}
       >
         {newThought.length} / 140 characters
       </span>
-      <div>
-        <button className="submit-button">
+      <div className="container__button-like-post-value">
+        <button
+          className="submit-button"
+          disabled={inputValue < 5 || inputValue > 140}
+        >
           <FontAwesomeIcon icon={faHeart} className="icon__heart--red" />
           Send Happy Thougth
           <FontAwesomeIcon icon={faHeart} className="icon__heart--red" />
         </button>
+        <span
+          className="liked-post-value"
+          title="Amount of likes given on posts"
+        >
+          {likedPostValue}
+        </span>
       </div>
     </form>
   );

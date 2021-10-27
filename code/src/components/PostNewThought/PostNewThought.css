@@ -1,5 +1,5 @@
 form {
-  width: 400px;
+  width: 450px;
   height: 200px;
   margin: 10px;
   padding: 20px;
@@ -35,4 +35,10 @@ input {
 .icon__heart--red {
   color: red;
   margin: 0 10px;
+}
+
+.container__button-like-post-value {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
 }

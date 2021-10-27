@@ -1,13 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./ThoughtsList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 
-export const ThoughtsList = ({ API_URL, onSetThoughtList, thoughtList }) => {
-  console.log(thoughtList);
-
+export const ThoughtsList = ({
+  API_URL,
+  onSetThoughtList,
+  thoughtList,
+  likedPostValue,
+  onSetLikedPostValue,
+}) => {
   const postALike = (id) => {
     const options = {
       method: "POST",
@@ -47,10 +51,13 @@ export const ThoughtsList = ({ API_URL, onSetThoughtList, thoughtList }) => {
       {thoughtList.map((thought) => {
         return (
           <div className="thoughts__thought-container" key={thought._id}>
-            <span>{thought.message}</span>
+            <span className="thoughts__message">{thought.message}</span>
             <div className="thoughts__likes-time">
               <button
-                onClick={() => postALike(thought._id)}
+                onClick={() => {
+                  postALike(thought._id);
+                  onSetLikedPostValue(likedPostValue + 1);
+                }}
                 className="icon__heart"
                 style={{
                   backgroundColor: thought.hearts > 0 ? "#fbabab" : "#f3f2f2",
