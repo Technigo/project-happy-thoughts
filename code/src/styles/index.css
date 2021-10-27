@@ -9,6 +9,7 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,10 +18,10 @@ body {
   background-color: var(--background-color);
 }
 
-/* .loading-screen {
+.loading-screen {
   width: 100vw;
   height: 100vh;
-} */
+}
 
 .grid {
   display: grid;
