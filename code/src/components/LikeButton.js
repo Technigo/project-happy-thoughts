@@ -3,11 +3,28 @@ import Icon from "@mui/material/Icon";
 
 export const LikeButton = ({ onLikeButtonClick, thought }) => {
   return (
-    <div>
-      <button disabled={thought.liked} onClick={() => onLikeButtonClick(thought)}>
-        &nbsp;<Icon>favorite</Icon>&nbsp;
-      </button>
-      <span> x {thought.hearts}</span>
-    </div>
+    <>
+      <div className="like-button-wrapper">
+        {thought.liked && (
+          <div className="btn-border">
+            <button className="like-button" disabled>
+              &nbsp;
+              <Icon className="like-icon">favorite</Icon>
+              &nbsp;
+            </button>
+          </div>
+        )}
+        {!thought.liked && (
+          <div className="btn-border">
+            <button className="like-button" onClick={() => onLikeButtonClick(thought)}>
+              &nbsp;
+              <Icon className="like-icon">favorite_border</Icon>
+              &nbsp;
+            </button>
+          </div>
+        )}
+      </div>
+      <span className="sub-text-styling spacing-styling"> x {thought.hearts}</span>
+    </>
   );
 };

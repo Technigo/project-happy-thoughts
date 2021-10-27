@@ -82,7 +82,7 @@ export const App = () => {
             </div>
             <div>
               {thoughts.map((thought) => (
-                <div className="uploaded-thought-container" key={thought._id}>
+                <div className="each-thought-wrapper" key={thought._id}>
                   <Box sx={{ minWidth: 275 }}>
                     <ThoughtItem thought={thought} onLikeButtonClick={handleLikeButtonClick} />
                   </Box>

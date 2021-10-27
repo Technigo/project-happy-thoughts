@@ -54,7 +54,10 @@ export const NewThought = ({ thoughts, setThoughts }) => {
                 type="text"
                 placeholder="Share positive vibes"
                 value={newThought}
-                onChange={(e) => setNewThought(e.target.value)}
+                onChange={(e) => {
+                  setAlertShown("");
+                  setNewThought(e.target.value);
+                }}
                 style={{ borderColor: newThought.length >= 140 ? "red" : "inherit" }}
               />
               {alertShown !== "" && (

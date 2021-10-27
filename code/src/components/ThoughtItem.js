@@ -10,20 +10,22 @@ import CardContent from "@mui/material/CardContent";
 
 export const ThoughtItem = ({ thought, onLikeButtonClick }) => {
   return (
-    <div>
+    <>
       <Card variant="outlined">
         <CardContent>
-          <div className="inner-uploaded-thought-container">
+          <div className="inner-each-thought-container">
             <p className="thought-text">{thought.message}</p>
-            <CardActions>
-              <div>
-                <LikeButton onLikeButtonClick={onLikeButtonClick} thought={thought} />
-              </div>
-            </CardActions>
-            <p className="date">{moment(thought.createdAt).fromNow()}</p>
+            <div className="like-btn-post-moment-container">
+              <CardActions>
+                <div className="likes-info-wrapper">
+                  <LikeButton onLikeButtonClick={onLikeButtonClick} thought={thought} />
+                </div>
+              </CardActions>
+              <p className="date sub-text-styling">{moment(thought.createdAt).fromNow()}</p>
+            </div>
           </div>
         </CardContent>
       </Card>
-    </div>
+    </>
   );
 };
