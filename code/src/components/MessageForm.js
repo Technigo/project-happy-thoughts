@@ -19,9 +19,10 @@ return (
 		/>
         <div className="counter-container">
 			<p>{140-counter} / 140 characters left</p>
-		</div>
+		
         <button className="send-button" type="submit" disabled={newThought.length < 5}>
             <span aria-label="heart" role="img"> ❤️ </span> Send happy thought <span aria-label="heart" role="img"> ❤️ </span> </button>
+            </div>
     </form>
     </section>
     )  

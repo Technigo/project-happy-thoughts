@@ -8,6 +8,8 @@
 body {
   margin: 0;
   font-family: "Trispace", sans-serif;
+  /* font-size: 1vw; */
+  font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,26 +27,34 @@ main {
 }
 
 .form,
-.thoughts-card {
+.thoughts-container,
+.messages {
   display: flex;
   flex-direction: column;
-  overflow-wrap: break-word;
-  width: 330px;
-  background-color: var(--primary);
-  padding: 1rem;
-  border: 1px solid var(--fourth);
-  box-shadow: 8px 8px var(--fourth);
-  margin-bottom: 1rem;
-  border-radius: 2px;
-  margin-bottom: 2rem;
+}
+
+.form,
+.messages {
+  background: #f2f0f0;
+  border: 1px solid #000;
+  padding: 10px;
+  box-shadow: 7px 7px #000;
+  justify-content: center;
+  width: 100%;
+}
+
+.messages {
+  margin: 20px;
 }
 
 .thoughts-container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   width: 80%;
   margin: 20px;
+}
+
+.input-label {
+  line-height: 3em;
 }
 
 .input {
@@ -57,8 +67,9 @@ main {
   padding-left: 0.5rem;
 }
 
-.input-label {
-  margin-bottom: 0.5rem;
+.new-message {
+  resize: none;
+  line-height: 1.5em;
 }
 
 .send-button {
@@ -70,7 +81,6 @@ main {
   border: none;
   height: 48px;
   margin-top: 1rem;
-  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -115,4 +125,7 @@ main {
   100% {
     transform: rotate(360deg);
   }
+}
+
+@media screen {
 }

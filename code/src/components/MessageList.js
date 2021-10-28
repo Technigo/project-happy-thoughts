@@ -4,7 +4,9 @@ import moment from 'moment'
 const MessageList = ({ thoughts, onLikesIncrease }) => {
     return (
         <section className="thoughts-container">
-        {thoughts.map((thought) => (
+            {thoughts.map((thought) => (
+            <section className="messages" key={thought._id}>
+                
             <div className="thoughts-card" key={thought._id}>
                 <p className="thought-message">{thought.message}</p>
                 <div className="like-date">
@@ -17,8 +19,9 @@ const MessageList = ({ thoughts, onLikesIncrease }) => {
                 </p>
                 </div>
             </div>
-         ))}
-            
+         
+            </section>
+            ))}
         </section>
 
     )
