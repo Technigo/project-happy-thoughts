@@ -5,27 +5,30 @@ import { API_URL, LIKES_URL } from '../utils/urls';
 import Header from './Header';
 import FormInput from './FormInput';
 import ThoughtsList from './ThoughtsList';
-// import LikeButton from './LikeButton';
+import Loader from './Loader';
 
 const HappyThoughts = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchThoughts();
   }, []);
 
   const fetchThoughts = () => {
+    setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data));
+      .then((data) => setThoughts(data))
+      .finally(() => setLoading(false));
   };
 
-  const onThoughtsChange = (event) => {
+  const handleThoughtsChange = (event) => {
     setNewThought(event.target.value);
   };
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
@@ -48,7 +51,7 @@ const HappyThoughts = () => {
   };
   // console.log(thoughts);
 
-  const onLikesIncrease = (thoughtId) => {
+  const handleLikesIncrease = (thoughtId) => {
     const options = {
       method: 'POST',
     };
@@ -72,16 +75,14 @@ const HappyThoughts = () => {
 
   return (
     <div className='thoughts-container'>
+      {loading && <Loader />}
       <Header />
       <FormInput
-        // thoughts={thoughts}
-        // setThoughts={setThoughts}
         newThought={newThought}
-        // setNewThought={setNewThought}
-        onThoughtsChange={onThoughtsChange}
-        onFormSubmit={onFormSubmit}
+        onThoughtsChange={handleThoughtsChange}
+        onFormSubmit={handleFormSubmit}
       />
-      <ThoughtsList thoughts={thoughts} onLikesIncrease={onLikesIncrease} />
+      <ThoughtsList thoughts={thoughts} onLikesIncrease={handleLikesIncrease} />
     </div>
   );
 };
