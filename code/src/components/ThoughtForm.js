@@ -3,8 +3,8 @@ import React from "react";
 const ThoughtForm = ({
   onFormSubmit,
   newThought,
-  setNewThought,
-  handleKeyPress,
+  count,
+  handleInputChange,
 }) => {
   return (
     <form onSubmit={onFormSubmit}>
@@ -14,23 +14,27 @@ const ThoughtForm = ({
             <h1>Type your thought</h1>
           </label>
           <textarea
+            className="new-thought-input"
             rows="3"
             id="newThought"
-            className="new-thought-input"
             type="text"
             placeholder="type here.."
             value={newThought}
-            onChange={e => setNewThought(e.target.value)}
+            onChange={handleInputChange}
             onSubmit={event => event.target.reset()}
-            onKeyPress={handleKeyPress}
           />
+          <p className={count > 140 ? "red-text" : "counter"}>
+            number of letters: {count}/140
+          </p>
         </div>
         <button
           className="submitBtn"
           disabled={newThought.length < 5}
           type="submit"
         >
-          &#10084;&#65039; Send happy thought! &#10084;&#65039;
+          <span role="img" aria-label="heart">
+            &#10084;&#65039; Send happy thought! &#10084;&#65039;
+          </span>
         </button>
       </div>
     </form>

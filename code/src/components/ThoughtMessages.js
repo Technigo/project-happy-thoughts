@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-const ThoughtItem = ({ thought, onLikesIncrease }) => {
+const ThoughtMessages = ({ thought, onLikesIncrease }) => {
   return (
     <section className="thoughts-card">
       <div>
@@ -11,7 +11,10 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
           onClick={() => onLikesIncrease(thought._id)}
         >
           {" "}
-          <span> &#10084;&#65039; </span>{" "}
+          <span aria-label="hearts" role="img">
+            {" "}
+            &#10084;&#65039;{" "}
+          </span>{" "}
         </button>
         <span className="total-likes">x{thought.hearts}</span>
         <p className="date">{moment(thought.createdAt).fromNow()}</p>
@@ -20,4 +23,4 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
   );
 };
 
-export default ThoughtItem;
+export default ThoughtMessages;

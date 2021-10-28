@@ -22,9 +22,14 @@ textarea {
   display: flex;
 }
 
+.red-text {
+  color: red;
+}
+
 h1 {
   margin-top: 0;
   margin-left: 30px;
+  font-size: 18px;
 }
 
 form {
@@ -60,6 +65,20 @@ form {
 button {
   font-family: "Roboto Mono", monospace;
   border: none;
+}
+
+.counter {
+  float: right;
+  font-size: 10px;
+  margin-right: 20px;
+  color: gray;
+}
+
+.red-text {
+  color: red;
+  float: right;
+  font-size: 10px;
+  margin-right: 20px;
 }
 
 .heart-button {
