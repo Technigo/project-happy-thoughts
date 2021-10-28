@@ -25,14 +25,25 @@ export const App = () => {
     event.preventDefault();
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => console.log("POST DATA", data));
+      .then((data) => setThoughts([data, ...thoughts]));
   };
+
   /* 2-Function for the onClick button in the Form */
   const onChangebtn = (e) => {
     setNewThought(e.target.value);
   };
 
-  console.log("yes", thoughts, newThought); //first happens
+/* 3-Function for the likes */
+const onLikesIncrease = (thoughtId) => {
+  const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+  }
+
+  fetch(`POST https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
+  .then(res => res.json())
+  .then(data => console.log(data))
+}
 
   return (
     <>
@@ -51,7 +62,9 @@ export const App = () => {
         {thoughts.map((thought) => (
           <div key={thought._id}>
             <p>{thought.message}</p>
-            <button> &hearts; {thought.hearts}</button>
+            <button onClick={() => onLikesIncrease(thought._id)}>
+              {" "}
+               &hearts; {thought.hearts}</button>
             <p className="date">
               - Created at: {moment(thought.createdAt).fromNow()}
             </p>
