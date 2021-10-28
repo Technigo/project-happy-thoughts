@@ -5,7 +5,7 @@
 }
 
 body {
-  margin: 10px;
+  /* margin: 10px; */
   font-family: 'PrimaSans BT';
   font-style: roman;
 
@@ -16,9 +16,16 @@ body {
   -moz-osx-font-smoothing: grayscale; */
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+.app__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* width: min-content; */
 }
 
 ::placeholder {

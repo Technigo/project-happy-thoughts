@@ -1,0 +1,11 @@
+.get-thought__button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.get-thoughts__button {
+  border-radius: 50%;
+  height: fit-content;
+}

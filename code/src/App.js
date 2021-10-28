@@ -69,7 +69,7 @@ export const App = () => {
   };
 
   return (
-    <div>
+    <div className="app__wrapper">
       {loading && <LoadingItem />}
       <NewThoughtInput
         onFormSubmit={handleFormSubmit}

@@ -3,27 +3,29 @@ import './newThoughtInput.css';
 
 const NewThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
   return (
-    <form onSubmit={onFormSubmit}>
+    <form className="new-thought-input__form" onSubmit={onFormSubmit}>
       <label>
         What's making you happy right now?
-        <input
-          type="text"
-          placeholder="happy thought"
+        <textarea
+          rows="2"
           value={newThought}
           onChange={(event) => setNewThought(event.target.value)} // skapa function (se förra veckan!)
         />
-        <button
-          disabled={newThought.length < 5 || newThought.length > 140}
-          type="submit"
-        >
-          <span role="img" aria-label="heart">
-            ❤️&emsp;
-          </span>
-          Send Happy Thought
-          <span role="img" aria-label="heart">
-            &ensp;❤️
-          </span>
-        </button>
+        <div className="new-thought-input__button-wrapper">
+          <button
+            className="new-thought-input__button"
+            disabled={newThought.length < 5 || newThought.length > 140}
+            type="submit"
+          >
+            <span role="img" aria-label="heart">
+              ❤️&ensp;
+            </span>
+            Send Happy Thought
+            <span role="img" aria-label="heart">
+              &ensp;❤️
+            </span>
+          </button>
+        </div>
       </label>
     </form>
   );
