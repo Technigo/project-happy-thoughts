@@ -31,6 +31,32 @@ export const App = () => {
       .then(newThought => setThoughts([newThought, ...thoughts]))
   }
 
+  const onLikesIncrease = (thoughtId) => {
+    const options = {
+      method: 'POST',
+    }
+
+    fetch(
+      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`,
+      options
+    )
+      .then(res => res.json())
+      .then(data => {
+
+        //v1 increase amount of likes only
+
+        const updatedThoughts = thoughts.map(item => {
+          if (item._id === data._id) { //iteratig over all of the objects looking for the item. increase amount of likes for one specific thought
+            item.hearts += 1
+            return item
+          } else {
+            return item
+          }
+        })
+        setThoughts(updatedThoughts)
+      })
+  }
+  
   return ( //since state is updated, component renders some JS6. After JS6 rendered first time then useEffect gets triggered with console log
     <div>
       <form onSubmit={onFormSubmit}>
@@ -46,9 +72,12 @@ export const App = () => {
       {thoughts.map(thought => (
         <div key={thought._id}>
           <p>{thought.message}</p>
-          <button>&hearts; {thought.hearts}</button>
+          <button onClick={() => onLikesIncrease(thought._id)}> 
+            {''}
+            &hearts; {thought.hearts}
+          </button>
           <p className="date">
-            Created date: {moment(thought.createdAt).fromNow()}
+            Created {moment(thought.createdAt).fromNow()}
           </p>
         </div>
       ))}
