@@ -5,14 +5,17 @@ const ThoughtsList = ({ thought, onLikesIncrease }) => {
   return (
     <div className="container">
       <div className="thoughts-wrapper">
-        <p>{thought.message}</p>
-        <button onClick={() => onLikesIncrease(thought._id)}>
+        <p className="thought-message">{thought.message}</p>
+        <button
+          className="like-btn"
+          onClick={() => onLikesIncrease(thought._id)}
+        >
           <span role="img" aria-label="heart">
             ❤️
-          </span>{" "}
-          {thought.hearts}
+          </span>
         </button>
-        <p className="date">posted {moment(thought.createdAt).fromNow()}</p>
+        <span className="likes-counter">x {thought.hearts}</span>
+        <p className="date">Posted {moment(thought.createdAt).fromNow()}</p>
       </div>
     </div>
   )

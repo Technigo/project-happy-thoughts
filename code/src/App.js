@@ -9,6 +9,7 @@ import { API_URL, LIKES_URL } from "reusables/urls"
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
+  const [counter, setCounterValue] = useState(0)
 
   // const onNewThoughtChange = (event) => {
   //   setNewThought(event.target.value)
@@ -42,6 +43,7 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts()
+        setNewThought("")
       })
   }
 
@@ -63,6 +65,8 @@ export const App = () => {
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
         setNewThought={setNewThought}
+        counter={counter}
+        setCounterValue={setCounterValue}
       />
 
       {thoughts.map((thought) => (
