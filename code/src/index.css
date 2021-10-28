@@ -30,31 +30,23 @@ main {
   padding: 10px 15px 5px;
   display: flex;
   flex-direction: column;
-  /* font-size: 10px; */
 }
 
-/* .thought-input {
-  line-height: 4em;
+.count-text {
+  line-height: 6em;
   border: 2px solid rgb(191, 191, 191);
   margin-top: 12px;
   font-family: 'Roboto Mono', monospace;
-} */
+  font-size: 10px;
+}
 
 .count-text-error {
-  line-height: 4em;
+  line-height: 5em;
   border: 2px solid rgb(191, 191, 191);
   margin-top: 12px;
   font-family: 'Roboto Mono', monospace;
   font-size: 10px;
   color: red;
-}
-
-.count-text {
-  line-height: 4em;
-  border: 2px solid rgb(191, 191, 191);
-  margin-top: 12px;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 10px;
 }
 
 .counter-text {

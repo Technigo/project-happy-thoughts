@@ -12,7 +12,6 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([]) 
   const [newThought, setNewThought] = useState('')
   const [loading, setLoading]  = useState(false)
-  const [counter, setCounter] = useState(0)
 
 
   // Mount app
@@ -33,11 +32,6 @@ export const App = () => {
     // Where loading ends (Page finished loading and thoughts are shown)
   }
 
-
-  // const handleNewThoughtChange = (event) => {
-  //   setNewThought(event.target.value)
-  //   setCounter(event.target.value.length)
-  // }
 
   // Handles new thoughts 
 
@@ -61,21 +55,8 @@ export const App = () => {
 
     // Clears input-field and let's you post a new thought
     setNewThought('')
-    setCounter()
   }
 
-
-  // Handles the maximum of 140 characters
-
-  const handleNewThoughtSubmit = (event) => {
-      const count = event.target.value
-      const characterCount = count.length 
-      if (characterCount <= 140) {
-        setNewThought(count)
-      } else if (characterCount > 140) {
-        return setNewThought(newThought)
-      }
-  }
 
   // Handles new likes
 
@@ -101,9 +82,7 @@ export const App = () => {
         <ThoughtForm 
           onFormSubmit={handleFormSubmit}
           newThought={newThought}
-          // onNewThoughtChange={handleNewThoughtChange} 
           setNewThought={setNewThought}
-          counter={counter}
         />
       {thoughts.map((thought) => (
         <ThoughtItem
