@@ -1,13 +1,9 @@
 import React from 'react'
 import moment from 'moment'
-import { Oldest } from 'Oldest'
 
-export const Newest = ({ thoughts, onLikeClick, filter }) => {
+export const Newest = ({ thoughts, onLikeClick }) => {
   return (
     <>
-      {filter === 'Oldest' && (
-        <Oldest thoughts={thoughts} onLikeClick={onLikeClick} />
-      )}
       {thoughts.map((thought) => (
         <div
           className='message-container'

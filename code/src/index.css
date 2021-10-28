@@ -60,6 +60,10 @@ form {
   overflow-wrap: break-word;
 }
 
+.disabled-textarea {
+  color: red;
+}
+
 .submit-button {
   border-radius: 20px;
   border: none;

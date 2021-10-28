@@ -46,6 +46,7 @@ export const App = () => {
     <div className='container'>
       <div className='main'>
         <Form thoughts={thoughts} setThoughts={setThoughts} />
+
         <Messages
           thoughts={thoughts}
           setThoughts={setThoughts}

@@ -20,7 +20,7 @@ export const Messages = ({
           onChange={handleFilterChange}
           onSubmit={onSortSubmit}
         >
-          <option value=''>Filter thoughts</option>
+          <option value=''>Sort thoughts</option>
           <option value='Newest'>Newest</option>
           <option value='Oldest'>Oldest</option>
         </select>

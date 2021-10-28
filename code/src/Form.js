@@ -35,6 +35,9 @@ export const Form = ({ thoughts, setThoughts }) => {
           <h1>What's making you happy right now?</h1>
         </label>
         <textarea
+          className={
+            counter < 6 || counter > 140 ? 'disabled-textarea' : 'textarea'
+          }
           rows='3'
           id='newThought'
           type='text'
@@ -42,6 +45,7 @@ export const Form = ({ thoughts, setThoughts }) => {
           onChange={onNewThoughtChange}
           placeholder='Minimum 6 characters and maximum 140 characters'
         />
+
         <p>{140 - counter} / 140 characters left</p>
 
         <button
