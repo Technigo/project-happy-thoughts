@@ -54,7 +54,7 @@ export const App = () => {
 	};
 
 	return (
-		<div>
+		<div className="body">
       {loading && <LoadingItem />}
 			<ThoughtForm
 				onFormSubmit={handleFormSubmit}
