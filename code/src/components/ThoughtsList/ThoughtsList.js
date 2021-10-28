@@ -1,51 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./ThoughtsList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faHeartBroken } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 
 export const ThoughtsList = ({
-  API_URL,
-  onSetThoughtList,
   thoughtList,
   likedPostValue,
   onSetLikedPostValue,
+  onPostALike,
 }) => {
-  const postALike = (id) => {
-    const options = {
-      method: "POST",
-    };
-
-    fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
-      options
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        fetch(API_URL)
-          .then((res) => {
-            return res.json();
-          })
-          .then((data) => {
-            onSetThoughtList(data);
-          })
-          .catch((err) => {});
-      });
-  };
-
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        onSetThoughtList(data);
-      })
-      .catch((err) => {});
-  }, [API_URL, onSetThoughtList]);
-
   return (
     <div className="thoughts__container">
       {thoughtList.map((thought) => {
@@ -55,7 +19,7 @@ export const ThoughtsList = ({
             <div className="thoughts__likes-time">
               <button
                 onClick={() => {
-                  postALike(thought._id);
+                  onPostALike(thought._id);
                   onSetLikedPostValue(likedPostValue + 1);
                 }}
                 className="icon__heart"
