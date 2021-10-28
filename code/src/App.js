@@ -1,9 +1,11 @@
 import React from 'react'
+import  HappyThoughts  from './components/HappyThoughts'
+
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
+    <div className= "wrapper">
+      <HappyThoughts/>
     </div>
   )
 }

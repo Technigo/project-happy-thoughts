@@ -1,0 +1,42 @@
+.thought {
+  order: 5px solid #00668d;
+  margin: 25px 10px;
+  border: #ccc solid 1px;
+  box-shadow: 10px 10px 1px #333;
+  background: #f2f0f0;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.heart{
+  color: #f93e2f;
+  background-color: #d0d0d0;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.75rem;
+  width:40px;
+  height:40px;
+  padding:0;
+  margin:0 10px 0 0;
+  cursor: pointer;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.likes{
+  display:flex;
+}
+.other-details{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.other-details p{
+  color:rgb(123, 124, 124);
+  font-size:  0.9rem; 
+}

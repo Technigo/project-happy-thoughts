@@ -1,0 +1,29 @@
+.new-thought {
+  order: 5px solid #00668d;
+  margin: 10px;
+  border: #ccc solid 1px;
+  box-shadow: 5px 5px 1px #333;
+  background: #f2f0f0;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.new-message{
+    border:rgb(123, 124, 124) 1px solid;
+    height:4rem
+}
+
+.submit-button{
+
+    border-radius: 22%;
+    width: 186px;
+    height: 42px;
+    margin-top: 1.5rem;
+    border: none;
+    background-color: rgb(223, 156, 176);
+    color: #333;
+    cursor: pointer;
+}
