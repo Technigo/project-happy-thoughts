@@ -2,25 +2,26 @@ import React from "react";
 import { useState } from "react";
 
 const Create = () => {
-	const [time, setTime] = useState("");
+	
 	const [message, setMessage] = useState("");
-	const [hearts, setHearts] = useState("");
+
 
 	const handleSubmit = (e) => {
-		/*  e.preventDefault(); */
-		const todo = { message, hearts };
+		 e.preventDefault(); 
+	
 
 		fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", {
-			method: "POST",
-			headers: { "content-type": "application/json" },
-			body: JSON.stringify(todo),
-		}).then(() => {
-			console.log("new todo added");
-		});
-	};
+			method: 'POST', 
+			headers: {
+				'Content-Type': 'application/json'
+			  },
+			  body: JSON.stringify({ message })  
+			})
+		
+	}
 
 	return (
-		<div className="messageContainer" onSubmit={handleSubmit}>
+		<form className="messageContainer" onSubmit={handleSubmit}>
 			<div className="contentTextArea">
 				<div>
 					<label>What´s making you happy right now?</label>
@@ -30,7 +31,6 @@ const Create = () => {
 					<textarea
 						type="text"
 						required
-				
 						minLength="3"
 						maxLength="140"
 						value={message}
@@ -44,7 +44,7 @@ const Create = () => {
         </span></button>
 				</div>
 			</div>
-		</div>
+		</form>
 	);
 };
 

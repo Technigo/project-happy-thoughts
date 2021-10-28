@@ -153,9 +153,27 @@ textarea:focus {
 	font-weight: 600;
 	line-height: 20px;
 	color: #37352f;
+	word-break: normal;
+	line-break:normal;
+	overflow: hidden;
+    overflow-wrap: break-word;
 	
 
 }
+
+
+/* Icon and timestamp */
+
+
+.iconAndTime{
+
+width: 100%;
+display: flex;
+justify-content: space-between;
+
+}
+
+
 
 .like{
 	padding-bottom: -10px;
@@ -182,4 +200,13 @@ font-weight: 100;
 
 
 }
+
+.time{
+
+
+	font-size: 0.8em;
+	color: rgb(170, 168, 168);
+
+}
+
 

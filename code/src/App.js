@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 import Create from 'Create'
-import AddDataTodoList from 'AddDataTodoList'
+import AddDataToList from 'AddDataToList'
 
 
 export const App = () => {
 
-
-
-  return (
+return (
 
 
 <div className="container">
@@ -18,7 +16,7 @@ export const App = () => {
 </div>
 
 <div className="listContainer"> 
-<AddDataTodoList />
+<AddDataToList />
 </div>
 
 

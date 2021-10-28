@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import TodoList from "TodoList";
+import List from "List";
 
-const AddDataTodoList = () => {
-	const [todos, setTodos] = useState();
+const AddDataToList = () => {
+	const [messages, setMessages] = useState();
 
 	
 
@@ -12,11 +12,11 @@ const AddDataTodoList = () => {
 				return res.json();
 			})
 			.then((data) => {
-				setTodos(data);
+				setMessages(data);
 			});
 	}, []);
 
-	return <div>{todos && <TodoList todos={todos} />}</div>;
+	return <div>{messages && <List messages={messages} />}</div>;
 };
 
-export default AddDataTodoList;
+export default AddDataToList;
