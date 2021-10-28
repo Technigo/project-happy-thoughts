@@ -8,7 +8,6 @@ import ThoughtsItem from './components/ThoughtsItem';
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
-  // const [countChars, setCountChars] = useState(0)
 
   useEffect(() => {
     fetchThoughts()
@@ -39,15 +38,9 @@ export const App = () => {
       
       // v1
       // setThoughts([data, ...thoughts])))
+      
+      setNewThought('')
   }
-
-  // const numberOfChars = (event) => {
-  //   let chars = event.target.value
-  //   // chars.length = setCountChars
-  //   // setCountChars = countChars
-  //   console.log(chars.length)
-  //   // return chars.length
-  // } 
 
   const handleLikesIncrease = (thoughtId) => {
     const options = {
@@ -68,8 +61,6 @@ export const App = () => {
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
         setNewThought={setNewThought}
-        // countChars={countChars}
-        // numberOfChars={numberOfChars}
       />
 
       {thoughts.map((thought) => (

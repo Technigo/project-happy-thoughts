@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Inconsolata', monospace;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 23px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -49,7 +49,7 @@ body {
 
 textarea {
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
   border: lightgray 1.5px solid;
   font-family: 'Inconsolata', monospace;
 }
@@ -82,4 +82,20 @@ textarea {
 
 p {
   margin: 10px 0;
+}
+
+.char-counter {
+  text-align: right;
+  margin: 0;
+  font-size: 13px;
+  font-style: italic;
+  color: grey;
+}
+
+.red {
+  color: red;
+}
+
+.liked {
+  background-color: #F5AAAD;
 }
