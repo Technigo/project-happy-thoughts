@@ -1,7 +1,7 @@
 import React from "react"
 import moment from "moment"
 
-const ThoughtItem = ({ thought, onLikesIncrease, }) => {
+const ThoughtItem = ({ thought, onLikesIncrease }) => {
     return (
         <div className="thought-wrapper">
         <p className="message-text">{thought.message}</p>

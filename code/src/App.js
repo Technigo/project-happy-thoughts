@@ -58,6 +58,18 @@ export const App = () => {
   }
 
 
+  // Handles the maximum of 140 characters
+
+  // const handleNewThoughtSubmit = (event) => {
+  //     const count = event.target.value
+  //     const characterCount = count.length 
+  //     if (characterCount <= 140) {
+  //       setNewThought(count)
+  //     } else if (characterCount > 140) {
+  //       return setNewThought(newThought)
+  //     }
+  // }
+
   // Handles new likes
 
     const handleLikesIncrease = (thoughtId) => {
@@ -82,6 +94,7 @@ export const App = () => {
         <ThoughtForm 
           onFormSubmit={handleFormSubmit}
           newThought={newThought}
+          // onNewThoughtSubmit={handleNewThoughtSubmit} 
           setNewThought={setNewThought}
         />
       {thoughts.map((thought) => (
