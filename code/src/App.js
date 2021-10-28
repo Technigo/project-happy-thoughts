@@ -1,56 +1,79 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
 
-import { API_URL } from './utils/urls';
-import { LIKES_URL } from './utils/urls';
+import ThoughtForm from './components/ThoughtForm';
+import ThoughtItem from './components/ThoughtItem';
+import LoadingItem from './components/Loading';
+
+import { API_URL, LIKES_URL } from './utils/urls';
+
 
 export const App = () => {
-	const [thoughts, setThoughts] = useState([]);
-	const [newThought, setNewThought] = useState('');
+	const [thoughts, setThoughts] = useState([]); //state with list of thoughts
+	const [newThought, setNewThought] = useState(''); //state to keep track of new thoughts being typed in the input field
+	const [loading, setLoading] = useState(false); //loading icon
 
+
+
+//basic useEffect hook to make a getRequest to get all of the thought when the app is mounted
 	useEffect(() => {
-		fetch(API_URL)
-			.then((res) => res.json())
-			.then((data) => setThoughts(data));
+		fetchThoughts();
 	}, []);
 
-	const onFormSubmit = (event) => {
+	const fetchThoughts = () => {
+		setLoading(true);
+		fetch(API_URL)
+			.then((res) => res.json())
+			.then((data) => setThoughts(data))
+			.finally(() => setLoading(false));
+	};
+
+	const handleFormSubmit = (event) => {
 		event.preventDefault();
 
 		const options = {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json',
+				'Content-Type': 'application/json', 
 			},
-			body: JSON.stringify({ message: newThought }),
+			body: JSON.stringify({ message: newThought }), //
 		};
 
-		fetch(API_URL, options)
+		fetch(API_URL, options) //option is neeed otherwise is going to be getMetod
 			.then((res) => res.json())
-			.then((data) => setThoughts([data, ...thoughts]));
+			.then((data) => {
+
+				fetchThoughts();
+			});
+	};
+
+	//function that handles increase of likes and fetch the unique URL. And this should be a POST request.
+	const handleLikesIncrease = (thoughtId) => { 
+		const options = {
+			method: 'POST',
+		};
+
+		fetch(LIKES_URL(thoughtId), options)
+			.then((res) => res.json())
+			.then((data) => {
+				fetchThoughts();
+			});
 	};
 
 	return (
 		<div>
-			<form onSubmit={onFormSubmit}>
-				<label htmlFor="newThought">Type your thought</label>
-				<input
-					id="newThought"
-					type="text"
-					value={newThought}
-					onChange={(e) => setNewThought(e.target.value)}
-				/>
-				<button type="submit">Send thought!</button>
-			</form>
+			{loading && <LoadingItem />}
+			<ThoughtForm
+				onFormSubmit={handleFormSubmit}
+				newThought={newThought}
+				setNewThought={setNewThought}
+			/>
 
-			{thoughts.map((thought) => (
-				<div key={thought._id}>
-					<p>{thought.message}</p>
-					<button> &hearts; {thought.hearts}</button>
-					<p className="date">
-						- Created at: {moment(thought.createdAt).fromNow()}
-					</p>
-				</div>
+			{thoughts.map((thought) => ( //code responsible to display all thoughts
+				<ThoughtItem
+					key={thought._id}
+					thought={thought}
+					onLikesIncrease={handleLikesIncrease}
+				/>
 			))}
 		</div>
 	);

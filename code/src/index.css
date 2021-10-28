@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
- 
+@import url(//db.onlinewebfonts.com/c/395410b1fd4cca8cfb17bd78a9c34889?family=Helvetica+Monospaced);
+
+
+
 
 body {
 	margin: 10px;
@@ -8,13 +10,15 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	-webkit-appearance: none;
+	-webkit-input: none;
+	-webkit-button: none;
 }
+
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
 
-.date {
-	font-style: italic;
-}
+

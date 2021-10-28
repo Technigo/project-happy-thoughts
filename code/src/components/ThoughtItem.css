@@ -1,0 +1,44 @@
+.thought-form {
+    margin: 20px auto;
+    border: 2px solid black;
+    width: 500px;
+    box-shadow: 5px 5px;
+    padding: 20px;
+    word-wrap: break-word;
+    font-family: Helvetica Monospaced;
+  }
+
+  .heart-likes-date-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+}
+
+  .heart-click-button {
+    padding: 10px 12px 10px 12px;
+    margin-right: 7px;
+    border: none;
+    border-radius: 50%;
+  }
+
+  .heart-click-button:focus {     
+    background-color: #FFADAD;  
+  }
+
+  .emoji {
+      padding-right: 4px;
+  }
+
+  .x-likes {
+    font-size: 14px;
+    color: #BABABA;
+  }
+
+  .date {
+    color: #BABABA;
+    font-size: 12px;
+    display: block;
+}
+  

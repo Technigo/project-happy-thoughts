@@ -1,0 +1,60 @@
+.happy-thought-form {
+    margin: 20px auto;
+    border: 2px solid black;
+    width: 500px;
+    box-shadow: 5px 5px;
+    padding: 20px;
+    background-color: #F2F0F0;
+    font-family: Helvetica Monospaced;
+}
+
+.happy-thought-textarea {
+    margin-top: 13px;
+    font-size: 12px;
+    font-family: Helvetica Monospaced;
+    width: 470px;
+    height: 80px;
+    max-width: 470px;
+    max-height: 150px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+::placeholder {
+    font-size: 10px;
+}
+
+.happy-header {
+    font-weight: bold;
+}
+
+.happy-thought-button {
+    -webkit-appearance: none;
+    font-family: Helvetica Monospaced;
+    margin-top: 10px;
+    width: 250px;
+    font-size: 14px;
+    border: 2px solid #FFADAD;
+    border-radius: 30px;
+    background-color: #FFADAD;
+    color: black;
+    cursor: pointer;
+}
+
+.happy-thought-button:disabled, form-button[disabled] {
+    border: 1px solid #999999;
+    background-color: #F2F0F0;
+    color: #666666;
+}
+
+
+.thought-length {
+    line-height: 5px;
+    font-size: 12px;
+}
+
+.characters {
+    font-size: 12px;
+}
