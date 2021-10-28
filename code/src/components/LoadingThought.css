@@ -1,0 +1,107 @@
+.loading-thought-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-sizing: content-box;
+    background-color: rgba(185, 198, 233, 0.781);
+    padding: 10px;
+    width: 45vh;
+    border-radius: 10px;
+    margin-top: 3vh;
+}
+
+.loading-thought-text {
+    font-size: 25px;
+    color: rgba(42, 45, 54, 0.753);
+    font-weight: bold;
+}
+
+.loading-dots {
+    display: flex;
+    column-gap: 2px;
+    margin-left: 4px;
+}
+
+.loading-dots span {
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    -webkit-animation: loading-dots 1s infinite ease-in-out;
+    animation: loading-dots 1s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(2) {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.loading-dots span:nth-child(3) {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.loading-dots span:nth-child(4) {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+@keyframes loading-dots {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        background: rgb(161, 224, 253);
+    }
+    25% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        background: rgb(145, 122, 160);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        background: rgb(250, 235, 215);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        background: rgb(161, 224, 253);
+    }
+}
+
+@-webkit-keyframes loading-dots {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        background: rgb(145, 122, 160);
+    }
+    25% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        background: rgb(250, 235, 215);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        background: rgb(161, 224, 253);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        background: rgb(250, 235, 215);
+    }
+}

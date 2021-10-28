@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import './ThoughtForm.css'
 import { API_URL } from "utils/urls";
+import LoadingThought from 'components/LoadingThought'
 
 const ThoughtForm = ({ setNewThought, setThoughts, thoughts, newThought }) => {
     const [counter, setCounter] = useState(0)
+    const [loading, setLoading] = useState(false)
 
     const onNewThoughtChange = (event) => {
         setNewThought(event.target.value)
@@ -11,6 +13,7 @@ const ThoughtForm = ({ setNewThought, setThoughts, thoughts, newThought }) => {
     }
 
     const handleFormSubmit = (event) => {
+        setLoading(true)
         event.preventDefault()
 
         const options = {
@@ -23,25 +26,31 @@ const ThoughtForm = ({ setNewThought, setThoughts, thoughts, newThought }) => {
 
         fetch(API_URL, options)
             .then((res) => res.json())
-            .then((data) => setTimeout(() => setThoughts([data, ...thoughts]), 1500))
+            .then((data) => setTimeout(() => setThoughts([data, ...thoughts]), 2000))
+            .finally(() => setTimeout(() => setLoading(false), 2000))
         setNewThought('')
         setCounter(0)
     }
 
     return (
-        <form onSubmit={handleFormSubmit} className="form-container">
-            <label className="label-title" htmlFor="newThought">What's making you happy right now?</label>
-            <textarea className="input-form"
-                id="newThought"
-                type="text"
-                value={newThought}
-                onChange={onNewThoughtChange}
-                minLength="4"
-                maxLength="140"
-            />
-            <p className="character-counter">{140 - counter}/140 characters left</p>
-            <button disabled={newThought.length < 5} type="submit" className="submit-button">Send a happy thought!</button>
-        </form>
+        <div>
+            <form onSubmit={handleFormSubmit} className="form-container">
+                <label className="label-title" htmlFor="newThought">What's making you happy right now?</label>
+                <textarea className="input-form"
+                    align="top"
+                    id="newThought"
+                    type="text"
+                    value={newThought}
+                    onChange={onNewThoughtChange}
+                    minLength="4"
+                    maxLength="140"
+                />
+                <p className="character-counter">{140 - counter}/140 characters left</p>
+                <button disabled={newThought.length < 5} type="submit" className="submit-button">Send a happy thought!</button>
+            </form>
+
+            {loading && <LoadingThought />}
+        </div>
     )
 }
 
