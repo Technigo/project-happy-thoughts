@@ -1,8 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-import { ReactComponent as Heart } from "./images/heart.svg";
-import { ReactComponent as EmptyHeart } from "./images/empty-heart.svg";
+import { Heart, EmptyHeart } from "./iconComponents/icons";
 
 const SingleThought = ({
   oneThought,
@@ -12,24 +11,26 @@ const SingleThought = ({
 }) => {
   return (
     <div key={oneThought._id} className="card">
-      <p>{oneThought.message}</p>
-      <p>{moment(oneThought.createdAt).fromNow()}</p>
-      <div>
-        <button
-          disabled={likedThoughts.includes(oneThought._id)}
-          className="heart-button"
-          onClick={() => {
-            likeThisThought(oneThought._id);
-            setLikedThoughts([...likedThoughts, oneThought._id]);
-          }}
-        >
-          {likedThoughts.includes(oneThought._id) ? (
-            <Heart className="icon" />
-          ) : (
-            <EmptyHeart className="icon" />
-          )}
-        </button>
-        <span id={oneThought._id}>{oneThought.hearts}</span>
+      <p className="happy-thought">{oneThought.message}</p>
+      <div className="inline-wrapper">
+        <div className="like">
+          <button
+            disabled={likedThoughts.includes(oneThought._id)}
+            className="heart-button"
+            onClick={() => {
+              likeThisThought(oneThought._id);
+              setLikedThoughts([...likedThoughts, oneThought._id]);
+            }}
+          >
+            {likedThoughts.includes(oneThought._id) ? (
+              <Heart />
+            ) : (
+              <EmptyHeart />
+            )}
+          </button>
+          <span id={oneThought._id}> x {oneThought.hearts}</span>
+        </div>
+        <p>{moment(oneThought.createdAt).fromNow()}</p>
       </div>
     </div>
   );

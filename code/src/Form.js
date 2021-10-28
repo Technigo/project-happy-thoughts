@@ -12,7 +12,7 @@ const Form = ({ message, postMessage, setMessage, error }) => {
         postMessage(message);
       }}
     >
-      <label>
+      <label className="message-label">
         {error && (
           <div className="error">
             <p>
@@ -20,7 +20,7 @@ const Form = ({ message, postMessage, setMessage, error }) => {
             </p>
           </div>
         )}
-        Please share a happy thought!
+        <h1 className="form-title">Please share a happy thought!</h1>
         <textarea
           value={message}
           onChange={(event) => {
@@ -28,19 +28,26 @@ const Form = ({ message, postMessage, setMessage, error }) => {
             setMessageLength(event.target.value.length);
           }}
           className="text-input"
+          placeholder="Type your thought here"
         ></textarea>
-        <p>
-          Characters left:{" "}
+      </label>
+      <div className="inline-wrapper">
+        <button
+          disabled={messageLength < 5 || messageLength > 141}
+          type="submit"
+          className="btn-send-msg"
+        >
+          Add a happy thought!
+        </button>
+        <p className="characters-left">
+          characters left:
           {messageLength > 141 ? (
             <span className="too-long"> {140 - messageLength}</span>
           ) : (
             <span> {140 - messageLength}</span>
           )}
         </p>
-      </label>
-      <button disabled={messageLength < 5 || messageLength > 141} type="submit">
-        Add a happy thought!
-      </button>
+      </div>
     </form>
   );
 };

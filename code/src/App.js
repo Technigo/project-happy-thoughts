@@ -71,7 +71,12 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="content-wrapper">
+      <div className="likes-counter">
+        <h2 className="likes-text">
+          Today you have liked {likedThoughts.length} happy thoughts
+        </h2>
+      </div>
       <div className="card form">
         <Form
           message={message}
@@ -79,9 +84,6 @@ export const App = () => {
           setMessage={setMessage}
           error={error}
         />
-      </div>
-      <div>
-        <h1> Today you have liked {likedThoughts.length} happy thoughts</h1>
       </div>
 
       {thoughts.map((oneThought) => (
