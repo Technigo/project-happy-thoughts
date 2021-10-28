@@ -38,7 +38,7 @@ form {
 
 .input-container {
   background-color: rgb(224, 220, 220);
-  margin-top: 10px;
+  padding-top: 10px;
 }
 
 .submitBtn {
