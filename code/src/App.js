@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import moment from 'moment'
 import FormNewThought from './components/FormNewThought'
+import ThoughtsList from './components/ThoughtsList'
+import LoadingSpinner from './components/LoadingSpinner'
+import Header from 'components/Header'
 
 import { API_URL, LIKES_URL } from './utils/urls'
 
@@ -9,57 +11,90 @@ export const App = () => {
   // States
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   useEffect(() => {
+    fetchThoughts()
+  }, [])
+
+  const fetchThoughts = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(data => setThoughts(data))
-  }, [])
+      .finally(() => {
+        setLoading(false)
+      })
+      .catch(error => console.error(error))
+  }
 
-  const onLikeSubmit = (id) => {
-    const likes = {
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+    const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/text'
-      }
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message: newThought })
     }
-    // helps to change the likes on thought depending on which thought user clicked
-    const onLikeChange = thoughts.map(thought => {
-      if (thought._id === id) {
-        thought.hearts += 1
-      }
-      return thought
-    })
+
+    fetch(API_URL, options)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        //if error, then invoke error function
+        if (data.errors) {
+          handleError(data)
+        }
+        else {
+          // no error, fetch thoughts after loading spinner, empty the input and empty the error
+          setLoading(true)
+          setTimeout(() => fetchThoughts(), 200);
+          setNewThought('')
+          setError('')
+        }
+      })
+      .catch(error => console.error(error))
+  }
+
+  const handleError = (data) => {
+    const errorMessage = data.errors.message.kind
+
+    if (errorMessage === 'required') {
+      setError('You cannot send an empty message!')
+    } else if (errorMessage === 'minlength') {
+      setError('Your message should be at least 5 characters!')
+    } else if (errorMessage === 'maxlength') {
+      setError('Your message is too long! Max 140 characters')
+    }
+  }
+
+  const handleLikesIncrease = (id) => {
+    const likes = {
+      method: 'POST',
+    }
 
     fetch(LIKES_URL(id), likes)
       .then(res => res.json())
-      .then(() => setThoughts(onLikeChange))
+      .then((data) => fetchThoughts())
+      .catch(error => console.error(error))
   }
 
-  // console.log(thoughts)
+
   return (
     <main className="main-container">
+      <Header />
       <FormNewThought
         newThought={newThought}
         setNewThought={setNewThought}
-        thoughts={thoughts}
-        setThoughts={setThoughts}
+        onFormSubmit={handleFormSubmit}
+        error={error}
       />
-
-      {thoughts.map(thought => (
-        <div key={thought._id} className="thought-card">
-          <p className="thought-title">{thought.message}</p>
-          <div className="like-time-container">
-            <div className="likes-amount-container">
-              <button onClick={() => onLikeSubmit(thought._id)} className={thought.hearts > 0 ? 'liked-heart' : 'unliked-heart'}>
-                <span aria-label="heart" role="img">❤️</span>
-              </button>
-              <p className="likes-counter"> x {thought.hearts}</p>
-            </div>
-            <p className="date">{moment(thought.createdAt).fromNow()}</p>
-          </div>
-        </div >
-      ))}
+      {loading && <LoadingSpinner />}
+      <ThoughtsList
+        thoughts={thoughts}
+        onLikeSubmit={handleLikesIncrease}
+      />
     </main >
   )
 }

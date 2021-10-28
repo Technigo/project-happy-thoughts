@@ -4,8 +4,10 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   /* background-color: #fbe8ef; */
+  /* background-color: #f8e3f0; */
+  background-color: #fcf1f7;
   font-family: 'Roboto Mono', monospace;
 }
 
@@ -15,13 +17,81 @@ code {
 }
 * {
   box-sizing: border-box;
-}
+} 
 
 .main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  font-size: 18px;
+  color: #ffadad;
+  height: 100px;
+  text-align: center;
+}
+/* .wrapper{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+} */
+.container{
+  margin: 30px;
+  position: relative;
+}
+.heart-pulse {
+  width: 20px;
+  height: 20px;
+  background-color: #ef4234;
+  transform: rotate(45deg);
+  transition: 0.5s linear;
+  animation: pulse 4s linear infinite;
+}
+
+.heart-pulse::before,
+.heart-pulse::after {
+  content: "";
+  position: absolute;
+  background-color: #ef4234;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+.heart-pulse::before {
+  top:0;
+  left:-10px;
+}
+.heart-pulse::after {
+  top:-10px;
+  left: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  25%{
+    transform: rotate(45deg) scale(0.8);
+  }
+  50%{
+    transform: rotate(45deg) scale(1);
+  }
+  75% {
+    transform: rotate(45deg) scale(0.8);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
 }
 
 .input-form, .thought-card {
@@ -31,27 +101,23 @@ code {
 }
 
 .input-form {
-  height: 220px;
-  margin-top: 50px;
-  width: 300px;
+  height: 210px;
+  width: 90%;
   background-color: #f2f0f0;
   padding: 15px;
 }
 
 .thought-card {
-  width: 300px;
+  background-color:#fff;
+  width: 90%;
   padding: 15px;
-}
-.new-thought {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
 }
+
 .header-form {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 800;
-  margin-bottom: 15px;
 }
 
 .input-message {
@@ -60,7 +126,15 @@ code {
   border: 1px solid grey;
   padding: 10px;
   font-size: 16px;
+  margin-top: 10px;
 }
+.input-message:hover {
+  border-color:pink;
+}
+.input-message:focus {
+  outline: pink solid 2px;
+}
+
 .form-button {
   width: 220px;
   height: 40px;
@@ -75,6 +149,10 @@ code {
   padding: 0 10px;
   background-color: #ffadad;
 }
+.form-button:disabled{
+  opacity: 0.5;
+}
+
 .thought-title {
   font-size: 16px;
   overflow-wrap: break-word;
@@ -112,12 +190,14 @@ code {
   border-radius: 50%;
   cursor: pointer;
 }
-.heart {
-  border: none;
-  display: flex;
-  font-size: 16px;
-  padding: 5px;
+.unliked-heart:hover{
+  transform: scale(1.2);
+  background-color:#ffadad;
 }
+.liked-heart:hover {
+  transform: scale(1.2);
+}
+
 ::placeholder{
   font-size: 14px;
 }
@@ -134,7 +214,7 @@ code {
 }
 .count {
   text-align: right;
-  font-size: 10px;
+  font-size: 13px;
 }
 .black-color-counter {
   color: black;
@@ -143,21 +223,111 @@ code {
   color: #cb3532;
 }
 
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid grey;
+  border-radius: 50%;
+  border-left: 5px solid white;
+  animation: spinner infinite 0.5s;
+}
+.loading-overlay {
+  position: absolute;
+  top:0;
+  right: 0;
+  bottom:0;
+  left: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+.error-message {
+  font-size: 10px;
+  margin: 0px;
+  color: red;
+}
+
 @media (min-width: 768px) {
   .input-form, .thought-card {
-    width: 500px;
+    width: 550px;
+  }
+  .count{
+    font-size: 14px;
+  }
+  .heart{
+    font-size: 15px;
+  }
+  .header-form{
+    font-size: 17px;
+  }
+  .input-message{
+    margin-top: 15px;
+  }
+  .animation-box {
+    margin-top: 20px;
   }
 }
 
 @media (min-width: 992px) {
   .input-form, .thought-card {
-    width: 650px;
+    width: 700px;
   }
   .input-form{
     height: 250px;
     padding: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
   }
   ::placeholder{
     font-size: 18px;
+  }
+  .count{
+    font-size: 16px;
+  }
+  .header-form{
+    font-size: 18px;
+  }
+  .input-message{
+    margin-top: 20px;
+  }
+  .header {
+    font-size: 35px;
+  }
+  .animation-box {
+    margin-top: 30px;
+  }
+  .error-message{
+    font-size: 12px;
+  }
+  .heart-pulse {
+    width: 40px;
+    height: 40px;
+  }
+  .heart-pulse::before,
+  .heart-pulse::after {
+    width: 40px;
+    height: 40px;
+}
+  .heart-pulse::before {
+  left:-20px;
+  }
+  .heart-pulse::after {
+  top:-20px;
+  }
+  .container:before{
+    top: 48px;
+    left:-10px;
+    width: 60px;
+    height:15px; 
   }
 }
