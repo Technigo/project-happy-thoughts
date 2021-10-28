@@ -28,7 +28,7 @@ footer {
   font-family: "Courier New",
     monospace;
 
-  padding: 50px;
+  padding: 30px;
   text-align: center;
 }
 
@@ -76,15 +76,19 @@ margin: 0 auto;
   grid-column: span 2;
 }
 
+
+
+
+
+
+
 .heart {
   border-radius: 50%;
   margin: 10px;
   border: none;
 }
 
-.button {
-  border:none;
-}
+
 
 .send-button{
   background-color: #ffadad;
