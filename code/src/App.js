@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import moment from "moment";
 
-import { ReactComponent as Heart } from "./images/heart.svg";
+import Form from "./Form";
+import SingleThought from "./SingleThought";
 
-const API_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-let API_LIKE_URL = "";
+import { API_URL, API_LIKE_URL } from "./utils/urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -14,9 +13,11 @@ export const App = () => {
   const getMessages = () => {
     fetch(API_URL)
       .then((response) => response.json())
-      .then((data) => setThoughts(data));
+      .then((data) => {
+        console.log("WE are fetching from API");
+        setThoughts(data);
+      });
   };
-
   // This function will post the message to API
   const postMessage = (messageToPost) => {
     fetch(API_URL, {
@@ -34,8 +35,7 @@ export const App = () => {
 
   // Function to post a message on the API
   const likeThisThought = (id) => {
-    API_LIKE_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
-    fetch(API_LIKE_URL, {
+    fetch(API_LIKE_URL(id), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,42 +59,20 @@ export const App = () => {
 
   return (
     <div>
-      <div className="thought-card">
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-            postMessage(message);
-          }}
-        >
-          <label>
-            Please share a happy thought!
-            <textarea
-              value={message}
-              onChange={(event) => {
-                setMessage(event.target.value);
-              }}
-              className="text-input"
-            ></textarea>
-          </label>
-          <button type="submit">Add a happy thought!</button>
-        </form>
+      <div className="card">
+        <Form
+          message={message}
+          postMessage={postMessage}
+          setMessage={setMessage}
+        />
       </div>
-      {thoughts.map((singleThought) => (
-        <div key={singleThought._id} className="thought-card">
-          <p>{singleThought.message}</p>
-          <p>{moment(singleThought.createdAt).fromNow()}</p>
-          <div>
-            <button
-              className="heart-link"
-              onClick={() => {
-                likeThisThought(singleThought._id);
-              }}
-            >
-              <Heart className="icon" />
-            </button>
-            <span id={singleThought._id}>{singleThought.hearts}</span>
-          </div>
-        </div>
+
+      {thoughts.map((oneThought) => (
+        <SingleThought
+          key={oneThought._id}
+          oneThought={oneThought}
+          likeThisThought={likeThisThought}
+        />
       ))}
     </div>
   );
