@@ -13,6 +13,13 @@
     background-size: cover;
 }
 
+.loading-text {
+    position: absolute;
+    bottom: 55vh;
+    font-size: 25px;
+    color: antiquewhite;
+}
+
 .circle {
     --sz: 8vmin;
     --tX: 0;
@@ -47,5 +54,12 @@
 @keyframes attract-blue {
     to {
         transform: translateX(calc(var(--sz) * -1 - calc(var(--hm) / 4)));
+    }
+}
+
+@media (min-width: 768px) {
+    .loading-text {
+        font-size: 40px;
+        bottom: 57vh;
     }
 }

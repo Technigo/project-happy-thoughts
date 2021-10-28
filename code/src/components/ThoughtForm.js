@@ -23,8 +23,7 @@ const ThoughtForm = ({ setNewThought, setThoughts, thoughts, newThought }) => {
 
         fetch(API_URL, options)
             .then((res) => res.json())
-            .then((data) => setThoughts([data, ...thoughts]))
-
+            .then((data) => setTimeout(() => setThoughts([data, ...thoughts]), 1500))
         setNewThought('')
         setCounter(0)
     }
