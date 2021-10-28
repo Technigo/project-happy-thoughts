@@ -3,6 +3,8 @@ import ThoughtForm from "./components/ThoughtForm";
 import ThoughtItem from "./components/ThoughtItem";
 import LoadingItem from  './components/Loading';
 import { API_URL, LIKES_URL } from "./utils/urls";
+import { Header } from 'Header'
+// import { Footer } from 'Footer'
 
 export const App = () => {
 	const [thoughts, setThoughts] = useState([]);
@@ -52,9 +54,9 @@ export const App = () => {
 
 		const thoughtsWithoutUpdatedThought = thoughts;
 	};
-
 	return (
 		<div className="body">
+			<Header />
       {loading && <LoadingItem />}
 			<ThoughtForm
 				onFormSubmit={handleFormSubmit}

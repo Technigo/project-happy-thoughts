@@ -7,8 +7,10 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 			<input className="answer"
 				id="newThought"
 				type="text"
+				placeholder="Share your happy thoughts💕"
 				value={newThought}
-				onChange={(e) => setNewThought(e.target.value)}
+				onChange={(e) => 
+					setNewThought(e.target.value)}
 			/>
 			<button className="send-button" disabled={newThought.length < 5} type="submit">
 				💖Send Happy Thought💖

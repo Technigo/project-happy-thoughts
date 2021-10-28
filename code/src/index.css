@@ -1,21 +1,14 @@
 /* body part */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(0deg, #FF9292 54%, #FFCCD2 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  width: 100%;
+  font-family: 'Cairo', sans-serif;
 }
 
 /* loading */
@@ -127,6 +120,8 @@ code {
 .answer {
   padding: 30px;
   border: solid black 1px;
+  font-size: larger;
+  font-family: 'Cairo', sans-serif;
 }
 
 .send-button {
@@ -139,6 +134,7 @@ align-items: center ;
 color: black;
 background-color:#FF9292;
 width: fit-content;
+font-family: 'Cairo', sans-serif;
 }
 
 .send-button:hover {
