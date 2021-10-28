@@ -72,9 +72,9 @@ h1 {
   box-shadow: 10px 10px var(--box-shadow-color);
 }
 
-.post-a-thought-container {
+/* .post-a-thought-container {
   margin-bottom: 48px;
-}
+} */
 
 .post-a-thought-container h2 {
   font-size: 20px;
@@ -193,6 +193,35 @@ footer p {
   align-items: center;
 }
 
+.refresh-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.refresh-button {
+  font-family: 'Courier New';
+  font-size: 16px;
+  font-weight: 700;
+  margin: 10px auto;
+  border: 2px solid var(--border-color);
+  border-radius: 20px;
+  padding: 4px 12px;
+  background: black;
+  color: white;
+}
+
+.refresh-button:hover,
+.refresh-button:focus {
+  cursor: pointer;
+  background: white;
+  color: black;
+}
+
+.reload-symbol {
+  font-size: 18px;
+}
+
 @keyframes rainbow {
   to {
     background-position: 20vw;
@@ -244,9 +273,9 @@ footer p {
     width: 96%;
     box-shadow: 5px 5px var(--box-shadow-color);
   }
-  .post-a-thought-container {
+  /* .post-a-thought-container {
     margin-bottom: 14px;
-  }
+  } */
   .post-a-thought-container h2 {
     font-size: 18px;
   }
@@ -263,6 +292,9 @@ footer p {
   }
   .heart-timestamp-container {
     font-size: 14px;
+  }
+  .heart-emoji {
+    padding: 8px 14px 8px 12px;
   }
   footer {
     font-size: 14px;

@@ -13,12 +13,16 @@ export const App = () => {
   const [newThought, setNewThought] = useState('');
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
+  const fetchThoughts = () => {
     setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
       .then((json) => setRecentThoughts(json))
       .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchThoughts();
   }, []);
 
   const onNewThoughtChange = (event) => {
@@ -83,6 +87,17 @@ export const App = () => {
           placeholder='React is making me happy!'
           // eslint-disable-next-line react/jsx-closing-bracket-location
         />
+        <div className='refresh-button-container'>
+          <button
+            aria-label='Refresh the feed'
+            type='button'
+            className='refresh-button'
+            onClick={fetchThoughts}
+            // eslint-disable-next-line react/jsx-closing-bracket-location
+          >
+            Refresh Feed <span className='reload-symbol'>⟳</span>
+          </button>
+        </div>
         {loading && <LoadingSpinner />}
         <RecentThoughtsList
           recentThoughts={recentThoughts}
