@@ -78,6 +78,7 @@ export const App = () => {
       .then(res => res.json())
       .then((data) => fetchThoughts())
       .catch(error => console.error(error))
+
   }
 
 

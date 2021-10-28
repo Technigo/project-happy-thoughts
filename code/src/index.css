@@ -201,12 +201,12 @@ code {
 ::placeholder{
   font-size: 14px;
 }
-.unliked-heart{
+/* .unliked-heart{
   background-color: #eaeaea;
 }
 .liked-heart{
   background-color: #ffadad;
-}
+} */
 .likes-counter {
   color: #a6a6a6;
   font-size: 13px;

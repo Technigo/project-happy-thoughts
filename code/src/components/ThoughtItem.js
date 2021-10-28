@@ -4,17 +4,19 @@ import moment from 'moment'
 
 const ThoughtItem = ({ thought, onLikeSubmit }) => {
     const [clicks, setClicks] = useState(0)
+    const [color, setColor] = useState("eaeaea");
 
     const onIncreaseClicks = (id) => {
         setClicks(clicks + 1)
         onLikeSubmit(id)
+        setColor("#ffadad")
     }
     return (
         <div className="thought-card">
             <p className="thought-title">{thought.message}</p>
             <div className="like-time-container">
                 <div className="likes-amount-container">
-                    <button onClick={() => onIncreaseClicks(thought._id)} className={thought.hearts > 0 ? 'liked-heart' : 'unliked-heart'}>
+                    <button onClick={() => onIncreaseClicks(thought._id)} className="unliked-heart" style={{ backgroundColor: color }}>
                         <span aria-label="heart" role="img" className="heart">❤️</span>
                     </button>
                     <p className="likes-counter"> x {thought.hearts}</p>

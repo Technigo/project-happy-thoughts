@@ -10,9 +10,6 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="animation-box">
-                <span className='heart-animation' role='img' aria-label='heart'> ❤️ { }❤️ { } ❤️ </span>
-            </div> */}
         </h1>
     );
 }
