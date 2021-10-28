@@ -7,6 +7,7 @@
   background-color: white;
   transition: ease-in 0.1s;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .like-button:disabled {
@@ -18,8 +19,7 @@
 .btn-border {
   border-radius: 50%;
   border: 2px solid #f53536;
-  width: 50px;
-  height: 50px;
+  box-sizing: border-box;
 }
 
 .like-button:hover:not(:disabled) {
@@ -59,9 +59,5 @@
   /* https://stackoverflow.com/questions/36482126/how-to-enlarge-the-svg-icon-in-material-ui-iconbuttons */
   .like-icon {
     transform: scale(1.3);
-  }
-  .btn-border {
-    width: 60px;
-    height: 60px;
   }
 }
