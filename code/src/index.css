@@ -299,4 +299,10 @@ footer p {
   footer {
     font-size: 14px;
   }
+  .refresh-button {
+    margin: 20px auto;
+  }
+  .reload-symbol {
+    font-size: 20px;
+  }
 }
