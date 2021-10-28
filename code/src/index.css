@@ -288,13 +288,12 @@ footer p {
   }
   .post-a-thought-container button {
     font-size: 14px;
-    padding: 10px 22px;
   }
   .heart-timestamp-container {
     font-size: 14px;
   }
   .heart-emoji {
-    padding: 8px 14px 8px 12px;
+    padding: 8px 12px 8px 12px;
   }
   footer {
     font-size: 14px;
