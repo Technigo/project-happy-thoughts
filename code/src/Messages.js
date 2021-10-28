@@ -14,13 +14,12 @@ export const Messages = ({
 
   return (
     <>
-      <div className='filter-container'>
+      <div className='sort-container'>
         <select
           value={filter}
           onChange={handleFilterChange}
           onSubmit={onSortSubmit}
         >
-          <option value=''>Sort thoughts</option>
           <option value='Newest'>Newest</option>
           <option value='Oldest'>Oldest</option>
         </select>

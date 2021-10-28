@@ -46,7 +46,7 @@ export const Form = ({ thoughts, setThoughts }) => {
           placeholder='Minimum 6 characters and maximum 140 characters'
         />
 
-        <p>{140 - counter} / 140 characters left</p>
+        <p className='characters-left'>{140 - counter} / 140 characters left</p>
 
         <button
           className='submit-button'

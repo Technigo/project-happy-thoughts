@@ -5,7 +5,7 @@ import { Messages } from 'Messages'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
-  const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useState('Newest')
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value)
@@ -14,7 +14,7 @@ export const App = () => {
   //Fetches the messages from the API
   useEffect(() => {
     fetchThoughts()
-  }, [])
+  }, [handleFilterChange])
 
   const fetchThoughts = () => {
     fetch(API_URL)
