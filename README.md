@@ -1,13 +1,17 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+Funky notepad for sharing positive vibes. This React app is fetching "Happy Thoughts" API , provide an opportunity to add your thoughts, like other users' posts and keep track of your likes.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Tech Stack: React, React Hooks, JSX, Material UI, CSS.
 
-## The problem
+## Cool Features:
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- User-friendly input validation matching API requirements
+- Likes Counter that keeps track of user likes and store data in LocalStorage
+- Update Button allows user to get latest thoughts without page reload.
+- During initial fetch Spinner is shown.
+- Fancy styling touches (animated header, thoughts "like button")
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://mary-snopok-happy-thoughts-react-app.netlify.app/

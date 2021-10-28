@@ -18,7 +18,7 @@ export const NewThought = ({ thoughts, setThoughts }) => {
   const onButtonClick = (e) => {
     e.preventDefault();
     if (newThought === "") {
-      setAlertShown("Ops , you forgot to type your thought.");
+      setAlertShown("Oops , you forgot to type your thought.");
     } else if (newThought.length <= 5) {
       setAlertShown(`Your thought has only ${newThought.length} characters. Please add at least 5 symbols.`);
     } else {

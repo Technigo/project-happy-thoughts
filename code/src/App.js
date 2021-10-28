@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 // MUI components import
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Slide from "@mui/material/Slide";
 import Box from "@mui/material/Box";
 // Internal components
 import { NewThought } from "components/NewThought";
@@ -94,11 +95,13 @@ export const App = () => {
             </div>
             <div>
               {thoughts.map((thought) => (
-                <div className="each-thought-wrapper" key={thought._id}>
-                  <Box sx={{ minWidth: 275 }}>
-                    <ThoughtItem thought={thought} onLikeButtonClick={handleLikeButtonClick} />
-                  </Box>
-                </div>
+                <Slide direction="right" in key={thought._id}>
+                  <div className="each-thought-wrapper" key={thought._id}>
+                    <Box sx={{ minWidth: 275 }}>
+                      <ThoughtItem thought={thought} onLikeButtonClick={handleLikeButtonClick} />
+                    </Box>
+                  </div>
+                </Slide>
               ))}
             </div>
             <UpdateButton onFetchThought={handleFetchThoughts} />
