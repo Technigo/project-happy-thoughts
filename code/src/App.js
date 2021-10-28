@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import moment from 'moment';
-import { API_URL } from './utils/commons'
+
+import { API_URL, LIKES_URL } from './utils/commons'
+
+import ThoughtForm from './components/ThoughtForm';
+import ThoughtsItem from './components/ThoughtsItem';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
-  const [countChars, setCountChars] = useState(0)
+  // const [countChars, setCountChars] = useState(0)
 
   useEffect(() => {
+    fetchThoughts()
+  }, [])
+
+  const fetchThoughts = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then((data) => setThoughts(data))
-  }, [])
+  }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -26,47 +33,52 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json()
-      .then((data) => setThoughts([data, ...thoughts])))
+      .then((data) => {
+        fetchThoughts()
+      }))
+      
+      // v1
+      // setThoughts([data, ...thoughts])))
   }
 
-  const numberOfChars = (event) => {
-    const chars = event.target.value
-    console.log(chars.length)
-    return chars.length
-  } 
+  // const numberOfChars = (event) => {
+  //   let chars = event.target.value
+  //   // chars.length = setCountChars
+  //   // setCountChars = countChars
+  //   console.log(chars.length)
+  //   // return chars.length
+  // } 
+
+  const handleLikesIncrease = (thoughtId) => {
+    const options = {
+      method: 'POST',
+    }
+
+    fetch(LIKES_URL(thoughtId), options)
+      .then((res) => res.json()
+      .then((data) => {
+        fetchThoughts()
+      }))
+      
+  }
 
   return (
     <div>
-      <form onSubmit={onFormSubmit} className="thought-input-container">
-        <label htmlFor="newThought">What's making you happy right now?</label>
-        <textarea
-          id="newThought"
-          type="text"
-          rows="2"
-          value={newThought} 
-          onChange={(event) => {
-            setNewThought(event.target.value)
-            numberOfChars(event)
-          }}>
-        </textarea>
-        <p className="char-counter">{countChars} characters</p>
-        <button type="submit" className="send-thought"><span role="img" aria-label="heart">❤️</span> Send Happy Thought <span role="img" aria-label="heart">❤️</span></button>
-      </form>
+      <ThoughtForm
+        onFormSubmit={handleFormSubmit}
+        newThought={newThought}
+        setNewThought={setNewThought}
+        // countChars={countChars}
+        // numberOfChars={numberOfChars}
+      />
 
-      {thoughts.map(thought =>
-        <div key={thought._id} className="thought-card">
-          <p>{thought.message}</p>
-          <div className="message-card-bottom-row">
-            <div className="heart-likes-container">
-              <button className="heart-button">
-                <span role="img" aria-label="heart">❤️</span>
-              </button>
-              <div className="likes-text"> x {thought.hearts}</div>
-            </div>
-            <p className="date-text">{moment(thought.createdAt).fromNow()}</p>
-          </div>
-          
-        </div>)}
+      {thoughts.map((thought) => (
+        <ThoughtsItem
+          key={thought._id}
+          thought={thought}
+          onLikesIncrease={handleLikesIncrease}
+        />
+      ))}
     </div>
   )
 }
