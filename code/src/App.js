@@ -5,27 +5,29 @@ import ThoughtsList from "components/ThoughtsList"
 
 import { API_URL, LIKES_URL } from "reusables/urls"
 
-//These state properties stores and keeps track of current state  in thought list and thought input
+//These state properties stores and keeps track of current state  in thoughtlist and thoughtinput
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
 
-  // This UseEffect hook in vorder to make a get req to get all thought when the app starts and is mounted
+  // const onNewThoughtChange = (event) => {
+  //   setNewThought(event.target.value)
+  // }
+
+  // This UseEffect hook in order to make a get req to get all thought when the app starts and is mounted
   useEffect(() => {
-    getThoughts()
+    fetchThoughts()
   }, [])
 
-  const getThoughts = () => {
+  // console.log("new thoughts", thoughts)
+
+  const fetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
   }
 
-  const onNewThoughtChange = (event) => {
-    setNewThought(event.target.value)
-  }
-
-  const handleInputSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -39,7 +41,7 @@ export const App = () => {
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
-        getThoughts()
+        fetchThoughts()
       })
   }
 
@@ -51,25 +53,24 @@ export const App = () => {
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((data) => {
-        getThoughts()
+        fetchThoughts()
       })
   }
 
   return (
     <div>
       <ThoughtsInput
-        handleInputSubmit={handleInputSubmit}
+        onFormSubmit={handleFormSubmit}
         newThought={newThought}
         setNewThought={setNewThought}
-        onNewThoughtChange={onNewThoughtChange}
       />
-      {thoughts.map((thoughts) => (
+
+      {thoughts.map((thought) => (
         <ThoughtsList
-          key={thoughts._id}
-          thoughts={thoughts}
-          setThoughts={setThoughts}
-          handleLikesIncrease={handleLikesIncrease}
-          onNewThoughtChange={onNewThoughtChange}
+          key={thought._id}
+          thought={thought}
+          newThought={newThought}
+          onLikesIncrease={handleLikesIncrease}
         />
       ))}
     </div>

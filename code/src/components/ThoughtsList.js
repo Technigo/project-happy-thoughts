@@ -1,15 +1,18 @@
 import React from "react"
 import moment from "moment"
 
-const ThoughtsList = ({ thoughts, handleLikesIncrease }) => {
+const ThoughtsList = ({ thought, onLikesIncrease }) => {
   return (
     <div className="container">
       <div className="thoughts-wrapper">
-        <p>{thoughts.message}</p>
-        <button onClick={() => handleLikesIncrease(thoughts._id)}>
-          ❤️ {thoughts.hearts}
+        <p>{thought.message}</p>
+        <button onClick={() => onLikesIncrease(thought._id)}>
+          <span role="img" aria-label="heart">
+            ❤️
+          </span>{" "}
+          {thought.hearts}
         </button>
-        <p className="date">posted {moment(thoughts.createdAt).fromNow()}</p>
+        <p className="date">posted {moment(thought.createdAt).fromNow()}</p>
       </div>
     </div>
   )
