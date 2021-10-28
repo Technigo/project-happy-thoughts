@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import { API_URL, API_HEART } from "./utils/urls";
+import Form from "components/Form";
+import ThoughtsCard from "components/ThoughtsCard";
 
 function App() {
   // * * * * * states * * * * *
@@ -88,46 +90,11 @@ function App() {
   return (
     <>
       {/* * * * * * * * * * * * NEW THOUGHT * * * * * * * * * */}
-      <form onSubmit={onFormSubmit} className="question-card">
-        <section className="question-container">
-          <label htmlFor="newThought" className="question">
-            What is making you happy right now?
-          </label>
-          <input
-            id="newThought"
-            type="text"
-            placeholder="Type your happy thougt here"
-            value={newThought}
-            onChange={onSetThoughtChange}
-            className={newThought.length < 5 ? "invalid-input" : ""}
-          ></input>
-        </section>
-        <p>
-          <span
-            className={
-              newThought.length < 5 || newThought.length > 140
-                ? "invalid"
-                : "valid"
-            }
-          >
-            {newThought.length}
-          </span>
-          / 140
-        </p>
-        <button
-          className="submit-btn"
-          type="submit"
-          disabled={newThought.length < 5 || newThought.length > 140}
-        >
-          <span role="img" aria-label="heart-emoji" className="icon-btn">
-            ❤️
-          </span>
-          Send Happy Thought
-          <span role="img" aria-label="heart-emoji" className="icon-btn">
-            ❤️
-          </span>
-        </button>
-      </form>
+      <Form
+        onFormSubmit={onFormSubmit}
+        newThought={newThought}
+        onSetThoughtChange={onSetThoughtChange}
+      />
       {/* * * * * * * * * * * * CARDS * * * * * * * * * */}
 
       {thoughts.map(thought => {
@@ -144,7 +111,7 @@ function App() {
                   <span role="img" aria-label="heart-emoji" className="heart">
                     ❤️
                   </span>{" "}
-                  x{thought.hearts}
+                  x {thought.hearts}
                 </button>
                 <p className="date">
                   -Created at: {moment(thought.createdAt).fromNow()}
