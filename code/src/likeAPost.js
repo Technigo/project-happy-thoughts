@@ -1,12 +1,11 @@
-// import React from 'react';
 import { API_URL_LIKE } from 'utils/urls';
 
-const LikeAPost = ({ thoughtID, recentThoughts }) => {
+const likeAPost = ({ thoughtID, recentThoughts }) => {
   const options = {
     method: 'POST',
   };
 
-  fetch(API_URL_LIKE(thoughtID), options)
+  return fetch(API_URL_LIKE(thoughtID), options)
     .then((res) => res.json())
     .then((json) => {
       const updateLikes = recentThoughts.map((thought) => {
@@ -19,8 +18,7 @@ const LikeAPost = ({ thoughtID, recentThoughts }) => {
         }
       });
       return updateLikes;
-      // setRecentThoughts(updateIncreaseLikes);
     });
 };
 
-export default LikeAPost;
+export default likeAPost;

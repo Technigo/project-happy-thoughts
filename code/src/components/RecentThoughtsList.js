@@ -3,7 +3,7 @@ import moment from 'moment';
 // import LikeAPost from './LikeAPost';
 // import { API_URL } from 'utils/urls';
 
-const RecentThoughtsList = ({ recentThoughts, handleLikes }) => {
+const RecentThoughtsList = ({ recentThoughts, onLikes }) => {
   // const [recentThoughts, setRecentThoughts] = useState([]);
 
   // useEffect(() => {
@@ -22,20 +22,22 @@ const RecentThoughtsList = ({ recentThoughts, handleLikes }) => {
           <div className='heart-timestample-container'>
             <p className='hearts-container'>
               <button
+                aria-label='Like this post'
                 type='button'
                 className='heart-emoji'
                 style={{
                   backgroundColor: thought.hearts > 0 ? '#ffadad' : '#eaeaea',
                 }}
                 // eslint-disable-next-line no-underscore-dangle
-                onClick={() => handleLikes(thought._id)}
+                onClick={() => onLikes(thought._id)}
                 // eslint-disable-next-line react/jsx-closing-bracket-location
               >
                 <span role='img' aria-label='heart emoji'>
                   ❤️
                 </span>
               </button>
-              &nbsp;x {thought.hearts}
+              &nbsp;<span aria-hidden='true'>x</span>&nbsp;
+              <span>{thought.hearts} likes</span>
             </p>
             <p>{moment(thought.createdAt).fromNow()}</p>
           </div>

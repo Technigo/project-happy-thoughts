@@ -3,17 +3,22 @@ import { API_URL } from 'utils/urls';
 import Header from 'components/Header';
 import PostAThought from 'components/PostAThought';
 import Footer from 'components/Footer';
-import LikeAPost from 'components/LikeAPost';
+// likeAPost is a function, not an component. Therefore in camelCase.
+import likeAPost from 'likeAPost';
+import LoadingSpinner from 'components/LoadingSpinner';
 import RecentThoughtsList from './components/RecentThoughtsList';
 
 export const App = () => {
   const [recentThoughts, setRecentThoughts] = useState([]);
   const [newThought, setNewThought] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((json) => setRecentThoughts(json));
+      .then((json) => setRecentThoughts(json))
+      .finally(() => setLoading(false));
   }, []);
 
   const onNewThoughtChange = (event) => {
@@ -38,10 +43,15 @@ export const App = () => {
     setNewThought('');
   };
 
-  const handleLikes = (thoughtID) => {
-    setRecentThoughts(
-      <LikeAPost thoughtID={thoughtID} recentThoughts={recentThoughts} />
-    );
+  // return a promise rather than directly returning the value
+  // async keyword turns a function into a promise
+  const handleLikes = async (thoughtID) => {
+    likeAPost({ thoughtID, recentThoughts }).then((updatedLikes) => {
+      setRecentThoughts(updatedLikes);
+    });
+    // setRecentThoughts(
+    //   <LikeAPost thoughtID={thoughtID} recentThoughts={recentThoughts} />
+    // );
     // const options = {
     //   method: 'POST',
     // };
@@ -73,9 +83,10 @@ export const App = () => {
           placeholder='React is making me happy!'
           // eslint-disable-next-line react/jsx-closing-bracket-location
         />
+        {loading && <LoadingSpinner />}
         <RecentThoughtsList
           recentThoughts={recentThoughts}
-          handleLikes={handleLikes}
+          onLikes={handleLikes}
           // eslint-disable-next-line react/jsx-closing-bracket-location
         />
       </fieldset>

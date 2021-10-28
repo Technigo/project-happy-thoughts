@@ -40,6 +40,8 @@ const PostAThought = ({
         <label htmlFor='newThought'>
           <h2>{title}</h2>
           <textarea
+            aria-label='Placeholder. Share your Happy Thoughts!'
+            {...placeholder}
             id='newThought'
             name='newThought'
             // cols='50' // 50 characters per line
@@ -59,6 +61,7 @@ const PostAThought = ({
           Remaining characters: {140 - newThought.length}
         </p>
         <button
+          aria-label='button to Send Happy Thought'
           type='submit'
           disabled={newThought.length < 5 || newThought.length > 140}
           // eslint-disable-next-line react/jsx-closing-bracket-location
