@@ -1,17 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-// import LikeAPost from './LikeAPost';
-// import { API_URL } from 'utils/urls';
 
 const RecentThoughtsList = ({ recentThoughts, onLikes }) => {
-  // const [recentThoughts, setRecentThoughts] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(API_URL)
-  //     .then((res) => res.json())
-  //     .then((json) => setRecentThoughts(json));
-  // }, []);
-
   return (
     <section className='recent-thoughts-section'>
       {recentThoughts.map((thought) => (
@@ -30,7 +20,6 @@ const RecentThoughtsList = ({ recentThoughts, onLikes }) => {
                 }}
                 // eslint-disable-next-line no-underscore-dangle
                 onClick={() => onLikes(thought._id)}
-                // eslint-disable-next-line react/jsx-closing-bracket-location
               >
                 <span role='img' aria-label='heart emoji'>
                   ❤️

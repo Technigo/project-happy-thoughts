@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import { API_URL } from 'utils/urls';
-
 const PostAThought = ({
   newThought,
   onNewThoughtChange,
@@ -53,7 +51,6 @@ const PostAThought = ({
             placeholder={placeholder}
             value={newThought}
             onChange={onNewThoughtChange}
-            // eslint-disable-next-line react/jsx-closing-bracket-location
           />
         </label>
         <p className='remaining-chars'>
@@ -63,7 +60,6 @@ const PostAThought = ({
           aria-label='button to Send Happy Thought'
           type='submit'
           disabled={newThought.length < 5 || newThought.length > 140}
-          // eslint-disable-next-line react/jsx-closing-bracket-location
         >
           <span role='img' aria-label='heart emoji'>
             ❤️

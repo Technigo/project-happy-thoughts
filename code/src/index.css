@@ -74,6 +74,8 @@ h1 {
   grid-column: span 1;
   width: 38%;
   box-shadow: 10px 10px var(--box-shadow-color);
+  /* if user send a long line of letters without any spaces, it will break the word */
+  word-break: break-word;
 }
 
 /* .post-a-thought-container {

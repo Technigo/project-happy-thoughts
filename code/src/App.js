@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { API_URL } from 'utils/urls';
+
 import Header from 'components/Header';
 import PostAThought from 'components/PostAThought';
 import Footer from 'components/Footer';
-// likeAPost is a function, not an component. Therefore in camelCase.
-import likeAPost from 'likeAPost';
 import LoadingSpinner from 'components/LoadingSpinner';
+import Confetti from 'react-confetti';
+import likeAPost from 'likeAPost'; // likeAPost is a function, not an component. Therefore in camelCase.
 import RecentThoughtsList from './components/RecentThoughtsList';
 
 export const App = () => {
   const [recentThoughts, setRecentThoughts] = useState([]);
   const [newThought, setNewThought] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const fetchThoughts = () => {
     setLoading(true);
@@ -45,6 +47,8 @@ export const App = () => {
       .then((json) => setRecentThoughts([json, ...recentThoughts]));
     // empty the textarea after posting a happy thought
     setNewThought('');
+    // each time an user is sending a happy thought, it will show confetti
+    setShowConfetti(true);
   };
 
   // return a promise rather than directly returning the value
@@ -85,7 +89,6 @@ export const App = () => {
           onSubmit={handleSubmit}
           title="What's making you happy right now?"
           placeholder='React is making me happy!'
-          // eslint-disable-next-line react/jsx-closing-bracket-location
         />
         <div className='refresh-button-container'>
           <button
@@ -93,22 +96,30 @@ export const App = () => {
             type='button'
             className='refresh-button'
             onClick={fetchThoughts}
-            // eslint-disable-next-line react/jsx-closing-bracket-location
           >
             Refresh Feed <span className='reload-symbol'>⟳</span>
           </button>
         </div>
         {loading && <LoadingSpinner />}
+        {showConfetti && (
+          <Confetti
+            width={window.innerWidth}
+            height={window.innerHeight}
+            numberOfPieces={500}
+            /* do not want to recycle the confetti, it will end after showing 500 pieces */
+            recycle={false}
+            /* set the state to false after each complete confetti */
+            onConfettiComplete={() => setShowConfetti(false)}
+          />
+        )}
         <RecentThoughtsList
           recentThoughts={recentThoughts}
           onLikes={handleLikes}
-          // eslint-disable-next-line react/jsx-closing-bracket-location
         />
       </fieldset>
       <Footer
         textLineOne='&#169; 2021 by Katie Wu'
         textLineTwo='Team Foxes | Technigo'
-        // eslint-disable-next-line react/jsx-closing-bracket-location
       />
     </>
   );
