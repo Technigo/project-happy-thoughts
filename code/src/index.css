@@ -1,3 +1,8 @@
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -12,6 +17,35 @@ code {
     monospace;
 }
 
+.loader-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  border-top: 16px solid blue;
+  border-right: 16px solid green;
+  border-bottom: 16px solid red;
+  border-left: 16px solid pink;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .card {
   width: 300px;
   height: 200px;
@@ -22,6 +56,8 @@ code {
 
 .icon {
   fill: crimson;
+  stroke-opacity: 0;
+  background-color: cornflowerblue;
 }
 
 .heart-wrapper {
@@ -38,4 +74,12 @@ code {
   display: block;
   width: 250px;
   height: 80px;
+}
+
+.too-long,
+.error {
+  background-color: crimson;
+}
+.heart-button {
+  background-color: cornflowerblue;
 }

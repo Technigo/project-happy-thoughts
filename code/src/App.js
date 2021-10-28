@@ -8,6 +8,9 @@ import { API_URL, API_LIKE_URL } from "./utils/urls";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [likedThoughts, setLikedThoughts] = useState([]);
 
   // Function that fetches the messages from API and sets the state property to hold the data returned
   const getMessages = () => {
@@ -16,6 +19,7 @@ export const App = () => {
       .then((data) => {
         console.log("WE are fetching from API");
         setThoughts(data);
+        setLoading(false);
       });
   };
   // This function will post the message to API
@@ -30,7 +34,12 @@ export const App = () => {
       }),
     })
       .then((response) => response.json())
-      .then((data) => getMessages());
+      .then((data) => {
+        if (data.message === "Could not save thought") {
+          setError(true);
+        }
+        getMessages();
+      });
   };
 
   // Function to post a message on the API
@@ -53,18 +62,26 @@ export const App = () => {
   // Calling the getMessages on the mounting of the App component
   useEffect(() => getMessages(), []);
   console.log("MOUNTING");
-  if (thoughts.length === 0) {
-    return <div>Locating satellites!</div>;
+  if (loading) {
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
   }
 
   return (
     <div>
-      <div className="card">
+      <div className="card form">
         <Form
           message={message}
           postMessage={postMessage}
           setMessage={setMessage}
+          error={error}
         />
+      </div>
+      <div>
+        <h1> Today you have liked {likedThoughts.length} happy thoughts</h1>
       </div>
 
       {thoughts.map((oneThought) => (
@@ -72,6 +89,8 @@ export const App = () => {
           key={oneThought._id}
           oneThought={oneThought}
           likeThisThought={likeThisThought}
+          likedThoughts={likedThoughts}
+          setLikedThoughts={setLikedThoughts}
         />
       ))}
     </div>
