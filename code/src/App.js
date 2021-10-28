@@ -9,6 +9,7 @@ export const App = () => {
   const [post, setPost] = useState([]);
   const [newPost, setNewPost] = useState("");
   const [loading, setLoading] = useState(false);
+  const [color, setColor] = useState("#f2f2f2");
 
   useEffect(() => {
     fetchPosts();
@@ -38,8 +39,13 @@ export const App = () => {
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
-        fetchPosts();
-      });
+        if (data.errors) {
+          alert("Message must be between 5 and 140 characters long");
+        } else fetchPosts();
+      })
+      .catch((err) => console.err(err));
+
+    setNewPost("");
   };
 
   const handleNewPostChange = (event) => setNewPost(event.target.value);
@@ -57,6 +63,8 @@ export const App = () => {
       .then(() => {
         fetchPosts();
       });
+
+    setColor("#ffb3b3");
   };
 
   return (
@@ -73,6 +81,7 @@ export const App = () => {
           key={thought._id}
           thought={thought}
           onSendLike={handleSendLike}
+          color={color}
         />
       ))}
     </div>

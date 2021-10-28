@@ -27,10 +27,10 @@ code {
   width: 200px;
   border: 3px solid black;
 }
+
 .loading {
   height: 10px;
   width: 200px;
-
   background: blue;
   animation: loader infinite 0.5s;
 }
@@ -47,6 +47,10 @@ code {
   100% {
     width: 100%;
   }
+}
+
+.header {
+  text-align: center;
 }
 
 .container {
@@ -76,12 +80,18 @@ code {
   margin-top: 10px;
   width: 60%;
   height: 30px;
-  background-color: #ffb3b3;
+  /* background-color: #ffb3b3; */
   border-radius: 15px;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+textarea {
+  resize: none;
+  font-size: 16px;
+  font-family: "Oxygen", sans-serif;
 }
 
 .message {
@@ -119,4 +129,24 @@ code {
 .inner-container {
   display: flex;
   justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  body {
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .submit {
+    width: 225px;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    margin-top: 40px;
+    margin-left: 225px;
+    margin-right: 225px;
+  }
 }
