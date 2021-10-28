@@ -1,7 +1,7 @@
 .thought-container {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid black;
   box-shadow: 5px 5px;
   width: 80%;
@@ -19,7 +19,6 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 10px;
-  margin-bottom: 10px;
   font-size: 12px;
 }
 

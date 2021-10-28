@@ -11,6 +11,13 @@ const ThoughtsForm = ({ onFormSubmit, newThought, setNewThought }) => {
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
       />
+      <label
+        className="counter"
+        htmlFor="counter"
+        style={{ color: newThought.length > 140 ? "red" : "grey" }}
+      >
+        {newThought.length} characters
+      </label>
       <button
         disabled={newThought.length < 5 || newThought.length > 140}
         className="submit-button"
