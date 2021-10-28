@@ -49,10 +49,14 @@ body {
 
 textarea {
   max-width: 100%;
-  padding: 10px;
+  min-width: 100%;
+  min-height: 60px;
+  max-height: 100px;
+  padding: 8px 10px;
   margin: 10px 0 0 0;
   border: lightgray 1.5px solid;
   font-family: 'Inconsolata', monospace;
+  line-height: 20px;
 }
 
 .message-card-bottom-row {
