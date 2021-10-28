@@ -26,10 +26,9 @@ textarea {
   /* border-radius: */
   color: #000;
   background-color: #ffadad;
-}
-
-button {
   border-style: none;
   font-weight: 700;
   font-size: 14px;
+  padding: 10px;
+  border-radius: 20px;
 }

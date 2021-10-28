@@ -5,7 +5,13 @@
   align-items: center;
 }
 
-.get-thoughts__button {
-  border-radius: 50%;
+.get-thoughts__heart-button {
+  border-radius: 100%;
   height: fit-content;
+}
+
+.get-thoughts__heart-amount {
+  color: grey;
+  font-weight: 300;
+  font-size: smaller;
 }

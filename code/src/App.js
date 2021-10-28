@@ -24,7 +24,10 @@ export const App = () => {
   };
   //fetch request should start when the component is mounted or whenever anything gets updated
 
-  //if its going to be called by a child it is named handle instead of on
+  const handleNewThoughtChange = (event) => {
+    setNewThought(event.target.value);
+  };
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
@@ -74,7 +77,7 @@ export const App = () => {
       <NewThoughtInput
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
-        setNewThought={setNewThought}
+        onNewThoughtChange={handleNewThoughtChange}
       />
       {thoughts.map((thought) => (
         <GetThought
