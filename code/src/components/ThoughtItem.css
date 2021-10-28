@@ -3,10 +3,17 @@
     flex-direction: column;
     border: none;
     box-sizing: content-box;
-    background-color: rgba(250, 213, 193, 0.952);
+    background-color: rgba(185, 198, 233, 0.781);
     padding: 10px;
     width: 45vh;
     border-radius: 10px;
+}
+
+.thought-message {
+    word-break: break-word;
+    font-weight: bold;
+    font-size: 17px;
+    color: rgb(42, 45, 54);
 }
 
 .button-date-container {
@@ -23,10 +30,15 @@
 .like-button {
     border-radius: 50%;
     border: none;
-    background-color: rgb(255, 243, 230);
+    background-color: rgb(226, 224, 250);
     cursor: pointer;
     height: 35px;
     width: 35px;
+    transition: .2s ease-in-out;
+}
+
+.like-button:hover {
+    transform: scale(1.1);
 }
 
 .heart-icon {

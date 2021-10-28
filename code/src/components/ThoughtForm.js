@@ -40,7 +40,7 @@ const ThoughtForm = ({ setNewThought, setThoughts, thoughts, newThought }) => {
                 minLength="4"
                 maxLength="140"
             />
-            <p>{140 - counter}/140 characters left</p>
+            <p className="character-counter">{140 - counter}/140 characters left</p>
             <button disabled={newThought.length < 5} type="submit" className="submit-button">Send a happy thought!</button>
         </form>
     )

@@ -5,27 +5,45 @@
     border: none;
     padding: 10px;
     box-sizing: content-box;
-    background-color: rgba(250, 213, 193, 0.952);
+    background-color: rgba(194, 210, 255, 0.904);
     width: 45vh;
     border-radius: 10px;
+}
+
+.label-title {
+    font-weight: bold;
+    font-size: 17px;
+    color: rgb(42, 45, 54);
 }
 
 .submit-button {
     border-radius: 10px;
     width: 200px;
     border: none;
-    background-color: rgb(255, 243, 230);
+    background-color: rgb(226, 224, 250);
     height: 30px;
     cursor: pointer;
-    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Poiret One';
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 2px;
+    transition: .2s ease-in-out;
+    letter-spacing: 0.5px;
+}
+
+.submit-button:hover {
+    transform: scale(1.05);
 }
 
 .input-form {
-    height: 50px;
+    height: 55px;
     resize: none;
-    background-color: rgb(255, 243, 230);
+    background-color: rgba(226, 224, 250, 0.76);
     border: none;
     border-radius: 10px;
-    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Poiret One';
     font-size: 16px;
+    font-weight: bold;
+    color: rgb(42, 45, 54);
+    letter-spacing: 1px;
 }

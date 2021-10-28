@@ -1,18 +1,18 @@
 body {
   margin: 20px;
-  font-family: 'Zen Kurenaido', sans-serif;
+  font-family: 'Poiret One';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
-  background-image: url("./assets/background-image.jpg");
+  background-image: linear-gradient(rgba(38, 41, 54, 0.466), rgba(38, 41, 54, 0.226)), url("./assets/background-image.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 
 code {
-  font-family: 'Zen Kurenaido', sans-serif;
+  font-family: 'Poiret One';
 }
 
 .thought-form-container {

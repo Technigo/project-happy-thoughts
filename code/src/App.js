@@ -10,15 +10,17 @@ export const App = () => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    fetchThoughts()
-  }, [])
-
-  const fetchThoughts = () => {
     setLoading(true)
     fetch(API_URL)
       .then((res) => res.json())
+      .then((data) => setTimeout(() => setThoughts(data), 2500))
+      .finally(() => setTimeout(() => setLoading(false), 2500))
+  }, [])
+
+  const fetchThoughts = () => {
+    fetch(API_URL)
+      .then((res) => res.json())
       .then((data) => setThoughts(data))
-      .finally(() => setLoading(false))
   }
 
   const handleLikesIncrease = (thoughtId) => {
