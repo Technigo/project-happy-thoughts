@@ -80,6 +80,12 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
+  /* breaks a long line of text that does not hav any spacing */
+  white-space: pre-wrap; /* CSS3 */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap; /* Opera <7 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* IE */
 }
 
 .thought-card-info {
