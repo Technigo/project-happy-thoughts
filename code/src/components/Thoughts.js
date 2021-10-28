@@ -5,16 +5,14 @@ import moment from "moment";
 const Thoughts = ({ thoughts, onLikeSubmit }) => {
   return (
     <>
-      {thoughts.map((thought) => (
-        <article className="thought-container" key={thought._id}>
-          <p className="message">{thought.message}</p>
-          <section className="like-section">
-            <LikeButton thought={thought} onLikeSubmit={onLikeSubmit} />
-            <p className="number-of-likes"> X {thought.hearts}</p>
-            <p className="date">{moment(thought.createdAt).fromNow()}</p>
-          </section>
-        </article>
-      ))}
+      <article className="thought-container">
+        <p className="message">{thoughts.message}</p>
+        <section className="like-section">
+          <LikeButton thought={thoughts} onLikeSubmit={onLikeSubmit} />
+          <p className="number-of-likes"> X {thoughts.hearts}</p>
+          <p className="date">{moment(thoughts.createdAt).fromNow()}</p>
+        </section>
+      </article>
     </>
   );
 };
