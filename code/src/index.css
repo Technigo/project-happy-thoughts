@@ -19,6 +19,7 @@ code {
 
 .date {
   font-style: italic;
+  font-size: 14px;
 }
 
 form {
@@ -33,6 +34,7 @@ form {
 }
 form textarea {
 margin-top: 15px;
+padding: 5px
 
 }
 
