@@ -8,10 +8,9 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
           <label 
           className="thought-text" 
           htmlFor="newThought">What's making you happy right now?</label>
-          <input
+          <textarea
           className={newThought.length < 6 || newThought.length > 140 ? "count-text-error": "count-text"}
-          id="newThought" 
-          type="text" 
+          id="newThought"  
           value={newThought} 
           onChange={(e) => setNewThought(e.target.value)} 
           />

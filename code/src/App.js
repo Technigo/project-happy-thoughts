@@ -13,7 +13,6 @@ export const App = () => {
   const [newThought, setNewThought] = useState('')
   const [loading, setLoading]  = useState(false)
 
-
   // Mount app
 
   useEffect(() => {
