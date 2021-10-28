@@ -65,9 +65,9 @@ export const App = () => {
           ></input>
           <button type="submit" className="submit-button">
             <div className="send-wrapper">
-              <span className="heart">&hearts;</span> 
+              <img src="/assets/red-heart.png"className="heart"></img> 
               <span className="send-happy">Send Happy Thought</span>
-              <span className="heart">&hearts;</span> 
+              <img src="/assets/red-heart.png"className="heart"></img> 
             </div>
             
             </button>
@@ -83,7 +83,7 @@ export const App = () => {
             <div className="heart-button-wrapper">
               <button onClick = {() => onLikesIncrease(thought._id)}
                 className="heart-button">
-                  <span className="heart">&hearts;</span> 
+                  <img src="/assets/red-heart.png"className="heart"></img> 
                 </button>
               <p> x {thought.hearts}</p>
             </div>

@@ -90,10 +90,10 @@ align-items: center;
   align-items: center;
   width: 80%;
 }
-.heart {
-  color: red;
-  font-size: 40px;
+.send-wrapper img {
+  width: 40px;
 }
+
 .heart-button{
   color: #EAEAEA;
   border-radius: 50%;
@@ -104,7 +104,9 @@ align-items: center;
   cursor: pointer;
  
 }
-
+.heart-button img {
+  width: 40px;
+}
 .date {
   display: inline;
 }
