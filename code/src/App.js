@@ -6,6 +6,7 @@ function App() {
   // * * * * * states * * * * *
   const [newThought, setNewThought] = useState("");
   const [thoughts, setThoughts] = useState([]);
+  // const [count, setCount] = useState(0);
 
   console.log("this is newThought", newThought);
 
@@ -42,6 +43,8 @@ function App() {
 
   const onSetThoughtChange = e => {
     setNewThought(e.target.value);
+    console.log("new thought in onSetToughtChange", newThought.length);
+    onSetCountChange(newThought.length);
   };
 
   const heartCounter = thought_id => {
@@ -61,9 +64,11 @@ function App() {
           if (thought_id === item._id) {
             console.log("this is the one", item._id);
             item.hearts += 1;
+
             return item;
           } else {
             console.log("this is no new");
+
             return item;
           }
         });
@@ -72,10 +77,19 @@ function App() {
       });
   };
 
+  const onSetCountChange = count => {
+    console.log("vad hädner", newThought);
+    console.log(count);
+    //   if (count < 4 || count > 139) {
+    //     style = { backgroundColor: "red" };
+    //   }
+  };
+
   return (
     <>
+      {/* * * * * * * * * * * * NEW THOUGHT * * * * * * * * * */}
       <form onSubmit={onFormSubmit} className="question-card">
-        <div>
+        <section className="question-container">
           <label htmlFor="newThought" className="question">
             What is making you happy right now?
           </label>
@@ -85,9 +99,26 @@ function App() {
             placeholder="Type your happy thougt here"
             value={newThought}
             onChange={onSetThoughtChange}
+            className={newThought.length < 5 ? "invalid-input" : ""}
           ></input>
-        </div>
-        <button className="submit-btn" type="submit">
+        </section>
+        <p>
+          <span
+            className={
+              newThought.length < 5 || newThought.length > 140
+                ? "invalid"
+                : "valid"
+            }
+          >
+            {newThought.length}
+          </span>
+          / 140
+        </p>
+        <button
+          className="submit-btn"
+          type="submit"
+          disabled={newThought.length < 5 || newThought.length > 140}
+        >
           <span role="img" aria-label="heart-emoji" className="icon-btn">
             ❤️
           </span>
