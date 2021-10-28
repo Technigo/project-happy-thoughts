@@ -1,6 +1,11 @@
 import React from "react";
 
-export const Form = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
+export const Form = ({
+  newThought,
+  onNewThoughtChange,
+  onFormSubmit,
+  counter,
+}) => {
   return (
     <form onSubmit={onFormSubmit}>
       <div className="input-container">
@@ -10,15 +15,24 @@ export const Form = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
         <textarea
           rows="3"
           id="newThought"
-          className="message-box"
           type="text"
           value={newThought}
           onChange={onNewThoughtChange}
-          placeholder="Share your thoughts!"
+          placeholder="Minimum 6 characters"
         />
 
-        <button className="submit-button" type="submit">
-          &#10084;&#65039;Send Happy Thought!&#10084;&#65039;
+        <p className={counter > 140 ? "red-counter" : "counter-text"}>
+          {140 - counter} / 140 characters left{" "}
+        </p>
+
+        <button
+          className="submit-button"
+          type="submit"
+          disabled={newThought.length < 6 || newThought.length > 140}
+        >
+          <span aria-label="heart-icon" role="img">
+            &#10084;&#65039;Send Happy Thought!&#10084;&#65039;
+          </span>
         </button>
       </div>
     </form>

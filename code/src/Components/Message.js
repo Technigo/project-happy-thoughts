@@ -12,7 +12,9 @@ export const Message = ({ thought, onLikesIncrease }) => {
             onClick={() => onLikesIncrease(thought._id)}
           >
             {" "}
-            &#10084;&#65039;
+            <span aria-label="heart-icon" role="img">
+              &#10084;&#65039;
+            </span>
           </button>
           <span className="likes"> x {thought.hearts}</span>
           <p className="date">{moment(thought.createdAt).fromNow()}</p>

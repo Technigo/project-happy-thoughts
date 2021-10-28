@@ -12,18 +12,23 @@ body {
 } */
 
 h1 {
-  margin-left: 4%;
+  margin: 4%;
   font-size: 24px;
 }
 
 textarea {
   resize: none;
   width: 90%;
-}
-
-.message-box {
   display: flex;
   margin: 0 4% auto;
+}
+
+.counter-text {
+  margin: 4%;
+}
+
+.red-counter {
+  color: red;
 }
 
 button {
@@ -46,7 +51,7 @@ button {
   font-family: "PT Mono", monospace;
   width: 40%;
   padding: 4px 0px;
-  margin: 10px 0px;
+  margin: 10px 17px;
   display: flex;
   justify-content: space-evenly;
 }

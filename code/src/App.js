@@ -6,6 +6,7 @@ import { Message } from "./Components/Message";
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     fetchThoughts();
@@ -19,6 +20,7 @@ export const App = () => {
 
   const onNewThoughtChange = event => {
     setNewThought(event.target.value);
+    setCounter(event.target.value.length);
   };
 
   const onFormSubmit = event => {
@@ -39,6 +41,7 @@ export const App = () => {
       });
 
     setNewThought("");
+    setCounter(0);
   };
 
   const handleLikesIncrease = thoughtId => {
@@ -59,6 +62,7 @@ export const App = () => {
         setNewThought={setNewThought}
         onFormSubmit={onFormSubmit}
         onNewThoughtChange={onNewThoughtChange}
+        counter={counter}
       />
       {thoughts.map(thought => (
         <Message
