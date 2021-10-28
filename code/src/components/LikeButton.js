@@ -8,18 +8,14 @@ export const LikeButton = ({ onLikeButtonClick, thought }) => {
         {thought.liked && (
           <div className="btn-border">
             <button className="like-button" disabled>
-              &nbsp;
               <Icon className="like-icon">favorite</Icon>
-              &nbsp;
             </button>
           </div>
         )}
         {!thought.liked && (
           <div className="btn-border">
             <button className="like-button" onClick={() => onLikeButtonClick(thought)}>
-              &nbsp;
               <Icon className="like-icon">favorite_border</Icon>
-              &nbsp;
             </button>
           </div>
         )}
