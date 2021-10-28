@@ -34,6 +34,7 @@
   flex-direction: row;
   justify-content: baseline;
   align-items: center;
+  margin: 20px;
 }
 
 .like-button-wrapper {
@@ -63,5 +64,8 @@
   .btn-border {
     width: 60px;
     height: 60px;
+  }
+  .likes-info-wrapper {
+    margin: 20px;
   }
 }
