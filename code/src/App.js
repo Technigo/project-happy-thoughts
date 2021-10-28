@@ -41,6 +41,7 @@ export const App = () => {
       .then((res) => res.json())
       .then((newData) => {
         /* cross checking incoming state vs current state to find cross matched thoughts by ids and mark them as liked to prevent double liking  */
+        /*https://stackoverflow.com/questions/18965293/best-way-to-prevent-a-user-clicking-like-multiple-times */
         setThoughts((oldData) =>
           newData.map((newThought) => {
             const oldThough = oldData.find((t) => t._id === newThought._id);

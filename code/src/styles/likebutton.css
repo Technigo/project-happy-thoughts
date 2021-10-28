@@ -46,12 +46,16 @@
   display: flex;
   align-self: center;
   justify-self: center;
-  margin-top: 4px;
+  /* margin-top: 4px; */
 }
 
 @media (min-width: 767px) {
   .like-button {
     width: 60px;
     height: 60px;
+  }
+  /* https://stackoverflow.com/questions/36482126/how-to-enlarge-the-svg-icon-in-material-ui-iconbuttons */
+  .like-icon {
+    transform: scale(1.3);
   }
 }
