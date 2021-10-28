@@ -3,15 +3,18 @@ import moment from "moment";
 
 const ThoughtItem = ({ thought, onLikesIncrease }) => {
 	return (
-		<div>
-			<p>{thought.message}</p>
-			<button onClick={() => onLikesIncrease(thought._id)}>
+		<div className="answer-container">
+			<p className="answered-ones">{thought.message}</p>
+			<div className="heart-button-and-date">
+			<button className="heart-button" onClick={() => onLikesIncrease(thought._id)}>
 				{" "}
-				&hearts; {thought.hearts}
+				💖 x {thought.hearts}
 			</button>
 			<p className="date">
-				- Created at: {moment(thought.createdAt).fromNow()}
+				- {moment(thought.createdAt).fromNow()}
 			</p>
+			</div>
+	
 		</div>
 	);
 };
