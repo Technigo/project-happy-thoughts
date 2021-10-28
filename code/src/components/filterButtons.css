@@ -1,0 +1,23 @@
+.button-container {
+    margin: 20px auto;
+    border: 2px solid black;
+    width: 500px;
+    box-shadow: 5px 5px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+
+button {
+    margin-top: 10px;
+    width: 150px;
+    background-color: #ffadad;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    font-family: 'Trispace', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}

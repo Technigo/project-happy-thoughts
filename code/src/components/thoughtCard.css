@@ -1,0 +1,26 @@
+.thought-card {
+    margin: 20px auto;
+    border: 2px solid black;
+    width: 500px;
+    box-shadow: 5px 5px;
+    padding: 20px;
+    word-wrap: break-word;
+    background-color: white;
+}
+
+.likes-button {
+    margin-top: 10px;
+    width: 70px;
+    background-color: #ffadad;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    font-family: 'Trispace', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.likes-button:hover {
+    width: 80px;
+    transform: scale(1.07);
+}

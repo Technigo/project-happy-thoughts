@@ -1,17 +1,22 @@
 import React from 'react';
 import moment from 'moment';
 
-export const ThoughtCard = ({id, message, date, hearts}) => {
+import './thoughtCard.css'
 
- 
-
+export const ThoughtCard = ({ thought, onLikesIncrease }) => {
 
     return (
-        <div key={id} >
-            <p>{message}</p>
-            <button> &hearts; {hearts}</button>
+        <div key={thought._id} className="thought-card">
+            <p>{thought.message}</p>
+            <button 
+            className="likes-button" 
+            onClick={() => onLikesIncrease(thought._id)}> 
+            {/* why? */}
+            {' '}
+            &hearts; {thought.hearts}</button>
+
             <p className="date">
-                - Created at: {moment(date.createdAt).fromNow()}
+                {moment(thought.createdAt).fromNow()}
             </p>
         </div>
     );

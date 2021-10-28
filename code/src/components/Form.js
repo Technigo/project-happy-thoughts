@@ -1,37 +1,11 @@
-import React, { useState } from 'react';
-import { API_URL } from '../utils/urls';
+import React from 'react';
+import  "./form.css"
 
-export const Form = () => {
-
-    /*new thought is the value from input*
-    setNewThought function, sets value to the newThought*/
-	const [newThought, setNewThought] = useState("");
-
-    const fetchRequest = () => {
-        const options = {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-            }, 
-            body: JSON.stringify({message: newThought})
-        }
-
-        /* Fetch to post a new message*/
-        fetch(API_URL, options)
-        .then(res => res.json())
-        /* publishes new message and then reaload page*/
-        .then(() => { window.location.reload()});
-    }
-
-    const onFormSubmit = (event) => {
-        event.preventDefault()
-        fetchRequest()
-    };
-
-
+export const Form = ({newThought, setNewThought, handleFormSubmit}) => {
+    // when submitting form, handleFormSubmit function trigged, which is in App.js
     return (
-        <form onSubmit={onFormSubmit} className="form" >
-            <label htmlFor="newThought">What makes you happy?</label>
+        <form onSubmit={handleFormSubmit} className="form" >
+            <p className="form-title">What makes you happy?</p>
             <textarea 
                 id="newThought"
                 type="text" 
@@ -39,9 +13,17 @@ export const Form = () => {
                 value={newThought}
                 onChange={(e) => setNewThought(e.target.value)}
                 />
-            <button type="submit">Send</button>
+            <p  style={{ color: newThought.length > 130 ? "red" : "black" }} >
+                {newThought.length}/140
+            </p>
+            <button 
+                className="form-button"
+                type="submit" 
+                disabled={newThought.length < 6 || newThought.length > 140} >
+                    &hearts; Send &hearts;
+            </button>
         </form>
-    )
+    );
 };
 
 
