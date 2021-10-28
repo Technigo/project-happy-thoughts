@@ -9,8 +9,9 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought, counter }) => {
           className="thought-text" 
           htmlFor="newThought">What's making you happy right now?</label>
           <input
-          className="thought-input"
-        //   className={counter < 6 || counter > 140 ? "count-text-error": "count-text"}
+          // className="thought-input"
+          // className={counter < 6 || counter > 140 ? "count-text-error": "count-text"}
+          className={newThought.length > 6 || newThought.length < 140 ? "count-text" : "count-text-error"}
           id="newThought" 
           type="text" 
           value={newThought} 
@@ -18,9 +19,9 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought, counter }) => {
           />
           {/* <p className="chars-left">{140 - counter} of 140</p> */}
           {/* <p className={newThought.length <= 140 ? "count-text" : "count-text count-text-error"}>{newThought.length} of 140</p> */}
-          {/* <p>{newThought.length} of 140</p> */}
+          <p className="counter-text">{newThought.length} of 140</p>
           <button 
-          disabled={counter < 6 || counter > 140}
+          // disabled={counter < 6 || counter > 140}
           className="form-btn"
           type="submit">
               <span className="heart-icon" role="img" aria-label="like">❤️ </span>

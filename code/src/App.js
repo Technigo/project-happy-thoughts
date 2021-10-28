@@ -34,10 +34,10 @@ export const App = () => {
   }
 
 
-  const handleNewThoughtChange = (event) => {
-    setNewThought(event.target.value)
-    setCounter(event.target.value.length)
-  }
+  // const handleNewThoughtChange = (event) => {
+  //   setNewThought(event.target.value)
+  //   setCounter(event.target.value.length)
+  // }
 
   // Handles new thoughts 
 
@@ -60,22 +60,22 @@ export const App = () => {
     })
 
     // Clears input-field and let's you post a new thought
-    setNewThought()
+    setNewThought('')
     setCounter()
   }
 
 
   // Handles the maximum of 140 characters
 
-  // const handleNewThoughtSubmit = (event) => {
-  //     const count = event.target.value
-  //     const characterCount = count.length 
-  //     if (characterCount <= 140) {
-  //       setNewThought(count)
-  //     } else if (characterCount > 140) {
-  //       return setNewThought(newThought)
-  //     }
-  // }
+  const handleNewThoughtSubmit = (event) => {
+      const count = event.target.value
+      const characterCount = count.length 
+      if (characterCount <= 140) {
+        setNewThought(count)
+      } else if (characterCount > 140) {
+        return setNewThought(newThought)
+      }
+  }
 
   // Handles new likes
 
@@ -101,8 +101,9 @@ export const App = () => {
         <ThoughtForm 
           onFormSubmit={handleFormSubmit}
           newThought={newThought}
-          onNewThoughtChange={handleNewThoughtChange} 
+          // onNewThoughtChange={handleNewThoughtChange} 
           setNewThought={setNewThought}
+          counter={counter}
         />
       {thoughts.map((thought) => (
         <ThoughtItem

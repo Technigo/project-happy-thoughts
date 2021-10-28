@@ -33,19 +33,32 @@ main {
   /* font-size: 10px; */
 }
 
-.thought-input {
+/* .thought-input {
   line-height: 4em;
   border: 2px solid rgb(191, 191, 191);
   margin-top: 12px;
   font-family: 'Roboto Mono', monospace;
+} */
+
+.count-text-error {
+  line-height: 4em;
+  border: 2px solid rgb(191, 191, 191);
+  margin-top: 12px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10px;
+  color: red;
 }
 
 .count-text {
+  line-height: 4em;
+  border: 2px solid rgb(191, 191, 191);
+  margin-top: 12px;
+  font-family: 'Roboto Mono', monospace;
   font-size: 10px;
 }
 
-.count-text-error {
-  color: red;
+.counter-text {
+  font-size: 10px;
 }
 
 .thought-text {
