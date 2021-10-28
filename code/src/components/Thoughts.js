@@ -8,7 +8,10 @@ const Thoughts = ({ thought, onHeartClick }) => {
       <div className="happy-thoughts-list" key={thought._id}>
         <p>{thought.message}</p>
         <div className="heart-and-created">
-          <button className="button" onClick={() => onHeartClick(thought._id)}>
+          <button
+            className="heart-button"
+            onClick={() => onHeartClick(thought._id)}
+          >
             {" "}
             <p className="heart"> &hearts;</p>
             <p className="hearts-count"> x {thought.hearts}</p>

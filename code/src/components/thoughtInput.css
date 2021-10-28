@@ -4,7 +4,72 @@
   margin: 20px;
   padding: 10px;
   box-shadow: 5px 10px;
-  background: white;
+  background: rgb(235, 234, 234);
   display: flex;
   flex-direction: column;
+}
+
+.input-title {
+  padding: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+.new-thought-input {
+  padding: 15px;
+  border: 1px solid rgb(171, 168, 168);
+  font-family: "Courier New", monospace;
+}
+
+.send-thoughts-button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  background: rgb(247, 176, 176);
+  width: fit-content;
+  margin: 10px;
+}
+
+.send-thoughts-button:hover {
+  box-shadow: 2px 5px red;
+  transition: 0.2s;
+}
+
+.send-thoughts-button[wobble="1"] {
+  animation: wobble 1s 1;
+}
+
+@keyframes wobble {
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.heart-input {
+  border-radius: 50%;
+  width: 30px;
+  font-size: 20px;
+  margin: 0;
+  color: red;
+  padding: 7px;
+}
+
+@media (min-width: 760px) {
+  .input-box {
+    width: 350px;
+  }
 }

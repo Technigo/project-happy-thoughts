@@ -1,0 +1,39 @@
+.happy-footer {
+  margin-top: 10px;
+  background: rgba(238, 187, 207, 0.8);
+  height: 100px;
+  text-align: center;
+  padding: 10px;
+}
+
+.happy-footer-text {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  color: white;
+  font-style: italic;
+  padding-top: 10px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.circles {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 15px;
+  height: 20px;
+  padding: 8px;
+}
