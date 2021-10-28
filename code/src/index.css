@@ -144,7 +144,7 @@ textarea:valid {
   animation: rainbow 5s linear infinite;
 }
 
-.heart-timestample-container {
+.heart-timestamp-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -261,7 +261,7 @@ footer p {
     font-size: 14px;
     padding: 10px 22px;
   }
-  .heart-timestample-container {
+  .heart-timestamp-container {
     font-size: 14px;
   }
   footer {

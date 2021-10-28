@@ -41,7 +41,6 @@ const PostAThought = ({
           <h2>{title}</h2>
           <textarea
             aria-label='Placeholder. Share your Happy Thoughts!'
-            {...placeholder}
             id='newThought'
             name='newThought'
             // cols='50' // 50 characters per line

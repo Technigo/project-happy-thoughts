@@ -19,7 +19,7 @@ const RecentThoughtsList = ({ recentThoughts, onLikes }) => {
         <div key={thought._id} className='thought-card'>
           <p>{thought.message}</p>
           {/* <p>id: {thought._id}</p> */}
-          <div className='heart-timestample-container'>
+          <div className='heart-timestamp-container'>
             <p className='hearts-container'>
               <button
                 aria-label='Like this post'
