@@ -10,7 +10,7 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 			<textarea className="happy-thought-textarea" 
 				id="newThought"
 				type="text"
-				placeholder="Spread some happiness"
+				placeholder="Spread some happiness..."
 				value={newThought}
 				onChange={(e) => setNewThought(e.target.value)}
 			/>

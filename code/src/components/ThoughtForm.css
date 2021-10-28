@@ -49,7 +49,6 @@ input:focus, textarea:focus, select:focus {
     color: #666666;
 }
 
-
 .thought-length {
     line-height: 5px;
     font-size: 12px;
@@ -57,4 +56,24 @@ input:focus, textarea:focus, select:focus {
 
 .characters {
     font-size: 12px;
+}
+
+/*Media Queries*/
+
+/*Mobile*/
+
+@media (max-width: 666px) {
+    .happy-thought-form {
+        width: 70%;
+        max-width: 500px;
+    }
+    .happy-thought-textarea {
+        font-size: 14px;
+        width: 220px;
+        width: 95%;
+    }
+    .happy-thought-button {
+        font-size: 11px;
+        width: 190px;
+    }
 }
