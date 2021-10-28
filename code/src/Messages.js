@@ -1,39 +1,37 @@
 import React from 'react'
-import moment from 'moment'
+import { Newest } from 'Newest'
+import { Oldest } from 'Oldest'
 
-export const Messages = ({ thoughts, onLikeClick }) => {
+export const Messages = ({
+  thoughts,
+  onLikeClick,
+  filter,
+  handleFilterChange,
+}) => {
+  const onSortSubmit = (event) => {
+    event.preventDefault()
+  }
+
   return (
     <>
-      {thoughts.map((thought) => (
-        <div
-          className='message-container'
-          key={thought._id}
-          onSubmit={onLikeClick}
+      <div className='filter-container'>
+        <select
+          value={filter}
+          onChange={handleFilterChange}
+          onSubmit={onSortSubmit}
         >
-          <p>{thought.message}</p>
-          <div className='icon-container'>
-            <div className='button-container'>
-              <button
-                className={
-                  thought.hearts > 0
-                    ? 'like-button like-button-clicked'
-                    : 'like-button'
-                }
-                onClick={() => onLikeClick(thought._id)}
-              >
-                <span className='heart-icon' role='img' aria-label='heart-icon'>
-                  ❤️️
-                </span>{' '}
-              </button>
-              <p className='likes-number'>x {thought.hearts} </p>
-            </div>
+          <option value=''>Filter thoughts</option>
+          <option value='Newest'>Newest</option>
+          <option value='Oldest'>Oldest</option>
+        </select>
+      </div>
 
-            <p className='date'>{moment(thought.createdAt).fromNow()}</p>
-          </div>
-        </div>
-      ))}
+      {filter === 'Newest' && (
+        <Newest thoughts={thoughts} onLikeClick={onLikeClick} />
+      )}
+      {filter === 'Oldest' && (
+        <Oldest thoughts={thoughts} onLikeClick={onLikeClick} />
+      )}
     </>
   )
 }
-
-//className={message.hearts > 0 ? "like-button like-button-clicked" : "like-button" }

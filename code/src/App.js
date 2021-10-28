@@ -5,6 +5,11 @@ import { Messages } from 'Messages'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
+  const [filter, setFilter] = useState('')
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value)
+  }
 
   //Fetches the messages from the API
   useEffect(() => {
@@ -16,6 +21,10 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => setThoughts(data))
   }
+
+  /*const sortThoughts = thoughts.sort(() => {
+    return new Date(oldest.createdAt) - new Date(newest.createdAt)
+  })*/
 
   //POST likes into the API and fetches it
   const handleLikedThoughts = (id) => {
@@ -33,19 +42,6 @@ export const App = () => {
       .catch((error) => error)
   }
 
-  /*const onLikeClick = async (likedId) => {
-    //const updatedThought = await likedThoughts(likedId)
-
-    const updatedMessage = thoughts.map((thought) => {
-      if (thought._id === likedId) {
-        thought.hearts += 1
-      }
-      return thought
-    })
-
-    setThoughts(updatedMessage)
-  }*/
-
   return (
     <div className='container'>
       <div className='main'>
@@ -54,6 +50,8 @@ export const App = () => {
           thoughts={thoughts}
           setThoughts={setThoughts}
           onLikeClick={handleLikedThoughts}
+          filter={filter}
+          handleFilterChange={handleFilterChange}
         />
       </div>
     </div>
