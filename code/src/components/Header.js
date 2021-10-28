@@ -4,7 +4,11 @@ import "./header.css";
 const Header = () => {
   return (
     <section className="happy-header">
-      <img className="background-img" src="./pictures/pink.jpg" />
+      <img
+        className="background-img"
+        src="./pictures/pink.jpg"
+        alt="backroundpicture"
+      />
       <div className="happy-text-box">
         <h1 className="happy-header-title">
           Welcome to a place of happy thoughts!
