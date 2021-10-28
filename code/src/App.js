@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
-import { API_URL } from "./utils/urls";
-// import Like from "Components/Like";
+import { API_URL, LIKES_URL } from "./utils/urls";
+import ThoughtForm from "./components/ThoughtForm";
+import ThoughtItem from "./components/ThoughtItem";
+import LoadingItem from "./components/LoadingItem";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
-  const [count, setCount] = useState(0); /**varijabla za timer */
+  const [count, setCount] =
+    useState(0); /*set state for send thoughts counter */
+  const [loading, setLoading] = useState(false);
 
   const handleIncrement = () =>
     setTimeout(() => setCount((currentCount) => currentCount + 1), 500);
 
   useEffect(() => {
+    fetchThoughts();
+  }, []);
+
+  const fetchThoughts = () => {
+    setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data));
-  }, []);
+      .then((data) => setThoughts(data))
+      .finally(() => setLoading(false));
+  };
 
   const onFormSubmitt = (event) => {
     event.preventDefault();
@@ -29,61 +38,54 @@ export const App = () => {
     };
     fetch(API_URL, thoughts)
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        // setThoughts([data, ...thoughts]);
+
+        fetchThoughts();
+      });
+  };
+  const onLikesIncrease = (thoughtId) => {
+    const options = {
+      method: "POST",
+    };
+    fetch(LIKES_URL(thoughtId), options)
+      .then((res) => res.json())
+      .then((data) => {
+        // const updatedThoughts = thoughts.map((item) => {
+        //   if (item._id === data._id) {
+        //     item.hearts += 1;
+        //     return item;
+        //   } else {
+        //     return item;
+        //   }
+        // });
+
+        // setThoughts(updatedThoughts);
+        fetchThoughts();
+      });
   };
 
   return (
     <div>
-      {/* <Like onStepChange={onStepChange} /> */}
+      {loading && <LoadingItem />}
       <div className="form">
         {/* <p>What's making you happy right now?</p> */}
-        <form onSubmit={onFormSubmitt}>
-          <label htmlFor="newThought">
-            What's is making you happy right now?
-          </label>
-          <input
-            id="newThought"
-            className="input"
-            type="text"
-            value={newThought}
-            onChange={(e) => setNewThought(e.target.value)}
-          />
-          <button onClick={handleIncrement} type="submit" className="send-btn">
-            <span className="send-heart">❤</span>
-            Send happy thought
-            <span className="send-heart">❤</span>
-            {count}times
-          </button>
-          {/* <h3>{count}</h3> */}
-        </form>
-
-        {/* <button type="submit" className="send-btn">
-          <span className="send-heart">❤</span>Send happy thought
-          <span className="send-heart">❤</span>
-        </button> */}
+        <ThoughtForm
+          onFormSubmitt={onFormSubmitt}
+          newThought={newThought}
+          setNewThought={setNewThought}
+          handleIncrement={handleIncrement}
+          count={count}
+        />
       </div>
 
       {thoughts.map((thought) => (
-        <div className="thoughts" key={thought._id}>
-          <div className="thoughts-card">
-            <p>{thought.message}</p>
-            <div className="thoughts-container">
-              <button type="submit" className="btn">
-                <span>❤</span>
-              </button>
-              <p>x{thought.hearts} </p>
-              <p className="date">{moment(thought.createdAt).fromNow()}</p>
-            </div>
-          </div>
-        </div>
+        <ThoughtItem
+          key={thought._id}
+          thought={thought}
+          onLikesIncrease={onLikesIncrease}
+        />
       ))}
     </div>
-  ); // const [step, setStep] = useState(0);
-  // const onStepChange = () => {
-  //   setStep(step + 1);
-  // };
-
-  // const onNewThoughInputChange = (event) => {
-  //   setNewThought(event.target.value);
-  // };
+  );
 };
