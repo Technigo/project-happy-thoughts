@@ -1,4 +1,5 @@
 import React from "react";
+import Counter from "./Counter";
 
 const Form = ({ onFormSubmit, newThought, onSetThoughtChange }) => {
   return (
@@ -16,18 +17,8 @@ const Form = ({ onFormSubmit, newThought, onSetThoughtChange }) => {
           className={newThought.length < 5 ? "invalid-input" : ""}
         ></input>
       </section>
-      <p>
-        <span
-          className={
-            newThought.length < 5 || newThought.length > 140
-              ? "invalid"
-              : "valid"
-          }
-        >
-          {newThought.length}
-        </span>
-        / 140
-      </p>
+      <Counter counter={newThought.length} />
+
       <button
         className="submit-btn"
         type="submit"

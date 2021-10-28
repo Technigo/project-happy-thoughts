@@ -3,26 +3,24 @@ import moment from "moment";
 import { API_URL, API_HEART } from "./utils/urls";
 import Form from "components/Form";
 import ThoughtsCard from "components/ThoughtsCard";
+import Loading from "components/Loading";
 
 function App() {
   // * * * * * states * * * * *
   const [newThought, setNewThought] = useState("");
   const [thoughts, setThoughts] = useState([]);
-  // const [count, setCount] = useState(0);
-
-  console.log("this is newThought", newThought);
+  const [loading, setLoading] = useState(true);
 
   // * * * * * useEffect * * * * *
   useEffect(() => {
     fetch(API_URL)
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setThoughts(data);
-      });
+      .then(data => setThoughts(data))
+      .finally(() => setLoading(false));
   }, []);
 
   // * * * * * function * * * * *
+  // 1
   const onFormSubmit = e => {
     e.preventDefault();
 
@@ -36,22 +34,20 @@ function App() {
     fetch(API_URL, options)
       .then(res => res.json())
       .then(data => {
-        console.log("this is fetch2 with POST", data);
         setThoughts([data, ...thoughts]);
       });
 
     setNewThought("");
   };
+  // 2
 
   const onSetThoughtChange = e => {
     setNewThought(e.target.value);
-    console.log("new thought in onSetToughtChange", newThought.length);
-    onSetCountChange(newThought.length);
   };
 
-  const heartCounter = thought_id => {
-    console.log("this is thought_id", thought_id);
+  // 3
 
+  const heartCounter = thought_id => {
     const options = {
       method: "POST",
       // if there is no body we dont need a header
@@ -60,35 +56,24 @@ function App() {
     fetch(API_HEART(thought_id), options)
       .then(res => res.json())
       .then(data => {
-        console.log("this is fetch3 HEART with POST", data);
-
         const updatedThoughts = thoughts.map(item => {
           if (thought_id === item._id) {
-            console.log("this is the one", item._id);
             item.hearts += 1;
 
             return item;
           } else {
-            console.log("this is no new");
-
             return item;
           }
         });
-        console.log(updatedThoughts);
+
         setThoughts(updatedThoughts);
       });
   };
 
-  const onSetCountChange = count => {
-    console.log("vad hädner", newThought);
-    console.log(count);
-    //   if (count < 4 || count > 139) {
-    //     style = { backgroundColor: "red" };
-    //   }
-  };
-
   return (
     <>
+      {/* <Loading /> */}
+      {loading && <Loading />}
       {/* * * * * * * * * * * * NEW THOUGHT * * * * * * * * * */}
       <Form
         onFormSubmit={onFormSubmit}
@@ -99,28 +84,16 @@ function App() {
 
       {thoughts.map(thought => {
         return (
-          <>
-            <div key={thought._id} className="answer-card">
-              <div className="answer">
-                <p>{thought.message}</p>
-                <button
-                  onClick={() => heartCounter(thought._id)}
-                  className="heart-btn"
-                >
-                  {" "}
-                  <span role="img" aria-label="heart-emoji" className="heart">
-                    ❤️
-                  </span>{" "}
-                  x {thought.hearts}
-                </button>
-                <p className="date">
-                  -Created at: {moment(thought.createdAt).fromNow()}
-                </p>
-              </div>
-            </div>
-          </>
+          <ThoughtsCard
+            thought={thought}
+            heartCounter={heartCounter}
+            moment={moment}
+          />
         );
       })}
+      <footer>
+        <p>By Elin Elmvik Diczfalusy</p>
+      </footer>
     </>
   );
 }

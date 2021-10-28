@@ -14,7 +14,7 @@ const ThoughtsCard = ({ thought, heartCounter, moment }) => {
             <span role="img" aria-label="heart-emoji" className="heart">
               ❤️
             </span>{" "}
-            x{thought.hearts}
+            x {thought.hearts}
           </button>
           <p className="date">
             -Created at: {moment(thought.createdAt).fromNow()}
