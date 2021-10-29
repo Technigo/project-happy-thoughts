@@ -29,6 +29,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .happy-thought-button {
+    font-family: 'Trispace', sans-serif;
     -webkit-appearance: none;
     margin-top: 10px;
     width: 250px;
