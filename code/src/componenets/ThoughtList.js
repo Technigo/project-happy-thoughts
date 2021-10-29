@@ -10,7 +10,7 @@ const ThoughtList = ({thought, onLikesIncrease}) => {
             <button className="heart-button" onClick={() => onLikesIncrease(thought._id)} style={{backgroundColor: thought.hearts > 0 ? 'lightpink' : 'lightgrey'}}>
               <span className="heart" role="img" aria-label="heart">❤️</span>
             </button>
-            <span>  x {thought.hearts}</span>
+            <span className="x-hearts">  x {thought.hearts}</span>
           </div>
           <p className="date"> {moment(thought.createdAt).fromNow()} </p>
         </div>

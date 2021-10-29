@@ -62,7 +62,6 @@ button {
   justify-content: space-between;
 }
 .heart-button {
-  /* background-color: lightpink; */
   border: none;
   border-radius: 50%;
   height: 40px;
@@ -73,9 +72,7 @@ button {
   transform: scale(1.1);
   cursor: pointer;
 }
-span {
-  color: grey;
-}
+.x-hearts,
 .date {
   color: grey;
 }
