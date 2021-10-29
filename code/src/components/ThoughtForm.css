@@ -5,13 +5,11 @@
     box-shadow: 5px 5px;
     padding: 20px;
     background-color: #F2F0F0;
-    font-family: Helvetica Monospaced;
 }
 
 .happy-thought-textarea {
     margin-top: 13px;
     font-size: 12px;
-    font-family: Helvetica Monospaced;
     width: 470px;
     height: 80px;
     max-width: 470px;
