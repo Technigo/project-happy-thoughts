@@ -2,18 +2,21 @@ import React, { useEffect, useState } from "react";
 
 import { NewPost } from "./components/NewPost";
 import Posts from "./components/Posts";
-import { API_URL } from "./utils/urls";
-// import { LIKES_URL } from "./utils/urls";
+import { API_URL, LIKES_URL } from "./utils/urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
 
   useEffect(() => {
+    fetchThoughts();
+  }, []);
+
+  const fetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data));
-  }, []);
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -28,16 +31,25 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]));
+      .then((data) => {
+        fetchThoughts();
+      });
   };
 
-  // const likePost = {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.
-  // };
+  const onLikesIncrease = (thoughtId) => {
+    const options = {
+      method: "POST",
+    };
+
+    fetch(
+      LIKES_URL(thoughtId),
+      options
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        fetchThoughts();
+      });
+  };
 
   return (
     <div>
@@ -46,21 +58,11 @@ export const App = () => {
         newThought={newThought}
         setNewThought={setNewThought}
       />
-      <Posts thoughts={thoughts} />
-      {/* {thoughts.map((thought) => (
-        <div key={thought._id} className="post-container">
-          <p>{thought.message}</p>
-          <div className="like-div">
-            <button className="heart-button">
-              <span role="img" aria-label="heart icon">
-                💗
-              </span>
-            </button>
-            x{thought.hearts}
-          </div>
-          <p className="date">{moment(thought.createdAt).fromNow()}</p>
-        </div>
-      ))} */}
+
+      <Posts
+        thoughts={thoughts}
+        onLikesIncrease={onLikesIncrease}
+      />
     </div>
   );
 };
