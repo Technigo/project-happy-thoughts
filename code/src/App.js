@@ -9,7 +9,6 @@ export const App = () => {
   const [post, setPost] = useState([]);
   const [newPost, setNewPost] = useState("");
   const [loading, setLoading] = useState(false);
-  const [color, setColor] = useState("#f2f2f2");
 
   useEffect(() => {
     fetchPosts();
@@ -63,8 +62,6 @@ export const App = () => {
       .then(() => {
         fetchPosts();
       });
-
-    setColor("#ffb3b3");
   };
 
   return (
@@ -81,7 +78,6 @@ export const App = () => {
           key={thought._id}
           thought={thought}
           onSendLike={handleSendLike}
-          color={color}
         />
       ))}
     </div>

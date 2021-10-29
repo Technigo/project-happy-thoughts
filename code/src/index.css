@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
+  max-width: 500px;
 }
 
 code {
@@ -80,7 +81,7 @@ code {
   margin-top: 10px;
   width: 60%;
   height: 30px;
-  /* background-color: #ffb3b3; */
+  background-color: #ffb3b3;
   border-radius: 15px;
   border: none;
   display: flex;
@@ -133,20 +134,10 @@ textarea {
 
 @media (min-width: 768px) {
   body {
-    margin-top: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 40px auto;
   }
 
   .submit {
     width: 225px;
-  }
-}
-
-@media (min-width: 992px) {
-  body {
-    margin-top: 40px;
-    margin-left: 225px;
-    margin-right: 225px;
   }
 }

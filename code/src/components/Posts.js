@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
-const Posts = ({ thought, onSendLike, color }) => {
+const Posts = ({ thought, onSendLike }) => {
+  const [color, setColor] = useState("#f2f2f2");
+
+  const clickLike = (id) => {
+    setColor("#ffb3b3");
+    onSendLike(id);
+  };
+
   return (
     <div className="container posts">
       <p className="message">{thought.message}</p>
@@ -10,7 +17,7 @@ const Posts = ({ thought, onSendLike, color }) => {
           <button
             style={{ background: color }}
             onClick={() => {
-              onSendLike(thought._id);
+              clickLike(thought._id);
             }}
             className="like"
           >
