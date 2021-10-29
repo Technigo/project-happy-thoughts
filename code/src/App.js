@@ -31,7 +31,6 @@ export const App = () => {
       body: JSON.stringify({message: newThought })
     })
     .then((res) => res.json())
-    .then((data) => console.log(data))
     .then(setNewThought(''))
     .finally(() => fetchThoughts())
   }

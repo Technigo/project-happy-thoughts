@@ -66,15 +66,25 @@ code {
   
 }
 
-.heart-btn-loved:hover, .thought-btn:hover {
+.thought-btn:hover, .heart-btn-loved:hover {
   background-color: rgb(255, 122, 122);
-  /* cursor: pointer; */
   cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym49.cur), auto;
 }
 
 .thought-btn:disabled {
   cursor: not-allowed;
   background-color: rgb(255, 173, 173)
+}
+
+.black-text, .red-text {
+  width: 30px;
+  margin-left: 10px;
+  font-size: 12px;
+  word-break: normal;
+}
+
+.red-text {
+  color: red;
 }
 
 .thought {
@@ -134,8 +144,8 @@ code {
 .loader {  
   background: linear-gradient(-45deg, rgba(255, 255, 255, 0) 49%, rgb(255, 21, 0) 51%);
   border-radius: 50%;
-  width: 450px;
-  height: 450px;
+  width: 350px;
+  height: 350px;
   animation: spin 2s linear infinite;
 }
 
@@ -151,6 +161,7 @@ code {
 @media screen and (max-width: 756px) {
   .container {
     height: 200px;
+    width: 90%;
   }
 
   .inner-container, .inner-container-form {
