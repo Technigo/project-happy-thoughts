@@ -41,16 +41,13 @@ export const App = () => {
 		fetch(API_URL, options)
 			.then((response) => response.json())
 			.then((data) => {
-				fetchThoughts();
+				fetchThoughts(setNewThought(""));
 			});
 	};
 
 	const handleLikesIncrease = (thoughtId) => {
 		const options = {
 			method: "POST",
-			// headers: {
-			// 	"Content-Type": "application/json",
-			// },
 		};
 
 		fetch(LIKES_URL(thoughtId), options)
@@ -82,15 +79,17 @@ export const App = () => {
 				setNewThought={setNewThought}
 			/>
 
-			{/*prettier-ignore*/}
-			{thoughts.map((thought) =>
-				/*prettier-ignore*/
-				<ThoughtItem
-					key={thought._id}
-					thought={thought}
-					onLikesIncrease={handleLikesIncrease}
-				/>
-			)}
+			<section className="thoughts-section">
+				{/*prettier-ignore*/}
+				{thoughts.map((thought) =>
+					/*prettier-ignore*/
+					<ThoughtItem
+						key={thought._id}
+						thought={thought}
+						onLikesIncrease={handleLikesIncrease}
+					/>
+				)}
+			</section>
 		</main>
 	);
 };

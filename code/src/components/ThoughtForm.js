@@ -14,7 +14,7 @@ export const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
         // wrap="hard"
         value={newThought} onChange={(event) => setNewThought(event.target.value)}>
       </textarea>
-			<button className="submit-btn" disabled={newThought.length < 5} type="submit">
+			<button className="submit-btn" disabled={newThought.length < 5 || newThought.length > 140} type="submit">
 				<span role="img" className="heart-icon" aria-label="heart icon">
 					❤️
 				</span>
