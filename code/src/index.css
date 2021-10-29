@@ -62,7 +62,7 @@ button {
   justify-content: space-between;
 }
 .heart-button {
-  background-color: lightpink;
+  /* background-color: lightpink; */
   border: none;
   border-radius: 50%;
   height: 40px;

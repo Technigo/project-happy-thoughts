@@ -18,7 +18,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true) //loading overlay on while fetching
-    fetch(API_URL)
+    fetch(API_URL) //fetching the API
     .then((res) => res.json())
     .then((data) => setThoughts(data))
     .finally(() => setLoading(false)) //stopped fetching, loading overlay off

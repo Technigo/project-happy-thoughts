@@ -1,13 +1,14 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Project making a Twitter clone with React components and useState/useEffect.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Started by making a working build with fetching API information and displaying it on a page with useStates, useEffect and some minor styling.
+Added other functions like a counter for characters in the textarea, disabled button if text too short or too long and made the textarea counter text red in that case. Animated heart for while the site is loading.
+
+If I had more time I would've wanted to dive down even deeper for understanding the useEffect and how everything works together, and add even more functions.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://vibrant-poincare-2ba27b.netlify.app/
