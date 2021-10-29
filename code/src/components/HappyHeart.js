@@ -14,8 +14,9 @@ const HappyHeart = ({ thought, onLikesIncreased}) => {
             (thought._id)}
             style={{ background: thought.hearts >= 1 ? '#ffadad' : '#eaeaea'}} 
         >
-            {' '}
-            &hearts;
+            <span role="img" aria-label="heart">
+                🖤
+            </span>
         </button>
         <p className="happyHeartAmount" >&nbsp;x {thought.hearts}</p>
         <p className="happyDate">
