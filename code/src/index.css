@@ -11,3 +11,77 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.main {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.new-thought-container {
+  margin-top: 30px !important;
+}
+
+.new-thought-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+
+}
+
+.new-thought-label {
+
+}
+
+.new-thought-input {
+  height: 100px;
+
+}
+
+.submit-btn {
+  width: 150px;
+  height: 40px;
+}
+
+.thoughts-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.thought-box, .new-thought-container {
+  width: 315px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid black;
+  -webkit-box-shadow: 6px 5px 2px 1px rgba(40, 40, 40, 0.71);
+  box-shadow: 6px 5px 2px 1px rgba(40, 40, 40, 0.71);
+}
+
+.message {
+  font-size: 20px;
+}
+
+.post-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.heart {
+  justify-self: start;
+}
+
+.date {
+  justify-self: end;
+  font-size: 14px;
+  color: gray;
+}
+
+@media (min-width: 450px) {
+  .thought-box, .new-thought-container {
+    width: 430px;
+  }
+}
