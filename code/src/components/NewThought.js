@@ -20,7 +20,10 @@ const NewThought = ({ onFormSubmit, newThought, setNewThoughts, heart }) => {
         </button>
         {/* Presents how many characters you have printed in the form */}
         {/* Currently trying a new thing that isn't really working out */}
-        {newThought.length <= 140 && <p>{newThought.length}/140 characters</p>}
+        {newThought.length < 5 && (
+          <p className="errorMessage">{newThought.length}/140 characters</p>
+        )}
+        {newThought.length <= 140 && newThought.length >= 5 && <p>{newThought.length}/140 characters</p>}
         {newThought.length > 140 && (
           <p className="errorMessage">{newThought.length}/140 characters</p>
         )}
