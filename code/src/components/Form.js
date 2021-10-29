@@ -23,7 +23,7 @@ const Form = ({ onFormSubmit, newThought, setNewThought, likeClick }) => {
             color: caractersLeft < 0 && "red",
           }}
         >
-          {caractersLeft}
+          {caractersLeft} / 140
         </p>
         <p className="clicked-likes">
           You <span className="heart">&#10084;</span> : {likeClick} posts
