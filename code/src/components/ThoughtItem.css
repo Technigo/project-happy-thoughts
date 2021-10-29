@@ -28,7 +28,7 @@
   }
 
   .emoji {
-      padding-right: 2px;
+    transform: translateX(5px);
   }
 
   .x-likes {
