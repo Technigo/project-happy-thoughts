@@ -3,11 +3,23 @@ body {
   font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+h1 {
+  text-align: center;
+  color: #ffadad;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .date {
@@ -18,13 +30,80 @@ code {
   border: 1px solid black;
   padding: 25px;
   background-color: #f2f0f0;
+  box-shadow: 7px 7px black;
+  margin: 20px;
+  display: flex;
+}
+
+input {
+  padding: 20px;
+  margin: 10px 0;
 }
 
 .form-button {
   background-color: #ffadad;
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
 }
 
 .thought-wrapper {
   border: 1px solid black;
   margin: 20px;
+  box-shadow: 7px 7px black;
+  overflow-wrap: break-word;
+}
+
+.like-button {
+  border-radius: 50%;
+  padding: 0 16px;
+  background-color: #f2f0f0;
+  border: none;
+}
+
+.like-button:hover {
+  background-color: #ffadad;
+}
+
+.likes {
+  display: flex;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ffadad;
+  border-radius: 50%;
+  border-left: 5px solid #fff;
+  animation: spinner infinite 0.5s;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    width: 70%;
+  }
 }

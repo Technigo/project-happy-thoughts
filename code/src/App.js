@@ -1,15 +1,14 @@
 import React from "react";
-import Thoughts from "./components/Thoughts";
-import Form from "./components/Form";
+
+import Wrapper from "./components/Wrapper";
 
 export const App = () => {
   return (
-    <>
+    <div className="content-wrapper">
       <header>
         <h1>Happy Thoughts</h1>
       </header>
-      <Form />
-      <Thoughts />
-    </>
+      <Wrapper />
+    </div>
   );
 };
