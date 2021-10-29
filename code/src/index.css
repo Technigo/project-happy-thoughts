@@ -97,3 +97,9 @@ label {
 .date {
   font-style: italic;
 }
+
+textarea {
+  min-width: 90%;
+  max-width: 90%;
+  min-height: 1em;
+}
