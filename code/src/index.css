@@ -72,6 +72,9 @@ button {
   transform: scale(1.1);
   cursor: pointer;
 }
+.heart {
+  transform: translateX(5px);
+}
 .x-hearts,
 .date {
   color: grey;
