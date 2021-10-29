@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Podkova", serif;
-  padding: 20px;
+  padding: 10px 20px 10px 10px;
   background-image: url("./pixel-heart.png");
   background-repeat: repeat;
   -webkit-font-smoothing: antialiased;
