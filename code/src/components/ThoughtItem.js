@@ -7,7 +7,7 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
           <p>{thought.message}</p>
           <div className="like-container">
             <button
-              className="like-btn"
+              className={(thought.hearts === 0) ? "like-btn"  : "like-btn like-btn-loved"}
               onClick={() => onLikesIncrease(thought._id)}>
                 {' '}
                 &hearts;
