@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'; //use effect hook
-import { API_URL, LIKES_URL } from './utils/urls';
-import ThoughtItem from 'components/ThoughtItem';
+import { API_URL, LIKES_URL } from './utils/urls'; //Links to the URLs
+import ThoughtItem from './components/ThoughtItem';
 import ThoughtForm from './components/ThoughtForm';
-import LoadingItem from 'components/LoadingItem';
+import LoadingItem from './components/LoadingItem';
 
 export const App = () => {
 	const [thoughts, setThoughts] = useState([]); //should be initialized by an empty array//state property should by convention be at the top

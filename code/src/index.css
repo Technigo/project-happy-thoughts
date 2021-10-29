@@ -5,9 +5,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
+.img {
+	padding: 5px;
 }
 
 /*-----------------Question Form------------- */
@@ -15,22 +14,36 @@ code {
 .question-form {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	flex-direction: column;
-	row-gap: 20px;
+	row-gap: 30px;
 	border: solid black 1px;
-	padding: 20px;
+	padding: 15px;
 	margin: 25px auto;
 	box-shadow: 5px 5px;
 	background-color: #f2f0f0;
+	max-width: 400px;
+	height: 200px;
 }
 
 .thought-btn {
 	background-color: #ffadad;
-	padding: 10px;
+	padding: 8px;
 	border-radius: 20px;
 	color: black;
 	border: none;
+	font-weight: bold;
+}
+
+.form-title {
+	font-weight: bold;
+	font-family: 'Trispace', sans-serif;
+}
+
+.form-bottom-wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	width: 100%;
 }
 
 /*-----------------ThoughtItem------------- */
@@ -45,10 +58,15 @@ code {
 	padding: 15px;
 	margin: 25px auto;
 	box-shadow: 5px 5px;
+	max-width: 400px;
 }
 
 .thought-message {
 	width: 100%;
+}
+
+.thought-message p {
+	overflow-wrap: break-word;
 }
 
 .heart-date-container {
@@ -56,6 +74,7 @@ code {
 	justify-content: space-between;
 	flex-direction: row;
 	width: 100%;
+	color: #949494;
 }
 
 .heart-btn {
@@ -63,10 +82,13 @@ code {
 	padding: 13px;
 	background: #ffadad;
 	border: none;
+	margin-right: 5px;
 }
 
 .date {
-	color: #eaeaea;
+	color: #949494;
+	display: flex;
+	align-items: center;
 }
 /*-----------------spinner animation------------- */
 
@@ -101,5 +123,18 @@ code {
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+/*Media Queries*/
+/*Mobile*/
+@media (min-width: 666px) {
+	.question-form,
+	.thought-container {
+		width: 60%;
+		max-width: 400px;
+	}
+
+	textarea {
 	}
 }
