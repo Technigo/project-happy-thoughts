@@ -6,7 +6,6 @@ const Loading = () => {
       <div className="progress-container">
         <div className="progress"></div>
       </div>
-      <p>We are catching your data...</p>
     </section>
   );
 };

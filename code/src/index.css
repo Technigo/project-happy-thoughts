@@ -160,6 +160,6 @@ textarea {
 
 footer {
   margin-top: auto;
-  background-color: rgb(237, 237, 237);
+  background-color: rgba(237, 237, 237, 0.5);
   padding: 10px;
 }

@@ -4,6 +4,7 @@ import { API_URL, API_HEART } from "./utils/urls";
 import Form from "components/Form";
 import ThoughtsCard from "components/ThoughtsCard";
 import Loading from "components/Loading";
+import Footer from "components/Footer";
 
 function App() {
   // * * * * * states * * * * *
@@ -92,9 +93,7 @@ function App() {
           />
         );
       })}
-      <footer>
-        <p>By Elin Elmvik Diczfalusy</p>
-      </footer>
+      <Footer />
     </>
   );
 }
