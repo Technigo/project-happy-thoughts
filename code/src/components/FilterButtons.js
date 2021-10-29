@@ -1,6 +1,4 @@
 import React from 'react';
-import  "./FilterButtons.css"
-
 
 export const FilterButtons = ({handleOldestButton, handleNewestButton}) => {
     return (

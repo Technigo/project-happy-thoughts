@@ -1,5 +1,4 @@
 import React from 'react';
-import  "./form.css"
 
 export const Form = ({newThought, setNewThought, handleFormSubmit}) => {
     // when submitting form, handleFormSubmit function trigged, which is in App.js

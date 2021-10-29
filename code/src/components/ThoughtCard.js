@@ -1,8 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 
-import './ThoughtCard.css'
-
 export const ThoughtCard = ({ thought, onLikesIncrease }) => {
 
     return (

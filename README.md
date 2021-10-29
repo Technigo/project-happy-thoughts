@@ -4,7 +4,7 @@ This project's goals is to learn about a React component's lifecycle and how to 
 
 # What I learned | How I built it 
 
-For this project, I've been digging into React, and a deeper understanding of useEffect and useState. My project contains three components and different style.css files. This is my first time using different style.css files for different components. 
+For this project, I've been digging into React, and a deeper understanding of useEffect and useState.
 
 # View it here
 
