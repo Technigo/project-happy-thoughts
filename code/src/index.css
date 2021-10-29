@@ -4,9 +4,6 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #f8f8f8; */
-  /* background-color: #fbe8ef; */
-  /* background-color: #f8e3f0; */
   background-color: #fcf1f7;
   font-family: 'Roboto Mono', monospace;
 }
@@ -35,13 +32,8 @@ code {
   height: 100px;
   text-align: center;
 }
-/* .wrapper{
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-} */
-.container{
+
+.container {
   margin: 30px;
   position: relative;
 }
@@ -127,6 +119,7 @@ code {
   padding: 10px;
   font-size: 16px;
   margin-top: 10px;
+  resize: none;
 }
 .input-message:hover {
   border-color:pink;
@@ -201,12 +194,7 @@ code {
 ::placeholder{
   font-size: 14px;
 }
-/* .unliked-heart{
-  background-color: #eaeaea;
-}
-.liked-heart{
-  background-color: #ffadad;
-} */
+
 .likes-counter {
   color: #a6a6a6;
   font-size: 13px;
@@ -216,8 +204,9 @@ code {
   text-align: right;
   font-size: 13px;
 }
+
 .black-color-counter {
-  color: black;
+  color: purple;
 }
 .red-color-counter {
   color: #cb3532;

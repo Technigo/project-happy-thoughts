@@ -8,7 +8,6 @@ import { API_URL, LIKES_URL } from './utils/urls'
 
 
 export const App = () => {
-  // States
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
   const [loading, setLoading] = useState(true)
@@ -78,7 +77,6 @@ export const App = () => {
       .then(res => res.json())
       .then((data) => fetchThoughts())
       .catch(error => console.error(error))
-
   }
 
 

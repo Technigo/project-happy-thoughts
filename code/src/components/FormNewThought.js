@@ -3,7 +3,6 @@ import React from 'react'
 
 const FormNewThought = ({ newThought, setNewThought, onFormSubmit, error }) => {
 
-
     // updating newThoughts from the form input like we did last week to have separate function for it 
     const onNewThoughtChange = (event) => {
         setNewThought(event.target.value)
@@ -24,14 +23,15 @@ const FormNewThought = ({ newThought, setNewThought, onFormSubmit, error }) => {
                 <p className="error-message">{error}</p>
                 <div className="count">
                     <span className={newThought.length > 140 ? 'red-color-counter' : 'black-color-counter'}>
-                        {newThought.length}/140</span>
+                        {newThought.length}</span>/140
                 </div>
                 <div className="button-container">
                     <button
                         type="submit"
                         className="form-button"
-                    ><span role="img"
-                        aria-label="heart" className="heart">❤️</span><p className="send-thought-button">Send Happy Thought</p> <span role="img" aria-label="heart" className="heart">❤️</span>
+                    >
+                        <span role="img"
+                            aria-label="heart" className="heart">❤️</span><p className="send-thought-button">Send Happy Thought</p> <span role="img" aria-label="heart" className="heart">❤️</span>
                     </button >
                 </div>
             </div>
