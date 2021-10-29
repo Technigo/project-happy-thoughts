@@ -28,8 +28,6 @@ h1 {
 /*Containers*/
 
 .form-container{
-  /*width: 660px;
-  height: 260px;*/
   width: 100%;
   margin: 40px auto;
   border: 1px solid black;
@@ -40,22 +38,18 @@ h1 {
 
 }
 .message-container{
-  /*width: 660px;
- 
-  height: 260px;*/
   width: 100%;
   margin: 40px auto;
   border: 1px solid black;
   box-shadow: 13px 13px black;
-  
 }
 /*Form for thought-submission*/
 
 .label-form {
-  
   margin: 25px 0 15px 25px;
   font-weight: 600;
 }
+/*This is where you type in your thought*/
 .thought-input {
   border: 1px solid #D5D2D2;
   margin: 0 auto;
@@ -64,11 +58,13 @@ h1 {
   font-family: 'Roboto Mono', monospace;
   padding: 10px;
 }
-.button-error{
+/*This is the button-character counter wrapper*/
+.button-count{
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+/*Styles the thought-submit button*/
 .submit-button {
   width: 50%;
   height: 60px;
@@ -81,30 +77,30 @@ h1 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-
 }
+/* Wraps heart icond and Send Happy Thought text*/
 .send-wrapper {
   display: flex;
   justify-content: center;
   align-content: center;
-  
 }
 
 .character-count {
   margin-right: 50px;
 }
-
+/*MEssage which is conditionally rendered*/
 .error-message {
   font-family: 'Roboto Mono', monospace;
   text-align: center;
 }
+/*Text on button*/
 .send-happy {
   padding: 0 15px;
   font-size: 16px;
   font-weight: 600;
   margin-top: 10px;
 }
+/*Heart icon*/
 .send-wrapper img {
   width: 40px;
 }
@@ -115,6 +111,7 @@ h1 {
   height: 60px;
   margin-bottom: 30px;
 }
+
 .thought-message {
   margin: 70px 35px;
   font-size: 20px;
@@ -122,6 +119,8 @@ h1 {
   font-family: 'Roboto Mono', monospace;
   font-weight: bold;
 }
+/*Row containing Hear button for likes, number of likes and 
+time when last updated*/
 .button-row{
   display: flex;
   flex-direction: row;
@@ -130,12 +129,12 @@ h1 {
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
+/*Heart button and counter for likes*/
 .heart-button-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 75%;
-  
+  width: 75%; 
 }
 
 .heart-button{
@@ -146,35 +145,19 @@ h1 {
   height: 67px;
   margin: 0 15px 0 25px;
   cursor: pointer;
- 
 }
 
 .heart-button img {
   width: 40px;
 }
+
 .date {
   display: inline;
 }
-
+/* media queries*/
 @media (min-width: 700px) {
  
-  .message-container{
+  .message-container, .form-container{
     width: 660px;
-    height: 260px;
-    margin: 40px auto;
-    border: 1px solid black;
-    box-shadow: 13px 13px black;
-    
   }
-
-  .form-container{
-    width: 660px;
-    height: 260px;
-    margin: 40px auto;
-    border: 1px solid black;
-    box-shadow: 13px 13px black;
-    display: flex;
-    flex-direction: column;
-    background-color: #F3F0F0;
-}
 }

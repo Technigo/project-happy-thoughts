@@ -13,7 +13,7 @@ const ThoughtForm = ({onFormSubmit, setNewThought, newThought}) => {
           value={newThought}
           onChange= {(e) => setNewThought(e.target.value)}
           ></textarea>
-          <div className="button-error">
+          <div className="button-count">
             <button disabled = {newThought.length<5 || newThought.length>140}type="submit" className="submit-button">
               <div className="send-wrapper">
                 <img src="/assets/red-heart.png" alt="red heart" className="heart"></img> 
