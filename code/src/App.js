@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
 import {Form} from './components/Form';
 import { ThoughtCard } from 'components/ThoughtCard';
 import { FilterButtons } from './components/FilterButtons';
@@ -15,9 +14,28 @@ export const App = () => {
   /*new thought is the value from input*
   setNewThought function, sets value to the newThought*/
 	const [newThought, setNewThought] = useState("");
-  
+  const [filteredArray, setFilter] = useState([]);
 
-  
+  // Those two function are handeling filtering of thoughts array. 
+  // I made two function, but it is sure a way of doing it in another way. 
+  // Maybe by combining two functions in one, and use conditions inside for different button clicks
+  const handleOldestButton = (e) => {
+    e.preventDefault()
+
+    // sorting array of thoughts by date, so the oldest messages comes first 
+    const sorted = [...thoughts].sort((oldestMsg, newestMsg) => {
+      return new Date(oldestMsg.createdAt) - new Date(newestMsg.createdAt);
+    }); 
+    // setting the value of sorted to setFilter function which sets value to filteredArray
+    setFilter(sorted)
+  };
+
+  const handleNewestButton = () => {
+    const sorted = [...thoughts].sort((oldestMsg, newestMsg) => {
+      return new Date(newestMsg.createdAt) - new Date(oldestMsg.createdAt);
+    }); 
+    setFilter(sorted)
+  };
 
   // useEffect is like reaction to componenet behavior 
   // it can be a couple of useEffect in one componenet, and you can apply useEffect to different fases of componenet live 
@@ -34,7 +52,9 @@ export const App = () => {
       and message has a value of json object?
       saving data from json to thoughts*/
       .then((json) => {
-        setThoughts(json)
+        setThoughts(json);
+        setFilter(json)
+
       });
   };
 
@@ -51,7 +71,10 @@ export const App = () => {
 
 		fetch(API_URL, options)
 			.then((res) => res.json())
-			.then(() => getRequest());
+			.then(() => {
+        getRequest();
+        setNewThought("");
+      });
 	};
 
   /* function to increase the mount of hearts, passing the id of thought as argument to this function*/
@@ -68,31 +91,31 @@ export const App = () => {
 			.then(() => getRequest());
 	};
 
-  const arr = thoughts.sort((old, newest) => {
-    const oldest = new Date(old.createdAt) - new Date(newest.createdAt);
-    return oldest
-  })
-
-  console.log(arr)
-
-
   return (
      <>
-       {/* Passing handleFormSubmit function and use state as props to form js */}
+      {/* Passing handleFormSubmit function and use state as props to form js */}
       <Form 
       	handleFormSubmit={handleFormSubmit}
         newThought={newThought}
         setNewThought={setNewThought}
       /> 
-      <FilterButtons thoughts={thoughts} />
-      {thoughts.map(thought => (
 
-      <ThoughtCard 
-        key={thought._id}
-        thought={thought}
-        onLikesIncrease={handleLikesIncrease}
+      <FilterButtons 
+        handleOldestButton={handleOldestButton}
+        handleNewestButton={handleNewestButton}
       />
-      ))}
+
+      {/* mapping filteredArray */ }
+      {filteredArray.map((thought) => {
+        return (
+          <ThoughtCard 
+          key={thought._id}
+          thought={thought}
+          onLikesIncrease={handleLikesIncrease}
+        />
+        );
+      })};
+
      </>
   );
 };

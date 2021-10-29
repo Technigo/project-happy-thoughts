@@ -1,13 +1,12 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This project's goals is to learn about a React component's lifecycle and how to react to that. We looked at how to react to changes in state or a component mounting using useEffect. We worked with a Happy Thoughts API which showcases previously posted thoughts, gives us the possibility to post new thoughts and also give likes to the already existing ones.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+# What I learned | How I built it 
 
-## The problem
+For this project, I've been digging into React, and a deeper understanding of useEffect and useState. My project contains three components and different style.css files. This is my first time using different style.css files for different components. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+# View it here
 
-## View it live
+https://happy-thoughts-react-project.netlify.app/
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.

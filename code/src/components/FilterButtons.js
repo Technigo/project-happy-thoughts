@@ -1,18 +1,14 @@
 import React from 'react';
-import  "./filterButtons.css"
+import  "./FilterButtons.css"
 
 
-export const FilterButtons = ({thoughts}) => {
-
-
-
-
+export const FilterButtons = ({handleOldestButton, handleNewestButton}) => {
     return (
         <div className="button-container">
-            <button>New</button>
-            <button>Oldest</button>
+            <button onClick={handleNewestButton}>&bull; Newest Thoughts &bull;</button>
+            <button onClick={handleOldestButton}>&bull; Oldest Thoughts &bull;</button>
         </div>
-    )
+    );
 };
 
 

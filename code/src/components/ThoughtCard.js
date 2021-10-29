@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-import './thoughtCard.css'
+import './ThoughtCard.css'
 
 export const ThoughtCard = ({ thought, onLikesIncrease }) => {
 

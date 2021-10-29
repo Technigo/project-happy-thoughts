@@ -1,7 +1,7 @@
 .thought-card {
     margin: 20px auto;
     border: 2px solid black;
-    width: 500px;
+    width: 350px;
     box-shadow: 5px 5px;
     padding: 20px;
     word-wrap: break-word;
@@ -23,4 +23,12 @@
 .likes-button:hover {
     width: 80px;
     transform: scale(1.07);
+}
+
+/* MEDIA QUERIES */ 
+
+@media(min-width:1024px) {
+    .thought-card {
+        width: 500px;
+    }
 }
