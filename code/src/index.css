@@ -73,6 +73,7 @@ button {
   cursor: pointer;
 }
 .heart {
+  padding: 0.5px 0 2.5px 4px;
   transform: translateX(5px);
 }
 .x-hearts,
