@@ -38,11 +38,13 @@ export const App = () => {
 			body: JSON.stringify({ message: newThought }), //
 		};
 
-		fetch(API_URL, options) //option is neeed otherwise is going to be getMetod
+		fetch(API_URL, options) //option is needed otherwise is going to be getMetod
 			.then((res) => res.json())
 			.then((data) => {
 
 				fetchThoughts();
+				setNewThought(''); //clear inputfield after sumbitting thought
+
 			});
 	};
 

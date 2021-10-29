@@ -14,7 +14,8 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 				value={newThought}
 				onChange={(e) => setNewThought(e.target.value)}
 			/>
-			<button className="happy-thought-button" disabled={newThought.length < 6 || newThought.length > 140 ? true : false} type="submit">
+			<button className="happy-thought-button" 
+			disabled={newThought.length < 6 || newThought.length > 140 ? true : false} type="submit">
 			<span className="heart" role="img" arial-label="Heart">
               {"❤️ "}
             </span>Send Happy Thought <span className="heart" role="img" arial-label="Heart">
