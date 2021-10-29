@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from 'react'
-import moment from 'moment'
 
-import { API_URL } from './utils/urls'
+import ThoughtForm from './components/ThoughtForm'
+import ThoughtItem from './components/ThoughtItem'
+
+import { API_URL, LIKES_URL } from './utils/urls'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([{message: 'hello', createdAt: '2021/10/12', hearts: 1, _id: 'asdf'}]) //should be empty array because later it will be non empty array
   const [newThought, setNewThought] = useState ('')
 
-//calling useEffect after the component gets mounted
+  //calling useEffect after the component gets mounted
   useEffect (() => {
+    fetchThoughts()
+  }, [])
+  
+  const fetchThoughts = () => {
     fetch(API_URL) // fetch request when component is mounted to get the data from the API
       .then((res) => res.json())  //unpack json                  
       .then((data) => setThoughts(data)) //save the data in the state
-  
-    }, []) //pass an empty array
+  }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault() //because we dont want the submission of the form to refresh the page
   
     const options = {
@@ -23,63 +28,41 @@ export const App = () => {
       headers: { //for the API to know what type of data we will send
         'Content-Type': 'application/json', //type is json
       },
-      body: JSON.stringify({ message: 'newThought' }) //"message" is the key of the object and value is the "my happy thought"
+      body: JSON.stringify({ message: newThought }) //"message" is the key of the object and value is the "my happy thought"
     }
 
-    fetch(API_URL, options)
+    fetch(API_URL, options) //send request to add a new thought
       .then(res => res.json())
-      .then(newThought => setThoughts([newThought, ...thoughts]))
+      .then(newThought => {
+
+        fetchThoughts()
+        setNewThought('') //clears input field after submitting thought
+      }) 
   }
 
-  const onLikesIncrease = (thoughtId) => {
+  const handleLikesIncrease = (thoughtId) => {
     const options = {
       method: 'POST',
     }
 
-    fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`,
-      options
-    )
+    fetch(LIKES_URL(thoughtId), options)
       .then(res => res.json())
       .then(data => {
-
-        //v1 increase amount of likes only
-
-        const updatedThoughts = thoughts.map(item => {
-          if (item._id === data._id) { //iteratig over all of the objects looking for the item. increase amount of likes for one specific thought
-            item.hearts += 1
-            return item
-          } else {
-            return item
-          }
-        })
-        setThoughts(updatedThoughts)
+        
+        fetchThoughts()      
       })
   }
-  
+
   return ( //since state is updated, component renders some JS6. After JS6 rendered first time then useEffect gets triggered with console log
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">Type your thought</label> 
-        <input 
-          id="newThought"
-          type="text" 
-          value={newThought}
-          onChange={e => setNewThought(e.target.value)}/>
-          <button type="submit">Send thought!</button>
-      </form>
+      <ThoughtForm 
+        onFormSubmit={handleFormSubmit}
+        newThought={newThought}
+        setNewThought={setNewThought} 
+      />
 
       {thoughts.map(thought => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          <button onClick={() => onLikesIncrease(thought._id)}> 
-            {''}
-            &hearts; {thought.hearts}
-          </button>
-          <p className="date">
-            Created {moment(thought.createdAt).fromNow()}
-          </p>
-        </div>
+       <ThoughtItem key={thought._id} thought={thought} onLikesIncrease={handleLikesIncrease}/>
       ))}
     </div>
   )
