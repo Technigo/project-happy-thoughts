@@ -13,6 +13,7 @@ export const PostNewThought = ({
   return (
     <>
       <form onSubmit={onFormSubmit}>
+        {/* Did a errorState that activates a dic saying that some kind of error occured */}
         {errorState && (
           <div>Some kind of error occured, please try again later.</div>
         )}
@@ -28,6 +29,7 @@ export const PostNewThought = ({
           rows="5"
         ></textarea>
         <span
+          // Added a if/else statement to the lenght of NewThought to change the color depending on the amount of characters.
           style={{
             color:
               newThought.length > 4 && newThought.length < 141
@@ -37,7 +39,7 @@ export const PostNewThought = ({
         >
           {newThought.length} / 140 characters
         </span>
-
+        {/* Disabeled the button if it was less then 4 characters or more then 140 */}
         <button
           className="submit-button"
           disabled={newThought.length < 5 || newThought.length > 140}
@@ -46,6 +48,7 @@ export const PostNewThought = ({
           Send Happy Thougth
           <FontAwesomeIcon icon={faHeart} className="icon__heart--red" />
         </button>
+        {/* Made a likedPostValue that stores how many likes the user have given. */}
         <span
           className="liked-post-value"
           title="Amount of likes given on posts"

@@ -12,6 +12,8 @@ export const Main = () => {
   const [errorState, setErrorState] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  // this function set loading to true and then fetch the api data and update it through setThoughtList.
+  //I also did a setTimout just to see the loading spinner better.
   const fetchThoughts = () => {
     setLoading(true);
     fetch(API_ThoughtList)
@@ -20,10 +22,12 @@ export const Main = () => {
       .finally(() => setTimeout(() => setLoading(false), 500));
   };
 
+  //The useEffect calls for the fetchThoughts function everytime the component is mounted.
   useEffect(() => {
     fetchThoughts();
-  }, [setThoughtList]);
+  }, []);
 
+  // This function sets event.prevent Default and then fetches the Thoughtlist with the options
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
@@ -45,6 +49,7 @@ export const Main = () => {
       });
   };
 
+  // This function expects a id to be sent in to be able to update the likes on a post.
   const postALike = (id) => {
     const options = {
       method: "POST",
@@ -58,6 +63,7 @@ export const Main = () => {
       .catch(() => {});
   };
 
+  // if the state loading is true the spinner is only shown.
   return (
     <div className="wrapper">
       {loading && (
@@ -65,6 +71,8 @@ export const Main = () => {
           <ClipLoader color={"black"} loading={true} size={150} />
         </div>
       )}
+
+      {/* if the state loading is not true the other content is shown.  */}
 
       {!loading && (
         <>
