@@ -1,13 +1,13 @@
-# Happy Thoughts
+Week 11 - Technigo Bootcamp - Happy Thoughts
 
-Replace this readme with your own information about your project.
+Happy Thoughts is a "Twitter" kind app using React hooks (useState and useEffect) by posting and receiving data from an API, then use GET- and POST-requests to display and add new thoughts/likes to a list of happy thoughts. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+During this project I got introdued to the full concept of the component lifecycle, how to use useEffect hook in React to make  components mount, unmount, or when state changes.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+To understand the Reactl-concept, and where to put different "things" to be able to access them from all components is still challenging for me. But this project this project has been very helpful for me to understand more about React components, usage of states and sending data through functions and props.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+plese view it : 

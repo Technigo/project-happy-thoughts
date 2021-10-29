@@ -4,6 +4,7 @@ import ThoughtForm from './components/ThoughtForm' ;
 import ThoughtItem from './components/ThoughtItem';
 import LoadingItem from './components/Loading';
 
+
 import { API_URL , LIKES_URL } from 'utils/Urls';
 
 export const App = () => {
@@ -18,7 +19,8 @@ export const App = () => {
   }, [] ); 
 
   const  fetchThoughts = ( ) => {
-        fetch(API_URL )
+          setLoading(true);
+          fetch(API_URL )
           .then(res => res.json())
           .then(data => setThoughts (data))
           .finally(() => setLoading (false));
@@ -32,7 +34,7 @@ const handleFormSubmit = (event) => {
       headers: {
         'Content-Type': 'application/json', 
       },
-     // converting to JSON is the same as wrapping the message
+    
       body: JSON.stringify({message: newThought}), 
   };
 
@@ -53,24 +55,16 @@ fetch (LIKES_URL(thoughtId) ,options)
 .then(res => res.json())
 .then((data) => {
 
- // const updatedThoughts = thoughts.map((item) => {
-// if (item._id === data._id){
- // item.hearts += 1;
-//  return item;
-//  } else {
-//  return item; 
-// }
-//  }); 
-
-// setThoughts(updatedThoughts);
-
 fetchThoughts();
 });
 
 };
   return (
 		<div>
-			<LoadingItem />
+    {
+      loading && <LoadingItem />
+    }
+	
 			<ThoughtForm
 				onFormSubmit={handleFormSubmit}
 				newThought={newThought}

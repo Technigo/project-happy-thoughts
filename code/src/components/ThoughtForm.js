@@ -1,23 +1,38 @@
 import React from "react";
-import SubmitButton from "./SubmitButton";
 
-const ThoughtForm = ({onFormSubmit, newThought, setNewThought}) =>  {
+
+const ThoughtForm = ({onFormSubmit, newThought, setNewThought, likeClick}) =>  {
+const charactersLeft = 140  - newThought.length;
 
 return (
     <div className="thought_wrapper">
-    <form onSubmit ={onFormSubmit} >
-            <label htmlFor="newThought" className="thought_question">Please share what's making you happy right now?</label>
-            <input 
+         <form onSubmit ={onFormSubmit} >
+             <label htmlFor="newThought" className="thought_question">
+            What's making you happy right now?</label>
+
+
+        <input 
                 id="newThought"
                 type= "text"
                 value={newThought}
                 className="add-thought_input-field"
                 placeholder="Type your thoughts here..."
                 onChange= {(event) => setNewThought(event.target.value)} 
-                maxLength= "140"
+
        />
 
-       <button className="add-thought_button" disabled={newThought.length > 5 } type="submit"> ❤️ Send thought ❤️</button>
+     <div className="inline-wrapper">
+        <p
+          className="characters"
+          style={{
+            color: charactersLeft < 0 && "red",
+          }}
+        >
+        {charactersLeft} 
+        </p>
+      </div>
+     
+       <button className="add-thought_button" disabled={newThought.length < 5 } type="submit"> ❤️ Send thought ❤️ </button>
     
     </form>
     </div>
