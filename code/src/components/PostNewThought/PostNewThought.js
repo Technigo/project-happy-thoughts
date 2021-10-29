@@ -17,7 +17,7 @@ export const PostNewThought = ({
           <div>Some kind of error occured, please try again later.</div>
         )}
         <label htmlFor="inputThought">What makes you happy right now?</label>
-        <input
+        <textarea
           value={newThought}
           onChange={(event) => {
             onSetNewThought(event.target.value);
@@ -25,7 +25,8 @@ export const PostNewThought = ({
           type="text"
           id="inputThought
         "
-        ></input>
+          rows="5"
+        ></textarea>
         <span
           style={{
             color:
@@ -36,22 +37,21 @@ export const PostNewThought = ({
         >
           {newThought.length} / 140 characters
         </span>
-        <div className="container__button-like-post-value">
-          <button
-            className="submit-button"
-            disabled={newThought.length < 5 || newThought.length > 140}
-          >
-            <FontAwesomeIcon icon={faHeart} className="icon__heart--red" />
-            Send Happy Thougth
-            <FontAwesomeIcon icon={faHeart} className="icon__heart--red" />
-          </button>
-          <span
-            className="liked-post-value"
-            title="Amount of likes given on posts"
-          >
-            {likedPostValue}
-          </span>
-        </div>
+
+        <button
+          className="submit-button"
+          disabled={newThought.length < 5 || newThought.length > 140}
+        >
+          <FontAwesomeIcon icon={faHeart} className="icon__heart--red" />
+          Send Happy Thougth
+          <FontAwesomeIcon icon={faHeart} className="icon__heart--red" />
+        </button>
+        <span
+          className="liked-post-value"
+          title="Amount of likes given on posts"
+        >
+          You have liked {likedPostValue} posts!
+        </span>
       </form>
     </>
   );

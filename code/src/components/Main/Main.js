@@ -3,7 +3,6 @@ import "./Main.css";
 import { ThoughtsList } from "../ThoughtsList/ThoughtsList";
 import { PostNewThought } from "../PostNewThought/PostNewThought";
 import { API_ThoughtList, POST_Like } from "utils/urls";
-import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
 
 export const Main = () => {
