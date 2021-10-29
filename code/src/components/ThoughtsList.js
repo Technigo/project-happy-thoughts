@@ -9,8 +9,9 @@ const ThoughtsList = ({ thought, onLikesIncrease }) => {
         <button
           className="like-btn"
           onClick={() => onLikesIncrease(thought._id)}
+          style={{ background: thought.hearts >= 1 ? "#ffadad" : "#eaeaea" }}
         >
-          <span role="img" aria-label="heart">
+          <span className="like-heart" role="img" aria-label="heart">
             ❤️
           </span>
         </button>

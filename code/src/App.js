@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 
 import ThoughtsInput from "components/ThoughtsInput"
 import ThoughtsList from "components/ThoughtsList"
+import LoadSpinner from "./components/LoadSpinner"
 
 import { API_URL, LIKES_URL } from "reusables/urls"
 
@@ -10,24 +11,23 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
   const [counter, setCounterValue] = useState(0)
+  const [load, setLoad] = useState(false)
 
-  // const onNewThoughtChange = (event) => {
-  //   setNewThought(event.target.value)
-  // }
-
-  // This UseEffect hook in order to make a get req to get all thought when the app starts and is mounted
+  // This UseEffect hook in order to make a get-req to get all thoughts when the app starts and is mounted
   useEffect(() => {
     fetchThoughts()
   }, [])
 
-  // console.log("new thoughts", thoughts)
-
+  //a function that fetches the API and gives back the data thorugh the state set
   const fetchThoughts = () => {
+    setLoad(true)
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
+      .finally(() => setLoad(false))
   }
 
+  //Function that makes a POST-request to the API when you submit the input-form
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -46,7 +46,7 @@ export const App = () => {
         setNewThought("")
       })
   }
-
+  // a function that keeps track of the likes by fetching information from the API
   const handleLikesIncrease = (thoughtId) => {
     const options = {
       method: "POST",
@@ -58,9 +58,10 @@ export const App = () => {
         fetchThoughts()
       })
   }
-
+  //these are the components that displays on the FE aka Mounting the components that contains props being passed into here.
   return (
     <div>
+      {load && <LoadSpinner />}
       <ThoughtsInput
         onFormSubmit={handleFormSubmit}
         newThought={newThought}

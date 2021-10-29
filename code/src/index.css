@@ -23,7 +23,6 @@ code {
 p {
   font-family: "Trispace", sans-serif;
   word-wrap: break-word;
-  /* padding: 5px 20px; */
 }
 
 .letter-counter {
@@ -66,6 +65,30 @@ p {
   padding: 2%;
   width: 40px;
   margin: 10px 6px 0px 0px;
+  box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
+  animation: btn-pulse 2s infinite;
+}
+
+@keyframes btn-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
+
+.like-btn:hover {
+  color: rgb(228, 85, 85);
+  cursor: pointer;
 }
 
 .likes-counter {
@@ -84,11 +107,63 @@ textarea {
   border-radius: 30px;
   padding: 2% 6%;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .thought-message {
   height: 50%;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.load-spinner {
+  width: 80px;
+  height: 80px;
+  border: 10px solid #f73737;
+  border-radius: 50%;
+  border-left: 10px solid #fff;
+  animation: spinner infinite 1s;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.refresh-btn {
+  background-color: #fff;
+  border: none;
+  width: 200px;
+  color: rgb(240, 125, 144);
+  padding: 15px 30px;
+  margin-bottom: 30px;
+  box-shadow: 3px 3px rgb(0, 0, 0);
+}
+
+/* ---- MEDIA QUERY FOR DESKTOP AND TABLET ----- */
 
 @media (min-width: 768px) {
   .thoughts-wrapper,
