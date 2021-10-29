@@ -1,18 +1,27 @@
 import React from 'react';
 import moment from 'moment';
 
+import './HappyHeart.css';
+
 const HappyHeart = ({ thought, onLikesIncreased}) => {
     return (
-
-    <div key={thought._id}>
+    <div>
         <p>{thought.message}</p>
-        <button onClick={() => onLikesIncreased(thought._id)}>
+    <div className="happyHeart_buttonWrapper">
+        <button 
+        className="happyHeartButton"
+            onClick={() => onLikesIncreased
+            (thought._id)}
+            style={{ background: thought.hearts >= 1 ? '#ffadad' : '#eaeaea'}} 
+        >
             {' '}
-            &hearts; {thought.hearts}
-            </button>
-        <p className="date">
+            &hearts;
+        </button>
+        <p className="happyHeartAmount" >&nbsp;x {thought.hearts}</p>
+        <p className="happyDate">
             Created at: {moment(thought.createdAt).fromNow()}
         </p>
+    </div>
     </div>
     );
 };

@@ -39,7 +39,9 @@ export const App = () => {
 			.then((data) => {
 				fetchThoughts();
 			});
-	};
+    setNewThought('');
+  };
+	
 
 	const handleLikesIncrease = (thoughtId) => {
 		const options = {
@@ -56,7 +58,7 @@ export const App = () => {
 
 
 	return (
-		<div>
+		<div className="bigWrapper">
 			{loading && <HappyLoading />}
 			<HappyForm
 			onFormSubmit={handleFormSubmit} 

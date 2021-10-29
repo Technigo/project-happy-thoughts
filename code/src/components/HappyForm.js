@@ -1,20 +1,30 @@
 import React from 'react'
+import './HappyForm.css'
 
 const HappyForm = ({ onFormSubmit, newThought, setNewThought }) => {
-return (
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">Type happy thought</label>
-        <input
-          id="newThought"
-          type="text"
+
+  return (
+
+      <form className="happyThoughtInput" onSubmit={onFormSubmit}>
+        <label>
+          Type happy thought
+        <textarea
+          row="2"
+          minLength="4"
+          maxLength="140"
+          required
           value={newThought}
-          onChange={(e) => setNewThought(e.target.value)}
+          onChange={(event) => setNewThought(event.target.value)}
         />
-        <button disabled=
+        
+        
+
+        <button className="happyThoughtButton" disabled=
                 {newThought.length < 4 || newThought.length > 140}
                 type="submit">
                   Send thought!
         </button>
+        </label>
       </form>
       );
     };
