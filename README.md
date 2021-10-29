@@ -1,14 +1,13 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
+Practicing React state skills by fetching and posting data to an API by using Technigos API to collect 'happy thoughts'
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First time of posting in API. Used postman to play around with it. useEffect for the first time, only with dependency of mounting. I approach by first pseduo coding, then one problem at the time and when I got stuck I took help from lesson.
+
+If I had more time I will just redo everything to make sure I really grasp it.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+happy-thoughts-ajliin.netlify.app
 
