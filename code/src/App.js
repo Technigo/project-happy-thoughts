@@ -32,7 +32,8 @@ export const App = () => {
     })
     .then((res) => res.json())
     .then((data) => console.log(data))
-    .finally(() => setLoading(false))
+    .then()
+    .finally(() => fetchThoughts())
   }
   
   const onLikesIncreased = (thought_id) => {
@@ -74,8 +75,8 @@ export const App = () => {
       {thoughts.map(thought => (
         <div className="container" key={thought._id}>
           <div className="inner-container">
-            <p>{thought.message}</p>
-
+            <p className="thought">{thought.message}</p>
+            
             <div className="heart-time">
               <div className="heart-container">
                 <button onClick={() => onLikesIncreased(thought._id)} className={(thought.hearts === 0) ? "heart-btn-unloved"  : "heart-btn-loved"}>
