@@ -1,14 +1,14 @@
 import React from "react";
 import moment from "moment";
 
-const ThoughtItem = ({thought, onLikesIncrease }) => {
+const ThoughtItem = ({ thought, onLikesIncrease }) => {
   return (
 
-    <div>
+    <div className="thought-container">
       <p>{thought.message}</p>
       <button onClick={() => onLikesIncrease(thought._id)}>
         {" "}
-        &hearts; {thought.hearts}
+        ❤️ {thought.hearts}
       </button>
       <p className="date">
         - Created at: {moment(thought.createdAt).fromNow()}
