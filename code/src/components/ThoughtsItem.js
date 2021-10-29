@@ -3,6 +3,8 @@ import moment from "moment";
 import "./ThoughtsItem.css";
 
 const ThoughtsItem = ({ thought, onLikesIncrease }) => {
+  // const [yourLikes, setYourLikes] = useState(0)
+
   return (
     <div className="thought-container">
       <p className="thoughts-text">{thought.message}</p>

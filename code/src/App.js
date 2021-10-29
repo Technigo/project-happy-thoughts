@@ -4,7 +4,6 @@ import { API_URL, LIKE_URL } from "./utils/urls";
 import ThoughtsItem from "./components/ThoughtsItem";
 import ThoughtsForm from "./components/ThoughtsForm";
 import LoadingItem from "./components/LoadingItem";
-import ErrorItem from "./components/ErrorItem";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);

@@ -16,7 +16,7 @@ const ThoughtsForm = ({ onFormSubmit, newThought, setNewThought }) => {
         htmlFor="counter"
         style={{ color: newThought.length > 140 ? "red" : "grey" }}
       >
-        {newThought.length} characters
+        {newThought.length}/140 characters
       </label>
       <button
         disabled={newThought.length < 5 || newThought.length > 140}
