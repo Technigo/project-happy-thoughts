@@ -36,7 +36,7 @@ const onLikesIncrease = (thoughtId) => {
     method: 'POST',
   };
   
-  fetch(LIKES_URL, options)
+  fetch(LIKES_URL(thoughtId), options)
   .then((res) => res.json())
   .then((data) => { //v 1 increases likes only
     

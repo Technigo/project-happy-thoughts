@@ -3,17 +3,17 @@ import moment from "moment";
 
 
 const HeartItem = ({ thoughts, onLikesIncrease }) => {
-    return (<div className="heart-wrapper"> 
+    return (
+    <div > 
         {thoughts.map((thought) => (
-        <div key={thought._id}>
-            <p>{thought.message}</p>
-            <button onClick={() => onLikesIncrease(thought._id)}> 
-            {''}
-            &hearts; {thought.hearts}
+        <div key={thought._id}className="thought-wrapper">
+            <p className="thought-input">{thought.message}</p>
+            <button
+                className="like-button" 
+                onClick={() => onLikesIncrease(thought._id)}> 
+                &hearts; {thought.hearts}
             </button>
-            <p className="date">
-                Created at: {moment(thought.createdAt).fromNow()}
-            </p>
+            <p className="date">Thought written: {moment(thought.createdAt).fromNow()}</p>
         </div>
         ))}; 
     </div>
