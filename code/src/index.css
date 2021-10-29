@@ -5,10 +5,11 @@ body {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 600;
   text-align: center;
   margin-top: 3vh;
+  color: #37251edb;
 }
 
 .thoughts-container {
@@ -22,8 +23,8 @@ h1 {
 .form-container {
   box-sizing: border-box;
   background-color: rgb(202, 208, 180, 0.81);
-  border: 2px solid black;
-  box-shadow: 5px 5px;
+  border: 2px solid #37251edb;
+  box-shadow: 5px 5px #37251edb;
   padding: 10px 14px;
   height: 180px;
   display: flex;
@@ -34,6 +35,7 @@ h1 {
   font-size: 14px;
   width: 90%;
   max-width: 550px;
+  color: #37251edb;
 }
 
 .text-input {
@@ -63,8 +65,13 @@ h1 {
   justify-content: space-around;
 }
 
+.btn-text {
+  color: #37251edb;
+}
+
 .share-button:hover {
-  background-color: rgba(214, 86, 43, 0.49);
+  background-color: rgba(226, 71, 20, 0.57);
+  color: #37251edb;
 }
 
 .btn-heart {
@@ -79,6 +86,7 @@ h1 {
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 12px;
+  color: #37251edb;
 }
 
 .char-text-red {
@@ -95,8 +103,8 @@ h1 {
 
 .thought-card {
   box-sizing: border-box;
-  border: 2px solid black;
-  box-shadow: 5px 5px;
+  border: 2px solid #37251edb;
+  box-shadow: 5px 5px #37251edb;
   padding: 5px 14px;
   height: 180px;
   display: flex;
@@ -122,6 +130,7 @@ h1 {
 .thought-text {
   font-size: 15.5px;
   font-weight: 600;
+  color: #37251edb;
 }
 
 .like-info {
@@ -185,22 +194,5 @@ h1 {
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@media (min-width: 768px) {
-  .form-container {
-    max-width: 900px;
-  }
-
-  .thought-cards-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 900px;
-  }
-
-  .thought-card {
-    width: 48%;
   }
 }

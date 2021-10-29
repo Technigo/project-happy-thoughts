@@ -26,7 +26,7 @@ const FormInput = ({ newThought, onThoughtsChange, onFormSubmit }) => {
           <span className='btn-heart' role='img' aria-label='heart'>
             ❤️
           </span>
-          <span>Send happy thought</span>
+          <span className='btn-text'>Send happy thought</span>
           <span className='btn-heart' role='img' aria-label='heart'>
             ❤️
           </span>
