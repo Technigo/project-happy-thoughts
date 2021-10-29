@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
 import ThoughtForm from "./components/ThoughtForm";
+import ThoughtItem from "./components/ThoughtItem";
+import LoadingItem from "./components/LoadingItem";
 import { API_URL, LIKES_URL } from "./utils/urls";
 
 export const App = () => {
   /* useStates */
   const [thoughts, setThoughts] = useState([]); //It b
   const [newThought, setNewThought] = useState(""); // It being used in the form to send the new message
+  const [loading, setLoading] = useState(false);
 
   /* useEffects: it renders after the component gets mounted */
   useEffect(() => {
@@ -16,9 +18,11 @@ export const App = () => {
   console.log(thoughts);
 
   const fetchThoughts = () => {
+    setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data));
+      .then((data) => setThoughts(data))
+      .finally(() => setLoading(false));
   };
 
   /* 1-Function for the submit Form to be able to send the new message */
@@ -39,13 +43,8 @@ export const App = () => {
       });
   };
 
-  /* 2-Function for the onClick button in the Form */
-  // const onChangebtn = (e) => {
-  //   setNewThought(e.target.value);
-  // };
-
   /* 3-Function for the likes */
-  const onLikesIncrease = (thoughtId) => {
+  const handleLikesIncrease = (thoughtId) => {
     const options = {
       method: "POST",
     };
@@ -53,24 +52,15 @@ export const App = () => {
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((data) => {
-        //increase likes only
-        // const updatedThoughts = thoughts.map((item) => {
-        //   if (item._id === data._id) {
-        //     item.hearts += 1;
-        //     return item;
-        //   } else {
-        //     return item;
-        //   }
-        // });
-
-        // setThoughts(updatedThoughts);
-
         fetchThoughts();
       });
   };
 
   return (
     <div>
+      {loading &&  <LoadingItem /> }
+     
+
       <ThoughtForm
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
@@ -78,8 +68,12 @@ export const App = () => {
       />
 
       {thoughts.map((thought) => (
-        // here we are mapping though the thoughts variable, which is filled with the array of objects
-        
+        <ThoughtItem
+          key={thought._id}
+          thought={thought}
+          onLikesIncrease={handleLikesIncrease}
+        />
+
       ))}
     </div>
   );

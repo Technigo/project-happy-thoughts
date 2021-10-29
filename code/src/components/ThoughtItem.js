@@ -1,9 +1,10 @@
 import React from "react";
+import moment from "moment";
 
-const ThoughtItem = ({}) => {
+const ThoughtItem = ({thought, onLikesIncrease }) => {
   return (
 
-    <div key={thought._id}>
+    <div>
       <p>{thought.message}</p>
       <button onClick={() => onLikesIncrease(thought._id)}>
         {" "}
