@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
 
-import { API_URL } from "utils/urls";
+import ThoughtForm from "components/ThoughtForm";
+import ThoughtItem from "components/ThoughtItem";
+
+import { API_URL, URL_LIKES } from "utils/urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState();
 
   useEffect(() => {
+    fetchThoughts();
+  }, []);
+
+  const fetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data));
-  }, []);
+  };
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
@@ -26,31 +32,43 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]));
+      .then((data) => {
+        // setThoughts([data, ...thoughts])
+
+        fetchThoughts();
+      });
+  };
+
+  const handleLikesIncrease = (thoughtId) => {
+    const options = {
+      method: "POST",
+    };
+
+    fetch(URL_LIKES(thoughtId), options)
+      .then((res) => res.json())
+      .then((data) => {
+        fetchThoughts();
+      });
   };
 
   return (
-    <div>
-      <div>
-        <form onSubmit={onFormSubmit}>
-          <label htmlFor="newThought">Type your thought</label>
-          <input
-            type="text"
-            value={newThought}
-            onChange={(e) => setNewThought(e.target.value)}
-          />
-          <button type="submit">Send Thought!</button>
-        </form>
+    <div className="main-container">
+      <div className="form-container">
+        <ThoughtForm
+          onFormSubmit={handleFormSubmit}
+          newThought={newThought}
+          setNewThought={setNewThought}
+        />
       </div>
-      {thoughts.map((thought) => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          <button> &hearts; {thought.hearts}</button>
-          <p className="date">
-            - Created: {moment(thought.createdAt).fromNow()}
-          </p>
-        </div>
-      ))}
+      <div className="new-container">
+        {thoughts.map((thought) => (
+          <ThoughtItem
+            key={thought._id}
+            thought={thought}
+            onLikesIncrease={handleLikesIncrease}
+          />
+        ))}
+      </div>
     </div>
   );
 };
