@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
-const LikeButton = ({ onLikeSubmit, thought }) => {
+const LikeButton = ({ thought, addClicks, likedClicks }) => {
   return (
     <>
-      {/* {console.log(thought)} */}
       <button
         className="like-button"
-        onClick={() => onLikeSubmit(thought._id)}
+        onClick={() => addClicks(thought._id)}
         style={{
           backgroundColor: thought.hearts > 0 ? "rgb(245, 169, 169)" : "",
         }}
       >
         &#10084;
       </button>
+      <p>{likedClicks}</p>
     </>
   );
 };

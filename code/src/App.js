@@ -12,19 +12,23 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   let [likeClick, setLikeClick] = useState(0);
+  const [likedClicks, setLikedClicks] = useState(0);
 
   useEffect(() => {
     fetchThoughts();
   }, []);
+
+  const addClicks = (id) => {
+    setLikedClicks(likedClicks + 1);
+    onLikeSubmit(id);
+  };
 
   const fetchThoughts = () => {
     setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
-      .catch((err) => {
-        console.log("error:", err.message);
-      })
+      .catch((err) => {})
       .finally(() => setLoading(false));
   };
 
@@ -57,6 +61,7 @@ export const App = () => {
       });
     setNewThought("");
   };
+
   const onLikeSubmit = (id) => {
     const likes = {
       method: "POST",
@@ -93,6 +98,8 @@ export const App = () => {
             thoughts={thought}
             onLikeSubmit={onLikeSubmit}
             hearts={thought.hearts}
+            likedClicks={likedClicks}
+            addClicks={addClicks}
           />
         ))}
       </div>
