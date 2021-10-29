@@ -83,9 +83,9 @@ const AddDataToList = () => {
 
 	return (
 	
-<>
 
-	<div className="messageContainer"> 
+
+	<div className="ContainerData"> 
 <Create
 handleSubmitMessages={handleSubmitMessages}
 message={message}
@@ -93,14 +93,13 @@ setMessage={setMessage}
 
 
 />
-</div>
-	
+
 <div>{loading && <Loading />}</div>
 
 
-<div className="listContainer"> 
+ 
 	{posts.map((post) => (
-	<div className="messageContainer"> 
+
 	<List 
 
 	key={post._id}
@@ -108,11 +107,11 @@ setMessage={setMessage}
 	handleLikes={handleLikes}
 
 	/> 
-	</div>
+	
 	)) }
 
-	</div>
-</>
+</div>
+
 	)
 };
 

@@ -7,18 +7,18 @@ export const App = () => {
 return (
 
 
-<div className="container">
+<div>
 
 <Helmet>
                 <meta charSet="utf-8" />
                 <title>Happy Thought</title>
                 
             </Helmet>
-
+            <div className="container">
 <AddDataToList />
 
 
-
+</div>
 
 
 
