@@ -1,27 +1,11 @@
 import React from "react";
 import { useState } from "react";
 
-const Create = () => {
+const Create = ({handleSubmitMessages, message, setMessage}) => {
 	
-	const [message, setMessage] = useState("");
-
-
-	const handleSubmit = (e) => {
-		 e.preventDefault(); 
-	
-
-		fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", {
-			method: 'POST', 
-			headers: {
-				'Content-Type': 'application/json'
-			  },
-			  body: JSON.stringify({ message })  
-			})
-		
-	}
 
 	return (
-		<form className="messageContainer" onSubmit={handleSubmit}>
+		<form className="messageContainer" onSubmit={handleSubmitMessages}>
 			<div className="contentTextArea">
 				<div>
 					<label>What´s making you happy right now?</label>
@@ -34,15 +18,17 @@ const Create = () => {
 						minLength="3"
 						maxLength="140"
 						value={message}
-						onChange={(e) => setMessage(e.target.value)}
-					/>
+						onChange={(e) => setMessage(e.target.value, e.target.reset)}/>
 				</div>
 				
-				<div>
-					<button className="PostBtn">  <span role='img' aria-label='heart-emoji'>
+				<div className="counterButton">
+					<button  className="PostBtn">  <span role='img' aria-label='heart-emoji'>
           ❤️ Send Happy Thought ❤️
         </span></button>
+
+		<p className="counterText"> {message.length} / 140 </p>
 				</div>
+				
 			</div>
 		</form>
 	);

@@ -1,26 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import moment from 'moment';
 
 
-const List = ({messages}) => {
+const List = ({ post, handleLikes}) => {
 
 
 return (
       
-<div className="messageContainer"> 
-{messages.map((message) => (
-<div className="content" key={message.id}>
-   
-<p>{message.message} </p>
+
+<div className="content">
+<div className="TextPost">
+<p>{post.message}</p>
+</div>
 <div className="iconAndTime">
-<p ><span role='img' aria-label='heart-emoji' className="icon">
-          ❤️</span><span className="like">  x {message.hearts} </span></p>
-          <p className="time">{moment(message.createdAt).fromNow()}</p>
+<p onClick={() => handleLikes(post._id)}>
+<span role='img' aria-label='heart-emoji' className="icon">
+ ❤️</span><span className="like">  x {post.hearts} </span></p>
+ <p className="time">{moment(post.createdAt).fromNow()}</p>
  </div>
 </div>
-))}
 
-</div>
     )
 
 
