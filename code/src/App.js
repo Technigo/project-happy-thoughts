@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, LIKES_URL } from "./utils/urls";
-import ThoughtForm from "./components/ThoughtForm";
-import ThoughtItem from "./components/ThoughtItem";
-import LoadingItem from "./components/LoadingItem";
+import ThoughtForm from "./Components/ThoughtForm";
+import ThoughtItem from "./Components/ThoughtItem";
+import LoadingItem from "./Components/LoadingItem";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
