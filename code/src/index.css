@@ -45,4 +45,55 @@ label {
   place-items: center;
   padding: 0.5em;
   margin: 2em auto;
+
+  /* -webkit-animation-name: falling; */
+  animation: falling 2s;
+  /* -webkit-animation-duration: 3s;
+  animation-duration: 3s; */
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+.message-wrapper {
+  display: grid;
+  place-items: center;
+  padding: 0.5em;
+
+  animation: spin 2s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes falling {
+  0% {
+    opacity: 0.1;
+    transform: translateX(-10em);
+  }
+  25% {
+    opacity: 0.25;
+    transform: translateX(20em);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(15em);
+  }
+  75% {
+    opacity: 0.75;
+    transform: translateY(-15em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.date {
+  font-style: italic;
 }

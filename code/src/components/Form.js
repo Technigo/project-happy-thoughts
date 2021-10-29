@@ -3,9 +3,11 @@ import API_URL from 'utils/Commons'
 
 const Form = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState('')
+  const [counter, setCounter] = useState(0)
 
   const onNewThoughtChange = (e) => {
     setNewThought(e.target.value)
+    setCounter(e.target.value.length)
   }
 
   const onFormSubmit = (e) => {
@@ -19,6 +21,9 @@ const Form = ({ thoughts, setThoughts }) => {
     fetch(API_URL, options)
       .then((response) => response.json)
       .then((data) => setThoughts([data, ...thoughts]))
+
+    setNewThought('')
+    setCounter(0)
   }
 
   return (
@@ -27,6 +32,9 @@ const Form = ({ thoughts, setThoughts }) => {
         <form onSubmit={onFormSubmit}>
           <label htmlfor="newThought"> Write a happy thought </label>
           <textarea
+            className={
+              counter < 6 || counter > 140 ? 'no-words' : 'word-counter'
+            }
             type="text"
             rows="3"
             id="newThought"
@@ -34,6 +42,7 @@ const Form = ({ thoughts, setThoughts }) => {
             onChange={onNewThoughtChange}
             placeholder="Write a happy thought"
           />
+          <p> {140 - counter} / 140 characters left</p>
           <button
             className="submit-button"
             type="submit"
