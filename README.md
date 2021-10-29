@@ -6,7 +6,7 @@ During this project I got introdued to the full concept of the component lifecyc
 
 ## The problem
 
-To understand the Reactl-concept, and where to put different "things" to be able to access them from all components is still challenging for me. But this project this project has been very helpful for me to understand more about React components, usage of states and sending data through functions and props.
+To understand the React-concept, and where to put different "things" to be able to access them from all components is still challenging for me. But this project this project has been very helpful for me to understand more about React components, usage of states and sending data through functions and props.
 
 ## View it live
 
