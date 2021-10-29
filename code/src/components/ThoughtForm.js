@@ -1,5 +1,5 @@
 import React from 'react'
-import Emoji from './Emoji'
+import Emoji from '../utils/Emoji'
 
 const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
     return (
@@ -11,10 +11,16 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
                 type="text"
                 value={newThought}
                 onChange={(event) => setNewThought(event.target.value)}
+                placeholder="Type here..."
             />
 
-            <button className="sendbtn" disabled={newThought.length < 5} type="submit">
-            <Emoji symbol=":heart:" label="heart"/> Send Happy Thought <Emoji symbol=":heart:" label="heart"/>
+            <button 
+                className="sendbtn" 
+                disabled={newThought.length < 5} 
+                type="submit">
+                <Emoji symbol="❤️" label="heart"/> 
+                Send Happy Thought 
+                <Emoji symbol="❤️" label="heart"/>
             </button>
 
         </form>

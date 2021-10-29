@@ -19,7 +19,7 @@ p {
 label {
   font-family: 'Roboto Mono', monospace;
   font-weight: bolder;
-  font-size: 11px;
+  font-size: 12px;
   padding: 5px;
 }
 
@@ -30,6 +30,10 @@ input {
   width: 93%;
   margin: 7px 5px;
   padding-top: 15px;
+}
+
+::placeholder {
+  font-size: 12px;
 }
 
 main {
@@ -54,9 +58,14 @@ form {
   color: rgb(29, 28, 28);
   font-family: 'Roboto Mono', monospace;
   font-weight: bolder;
-  font-size: 12px;
+  font-size: 11px;
   border: none;
   margin: 5px;
+  padding: 6px;
+}
+
+.emoji {
+  padding: 3px;
 }
 
 .thought-container {
@@ -67,10 +76,37 @@ form {
   max-width: 350px;
 }
 
+.likes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.likes-wrapper {
+  display: flex;
+}
+
+.likes {
+ color:rgb(182, 182, 182);
+ padding-left: 8px;
+ font-size: 14px;
+}
+
+.likebtn {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
 .date {
   color: grey;
-  /* display: flex;
-  text-align: end; */
 }
 
 .loading-overlay {
