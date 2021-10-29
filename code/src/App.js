@@ -43,6 +43,7 @@ export const App = () => {
         //v2
         fetchThoughts();
       });
+    setNewThought("");
   };
 
   const handleLikesIncrease = (thoughtId) => {

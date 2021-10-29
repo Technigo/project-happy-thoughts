@@ -7,7 +7,10 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
       <p>{thought.message}</p>
       <button className="heart-button" onClick={() => onLikesIncrease(thought._id)}>
         {" "}
-        💖 {thought.hearts}
+        <span className="heart" role="img" aria-label="fonkelend hart">
+          💖
+        </span>
+        {thought.hearts}
       </button>
       <p className="date">- Created at: {moment(thought.createdAt).fromNow()}</p>
     </div>

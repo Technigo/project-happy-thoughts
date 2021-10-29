@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(114, 209, 181);
 }
 
 code {
@@ -45,6 +46,7 @@ code {
 }
 
 .message-wrapper {
+  background: white;
   border: 1px solid #000;
   box-shadow: 7px 7px #000;
   width: 50vw;
