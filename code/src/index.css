@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Podkova", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,6 +9,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 .form-container {
   background-color: rgb(240, 240, 240);
   border: 1px solid black;
@@ -26,6 +25,14 @@ textarea {
   width: 100%;
   margin: 20px 0;
 }
+.form-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  font-family: inherit;
+}
 .send-button {
   background-color: lightpink;
   border: none;
@@ -35,6 +42,8 @@ textarea {
 }
 .send-button:hover {
   background-color: lightsalmon;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 .thought-container {
   border: 1px solid black;
@@ -45,6 +54,8 @@ textarea {
 }
 .thought-message {
   margin: 0 0 30px 5px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 .thought-info {
   display: flex;
@@ -60,6 +71,7 @@ textarea {
 .heart-button:hover {
   background-color: lightsalmon;
   transform: scale(1.1);
+  cursor: pointer;
 }
 span {
   color: grey;
@@ -68,7 +80,7 @@ span {
   color: grey;
 }
 
-.heart-animation {
+.loader-heart {
   height: 100px;
   width: auto;
 }

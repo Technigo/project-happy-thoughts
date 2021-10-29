@@ -12,14 +12,14 @@ const ThoughtForm = ({onFormSubmit, newThought, setNewThought, setCount, count})
             value={newThought} 
             onChange={(e) => setNewThought(e.target.value) || setCount(e.target.value.length)}
           />
-
-          <p style={{color: count >= 140 || count <= 4 ? 'red' : 'black'}}>{count} / 140</p>
-
-          <button disabled={count >= 140 || count <= 4} className="send-button" type="submit">
-            <span className="heart" role="img" aria-label="heart">❤️  </span>  
-            Send Happy Thought  
-            <span className="heart" role="img" aria-label="heart">  ❤️</span>
-          </button>
+            <div className="form-bottom">
+                <button disabled={count >= 140 || count <= 4} className="send-button" type="submit">
+                    <span className="heart" role="img" aria-label="heart">❤️  </span>  
+                    Send Happy Thought  
+                    <span className="heart" role="img" aria-label="heart">  ❤️</span>
+                </button>
+                <p className="char-counter" style={{color: count >= 140 || count <= 4 ? 'red' : 'black'}}>{count} / 140</p>
+            </div>
         </form>
       </div>
     )

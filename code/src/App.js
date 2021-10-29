@@ -17,11 +17,11 @@ export const App = () => {
   }, [])
 
   const fetchThoughts = () => {
-    setLoading(true)
+    setLoading(true) //loading overlay on while fetching
     fetch(API_URL)
     .then((res) => res.json())
     .then((data) => setThoughts(data))
-    .finally(() => setLoading(false))
+    .finally(() => setLoading(false)) //stopped fetching, loading overlay off
   }
 
   const handleFormSubmit = (event) => {
