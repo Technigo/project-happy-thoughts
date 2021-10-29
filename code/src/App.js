@@ -64,7 +64,6 @@ export const App = () => {
     <div className="app">
       {loading && <LoadingItem />}
       <div>
-        {/* <p>What's making you happy right now?</p> */}
         <ThoughtForm
           onFormSubmitt={onFormSubmitt}
           newThought={newThought}

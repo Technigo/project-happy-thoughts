@@ -7,7 +7,13 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
       <div className="thoughts-card">
         <p>{thought.message}</p>
         <div className="thoughts-container">
-          <button onClick={() => onLikesIncrease(thought._id)} className="btn">
+          <button
+            style={{
+              backgroundColor: thought.hearts > 0 ? "lightpink" : "lightgrey",
+            }}
+            onClick={() => onLikesIncrease(thought._id)}
+            className="btn"
+          >
             {" "}
             <span>❤</span>
           </button>

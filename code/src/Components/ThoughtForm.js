@@ -10,7 +10,7 @@ const ThoughtForm = ({
   return (
     <form className="form" onSubmit={onFormSubmitt}>
       <div className="form-container">
-        <p>What is making you happy right now?</p>
+        <p className="form-title">What is making you happy right now?</p>
         <label
           htmlFor="label-title"
           disabled={newThought.length < 5 || newThought.length > 140}
