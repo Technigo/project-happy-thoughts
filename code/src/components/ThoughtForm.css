@@ -9,7 +9,7 @@
 
 .happy-thought-textarea {
     margin-top: 13px;
-    font-size: 12px;
+    font-size: 16px;
     width: 470px;
     height: 80px;
     max-width: 470px;
@@ -71,7 +71,9 @@ input:focus, textarea:focus, select:focus {
         width: 95%;
     }
     .happy-thought-button {
-        font-size: 9px;
-        width: 180px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 500px;
+        padding: 5px;
     }
 }
