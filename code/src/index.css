@@ -8,7 +8,7 @@ body {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 25px;
-	background-color: #fcc9c7;
+	background-color: #ffd8d6;
 }
 
 .thought-container,
@@ -51,7 +51,7 @@ body {
 .submit-btn {
 	width: 265px;
 	height: 45px;
-	background-color: #f3b1af;
+	background-color: #feb7c6;
 	cursor: pointer;
 	border: none;
 	border-radius: 30px;
@@ -112,6 +112,10 @@ body {
 	margin-right: 7px;
 }
 
+.clicked {
+	background-color: #feb7c6;
+}
+
 .heart-icon {
 	font-size: 21px;
 }
@@ -128,7 +132,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #f3b1af;
+	background-color: #ffd8d6;
 }
 
 .loading-overlay {
@@ -144,7 +148,7 @@ body {
 	height: 50px;
 	border: 5px solid rgba(255, 255, 255, 0.6);
 	border-radius: 50%;
-	border-left: 5px solid #f3b1af;
+	border-left: 5px solid #ffd8d6;
 	animation: spinner infinite 0.5s;
 	display: inline-block;
 }
