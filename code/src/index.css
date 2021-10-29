@@ -30,6 +30,10 @@ code {
   margin-bottom: 45px;
 }
 
+.container:first-of-type:hover {
+  background-color: rgb(242,240,240);
+}
+
 .container:hover {
   background-color: rgb(246, 246, 246);
 }
@@ -73,26 +77,6 @@ code {
   background-color: rgb(255, 173, 173)
 }
 
-.loading-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-  background-color: rgba(246, 246, 246, 0.5);
-}
-
-.loader {  
-  background: linear-gradient(-45deg, rgba(255, 255, 255, 0) 49%, rgb(255, 21, 0) 51%);
-  border-radius: 50%;
-  width: 450px;
-  height: 450px;
-  animation: spin 2s linear infinite;
-}
-
 .thought {
   word-break: break-all;
   white-space: normal;
@@ -133,6 +117,26 @@ code {
 .heart-btn-unloved:hover {
   background-color: rgb(165, 165, 165);
   cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym49.cur), auto;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+  background-color: rgba(246, 246, 246, 0.5);
+}
+
+.loader {  
+  background: linear-gradient(-45deg, rgba(255, 255, 255, 0) 49%, rgb(255, 21, 0) 51%);
+  border-radius: 50%;
+  width: 450px;
+  height: 450px;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {

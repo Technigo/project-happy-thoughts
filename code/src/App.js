@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import Loading from './components/Loading'
-import moment from 'moment';
+import NewThoughts from './components/NewThoughts'
+import Thoughts from './components/Thoughts'
 import {API_URL} from './utils/urls.js'
 
 export const App = () => {
   const[thoughts, setThoughts] = useState([])
   const[newThought, setNewThought] = useState('')
-  const[loading, setLoading] = useState(true)
+  const[loading, setLoading] = useState(false)
 
   useEffect(() => {
     fetchThoughts()
@@ -32,7 +32,7 @@ export const App = () => {
     })
     .then((res) => res.json())
     .then((data) => console.log(data))
-    .then()
+    .then(setNewThought(''))
     .finally(() => fetchThoughts())
   }
   
@@ -50,48 +50,18 @@ export const App = () => {
 
   return (
     <main className="main-container">
-      <div className="container">
-        <form className="inner-container-form" onSubmit={onFormSubmit}>
-          <label htmlFor="newThought">What's making you happy right now?</label>
-          <textarea 
-            id="newThought"
-            type="text"
-            value={newThought}
-            className="thought-input"
-            onChange={(e) => setNewThought(e.target.value)}/>
-          <button 
-            type="submit"
-            disabled={newThought.length < 5 || newThought.length > 140}
-            className="thought-btn">
-              <span role="img" aria-label="heart-emoji">&#10084;&#65039;</span> 
-              Send happy thought 
-              <span role="img" aria-label="heart-emoji">&#10084;&#65039;</span>
-          </button>
-          {loading && <Loading />}
-        </form>
-      </div>
+      <NewThoughts 
+        onFormSubmit={onFormSubmit}
+        newThought={newThought}
+        setNewThought={setNewThought}
+        loading={loading}
+      />
 
-
-      {thoughts.map(thought => (
-        <div className="container" key={thought._id}>
-          <div className="inner-container">
-            <p className="thought">{thought.message}</p>
-            
-            <div className="heart-time">
-              <div className="heart-container">
-                <button onClick={() => onLikesIncreased(thought._id)} className={(thought.hearts === 0) ? "heart-btn-unloved"  : "heart-btn-loved"}>
-                  <span role="img" aria-label="heart-emoji">&#10084;&#65039;</span>
-                </button>
-                <p>x {thought.hearts}</p>
-              </div>
-              <p className="date">
-                {moment(thought.createdAt).fromNow()}
-              </p>
-            </div>
-          </div>
-        </div>
-
-      ))}
+      <Thoughts 
+        thoughts={thoughts}
+        onLikesIncreased={onLikesIncreased}
+      /> 
     </main>
   )
 }
+
