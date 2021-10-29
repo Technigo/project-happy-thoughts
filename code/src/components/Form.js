@@ -12,9 +12,15 @@ const Form = ({ onFormSubmit, form, setForm }) => {
           type="text"
           value={form}
           onChange={(event) => setForm(event.target.value)}
+          //I also want to incorporate the counter... min 5 max 140.
         />
 
-        <button className="send-button" type="submit">
+        <button
+          className="send-button"
+          type="submit"
+          //This disabled thing dont seem to work...
+          disabled={form.length > 5 || form.length > 140}
+        >
           <p>
             <span role="img" aria-label="heart emoji">
               {" "}
