@@ -2,13 +2,7 @@ import React from "react";
 import LikeButton from "./LikeButton";
 import moment from "moment";
 
-const Thoughts = ({
-  thoughts,
-  onLikeSubmit,
-  yourLikes,
-  yourPreviousLikes,
-  hearts,
-}) => {
+const Thoughts = ({ thoughts, onLikeSubmit, yourLikes }) => {
   return (
     <>
       <article className="thought-container">
