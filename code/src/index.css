@@ -15,8 +15,25 @@ code {
   font-family: 'Poiret One';
 }
 
+.app-title {
+  text-align: center;
+  color: rgb(250, 235, 215);
+  margin: 0;
+  font-size: 25px;
+}
+
+.title-icon {
+  height: 3px;
+}
+
 .thought-form-container {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .app-title {
+    font-size: 40px;
+  }
 }

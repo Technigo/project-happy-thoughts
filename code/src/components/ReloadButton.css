@@ -1,0 +1,31 @@
+.reload-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.reload-button {
+    border-radius: 10px;
+    width: 200px;
+    border: none;
+    background-color: rgba(44, 51, 71, 0.808);
+    height: 40px;
+    cursor: pointer;
+    font-family: 'Poiret One';
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 2px;
+    transition: .2s ease-in-out;
+    color: rgb(250, 235, 215);
+    letter-spacing: 0.5px;
+}
+
+.reload-button:hover {
+    box-shadow: 0 0 10px rgb(244, 224, 250);
+}
+
+.reload-button:active {
+    -ms-transform: scale(0.98);
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    box-shadow: 0 0 1px rgb(42, 45, 54);
+}

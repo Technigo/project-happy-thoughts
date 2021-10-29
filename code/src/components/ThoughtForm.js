@@ -32,6 +32,12 @@ const ThoughtForm = ({ setNewThought, setThoughts, thoughts, newThought }) => {
         setCounter(0)
     }
 
+    const checkKey = (event) => {
+        if (event.keyCode === 13 && !event.shiftKey) {
+            handleFormSubmit(event)
+        }
+    }
+
     return (
         <div>
             <form onSubmit={handleFormSubmit} className="form-container">
@@ -44,6 +50,8 @@ const ThoughtForm = ({ setNewThought, setThoughts, thoughts, newThought }) => {
                     onChange={onNewThoughtChange}
                     minLength="4"
                     maxLength="140"
+                    placeholder="Minimum 5 characters & maximum 140 characters"
+                    onKeyDown={(event) => checkKey(event)}
                 />
                 <p className="character-counter">{140 - counter}/140 characters left</p>
                 <button disabled={newThought.length < 5} type="submit" className="submit-button">Send a happy thought!</button>

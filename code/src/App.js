@@ -3,6 +3,7 @@ import { API_URL, LIKES_URL } from './utils/urls'
 import ThoughtForm from 'components/ThoughtForm'
 import ThoughtItem from 'components/ThoughtItem'
 import LoadingSpinner from 'components/LoadingSpinner'
+import ReloadButton from 'components/ReloadButton'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -39,6 +40,8 @@ export const App = () => {
     <div className="thought-form-container">
       {loading && <LoadingSpinner />}
 
+      <h1 className="app-title">~Happy Happy Thoughts~</h1>
+
       <ThoughtForm
         thoughts={thoughts}
         newThought={newThought}
@@ -52,6 +55,9 @@ export const App = () => {
           thought={thought}
           onLikesIncrease={handleLikesIncrease} />
       ))}
+
+      <ReloadButton
+        onFetchThought={fetchThoughts} />
     </div>
   )
 }
