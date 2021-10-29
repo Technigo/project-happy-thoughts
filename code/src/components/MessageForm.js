@@ -11,7 +11,7 @@ return (
 			cols="20"
 			rows="5"
 			maxLength="140"
-			id="newMessage"
+			id="newThought"
 			type="text"
 			placeholder="Your message should be between 5 and 140 characters long"
 			value={newThought}

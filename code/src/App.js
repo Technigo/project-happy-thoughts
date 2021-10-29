@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
+import Header from "components/Header"
 import MessageForm from 'components/MessageForm'
 import MessageList from 'components/MessageList'
 import LoadingItem from './components/Loading'
@@ -74,6 +75,7 @@ export const App = () => {
 	return (
     <main>
 		{loading && <LoadingItem />}
+	<Header />	
       <MessageForm 
        newThought={newThought}
        onNewThoughtChange={handleNewThoughtChange} 

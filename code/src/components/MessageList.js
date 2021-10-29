@@ -9,14 +9,16 @@ const MessageList = ({ thoughts, onLikesIncrease }) => {
                 
             <div className="thoughts-card" key={thought._id}>
                 <p className="thought-message">{thought.message}</p>
-                <div className="like-date">
-                <button className="like-button" onClick={() => onLikesIncrease(thought._id)}>
+                <div className="like">
+                <button className={thought.hearts > 0 ? "like-button like-button-clicked" : "like-button" } onClick={() => onLikesIncrease(thought._id)}>
                     {' '} 
                     <span aria-label="heart" role="img">❤️</span>
-                    </button> x{thought.hearts}
-                <p className="date">
+                    </button> x {thought.hearts}
+                    </div>
+                    <div className="date">
+                    <p>
                     {moment(thought.createdAt).fromNow()}
-                </p>
+                    </p>
                 </div>
             </div>
          
