@@ -1,6 +1,8 @@
 body {
   margin: 0;
   font-family: "Podkova", serif;
+  background-image: url("./hearts-bg.png");
+  background-repeat: repeat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -46,6 +48,7 @@ button {
   cursor: pointer;
 }
 .thought-container {
+  background-color: white;
   border: 1px solid black;
   max-width: 500px;
   margin: 30px auto;
