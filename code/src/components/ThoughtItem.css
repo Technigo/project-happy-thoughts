@@ -9,14 +9,20 @@
     border-radius: 10px;
 }
 
-/* .thought-item-container {
-    transition: 2s ease-in;
-    transform-origin: left top;
+.thought-item-container {
+    animation: topToBottom ease 1s;
+    -webkit-animation: topToBottom ease 1s;
+    -moz-animation: topToBottom ease 1s;
 }
 
-.thought-item-container:target {
-    transform: scaleY(1);
-} */
+@keyframes topToBottom {
+    0% {
+        margin-top: -10%;
+    }
+    100% {
+        margin-top: 0%;
+    }
+}
 
 .thought-message {
     word-break: break-word;

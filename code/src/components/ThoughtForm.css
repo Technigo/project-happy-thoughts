@@ -21,7 +21,7 @@
     width: 200px;
     border: none;
     background-color: rgba(226, 224, 250, 0.671);
-    height: 30px;
+    height: 35px;
     cursor: pointer;
     font-family: 'Poiret One';
     font-weight: bold;
@@ -53,6 +53,7 @@
     font-weight: bold;
     font-size: 16px;
     color: rgb(42, 45, 54);
+    letter-spacing: 0.5px;
 }
 
 .input-form::placeholder {

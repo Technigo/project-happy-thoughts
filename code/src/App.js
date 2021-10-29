@@ -14,7 +14,7 @@ export const App = () => {
     setLoading(true)
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setTimeout(() => setThoughts(data), 2500))
+      .then((data) => setTimeout(() => setThoughts(data), 2800))
       .finally(() => setTimeout(() => setLoading(false), 2500))
   }, [])
 
