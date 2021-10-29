@@ -8,14 +8,14 @@ const Form = ({ onFormSubmit, newThought, onSetThoughtChange }) => {
         <label htmlFor="newThought" className="question">
           What is making you happy right now?
         </label>
-        <input
+        <textarea
           id="newThought"
           type="text"
           placeholder="Type your happy thougt here"
           value={newThought}
           onChange={onSetThoughtChange}
           className={newThought.length < 5 ? "invalid-input" : ""}
-        ></input>
+        ></textarea>
       </section>
       <Counter counter={newThought.length} />
 
