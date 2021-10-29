@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import List from "List";
 import Create from "Create";
+import Loading from "Loading";
 
 const API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
 const API_LIKE = (thoughtId) =>
@@ -94,6 +95,9 @@ setMessage={setMessage}
 />
 </div>
 	
+<div>{loading && <Loading />}</div>
+
+
 <div className="listContainer"> 
 	{posts.map((post) => (
 	<div className="messageContainer"> 
