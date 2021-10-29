@@ -37,12 +37,16 @@
     --bg: linear-gradient(-50deg, #fbab7e 0%, #f7ce68 100%);
     margin-right: var(--hm);
     animation: attract-orange var(--animation);
+    -webkit-animation: attract-orange var(--animation);
+    -moz-animation: attract-orange var(--animation);
 }
 
 .blue {
     --bg: linear-gradient(50deg, #00bfd5 0%, #c5f5ff 100%);
     margin-left: var(--hm);
     animation: attract-blue var(--animation);
+    -webkit-animation: attract-blue var(--animation);
+    -moz-animation: attract-blue var(--animation);
 }
 
 @keyframes attract-orange {
@@ -51,7 +55,19 @@
     }
 }
 
+@-webkit-keyframes attract-orange {
+    to {
+        transform: translateX(calc(var(--sz) + calc(var(--hm) / 4)));
+    }
+}
+
 @keyframes attract-blue {
+    to {
+        transform: translateX(calc(var(--sz) * -1 - calc(var(--hm) / 4)));
+    }
+}
+
+@-webkit-keyframes attract-blue {
     to {
         transform: translateX(calc(var(--sz) * -1 - calc(var(--hm) / 4)));
     }

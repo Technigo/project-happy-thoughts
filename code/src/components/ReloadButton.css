@@ -24,7 +24,7 @@
 }
 
 .reload-button:active {
-    -ms-transform: scale(0.98);
+    -moz-transform: scale(0.98);
     -webkit-transform: scale(0.98);
     transform: scale(0.98);
     box-shadow: 0 0 1px rgb(42, 45, 54);

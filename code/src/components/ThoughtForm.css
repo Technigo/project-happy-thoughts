@@ -37,7 +37,7 @@
 }
 
 .submit-button:active {
-    -ms-transform: scale(0.99);
+    -moz-transform: scale(0.99);
     -webkit-transform: scale(0.99);
     transform: scale(0.99);
     box-shadow: 0 0 1px rgb(42, 45, 54);

@@ -29,26 +29,31 @@
     background: rgba(0, 0, 0, 0.25);
     border-radius: 50%;
     -webkit-animation: loading-dots 1s infinite ease-in-out;
+    -moz-animation: loading-dots 1s infinite ease-in-out;
     animation: loading-dots 1s infinite ease-in-out;
 }
 
 .loading-dots span:nth-child(1) {
     -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
     animation-delay: 0.2s;
 }
 
 .loading-dots span:nth-child(2) {
     -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
     animation-delay: 0.3s;
 }
 
 .loading-dots span:nth-child(3) {
     -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
     animation-delay: 0.4s;
 }
 
 .loading-dots span:nth-child(4) {
     -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
     animation-delay: 0.5s;
 }
 
@@ -87,21 +92,44 @@
     0% {
         -webkit-transform: translateY(0px);
         transform: translateY(0px);
-        background: rgb(145, 122, 160);
+        background: rgb(161, 224, 253);
     }
     25% {
         -webkit-transform: translateY(10px);
         transform: translateY(10px);
-        background: rgb(250, 235, 215);
+        background: rgb(145, 122, 160);
     }
     50% {
         -webkit-transform: translateY(10px);
         transform: translateY(10px);
-        background: rgb(161, 224, 253);
+        background: rgb(250, 235, 215);
     }
     100% {
         -webkit-transform: translateY(0px);
         transform: translateY(0px);
+        background: rgb(161, 224, 253);
+    }
+}
+
+@-moz-keyframes loading-dots {
+    0% {
+        -moz-transform: translateY(0px);
+        transform: translateY(0px);
+        background: rgb(161, 224, 253);
+    }
+    25% {
+        -moz-transform: translateY(10px);
+        transform: translateY(10px);
+        background: rgb(145, 122, 160);
+    }
+    50% {
+        -moz-transform: translateY(10px);
+        transform: translateY(10px);
         background: rgb(250, 235, 215);
+    }
+    100% {
+        -moz-transform: translateY(0px);
+        transform: translateY(0px);
+        background: rgb(161, 224, 253);
     }
 }
