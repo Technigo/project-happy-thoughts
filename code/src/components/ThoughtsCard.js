@@ -11,7 +11,11 @@ const ThoughtsCard = ({ thought, heartCounter, moment }) => {
             className="heart-btn"
           >
             {" "}
-            <span role="img" aria-label="heart-emoji" className="heart">
+            <span
+              role="img"
+              aria-label="heart-emoji"
+              className={thought.hearts > 0 ? "heart-liked" : "heart"}
+            >
               ❤️
             </span>{" "}
             x {thought.hearts}
