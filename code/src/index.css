@@ -143,6 +143,9 @@ code {
 }
 
 .like-btn {
+  display: grid;
+  justify-content: center;
+  align-items: center;
   font-family: inherit;
   font-size: 24px;
   border: 1px solid transparent;
@@ -153,7 +156,6 @@ code {
   color: #fff;
   font-weight: 700;
   cursor: pointer;
-  align-items: center;
 }
 
 /* styling for tablet and desktop */
