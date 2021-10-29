@@ -8,13 +8,14 @@ const ThoughtsList = ({ thought, handleLikesIncrease }) => {
     className="toughts-box" 
     key={thought._id}>
     <p>{thought.message}</p>
+
     <button className="heart-button" 
     onClick={() => handleLikesIncrease(thought._id)}>
-   <Emoji symbol="❤️" />{thought.hearts}
+   <Emoji symbol="❤️" />
     </button>
-    <p className="date">
-      Created: {moment(thought.createdAt).fromNow()}
-    </p>
+    
+    <span className="thoughts-likes"> x {thought.hearts}</span>
+    <p className="date">{moment(thought.createdAt).fromNow()}</p>
   </article>
   )
   

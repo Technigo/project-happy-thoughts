@@ -40,7 +40,6 @@ const onFormSubmit = (event) => {
   .then(res => res.json())
   .then((data) => setThoughts([data, ...thoughts]))
   
-    // fetchThoughts()
 }
 
 const handleLikesIncrease = (thoughtId) => {

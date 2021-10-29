@@ -12,12 +12,10 @@
     background-color: #ffadad;
     border: 1px solid #ffadad; 
     cursor: pointer;
-    outline: inherit;
     font-size: 14px;
-    font-weight: 500;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin-top: 7px;
 }
 
 .submit-button:hover {
@@ -25,5 +23,5 @@
 }
 
 .emoji {
-padding-right: 5px;
+padding: 4px;
 }
