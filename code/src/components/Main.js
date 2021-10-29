@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ThoughtForm from "./ThoughtForm";
-import ThoughtItem from "./ThoughtItem";
+import ThoughtCard from "./ThoughtCard";
 import Spinner from "./Spinner";
 import { API_URL, LIKES_URL } from "../utils/urls";
 
@@ -65,7 +65,7 @@ const Main = () => {
       />
 
       {thoughts.map((thought) => (
-        <ThoughtItem
+        <ThoughtCard
           key={thought._id}
           thought={thought}
           onLikesIncrease={handleLikesIncrease}

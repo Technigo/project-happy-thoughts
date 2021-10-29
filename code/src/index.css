@@ -19,6 +19,7 @@ code {
     monospace;
 }
 
+/* Main */
 .container {
   margin: 0 auto;
   margin-left: auto;
@@ -31,9 +32,18 @@ code {
   margin: 20px 0;
   text-transform: capitalize;
 }
-/* Item component */
+/* Card component */
 .date {
   font-style: italic;
+}
+.heart-btn {
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+.thought-message p {
+  overflow-wrap: break-word;
 }
 
 /* Form component */
