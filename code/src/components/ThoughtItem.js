@@ -5,12 +5,14 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
   return (
     <div key={thought._id}>
     <p>{thought.message}</p>
-    <button onClick={() => onLikesIncrease(thought._id)}> 
-      {''}
-      &hearts; {thought.hearts}
+    <p>
+      <button onClick={() => onLikesIncrease(thought._id)}> 
+    <span className="emoji" role="img" aria-label="heart">❤️</span> 
     </button>
+      x {thought.hearts}
+    </p>
     <p className="date">
-      Created {moment(thought.createdAt).fromNow()}
+      {moment(thought.createdAt).fromNow()}
     </p>
   </div>
   )

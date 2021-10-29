@@ -9,7 +9,7 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([{message: 'hello', createdAt: '2021/10/12', hearts: 1, _id: 'asdf'}]) //should be empty array because later it will be non empty array
   const [newThought, setNewThought] = useState ('')
 
-  //calling useEffect after the component gets mounted
+  //calling useEffect to fetch all thoughts after the component gets mounted
   useEffect (() => {
     fetchThoughts()
   }, [])
@@ -52,9 +52,9 @@ export const App = () => {
         fetchThoughts()      
       })
   }
-
+ 
   return ( //since state is updated, component renders some JS6. After JS6 rendered first time then useEffect gets triggered with console log
-    <div>
+    <div className="main">
       <ThoughtForm 
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
@@ -62,7 +62,11 @@ export const App = () => {
       />
 
       {thoughts.map(thought => (
-       <ThoughtItem key={thought._id} thought={thought} onLikesIncrease={handleLikesIncrease}/>
+        <ThoughtItem 
+          key={thought._id} 
+          thought={thought} 
+          onLikesIncrease={handleLikesIncrease}
+        />
       ))}
     </div>
   )

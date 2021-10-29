@@ -1,0 +1,30 @@
+.thought-form {
+  margin: 20px;
+  padding: 20px;
+  width: 400px;
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+  background-color: #F2F0F0;
+}
+
+.textarea-form {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heart {
+  margin-right: 6px;
+}
+
+.thought-button {
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #FFADAD;
+}
