@@ -88,6 +88,7 @@ function App() {
             thought={thought}
             heartCounter={heartCounter}
             moment={moment}
+            key={thought._id}
           />
         );
       })}
