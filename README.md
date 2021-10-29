@@ -1,13 +1,14 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week's project is about creating a Twitter-like website where we can post Happy thoughts and share it with each other. The purpose is to practice React hooks (State, Effect), fetching and posting data to an API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The main approach for this week's challenge was to study the provided design and apply my own features that I want. The general concept of the code structure was provided by the code coaches. I've tried to remake the code and make it my own.
+When the functionality parts worked I put more time to do animations and different kind of effects just for practice. I spend more time to add features more than practising React hooks.
+If I had more time I'd like to start over and redo this assignment and see if I would've approach the project differently. And to understand React hooks more.
+Would also like to add a feature where you can delete posts.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Netlify link: https://happythoughts-katie.netlify.app/

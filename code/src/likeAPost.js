@@ -9,7 +9,6 @@ const likeAPost = ({ thoughtID, recentThoughts }) => {
     .then((res) => res.json())
     .then((json) => {
       const updateLikes = recentThoughts.map((thought) => {
-        // eslint-disable-next-line no-underscore-dangle
         if (thought._id === json._id) {
           thought.hearts += 1;
           return thought;

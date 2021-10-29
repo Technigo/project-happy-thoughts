@@ -5,10 +5,8 @@ const RecentThoughtsList = ({ recentThoughts, onLikes }) => {
   return (
     <section className='recent-thoughts-section'>
       {recentThoughts.map((thought) => (
-        // eslint-disable-next-line no-underscore-dangle
         <div key={thought._id} className='thought-card'>
           <p>{thought.message}</p>
-          {/* <p>id: {thought._id}</p> */}
           <div className='heart-timestamp-container'>
             <p className='hearts-container'>
               <button
@@ -18,7 +16,6 @@ const RecentThoughtsList = ({ recentThoughts, onLikes }) => {
                 style={{
                   backgroundColor: thought.hearts > 0 ? '#ffadad' : '#eaeaea',
                 }}
-                // eslint-disable-next-line no-underscore-dangle
                 onClick={() => onLikes(thought._id)}
               >
                 <span role='img' aria-label='heart emoji'>

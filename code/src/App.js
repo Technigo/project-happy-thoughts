@@ -57,26 +57,6 @@ export const App = () => {
     likeAPost({ thoughtID, recentThoughts }).then((updatedLikes) => {
       setRecentThoughts(updatedLikes);
     });
-    // setRecentThoughts(
-    //   <LikeAPost thoughtID={thoughtID} recentThoughts={recentThoughts} />
-    // );
-    // const options = {
-    //   method: 'POST',
-    // };
-    // fetch(API_URL_LIKE(thoughtID), options)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     const updateLikes = recentThoughts.map((thought) => {
-    //       // eslint-disable-next-line no-underscore-dangle
-    //       if (thought._id === data._id) {
-    //         thought.hearts += 1;
-    //         return thought;
-    //       } else {
-    //         return thought;
-    //       }
-    //     });
-    //     setRecentThoughts(updateLikes);
-    //   });
   };
 
   return (
