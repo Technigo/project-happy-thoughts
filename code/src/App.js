@@ -1,18 +1,29 @@
-import moment from "moment";
 import React, { useEffect, useState } from "react";
+import ThoughtForm from "./components/ThoughtForm";
+import ThoughtItem from "./components/ThoughtItem";
+import LoadingItem from "components/Loading";
+
+import { API_URL, LIKES_URL } from "./utils/urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
-      .then((res) => res.json())
-      .then((data) => setThoughts(data));
+    fetchThoughts();
   }, []);
 
-  const onFormSubmit = (event) => {
+  const fetchThoughts = () => {
+    setLoading(true);
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => setThoughts(data))
+      .finally(() => setLoading(false));
+  };
+  const handleFormSubmit = (event) => {
     event.preventDefault();
+
     const options = {
       method: "POST",
       headers: {
@@ -20,38 +31,38 @@ export const App = () => {
       },
       body: JSON.stringify({ message: newThought }),
     };
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", options)
+    fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]));
+      .then((data) => {
+        fetchThoughts();
+      });
+  };
+  const handleLikesIncrease = (thoughtId) => {
+    const options = {
+      method: "POST",
+    };
+    fetch(LIKES_URL(thoughtId), options)
+      .then((res) => res.json())
+      .then((data) => {
+        fetchThoughts();
+      });
   };
 
   return (
     <div>
-      <form className="form-box" onSubmit={onFormSubmit}>
-        <label className="label-text" htmlFor="newThought">
-          What´s making you happy right know?
-        </label>
-        <input
-          className="input-text"
-          id="newThought"
-          type="text"
-          value={newThought}
-          onChange={(event) => setNewThought(event.target.value)}
-        />
-        <button className="submit-button" type="submit">
-          <p className="happy-thought">
-            &#128151;Send a happy thought&#128151;
-          </p>
-        </button>
-      </form>
+      {loading && <LoadingItem />}
+      <ThoughtForm
+        onFormSubmit={handleFormSubmit}
+        newThought={newThought}
+        setNewThought={setNewThought}
+      />
+
       {thoughts.map((thought) => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          <button>&hearts;{thought.hearts}</button>
-          <p className="date">
-            - Created at: {moment(thought.createdAt).fromNow()}
-          </p>
-        </div>
+        <ThoughtItem
+          key={thought._id}
+          thought={thought}
+          onLikesIncrease={handleLikesIncrease}
+        />
       ))}
     </div>
   );
