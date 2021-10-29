@@ -19,8 +19,9 @@ code {
 /*Containers*/
 
 .form-container{
-  width: 660px;
-  height: 260px;
+  /*width: 660px;
+  height: 260px;*/
+  width: 100%;
   margin: 40px auto;
   border: 1px solid black;
   box-shadow: 13px 13px black;
@@ -30,9 +31,11 @@ code {
 
 }
 .message-container{
-  width: 660px;
-  height: 260px;
-  margin: 20px auto;
+  /*width: 660px;
+ 
+  height: 260px;*/
+  width: 100%;
+  margin: 40px auto;
   border: 1px solid black;
   box-shadow: 13px 13px black;
   
@@ -41,7 +44,7 @@ code {
 
 .label-form {
   
-  margin: 25px;
+  margin: 25px 0 15px 25px;
   font-weight: 600;
 }
 .thought-input {
@@ -50,12 +53,18 @@ code {
   width: 90%;
   height: 70px;
   font-family: 'Roboto Mono', monospace;
+  padding: 10px;
 }
-
+.button-error{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .submit-button {
   width: 50%;
-  height: 67px;
-  margin: 20px auto 25px 25px;
+  height: 60px;
+  min-width: 250px;
+  margin: 10px auto 5px 25px;
   border-radius: 40px;
   background-color: #FDAEAD;
   border:none;
@@ -69,6 +78,16 @@ code {
   display: flex;
   justify-content: center;
   align-content: center;
+  
+}
+
+.character-count {
+  margin-right: 50px;
+}
+
+.error-message {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
 }
 .send-happy {
   padding: 0 15px;
@@ -123,9 +142,29 @@ code {
 .heart-button img {
   width: 40px;
 }
-.heart-button:active{
-  background-color: #FDAEAD;
-}
 .date {
   display: inline;
+}
+
+@media (min-width: 700px) {
+ 
+  .message-container{
+    width: 660px;
+    height: 260px;
+    margin: 40px auto;
+    border: 1px solid black;
+    box-shadow: 13px 13px black;
+    
+  }
+
+  .form-container{
+    width: 660px;
+    height: 260px;
+    margin: 40px auto;
+    border: 1px solid black;
+    box-shadow: 13px 13px black;
+    display: flex;
+    flex-direction: column;
+    background-color: #F3F0F0;
+}
 }
