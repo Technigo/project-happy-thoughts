@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.heading {
+  text-align: center;
+}
 
 .content-wrapper {
   display: flex;
@@ -43,8 +46,20 @@ code {
   background-color: rgb(245, 169, 169);
   cursor: pointer;
 }
+.input-info {
+  position: relative;
+}
 .caracters {
-  margin: 5px;
+  font-size: 13px;
+  margin: 10px;
+  display: inline-block;
+}
+.clicked-likes {
+  font-size: 13px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  margin: 10px;
 }
 .heart {
   color: red;

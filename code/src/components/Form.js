@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({ onFormSubmit, newThought, setNewThought }) => {
+const Form = ({ onFormSubmit, newThought, setNewThought, likeClick }) => {
   const caractersLeft = 140 - newThought.length;
 
   return (
@@ -8,21 +8,27 @@ const Form = ({ onFormSubmit, newThought, setNewThought }) => {
       <label className="new-thought-label" htmlFor="newThought">
         What´s making you happy right now?
       </label>
-      <input
+      <textarea
         className="new-thought-input"
         type="text"
         id="newThought"
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
       />
-      <p
-        className="caracters"
-        style={{
-          color: caractersLeft < 0 && "red",
-        }}
-      >
-        {caractersLeft} caracters left
-      </p>
+
+      <section className="input-info">
+        <p
+          className="caracters"
+          style={{
+            color: caractersLeft < 0 && "red",
+          }}
+        >
+          {caractersLeft}
+        </p>
+        <p className="clicked-likes">
+          You <span className="heart">&#10084;</span> : {likeClick} posts
+        </p>
+      </section>
       <button
         // disabled={newThought.length < 5 || newThought.length > 140}
         className="new-thought-button"

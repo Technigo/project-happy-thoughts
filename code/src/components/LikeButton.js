@@ -3,7 +3,7 @@ import React from "react";
 const LikeButton = ({ onLikeSubmit, thought }) => {
   return (
     <>
-      {console.log(thought)}
+      {/* {console.log(thought)} */}
       <button
         className="like-button"
         onClick={() => onLikeSubmit(thought._id)}

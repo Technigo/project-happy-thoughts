@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { API_URL } from "./utilis/urls";
 import { LIKE_URL } from "./utilis/urls";
+import Header from "components/Header";
 import Form from "components/Form";
 import Thoughts from "./components/Thoughts";
 import LoadingItem from "components/LoadingItem";
@@ -10,6 +11,7 @@ export const App = () => {
   const [newThought, setNewThought] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  let [likeClick, setLikeClick] = useState(0);
 
   useEffect(() => {
     fetchThoughts();
@@ -46,7 +48,8 @@ export const App = () => {
         if (data.errors) {
           throw Error(data.errors.message.message);
         }
-        console.log(data);
+
+        // console.log(data);
       })
       .catch((err) => {
         setError(err.message);
@@ -54,7 +57,6 @@ export const App = () => {
       });
     setNewThought("");
   };
-
   const onLikeSubmit = (id) => {
     const likes = {
       method: "POST",
@@ -66,31 +68,34 @@ export const App = () => {
       .then((data) => {
         fetchThoughts();
       })
-      .catch((err) => {
-        console.log("error:", err.message);
-      });
+      .catch((err) => {});
+    setLikeClick((likeClick += 1));
   };
-
   return (
-    <div className="content-wrapper">
-      {error && (
-        <div className="error">
-          <p>{error}</p>
-        </div>
-      )}
-      {loading && <LoadingItem />}
-      <Form
-        setNewThought={setNewThought}
-        onFormSubmit={onFormSubmit}
-        newThought={newThought}
-      />
-      {thoughts.map((thought) => (
-        <Thoughts
-          key={thought._id}
-          thoughts={thought}
-          onLikeSubmit={onLikeSubmit}
+    <>
+      <Header />
+      <div className="content-wrapper">
+        {error && (
+          <div className="error">
+            <p>{error}</p>
+          </div>
+        )}
+        {loading && <LoadingItem />}
+        <Form
+          setNewThought={setNewThought}
+          onFormSubmit={onFormSubmit}
+          newThought={newThought}
+          likeClick={likeClick}
         />
-      ))}
-    </div>
+        {thoughts.map((thought) => (
+          <Thoughts
+            key={thought._id}
+            thoughts={thought}
+            onLikeSubmit={onLikeSubmit}
+            hearts={thought.hearts}
+          />
+        ))}
+      </div>
+    </>
   );
 };
