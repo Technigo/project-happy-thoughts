@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ThoughtForm from './components/ThoughtForm'
 import ThoughtItem from './components/ThoughtItem'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 import { API_URL, LIKES_URL } from './utils/urls'
 
@@ -35,7 +36,7 @@ const [newThought, setNewThought] = useState('')
     .then((data) => {
 
       fetchThoughts()
-      
+
     })
   }
 
@@ -79,6 +80,8 @@ const [newThought, setNewThought] = useState('')
         />
 
         ))}
+
+        <Footer />
       </section>
     </>
 )

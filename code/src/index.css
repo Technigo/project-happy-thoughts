@@ -43,7 +43,6 @@ h1 {
 
 }
 
-
 .content-area {
   display: flex;
   flex-direction: column;
@@ -51,7 +50,6 @@ h1 {
   min-width: 300px;
   padding: 0;
 }
-
 
 button {
   font-family: inherit;
@@ -74,7 +72,6 @@ button {
   margin-bottom: 2rem;
   border-radius: 2px;
 }
-
 
 textarea {
   border: 1px solid #c7c7c7;
@@ -255,8 +252,17 @@ textarea {
 }
 }
 
+.footer {
+  text-align: center;
+  max-width: 550px;
+}
+
 
 @media (max-width: 767px) {
+
+  body {
+    padding-bottom: 1rem;
+  }
 
   .form {
     width: 300px;
@@ -273,3 +279,4 @@ textarea {
     margin-bottom: 0.8rem;
   }
 }
+
