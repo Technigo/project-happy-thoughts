@@ -7,7 +7,6 @@ const ThoughtsList = ({ thoughts, onLikesIncrease }) => {
       {thoughts.map((thought) => (
         <div key={thought._id} className='thought-card'>
           <p className='thought-text'>{thought.message}</p>
-          {/* <LikeButton id={thought._id} /> */}
 
           <div className='thought-card-info'>
             <div className='like-info'>
@@ -15,7 +14,6 @@ const ThoughtsList = ({ thoughts, onLikesIncrease }) => {
                 onClick={() => onLikesIncrease(thought._id)}
                 type='button'
                 className='like-button'
-                // onClick={(event) => onLikeButtonClick(event)}
               >
                 <span className='like-heart' role='img' aria-label='heart'>
                   ❤️

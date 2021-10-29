@@ -1,5 +1,6 @@
 import React from 'react';
-// import { API_URL } from '../utils/urls';
+
+import CharCount from './CharCount';
 
 const FormInput = ({ newThought, onThoughtsChange, onFormSubmit }) => {
   return (
@@ -9,26 +10,29 @@ const FormInput = ({ newThought, onThoughtsChange, onFormSubmit }) => {
         id='newThought'
         onChange={onThoughtsChange}
         className='text-input'
-        value={newThought} //I need this to clear the input... why?
+        value={newThought}
         autoComplete='off'
         rows='3'
         cols='30'
         placeholder='Write your happy thought here'
         required
       />
-      <button
-        type='submit'
-        className='share-button'
-        disabled={newThought.length < 5 || newThought.length > 140}
-      >
-        <span className='btn-heart' role='img' aria-label='heart'>
-          ❤️
-        </span>
-        <span>Send happy thought</span>
-        <span className='btn-heart' role='img' aria-label='heart'>
-          ❤️
-        </span>
-      </button>
+      <div className='btn-counter-container'>
+        <button
+          type='submit'
+          className='share-button'
+          disabled={newThought.length < 5 || newThought.length > 140}
+        >
+          <span className='btn-heart' role='img' aria-label='heart'>
+            ❤️
+          </span>
+          <span>Send happy thought</span>
+          <span className='btn-heart' role='img' aria-label='heart'>
+            ❤️
+          </span>
+        </button>
+        <CharCount messageLength={newThought.length} />
+      </div>
     </form>
   );
 };

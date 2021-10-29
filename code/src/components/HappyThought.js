@@ -41,15 +41,10 @@ const HappyThoughts = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => {
-        //v1:
-        // setThoughts([data, ...thoughts]);
-
-        //v2:
+      .then(() => {
         fetchThoughts(setNewThought(''));
       });
   };
-  // console.log(thoughts);
 
   const handleLikesIncrease = (thoughtId) => {
     const options = {
@@ -58,17 +53,7 @@ const HappyThoughts = () => {
 
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
-      .then((data) => {
-        //   const updatedThoughts = thoughts.map((item) => {
-        //     if (item._id === data._id) {
-        //       item.hearts += 1;
-        //       return item;
-        //     } else {
-        //       return item;
-        //     }
-        //   });
-
-        //   setThoughts(updatedThoughts);
+      .then(() => {
         fetchThoughts();
       });
   };
