@@ -1,11 +1,18 @@
+html {
+  box-sizing: border-box;
+}
+
 body {
-  margin: auto;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: roboto mono;
+  font-weight: 400;
+  background-color: #F3B1AF;
+  margin: 0;
+  padding: 0;
+  font-family: roboto mono, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 2rem;
 }
 
 code {
@@ -13,15 +20,34 @@ code {
     monospace;
 }
 
-body {
-  font-family: roboto mono;
-  font-weight: 400;
+.header {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
 }
 
+h1 {
+  font-size: 32px;
+  font-weight: 100;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 button {
+  font-family: inherit;
   -webkit-appearance: none;
   -moz-apperance: none;
   border: none;
+  background: none;
+  padding: 0;
+  font-size: 14px;
 }
 
 .form {
@@ -37,17 +63,12 @@ button {
   margin-bottom: 2rem;
 }
 
-input {
-  -webkit-appearance: none;
-  -moz-apperance: none;
-  border: none;
-}
 
-.text-input {
-  min-height: 56px;
+textarea {
   border: 1px solid #c7c7c7;
   border-radius: 2px;
-  padding-left: 0.5rem;
+  padding: 0.5rem;
+  resize: none;
 }
 
 .input-label {
@@ -60,6 +81,19 @@ input {
   height: 48px;
   margin-top: 1rem;
   font-size: 1rem;
+  -webkit-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+.btn-send:hover {
+  cursor: pointer;
+  -webkit-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;  
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  background-color: #fca4a1;
 }
 
 .thought-item {
@@ -72,22 +106,32 @@ input {
   border-radius: 2px;
 }
 
-.btn {
-  -webkit-appearance: none;
-  -moz-apperance: none;
-  border: none;
-  background: none;
+.btn-heart { 
+  display: inline-flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  background-color: #EAEAEA;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
   margin: 0;
-  padding: 0;
-  color: #999;
+  -webkit-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in; 
+  padding: 0.5px 0 2.5px 4px;
 }
 
-.btn-heart {
-  background-color: #eee;
-  padding: 1rem;
-  border-radius: 50%;
-  margin: 0;
-  font-size: 1rem;
+
+.btn-heart:hover {
+  -webkit-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;  
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  background-color: #F3B1AF;
 }
 
 .likesAndTime {
@@ -98,10 +142,89 @@ input {
 
 .thought-message {
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.4rem;
   margin-top: 0;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .time {
   color: #999;
+  font-size: 14px;
+}
+
+
+/* HEADER ANIMATION  */
+
+.heart-animation {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  animation: heartbeat 2s infinite;
+  margin:0 auto
+}
+.heart-animation:before,
+.heart-animation:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #fff;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(-45deg);
+     -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+       -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+     -moz-transform-origin: 0 100%;
+      -ms-transform-origin: 0 100%;
+       -o-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+.heart-animation:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+     -moz-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+       -o-transform-origin: 100% 100%;
+          transform-origin :100% 100%;
+}
+
+
+
+@keyframes heartbeat
+{
+0%
+{
+  transform: scale( .75 );
+}
+20%
+{
+  transform: scale( 1 );
+}
+40%
+{
+  transform: scale( .75 );
+}
+60%
+{
+  transform: scale( 1 );
+}
+80%
+{
+  transform: scale( .75 );
+}
+100%
+{
+  transform: scale( .75 );
+}
 }
