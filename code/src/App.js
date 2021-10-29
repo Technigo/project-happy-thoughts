@@ -46,28 +46,18 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => {
 
-        /*const updatedThoughts = thoughts.map((item) => {
-          if (item._id === data._id){
-            item.hearts += 1;
-            return item;
-          } else {
-            return item;
-          }
-        })
-        setThoughts(updatedThoughts)*/
         fetchThoughts()
       })
     }
 
   return (
     <div className="body">
+      <h1>A Happy-Thoughts Place</h1>
         <ThoughtForm
         onFormSubmit = {handleFormSubmit}
         newThought = {newThought}
         setNewThought = {setNewThought}/>
       
-
-
       {thoughts.map(thought => (
 
        <ThoughtItem 
