@@ -153,6 +153,7 @@ code {
   color: #fff;
   font-weight: 700;
   cursor: pointer;
+  align-items: center;
 }
 
 /* styling for tablet and desktop */
