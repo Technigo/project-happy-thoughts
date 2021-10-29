@@ -1,34 +1,31 @@
 .new-thought-input__form {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
-  width: 100%;
-  height: 100%;
   background: #efefef;
   border: 1px solid #000;
-  box-shadow: 5px 5px #000;
   align-items: center;
+  margin: 20px;
+  box-shadow: 5px 5px #000;
 }
 
 textarea {
   resize: none;
   width: 100%;
-  margin: 10px 2px;
+  margin: 5px 0;
   font-size: 20px;
 }
 
-.new-thought-input__button-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .new-thought-input__button {
-  /* border-radius: */
   color: #000;
   background-color: #ffadad;
-  border-style: none;
   font-weight: 700;
   font-size: 14px;
   padding: 10px;
   border-radius: 20px;
+}
+
+.new-thought-input__button:hover {
+  cursor: pointer;
+  border: 1px solid gray;
 }

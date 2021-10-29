@@ -14,21 +14,19 @@ const NewThoughtInput = ({ onFormSubmit, newThought, onNewThoughtChange }) => {
           value={newThought}
           onChange={onNewThoughtChange}
         />
-        <div className="new-thought-input__button-wrapper">
-          <button
-            className="new-thought-input__button"
-            disabled={newThought.length < 5 || newThought.length > 140}
-            type="submit"
-          >
-            <span role="img" aria-label="heart">
-              ❤️&ensp;
-            </span>
-            Send Happy Thought
-            <span role="img" aria-label="heart">
-              &ensp;❤️
-            </span>
-          </button>
-        </div>
+        <button
+          className="new-thought-input__button"
+          disabled={newThought.length < 5 || newThought.length > 140}
+          type="submit"
+        >
+          <span role="img" aria-label="heart">
+            ❤️&ensp;
+          </span>
+          Send Happy Thought
+          <span role="img" aria-label="heart">
+            &ensp;❤️
+          </span>
+        </button>
       </label>
     </form>
   );

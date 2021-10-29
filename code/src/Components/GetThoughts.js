@@ -4,23 +4,23 @@ import './getThoughts.css';
 
 const GetThought = ({ thought, onLikesIncrease }) => {
   return (
-    <div>
+    <div className="get-thoughts__wrapper">
       <p>{thought.message}</p>
-      <div className="get-thought__button-wrapper">
+      <div className="get-thoughts__button-wrapper">
         <button
           className="get-thoughts__heart-button"
-          onClick={() => onLikesIncrease(thought._id)} // change color of button!
+          onClick={() => onLikesIncrease(thought._id)}
           style={{ background: thought.hearts >= 1 ? '#ffadad' : '#eaeaea' }}
         >
           <span role="img" aria-label="heart">
             ❤️
           </span>
         </button>
-        <p className="get-thoughts__heart-amount">&nbsp;x {thought.hearts}</p>
+        <p className="left">&nbsp;x {thought.hearts}</p>
+
+        <p className="right">{moment(thought.createdAt).fromNow()}</p>
       </div>
-      <p className="date">-Created at: {moment(thought.createdAt).fromNow()}</p>
     </div>
   );
 };
-
 export default GetThought;

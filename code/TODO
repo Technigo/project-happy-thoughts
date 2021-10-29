@@ -1,6 +1,4 @@
-# TODO
-
-🔵
+# 🔵 REQUIREMENTS
 
 - Your page should follow the design as closely as possible
 - You should list the most recent thoughts at the top and older thoughts at the bottom (sorted) ✅
@@ -8,11 +6,24 @@
 - You should have a form to post new thoughts ✅
 - You should implement the heart button to send likes on a thought ✅
 
-FUNCTIONS
-Change color of heart button onClick ✅
-Complete handleNewThought... ✅
-Complete the hearts button (make it round)
+# FUNCTIONS
 
-STYLE
+Change color of heart button onClick fungerar? Se netlify?
+Maybe changing to use a state instead of inline style??
+Complete handleNewThought... ✅
+Complete the hearts button (make it round, add padding)
+Send comment with enter - see Jennies Q & A
+Label-wrap around how much?
+
+# STYLE
+
 Complete style for form
 Adding boxes around all thoughts
+
+# OTHER
+
+Remove console.log
+Add comment
+Add readme
+REDO EVERYTHING
+Catch error function

@@ -1,17 +1,40 @@
-.get-thought__button-wrapper {
+.get-thoughts__wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  padding: 15px;
+  background: #ffff;
+  border: 1px solid #000;
+  margin: 20px;
+  box-shadow: 5px 5px #000;
+}
+
+.get-thoughts__button-wrapper {
+  display: grid;
+  grid-template-columns: 40px 50px auto;
   align-items: center;
 }
 
-.get-thoughts__heart-button {
-  border-radius: 100%;
-  height: fit-content;
-}
-
-.get-thoughts__heart-amount {
+.get-thoughts__button-wrapper p {
   color: grey;
   font-weight: 300;
-  font-size: smaller;
+  font-size: 14px;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.get-thoughts__heart-button {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+
+.get-thoughts__heart-button:hover {
+  cursor: pointer;
+  border: 1px solid gray;
 }
