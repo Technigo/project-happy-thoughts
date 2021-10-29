@@ -1,8 +1,8 @@
-@import url(//db.onlinewebfonts.com/c/395410b1fd4cca8cfb17bd78a9c34889?family=Helvetica+Monospaced);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 body {
   margin: 20px;
-  font-family: Helvetica Monospaced;
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -32,6 +32,7 @@ form {
   box-shadow: 6px 7px;
   box-sizing: border-box;
   
+  
 }
 form textarea {
   margin-top: 15px;
@@ -55,6 +56,7 @@ form textarea {
   cursor: pointer;
   margin-top: 5px;
   background: #ffadad; 
+  
 }
 
 .character-counter {

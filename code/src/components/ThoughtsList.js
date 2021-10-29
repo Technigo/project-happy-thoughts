@@ -11,7 +11,7 @@ const ThoughtsList = ({ thought, handleLikesIncrease }) => {
 
     <button className="heart-button" 
     onClick={() => handleLikesIncrease(thought._id)}>
-   <Emoji symbol="❤️" />
+    <Emoji symbol="❤️" />
     </button>
     
     <span className="thoughts-likes"> x {thought.hearts}</span>

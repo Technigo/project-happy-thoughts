@@ -43,16 +43,16 @@ const onFormSubmit = (event) => {
 }
 
 const handleLikesIncrease = (thoughtId) => {
-    const options = {
-      method: 'POST',
-    }
-
-    fetch(API_LIKES_URL(thoughtId), options)
-      .then((res) => res.json())
-      .then((data) => {
-        fetchThoughts()
-      })
+  const options = {
+    method: 'POST',
   }
+
+  fetch(API_LIKES_URL(thoughtId), options)
+    .then((res) => res.json())
+    .then((data) => {
+      fetchThoughts()
+  })
+}
 
 
 return (
