@@ -21,7 +21,6 @@ code {
 }
 
 .header {
-  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +33,16 @@ h1 {
   font-weight: 100;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin: 1rem 0;
 }
+
+.preamble {
+  max-width: 550px;
+  margin-bottom: 2rem;
+  margin-top: 0;
+
+}
+
 
 .content-area {
   display: flex;
@@ -65,7 +73,6 @@ button {
   box-shadow: 8px 8px  #333;
   margin-bottom: 1rem;
   border-radius: 2px;
-  margin-bottom: 2rem;
 }
 
 
@@ -85,7 +92,9 @@ textarea {
   border-radius: 24px;
   height: 48px;
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: 14px;
+  padding-left: 1rem;
+  padding-right: 1rem;
   -webkit-transition: all 200ms ease-in;
   -ms-transition: all 200ms ease-in;
   -moz-transition: all 200ms ease-in;
@@ -99,6 +108,19 @@ textarea {
   -moz-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
   background-color: #fca4a1;
+}
+
+.btn-lettercounter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.letter-counter {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .thought-item {
@@ -141,7 +163,6 @@ textarea {
 
 .likesAndTime {
   display: flex;
-  flex-direction: flex;
   justify-content: space-between;
 }
 

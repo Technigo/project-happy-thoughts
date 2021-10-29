@@ -33,8 +33,9 @@ const [newThought, setNewThought] = useState('')
     fetch(API_URL, options)
     .then((res) => res.json())
     .then((data) => {
-      // setThoughts([data, ...thoughts])
+
       fetchThoughts()
+      
     })
   }
 
@@ -51,16 +52,6 @@ const [newThought, setNewThought] = useState('')
     .then((res) => res.json())
     .then((data) => {
 
-      // const updatedThoughts = thoughts.map((item) => {
-      //   if (item._id === data.id) {
-      //     item.hearts += 1
-      //     return item
-      //   } else {
-      //     return item
-      //   }
-      // })
-
-      // setThoughts(updatedThoughts)
       fetchThoughts()
 
     })
@@ -77,6 +68,7 @@ const [newThought, setNewThought] = useState('')
           onFormSubmit={handleFormSubmit}
           newThought={newThought}  
           setNewThought={setNewThought}
+          letterCounter={newThought.length}
         />
 
       {thoughts.map((thought) => (
