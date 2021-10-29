@@ -5,6 +5,7 @@
   padding: 10px;
   box-shadow: 5px 10px;
   background: white;
+  word-break: break-word;
 }
 
 .heart-and-created {

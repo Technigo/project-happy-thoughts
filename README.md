@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week we continued with React and started using useEffects. By using API to both get and post information we built a app that received and sent messages and posted them in the app.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+There wasn't really a problem this week. But I noticed that remembering and keeping in mind all things we already learned about useState, props and components became a bit confusing. All the parts separatly are clear but combining all parts does need you to think a bit more. But it was really fun and unsing all things you've learned previously is good repetition and sets everything into a new and bigger perspective.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lisapblome-w11-happythoughts.netlify.app/

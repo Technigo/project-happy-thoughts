@@ -12,7 +12,6 @@ const Thoughts = ({ thought, onHeartClick }) => {
             className="heart-button"
             onClick={() => onHeartClick(thought._id)}
           >
-            {" "}
             <p className="heart"> &hearts;</p>
             <p className="hearts-count"> x {thought.hearts}</p>
           </button>

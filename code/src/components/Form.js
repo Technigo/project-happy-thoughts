@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./form.css";
-
 import { API_URL, API_URL_HEART } from "utils/urls";
 import Thoughts from "./Thoughts";
 import ThoughtInput from "./ThoughtInput";
+import "./form.css";
 
 const Form = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -29,6 +28,7 @@ const Form = () => {
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => setThoughts([data, ...thoughts]));
+    setNewThought("");
   };
 
   const handleHeartClick = (thoughtId) => {
@@ -73,12 +73,5 @@ const Form = () => {
     </div>
   );
 };
-
-// <ThoughtInput
-//   onFormSubmit={handleFormSubmit}
-//   newTought={newThought}
-//   setNewThought={setNewThought}
-// />
-// <Thoughts />
 
 export default Form;
