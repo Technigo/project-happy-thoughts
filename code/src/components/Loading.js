@@ -5,6 +5,7 @@ import heart from '../images/red-heart.png';
 const LoadingItem = () => {
 	return (
 		<div className="loading-overlay">
+			{/* The loading function in the form of a heart */}
 			<img className="loading-heart" src={heart} alt="Red heart emoji" />
 		</div>
 	);

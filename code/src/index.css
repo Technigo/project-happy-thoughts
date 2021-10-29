@@ -137,7 +137,6 @@ textarea {
 .loading-heart {
 	width: 50px;
 	height: 50px;
-	border-radius: 50%;
 	border-left: 5px solid #fff;
 	animation: spinner infinite 0.5s;
 }
