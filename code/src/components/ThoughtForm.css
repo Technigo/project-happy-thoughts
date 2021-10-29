@@ -30,7 +30,6 @@ input:focus, textarea:focus, select:focus {
 
 .happy-thought-button {
     -webkit-appearance: none;
-    font-family: Helvetica Monospaced;
     margin-top: 10px;
     width: 250px;
     font-size: 14px;
