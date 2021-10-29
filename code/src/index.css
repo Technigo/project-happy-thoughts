@@ -176,8 +176,13 @@ code {
   .container {
     width: 500px;
   }
+  .like-btn {
+    height: 50px;
+    width: 50px;
+    font-size: 24px;
+  }
    .likes {
-    margin-inline-start: 0;
+    margin-inline-start: 10px;
   }
   .happy-form {
     font-size: 16px;
