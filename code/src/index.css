@@ -97,7 +97,7 @@ code {
   background: #DB398D;
   height: 50px;
   border-radius: 25px;
-  padding: 10px 20px;
+  padding: 5px 20px;
   color: #fff;
   font-size: inherit;
   font-weight: 700;
@@ -149,7 +149,6 @@ code {
   font-family: inherit;
   font-size: 24px;
   border: 1px solid transparent;
-  /* background: #DB398D; */
   background-color: rgb(233, 231, 231);
   height: 50px;
   width: 50px;
@@ -157,6 +156,8 @@ code {
   color: red;
   font-weight: 700;
   cursor: pointer;
+  /* background: #DB398D;
+  color: #fff */
 }
 
 /* styling for tablet and desktop */
@@ -173,6 +174,9 @@ code {
   }
   .happy-form {
     font-size: 16px;
+  }
+  .send-btn {
+    padding: 10px 20px;
   }
   .likes {
     grid-column: span 1;
