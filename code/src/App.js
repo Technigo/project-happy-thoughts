@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { API_URL, LIKES_URL } from "utils/urls";
-import moment from "moment";
-import List from "components/List";
-import Form from "components/Form";
+import { API_URL, LIKES_URL } from "./utils/urls";
+import List from "./components/List";
+import Form from "./components/Form";
+import Loading from "./components/Loading";
 
 export const App = () => {
   const [list, setList] = useState([]);
   const [form, setForm] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setList(data));
+      .then((data) => setList(data))
+      .finally(() => setLoading(false));
   }, []);
 
   const onFormSubmit = (event) => {
@@ -57,6 +60,7 @@ export const App = () => {
       <header>
         <h1>Happy thoughts!</h1>
       </header>
+      {loading && <Loading />}
       <div className="container">
         <Form onFormSubmit={onFormSubmit} form={form} setForm={setForm} />
         <List list={list} handleLikesIncrease={handleLikesIncrease} />
