@@ -26,6 +26,11 @@ export const App = () => {
       .finally(() => setLoading(false));
   };
 
+  // useEffect(() => {
+  //   if (count >= 1) return <div>hello</div>;
+  // });
+  // console.log(count);
+
   const onFormSubmitt = (event) => {
     event.preventDefault();
 
@@ -51,24 +56,14 @@ export const App = () => {
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((data) => {
-        // const updatedThoughts = thoughts.map((item) => {
-        //   if (item._id === data._id) {
-        //     item.hearts += 1;
-        //     return item;
-        //   } else {
-        //     return item;
-        //   }
-        // });
-
-        // setThoughts(updatedThoughts);
         fetchThoughts();
       });
   };
 
   return (
-    <div>
+    <div className="app">
       {loading && <LoadingItem />}
-      <div className="form">
+      <div>
         {/* <p>What's making you happy right now?</p> */}
         <ThoughtForm
           onFormSubmitt={onFormSubmitt}

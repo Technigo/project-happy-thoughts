@@ -41,12 +41,19 @@ code {
   margin-left: 5px;
 }
 
+.textarea {
+  width: auto;
+  color: aqua;
+}
+
 .input {
+  color: red;
   width: 90%;
   height: 40px;
   border-color: rgb(207, 207, 207);
-  /* border: 4px; */
+  border: 4px;
 }
+
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -62,12 +69,16 @@ button {
   height: 27px;
 }
 
+.app {
+  margin: 0 auto;
+}
+
 .form {
   display: flex;
   align-items: left;
   flex-direction: column;
   width: 300px;
-  height: 150px;
+  height: 180px;
   background-color: rgb(242, 240, 240);
   /* padding: 1rem 1rem 1 rem 1 rem; */
   border: 1px solid rgb(2, 2, 2);
@@ -77,11 +88,15 @@ button {
   margin-bottom: 1.5rem;
 }
 
+.form-container {
+  padding: 5px;
+}
 .thoughts {
   display: flex;
   flex-direction: column;
   align-items: left;
   width: 300px;
+  height: 180px;
   border: 1px solid #333;
   margin-bottom: 1rem;
   height: 140px;
@@ -89,18 +104,86 @@ button {
   box-shadow: 7px 7px rgb(63, 62, 62);
 }
 
-.thoughts-container {
-  display: flex;
-  flex-direction: row;
+.thoughts-card {
+  padding: 10px;
 }
 
-.thoughts-card {
-  margin: 20px;
+.thoughts-container {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
 }
 
 .btn-heart {
   color: red;
 }
+
+/* .loading-heart {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+  animation: heartbeat 1s infinite;
+} */
+
+/* #loading-heart:before,
+#loading-heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #fff;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+} */
+/* #loading-heart:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+} */
+/* 
+@keyframes loading-heart {
+  0% {
+    transform: scale(0.75);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.75);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(0.75);
+  }
+} */
 
 .loading-overlay {
   position: absolute;
