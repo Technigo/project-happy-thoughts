@@ -1,7 +1,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	/* box-sizing: border-box; */
 }
 
 body {
@@ -9,7 +8,7 @@ body {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 25px;
-	background-color: #f3b1af;
+	background-color: #fcc9c7;
 }
 
 .thought-container,
