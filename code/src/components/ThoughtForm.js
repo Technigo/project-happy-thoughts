@@ -28,6 +28,7 @@ const ThoughtForm = ({ setNewThought, setThoughts, thoughts, newThought }) => {
             .then((res) => res.json())
             .then((data) => setTimeout(() => setThoughts([data, ...thoughts]), 2000))
             .finally(() => setTimeout(() => setLoading(false), 2000))
+
         setNewThought('')
         setCounter(0)
     }
