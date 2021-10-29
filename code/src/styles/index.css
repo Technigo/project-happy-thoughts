@@ -57,6 +57,7 @@ body {
   flex-wrap: wrap;
   font-size: 14px;
   margin-top: 12px;
+  word-break: break-all;
 }
 
 .new-thought-space {
@@ -79,6 +80,7 @@ textarea {
   outline: none;
   color: var(--theme-color);
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 textarea:focus {
