@@ -4,22 +4,33 @@ import { API_URL, LIKE_URL } from "./utils/urls";
 import ThoughtsItem from "./components/ThoughtsItem";
 import ThoughtsForm from "./components/ThoughtsForm";
 import LoadingItem from "./components/LoadingItem";
+import ErrorItem from "./components/ErrorItem";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchThoughts();
   }, []);
 
   const fetchThoughts = () => {
+    setError(null);
     setLoading(true);
     fetch(API_URL)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw Error("could not fetch the data");
+        }
+        return res.json();
+      })
       .then((data) => setThoughts(data))
-      .finally(() => setLoading(false));
+      .finally(() => setLoading(false))
+      .catch((err) => {
+        setError(err.message);
+      });
   };
 
   const handleFormSubmit = (event) => {
@@ -36,6 +47,7 @@ export const App = () => {
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
+        setNewThought("");
         fetchThoughts();
       });
   };
@@ -54,6 +66,7 @@ export const App = () => {
 
   return (
     <div className="main-container">
+      {error && <div> {error} </div>}
       {loading && <LoadingItem />}
       <ThoughtsForm
         onFormSubmit={handleFormSubmit}

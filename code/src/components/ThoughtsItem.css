@@ -1,6 +1,7 @@
 .thought-container {
   display: flex;
   flex-direction: column;
+  background-color: white;
   padding: 15px;
   border: 1px solid black;
   box-shadow: 5px 5px;
@@ -37,14 +38,16 @@
   margin-right: 5px;
 }
 
-.like-button:active {
-  background-color: rgb(245, 177, 169);
-}
-
 .likes {
   color: grey;
 }
 
 .date {
   color: lightgray;
+}
+
+@media (min-width: 1024px) {
+  .thought-container {
+    width: 50%;
+  }
 }
