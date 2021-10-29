@@ -18,7 +18,7 @@ const ThoughtForm = ({
         <textarea
           className="textarea"
           id="newThought"
-          className="input"
+          // className="input"
           type="text"
           value={newThought}
           onChange={(e) => setNewThought(e.target.value)}
