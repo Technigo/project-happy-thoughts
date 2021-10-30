@@ -48,7 +48,9 @@ main {
 }
 
 .thoughts-container {
+  word-break: break-word;
   align-items: center;
+  break-inside: auto;
   width: 400px;
   margin: 20px;
 }
