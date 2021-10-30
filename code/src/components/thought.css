@@ -1,21 +1,20 @@
 .thought {
-  order: 5px solid #00668d;
+  width:350px;
   margin: 25px 10px;
   border: #ccc solid 1px;
   box-shadow: 10px 10px 1px #333;
   background: #f2f0f0;
-  padding: 15px;
-  box-sizing: border-box;
+  padding:5px 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Trispace', sans-serif;
 }
 .heart{
-  color: #f93e2f;
   background-color: #d0d0d0;
   border-radius: 50%;
   border: none;
-  font-size: 1.75rem;
+  font-size: 1rem;
   width:40px;
   height:40px;
   padding:0;
@@ -24,6 +23,17 @@
   display:flex;
   align-items: center;
   justify-content: center;
+ 
+}
+.heart:hover{
+  border: 1px solid #f93e2f
+}
+
+.heart span{
+ padding-right: 5px;
+ margin: 0;
+ font-size: 1rem;
+text-align: center;
 }
 
 .likes{
@@ -39,4 +49,12 @@
 .other-details p{
   color:rgb(123, 124, 124);
   font-size:  0.9rem; 
+}
+
+
+@media (min-width: 768px) {
+  .thought {
+    width:450px;
+  }
+
 }
