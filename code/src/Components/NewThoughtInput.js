@@ -11,6 +11,7 @@ const NewThoughtInput = ({ onFormSubmit, newThought, onNewThoughtChange }) => {
           minLength="5"
           maxLength="140"
           required
+          placeholder="Share your happy thought, min 5 and max 140 carachters."
           value={newThought}
           onChange={onNewThoughtChange}
         />
