@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LikeButton from "./LikeButton";
 import moment from "moment";
 
-const Thoughts = ({ thoughts, onLikeSubmit, yourLikes }) => {
+const Thoughts = ({ thoughts, onLikeSubmit }) => {
   const [likedClicks, setLikedClicks] = useState(0);
 
   const addClicks = (id) => {
@@ -22,13 +22,14 @@ const Thoughts = ({ thoughts, onLikeSubmit, yourLikes }) => {
             likedCliks={likedClicks}
           />
           <p className="number-of-likes"> X {thoughts.hearts}</p>
-          <p className="date">{moment(thoughts.createdAt).fromNow()}</p>
-          <p>{yourLikes}</p>
         </section>
-        <p className="liked-this">
-          you <span className="heart">&#10084;</span> this : {likedClicks}
-          {likedClicks > 1 ? " times" : " time"}
-        </p>
+        <section className="like-section">
+          <p className="liked-this">
+            you <span className="heart">&#10084;</span> this : {likedClicks}
+            {likedClicks > 1 ? " times" : " time"}
+          </p>
+          <p className="date">{moment(thoughts.createdAt).fromNow()}</p>
+        </section>
       </article>
     </>
   );
