@@ -1,13 +1,12 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week's project was to create an app like Twitter where
+you can post your happy thougths.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The app is created using React. It fetches and collects data from an API created for this week's project. I have a different component for the form that is used to post my happy thoughts and a different component for the posts that the app receives from the API. With React useEffect hook I fetch the data from the API when the App is mounted.In my Posts component I have used the useState hook to change the background color of the button when I like a post. the design follows the guidelines given for the project.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://optimistic-varahamihira-083837.netlify.app
