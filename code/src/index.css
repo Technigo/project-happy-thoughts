@@ -8,7 +8,7 @@ body {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 25px;
-	background-color: #ffd8d6;
+	background-color: #ffe8e8;
 }
 
 .thought-container,
@@ -51,7 +51,7 @@ body {
 .submit-btn {
 	width: 265px;
 	height: 45px;
-	background-color: #feb7c6;
+	background-color: #ffadad;
 	cursor: pointer;
 	border: none;
 	border-radius: 30px;
@@ -113,7 +113,7 @@ body {
 }
 
 .clicked {
-	background-color: #feb7c6;
+	background-color: #ffadad;
 }
 
 .heart-icon {
@@ -132,7 +132,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #ffd8d6;
+	background-color: #ffe8e8;
 }
 
 .loading-overlay {
@@ -148,7 +148,7 @@ body {
 	height: 50px;
 	border: 5px solid rgba(255, 255, 255, 0.6);
 	border-radius: 50%;
-	border-left: 5px solid #ffd8d6;
+	border-left: 5px solid #ffe8e8;
 	animation: spinner infinite 0.5s;
 	display: inline-block;
 }
