@@ -9,7 +9,7 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
         type="text"
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
-        placeholder="share a happy thought with us"
+        placeholder="Write your happy thought here..."
       />
       <button className="submit-button" type="submit">
         <span role="img" aria-label="heart">
