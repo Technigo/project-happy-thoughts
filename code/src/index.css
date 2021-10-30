@@ -9,19 +9,6 @@ body {
   background-color: #ffadad;
 }
 
-header {
-  width: 100%;
-  /* display: flex;
-  justify-content: center; */
-  padding: 0 10%;
-}
-
-h1 {
-  font-size: 4em;
-  color: #ffff;
-  margin-bottom: 5%;
-}
-
 button {
   border: none;
 }

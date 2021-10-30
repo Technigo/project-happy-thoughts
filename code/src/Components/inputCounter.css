@@ -1,0 +1,14 @@
+.p-input-counter,
+.p-red,
+.p-green {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.p-red {
+  color: #c70039;
+}
+
+.p-green {
+  color: #006e33;
+}
