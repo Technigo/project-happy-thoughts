@@ -14,9 +14,7 @@ export const App = () => {
     fetch(API_URL)
       .then(res => res.json())
       .then(json => {
-
         setThougths(json)
-        console.log("fetching thougths")
       }).catch((error) => {
         console.log('Error in Fetch:' + error.message);
       });

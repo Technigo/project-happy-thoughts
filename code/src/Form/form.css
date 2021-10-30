@@ -35,3 +35,9 @@
     width: 60%;
     border: none;
 }
+
+.form-button-hover:hover{
+    color: rgb(212, 22, 149);
+}
+
+    
