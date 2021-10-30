@@ -38,9 +38,8 @@ form {
   padding: 10px;
   box-shadow: 6px 6px 1px 1px rgba(5, 5, 5, 0.9);
   background: rgb(238, 236, 236);
-  width: 90%;
+  width: 350px;
   height: 160px;
-  max-width: 350px;
 }
 
 label {
@@ -97,9 +96,8 @@ label {
   margin: 15px;
   padding: 10px;
   box-shadow: 6px 6px 1px 1px rgba(5, 5, 5, 0.9);
-  width: 90%;
+  width: 350px;
   height: auto;
-  max-width: 350px;
   background-color: white;
 }
 
@@ -116,7 +114,7 @@ label {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 350px;
+  width: 330px;
 }
 
 .likes-wrapper {
@@ -150,7 +148,6 @@ label {
 
 .date {
   color: rgb(182, 182, 182);
-  padding-right: 20px;
 }
 
 .loading-overlay {
