@@ -53,13 +53,14 @@ export const App = () => {
 
   return (
     <div className="main-container">
-      <div className="form-container">
+      <div className="new-container">
         <ThoughtForm
           onFormSubmit={handleFormSubmit}
           newThought={newThought}
           setNewThought={setNewThought}
         />
       </div>
+
       <div className="new-container">
         {thoughts.map((thought) => (
           <ThoughtItem
