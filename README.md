@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The project was to create a happier version of twitter built in React. Collect Technigo students 'happy thoughts' using Fetch API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The challenge was to understand the components lifecycle and to react to that when creating the project and mounting the components
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://aspen-happy-thought.netlify.app/

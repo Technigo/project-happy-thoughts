@@ -6,6 +6,7 @@
   border: 1px solid #000;
   margin: 20px;
   box-shadow: 5px 5px #000;
+  max-width: 450px;
 }
 
 .get-thoughts__button-wrapper {

@@ -9,7 +9,6 @@
 # FUNCTIONS
 
 Change color of heart button onClick fungerar? Se netlify?
-Maybe changing to use a state instead of inline style??
 Complete handleNewThought... ✅
 Complete the hearts button (make it round, add padding)
 Send comment with enter - see Jennies Q & A
@@ -17,8 +16,8 @@ Label-wrap around how much?
 
 # STYLE
 
-Complete style for form
-Adding boxes around all thoughts
+Complete style for form ✅
+Adding boxes around all thoughts ✅
 
 # OTHER
 
@@ -27,3 +26,4 @@ Add comment
 Add readme
 REDO EVERYTHING
 Catch error function
+https://stackoverflow.com/questions/54114171/how-to-play-an-mp3-once-onclick-in-react?rq=1

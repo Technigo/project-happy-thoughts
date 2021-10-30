@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import NewThoughtInput from './Components/NewThoughtInput';
 import GetThought from './Components/GetThoughts';
 import LoadingItem from './Components/LoadingItem';
+import Header from './Components/Header';
 
 import { API_URL, LIKES_URL } from './utils/urls';
 
@@ -72,7 +73,8 @@ export const App = () => {
   };
 
   return (
-    <div>
+    <div className="app__wrapper">
+      <Header />
       {loading && <LoadingItem />}
       <NewThoughtInput
         onFormSubmit={handleFormSubmit}

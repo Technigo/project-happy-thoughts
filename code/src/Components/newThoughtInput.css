@@ -4,9 +4,10 @@
   padding: 10px;
   background: #efefef;
   border: 1px solid #000;
-  align-items: center;
+  /* align-items: center; */
   margin: 20px;
   box-shadow: 5px 5px #000;
+  max-width: 450px;
 }
 
 textarea {
