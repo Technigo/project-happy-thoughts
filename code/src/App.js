@@ -1,24 +1,54 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
+import { API_URL } from "./utils/urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
+  const [newThought, setNewThought] = useState("");
 
   useEffect(() => {
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data));
   }, []);
 
-  console.log(thoughts);
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: newThought }),
+    };
+
+    fetch(API_URL, options)
+      .then((res) => res.json())
+      // spread the previous array and add new data to it
+      .then((data) => setThoughts([data, ...thoughts]));
+  };
 
   return (
     <div>
+      <form onSubmit={onFormSubmit}>
+        <label htmlFor="newThought">Type your text</label>
+        <input
+          id="newThought"
+          type="text"
+          value={newThought}
+          onChange={(e) => setNewThought(e.target.value)}
+        />
+        <button type="submit">Send Thought!</button>
+      </form>
+
       {thoughts.map((thought) => (
         <div key={thought._id}>
           <p>{thought.message}</p>
           <button> &hearts; {thought.hearts}</button>
-          <p>Created at: {moment(thought.createdAt).fromNow()}</p>
+          <p className="date">
+            - Created at: {moment(thought.createdAt).fromNow()}
+          </p>
         </div>
       ))}
     </div>
