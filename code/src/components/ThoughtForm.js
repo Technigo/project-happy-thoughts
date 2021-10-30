@@ -21,7 +21,7 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
             disabled={newThought.length < 5}
             type="submit"
           >
-            ❤️ Send Happy Thought ❤️
+            <span>&#10084;&#65039; Send Happy Thought &#10084;&#65039;</span>
           </button>
           <p
             className="text-counter"
