@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Happy Thoughts is a webb-application where the user can send a happy thought and read other peoples happy thoughts. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This project focuses on JavaScript, React and communicating with API's. It was really interesting to finally start posting to an API, and realising how few lines of code it requires. The styling of the page was given as an image, and I loved recreating the details such as different colors of the like-button depending on number of likes and hovering-effects.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-sofia-willebrand.netlify.app/
