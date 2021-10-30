@@ -51,7 +51,7 @@ textarea {
   max-width: 100%;
   min-width: 100%;
   min-height: 60px;
-  max-height: 100px;
+  max-height: 145px;
   padding: 8px 10px;
   margin: 10px 0 0 0;
   border: lightgray 1.5px solid;
@@ -74,16 +74,21 @@ textarea {
   width: 35px;
   height: 35px;
   margin-right: 8px;
-  padding: 0 0 2.5px 4px;
+  /* padding: 0 0 2.5px 4px; */
   background-color: lightgray;
   border-radius: 50%;
-  font-size: 17px;
+  /* font-size: 17px; */
   display: flex;
   align-items: center;
   justify-content: center;
   appearance: none;
   border: none;
 }
+
+/* .heart {
+  transform: translateX(100px);
+  width: 50%;
+} */
 
 p {
   margin: 10px 0;
@@ -103,4 +108,9 @@ p {
 
 .liked {
   background-color: #F5AAAD;
+}
+
+button:hover,
+.blue {
+  background-color: dodgerblue;
 }

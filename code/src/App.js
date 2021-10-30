@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { API_URL, LIKES_URL } from './utils/commons'
+import { API_URL } from './utils/commons'
 
 import ThoughtForm from './components/ThoughtForm';
 import ThoughtsItem from './components/ThoughtsItem';
@@ -38,21 +38,8 @@ export const App = () => {
       
       // v1
       // setThoughts([data, ...thoughts])))
-      
+
       setNewThought('')
-  }
-
-  const handleLikesIncrease = (thoughtId) => {
-    const options = {
-      method: 'POST',
-    }
-
-    fetch(LIKES_URL(thoughtId), options)
-      .then((res) => res.json()
-      .then((data) => {
-        fetchThoughts()
-      }))
-      
   }
 
   return (
@@ -67,7 +54,8 @@ export const App = () => {
         <ThoughtsItem
           key={thought._id}
           thought={thought}
-          onLikesIncrease={handleLikesIncrease}
+          thoughtId={thought._id}
+          fetchThoughts={fetchThoughts}
         />
       ))}
     </div>

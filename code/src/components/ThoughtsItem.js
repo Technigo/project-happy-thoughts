@@ -1,31 +1,24 @@
 import React from "react";
 import moment from 'moment';
+import HeartButton from "./HeartButton";
 
-const ThoughtsItem = ({ thought, onLikesIncrease, }) => {
 
-    return (
-        <div className="thought-card">
-          <p>{thought.message}</p>
-          <div className="message-card-bottom-row">
-            <div className="heart-likes-container">
+const ThoughtsItem = ({ onLikesIncrease, thought, thoughtId, fetchThoughts }) => {
 
-              {thought.hearts > 0 && (
-                <button className="heart-button liked" onClick={() => onLikesIncrease(thought._id)}>
-                  <span role="img" aria-label="heart">❤️</span>
-                </button>
-              )}
-              {thought.hearts === 0 && (
-                <button className="heart-button" onClick={() => onLikesIncrease(thought._id)}>
-                  <span role="img" aria-label="heart">❤️</span>
-                </button>
-              )}
-             
-              <div className="likes-text"> x {thought.hearts}</div>
-            </div>
-            <p className="date-text">{moment(thought.createdAt).fromNow()}</p>
-          </div>
+  return (
+      <div className="thought-card">
+        <p>{thought.message}</p>
+        <div className="message-card-bottom-row">
+          <HeartButton 
+            onLikesIncrease={onLikesIncrease}
+            thought={thought}
+            thoughtId={thoughtId}
+            fetchThoughts={fetchThoughts}
+          />
+          <p className="date-text">{moment(thought.createdAt).fromNow()}</p>
         </div>
-    )
+      </div>
+  )
 }
 
 export default ThoughtsItem
