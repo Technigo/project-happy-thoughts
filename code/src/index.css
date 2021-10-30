@@ -14,9 +14,14 @@ code {
 }
 
 /* Loading Screen */
+/* Overlay */
 .loading-overlay {
   position: absolute;
-  background-color: white;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+  background: white;
   display: flex;
 	justify-content: center;
 	align-items: center;
@@ -24,6 +29,7 @@ code {
   width: 100%;
 }
 
+/* Bouncing loading ball */
 .loading-ball {
   align-self: flex-end;
   animation-duration: 2s;
@@ -62,10 +68,10 @@ code {
   flex-direction: column;
   box-shadow: 5px 5px black;
   position: relative;
-  z-index: -1;
+  word-break: break-word;
 }
 
-/* Form, new post */
+/* New post form */
 .post-container h1 {
   font-size: 14px;
 }
@@ -73,15 +79,16 @@ code {
 .form {
   background-color: #f2f0f0;
   position: relative;
-  
 }
 
+/* Input */
 #newThought {
   padding: 10px;
   border: 1.5px solid #c8c7c7;
   margin-bottom: 0;
 }
 
+/* Submit button */
 .form-button {
   margin-top: 10px;
   width: fit-content;
@@ -94,6 +101,7 @@ code {
   bottom: 20px;
 }
 
+/* Div for character amount and error message */
 .character-div {
   margin-top: 0;
   display: flex;
@@ -105,6 +113,7 @@ code {
   margin-left: 20px;
 }
 
+/* Heart button and amount of likes */
 .like-div {
   position: absolute;
   bottom: 15px;
@@ -119,6 +128,7 @@ code {
   border: none;
 }
 
+/* Date container */
 .post-container .date {
   color: #c8c7c7;
   position: absolute;
@@ -126,6 +136,7 @@ code {
   bottom: 10px;
 }
 
+/* Media queries */
 @media (min-width: 768px) {
   .post-container {
     width: 60%;

@@ -6,7 +6,6 @@ import HeartButton from "./HeartButton";
 const Posts = ({
   thoughts,
   onLikesIncrease,
-  
 }) => {
   return (
     <>

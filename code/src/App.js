@@ -59,7 +59,7 @@ export const App = () => {
   return (
     <div>
       {loading && <LoadingScreen />}
-      
+
       <NewPost
         onFormSubmit={onFormSubmit}
         newThought={newThought}
