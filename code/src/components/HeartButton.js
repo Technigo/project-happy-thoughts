@@ -2,26 +2,26 @@ import React, { useState } from "react";
 import { LIKES_URL } from '../utils/commons'
 
 const HeartButton = ({ thoughtId, thought, fetchThoughts }) => {
-  const [sumYourLikes, setSumYourLikes] = useState(
+  const [yourLikes, setYourLikes] = useState(
     JSON.parse(localStorage.getItem(thoughtId)) + 0
   );
 
-  const onLikesIncrease = (thoughtId) => {
+  const onLikesIncrease = () => {
+    
     fetch(LIKES_URL(thoughtId), {
       method: 'POST'
     })
       .then((res) => res.json())
-      .then(() => {
-        fetchThoughts()
-      }, [])
-    
-    setSumYourLikes((value) => value + 1)
-    localStorage.setItem(thoughtId, JSON.stringify(sumYourLikes))
+      .then(() => {}, [])
+
+    fetchThoughts()
+    setYourLikes((value) => value + 1)
+    localStorage.setItem(thoughtId, JSON.stringify(yourLikes + 1))
   }
 
   return (
     <div className="heart-likes-container">
-      {sumYourLikes === 0 && (
+      {yourLikes === 0 && (
         <button
           className={thought.hearts === 0 ? "heart-button" : "heart-button liked"}
           onClick={() => onLikesIncrease(thought._id)}
@@ -29,7 +29,7 @@ const HeartButton = ({ thoughtId, thought, fetchThoughts }) => {
           <span role="img" aria-label="heart">❤️</span>
         </button>
       )}
-      {sumYourLikes >= 1 && (
+      {yourLikes > 0 && (
         <button
           className="heart-button blue"
           onClick={() => onLikesIncrease(thought._id)}
@@ -38,7 +38,6 @@ const HeartButton = ({ thoughtId, thought, fetchThoughts }) => {
         </button>
       )}
         <div className="likes-text"> x {thought.hearts}</div>
-        <div>You x {sumYourLikes}</div>
     </div>
   )
 }

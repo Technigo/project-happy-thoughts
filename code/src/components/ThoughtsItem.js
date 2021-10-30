@@ -3,7 +3,7 @@ import moment from 'moment';
 import HeartButton from "./HeartButton";
 
 
-const ThoughtsItem = ({ onLikesIncrease, thought, thoughtId, fetchThoughts }) => {
+const ThoughtsItem = ({ onLikesIncrease, thought, thoughtId, fetchThoughts, sumYourLikes }) => {
 
   return (
       <div className="thought-card">
@@ -14,6 +14,7 @@ const ThoughtsItem = ({ onLikesIncrease, thought, thoughtId, fetchThoughts }) =>
             thought={thought}
             thoughtId={thoughtId}
             fetchThoughts={fetchThoughts}
+            sumYourLikes={sumYourLikes}
           />
           <p className="date-text">{moment(thought.createdAt).fromNow()}</p>
         </div>
