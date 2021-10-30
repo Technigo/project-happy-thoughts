@@ -1,11 +1,9 @@
 import React from "react";
 
-const Form = ({ newThought, setNewThought, formSubmit, setCounterValue }) => {
+const Form = ({ newThought, setNewThought, formSubmit }) => {
   return (
     <div className="form-wrapper">
-      <form
-        onSubmit={((e) => setCounterValue(e.target.value.length), formSubmit)}
-      >
+      <form onSubmit={formSubmit}>
         <label htmlFor="newThought">What's making you happy right now?</label>
         <div>
           <input
@@ -13,6 +11,7 @@ const Form = ({ newThought, setNewThought, formSubmit, setCounterValue }) => {
             type="text"
             value={newThought}
             onChange={(e) => setNewThought(e.target.value)}
+            placeholder="Happy thought here!"
           />
           <p className="letter-counter">
             {140 - newThought.length} characters left
@@ -30,7 +29,6 @@ const Form = ({ newThought, setNewThought, formSubmit, setCounterValue }) => {
           <span role="img" aria-label="heart emoji">
             ❤️
           </span>
-          ;
         </button>
       </form>
     </div>

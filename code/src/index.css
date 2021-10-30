@@ -1,42 +1,31 @@
 body {
-  margin: 15px;
+  width: 100%;
   font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
+  background-image: url("./rose.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 h1 {
   text-align: center;
-  color: #ffadad;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.date {
-  text-align: end;
+  color: black;
+  font-size: 30px;
 }
 
 .form-wrapper {
   border: 1px solid black;
-  padding: 25px;
   background-color: #f2f0f0;
   box-shadow: 7px 7px black;
-  margin: 20px;
-  display: flex;
+  margin: 2% 5%;
+  padding: 5%;
 }
 
 input {
-  padding: 20px;
+  padding: 40px;
   margin: 10px 0;
 }
 
@@ -49,19 +38,29 @@ input {
 
 .thought-wrapper {
   border: 1px solid black;
-  margin: 20px;
+  margin: 5% 5%;
+  padding: 20px;
   box-shadow: 7px 7px black;
   overflow-wrap: break-word;
+  background-color: white;
+}
+
+.date {
+  text-align: end;
+  font-size: 12px;
 }
 
 .like-button {
   border-radius: 50%;
-  padding: 0 16px;
+  padding: 0 15px;
   background-color: #f2f0f0;
   border: none;
+  margin-right: 5px;
 }
 
-.like-button:hover {
+.like-button:hover,
+.like-button:active,
+.like-button:visited {
   background-color: #ffadad;
 }
 
@@ -102,8 +101,97 @@ input {
   }
 }
 
+@media (min-width: 768px) {
+  body {
+    margin: 5% 0;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 15%;
+  }
+
+  h1 {
+    font-size: 55px;
+  }
+
+  .form-wrapper {
+    width: 80%;
+    padding: 5% 3%;
+    box-shadow: 9px 9px;
+  }
+
+  p,
+  label {
+    font-size: 16px;
+  }
+
+  input {
+    padding: 8% 32%;
+    margin: 20px 15px;
+  }
+
+  .letter-counter {
+    text-align: end;
+    margin-top: 0;
+  }
+
+  .form-button {
+    padding: 12px;
+  }
+
+  .thought-wrapper {
+    width: 80%;
+    padding: 5% 3%;
+    box-shadow: 8px 8px;
+  }
+
+  .date {
+    font-size: 14px;
+  }
+}
+
 @media (min-width: 1025px) {
   body {
-    width: 70%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .content-wrapper {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 55px;
+  }
+
+  .form-wrapper {
+    width: 80%;
+    padding: 5% 3%;
+  }
+
+  p,
+  label {
+    font-size: 18px;
+  }
+
+  input {
+    padding: 8% 32%;
+    margin: 25px 10px;
+  }
+
+  .form-button {
+    padding: 12px;
+  }
+
+  .thought-wrapper {
+    width: 80%;
+    padding: 5% 3%;
+  }
+
+  .date {
+    font-size: 16px;
   }
 }

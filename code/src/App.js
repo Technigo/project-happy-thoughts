@@ -5,10 +5,14 @@ import Wrapper from "./components/Wrapper";
 export const App = () => {
   return (
     <div className="content-wrapper">
-      <header>
-        <h1>Happy Thoughts</h1>
-      </header>
-      <Wrapper />
+      <div>
+        <header>
+          <h1> &hearts; Happy Thoughts &hearts;</h1>
+        </header>
+      </div>
+      <div>
+        <Wrapper />
+      </div>
     </div>
   );
 };

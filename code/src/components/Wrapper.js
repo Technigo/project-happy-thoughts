@@ -37,6 +37,7 @@ const Wrapper = () => {
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts();
+        setNewThought("");
       });
   };
   const handleLikesIncrease = (thoughtId) => {
