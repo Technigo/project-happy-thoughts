@@ -22,6 +22,37 @@ code {
   
 }
 
+/*Loading spinner*/
+
+.loading-overlay {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: honeydew;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.loading-overlay img {
+  height: 300px;
+  width: 300px;
+  animation: spinner infinite 0.8s;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 h1 {
   font-family: 'Roboto Mono', monospace;
   font-size: 60px;
@@ -84,13 +115,15 @@ h1 {
   align-items: center;
   cursor: pointer;
 }
-/* Wraps heart icond and Send Happy Thought text*/
+.submit-button:hover {
+  transform:scale(1.1,1.1);
+}
+/* Wraps heart icon and Send Happy Thought text*/
 .send-wrapper {
   display: flex;
   justify-content: center;
   align-content: center;
 }
-
 .character-count {
   margin-right: 50px;
 }
@@ -126,7 +159,7 @@ h1 {
   font-weight: bold;
   overflow-wrap: break-word;
 }
-/*Row containing Hear button for likes, number of likes and 
+/*Row containing Heart button for likes, number of likes and 
 time when last updated*/
 .button-row{
   display: flex;
@@ -156,6 +189,10 @@ time when last updated*/
 
 .heart-button img {
   width: 40px;
+  
+}
+.heart-button img:hover {
+  transform:scale(1.2,1.2);
 }
 
 .date {

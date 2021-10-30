@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { API_URL, LIKES_URL } from './utils/urls'
 import ThoughtForm from './components/ThoughtForm'
 import ThoughtItem from './components/ThoughtItem'
+import LoadingItem from './components/LoadingItem'
 
 export const App = () => {
 
   const [thoughts, setThoughts] = useState ([])
   const [newThought, setNewThought] = useState ('')
- 
+  const [loading, setLoading] = useState(false)
 
   useEffect(()=> {
     fetchThoughts()
@@ -15,9 +16,11 @@ export const App = () => {
 
   // The first fetch request to fetch and display the 20 most current messages
   const fetchThoughts =() => {
+    setLoading(true)
     fetch (API_URL)
     .then ((res) => res.json ())
     .then ((data) => setThoughts(data))
+    .finally (() => setLoading(false))
   }
 
   const handleFormSubmit = (event) => {
@@ -37,6 +40,7 @@ export const App = () => {
       fetchThoughts()
       setNewThought("") // This clears the textarea for a new input
     })
+    
   }
 
   const handleLikesIncrease = (thoughtId) => {
@@ -54,6 +58,7 @@ export const App = () => {
 
   return (
     <div className="body">
+      {loading &&<LoadingItem/>}
       <h1>A Happy-Thoughts Place</h1>
         <ThoughtForm
         onFormSubmit = {handleFormSubmit}
