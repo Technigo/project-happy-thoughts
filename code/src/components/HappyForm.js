@@ -7,8 +7,9 @@ const HappyForm = ({ onFormSubmit, newThought, setNewThought }) => {
 
       <form className="happyThoughtInput" onSubmit={onFormSubmit}>
         <label>
-          Type happy thought
+          What's making you happy?
         <textarea
+          placeholder="Type here :)"
           row="2"
           minLength="4"
           maxLength="140"
@@ -22,7 +23,13 @@ const HappyForm = ({ onFormSubmit, newThought, setNewThought }) => {
         <button className="happyThoughtButton" disabled=
                 {newThought.length < 4 || newThought.length > 140}
                 type="submit">
-                  Send thought!
+                   <span role="img" aria-label="heart">
+                    ❤️
+                    </span>
+                  Send happy thought&nbsp;
+                    <span role="img" aria-label="heart">
+                     ❤️
+                    </span>
         </button>
         </label>
       </form>

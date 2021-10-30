@@ -1,2 +1,43 @@
 
 
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 0 5%;
+    margin: 20px 0;
+    border: 1px solid #000;
+    box-shadow: 5px 5px 0 #000;
+}
+
+.heart_buttonWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2%;
+
+}
+.heartButton_Counter {
+    display: flex;
+    align-items: baseline;
+}
+
+.heartButton_Counter p {
+    color: gray;
+    font-size: small;
+}
+
+.heartButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.heartDate {
+    color: gray;
+    font-size: x-small;
+
+}

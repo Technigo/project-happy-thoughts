@@ -2,7 +2,7 @@
 	box-sizing: border-box;
   }
 
-@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Roboto:wght@300&display=swap');
 
 body {
 	font-family: 'Oxygen Mono', monospace;
@@ -14,25 +14,26 @@ body {
   -moz-osx-font-smoothing: grayscale; */
 }
 
+/* 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */
 
 
 
 .bigWrapper {
 	display: flex;
     flex-direction: column;
-	width: 100%;
-
+	max-width: 470px;
+	width: 90%;
+	margin: 10% auto;
+    margin-top: 5%;
 }
 
 button {
 	border: none;
 }
-
-
 
 .loading-overlay {
 	position: absolute;
