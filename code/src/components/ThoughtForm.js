@@ -1,5 +1,4 @@
 import React from "react";
-// import LetterCounter from './components/LetterCounter'
 
 const ThoughtForm = ({ onFormSubmit, newThought, setNewThought, letterCounter }) => {
 
