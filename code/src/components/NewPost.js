@@ -27,7 +27,7 @@ export const NewPost = ({ onFormSubmit, newThought, setNewThought }) => {
       </button>
 
       <div className="character-div">
-        <p>{newThought.length}/140</p>
+        <p className="character-count">{newThought.length}/140</p>
         {newThought.length <5 && (
           <p className="error-message"> Your message must be 5 characters long</p>
           )}

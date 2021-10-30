@@ -98,7 +98,7 @@ code {
   background-color: #ffadad;
   font-family: Consolas;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
 }
 
 /* Div for character amount and error message */
@@ -107,10 +107,14 @@ code {
   display: flex;
 }
 
+.character-count {
+  width: 80px;
+}
+
 .error-message {
   color: red;
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 /* Heart button and amount of likes */
