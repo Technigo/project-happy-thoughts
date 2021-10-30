@@ -6,7 +6,7 @@ const HeartButton = ({ thought, onLikesIncrease }) => {
       className="heart-button"
       onClick={() => onLikesIncrease(thought._id)}
     >
-      <span role="img" aria-label="heart icon">
+      <span role="img" className="heart-icon" aria-label="heart icon">
         💗
       </span>
     </button>

@@ -2,20 +2,25 @@ import React, { useEffect, useState } from "react";
 
 import { NewPost } from "./components/NewPost";
 import Posts from "./components/Posts";
+import LoadingScreen from "./components/LoadingScreen";
+
 import { API_URL, LIKES_URL } from "./utils/urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchThoughts();
   }, []);
 
   const fetchThoughts = () => {
+    setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data));
+      .then((data) => setThoughts(data))
+      .finally(() => setLoading(false));
   };
 
   const onFormSubmit = (event) => {
@@ -53,6 +58,8 @@ export const App = () => {
 
   return (
     <div>
+      {loading && <LoadingScreen />}
+      
       <NewPost
         onFormSubmit={onFormSubmit}
         newThought={newThought}

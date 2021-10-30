@@ -13,6 +13,44 @@ code {
     monospace;
 }
 
+/* Loading Screen */
+.loading-overlay {
+  position: absolute;
+  background-color: white;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+  height: 500px;
+  width: 100%;
+}
+
+.loading-ball {
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  background-color: #F44336;
+  height: 200px;
+  margin: 0 auto 0 auto;
+  border-radius: 50%;
+  transform-origin: bottom;
+  width: 200px;
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1,1)      translateY(0); }
+  10%  { transform: scale(1.1,.9)   translateY(0); }
+  30%  { transform: scale(.9,1.1)   translateY(-100px); }
+  50%  { transform: scale(1.05,.95) translateY(0); }
+  57%  { transform: scale(1,1)      translateY(-7px); }
+  64%  { transform: scale(1,1)      translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
+}
+
 /* All post containers  */
 .post-container {
   width: 80%;
@@ -24,6 +62,7 @@ code {
   flex-direction: column;
   box-shadow: 5px 5px black;
   position: relative;
+  z-index: -1;
 }
 
 /* Form, new post */
@@ -33,11 +72,14 @@ code {
 
 .form {
   background-color: #f2f0f0;
+  position: relative;
+  
 }
 
 #newThought {
   padding: 10px;
   border: 1.5px solid #c8c7c7;
+  margin-bottom: 0;
 }
 
 .form-button {
@@ -52,6 +94,17 @@ code {
   bottom: 20px;
 }
 
+.character-div {
+  margin-top: 0;
+  display: flex;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
 .like-div {
   position: absolute;
   bottom: 15px;
@@ -64,11 +117,6 @@ code {
   padding: 10px;
   border-radius: 50px;
   border: none;
-}
-
-
-.heart-button:hover, .heart-button:active {
-  background-color: #ffadad;
 }
 
 .post-container .date {
@@ -87,5 +135,9 @@ code {
 @media (min-width: 1023px) {
   .post-container {
     width: 30%;
+  }
+
+  .heart-button:hover, .heart-button:active {
+    background-color: #ffadad;
   }
 }

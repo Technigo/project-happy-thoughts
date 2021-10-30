@@ -15,7 +15,7 @@ export const NewPost = ({ onFormSubmit, newThought, setNewThought }) => {
       <button
         type="submit"
         className="form-button"
-        disabled={newThought.length < 6 || newThought.length > 140}
+        disabled={newThought.length < 5 || newThought.length > 140}
       >
         <span role="img" aria-label="heart icon">
           💓
@@ -25,6 +25,16 @@ export const NewPost = ({ onFormSubmit, newThought, setNewThought }) => {
           💓
         </span>
       </button>
+
+      <div className="character-div">
+        <p>{newThought.length}/140</p>
+        {newThought.length <5 && (
+          <p className="error-message"> Your message must be 5 characters long</p>
+          )}
+        {newThought.length >140 && (
+          <p className="error-message"> Your message must be less than 140 characters long</p>
+        )}
+      </div>
     </form>
   );
 };
