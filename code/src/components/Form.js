@@ -6,9 +6,10 @@ const Form = ({ newThought, setNewThought, formSubmit }) => {
       <form onSubmit={formSubmit}>
         <label htmlFor="newThought">What's making you happy right now?</label>
         <div>
-          <input
+          <textarea
             id="newThought"
             type="text"
+            rows="5"
             value={newThought}
             onChange={(e) => setNewThought(e.target.value)}
             placeholder="Happy thought here!"
