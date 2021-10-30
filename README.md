@@ -12,4 +12,6 @@ It's connected to a simple API.
 
 ## View it live
 
+happy-thoughts-kim.netlify.app
+
 
