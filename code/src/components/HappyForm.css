@@ -19,17 +19,43 @@
     font-size: 14px; 
     padding: 10px 15px; 
     border-radius: 20px;
- 
 }
 
 
 textarea {
     resize: none;
     width: 100%;
-    font-size: 18px;
     font-family: 'Oxygen Mono';
     font-size: 12px;
     padding: 10px;
     margin: 10px 0;
+
+}
+
+
+/* Responsiveness SMALL SCREEN */
+@media (min-width: 992px) {
+
+    .happyThoughtInput{    
+        padding: 30px;
+        max-width: 700px;
+        box-shadow: 10px 10px #000;
+        font-size: 24px;
+    
+    }
+    
+    .happyThoughtButton{
+        font-size: 18px; 
+        padding: 15px 25px; 
+        border-radius: 30px;
+    }
+    
+    
+    textarea {
+        font-size: 16px;
+        padding: 15px;
+        margin: 20px 0;
+    
+    }
 
 }

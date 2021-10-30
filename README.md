@@ -2,12 +2,16 @@
 
 Replace this readme with your own information about your project.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+We were to make an app using react.js. The user should be able to post messages, see earlier attributions and like them. The buttons and posting also had som requiremensts like color shifting and required chars lengths. 
 
-## The problem
+It has been a fun, yet special week. The project went well, but to me, react is like learning a new language. I need to practice more to make it stick for real. But I guess programming is a constant learning. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I liked the styling alot because it made me questioning and understanding my code better. It is still an adventure to understand what kind of styling that is accetable to react (and netlify). 
+
+I added some og-tags for the first, hopefully it will work. 
+
+if I had more time I would add a header and a chars counter.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-maria-petersson.netlify.app/

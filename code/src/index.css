@@ -6,20 +6,7 @@
 
 body {
 	font-family: 'Oxygen Mono', monospace;
-	
-	
-  /* font-family: Consolas-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
 }
-
-/* 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
 
 
 
@@ -30,6 +17,7 @@ code {
 	width: 90%;
 	margin: 10% auto;
     margin-top: 5%;
+	border: 2px solid lime;
 }
 
 button {
@@ -74,5 +62,9 @@ button {
 /* Responsiveness SMALL SCREEN */
 @media (min-width: 992px) {
 
+
+.bigWrapper {
+	max-width: 700px;
+}
 
 }
