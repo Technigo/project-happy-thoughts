@@ -8,3 +8,4 @@ I tried to make the code as clean as I could to avoid unnecessary code.
 
 ## View it live
 
+https://zancotti-thoughts.netlify.app/
