@@ -1,97 +1,85 @@
-import React, { useEffect, useState } from 'react'; //use effect hook
+import React, { useEffect, useState } from 'react'; //use effect and use state hook
 import { API_URL, LIKES_URL } from './utils/urls'; //Links to the URLs
-import ThoughtItem from './components/ThoughtItem';
+import ThoughtCard from './components/ThoughtCard';
 import ThoughtForm from './components/ThoughtForm';
 import LoadingItem from './components/LoadingItem';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 export const App = () => {
-	const [thoughts, setThoughts] = useState([]); //should be initialized by an empty array//state property should by convention be at the top
+	const [thoughts, setThoughts] = useState([]); // thoughts initialized by an empty array
 	const [newThought, setNewThought] = useState(''); //state property
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(false); //state property
 
+	//getting the happy thought-posts.
 	useEffect(() => {
 		fetchThoughts();
-	}, []); // empty dependencies array is to detect when the component is mounted. If we delete the empty array, there would be an infinite loop bc we  update our state in the userEffect
+	}, []);
 
 	const fetchThoughts = () => {
 		setLoading(true);
-		fetch(API_URL) //fetch data from API
-			.then((res) => res.json()) //unpack the data
+		//fetching data from API to show the happy thought-posts.
+		fetch(API_URL)
+			.then((res) => res.json())
 			.then((data) => setThoughts(data))
 			.finally(() => setLoading(false));
 	};
 
-	//useEffect(() => {console.log("Updated!")}, [propName, stateName])
-	//a dependencies array propName, stateName
-
-	//when we want to detect both mounted and updated elements, then we dont pass any any dependencies. Just the callback/function.  useEffect(()=>{console.log("Mounted or updated!")
-
-	//when the components dies - we add a return. useEffect(()=>{console.log("Mounted") return()=>{ console.log("Unmounted!")}}, [])
-
 	const handleFormSubmit = (event) => {
-		event.preventDefault(); //dont want the Submission of button to refresh the page
+		//Prevents the page from reloading when submit button been pushed.
+		event.preventDefault();
 
 		const options = {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ message: newThought }), //the key = message and the value =newThought  //JSON.stringify is wrapping it a package
+			body: JSON.stringify({ message: newThought }), //JSON.stringify converts it to JSON.
 		};
 
-		//a post request
-		//method is by default GET, so if we want GET, we can omit the second optional argument (options object)
+		// Get the data and pushes it into the array with posts
 		fetch(API_URL, options)
 			.then((res) => res.json())
 			.then((data) => {
-				// setThoughts([data, ...thoughts])
-
 				fetchThoughts();
 			});
 	};
-
+	//function that adds 1 like by pressing the heart
 	const handleLikesIncrease = (thoughtId) => {
-		//option object
 		const options = {
 			method: 'POST',
 		};
+
+		//Fetches data from the API from the post that has been sent
 		fetch(LIKES_URL(thoughtId), options)
 			.then((res) => res.json())
 			.then((data) => {
-				//first approach increases likes only (vanilla js)
-				//checks all the data in the array
-				// const updatedThoughts = thoughts.map((item) => {
-				// 	if (item._id === data._id) {
-				// 		item.hearts += 1;
-				// 		return item;
-				// 	} else {
-				// 		return item;
-				// 	}
-				// });
-				// setThoughts(updatedThoughts); //state handler
-				//	});
-
-				//second version
 				fetchThoughts();
 			});
 	};
 	return (
-		<div>
-			{loading && <LoadingItem />}
-			{/* mounting the Thoughtform */}
-			<ThoughtForm
-				onFormSubmit={handleFormSubmit}
-				newThought={newThought}
-				setNewThought={setNewThought}
-			/>
-			{thoughts.map((thought) => (
-				<ThoughtItem
-					key={thought._id}
-					thought={thought}
-					onLikesIncrease={handleLikesIncrease}
+		<>
+			<Header heading="Share your happy Thoughts" />
+			<div>
+				{/* A spinner that shows when the page loads */}
+				{loading && <LoadingItem />}
+				{/* A component that receives the users input and makes a new thought-card */}
+				<ThoughtForm
+					onFormSubmit={handleFormSubmit}
+					newThought={newThought}
+					setNewThought={setNewThought}
 				/>
-			))}
-			;
-		</div>
+				{/* mapping through the thought array and generating thought-cards */}
+				{/* sending data as props to the thought card component */}
+				{thoughts.map((thought) => (
+					<ThoughtCard
+						key={thought._id}
+						thought={thought}
+						onLikesIncrease={handleLikesIncrease}
+					/>
+				))}
+			</div>
+			<Footer />
+		</>
 	);
 };
