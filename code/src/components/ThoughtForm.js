@@ -5,11 +5,12 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 
   return (
     <form className="thought-form" onSubmit={onFormSubmit}>
-      <label htmlFor="newThought">What's making you happy right now?</label> 
+      <label className="happy-thought" htmlFor="newThought">What's making you happy right now?</label> 
       <textarea className="textarea-form"
         id="newThought"
         type="text"
-        placeholder="Write your thought min 5 characters" 
+        rows="3"
+        placeholder="my happy thought..." 
         value={newThought}
         onChange={event => setNewThought(event.target.value)}
       />
@@ -19,7 +20,7 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
       <span className="heart" role="img" arial-label="Heart">
         {"❤️ "}
       </span>
-        Send Happy Thought 
+      <span className="button-text">Send Happy Thought</span> 
       <span className="heart" role="img" arial-label="Heart">
         {" ❤️"}
       </span>

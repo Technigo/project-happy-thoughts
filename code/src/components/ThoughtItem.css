@@ -1,0 +1,51 @@
+.thought-item {
+  margin: 20px;
+  padding: 10px 15px 10px 10px;
+  width: 400px;
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+  background-color: #FFFFFF;
+}
+
+.thought-message {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.like-button {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #FFADAD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji {
+  width: 25px;
+  height: 25px;
+  padding-left: 6px;
+}
+
+.like-date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+}
+
+.x-likes {
+  font-size: 14px;
+  color: #A9A9A9;
+  padding-left: 5px;
+}
+
+.date {
+  color: #D2D2D2;
+}

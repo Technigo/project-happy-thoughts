@@ -55,19 +55,22 @@ export const App = () => {
  
   return ( //since state is updated, component renders some JS6. After JS6 rendered first time then useEffect gets triggered with console log
     <div className="main">
-      <ThoughtForm 
-        onFormSubmit={handleFormSubmit}
-        newThought={newThought}
-        setNewThought={setNewThought} 
-      />
-
-      {thoughts.map(thought => (
-        <ThoughtItem 
-          key={thought._id} 
-          thought={thought} 
-          onLikesIncrease={handleLikesIncrease}
+      <fieldset>
+        <ThoughtForm 
+          onFormSubmit={handleFormSubmit}
+          newThought={newThought}
+          setNewThought={setNewThought} 
         />
+
+        {thoughts.map(thought => (
+          <ThoughtItem 
+            key={thought._id} 
+            thought={thought} 
+            onLikesIncrease={handleLikesIncrease}
+          />
+        
       ))}
+      </fieldset>
     </div>
   )
 }

@@ -1,21 +1,29 @@
 .thought-form {
   margin: 20px;
-  padding: 20px;
+  padding: 15px 15px 10px 10px;
   width: 400px;
-  border: 1px solid black;
-  box-shadow: 5px 5px;
+  border: 1px solid#737373;
+  box-shadow: 7px 7px;
   background-color: #F2F0F0;
+}
+
+.happy-thought {
+  
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .textarea-form {
   margin-top: 10px;
   width: 100%;
+  resize: none;
 }
 
 .bottom-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5px;
 }
 
 .heart {
@@ -27,4 +35,9 @@
   border-radius: 25px;
   padding: 10px;
   background-color: #FFADAD;
+  cursor: pointer;
+}
+
+.button-text {
+  font-weight: bold;
 }
