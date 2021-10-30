@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ThoughtsList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export const ThoughtsList = ({
   thoughtList,
   likedPostValue,
   onSetLikedPostValue,
   onPostALike,
+  loadingLike,
 }) => {
   return (
     <div className="thoughts__container">
@@ -20,7 +22,10 @@ export const ThoughtsList = ({
               <button
                 onClick={() => {
                   onPostALike(thought._id);
+                  let likedPosts = likedPostValue + 1;
+                  console.log(likedPosts);
                   onSetLikedPostValue(likedPostValue + 1);
+                  localStorage.setItem("likedPostValue", likedPosts);
                 }}
                 className="icon__heart"
                 style={{
@@ -31,7 +36,11 @@ export const ThoughtsList = ({
                   icon={thought.hearts > 0 ? faHeart : faHeartBroken}
                 />
               </button>
-              <span> x {thought.hearts} </span>
+              {loadingLike.id === thought._id && loadingLike.loading ? (
+                <ClipLoader color={"black"} loading={true} size={20} />
+              ) : (
+                <span> x {thought.hearts} </span>
+              )}
               <span>{moment(thought.createdAt).fromNow()}</span>
             </div>
           </div>

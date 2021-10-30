@@ -53,7 +53,7 @@ export const PostNewThought = ({
           className="liked-post-value"
           title="Amount of likes given on posts"
         >
-          You have liked {likedPostValue} posts!
+          You have liked a post {likedPostValue} times!
         </span>
       </form>
     </>

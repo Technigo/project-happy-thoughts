@@ -7,24 +7,29 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 export const Main = () => {
   const [thoughtList, setThoughtList] = useState([]);
-  const [likedPostValue, setLikedPostValue] = useState(0);
+  const [likedPostValue, setLikedPostValue] = useState(
+    Number(localStorage.getItem("likedPostValue"))
+  );
   const [newThought, setNewThought] = useState("");
   const [errorState, setErrorState] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [loadingLike, setLoadingLike] = useState({ id: "", loading: false });
 
   // this function set loading to true and then fetch the api data and update it through setThoughtList.
-  //I also did a setTimout just to see the loading spinner better.
+
   const fetchThoughts = () => {
-    setLoading(true);
     fetch(API_ThoughtList)
       .then((res) => res.json())
-      .then((data) => setThoughtList(data))
-      .finally(() => setTimeout(() => setLoading(false), 500));
+      .then((data) => setThoughtList(data));
   };
 
   //The useEffect calls for the fetchThoughts function everytime the component is mounted.
+  //I also did a setTimout throughtout the project just to see the loading spinners better.
   useEffect(() => {
+    setLoading(true);
+    localStorage.setItem("likedPostValue", 0);
     fetchThoughts();
+    setTimeout(() => setLoading(false), 500);
   }, []);
 
   // This function sets event.prevent Default and then fetches the Thoughtlist with the options
@@ -40,17 +45,20 @@ export const Main = () => {
     fetch(API_ThoughtList, options)
       .then((res) => res.json())
       .then(() => {
+        setLoading(true);
         setErrorState(false);
         fetchThoughts();
         setNewThought("");
       })
       .catch(() => {
         setErrorState(true);
-      });
+      })
+      .finally(() => setTimeout(() => setLoading(false), 500));
   };
 
   // This function expects a id to be sent in to be able to update the likes on a post.
   const postALike = (id) => {
+    setLoadingLike({ id: id, loading: true });
     const options = {
       method: "POST",
     };
@@ -60,12 +68,22 @@ export const Main = () => {
       .then(() => {
         fetchThoughts();
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => {
+        setTimeout(() => setLoadingLike({ id: id, loading: false }), 300);
+      });
   };
 
   // if the state loading is true the spinner is only shown.
   return (
     <div className="wrapper">
+      <PostNewThought
+        likedPostValue={likedPostValue}
+        onFormSubmit={handleFormSubmit}
+        errorState={errorState}
+        onSetNewThought={setNewThought}
+        newThought={newThought}
+      />
       {loading && (
         <div className="spinner__container">
           <ClipLoader color={"black"} loading={true} size={150} />
@@ -76,14 +94,8 @@ export const Main = () => {
 
       {!loading && (
         <>
-          <PostNewThought
-            likedPostValue={likedPostValue}
-            onFormSubmit={handleFormSubmit}
-            errorState={errorState}
-            onSetNewThought={setNewThought}
-            newThought={newThought}
-          />
           <ThoughtsList
+            loadingLike={loadingLike}
             onFetchThoughts={fetchThoughts}
             thoughtList={thoughtList}
             likedPostValue={likedPostValue}
