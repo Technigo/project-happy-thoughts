@@ -4,12 +4,13 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-width: 300px;
+    min-width: 280px;
     max-width: 500px;
     padding: 0 5%;
     margin: 20px 0;
     border: 1px solid #000;
     box-shadow: 6px 6px 0 #000;
+    word-break: break-word;
 }
 
 .heart_buttonWrapper {

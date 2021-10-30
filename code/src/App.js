@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+import HappyHeader from 'components/HappyHeader';
 import HappyForm from 'components/HappyForm';
 import HappyHeart from 'components/HappyHeart';
 import HappyLoading from 'components/HappyLoading';
+
 
 import { API_URL, HEART_URL } from './API/url';
 
@@ -60,6 +62,7 @@ export const App = () => {
 	return (
 		<div className="bigWrapper">
 			{loading && <HappyLoading />}
+			<HappyHeader />
 			<HappyForm
 			onFormSubmit={handleFormSubmit} 
 			newThought={newThought}
