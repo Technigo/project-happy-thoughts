@@ -1,13 +1,15 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+For this project, I built a twitter-like site where you can post Happy Thoughts. 
+It's connected to a simple API.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## What I learnt
 
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+-What a component lifecycle means
+-How to use the UseEffect hook in React to perform actions when components mount, unmount, or when state changes.
+-How to call APIs from React and put the data into state
+-To fetch and post data from an API
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+

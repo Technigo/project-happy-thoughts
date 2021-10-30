@@ -39,6 +39,7 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts()
+        setNewThought('') //clears input field after sumbitting thought
       })
   }
 

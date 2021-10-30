@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: url("https://images.unsplash.com/photo-1558779967-a95d813caee3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80");
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {
@@ -14,66 +19,96 @@ code {
 
 p {
   font-family: 'Roboto Mono', monospace;
-}
-
-label {
-  font-family: 'Roboto Mono', monospace;
   font-weight: bolder;
   font-size: 12px;
-  padding: 5px;
-}
-
-input {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: bold;
-  border: rgb(182, 182, 182) 1.5px solid;
-  width: 93%;
-  margin: 7px 5px;
-  padding-top: 15px;
-}
-
-::placeholder {
-  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 main {
   display: flex;
   height: auto;
   flex-direction: column;
+  align-items: center;
 }
 
 form {
-  border: 1px solid black;
-  margin: 10px;
-  margin-bottom: 0;
+  border: 1.5px solid black;
+  margin-top: 40px;
+  margin-bottom: 10px;
   padding: 10px;
   box-shadow: 6px 6px 1px 1px rgba(5, 5, 5, 0.9);
   background: rgb(238, 236, 236);
+  width: 90%;
+  height: 160px;
   max-width: 350px;
 }
 
+label {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bolder;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.textinput {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  border: rgb(182, 182, 182) 1.5px solid;
+  width: 98%;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.textinput:focus {
+  outline: solid 1.5px #FFCCD2;
+}
+
+::placeholder {
+  font-size: 12px;
+}
+
 .sendbtn {
-  background-color: rgb(251, 176, 176);
+  background-color: #FFCCD2;
   border-radius: 25px;
   color: rgb(29, 28, 28);
   font-family: 'Roboto Mono', monospace;
   font-weight: bolder;
-  font-size: 11px;
+  font-size: 12px;
   border: none;
   margin: 5px;
-  padding: 6px;
+  padding: 8px;
+  cursor: pointer;
 }
 
 .emoji {
   padding: 3px;
 }
 
+.counter {
+  text-align: right;
+  font-size: 13px;
+  margin-right: 14px;
+  font-family: 'Roboto Mono', monospace;
+  color: rgb(182, 182, 182);
+}
+
 .thought-container {
-  border: 1px solid black;
-  margin: 25px;
+  border: 1.5px solid black;
+  margin: 15px;
   padding: 10px;
   box-shadow: 6px 6px 1px 1px rgba(5, 5, 5, 0.9);
+  width: 90%;
+  height: auto;
   max-width: 350px;
+  background-color: white;
+}
+
+.thought-text {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bolder;
+  font-size: 12px;
+  letter-spacing: 1px;
+  overflow-wrap: break-word;
 }
 
 .likes-container {
@@ -81,7 +116,7 @@ form {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
+  width: 350px;
 }
 
 .likes-wrapper {
@@ -102,11 +137,19 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
- 
+  cursor: pointer;
+}
+
+.likebtn:hover {
+  background-color: #FFCCD2;
+}
+
+.likebtn:focus {
+  background-color: #FFCCD2;
 }
 
 .date {
-  color: grey;
+  color: rgb(182, 182, 182);
 }
 
 .loading-overlay {
