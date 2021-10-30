@@ -146,7 +146,7 @@ textarea {
   -ms-transition: all 200ms ease-in;
   -moz-transition: all 200ms ease-in;
   transition: all 200ms ease-in; 
-  padding: 0.5px 0 2.5px 4px;
+  padding: 0.5px 0 2.5px 3px;
 }
 
 
