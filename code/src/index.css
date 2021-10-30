@@ -32,29 +32,22 @@ main {
   flex-direction: column;
 }
 
-.count-text {
-  /* line-height: 6em;   */
+.form-input {
   border: 2px solid rgb(191, 191, 191);
   margin-top: 12px;
   height: 50px;
   padding: 10px;
   font-family: 'Roboto Mono', monospace;
+  /* font-size: 10px; */
+}
+
+.count-text {
   font-size: 10px;
 }
 
 .count-text-error {
-  /* line-height: 5em; */
-  border: 2px solid rgb(191, 191, 191);
-  margin-top: 12px;
-  height: 50px;
-  padding: 10px;
-  font-family: 'Roboto Mono', monospace;
   font-size: 10px;
   color: red;
-}
-
-.counter-text {
-  font-size: 10px;
 }
 
 .thought-text {
@@ -126,6 +119,12 @@ main {
 
 .heart-btn-clicked {
   background-color: rgb(255, 173, 173);
+}
+
+.likes-text {
+  font-size: 11px;
+  color: rgb(162, 162, 162);
+  opacity: 0.8;
 }
 
 .date {

@@ -74,6 +74,7 @@ export const App = () => {
       })
     }
 
+
   return (
     <main>
       <div className="content-wrapper"> 
@@ -85,9 +86,10 @@ export const App = () => {
         />
       {thoughts.map((thought) => (
         <ThoughtItem
-        key={thought._id} 
+        key={thought._id}
         thought={thought}
-        onLikesIncrease={handleLikesIncrease}/>
+        onLikesIncrease={handleLikesIncrease}
+        />
   ))}
       </div>
     </main>
