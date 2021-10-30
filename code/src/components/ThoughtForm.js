@@ -12,8 +12,13 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
         placeholder="share a happy thought with us"
       />
       <button className="submit-button" type="submit">
-        <span>&#10084;&#65039;</span> Send Happy Thought{" "}
-        <span>&#10084;&#65039;</span>
+        <span role="img" aria-label="heart">
+          &#10084;&#65039;
+        </span>{" "}
+        Send Happy Thought{" "}
+        <span role="img" aria-label="heart">
+          &#10084;&#65039;
+        </span>
       </button>
     </form>
   );

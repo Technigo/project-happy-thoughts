@@ -5,15 +5,24 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
   return (
     <div className="new-thoughts-card">
       <p>{thought.message}</p>
-      <button
-        className="like-button"
-        onClick={() => onLikesIncrease(thought._id)}
-      >
-        {" "}
-        &#10084;&#65039;
-      </button>
-      <p>x {thought.hearts}</p>
-      <p className="date">- Created: {moment(thought.createdAt).fromNow()}</p>
+      <div className="likes">
+        <div className="button-card">
+          <button
+            className="like-button"
+            onClick={() => onLikesIncrease(thought._id)}
+            style={{
+              backgroundColor: thought.hearts > 0 ? "#ffadad" : "#eaeaea",
+            }}
+          >
+            {" "}
+            <span role="img" aria-label="heart emoji">
+              &#10084;&#65039;
+            </span>
+          </button>
+          <p className="likes-amount">x {thought.hearts}</p>
+        </div>
+        <p className="date">{moment(thought.createdAt).fromNow()}</p>
+      </div>
     </div>
   );
 };
