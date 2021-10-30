@@ -15,7 +15,6 @@ const Main = () => {
     fetchThoughts();
   }, []);
 
-
   const fetchThoughts = () => {
     setLoading(true);
     fetch(API_URL)

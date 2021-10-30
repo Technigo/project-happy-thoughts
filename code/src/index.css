@@ -7,19 +7,12 @@
 body {
   font-size: 12px;
   font-weight: bold;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Trispace", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-/* Main */
+/*---------- Main ----------*/
 .container {
   margin: 0 auto;
   margin-left: auto;
@@ -32,31 +25,8 @@ code {
   margin: 20px 0;
   text-transform: capitalize;
 }
-/* Card component */
-.date {
-  font-style: italic;
-}
-.heart-btn {
-    border: none;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-}
-.thought-message p {
-  overflow-wrap: break-word;
-}
 
-/* Form component */
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-.new {
-  background-color: #f2f0f0;
-}
-
+/* -------- Card component -------- */
 .thought-container {
   border: 1px solid #000;
   padding: 15px;
@@ -64,20 +34,82 @@ code {
   margin-bottom: 30px;
   box-shadow: 6px 6px;
   width: 100%;
-  max-width: 540px;
+  max-width: 400px;
+  height: 150px;
 }
+
+.date {
+  font-style: italic;
+}
+
+.heart-btn {
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  transition: all 0.2s ease-in-out;
+}
+
+.heart-btn:hover {
+  transform: scale(1.1);
+}
+
+.thought-message p {
+  overflow-wrap: break-word;
+  font-weight: 300;
+}
+
+.thought-message {
+  padding: 5px 0 30px 10px;
+}
+
+.heart-date-container {
+  display: flex;
+  align-items: center;
+  color: #949494;
+}
+
+.amount-hearts {
+  margin-left: 7px;
+}
+
+.date {
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: end;
+}
+
+/* --------- Form component ----------- */
+.form-container {
+  background-color: #f2f0f0;
+  height: 250px;
+  border: 1px solid #000;
+  padding: 15px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  box-shadow: 6px 6px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .text-area {
   display: block;
   resize: none;
-  font-family: "JetBrains Mono", monospace;
-  /* font-family: var(--font); */
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 100;
   margin: 10px 0;
   padding: 10px;
   border-color: #e0dfdf;
   width: 90%;
 }
+
 .thought-btn {
   background-color: #ffadad;
   border-color: transparent;
@@ -87,17 +119,26 @@ code {
   width: -moz-fit-content;
   width: fit-content;
   font-family: "JetBrains Mono", monospace;
-  /* font-family: var(--font); */
   font-size: 12px;
   font-weight: 700;
   color: #000;
   transition: all 0.2s ease-in-out;
 }
+
 .thought-btn:hover {
   transform: scale(1.1);
 }
 
-/* Loading component */
+.text-counter-wrapper {
+  display: flex;
+}
+.text-counter {
+  align-self: center;
+  flex-grow: 2;
+  text-align: end;
+}
+
+/* ---------- Loading component ---------- */
 .loading-overlay {
   position: absolute;
   top: 0;
@@ -130,4 +171,18 @@ code {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* ------- Footer ----- */
+.footer {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
 }
