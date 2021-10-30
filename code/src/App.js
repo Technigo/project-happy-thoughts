@@ -61,25 +61,29 @@ export const App = () => {
   };
 
   return (
-    <div className="app">
-      {loading && <LoadingItem />}
-      <div>
-        <ThoughtForm
-          onFormSubmitt={onFormSubmitt}
-          newThought={newThought}
-          setNewThought={setNewThought}
-          handleIncrement={handleIncrement}
-          count={count}
-        />
-      </div>
+    <fieldset>
+      <legend> Happy thoughts project </legend>
 
-      {thoughts.map((thought) => (
-        <ThoughtItem
-          key={thought._id}
-          thought={thought}
-          onLikesIncrease={onLikesIncrease}
-        />
-      ))}
-    </div>
+      <div className="app">
+        {loading && <LoadingItem />}
+        <div>
+          <ThoughtForm
+            onFormSubmitt={onFormSubmitt}
+            newThought={newThought}
+            setNewThought={setNewThought}
+            handleIncrement={handleIncrement}
+            count={count}
+          />
+        </div>
+
+        {thoughts.map((thought) => (
+          <ThoughtItem
+            key={thought._id}
+            thought={thought}
+            onLikesIncrease={onLikesIncrease}
+          />
+        ))}
+      </div>
+    </fieldset>
   );
 };

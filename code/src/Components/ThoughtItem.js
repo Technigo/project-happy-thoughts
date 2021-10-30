@@ -3,10 +3,10 @@ import moment from "moment";
 
 const ThoughtItem = ({ thought, onLikesIncrease }) => {
   return (
-    <div className="thoughts">
-      <div className="thoughts-card">
-        <p>{thought.message}</p>
-        <div className="thoughts-container">
+    <div className="thoughts-card">
+      <p className="thought-p">{thought.message}</p>
+      <div className="thoughts-container">
+        <div className="heart-likes">
           <button
             style={{
               backgroundColor: thought.hearts > 0 ? "lightpink" : "lightgrey",
@@ -18,8 +18,8 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
             <span>❤</span>
           </button>
           <p>x{thought.hearts} </p>
-          <p className="date">{moment(thought.createdAt).fromNow()}</p>
         </div>
+        <p className="date">{moment(thought.createdAt).fromNow()}</p>
       </div>
     </div>
   );
