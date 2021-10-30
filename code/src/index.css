@@ -78,6 +78,11 @@ main {
   cursor: pointer;
 }
 
+.form-btn:hover {
+  width: 52%;
+  font-size: 13px;
+}
+
 .message-text {
   font-size: 14px;
   overflow-wrap: break-word;
@@ -119,6 +124,11 @@ main {
 
 .heart-btn-clicked {
   background-color: rgb(255, 173, 173);
+}
+
+.heart-btn:hover {
+  width: 43px;
+  height: 43px;
 }
 
 .likes-text {
