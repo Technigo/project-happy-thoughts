@@ -5,23 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("/assets/background.jpg");
+  background-size: cover;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   font-family: 'Roboto Mono', monospace;
+
 }
 
 .body{
   width: 100%;
+  
 }
 
 h1 {
   font-family: 'Roboto Mono', monospace;
   font-size: 60px;
   font-weight: 700;
-  text-shadow: 3px 3px 4px #FDAEAD;
+  text-shadow: 3px 3px 3px gray;
   text-align: center;
   margin: 30px
 }
@@ -42,6 +47,7 @@ h1 {
   margin: 40px auto;
   border: 1px solid black;
   box-shadow: 13px 13px black;
+  background-color: white;
 }
 /*Form for thought-submission*/
 
@@ -118,6 +124,7 @@ h1 {
   line-height: 25px;
   font-family: 'Roboto Mono', monospace;
   font-weight: bold;
+  overflow-wrap: break-word;
 }
 /*Row containing Hear button for likes, number of likes and 
 time when last updated*/

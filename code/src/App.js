@@ -13,6 +13,7 @@ export const App = () => {
     fetchThoughts()
   }, [])
 
+  // The first fetch request to fetch and display the 20 most current messages
   const fetchThoughts =() => {
     fetch (API_URL)
     .then ((res) => res.json ())
@@ -34,6 +35,7 @@ export const App = () => {
     .then((res) => res.json())
     .then((data) => {
       fetchThoughts()
+      setNewThought("") // This clears the textarea for a new input
     })
   }
 
