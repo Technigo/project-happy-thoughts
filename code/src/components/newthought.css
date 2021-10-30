@@ -1,5 +1,5 @@
 .new-thought {
-  width: 350px;
+  width: 325px;
   height: 280px;
   margin: 25px 10px;
   border: #ccc solid 1px;
@@ -42,7 +42,7 @@
   width: 80%;
   font-weight: bold;
   color: #333;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 0;
   cursor: pointer;
 }
@@ -59,14 +59,19 @@
   display: flex;
   justify-content: center;
   margin-right: 5px;
+  font-size: 0.9rem;
 }
 
 @media (min-width: 768px) {
   .new-thought {
-    width: 450px;
+    width: 550px;
   }
-
+.counter-container {
+  
+  font-size: 1.5rem;
+}
   .submit-button {
-    width: 60%;
+    width: 65%;
+    font-size: 1rem;
   }
 }
