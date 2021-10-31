@@ -19,7 +19,7 @@ const ThoughtForm = ( {onFormSubmit, newThought, setNewThought }) => {
             disabled={newThought.length < 5}
             className="send-btn"
             type="submit">
-                &hearts; Send happy thought &hearts;
+                <span role="img" aria-label="heart-emoji">❤️</span> Send happy thought <span role="img" aria-label="heart-emoji">❤️</span>
         </button>
       </form>
     )

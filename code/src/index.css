@@ -66,7 +66,7 @@ code {
   flex-direction: column;
   align-items: flex-start;
   margin-top: 40px;
-  gap: 15px;
+  gap: 10px;
   border: 2px solid;
   box-shadow: 8px 8px 0;
   padding: 20px;
@@ -75,7 +75,7 @@ code {
 
 .newThought {
   width: 97%;
-  margin-top: 5px;
+  margin-top: 10px;
   height: 40px;
   box-sizing: content-box;
   outline: none;
@@ -89,14 +89,18 @@ code {
   font-family: inherit;
   outline: none;
   border: 1px solid transparent;
-  background: #DB398D;
+  background: #ffadad;
   height: 50px;
   border-radius: 25px;
   padding: 5px 15px;
-  color: #fff;
   font-size: inherit;
   font-weight: 700;
   cursor: pointer;
+}
+
+.like-btn:hover, .send-btn:hover {
+  transition: 0.5s ease-in-out;
+  transform: scale(1.05);
 }
 
 /* message styling */
@@ -151,14 +155,17 @@ code {
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  color: red;
   font-weight: 700;
   cursor: pointer;
 }
 
 .like-btn-loved {
-  background: #DB398D;
-  color: #fff
+  background: #ffadad;
+}
+
+.like-btn:hover {
+  transition: 0.5s ease-in-out;
+  transform: scale(1.1);
 }
 
 /* styling for tablet and desktop */
@@ -179,7 +186,7 @@ code {
   .like-btn {
     height: 50px;
     width: 50px;
-    font-size: 24px;
+    font-size: 20px;
   }
    .likes {
     margin-inline-start: 10px;
