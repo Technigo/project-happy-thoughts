@@ -10,8 +10,6 @@ const NewThoughtInput = ({ onFormSubmit, newThought, onNewThoughtChange }) => {
         <textarea
           className="new-thought-input__text-area"
           rows="2"
-          // minLength="5"
-          // maxLength="140"
           required
           placeholder="Share your happy thought, min 5 and max 140 carachters."
           value={newThought}
