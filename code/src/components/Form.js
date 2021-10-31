@@ -33,7 +33,7 @@ const Form = ({ fetchThoughtList, API_URL }) => {
   return (
     <form onSubmit={onFormSubmit}>
       <label htmlFor='newThought'>
-        What makes you happy right now?
+        What makes you happy right now?{' '}
         <textarea
           className={
             counter < 6 || counter > 140 ? 'disabled-textarea' : 'textarea'
@@ -55,7 +55,8 @@ const Form = ({ fetchThoughtList, API_URL }) => {
         className='submit-button'
         disabled={newThought.length < 6 || newThought.length > 140}
       >
-        Send thought!
+        <span className='hearts'>&hearts;</span> Send thought!
+        <span className='hearts'>&hearts;</span>
       </button>
     </form>
   );

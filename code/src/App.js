@@ -12,7 +12,7 @@ export const App = () => {
   useEffect(() => {
     // eslint-disable-next-line no-use-before-define
     fetchThoughtList();
-  }, []);
+  }, [thoughtsList]);
 
   //   fetching API
   const fetchThoughtList = () => {
