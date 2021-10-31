@@ -58,7 +58,7 @@ export const App = () => {
 
   return (
     <div className="body">
-      {loading &&<LoadingItem/>}
+      {loading &&<LoadingItem/>} {/* Conditionally renders loading only when loading happens*/}
       <h1>A Happy-Thoughts Place</h1>
         <ThoughtForm
         onFormSubmit = {handleFormSubmit}
