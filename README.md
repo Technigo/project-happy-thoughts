@@ -1,13 +1,8 @@
 # Happy Thoughts
+The aim of the project was to build a twitter-like app that collects and publishes happy thoughts. The projects is built using React useEffect hook, calling and fetching data from an API and putting the data into a state. 
 
-Replace this readme with your own information about your project.
+This was an interesting project with many new features to learn in React. Although at first challenged with grapsing the flow of the fetching and posting data, I really enjoy working in react and looking forward to diving deeper. If I had more time I would liked to challenge myself to make a counter to keep track of the many different posts. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://mt-dotse-happy-thoughts.netlify.app/
