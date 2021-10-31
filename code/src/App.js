@@ -8,9 +8,6 @@ import { API_URL, LIKES_URL } from './utils/urls';
 
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([]); // empty array
-  const [newThought, setNewThought] = useState('');
-
-  const handleNewThoughtChange = (e) => setNewThought(e.target.value);
 
   useEffect(() => {
     // eslint-disable-next-line no-use-before-define
@@ -23,24 +20,6 @@ export const App = () => {
       .then((res) => res.json())
       .then((thoughts) => setThoughtsList(thoughts))
       .catch((err) => console.error(err));
-  };
-
-  //   form submitted
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: newThought })
-    };
-    fetch(API_URL, options)
-      .then((res) => res.json())
-      .then(() => fetchThoughtList())
-      .catch((err) => console.error(err));
-    setNewThought('');
   };
 
   //   send POST request when thought is liked
@@ -62,11 +41,7 @@ export const App = () => {
 
   return (
     <div>
-      <Form
-        onFormSubmit={onFormSubmit}
-        newThought={newThought}
-        handleNewThoughtChange={handleNewThoughtChange}
-      />
+      <Form fetchThoughtList={fetchThoughtList} API_URL={API_URL} />
       <ThoughtCard
         thoughtsList={thoughtsList}
         handleLikedThoughts={handleLikedThoughts}
