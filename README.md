@@ -1,12 +1,10 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This was alla bout using an API to GET and POST using a "happy thoughts" API
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Took help by the lectures and other peoples approach to the problem. I will redo this assignment to code more independently!
 
 ## View it live
 
