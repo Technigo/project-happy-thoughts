@@ -38,10 +38,6 @@ export const App = () => {
     .then((res) => res.json())
     .then(setNewThought(''))
     .then((data) => {
-      // v1 - 
-      // setThoughts([data, ...thoughts]))
-
-      // v2 -
       fetchThoughts()
     })
   }
@@ -54,18 +50,6 @@ export const App = () => {
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((data) => {
-        // version 1 increase likes only
-        // const updatedThoughts = thoughts.map(item => {
-        //   if (item._id === data._id) {
-        //     item.hearts += 1
-        //     return item
-        //   } else {
-        //     return item
-        //   }
-        // })
-
-        // setThoughts(updatedThoughts)
-        // version 2
         fetchThoughts()
       })
   }
