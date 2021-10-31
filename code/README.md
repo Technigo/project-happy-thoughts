@@ -1,19 +1,9 @@
-# Technigo React Starter App
+# The Project
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+In this project we build an app where you can post a message that's between 5-140 characters. There is also a heart function where you can like messages.
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+## The problem
 
-## Usage
+This week I've had some problems with understanding how al the elements function together and how to use the fetches in the different elements. Right now i'm struggeling with the form and how to display the thought from the form right away at the list. Right now an empty area (where the thought should show) appears and only when i reload the page the thougt appears.
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
-
-Alternatively, if you don't want a new git repo on your account;
-
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+I also wanted to make the heart perfectly round, and change colors when clicked. Last but not least I wanted to make a count down for the characters if i had more time. This week i have struggeld a lot with time management and had to make the whole app on a day when i had to care of my infant baby.
