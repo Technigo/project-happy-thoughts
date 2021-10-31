@@ -20,6 +20,10 @@ code {
   width: 100%;
 }
 
+p {
+  font-size: 20px;
+}
+
 .date {
   font-style: italic;
 }

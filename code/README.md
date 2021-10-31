@@ -1,19 +1,21 @@
-# Technigo React Starter App
+# Happy Thoughts
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+In this week's project we created a site similar to Twitter, named ‘happy thoughts’. We practice React state skills by fetching and posting data to an API.
+## The Problem
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+I started with fetching the API to get the existing data in App.js After that I created two more components, one for the form where the users can post their messages and one for the message list . When I had built the structure of the app and built methods to post messages and likes to the API I finished the site of with CSS-styling.
 
-## Usage
+I had problems with the message not being deleted from the message field when sent and also on how to get the counter of characters to increase when writing messages. My team, Google and Stack overflow helped me overcome my problems. 
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+##Tech
 
-Alternatively, if you don't want a new git repo on your account;
+React
+JSX
+API
+useState
+useEffect
+CSS
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+##View it live
+
+Spread some happiness here: https://my-happy-thought.netlify.app
