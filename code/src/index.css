@@ -1,13 +1,234 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+	  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	  sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  
+   background-color:rgb(121, 6, 6);
+	background-size: cover; 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  }
+  
+  code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+	  monospace;
+  }
+  
+  p {
+	font-family: 'Roboto Mono', monospace;
+	font-weight: bolder;
+	font-size: 12px;
+	letter-spacing: 1px;
+  }
+  
+  main {
+	display: flex;
+	height: auto;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  form {
+	border: 1.5px solid black;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	padding: 10px;
+	box-shadow: 5px 5px 1px 1px rgba(71, 15, 15, 0.9);
+	background: rgb(238, 236, 236);
+	width: 350px;
+	height: 160px;
+  }
+  
+  label {
+	font-family: 'Roboto Mono', monospace;
+	font-weight: bolder;
+	font-size: 14px;
+	padding: 5px;
+  }
+  
+  .textinput {
+	font-family: 'Roboto Mono', monospace;
+	font-weight: bold;
+	border: rgb(53, 31, 31) 1.5px solid;
+	width: 98%;
+	height: 60px;
+	margin-top: 10px;
+  }
+  
+  .textinput:focus {
+	outline: solid 1.5px #FFCCD2;
+  }
+  
+  ::placeholder {
+	font-size: 12px;
+  }
+  
+  .sendbutton {
+	background-color: #f3a0b1;
+	border-radius: 25px;
+	color: rgb(29, 28, 28);
+	font-family: 'Roboto Mono', monospace;
+	font-weight: bolder;
+	font-size: 12px;
+	border: none;
+	margin: 5px;
+	padding: 8px;
+	cursor: pointer;
+  }
+  
+  .emoji {
+	padding: 3px;
+  }
+  
+  .counter {
+	text-align: right;
+	font-size: 13px;
+	margin-right: 14px;
+	font-family: 'Roboto Mono', monospace;
+	color: rgb(182, 182, 182);
+  }
+  
+  .thought-container {
+	border: 1.5px solid black;
+	margin: 15px;
+	padding: 10px;
+	box-shadow: 5px 5px 1px 1px rgba(22, 21, 21, 0.9);
+	width: 350px;
+	height: auto;
+	background-color: white;
+  }
+  
+  .thought-text {
+	font-family: 'Roboto Mono', monospace;
+	font-weight: bolder;
+	font-size: 12px;
+	letter-spacing: 1px;
+	overflow-wrap: break-word;
+	margin-left: 5px;
+  }
+  
+  .container {
+	width: 280px;
+	margin: 0 auto;
+  }
+  .heart-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 330px;
+  }
+  
+  .heart-wrapper {
+	display: flex;
+  }
+  
+  .happy-form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 40px;
+	margin-left:7px;
+	gap: 10px;
+	border: 2px solid;
+	box-shadow: 8px 8px 0;
+	padding: 20px;
+	background-color: rgb(233, 231, 231);
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+  .likes {
+   color:rgb(182, 182, 182);
+   padding-left: 8px;
+   font-size: 14px;
+  }
+  
+  .likebutton {
+	border: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+  }
+  
+  .likebuttton:hover {
+	background-color: #ddd3d4;
+  }
+  
+  .likebutton:focus {
+	background-color: #FFCCD2;
+  }
+  
+  .date {
+	color: rgb(182, 182, 182);
+  }
+  
+  .loading-container {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  background: #fff;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+  }
+  
+  .loading-wrapper {
+	  width: 50px;
+	  height: 50px;
+	  border: 5px solid #dcdcdc;
+	  border-radius: 50%;
+	  border-left: 5px solid #fff;
+	  animation: spinner infinite 0.5s;
+  }
+  
+  @keyframes spinner {
+	  0% {
+		  transform: rotate(0);
+	  }
+	  50% {
+		  transform: rotate(180deg);
+	  }
+	  100% {
+		  transform: rotate(360deg);
+	  }
+  }
+  
+
+  @media only screen and (min-width: 360px) {
+	.container {
+	  width: 320px;
+	}
+  }
+  
+  @media only screen and (min-width: 768px) {
+	body {
+	  font-size: 20px;
+	}
+	.container {
+	  width: 500px;
+	}
+	.likebutton {
+	  height: 50px;
+	  width: 50px;
+	  font-size: 20px;
+	}
+
+	 .likes {
+	  margin-inline-start: 10px;
+	}
+	.happy-form {
+	  font-size: 16px;
+	}
+	.sendbutton {
+	  padding: 10px 20px;
+	}
+  }
+  
