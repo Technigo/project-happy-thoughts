@@ -55,7 +55,7 @@ export const App = () => {
  
   return ( //since state is updated, component renders some JS6. After JS6 rendered first time then useEffect gets triggered with console log
     <div className="main">
-      <p>'Happiness is only real when shared'</p>
+      <p> &hearts; Happiness is only real when shared &hearts;</p>
       <fieldset>
         <ThoughtForm 
           onFormSubmit={handleFormSubmit}

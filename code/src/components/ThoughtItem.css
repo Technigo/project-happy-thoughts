@@ -26,7 +26,8 @@
 .emoji {
   width: 25px;
   height: 25px;
-  padding-left: 6px;
+  padding: 0px 0px 2px 4px;
+
 }
 
 .like-date-container {

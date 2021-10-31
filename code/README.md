@@ -18,4 +18,4 @@ CSS
 
 ##View it live
 
-Spread some happiness here: https://my-happy-thought.netlify.app
+Share some happiness here: https://my-happy-thought.netlify.app
