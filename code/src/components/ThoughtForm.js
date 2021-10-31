@@ -16,7 +16,11 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
       <button 
       className="submit-button"
       disabled={newThought.length < 5 || newThought.length > 140} 
-      type="submit">❤️ Send Thought ❤️</button>
+      type="submit">
+    <span className="heart" role="img" aria-label="like">❤️ </span>
+        Send Thought
+    <span className="heart" role="img" aria-label="like"> ❤️</span>
+      </button>
     </form>
     )
 
