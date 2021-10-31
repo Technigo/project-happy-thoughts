@@ -2,20 +2,31 @@ import React from "react";
 
 const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
   return (
-    <form onSubmit={onFormSubmit}>
-      <label htmlFor="newThought">Type your thought</label>
-      <input
-        id="newThought"
-        type="text"
-        value={newThought}
-        onChange={(e) => setNewThought(e.target.value)}
-      />
+    <form className="happy-form" onSubmit={onFormSubmit}>
+      <label htmlFor="newThought">
+        What's making you happy right now?
+        <textarea
+          className="newThought"
+          id="newThought"
+          type="text"
+          placeholder="Type your thoughts here..."
+          autoComplete="off"
+          value={newThought}
+          onChange={(e) => setNewThought(e.target.value)}
+        ></textarea>
+      </label>
       <button
         disabled={newThought.length < 5}
-        className="submit-btn"
+        className="send-btn"
         type="submit"
       >
-        Send thought!
+        <span role="img" aria-label="heart-emoji">
+          ❤️
+        </span>{" "}
+        Send happy thought{" "}
+        <span role="img" aria-label="heart-emoji">
+          ❤️
+        </span>
       </button>
     </form>
   );
