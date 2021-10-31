@@ -3,14 +3,22 @@ import moment from "moment";
 
 const MessageItem = ({ message, onLikeIncrease }) => {
 	return (
-		<div>
-			<p>{message.message}</p>
-			<button onClick={() => onLikeIncrease(message._id)}>
-				{" "}
-				&hearts; {message.hearts}
-			</button>
-			{/* <p> x {message.hearts}</p> */}
-			<p> - Submitted: {moment(message.createdAt).fromNow()}</p>
+		<div className="message-container">
+			<p className="message">{message.message}</p>
+			<div className="likes-and-submitted">
+				<div className="likes-container">
+					<button
+						className={message.hearts === 0 ? "like-button" : "liked-button"}
+						onClick={() => onLikeIncrease(message._id)}
+					>
+						❤️
+					</button>
+					<p> x {message.hearts}</p>
+				</div>
+				<div className="submitted-container">
+					<p>{moment(message.createdAt).fromNow()}</p>
+				</div>
+			</div>
 		</div>
 	);
 };

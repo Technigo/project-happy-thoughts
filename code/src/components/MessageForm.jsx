@@ -2,20 +2,27 @@ import React from "react";
 
 const MessageForm = ({ newMessage, onFormSubmit, setNewMessage }) => {
 	return (
-		<form onSubmit={onFormSubmit}>
-			<label htmlFor="message">Type your thought here:</label>
-			<input
+		<form className="form-container" onSubmit={onFormSubmit}>
+			<label htmlFor="message">
+				<h2 className="label-text">What's making you happy right now?</h2>
+			</label>
+			<textarea
+				className="input-container"
 				type="text"
 				name="newMessage"
 				id="message"
 				minLength="5"
 				maxLength="140"
-				placeholder="Write something lovely"
+				placeholder="Write something lovely..."
 				value={newMessage}
 				onChange={(event) => setNewMessage(event.target.value)}
 			/>
-			<button disabled={newMessage.length < 5} type="submit">
-				Send thought!
+			<button
+				className="send-button"
+				disabled={newMessage.length < 5 || newMessage.length > 140}
+				type="submit"
+			>
+				❤️ Send Happy Thought! ❤️
 			</button>
 		</form>
 	);

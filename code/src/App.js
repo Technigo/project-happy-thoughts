@@ -4,23 +4,20 @@ import { Header, Footer } from "./components/Base";
 import MessageForm from "./components/MessageForm";
 import { API_URL, LIKES_URL } from "./utils/Urls";
 import MessageItem from "./components/MessageItem";
-// import Loading from "./components/Loading";
 
 export const App = () => {
 	const [messages, setMessages] = useState([]);
 	const [newMessage, setNewMessage] = useState("");
-	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		fetchMessages();
 	}, []);
 
 	const fetchMessages = () => {
-		setLoading(true);
 		fetch(API_URL)
 			.then((res) => res.json())
 			.then((data) => setMessages(data, ...messages))
-			.finally(() => setLoading(false));
+			.finally(() => setNewMessage(""));
 	};
 
 	const options = {
