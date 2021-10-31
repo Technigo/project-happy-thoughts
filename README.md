@@ -1,13 +1,17 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This assignment was created to focus on Useeffect. While fetching happy thoughts and using the Post method to add new thoughts to the Technigo API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First off we had to create a base structure by deciding on how many components are needed to create this React app.
+Secondly thanks to the live sessions we were able to get some base code to help out with the Post method.
+
+I used VS code to create the app. The languages used are HTML5, CSS, JS6 and React.
+If I had more time I would create a different design.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Link to my project.
+
+https://happyhappyhappy.netlify.app/
