@@ -2,11 +2,12 @@ import React from 'react';
 import InputCounter from './InputCounter';
 import './newThoughtInput.css';
 
+// Component for new input form
 const NewThoughtInput = ({ onFormSubmit, newThought, onNewThoughtChange }) => {
   return (
     <form className="new-thought-input__form" onSubmit={onFormSubmit}>
       <label>
-        What's making you happy right now?
+        <p>What's making you happy right now?</p>
         <textarea
           className="new-thought-input__text-area"
           rows="2"

@@ -12,3 +12,12 @@
 .p-green {
   color: #006e33;
 }
+
+/* STYLING FOR DESKTOP */
+@media (min-width: 1024px) {
+  .p-input-counter,
+  .p-red,
+  .p-green {
+    font-size: 16px;
+  }
+}

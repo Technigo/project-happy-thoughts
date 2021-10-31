@@ -4,10 +4,9 @@
   padding: 10px;
   background: #efefef;
   border: 1px solid #000;
-  /* align-items: center; */
   margin: 20px;
   box-shadow: 5px 5px #000;
-  max-width: 450px;
+  width: 300px;
 }
 
 .new-thought-input__text-area {
@@ -42,4 +41,29 @@
 .new-thought-input__button:hover {
   cursor: pointer;
   border: 1px solid gray;
+}
+
+.new-thought-input__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* STYLING FOR LARGER PHONES AND TABLET */
+@media (min-width: 481px) {
+  .new-thought-input__form {
+    width: 430px;
+  }
+}
+
+/* STYLING FOR DESKTOP */
+@media (min-width: 1024px) {
+  .new-thought-input__form {
+    padding: 20px;
+    box-shadow: 10px 10px #000;
+    width: 550px;
+  }
+
+  ::placeholder {
+    font-size: 14px;
+  }
 }

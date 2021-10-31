@@ -23,8 +23,7 @@ export const App = () => {
       .then((data) => setThoughts(data))
       .finally(() => setLoading(false));
   };
-  //fetch request should start when the component is mounted or whenever anything gets updated
-
+  // Function to handle onChange-event for NewThoughtInput
   const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value);
   };
@@ -56,18 +55,6 @@ export const App = () => {
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((data) => {
-        // //v1 increase likes only
-
-        // const UpdatedThoughts = thoughts.map((item) => {
-        //   if (item._id === data._id) {
-        //     item.hearts += 1;
-        //     return item;
-        //   } else {
-        //     return item;
-        //   }
-        // });
-
-        // setThoughts(UpdatedThoughts);
         fetchThoughts();
       });
   };
@@ -91,16 +78,3 @@ export const App = () => {
     </div>
   );
 };
-
-// move onchange as in project survey?
-
-/* <FontAwesomeIcon icon="fa-solid fa-heart" /> */
-// {
-//   thoughts.map((thought) => (
-//     <div>
-//       <p>{thought.message}</p>
-//       <button> &hearts; {thought.hearts}</button>
-//       <p className="date">-Created at: {moment(thought.createdAt).fromNow()}</p>
-//     </div>
-//   ));
-// }

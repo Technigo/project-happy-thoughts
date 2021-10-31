@@ -1,12 +1,12 @@
 .get-thoughts__wrapper {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 10px;
   background: #ffff;
   border: 1px solid #000;
   margin: 20px;
   box-shadow: 5px 5px #000;
-  max-width: 450px;
+  width: 300px;
 }
 
 .get-thoughts__button-wrapper {
@@ -38,4 +38,21 @@
 .get-thoughts__heart-button:hover {
   cursor: pointer;
   border: 1px solid gray;
+}
+
+/* STYLING FOR LARGER PHONES AND TABLET */
+@media (min-width: 481px) {
+  .get-thoughts__wrapper {
+    width: 430px;
+  }
+}
+
+/* STYLING FOR DESKTOP */
+@media (min-width: 1024px) {
+  .get-thoughts__wrapper {
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 10px 10px #000;
+    width: 550px;
+  }
 }

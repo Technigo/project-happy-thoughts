@@ -1,6 +1,7 @@
 import React from 'react';
 import './inputCounter.css';
 
+// Component for input counter
 const InputCounter = ({ charCount }) => {
   const maxChar = 140;
 
