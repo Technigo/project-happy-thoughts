@@ -2,10 +2,8 @@ import React from "react";
 
 const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
   return (
-    <form className="form-box" onSubmit={onFormSubmit}>
-      <label className="label-text" htmlFor="newThought">
-        What´s making you happy right know?
-      </label>
+    <form onSubmit={onFormSubmit} className="form-box">
+      <label htmlFor="newThought">What´s making you happy right know?</label>
       <textarea
         id="newThought"
         type="text"

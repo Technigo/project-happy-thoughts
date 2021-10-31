@@ -80,7 +80,7 @@ textarea {
   align-items: center;
 }
 
-.like-button {
+.liked-button {
   width: 35px;
   height: 35px;
   margin-right: 8px;
@@ -95,7 +95,7 @@ textarea {
 .liked {
   background-color: #f5aaad;
 }
-button:hover,
+.like-button:hover,
 .hover {
   background-color: rgb(236, 217, 141);
 }

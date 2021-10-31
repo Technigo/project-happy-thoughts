@@ -32,7 +32,7 @@ const LikeButton = ({ thoughtId, thought, fetchThoughts }) => {
       )}
       {likes > 0 && (
         <button
-          className="heart-button hover"
+          className="liked-button hover"
           onClick={() => onLikesIncrease(thought._id)}
         >
           <span role="img" aria-label="heart">
