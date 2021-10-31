@@ -1,32 +1,33 @@
 body {
-  margin: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  margin: 0;
+  font-family: "Inconsolata", monospace;
+  font-size: 17px;
+  line-height: 23px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.date {
-  font-style: italic;
+  overflow-wrap: break-word;
+  background-color: rgb(233, 196, 220);
 }
 
 .submit-button {
-  display: flex;
-  background-color: pink;
-  border-radius: 50px;
+  width: 210px;
+  font-family: "Inconsolata", monospace;
+  font-size: 15px;
+  background-color: #f5aaad;
+  padding: 5px 10px 8px;
+  margin: 8px 0px;
+  border-radius: 20px;
+  border: none;
 }
 .happy-thought {
   display: flex;
   margin: 0;
 }
-.label-text {
-  font-display: flex;
+
+.date,
+.likes-text {
+  color: grey;
+  font-size: 15px;
 }
 
 .input-text {
@@ -36,7 +37,130 @@ code {
   padding: 30px;
   width: 100%;
 }
-.form-box {
-  border: solid black 1px;
+.form-box,
+.happy-card {
+  width: 87%;
+  max-width: 350px;
   padding: 10px;
+  background-color: white;
+  border: black 1px solid;
+  margin: 40px auto;
+  box-shadow: 8px 8px;
+}
+
+.form-box {
+  background-color: #f3f0f0;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+textarea {
+  max-width: 100%;
+  min-height: 60px;
+  max-height: 100px;
+  padding: 8px 10px;
+  margin: 10px 0 0 0;
+  border: lightgray 1.5px solid;
+  font-family: "Inconsolata", monospace;
+  line-height: 20px;
+}
+.letters-counter {
+  margin: 0;
+  font-size: 13px;
+  font-style: italic;
+  color: grey;
+}
+
+.red {
+  color: red;
+}
+
+.likes-container {
+  display: flex;
+  align-items: center;
+}
+
+.like-button {
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+  background-color: lightgray;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+}
+.liked {
+  background-color: #f5aaad;
+}
+button:hover,
+.hover {
+  background-color: rgb(236, 217, 141);
+}
+
+.happy-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .form-box,
+  .happy-card {
+    max-width: 500px;
+    padding: 20px;
+  }
+  body {
+    font-size: 25px;
+  }
+
+  .form-box {
+    font-size: 25px;
+  }
+
+  .date,
+  .likes-text {
+    color: grey;
+    font-size: 20px;
+  }
+  .like-button {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  .letters-counter {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  .form-box,
+  .happy-card {
+    max-width: 700px;
+    padding: 30px;
+  }
+  body {
+    font-size: 25px;
+  }
+
+  .form-box {
+    font-size: 30px;
+  }
+
+  .date,
+  .likes-text {
+    color: grey;
+    font-size: 25px;
+  }
+  .like-button {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+  }
+
+  .letters-counter {
+    font-size: 18px;
+  }
 }

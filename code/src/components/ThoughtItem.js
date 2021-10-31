@@ -1,17 +1,29 @@
 import React from "react";
 import moment from "moment";
+import LikeButton from "./LikeButton";
 
-const ThoughtItem = ({ thought, onLikesIncrease }) => {
+const ThoughtItem = ({
+  thoughtId,
+  thought,
+  onLikesIncrease,
+  fetchThoughts,
+  sumYourLikes,
+}) => {
   return (
-    <div>
+    <div className="happy-card">
       <p>{thought.message}</p>
-      <button onClick={() => onLikesIncrease(thought._id)}>
-        {""}
-        &hearts;{thought.hearts}
-      </button>
-      <p className="date">
-        - Created at: {moment(thought.createdAt).fromNow()}
-      </p>
+      <div className="happy-card-row">
+        <LikeButton
+          onLikesIncrease={onLikesIncrease}
+          thought={thought}
+          thoughtId={thoughtId}
+          fetchThoughts={fetchThoughts}
+          sumYourLikes={sumYourLikes}
+        />
+        <p className="date">
+          - Created at: {moment(thought.createdAt).fromNow()}
+        </p>
+      </div>
     </div>
   );
 };
