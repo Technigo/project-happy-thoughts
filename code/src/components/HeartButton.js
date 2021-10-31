@@ -16,7 +16,7 @@ const HeartButton = ({ thoughtId, thought, fetchThoughts }) => {
 
     fetchThoughts()
     setYourLikes((value) => value + 1)
-    localStorage.setItem(thoughtId, JSON.stringify(yourLikes + 1))
+    localStorage.setItem(thoughtId, JSON.stringify(yourLikes + 1)) // Could not make this work properly without adding + 1. Isn't the previous line supposed to add + 1 to yourLikes?
   }
 
   return (

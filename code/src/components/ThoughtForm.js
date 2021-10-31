@@ -20,10 +20,10 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
         <p className="char-counter">Minimum 5 characters</p>
       )}
       {newThought.length > 140 && (
-        <p className="char-counter red">Message is too long!</p>
+        <p className="char-counter red">Message has too many characters!</p>
       )}
       {newThought.length >= 5 && newThought.length <= 140 && (
-        <p className="char-counter">{140 - newThought.length} characters left</p>
+        <p className="char-counter">{newThought.length}/140 characters</p>
         
       )}
 
