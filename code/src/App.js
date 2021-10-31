@@ -63,14 +63,15 @@ export const App = () => {
         newThought={newThought}
         setNewThought={setNewThought}
       />
-
-      {thoughts.map((thought) => (
-        <ThoughtItem
-          key={thought._id}
-          thought={thought}
-          onLikesIncrease={handleLikesIncrease}
-        />
-      ))}
+      <section className="all-thoughts-container">
+        {thoughts.map((thought) => (
+          <ThoughtItem
+            key={thought._id}
+            thought={thought}
+            onLikesIncrease={handleLikesIncrease}
+          />
+        ))}
+      </section>
     </div>
   );
 };
