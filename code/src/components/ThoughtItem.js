@@ -14,9 +14,7 @@ export const ThoughtItem = ({ thought, onLikesIncrease }) => {
 							? "heart-icon-container clicked"
 							: "heart-icon-container"
 						}>
-						<span role="img" className="heart-icon" aria-label="heart icon">
-							❤️
-						</span>
+						<span role="img" className="heart-icon" aria-label="heart icon">❤️</span>
 					</div>
 					<span className="like-counter"> x {thought.hearts}</span>
 				</button>

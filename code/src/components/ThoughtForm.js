@@ -18,13 +18,9 @@ export const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 				className="submit-btn"
 				disabled={newThought.length < 5 || newThought.length > 140}
 				type="submit">
-				<span role="img" className="heart-icon" aria-label="heart icon">
-					❤️
-				</span>
+				<span role="img" className="heart-icon" aria-label="heart icon">❤️</span>
 				<span className="btn-text">Send Happy Thought</span>
-				<span role="img" className="heart-icon" aria-label="heart icon">
-					❤️
-				</span>
+				<span role="img" className="heart-icon" aria-label="heart icon">❤️</span>
 			</button>
 		</form>
 	);

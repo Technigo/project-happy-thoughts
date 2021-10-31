@@ -11,6 +11,20 @@ body {
 	background-color: #ffe8e8;
 }
 
+/* .root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main-section {
+	max-width: 520px;
+} */
+
+.main-section {
+	margin: 20px;
+}
+
 .thought-container,
 .form-container {
 	box-sizing: border-box;
@@ -39,6 +53,7 @@ body {
 	background-color: #f2f0f0;
 	font-size: 15px;
 	line-height: 21px;
+	margin-bottom: 60px;
 }
 
 .form-container,
@@ -49,7 +64,7 @@ body {
 }
 
 .submit-btn {
-	width: 265px;
+	width: 234px;
 	height: 45px;
 	background-color: #ffadad;
 	cursor: pointer;
@@ -61,7 +76,6 @@ body {
 }
 
 .btn-text {
-	font-size: 15px;
 	line-height: 21px;
 	padding: 0 5px;
 }
@@ -76,7 +90,7 @@ body {
 .info-text-container,
 .like-counter {
 	font-family: "Roboto", sans-serif;
-	font-size: 16px;
+	font-size: 15px;
 	color: #adadad;
 }
 
@@ -89,7 +103,7 @@ body {
 }
 
 .like-counter {
-	margin-right: 10px;
+	margin-right: 8px;
 }
 
 .like-btn {
@@ -118,6 +132,8 @@ body {
 
 .heart-icon {
 	font-size: 21px;
+	text-align: center;
+	padding-left: 2px;
 }
 
 /* .time-info {
@@ -196,3 +212,13 @@ body {
 		flex-wrap: wrap;
 	}
 } */
+
+/* Bigger mobiles */
+@media (min-width: 375px) {
+	.submit-btn {
+		width: 265px;
+	}
+	.btn-text {
+		font-size: 15px;
+	}
+}

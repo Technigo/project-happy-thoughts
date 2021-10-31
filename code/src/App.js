@@ -72,6 +72,7 @@ export const App = () => {
 	return (
 		<main className="main-section">
 			{loading && <LoadingItem />}
+
 			{/*prettier-ignore*/}
 			<ThoughtForm
 				onFormSubmit={handleFormSubmit}
