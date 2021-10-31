@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
-import { API_URL } from 'utils/urls'; //importing API-URLS
+import { API_URL , LIKES_URL } from 'utils/urls'; //importing API-URLS
 import NewThought from './NewThought'; // importing NewThought component that has form to post thoughts
 import Thoughts from './Thoughts'; // importing NewThought component that displays thoughts
 import Loader from './Loader'; //importing Loader component that displayed while fetching data from server
@@ -9,7 +9,6 @@ import Loader from './Loader'; //importing Loader component that displayed while
 const HappyThoughts = () => {
   const [thoughts, setThoughts] = useState([]); // for displaying thoughts
   const [newThought, setNewThought] = useState(''); // for sending new thought
-  const [likeThought, setLikeThought] = useState(''); //for liking a thought
   const [loading, setLoading] = useState(false); // for loader
 
   //for GET API request
@@ -24,8 +23,9 @@ const HappyThoughts = () => {
       .then((data) => setThoughts(data))
       .finally (()=> setLoading(false));
   };
+
   // for setting the new thought
-  const onInputChange = (event) => {
+  const handleInputChange = (event) => {
     setNewThought(event.target.value);
   };
 
@@ -47,11 +47,9 @@ const HappyThoughts = () => {
       .then(() => setNewThought(''));
   };
   // for like a thought
-  const onLikeAThought = (likeThought) => {
+  const handleLikeAThought = (thoughtId) => {
     
-    const API_URL_LIKE = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${likeThought}/like`;
-
-    fetch(API_URL_LIKE, {
+    fetch(LIKES_URL(thoughtId), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -67,10 +65,10 @@ const HappyThoughts = () => {
       <NewThought
         onFormSubmit={onFormSubmit}
         newThought={newThought}
-        onInputChange={onInputChange}
+        onInputChange={handleInputChange}
       />
       {loading && <Loader />}
-      
+
       {thoughts.map((thought) => (
         <Thoughts
           key={thought._id}
@@ -78,7 +76,7 @@ const HappyThoughts = () => {
           date={moment(thought.createdAt).fromNow()}
           hearts={thought.hearts}
           _id={thought._id}
-          onLikeAThought={onLikeAThought}
+          onLikeAThought={handleLikeAThought}
         />
       ))}
     </>
