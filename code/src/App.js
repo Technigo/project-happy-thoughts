@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 
 import ThoughtForm from "components/ThoughtForm"
 import ThoughtItem from "components/ThoughtItem"
+import Loader from "components/Loader"
 
 import { API_URL, LIKES_URL } from "utils/urls"
 
@@ -9,15 +10,18 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   // to keep track of the new thoughts beeing typed in the input field
   const [newThought, setNewThought] = useState("")
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     fetchThoughts()
   }, [])
 
   const fetchThoughts = () => {
+    setLoading(true)
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
+      .finally(() => setLoading(false))
   }
 
   const handleFormSubmit = (event) => {
@@ -41,6 +45,7 @@ export const App = () => {
         //v2
         fetchThoughts()
       })
+    setNewThought("") //clears form after first type
   }
   const handleLikeIncrease = (thoughtId) => {
     const options = {
@@ -68,6 +73,7 @@ export const App = () => {
 
   return (
     <div>
+      {loading && <Loader />}
       <ThoughtForm
         onFormSubmit={handleFormSubmit}
         newThought={newThought}

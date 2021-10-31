@@ -1,16 +1,83 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(250, 217, 217);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Roboto Mono", monospace;
+}
+
+.bottom-info {
+  display: flex;
+  justify-content: space-between;
 }
 .date {
   font-style: italic;
+  color: rgb(80, 80, 80);
+}
+
+textarea {
+  display: block;
+  resize: none;
+  height: 100px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.send-button {
+  background-color: rgb(250, 217, 217);
+  border: none;
+  border-radius: 30px;
+  height: 30px;
+  width: 220px;
+  font-family: "Roboto Mono", monospace;
+}
+.hearts {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  color: red;
+}
+.hearts:hover {
+  transform: scale(1.8);
+}
+
+.loader-heart {
+  width: 200px;
+  height: auto;
+}
+
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background-color: #f0f0f0;
+  border: 1px solid #000;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 40px;
+  box-shadow: 8px 8px;
+}
+
+.thought-container {
+  background-color: #fff;
+  border: 1px solid #000;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 40px;
+  box-shadow: 8px 8px;
 }
