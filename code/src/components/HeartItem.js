@@ -1,7 +1,6 @@
 import React from "react";
 import moment from "moment";
 
-
 const HeartItem = ({ thoughts, onLikesIncrease }) => {
     return (
     <div > 
@@ -11,8 +10,9 @@ const HeartItem = ({ thoughts, onLikesIncrease }) => {
             <button
                 className="like-button" 
                 onClick={() => onLikesIncrease(thought._id)}> 
-                &#10084;&#65039; 
-            </button> X {thought.hearts}
+                <span role="img" aria-label="heart">&#10084;&#65039;</span>
+            </button> 
+            <div className="amount-likes"> X {thought.hearts}</div>
             <p className="date">Thought written: {moment(thought.createdAt).fromNow()}</p>
         </div>
         ))}; 
