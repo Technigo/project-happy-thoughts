@@ -6,7 +6,9 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
       <form onSubmit={onFormSubmit}>
         <label htmlFor="newThought">Type your thought</label>
         <input className="inputfield" id="newThought" type="text" value={newThought} onChange={(e) => setNewThought(e.target.value)} maxLength="140" placeholder="Type Here...." />
-        <p> {newThought.length}/ 140</p>
+        <p className="wordcount-newthought">
+          <span className="newthought-color"> {newThought.length}</span>/ 140
+        </p>
 
         <button className="ThoughtButton" disabled={newThought.length < 5} type="submit">
           <span className="heart" role="img" aria-label="fonkelend hart">

@@ -55,6 +55,16 @@ code {
   position: relative;
 }
 
+.wordcount-newthought {
+  color: red;
+  font-size: 12px;
+  text-align: right;
+}
+
+.newthought-color {
+  color: blue;
+}
+
 .heart-button {
   background: #ffadad;
   border: none;
