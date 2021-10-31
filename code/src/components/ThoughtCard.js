@@ -15,7 +15,7 @@ const ThoughtCard = ({ thought, handleAddedLikes }) => {
             <span className="hearts">&hearts;</span> {thought.hearts}{' '}
           </button>
           <p className="date">
-            -- Thought shared: {moment(thought.createdAt).fromNow()} --{' '}
+            -- Shared {moment(thought.createdAt).fromNow()} --{' '}
           </p>
         </div>
       </div>

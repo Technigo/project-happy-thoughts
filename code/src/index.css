@@ -56,12 +56,9 @@ label {
   font-style: italic;
 }
 
-p {
-  font-size: 12px;
-}
-
 .thought-text {
   overflow-wrap: break-word;
+  font-size: 12px;
 }
 
 .hearts {
@@ -106,26 +103,26 @@ p {
 @keyframes spin {
   100% {
     transform: rotate(360deg);
-    opacity: 0;
+    opacity: 1;
   }
 }
 
 @keyframes falling {
   0% {
     opacity: 0.1;
-    transform: translateX(-10em);
+    transform: translateX(-2em);
   }
   25% {
     opacity: 0.25;
-    transform: translateX(20em);
+    transform: translateX(2em);
   }
   50% {
     opacity: 0.5;
-    transform: translateY(15em);
+    transform: translateY(-1em);
   }
   75% {
     opacity: 0.75;
-    transform: translateY(-15em);
+    transform: translateY(1em);
   }
   100% {
     opacity: 1;
