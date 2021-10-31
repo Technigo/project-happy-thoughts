@@ -37,7 +37,7 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 						&#10084;&#65039;
 					</span>
 				</button>
-				{/* A text counter showing red numbers when there are 10 characters left */}
+				{/* A text-counter showing red numbers when there are 10 characters left */}
 				<div className="text-counter">
 					<span style={{ color: newThought.length > 130 ? 'red' : 'grey' }}>
 						{140 - newThought.length}
