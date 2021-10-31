@@ -6,7 +6,7 @@ const Footer = () => {
 			<a
 				href="https://www.linkedin.com/in/madelene-trang-33648a38/"
 				target="_blank"
-				rel="noopener norerrer"
+				rel="noopener noreferrer"
 			>
 				<p className="footer-info"> &#169; by Madelene Trang</p>
 			</a>
