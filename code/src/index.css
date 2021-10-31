@@ -6,7 +6,7 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	
+
 	font-weight: 500;
 }
 
@@ -21,47 +21,27 @@ code {
 	align-items: center;
 	justify-content: center;
 	background-color: rgb(255, 255, 255);
-	
-	
 }
 
-.ContainerData{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-
+.ContainerData {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
-
 
 /* Container over post and masage */
-
 
 .messageContainer {
 	display: flex;
 	align-items: center;
 	justify-items: center;
 	flex-direction: column;
-width: 100%;
-	
-	
-	
+	width: 100%;
 }
 
-
-
-
-
 /* Make a post area */
-
-
-
-
-
-
-
-
 
 .contentTextArea {
 	display: flex;
@@ -87,10 +67,6 @@ width: 100%;
 	justify-content: center;
 	height: 40px;
 	margin: 5px 0px 15px 0px;
-	
-	
-
-	
 }
 textarea {
 	background-color: rgb(255, 255, 255);
@@ -99,48 +75,37 @@ textarea {
 	border: lightgray 1.5px solid;
 	resize: none;
 	overflow: hidden;
-    overflow-wrap: break-word;
-padding: 7px 0 7px 7px;
-font-family: monospace;
-font-weight: 600;
-font-size: 13px;
-letter-spacing: 2px;
-
-
-
-
+	overflow-wrap: break-word;
+	padding: 7px 0 7px 7px;
+	font-family: monospace;
+	font-weight: 600;
+	font-size: 13px;
+	letter-spacing: 2px;
 }
 textarea:focus {
 	border: none;
 	border: rgb(185, 184, 184) 2px solid;
 	outline: none;
-	
-  }
+}
 
-  textarea:focus:invalid {
+textarea:focus:invalid {
 	outline: none;
 	border: rgb(185, 184, 184) 2px solid;
-	background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95% 50% rgb(255, 255, 255);
+	background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg")
+		no-repeat 95% 50% rgb(255, 255, 255);
 	background-size: 25px;
-	
-  }
-
-.counterButton{
-
-display: flex;
-justify-content: space-between;
-align-items: center;
-
 }
 
-.counterText{
+.counterButton {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.counterText {
 	font-size: 12px;
 	color: rgb(170, 168, 168);
-
-
 }
-
-
 
 .PostBtn {
 	background-color: rgb(255, 173, 173);
@@ -151,19 +116,12 @@ align-items: center;
 	font-weight: 600;
 	cursor: pointer;
 	margin: 10px 0;
-
 }
 .PostBtn:hover {
 	background-color: rgb(245, 150, 150);
 }
 
-
-
-
-
-
 /* Message container  */
-
 
 .content {
 	display: flex;
@@ -187,54 +145,42 @@ align-items: center;
 
 /* Text-box message */
 
-
-.TextPost{
-	
-height: 70%;
-margin-bottom: 5px;
-word-break: normal;
-	line-break:normal;
+.TextPost {
+	height: 70%;
+	margin-bottom: 5px;
+	word-break: normal;
+	line-break: normal;
 	overflow: hidden;
-    overflow-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
-.TextPost p{
-text-align: start;
-font-size:  1.2em;
-font-family: monospace;
-font-weight: 600;
-line-height: 17px;
+.TextPost p {
+	text-align: start;
+	font-size: 1.2em;
+	font-family: monospace;
+	font-weight: 600;
+	line-height: 17px;
 }
-
-
-
 
 /* Icon and timestamp */
 
-
-.iconAndTime{
-
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-height: 30%;
+.iconAndTime {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 30%;
 }
 
-
-
-.like{
+.like {
 	padding-bottom: -10px;
-font-size: 12px;
+	font-size: 12px;
 	color: rgb(170, 168, 168);
 	font-family: sans-serif;
-font-weight: 100;
-
+	font-weight: 100;
 }
 
-.icon{
-
-
+.icon {
 	background-color: rgb(255, 173, 173);
 	border-radius: 100px;
 	padding: 10px;
@@ -243,78 +189,48 @@ font-weight: 100;
 	cursor: pointer;
 }
 
-.icon:hover{
+.icon:hover {
 	background-color: whitesmoke;
-
-
 }
 
-.time{
-
-
+.time {
 	font-size: 0.8em;
 	color: rgb(170, 168, 168);
-
 }
 
+.load {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-.load{
+	font-size: 50px;
 
-display: flex;
-align-items: center;
-justify-content: center;
-
-font-size: 50px;
-
-animation: blur .75s ease-out infinite;
-text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+	animation: blur 0.75s ease-out infinite;
+	text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
 }
 
 @keyframes blur {
-from {
-  text-shadow:0px 0px 10px #fff,
-	0px 0px 10px #fff, 
-	0px 0px 25px #fff,
-	0px 0px 25px #fff,
-	0px 0px 25px #fff,
-	0px 0px 25px #fff,
-	0px 0px 25px #fff,
-	0px 0px 25px rgb(255, 230, 0),
-	0px 0px 50px rgb(231, 255, 11),
-	0px 0px 50px rgb(255, 217, 1),
-	0px 0px 50px #ff0f0f,
-	0px 0px 150px #ff0f0f,
-	0px 10px 100px #ff0f0f,
-	0px 10px 100px #ff0f0f,
-	0px 10px 100px #ff0f0f,
-	0px 10px 100px #fbff00,
-	0px -10px 100px #ffd900,
-	0px -10px 100px #ff9900;
-}
+	from {
+		text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 25px #fff,
+			0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff,
+			0px 0px 25px rgb(255, 230, 0), 0px 0px 50px rgb(231, 255, 11),
+			0px 0px 50px rgb(255, 217, 1), 0px 0px 50px #ff0f0f, 0px 0px 150px #ff0f0f,
+			0px 10px 100px #ff0f0f, 0px 10px 100px #ff0f0f, 0px 10px 100px #ff0f0f,
+			0px 10px 100px #fbff00, 0px -10px 100px #ffd900, 0px -10px 100px #ff9900;
+	}
 }
 
-
-
-
-@media (max-width:500px) {
-	
-	.TextPost p{
+@media (max-width: 500px) {
+	.TextPost p {
 		font-weight: 650;
-		font-size:  1.1em;
+		font-size: 1.1em;
 		line-height: 15px;
-		}
-
-
+	}
 }
 
-@media (max-width:380px) {
-	
-	.TextPost p{
+@media (max-width: 380px) {
+	.TextPost p {
 		font-weight: 700;
-		font-size:  0.90em;
-		
-		
-		}
-
-
+		font-size: 0.9em;
+	}
 }

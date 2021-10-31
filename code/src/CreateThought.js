@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Create = ({handleSubmitMessages, message, setMessage}) => {
+const  CreateThought = ({handleSubmitMessages, message, setMessage}) => {
 	
 
 	return (
@@ -34,4 +34,4 @@ const Create = ({handleSubmitMessages, message, setMessage}) => {
 	);
 };
 
-export default Create;
+export default CreateThought;
