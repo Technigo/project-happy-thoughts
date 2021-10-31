@@ -19,7 +19,7 @@ const Form = ({ onFormSubmit, form, setForm }) => {
           className="send-button"
           type="submit"
           //This disabled thing dont seem to work...
-          disabled={form.length > 5 || form.length > 140}
+          disabled={form.length < 5 || form.length > 140}
         >
           <p>
             <span role="img" aria-label="heart emoji">
