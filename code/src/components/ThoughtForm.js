@@ -5,11 +5,12 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 return (
 <div>
 <form className="form" onSubmit={onFormSubmit}>
-  <label htmlFor="newThought">What's your happy thought? </label>
+  <label className="label" htmlFor="newThought">What's your happy thought? </label>
     <input
       className="new-thought"
       id="newThought"
       type="text"
+      minlength="5"
       value={newThought}
       onChange={(e) => setNewThought(e.target.value)}
     />
