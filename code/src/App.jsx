@@ -16,7 +16,7 @@ export const App = () => {
 	const fetchMessages = () => {
 		fetch(API_URL)
 			.then((res) => res.json())
-			.then((data) => setMessages(data, ...messages))
+			.then((data) => setMessages(data))
 			.finally(() => setNewMessage(""));
 	};
 
@@ -34,7 +34,7 @@ export const App = () => {
 		fetch(API_URL, options)
 			.then((res) => res.json())
 			.then((data) => {
-				fetchMessages(data, ...messages);
+				fetchMessages(data);
 			});
 	};
 
@@ -42,7 +42,7 @@ export const App = () => {
 		fetch(LIKES_URL(messageId), options)
 			.then((res) => res.json())
 			.then((data) => {
-				fetchMessages(data, ...messages);
+				fetchMessages(data);
 			});
 	};
 
