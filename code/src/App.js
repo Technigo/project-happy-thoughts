@@ -38,7 +38,7 @@ const onLikesIncrease = (thoughtId) => {
   
   fetch(LIKES_URL(thoughtId), options)
   .then((res) => res.json())
-  .then((data) => { //v 1 increases likes only
+  .then((data) => { //increases likes only
     
     const updatedThoughts = thoughts.map((item) => {
       if (item._id === data._id){
@@ -57,11 +57,10 @@ const onLikesIncrease = (thoughtId) => {
         newThought={newThought}
         setNewThought={setNewThought}  
       />
-      
-      <HeartItem
+        <HeartItem
         thoughts={thoughts}
         onLikesIncrease={onLikesIncrease}  
       />
     </div>
   )
-  }
+}

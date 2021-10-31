@@ -86,35 +86,3 @@ code {
   font-size: 10px;
   align-self: end;
 }
-
-
-
-
-
-
-
-
-
-/* 
- .main-heading{
-   width: 100%;
-   border-bottom: solid 2px rgb(73, 73, 73);
-   display: block;
-   text-align: center;
- }
- .album-grid-container {
- display: grid;
- justify-self: center;
- grid-template-columns: 1fr;
- column-gap: 20px;
- row-gap: 40px;
- }
- 
- .album-grid-container > {
-   justify-self: center;
- }
- 
- .album-card-container{
-   display: flex;
-   flex-direction: column;
-   margin: auto;*/
