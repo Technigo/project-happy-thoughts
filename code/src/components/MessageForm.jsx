@@ -22,7 +22,13 @@ const MessageForm = ({ newMessage, onFormSubmit, setNewMessage }) => {
 				disabled={newMessage.length < 5 || newMessage.length > 140}
 				type="submit"
 			>
-				❤️ Send Happy Thought! ❤️
+				<span className="heart-span" role-img-alt="heart">
+					❤️
+				</span>{" "}
+				Send Happy Thought!{" "}
+				<span className="heart-span" role-img-alt="heart">
+					❤️
+				</span>
 			</button>
 		</form>
 	);

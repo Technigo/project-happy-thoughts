@@ -11,7 +11,9 @@ const MessageItem = ({ message, onLikeIncrease }) => {
 						className={message.hearts === 0 ? "like-button" : "liked-button"}
 						onClick={() => onLikeIncrease(message._id)}
 					>
-						❤️
+						<span className="heart-span" role-img-alt="heart">
+							❤️
+						</span>
 					</button>
 					<p> x {message.hearts}</p>
 				</div>
