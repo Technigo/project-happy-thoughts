@@ -19,6 +19,15 @@
   resize: none;
 }
 
+.textarea-form:focus {
+  outline: 1px solid #FFADAD
+ }
+
+ /* textarea-form.visited {
+   color: red;
+  outline: 2px solid rgb(0, 255, 42);  
+ } */
+
 .bottom-container {
   display: flex;
   justify-content: space-between;
