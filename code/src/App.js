@@ -3,24 +3,23 @@ import React, { useEffect, useState } from "react"
 import ThoughtsInput from "components/ThoughtsInput"
 import ThoughtsList from "components/ThoughtsList"
 import LoadSpinner from "./components/LoadSpinner"
-
 import Header from "components/Header"
 
 import { API_URL, LIKES_URL } from "reusables/urls"
 
-//These state properties stores and keeps track of current state  in thoughtlist and thoughtinput
+//stores and keeps track of current state
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
   const [counter, setCounterValue] = useState(0)
   const [load, setLoad] = useState(false)
 
-  // This UseEffect hook in order to make a get-req to get all thoughts when the app starts and is mounted
+  // UseEffect hook to get all thoughts when the app starts and gets mounted
   useEffect(() => {
     fetchThoughts()
   }, [])
 
-  //a function that fetches the API and gives back the data thorugh the state set
+  //a function that fetches the API and gives back the data through the state set
   const fetchThoughts = () => {
     setLoad(true)
     fetch(API_URL)
@@ -60,7 +59,7 @@ export const App = () => {
         fetchThoughts()
       })
   }
-  //these are the components that displays on the FE aka Mounting the components that contains props being passed into here.
+  // Mounting the components that contains props being passed into here and displays in FE
   return (
     <div>
       <Header />

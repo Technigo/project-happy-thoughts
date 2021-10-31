@@ -18,7 +18,7 @@ const ThoughtsInput = ({
             value="Refresh"
             onClick={RefreshButton}
           >
-            Refresh thoughts
+            Refresh feed
           </button>
         </span>
         <div className="submit-wrapper">
