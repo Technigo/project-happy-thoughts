@@ -34,7 +34,7 @@ h1 {
   text-shadow: 2px 2px red, 3px 3px red, 4px 4px red;
 
   padding-bottom: 10px;
-  animation: header 2.5s ease-in-out 3;
+  animation: header 2.5s ease-in-out 2;
 }
 
 @keyframes header {
@@ -89,6 +89,25 @@ form {
 
 .thoughts-card p {
   margin: 10px;
+}
+
+.refresh-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.refresh-button button {
+  border: 2px solid red;
+  cursor: pointer;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: red;
+}
+
+.refresh-button button:hover {
+  background-color: red;
+  color: pink;
 }
 
 button {
@@ -154,6 +173,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  h1 {
+    animation: none;
+  }
+
   form,
   .thoughts-card {
     width: 100%;

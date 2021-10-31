@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import ThoughtForm from "./components/ThoughtForm";
 import ThoughtMessages from "./components/ThoughtMessages";
+import RefreshButton from "./components/RefreshButton";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -70,8 +71,9 @@ export const App = () => {
           onFormSubmit={handleFormSubmit}
           count={count}
           handleInputChange={handleInputChange}
-          // onKeyPress={handleKeyPress}
         />
+
+        <RefreshButton />
 
         {thoughts.map(thought => (
           <ThoughtMessages
