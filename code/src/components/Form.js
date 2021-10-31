@@ -49,7 +49,8 @@ const Form = ({ thoughts, setThoughts }) => {
             disabled={newThought.length < 6 || newThought.length > 140}
           >
             {' '}
-            Share thought!{' '}
+            <span className="hearts">&hearts;</span> Share thought!{' '}
+            <span className="hearts">&hearts;</span>{' '}
           </button>
         </form>
       </div>

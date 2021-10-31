@@ -5,14 +5,19 @@ const ThoughtCard = ({ thought, handleAddedLikes }) => {
   return (
     <div className="main-container" key={thought._id}>
       <div className="message-wrapper">
-        <p>{thought.message} </p>
-        <button onClick={() => handleAddedLikes(thought._id)}>
-          {' '}
-          &hearts; {thought.hearts}{' '}
-        </button>
-        <p className="date">
-          -- Thought shared: {moment(thought.createdAt).fromNow()} --{' '}
-        </p>
+        <p className="thought-text">{thought.message} </p>
+        <div className="likes-container">
+          <button
+            className="icon"
+            onClick={() => handleAddedLikes(thought._id)}
+          >
+            {' '}
+            <span className="hearts">&hearts;</span> {thought.hearts}{' '}
+          </button>
+          <p className="date">
+            -- Thought shared: {moment(thought.createdAt).fromNow()} --{' '}
+          </p>
+        </div>
       </div>
     </div>
   )
