@@ -11,3 +11,111 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.date {
+  font-style: italic;
+}
+
+.thought-input {
+  border: 2px solid rgb(191, 191, 191);
+  margin-top: 12px;
+  height: 50px;
+  padding: 10px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.form-container {
+  background-color: rgb(242, 240, 240);
+  border: 2px solid black;
+  box-shadow: 6px 8px;
+  margin: 30px 15px;
+  line-height: 1rem;
+  padding: 10px 15px 5px;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: center;
+}
+
+.thought-container {
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 6px 6px;
+  margin: 30px 15px;
+  line-height: 1rem;
+  padding: 0 15px;
+  width: 20%;
+  justify-content: center;
+}
+
+.submit-button {
+  width: 50%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(255, 173, 173);
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(78, 52, 52);
+  
+}
+
+.like-button {
+  display: flex;
+  color: gray;
+  letter-spacing: 2px;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  align-items: center;
+}
+
+.heart-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-right: 10px;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  
+}
+
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #dcdcdc;
+  border-radius: 50%;
+  border-left: 5px solid #fff;
+  animation: spinner infinite 0.5s;
+  display: inline-block;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
