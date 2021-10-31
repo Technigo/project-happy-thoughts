@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import ThoughtCard from 'components/ThoughtCard';
 import Form from './components/Form';
 
-import { API_URL } from './utils/urls';
+import { API_URL, LIKES_URL } from './utils/urls';
 
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([]); // empty array
@@ -17,12 +17,15 @@ export const App = () => {
     fetchThoughtList();
   }, []);
 
+  //   fetching API
   const fetchThoughtList = () => {
     fetch(API_URL)
       .then((res) => res.json())
-      .then((thoughts) => setThoughtsList(thoughts));
+      .then((thoughts) => setThoughtsList(thoughts))
+      .catch((err) => console.error(err));
   };
 
+  //   form submitted
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -35,8 +38,26 @@ export const App = () => {
     };
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughtsList([data, ...thoughtsList]));
+      .then(() => fetchThoughtList())
+      .catch((err) => console.error(err));
     setNewThought('');
+  };
+
+  //   send POST request when thought is liked
+  const handleLikedThoughts = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    fetch(LIKES_URL(id), options)
+      .then((res) => res.json())
+      .then(() => {
+        fetchThoughtList();
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
@@ -46,7 +67,10 @@ export const App = () => {
         newThought={newThought}
         handleNewThoughtChange={handleNewThoughtChange}
       />
-      <ThoughtCard thoughtsList={thoughtsList} />
+      <ThoughtCard
+        thoughtsList={thoughtsList}
+        handleLikedThoughts={handleLikedThoughts}
+      />
     </div>
   );
 };
