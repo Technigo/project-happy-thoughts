@@ -14,15 +14,18 @@ const LikeButton = ({ thoughtId, thought, fetchThoughts }) => {
       .then(() => {}, []);
 
     fetchThoughts();
-    setLikes((value) => value + 1);
-    localStorage.setItem(thoughtId, JSON.stringify(likes + 1)); // Could not make this work properly without adding + 1. Isn't the previous line supposed to add + 1 to yourLikes?
+    const incLikes = likes + 1;
+    setLikes(incLikes);
+    localStorage.setItem(thoughtId, JSON.stringify(incLikes));
   };
 
   return (
     <div className="likes-container">
       {likes === 0 && (
         <button
-          className={thought.hearts === 0 ? "like-button" : "like-button liked"}
+          className={
+            thought.hearts === 0 ? "liked-button" : "liked-button liked"
+          }
           onClick={() => onLikesIncrease(thought._id)}
         >
           <span role="img" aria-label="heart">

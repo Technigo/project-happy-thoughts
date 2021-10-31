@@ -63,7 +63,7 @@ export const App = () => {
         <ThoughtItem
           key={thought._id}
           thought={thought}
-          thoughtId={thought._Id}
+          thoughtId={thought._id}
           fetchThoughts={fetchThoughts}
           // onLikesIncrease={handleLikesIncrease}
         />

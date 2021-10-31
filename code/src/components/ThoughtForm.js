@@ -30,7 +30,7 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
       <button
         disabled={
           (newThought.length < 0 && newThought.length < 5) ||
-          newThought.length < 140
+          newThought.length > 140
         }
         className="submit-button"
         type="submit"

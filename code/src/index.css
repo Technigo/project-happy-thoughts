@@ -95,7 +95,7 @@ textarea {
 .liked {
   background-color: #f5aaad;
 }
-.like-button:hover,
+.liked-button:hover,
 .hover {
   background-color: rgb(236, 217, 141);
 }
@@ -125,7 +125,7 @@ textarea {
     color: grey;
     font-size: 20px;
   }
-  .like-button {
+  .liked-button {
     width: 40px;
     height: 40px;
     margin-right: 5px;
@@ -154,7 +154,7 @@ textarea {
     color: grey;
     font-size: 25px;
   }
-  .like-button {
+  .liked-button {
     width: 50px;
     height: 50px;
     margin-right: 5px;
