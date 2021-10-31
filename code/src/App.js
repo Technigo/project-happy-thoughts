@@ -4,6 +4,8 @@ import ThoughtsInput from "components/ThoughtsInput"
 import ThoughtsList from "components/ThoughtsList"
 import LoadSpinner from "./components/LoadSpinner"
 
+import Header from "components/Header"
+
 import { API_URL, LIKES_URL } from "reusables/urls"
 
 //These state properties stores and keeps track of current state  in thoughtlist and thoughtinput
@@ -61,6 +63,8 @@ export const App = () => {
   //these are the components that displays on the FE aka Mounting the components that contains props being passed into here.
   return (
     <div>
+      <Header />
+
       {load && <LoadSpinner />}
       <ThoughtsInput
         onFormSubmit={handleFormSubmit}
