@@ -11,14 +11,14 @@ const ThoughtForm = ({
       <div className="input-container">
         <div className="input-text">
           <label htmlFor="newThought">
-            <h1>Type your thought</h1>
+            <h2>Type your thought</h2>
           </label>
           <textarea
             className="new-thought-input"
             rows="3"
             id="newThought"
             type="text"
-            placeholder="type here.."
+            placeholder="write a happy thought between 5 and 140 characters"
             value={newThought}
             onChange={handleInputChange}
             onSubmit={event => event.target.reset()}
@@ -33,7 +33,7 @@ const ThoughtForm = ({
           type="submit"
         >
           <span role="img" aria-label="heart">
-            &#10084;&#65039; Send happy thought! &#10084;&#65039;
+            &#10084;&#65039; Send a happy thought! &#10084;&#65039;
           </span>
         </button>
       </div>

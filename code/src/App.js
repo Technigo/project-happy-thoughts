@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import ThoughtForm from "./components/ThoughtForm";
 import ThoughtMessages from "./components/ThoughtMessages";
-// import LoadingItem from "./components/Loading";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import { API_URL, LIKES_URL } from "./utils/urls";
 
@@ -59,24 +60,29 @@ export const App = () => {
   };
 
   return (
-    <div>
-      {/* {loading && <LoadingItem />} */}
-      <ThoughtForm
-        newThought={newThought}
-        setNewThought={setNewThought}
-        onFormSubmit={handleFormSubmit}
-        count={count}
-        handleInputChange={handleInputChange}
-        // onKeyPress={handleKeyPress}
-      />
+    <div className="background-wrap">
+      <div className="content">
+        <Header title="What is making you happy today?" />
 
-      {thoughts.map(thought => (
-        <ThoughtMessages
-          key={thought._id}
-          thought={thought}
-          onLikesIncrease={handleLikesIncrease}
+        <ThoughtForm
+          newThought={newThought}
+          setNewThought={setNewThought}
+          onFormSubmit={handleFormSubmit}
+          count={count}
+          handleInputChange={handleInputChange}
+          // onKeyPress={handleKeyPress}
         />
-      ))}
+
+        {thoughts.map(thought => (
+          <ThoughtMessages
+            key={thought._id}
+            thought={thought}
+            onLikesIncrease={handleLikesIncrease}
+          />
+        ))}
+
+        <Footer />
+      </div>
     </div>
   );
 };
