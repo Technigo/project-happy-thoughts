@@ -10,7 +10,14 @@ const Footer = () => {
 			>
 				<p className="footer-info"> &#169; by Madelene Trang</p>
 			</a>
-			<p> Team Hippo 🦛 Technigo 2021'</p>
+			<p>
+				Team Hippo{' '}
+				<span role="img" aria-label="hippo">
+					{' '}
+					🦛
+				</span>{' '}
+				Technigo 2021'
+			</p>
 		</footer>
 	);
 };
