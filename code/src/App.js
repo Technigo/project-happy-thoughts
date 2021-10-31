@@ -6,6 +6,8 @@ import LoadingItem from "./components/Loading";
 
 import { API_URL, LIKES_URL } from "./utils/urls";
 
+import "./index.css";
+
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");

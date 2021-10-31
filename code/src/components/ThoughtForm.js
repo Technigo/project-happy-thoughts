@@ -10,7 +10,11 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
       />
-      <button disabled={newThought.length < 5} type="submit">
+      <button
+        disabled={newThought.length < 5}
+        className="submit-btn"
+        type="submit"
+      >
         Send thought!
       </button>
     </form>
