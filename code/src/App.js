@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from "react"
-import moment from "moment"
 
-import { API_URL } from "utils/urls"
+import ThoughtForm from "components/ThoughtForm"
+import ThoughtItem from "components/ThoughtItem"
+
+import { API_URL, LIKES_URL } from "utils/urls"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
+  // to keep track of the new thoughts beeing typed in the input field
   const [newThought, setNewThought] = useState("")
 
   useEffect(() => {
+    fetchThoughts()
+  }, [])
+
+  const fetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
-  }, [])
+  }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault()
 
     // Send a POST request with a JSON body
@@ -27,31 +34,52 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]))
+      .then((data) => {
+        //v1
+        // setThoughts([data, ...thoughts])
+
+        //v2
+        fetchThoughts()
+      })
+  }
+  const handleLikeIncrease = (thoughtId) => {
+    const options = {
+      method: "POST",
+    }
+
+    fetch(LIKES_URL(thoughtId), options)
+      .then((res) => res.json())
+      .then((data) => {
+        // v1 increase likes only
+
+        // const updatedToughts = thoughts.map((item) => {
+        //   if (item._id === data._id) {
+        //     item.hearts += 1
+        //     return item
+        //   } else {
+        //     return item
+        //   }
+        // })
+        // setThoughts(updatedToughts)
+
+        fetchThoughts()
+      })
   }
 
   return (
     <div>
-      {/* this is only for the button and the box to type the thoughts */}
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">Type your thought</label>
-        <input
-          id="newThought"
-          type="text"
-          value={newThought}
-          onChange={(e) => setNewThought(e.target.value)}
-        />
-        <button type="submit">Send thought!</button>
-      </form>
+      <ThoughtForm
+        onFormSubmit={handleFormSubmit}
+        newThought={newThought}
+        setNewThought={setNewThought}
+      />
 
       {thoughts.map((thought) => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          <button> &hearts; {thought.hearts}</button>
-          <p className="date">
-            - Created at: {moment(thought.createdAt).fromNow()}
-          </p>
-        </div>
+        <ThoughtItem
+          key={thought._id}
+          thought={thought}
+          onLikeIncrease={handleLikeIncrease}
+        />
       ))}
     </div>
   )
