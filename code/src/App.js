@@ -36,6 +36,7 @@ export const App = () => {
 
     fetch(API_URL, options)
     .then((res) => res.json())
+    .then(setNewThought(''))
     .then((data) => {
       // v1 - 
       // setThoughts([data, ...thoughts]))

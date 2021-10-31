@@ -79,7 +79,8 @@ code {
   height: 40px;
   box-sizing: content-box;
   outline: none;
-  padding-inline-start: 6px;
+  padding-inline-start: 10px;
+  padding-top: 10px;
   padding-bottom: 25px;
   font-family: inherit;
   font-size: inherit;
