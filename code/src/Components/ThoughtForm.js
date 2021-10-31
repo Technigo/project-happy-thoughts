@@ -1,4 +1,5 @@
 import React from "react";
+import CharCount from "./CharCount";
 
 const ThoughtForm = ({
   onFormSubmitt,
@@ -6,6 +7,7 @@ const ThoughtForm = ({
   setNewThought,
   handleIncrement,
   count,
+  thought,
 }) => {
   return (
     <form className="form" onSubmit={onFormSubmitt}>
@@ -22,18 +24,20 @@ const ThoughtForm = ({
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
       />
-
-      <button
-        onClick={handleIncrement}
-        type="submit"
-        id="myInput"
-        className="send-btn"
-      >
-        <span className="send-heart">❤</span>
-        Send happy thought
-        <span className="send-heart">❤</span>
-        {count}times
-      </button>
+      <div className="counter-btn">
+        <button
+          onClick={handleIncrement}
+          type="submit"
+          id="myInput"
+          className="send-btn"
+        >
+          <span className="send-heart">❤</span>
+          Send happy thought
+          <span className="send-heart">❤</span>
+          {count}times
+        </button>
+        <CharCount charCount={newThought.length} />
+      </div>
     </form>
   );
 };

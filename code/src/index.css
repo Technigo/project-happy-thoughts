@@ -34,6 +34,7 @@ p {
 }
 
 /* send thought btn*/
+
 .send-btn {
   margin-top: 10px;
   border-radius: 50%;
@@ -47,12 +48,16 @@ p {
   font-family: "Roboto Mono";
   text-align: center;
   font-size: 10px;
+  margin-bottom: 10px;
 }
+
 /* red hearts in send thought btn*/
+
 .send-heart {
   color: rgb(255, 64, 50);
   margin-right: 5px;
   margin-left: 5px;
+  font-size: 14px; /* emoji size is adjusted with font-size */
 }
 
 legend {
@@ -62,11 +67,12 @@ legend {
   font-weight: 600;
   color: rgb(255, 173, 173);
   font-family: "Roboto Mono";
-  weight: 600;
+  font-weight: 700;
 }
 
 fieldset {
   padding: 10px 25px 20px 20px;
+  width: 320px;
 }
 
 fieldset > legend {
@@ -75,11 +81,9 @@ fieldset > legend {
 
 .textarea {
   width: 95%;
-  height: 37px;
+  height: 45px;
   border: 1px solid rgb(207, 207, 207);
-
-  /* white-space: pre-wrap; */
-  /* word-wrap: break-word; */
+  background-color: #fff;
 }
 
 button {
@@ -96,6 +100,7 @@ button {
   width: 40px;
   height: 40px;
   margin-right: 5px;
+  margin-bottom: 8px;
 }
 
 .app {
@@ -122,7 +127,6 @@ button {
   width: 300px;
   border: 1px solid #333;
   margin-bottom: 1rem;
-
   border: 1px solid rgb(63, 62, 62);
   box-shadow: 7px 7px rgb(63, 62, 62);
   padding: 10px;
@@ -135,11 +139,33 @@ button {
 }
 
 .btn-heart {
-  color: red;
+  color: rgb(255, 64, 50);
 }
 
 .heart-likes {
   display: flex;
+}
+
+.counter {
+  width: 20px;
+  height: 20px;
+  fill: blue;
+  stroke: rgb(255, 64, 50);
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+
+.message-count {
+  color: rgb(63, 62, 62);
+  display: flex;
+  flex-direction: row;
+  padding-top: 12px;
+  padding-left: 50px;
+}
+
+.counter-btn {
+  display: flex;
+  flex-direction: row;
 }
 
 .loading-overlay {
@@ -162,6 +188,7 @@ button {
   border-left: 5px solid #fff;
   animation: spinner infinite 1s;
 }
+
 @keyframes spinner {
   0% {
     transform: rotate(0);
