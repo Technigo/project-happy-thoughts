@@ -1,0 +1,17 @@
+.header {
+  text-align: center;
+  display: block;
+  margin: 30px auto 40px;
+  font-size: 22px;
+  font-family: "Trispace", sans-serif;
+  font-weight: 500;
+}
+
+/*TABLET*/
+
+@media (min-width: 670px) {
+  .header {
+    font-size: 28px;
+    margin: 50px auto;
+  }
+}

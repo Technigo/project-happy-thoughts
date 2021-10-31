@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { API_URL } from "utils/urls";
-
-/*  a form/text-input where you can type a message, a button where you send a post request to send a new message and save that thought in the api.
-
-You can set the state to an empty string after the message is sent with fetch with something like this: setNewThought("")
-*/
+import "./NewThought.css";
 
 export const NewThought = () => {
   const [thoughts, setThoughts] = useState([]);

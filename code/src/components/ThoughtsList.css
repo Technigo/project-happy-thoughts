@@ -1,0 +1,85 @@
+.messageText {
+  margin: 30px auto 0;
+  max-width: 90%;
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.thoughtsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.thoughtWrapper {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 150px;
+  border: 1px solid black;
+  box-shadow: 4px 6px black;
+  margin: 10px auto;
+}
+
+.likesWrapper {
+  width: 290px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.hearts {
+  font-size: 12px;
+  background-color: #ffadad;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: cell;
+}
+
+.numberOfLikes {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.date {
+  font-size: 12px;
+
+  color: #818080;
+}
+
+/*TABLET*/
+
+@media (min-width: 670px) {
+  .thoughtWrapper {
+    width: 500px;
+    height: 220px;
+  }
+
+  .messageText {
+    margin: 50px auto 20px;
+    max-width: 80%;
+    font-size: 16px;
+  }
+
+  .likesWrapper {
+    width: 400px;
+  }
+
+  .hearts {
+    font-size: 14px;
+  }
+
+  .numberOfLikes {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 14px;
+  }
+}

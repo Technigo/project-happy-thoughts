@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
 import { API_URL } from "utils/urls";
 import moment from "moment";
-
-//  display a list of happy thoughts as component. sends request to get happy thoughts from api.
+import "./ThoughtsList.css";
 
 export const ThoughtList = ({ thoughts, setThoughts }) => {
-  // const [thoughts, setThoughts] = useState([]);
-
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
@@ -26,8 +23,6 @@ export const ThoughtList = ({ thoughts, setThoughts }) => {
     )
       .then((res) => res.json())
       .then((data) => {
-        // v1 increase likes only
-
         const updatedThoughts = thoughts.map((item) => {
           if (item._id === data._id) {
             item.hearts += 1;

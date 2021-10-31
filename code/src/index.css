@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Trispace", sans-serif;
 }
 
 code {
@@ -15,15 +16,6 @@ code {
 
 @import url("https://fonts.googleapis.com/css2?family=Trispace&display=swap");
 
-.header {
-  text-align: center;
-  display: block;
-  margin: 30px auto 40px;
-  font-size: 22px;
-  font-family: "Trispace", sans-serif;
-  font-weight: 500;
-}
-
 p {
   margin: 10px auto;
   max-width: 80%;
@@ -32,113 +24,6 @@ p {
   font-family: "Trispace", sans-serif;
   font-weight: 500;
 }
-
-.messageText {
-  margin: 30px auto 0;
-  max-width: 90%;
-  color: #000;
-  font-size: 12px;
-  font-family: "Trispace", sans-serif;
-  font-weight: 500;
-}
-
-.thoughtsContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.thoughtWrapper {
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 320px;
-  height: 150px;
-  border: 1px solid black;
-  box-shadow: 4px 6px black;
-  margin: 10px auto;
-}
-
-.likesWrapper {
-  width: 290px;
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  justify-content: space-between;
-}
-
-.hearts {
-  font-size: 12px;
-  background-color: #ffadad;
-  border: none;
-  padding: 10px;
-  border-radius: 30px;
-  cursor: cell;
-}
-
-.numberOfLikes {
-  font-family: "Trispace", sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-}
-
-.date {
-  font-size: 12px;
-  font-family: "Trispace", sans-serif;
-  color: #818080;
-}
-
-.newThoughtWrapper {
-  background-color: #f2f0f0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 320px;
-  height: fit-content;
-  margin: 20px auto 30px;
-  border: 1px solid #000;
-  box-shadow: 5px 5px black;
-}
-
-.newThoughtWrapper label {
-  font-family: "Trispace", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #000;
-  margin: 20px auto 15px;
-}
-
-textarea {
-  font-family: "Trispace", sans-serif;
-  width: 250px;
-  height: 50px;
-  margin: 10px auto;
-  font-size: 12px;
-  border: 1px solid #ffadad;
-  border-radius: 2px;
-  cursor: text;
-  caret-color: #ffadad;
-}
-
-.charactersLeft {
-  font-size: 12px;
-}
-
-.sendThought {
-  font-size: 12px;
-  font-family: "Trispace", sans-serif;
-  background-color: #ffadad;
-  color: #000;
-  border: none;
-  padding: 10px;
-  border-radius: 30px;
-  margin: 15px auto;
-  cursor: cell;
-}
-
-/* MEDIA QUERIES */
 
 /*TABLET*/
 
@@ -150,18 +35,5 @@ textarea {
   .container {
     width: 400px;
     align-items: center;
-  }
-
-  .newThoughtWrapper {
-    width: 400px;
-    height: 250px;
-    margin: 40px auto 30px;
-    align-items: center;
-  }
-
-  .thoughtWrapper {
-    width: 400px;
-    height: 150px;
-    margin: 10px auto;
   }
 }
