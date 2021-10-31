@@ -43,7 +43,21 @@ export const App = () => {
       options
     )
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        // v1 increase likes only
+
+        // iterates over array to find the specific thought that needs to be updated
+        const updatedThoughts = thoughts.map((item) => {
+          if (item._id === data._id) {
+            item.hearts += 1;
+            return item;
+          } else {
+            return item;
+          }
+        });
+
+        setThoughts(updatedThoughts);
+      });
   };
 
   // displays the information on the page
