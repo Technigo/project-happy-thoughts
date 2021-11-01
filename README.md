@@ -1,13 +1,13 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+Our very own Twitter, but kinder.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+With the use of Techingos own API we were tasked on building or own site where we could submit,read and like eachothers thoughts.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+With the help of classmates, teachers and recordings of our classes I was able to make this version of "Happy Thoughts".
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://ninarivera-pennyforyourthoughts.netlify.app/
