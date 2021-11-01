@@ -10,6 +10,7 @@
 .thought-message {
   font-size: 18px;
   font-weight: bold;
+  overflow: hidden;
 }
 
 .like-button {
