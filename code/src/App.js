@@ -22,8 +22,6 @@ export const App = () => {
       .finally(() => setLoading(false));
   };
 
-  console.log(post);
-
   const handleSubmitForm = (event) => {
     event.preventDefault();
 
