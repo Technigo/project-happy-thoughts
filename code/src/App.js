@@ -38,9 +38,11 @@ export const App = () => {
     };
 
     // sends request to add new thought and then fetches the thoughts again
-    fetch(API_URL, options).then((res) => res.json());
-
-    fetchThoughts();
+    fetch(API_URL, options)
+      .then((res) => res.json())
+      .then((data) => {
+        fetchThoughts();
+      });
   };
 
   const handleLikesIncrease = (thoughtId) => {
