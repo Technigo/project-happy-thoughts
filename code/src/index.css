@@ -32,7 +32,7 @@ h1 {
   flex-direction: column;
   font-family: 'Roboto';
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   width: 90%;
   max-width: 550px;
   color: #37251edb;
@@ -106,7 +106,7 @@ h1 {
   border: 2px solid #37251edb;
   box-shadow: 5px 5px #37251edb;
   padding: 5px 14px;
-  height: 180px;
+  min-height: 130px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
