@@ -5,6 +5,7 @@ import ThoughtItem from "components/ThoughtItem"
 import Loader from "components/Loader"
 
 import { API_URL, LIKES_URL } from "utils/urls"
+import Footer from "components/Footer"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -87,6 +88,7 @@ export const App = () => {
           onLikeIncrease={handleLikeIncrease}
         />
       ))}
+      <Footer />
     </div>
   )
 }

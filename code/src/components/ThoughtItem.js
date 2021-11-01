@@ -5,7 +5,7 @@ const ThoughtItem = ({ thought, onLikeIncrease }) => {
   return (
     <>
       <div className="thought-container">
-        <p>{thought.message}</p>
+        <p className="thought-message">{thought.message}</p>
         <div className="bottom-info">
           <div className="hearts-counter">
             <button

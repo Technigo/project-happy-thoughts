@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 15px;
   font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,10 +32,14 @@ textarea {
   background-color: rgb(250, 217, 217);
   border: none;
   border-radius: 30px;
-  height: 30px;
+  height: 35px;
   width: 220px;
   font-family: "Roboto Mono", monospace;
 }
+.send-button:hover {
+  background-color: rgb(255, 182, 182);
+}
+
 .hearts {
   background-color: rgba(255, 255, 255, 0);
   border: none;
@@ -80,4 +85,28 @@ textarea {
   margin: 40px auto;
   padding: 40px;
   box-shadow: 8px 8px;
+}
+.thought-message {
+  margin: 0 0 30px 5px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Footer Styling */
+footer h4 {
+  color: #000;
+  border-top: 1px solid;
+  padding: 10px 0 0 20px;
+  font-weight: 100;
+}
+
+.fa {
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa-github {
+  color: #000;
+  font-size: 24px;
 }
