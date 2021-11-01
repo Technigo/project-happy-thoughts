@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
-import { API_URL } from "./utils/urls";
+
+import ThoughtForm from "./components/ThoughtForm";
+import ThoughtItem from "./components/ThoughtItem";
+import Loading from "./components/Loading";
+
+import { API_URL, LIKES_URL } from "./utils/urls";
 
 export const App = () => {
-  // state properties that keep track of the list of thoughts and the new thought
-  // that the user types in the input field
+  // state properties that keep track of the list of thoughts, the new thought and the loading value
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // useEffect hook for GET request when component is mounted
   useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => setThoughts(data));
+    fetchThoughts();
   }, []);
 
+  const fetchThoughts = () => {
+    setLoading(true);
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => setThoughts(data))
+      .finally(() => setLoading(false));
+  };
+
   // makes a POST request to the same URL
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
@@ -27,63 +37,42 @@ export const App = () => {
       body: JSON.stringify({ message: newThought }),
     };
 
-    fetch(API_URL, options)
-      .then((res) => res.json())
-      // spreads the previous array and adds the new data to it
-      .then((data) => setThoughts([data, ...thoughts]));
+    // sends request to add new thought and then fetches the thoughts again
+    fetch(API_URL, options).then((res) => res.json());
+
+    fetchThoughts();
   };
 
-  const onLikesIncrease = (thoughtID) => {
+  const handleLikesIncrease = (thoughtId) => {
     const options = {
       method: "POST",
     };
 
-    fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtID}/like`,
-      options
-    )
+    fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((data) => {
-        // v1 increase likes only
+        // calls the fetchThoughts function to update the likes (amount of hearts) for the message
 
-        // iterates over array to find the specific thought that needs to be updated
-        const updatedThoughts = thoughts.map((item) => {
-          if (item._id === data._id) {
-            item.hearts += 1;
-            return item;
-          } else {
-            return item;
-          }
-        });
-
-        setThoughts(updatedThoughts);
+        fetchThoughts();
       });
   };
 
   // displays the information on the page
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">Type your text</label>
-        <input
-          id="newThought"
-          type="text"
-          value={newThought}
-          onChange={(e) => setNewThought(e.target.value)}
-        />
-        <button type="submit">Send Thought!</button>
-      </form>
+      {loading && <Loading />}
+      <ThoughtForm
+        onFormSubmit={handleFormSubmit}
+        newThought={newThought}
+        setNewThought={setNewThought}
+      />
 
       {thoughts.map((thought) => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          <button onClick={() => onLikesIncrease(thought._id)}>
-            &hearts; {thought.hearts}
-          </button>
-          <p className="date">
-            - Created at: {moment(thought.createdAt).fromNow()}
-          </p>
-        </div>
+        <ThoughtItem
+          key={thought._id}
+          thought={thought}
+          onLikesIncrease={handleLikesIncrease}
+        />
       ))}
     </div>
   );
