@@ -150,6 +150,10 @@ h1 {
 }
 
 .like-button:hover {
+  background-color: #e79403cf;
+}
+
+.like-button-clicked {
   background-color: #ebad1ad1;
 }
 

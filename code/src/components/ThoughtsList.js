@@ -13,7 +13,11 @@ const ThoughtsList = ({ thoughts, onLikesIncrease }) => {
               <button
                 onClick={() => onLikesIncrease(thought._id)}
                 type='button'
-                className='like-button'
+                className={
+                  thought.hearts > 0
+                    ? 'like-button like-button-clicked'
+                    : 'like-button'
+                }
               >
                 <span className='like-heart' role='img' aria-label='heart'>
                   ❤️
