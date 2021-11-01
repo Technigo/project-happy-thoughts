@@ -1,13 +1,235 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 30px;
+}
+
+.title-hearts{
+  color:red;
+}
+
+.form-wrapper {
+  border: 1px solid black;
+  background-color: #f2f0f0;
+  box-shadow: 7px 7px black;
+  margin: 2% 5%;
+  padding: 5%;
+}
+
+textarea {
+  height: 6em;
+  width: 22em;
+  margin:1.5em 0;
+}
+
+.form-button {
+  background-color: #ffadad;
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+
+.thoughts-wrapper {
+  border: 1px solid black;
+  margin: 5% 5%;
+  padding: 20px;
+  box-shadow: 7px 7px black;
+  overflow-wrap: break-word;
+  background-color: white;
+}
+
+.date {
+  text-align: end;
+  font-size: 12px;
+}
+
+.likes-button {
+  border-radius: 50%;
+  padding: 10px 20px;
+  background-color: #f2f0f0;
+  border: none;
+  margin-right: 5px;
+}
+
+.likes-button:hover {
+  background-color: #ffadad;
+}
+
+.likes {
+  display: flex;
+}
+
+.loader-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+}
+.lds-heart div {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: red;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: red;
+}
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    margin: 5% 0;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  .form-wrapper {
+    padding: 5% 3%;
+    box-shadow: 9px 9px;
+  }
+
+  p, label {
+    font-size: 16px;
+  }
+
+  textarea {
+    height: 8em;
+    width: 38em;
+    margin: 2em 0;
+  }
+
+  .letter-counter {
+    text-align: end;
+    margin-top: 0;
+  }
+
+  .form-button {
+    padding: 12px;
+    box-shadow: 5px 10px #888888;
+  }
+
+  .thoughts-wrapper {
+    padding: 5% 3%;
+    box-shadow: 8px 8px;
+  }
+
+  .date {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .content-wrapper {
+    margin: 5% 20%;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  .form-wrapper {
+    width: 84%;
+    padding: 5% 3%;
+  }
+
+  p, label {
+    font-size: 18px;
+  }
+
+  textarea {
+    height: 10em;
+    width: 36.5em;
+    margin: 2.3em 0;
+  }
+
+  .form-button {
+    padding: 20px;
+    box-shadow: 5px 10px #888888;
+  }
+
+  .thoughts-wrapper {
+    width: 83%;
+    padding: 5% 3%;
+  }
+
+  .date {
+    font-size: 16px;
+  }
 }
