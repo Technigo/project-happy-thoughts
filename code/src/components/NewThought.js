@@ -22,7 +22,7 @@ export const NewThought = () => {
   };
 
   return (
-    <div>
+    <>
       <form className="newThoughtWrapper" onSubmit={onFormSubmit}>
         {" "}
         <label htmlFor="newThought">What's making you happy right now?</label>
@@ -50,7 +50,7 @@ export const NewThought = () => {
           </span>{" "}
         </button>
       </form>
-    </div>
+    </>
   );
 };
 

@@ -8,10 +8,10 @@ export const App = () => {
   const [newThought, setNewThought] = useState("");
 
   return (
-    <div className="contentContainer">
+    <>
       <Header />
       <NewThought newThought={newThought} setNewThought={setNewThought} />
       <ThoughtList thoughts={thoughts} setThoughts={setThoughts} />
-    </div>
+    </>
   );
 };
