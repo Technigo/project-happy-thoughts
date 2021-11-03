@@ -19,9 +19,9 @@ const NewThoughtInput = ({ onFormSubmit, newThought, onNewThoughtChange }) => {
       </label>
       <div className="new-thought-input__button-wrapper">
         <button
+          type="submit"
           className="new-thought-input__button"
           disabled={newThought.length < 5 || newThought.length > 140}
-          type="submit"
         >
           <span role="img" aria-label="heart">
             ❤️&ensp;
