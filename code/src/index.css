@@ -85,7 +85,7 @@ p {
 
 .hearts {
   color: red;
-  font-size: 27px;
+  font-size: 22px;
 }
 
 .icon {
@@ -133,8 +133,8 @@ main {
   border: 1px solid black;
   box-shadow: 6px 6px 1px 1px rgb(5 5 5 / 90%);
   margin: 12px 0;
-  animation: falling 2s;
-  animation-timing-function: ease-in;
+  animation: falling 1.5s;
+  animation-timing-function: linear;
   background-color: white;
 }
 
@@ -145,24 +145,20 @@ main {
   }
   25% {
     opacity: 0.2;
-    transform: translateY(-5em);
+    transform: translateY(0);
   }
 
   50% {
     opacity: 0.3;
-    transform: translateY(-6em);
+    transform: translateY(-5em);
   }
   70% {
     opacity: 0.4;
-    transform: translateY(-5em);
+    transform: translateY(0);
   }
   80% {
     opacity: 0.5;
     transform: translateY(-3em);
-  }
-  95% {
-    opacity: 0.7;
-    transform: translateY(-5em);
   }
 
   100% {
@@ -178,24 +174,20 @@ main {
   }
   25% {
     opacity: 0.2;
-    transform: translateY(-5em);
+    transform: translateY(0);
   }
 
   50% {
     opacity: 0.3;
-    transform: translateY(-6em);
+    transform: translateY(-5em);
   }
   70% {
     opacity: 0.4;
-    transform: translateY(-5em);
+    transform: translateY(0);
   }
   80% {
     opacity: 0.5;
     transform: translateY(-3em);
-  }
-  95% {
-    opacity: 0.7;
-    transform: translateY(-5em);
   }
 
   100% {
@@ -211,24 +203,20 @@ main {
   }
   25% {
     opacity: 0.2;
-    transform: translateY(-5em);
+    transform: translateY(0);
   }
 
   50% {
     opacity: 0.3;
-    transform: translateY(-6em);
+    transform: translateY(-5em);
   }
   70% {
     opacity: 0.4;
-    transform: translateY(-5em);
+    transform: translateY(0);
   }
   80% {
     opacity: 0.5;
     transform: translateY(-3em);
-  }
-  95% {
-    opacity: 0.7;
-    transform: translateY(-5em);
   }
 
   100% {

@@ -56,7 +56,7 @@ const Form = ({ fetchThoughtList, API_URL }) => {
         disabled={newThought.length < 6 || newThought.length > 140}
       >
         <span className='hearts'>&hearts;</span> Send thought!
-        <span className='hearts'>&hearts;</span>
+        <span className='hearts'> &hearts;</span>
       </button>
     </form>
   );
