@@ -12,6 +12,56 @@ code {
     monospace;
 }
 
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  width: 6rem;
+  height: 6rem;
+  border: 0.4rem solid silver;
+  border-radius: 50%;
+  border-left: 0.4rem solid white;
+  animation: spinner infinite 1s linear;
+  display: inline-block;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .date {
   font-style: italic;
+}
+
+.like-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.heart-btn {
+  padding: 0;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  border-radius: 50%;
+}
+
+.emoji {
+  font-size: 2rem;
 }
