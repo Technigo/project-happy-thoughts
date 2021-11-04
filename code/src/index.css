@@ -97,28 +97,27 @@ margin: 0 auto;
     0% {
       transform:rotate(0);
     }
-
+    25% {
+      transform:rotate(90deg);
+    }
     50% {
       transform:rotate(180deg);
+    }
+    75% {
+      transform:rotate(270deg);
     }
     100% {
       transform:rotate(360deg);
     }
   }
 
-
-
-
-
-
-
 .heart {
   border-radius: 50%;
   margin: 10px;
   border: none;
+  height:30px;
+  width: 30px;
 }
-
-
 
 .send-button{
   background-color: #ffadad;
