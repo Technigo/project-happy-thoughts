@@ -30,7 +30,30 @@ export const App = () => {
       .then(data => setThoughts([data, ...thoughts]))
   }
 
+  const onLikesIncrease = (thoughtId) => {
 
+    const options = { method: 'POST', }
+
+    fetch(
+      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`,
+      options
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        //v1 increase likes only
+
+        const updatedThoughts = thoughts.map((item) => {
+          if (item._id === data._id) {
+            item.hearts += 1
+            return item
+          } else {
+            return item
+          }
+        })
+
+        setThoughts(updatedThoughts)
+      })
+  }
 
   return (
     <div>
@@ -49,7 +72,7 @@ export const App = () => {
       {thoughts.map((thought) => (
         <div key={thought._id}>
           <p>{thought.message}</p>
-          <button>&hearts; {thought.hearts}</button>
+          <button onClick={() => onLikesIncrease(thought._id)}>&hearts; {thought.hearts}</button>
           <p className="date">Created at: {moment(thought.createdAt).fromNow()}</p>
         </div>
       ))}
