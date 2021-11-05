@@ -13,7 +13,7 @@ export const App = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setAllThoughts(data));
-  }, []);
+  }, [allThoughts]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +26,8 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((newestThought) => setAllThoughts([newestThought, ...allThoughts]));
+      .then((newestThought) => setAllThoughts([newestThought, ...allThoughts]))
+      .then(setNewThought(""));
   };
 
   const handleNewThought = (e) => {
@@ -42,7 +43,7 @@ export const App = () => {
         handleFormSubmit={handleFormSubmit}
       />
 
-      <ExistingThoughts allThoughts={allThoughts} />
+      <ExistingThoughts allThoughts={allThoughts} setAllThoughts={setAllThoughts}/>
     </div>
   );
 };
