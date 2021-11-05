@@ -15,8 +15,12 @@ const Form = ({ newThought, handleNewThought, handleFormSubmit }) => {
           value={newThought}
           onChange={handleNewThought}
         />
-        <button className="submit-btn" type="submit">
-          Send happy thought!
+        <button
+          disabled={newThought.length < 6 || newThought.length > 140}
+          className="submit-btn"
+          type="submit"
+        >
+          &hearts; Send happy thought! &hearts;
         </button>
       </form>
     </div>

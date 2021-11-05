@@ -30,6 +30,10 @@ h1 {
   margin: 0;
 }
 
+.loading {
+  text-align: center;
+}
+
 .new-thought-container {
   background: #d9dce8;
   background: -webkit-linear-gradient(top left, #d9dce8, #f0bdee);
@@ -43,16 +47,12 @@ h1 {
   gap: 30px;
 }
 
-/* .new-thought-label {
-
-} */
-
 .new-thought-input {
   height: 100px;
 }
 
 .submit-btn {
-  width: 150px;
+  width: 200px;
   height: 40px;
 }
 
@@ -89,8 +89,17 @@ h1 {
   grid-template-columns: 1fr 1fr;
 }
 
-.heart {
-  justify-self: start;
+.heart-button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: rgb(233, 93, 93);
+  font-size: 30px;
+}
+
+.hearts-number {
+  padding-left: 5px;
 }
 
 .date {

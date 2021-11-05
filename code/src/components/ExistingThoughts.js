@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-const ExistingThoughts = ({ allThoughts, setAllThoughts }) => {
+const ExistingThoughts = ({ allThoughts, setAllThoughts, fetchThoughts }) => {
   const onLikesIncrease = (thoughtId) => {
     const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
 
@@ -9,18 +9,9 @@ const ExistingThoughts = ({ allThoughts, setAllThoughts }) => {
       method: "POST",
     };
 
-    fetch(LIKES_URL, options)
-      .then((res) => res.json)
-      .then((data) => {
-        const updatedThoughts = allThoughts.map((thought) => {
-          if (thought._id === data._id) {
-            thought.hearts += 1;
-            return thought;
-          }
-          return thought;
-        });
-        setAllThoughts(updatedThoughts);
-      });
+    fetch(LIKES_URL, options).then(
+      fetchThoughts()
+    );
   };
 
   return (
@@ -29,13 +20,15 @@ const ExistingThoughts = ({ allThoughts, setAllThoughts }) => {
         <div className="thought-box" key={thought._id}>
           <p className="message">{thought.message}</p>
           <div className="post-info">
-            <button
-              onClick={() => onLikesIncrease(thought._id)}
-              className="heart"
-            >
-              {" "}
-              &hearts; {thought.hearts}
-            </button>
+            <div className="likes">
+              <button
+                onClick={() => onLikesIncrease(thought._id)}
+                className="heart-button"
+              >
+                &hearts;
+              </button>
+              <span className="hearts-number"> x {thought.hearts}</span>
+            </div>
             <p className="date">posted {moment(thought.createdAt).fromNow()}</p>
           </div>
         </div>
