@@ -10,28 +10,30 @@ const Form = ({ onFormSubmit, form, setForm }) => {
 
         <input
           type="text"
+          placeholder="Write your thoughts here."
           value={form}
           onChange={(event) => setForm(event.target.value)}
-          //I also want to incorporate the counter... min 5 max 140.
         />
-
-        <button
-          className="send-button"
-          type="submit"
-          disabled={form.length < 5 || form.length > 140}
-        >
-          <p>
-            <span role="img" aria-label="heart emoji">
-              {" "}
-              ❤️{" "}
-            </span>{" "}
-            Send happy Thought!{" "}
-            <span role="img" aria-label="heart emoji">
-              {" "}
-              ❤️{" "}
-            </span>
-          </p>
-        </button>
+        <div className="counter-styling">
+          <button
+            className="send-button"
+            type="submit"
+            disabled={form.length < 5 || form.length > 140}
+          >
+            <p>
+              <span role="img" aria-label="heart emoji">
+                {" "}
+                ❤️{" "}
+              </span>{" "}
+              Send happy Thought!{" "}
+              <span role="img" aria-label="heart emoji">
+                {" "}
+                ❤️{" "}
+              </span>
+            </p>
+          </button>
+          <p className="letter-counter">{140 - form.length}/ 140 </p>
+        </div>
       </div>
     </form>
   );

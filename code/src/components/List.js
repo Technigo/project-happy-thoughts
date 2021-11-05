@@ -9,7 +9,7 @@ const List = ({ list, handleLikesIncrease }) => {
           <p className="message">{list.message}</p>
           <div>
             <button
-              className="heart"
+              className={list.hearts > 0 ? "heart-liked" : "heart"}
               onClick={() => handleLikesIncrease(list._id)}
             >
               <span role="img" aria-label="heart emoji">
