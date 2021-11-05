@@ -1,7 +1,7 @@
 import React from "react";
 
 const Form = ({ onFormSubmit, newThought, setNewThought, likeClick }) => {
-  const caractersLeft = 140 - newThought.length;
+  const charactersLeft = 140 - newThought.length;
 
   return (
     <form className="new-thought-container" onSubmit={onFormSubmit}>
@@ -18,12 +18,12 @@ const Form = ({ onFormSubmit, newThought, setNewThought, likeClick }) => {
 
       <section className="input-info">
         <p
-          className="caracters"
+          className="characters"
           style={{
-            color: caractersLeft < 0 && "red",
+            color: charactersLeft < 0 && "red",
           }}
         >
-          {caractersLeft} / 140
+          {charactersLeft} / 140
         </p>
         <p className="clicked-likes">
           You <span className="heart">&#10084;</span> : {likeClick} posts

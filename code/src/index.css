@@ -37,6 +37,7 @@ code {
 }
 .new-thought-input {
   height: 50px;
+  resize: none;
 }
 .new-thought-button {
   border: none;
@@ -49,7 +50,7 @@ code {
 .input-info {
   position: relative;
 }
-.caracters {
+.characters {
   font-size: 13px;
   margin: 10px;
   display: inline-block;
@@ -104,10 +105,11 @@ code {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #fff;
+  background: rgb(255, 249, 250);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 .loading-spinner {
   width: 50px;
