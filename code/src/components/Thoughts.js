@@ -3,11 +3,14 @@ import LikeButton from "./LikeButton";
 import moment from "moment";
 
 const Thoughts = ({ thoughts, onLikeSubmit }) => {
-  const [likedClicks, setLikedClicks] = useState(0);
+  const [likedClicks, setLikedClicks] = useState(
+    JSON.parse(localStorage.getItem(thoughts._id)) + 0
+  );
 
   const addClicks = (id) => {
     setLikedClicks(likedClicks + 1);
     onLikeSubmit(id);
+    localStorage.setItem(thoughts._id, JSON.stringify(likedClicks + 1));
   };
 
   return (
