@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
 body {
   margin: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,11 +7,136 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto Mono", monospace;
+  background-color: #fcf1f7;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Styling for ThoughtForm */
+
+.input-form {
+  background-color: #f2f0f0;
+  width: 40vw;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-form,
+.thought-card {
+  border: 2px solid black;
+  margin-bottom: 40px;
+  box-shadow: 5px 5px;
+}
+
+.input-message-container {
+  display: flex;
+  justify-content: center;
+}
+
+.input-label {
+  margin: 5%;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.input-message {
+  width: 90%;
+  padding-bottom: 50px;
+  border: 1px solid grey;
+  font-size: 14px;
+  margin-top: 2.5%;
+  resize: none;
+}
+
+.input-message:hover {
+  border-color: pink;
+}
+.input-message:focus {
+  outline: pink solid 2px;
+}
+
+.send-thought-button {
+  margin: 2.5% 0 0 5%;
+  border-radius: 40px;
+  cursor: pointer;
+  background-color: #ffadad;
+  border: none;
+  width: 220px;
+  height: 40px;
+  color: black;
+  font-weight: 700;
+}
+
+.send-thought-button:disabled {
+  opacity: 0.5;
+}
+
+.heart {
+  margin: 10px;
+}
+
+/* Styling for ThoughtItem */
+
+.thought-card {
+  background-color: #fff;
+  width: 40vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thought-text {
+  margin-left: 5%;
+  font-size: 14px;
+}
+
+.likes-time-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2.5% 5% 0 5%;
+  align-items: center;
+}
+
+.likes-amount-container {
+  display: flex;
+}
+
+.heart-button {
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.heart-button:hover {
+  transform: scale(1.2);
+  background-color: #ffadad;
+}
+.heart-button:hover {
+  transform: scale(1.2);
+}
+
+.heart-button-icon {
+  text-align: center;
+}
+
+.likes-counter {
+  margin-left: 10px;
 }
 
 .date {

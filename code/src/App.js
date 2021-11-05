@@ -37,11 +37,12 @@ export const App = () => {
       body: JSON.stringify({ message: newThought }),
     };
 
-    // sends request to add new thought and then fetches the thoughts again
+    // sends request to add new thought and then fetches the thoughts again and clears the input field
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts();
+        setNewThought("");
       });
   };
 
@@ -61,7 +62,8 @@ export const App = () => {
 
   // displays the information on the page
   return (
-    <div>
+    <section className="main-container">
+      <h1>Share your happy thoughts</h1>
       {loading && <Loading />}
       <ThoughtForm
         onFormSubmit={handleFormSubmit}
@@ -76,6 +78,6 @@ export const App = () => {
           onLikesIncrease={handleLikesIncrease}
         />
       ))}
-    </div>
+    </section>
   );
 };

@@ -5,6 +5,8 @@ The goal this week was to learn more about using states in React by fetching and
 
 ## The problem
 
-Still in progress - will update this later on
+During this project I managed to grasp the different concepts in React in a bit more and practised posting data for the first time.
 
 ## View it live
+
+https://happy-thoughts-rephili.netlify.app/
