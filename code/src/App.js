@@ -68,8 +68,10 @@ export const App = () => {
   }
 
   return (
-    <div>
-      {loading && <LoadingItem />}
+    <>
+    {loading && <LoadingItem />}
+    
+    <div className="feed-wrapper">
       <ThoughtForm
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
@@ -84,6 +86,7 @@ export const App = () => {
         />
       ))}
     </div>
+    </>
   )
 
 }

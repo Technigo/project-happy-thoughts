@@ -7,15 +7,17 @@ const ThoughtItem = ( { thought, onLikesIncrease } ) => {
     return(
         <div>
             <p>{thought.message}</p>
-                <div className="like-wrapper">
+            <div className="like-wrapper like">
+                <div className="like">
                     <button 
-                        className="heart-btn"
+                        className={thought.hearts > 0 ? "heart-btn liked" : "heart-btn" }
                         onClick={() => onLikesIncrease(thought._id)}>
                         <Emoji symbol="❤️" label="Heart" />
                     </button>
                     <span>x {thought.hearts}</span>
                 </div>
-            <p className="date">Created at: {moment(thought.createdAt).fromNow()}</p>
+                <span className="date">{moment(thought.createdAt).fromNow()}</span>
+            </div>
       </div>
     )
 }
