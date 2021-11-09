@@ -21,8 +21,11 @@ const HappyThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
-      .finally(() => setLoading(false));
+      .finally(() => setTimeout(() => setLoading(false), 500));
   };
+
+  // setThoughts(data))
+  // setLoading(false))
 
   const handleThoughtsChange = (event) => {
     setNewThought(event.target.value);
