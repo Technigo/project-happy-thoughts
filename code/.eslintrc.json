@@ -2,6 +2,7 @@
   "parser": "babel-eslint",
   "extends": [
     "airbnb"
+    "prettier"
   ],
   "globals": {
     "document": true,
