@@ -34,9 +34,8 @@ export const App = () => {
       .then((res) => res.json()
       .then(() => {
         fetchThoughts()
+        setNewThought('')
       }))
-
-    setNewThought('')
   }
 
   return (
