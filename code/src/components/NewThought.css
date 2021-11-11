@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 80%;
+  max-width: 90%;
   height: fit-content;
   margin: 20px auto 30px;
   border: 1px solid #000;
@@ -49,7 +50,8 @@ textarea {
 
 @media (min-width: 670px) and (max-width: 1049px) {
   .newThoughtWrapper {
-    width: 500px;
+    width: 60%;
+    max-width: 70%;
     height: 300px;
   }
   .newThoughtWrapper label {
