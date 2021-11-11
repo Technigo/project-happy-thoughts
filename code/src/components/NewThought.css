@@ -4,8 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  max-width: 90%;
+  width: 95%;
+  max-width: 95%;
   height: fit-content;
   margin: 20px auto 30px;
   border: 1px solid #000;
@@ -35,7 +35,7 @@ textarea {
 }
 
 .sendThought {
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Trispace", sans-serif;
   background-color: #ffadad;
   color: #000;
