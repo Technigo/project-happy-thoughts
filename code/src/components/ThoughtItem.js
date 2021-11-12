@@ -2,15 +2,19 @@ import React from 'react'
 import { useState } from 'react'
 import moment from 'moment'
 
-const ThoughtItem = ({ thought, onLikeSubmit }) => {
+const ThoughtItem = ({ thought, onLikeSubmit, id }) => {
     const [clicks, setClicks] = useState(0)
+    const [yourPreviousLikes, setYourPreviousLikes] = useState(JSON.parse(localStorage.getItem(id)) + 0)
     const [color, setColor] = useState("eaeaea");
 
     const onIncreaseClicks = (id) => {
         setClicks(clicks + 1)
         onLikeSubmit(id)
         setColor("#ffadad")
+        setYourPreviousLikes((oldState) => oldState + 1)
+        localStorage.setItem(id, JSON.stringify(yourPreviousLikes + 1))
     }
+
     return (
         <div className="thought-card">
             <p className="thought-title">{thought.message}</p>
@@ -23,7 +27,7 @@ const ThoughtItem = ({ thought, onLikeSubmit }) => {
                 </div>
                 <p className="date">{moment(thought.createdAt).fromNow()}</p>
             </div>
-            <p className="likes-counter"> you liked this thought {clicks} {clicks > 1 ? "times" : "time"}</p>
+            <p className="likes-counter"> you liked this thought {yourPreviousLikes} {yourPreviousLikes > 1 ? "times" : "time"}</p>
         </div >
     )
 }

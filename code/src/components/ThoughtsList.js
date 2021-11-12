@@ -5,7 +5,7 @@ const ThoughtsList = ({ thoughts, onLikeSubmit }) => {
     return (
         <>
             {thoughts.map(thought => (
-                <ThoughtItem key={thought._id} onLikeSubmit={onLikeSubmit} thought={thought} />
+                <ThoughtItem key={thought._id} id={thought._id} onLikeSubmit={onLikeSubmit} thought={thought} />
 
             ))}
         </>
