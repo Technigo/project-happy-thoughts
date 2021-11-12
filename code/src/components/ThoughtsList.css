@@ -2,7 +2,7 @@
   margin: 30px auto 0;
   max-width: 90%;
   color: #000;
-  font-size: 14px;
+  font-size: 22px;
   font-weight: 500;
   text-align: left;
 }
@@ -10,6 +10,7 @@
 .thoughtsContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .thoughtWrapper {
@@ -35,7 +36,7 @@
 }
 
 .hearts {
-  font-size: 12px;
+  font-size: 14px;
   background-color: #ffadad;
   border: none;
   padding: 10px;
@@ -57,15 +58,15 @@
 
 @media (min-width: 670px) and (max-width: 1049px) {
   .thoughtWrapper {
-    width: 60%;
-    max-width: 70%;
-    height: 220px;
+    width: 90%;
+    max-width: 90%;
+    height: 280px;
   }
 
   .messageText {
     margin: 50px auto 20px;
     max-width: 80%;
-    font-size: 16px;
+    font-size: 26px;
   }
 
   .likesWrapper {
@@ -73,14 +74,14 @@
   }
 
   .hearts {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .numberOfLikes {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .date {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
