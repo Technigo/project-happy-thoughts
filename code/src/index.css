@@ -77,7 +77,6 @@ code {
   width: 220px;
   height: 40px;
   color: black;
-  font-weight: 700;
 }
 
 .send-thought-button:disabled {
@@ -174,5 +173,55 @@ code {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* Media queries */
+
+@media (max-width: 480px) {
+  .input-form {
+    width: 90vw;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .input-label {
+    font-size: 14px;
+  }
+
+  .thought-card {
+    width: 90vw;
+  }
+
+  .likes-counter {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .input-form {
+    width: 70vw;
+  }
+
+  .input-label {
+    font-size: 14px;
+  }
+
+  .thought-card {
+    width: 70vw;
+  }
+
+  .likes-counter {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 14px;
   }
 }
