@@ -3,12 +3,13 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(0deg, #FF9292 54%, #FFCCD2 100%);
+  background: linear-gradient(0deg, #ff9292 54%, #ffccd2 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
+  background-image: url("https://images6.alphacoders.com/114/thumb-1920-1146848.jpg");
 }
 
 /* loading */
@@ -27,13 +28,13 @@ body {
   animation-name: pump;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.26,-0.53,.57,2.32);
+  animation-timing-function: cubic-bezier(0.26, -0.53, 0.57, 2.32);
 }
 
 .heart-loader:before {
   content: "";
   position: absolute;
-  background: #EA4C89;
+  background: #ea4c89;
   height: 40px;
   width: 40px;
   z-index: 0;
@@ -45,7 +46,7 @@ body {
 .heart-loader .circle1 {
   content: "";
   position: absolute;
-  background: #EA4C89;
+  background: #ea4c89;
   height: 40px;
   width: 40px;
   z-index: 1;
@@ -56,7 +57,7 @@ body {
 .heart-loader .circle2 {
   content: "";
   position: absolute;
-  background: #EA4C89;
+  background: #ea4c89;
   height: 40px;
   width: 40px;
   z-index: 1;
@@ -71,31 +72,32 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
-  background: linear-gradient(0deg, #FF9292 54%, #FFCCD2 100%);
+  /* background: linear-gradient(0deg, #FF9292 54%, #FFCCD2 100%); */
+  background-image: url("https://images6.alphacoders.com/114/thumb-1920-1146848.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @keyframes pump {
-  0%{
-      transform: scale(1);
+  0% {
+    transform: scale(1);
   }
-  100%{
-      transform: scale(1.1);
+  100% {
+    transform: scale(1.1);
   }
 }
 
 @keyframes change {
   25%,
   50% {
-      margin-top: 30px;
-      margin-left: 0px;
+    margin-top: 30px;
+    margin-left: 0px;
   }
   75%,
   100% {
-      margin-top: 0px;
-      margin-left: 30px;
+    margin-top: 0px;
+    margin-left: 30px;
   }
 }
 
@@ -103,7 +105,7 @@ body {
 .form-container {
   display: flex;
   flex-direction: column;
-  padding: 20px; 
+  padding: 20px;
   margin: 30px;
   box-sizing: content-box;
   width: 320px;
@@ -121,31 +123,31 @@ body {
   padding: 30px;
   border: solid black 1px;
   font-size: larger;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 .send-button {
-border: none;
-border-radius: 20%;
-padding: 7px;
-margin-top: 10px;
-display: inline-flex;
-align-items: center ;
-color: black;
-background-color:#FF9292;
-width: fit-content;
-font-family: 'Cairo', sans-serif;
+  border: none;
+  border-radius: 20%;
+  padding: 7px;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  color: black;
+  background-color: #ff9292;
+  width: fit-content;
+  font-family: "Cairo", sans-serif;
 }
 
 .send-button:hover {
-  background-color: #FF7878;
+  background-color: #ff7878;
 }
 
 /* answers container */
 .answer-container {
   display: flex;
   flex-direction: column;
-  padding: 20px; 
+  padding: 20px;
   margin: 30px;
   box-sizing: content-box;
   width: 320px;
@@ -164,75 +166,75 @@ font-family: 'Cairo', sans-serif;
   border-radius: 20%;
   padding: 5px;
   display: inline-flex;
-  align-items: center ;
+  align-items: center;
   width: fit-content;
   height: min-content;
+}
+
+.heart-button:hover {
+  background-color: #ff7878;
+}
+
+.date {
+  font-style: italic;
+  color: gray;
+}
+
+.heart-button-and-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media only screen and (min-device-width: 668px) and (max-device-width: 1023px) {
+  .form-container {
+    font-size: x-large;
+    width: 600px;
+    padding: 30px;
+    margin: 30px;
+  }
+  .answer-container {
+    font-size: larger;
+    width: 600px;
+    padding: 30px;
+    margin: 50px 30px 50px 30px;
+  }
+  .send-button {
+    margin-top: 20px;
+    font-size: medium;
+    padding: 10px;
+  }
+  .heart-button {
+    font-size: medium;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: medium;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    font-size: x-large;
+    width: 900px;
+    padding: 40px;
+    margin: 50px 30px 50px 30px;
+  }
+  .answer-container {
+    font-size: x-large;
+    width: 900px;
+    padding: 40px 40px 20px 40px;
+    margin: 50px 30px 50px 30px;
   }
 
-  .heart-button:hover {
-    background-color: #FF7878;
+  .send-button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: medium;
   }
 
-  .date {
-    font-style: italic;
-    color: gray; 
+  .heart-button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: medium;
   }
-
-  .heart-button-and-date {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  @media only screen and (min-device-width: 668px) and (max-device-width: 1023px) {
-    .form-container{
-      font-size: x-large;
-      width: 600px;
-      padding: 30px;
-      margin: 30px;
-    }
-    .answer-container{
-      font-size: larger;
-      width: 600px;
-      padding: 30px;
-      margin: 50px 30px 50px 30px;
-    }
-    .send-button {
-      margin-top: 20px;
-      font-size: medium;
-      padding: 10px
-    }
-    .heart-button {
-      font-size: medium;
-      margin-top: 10px;
-      padding: 10px;
-      font-size: medium;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .form-container{
-      font-size: x-large;
-      width: 900px;
-      padding: 40px;
-      margin: 50px 30px 50px 30px;
-    }
-    .answer-container{
-      font-size: x-large;
-      width: 900px;
-      padding: 40px 40px 20px 40px;
-      margin: 50px 30px 50px 30px;
-    }
-
-    .send-button {
-      margin-top: 20px;
-      padding: 10px;
-      font-size: medium;
-    }
-
-    .heart-button {
-      margin-top: 10px;
-      padding: 10px;
-      font-size: medium;
-    }
-  }
+}
