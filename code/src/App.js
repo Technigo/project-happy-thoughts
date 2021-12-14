@@ -23,12 +23,8 @@ export const App = () => {
 			.finally(() => setLoading(false));
 	};
 
-	// console.log("Our data (thoughts)", thoughts);
-
 	const handleFormSubmit = (event) => {
 		event.preventDefault();
-
-		// console.log("Form submitted", { newThought });
 
 		const options = {
 			method: "POST",
@@ -53,7 +49,6 @@ export const App = () => {
 		fetch(LIKES_URL(thoughtId), options)
 			.then((response) => response.json())
 			.then((data) => {
-				// v1 increase likes only
 				const updatedThoughts = thoughts.map((item) => {
 					if (item._id === data._id) {
 						item.hearts += 1;
@@ -63,17 +58,12 @@ export const App = () => {
 					}
 				});
 				setThoughts(updatedThoughts);
-
-				//v2 fetch all the 20 thoughts (all updates)
-				//fetchThoughts();
 			});
 	};
 
 	return (
 		<main className="main-section">
 			{loading && <LoadingItem />}
-
-			{/*prettier-ignore*/}
 			<ThoughtForm
 				onFormSubmit={handleFormSubmit}
 				newThought={newThought}
@@ -81,34 +71,14 @@ export const App = () => {
 			/>
 
 			<section className="thoughts-section">
-				{/*prettier-ignore*/}
-				{thoughts.map((thought) =>
-					/*prettier-ignore*/
+				{thoughts.map((thought) => (
 					<ThoughtItem
 						key={thought._id}
 						thought={thought}
 						onLikesIncrease={handleLikesIncrease}
 					/>
-				)}
+				))}
 			</section>
 		</main>
 	);
 };
-
-// {thoughts.map((thought) => (
-// 		<div className="thought-container" key={thought._id}>
-// 			<p>{thought.message}</p>
-// 			<div className="info-text-container">
-// 				<button className="like-btn" onClick={() => onLikesIncrease(thought._id)}>
-// 					{" "}
-// 					<div className="heart-icon-container">
-// 						<span className="heart-icon" aria-label="heart icon">
-// 							❤️
-// 						</span>
-// 					</div>
-// 					<span className="like-counter"> x {thought.hearts}</span>
-// 				</button>
-// 				<p className="time-info">{moment(thought.createdAt).fromNow()}</p>
-// 			</div>
-// 		</div>
-// 	));}

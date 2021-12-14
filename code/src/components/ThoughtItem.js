@@ -6,15 +6,20 @@ export const ThoughtItem = ({ thought, onLikesIncrease }) => {
 		<div className="thought-container">
 			<p className="thoughts-messages">{thought.message}</p>
 			<div className="info-text-container">
-				<button className="like-btn" onClick={() => onLikesIncrease(thought._id)}>
-					{/*prettier-ignore*/}
+				<button
+					className="like-btn"
+					onClick={() => onLikesIncrease(thought._id)}
+				>
 					<div
 						className={
 							thought.hearts > 0
-							? "heart-icon-container clicked"
-							: "heart-icon-container"
-						}>
-						<span role="img" className="heart-icon" aria-label="heart icon">❤️</span>
+								? "heart-icon-container clicked"
+								: "heart-icon-container"
+						}
+					>
+						<span role="img" className="heart-icon" aria-label="heart icon">
+							❤️
+						</span>
 					</div>
 					<span className="like-counter"> x {thought.hearts}</span>
 				</button>
