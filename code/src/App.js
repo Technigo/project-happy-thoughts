@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { API_URL, LIKES_URL } from "./utils/urls";
-import ThoughtForm from "./Components/ThoughtForm";
-import ThoughtItem from "./Components/ThoughtItem";
-import LoadingItem from "./Components/LoadingItem";
+import React, { useEffect, useState } from 'react';
+import { API_URL, LIKES_URL } from './utils/urls';
+import ThoughtForm from './Components/ThoughtForm';
+import ThoughtItem from './Components/ThoughtItem';
+import LoadingItem from './Components/LoadingItem';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [newThought, setNewThought] = useState("");
+  const [newThought, setNewThought] = useState('');
   const [count, setCount] =
     useState(0); /*set state for send thoughts counter */
   const [loading, setLoading] = useState(false);
@@ -35,9 +35,9 @@ export const App = () => {
     event.preventDefault();
 
     const thoughts = {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ message: newThought }),
     };
@@ -51,7 +51,7 @@ export const App = () => {
   };
   const onLikesIncrease = (thoughtId) => {
     const options = {
-      method: "POST",
+      method: 'POST',
     };
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
@@ -64,7 +64,7 @@ export const App = () => {
     <fieldset>
       <legend> Happy thoughts project </legend>
 
-      <div className="app">
+      <div className='app'>
         {loading && <LoadingItem />}
         <div>
           <ThoughtForm

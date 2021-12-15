@@ -1,8 +1,11 @@
 body {
-  margin: 20px;
-  font-family: "Roboto Mono";
+  margin: 0 auto;
+  padding: 10px 20px 10px 10px;
+  font-family: 'Roboto Mono';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url('./hearts.jpg'); */
+  background-repeat: repeat;
 }
 
 html {
@@ -10,8 +13,17 @@ html {
 }
 
 code {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
 }
+
+/* .form-wrapper {
+  background-color: rgb(240, 240, 240);
+  border: 1px solid black;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 30px;
+  box-shadow: 10px 10px;
+} */
 
 p {
   font-size: 12px;
@@ -20,12 +32,14 @@ p {
 .thought-p {
   font-weight: 600;
   color: #333;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .form-title {
   font-size: 11px;
   font-weight: 600;
-  font-family: "Roboto Mono";
+  font-family: 'Roboto Mono';
   color: #333;
 }
 
@@ -45,7 +59,7 @@ p {
   font-weight: 700;
   color: rgb(63, 62, 62);
   background-color: rgb(255, 173, 173);
-  font-family: "Roboto Mono";
+  font-family: 'Roboto Mono';
   text-align: center;
   font-size: 10px;
   margin-bottom: 10px;
@@ -62,17 +76,17 @@ p {
 
 legend {
   color: #333;
-  padding: 5px;
+  padding: 15px;
   position: relative;
-  font-weight: 600;
   color: rgb(255, 173, 173);
-  font-family: "Roboto Mono";
+  font-family: 'Roboto Mono';
   font-weight: 700;
 }
 
 fieldset {
   padding: 10px 25px 20px 20px;
   width: 320px;
+  margin: 0 auto;
 }
 
 fieldset > legend {
@@ -103,28 +117,34 @@ button {
   margin-bottom: 8px;
 }
 
-.app {
+/* .app {
   margin: 0 auto;
-}
+} */
 
 .form {
   display: flex;
   align-items: left;
   flex-direction: column;
-  width: 300px;
+  max-width: 400px;
   background-color: rgb(242, 240, 240);
   border: 1px solid rgb(2, 2, 2);
   box-shadow: 7px 7px rgb(2, 2, 2);
   border-radius: 2px;
   margin-bottom: 1.5rem;
-  padding: 10px;
+  padding: 10px 30px 10px 30px;
+}
+
+.test {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .thoughts-card {
   display: flex;
   flex-direction: column;
   align-items: left;
-  width: 300px;
+  width: 400px;
+  height: auto;
   border: 1px solid #333;
   margin-bottom: 1rem;
   border: 1px solid rgb(63, 62, 62);
@@ -135,7 +155,7 @@ button {
 .thoughts-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .btn-heart {
@@ -198,5 +218,13 @@ button {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  fieldset {
+    padding: 10px 25px 20px 20px;
+    width: 320px;
+    margin: 0 auto;
   }
 }
