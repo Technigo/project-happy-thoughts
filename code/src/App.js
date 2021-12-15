@@ -64,11 +64,7 @@ export const App = () => {
     <fieldset>
       <legend> Happy thoughts project </legend>
 
-<<<<<<< HEAD
       <div className='app'>
-=======
-      <div className="app">
->>>>>>> b26ebeb9849581edd0bfb79510a39c73be4693c2
         {loading && <LoadingItem />}
         <div>
           <ThoughtForm
