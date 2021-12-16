@@ -1,236 +1,236 @@
 body {
-	padding: 0 auto;
-	margin: 0 auto;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-		sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  padding: 0 auto;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-	font-weight: 500;
+  font-weight: 500;
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .container {
-	padding: 15px 25px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: rgb(255, 255, 255);
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
 }
 
 .ContainerData {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* Container over post and masage */
 
 .messageContainer {
-	display: flex;
-	align-items: center;
-	justify-items: center;
-	flex-direction: column;
-	width: 100%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 /* Make a post area */
 
 .contentTextArea {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	margin-bottom: 25px;
-	background-color: rgb(242, 240, 240);
-	border: rgb(0, 0, 0) 1px solid;
-	border-radius: 1%;
-	box-shadow: 12px 12px 1px -5px black;
-	width: 100%;
-	max-width: 450px;
-	height: 140px;
-	white-space: normal;
-	word-break: normal;
-	padding: 10px 15px;
-	font-size: 15px;
-	font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: 25px;
+  background-color: rgb(242, 240, 240);
+  border: rgb(0, 0, 0) 1px solid;
+  border-radius: 1%;
+  box-shadow: 12px 12px 1px -5px black;
+  width: 100%;
+  max-width: 450px;
+  height: 140px;
+  white-space: normal;
+  word-break: normal;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .TextArea {
-	display: flex;
-	justify-content: center;
-	height: 40px;
-	margin: 5px 0px 15px 0px;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  margin: 5px 0px 15px 0px;
 }
 textarea {
-	background-color: rgb(255, 255, 255);
-	width: 100%;
-	height: 90%;
-	border: lightgray 1.5px solid;
-	resize: none;
-	overflow: hidden;
-	overflow-wrap: break-word;
-	padding: 7px 0 7px 7px;
-	font-family: monospace;
-	font-weight: 600;
-	font-size: 13px;
-	letter-spacing: 2px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 90%;
+  border: lightgray 1.5px solid;
+  resize: none;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  padding: 7px 0 7px 7px;
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 textarea:focus {
-	border: none;
-	border: rgb(185, 184, 184) 2px solid;
-	outline: none;
+  border: none;
+  border: rgb(185, 184, 184) 2px solid;
+  outline: none;
 }
 
 textarea:focus:invalid {
-	outline: none;
-	border: rgb(185, 184, 184) 2px solid;
-	background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg")
-		no-repeat 95% 50% rgb(255, 255, 255);
-	background-size: 25px;
+  outline: none;
+  border: rgb(185, 184, 184) 2px solid;
+  background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg")
+    no-repeat 95% 50% rgb(255, 255, 255);
+  background-size: 25px;
 }
 
 .counterButton {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .counterText {
-	font-size: 12px;
-	color: rgb(170, 168, 168);
+  font-size: 12px;
+  color: rgb(170, 168, 168);
 }
 
 .PostBtn {
-	background-color: rgb(255, 173, 173);
-	border: none;
-	border-radius: 100px;
-	padding: 9px 15px;
-	font-size: 13px;
-	font-weight: 600;
-	cursor: pointer;
-	margin: 10px 0;
+  background-color: rgb(255, 173, 173);
+  border: none;
+  border-radius: 100px;
+  padding: 9px 15px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px 0;
 }
 .PostBtn:hover {
-	background-color: rgb(245, 150, 150);
+  background-color: rgb(245, 150, 150);
 }
 
 /* Message container  */
 
 .content {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 
-	margin-bottom: 25px;
-	background-color: rgb(242, 240, 240);
-	border: rgb(0, 0, 0) 1px solid;
-	border-radius: 1%;
-	box-shadow: 12px 12px 1px -5px black;
-	width: 100%;
-	max-width: 450px;
-	height: 140px;
-	white-space: normal;
-	word-break: normal;
-	padding: 10px 15px;
-	font-size: 15px;
-	font-weight: 700;
+  margin-bottom: 25px;
+  background-color: rgb(242, 240, 240);
+  border: rgb(0, 0, 0) 1px solid;
+  border-radius: 1%;
+  box-shadow: 12px 12px 1px -5px black;
+  width: 100%;
+  max-width: 450px;
+  height: 140px;
+  white-space: normal;
+  word-break: normal;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 /* Text-box message */
 
 .TextPost {
-	height: 70%;
-	margin-bottom: 5px;
-	word-break: normal;
-	line-break: normal;
-	overflow: hidden;
-	overflow-wrap: break-word;
+  height: 70%;
+  margin-bottom: 5px;
+  word-break: normal;
+  line-break: normal;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .TextPost p {
-	text-align: start;
-	font-size: 1.2em;
-	font-family: monospace;
-	font-weight: 600;
-	line-height: 17px;
+  text-align: start;
+  font-size: 1.2em;
+  font-family: monospace;
+  font-weight: 600;
+  line-height: 17px;
 }
 
 /* Icon and timestamp */
 
 .iconAndTime {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30%;
 }
 
 .like {
-	padding-bottom: -10px;
-	font-size: 12px;
-	color: rgb(170, 168, 168);
-	font-family: sans-serif;
-	font-weight: 100;
+  padding-bottom: -10px;
+  font-size: 12px;
+  color: rgb(170, 168, 168);
+  font-family: sans-serif;
+  font-weight: 100;
 }
 
 .icon {
-	background-color: rgb(255, 173, 173);
-	border-radius: 100px;
-	padding: 10px;
-	margin-bottom: 5px;
-	font-size: 0.7em;
-	cursor: pointer;
+  background-color: rgb(255, 173, 173);
+  border-radius: 100px;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 0.7em;
+  cursor: pointer;
 }
 
 .icon:hover {
-	background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 .time {
-	font-size: 0.8em;
-	color: rgb(170, 168, 168);
+  font-size: 0.8em;
+  color: rgb(170, 168, 168);
 }
 
 .load {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-	font-size: 50px;
+  font-size: 50px;
 
-	animation: blur 0.75s ease-out infinite;
-	text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+  animation: blur 0.75s ease-out infinite;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
 }
 
 @keyframes blur {
-	from {
-		text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 25px #fff,
-			0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff,
-			0px 0px 25px rgb(255, 230, 0), 0px 0px 50px rgb(231, 255, 11),
-			0px 0px 50px rgb(255, 217, 1), 0px 0px 50px #ff0f0f, 0px 0px 150px #ff0f0f,
-			0px 10px 100px #ff0f0f, 0px 10px 100px #ff0f0f, 0px 10px 100px #ff0f0f,
-			0px 10px 100px #fbff00, 0px -10px 100px #ffd900, 0px -10px 100px #ff9900;
-	}
+  from {
+    text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 25px #fff,
+      0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff,
+      0px 0px 25px rgb(255, 230, 0), 0px 0px 50px rgb(231, 255, 11),
+      0px 0px 50px rgb(255, 217, 1), 0px 0px 50px #ff0f0f, 0px 0px 150px #ff0f0f,
+      0px 10px 100px #ff0f0f, 0px 10px 100px #ff0f0f, 0px 10px 100px #ff0f0f,
+      0px 10px 100px #fbff00, 0px -10px 100px #ffd900, 0px -10px 100px #ff9900;
+  }
 }
 
 @media (max-width: 500px) {
-	.TextPost p {
-		font-weight: 650;
-		font-size: 1.1em;
-		line-height: 15px;
-	}
+  .TextPost p {
+    font-weight: 650;
+    font-size: 1.1em;
+    line-height: 15px;
+  }
 }
 
 @media (max-width: 380px) {
-	.TextPost p {
-		font-weight: 700;
-		font-size: 0.9em;
-	}
+  .TextPost p {
+    font-weight: 700;
+    font-size: 0.9em;
+  }
 }

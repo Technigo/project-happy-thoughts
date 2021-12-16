@@ -1,19 +1,16 @@
-
-import React from 'react'
-
+import React from "react";
 
 const Loading = () => {
-    return (
-       
-<div className="load">
-<p> <span role='img' aria-label='heart-emoji'>
-          ❤️ 
-        </span></p>
+  return (
+    <div className="load">
+      <p>
+      
+        <span role="img" aria-label="heart-emoji">
+          ❤️
+        </span>
+      </p>
+    </div>
+  );
+};
 
-</div>
-
-        
-    )
-}
-
-export default Loading
+export default Loading;
