@@ -10,11 +10,11 @@ export const App = () => {
   const [countChar, setCountChar] = useState(0);
 
   useEffect(() => {
+    setLoading(true);
     fetchThoughts();
   }, []);
 
   const fetchThoughts = () => {
-    setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
@@ -46,9 +46,7 @@ export const App = () => {
 
     fetch(`${API_URL}/${thought_id}/like`, options)
       .then((res) => res.json())
-      .then((data) => console.log(data))
-      .then(fetchThoughts())
-      .finally(() => setLoading(false));
+      .then(fetchThoughts());
   };
 
   return (
