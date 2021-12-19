@@ -4,12 +4,7 @@ body {
   font-family: 'Roboto Mono';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url('./hearts.jpg'); */
   background-repeat: repeat;
-}
-
-html {
-  box-sizing: border-box;
 }
 
 html {
@@ -19,15 +14,6 @@ html {
 code {
   font-family: 'Roboto Mono', monospace;
 }
-
-/* .form-wrapper {
-  background-color: rgb(240, 240, 240);
-  border: 1px solid black;
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 30px;
-  box-shadow: 10px 10px;
-} */
 
 p {
   font-size: 12px;
@@ -121,10 +107,6 @@ button {
   margin-bottom: 8px;
 }
 
-/* .app {
-  margin: 0 auto;
-} */
-
 .form {
   display: flex;
   align-items: left;
@@ -159,7 +141,6 @@ button {
 .thoughts-container {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
 }
 
 .btn-heart {

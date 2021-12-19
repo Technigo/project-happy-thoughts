@@ -25,12 +25,6 @@ export const App = () => {
       .then((data) => setThoughts(data))
       .finally(() => setLoading(false));
   };
-
-  // useEffect(() => {
-  //   if (count >= 1) return <div>hello</div>;
-  // });
-  // console.log(count);
-
   const onFormSubmitt = (event) => {
     event.preventDefault();
 
@@ -44,8 +38,6 @@ export const App = () => {
     fetch(API_URL, thoughts)
       .then((res) => res.json())
       .then((data) => {
-        // setThoughts([data, ...thoughts]);
-
         fetchThoughts();
       });
   };
