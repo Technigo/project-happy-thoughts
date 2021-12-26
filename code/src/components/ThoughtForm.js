@@ -17,13 +17,11 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
           type="submit"
         >
           <span role="img" aria-label="heart image">
-            {" "}
-            ❤️{" "}
-          </span>{" "}
-          Send happy thought!{" "}
+            ❤️
+          </span>
+          Send happy thought!
           <span role="img" aria-label="heart image">
-            {" "}
-            ❤️{" "}
+            ❤️
           </span>
         </button>
       </form>

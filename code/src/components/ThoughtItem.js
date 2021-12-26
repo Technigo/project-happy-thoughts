@@ -12,10 +12,8 @@ const ThoughtItem = ({ thought, onLikeIncrease }) => {
               className="hearts"
               onClick={() => onLikeIncrease(thought._id)}
             >
-              {" "}
               <span role="img" aria-label="heart image">
-                {" "}
-                ❤️{" "}
+                ❤️
               </span>
             </button>
             <span className="x-hearts"> x {thought.hearts}</span>

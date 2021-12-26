@@ -9,6 +9,7 @@ import Footer from "components/Footer"
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
+
   // to keep track of the new thoughts beeing typed in the input field
   const [newThought, setNewThought] = useState("")
   const [loading, setLoading] = useState(false)
@@ -56,18 +57,6 @@ export const App = () => {
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((data) => {
-        // v1 increase likes only
-
-        // const updatedToughts = thoughts.map((item) => {
-        //   if (item._id === data._id) {
-        //     item.hearts += 1
-        //     return item
-        //   } else {
-        //     return item
-        //   }
-        // })
-        // setThoughts(updatedToughts)
-
         fetchThoughts()
       })
   }
