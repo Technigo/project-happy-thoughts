@@ -1,13 +1,13 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Twitter-like form reading and pushing to a public API, with an input box for the user to share some happy thoughts and see what others have shared.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This one was a bit tricky to understand completely. The most difficult part was to submit a thought properly and at the same time fetch the updated response in a manner that made sense to the user. Same thing with the like increase.
+
+Looking back at it, the code is relatively simple and clean. But starting from scratch it was anything but. Great learning experience.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://angry-kepler-3f096d.netlify.app/

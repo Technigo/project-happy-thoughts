@@ -8,7 +8,12 @@ import { API_URL, LIKES_URL } from 'utils/urls'
 
 export const App = () => {
 
-  const [thoughts, setThoughts] = useState([ { message: 'Hello', createdAt: '2021-11-01', hearts: 0, _id: 'abc123' } ])
+  const [thoughts, setThoughts] = useState([ { 
+    message: 'Hello',
+    createdAt: '2021-11-01',
+    hearts: 0,
+    _id: 'abc123'
+  } ])
   const [newThought, setNewThought] = useState('')
   const [loading, setLoading] = useState('false')
 

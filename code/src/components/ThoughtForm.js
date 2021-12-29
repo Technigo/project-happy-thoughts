@@ -7,8 +7,6 @@ const ThoughtForm = ( { onFormSubmit, newThought, setNewThought } ) => {
         <form onSubmit={onFormSubmit} className="submit-form">
             <label htmlFor="newThough"><h1>What's making <em>you</em> <strong>happy</strong> right now?</h1></label>
             <input
-                pattern=".{5,140}"
-                title="Your message must contain at least 5 characters, but no more than 140."
                 id="newThought"
                 type="text"
                 value={newThought}
@@ -16,15 +14,17 @@ const ThoughtForm = ( { onFormSubmit, newThought, setNewThought } ) => {
                 placeholder="Share a smile..."
                 required
             />
+            <p className="char-count">{newThought.length} / 100 characters</p>
             <button
                 className="submit-btn"
-                type="submit">
+                type="submit"
+                disabled={newThought.length < 1 || newThought.length > 100}
+            >
                 <Emoji symbol="❤️" label="Heart" />
                 <span>&nbsp;Send happy thoughts!&nbsp;</span>
                 <Emoji symbol="❤️" label="Heart" />
             </button>
         </form>
-
     )
 }
 
