@@ -13,8 +13,8 @@ const ThoughtItem = ({thought, onLikesIncrease}) => {
             <div className="heart-button-wrapper">
               <button onClick = {() => onLikesIncrease(thought._id)}
                 className="heart-button" style={{
-                  backgroundColor: thought.hearts > 0 ? "#fbabab" : "#f3f2f2",
-                }}>
+                  backgroundColor: thought.hearts > 0 ? "#fbabab" : "#f3f2f2", 
+                }}> 
                   <img src="/assets/red-heart.png" alt="red heart" className="heart"
                   ></img> 
                 </button>
