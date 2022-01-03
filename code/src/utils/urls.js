@@ -1,7 +1,7 @@
 
-
+// New exclusive API
 export const API_URL = 'https://happy-t-api.herokuapp.com/thoughts'
-export const API_URL_HEARTS = (thoughtId) => `hhttps://happy-t-api.herokuapp.com/thoughts/${thoughtId}/hearts`
+export const API_URL_HEARTS = (thoughtId) => `https://happy-t-api.herokuapp.com/thoughts/${thoughtId}/hearts`
 
 
 // Old Technigo public API
