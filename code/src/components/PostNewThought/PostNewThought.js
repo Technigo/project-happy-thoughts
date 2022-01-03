@@ -45,7 +45,7 @@ export const PostNewThought = ({
           disabled={newThought.length < 5 || newThought.length > 140}
         >
           <FontAwesomeIcon icon={faHeart} className="icon__heart--red" />
-          Send Happy Thougth
+          Send Happy Thought
           <FontAwesomeIcon icon={faHeart} className="icon__heart--red" />
         </button>
         {/* Made a likedPostValue that stores how many likes the user have given. */}
