@@ -1,6 +1,6 @@
 # Happy Thoughts
 
-Project making a Twitter clone with React components and useState/useEffect.
+Project making a sort of Twitter clone with React components and useState/useEffect.
 
 ## The problem
 
