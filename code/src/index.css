@@ -17,7 +17,7 @@ code {
   font-style: italic;
 }
 
-.thought-card {
+.thought-card{
   margin: 20px auto;
   border: 2px solid black;
   width: 350px;
@@ -42,14 +42,6 @@ code {
 .likes-button:hover {
   width: 80px;
   transform: scale(1.07);
-}
-
-/* MEDIA QUERIES */ 
-
-@media(min-width:1024px) {
-  .thought-card {
-      width: 500px;
-  }
 }
 
 .form {
@@ -89,14 +81,7 @@ textarea {
   height: 80px;
   max-width: 470px;
   max-height: 150px;
-}
-
-/* MEDIA QUERIES */ 
-
-@media(min-width:1024px) {
-  .form {
-      width: 500px;
-  }
+	padding: 10px;
 }
 
 .button-container {
@@ -125,6 +110,24 @@ button {
 
 button:hover {
   box-shadow: 5px 5px;
+}
+
+
+
+/* MEDIA QUERIES */ 
+
+@media(min-width:1024px) {
+  .form {
+      width: 500px;
+  }
+}
+
+/* MEDIA QUERIES */ 
+
+@media(min-width:1024px) {
+  .thought-card {
+      width: 500px;
+  }
 }
 
 /* MEDIA QUERIES */ 
