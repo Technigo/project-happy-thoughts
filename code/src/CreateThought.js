@@ -12,7 +12,7 @@ const CreateThought = ({ handleSubmitMessages, message, setMessage }) => {
           <textarea
             type="text"
             required
-            minLength="3"
+            minLength="5"
             maxLength="140"
             value={message}
             onChange={(e) => setMessage(e.target.value, e.target.reset)}

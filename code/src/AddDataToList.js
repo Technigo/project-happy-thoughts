@@ -3,9 +3,9 @@ import ListThought from "ListThought";
 import CreateThought from "CreateThought";
 import Loading from "Loading";
 
-const API = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+const API = "https://happy-thought-jess.herokuapp.com/thoughts/";
 const API_LIKE = (thoughtId) =>
-  `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
+  `https://happy-thought-jess.herokuapp.com/thoughts/${thoughtId}/like`;
 
 const AddDataToList = () => {
   const [posts, setPosts] = useState([]);
