@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import heart from './images/red-heart.png'; // Getting the red heart emoji
 
-import { API_URL, POST_URL, LIKES_URL } from './utils/urls'; // The file that holds the URLs for the project
+import { API_URL, LIKES_URL } from './utils/urls'; // The file that holds the URLs for the project
 import NewThought from 'components/NewThought';
 import AllThoughts from 'components/AllThoughts';
 import LoadingItem from 'components/Loading';
