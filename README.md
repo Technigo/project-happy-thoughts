@@ -7,6 +7,6 @@ This project's goals is to learn about a React component's lifecycle and how to 
 For this project, I've been digging deeper into React, and understanding of useEffect and useState.
 
 # View it here
-
+Now with backend!
 https://happy-thoughts-react-project.netlify.app/
 
