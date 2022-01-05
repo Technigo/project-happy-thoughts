@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Spinner } from 'componenets/Spinner'
 import moment from 'moment';
 
 import { API_URL, LIKES_URL, DELETE_URL } from './utils/urls';
@@ -13,6 +14,7 @@ export const App = () => {
   const [newThought, setNewThought] = useState('');
   const [filteredArray, setFilter] = useState([]);
   const [username, setUsername] = useState('');
+  const [spinner, setSpinner] = useState(false)
 
   // useEffect is like reaction to componenet behavior 
   // it can be a couple of useEffect in one componenet, and you can apply useEffect to different fases of componenet live 
@@ -81,6 +83,7 @@ export const App = () => {
       /*Sending request to backend*/
       // what to to here? add loader? 
       .then(() => {
+        setSpinner(true)
         window.location.reload()
       })
 
@@ -114,6 +117,56 @@ export const App = () => {
               &hearts; Send &hearts;
         </button>
       </form>
+      {spinner && <Spinner  />}
+      {filteredArray.map((thought) => ( 
+        <div key={thought._id} className="thought-card">
+          <p>{thought.message}</p>
+          <p style={{fontStyle: 'italic'}}>Posted by: {thought.username}</p>
+          <div className="button-container">
+            <button className="likes-button" 
+              onClick={() => handleLikesIncrease(thought._id)}
+            > 
+              &hearts; {thought.hearts}
+            </button>
+
+            <button className="likes-button"
+              onClick={() => handleDeleteMessage(thought._id)}
+            > 
+              <i className="fas fa-trash-alt"></i>
+            </button>
+          </div>
+
+          <p className="date">
+            {moment(thought.createdAt).fromNow()}
+          </p>
+        </div>
+      ))}
+
+      {/*{spinner === false ?
+        filteredArray.map((thought) => ( 
+          <div key={thought._id} className="thought-card">
+            <p>{thought.message}</p>
+            <p style={{fontStyle: 'italic'}}>Posted by: {thought.username}</p>
+            <div className="button-container">
+              <button className="likes-button" 
+                onClick={() => handleLikesIncrease(thought._id)}
+              > 
+                &hearts; {thought.hearts}
+              </button>
+  
+              <button className="likes-button"
+                onClick={() => handleDeleteMessage(thought._id)}
+              > 
+                <i className="fas fa-trash-alt"></i>
+              </button>
+            </div>
+  
+            <p className="date">
+              {moment(thought.createdAt).fromNow()}
+            </p>
+          </div>
+        )) : <Spinner />
+      }*/}
 
       {/* mapping filteredArray */ }
       {filteredArray.map((thought) => ( 
