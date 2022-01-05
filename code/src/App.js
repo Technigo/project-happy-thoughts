@@ -53,6 +53,7 @@ export const App = () => {
         setUsername('');
       });
   };
+
   /* function to increase the mount of hearts, passing the id of thought as argument to this function*/
   const handleLikesIncrease = (thoughtId) => {
     /*options object that needed to POST messages*/
@@ -66,9 +67,9 @@ export const App = () => {
       /*Sending request to backend*/ 
       .then(() => getRequest());
   };
-  // DELETE MESSSAGE FUNCTION
+
+  // delete message
   const handleDeleteMessage = (thoughtId) => {
-    console.log(thoughtId)
     /*options object that needed to POST messages*/
     const options = {
       method: 'DELETE',
@@ -136,7 +137,7 @@ export const App = () => {
           <p className="date">
             {moment(thought.createdAt).fromNow()}
           </p>
-      </div>
+        </div>
       ))};
 
      </>
