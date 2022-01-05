@@ -63,6 +63,7 @@ export const App = () => {
 
 	return (
 		<div>
+			<LoadingItem />
 			{loading && <LoadingItem />}
 			<ThoughtForm
 				onFormSubmit={handleFormSubmit}
