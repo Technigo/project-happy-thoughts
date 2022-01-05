@@ -13,7 +13,7 @@ const Thoughts = ({ thought, onHeartClick }) => {
             onClick={() => onHeartClick(thought._id)}
           >
             <p className="heart"> &hearts;</p>
-            <p className="hearts-count"> x {thought.hearts}</p>
+            <p className="hearts-count"> x {thought.heart}</p>
           </button>
           <p className="created-text">{moment(thought.createdAt).fromNow()}</p>
         </div>

@@ -27,7 +27,7 @@ const Form = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]));
+      .then((data) => setThoughts([data.response, ...thoughts]));
     setNewThought("");
   };
 
@@ -40,8 +40,8 @@ const Form = () => {
       .then((res) => res.json())
       .then((data) => {
         const updatedThoughts = thoughts.map((item) => {
-          if (item._id === data._id) {
-            item.hearts += 1;
+          if (item._id === data.response._id) {
+            item.heart += 1;
             return item;
           } else {
             return item;
