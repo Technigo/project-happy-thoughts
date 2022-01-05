@@ -24,7 +24,8 @@ export const App = () => {
       method: 'POST',
     }
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+      // `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+      `https://happyhappythoughts.herokuapp.com/thoughts/:thoughtId/like`,
       options
     )
       .then((response) => response.json())
