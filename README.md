@@ -1,13 +1,12 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was made my using an API of happy thoughts to fetch and get but also to post new data into the API by writing and submitting new "happy thoughts" to be generated on the page and in the backend like a feed of the latest 20 posts. A design was given to be followed.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I had a few roadblocks in this project. One example was that new thoughts that I tried to submit wasn't getting posted to the page, after investigating it didn't seem to appear in the backend either (using POSTMAN to check the data). Since the rest of the code was working I did not get a error and therefore needed to trace the problem to the submit-input component and app.js. after comparing them side by side I realised that the props-naming were not the same and therefore they did not connect. after solving that I was able to continue with only minor roadblocks.
+If I had more time aI would add a error-catching message on the front end side when the input is too short or too long.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://waliem-project-happy-thoughts.netlify.app/
