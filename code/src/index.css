@@ -7,9 +7,10 @@
 body {
 	/* background-color: #ffadad; */
 	background-image: url(./images/background.jpg);
-	background-position: bottom;
+	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	height: 100%;
 	font-weight: 400;
 	font-size: 12px;
 	font-family: 'Trispace', sans-serif;
@@ -81,7 +82,7 @@ body {
 	color: black;
 	border: none;
 	font-weight: bold;
-	transition: all 0.2s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 
 .thought-btn:hover {

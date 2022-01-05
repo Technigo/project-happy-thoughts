@@ -42,6 +42,7 @@ export const App = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				fetchThoughts();
+				setNewThought(''); // This clears the textarea for a new input
 			});
 	};
 	//function that adds 1 like by pressing the heart
