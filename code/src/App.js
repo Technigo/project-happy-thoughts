@@ -32,7 +32,7 @@ const [loading, setLoading] = useState(false);
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ message: newThought })
+      body: JSON.stringify({ text: newThought })
     }
 
     fetch(API_URL, options)
