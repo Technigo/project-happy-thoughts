@@ -4,7 +4,7 @@ import ThoughtsList from './components/ThoughtsList'
 import LoadingSpinner from './components/LoadingSpinner'
 import Header from 'components/Header'
 
-import { API_URL, LIKES_URL } from './utils/urls'
+import { API_URL, LIKES_URL, DELETE_URL } from './utils/urls'
 
 
 export const App = () => {
@@ -20,7 +20,10 @@ export const App = () => {
   const fetchThoughts = () => {
     fetch(API_URL)
       .then(res => res.json())
-      .then(data => setThoughts(data))
+      .then(data => {
+        setThoughts(data.response)
+        console.log(data)
+      })
       .finally(() => {
         setLoading(false)
       })
@@ -79,6 +82,16 @@ export const App = () => {
       .catch(error => console.error(error))
   }
 
+  const handleDeleteThoughts = (id) => {
+    const options = {
+      method: 'DELETE'
+    }
+
+    fetch(DELETE_URL(id), options)
+      .then((data) => fetchThoughts())
+      .catch(error => console.log(error))
+  }
+
 
   return (
     <main className="main-container">
@@ -93,6 +106,7 @@ export const App = () => {
       <ThoughtsList
         thoughts={thoughts}
         onLikeSubmit={handleLikesIncrease}
+        onDeleteThought={handleDeleteThoughts}
       />
     </main >
   )

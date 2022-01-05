@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import moment from 'moment'
+import { FaTrashAlt } from 'react-icons/fa';
 
-const ThoughtItem = ({ thought, onLikeSubmit, id }) => {
+const ThoughtItem = ({ thought, onLikeSubmit, id, onDeleteThought }) => {
     const [clicks, setClicks] = useState(0)
     const [yourPreviousLikes, setYourPreviousLikes] = useState(JSON.parse(localStorage.getItem(id)) + 0)
     const [color, setColor] = useState("eaeaea");
@@ -27,7 +28,10 @@ const ThoughtItem = ({ thought, onLikeSubmit, id }) => {
                 </div>
                 <p className="date">{moment(thought.createdAt).fromNow()}</p>
             </div>
-            <p className="likes-counter"> you liked this thought {yourPreviousLikes} {yourPreviousLikes > 1 ? "times" : "time"}</p>
+            <div className="additional-info">
+                <p className="likes-counter"> you liked this thought {yourPreviousLikes} {yourPreviousLikes > 1 ? "times" : "time"}</p>
+                <button className="button-delete" onClick={() => onDeleteThought(thought._id)}><FaTrashAlt /></button>
+            </div>
         </div >
     )
 }
