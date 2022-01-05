@@ -1,4 +1,4 @@
-export const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+export const API_URL = 'https://alisebrink-happy-thoughts.herokuapp.com/thoughts';
 
 // URL for getting the post that you click on
-export const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
+export const LIKES_URL = (thoughtId) => `https://alisebrink-happy-thoughts.herokuapp.com/${thoughtId}/like`;
