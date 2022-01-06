@@ -71,13 +71,13 @@ export const App = () => {
         setNewPost={handleNewPostChange}
       />
 
-      {post?.map((thought) => (
+      {/* {post?.map((thought) => (
         <Posts
           key={thought._id}
           thought={thought}
           onSendLike={handleSendLike}
         />
-      ))}
+      ))} */}
     </div>
   );
 };
