@@ -7,14 +7,14 @@ const ThoughtItem = ({thought, onLikesIncrease}) => {
         <div className="message-container">
           <div className="displayed-message">
             <p className="thought-message">{thought.message}</p>
-            <p>{thought.name}</p>
+            <p className="name-message">{thought.name}</p>
           </div>
   
           <div className="button-row">
             <div className="heart-button-wrapper">
               <button onClick = {() => onLikesIncrease(thought._id)}
                 className="heart-button" style={{
-                  backgroundColor: thought.hearts > 0 ? "#fbabab" : "#f3f2f2", 
+                  backgroundColor: thought.hearts > 0 ? "#878DF7" : "#fbabab", 
                 }}> 
                   <img src="/assets/red-heart.png" alt="red heart" className="heart"
                   ></img> 

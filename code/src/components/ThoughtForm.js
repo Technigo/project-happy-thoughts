@@ -1,11 +1,6 @@
 import React from 'react'
 
 const ThoughtForm = ({onFormSubmit, setNewThought, newThought, newName, setNewName}) => {
-
-  const handleNewName = (e) => {
-    setNewName(e.target.value);
-  };
-
     return (
 
       <form onSubmit={onFormSubmit} className="form-container">
@@ -18,11 +13,13 @@ const ThoughtForm = ({onFormSubmit, setNewThought, newThought, newName, setNewNa
           onChange= {(e) => setNewThought(e.target.value)}
           ></textarea>
           <input
+            className="name-input"
             type='text' 
             placeholder='Your name (optional)'
             maxLength='20'
             value={newName}
-            onChange={handleNewName}></input>
+            onChange={(e) => setNewName(e.target.value)}>
+            </input>
             
           <div className="button-count">
             <button disabled = {newThought.length<5 || newThought.length>140}type="submit" className="submit-button">
