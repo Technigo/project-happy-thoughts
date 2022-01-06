@@ -7,14 +7,10 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [filter, setFilter] = useState('Newest')
 
-  const handleFilterChange = (event) => {
-    setFilter(event.target.value)
-  }
-
   //Fetches the messages from the API
   useEffect(() => {
     fetchThoughts()
-  }, [handleFilterChange])
+  }, [])
 
   const fetchThoughts = () => {
     fetch(API_URL)
@@ -32,7 +28,7 @@ export const App = () => {
       method: 'POST',
     }
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+      `https://carling-happythoughts-api.herokuapp.com/thoughts/${id}/like`,
       options
     )
       .then((res) => res.json())
@@ -40,6 +36,10 @@ export const App = () => {
         fetchThoughts()
       })
       .catch((error) => error)
+  }
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value)
   }
 
   return (
