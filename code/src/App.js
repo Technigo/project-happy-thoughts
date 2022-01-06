@@ -47,6 +47,7 @@ export const App = () => {
       .catch((err) => console.err(err));
 
     setNewPost("");
+    setNewUser("");
   };
 
   const handleNewPostChange = (event) => setNewPost(event.target.value);
