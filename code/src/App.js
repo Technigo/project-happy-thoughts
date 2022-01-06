@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { API_URL, LIKES_URL } from "./utils/urls";
-import List from "./components/List";
-import Form from "./components/Form";
-import Loading from "./components/Loading";
+import React, { useEffect, useState } from 'react';
+import { API_URL, LIKES_URL } from './utils/urls';
+import List from './components/List';
+import Form from './components/Form';
+import Loading from './components/Loading';
 
 export const App = () => {
   const [list, setList] = useState([]);
-  const [form, setForm] = useState("");
+  const [form, setForm] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setList(data))
+      .then((data) => setList(data.response))
       .finally(() => setLoading(false));
   }, []);
 
   const onFormSubmit = (event) => {
     event.preventDefault();
     const options = {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ message: form }),
     };
@@ -31,13 +31,13 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => {
         setList([data, ...list]);
-        setForm("");
+        setForm('');
       });
   };
 
   const handleLikesIncrease = (listId) => {
     const options = {
-      method: "POST",
+      method: 'POST',
     };
 
     fetch(LIKES_URL(listId), options)
@@ -62,14 +62,14 @@ export const App = () => {
         <h1>Happy thoughts!</h1>
       </header>
       {loading && <Loading />}
-      <div className="container">
+      <div className='container'>
         <Form onFormSubmit={onFormSubmit} form={form} setForm={setForm} />
         <List list={list} handleLikesIncrease={handleLikesIncrease} />
       </div>
       <footer>
         <h1>
           Hedvig Mejstedt
-          <span role="img" aria-label="lion emoji">
+          <span role='img' aria-label='lion emoji'>
             🦁
           </span>
         </h1>

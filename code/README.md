@@ -1,9 +1,9 @@
 # The Project
 
-In this project we build an app where you can post a message that's between 5-140 characters. There is also a heart function where you can like messages.
+The assignment was to build a twitter-like app where you can post a message and like the messages shown in the list. To build the app i used react, props and my API i build in an project named: happy thoughts api.
 
 ## The problem
 
-This week I've had some problems with understanding how al the elements function together and how to use the fetches in the different elements. Right now i'm struggeling with the form and how to display the thought from the form right away at the list. Right now an empty area (where the thought should show) appears and only when i reload the page the thougt appears.
+I implemented my own API in this project, but unfortunately i had some problems with the implementation. When you write a new message or click on the hearts you first have to reload the site to se the updated information. If i had more time i would love to fix that problem and also make it possible to write a username, so one can se who the message is from.
 
-I also wanted to make the heart perfectly round, and change colors when clicked. Last but not least I wanted to make a count down for the characters if i had more time. This week i have struggeld a lot with time management and had to make the whole app on a day when i had to care of my infant baby.
+I would also love to do a more exiting design for the app. Maybe a light/ dark mode.
