@@ -2,8 +2,6 @@ import React from 'react';
 import moment from 'moment';
 
 const List = ({ list, handleLikesIncrease }) => {
-  console.log(list);
-
   return (
     <div>
       {list.map((list) => (

@@ -30,7 +30,7 @@ export const App = () => {
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
-        setList([data, ...list]);
+        setList([data.response, ...list]);
         setForm('');
       });
   };
@@ -44,7 +44,7 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => {
         const updatedList = list.map((item) => {
-          if (item._id === data._id) {
+          if (item._id === data.response._id) {
             item.hearts += 1;
             return item;
           } else {
