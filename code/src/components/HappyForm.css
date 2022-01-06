@@ -1,61 +1,53 @@
-.happyThoughtInput{    
-    font-family: 'Roboto', sans-serif;
-    background-color: #efefef;
-    padding: 15px;
-    margin: 0 0 20px;
-    width: 100%;
-    min-width: 260px;
-    max-width: 450px;
-    height: 100%;
-    border: 1px solid #000;
-    box-shadow: 6px 6px #000;
-    align-items: center;
+.happyThoughtInput {
+  font-family: 'Roboto', sans-serif;
+  background-color: #efefef;
+  padding: 15px;
+  margin: 0 0 20px;
+  width: 100%;
+  min-width: 260px;
+  max-width: 450px;
+  height: 100%;
+  border: 1px solid #000;
+  box-shadow: 6px 6px #000;
+  align-items: center;
 }
 
-.happyThoughtButton{
-    font-family: 'Roboto', sans-serif;
-    color: #000; 
-    background-color: #ffadad;
-    font-size: 14px; 
-    padding: 10px 15px; 
-    border-radius: 20px;
+.happyThoughtButton {
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  background-color: #ffadad;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 20px;
 }
-
 
 textarea {
-    resize: none;
-    width: 100%;
-    font-family: 'Oxygen Mono';
-    font-size: 12px;
-    padding: 10px;
-    margin: 10px 0;
-
+  resize: none;
+  width: 100%;
+  font-family: 'Oxygen Mono';
+  font-size: 12px;
+  padding: 10px;
+  margin: 10px 0;
 }
-
 
 /* Responsiveness SMALL SCREEN */
 @media (min-width: 992px) {
+  .happyThoughtInput {
+    padding: 30px;
+    max-width: 680px;
+    box-shadow: 10px 10px #000;
+    font-size: 24px;
+  }
 
-    .happyThoughtInput{    
-        padding: 30px;
-        max-width: 680px;
-        box-shadow: 10px 10px #000;
-        font-size: 24px;
-    
-    }
-    
-    .happyThoughtButton{
-        font-size: 18px; 
-        padding: 15px 25px; 
-        border-radius: 30px;
-    }
-    
-    
-    textarea {
-        font-size: 16px;
-        padding: 15px;
-        margin: 20px 0;
-    
-    }
+  .happyThoughtButton {
+    font-size: 18px;
+    padding: 15px 25px;
+    border-radius: 30px;
+  }
 
+  textarea {
+    font-size: 16px;
+    padding: 15px;
+    margin: 20px 0;
+  }
 }
