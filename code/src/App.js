@@ -1,38 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { API_URL } from 'utils/urls';
+import React, { useState, useEffect } from 'react'
+import { API_URL } from 'utils/urls'
 
-import Header from 'components/Header';
-import PostAThought from 'components/PostAThought';
-import Footer from 'components/Footer';
-import LoadingSpinner from 'components/LoadingSpinner';
-import Confetti from 'react-confetti';
-import likeAPost from 'likeAPost'; // likeAPost is a function, not an component. Therefore in camelCase.
-import RecentThoughtsList from './components/RecentThoughtsList';
+import Header from 'components/Header'
+import PostAThought from 'components/PostAThought'
+import Footer from 'components/Footer'
+import LoadingSpinner from 'components/LoadingSpinner'
+import Confetti from 'react-confetti'
+import likeAPost from 'likeAPost' // likeAPost is a function, not an component. Therefore in camelCase.
+import deleteAPost from 'deleteAPost' // deleteAPost is a function, not an component. Therefore in camelCase.
+import RecentThoughtsList from './components/RecentThoughtsList'
 
 export const App = () => {
-  const [recentThoughts, setRecentThoughts] = useState([]);
-  const [newThought, setNewThought] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
+  const [recentThoughts, setRecentThoughts] = useState([])
+  const [newThought, setNewThought] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [showConfetti, setShowConfetti] = useState(false)
 
   const fetchThoughts = () => {
-    setLoading(true);
+    setLoading(true)
     fetch(API_URL)
       .then((res) => res.json())
       .then((json) => setRecentThoughts(json))
-      .finally(() => setLoading(false));
-  };
+      .finally(() => setLoading(false))
+  }
 
   useEffect(() => {
-    fetchThoughts();
-  }, []);
+    fetchThoughts()
+  }, [])
 
   const onNewThoughtChange = (event) => {
-    setNewThought(event.target.value);
-  };
+    setNewThought(event.target.value)
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const options = {
       method: 'POST',
@@ -40,24 +41,30 @@ export const App = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ message: newThought }),
-    };
+    }
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((json) => setRecentThoughts([json, ...recentThoughts]));
+      .then((json) => setRecentThoughts([json, ...recentThoughts]))
     // empty the textarea after posting a happy thought
-    setNewThought('');
+    setNewThought('')
     // each time an user is sending a happy thought, it will show confetti
-    setShowConfetti(true);
-  };
+    setShowConfetti(true)
+  }
 
   // return a promise rather than directly returning the value
   // async keyword turns a function into a promise
   const handleLikes = async (thoughtID) => {
     likeAPost({ thoughtID, recentThoughts }).then((updatedLikes) => {
-      setRecentThoughts(updatedLikes);
-    });
-  };
+      setRecentThoughts(updatedLikes)
+    })
+  }
+
+  const handleDelete = async (thoughtID) => {
+    deleteAPost({ thoughtID, recentThoughts }).then((remainingThoughts) => {
+      setRecentThoughts(remainingThoughts)
+    })
+  }
 
   return (
     <>
@@ -95,6 +102,7 @@ export const App = () => {
         <RecentThoughtsList
           recentThoughts={recentThoughts}
           onLikes={handleLikes}
+          onDelete={handleDelete}
         />
       </fieldset>
       <Footer
@@ -102,5 +110,5 @@ export const App = () => {
         textLineTwo='Team Foxes | Technigo'
       />
     </>
-  );
-};
+  )
+}

@@ -1,23 +1,23 @@
-import { API_URL_LIKE } from 'utils/urls';
+import { API_URL_LIKE } from 'utils/urls'
 
 const likeAPost = ({ thoughtID, recentThoughts }) => {
   const options = {
     method: 'POST',
-  };
+  }
 
   return fetch(API_URL_LIKE(thoughtID), options)
     .then((res) => res.json())
     .then((json) => {
       const updateLikes = recentThoughts.map((thought) => {
         if (thought._id === json._id) {
-          thought.hearts += 1;
-          return thought;
+          thought.hearts += 1
+          return thought
         } else {
-          return thought;
+          return thought
         }
-      });
-      return updateLikes;
-    });
-};
+      })
+      return updateLikes
+    })
+}
 
-export default likeAPost;
+export default likeAPost

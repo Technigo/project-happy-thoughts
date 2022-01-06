@@ -192,7 +192,8 @@ footer a:hover {
   align-items: center;
 }
 
-.refresh-button {
+.refresh-button,
+.delete-button {
   font-family: 'Courier New';
   font-size: 16px;
   font-weight: 700;
@@ -204,8 +205,15 @@ footer a:hover {
   color: var(--refresh-text-color);
 }
 
+.delete-button {
+  margin: 0;
+  font-size: 14px;
+}
+
 .refresh-button:hover,
-.refresh-button:focus {
+.refresh-button:focus,
+.delete-button:hover,
+.delete-button:focus {
   cursor: pointer;
   background: var(--refresh-hover-bg-color);
   color: var(--refresh-hover-text-color);

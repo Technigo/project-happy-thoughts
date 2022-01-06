@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const PostAThought = ({
   newThought,
@@ -44,7 +44,7 @@ const PostAThought = ({
         </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default PostAThought;
+export default PostAThought

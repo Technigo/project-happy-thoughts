@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const LoadingSpinner = () => {
   return (
@@ -6,7 +6,7 @@ const LoadingSpinner = () => {
       <img src='./assets/Heart.svg' alt='loading spinner' />
       <p>from loading.io</p>
     </div>
-  );
-};
+  )
+}
 
-export default LoadingSpinner;
+export default LoadingSpinner
