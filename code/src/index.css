@@ -106,6 +106,18 @@ textarea {
   font-size: 18px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.button {
+  margin-right: 3px;
+  box-shadow: 5px 5px black;
+  background: #f2f2f2;
+  border: 1px solid black;
+}
 .posts {
   background: #fff;
 }

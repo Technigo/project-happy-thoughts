@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import NewPost from "components/NewPost";
 import Posts from "components/Posts";
 import Loading from "components/Loading";
 
 import { API_URL, LIKE_URL } from "./utils/urls";
+import Pagination from "components/Pagination";
 
 export const App = () => {
   const [post, setPost] = useState([]);
   const [newPost, setNewPost] = useState("");
   const [newUser, setNewUser] = useState("");
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(5);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  const fetchPosts = () => {
+  const fetchPosts = useCallback(() => {
     setLoading(true);
-    fetch(API_URL)
+    fetch(`${API_URL}?page=${page}&perPage=${perPage}`)
       .then((res) => res.json())
       .then((data) => setPost(data.message))
       .finally(() => setLoading(false));
-  };
+  }, [page, perPage]);
+
+  useEffect(() => {
+    fetchPosts();
+  }, [fetchPosts]);
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
@@ -68,6 +71,16 @@ export const App = () => {
       });
   };
 
+  const nextPage = () => {
+    setPage(page + 1);
+  };
+
+  const previousPage = () => {
+    setPage(page - 1);
+  };
+
+  const handlePerPageChange = (event) => setPerPage(event.target.value);
+
   return (
     <div>
       {loading && <Loading />}
@@ -78,7 +91,12 @@ export const App = () => {
         setNewPost={handleNewPostChange}
         setNewUser={handleNewUserChange}
       />
-
+      <Pagination
+        perPage={perPage}
+        setPerPage={handlePerPageChange}
+        nextPage={nextPage}
+        previousPage={previousPage}
+      />
       {post.map((thought) => (
         <Posts
           key={thought._id}
