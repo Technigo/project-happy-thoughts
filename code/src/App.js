@@ -10,7 +10,7 @@ export const App = () => {
   //Fetches the messages from the API
   useEffect(() => {
     fetchThoughts()
-  }, [])
+  })
 
   const fetchThoughts = () => {
     fetch(API_URL)
