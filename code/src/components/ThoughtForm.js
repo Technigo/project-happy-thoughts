@@ -1,6 +1,10 @@
 import React from 'react'
 
-const ThoughtForm = ({onFormSubmit, setNewThought, newThought}) => {
+const ThoughtForm = ({onFormSubmit, setNewThought, newThought, newName, setNewName}) => {
+
+  const handleNewName = (e) => {
+    setNewName(e.target.value);
+  };
 
     return (
 
@@ -13,6 +17,13 @@ const ThoughtForm = ({onFormSubmit, setNewThought, newThought}) => {
           value={newThought}
           onChange= {(e) => setNewThought(e.target.value)}
           ></textarea>
+          <input
+            type='text' 
+            placeholder='Your name (optional)'
+            maxLength='20'
+            value={newName}
+            onChange={handleNewName}></input>
+            
           <div className="button-count">
             <button disabled = {newThought.length<5 || newThought.length>140}type="submit" className="submit-button">
               <div className="send-wrapper">

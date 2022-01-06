@@ -7,6 +7,7 @@ const ThoughtItem = ({thought, onLikesIncrease}) => {
         <div className="message-container">
           <div className="displayed-message">
             <p className="thought-message">{thought.message}</p>
+            <p>{thought.name}</p>
           </div>
   
           <div className="button-row">
