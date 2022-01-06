@@ -12,6 +12,7 @@ const Posts = ({ thought, onSendLike }) => {
   return (
     <div className="container posts">
       <p className="message">{thought.message}</p>
+      <p className="message">{thought.user}</p>
       <div className="inner-container">
         <div className="hearts-counter">
           <button

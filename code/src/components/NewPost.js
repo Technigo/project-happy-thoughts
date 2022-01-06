@@ -1,6 +1,12 @@
 import React from "react";
 
-const NewPost = ({ newPost, onSubmitForm, setNewPost }) => {
+const NewPost = ({
+  newPost,
+  onSubmitForm,
+  setNewPost,
+  newUser,
+  setNewUser,
+}) => {
   const characters = newPost.length;
   return (
     <>
@@ -16,6 +22,18 @@ const NewPost = ({ newPost, onSubmitForm, setNewPost }) => {
           value={newPost}
           onChange={setNewPost}
         />
+        <label htmlFor="user" className="user">
+          <textarea
+            cols="35"
+            rows="1"
+            id="user"
+            value={newUser}
+            onChange={setNewUser}
+            className="userId"
+            placeholder="Post as..."
+          />
+        </label>
+
         <div className="button-container">
           <button className="submit" type="submit">
             <span className="hearts">&hearts;</span>

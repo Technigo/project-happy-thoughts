@@ -68,6 +68,13 @@ code {
   padding-bottom: 10px;
 }
 
+.userId {
+  margin-top: 5px;
+  height: 20px;
+  width: 45%;
+  border: 1px solid black;
+}
+
 .button-container {
   display: flex;
   justify-content: space-between;

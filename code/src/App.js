@@ -8,6 +8,7 @@ import { API_URL, LIKE_URL } from "./utils/urls";
 export const App = () => {
   const [post, setPost] = useState([]);
   const [newPost, setNewPost] = useState("");
+  const [newUser, setNewUser] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -30,7 +31,10 @@ export const App = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message: newPost }),
+      body: JSON.stringify({
+        message: newPost,
+        user: newUser,
+      }),
     };
 
     fetch(API_URL, options)
@@ -46,6 +50,7 @@ export const App = () => {
   };
 
   const handleNewPostChange = (event) => setNewPost(event.target.value);
+  const handleNewUserChange = (event) => setNewUser(event.target.value);
 
   const handleSendLike = (postId) => {
     const options = {
@@ -66,9 +71,11 @@ export const App = () => {
     <div>
       {loading && <Loading />}
       <NewPost
+        newUser={newUser}
         newPost={newPost}
         onSubmitForm={handleSubmitForm}
         setNewPost={handleNewPostChange}
+        setNewUser={handleNewUserChange}
       />
 
       {post.map((thought) => (
