@@ -45,7 +45,7 @@ export const App = () => {
   // Function to post a message on the API
   const likeThisThought = (id) => {
     fetch(API_LIKE_URL(id), {
-      method: "POST",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
