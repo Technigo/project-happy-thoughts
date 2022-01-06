@@ -29,12 +29,12 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 					disabled={newThought.length < 5 || newThought.length > 140}
 					type="submit"
 				>
-					<span role="img" aria-label="Heart emoji">
-						&#10084;&#65039;
+					<span role="img" aria-label="Heart symbol">
+						❤️
 					</span>
-					&nbsp; Send Happy thought &nbsp;
-					<span role="img" aria-label="Heart emoji">
-						&#10084;&#65039;
+					&nbsp; Send Happy Thought &nbsp;
+					<span role="img" aria-label="Heart symbol">
+						❤️
 					</span>
 				</button>
 				{/* A text-counter showing red numbers when there are 10 characters left */}
