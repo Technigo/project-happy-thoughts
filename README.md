@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Post happy thoughts and like other thoughts posted through an API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Used react and fetched data from API with both GET and POST request. Built the website with components for both all thoughts as well as the submit form. Had validation and disabled rules on input. If I had more time I would like to add loading animation and local storage to keep count of how many thoughts the user liked.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://carling-happy-thoughts.netlify.app/
