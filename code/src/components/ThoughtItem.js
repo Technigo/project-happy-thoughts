@@ -10,6 +10,7 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
     onLikesIncrease(id)
   }
 
+
   return (
     <div className="thought-wrapper">
       <p className="message-text">{thought.message}</p>
