@@ -8,9 +8,10 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
 
   useEffect(() => {
-    fetch(API_URL)
-      .then((response) => response.json())
-      .then((data) => setThoughts(data))
+    // fetch(API_URL)
+    //   .then((response) => response.json())
+    //   .then((data) => setThoughts(data))
+    fetchThoughts()
   })
 
   const fetchThoughts = () => {
