@@ -1,11 +1,20 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react"
 
-const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
+const ThoughtForm = ({ onFormSubmit, newThought, setNewThought, newName, setNewName }) => {
   return (
     <form 
       className="form-wrapper"
       onSubmit={onFormSubmit}>
+      <label 
+      className="thought-text"
+      id='userName'
+      htmlFor='newName'>Your name here...</label>
+      <input 
+      type="text" 
+      id="name"
+      value={newName} 
+      onChange={(e) => setNewName(e.target.value)}/>
       <label 
         className="thought-text" 
         // eslint-disable-next-line react/no-unescaped-entities

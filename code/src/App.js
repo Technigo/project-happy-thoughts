@@ -10,6 +10,7 @@ import { API_URL, API_LIKES } from './utils/urls'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]) 
+  const [newName, setNewName] = useState('')
   const [newThought, setNewThought] = useState('')
   const [loading, setLoading]  = useState(false)
 
@@ -42,7 +43,7 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought }),
+      body: JSON.stringify({ name: newName, message: newThought }),
     }
     event.target.reset()
 
@@ -83,6 +84,8 @@ export const App = () => {
           onFormSubmit={handleFormSubmit}
           newThought={newThought}
           setNewThought={setNewThought}
+          newName={newName}
+          setNewName={setNewName}
         />
       {thoughts.map((thought) => (
         <ThoughtItem
