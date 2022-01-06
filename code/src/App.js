@@ -18,7 +18,7 @@ export const App = () => {
     setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setPost(data))
+      .then((data) => setPost(data.message))
       .finally(() => setLoading(false));
   };
 
@@ -71,13 +71,13 @@ export const App = () => {
         setNewPost={handleNewPostChange}
       />
 
-      {/* {post?.map((thought) => (
+      {post.map((thought) => (
         <Posts
           key={thought._id}
           thought={thought}
           onSendLike={handleSendLike}
         />
-      ))} */}
+      ))}
     </div>
   );
 };
