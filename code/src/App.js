@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { API_URL } from 'urls'
+import { API_URL, LIKE_URL } from 'urls'
 import { Form } from 'Form'
 import { Messages } from 'Messages'
 
@@ -27,10 +27,7 @@ export const App = () => {
     const options = {
       method: 'POST',
     }
-    fetch(
-      `https://carling-happythoughts-api.herokuapp.com/thoughts/${id}/like`,
-      options
-    )
+    fetch(LIKE_URL(id), options)
       .then((res) => res.json())
       .then(() => {
         fetchThoughts()
