@@ -1,11 +1,15 @@
 import React from 'react'
 
 
-const FormNewThought = ({ newThought, setNewThought, onFormSubmit, error }) => {
+const FormNewThought = ({ newThought, setNewThought, onFormSubmit, error, username, setUsername }) => {
 
     // updating newThoughts from the form input like we did last week to have separate function for it 
     const onNewThoughtChange = (event) => {
         setNewThought(event.target.value)
+    }
+
+    const onUsernameChange = (event) => {
+        setUsername(event.target.value)
     }
 
     return (
@@ -24,6 +28,16 @@ const FormNewThought = ({ newThought, setNewThought, onFormSubmit, error }) => {
                 <div className="count">
                     <span className={newThought.length > 140 ? 'red-color-counter' : 'black-color-counter'}>
                         {newThought.length}</span>/140
+                </div>
+                <div className="username-container">
+                    <label htmlFor="newUsername" className="header-form">Your name (optional)</label>
+                    <input type="text"
+                        id="newUsername"
+                        value={username}
+                        onChange={onUsernameChange}
+                        placeholder="anonymous"
+                        className="input-message"
+                    />
                 </div>
                 <div className="button-container">
                     <button

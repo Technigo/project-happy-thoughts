@@ -3,7 +3,7 @@ import { useState } from 'react'
 import moment from 'moment'
 import { FaTrashAlt } from 'react-icons/fa';
 
-const ThoughtItem = ({ thought, onLikeSubmit, id, onDeleteThought }) => {
+const ThoughtItem = ({ thought, onLikeSubmit, id, onDeleteThought, username }) => {
     const [clicks, setClicks] = useState(0)
     const [yourPreviousLikes, setYourPreviousLikes] = useState(JSON.parse(localStorage.getItem(id)) + 0)
     const [color, setColor] = useState("eaeaea");
@@ -19,6 +19,8 @@ const ThoughtItem = ({ thought, onLikeSubmit, id, onDeleteThought }) => {
     return (
         <div className="thought-card">
             <p className="thought-title">{thought.message}</p>
+            <h5 className="thought-author">Posted by:
+                {thought.name === '' ? 'anonymous' : thought.name}</h5>
             <div className="like-time-container">
                 <div className="likes-amount-container">
                     <button onClick={() => onIncreaseClicks(thought._id)} className="unliked-heart" style={{ backgroundColor: color }}>

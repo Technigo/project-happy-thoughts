@@ -12,6 +12,7 @@ export const App = () => {
   const [newThought, setNewThought] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [username, setUsername] = useState('')
 
   useEffect(() => {
     fetchThoughts()
@@ -37,7 +38,7 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought })
+      body: JSON.stringify({ message: newThought, name: username })
     }
 
     fetch(API_URL, options)
@@ -53,6 +54,7 @@ export const App = () => {
           setLoading(true)
           setTimeout(() => fetchThoughts(), 200);
           setNewThought('')
+          setUsername('')
           setError('')
         }
       })
@@ -99,11 +101,14 @@ export const App = () => {
       <FormNewThought
         newThought={newThought}
         setNewThought={setNewThought}
+        username={username}
+        setUsername={setUsername}
         onFormSubmit={handleFormSubmit}
         error={error}
       />
       {loading && <LoadingSpinner />}
       <ThoughtsList
+        username={username}
         thoughts={thoughts}
         onLikeSubmit={handleLikesIncrease}
         onDeleteThought={handleDeleteThoughts}

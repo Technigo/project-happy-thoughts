@@ -93,7 +93,7 @@ code {
 }
 
 .input-form {
-  height: 210px;
+  height: 300px;
   width: 90%;
   background-color: #f2f0f0;
   padding: 15px;
@@ -150,6 +150,11 @@ code {
   font-size: 16px;
   overflow-wrap: break-word;
   color: black;
+}
+.thought-author {
+  font-size: 16px;
+  overflow-wrap: break-word;
+  color: grey;
 }
 .send-thought-button {
   margin: 0px 7px;
@@ -287,7 +292,7 @@ code {
     width: 700px;
   }
   .input-form{
-    height: 250px;
+    height: 350px;
     padding: 40px;
     margin-top: 60px;
     margin-bottom: 60px;
@@ -302,7 +307,7 @@ code {
     font-size: 18px;
   }
   .input-message{
-    margin-top: 20px;
+    margin-top: 10px;
   }
   .header {
     font-size: 35px;
