@@ -43,7 +43,7 @@ export const App = () => {
     // Takes the data and pushes it intot the array with posts
     fetch(API_URL, optionsThoughts)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]));
+      .then((data) => setThoughts([data, ...message]));
   };
 
   // A function that adds 1 to the like (pressing the heart)
