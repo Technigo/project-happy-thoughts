@@ -40,6 +40,7 @@ export const App = () => {
     .then((data) => {
       fetchThoughts()
       setNewThought("") // This clears the textarea for a new input
+      setNewName("") // This clears the name input
     })
     
   }

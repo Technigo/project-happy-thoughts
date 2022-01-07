@@ -37,8 +37,8 @@ align-items: center;
 }
 
 .loading-overlay img {
-  height: 300px;
-  width: 300px;
+  height: 500px;
+  width: 500px;
   animation: spinner infinite 0.8s;
 }
 
@@ -74,7 +74,7 @@ background-color: white;
   box-shadow: 13px 13px #878DF7;
   display: flex;
   flex-direction: column;
-  background-color: #F3F0F0;
+  background-color: white;
 
 }
 .message-container{
@@ -105,7 +105,7 @@ background-color: white;
   padding: 10px;
   width: 90%;
   font-family: 'Roboto Mono', monospace;
-  border: none;
+  border: 1px solid #D5D2D2;
   
 }
 /*This is the button-character counter wrapper*/
