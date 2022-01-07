@@ -34,22 +34,22 @@ export const App = () => {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought }),
+      body: JSON.stringify({ message: newThought })
     };
 
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts();
+        setNewThought('');
       });
-    setNewThought('');
   };
 
   const handleLikesIncrease = (thoughtId) => {
     const options = {
-      method: 'POST',
+      method: 'POST'
     };
 
     fetch(LIKES_URL(thoughtId), options)
