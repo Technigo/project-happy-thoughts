@@ -43,7 +43,8 @@ export const App = () => {
     // Takes the data and pushes it intot the array with posts
     fetch(API_URL, optionsThoughts)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...message]));
+      .then((data) => {setThoughts([data.response, ...thoughts]); console.log(data)});
+      
   };
 
   // A function that adds 1 to the like (pressing the heart)
@@ -73,7 +74,7 @@ export const App = () => {
       />
       {/* This is my component generates all the posts in the API, it takes the data and makes it into an array with the map() */}
       {thoughts.map((thought) => (
-        <AllThoughts thought={thought} onLikesIncrease={onLikesIncrease} heart={heart} />
+        <AllThoughts key={thought._id} thought={thought} onLikesIncrease={onLikesIncrease} heart={heart} />
       ))}
     </div>
   );
