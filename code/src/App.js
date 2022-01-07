@@ -96,6 +96,7 @@ export const App = () => {
         setPerPage={handlePerPageChange}
         nextPage={nextPage}
         previousPage={previousPage}
+        page={page}
       />
       {post.map((thought) => (
         <Posts
