@@ -32,7 +32,7 @@ const NewThought = ({
       <div className="new-thought-button-container">
         {/*This button is deactivated when the user has put in less than 5 or more than 140 characters */}
         <button type="submit" disabled={newThought.length < 5 || newThought.length > 140}>
-          <img alt="heart" src={heart} /> &nbsp; Send happy thought! &nbsp;
+          <img alt="heart" src={heart} /> &nbsp; Send your thought! &nbsp;
           <img alt="heart" src={heart} />
         </button>
         {/* Presents how many characters you have printed in the form */}
