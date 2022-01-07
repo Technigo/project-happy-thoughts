@@ -50,7 +50,8 @@ export const App = () => {
 			.then((response) => response.json())
 			.then((data) => {
 				const updatedThoughts = thoughts.map((item) => {
-					if (item._id === data._id) {
+					if (item._id === data.response._id) {
+						// before item._id === data._id
 						item.hearts += 1;
 						return item;
 					} else {
