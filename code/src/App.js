@@ -20,7 +20,7 @@ export const App = () => {
     setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((data) => setThoughts(data.response))
       .finally(() => setLoading(false));
   };
 
@@ -35,7 +35,6 @@ export const App = () => {
       body: JSON.stringify({ message: newThought }),
     };
 
-    // move set new thoughts inside the yellow curlybrackets
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
