@@ -16,7 +16,7 @@ export const App = () => {
   const fetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((data) => setThoughts(data.response))
   }
 
   const handleFormSubmit = (event) => {
@@ -45,15 +45,14 @@ export const App = () => {
         newThought={newThought}
         setNewThought={setNewThought}
       />
-      {thoughts.length &&
-        thoughts.map((thought) => (
-          <ThoughtsItem
-            key={thought._id}
-            thought={thought}
-            thoughtId={thought._id}
-            fetchThoughts={fetchThoughts}
-          />
-        ))}
+      {thoughts.map((thought) => (
+        <ThoughtsItem
+          key={thought._id}
+          thought={thought}
+          thoughtId={thought._id}
+          fetchThoughts={fetchThoughts}
+        />
+      ))}
     </div>
   )
 }
