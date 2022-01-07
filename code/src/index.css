@@ -56,6 +56,11 @@ textarea {
   box-shadow:8px 8px 0px red;
 }
 
+.excited {
+  border:1px solid hotpink;
+  box-shadow:8px 8px 0px hotpink;
+}
+
 .sad {
   border:1px solid #007cc9;
   box-shadow:8px 8px 0px #007cc9;
