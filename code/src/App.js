@@ -63,7 +63,7 @@ export const App = () => {
 
   return (
     <div className="mainContainer">
-      <h1>Welcome to my happy thoughts generator!</h1>
+      <h1>Welcome to my thought generator!</h1>
       {/* This is what is shown when the page is loading, a spinning heart */}
       {loadingPage && <LoadingItem />}
       {/* This is my component that takes the user input and makes a new post */}
