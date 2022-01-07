@@ -25,7 +25,7 @@ export const App = () => {
         }
         return res.json();
       })
-      .then((data) => setThoughts(data))
+      .then((data) => setThoughts(data.response))
       .finally(() => setLoading(false))
       .catch((err) => {
         setError(err.message);
