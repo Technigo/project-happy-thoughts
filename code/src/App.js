@@ -44,7 +44,7 @@ export const App = () => {
     // Takes the data and pushes it intot the array with posts
     fetch(API_URL, optionsThoughts)
       .then((res) => res.json())
-      .then((data) => {setThoughts([data.response, ...thoughts]); console.log(data)});
+      .then((data) => {setThoughts([data.response, ...thoughts]); setNewThoughts('')});
       
   };
 
