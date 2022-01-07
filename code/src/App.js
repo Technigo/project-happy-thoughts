@@ -17,7 +17,7 @@ export const App = () => {
   const fetchThoughts = () => {
     fetch(API_URL) // fetch request when component is mounted to get the data from the API
       .then((res) => res.json())  //unpack json                  
-      .then((data) => setThoughts(data)) //save the data in the state
+      .then((data) => setThoughts(data.response)) //save the data in the state
   }
 
   const handleFormSubmit = (event) => {
