@@ -1,1 +1,1 @@
-export const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+export const API_URL = 'https://sarah-mottram-happy-thoughts.herokuapp.com/thoughts'

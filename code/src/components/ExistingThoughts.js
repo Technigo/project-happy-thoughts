@@ -3,7 +3,7 @@ import moment from "moment";
 
 const ExistingThoughts = ({ allThoughts, setAllThoughts, fetchThoughts }) => {
   const onLikesIncrease = (thoughtId) => {
-    const LIKES_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
+    const LIKES_URL = `https://sarah-mottram-happy-thoughts.herokuapp.com/thoughts/${thoughtId}/like`;
 
     const options = {
       method: "POST",
