@@ -1,8 +1,8 @@
 # Happy Thoughts
 
-The app shows 20 messages from a Techingo API where the user can submit messages
-and like both their own and others messages for as long as they are shown on the
-site.
+The app shows 20 messages from a API that I created in another project where the
+user can submit messages and like both their own and others messages for as long
+as they are shown on the site.
 
 ## The problem
 
@@ -13,3 +13,5 @@ to the app if I had more time.
 ## View it live
 
 https://linneawilhelmsson-happy-thoughts.netlify.app/
+
+Backend: http://happy-thoughts-api-technigo.herokuapp.com/
