@@ -19,7 +19,7 @@ export const App = () => {
 		setLoading(true);
 		fetch(API_URL)
 			.then((response) => response.json())
-			.then((data) => setThoughts(data))
+			.then((data) => setThoughts(data.response)) // before setThoughts(data.response)
 			.finally(() => setLoading(false));
 	};
 
