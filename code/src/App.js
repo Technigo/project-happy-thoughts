@@ -73,7 +73,7 @@ export const App = () => {
       />
       {/* This is my component generates all the posts in the API, it takes the data and makes it into an array with the map() */}
       {thoughts.map((message) => (
-        <AllThoughts message={message} onLikesIncrease={onLikesIncrease} heart={heart} />
+        <AllThoughts thought={message} onLikesIncrease={onLikesIncrease} heart={heart} />
       ))}
     </div>
   );
