@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import ThoughtForm from "./components/ThoughtForm";
-import ThoughtMessages from "./components/ThoughtMessages";
-import RefreshButton from "./components/RefreshButton";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import ThoughtForm from './components/ThoughtForm';
+import ThoughtMessages from './components/ThoughtMessages';
+import RefreshButton from './components/RefreshButton';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-import { API_URL, LIKES_URL } from "./utils/urls";
+import { API_URL, LIKES_URL } from './utils/urls';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [newThought, setNewThought] = useState("");
+  const [newThought, setNewThought] = useState('');
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -32,9 +32,9 @@ export const App = () => {
     event.preventDefault();
 
     const options = {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ message: newThought }),
     };
@@ -45,12 +45,12 @@ export const App = () => {
         fetchThoughts(data);
       });
 
-    setNewThought("");
+    setNewThought('');
   };
 
   const handleLikesIncrease = thoughtId => {
     const options = {
-      method: "POST",
+      method: 'POST',
     };
 
     fetch(LIKES_URL(thoughtId), options)
@@ -61,9 +61,9 @@ export const App = () => {
   };
 
   return (
-    <div className="background-wrap">
-      <div className="content">
-        <Header title="What is making you happy today?" />
+    <div className='background-wrap'>
+      <div className='content'>
+        <Header title='What is making you happy today?' />
 
         <ThoughtForm
           newThought={newThought}
