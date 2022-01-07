@@ -24,7 +24,7 @@ const NewThought = ({
         <option value="happy">Happy</option>
         <option value="excited">Excited</option>
         <option value="inventive">Inventive</option>
-        <option value="whimsicle">Whimsicle</option>
+        <option value="bonkers">Bonkers</option>
         <option value="sad">Sad</option>
         <option value="angry">Angry</option>
         
