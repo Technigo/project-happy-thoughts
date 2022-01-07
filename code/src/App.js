@@ -20,7 +20,7 @@ export const App = () => {
     setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((data) => setThoughts(data.response))
       .finally(() => setLoading(false));
   };
   // Function to handle onChange-event for NewThoughtInput
