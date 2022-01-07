@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import { API_URL } from './utils/commons'
 
-import ThoughtForm from './components/ThoughtForm';
-import ThoughtsItem from './components/ThoughtsItem';
+import ThoughtForm from './components/ThoughtForm'
+import ThoughtsItem from './components/ThoughtsItem'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -15,7 +15,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     fetch(API_URL)
-      .then(res => res.json())
+      .then((res) => res.json())
       .then((data) => setThoughts(data))
   }
 
@@ -27,15 +27,15 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ message: newThought})
+      body: JSON.stringify({ message: newThought }),
     }
 
-    fetch(API_URL, options)
-      .then((res) => res.json()
-      .then(() => {
+    fetch(API_URL, options).then((res) =>
+      res.json().then(() => {
         fetchThoughts()
         setNewThought('')
-      }))
+      }),
+    )
   }
 
   return (
@@ -45,15 +45,15 @@ export const App = () => {
         newThought={newThought}
         setNewThought={setNewThought}
       />
-
-      {thoughts.map((thought) => (
-        <ThoughtsItem
-          key={thought._id}
-          thought={thought}
-          thoughtId={thought._id}
-          fetchThoughts={fetchThoughts}
-        />
-      ))}
+      {thoughts.length &&
+        thoughts.map((thought) => (
+          <ThoughtsItem
+            key={thought._id}
+            thought={thought}
+            thoughtId={thought._id}
+            fetchThoughts={fetchThoughts}
+          />
+        ))}
     </div>
   )
 }
