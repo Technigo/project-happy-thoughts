@@ -45,6 +45,45 @@ code {
   transition: 0.5s linear;
   animation: pulse 4s linear infinite;
 }
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.pagination-dropdown{ 
+  margin-left: 10px;
+  font-size: 15px;
+}
+.label-pagination {
+  font-size: 15px;
+}
+
+.buttons-container {
+  display: flex;  
+  flex-direction: row;
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.pagination-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-one-button {
+  border-radius: 10px;
+  background-color: rgba(255, 0,	0, 0.3);
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 15px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.pagination-one-button:hover {
+  opacity: 0.7; 
+}
 
 .heart-pulse::before,
 .heart-pulse::after {
@@ -285,6 +324,16 @@ code {
   .animation-box {
     margin-top: 20px;
   }
+  .pagination-dropdown{ 
+    font-size: 18px;
+  }
+  .label-pagination {
+    font-size: 18px;
+  }
+  .pagination-one-button {
+    font-size: 18px;
+  }
+  
 }
 
 @media (min-width: 992px) {
@@ -338,5 +387,14 @@ code {
     left:-10px;
     width: 60px;
     height:15px; 
+  }
+  .pagination-dropdown{ 
+    font-size: 20px;
+  }
+  .label-pagination {
+    font-size: 20px;
+  }
+  .pagination-one-button {
+    font-size: 20px;
   }
 }

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import FormNewThought from './components/FormNewThought'
 import ThoughtsList from './components/ThoughtsList'
 import LoadingSpinner from './components/LoadingSpinner'
 import Header from 'components/Header'
+import Pagination from './components/Pagination'
 
 import { API_URL, LIKES_URL, DELETE_URL } from './utils/urls'
 
@@ -13,13 +14,11 @@ export const App = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [username, setUsername] = useState('')
+  const [page, setPage] = useState(1)
+  const [amount, setAmount] = useState(5)
 
-  useEffect(() => {
-    fetchThoughts()
-  }, [])
-
-  const fetchThoughts = () => {
-    fetch(API_URL)
+  const fetchThoughts = useCallback(() => {
+    fetch(`${API_URL}?page=${page}&amount=${amount}`)
       .then(res => res.json())
       .then(data => {
         setThoughts(data.response)
@@ -29,7 +28,11 @@ export const App = () => {
         setLoading(false)
       })
       .catch(error => console.error(error))
-  }
+  }, [page, amount])
+
+  useEffect(() => {
+    fetchThoughts()
+  }, [fetchThoughts])
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
@@ -107,6 +110,13 @@ export const App = () => {
         error={error}
       />
       {loading && <LoadingSpinner />}
+      <Pagination
+        page={page}
+        amount={amount}
+        setPage={setPage}
+        setAmount={setAmount}
+        thoughts={thoughts}
+      />
       <ThoughtsList
         username={username}
         thoughts={thoughts}
