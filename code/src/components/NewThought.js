@@ -18,12 +18,16 @@ const NewThought = ({
         onChange={(e) => setNewThoughts(e.target.value)}
         placeholder="Write your happy thought here.."
       />
-      <label for="typeOfMessage">What kind of thought is this?</label>
+      <label className="type-of-message-header" for="typeOfMessage">What kind of thought is this?</label>
       <select id="typeOfMessage" type="select" onChange={(e) => setTypeOfMessage(e.target.value)}>
+        <option value="neutral">Neutral</option>
         <option value="happy">Happy</option>
+        <option value="excited">Excited</option>
+        <option value="inventive">Inventive</option>
+        <option value="whimsicle">Whimsicle</option>
         <option value="sad">Sad</option>
         <option value="angry">Angry</option>
-        <option value="neutral">Neutral</option>
+        
       </select>
       <div className="new-thought-button-container">
         {/*This button is deactivated when the user has put in less than 5 or more than 140 characters */}

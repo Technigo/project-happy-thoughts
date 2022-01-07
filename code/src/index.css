@@ -46,6 +46,40 @@ textarea {
   box-shadow:8px 8px 0px #49FF00;
 }
 
+.happy {
+  border:1px solid #FFF600;
+  box-shadow:8px 8px 0px #FFF600;
+}
+
+.angry {
+  border:1px solid red;
+  box-shadow:8px 8px 0px red;
+}
+
+.sad {
+  border:1px solid #007cc9;
+  box-shadow:8px 8px 0px #007cc9;
+}
+
+.neutral {
+  border:1px solid grey;
+  box-shadow:8px 8px 0px grey;
+}
+
+.inventive {
+  border:1px solid orange;
+  box-shadow:8px 8px 0px orange;
+}
+
+.whimsicle {
+  border:1px solid purple;
+  box-shadow:8px 8px 0px purple;
+}
+
+.type-of-message-header {
+  margin-top:10px;
+}
+
 .newThought {
   display:flex;
   flex-direction: column;
@@ -67,6 +101,7 @@ textarea {
 
 .newThought button {
   background:#49FF00;
+  color:black;
   border:none;
   padding:10px 10px;
   border-radius: 20px;
