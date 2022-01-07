@@ -35,12 +35,13 @@ export const App = () => {
       body: JSON.stringify({ message: newThought }),
     };
 
+    // move set new thoughts inside the yellow curlybrackets
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts();
+        setNewThought('');
       });
-    setNewThought('');
   };
 
   const handleLikesIncrease = (thoughtId) => {
