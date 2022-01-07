@@ -16,7 +16,7 @@ export const App = () => {
 	const fetchMessages = () => {
 		fetch(API_URL)
 			.then((res) => res.json())
-			.then((data) => setMessages(data))
+			.then((data) => setMessages(data.response))
 			.finally(() => setNewMessage(""));
 	};
 
@@ -25,7 +25,7 @@ export const App = () => {
 		headers: {
 			"Content-Type": "application/json",
 		},
-		body: JSON.stringify({ message: newMessage }),
+		body: JSON.stringify({ messages: newMessage }),
 	};
 
 	const handleOnFormSubmit = (event) => {
@@ -34,7 +34,7 @@ export const App = () => {
 		fetch(API_URL, options)
 			.then((res) => res.json())
 			.then((data) => {
-				fetchMessages(data);
+				fetchMessages(data.response);
 			});
 	};
 
@@ -42,7 +42,7 @@ export const App = () => {
 		fetch(LIKES_URL(messageId), options)
 			.then((res) => res.json())
 			.then((data) => {
-				fetchMessages(data);
+				fetchMessages(data.response);
 			});
 	};
 
@@ -57,7 +57,7 @@ export const App = () => {
 			{messages.map((messages) => (
 				<MessageItem
 					key={messages._id}
-					message={messages}
+					messages={messages}
 					onLikeIncrease={handleLikeIncrease}
 				/>
 			))}
