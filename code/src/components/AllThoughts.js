@@ -3,11 +3,12 @@ import moment from 'moment';
 
 const AllThoughts = ({ thought, onLikesIncrease, heart }) => {
   return (
-    <div className="posted-thoughts" key={thought._id}>
+    <div className={'posted-thoughts ' + thought.typeOfMessage} key={thought._id}>
       <p className="thought-message">{thought.message}</p>
+      <p className='type-of-thought'>This is a {thought.typeOfMessage} thought</p>
       <div className="like-button">
         <button onClick={() => onLikesIncrease(thought._id)}>
-          <img src={heart} alt="Red heart emoji" />
+        <img alt="heart" src={heart}/>
         </button>
         <span className="thoughts-likes"> x {thought.hearts}</span>
       </div>

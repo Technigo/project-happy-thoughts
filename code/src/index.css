@@ -5,6 +5,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image:url(images/darkness.png);
 }
 
 code {
@@ -33,19 +34,24 @@ textarea {
   margin:0px;
 }
 
+.mainContainer h1 {
+  color:#FFF600;
+}
+
 .newThought, .posted-thoughts {
-  border:1px solid black;
+  border:1px solid #49FF00;
   padding:10px;
   margin-bottom:20px;
   border-radius: 2px;
-  box-shadow:8px 8px 0px black;
+  box-shadow:8px 8px 0px #49FF00;
 }
 
 .newThought {
   display:flex;
   flex-direction: column;
-  background:#E1DCDC;
+  background:black;
   min-height: 180px;
+  color:white;
 }
 
 .newThought label {
@@ -53,22 +59,34 @@ textarea {
   font-weight: 700;
 }
 
+.newThought textarea {
+  background:none;
+  border: 1px solid #49FF00;
+  color:white;
+}
+
 .newThought button {
-  background:#FF8A8A;
+  background:#49FF00;
   border:none;
   padding:10px 10px;
   border-radius: 20px;
   cursor: pointer;
   width:auto;
+  display:flex;
+  align-items: center;
+  border:2px solid #49FF00;
 }
 
 .newThought button:hover {
-  background:#d87474;
+  background:black;
   transition: .2s;
+  color:#49FF00;
 }
 
 .posted-thoughts {
   position:relative;
+  background:black;
+  color:white;
 }
 
 .posted-thoughts button {
@@ -132,6 +150,7 @@ textarea {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+  z-index:5;
 }
 
 .loading-heart {

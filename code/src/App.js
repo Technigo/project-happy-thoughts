@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import heart from './images/red-heart.png'; // Getting the red heart emoji
+import heart from './images/green-heart.png'; // Getting the red heart emoji
 
 import { API_URL, LIKES_URL } from './utils/urls'; // The file that holds the URLs for the project
 import NewThought from 'components/NewThought';
@@ -9,6 +9,7 @@ import LoadingItem from 'components/Loading';
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThoughts] = useState('');
+  const [typeOfMessage, setTypeOfMessage] = useState('');
   const [loadingPage, setLoadingPage] = useState(false);
 
   // Getting the posts
@@ -37,7 +38,7 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ message: newThought }), // This takes a string and makes it into JSON
+      body: JSON.stringify({ message: newThought, typeOfMessage: typeOfMessage }), // This takes a string and makes it into JSON
     };
 
     // Takes the data and pushes it intot the array with posts
@@ -69,12 +70,14 @@ export const App = () => {
       <NewThought
         onFormSubmit={onFormSubmit}
         newThought={newThought}
+        typeOfMessage={typeOfMessage}
+        setTypeOfMessage={setTypeOfMessage}
         heart={heart}
         setNewThoughts={setNewThoughts}
       />
       {/* This is my component generates all the posts in the API, it takes the data and makes it into an array with the map() */}
       {thoughts.map((thought) => (
-        <AllThoughts key={thought._id} thought={thought} onLikesIncrease={onLikesIncrease} heart={heart} />
+        <AllThoughts key={thought._id} thought={thought} typeOfMessage={typeOfMessage} onLikesIncrease={onLikesIncrease} heart={heart} />
       ))}
     </div>
   );

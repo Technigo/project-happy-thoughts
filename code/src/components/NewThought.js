@@ -1,7 +1,13 @@
 import React from 'react';
 
 // This is my function that lets the user post a new post
-const NewThought = ({ onFormSubmit, newThought, setNewThoughts, heart }) => {
+const NewThought = ({
+  onFormSubmit,
+  newThought,
+  setNewThoughts,
+  setTypeOfMessage,
+  heart,
+}) => {
   return (
     <form className="newThought" onSubmit={onFormSubmit}>
       <label>What is making you happy right now?</label>
@@ -12,18 +18,27 @@ const NewThought = ({ onFormSubmit, newThought, setNewThoughts, heart }) => {
         onChange={(e) => setNewThoughts(e.target.value)}
         placeholder="Write your happy thought here.."
       />
+      <label for="typeOfMessage">What kind of thought is this?</label>
+      <select id="typeOfMessage" type="select" onChange={(e) => setTypeOfMessage(e.target.value)}>
+        <option value="happy">Happy</option>
+        <option value="sad">Sad</option>
+        <option value="angry">Angry</option>
+        <option value="neutral">Neutral</option>
+      </select>
       <div className="new-thought-button-container">
         {/*This button is deactivated when the user has put in less than 5 or more than 140 characters */}
         <button type="submit" disabled={newThought.length < 5 || newThought.length > 140}>
-          <img src={heart} alt="Red heart emoji" /> Send happy thought!{' '}
-          <img src={heart} alt="Red heart emoji" />
+          <img alt="heart" src={heart} /> &nbsp; Send happy thought! &nbsp;
+          <img alt="heart" src={heart} />
         </button>
         {/* Presents how many characters you have printed in the form */}
         {/* Currently trying a new thing that isn't really working out */}
         {newThought.length < 5 && (
           <p className="errorMessage">{newThought.length}/140 characters</p>
         )}
-        {newThought.length <= 140 && newThought.length >= 5 && <p>{newThought.length}/140 characters</p>}
+        {newThought.length <= 140 && newThought.length >= 5 && (
+          <p>{newThought.length}/140 characters</p>
+        )}
         {newThought.length > 140 && (
           <p className="errorMessage">{newThought.length}/140 characters</p>
         )}
