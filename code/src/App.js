@@ -12,19 +12,14 @@ export const App = () => {
   /*new thought is the value from input*
   setNewThought function, sets value to the newThought*/
   const [newThought, setNewThought] = useState('');
-  const [filteredArray, setFilter] = useState([]);
   const [username, setUsername] = useState('');
   const [spinner, setSpinner] = useState(false);
-  const [pageNumber, setPageNumber] = useState(1)
-  const pageLimit = 5
-
-  const API_URL = `https://happy-thoughts-backend.herokuapp.com/thoughts?page=${pageNumber}&perPage=${pageLimit}`
 
   // useEffect is like reaction to componenet behavior 
   // it can be a couple of useEffect in one componenet, and you can apply useEffect to different fases of componenet live 
   useEffect(() => {
     getRequest()
-  }, [pageNumber, pageLimit]);
+  }, []);
 
   /* get request for fetchnig thoughts from backend, everytime this function calls it uppdates? */
   const getRequest = () => {
@@ -36,8 +31,7 @@ export const App = () => {
       saving data from json to thoughts*/
       .then((json) => {
          setSpinner(false)
-         setThoughts(json);
-         setFilter(json)
+         setThoughts(json.response);
       });
   };
 
@@ -93,14 +87,6 @@ export const App = () => {
         // window.location.reload()
       })
   };
-
-  const nextPage = () => {
-    setPageNumber(pageNumber + 1);
-  };
-
-  const previousPage = () => {
-    setPageNumber(pageNumber - 1);
-  };
   
   return (
      <>
@@ -131,15 +117,7 @@ export const App = () => {
         </button>
       </form>
 
-      <div className="page-container">
-        <p>Page {pageNumber}/{pageLimit}</p>
-				<div>
-					<button type="button" onClick={previousPage} disabled={pageNumber === 1} className="page-button">Previous Page</button>
-					<button type="button" onClick={nextPage} disabled={pageNumber === pageLimit} className="page-button">Next Page</button>
-				</div>
-      </div>
-
-      {filteredArray.map((thought) => ( 
+      {thoughts.map((thought) => ( 
         spinner 
           ? <Spinner key={thought._id} />
           : <div key={thought._id} className="thought-card">
