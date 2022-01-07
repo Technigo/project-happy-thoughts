@@ -83,6 +83,15 @@ main {
   font-size: 13px;
 }
 
+.name-text {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.optional-text {
+  color: #868686;
+}
+
 .message-text {
   font-size: 14px;
   overflow-wrap: break-word;

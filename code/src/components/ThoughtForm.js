@@ -8,8 +8,8 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought, newName, setNewN
       onSubmit={onFormSubmit}>
       <label 
       className="thought-text"
-      id='userName'
-      htmlFor='newName'>Your name here...</label>
+      id='newName'
+      htmlFor='newName'>What's your name? <span className="optional-text">(optional)</span></label>
       <input 
       type="text" 
       id="name"
