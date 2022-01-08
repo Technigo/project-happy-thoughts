@@ -23,7 +23,7 @@ const Form = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message: newThought }),
+      body: JSON.stringify({ message: newThought, author: name }),
     };
 
     fetch(API_URL, options)

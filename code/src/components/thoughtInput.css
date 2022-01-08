@@ -44,6 +44,13 @@
   animation: wobble 1s 1;
 }
 
+.name-input {
+  margin: 5px 0;
+  border: 1px solid rgb(171, 168, 168);
+  font-family: "Courier New", monospace;
+  padding: 3px;
+}
+
 @keyframes wobble {
   25% {
     transform: rotate(15deg);

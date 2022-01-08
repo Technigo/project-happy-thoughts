@@ -25,8 +25,9 @@ const ThoughtInput = ({
 
       <label>
         <input
+          className="name-input"
           type={"text"}
-          placeholder="Your name (optional)"
+          placeholder="Your name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
