@@ -19,7 +19,7 @@ export const App = () => {
 		setLoading(true);
 		fetch(API_URL)
 			.then((response) => response.json())
-			.then((data) => setThoughts(data.response)) // before setThoughts(data.response)
+			.then((data) => setThoughts(data.response))
 			.finally(() => setLoading(false));
 	};
 
@@ -51,7 +51,6 @@ export const App = () => {
 			.then((data) => {
 				const updatedThoughts = thoughts.map((item) => {
 					if (item._id === data.response._id) {
-						// before item._id === data._id
 						item.hearts += 1;
 						return item;
 					} else {
