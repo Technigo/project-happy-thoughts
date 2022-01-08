@@ -7,6 +7,7 @@ import "./form.css";
 const Form = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState("");
+  const [name, setName] = useState("");
 
   useEffect(() => {
     fetch(API_URL)
@@ -29,6 +30,7 @@ const Form = () => {
       .then((res) => res.json())
       .then((data) => setThoughts([data.response, ...thoughts]));
     setNewThought("");
+    setName("");
   };
 
   const handleHeartClick = (thoughtId) => {
@@ -59,6 +61,8 @@ const Form = () => {
           onFormSubmit={handleFormSubmit}
           newThought={newThought}
           setNewThought={setNewThought}
+          name={name}
+          setName={setName}
         />
       </div>
       <div className="thougths-container">

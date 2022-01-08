@@ -7,6 +7,7 @@ const Thoughts = ({ thought, onHeartClick }) => {
     <div>
       <div className="happy-thoughts-list" key={thought._id}>
         <p>{thought.message}</p>
+        <p>by {thought.author}</p>
         <div className="heart-and-created">
           <button
             className="heart-button"
