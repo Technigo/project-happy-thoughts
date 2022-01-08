@@ -11,6 +11,7 @@ export const App = () => {
   const [newThought, setNewThoughts] = useState('');
   const [typeOfMessage, setTypeOfMessage] = useState('');
   const [loadingPage, setLoadingPage] = useState(false);
+  const [name, setName] = useState('');
 
   // Getting the posts
   useEffect(() => {
@@ -38,14 +39,17 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ message: newThought, typeOfMessage: typeOfMessage }), // This takes a string and makes it into JSON
+      body: JSON.stringify({ message: newThought, typeOfMessage: typeOfMessage, name: name }), // This takes a string and makes it into JSON
     };
 
     // Takes the data and pushes it intot the array with posts
     fetch(API_URL, optionsThoughts)
       .then((res) => res.json())
-      .then((data) => {setThoughts([data.response, ...thoughts]); setNewThoughts('')});
-      
+      .then((data) => {
+        setThoughts([data.response, ...thoughts]);
+        setNewThoughts('');
+        setName('');
+      });
   };
 
   // A function that adds 1 to the like (pressing the heart)
@@ -74,10 +78,18 @@ export const App = () => {
         setTypeOfMessage={setTypeOfMessage}
         heart={heart}
         setNewThoughts={setNewThoughts}
+        name={name}
+        setName={setName}
       />
       {/* This is my component generates all the posts in the API, it takes the data and makes it into an array with the map() */}
       {thoughts.map((thought) => (
-        <AllThoughts key={thought._id} thought={thought} typeOfMessage={typeOfMessage} onLikesIncrease={onLikesIncrease} heart={heart} />
+        <AllThoughts
+          key={thought._id}
+          thought={thought}
+          typeOfMessage={typeOfMessage}
+          onLikesIncrease={onLikesIncrease}
+          heart={heart}
+        />
       ))}
     </div>
   );

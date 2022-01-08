@@ -34,56 +34,56 @@ textarea {
   min-height: 100px;
 }
 .mainContainer {
-  width:100%;
-  padding:10px;
-  margin:0px;
+  width:calc(100% - 40px);
+  margin:20px;
 }
 
 .mainContainer h1 {
   color:#FFF600;
+  font-size:22px;
 }
 
 .newThought, .posted-thoughts {
-  border:1px solid #49FF00;
+  border:2px solid #49FF00;
   padding:10px;
   margin-bottom:20px;
   border-radius: 2px;
-  box-shadow:8px 8px 0px #49FF00;
+  box-shadow:0px 0px 15px #49FF00;
 }
 
 .happy {
-  border:1px solid #FFF600;
-  box-shadow:8px 8px 0px #FFF600;
+  border:2px solid #FFF600;
+  box-shadow:0px 0px 15px #FFF600;
 }
 
 .angry {
-  border:1px solid red;
-  box-shadow:8px 8px 0px red;
+  border:2px solid red;
+  box-shadow:0px 0px 15px red;
 }
 
 .excited {
-  border:1px solid hotpink;
-  box-shadow:8px 8px 0px hotpink;
+  border:2px solid hotpink;
+  box-shadow:0px 0px 15px hotpink;
 }
 
 .sad {
-  border:1px solid #007cc9;
-  box-shadow:8px 8px 0px #007cc9;
+  border:2px solid #007cc9;
+  box-shadow:0px 0px 15px #007cc9;
 }
 
 .neutral {
-  border:1px solid grey;
-  box-shadow:8px 8px 0px grey;
+  border:2px solid grey;
+  box-shadow:0px 0px 15px grey;
 }
 
 .inventive {
-  border:1px solid orange;
-  box-shadow:8px 8px 0px orange;
+  border:2px solid orange;
+  box-shadow:0px 0px 15px orange;
 }
 
 .bonkers {
-  border:1px solid purple;
-  box-shadow:8px 8px 0px purple;
+  border:2px solid purple;
+  box-shadow:0px 0px 15px purple;
 }
 
 .type-of-message-header {
@@ -105,14 +105,14 @@ textarea {
 
 .newThought textarea {
   background:none;
-  border: 1px solid #49FF00;
+  border: 2px solid #49FF00;
   color:white;
 }
 
 .newThought button {
   background:#49FF00;
   color:black;
-  border:none;
+  font-size:12px;
   padding:10px 10px;
   border-radius: 20px;
   cursor: pointer;
@@ -146,6 +146,7 @@ textarea {
 .errorMessage {
   color:red;
   font-size: 14px;
+  text-align: center;
 }
 
 .date {
@@ -174,7 +175,7 @@ textarea {
 
 .new-thought-button-container {
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   align-content: center;
   margin-top:10px;
@@ -205,6 +206,12 @@ textarea {
 	animation: spinner infinite 0.5s;
 }
 
+select {
+  background:white;
+  border:none;
+  padding:10px;
+}
+
 @keyframes spinner {
 	0% {
 		transform: rotate(0);
@@ -219,7 +226,7 @@ textarea {
 
 @media only screen and (min-width:599px) {
 
-  h1 {text-align:center}
+  .mainContainer h1 {text-align:center;font-size:32px;}
 
   .like-button {
     margin-bottom:0px;
@@ -242,5 +249,13 @@ textarea {
     padding:20px;
     margin-bottom:40px;
     border-radius: 2px;
+  }
+
+  .new-thought-button-container {
+    flex-direction: row;
+  }
+
+  .errorMessage {
+    text-align: left;
   }
 }
