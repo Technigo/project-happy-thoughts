@@ -19,7 +19,7 @@ const NewThought = ({
         onChange={(e) => setNewThoughts(e.target.value)}
         placeholder="Write your happy thought here.."
       />
-      <label htmlFor="name">Enter your name here (leave empty to be anonymous):</label>
+      <label className="type-of-message-header" htmlFor="name">Enter your name here (leave empty to be anonymous):</label>
       <input type="text" id="name" onChange={(e) => setName(e.target.value)}/>
       <label className="type-of-message-header" htmlFor="typeOfMessage">What kind of thought is this?</label>
       <select id="typeOfMessage" type="select" onChange={(e) => setTypeOfMessage(e.target.value)}>
