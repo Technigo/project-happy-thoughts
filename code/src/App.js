@@ -10,6 +10,7 @@ export const App = () => {
 	const [thoughts, setThoughts] = useState([]); // thoughts initialized by an empty array
 	const [newThought, setNewThought] = useState(''); //state property
 	const [loading, setLoading] = useState(false); //state property
+	const [name, setName] = useState('');
 
 	//getting the happy thought-posts.
 	useEffect(() => {
@@ -34,7 +35,7 @@ export const App = () => {
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ message: newThought }), //JSON.stringify converts it to JSON.
+			body: JSON.stringify({ message: newThought, author: name }), //JSON.stringify converts it to JSON.
 		};
 
 		// Get the data and pushes it into the array with posts
@@ -43,6 +44,7 @@ export const App = () => {
 			.then((data) => {
 				fetchThoughts();
 				setNewThought(''); // This clears the textarea for a new input
+				setName('');
 			});
 	};
 	//function that adds 1 like by pressing the heart
@@ -69,6 +71,8 @@ export const App = () => {
 					onFormSubmit={handleFormSubmit}
 					newThought={newThought}
 					setNewThought={setNewThought}
+					name={name}
+					setName={setName}
 				/>
 				{/* mapping through the thought array and generating thought-cards */}
 				{/* sending data as props to the thought card component */}

@@ -2,12 +2,13 @@ import React from 'react';
 import moment from 'moment'; //import outer package moment.js
 
 //passing the props gathered from the App.js
-const ThoughtCard = ({ thought, onLikesIncrease }) => {
+const ThoughtCard = ({ thought, onLikesIncrease, name }) => {
 	return (
 		<div className="thought-container">
 			<div className="thought-message">
 				{/* displaying thought message */}
 				<p>{thought.message}</p>
+				<p>{thought.author}</p>
 			</div>
 			<div className="heart-date-container">
 				<p>
