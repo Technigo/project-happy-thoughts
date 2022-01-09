@@ -26,7 +26,6 @@ export const App = () => {
       .finally(() => setLoading(false))
   }
 
-  // Posting a new happy thought
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -39,7 +38,6 @@ export const App = () => {
       body: JSON.stringify({ message: newThought }),
     }
 
-    // Fetches the data and pushes it into the array
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
@@ -51,8 +49,6 @@ export const App = () => {
       })
     setNewThought("") //clears form after first type
   }
-
-  // Adds +1 to the like by pressing the heart
   const handleLikeIncrease = (thoughtId) => {
     const options = {
       method: "POST",
