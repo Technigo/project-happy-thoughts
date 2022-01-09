@@ -10,7 +10,10 @@ export const Oldest = ({ thoughts, onLikeClick }) => {
           key={thought._id}
           onClick={onLikeClick}
         >
+          <p>{thought.tag}</p>
           <p>{thought.message}</p>
+
+          <p>{thought.name}</p>
           <div className='icon-container'>
             <div className='button-container'>
               <button

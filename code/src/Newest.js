@@ -10,7 +10,11 @@ export const Newest = ({ thoughts, onLikeClick }) => {
           key={thought._id}
           onClick={onLikeClick}
         >
+          <p className='tag'>#{thought.tag}</p>
+
           <p>{thought.message}</p>
+          <p className='username'>Posted by {thought.name}</p>
+
           <div className='icon-container'>
             <div className='button-container'>
               <button

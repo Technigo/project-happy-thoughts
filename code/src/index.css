@@ -31,6 +31,8 @@ label {
 
 textarea {
   resize: none;
+  border: 1px solid #000;
+  box-shadow: 3px 3px #000;
 }
 
 .main {
@@ -92,7 +94,16 @@ form {
 select {
   font-family: 'PT Mono', monospace;
   padding: 5px;
-  width: 90px;
+  width: 130px;
+  border: 1px solid #000;
+  box-shadow: 3px 3px #000;
+}
+
+input {
+  margin: 10px 0 10px 0;
+  font-family: 'PT Mono', monospace;
+  padding: 5px;
+  width: 118px;
   border: 1px solid #000;
   box-shadow: 3px 3px #000;
 }
@@ -128,6 +139,10 @@ select {
   justify-content: space-between;
   align-items: center;
   color: #d0d0d0;
+}
+
+.username {
+  font-style: italic;
 }
 
 @media (min-width: 420px) and (max-width: 719px) {
