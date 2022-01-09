@@ -1,12 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+For this project I have built a simple API to collect 'happy thoughts'. See the repository for the API here: https://github.com/amandatilly/project-happy-thoughts-api
+In this repo I have built the frontend for project happy thoughts. Think of it as my own version of Twitter, but with less negativity.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Built with React, using the UseEffect hook.
 
 ## View it live
 
