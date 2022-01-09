@@ -6,7 +6,7 @@ import { API_URL, LIKES_URL } from "../utils/urls";
 
 const Main = () => {
   /* useStates */
-  const [thoughts, setThoughts] = useState([]); //It b
+  const [thoughts, setThoughts] = useState([]); 
   const [newThought, setNewThought] = useState(""); // It being used in the form to send the new message
   const [loading, setLoading] = useState(false);
 
@@ -15,6 +15,7 @@ const Main = () => {
     fetchThoughts();
   }, []);
 
+/* fetching the API that renders the messages */
   const fetchThoughts = () => {
     setLoading(true);
     fetch(API_URL)
