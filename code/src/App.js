@@ -71,7 +71,7 @@ export const App = () => {
       )
       .then((res) => res.json())
       .then((data) => {
-      fetchThoughts()
+      fetchThoughts(data.results)
       })
     }
 
