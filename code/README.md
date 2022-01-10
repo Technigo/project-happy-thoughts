@@ -7,12 +7,12 @@ I started with fetching the API to get the existing data in App.js After that I 
 
 ##Tech
 
-React
-JSX
-API
-useState
-useEffect
-CSS
+* React
+* JSX
+* API
+* useState
+* useEffect
+* CSS
 
 ##View it live
 
