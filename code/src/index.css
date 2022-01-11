@@ -7,6 +7,11 @@
 body {
   font-size: 12px;
   font-weight: bold;
+  background-image: url(./assets/moras-background.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
   font-family: "Trispace", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,18 +22,22 @@ body {
   margin: 0 auto;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
 }
 
 .heading-one {
   text-align: center;
-  margin: 20px 0;
   text-transform: capitalize;
+  background: whitesmoke;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 /* -------- Card component -------- */
 .thought-container {
   border: 1px solid #000;
+  background-color: #f1bebe;
+
   padding: 15px;
   margin: 0 auto;
   margin-bottom: 30px;
@@ -97,6 +106,7 @@ body {
   box-shadow: 6px 6px;
   width: 100%;
   max-width: 400px;
+  margin-top: 80px;
 }
 
 .form {
@@ -121,8 +131,8 @@ body {
   font-family: "Trispace", sans-serif;
   font-size: 10px;
   width: 50%;
-  height: 20px;
-  background-color: rgb(151, 190, 73);
+  height: 25px;
+  background-color: rgb(207, 219, 183);
 }
 .thought-btn {
   background-color: #ffadad;
