@@ -6,3 +6,4 @@ During this project, I got introduced to the full concept of the component lifec
 
 https://my-happy-thoughts-place.netlify.app/
 
+
