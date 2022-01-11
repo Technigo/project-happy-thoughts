@@ -4,6 +4,6 @@ During this project, I got introduced to the full concept of the component lifec
 
 ## Link to my deployed project: 
 
-https://nifty-blackwell-f65e37.netlify.app/
+https://my-happy-thoughts-place.netlify.app/
 
 
