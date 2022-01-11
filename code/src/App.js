@@ -49,12 +49,11 @@ export const App = () => {
 
     fetch(API_URL, options)
     .then((res) => res.json())
-    .then((data) => {
-    fetchThoughts()
-    })
+    .then((data) => setThoughts([data.response, ...thoughts]))
 
     // Clears input-field and let's you post a new thought
     setNewThought('')
+    setNewName('')
   }
 
 
