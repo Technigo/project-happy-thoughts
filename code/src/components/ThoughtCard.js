@@ -5,7 +5,9 @@ const ThoughtCard = ({ thought, onLikesIncrease }) => {
   return (
     <div className="thought-container">
       <div className="thought-message">
+        {/* displaying thought message */}
         <p>{thought.message}</p>
+        <p className="name">{thought.author}</p>
       </div>
 
       <div className="heart-date-container">
@@ -23,7 +25,7 @@ const ThoughtCard = ({ thought, onLikesIncrease }) => {
         </button>
 
         <p className="amount-hearts">x {thought.hearts}</p>
-
+        {/* Using the Moment.js to display when the happy thought was posted */}
         <p className="date">{moment(thought.createdAt).fromNow()}</p>
       </div>
     </div>

@@ -9,6 +9,7 @@ const Main = () => {
   const [thoughts, setThoughts] = useState([]); 
   const [newThought, setNewThought] = useState(""); // It being used in the form to send the new message
   const [loading, setLoading] = useState(false);
+  const [name, setName] = useState('');
 
   /* useEffects: it renders after the component gets mounted */
   useEffect(() => {
@@ -31,17 +32,19 @@ const Main = () => {
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: newThought }),
+      body: JSON.stringify({ message: newThought, author: name }), //JSON.stringify converts it to JSON.
     };
 
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts();
+        setNewThought(''); // This clears the textarea for a new input
+				setName('');
       });
   };
 
-  /* Function for the likes */
+  /* Function for the likes; adds 1 like by pressing the heart */
   const handleLikesIncrease = (thoughtId) => {
     const options = {
       method: "POST",
@@ -62,8 +65,11 @@ const Main = () => {
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
         setNewThought={setNewThought}
+        name={name}
+				setName={setName}
       />
-
+     {/* mapping through the thought array and generating thought-cards */}
+		 {/* sending data as props to the thought card component */}
       {thoughts.map((thought) => (
         <ThoughtCard
           key={thought._id}

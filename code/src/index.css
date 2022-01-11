@@ -54,13 +54,20 @@ body {
   transform: scale(1.1);
 }
 
-.thought-message p {
-  overflow-wrap: break-word;
-  font-weight: 300;
+.thought-message {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0 30px;
 }
 
-.thought-message {
-  padding: 5px 0 30px 10px;
+.thought-message p {
+  overflow-wrap: break-word;
+  font-weight: 500;
+}
+
+.name {
+  font-style: italic;
+  color: firebrick;
 }
 
 .heart-date-container {
@@ -110,6 +117,13 @@ body {
   width: 90%;
 }
 
+.name-inputfield {
+  font-family: "Trispace", sans-serif;
+  font-size: 10px;
+  width: 50%;
+  height: 20px;
+  background-color: rgb(151, 190, 73);
+}
 .thought-btn {
   background-color: #ffadad;
   border-color: transparent;
