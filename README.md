@@ -1,13 +1,14 @@
-# Happy Thoughts
+# ❤️ Happy Thoughts ❤️
 
-Replace this readme with your own information about your project.
+Project making a app to make users able to share thoughts, almost like a Twitter-clone, with React components and useState/useEffect.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
-## The problem
+## The challenge
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This project has been made using: HTML5, CSS3, React (useEffect, useState, props, form validation etc)
+
+Fetched data from API, with both GET and POST request. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-happy-thoughts-jessica-nordahl.netlify.app/
