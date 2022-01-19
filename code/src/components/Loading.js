@@ -1,16 +1,12 @@
-import React from 'react';
+import React from "react";
+import "./Loading.css";
 
-const LoadingItem = () => {
-
- return (
-     <div className="loading-overlay">
-    <div className="heart-loader">
-        <div className="circle1"></div>
-        <div className="circle2"></div>
+const Loading = () => {
+  return (
+    <div className="loading-overlay">
+      <div className="loading-spinner" />
     </div>
-     </div>
+  );
+};
 
- )
-}
-
-export default LoadingItem;
+export default Loading;

@@ -1,76 +1,65 @@
-import React, { useEffect, useState } from "react";
-import ThoughtForm from "./components/ThoughtForm";
-import ThoughtItem from "./components/ThoughtItem";
-import LoadingItem from  './components/Loading';
+import React, { useState, useEffect } from "react";
 import { API_URL, LIKES_URL } from "./utils/urls";
-import { Header } from 'Header'
-// import { Footer } from 'Footer'
+import Input from "components/Input";
+import MessageList from "components/MessageList";
+import Loading from "components/Loading";
 
 export const App = () => {
-	const [thoughts, setThoughts] = useState([]);
-	const [newThought, setNewThought] = useState("");
+  const [thoughts, setThoughts] = useState([]);
+  const [newThought, setNewThought] = useState("");
   const [loading, setLoading] = useState(false);
 
-	useEffect(() => {
-		fetchThoughts();
-	}, []);
-
-	const fetchThoughts = () => {
+  useEffect(() => {
     setLoading(true);
-		fetch(API_URL)
-			.then((res) => res.json())
-			.then((data) => setThoughts(data))
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => setThoughts(data))
       .finally(() => setLoading(false));
-	};
+  }, []);
 
-	const handleFormSubmit = (event) => {
-		event.preventDefault();
+  const postLikedThought = async (id) =>
+    fetch(LIKES_URL(id), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => data)
+      .catch((error) => error);
 
-		const options = {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ message: newThought }),
-		};
+  const onMessageLiked = async (likedMessageId) => {
+    // New updated thought object sent from the API
+    const updatedThought = await postLikedThought(likedMessageId);
 
-		fetch(API_URL, options)
-			.then((res) => res.json())
-			.then((data) => {
-				fetchThoughts();
-			});
-	};
+    const updatedMessage = thoughts.map((thought) => {
+      if (thought._id === likedMessageId) {
+        // Set the thoughts hearts to the new updated thought hearts from the API
+        thought.hearts = updatedThought.hearts;
+      }
+      return thought;
+    });
 
-	const handleLikesIncrease = (thoughtId) => {
-		const options = {
-			method: "POST",
-		};
+    setThoughts(updatedMessage);
+  };
 
-		fetch(LIKES_URL(thoughtId), options)
-			.then((res) => res.json())
-			.then((data) => {
-				fetchThoughts();
-			});
+  return (
+    <div>
+      {loading && <Loading />}
+      <Input
+        newThought={newThought}
+        setNewThought={setNewThought}
+        thoughts={thoughts}
+        setThoughts={setThoughts}
+      />
 
-		const thoughtsWithoutUpdatedThought = thoughts;
-	};
-	return (
-		<div className="body">
-			<Header />
-      {loading && <LoadingItem />}
-			<ThoughtForm
-				onFormSubmit={handleFormSubmit}
-				newThought={newThought}
-				setNewThought={setNewThought}
-			/>
-
-			{thoughts.map((thought) => (
-				<ThoughtItem
-					key={thought._id}
-					thought={thought}
-					onLikesIncrease={handleLikesIncrease}
-				/>
-			))}
-		</div>
-	);
+      {thoughts.map((thought) => (
+        <MessageList
+          key={thought._id}
+          thought={thought}
+          onMessageLiked={onMessageLiked}
+        />
+      ))}
+    </div>
+  );
 };
