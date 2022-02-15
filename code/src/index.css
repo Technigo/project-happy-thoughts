@@ -1,255 +1,198 @@
 * {
-	margin: 0px;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	/* background-color: #ffadad; */
-	background-image: url(./images/background.jpg);
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 100%;
-	font-weight: 400;
-	font-size: 12px;
-	font-family: 'Trispace', sans-serif;
+  height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Courier Prime', monospace;
+  color: black;
 }
 
-.img {
-	padding: 5px;
-}
-
-/*-----------------Header------------- */
+/*-----------------HEADER------------- */
 .title {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .header {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 32px;
 }
 
 .header h1 {
-	font-family: 'Bungee Shade', cursive;
-	text-transform: uppercase;
-	color: black;
-	text-shadow: 2px white;
-	font-size: 30px;
-	letter-spacing: 3px;
-	animation: color 15s infinite;
+  font-family: 'Bungee Shade', cursive;
+  color: black;
+  font-size: 22px;
+  letter-spacing: 3px;
+  animation: color 15s infinite;
 }
 
 @keyframes color {
-	from {
-		color: #120078;
-	}
-	20% {
-		color: #9d0191;
-	}
-	40% {
-		color: #fd3a69;
-	}
-	60% {
-		color: #fecd1a;
-	}
+  from {
+    color: #120078;
+  }
+  20% {
+    color: #9d0191;
+  }
+  40% {
+    color: #fd3a69;
+  }
+  60% {
+    color: #fecd1a;
+  }
 }
 
-/*-----------------Question Form------------- */
+/*-----------------THOUGHT FORM------------- */
 
 .question-form {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	row-gap: 25px;
-	border: solid black 1px;
-	padding: 15px;
-	margin: 25px auto;
-	box-shadow: 5px 5px;
-	background-color: #f2f0f0;
-	max-width: 400px;
-	height: 350px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 15px;
+  border: solid black 2px;
+  padding: 0 20px;
+  margin: 10px auto;
+  box-shadow: 5px 5px;
+  background-color: #f2f0f0;
+  max-width: 400px;
+  height: 270px;
 }
 
 .thought-btn {
-	height: 40px;
-	background-color: #ffadad;
-	padding: 8px;
-	border-radius: 20px;
-	color: black;
-	border: none;
-	font-weight: bold;
-	font-size: 13px;
-	transition: all 0.5s ease-in-out;
+  height: 40px;
+  background-color: #ffadad;
+  padding: 8px;
+  border-radius: 20px;
+  color: black;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.5s ease-in-out;
 }
 
 .thought-btn:hover {
-	transform: scale(1.1);
-}
-
-/* Heart Icon */
-.send-wrapper img {
-	width: 16px;
+  transform: scale(1.1);
 }
 
 /* Text on Button */
 .send-happy-thoughts {
-	padding-bottom: 10px;
+  font-family: 'Courier Prime', monospace;
 }
+
 .form-title {
-	font-weight: bold;
-	font-family: 'Trispace', sans-serif;
-	font-size: 14px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .form-bottom-wrapper {
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row;
-	width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .text-area {
-	display: block;
-	resize: none;
-	font-size: 12px;
-	font-weight: 400;
-	padding: 10px;
-	border-color: #e0dfdf;
-	width: 98%;
+  display: block;
+  resize: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px;
+  border-color: #e0dfdf;
+  width: 100%;
 }
 
 .text-counter {
-	display: flex;
-	align-items: center;
-	color: #949494;
+  display: flex;
+  align-items: center;
+  color: #949494;
 }
 
 /* Name inputfield */
 .name-inputfield {
-	font-family: 'Trispace', sans-serif;
-	font-size: 10px;
-	width: 50%;
-	height: 20px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 16px;
+  width: 80%;
+  height: 22px;
 }
 
-/*-----------------ThoughtItem------------- */
+/*-----------------THOUGHT CARD------------- */
 
 .thought-container {
-	background-color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	row-gap: 20px;
-	border: solid black 1px;
-	padding: 15px;
-	margin: 25px auto;
-	box-shadow: 5px 5px;
-	max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 20px;
+  border: solid black 1px;
+  padding: 15px;
+  margin: 25px auto;
+  box-shadow: 6px 6px;
+  max-width: 400px;
 }
 
 .thought-message {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .thought-message p {
-	overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .heart-date-container {
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row;
-	width: 100%;
-	color: #949494;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #949494;
 }
 
 .heart-btn {
-	border-radius: 50%;
-	padding: 13px;
-	background: #ffadad;
-	border: none;
-	margin-right: 5px;
-	transition: all 0.2s ease-in-out;
+  border-radius: 50%;
+  padding: 13px;
+  background: #ffadad;
+  border: none;
+  margin-right: 5px;
+  transition: all 0.2s ease-in-out;
 }
 
 .heart-btn:hover {
-	transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .date {
-	color: #949494;
-	display: flex;
-	align-items: center;
-}
-/*-----------------spinner animation------------- */
-
-.loading-overlay {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  color: #949494;
+  display: flex;
+  align-items: center;
 }
 
-.loading-spinner {
-	width: 50px;
-	height: 50px;
-	border: 5px solid #ffadad;
-	border-radius: 50%;
-	border-left: 5px solid #fff;
-	animation: spinner infinite 0.5s;
-	display: inline;
-}
-
-@keyframes spinner {
-	0% {
-		transform: rotate(0);
-	}
-	50% {
-		transform: rotate (180deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-/*-----------------footer------------- */
+/*-----------------FOOTER------------- */
 .footer {
-	color: #fff;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding-bottom: 25px;
-	font-size: 15px;
-	text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 25px;
+  font-size: 16px;
 }
 
 .footer a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .footer-info {
-	text-decoration: none;
-	color: white;
+  text-decoration: none;
 }
-/*-----------------Media Queries------------- */
+/*-----------------MEDIA QUERIES------------- */
+
 /*Mobile*/
 @media (min-width: 666px) {
-	.question-form,
-	.thought-container {
-		max-width: 400px;
-	}
+  .question-form,
+  .thought-container {
+    max-width: 400px;
+  }
 }
