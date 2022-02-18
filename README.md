@@ -1,11 +1,14 @@
-# Project Happy Thoughts
+# ❤️ Happy Thoughts ❤️
+
+Project making a app to make users able to share thoughts, almost like a Twitter-clone, with React components and useState/useEffect.
 I've created an app that allows user to write and share happy-thoughts: The thoughts can me "liked" by clicking a button.
-
-## The challenge
-The assignment required use of both fetching API -to POST and GET "thoughts" + "likes" and make them update onclick.
-
 I created different components to structure the code and make it more readable- Linked them together¨with import/export.
 
-If I had more time, I would style it more and add more features.
+## The challenge
+This project has been made using: HTML5, CSS3, React (useEffect, useState, props, form validation etc)
+
+Fetched data from API, with both GET and POST request. 
+I created different components to structure the code and make it more readable- Linked them together¨with import/export.
+
 ## View it live
 https://project-happy-thoughts-jessica-nordahl.netlify.app/
