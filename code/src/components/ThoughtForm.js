@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 return (
 <div>
@@ -10,7 +9,7 @@ return (
         className="new-thought"
         id="newThought"
         type="text"
-        minlength="5"
+        minLength="5"
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)}
       />

@@ -5,8 +5,11 @@ const HeartItem = ({ thoughts, onLikesIncrease }) => {
     return (
     <div > 
         {thoughts.map((thought) => (
-        <div key={thought._id}className="thought-wrapper">
+        <div 
+            key={thought._id}
+            className="thought-wrapper">
             <p className="thought-input">{thought.message}</p>
+            
             <button
                 className="like-button" 
                 onClick={() => onLikesIncrease(thought._id)}> 
