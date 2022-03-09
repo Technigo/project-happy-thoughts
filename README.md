@@ -11,4 +11,4 @@ Updated: The API url was replaced with the one I created for this project. For t
 
 ## View it live
 
-https://optimistic-varahamihira-083837.netlify.app
+https://condescending-wilson-74c783.netlify.app
