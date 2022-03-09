@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   max-width: 500px;
+  box-sizing: border-box;
 }
 
 code {
@@ -13,6 +14,8 @@ code {
 }
 
 .loading-overlay {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -22,18 +25,23 @@ code {
   justify-content: center;
   align-items: center;
   background: white;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .loading-container {
   width: 200px;
   border: 3px solid black;
+  border-radius: 10px;
 }
 
 .loading {
+  margin: 3px;
+  border-radius: 10px;
   height: 10px;
   width: 200px;
   background: blue;
-  animation: loader infinite 0.5s;
+  animation: loader infinite 1.5s;
 }
 
 @keyframes loader {
@@ -46,7 +54,7 @@ code {
   }
 
   100% {
-    width: 100%;
+    width: 90%;
   }
 }
 
