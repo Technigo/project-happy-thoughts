@@ -1,12 +1,6 @@
 import React from "react";
 
-const ThoughtForm = ({
-  onFormSubmit,
-  newThought,
-  setNewThought,
-  setName,
-  name,
-}) => {
+const ThoughtForm = ({onFormSubmit,newThought,setNewThought,setName,name}) => {
   return (
     <div className="form-container">
       <form className="form" onSubmit={onFormSubmit}>
@@ -18,7 +12,7 @@ const ThoughtForm = ({
           type="text"
           value={newThought}
           rows="5"
-          maxLength="140"
+          maxLength="40"
           placeholder="Type here..."
           onChange={(e) => setNewThought(e.target.value)}
         ></textarea>
@@ -43,12 +37,12 @@ const ThoughtForm = ({
               &#10084;&#65039; Send Happy Thought &#10084;&#65039;
             </span>
           </button>
-          {/* A text-counter showing red numbers when there are 10 characters left */}
+          {/* A text-counter showing red numbers when there are only 10 characters left */}
           <p
             className="text-counter"
-            style={{ color: newThought.length > 130 ? "red" : "green" }}
+            style={{ color: newThought.length < 30 ? "green" : "red" }}
           >
-            {140 - newThought.length} characters left
+            {40 - newThought.length} characters left
           </p>
         </div>
       </form>

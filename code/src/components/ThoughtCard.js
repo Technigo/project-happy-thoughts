@@ -13,8 +13,8 @@ const ThoughtCard = ({ thought, onLikesIncrease }) => {
       <div className="heart-date-container">
         <button
           className="heart-btn"
-          onClick={() => onLikesIncrease(thought._id)}
-          //the heart-btn background-color depends on the likes or not
+          onClick={() => onLikesIncrease(thought._id)} //calling the function with the id of the object
+          //the heart-btn background-color depends on the likes(if bigger than 0 color is pink, otherwise is white)
           style={{
             backgroundColor: thought.hearts > 0 ? "#FFADAD" : "#EAEAEA",
           }}

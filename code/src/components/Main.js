@@ -5,46 +5,51 @@ import Spinner from "./Spinner";
 import { API_URL, LIKES_URL } from "../utils/urls";
 
 const Main = () => {
-  /* useStates */
-  const [thoughts, setThoughts] = useState([]); 
-  const [newThought, setNewThought] = useState(""); // It being used in the form to send the new message
+
+  /* ----- useStates ------ */
+  const [thoughts, setThoughts] = useState([]); // Square brakets for storing the data we fetch inside an array (an array of objects)
+  const [newThought, setNewThought] = useState(""); 
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState('');
 
-  /* useEffects: it renders after the component gets mounted */
+  /* ----- useEffect ------ */
+  // It renders after the component gets mounted and it calls the API that gets the info about the messages (object) 
+  // The dependency is empty, so this useEffect will be triggered just after the component gets mounted for the first time.
   useEffect(() => {
     fetchThoughts();
   }, []);
 
-/* fetching the API that renders the messages */
+  /* ----- ALL FUNCTIONS DECLARATIONS ------ */
+
+ // 1- Function that fetches the API and stores the data in the thoughts state (get http method)
   const fetchThoughts = () => {
     setLoading(true);
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((data) => setThoughts(data)) 
       .finally(() => setLoading(false));
   };
 
-  /* Function for the submit Form to be able to send the new message */
+  // 2- Function that fetches the API with a post request for sending the message and the author (post http method)
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: newThought, author: name }), //JSON.stringify converts it to JSON.
+      body: JSON.stringify({ message: newThought, author: name }), //JSON.stringify converts JS into JSON.
     };
 
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
-        fetchThoughts();
+        fetchThoughts(); // Calling again the function that fetches the API and stores the updated data in the thoughts state 
         setNewThought(''); // This clears the textarea for a new input
-				setName('');
+				setName(''); // This clears the name from the input
       });
   };
 
-  /* Function for the likes; adds 1 like by pressing the heart */
+  // 3- Function for the likes; adds 1 like by pressing the heart (post http method and passind the id as path params)
   const handleLikesIncrease = (thoughtId) => {
     const options = {
       method: "POST",
@@ -53,7 +58,7 @@ const Main = () => {
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((data) => {
-        fetchThoughts();
+        fetchThoughts(); // Calling again the function that fetches the API and stores the updated data in the thoughts state,in this case, about the likes  
       });
   };
 
@@ -68,6 +73,7 @@ const Main = () => {
         name={name}
 				setName={setName}
       />
+
      {/* mapping through the thought array and generating thought-cards */}
 		 {/* sending data as props to the thought card component */}
       {thoughts.map((thought) => (
@@ -81,3 +87,4 @@ const Main = () => {
   );
 };
 export default Main;
+
