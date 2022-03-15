@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ThoughtForm from "./ThoughtForm";
 import ThoughtCard from "./ThoughtCard";
 import Spinner from "./Spinner";
-import { API_URL, LIKES_URL } from "../utils/urls";
+import { API_URL, LIKES_URL, DELETE_URL } from "../utils/urls";
 
 const Main = () => {
 
@@ -62,6 +62,21 @@ const Main = () => {
       });
   };
 
+// 4- Function for deleting messages; (delete http method and passind the id as path params)
+const handleDeleteMessage = (thoughtId) => {
+  const options = {
+    method: "DELETE",
+  };
+
+  fetch(DELETE_URL(thoughtId), options)
+    .then((res) => res.json())
+    .then((data) => {
+      fetchThoughts(); // Calling again the function that fetches the API and stores the updated data in the thoughts state,in this case, about the likes  
+    });
+};
+
+
+
   return (
     <>
       {loading && <Spinner />}
@@ -81,6 +96,8 @@ const Main = () => {
           key={thought._id}
           thought={thought}
           onLikesIncrease={handleLikesIncrease}
+          onDeleteMessage={handleDeleteMessage}
+
         />
       ))}
     </>

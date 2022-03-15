@@ -1,16 +1,15 @@
 import React from "react";
 import moment from "moment";
 
-const ThoughtCard = ({ thought, onLikesIncrease }) => {
+const ThoughtCard = ({ thought, onLikesIncrease, onDeleteMessage }) => {
   return (
-    <div className="thought-container">
+    <div className="card-container">
       <div className="thought-message">
-        {/* displaying thought message */}
         <p>{thought.message}</p>
         <p className="name">{thought.author}</p>
       </div>
 
-      <div className="heart-date-container">
+      <div className="heart-bin-container">
         <button
           className="heart-btn"
           onClick={() => onLikesIncrease(thought._id)} //calling the function with the id of the object
@@ -25,9 +24,17 @@ const ThoughtCard = ({ thought, onLikesIncrease }) => {
         </button>
 
         <p className="amount-hearts">x {thought.hearts}</p>
-        {/* Using the Moment.js to display when the happy thought was posted */}
-        <p className="date">{moment(thought.createdAt).fromNow()}</p>
+
+        <button
+          className="trash-btn"
+          onClick={() => onDeleteMessage(thought._id)} //calling the function with the id of the object
+        >
+          <i class="fas fa-trash"></i>
+        </button>
       </div>
+
+      {/* Using the Moment.js to display when the happy thought was posted */}
+      <p className="date">{moment(thought.createdAt).fromNow()}</p>
     </div>
   );
 };

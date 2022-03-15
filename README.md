@@ -2,6 +2,8 @@
 
 During this project, I got introduced to the full concept of the component lifecycle, how to use useEffect hook in React to make components mount, unmount, or when state changes. This project has been very helpful for me to understand more about React components, usage of states and sending data through functions and props.
 
+Update:
+I have created my own Happy Thoughts API that I include in this project. It is an Express API using MongoDB Atlas and deployed in Heroku.
 
 ## Link to my deployed project: 
 
