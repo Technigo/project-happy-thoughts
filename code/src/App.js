@@ -3,19 +3,23 @@ import React, { useEffect, useState } from "react";
 import { API_LIKES, API_URL } from "./components/utils/urls";
 import { ThoughtInput } from "components/ThoughtInput";
 import { ThoughtList } from "components/ThoughtList";
+import { LoadingSpinner } from "components/LoadingSpinner";
 
 export const App = () => {
 	const [thoughts, setThoughts] = useState([]);
 	const [newThought, setNewThought] = useState("");
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		fetchThoughts();
 	}, []);
 
 	const fetchThoughts = () => {
+		setLoading(true);
 		fetch(API_URL)
 			.then((res) => res.json())
-			.then((data) => setThoughts(data));
+			.then((data) => setThoughts(data))
+			.finally(() => setLoading(false));
 	};
 
 	const handleFormSubmit = (e) => {
@@ -44,23 +48,13 @@ export const App = () => {
 		fetch(API_LIKES(thoughtId), options)
 			.then((res) => res.json())
 			.then(() => {
-				// const updatedThougts = thoughts.map((item) => {
-				// 	if (item._id === data._id) {
-				// 		item.hearts += 1;
-				// 		return item;
-				// 	} else {
-				// 		return item;
-				// 	}
-				// });
-
-				// setThoughts(updatedThougts);
-
 				fetchThoughts();
 			});
 	};
 
 	return (
 		<main>
+			{loading && <LoadingSpinner />}
 			<ThoughtInput
 				onFormSubmit={handleFormSubmit}
 				newThought={newThought}
