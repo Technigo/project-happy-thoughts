@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './components/Header'
 import HappyThoughtCards from './components/HappyThoughtCards'
-import ThoughtForm from './components/ThoughtForm'
+// import ThoughtForm from './components/ThoughtForm'
 import Footer from './components/Footer'
 
 
