@@ -80,6 +80,10 @@
 
 .time-text {}
 
+.bold {
+  font-weight: 600;
+}
+
 /* Send Form */
 
 .form-container {
@@ -90,7 +94,7 @@
 .send-thought-input {
   width: 100%;
   height: 70%;
-  margin-top: 5px;
+  margin-top: 10px;
   font-family: 'Source Code Pro', monospace;
   font-size: 16px;
   resize: none;
@@ -106,4 +110,5 @@
   font-family: 'Source Code Pro', monospace;
   padding: 0 10px;
   font-size: 16px;
+  cursor: pointer;
 }
