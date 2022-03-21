@@ -35,7 +35,7 @@ code {
 
 .all-thoughts {
   width: 40em;
-  max-width: 80vw;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -43,7 +43,7 @@ code {
   background-color: var(--pale-green);
   box-shadow: 1rem 1rem var(--marigold);
   padding: 1rem;
-  margin: 4rem;
+  margin: 4rem auto;
   border: 2px solid var(--marigold);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -102,5 +102,6 @@ button:hover {
 }
 
 .submit-button {
+  grid-column: span 2;
   display: flex;
 }
