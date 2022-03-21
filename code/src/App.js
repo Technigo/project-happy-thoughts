@@ -1,10 +1,12 @@
 import React from 'react'
-import CodeAlong from './CodeAlong'
+import Status from './Status'
+import Form from './Form'
 
 export const App = () => {
   return (
-    <div>
-      <CodeAlong />
-    </div>
+    <section>
+      <Form />
+      <Status />
+    </section>
   )
 }
