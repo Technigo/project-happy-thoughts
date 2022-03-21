@@ -4,7 +4,7 @@ import Heart from '../assets/heart.png'
 
 export const ThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
 	// if (newThought.length < 5){
-	// 	{style=backgroundColor: gray}
+	// 	{input= backgroundColor: 'pink'}
 	// }
 
 	const checkKey = (e) => {
@@ -18,6 +18,7 @@ export const ThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
 			<div className='input-container'>
 				<label>What's making you happy right now?</label>
 				<textarea
+					className={newThought.length > 140 ? 'red-text' : ''}
 					name='newThought'
 					type='text'
 					rows='5'

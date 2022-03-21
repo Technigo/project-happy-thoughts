@@ -1,56 +1,57 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 
-import { API_LIKES, API_URL } from "./components/utils/urls";
-import { ThoughtInput } from "components/ThoughtInput";
-import { ThoughtList } from "components/ThoughtList";
-import { LoadingSpinner } from "components/LoadingSpinner";
+import { API_LIKES, API_URL } from './components/utils/urls'
+import { ThoughtInput } from 'components/ThoughtInput'
+import { ThoughtList } from 'components/ThoughtList'
+import { LoadingSpinner } from 'components/LoadingSpinner'
 
 export const App = () => {
-	const [thoughts, setThoughts] = useState([]);
-	const [newThought, setNewThought] = useState("");
-	const [loading, setLoading] = useState(false);
+	const [thoughts, setThoughts] = useState([])
+	const [newThought, setNewThought] = useState('')
+	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
-		fetchThoughts();
-	}, []);
+		fetchThoughts()
+	}, [])
 
 	const fetchThoughts = () => {
-		setLoading(true);
+		setLoading(true)
 		fetch(API_URL)
 			.then((res) => res.json())
 			.then((data) => setThoughts(data))
-			.finally(() => setLoading(false));
-	};
+			.catch((err) => console.error(error))
+			.finally(() => setLoading(false))
+	}
 
 	const handleFormSubmit = (e) => {
-		e.preventDefault();
+		e.preventDefault()
 
 		const options = {
-			method: "POST",
+			method: 'POST',
 			headers: {
-				"Content-Type": "application/json",
+				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({ message: newThought }),
-		};
+		}
 
-		fetch(API_URL, options);
-		fetchThoughts();
-	};
+		fetch(API_URL, options)
+		fetchThoughts()
+	}
 
 	const handleLikesClick = (thoughtId) => {
 		const options = {
-			method: "POST",
+			method: 'POST',
 			headers: {
-				"Content-Type": "application/json",
+				'Content-Type': 'application/json',
 			},
-		};
+		}
 
 		fetch(API_LIKES(thoughtId), options)
 			.then((res) => res.json())
 			.then(() => {
-				fetchThoughts();
-			});
-	};
+				fetchThoughts()
+			})
+	}
 
 	return (
 		<main>
@@ -63,5 +64,5 @@ export const App = () => {
 
 			<ThoughtList onLikesClick={handleLikesClick} thoughts={thoughts} />
 		</main>
-	);
-};
+	)
+}

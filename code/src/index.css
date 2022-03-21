@@ -94,9 +94,14 @@ textarea:active {
 	border: 1px solid var(--clr-secondary);
 }
 
+textarea.red-text {
+	color: #e22a01;
+}
+
 /***   BUTTONS   ***/
 button {
 	font-size: inherit;
+	font-family: inherit;
 	height: 50px;
 	border: none;
 	color: var(--clr-black);
@@ -112,8 +117,9 @@ img.likes {
 }
 
 .send-btn {
-	width: 250px;
+	width: 270px;
 	background: var(--clr-accent);
+	margin-right: 0.5em;
 }
 
 .like-btn {

@@ -1,7 +1,9 @@
 import React from 'react'
 import moment from 'moment'
+import { formatDistance } from 'date-fns'
 
 import Heart from '../assets/heart.png'
+import BrokenHeart from '../assets/brokenheart.png'
 
 export const ThoughtList = ({ onLikesClick, thoughts }) => {
 	return (
@@ -16,14 +18,19 @@ export const ThoughtList = ({ onLikesClick, thoughts }) => {
 								onClick={() => onLikesClick(thought._id)}
 							>
 								<img
-									src={Heart}
+									src={thought.hearts > 0 ? Heart : BrokenHeart}
 									alt='heart-icon'
 									className='heart-icon likes'
 								/>
 							</button>
 							<p className='like-counter'> x{thought.hearts}</p>
 						</div>
-						<p className='date-text'>{moment(thought.createdAt).fromNow()}</p>
+						<p className='date-text'>
+							{formatDistance(new Date(thought.createdAt), Date.now(), {
+								addSuffix: true,
+							})}
+							{/* {moment(thought.createdAt).fromNow()} */}
+						</p>
 					</div>
 				</div>
 			))}
