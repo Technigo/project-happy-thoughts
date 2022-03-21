@@ -26,14 +26,23 @@ const ThoughtForm = (props) => {
     return (
 
         <form onSubmit={handleFormSubmit}>
-
-            <input
-            type="text"
-            name="thought"
-            onChange={event => setThought(event.target.value)}
-            />
             
-            <button type="submit">Submit</button>
+            <div className="thought-form">
+                <p>What's making you happy right now?</p>
+
+                <input
+                type="text"
+                name="thought"
+                onChange={event => setThought(event.target.value)}
+                />
+
+                <div>
+                    <button className="btn-happy-thought" type="submit">
+                        <span role="img" aria-label="heart emoji">💗 </span>
+                        Send Happy Thought
+                        <span role="img" aria-label="heart emoji"> 💗</span></button>
+                </div>
+            </div>
         </form>
     )
 

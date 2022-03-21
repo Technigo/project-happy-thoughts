@@ -13,7 +13,7 @@ export const App = () => {
           <Header />
             <main>
               <HappyThoughtCards />
-              <ThoughtForm />
+              {/* <ThoughtForm /> */}
             </main>
             <Footer />
     </div>
