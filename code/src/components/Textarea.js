@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Textarea = ({newThought, setNewThought}) => {
+const Textarea = ({newThought, handleNewThoughtSubmit}) => {
 
     // useEffect(() => {
     //     console.log('mounted textarea')
@@ -14,7 +14,7 @@ const Textarea = ({newThought, setNewThought}) => {
                 className='textarea'
                 placeholder='Doughnuts'
                 value={newThought}
-                onChange={setNewThought}
+                onChange={handleNewThoughtSubmit}
             >
             </textarea>
         </label>

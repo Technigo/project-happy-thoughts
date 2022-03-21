@@ -5,7 +5,7 @@ import Textarea from './Textarea';
 
 
 
-const AddThought = ({heartIcon, thoughtsAPI, fetchThoughts, newThought, setNewThought, newThoughtLength, setNewThoughtLength}) => {
+const AddThought = ({heartIcon, thoughtsAPI, fetchThoughts, newThought, handleNewThought, handleNewThoughtSubmit}) => {
     
 
     const onSubmitting = (event) => {
@@ -22,7 +22,7 @@ const AddThought = ({heartIcon, thoughtsAPI, fetchThoughts, newThought, setNewTh
                 console.log("no success"); 
             } else {
                 fetchThoughts();
-                setNewThought('');
+                handleNewThought('');
             }
         });
     };
@@ -31,9 +31,7 @@ const AddThought = ({heartIcon, thoughtsAPI, fetchThoughts, newThought, setNewTh
         <form onSubmit={onSubmitting} className='card'>
             <Textarea 
                 newThought={newThought}
-                setNewThought={setNewThought}
-                newThoughtLength={newThoughtLength}
-                setThoughtLength={setNewThoughtLength}
+                handleNewThoughtSubmit={handleNewThoughtSubmit}
             />
             <Button 
                 message={<>{heartIcon}&nbsp;Send happy thought!&nbsp;{heartIcon}</>}

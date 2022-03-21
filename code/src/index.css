@@ -1,10 +1,10 @@
 :root {
-  --marigold: #ECA400;
-  --marigold-opaque: #eca50060;
+  --marigold: rgb(236, 164, 0);
+  --marigold-tranparent: #eca50060;
   --pale-green: #EAF8BF;
   --blue-sapphire: #006992;
   --indigo: #27476E;
-  --indigo-opaque: #27476e9f;
+  --indigo-tranparent: #27476e9f;
 }
 
 * {
@@ -48,15 +48,8 @@ code {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  color: var(--indigo-opaque);
+  color: var(--indigo-tranparent);
 }
-/* 
-.thought {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  color: var(--indigo-opaque);
-} */
 
 .thought-header,
 label {
@@ -77,7 +70,7 @@ button {
   border-radius: 2rem;
   padding: 10px;
   border: none;
-  background-color: var(--marigold-opaque);
+  background-color: var(--marigold-tranparent);
   transition: background-color .3s ease;
   display: inline-grid;
   justify-content: center;

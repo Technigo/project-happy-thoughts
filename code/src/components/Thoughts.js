@@ -25,14 +25,16 @@ import Button from './Button'
 const Thoughts = ({heartIcon, thoughtsAPI}) => {
 	const [thoughts, setThoughts] = useState([])
     const [newThought, setNewThought] = useState('')
-    const [newThoughtLength, setNewThoughtLength] = useState(0)
+    const [newThoughtLength, setNewThoughtLength] = useState('')
 
-    const handleNewThought = (event) => {
-        setNewThought(event.target.value)
+    const handleNewThoughtSubmit = (event) => {
+        setNewThought(event.target.value);
+        setNewThoughtLength(event.target.value.length);
+        console.log(newThought, newThoughtLength)
     }
 
-    const handleNewThoughtLength = (event) => {
-        setNewThoughtLength(parseInt(event.target.value.length))
+    const handleNewThought = (msg) => {
+        setNewThought(msg)
     }
 
     const fetchThoughts = () => {
@@ -55,9 +57,9 @@ const Thoughts = ({heartIcon, thoughtsAPI}) => {
 					thoughtsAPI={thoughtsAPI}
                     fetchThoughts={fetchThoughts}
                     newThought={newThought}
-                    setnewThought={handleNewThought}
+                    handleNewThought={handleNewThought}
                     newThoughtLength={newThoughtLength}
-                    setNewThoughtLength={handleNewThoughtLength}
+                    handleNewThoughtSubmit={handleNewThoughtSubmit}
                 />
             </div>
             <div>
