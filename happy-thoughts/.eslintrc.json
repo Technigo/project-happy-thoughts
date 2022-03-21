@@ -80,6 +80,7 @@
       }
     ],
     "prefer-template": "error",
+    "quotes": ["error", "double"],
     "react/destructuring-assignment": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-closing-bracket-location": [
