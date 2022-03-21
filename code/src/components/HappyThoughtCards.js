@@ -16,7 +16,7 @@ const HappyThoughtCards = () => {
 
 console.log(thoughts)
 
-// ThoughtForm & getting all the latest thoughts through mapping
+// Adding ThoughtForm, getting all the latest thoughts through mapping
 return (
 
     <>

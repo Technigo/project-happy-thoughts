@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+
+// Creating ThoughtForm for user to post new thoughts
 const ThoughtForm = (props) => {
 
     const [thought, setThought] = useState('')
@@ -30,11 +32,10 @@ const ThoughtForm = (props) => {
             name="thought"
             onChange={event => setThought(event.target.value)}
             />
+            
             <button type="submit">Submit</button>
         </form>
     )
-
-
 
     }
 
