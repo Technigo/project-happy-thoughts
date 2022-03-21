@@ -4,6 +4,7 @@ const SendMessage = ({messageSent, setMessageSent}) => {
     const [message, setMessage] = useState('')
     const [messageLength, setMessageLength] = useState(0)
     const [error, setError] = useState(false)
+    const [tooShort, setTooShort] = useState(false)
 
     const SEND_API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
@@ -41,11 +42,14 @@ const SendMessage = ({messageSent, setMessageSent}) => {
         setMessage(event)
         setMessageLength(message.length)
         // console.log(message, messageLength)
-        if (message.length > 140) {
+        if (message.length < 5) {
+            setTooShort(true)
+        } else if (message.length > 140) {
             setError(true)
             // alert('Attention! You have exceeded the character limit of 140!')
         } else {
             setError(false)
+            setTooShort(false)
         }
     }
 
@@ -59,6 +63,12 @@ const SendMessage = ({messageSent, setMessageSent}) => {
         buttonMessage = 'Too long to send! 💀'
     } else {
         textErrorStyle = {}
+    }
+
+    if (tooShort === true) {
+        textErrorStyle = { fontWeight: 700, color: 'red' }
+        buttonErrorStyle = { backgroundColor: 'black', color: 'white', cursor: 'not-allowed' }
+        buttonMessage = 'Too short to send! 🥱'
     }
 
     return (
