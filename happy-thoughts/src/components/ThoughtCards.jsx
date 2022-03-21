@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ThoughtForm from "./ThoughtForm";
 
 const ThoughtCards = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -10,11 +11,14 @@ const ThoughtCards = () => {
   }, []);
 
   return (
+    <>
+    <ThoughtForm setThoughts={setThoughts} />
     <div>
-      {thoughts.map(thought => (
-        <p key={thought._id}>{thought.message}</p>
+      {thoughts.map((thought, index) => (
+        <p key={index}>{thought.message}</p>
       ))}
     </div>
+    </>
   );
 };
 
