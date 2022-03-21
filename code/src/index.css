@@ -1,19 +1,26 @@
 :root {
   --marigold: #ECA400;
+  --marigold-opaque: #eca50060;
   --pale-green: #EAF8BF;
   --blue-sapphire: #006992;
   --indigo: #27476E;
+  --indigo-opaque: #27476e9f;
 }
 
 * {
+  font-family: "Inconsolata", monospace;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Inconsolata", -apple-system, monospace, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--indigo);
@@ -36,4 +43,42 @@ code {
   padding: 1rem;
   margin: 4rem;
   border: 2px solid var(--marigold);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  color: var(--indigo-opaque);
+}
+
+.thought-header {
+  grid-column: span 2;
+  color: var(--indigo);
+}
+
+.button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: var(--marigold-opaque);
+  transition: background-color .3s ease;
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  background-color: var(--marigold);
+}
+
+.likes-container {
+  align-self: center;
+}
+
+.number-of-likes {
+  display: inline;
+}
+
+.posted-date {
+  justify-self: end;
+  align-self: center;
 }
