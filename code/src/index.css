@@ -24,6 +24,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--indigo);
+  
+  line-height: 1.7rem;
 }
 
 code {
@@ -37,7 +39,7 @@ code {
   margin: 0 auto;
 }
 
-.thought {
+.card {
   background-color: var(--pale-green);
   box-shadow: 1rem 1rem var(--marigold);
   padding: 1rem;
@@ -48,16 +50,23 @@ code {
   gap: 1rem;
   color: var(--indigo-opaque);
 }
+/* 
+.thought {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  color: var(--indigo-opaque);
+} */
 
-.thought-header {
+.thought-header,
+label{
   grid-column: span 2;
   color: var(--indigo);
 }
 
-.button {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+button {
+  border-radius: 2rem;
+  padding: 10px;
   border: none;
   background-color: var(--marigold-opaque);
   transition: background-color .3s ease;
@@ -66,7 +75,7 @@ code {
   align-items: center;
 }
 
-.button:hover {
+button:hover {
   background-color: var(--marigold);
 }
 
@@ -81,4 +90,12 @@ code {
 .posted-date {
   justify-self: end;
   align-self: center;
+}
+
+.submit-button {
+  display: flex;
+}
+
+.input-field {
+  height: 3rem;
 }

@@ -5,7 +5,7 @@ import Button from './Button'
 
 const thoughtsAPI = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
-const Thoughts = () => {
+const Thoughts = ({heartIcon}) => {
 	const [thoughts, setThoughts] = useState([])
 
 	useEffect(() => {
@@ -15,14 +15,15 @@ const Thoughts = () => {
 	}, [])
 
     return (
-        <div className='all-thoughts'>
+        <div>
 			{thoughts.map((thought) => (
-				<div key={thought._id} className='thought'>
+				<div key={thought._id} className='thought card'>
 					<h2 className='thought-header'>{thought.message}</h2>
                     <div className='likes-container'>
                         <Button 
-                            message={'hello'}
-                            imgSrc={'assets/heart.png'}
+                            message={heartIcon}
+                            className={'like-button'}
+                            // imgSrc={'assets/heart.png'}
                         />
                         <p className='number-of-likes'> x {thought.hearts}</p>
                     </div>
