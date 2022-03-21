@@ -1,9 +1,10 @@
 import React from 'react'
+import MessageContainer from 'components/MessageContainer'
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <section className="page">
+      <MessageContainer />
+    </section>
   )
 }

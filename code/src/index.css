@@ -1,13 +1,108 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.page {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.thought-container {
+  width: 400px;
+  height: 150px;
+  margin: 15px auto;
+  border: 1px solid black;
+  box-shadow: 5px 8px black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.top-bar {
+  height: 75%;
+}
+
+.bottom-bar {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.likes-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.heart-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+}
+
+.likes-text {
+  align-self: center;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.time-stamp-container {
+  color: gray;
+}
+
+/* Text */
+
+.thought-text {
+}
+
+.likes-text {
+  display: inline block;
+}
+
+.time-text {}
+
+/* Send Form */
+
+.bg-gray {
+  background-color: #ccc;
+}
+
+.send-thought-input {
+  width: 100%;
+  height: 60%;
+  margin-top: 5px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+  resize: none;
+  padding: 5px;
+}
+
+.send-thought-btn {
+  border-radius: 20px;
+  border: none;
+  background-color: pink;
+  height: 40px;
+  width: 70%;
+  font-family: 'Source Code Pro', monospace;
+  padding: 0 10px;
+  font-size: 16px;
 }
