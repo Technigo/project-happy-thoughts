@@ -1,18 +1,17 @@
 import React from "react";
 
-const HeartButton = ({likes, id}) => {
+const HeartButton = ({likes, id, messageLiked, setMessageLiked}) => {
 
     const SEND_API = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
 
     const sendLike = () => {
-        const data = {}
 
         const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({})
         };
 
         fetch(SEND_API, options)
@@ -22,10 +21,12 @@ const HeartButton = ({likes, id}) => {
             }
             return data.json();
         }).then(update => {
-            console.log(update)
+            setMessageLiked(true)
+            // console.log(update)
         }).catch(e => {
-            console.log(e)
+            // console.log(e)
         })
+
     }
 
     return (

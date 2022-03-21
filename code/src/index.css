@@ -20,7 +20,7 @@
 }
 
 .thought-container {
-  width: 400px;
+  width: 375px;
   height: 150px;
   margin: 15px auto;
   border: 1px solid black;
@@ -82,13 +82,14 @@
 
 /* Send Form */
 
-.bg-gray {
+.form-container {
   background-color: #ccc;
+  height: 230px;
 }
 
 .send-thought-input {
   width: 100%;
-  height: 60%;
+  height: 70%;
   margin-top: 5px;
   font-family: 'Source Code Pro', monospace;
   font-size: 16px;

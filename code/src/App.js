@@ -1,10 +1,10 @@
 import React from 'react'
-import MessageContainer from 'components/MessageContainer'
+import HomePage from 'components/HomePage'
 
 export const App = () => {
   return (
     <section className="page">
-      <MessageContainer />
+      <HomePage />
     </section>
   )
 }
