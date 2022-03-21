@@ -59,9 +59,18 @@ code {
 } */
 
 .thought-header,
-label{
+label {
   grid-column: span 2;
   color: var(--indigo);
+}
+
+.add-thought-header {
+  margin-bottom: 1rem;
+}
+
+.textarea {
+  width: 100%;
+  height: 3rem;
 }
 
 button {
@@ -94,8 +103,4 @@ button:hover {
 
 .submit-button {
   display: flex;
-}
-
-.input-field {
-  height: 3rem;
 }

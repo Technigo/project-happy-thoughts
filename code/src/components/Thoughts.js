@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { /*formatRelative,*/ subDays, formatDistance } from 'date-fns';
+import { /*formatRelative,*/ formatDistance } from 'date-fns';
+import parseISO from 'date-fns/parseISO';
 
 import Button from './Button'
 
@@ -28,7 +29,7 @@ const Thoughts = ({heartIcon}) => {
                         <p className='number-of-likes'> x {thought.hearts}</p>
                     </div>
 					{/* <p>Posted: {formatRelative(subDays(new Date(thought.createdAt), 3), new Date())}</p> */}
-					<p className='posted-date'>{formatDistance(subDays(new Date(thought.createdAt), 3), new Date(), { addSuffix: true })}</p>
+					<p className='posted-date'>{formatDistance(parseISO(thought.createdAt), new Date(), { addSuffix: true })}</p>
 				</div>
 			))}
 		</div>

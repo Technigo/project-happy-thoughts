@@ -1,12 +1,12 @@
 import React from 'react'
 
-const ThoughtInput = () => {
+const Textarea = () => {
     return (
         <label>
             <h1 className='add-thought-header'>What's making you happy right now?</h1>
             <textarea 
                 name="textarea"
-                className='input-field'
+                className='textarea'
                 placeholder='Doughnuts'
             >
 
@@ -21,4 +21,4 @@ const ThoughtInput = () => {
     )
 }
 
-export default ThoughtInput;
+export default Textarea;
