@@ -15,7 +15,10 @@ const ThoughtCards = () => {
     <ThoughtForm setThoughts={setThoughts} />
     <div>
       {thoughts.map((thought, index) => (
-        <p key={index}>{thought.message}</p>
+        <div className="thought-cards cards">
+          <p key={index}>{thought.message}</p>
+          <button className="heart-button">❤️</button>
+        </div>
       ))}
     </div>
     </>

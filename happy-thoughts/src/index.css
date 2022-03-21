@@ -1,8 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-weight: 500;
+  font-family: 'Roboto Slab', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  border: none;
+}
+
+textarea {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+  resize: none;
+  min-height: 50px;
+  margin: 10px 0 15px;
+}
+
+h1 {
+  color: white;
+  text-shadow: black 2px 5px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e5469;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: #e7e7e7;
+}
+
+.form button {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+  background-color: #fdaead;
+  padding: 10px 0;
+  width: 200px;
+  border-radius: 25px;
+}
+
+
+.cards {
+  border: 2px solid black;
+  margin-bottom: 35px;
+  padding: 10px 10px 20px;
+  width: 500px;
+  height: auto;
+  -moz-box-shadow: 7px 8px 1px 0px black;
+  -webkit-box-shadow: 7px 8px 1px 0px black;
+  box-shadow: 7px 8px 1px 0px black;
+  background-color: white;
+}
+
+.heart-button {
+  background-color: #eaeaea;
+  width: 45px;
+  height: 45px;
+  font-size: 17px;
+  border-radius: 50px;
+}
+
+.icon {
+  font-size: 17px;
 }
