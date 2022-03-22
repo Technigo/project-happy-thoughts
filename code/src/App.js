@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from "react";
-import moment from "moment";
 
-import { API_URL } from "./utils/urls";
+import ThoughtForm from "./components/ThoughtForm";
+import ThoughtItem from "./components/ThoughtItem";
+import LoadingItem from "./components/LoadingItem";
+import { API_URL, LIKES_URL } from "./utils/urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, SetNewThought] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => setThoughts(data));
+    fetchThoughts();
   }, []);
 
-  const onFormSubmit = (event) => {
+  const fetchThoughts = () => {
+    setLoading(true);
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => setThoughts(data))
+      .finally(() => setLoading(false));
+  };
+
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
@@ -26,36 +35,54 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]));
+      .then((data) => {
+        // v1
+        // setThoughts([data, ...thoughts]);
+
+        //v2
+        fetchThoughts();
+      });
+  };
+
+  const handleClickHeart = (thoughtId) => {
+    const options = {
+      method: "POST",
+    };
+
+    fetch(LIKES_URL(thoughtId), options)
+      .then((res) => res.json())
+      .then((data) => {
+        //increase likes only
+        // const updatedThoughts = thoughts.map((item) => {
+        //   if (item._id === data._id) {
+        //     item.hearts += 1;
+        //     return item;
+        //   } else {
+        //     return item;
+        //   }
+        // });
+        // setThoughts(updatedThoughts);
+
+        //v2
+        fetchThoughts();
+      });
   };
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">What's making you happy right now?</label>
-        <input
-          id="newThought"
-          type="text"
-          value={newThought}
-          onChange={(e) => SetNewThought(e.target.value)}
-        />
-        <button type="submit">Send happy thought</button>
-      </form>
+      {loading && <LoadingItem />}
+      <ThoughtForm
+        onFormSubmit={handleFormSubmit}
+        newThought={newThought}
+        SetNewThought={SetNewThought}
+      />
 
       {thoughts.map((thought) => (
-        <div key={thought._id}>
-          <p>{thought.message}</p>
-          <button>
-            <span role="emoji" aria-label="heart for likes">
-              ❤️
-            </span>{" "}
-            {thought.hearts}
-          </button>
-          {/* &hearts; also works  */}
-          <p className="date">
-            Created at: {moment(thought.createdAt).fromNow()}
-          </p>
-        </div>
+        <ThoughtItem
+          key={thought._id}
+          thought={thought}
+          onClickHeart={handleClickHeart}
+        />
       ))}
     </div>
   );
