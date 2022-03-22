@@ -21,13 +21,14 @@
 
 .thought-container {
   width: 375px;
-  height: 150px;
+  height: 180px;
   margin: 15px auto;
   border: 1px solid black;
   box-shadow: 5px 8px black;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 15px;
+  hyphens: auto;
 }
 
 .top-bar {
@@ -106,9 +107,21 @@
   border: none;
   background-color: pink;
   height: 40px;
-  width: 70%;
+  width: 75%;
   font-family: 'Source Code Pro', monospace;
   padding: 0 10px;
   font-size: 16px;
   cursor: pointer;
+}
+
+
+/* Hover Effect for Buttons */
+
+.send-thought-btn:hover {
+  /* border: 2px solid black;
+  transition: 0.5s ease-in-out; */
+}
+
+.heart-container:hover {
+  
 }
