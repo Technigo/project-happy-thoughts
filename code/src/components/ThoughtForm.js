@@ -1,28 +1,28 @@
 import React from 'react'
 import heart from '../assets/heart.png'
 
-const ThoughtForm = ({onFormSubmit, setNewThought, newThought, newName, setNewName}) => {
+const ThoughtForm = ({onFormSubmit, setNewThought, newThought}) => {
     return (
 
-      <form onSubmit={onFormSubmit} className="form-container">
-        <label htmlFor="newThought" className="label-form">What's making you Happy right now?</label>
+      <form onSubmit={onFormSubmit} className="form-container" tabindex="0">
+        <label htmlFor="newThought" className="label-form" tabindex="0">What's making you Happy right now?</label>
         <textarea 
           className="thought-input"
           id="newThought"
           type="text" 
+          tabindex="0"
           value={newThought}
           onChange= {(e) => setNewThought(e.target.value)}
           ></textarea>
             
           <div className="button-count">
-            <button disabled = {newThought.length<5 || newThought.length>140}type="submit" className="submit-button">
+            <button disabled = {newThought.length<5  || newThought.length>140}type="submit" className="submit-button">
               <div className="send-wrapper">
                 <img src={heart} alt="red heart" className="heart"></img> 
                 <span className="send-happy">Send Happy Thought</span>
                 <img src={heart} alt="red heart" className="heart"></img> 
               </div>
-              
-              </button>
+            </button>
             <p className="character-count">{newThought.length}/140</p>
           </div>
           

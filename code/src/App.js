@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import ThoughtForm from './components/ThoughtForm'
 import ThoughtItem from './components/ThoughtItem'
 import HappyLoading from './components/HappyLoading';
-import Background from './components/Background';
 
 const HAPPY_API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 const LIKES_URL = (thoughtId) =>  `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
@@ -11,7 +10,6 @@ export const App = () => {
 
   const [thoughts, setThoughts] = useState ([])
   const [newThought, setNewThought] = useState ('')
-  const [newName, setNewName] = useState ('')
   const [loading, setLoading] = useState(false);
 
 
@@ -36,7 +34,7 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ message: newThought, name: newName }),
+      body: JSON.stringify({ message: newThought}),
     }
 
     fetch(HAPPY_API, options)
@@ -44,7 +42,6 @@ export const App = () => {
     .then((data) => {
       fetchThoughts()
       setNewThought("") // This clears the textarea for a new input
-      setNewName("") // This clears the name input
     })
     
   }
@@ -64,24 +61,23 @@ export const App = () => {
 
   return (
     <div className="body">
-      <Background />
+ 
       {loading && <HappyLoading />}
-      <h1>A PLACE FOR EVERYONES HAPPY THOUGHTS</h1>
+      <h1 tabindex="0">A PLACE FOR EVERYONES HAPPY THOUGHTS</h1>
         <ThoughtForm
-        onFormSubmit = {handleFormSubmit}
-        newThought = {newThought}
-        setNewThought = {setNewThought}
-        newName = {newName}
-        setNewName = {setNewName}/>
+          onFormSubmit = {handleFormSubmit}
+          newThought = {newThought}
+          setNewThought = {setNewThought}
+        />
       
       {thoughts.map(thought => (
 
-       <ThoughtItem 
-       key={thought._id}
-       thought = {thought}
-       onLikesIncrease = {handleLikesIncrease}/>
-      ) 
-      )}
+      <ThoughtItem 
+        key={thought._id}
+        thought = {thought}
+        onLikesIncrease = {handleLikesIncrease}
+      />
+        ))}
     </div>
   )
 }

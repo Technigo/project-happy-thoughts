@@ -147,7 +147,7 @@ h1 {
 }
 
 .send-wrapper img {
-  width: 30px;
+  width: 40px;
 }
 
 /*New thought*/
@@ -173,8 +173,7 @@ h1 {
   color: #878DF7;
   font-weight: 700;
 }
-/*Row containing Heart button for likes, number of likes and 
-time when last updated*/
+
 .button-row{
   display: flex;
   flex-direction: row;
@@ -183,7 +182,8 @@ time when last updated*/
   padding: 20px 0;
   margin-bottom: 20px;
 }
-/*Heart button and counter for likes*/
+
+
 .heart-button-wrapper {
   display: flex;
   flex-direction: row;
@@ -213,9 +213,6 @@ time when last updated*/
 
 }
 
-.date {
-  display: inline;
-}
 
 @media (min-width: 700px) {
  

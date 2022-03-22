@@ -5,12 +5,10 @@ import heart from '../assets/heart.png'
 
 const ThoughtItem = ({thought, onLikesIncrease}) => {
 
-
     return (
         <div className="message-container">
           <div className="displayed-message">
-            <p className="thought-message">{thought.message}</p>
-            <p className="name-message">{thought.name}</p>
+            <p className="thought-message" tabindex="0">{thought.message}</p>
           </div>
   
           <div className="button-row">
