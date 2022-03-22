@@ -29,9 +29,12 @@
   flex-direction: column;
   padding: 15px;
   hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
+   -moz-hyphens: auto;
+   -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .top-bar {
