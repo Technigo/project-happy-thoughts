@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 
-export const Mainpage = () => {
+import { Thought } from "./Thought";
 
+export const Mainpage = () => {
   const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
   const [thoughts, setThoughts] = useState([]);
 
@@ -20,6 +21,7 @@ export const Mainpage = () => {
             <li key={thought._id}>{thought.message}</li>
             ))}
           </ul>
+          <Thought />
         </div>
       )
 }
