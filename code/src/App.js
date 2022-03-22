@@ -11,12 +11,30 @@ const LIKES_URL =
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  // const [thought, setThought] = useState("");
+  const [thought, setThought] = useState("");
 
   const fetchThoughts = () => {
     fetch(THOUGHTS_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data));
+  };
+
+  const handleInputSubmit = (event) => {
+    event.preventDefault();
+
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: thought }),
+    };
+
+    fetch(THOUGHTS_URL, requestOptions)
+      .then((res) => res.json())
+      .then((data) => {
+        fetchThoughts();
+      });
   };
 
   useEffect(() => {
@@ -26,6 +44,11 @@ export const App = () => {
   return (
     <section className="main">
       <Header />
+      <ThoughtInput
+        onInputSubmit={handleInputSubmit}
+        thought={thought}
+        setThought={setThought}
+      />
       <ThoughtList />
     </section>
   );
