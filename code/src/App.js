@@ -30,6 +30,29 @@ export const App = () => {
     .then((data) => setThoughts([data, ...thoughts]))
   }
 
+  const likesCounter = (thoughtId) => {
+    const options = {
+      method: 'POST', 
+    }
+
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
+    .then((res) => res.json())
+    .then((data) => { 
+
+      const updatedThoughts = thoughts.map(item => {
+        if (item._id === data._id) {
+          item.hearts += 1;
+          return item;
+        } else {
+          return item;
+        }
+      })
+      setThoughts(updatedThoughts)
+
+    })
+  }
+
+
   return (
     <div>
       <form onSubmit={onFormSubmit}>
@@ -42,12 +65,12 @@ export const App = () => {
       <button type="submit">Send Thougth!</button>
       </form>
 
-
-
       {thoughts.map((thought) => (
         <div key={thought._id}>
           <p>{thought.message}</p>
-          <button>&hearts; {thought.hearts}</button>
+          <button onClick={() => likesCounter(thought._id)}>
+            {''}
+          &hearts; {thought.hearts}</button>
           <p className="date"> - Created at:{moment(thought.createdAt).fromNow()}</p>
         </div>  
       ))}
