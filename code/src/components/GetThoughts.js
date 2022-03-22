@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-const FetchAPI = () => {
+const FetchThoughts = () => {
   const [postedThougts, setpostedThougts] = useState([])
   useEffect(() => {
     fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
@@ -11,10 +11,15 @@ const FetchAPI = () => {
   return (
     <>
       {postedThougts.map((data) => (
-        <div key={data._id}>
-          <p>Message: {data.message}</p>
-          <p>Likes: {data.hearts}</p>
-          <p>Created: {data.createdAt}</p>
+        <div className="thoughts" key={data._id}>
+          <p>{data.message}</p>
+          <div className="likes">
+            <button className="heartbutton" onClick={''}>❤️</button>
+            x {data.hearts}
+            <div className="date">
+              <p>{data.createdAt}</p>
+            </div>
+          </div>
         </div>
       ))}
       <p>testar 123</p>
@@ -22,4 +27,4 @@ const FetchAPI = () => {
   )
 }
 
-export default FetchAPI
+export default FetchThoughts
