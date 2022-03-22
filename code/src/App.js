@@ -1,9 +1,11 @@
 import React from 'react'
 
+import { Mainpage } from 'Components/Mainpage'
+
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <Mainpage />
     </div>
   )
 }
