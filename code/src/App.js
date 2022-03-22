@@ -44,12 +44,20 @@ export const App = () => {
   return (
     <section className="main">
       <Header />
+
       <ThoughtInput
         onInputSubmit={handleInputSubmit}
         thought={thought}
         setThought={setThought}
       />
-      <ThoughtList />
+
+      {thoughts.map((oneThought) => (
+        <ThoughtList
+          key={oneThought._id}
+          oneThought={oneThought}
+          // onLikesChange={handleLikesChange}
+        />
+      ))}
     </section>
   );
 };
