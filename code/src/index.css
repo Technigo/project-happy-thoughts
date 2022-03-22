@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("#");
+  background-color: #fef6f6;
   background-size: cover;
   
 }
@@ -25,21 +25,24 @@ code {
 /*Loading spinner*/
 
 .loading-overlay {
-position: absolute;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-background-color: #FDAEAD;
-display: flex;
-justify-content: center;
-align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.loading-overlay img {
-  height: 500px;
-  width: 500px;
-  animation: spinner infinite 0.8s;
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ffadad;
+  border-radius: 50%;
+  border-left: 5px solid #fff;
+  animation: spinner infinite 0.3s;
 }
 
 @keyframes spinner {
@@ -53,19 +56,17 @@ align-items: center;
     transform: rotate(360deg);
   }
 }
+
 h1 {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Poppins', sans-serif;
   font-size: 60px;
-  font-weight: 700;
   text-shadow: 4px 4px 10px #FDAEAD;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+
   text-align: center;
   margin: 30px;
-  color:white;
-background-color: white;
+  color:black;
 }
-/*Containers*/
+
 
 .form-container{
   width: 90%;
@@ -84,13 +85,13 @@ background-color: white;
   box-shadow: 13px 13px black;
   background-color: white;
 }
-/*Form for thought-submission*/
+
 
 .label-form {
   margin: 25px 0 15px 25px;
   font-weight: 600;
 }
-/*This is where you type in your thought*/
+
 .thought-input {
   border: 1px solid #D5D2D2;
   margin: 0 auto;
@@ -100,21 +101,11 @@ background-color: white;
   padding: 10px;
 }
 
-.name-input{
-  margin: 10px auto;
-  padding: 10px;
-  width: 90%;
-  font-family: 'Roboto Mono', monospace;
-  border: 1px solid #D5D2D2;
-  
-}
-/*This is the button-character counter wrapper*/
 .button-count{
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
-/*Styles thought-submit button*/
+
 .submit-button {
   width: 50%;
   height: 60px;
@@ -130,8 +121,9 @@ background-color: white;
 }
 .submit-button:hover {
   transform:scale(1.1,1.1);
+  transition: 0.5s ease;
 }
-/* Wraps heart icon and Send Happy Thought text*/
+
 .send-wrapper {
   display: flex;
   justify-content: center;
@@ -140,12 +132,12 @@ background-color: white;
 .character-count {
   margin-right: 50px;
 }
-/*MEssage which is conditionally rendered*/
+
 .error-message {
   font-family: 'Roboto Mono', monospace;
   text-align: center;
 }
-/*Text on button*/
+
 .send-happy {
   padding: 0 15px;
   font-size: 16px;
@@ -153,9 +145,9 @@ background-color: white;
   margin-top: 10px;
   color: black;
 }
-/*Heart icon*/
+
 .send-wrapper img {
-  width: 40px;
+  width: 30px;
 }
 
 /*New thought*/
@@ -210,11 +202,15 @@ time when last updated*/
 }
 
 .heart-button img {
-  width: 40px;
+  width: 30px;
+  margin: 5px 0 0 2px;
+  
   
 }
 .heart-button img:hover {
-  transform:scale(1.2,1.2);
+  transform: scale(1.2,1.2);
+  transition: 0.5s ease;
+
 }
 
 .date {

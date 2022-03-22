@@ -13,14 +13,6 @@ const ThoughtForm = ({onFormSubmit, setNewThought, newThought, newName, setNewNa
           value={newThought}
           onChange= {(e) => setNewThought(e.target.value)}
           ></textarea>
-          <input
-            className="name-input"
-            type='text' 
-            placeholder='Your name (optional)'
-            maxLength='20'
-            value={newName}
-            onChange={(e) => setNewName(e.target.value)}>
-            </input>
             
           <div className="button-count">
             <button disabled = {newThought.length<5 || newThought.length>140}type="submit" className="submit-button">
@@ -36,10 +28,10 @@ const ThoughtForm = ({onFormSubmit, setNewThought, newThought, newName, setNewNa
           
           
           {newThought.length <5 && (
-            <p className="error-message"> Your message must be 5 characters long</p>
+            <p className="error-message"> Your message must be at least 5 characters long</p>
           )}
             {newThought.length >140 && (
-            <p className="error-message"> Your message must be less thann 140 characters long</p>
+            <p className="error-message"> Your message must be less than 140 characters long</p>
           )}
       </form>
 

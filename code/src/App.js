@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ThoughtForm from './components/ThoughtForm'
 import ThoughtItem from './components/ThoughtItem'
 import HappyLoading from './components/HappyLoading';
+import Background from './components/Background';
 
 const HAPPY_API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 const LIKES_URL = (thoughtId) =>  `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
@@ -63,6 +64,7 @@ export const App = () => {
 
   return (
     <div className="body">
+      <Background />
       {loading && <HappyLoading />}
       <h1>A PLACE FOR EVERYONES HAPPY THOUGHTS</h1>
         <ThoughtForm
