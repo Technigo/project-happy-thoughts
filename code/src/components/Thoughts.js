@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { /*formatRelative,*/ formatDistance } from 'date-fns';
 import parseISO from 'date-fns/parseISO';
 
@@ -43,10 +43,12 @@ const Thoughts = ({heartIcon, thoughtsAPI}) => {
 			.then(json => setThoughts(json))
     }
 
-    useEffect(() => {
-        fetchThoughts();
-        setInterval(fetchThoughts, 5000);
-    }, [])
+    fetchThoughts()
+    setInterval(fetchThoughts, 5000);
+    // useEffect(() => {
+    //     fetchThoughts();
+    //     setInterval(fetchThoughts, 5000);
+    // }, [fetchThoughts])
     
 
     return (

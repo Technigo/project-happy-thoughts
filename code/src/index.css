@@ -25,7 +25,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--indigo);
   
-  line-height: 1.7rem;
+  line-height: 2rem;
 }
 
 code {
@@ -34,7 +34,7 @@ code {
 }
 
 .all-thoughts {
-  width: 40em;
+  width: 35em;
   max-width: 80%;
   margin: 0 auto;
 }
@@ -49,6 +49,7 @@ code {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   color: var(--indigo-tranparent);
+  word-break: break-word;
 }
 
 .thought-header,
