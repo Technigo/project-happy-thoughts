@@ -1,7 +1,16 @@
 import React from "react";
+import MessageCard from "./MessageCard";
+
+import './MessageGroup.css'
 
 const MessageGroup = ({ messages }) => {
-  return messages.map((item, i) => <p key={i}>{item.message}</p>);
+  return (
+    <div className="message-group-container">
+      {messages.map((message, i) => (
+        <MessageCard key={i} {...message} />
+      ))}
+    </div>
+  );
 };
 
 export default MessageGroup;

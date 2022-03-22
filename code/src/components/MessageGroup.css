@@ -1,0 +1,4 @@
+.message-group-container {
+	max-height: 100vh;
+	overflow: scroll;
+}
