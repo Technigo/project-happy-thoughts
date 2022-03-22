@@ -1,0 +1,43 @@
+.message-container {
+	display: block;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  box-shadow: 7px 7px black;
+  width: 95%;
+  padding: 16px;
+  margin: 30px auto;
+}
+
+.message-text {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px auto 20px auto;
+}
+
+.message-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-heart-group {
+  display: flex;
+  align-items: center;
+}
+
+.message-heart-button {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(242, 240, 240);
+  font-size: 12px;
+}
+
+.message-heart-count,
+.message-date {
+  color: grey;
+  font-size: 12px;
+}
