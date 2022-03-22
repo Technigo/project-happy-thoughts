@@ -40,11 +40,11 @@ const SendMessage = ({messageSent, setMessageSent}) => {
     // WordCounter and Message and Error
     const wordCount = (event) => {
         setMessage(event)
-        setMessageLength(message.length)
+        setMessageLength(event.length)
         // console.log(message, messageLength)
-        if (message.length < 5) {
+        if (event.length < 5) {
             setTooShort(true)
-        } else if (message.length > 140) {
+        } else if (event.length > 140) {
             setError(true)
             // alert('Attention! You have exceeded the character limit of 140!')
         } else {
