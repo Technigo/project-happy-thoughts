@@ -1,13 +1,229 @@
 body {
-  margin: 0;
+ 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("#");
+  background-size: cover;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  font-family: 'Roboto Mono', monospace;
+
+}
+
+.body{
+  width: 100%;
+  
+}
+
+/*Loading spinner*/
+
+.loading-overlay {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: #FDAEAD;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.loading-overlay img {
+  height: 500px;
+  width: 500px;
+  animation: spinner infinite 0.8s;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 60px;
+  font-weight: 700;
+  text-shadow: 4px 4px 10px #FDAEAD;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  text-align: center;
+  margin: 30px;
+  color:white;
+background-color: white;
+}
+/*Containers*/
+
+.form-container{
+  width: 90%;
+  margin: 40px auto;
+  border: 2px solid #939393;
+  box-shadow: 13px 13px black;
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F0F0;
+
+}
+.message-container{
+  width: 90%;
+  margin: 40px auto;
+  border:2px solid #939393;
+  box-shadow: 13px 13px black;
+  background-color: white;
+}
+/*Form for thought-submission*/
+
+.label-form {
+  margin: 25px 0 15px 25px;
+  font-weight: 600;
+}
+/*This is where you type in your thought*/
+.thought-input {
+  border: 1px solid #D5D2D2;
+  margin: 0 auto;
+  width: 90%;
+  height: 70px;
+  font-family: 'Roboto Mono', monospace;
+  padding: 10px;
+}
+
+.name-input{
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+  font-family: 'Roboto Mono', monospace;
+  border: 1px solid #D5D2D2;
+  
+}
+/*This is the button-character counter wrapper*/
+.button-count{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+/*Styles thought-submit button*/
+.submit-button {
+  width: 50%;
+  height: 60px;
+  min-width: 250px;
+  margin: 10px auto 5px 25px;
+  border-radius: 40px;
+  background-color: #FFAFAF;
+  border:none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.submit-button:hover {
+  transform:scale(1.1,1.1);
+}
+/* Wraps heart icon and Send Happy Thought text*/
+.send-wrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.character-count {
+  margin-right: 50px;
+}
+/*MEssage which is conditionally rendered*/
+.error-message {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+}
+/*Text on button*/
+.send-happy {
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: black;
+}
+/*Heart icon*/
+.send-wrapper img {
+  width: 40px;
+}
+
+/*New thought*/
+
+.displayed-message{
+  height: 60px;
+  margin: 30px 0;
+  
+}
+
+.thought-message {
+  margin: 40px 35px;
+  font-size: 20px;
+  line-height: 25px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  overflow-wrap: break-word;
+}
+
+.name-message {
+  margin: 15px 35px 30px 35px;
+  font-family: 'Roboto Mono', monospace;
+  color: #878DF7;
+  font-weight: 700;
+}
+/*Row containing Heart button for likes, number of likes and 
+time when last updated*/
+.button-row{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+/*Heart button and counter for likes*/
+.heart-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 75%; 
+}
+
+.heart-button {
+  background-color: #FFADAD;
+  border-radius: 50%;
+  border: none;
+  width: 67px;
+  height: 67px;
+  margin: 0 15px 0 25px;
+  cursor: pointer;
+}
+
+.heart-button img {
+  width: 40px;
+  
+}
+.heart-button img:hover {
+  transform:scale(1.2,1.2);
+}
+
+.date {
+  display: inline;
+}
+
+@media (min-width: 700px) {
+ 
+  .message-container, .form-container{
+    width: 660px;
+  }
 }
