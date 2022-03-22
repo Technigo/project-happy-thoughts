@@ -29,6 +29,8 @@
   flex-direction: column;
   padding: 15px;
   hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .top-bar {
