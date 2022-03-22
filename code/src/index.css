@@ -61,36 +61,17 @@ code {
 
 @media screen and (min-width: 768px) {
   .message-display-div {
-    background-color: white;
-    border: 2px solid grey;
-    box-shadow: 8px 7px 5px black;
-    word-wrap: break-word;
     width: 30vw;
-    margin: 8px;
-    padding-left: 20px;
-    padding-right: 20px;
   }
   
   .form-div {
-    background-color: lightgrey;
     margin: 30px;
     width: 30vw;
     height: 30vh;
-    padding-left: 20px;
-    padding-right: 20px;
-    /* text-align: center; */
   }
   
   .form-div input {
     width: 30vw;
     height: 50px;
-  }
-  
-  .form-button {
-    background-color: pink;
-    border: none;
-    border-radius: 50px;
-    font-size: 20px;
-    margin-top: 30px;
   }
 }
