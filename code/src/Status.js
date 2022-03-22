@@ -27,8 +27,15 @@ const Status = () => {
      <div className="container">
          {recentMessages.map((singleMessage) => (
              <article key={singleMessage._id}>
-                 <h4>
+                 <h4 className="sent-messages">
                      {singleMessage.message}</h4>
+                {/* <button>
+                <link rel="icon" type="image/png" sizes="72x72" href="">
+                <link rel="apple-touch-icon" type="image/png" sizes="72x72" href=".../icons8-red-heart-72.png">
+                <meta name="msapplication-square70x70logo" content=".../icons8-red-heart-70.png">
+                <meta name="msapplication-TileColor" content="#C0FFEE">
+                <meta name="application-name" content="Beautiful application name">
+                </button> */}
                  
              </article>
          ))}
