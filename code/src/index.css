@@ -73,6 +73,8 @@ main {
   border: 1px solid black;
   margin-top: 20px;
   padding: 30px;
+  box-shadow: 7px 10px;
+  font-family: "Roboto", sans-serif;
 }
 
 .heart-btn {
