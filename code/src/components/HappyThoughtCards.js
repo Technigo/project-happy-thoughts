@@ -23,11 +23,11 @@ return (
 <div className="thought-container">
     {thoughts.map(thought => (
         <section className="thought-box" key={thought._id}>
-                <p>
+                <p className="message">
                     {thought.message}
                 </p>
 
-            <div className="details-wrapper">
+          
 
             <div className="likes-container">
                 <button className={(thought.hearts === 0 ? "heart-btn" : "heart-btn red-heart-btn")} type="submit">
@@ -36,7 +36,7 @@ return (
 
                 <p className="likes">x {thought.hearts}</p>
             </div>
-            </div>
+       
         
         </section>
                  ))}

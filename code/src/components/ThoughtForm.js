@@ -35,7 +35,7 @@ const ThoughtForm = (props) => {
                 <textarea
                  className="text-input"
                  rows='5'
-                 columns='150'
+                 columns='140'
                  placeholder="Write a happy thought..."
                  type="text"
                  name="thought"

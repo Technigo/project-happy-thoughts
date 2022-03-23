@@ -17,6 +17,7 @@
   --clr-grey: #6f6d6d;
   --clr-link: rgba(174, 9, 9, 0.933);
   --clr-error: red;
+  --clr-send-btn: #ffadad;
 }
 
 body {
@@ -67,7 +68,7 @@ main {
 }
 
 .btn-happy-thought {
-  background: #ffadad;
+  background: var(--clr-send-btn);
   border: none;
   border-radius: 30px;
   padding: 12px;
@@ -87,7 +88,6 @@ main {
 
 .text-input {
   width: 100%;
-  padding: 5px 0 80px 5px;
   font-weight: 500;
   font-size: 1rem;
   border: 1px solid var(--clr-grey);
@@ -98,7 +98,7 @@ main {
 .thought-box {
   border: 1px solid black;
   margin-top: 20px;
-  padding: 30px;
+  padding: 1em;
   box-shadow: 7px 10px;
   font-family: "Roboto", sans-serif;
   background: var(--clr-white);
@@ -111,6 +111,10 @@ main {
   justify-content: space-between;
 }
 
+.message {
+  margin-bottom: 1rem;
+}
+
 .likes-container {
   display: flex;
   align-items: center;
@@ -119,13 +123,18 @@ main {
 .likes {
   color: var(--clr-grey);
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin: 0 0.5em;
 }
 
 .heart-btn {
   background: #eaeaea;
   border-radius: 50%;
   border: none;
-  padding: 12px;
+  width: 45px;
+  height: 45px;
+  font-size: 0.9rem;
 }
 
 .red-heart-btn {
