@@ -14,7 +14,8 @@ const HappyThoughtCards = () => {
         .then(thoughts => setThoughts(thoughts))
 }, [])
 
-console.log(thoughts)
+console.log('thoughts', thoughts)
+console.log('setThoughts', setThoughts)
 
 // Adding ThoughtForm, getting all the latest thoughts through mapping
 return (
@@ -23,10 +24,12 @@ return (
         <ThoughtForm setThoughts={setThoughts} />
 
     <div>
+  
             {thoughts.map((thought, index) => (
-                <p key={index}>{thought.message}</p>
+                <div className='thought-box' key={index}>{thought.message}</div>
             ))
             }
+           
     </div>
 
     </>

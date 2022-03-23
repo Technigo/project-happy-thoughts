@@ -9,10 +9,10 @@ body {
   font-family: "Roboto", "Courier New", Courier, monospace;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */
 
 h1 {
   font-family: "Inconsolata", "Courier New", Courier, monospace;
@@ -37,6 +37,29 @@ h1 {
   margin-top: 10px;
 }
 
+.message-length-ok {
+  color: #000000;
+  font-size: 14px;
+}
+
+.message-length-error {
+  color: red;
+  font-size: 14px;
+}
+
+.text-input {
+  width: 100%;
+  padding: 5px 0 80px 5px;
+}
+
+/* THOUGHT LIST */
+
+.thought-box {
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 30px;
+}
+
 /* FOOTER */
 
 .footer-section {
@@ -47,5 +70,5 @@ h1 {
 
 .footer-link {
   text-decoration: none;
-  color: rgba(193, 0, 122, 0.933);
+  color: rgba(174, 9, 9, 0.933);
 }
