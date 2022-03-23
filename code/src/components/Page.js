@@ -7,6 +7,11 @@ const Page = () => {
     const [loading, setLoading] = useState(false)
     const [newMessage, setNewMessage] = useState('')
 
+    const ApiFetch = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+    const ApiLikes = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
+
+
+
     useEffect(
         () => { 
     fetchRecentMessages() },
@@ -14,14 +19,14 @@ const Page = () => {
 
     const fetchRecentMessages = () => {
         setLoading(true)
-        fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')  
+        fetch(ApiFetch)  
           .then((res) => res.json())
           .then((data) => setRecentMessages(data))
           .finally(() => setLoading(false))
           
-        
         }   
 
+    
     const handleNewMessage = (event) => {
          setNewMessage(event.target.value)
     }
@@ -41,16 +46,36 @@ const Page = () => {
                 }
     
         fetch(
-            'https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+            ApiFetch, options)
             .then(res => res.json())
             .then(() => fetchRecentMessages())
             .finally(() => setNewMessage(''))
     }
 
+
+    const onHeartSubmit = (thoughtId) => {
+
+		const options = {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		}
+
+		fetch(ApiLikes(thoughtId), options)
+			.then((res) => res.json())
+			.then(() => {
+                fetchRecentMessages()
+			})
+	}
+
+
+
 return (
     <div className="container">
         <Form newMessage={newMessage} onNewMessage={handleNewMessage} onFormSubmit={onFormSubmit}/>
-        <Status loading={loading} recentMessages={recentMessages}/>
+            <Status loading={loading} recentMessages={recentMessages} onHeartSubmit={onHeartSubmit}/>
+
       </div>
 )
 

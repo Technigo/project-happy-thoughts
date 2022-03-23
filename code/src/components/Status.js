@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Status = ({ loading, recentMessages}) => {
+const Status = ({ loading, recentMessages, onHeartSubmit}) => {
      if (loading) {
             return (<p>Loading data...</p>)
         }
@@ -9,16 +9,34 @@ const Status = ({ loading, recentMessages}) => {
      <div>
          {recentMessages.map((singleMessage) => (
              <article key={singleMessage._id}>
-                 <h4 className="sent-messages">
-                     {singleMessage.message}</h4>
-                    
-                    <button className="heart-button">
-                    <span role="img" aria-label="heart emoji"> ❤️</span>
+                <p className="sent-messages">
+                     {singleMessage.message}</p>
+
+                <div className="btn-group">
+                    <button 
+                    onClick= {() => onHeartSubmit(singleMessage._id)}
+                    className={singleMessage.hearts > 0 ? "heart-btn liked" : "heart-btn"}>
+                    <span role="img" 
+                    aria-label="heart emoji">❤️</span>
                     </button>
+
+                <span 
+                key={singleMessage._id}
+                className="number-of-likes">
+                    x {singleMessage.hearts}
+                </span> 
+                    
+                </div> 
+
+                
+                
+                
                
                  
              </article>
-         ))}
+             ))}
+
+            
      </div>
  )
 

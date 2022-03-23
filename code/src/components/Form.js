@@ -10,19 +10,31 @@ return(
         onSubmit={onFormSubmit}>
 
             <div className="input-group">
-                <label>What's making you happy right now?
+                <label htmlFor="newMessage" key="newMessage">What's making you happy right now?
+
                     <input type="text" 
-                    name="text" 
+                    name="newMessage" 
                     value={newMessage}
-                    className="text-input"
-                    onChange={onNewMessage}/>
+                    className="text-input" 
+                    onChange={onNewMessage}
+                    // minLength='5'
+                    // maxlength='140'
+                    />
+                    
                 </label>
+
+                <div 
+                className={newMessage.length > 140 ? "characters red-text" : "characters"}>
+                    {0 + newMessage.length}/140
+                </div>
+
             </div>
 
             <div className="btn-group">
                 <button 
+                disabled={newMessage.length < 5}
                 type="submit"
-                className="send-button"> 
+                className="send-btn"> 
                     <span role="img" aria-label="heart emoji">❤️</span>
                     Send Happy Thought
                     <span role="img" aria-label="heart emoji">❤️</span>
