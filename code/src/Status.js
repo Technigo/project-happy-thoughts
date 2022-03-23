@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 const Status = () => {
     const [recentMessages, setRecentMessages] = useState([])
-    // const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     useEffect(
         () => { 
@@ -10,18 +10,19 @@ const Status = () => {
     [])
 
     const fetchRecentMessages = () => {
-        // setLoading(true)
+        setLoading(true)
         fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')  
           .then((res) => res.json())
           .then((data) => setRecentMessages(data))
-        //   .finally(() => setLoading(false))
+          .finally(() => setLoading(false))
           
         
         }   
 
-        // if (loading) {
-        //     <p>Loading data...</p>
-        // }
+        if (loading) {
+            return (<p>Loading data...</p>
+        )
+        }
 
  return (
      <div>
