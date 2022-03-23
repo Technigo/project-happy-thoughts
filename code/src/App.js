@@ -4,12 +4,14 @@ import { API_LIKES, API_URL } from './components/utils/urls'
 import { ThoughtInput } from 'components/ThoughtInput'
 import { ThoughtList } from 'components/ThoughtList'
 import { LoadingSpinner } from 'components/LoadingSpinner'
+import { Hearts } from 'components/Hearts'
 
 export const App = () => {
 	const [thoughts, setThoughts] = useState([])
 	const [newThought, setNewThought] = useState('')
 	const [loading, setLoading] = useState(false)
 
+	//Fetch thoughts when only when components get mounthed.
 	useEffect(() => {
 		fetchThoughts()
 	}, [])
@@ -36,7 +38,6 @@ export const App = () => {
 
 		fetch(API_URL, options)
 		fetchThoughts()
-
 		setNewThought('')
 	}
 
@@ -57,6 +58,7 @@ export const App = () => {
 
 	return (
 		<main>
+			<Hearts />
 			{loading && <LoadingSpinner />}
 			<ThoughtInput
 				onFormSubmit={handleFormSubmit}
