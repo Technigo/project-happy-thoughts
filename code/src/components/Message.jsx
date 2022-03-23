@@ -3,7 +3,8 @@ import { formatDistance } from 'date-fns'
 import parseISO from 'date-fns/parseISO'
 import HeartButton from "./HeartButton";
 
-const Message = ({thought, messageLiked, setMessageLiked}) => {
+const Message = ({thought, sendLike}) => {
+
     const timePosted = formatDistance(parseISO(thought.createdAt), new Date(), {addSuffix: true})
 
     return (
@@ -15,10 +16,9 @@ const Message = ({thought, messageLiked, setMessageLiked}) => {
             <div className="bottom-bar">
                 <div className="likes-container">
                     <HeartButton 
-                        likes={thought.hearts} 
-                        id={thought._id} 
-                        messageLiked={messageLiked}
-                        setMessageLiked={setMessageLiked}
+                        likes={thought.hearts}
+                        sendLike = {sendLike}
+                        messageID={thought._id}
                     />
                 </div>
                 <div className="time-stamp-container">

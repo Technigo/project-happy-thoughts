@@ -1,54 +1,21 @@
 import React, {useState} from "react";
 
-const SendMessage = ({messageSent, setMessageSent}) => {
-    const [message, setMessage] = useState('')
+const SendMessage = ({ sendMessage, setMessage}) => {
     const [messageLength, setMessageLength] = useState(0)
-    const [error, setError] = useState(false)
+    const [tooLong, setTooLong] = useState(false)
     const [tooShort, setTooShort] = useState(false)
-
-    const SEND_API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-
-    const sendMessage = () => {
-        
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message: message })
-        };
-
-        fetch(SEND_API, options)
-        .then(data => {
-            if (!data.ok) {
-                throw Error(data.status)
-            }
-            return data.json();
-        }).then(update => {
-            // console.log(update)
-            setMessageSent(true)
-            document.getElementById('sendThought').value = ''
-
-        }).catch(e => {
-            // console.log(e)
-        })
-
-        setMessageSent(true)
-    }
 
 
     // WordCounter and Message and Error
     const wordCount = (event) => {
         setMessage(event)
         setMessageLength(event.length)
-        // console.log(message, messageLength)
         if (event.length < 5) {
             setTooShort(true)
         } else if (event.length > 140) {
-            setError(true)
-            // alert('Attention! You have exceeded the character limit of 140!')
+            setTooLong(true)
         } else {
-            setError(false)
+            setTooLong(false)
             setTooShort(false)
         }
     }
@@ -57,7 +24,7 @@ const SendMessage = ({messageSent, setMessageSent}) => {
     let buttonErrorStyle = {}
     let buttonMessage = '💖 Send Happy Thought 💖'
 
-    if (error === true) {
+    if (tooLong === true) {
         textErrorStyle = { fontWeight: 700, color: 'red' }
         buttonErrorStyle = { backgroundColor: 'black', color: 'white', cursor: 'not-allowed' }
         buttonMessage = 'Too long to send! 💀'
@@ -69,6 +36,8 @@ const SendMessage = ({messageSent, setMessageSent}) => {
         textErrorStyle = { fontWeight: 700, color: 'red' }
         buttonErrorStyle = { backgroundColor: 'black', color: 'white', cursor: 'not-allowed' }
         buttonMessage = 'Too short to send! 🥱'
+    } else {
+        textErrorStyle = {}
     }
 
     return (
