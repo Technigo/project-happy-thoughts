@@ -1,9 +1,10 @@
 import React from 'react'
+import { ThoughtPage } from "Components/ThoughtPage"
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <ThoughtPage/>
     </div>
   )
 }
