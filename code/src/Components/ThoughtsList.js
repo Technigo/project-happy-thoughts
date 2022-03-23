@@ -2,19 +2,19 @@ import React from 'react'
 import moment from 'moment'
 import { HeartIcon } from 'Components/LikedThoughts'
 
-export const ThoughtsList = ({list}) => {
+export const ThoughtsList = ({thoughts, onLikes}) => {
     return (
         <section>
-           {list.map(thoughts => (
-               < div key={thoughts._id}>
+               < div >
                    <h4>{thoughts.message}</h4>
-                   <button>
+                   <button onClick= {() => onLikes(thoughts._id) }>
                        <HeartIcon symbol='❤️'/>
                    </button>
+                  
                    <p> x {thoughts.hearts}</p>
                    <p>{moment(thoughts.createdAt).fromNow()}</p>
                    </div>
-           ))}
+           ))
         </section>
     )
 }

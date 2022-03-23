@@ -1,57 +1,73 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { ThoughtsList } from 'Components/ThoughtsList'
 import { ThoughtsForm } from 'Components/ThoughtsForm'
 
-    
-export const ThoughtPage = () => {
-        const [list, setList] = useState([])
-        const [loading,setLoading] = useState(false)
-        const [newMessages, setNewMessages] = useState('')
+import { HAPPY_THOUGHTS_URL, LIKED_THOUGHTS_URL } from 'Fetch/API'
 
-        useEffect(() => {
-            fetchList()
-        }, [])
-         const fetchList = () => {
-            setLoading(true)
-            fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+export const ThoughtPage = () => {
+    const [list, setList] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [newMessages, setNewMessages] = useState('')
+
+
+    useEffect(() => {
+        fetchList()
+    }, [])
+
+    const fetchList = () => {
+        setLoading(true)
+        fetch(HAPPY_THOUGHTS_URL)
             .then(res => res.json())
             .then(data => setList(data))
             .catch(error => console.error(error))
             .finally(() => setLoading(false))
-            }
+    }
 
-            const handleNewMessagesChange = (event) => {
-                setNewMessages(event.target.value)
-            }
+    const onFormSubmit = (event) => {
+        event.preventDefault()
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: newMessages
+            })
+        }
+        fetch(HAPPY_THOUGHTS_URL, options)
+            .then(res => res.json())
+            .then((data) => {
+                fetchList()
+            })
+        }
 
-            const onFormSubmit = (event) => {
-                event.preventDefault()
-                 const options =  {
-                        method: 'POST',
-                        headers: {
-                            'content-Type': 'application/json'
-                        },
-                        body: JSON.stringify ({
-                            message : newMessages
-                        })
-                    }
-                    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-                    .then(res => res.json())
-                    .then(data => fetchList())
-            }
-           
-  return (
-    <div>
-      <ThoughtsForm 
-      newMessages ={newMessages}
-      onNewMessagesChange= {handleNewMessagesChange}
-      onFormSubmit={onFormSubmit}
-      />
+    const handleLikes = (thoughtId) => {
+        const options = {
+            method: 'POST',
+        }
+            fetch(LIKED_THOUGHTS_URL(thoughtId), options)
+                .then((res => res.json())
+                    .then((data) => {
+                        fetchList()
 
-      <ThoughtsList 
-      loading = {loading}
-      list={list}
-      />
-    </div>
-  )
+                    })
+    
+                )}
+    return (
+        <div>
+            {loading}
+            <ThoughtsForm
+                newMessages={newMessages}
+                setNewMessages={setNewMessages}
+                onFormSubmit={onFormSubmit}
+            />
+ {list.map((thoughts) => (
+            <ThoughtsList
+                key={thoughts._id}
+                list={list}
+                onLikes={handleLikes}
+            />
+            ))}
+        </div>
+    )
 }
