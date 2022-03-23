@@ -1,17 +1,23 @@
+import { formatRelative } from "date-fns";
 import React from "react";
 
 import "./MessageCard.css";
 
 const MessageCard = ({ message, hearts, createdAt }) => {
+  const date = formatRelative(new Date(createdAt), new Date());
+
   return (
     <div className="message-container">
       <h2 className="message-text">{message}</h2>
       <div className="message-info-container">
         <div className="message-heart-group">
-          <button type="button" className="message-heart-button"> ❤️ </button>
+          <button type="button" className="message-heart-button">
+            {" "}
+            ❤️{" "}
+          </button>
           <p className="message-heart-count"> x {hearts}</p>
         </div>
-        <p className="message-date">{createdAt}</p>
+        <p className="message-date">{date}</p>
       </div>
     </div>
   );
