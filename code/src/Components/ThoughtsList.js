@@ -5,6 +5,7 @@ export const ThoughtsList = () => {
 
   const [list, setList] = useState([])
   const [loading,setLoading] = useState(false)
+  
 
 
     useEffect(() => {
