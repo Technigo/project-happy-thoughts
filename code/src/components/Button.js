@@ -1,17 +1,35 @@
 import React from 'react'
 
-const Button = ({message, className, type}) => {
+const Button = ({message, className, type, disabled, onClick, thought=''}) => {
+    // console.log(thought.id, 'från button')
+
+
     return (
         <button
             className={className}
             type={type}
-            // disabled={message.length < 6 || message.length > 140}
-            // onClick={event => onButtonClick(event)}
+            onClick={onClick}
+            disabled={disabled}
+            id={thought._id}
         >
             {message}
 
         </button>
     )
+
+
+    // return (
+    //     <button
+    //         className={className}
+    //         type={type}
+    //         disabled={disabled}
+    //         id={thought._id}
+    //     >
+    //         {message}
+
+    //     </button>
+    // )
+
 }
 
 export default Button;

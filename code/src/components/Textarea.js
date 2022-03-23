@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Textarea = ({newThought, handleNewThoughtSubmit}) => {
+const Textarea = ({newThought, handleNewThoughtSubmit, newThoughtLength}) => {
 
     // useEffect(() => {
     //     console.log('mounted textarea')
@@ -17,6 +17,7 @@ const Textarea = ({newThought, handleNewThoughtSubmit}) => {
                 onChange={handleNewThoughtSubmit}
             >
             </textarea>
+            <p className='length-counter'>{newThoughtLength ? newThoughtLength : '0'} / 140</p>
         </label>
     )
 }
