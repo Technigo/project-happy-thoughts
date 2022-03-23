@@ -1,11 +1,10 @@
-import React from "react"
+/*
+import React, { useState } from "react"
 import GetThoughts from "./components/GetThoughts"
-import PostThoughts from './components/PostThoughts'
-
+import PostThoughts from "./components/PostThoughts"
 // import {formatRelative } from 'date-fns'
 
-
-export const App = () => {
+export const HappyThougts = () => {
   return (
     <div className="BoxContainer">
       <PostThoughts />
@@ -14,5 +13,5 @@ export const App = () => {
   )
 }
 
-
-//  <TaskForm />
+export default HappyThougts
+*/

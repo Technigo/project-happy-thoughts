@@ -8,13 +8,17 @@ const FetchThoughts = () => {
       .then((json) => setpostedThougts(json))
   }, [])
 
+  const test = () => {
+    console.log('test')
+  }
+
   return (
     <>
       {postedThougts.map((data) => (
         <div className="thoughts" key={data._id}>
           <p>{data.message}</p>
           <div className="likes">
-            <button className="heartbutton" onClick={''}>❤️</button>
+            <button className="heartbutton" onClick={test}>❤️</button>
             x {data.hearts}
             <div className="date">
               <p>{data.createdAt}</p>
