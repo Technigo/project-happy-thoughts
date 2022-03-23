@@ -31,7 +31,7 @@ const Status = () => {
                      {singleMessage.message}</h4>
                     
                     <button className="heart-button">
-                        ❤️
+                    <span role="img" aria-label="heart emoji"> ❤️</span>
                     </button>
                
                  

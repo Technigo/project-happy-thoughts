@@ -44,7 +44,7 @@ return(
 
             <div className="btn-group">
                 <button className="send-button"> 
-                    <span>❤️</span>Send Happy Thought<span>❤️</span>
+                    <span role="img" aria-label="heart emoji">❤️</span>Send Happy Thought<span role="img" aria-label="heart emoji">❤️</span>
                 </button>
             </div>
         </form>
