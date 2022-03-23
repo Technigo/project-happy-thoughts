@@ -45,7 +45,7 @@ export const App = () => {
 		fetch(API_URL, options)
 		setNewThought('')
 
-		//Set timeout in useRef by making a copy in the DOM using .current property.
+		//Call setTimeout using useRef. that stores value as .current property.
 		timeoutId.current = setTimeout(() => {
 			fetchThoughts()
 		}, 1000)
