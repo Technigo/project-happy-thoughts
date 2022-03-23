@@ -12,23 +12,17 @@ return(
             <div className="input-group">
                 <label htmlFor="newMessage" key="newMessage">What's making you happy right now?
 
-                    <input type="text" 
+                    <textarea type="text" 
                     name="newMessage" 
                     value={newMessage}
                     className="text-input" 
                     onChange={onNewMessage}
-                    // minLength='5'
-                    // maxlength='140'
                     />
                     
                 </label>
 
-                <div 
-                className={newMessage.length > 140 ? "characters red-text" : "characters"}>
-                    {0 + newMessage.length}/140
-                </div>
-
             </div>
+
 
             <div className="btn-group">
                 <button 
@@ -39,6 +33,13 @@ return(
                     Send Happy Thought
                     <span role="img" aria-label="heart emoji">❤️</span>
                 </button>
+
+                <span 
+                className={newMessage.length > 140 ? "characters red-text" : "characters"}>
+                    {0 + newMessage.length}/140
+                </span>
+
+
             </div>
 
         </form>

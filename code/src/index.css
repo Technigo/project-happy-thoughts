@@ -43,14 +43,18 @@ form {
 }
 
 label {
-  margin: 15px 0 15px 15px;
+  margin: 15px 0 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .text-input {
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
-  padding: 10px;
-  margin: 15px 0 15px 15px;
+  padding: 5px;
+  margin: 10px 0 10px 15px;
+  width: 300px;
 }
 
 .characters {
@@ -64,7 +68,7 @@ label {
 .send-btn {
   background-color: #FFADAD;
   color: black;
-  padding: 5px;
+  padding: 10px;
   border: none;
   border-radius: 15px;
   
@@ -91,12 +95,12 @@ label {
 
 .liked {
   background-color: #FFADAD;
-
 }
 
 .number-of-likes {
-  margin: 0;
+  margin: 0 0 0 5px;
   font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
 }
 
 .btn-group {
