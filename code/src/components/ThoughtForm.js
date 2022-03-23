@@ -29,7 +29,7 @@ const ThoughtForm = (props) => {
             
         
             <div className="thought-form">
-                <p>What's making you happy right now?</p>
+                <h2>What's making you happy right now?</h2>
 
                 <input
                 className="text-input"
