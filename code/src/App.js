@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import DisplayThoughts from './components/DisplayThoughts'
+import PostThoughts from './components/PostThoughts'
 
-export const App = () => {
+import './index.css';
+
+const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
+    <section className="all-thoughts">
+      <PostThoughts />
+      <DisplayThoughts />
+    </section>
+  );
 }
+
+export default App;
