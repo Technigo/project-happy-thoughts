@@ -34,9 +34,12 @@ const ThoughtForm = (props) => {
 
                 <textarea
                  className="text-input"
+                 rows='5'
+                 columns='150'
                  placeholder="Write a happy thought..."
                  type="text"
                  name="thought"
+                 value={newThought}
                  onChange={event => setNewThought(event.target.value)}
                  >
 
