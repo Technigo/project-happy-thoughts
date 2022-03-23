@@ -7,6 +7,7 @@ export const Mainpage = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [message, SetMessage] = useState('');
+  // const [like, setLike] = useState('');
 
   useEffect(() => {
     fetchThoughts();
@@ -41,6 +42,10 @@ export const Mainpage = () => {
     .then(() => fetchThoughts())
     .finally(() => SetMessage(''));
   }
+
+  // const likeMessage = () => {
+
+  // }
 
       return (
         <main>

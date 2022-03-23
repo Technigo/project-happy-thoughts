@@ -1,6 +1,5 @@
 import React from "react";
 // import { formatRelative } from "date-fns";
-//{formatRelative(thought.date, new Date())}
 
 const Inputlist = ({ loading, thoughts }) => {
 
@@ -9,11 +8,13 @@ const Inputlist = ({ loading, thoughts }) => {
   }
     return (
       <section className="thoughts-container">
-        <ul>
-          {thoughts.reverse().map(thought => (
-            <li key={thought._id}>{thought.message}</li>
+          {thoughts.map(thought => (
+            <div className="thought-box">
+            <p key={thought._id}>{thought.message}</p>
+            {/* <p>{formatRelative(thought.date, new Date())}</p> */}
+            <button className="like-button">💖</button>
+            </div>
           ))}
-        </ul>
       </section>
     )
   }

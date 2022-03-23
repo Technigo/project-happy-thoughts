@@ -6,10 +6,76 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Inconsolata,monospace;;
+  font-family: Monospace;
+  background-color: lightpink;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vw;
+  padding: 3vw;
+  background: lightgray;
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+}
+
+.form-button {
+  width: fit-content; 
+  margin: 2vw 0;
+  border: none;
+  border-radius: 10px;
+  background: lightpink;
+  padding: 1vw;
+  font-family: Monospace;
+}
+
+.like-button {
+  border: none;
+  border-radius: 50px;
+  background: lightpink;
+}
+
+.thoughts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5vw;
+}
+
+.thought-box {
+  width: 50%;
+  padding: 3vw;
+  margin-bottom: 5vw;
+  background: white;
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+}
+
+@media (min-width: 667px) {
+  .thought-box {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .thought-box {
+    width: 30%;
+  }
 }
