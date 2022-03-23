@@ -1,4 +1,5 @@
 const messageUrl = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+const likesUrl = "https://happy-thoughts-technigo.herokuapp.com/thoughts/{THOUGHT_ID}/like";
 
 const fetcher = (url, method, callback) => {
   fetch(url, method)
@@ -16,6 +17,17 @@ export const postMessages = (input, callback) =>
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: input }),
+    },
+    callback
+  );
+
+export const postLikes = (id, count, callback) =>
+  fetcher(
+    `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ hearts: count }),
     },
     callback
   );
