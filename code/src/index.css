@@ -14,6 +14,7 @@
 :root {
   --clr-black: #111111;
   --clr-white: #fff;
+  --clr-grey: #6f6d6d;
   --clr-link: rgba(174, 9, 9, 0.933);
 }
 
@@ -28,7 +29,7 @@ body {
 header {
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
+  margin-top: 50px;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -74,7 +75,7 @@ main {
 }
 
 .message-length-ok {
-  color: #000000;
+  color: var(--clr-grey);
   font-size: 14px;
 }
 
@@ -87,6 +88,7 @@ main {
   width: 100%;
   padding: 5px 0 80px 5px;
   font-weight: 500;
+  font-size: 1rem;
 }
 
 /* THOUGHT MESSAGES */

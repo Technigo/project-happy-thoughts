@@ -31,13 +31,15 @@ const ThoughtForm = (props) => {
             <div className="thought-form">
                 <h2>What's making you happy right now?</h2>
 
-                <input
-                className="text-input"
-                placeholder="Write a happy thought..."
-                type="text"
-                name="thought"
-                onChange={event => setNewThought(event.target.value)}
-                />
+
+                <textarea
+                 className="text-input"
+                 placeholder="Write a happy thought..."
+                 type="text"
+                 name="thought"
+                 onChange={event => setNewThought(event.target.value)}>
+
+                </textarea>
 
                 <p className={
                     newThought.length < 6 || newThought.length <= 140 ? 'message-length-ok' : 'message-length-error'}> 
