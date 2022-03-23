@@ -23,6 +23,7 @@ export const ThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
 					type='text'
 					rows='5'
 					columns='150'
+					placeholder='...'
 					value={newThought}
 					onKeyDown={(e) => checkKey(e)}
 					onChange={(e) => {
