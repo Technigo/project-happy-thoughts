@@ -1,11 +1,10 @@
 import React from "react";
-import { ThoughtsList } from "./components/ThoughtsList";
-import ThoughtsForm from "components/ThoughtsForm";
+import { ThoughtPage } from "Components/ThoughtPage";
+
 export const App = () => {
   return (
     <div>
-      <ThoughtsForm />
-      <ThoughtsList />
+      <ThoughtPage />
     </div>
   );
 };

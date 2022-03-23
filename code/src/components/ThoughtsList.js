@@ -1,30 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import moment from "moment";
-export const ThoughtsList = () => {
-  const [list, setList] = useState([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    fetchList();
-  }, []);
-  const fetchList = () => {
-    setLoading(true);
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
-      .then((res) => res.json())
-      .then((data) => setList(data))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  };
-  if (loading) {
-    return <h1>Loading in progress....</h1>;
-  }
+import { HeartIcon } from "Components/LikedThoughts";
+
+export const ThoughtsList = ({ thoughts, onLikes }) => {
   return (
     <section>
-      {list.map((thoughts) => (
-        <div key={thoughts._id}>
-          <h4>{thoughts.message}</h4>
-          <p>{moment(thoughts.createAT).fromNow()}</p>
-        </div>
-      ))}
+      <div>
+        <h4>{thoughts.message}</h4>
+        <button onClick={() => onLikes(thoughts._id)}>
+          <HeartIcon symbol="❤️" />
+        </button>
+
+        <p> x {thoughts.hearts}</p>
+        <p>{moment(thoughts.createdAt).fromNow()}</p>
+      </div>
+      ))
     </section>
   );
 };
