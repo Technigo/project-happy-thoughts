@@ -13,7 +13,7 @@ const ThoughtForm = (props) => {
     })
       .then((res) => res.json())
       .then((newThought) => props.setThoughts((thoughts) => [newThought, ...thoughts]))
-      .catch(error => console.log("error:", error))
+      .finally(setNewThought(""))
   }
 
   return (

@@ -15,13 +15,23 @@ const Entry = () => {
       .catch(error => console.log("error:", error))
   }, []);
 
+  const handleLikes = (id) => {
+    const updatedLikes = thoughts.map((thought) => {
+      if (thought._id === id) {
+        thought.hearts += 1;
+      }
+      return thought;
+    })
+    setThoughts(updatedLikes);
+  };
+
   return (
     <>
       <Header />
       <main>
         <ThoughtForm setThoughts={setThoughts} />
         {thoughts.map(thought => (
-          <ThoughtCards likes={likes} setLikes={setLikes} id={thought._id} thought={thought} setThoughts={setThoughts} />
+          <ThoughtCards handleLikes={handleLikes} setLikes={setLikes} id={thought._id} thought={thought} setThoughts={setThoughts} />
         ))}
       </main>
     </>

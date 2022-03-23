@@ -2,13 +2,13 @@ import React from "react";
 
 import TimeStamp from "./partials/TimeStamp";
 
-const ThoughtCards = ({ thought, setLikes, id }) => {
+const ThoughtCards = ({ thought, handleLikes, id }) => {
 
   const handleLikesClick = () => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" }
-    }).then(() => setLikes(id))
+    }).then(() => handleLikes(id))
   }
 
   return (
