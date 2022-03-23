@@ -1,5 +1,4 @@
 import React from 'react'
-import moment from 'moment'
 import { formatDistance } from 'date-fns'
 
 import Heart from '../assets/heart.png'
@@ -29,7 +28,6 @@ export const ThoughtList = ({ onLikesClick, thoughts }) => {
 							{formatDistance(new Date(thought.createdAt), Date.now(), {
 								addSuffix: true,
 							})}
-							{/* {moment(thought.createdAt).fromNow()} */}
 						</p>
 					</div>
 				</div>
