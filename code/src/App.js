@@ -69,7 +69,7 @@ export const App = () => {
   };
 
   return (
-    <div>
+    <main>
       {loading && <LoadingItem />}
       <ThoughtForm
         onFormSubmit={handleFormSubmit}
@@ -84,6 +84,6 @@ export const App = () => {
           onClickHeart={handleClickHeart}
         />
       ))}
-    </div>
+    </main>
   );
 };
