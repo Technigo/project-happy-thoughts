@@ -37,7 +37,8 @@ const ThoughtForm = (props) => {
                 />
 
                 <div>
-                    <button className="btn-happy-thought" type="submit">
+                    <button disabled={thought === ''}
+                    className="btn-happy-thought" type="submit">
                         <span role="img" aria-label="heart emoji">💗 </span>
                         Send Happy Thought
                         <span role="img" aria-label="heart emoji"> 💗</span></button>
