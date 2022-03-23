@@ -14,9 +14,9 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
             ❤️
           </span> 
      </button>
-    <p>x {thought.hearts}</p>
-   </div>
-     <p className="date">{moment(thought.createdAt).fromNow()}</p>
+    <p className='likes'>x {thought.hearts}</p>
+  </div>
+     <p className="date">{moment(thought.createdAt).fromNow()}</p> 
     </div>
   );
 };
