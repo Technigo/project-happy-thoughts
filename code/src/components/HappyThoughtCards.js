@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ThoughtForm from './ThoughtForm'
 
-
-
-
 // Creating HappyThoughtsCards, fetching thoughts data
 const HappyThoughtCards = () => {
     const [thoughts, setThoughts] = useState([])
@@ -21,21 +18,31 @@ console.log('setThoughts', setThoughts)
 return (
 
     <>
-        <ThoughtForm setThoughts={setThoughts} />
+    <ThoughtForm setThoughts={setThoughts} />
 
-    <div>
-  
-            {thoughts.map((thought, index) => (
-                <div className='thought-box' key={index}>{thought.message}</div>
-            ))
-            }
-           
+<div>
+    {thoughts.map(thought => (
+        <section className="thought-box" key={thought._id}>
+                <p>
+                    {thought.message}
+                </p>
+
+            <div className="details-wrapper">
+
+            <div>
+                <button className={(thought.hearts === 0 ? "heart-btn" : "heart-btn red-heart-btn")}>
+                <span role="img" aria-label="heart icon">❤️</span>
+                </button>
+
+                <p className="likes">X {thought.hearts}</p>
+            </div>
+            </div>
+        
+        </section>
+                 ))}
     </div>
-
-    </>
-
-)
+</>
+)    
 }
 
 export default HappyThoughtCards
-
