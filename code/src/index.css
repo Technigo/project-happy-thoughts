@@ -26,7 +26,7 @@ body {
 }
 
 /* THOUGHTFORM*/
-.main {
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,9 +91,14 @@ body {
 
 /* FOOTER */
 .footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-size: 16px;
   text-align: center;
-  color: #c54848;
+  color: #000;
+  margin-top: 50px;
+  letter-spacing: 0.1px;
 }
 
 .footer-link {
