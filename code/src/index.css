@@ -15,15 +15,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inconsolata", "Courier New", Courier, monospace;
-  background: linear-gradient(228deg, #ffcfcf 15%, #f6a4a4 30%, #faa4a4 40%);
+  background: linear-gradient(228deg, #ffcfcf 15%, #fddada 30%, #f8c6c69e 40%);
   line-height: 1.7;
 }
 
 header {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .page {
