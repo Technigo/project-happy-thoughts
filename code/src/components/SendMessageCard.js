@@ -1,23 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import { postMessages } from "assets/networking";
 
-import './SendMessageCard.css'
+import "./SendMessageCard.css";
 
-const SendMessageCard = () => {
+const SendMessageCard = ({ setMessages }) => {
+  const [messageInput, setMessageInput] = useState("");
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    postMessages(messageInput, (message) => {
+      setMessages((previousMessages) => [message, ...previousMessages]);
+    });
+    setMessageInput("");
+  };
+
   return (
-    <form className="message-form" onSubmit={(e) => e.preventDefault()}>
-      <h2 className="message-question">What's making you happy right now?</h2>
+    <form className="message-form" onSubmit={handleOnSubmit}>
+      <label htmlFor="text area" className="message-question">
+        What's making you happy right now?
+      </label>
 
-      <input
+      <textarea
+        id="text area"
         type="text"
-				className="message-input"
-        placeholder="Name..."
+        className="message-input"
+        value={messageInput}
+        placeholder="Message..."
+        rows={3}
         minLength="5"
         maxLength="140"
         required
         autoFocus
-        //onChange event
+        onChange={(e) => setMessageInput(e.target.value)}
       />
-      <button type="submit" className="message-send-button">❤️ Send happy thought ❤️</button>
+      <button type="submit" className="message-send-button">
+        ❤️ Send happy thought ❤️
+      </button>
     </form>
   );
 };

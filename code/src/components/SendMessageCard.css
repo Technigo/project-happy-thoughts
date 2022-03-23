@@ -19,8 +19,9 @@
   box-sizing: border-box;
   margin: 10px 0;
   width: 100%;
-  height: 50px;
+  min-height: 35px;
   padding: 10px;
+  resize: vertical;
 }
 
 .message-send-button {
