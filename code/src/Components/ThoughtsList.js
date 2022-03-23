@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import moment from 'moment'
 
 export const ThoughtsList = () => {
   const [list, setList] = useState([])
@@ -23,7 +24,7 @@ export const ThoughtsList = () => {
            {list.map(thoughts => (
                < div key={thoughts._id}>
                    <h4>{thoughts.message}</h4>
-                   <p>{thoughts.createdAt}</p>
+                   <p>{moment(thoughts.createdAt).fromNow()}</p>
                    </div>
            ))}
         </section>
