@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
-export const LoadingSpinner = () => {
+export const LoadingHeart = () => {
 	return (
-		<div className="loading-overlay">
-			<div className="loading-spinner"></div>
+		<div className='loading-overlay'>
+			<div className='loading-heart'></div>
 		</div>
-	);
-};
+	)
+}

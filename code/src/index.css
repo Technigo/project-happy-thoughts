@@ -149,21 +149,46 @@ img.likes {
 	justify-content: center;
 	align-items: center;
 	background: var(--clr-white);
+	animation: pulse 1s infinite;
 }
 
-.loading-spinner {
-	display: inline-block;
-	width: 40px;
-	height: 40px;
-	border: 6px solid var(--clr-primary);
-	border-left: 6px solid var(--clr-secondary);
-	border-radius: 50%;
-	animation: spin 1.25s linear infinite;
+.loading-heart {
+	position: relative;
+	width: 100px;
+	height: 90px;
 }
 
-@keyframes spin {
-	100% {
-		transform: rotate(360deg);
+.loading-heart:before,
+.loading-heart:after {
+	position: absolute;
+	content: '';
+	left: 50px;
+	top: 0;
+	width: 50px;
+	height: 80px;
+	background: #aa0000;
+	border-radius: 50px 50px 0 0;
+	transform: rotate(-45deg);
+	transform-origin: 0 100%;
+	animation: pulsecolor 1.5s infinite;
+}
+
+.loading-heart:after {
+	left: 0;
+	transform: rotate(45deg);
+	transform-origin: 100% 100%;
+	animation: pulsecolor 1.5s infinite;
+}
+
+@keyframes pulse {
+	10% {
+		transform: scale(1.1);
+	}
+}
+
+@keyframes pulsecolor {
+	10% {
+		background: #dd0000;
 	}
 }
 

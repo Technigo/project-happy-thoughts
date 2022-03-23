@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import { API_LIKES, API_URL } from './components/utils/urls'
 import { ThoughtInput } from 'components/ThoughtInput'
 import { ThoughtList } from 'components/ThoughtList'
-import { LoadingSpinner } from 'components/LoadingSpinner'
+import { LoadingHeart } from 'components/LoadingSpinner'
 import { Hearts } from 'components/Hearts'
 
 export const App = () => {
 	const [thoughts, setThoughts] = useState([])
 	const [newThought, setNewThought] = useState('')
 	const [loading, setLoading] = useState(false)
+	const timeoutId = useRef(null) //Used to pass to child
 
 	//Fetch thoughts when only when components get mounthed.
 	useEffect(() => {
 		fetchThoughts()
+
+		//Clear TimeoutId on component unmounth.
+		return () => {
+			clearTimeout(timeoutId.current)
+		}
 	}, [])
 
 	const fetchThoughts = () => {
@@ -37,8 +43,12 @@ export const App = () => {
 		}
 
 		fetch(API_URL, options)
-		fetchThoughts()
 		setNewThought('')
+
+		//Set timeout in useRef by making a copy in the DOM using .current property.
+		timeoutId.current = setTimeout(() => {
+			fetchThoughts()
+		}, 1000)
 	}
 
 	const handleLikesClick = (thoughtId) => {
@@ -59,7 +69,7 @@ export const App = () => {
 	return (
 		<main>
 			{newThought && <Hearts />}
-			{loading && <LoadingSpinner />}
+			{loading && <LoadingHeart />}
 			<ThoughtInput
 				onFormSubmit={handleFormSubmit}
 				newThought={newThought}

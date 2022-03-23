@@ -37,7 +37,7 @@ export const ThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
 						type='submit'
 					>
 						<img src={Heart} alt='heart-icon' className='heart-icon' /> Send
-						Happy Thought!{' '}
+						Happy Thought{' '}
 						<img src={Heart} alt='heart-icon' className='heart-icon' />
 					</button>
 					<div className='characters'>{140 - newThought.length}/140</div>
