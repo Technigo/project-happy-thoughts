@@ -58,7 +58,7 @@ export const App = () => {
 
 	return (
 		<main>
-			<Hearts />
+			{newThought && <Hearts />}
 			{loading && <LoadingSpinner />}
 			<ThoughtInput
 				onFormSubmit={handleFormSubmit}
