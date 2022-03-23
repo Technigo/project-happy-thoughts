@@ -3,17 +3,6 @@ import React from 'react'
 import Button from './Button';
 import Textarea from './Textarea';
 
-const emotions = [
-    'happy',
-    'sad',
-    'frustrated',
-    'angry',
-    'inspired',
-    'amused',
-    'confident',
-    'grateful',
-    'irritated'
-]
 
 const AddThought = ({
     heartIcon,

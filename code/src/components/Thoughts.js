@@ -9,7 +9,17 @@ import ThoughtsList from './ThoughtsList'
 
 const thoughtsAPI = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 const heartIcon = <img alt='heart-button' src={'assets/heart.png'} className='heart-icon'/>
-
+const emotions = [
+    'happy',
+    'sad',
+    'frustrated',
+    'angry',
+    'inspired',
+    'amused',
+    'confident',
+    'grateful',
+    'irritated'
+]
 
 const Thoughts = () => {
 	const [thoughts, setThoughts] = useState([])
