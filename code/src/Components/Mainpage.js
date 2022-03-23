@@ -1,27 +1,57 @@
-// here the main work will be
-
 import React, { useState, useEffect } from "react";
 
-import { Thought } from "./Thought";
+import Input from "./Input";
+import Inputlist from "./Inputlist";
 
 export const Mainpage = () => {
-  const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
   const [thoughts, setThoughts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [message, SetMessage] = useState('');
 
   useEffect(() => {
-    fetch(API_URL)
-    .then(res => res.json())
-    .then(json => setThoughts(json));
+    fetchThoughts();
   }, []);
 
+  const fetchThoughts = () => {
+    setLoading(true);
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    .then(res => res.json())
+    .then(data => setThoughts(data))
+    .catch(error => console.error(error))
+    .finally(() => setLoading(false));
+  }
+
+  const handleInputChange = (event) => {
+    SetMessage(event.target.value);
+  }
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message: message })
+    }
+  
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    .then(res => res.json())
+    .then(() => fetchThoughts())
+    .finally(() => SetMessage(''));
+  }
+
       return (
-        <div>
-          <ul>
-            {thoughts.map(thought => (
-            <li key={thought._id}>{thought.message}</li>
-            ))}
-          </ul>
-          <Thought />
-        </div>
+        <main>
+          <Input 
+            message={message}
+            onInputChange={handleInputChange}
+            onFormSubmit={onFormSubmit}
+          />
+          <Inputlist 
+            loading={loading} 
+            thoughts={thoughts}/>
+        </main>
       )
 }
