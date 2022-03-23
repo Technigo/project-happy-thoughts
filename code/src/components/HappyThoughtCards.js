@@ -20,7 +20,7 @@ return (
     <>
     <ThoughtForm setThoughts={setThoughts} />
 
-<div>
+<div className="thought-container">
     {thoughts.map(thought => (
         <section className="thought-box" key={thought._id}>
                 <p>
