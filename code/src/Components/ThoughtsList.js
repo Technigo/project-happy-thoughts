@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 export const ThoughtsList = () => {
 
@@ -7,20 +7,14 @@ export const ThoughtsList = () => {
 
 
     useEffect(() => {
-        fetchList()
-
-       return () => {
-           console.log('I will be mounted')
-       }
-    
-    }, [list])
+        fetchList() 
+    }, [])
 
      const fetchList = () => { 
-         setLoading(true)
-        console.log('use effect ran')
+        setLoading(true)
         fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
         .then(res => res.json())
-        .then(data =>  setList(data))
+        .then(data => setList(data))
         .catch(error => console.error(error))
         .finally(() => setLoading(false)) 
     
@@ -35,7 +29,7 @@ export const ThoughtsList = () => {
                < div key={thoughts._id}>
                    <h4>{thoughts.message}</h4>
                    <input type= "checkbox" checked={thoughts.isChecked} />
-                   <p>{(thoughts.createdAt, new Date())}</p>
+                   <p>{thoughts.createdAt}</p>
                    </div>
            ))}
         </section>

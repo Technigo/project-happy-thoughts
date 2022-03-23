@@ -10,8 +10,6 @@ const ThoughtsForm = () => {
     const onFormSubmit = (event) => {
         event.preventDefault()
 
-
-
          const options =  {
                 method: 'POST',
                 headers: {
