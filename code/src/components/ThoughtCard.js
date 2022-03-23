@@ -1,22 +1,21 @@
 import React from 'react'
 import moment from 'moment'
 
-const ThoughtCard = (thought) => {
+const ThoughtCard = ({ thought, handleAddedLikes }) => {
   return (
-    <section className="main-container key={thought.id}">
+    <section className="main-container" key={thought._id}>
       <div className="message-text">
-        <p className="text-thought">{thought.message}</p>
+        <p className="text-thought">{thought.message} </p>
         <div className="likes-container">
           <button
             className="icons"
             onClick={() => handleAddedLikes(thought._id)}
           >
-            {''}
-            <span className="heart">&heart;</span> {thought.heart}
-            {''}
+            {' '}
+            <span className="heart">&hearts;</span> {thought.hearts}{' '}
           </button>
-          <p className="date">
-            --Shared {moment(thought.createAt).fromNow()}--{''}
+          <p className="time">
+            -- Shared {moment(thought.createdAt).fromNow()} --{' '}
           </p>
         </div>
       </div>

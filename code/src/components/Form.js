@@ -1,34 +1,36 @@
 import React, { useState } from 'react'
-import API_URL from './API'
+import { API_URL } from 'utils/API'
 
-const Form = (thoughts, setThought) => {
+const Form = ({ thoughts, setThoughts }) => {
   const [newThought, setNewThought] = useState('')
   const [counter, setCounter] = useState(0)
 
-  const whenNewThought = (event) => {
-    setNewThought(event.target.value)
-    setCounter(event.target.value.length)
+  const newThoughtChange = (e) => {
+    setNewThought(e.target.value)
+    setCounter(e.target.value.length)
   }
-  const onFormSubmit = (event) => {
-    event.preventDefault()
+
+  const onFormSubmit = (e) => {
+    e.preventDefault()
 
     const options = {
-      method: 'post',
-      headers: { 'content-type': 'application/json' },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newThought }),
     }
     fetch(API_URL, options)
-      .then((res) => res.json)
-      .then((data) => setThought([data, ...thoughts]))
+      .then((response) => response.json)
+      .then((data) => setThoughts([data, ...thoughts]))
 
-    setThought('')
+    setNewThought('')
     setCounter(0)
   }
+
   return (
     <>
-      <section>
-        <from onSumbit={onFormSubmit}>
-          <label htmlFor="newThought">Write a happy thought</label>
+      <section className="main-container">
+        <form onSubmit={onFormSubmit}>
+          <label htmlfor="newThought"> Write a happy thought </label>
           <textarea
             className={
               counter < 6 || counter > 140 ? 'no-words' : 'word-counter'
@@ -37,23 +39,23 @@ const Form = (thoughts, setThought) => {
             rows="3"
             id="newThought"
             value={newThought}
-            onChange={whenNewThought}
+            onChange={newThoughtChange}
             placeholder="Write a happy thought"
           />
-          <p>{140 - counter} / 140 characters left</p>
+          <p> {140 - counter} / 140 characters left</p>
           <button
-            className="sub-button"
+            className="happy-button"
             type="submit"
             disabled={newThought.length < 6 || newThought.length > 140}
           >
-            {''}
-            <span className="heart">&heart;</span>Share thoughts! {''}
-            <span className="heart">&heart;</span>
-            {''}
+            {' '}
+            <span className="heart">&hearts;</span> Share thought!{' '}
+            <span className="heart">&hearts;</span>{' '}
           </button>
-        </from>
+        </form>
       </section>
     </>
   )
 }
+
 export default Form
