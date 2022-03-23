@@ -40,7 +40,7 @@ const TimeStamp = (props) => {
 
     if (interval > 1 || interval === 0) {
       unitsOfTime += "s ago";
-    } else if(interval === 1) {
+    } else if (interval === 1) {
       unitsOfTime += " ago";
     } else if (interval < 0) {
       return unitsOfTime;
@@ -49,7 +49,7 @@ const TimeStamp = (props) => {
   }
 
   return (
-    <p>{timeStamp()}</p>
+    <p className="timestamp">{timeStamp()}</p>
   )
 }
 

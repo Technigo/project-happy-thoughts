@@ -8,13 +8,12 @@ const ThoughtForm = (props) => {
 
     fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: newThought })
     })
       .then((res) => res.json())
       .then((newThought) => props.setThoughts((thoughts) => [newThought, ...thoughts]))
+      .catch(error => console.log("error:", error))
   }
 
   return (
@@ -23,14 +22,24 @@ const ThoughtForm = (props) => {
       <textarea
         type="text"
         id="thoughtInput"
+        value={newThought}
         name="thought"
         onChange={event => setNewThought(event.target.value)}
       />
-      <button type="submit">
-        <span role="img" aria-label="heart icon">❤️ </span>
-        Send Happy Thought
-        <span role="img" aria-label="heart icon"> ❤️</span>
-      </button>
+      <div className="button-wrapper">
+        <button
+          type="submit"
+          disabled={newThought.length < 6 || newThought.length > 140}
+        >
+          <span role="img" aria-label="heart icon">❤️ </span>
+          Send Happy Thought
+          <span role="img" aria-label="heart icon"> ❤️</span>
+        </button>
+        <p
+          className={(newThought.length < 6 || newThought.length > 140 ? "red-message-length" : "message-length")}>
+          {newThought.length}/140
+        </p>
+      </div>
     </form>
   );
 };

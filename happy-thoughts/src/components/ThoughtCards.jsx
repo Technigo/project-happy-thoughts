@@ -1,37 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import TimeStamp from "./partials/TimeStamp";
-import ThoughtForm from "./ThoughtForm";
 
-const ThoughtCards = () => {
-  const [thoughts, setThoughts] = useState([]);
+const ThoughtCards = ({ thought, setLikes, id }) => {
 
-  useEffect(() => {
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
-      .then(res => res.json())
-      .then(thoughts => setThoughts(thoughts))
-  }, []);
+  const handleLikesClick = () => {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" }
+    }).then(() => setLikes(id))
+  }
 
   return (
-    <>
-      <ThoughtForm setThoughts={setThoughts} />
-      <div>
-      {thoughts.map(thought => (
-        <section className="thought-cards cards" key={thought._id}>
-          <p>{thought.message}</p>
-          <div className="details-wrapper">
-            <div>
-              <button className={(thought.hearts === 0 ? "heart-button" : "heart-button red-heart-button")}>
-                <span role="img" aria-label="heart icon">❤️</span>
-              </button>
-              <p className="likes">x {thought.hearts}</p>
-            </div>
-            <TimeStamp createdAt={thought.createdAt} />
-          </div>
-        </section>
-      ))}
+    <section className="thought-cards cards" key={thought._id}>
+      <p>{thought.message}</p>
+      <div className="button-wrapper">
+        <div>
+          <button
+            onClick={handleLikesClick}
+            className={(thought.hearts === 0 ? "heart-button" : "heart-button red-heart-button")}>
+            <span role="img" aria-label="heart icon">❤️</span>
+          </button>
+          <p className="likes">x {thought.hearts}</p>
+        </div>
+        <TimeStamp createdAt={thought.createdAt} />
       </div>
-    </>
+    </section>
   );
 };
 

@@ -84,12 +84,12 @@ textarea {
   overflow-wrap: break-word;
 }
 
-.details-wrapper {
+.button-wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.details-wrapper p {
+.timestamp {
   margin-right: 15px;
   color: #adadad;
 }
@@ -99,6 +99,15 @@ textarea {
   color: #adadad;
   font-size: 14px;
   display: inline-flex;
+}
+
+.message-length {
+  margin-right: 15px;
+}
+
+.red-message-length {
+  margin-right: 15px;
+  color: #f21e1e;
 }
 
 @media (min-width: 375px) {
