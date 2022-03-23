@@ -20,11 +20,11 @@ const Status = ({ loading, recentMessages, onHeartSubmit}) => {
                     aria-label="heart emoji">❤️</span>
                     </button>
 
-                <span 
-                key={singleMessage._id}
-                className="number-of-likes">
-                    x {singleMessage.hearts}
-                </span> 
+                    <span 
+                    key={singleMessage._id}
+                    className="number-of-likes">
+                        x {singleMessage.hearts}
+                    </span> 
                     
                 </div> 
 

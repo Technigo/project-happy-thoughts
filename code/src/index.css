@@ -96,6 +96,7 @@ label {
 
 .number-of-likes {
   margin: 0;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .btn-group {
