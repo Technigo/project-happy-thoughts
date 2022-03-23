@@ -59,6 +59,7 @@ main {
 .thoughts-container--item {
 	padding: 1em 1em;
 	background: var(--clr-white);
+	overflow-wrap: break-word;
 }
 
 .message-text {
