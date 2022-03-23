@@ -1,15 +1,17 @@
 import React from 'react';
 
+// displays recent thoughts
+
 const RecentThoughts = ({ thoughts }) => {
   return (
-    <div>
+    <section className='thoughts-container'>
       <p>Recent Thoughts</p>
       {thoughts.map((thought) => (
-        <div key={thought._id}>
+        <div className='thoughts-message' key={thought._id}>
           <p>{thought.message}</p>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

@@ -4,8 +4,9 @@ import RecentThoughts from './components/RecentThoughts';
 import NewThoughts from './components/NewThoughts';
 
 export const App = () => {
-  const [thoughts, setThoughts] = useState([]);
   const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+  const [thoughts, setThoughts] = useState([]);
+  const [newThoughts, setNewThoughts] = useState('');
 
   useEffect(() => {
     fetchThoughts();
@@ -17,12 +18,26 @@ export const App = () => {
       .then((data) => setThoughts(data));
   };
 
+  // remove this later
   console.log(thoughts);
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    fetch(API_URL, {
+      method: 'POST',
+      body: JSON.stringify({ message: newThoughts }),
+    })
+      .then((res) => res.json())
+      .then((newThoughts) => {
+        setThoughts((previousThoughts) => [newThoughts, ...previousThoughts]);
+      });
+  };
+
   return (
-    <div>
-      <RecentThoughts thoughts={thoughts} />
+    <div className='main-container'>
       <NewThoughts />
+      <RecentThoughts thoughts={thoughts} />
     </div>
   );
 };
