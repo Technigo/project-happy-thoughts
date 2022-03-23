@@ -6,7 +6,6 @@ const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [happyThoughts, setHappyThoughts] = useState([])
     const [message, setMessage] = useState('')
-
     
     useEffect(() => {
         if (isLoading === true) {

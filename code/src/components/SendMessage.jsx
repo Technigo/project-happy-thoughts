@@ -5,7 +5,6 @@ const SendMessage = ({ sendMessage, setMessage}) => {
     const [tooLong, setTooLong] = useState(false)
     const [tooShort, setTooShort] = useState(false)
 
-
     // WordCounter and Message and Error
     const wordCount = (event) => {
         setMessage(event)
