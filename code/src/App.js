@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import ThoughtList from 'components/ThoughtList.js'
-import ThoughtForm from 'components/ThoughtForm.js'
+import ThoughtList from 'components/ThoughtList'
+import ThoughtForm from 'components/ThoughtForm'
 
 
 
@@ -45,12 +45,25 @@ export const App = () => {
           .then(() => fetchThoughts())
           .finally(() => setNewThought(''))
     }
+
+    const handleHeartLikes = () => {
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+  
+      fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts/like', options)
+        .then((res) => res.json())
+        .then(() => fetchThoughts())
+      }
     
 
   return (
     <div>
       <ThoughtForm newThought={newThought} handleNewThought={handleNewThought} handleFormSubmit={handleFormSubmit} />
-      <ThoughtList loading={loading} thoughtList={thoughtList}/>
+      <ThoughtList loading={loading} thoughtList={thoughtList} handleHeartLikes={handleHeartLikes}/>
     </div>
   )
 }
