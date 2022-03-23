@@ -1,9 +1,12 @@
 import React from 'react'
+import ThoughtList from 'components/ThoughtList.js'
+
+
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <ThoughtList />
     </div>
   )
 }
