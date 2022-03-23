@@ -10,10 +10,12 @@ import ThoughtsList from './ThoughtsList'
 const thoughtsAPI = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 const heartIcon = <img alt='heart-button' src={'assets/heart.png'} className='heart-icon'/>
 
+
 const Thoughts = () => {
 	const [thoughts, setThoughts] = useState([])
     const [newThought, setNewThought] = useState('')
     const [newThoughtLength, setNewThoughtLength] = useState('')
+    const [currentEmotion, setCurrentEmotion] = useState('happy')
     // const [likes, setlikes] = useState(0)
 
 
@@ -31,8 +33,6 @@ const Thoughts = () => {
     const handleNewThoughtLength = (msg) => {
         setNewThoughtLength(msg)
     }
-
-
 
     const fetchThoughts = useCallback(() => {
         fetch(thoughtsAPI)
@@ -54,6 +54,11 @@ const Thoughts = () => {
         });
     }
 
+    const handleCurrentEmotion = () => {
+        setCurrentEmotion(emotions[Math.floor(Math.random() * emotions.length)])
+    }
+        
+
     useEffect(() => {
         fetchThoughts();
         setInterval(fetchThoughts, 5000);
@@ -71,6 +76,8 @@ const Thoughts = () => {
                     newThoughtLength={newThoughtLength}
                     handleNewThoughtSubmit={handleNewThoughtSubmit}
                     handleNewThoughtLength={handleNewThoughtLength}
+                    currentEmotion={currentEmotion}
+                    setCurrentEmotion={handleCurrentEmotion}
                 />
             </div>
             <div>

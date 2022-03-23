@@ -3,9 +3,30 @@ import React from 'react'
 import Button from './Button';
 import Textarea from './Textarea';
 
+const emotions = [
+    'happy',
+    'sad',
+    'frustrated',
+    'angry',
+    'inspired',
+    'amused',
+    'confident',
+    'grateful',
+    'irritated'
+]
 
-
-const AddThought = ({heartIcon, thoughtsAPI, fetchThoughts, newThought, handleNewThought, newThoughtLength, handleNewThoughtSubmit, handleNewThoughtLength}) => {
+const AddThought = ({
+    heartIcon,
+    thoughtsAPI,
+    fetchThoughts,
+    newThought,
+    handleNewThought,
+    newThoughtLength,
+    handleNewThoughtSubmit,
+    handleNewThoughtLength,
+    currentEmotion,
+    setCurrentEmotion
+    }) => {
     
 
     const onSubmitting = (event) => {
@@ -24,6 +45,7 @@ const AddThought = ({heartIcon, thoughtsAPI, fetchThoughts, newThought, handleNe
                 fetchThoughts();
                 handleNewThought('');
                 handleNewThoughtLength('');
+                setCurrentEmotion();
             }
         });
     };
@@ -34,9 +56,10 @@ const AddThought = ({heartIcon, thoughtsAPI, fetchThoughts, newThought, handleNe
                 newThought={newThought}
                 handleNewThoughtSubmit={handleNewThoughtSubmit}
                 newThoughtLength={newThoughtLength}
+                currentEmotion={currentEmotion}
             />
             <Button 
-                message={<>{heartIcon}&nbsp;Send happy thought!&nbsp;{heartIcon}</>}
+                message={<>{heartIcon}&nbsp;Send {currentEmotion} thought!&nbsp;{heartIcon}</>}
                 className={'submit-button'}
                 type={"submit"}
                 disabled={newThoughtLength < 5 || newThoughtLength > 140}

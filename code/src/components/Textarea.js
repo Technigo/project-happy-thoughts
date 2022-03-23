@@ -1,14 +1,13 @@
 import React from 'react'
 
-const Textarea = ({newThought, handleNewThoughtSubmit, newThoughtLength}) => {
 
-    // useEffect(() => {
-    //     console.log('mounted textarea')
-    // },[])
+
+
+const Textarea = ({newThought, handleNewThoughtSubmit, newThoughtLength, currentEmotion}) => {
 
     return (
         <label>
-            <h1 className='add-thought-header'>What's making you happy right now?</h1>
+            <h1 className='add-thought-header'>What's making you {currentEmotion} right now?</h1>
             <textarea 
                 name="textarea"
                 className='textarea'
