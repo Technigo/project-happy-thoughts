@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatDistance } from 'date-fns'
 
 const Status = ({ loading, recentMessages, onHeartSubmit}) => {
      if (loading) {
@@ -25,6 +26,11 @@ const Status = ({ loading, recentMessages, onHeartSubmit}) => {
                     className="number-of-likes">
                         x {singleMessage.hearts}
                     </span> 
+
+                    <span className="date">
+                        {formatDistance(new Date (singleMessage.createdAt), Date.now(), {
+								addSuffix: true,})}
+                    </span>
                     
                 </div> 
 

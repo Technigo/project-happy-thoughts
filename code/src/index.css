@@ -27,7 +27,7 @@ article {
   -moz-box-shadow: 10px 9px 0px -1px rgba(0,0,0,1);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 form {
@@ -59,6 +59,8 @@ label {
 
 .characters {
   margin-left: 15px;
+  color:gray;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .red-text {
@@ -66,24 +68,34 @@ label {
 }
 
 .send-btn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
   background-color: #FFADAD;
   color: black;
   padding: 10px;
   border: none;
   border-radius: 15px;
-  font-size: 16px;
   cursor: pointer;
 }
 
+.send-btn:hover {
+  box-shadow: 10px 11px 31px -6px rgba(0,0,0,0.85);
+  -webkit-box-shadow: 10px 11px 31px -6px rgba(0,0,0,0.85);
+  -moz-box-shadow: 10px 11px 31px -6px rgba(0,0,0,0.85);
+}
+
 .send-btn:disabled {
-  background-color: gray;
+  background-color: rgb(253, 216, 223);
+  color:rgb(173, 173, 173);
   cursor:default;
+  box-shadow: none;
 }
 
 .sent-messages {
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
-  margin: 0 5px 5px 5px;
+  margin: 15px 0 0 15px;
 }
 
 .heart-btn {
@@ -101,8 +113,14 @@ label {
   margin: 0 0 0 5px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
+  color:gray;
+}
+
+.date {
+  margin-left: 150px;
+  color:rgb(173, 173, 173);
 }
 
 .btn-group {
-  margin: 15px 0 15px 15px;
+  margin: 15px 0 5px 15px;
 }
