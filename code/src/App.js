@@ -6,10 +6,10 @@ import './index.css';
 
 const App = () => {
   return (
-    <section className="all-thoughts">
+    <main className="all-thoughts">
       <PostThoughts />
       <DisplayThoughts />
-    </section>
+    </main>
   );
 }
 

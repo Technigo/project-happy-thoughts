@@ -1,12 +1,39 @@
-body {
-  margin: 0;
-  padding: 0
+h1 {
+  font-size: 1em;
+  font-weight: 400;
+  padding:0;
 }
 
+.all-thoughts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .thought {
  border: 1px solid black; 
  margin: 10px;
  width: 320px;
  height: 100px;
  padding: 20px 0 20px 10px;
+}
+
+
+.post-thought-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 330px;
+  border: 1px solid black;
+}
+
+.post-thought-form textarea{
+  width: 280px;
+  height: 80px;
+}
+
+.send-btn {
+  margin: 10px 0 10px 0;
 }

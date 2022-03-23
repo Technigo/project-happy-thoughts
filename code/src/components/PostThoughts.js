@@ -30,7 +30,8 @@ const PostThoughts = () => {
     return (
         <section>
             <div className="post-thought-container">
-                <form onSubmit={onThoughtSubmit}>
+                <h1>What's making you happy right now?</h1>
+                <form className="post-thought-form" onSubmit={onThoughtSubmit}>
                     <label htmlFor="thought">
                         <textarea
                             rows="3"
@@ -41,6 +42,8 @@ const PostThoughts = () => {
                     </label>
                     </form>
                     <button className="send-btn" type="submit">Send Happy Thoughts</button>
+
+                    
             </div>
         </section>
     )

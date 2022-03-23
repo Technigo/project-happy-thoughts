@@ -11,7 +11,11 @@ const DisplayThoughts = () => {
   }, []);
 
   const allThoughts = thoughts.map((thought) => {
-    return <div className="thought">{thought.message}</div>;
+    return <div className="thought">
+        <p>{thought.message}</p>
+        <p>{thought.hearts}</p>
+        <p>{thought.createdAt}</p>
+        </div>;
   });
 
   return (
