@@ -5,8 +5,10 @@ import Form from './Form'
 export const App = () => {
   return (
     <section>
-      <Form />
-      <Status />
+      <div className="container">
+        <Form />
+        <Status />
+      </div>
     </section>
   )
 }

@@ -19,8 +19,8 @@ code {
 }
 
 article {
-  border: solid black;
-  margin: 20px;
+  border: solid 1px black;
+  margin: 20px 0 20px 0;
   height: 150px;
   box-shadow: 10px 9px 0px -1px rgba(0,0,0,1);
   -webkit-box-shadow: 10px 9px 0px -1px rgba(0,0,0,1);
@@ -29,14 +29,25 @@ article {
 
 form {
   background-color: #F2F0F0;
-  border: solid black;
+  border: solid 1px black;
+  height: 180px;
   box-shadow: 10px 9px 0px -1px rgba(0,0,0,1);
   -webkit-box-shadow: 10px 9px 0px -1px rgba(0,0,0,1);
   -moz-box-shadow: 10px 9px 0px -1px rgba(0,0,0,1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+label {
+  margin: 15px 0 15px 15px;
 }
 
 .text-input {
   font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  padding: 10px;
+  margin: 15px 0 15px 15px;
 }
 
 .send-button {
@@ -44,8 +55,15 @@ form {
   padding: 5px;
   border: none;
   border-radius: 15px;
+  margin: 15px 0 15px 15px;
 }
 
 .sent-messages {
   font-family: 'Roboto Mono', monospace;
+}
+
+.heart-button {
+  border-radius: 50%;
+  border: none;
+  padding: 10px 10px 10px 10px;
 }
