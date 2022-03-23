@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 // Creating ThoughtForm for user to post new thoughts
 const ThoughtForm = (props) => {
 
-    const [thought, setThought] = useState('')
+    const [newThought, setNewThought] = useState('')
 
 
     // Prevents default for form
@@ -17,7 +17,7 @@ const ThoughtForm = (props) => {
         headers: {
         'Content-Type': "application/json",
         },
-        body: JSON.stringify({ message: thought })
+        body: JSON.stringify({ message: newThought })
 })
     .then((res) => res.json())
     .then((newThought) => props.setThoughts((thoughts) => [newThought, ...thoughts]))
@@ -33,11 +33,12 @@ const ThoughtForm = (props) => {
                 <input
                 type="text"
                 name="thought"
-                onChange={event => setThought(event.target.value)}
+                onChange={event => setNewThought(event.target.value)}
                 />
 
                 <div>
-                    <button disabled={thought === ''}
+                     
+                    <button disabled={newThought.length < 6 || newThought.length > 140 ? true : false} /* If input is less than 6 or longer than 140 characters, display button will be disabled */
                     className="btn-happy-thought" type="submit">
                         <span role="img" aria-label="heart emoji">💗 </span>
                         Send Happy Thought
