@@ -29,12 +29,12 @@ return (
 
             <div className="details-wrapper">
 
-            <div>
+            <div className="likes-container">
                 <button className={(thought.hearts === 0 ? "heart-btn" : "heart-btn red-heart-btn")} type="submit">
                 <span role="img" aria-label="heart icon">❤️</span>
                 </button>
 
-                <p className="likes">X {thought.hearts}</p>
+                <p className="likes">x {thought.hearts}</p>
             </div>
             </div>
         

@@ -37,15 +37,12 @@ const ThoughtForm = (props) => {
                  placeholder="Write a happy thought..."
                  type="text"
                  name="thought"
-                 onChange={event => setNewThought(event.target.value)}>
+                 onChange={event => setNewThought(event.target.value)}
+                 >
 
                 </textarea>
 
-                <p className={
-                    newThought.length < 6 || newThought.length <= 140 ? 'message-length-ok' : 'message-length-error'}> 
-                {newThought.length} / 140
-                
-                </p>
+            <div className="input-container-details">
 
                 <div>
                     <button disabled={newThought.length < 6 || newThought.length > 140 ? true : false} /* If input is less than 6 or longer than 140 characters, display button will be disabled */
@@ -56,7 +53,16 @@ const ThoughtForm = (props) => {
                     Send Happy Thought
                     <span role="img" aria-label="heart emoji"> ❤️</span></button>
 
+
+
+                    </div>
+                    <p className={
+                    newThought.length < 6 || newThought.length <= 140 ? 'message-length-ok' : 'message-length-error'}> 
+                {newThought.length} / 140
+                
+                </p>
                 </div>
+          
             </div>
         </form>
     </div>
