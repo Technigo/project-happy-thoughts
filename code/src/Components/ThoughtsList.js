@@ -7,17 +7,19 @@ const ThoughtsList = ({ thought, onLikeIncrease }) => {
       <p className='thoughtMessage'>{thought.message}</p>
       <div className='likesContainer'>
         <div className='likesAmountContainer'>
-          <button
-            onClick={() => onLikeIncrease(thought._id)}
-            className='likeButton'
-          >
-            <span aria-label='heart' role='img' className='heartButtonIcon'>
-              ❤️
-            </span>
-          </button>
-          <p className='heartsCounter'>x {thought.hearts}</p>
+          <div class='likesWrapper'>
+            <button
+              onClick={() => onLikeIncrease(thought._id)}
+              className='likeButton'
+            >
+              <span aria-label='heart' role='img' className='heartButtonIcon'>
+                ❤️
+              </span>
+            </button>
+            <span className='heartsCounter'> x {thought.hearts}</span>
+          </div>
+          <p className='date'>{moment(thought.createdAt).fromNow()}</p>
         </div>
-        <p className='date'>{moment(thought.createdAt).fromNow()}</p>
       </div>
     </section>
   );

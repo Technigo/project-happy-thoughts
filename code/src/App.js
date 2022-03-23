@@ -17,8 +17,8 @@ export const App = () => {
       .then((data) => setThoughts(data));
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
 
     const options = {
       method: 'POST',
@@ -48,8 +48,7 @@ export const App = () => {
       });
   };
   return (
-    <section className='mainContainer'>
-      <h1>Share your happy thoughts!</h1>
+    <section className='mainContent'>
       <ThoughtsInput
         onFormSubmit={handleFormSubmit}
         newThought={newThought}

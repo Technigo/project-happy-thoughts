@@ -1,13 +1,121 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --main-bg-color: #ffd0ce;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  margin: 0;
+  background-color: var(--main-bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newThoughtContainer {
+  background-color: lightgray;
+  margin: 15px;
+  width: 85vw;
+  padding: 10px;
+  border: 1px solid black;
+  box-shadow: 10px 10px black;
+}
+
+.inputMessage {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 15px;
+}
+
+button {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.sendButton {
+  border-radius: 10px;
+  padding: 5px;
+  background-color: var(--main-bg-color);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  height: 40px;
+}
+
+.sendButton:hover:not([disabled]) {
+  transform: scale(1.07);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thoughtCard {
+  margin: 15px;
+  margin-bottom: 20px;
+  width: 85vw;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 10px 10px black;
+}
+
+.likesAmountContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heartsCounter {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.likeButton {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.likesWrapper {
+  transition: transform 0.2s;
+}
+
+.likeButton:hover {
+  background-color: var(--main-bg-color);
+  transform: scale(1.1);
+}
+
+.likesWrapper :focus {
+  background-color: var(--main-bg-color);
+}
+
+@media screen and (min-width: 768px) {
+  .thoughtCard,
+  .newThoughtContainer {
+    width: 65vw;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .thoughtCard,
+  .newThoughtContainer {
+    width: 40vw;
+  }
+
+  .inputMessage {
+    width: 30vw;
+  }
 }
