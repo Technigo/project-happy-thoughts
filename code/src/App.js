@@ -1,14 +1,11 @@
 import React from 'react'
-import Status from './Status'
-import Form from './Form'
+import Page from './components/Page'
+
 
 export const App = () => {
   return (
     <section>
-      <div className="container">
-        <Form />
-        <Status />
-      </div>
+      <Page />
     </section>
   )
 }
