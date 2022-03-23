@@ -1,38 +1,35 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { HeartIcon } from './HeartIcon'
 
-const ThoughtsForm = () => {
-    const [newMessages, setNewMessages] = useState('')
-
-    const onNewMessagesChange = (event) => {
-        setNewMessages(event.target.value)
-    }
-
-    const onFormSubmit = (event) => {
-        event.preventDefault()
-
-         const options =  {
-                method: 'POST',
-                headers: {
-                    'content-Type': 'application/json'
-                },
-                body: JSON.stringify ({
-                    message : newMessages
-                })
-            }
-
-            fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-            .then(res => res.json())
-            .then(data => console.log(data))
-
-    }
+export const ThoughtsForm = ({onFormSubmit, setNewMessages, newMessages }) => { 
 
     return (
         <form onSubmit={onFormSubmit}>
             <h1>Welcome to write a message about you thoughts below</h1>
-            <textarea value={newMessages} onChange={e => onNewMessagesChange(e)}/>
-            <button type='submit'>Submit form!</button>
+            <textarea 
+            className='textinput'
+            type="text"
+            id='newMessages'
+            value={newMessages} 
+            onChange={setNewMessages}
+            placeholder="Write your thought here . . ." 
+            rows="4">
+            </textarea>
+    
+
+           <div className="countTheThoughts">
+                <span className={newMessages.length > 140}>
+                {newMessages.length}</span>/140
+            </div>
+
+            <button 
+            className='send-btn' 
+            type='submit'> 
+           
+                <HeartIcon symbol="❤️" label="heart"/> 
+                Submit form!
+                <HeartIcon symbol="❤️" label="heart"/> 
+                </button>
         </form>
     )
 }
-
-export default ThoughtsForm
