@@ -5,6 +5,7 @@ import ThoughtItem from 'components/ThoughtItem';
 import LoadingItem from 'components/Loading';
 import Header from 'components/Header';
 
+
 import { API_URL, LIKES_URL } from './utils/urls';
 
 export const App = () => {
@@ -76,7 +77,7 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="app-container">
       {loading && <LoadingItem />}
 
       <Header />

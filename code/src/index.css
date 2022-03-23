@@ -5,11 +5,123 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fdc4c4;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 40px;
+  color: #ffff;
+  margin-bottom: 5%;
+  text-shadow: 5px 5px black;
+}
+
+.newThoughtForm {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #efefef;
+  border: 1px solid #000;
+  margin: 20px;
+  box-shadow: 5px 5px #000;
+  width: 300px;
+}
+
+.new-thought-textarea {
+  width: 100%;
+  margin: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.new-thought-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newThoughtButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  background-color: #fdc4c4;
+  font-weight: 700;
+  font-size: 14px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+}
+
+.heart {
+  font-size: 20px;
+}
+
+.thought-item-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #ffff;
+  border: 1px solid #000;
+  margin: 20px;
+  box-shadow: 5px 5px #000;
+  width: 300px;
+  overflow-wrap: break-word;
+}
+
+.thought-item-form p {
+margin: 0 0 10px 0;
+}
+
+.thought-item-button-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: none;
+}
+
+.thought-item-button-container p {
+  font-weight: 300;
+  font-size: 14px;
+  margin: 0;
+}
+
+.thought-item-button {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  border: none;
+}
+
+.date {
+  text-align: right;
+  color: grey;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.counter {
+  text-align: right;
+  margin: 0;
+  color:grey;
+}
+
+.counter-red {
+  color: #c70039;
+}
+
+.counter-green {
+  color: #006e33;
 }
 
 .loading-overlay {
