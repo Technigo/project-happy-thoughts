@@ -100,8 +100,9 @@ textarea.red-text {
 
 /***   BUTTONS   ***/
 button {
-	font-size: inherit;
-	font-family: inherit;
+	font-size: 1rem;
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 400;
 	height: 50px;
 	border: none;
 	color: var(--clr-black);
@@ -109,7 +110,7 @@ button {
 }
 
 .heart-icon {
-	height: 20px;
+	height: 18px;
 }
 
 img.likes {
