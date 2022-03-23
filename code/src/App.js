@@ -8,7 +8,7 @@ export const App = () => {
 
 
   return (
-    <div>
+    <div className="page">
           <Header />
             <main>
               <HappyThoughtCards />

@@ -24,8 +24,10 @@ const ThoughtForm = (props) => {
 
     return (
 
+    <div className="thought-container">
         <form onSubmit={handleFormSubmit}>
             
+        
             <div className="thought-form">
                 <p>What's making you happy right now?</p>
 
@@ -45,13 +47,17 @@ const ThoughtForm = (props) => {
 
                 <div>
                     <button disabled={newThought.length < 6 || newThought.length > 140 ? true : false} /* If input is less than 6 or longer than 140 characters, display button will be disabled */
-                    className="btn-happy-thought" type="submit">
+                    className="btn-happy-thought"
+                    type="submit">
+                    
                     <span role="img" aria-label="heart emoji">❤️ </span>
                     Send Happy Thought
                     <span role="img" aria-label="heart emoji"> ❤️</span></button>
+
                 </div>
             </div>
         </form>
+    </div>
     )
 
     }
