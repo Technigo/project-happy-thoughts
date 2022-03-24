@@ -1,13 +1,64 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'PT Mono', monospace, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(210, 210, 210);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+}
+
+textarea {
+  display: flex;
+  resize: none;
+  width: 90%;
+  margin: 0 4% auto;
+}
+
+.input-container {
+  margin: 20px auto;
+  width: 400px;
+  border: solid 2px black;
+  box-shadow: 6px 6px black;
+  text-align: left;
+  padding: 30px;
+  background: lightgray;
+}
+
+.submit-button {
+  border-radius: 20px;
+  background-color: #ffadad;
+
+  width: 60%;
+  padding: 4px 0px;
+  margin: 10px 17px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.thought-box {
+  margin: 20px auto;
+  width: 400px;
+  background-color: #ffadad;
+  border: solid 2px black;
+  box-shadow: 6px 6px black;
+  padding: 30px;
+}
+
+.like-button {
+  animation: ripple 10s infinite;
+  clip: rect(auto, auto, auto, auto);
+}
+
+.heart-icon {
+  animation: ripple 10s infinite;
+  clip: rect(auto, auto, auto, auto);
 }
