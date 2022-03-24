@@ -34,7 +34,10 @@ export const Form = ({
             type="submit"
             disabled={newThought.length < 6 || newThought.length > 140}
           >
-            <p> Send Happy Thought &#10084;&#65039; </p>
+            <span role="img" aria-label="heart">
+              {' '}
+              Send Happy Thought &#10084;&#65039;{' '}
+            </span>
           </button>
         </div>
       </form>
