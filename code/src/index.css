@@ -16,7 +16,7 @@ body {
 
 form {
   border: 1px solid #000;
-  width: 400px;
+  width: 200px;
   background-color: lightgray;
   padding: 10px;
   margin-bottom: 20px;
@@ -43,12 +43,12 @@ form {
   width: 206px;
 }
 
-/*******Message Part***********/
+/*******MESSAGE PART***********/
 
 .message-container {
   border: 1px solid #000;
   background-color: #fff;
-  width: 400px;
+  width: 200px;
   padding: 10px;
   box-shadow: 8px 8px;
   margin-bottom: 20px;
@@ -82,4 +82,13 @@ form {
 
 .time {
   font-size: 12px;
+}
+
+@media screen and (min-width: 668px) {
+  form {
+    width: 400px;
+  }
+  .message-container {
+    width: 400px;
+  }
 }
