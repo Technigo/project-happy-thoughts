@@ -17,7 +17,7 @@ const ThoughtsForm = () => {
     }    
 
         fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts",options)
-        .then(res => res.json)
+        .then(res => res.json())
         .then(data => console.log(data))
     }
 

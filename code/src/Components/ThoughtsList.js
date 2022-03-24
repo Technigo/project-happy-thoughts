@@ -25,14 +25,15 @@ const ThoughtsList = () => {
         return (
             <section className="message-container">
                 {thoughtsList.map((singleThought) => (
-                   <div className="card">
-                   <div key = {singleThought._id}>
+                   <div className="card"
+                   key = {singleThought._id}>
+                   <div>
                       <h4 className="message-text">{singleThought.message}</h4>
                       
                       <input type="checkbox" checked={singleThought.isChecked} />
                       <p>{formatDistance(new Date(singleThought.createdAt), Date.now(), {addSuffix: true
             })}     </p>
-            
+
                     </div>
                     </div>))}
             </section>
