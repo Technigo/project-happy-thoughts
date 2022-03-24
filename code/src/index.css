@@ -73,6 +73,11 @@ p, button, textarea {
   font-size: large;
 }
 
+.date {
+  font-style: italic;
+  font-size: smaller;
+}
+
 @media (min-width: 667px) {
   form {
     width: 50%;

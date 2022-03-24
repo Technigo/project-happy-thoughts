@@ -1,8 +1,9 @@
 import React from "react";
 import LikeButton from "./LikeButton";
-// import { formatRelative } from "date-fns";
+import { formatRelative } from "date-fns";
 
 const Inputlist = ({ loading, thought, messageID, likeMessage }) => {
+  const date = formatRelative(new Date(thought.createdAt), new Date());
 
   if (loading) {
     return (
@@ -16,8 +17,8 @@ const Inputlist = ({ loading, thought, messageID, likeMessage }) => {
     return (
       <section className="thoughts-container">
             <div className="thought-box" key={thought._id}>
+            <p className="date">{date}</p>
             <p>{thought.message}</p>
-            {/* <p>{formatRelative(thought.date, new Date())}</p> */}
             <LikeButton 
               messageID={messageID} 
               thought={thought}
