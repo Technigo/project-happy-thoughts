@@ -22,6 +22,8 @@ export const App = () => {
       .finally(() => setLoading(false));
   }
 
+  console.log(thoughts);
+
   const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value)
   }
@@ -37,12 +39,20 @@ export const App = () => {
       
     .then(res => res.json())
     .then(() => fetchThoughts())
-    .then((newThought) => console.log(newThought))
     .finally(() => setNewThought(''));
   };
 
+  const onHeartClick = (thoughtId) => {
+
+    console.log(thoughtId);
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    })
+  };
+
   return (
-    <div>
+    <div className="happy-thoughts-container">
       <Form 
         newThought={newThought} 
         onFormSubmit={onFormSubmit} 
@@ -51,6 +61,7 @@ export const App = () => {
       <Thoughts 
         loading={loading}
         thoughts={thoughts} 
+        onHeartClick={onHeartClick}
       />
     </div>
   )

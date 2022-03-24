@@ -3,11 +3,15 @@ import React from "react";
 const Form = ({ onNewThoughtChange, newThought, onFormSubmit }) => {
     
   return (
-    <div>
+    <div className="happy-form">
       <form onSubmit={onFormSubmit}>
-          <label htmlFor="happythoughts">Write a happy thought!</label>
+          <label htmlFor="happythoughts">What's making you happy right now?</label>
           <textarea value={newThought} id="happythoughts" onChange={onNewThoughtChange} />
-          <button type="submit">Send happy thought</button>
+          <button type="submit">
+            <span className="heart-emoji">❤️</span> 
+            Send Happy Thought 
+            <span className="heart-emoji">❤️</span>
+          </button>
       </form>
     </div>
   )

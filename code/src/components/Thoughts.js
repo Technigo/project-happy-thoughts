@@ -1,29 +1,25 @@
 import React from "react";
 
-const Thoughts = ({ loading, thoughts }) => {
+const Thoughts = ({ loading, thoughts, onHeartClick, thoughtId }) => {
 
     if (loading) {
         return <h1>Loading...</h1>
     }
 
-//   const [thoughts, setThoughts] = useState([]);
-
-//   useEffect(() => {
-//     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-//       .then(res => res.json())
-//       .then(thoughts => setThoughts(thoughts));
-
-//   }, []);
-
   return (
-    <div>
-      <ul>
+    <div className="happy-thoughts">
         {thoughts.map((thought) => (
-          <li key={thought.id}>
-              {thought.message}
-          </li>
+          <div className="happy-thought" key={thought._id}>
+              <p className="thought-message">{thought.message}</p>
+              <div className="thought-footer">
+                <div className="thought-heart">
+                  <button onClick={() => onHeartClick(thought._id)}><span className="heart-emoji">❤️</span></button>
+                  <div className="thought-heart-times">x{thought.hearts}</div>
+                </div>
+                <p>{thought.createdAt}</p>
+              </div>
+          </div>
         ))}
-      </ul>
     </div>
   )
 }
