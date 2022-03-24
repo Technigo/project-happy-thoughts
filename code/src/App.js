@@ -26,7 +26,14 @@ export const App = () => {
     const timeout = setLoading(true);
     setTimeout(() => {
       httpRequest("", { method: "GET" })
-        .then(setList)
+        .then((data) => {
+          const sorted = data.sort((a, b) => {
+            const curr = new Date(a.createdAt).getTime();
+            const next = new Date(b.createdAt).getTime();
+            return next - curr;
+          });
+          setList(sorted);
+        })
         .catch(console.error)
         .finally(() => setLoading(false));
     }, 200);
