@@ -11,6 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Trispace", sans-serif;
+  background-color: #fcc8c8;
 }
 
 .main-container {
@@ -29,6 +30,7 @@ body {
 
 .card {
   box-sizing: border-box;
+  background-color: #fff;
   border: 1px solid #000;
   margin: 20px 0;
   padding: 15px;
@@ -50,6 +52,10 @@ textarea {
   box-sizing: border-box;
 }
 
+textarea.red-text {
+  color: #e22a01;
+}
+
 .submit-button {
   border: none;
   border-radius: 20px;
@@ -65,7 +71,7 @@ textarea {
 .thought-text {
   margin: 0;
   padding: 10px 0;
-  min-height: 35px;
+  min-height: 40px;
 }
 
 .likes,

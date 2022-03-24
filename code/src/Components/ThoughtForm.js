@@ -3,8 +3,9 @@ import React from "react";
 const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
   return (
     <form className="form card" onSubmit={onFormSubmit}>
-      <label htmlFor="newThought">What is making you happy right now?</label>
+      <label htmlFor="newThought">What's making you happy right now?</label>
       <textarea
+        className={newThought.length > 140 ? "red-text" : ""}
         id="newThought"
         type="text"
         rows="5"
