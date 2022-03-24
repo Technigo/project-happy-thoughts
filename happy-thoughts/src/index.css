@@ -101,6 +101,12 @@ textarea {
   background-color: #fdaead;
 }
 
+.heart-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .thought-cards p {
   overflow-wrap: break-word;
 }
