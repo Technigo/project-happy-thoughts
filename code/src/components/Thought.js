@@ -12,7 +12,7 @@ const Thought = ({thought, handleLikes}) => {
                 <p key={thought._id}>{thought.message}</p>
                 <div className='info-group' >
                     <div>
-                        <button className='btn-heart' 
+                        <button className={thought.hearts > 0 ? 'btn-heart clicked' : 'btn-heart'}
                             onClick={() => handleLikes(thought._id)}>
                             <span role='img' aria-label='heart'>❤️
                             </span>

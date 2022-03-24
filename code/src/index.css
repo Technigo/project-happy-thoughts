@@ -19,7 +19,8 @@ body {
   -ms-hyphens: auto;
   hyphens: auto;
   font-size: 18px;
-
+  font-family: monospace;
+  background: linear-gradient(to left, #ccffcc 0%, #ff6666 100%);
 }
 
 code {
@@ -31,41 +32,46 @@ code {
 .container {
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
   row-gap: 2em;
-  width: 327px;
+  width: 325px;
   margin: 0 auto;
-  border: 1px dotted blue;
-  margin-top: 2em; 
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .form-container {
   width: 327px;
-  border: 1px solid red;
-  padding: 0.5em 0.7em;
-  border-bottom: red 2px dotted;
+  border: 1px solid black;
+  padding: 0.8em 0.7em;
   box-shadow: 5px 5px;
-  background-color: aqua;
+  background-color: #e0dddd;
 }
 
 .form-content{
-  border: 1px green solid;
   display: grid;
   row-gap: 0.5em;
-  
 }
 
 .input-text {
   padding: 0.5em;
+  font-size: 16px;
+  color: black;
 }
 
 .submit-btn {
   width: 15em;
   border-radius: 50px;
+  border: none;
+  padding: 9px;
+  margin-bottom: 0.5em;
+  margin-top: 0.7em;
+  font-size: 16px;
+  background-color: pink;
 }
 
 .post-container {
-  border: 1px solid pink;
-  background-color: yellow;
+  background-color: rgb(245, 236, 236);
   box-shadow: 5px 5px;
   width: 327px;
 }
@@ -74,10 +80,8 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: 1px solid green;
-  padding: 1em 0.7em;
-  /* height: 100%; */
-
+  border: 1px solid black;
+  padding: 0.6em 0.7em;
 }
 
 .info-group {
@@ -85,24 +89,70 @@ code {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.8em;
+  margin-top: 1em;
   font-size: 16px;
-  color: rgb(82, 80, 80)
+  color: #525050
 }
 
 .btn-heart {
   border-radius: 50%;
-  padding: 5px;
-  margin-right: 1em;
-  /* transform: scale(1.5); */
+  padding: 9px;
+  margin-right: 0.5em;
+  border: none;
+  font-size: 16px;
+  background-color: #e0dddd;
 }
 
-/* .like-counter {
-  display: inline;
-} */
+.clicked {
+  background-color: pink;
+}
 
 .time-stamp {
- color: rgb(167, 164, 164);
+ color: #817e7e;
+}
+
+/*---- TABLET MODE-----*/
+
+@media (min-width: 768px){
+  
+  .container {
+    width: 600px;
+  }
+
+  .form-container {
+    width: 500px;
+    padding: 1em;
+  }
+
+  .post-container{
+    width: 500px;
+  }
+
+  .input-text {
+    width: 465px;
+  }
+}
+
+/*---- DESKTOP MODE-----*/
+
+@media (min-width: 1024px){
+
+  .container {
+    width: 600px;
+  }
+
+  .form-container {
+    width: 550px;
+    padding: 1em;
+  }
+
+  .post-container{
+    width: 550px;
+  }
+
+  .input-text {
+    width: 515px;
+  }
 
 }
 

@@ -8,7 +8,6 @@ import Thought from 'components/Thought'
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
-  // const [loading, setLoading] = useState(false)
 
   const handleOnNewThought = (event) => {
     setNewThought(event.target.value)
@@ -22,13 +21,8 @@ export const App = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
     .then(res => res.json())
     .then(json => setThoughts(json))
-    // .finally(()=> setLoading (false))
+    
   }
-
-  // if (loading) {
-  //   return <h1>Loading in progress</h1>
-  // }
- 
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
