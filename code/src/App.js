@@ -1,6 +1,5 @@
+import HappyThougts from "components/HappyThoughts"
 import React from "react"
-import GetThoughts from "./components/GetThoughts"
-import PostThoughts from './components/PostThoughts'
 
 // import {formatRelative } from 'date-fns'
 
@@ -8,11 +7,7 @@ import PostThoughts from './components/PostThoughts'
 export const App = () => {
   return (
     <div className="BoxContainer">
-      <PostThoughts />
-      <GetThoughts />
+      <HappyThougts />
     </div>
   )
 }
-
-
-//  <TaskForm />

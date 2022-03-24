@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 
-const FetchThoughts = () => {
-  const [postedThougts, setpostedThougts] = useState([])
-  useEffect(() => {
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
-      .then((response) => response.json())
-      .then((json) => setpostedThougts(json))
-  }, [])
-
-  const test = () => {
-    console.log('test')
-  }
-
+const GetThoughts = ({ thougts, onPostLike }) => {
   return (
     <>
-      {postedThougts.map((data) => (
+      {thougts.map((data) => (
         <div className="thoughts" key={data._id}>
           <p>{data.message}</p>
           <div className="likes">
-            <button className="heartbutton" onClick={test}>❤️</button>
+            <button
+              className="heartbutton"
+              onClick={() => onPostLike(data._id)}
+            >
+              ❤️
+            </button>
             x {data.hearts}
             <div className="date">
               <p>{data.createdAt}</p>
@@ -26,9 +20,8 @@ const FetchThoughts = () => {
           </div>
         </div>
       ))}
-      <p>testar 123</p>
     </>
   )
 }
 
-export default FetchThoughts
+export default GetThoughts
