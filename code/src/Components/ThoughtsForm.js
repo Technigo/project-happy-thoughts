@@ -9,26 +9,23 @@ export const ThoughtsForm = ({onFormSubmit, setNewMessages, newMessages }) => {
 
     return (
         <form onSubmit={onFormSubmit}>
-            <h1>Welcome to write a message about you thoughts below</h1>
+            <h1 className='header-text'>What's making you happy right now?</h1>
             <textarea 
-            className='textinput'
+            className='input'
             type="text"
             value={newMessages} 
             onChange={handleChange}
-            placeholder="Write your thought here . . ." 
-            >
-            </textarea>
+            placeholder="Happy thought here" 
+            />
     
-
            <div className="countTheThoughts">
                 <span className={newMessages.length > 140}>
                 {newMessages.length}</span>/140
             </div>
 
             <button 
-            className='send-btn' 
+            className="form-button" 
             type='submit'> 
-           
                 <HeartIcon symbol="❤️" label="heart"/> 
                 Submit form!
                 <HeartIcon symbol="❤️" label="heart"/> 

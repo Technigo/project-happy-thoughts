@@ -6,18 +6,25 @@ export const ThoughtsList = ({ thoughts, onLikes }) => {
         
     return (
         <section>
-               <div>
+               <div className='message-container'>
                    <h4>{thoughts.message}</h4>
-                   <div className='likes-wrapper'>
-                   <button className='like-btn' onClick={() => onLikes(thoughts._id)}>
+                   <div className='input-container'>
+                   <div className='likes-container'> 
+
+                   <button 
+                   className='heart-button' 
+                   onClick={() => onLikes(thoughts._id)}>
+
                    <HeartIcon symbol="❤️" label="heart"/> 
                    </button>
-                   <p className="likes">x {thoughts.hearts}</p>
+
+                   <p className="x-heart">x {thoughts.hearts}</p>
+
+                   </div>   
+                   <p className='time'>{moment(thoughts.createdAt).fromNow()}</p>
                    </div>
-                   <p>{moment(thoughts.createdAt).fromNow()}</p>
-                   </div>
-                    
-            )
+                </div>     
+            
             </section>
     )
 }
