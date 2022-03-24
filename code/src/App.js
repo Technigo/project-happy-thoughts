@@ -19,24 +19,38 @@ export const App = () => {
   };
 
   // remove this later
-  console.log(thoughts);
+  // console.log(thoughts);
+
+  const handleNewThoughtsChange = (e) => {
+    setNewThoughts(e.target.value);
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    fetch(API_URL, {
+    const options = {
       method: 'POST',
-      body: JSON.stringify({ message: newThoughts }),
-    })
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: newThoughts,
+      }),
+    };
+
+    fetch(API_URL, options)
       .then((res) => res.json())
-      .then((newThoughts) => {
-        setThoughts((previousThoughts) => [newThoughts, ...previousThoughts]);
-      });
+      .then(() => fetchThoughts())
+      .finally(() => setNewThoughts(''));
   };
 
   return (
     <div className='main-container'>
-      <NewThoughts />
+      <NewThoughts
+        newThoughts={newThoughts}
+        onNewThoughtsChange={handleNewThoughtsChange}
+        handleFormSubmit={handleFormSubmit}
+      />
       <RecentThoughts thoughts={thoughts} />
     </div>
   );

@@ -2,11 +2,19 @@ import React from 'react';
 
 // creating a thought
 
-const NewThoughts = () => {
+const NewThoughts = ({
+  newThoughts,
+  onNewThoughtsChange,
+  handleFormSubmit,
+}) => {
   return (
-    <div>
-      <p>New Thoughts</p>
-    </div>
+    <form onSubmit={handleFormSubmit}>
+      <div className='thoughts-message'>
+        <label>What`s making you happy right now?</label>
+        <textarea value={newThoughts} onChange={onNewThoughtsChange} />
+        <button type='submit'>Send Happy Thought</button>
+      </div>
+    </form>
   );
 };
 
