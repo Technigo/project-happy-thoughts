@@ -66,11 +66,6 @@ textarea {
   margin: 10px 0px 0px 0px;
 }
 
-.heart-icon {
-  animation: ripple 10s infinite;
-  clip: rect(auto, auto, auto, auto);
-}
-
 .date-text {
   float: right;
   margin: 25px 0px;
