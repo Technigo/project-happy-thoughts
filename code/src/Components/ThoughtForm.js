@@ -1,8 +1,5 @@
 import React from 'react'
 
-
-
-
 export const ThoughtForm =({onFormSubmit, newThought, setNewThought}) => {
 
 return (
@@ -19,14 +16,13 @@ return (
             onChange={(event) => setNewThought(event.target.value)}
             />
         <button 
-        disabled={newThought.length < 5} 
-        type="submit" 
-        className='heart-beat'> 
+            disabled={newThought.length < 5} 
+            type="submit" 
+            className='heart-beat'> 
            <span className='read-heart'>❤</span>{''} Send happy thought <span className='read-heart'>❤</span>{''}
         </button>
-        <span className='caracters-left'> Caracters left: {140 - newThought.length} </span>
+            <span className='caracters-left'> Caracters left: {140 - newThought.length} </span>
     </form>
     </div>
 )
-
 }
