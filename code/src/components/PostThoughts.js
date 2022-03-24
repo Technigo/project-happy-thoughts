@@ -3,6 +3,7 @@ import React from "react"
 
 const PostThoughts = ({newThought, setNewThought}) => {
 
+
     const onThoughtSubmit = (event) => {
 
         event.preventDefault();
@@ -21,6 +22,8 @@ const PostThoughts = ({newThought, setNewThought}) => {
             .then((res) => res.json())
             .then((data) => console.log(data));
     }
+
+
 
     return (
         <section>
