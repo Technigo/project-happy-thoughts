@@ -1,5 +1,4 @@
 const messageUrl = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-const likesUrl = "https://happy-thoughts-technigo.herokuapp.com/thoughts/{THOUGHT_ID}/like";
 
 const fetcher = (url, method, callback) => {
   fetch(url, method)
