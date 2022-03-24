@@ -44,7 +44,10 @@ export const ThoughtPage = () => {
     const options = {
       method: "POST",
     };
-    fetch(LIKED_THOUGHTS_URL, options)
+    fetch(
+      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`,
+      options
+    )
       .then((res) => res.json())
       .then((data) => {
         fetchList();
