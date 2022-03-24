@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "components/Header";
 import ThoughtList from "components/ThoughtList";
 import ThoughtInput from "components/ThoughtInput";
-import Button from "components/Button";
-import Heart from "components/Heart";
 
 const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 const LIKES_URL =
@@ -41,12 +39,24 @@ export const App = () => {
     fetchThoughts();
   }, []);
 
+  const handleLike = (thoughtId) => {
+    const requestOptions = {
+      method: "POST",
+    };
+
+    fetch(LIKES_URL(thoughtId), requestOptions)
+      .then((res) => res.json())
+      .then((data) => {
+        fetchThoughts();
+      });
+  };
+
   return (
     <section className="main">
       <Header />
 
       <ThoughtInput
-        onInputSubmit={handleInputSubmit}
+        handleInputSubmit={handleInputSubmit}
         thought={thought}
         setThought={setThought}
       />
@@ -55,7 +65,7 @@ export const App = () => {
         <ThoughtList
           key={oneThought._id}
           oneThought={oneThought}
-          // onLikesChange={handleLikesChange}
+          fetchThoughts={fetchThoughts}
         />
       ))}
     </section>

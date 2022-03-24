@@ -1,22 +1,39 @@
 import React from "react";
-import Button from "./Button";
 
-const ThoughtInput = ({ onInputSubmit, thought, setThought }) => {
+const ThoughtInput = ({ handleInputSubmit, thought, setThought }) => {
   return (
-    <form className="input" onSubmit={onInputSubmit}>
-      <label htmlFor="textInput" className="input-label">
-        What is making you happy right now?
-      </label>
-      <textarea
-        className="input-text"
-        id="textInput"
-        type="text"
-        value={thought}
-        onChange={(event) => setThought(event.target.value)}
-        maxLength={140}
-      />
-      <Button />
-    </form>
+    <div className="input-wrap">
+      <form className="input" onSubmit={handleInputSubmit}>
+        <label htmlFor="textInput" className="input-label">
+          What is making you happy right now?
+        </label>
+        <textarea
+          className="input-text"
+          id="textInput"
+          type="text"
+          placeholder="Type your thought here :)"
+          value={thought}
+          onChange={(event) => setThought(event.target.value)}
+          maxLength={140}
+        />
+
+        {/* I started with having Button as a separate element, but ran into an issue with a text length limitations, so decided to move it into the form. */}
+        <button
+          disabled={thought.length < 6 || thought.length > 140}
+          type="submit"
+          className="btn"
+        >
+          <span role="img" aria-label="heart emoji">
+            ❤️{" "}
+          </span>
+          Send Happy Thought
+          <span role="img" aria-label="heart emoji">
+            {" "}
+            ❤️
+          </span>
+        </button>
+      </form>
+    </div>
   );
 };
 
