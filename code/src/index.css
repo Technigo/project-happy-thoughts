@@ -12,6 +12,96 @@ code {
     monospace;
 }
 
+.thoughts-wrapper {
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+form {
+  width: 500px;
+  height: 170px;
+  padding: 1rem;
+  font-family: menlo;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1.4px solid black;
+  box-shadow: 10px 10px;
+  background-color: rgba(113, 3, 181, 0.123);
+
+}
+
+button {
+border-radius: 200px;
+background-color: rgba(255, 60, 0, 0.521);
+border: none;
+}
+
+input {
+  height: 4rem;
+  border: 3px solid rgba(128, 128, 128, 0.413);
+  font-family: menlo;
+  font-size: 0.9rem;
+}
+
+.submit-btn {
+  box-sizing: border-box;
+  height: 3rem;
+  background-color: rgb(217, 174, 255);
+  font-family: menlo;
+  font-size: 1rem;
+  width: 300px;
+}
+
+.post-card {
+  width: 500px;
+  border: 1.4px solid black;
+  box-shadow: 10px 10px;
+  padding: 1rem;
+  font-family: menlo;
+  font-size: 1rem;
+  line-height: 150%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.message {
+  width: 100%;
+}
+
+
+.heart-count {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heart-count div {
+
+}
+
 .date {
-  font-size: 0.6rem;
+  text-align: right;
+  width: 300px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+
+.likedColorClass {
+  background-color: rgba(204, 146, 255, 0.349);
+  height: 2.7rem;
+width: 2.7rem;
+}
+
+.notLikedClass {
+  background-color: rgb(174, 174, 174);
+  height: 2.7rem;
+  width: 2.7rem;
+
 }
