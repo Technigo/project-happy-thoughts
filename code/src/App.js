@@ -26,7 +26,6 @@ export const App = () => {
       .then(() => {
         fetchThoughts()
       })
-      .catch((error) => error)
   }
 
   return (

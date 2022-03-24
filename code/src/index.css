@@ -55,11 +55,14 @@ textarea {
 label {
 }
 /*------ThoughtCard------*/
-
+form {
+  text-align: center;
+}
 .message-text {
 }
 
 .text-thought {
+  word-break: break-word;
 }
 
 .likes-container {
@@ -69,4 +72,7 @@ label {
 .heart {
 }
 .time {
+}
+p {
+  padding: 0.5em;
 }

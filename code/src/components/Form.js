@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { API_URL } from 'utils/API'
 
-const Form = ({ thoughts, setThoughts }) => {
+const Form = ({ thought, setThought }) => {
   const [newThought, setNewThought] = useState('')
   const [counter, setCounter] = useState(0)
 
@@ -20,7 +20,7 @@ const Form = ({ thoughts, setThoughts }) => {
     }
     fetch(API_URL, options)
       .then((response) => response.json)
-      .then((data) => setThoughts([data, ...thoughts]))
+      .then((data) => setThought([data, ...thought]))
 
     setNewThought('')
     setCounter(0)
@@ -30,13 +30,13 @@ const Form = ({ thoughts, setThoughts }) => {
     <>
       <section className="main-container">
         <form onSubmit={onFormSubmit}>
-          <label htmlfor="newThought"> Write a happy thought </label>
+          <label htmlFor="newThought"> Write a happy thought </label>
           <textarea
             className={
               counter < 6 || counter > 140 ? 'no-words' : 'word-counter'
             }
             type="text"
-            rows="3"
+            rows="4"
             id="newThought"
             value={newThought}
             onChange={newThoughtChange}
