@@ -1,9 +1,11 @@
 import React from 'react'
 
+import FormMain from 'Components/FormMain';
+
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <main>
+      <FormMain />
+    </main>
   )
 }
