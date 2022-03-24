@@ -29,7 +29,7 @@ export const App = () => {
         .then(setList)
         .catch(console.error)
         .finally(() => setLoading(false));
-    }, 100);
+    }, 200);
     setTimeoutId(timeout);
   };
   useEffect(() => {
