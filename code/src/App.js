@@ -5,12 +5,12 @@ import NewThought from 'components/NewThought'
 import ThoughtList from 'components/ToughtList'
 
 export const App = () => {
-  const [thoughtList, setThoughtList] = useState ([])
   const [newThought, setNewThought] = useState ('')
+  const [thoughtList, setThoughtList] = useState ([])
 
   return (
     <>
-    <div>
+    <div className="main-div">
       <Header />
       <NewThought newThought={newThought} setNewThought={setNewThought} />
       <ThoughtList thoughtList={thoughtList} setThoughtList={setThoughtList} />

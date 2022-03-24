@@ -29,13 +29,15 @@ export const NewThought = () => {
 
     return (
         <>
-            <form onSubmit={onFormSubmit}>
+            <form className="form" onSubmit={onFormSubmit}>
                 <label>What's makng you happy right now?</label>
                 <textarea 
                     value={newThought} 
                     onChange={event => setNewThought(event.target.value)} 
                 />
-                <button type='submit'>Submit form!</button>
+                <button type='submit'>
+                    <span role="img" aria-label="heart">❤️</span> Send Happy Thought <span role="img" aria-label="heart">❤️</span>
+                </button>
             </form>
         
         
