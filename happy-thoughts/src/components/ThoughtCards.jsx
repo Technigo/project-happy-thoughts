@@ -1,5 +1,6 @@
 import React from "react";
 
+import HeartIcon from "./partials/HeartIcon";
 import TimeStamp from "./partials/TimeStamp";
 
 const ThoughtCards = ({ thought, handleLikes, id }) => {
@@ -19,7 +20,7 @@ const ThoughtCards = ({ thought, handleLikes, id }) => {
           <button
             onClick={handleLikesClick}
             className={(thought.hearts === 0 ? "heart-button" : "heart-button red-heart-button")}>
-            <span role="img" aria-label="heart icon" className="heart-icon">❤️</span>
+            <HeartIcon classname="heart - icon" />
           </button>
           <p className="likes">x {thought.hearts}</p>
         </div>

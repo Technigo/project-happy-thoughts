@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 
+import HeartIcon from "./partials/HeartIcon";
+
 const ThoughtForm = ({ setThoughts }) => {
   const [newThought, setNewThought] = useState("");
   const [errorMessage, setErrorMessage] = useState({})
   const [error, setError] = useState(false);
 
-  const checkThoughtLength = newThought.length < 6 || newThought.length > 140;
+  const errorMessages = [
+    `Type of error: ${ errorMessage.name }`,
+    `Message: ${errorMessage.message}`,
+    `Error occurred at: ${errorMessage.path}`,
+    `${errorMessage.type}: ${errorMessage.propertiesMessage}`
+  ]
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -51,19 +58,23 @@ const ThoughtForm = ({ setThoughts }) => {
         />
         { error &&
           <ul className="error-message">
-            <li>Type of error: {errorMessage.name}</li>
-            <li>Message: {errorMessage.message}</li>
-            <li>Error occurred at: {errorMessage.path}</li>
-            <li>{errorMessage.type}: {errorMessage.propertiesMessage}</li>
+            {errorMessages.map(message => (
+              <li>{message}</li>
+            ))}
           </ul>
         }
         <div className="button-wrapper">
           <button type="submit">
-            <span role="img" aria-label="heart icon">❤️ </span>
+            <HeartIcon />
             Send Happy Thought
-            <span role="img" aria-label="heart icon"> ❤️</span>
+            <HeartIcon />
           </button>
-          <p className={(checkThoughtLength ? "red-message-length" : "message-length")}>
+          <p className={
+            (newThought.length < 6 || newThought.length > 140 
+              ? "red-message-length" 
+              : "message-length"
+            )
+          }>
             {newThought.length}/140
           </p>
         </div>

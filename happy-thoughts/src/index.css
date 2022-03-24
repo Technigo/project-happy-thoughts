@@ -58,7 +58,8 @@ li {
   background-color: white;
 }
 
-.cards::first-letter {
+.cards::first-letter, 
+li::first-letter {
   text-transform: capitalize;
 }
 
@@ -116,6 +117,10 @@ textarea {
   justify-content: space-between;
 }
 
+.button-wrapper button {
+  color: black;
+}
+
 .timestamp {
   margin-right: 15px;
   color: #adadad;
@@ -151,10 +156,6 @@ textarea {
 @media (min-width: 768px) {
   h1 {
     font-size: 34px;
-  }
-
-  h1::first-letter {
-    font-size: 39px;
   }
 
   .cards {
