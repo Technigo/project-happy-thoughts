@@ -7,7 +7,6 @@ export const App = () => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => fetchMessages((data) => setMessages(data)), []);
-  console.log(messages);
 
   return (
     <main>
