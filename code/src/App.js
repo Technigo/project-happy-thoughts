@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { HappyMessages } from "Components/HappyMessages"
 
+
 export const App = () => {
   const [twentyThoughts, setTwentyThoughts] = useState([]);
 
@@ -26,6 +27,7 @@ export const App = () => {
         <HappyMessages
           key={twentyThoughts._id}
           twentyThoughts={twentyThoughts}
+          
         />
          ))}
     </>
