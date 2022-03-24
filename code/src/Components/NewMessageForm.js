@@ -7,7 +7,7 @@ const NewMessageForm = ({
 }) => {
   return (
     <form onSubmit={onNewMessageSubmit}>
-      <h1>What´s making you happy right now?</h1>
+      <h1>What's making you happy right now?</h1>
       <textarea value={newMessage} onChange={onMessageSubmit} />
       <button type="submit">Send Happy Thought</button>
     </form>
