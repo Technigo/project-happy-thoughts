@@ -1,9 +1,9 @@
-import React from 'react'
-
+import React from "react";
+import Finalpage from "./components/Finalpage";
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <Finalpage />
     </div>
-  )
-}
+  );
+};
