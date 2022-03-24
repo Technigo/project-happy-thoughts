@@ -4,8 +4,6 @@ import { formatRelative } from "date-fns";
 const Item = ({ item, handleOnLike }) => {
   const { _id, message, hearts, createdAt } = item;
   const onLike = () => {
-    console.log("item.heart", item.hearts);
-    console.log("hearts", hearts);
     handleOnLike(_id);
   };
   return (
