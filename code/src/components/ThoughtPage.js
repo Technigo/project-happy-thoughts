@@ -44,11 +44,11 @@ export const ThoughtPage = () => {
     const options = {
       method: "POST",
     };
-    fetch(LIKED_THOUGHTS_URL(thoughtId), options).then(
-      ((res) => res.json()).then((data) => {
+    fetch(LIKED_THOUGHTS_URL, options)
+      .then((res) => res.json())
+      .then((data) => {
         fetchList();
-      })
-    );
+      });
   };
   return (
     <div>
