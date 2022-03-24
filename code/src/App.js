@@ -1,61 +1,35 @@
 import React, { useState, useEffect } from 'react'
-
+import { HappyMessages } from "Components/HappyMessages"
 
 export const App = () => {
-  const [recentThoughts, setRecentThoughts] = useState([])
+  const [twentyThoughts, setTwentyThoughts] = useState([]);
 
-  useEffect (() => {
-  fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-  .then(res => res.json())
-  .then(json => setRecentThoughts(json.results) )  
+  useEffect(() => {
+    fetchTwentyThoughts();
+  }, []); //when mounted
+
+  const fetchTwentyThoughts = () => {
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+      .then(res => res.json())
+      .then(
+        data => setTwentyThoughts(data)
+      //   json =>
+      // console.log(json) 
+      );
+  };
 
 
-  }, [])
 
   return ( 
-    <div>
-        <ul>
-            {recentThoughts.map(thoughts => (
-            <li key={thoughts._id}>{thoughts._id}
-            <div class="card">{thoughts.message}</div></li>
-          ))}
-        </ul>
-    </div>
+    <>
+        {twentyThoughts.map(twentyThoughts => (
+        <HappyMessages
+          key={twentyThoughts._id}
+          twentyThoughts={twentyThoughts}
+        />
+         ))}
+    </>
   )
   }
 
   export default App;
-
-
-
-
-  // import Detail from 'Components/Detail'
-// import RecentThoughts from 'Components/RecentThoughts'
-// const [selectedPokemon, setSelectedPokemon] = useState();
-
-  // useEffect(() => {
-  //   fetch('https://pokeapi.co/api/v2/pokemon')
-  //   .then(res => res.json())
-  //   .then(json => setPokemons(json.results))
-  // }, [])
-
-// return (
-
-//   <div>
-//     <ul>
-//       {pokemons.map(pokemon => (
-//         <li key={pokemon.name}>
-//           <button onClick={()=> setSelectedPokemon(pokemon)}>
-//             {pokemon.name}</button></li>
-//       ))}
-      
-//     </ul>
-
-//     {selectedPokemon && 
-//     <Detail name={selectedPokemon.name} url={selectedPokemon.url}/>}
-//   </div>
-
-// )
-// }
-
-
