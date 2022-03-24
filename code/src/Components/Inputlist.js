@@ -8,7 +8,7 @@ const Inputlist = ({ loading, thought, messageID, likeMessage }) => {
     return (
     <section className="thoughts-container">
       <div className="loading-page">
-      <h2>Loading...</h2>;
+      <h2>Loading...</h2>
       </div>
     </section>
     )
