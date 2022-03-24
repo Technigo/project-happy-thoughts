@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { API_HEART, API_LIST } from './components/Api'
 import ThoughtList from 'components/ThoughtList'
 import ThoughtForm from 'components/ThoughtForm'
 
@@ -12,16 +13,15 @@ export const App = () => {
 
     useEffect(() => {
       fetchThoughts();
-      }, []);
+    }, []);
       
     const fetchThoughts = () => {
       setLoading(true)
-      fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-      .then((res) => res.json())
-      .then((data) => setThoughtList(data))
-      .finally (() => setLoading(false))
+      fetch(API_LIST)
+        .then((res) => res.json())
+        .then((data) => setThoughtList(data))
+        .finally (() => setLoading(false))
     }
-           console.log(thoughtList)
 
     const handleNewThought = (event) => {
       setNewThought(event.target.value)
@@ -40,13 +40,13 @@ export const App = () => {
           })
         }
 
-        fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+        fetch(API_LIST, options)
           .then(res =>res.json())
           .then(() => fetchThoughts())
           .finally(() => setNewThought(''))
     }
 
-    const handleHeartLikes = () => {
+    const handleHeartLikes = (thoughtID) => {
       const options = {
         method: 'POST',
         headers: {
@@ -54,16 +54,23 @@ export const App = () => {
         },
       }
   
-      fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts/like', options)
+      fetch(API_HEART(thoughtID), options)
         .then((res) => res.json())
         .then(() => fetchThoughts())
-      }
-    
+      }   
 
   return (
     <div>
-      <ThoughtForm newThought={newThought} handleNewThought={handleNewThought} handleFormSubmit={handleFormSubmit} />
-      <ThoughtList loading={loading} thoughtList={thoughtList} handleHeartLikes={handleHeartLikes}/>
+      <ThoughtForm
+        newThought={newThought}
+        handleNewThought={handleNewThought}
+        handleFormSubmit={handleFormSubmit}
+      />
+      <ThoughtList
+        loading={loading}
+        thoughtList={thoughtList}
+        handleHeartLikes={handleHeartLikes}
+      />
     </div>
   )
 }
