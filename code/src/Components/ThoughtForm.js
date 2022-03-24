@@ -23,8 +23,8 @@ return (
         type="submit" 
         className='heart-beat'> 
            <span className='read-heart'>❤</span>{''} Send happy thought <span className='read-heart'>❤</span>{''}
-        
         </button>
+        <span className='caracters-left'> Caracters left: {140 - newThought.length} </span>
     </form>
     </div>
 )
