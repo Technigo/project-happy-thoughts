@@ -10,7 +10,6 @@ export const HappyMessages = ({ twentyThoughts }) => {
             <p className="post-time">{moment(twentyThoughts.createdAt).fromNow()}</p>
         </div>
             )
-
         }
 
 export default HappyMessages
