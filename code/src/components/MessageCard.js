@@ -7,11 +7,11 @@ import "./MessageCard.css";
 const MessageCard = ({ _id, message, hearts, createdAt }) => {
   const [likeCount, setLikeCount] = useState(hearts);
 
+  const date = formatRelative(new Date(createdAt), new Date());
+
   const handleOnClick = () => {
     postLikes(_id, hearts, (data) => setLikeCount(data.hearts));
   };
-
-  const date = formatRelative(new Date(createdAt), new Date());
 
   return (
     <div className="message-container">
@@ -20,7 +20,9 @@ const MessageCard = ({ _id, message, hearts, createdAt }) => {
         <div className="message-heart-group">
           <button type="button" className="message-heart-button" onClick={handleOnClick}>
             {" "}
-            ❤️{" "}
+            <span role="img" aria-label="heart emoji">
+              ❤️
+            </span>{" "}
           </button>
           <p className="message-heart-count"> x {likeCount}</p>
         </div>

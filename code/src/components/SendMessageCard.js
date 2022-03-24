@@ -34,7 +34,13 @@ const SendMessageCard = ({ setMessages }) => {
         onChange={(e) => setMessageInput(e.target.value)}
       />
       <button type="submit" className="message-send-button">
-        ❤️ Send happy thought ❤️
+        <span role="img" aria-label="heart emoji">
+          ❤️
+        </span>{" "}
+        Send happy thought{" "}
+        <span role="img" aria-label="heart emoji">
+          ❤️
+        </span>
       </button>
     </form>
   );
