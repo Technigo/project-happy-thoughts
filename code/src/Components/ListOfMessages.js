@@ -1,7 +1,7 @@
 import React from "react";
 import LikeBtn from "./LikeBtn";
 
-const ListOfMessages = ({ loading, messages, fetchMessages, messageID }) => {
+const ListOfMessages = ({ loading, messages, fetchMessages, messageID}) => {
   if (loading) {
     return <h1>Happy Thoughts Loading...</h1>;
   }
@@ -14,7 +14,7 @@ const ListOfMessages = ({ loading, messages, fetchMessages, messageID }) => {
           <p>{singleMessage.hearts}</p>
           <p>{singleMessage.createdAt}</p>
           <LikeBtn
-            messageID={messages.id}
+            messageID={singleMessage._id}
             messages={singleMessage}
             fetchMessages={fetchMessages}
           />

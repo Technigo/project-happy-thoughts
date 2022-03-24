@@ -1,7 +1,7 @@
 import React from "react";
 
 const LikeBtn = ({ messageID, fetchMessage, messages }) => {
-  const sendLike = (messageID) => {
+  const sendLike = () => {
     const options = {
       method: "POST",
       headers: {
