@@ -1,3 +1,9 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +11,98 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  font-size: 18px;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* --- MOBILE STYLING ----*/
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2em;
+  width: 327px;
+  margin: 0 auto;
+  border: 1px dotted blue;
+  margin-top: 2em; 
+}
+
+.form-container {
+  width: 327px;
+  border: 1px solid red;
+  padding: 0.5em 0.7em;
+  border-bottom: red 2px dotted;
+  box-shadow: 5px 5px;
+  background-color: aqua;
+}
+
+.form-content{
+  border: 1px green solid;
+  display: grid;
+  row-gap: 0.5em;
+  
+}
+
+.input-text {
+  padding: 0.5em;
+}
+
+.submit-btn {
+  width: 15em;
+  border-radius: 50px;
+}
+
+.post-container {
+  border: 1px solid pink;
+  background-color: yellow;
+  box-shadow: 5px 5px;
+  width: 327px;
+}
+
+.post-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid green;
+  padding: 1em 0.7em;
+  /* height: 100%; */
+
+}
+
+.info-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8em;
+  font-size: 16px;
+  color: rgb(82, 80, 80)
+}
+
+.btn-heart {
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 1em;
+  /* transform: scale(1.5); */
+}
+
+/* .like-counter {
+  display: inline;
+} */
+
+.time-stamp {
+ color: rgb(167, 164, 164);
+
+}
+
