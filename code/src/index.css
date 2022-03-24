@@ -5,7 +5,7 @@ body {
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(210, 210, 210);
+  background-color: rgb(218, 218, 218);
 }
 
 code {
@@ -14,13 +14,16 @@ code {
 }
 
 h1 {
+  font-size: 30px;
 }
 
 textarea {
-  display: flex;
   resize: none;
   width: 90%;
-  margin: 0 4% auto;
+  height: 100px;
+  padding: 7px;
+  line-height: 25px;
+  font-size: 16px;
 }
 
 .input-container {
@@ -36,29 +39,39 @@ textarea {
 .submit-button {
   border-radius: 20px;
   background-color: #ffadad;
-
-  width: 60%;
+  width: 50%;
   padding: 4px 0px;
-  margin: 10px 17px;
+  margin: 10px 0px;
   display: flex;
   justify-content: space-evenly;
+  font-family: 'PT Mono', monospace;
 }
 
 .thought-box {
   margin: 20px auto;
   width: 400px;
-  background-color: #ffadad;
+  background-color: rgb(247, 196, 196);
   border: solid 2px black;
   box-shadow: 6px 6px black;
   padding: 30px;
+  line-height: 30px;
 }
 
 .like-button {
-  animation: ripple 10s infinite;
-  clip: rect(auto, auto, auto, auto);
+  background: #ffadad;
+  border: solid 2px #ff8c8c;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px 0px 0px 0px;
 }
 
 .heart-icon {
   animation: ripple 10s infinite;
   clip: rect(auto, auto, auto, auto);
+}
+
+.date-text {
+  float: right;
+  margin: 25px 0px;
 }

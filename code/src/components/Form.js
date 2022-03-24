@@ -34,7 +34,7 @@ export const Form = ({
             type="submit"
             disabled={newThought.length < 6 || newThought.length > 140}
           >
-            <p>Send Happy Thought</p>
+            <p> Send Happy Thought &#10084;&#65039; </p>
           </button>
         </div>
       </form>
