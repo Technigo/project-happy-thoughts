@@ -5,16 +5,22 @@ import { HeartIcon } from "Components/LikedThoughts";
 export const ThoughtsList = ({ thoughts, onLikes }) => {
   return (
     <section>
-      <div>
+      <div className="message-container">
         <h4>{thoughts.message}</h4>
-        <button onClick={() => onLikes(thoughts._id)}>
-          <HeartIcon symbol="❤️" />
-        </button>
+        <div className="input-container">
+          <div className="likes-container">
+            <button
+              className="heart-button"
+              onClick={() => onLikes(thoughts._id)}
+            >
+              <HeartIcon symbol="❤️" />
+            </button>
 
-        <p> x {thoughts.hearts}</p>
-        <p>{moment(thoughts.createdAt).fromNow()}</p>
+            <p className="x-heart"> x {thoughts.hearts}</p>
+          </div>
+          <p className="time">{moment(thoughts.createdAt).fromNow()}</p>
+        </div>
       </div>
-      ))
     </section>
   );
 };

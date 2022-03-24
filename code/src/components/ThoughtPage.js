@@ -59,7 +59,11 @@ export const ThoughtPage = () => {
         onFormSubmit={onFormSubmit}
       />
       {list.map((thoughts) => (
-        <ThoughtsList key={thoughts._id} list={list} onLikes={handleLikes} />
+        <ThoughtsList
+          key={thoughts._id}
+          thoughts={thoughts}
+          onLikes={handleLikes}
+        />
       ))}
     </div>
   );
