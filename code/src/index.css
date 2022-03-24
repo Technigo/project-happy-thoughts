@@ -29,53 +29,46 @@ header {
 form {
   display: flex;
   flex-direction: column;
-  margin-top: 5vw;
-  padding: 3vw;
+  margin: 50px 0px 20px 0px;
+  padding: 50px;  
   background: lightgray;
   border: 1px solid black;
   box-shadow: 5px 5px;
-}
-
-.form-button {
-  width: fit-content; 
-  margin: 2vw 0;
-  border: none;
-  border-radius: 10px;
-  background: lightpink;
-  padding: 1vw;
-  font-family: Monospace;
-}
-
-.like-button {
-  border: none;
-  border-radius: 50px;
-  background: lightpink;
 }
 
 .thoughts-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5vw;
+  margin: 50px;
 }
 
 .thought-box {
-  width: 50%;
-  padding: 3vw;
-  margin-bottom: 5vw;
+  width: 250px;  
+  padding: 30px;
+  margin-bottom: 50px;
   background: white;
   border: 1px solid black;
   box-shadow: 5px 5px;
 }
 
-@media (min-width: 667px) {
-  .thought-box {
-    width: 40%;
-  }
+.form-button {
+  width: fit-content; 
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background: lightpink;
+  padding: 10px;
+  font-family: Monospace;
 }
 
-@media (min-width: 1024px) {
-  .thought-box {
-    width: 30%;
-  }
+.like-button {
+  border: none;
+  pad: 2px;
+  border-radius: 50px;
+  background: lightpink;
+}
+
+p, button, textarea {
+  font-size: larger;
 }

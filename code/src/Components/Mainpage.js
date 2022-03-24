@@ -7,7 +7,6 @@ export const Mainpage = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [message, SetMessage] = useState('');
-  // const [like, setLike] = useState('');
 
   useEffect(() => {
     fetchThoughts();
@@ -43,10 +42,6 @@ export const Mainpage = () => {
     .finally(() => SetMessage(''));
   }
 
-  // const likeMessage = () => {
-
-  // }
-
       return (
         <main>
           <Input 
@@ -56,7 +51,9 @@ export const Mainpage = () => {
           />
           <Inputlist 
             loading={loading} 
-            thoughts={thoughts}/>
+            thoughts={thoughts}
+            fetchThoughts={fetchThoughts}
+          />
         </main>
       )
 }
