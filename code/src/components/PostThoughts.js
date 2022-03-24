@@ -1,15 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 
 
-const PostThoughts = () => {
-
-    const [newThought, setNewThought] = useState("");
-
-    const onNewThoughtChange = (event) => {
-        setNewThought(event.target.value);
-    };
+const PostThoughts = ({newThought, setNewThought}) => {
 
     const onThoughtSubmit = (event) => {
+
         event.preventDefault();
 
         const options = {
@@ -18,7 +13,7 @@ const PostThoughts = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                description: newThought
+                 message: newThought 
             })
         };
 
@@ -34,14 +29,15 @@ const PostThoughts = () => {
                 <form className="post-thought-form" onSubmit={onThoughtSubmit}>
                     <label htmlFor="thought">
                         <textarea
-                            rows="3"
+                            value={newThought}
                             placeholder="What's your happy thought?"
-                            name="thoughtt"
-                            onChange={onNewThoughtChange}
+                            name="thought"
+                            onChange={(event)=>(setNewThought(event.target.value))}
                         />
                     </label>
+                    <button className="send-btn" type="submit" onSubmit={onThoughtSubmit}>Send Happy Thoughts</button>
                     </form>
-                    <button className="send-btn" type="submit">Send Happy Thoughts</button>
+    
 
                     
             </div>
