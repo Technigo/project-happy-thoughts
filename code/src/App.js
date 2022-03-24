@@ -1,14 +1,19 @@
 import Footer from 'components/Footer'
+import ThoughtForm from 'components/ThoughtForm'
+import ThoughtItem from 'components/ThoughtItem'
 import React from 'react'
 
 export const App = () => {
   return (
   <section>
-      <div className="form-container">Happy Thoughts!!!
-        <div className="typing-area">Hej
-       </div> 
-       <button className="send-button">Send Happy Thought<span>❤️</span></button>
-        </div>
+
+<ThoughtForm />
+
+<div className="comment-container">Hej</div>
+
+
+
+   
       <Footer />
       </section>
 

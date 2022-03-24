@@ -29,8 +29,6 @@ footer{
   margin-top: auto;
 }
 
-
-
 .form-container{
   background-color: #f0f0f0;
 width: 50%;
@@ -40,24 +38,43 @@ box-shadow: 5px 6px;
 border-style:solid;
 border-width: thin;
 align-content: center;
-display: block;
+display:flex;
+flex-direction: column;
+}
+
+.happy-label{
+  font-size: 14pt;
+  font-weight: bolder;
+  margin:10px;
+  padding:10px;
 }
 
 .typing-area{
   background-color: brown;
-  margin:10%;
+  margin:5%;
   padding:10%;
   border-style: solid;
   border-width: thin;
   word-wrap: break-word;
   white-space: pre-wrap;
-  display: block;
 }
 
-.send-button{
+.big-button{
   padding:8px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
 border-radius:30px; 
 display: block;
+}
+
+.comment-container{
+  background-color: #ffffff;
+  width: 50%;
+  height: 30%;
+  margin: 200px;
+  box-shadow: 5px 6px;
+  border-style:solid;
+  border-width: thin;
+  align-content: center;
+  display: block;
 }
