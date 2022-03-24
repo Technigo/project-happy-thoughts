@@ -1,8 +1,8 @@
 import React from "react";
-import HeartButton from "./HeartButton";
+import LikeButton from "./LikeButton";
 // import { formatRelative } from "date-fns";
 
-const Inputlist = ({ loading, thoughts, fetchThoughts }) => {
+const Inputlist = ({ loading, thought, messageID, likeMessage }) => {
 
   if (loading) {
     return (
@@ -15,17 +15,15 @@ const Inputlist = ({ loading, thoughts, fetchThoughts }) => {
   }
     return (
       <section className="thoughts-container">
-          {thoughts.map(thought => (
             <div className="thought-box" key={thought._id}>
             <p>{thought.message}</p>
             {/* <p>{formatRelative(thought.date, new Date())}</p> */}
-            <HeartButton 
-              messageID={thought._id} 
+            <LikeButton 
+              messageID={messageID} 
               thought={thought}
-              fetchThoughts={fetchThoughts}
+              likeMessage={likeMessage}
               />
             </div>
-          ))}
       </section>
     )
   }

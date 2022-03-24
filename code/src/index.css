@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Monospace;
-  background-color: lightpink;
+  background-color: #FFF9F9;
 }
 
 code {
@@ -29,9 +29,10 @@ header {
 form {
   display: flex;
   flex-direction: column;
-  margin: 50px 0px 20px 0px;
-  padding: 50px;  
-  background: lightgray;
+  width: 70%;
+  margin: 20vw;
+  padding: 5vw;
+  background: #EEEEEE;
   border: 1px solid black;
   box-shadow: 5px 5px;
 }
@@ -40,13 +41,12 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px;
 }
 
 .thought-box {
-  width: 250px;  
-  padding: 30px;
-  margin-bottom: 50px;
+  width: 70%;
+  margin-bottom: 20vw;
+  padding: 10vw;
   background: white;
   border: 1px solid black;
   box-shadow: 5px 5px;
@@ -54,21 +54,57 @@ form {
 
 .form-button {
   width: fit-content; 
-  margin-top: 20px;
+  margin-top: 10px;
+  padding: 10px;
   border: none;
   border-radius: 10px;
-  background: lightpink;
-  padding: 10px;
+  background: #ECA6A6;
   font-family: Monospace;
 }
 
 .like-button {
   border: none;
-  pad: 2px;
+  margin-top: 2px;
   border-radius: 50px;
-  background: lightpink;
+  background: #ECA6A6
 }
 
 p, button, textarea {
-  font-size: larger;
+  font-size: large;
+}
+
+@media (min-width: 667px) {
+  form {
+    width: 50%;
+    margin: 5vw;
+    padding: 5vw;
+  }
+
+  .thought-box {
+    width: 50%;
+    margin: 5vw;
+    padding: 5vw;
+  }
+
+  p, button, textarea {
+    font-size: larger;
+  }
+}
+
+@media (min-width: 1024px) {
+  form {
+    width: 40%;
+    margin: 1vw;
+    padding: 1vw;
+  }
+
+  .thought-box {
+    width: 40%;
+    margin: 1vw;
+    padding: 1vw;
+  }
+
+  p, button, textarea {
+    font-size: larger;
+  }
 }

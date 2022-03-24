@@ -42,6 +42,19 @@ export const Mainpage = () => {
     .finally(() => SetMessage(''));
   }
 
+  const likeMessage = (messageID) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    }
+  
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`, options)
+    .then(res => res.json())
+    .then(() => fetchThoughts())
+  }
+
       return (
         <main>
           <Input 
@@ -49,11 +62,15 @@ export const Mainpage = () => {
             onInputChange={handleInputChange}
             onFormSubmit={onFormSubmit}
           />
+          {thoughts.map(thought => (
           <Inputlist 
+            key={thought._id}
             loading={loading} 
-            thoughts={thoughts}
-            fetchThoughts={fetchThoughts}
+            thought={thought}
+            messageID={thought._id}
+            likeMessage={likeMessage}
           />
+          ))}
         </main>
       )
 }
