@@ -20,7 +20,7 @@ const ThoughtCards = ({ thought, handleLikes, id }) => {
           <button
             onClick={handleLikesClick}
             className={(thought.hearts === 0 ? "heart-button" : "heart-button red-heart-button")}>
-            <HeartIcon classname="heart - icon" />
+            <HeartIcon classname={"heart-icon"} />
           </button>
           <p className="likes">x {thought.hearts}</p>
         </div>
