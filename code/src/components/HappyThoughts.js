@@ -3,8 +3,8 @@ import GetThoughts from "./GetThoughts"
 import PostThoughts from "./PostThoughts"
 // import {formatRelative } from 'date-fns'
 
-const API_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
-const LIKES_URL = (thoughtId) =>
+const API_THOUGHTS = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const API_LIKES = (thoughtId) =>
   `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
 
 const HappyThougts = () => {
@@ -16,7 +16,7 @@ const HappyThougts = () => {
   }, [])
 
   const fetchThoughts = () => {
-    fetch(API_URL)
+    fetch(API_THOUGHTS)
       .then((response) => response.json())
       .then((json) => setThougts(json))
   }
@@ -24,7 +24,7 @@ const HappyThougts = () => {
   const postLike = (thoughtId) => {
     const option = { method: "POST" }
 
-    fetch(LIKES_URL(thoughtId), option)
+    fetch(API_LIKES(thoughtId), option)
       .then((response) => response.json())
       .then((json) => fetchThoughts())
   }
@@ -47,7 +47,7 @@ const HappyThougts = () => {
       body: JSON.stringify({ message: newThought }),
     }
 
-    fetch(API_URL, option)
+    fetch(API_THOUGHTS, option)
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts()
