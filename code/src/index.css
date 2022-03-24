@@ -28,7 +28,7 @@ textarea {
 
 .input-container {
   margin: 20px auto;
-  width: 400px;
+  width: 60%;
   border: solid 2px black;
   box-shadow: 6px 6px black;
   text-align: left;
@@ -49,7 +49,7 @@ textarea {
 
 .thought-box {
   margin: 20px auto;
-  width: 400px;
+  width: 60%;
   background-color: rgb(247, 196, 196);
   border: solid 2px black;
   box-shadow: 6px 6px black;

@@ -1,13 +1,18 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This week we built a Twitter-like app were the user can post Happy thoughts.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+We learned how to use APIs in React and to use useEffect. And to post the result of API results into React State.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started out with fetching the APIs putting them into a seperate components folder.
+Then I used two other components, one for form and one for the messages/tjhoughts.
+I also added a counter that controls how many words the user can and have to type.
+
+I hade some problems with the input area and also with the fetch at first but that got solved thrue the eyes of my classmates, it was mostly small typos like normal ticks instead of backticks.
+The date was also a bit tricky but I got helo from classmates solving that.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-hallingedition.netlify.app/

@@ -6,7 +6,7 @@ export const ThoughtList = ({ thoughts, handleLikeIncrease }) => {
     <section className="thought-container">
       {thoughts.map((thought) => (
         <div className="thought-box">
-          <p>{thought.message}</p>
+          <p className="thought-text">{thought.message}</p>
           <button
             className="like-button"
             onClick={() => handleLikeIncrease(thought._id)}

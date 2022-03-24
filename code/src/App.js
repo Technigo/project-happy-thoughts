@@ -27,7 +27,7 @@ export const App = () => {
     setCounter(event.target.value.length)
   }
 
-  // stops refreshing submittion of the form. and executes:
+  // stops refreshing submittion of the form and executes:
   const handleFormSumbit = (event) => {
     event.preventDefault()
 
