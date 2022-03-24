@@ -18,8 +18,12 @@ h1 {
   text-shadow: black 2px 5px;
 }
 
+h2 {
+  text-align: center;
+}
+
 ul {
-  padding-left: 0;
+  padding-left: 5px;
   margin-bottom: 30px;
 }
 
@@ -33,6 +37,13 @@ li {
   justify-content: center;
   align-items: center;
   background-color: #216986;
+}
+
+.loader {
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cards {
