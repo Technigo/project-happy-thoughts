@@ -37,7 +37,7 @@ body {
 }
 
 textarea {
-  margin: 10px 0;
+  margin: 15px 0 10px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -47,6 +47,12 @@ textarea {
   border-radius: 20px;
   background-color: #ffadad;
   padding: 10px;
+}
+
+.form p {
+  text-align: right;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
 }
 
 .thought-text {
