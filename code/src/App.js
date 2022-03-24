@@ -35,11 +35,24 @@ export const App = () => {
           likesStyles.bgColor = 'lightgrey';
         }
 
+        const handleClick = async () => {
+          const options = {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          }
+
+          const fetchedRes = await fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+          let postedData = await fetchedRes.json();
+          console.log(postedData)
+        }
+
         return (
           <div key={_id} className="message-display-div">
             <p>Message: {message}</p>
             <span>
-            <p style={{display: 'flex'}}>
+            <p onClick={handleClick} style={{display: 'flex'}}>
               <span style={{backgroundColor: `${likesStyles.bgColor}`, padding: '10px', borderRadius: '50%'}}>
                 <span role="img" aria-label="Red Heart">❤️</span>
               </span>

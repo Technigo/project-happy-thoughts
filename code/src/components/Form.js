@@ -15,6 +15,8 @@ const Form = ({apiData}) => {
       })
     }
 
+    console.log(updatedData)
+
     const fetchedRes = await fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts`, options)
     let postedData = await fetchedRes.json();
     setUpdatedData(apiData => [...apiData, postedData])
