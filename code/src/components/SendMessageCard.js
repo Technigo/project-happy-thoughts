@@ -33,7 +33,11 @@ const SendMessageCard = ({ setMessages }) => {
         autoFocus
         onChange={(e) => setMessageInput(e.target.value)}
       />
-      <button type="submit" className="message-send-button">
+      <button
+        type="submit"
+        className="message-send-button"
+        disabled={messageInput.length >= 5 ? false : true}
+      >
         <span role="img" aria-label="heart emoji">
           ❤️
         </span>{" "}
