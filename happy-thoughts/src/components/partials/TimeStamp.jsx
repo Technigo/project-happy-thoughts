@@ -26,7 +26,7 @@ const TimeStamp = (props) => {
               unitsOfTime = "minute";
             } else {
               interval = seconds
-              if (interval < 0) {
+              if (interval <= 0) {
                 unitsOfTime = "just now";
               } else {
                 interval = seconds
@@ -38,11 +38,11 @@ const TimeStamp = (props) => {
       }
     }
 
-    if (interval > 1 || interval === 0) {
+    if (interval > 1) {
       unitsOfTime += "s ago";
     } else if (interval === 1) {
       unitsOfTime += " ago";
-    } else if (interval < 0) {
+    } else if (interval <= 0) {
       return unitsOfTime;
     }
     return interval + " " + unitsOfTime;

@@ -31,7 +31,12 @@ const Entry = () => {
       <main>
         <ThoughtForm setThoughts={setThoughts} />
         {thoughts.map(thought => (
-          <ThoughtCards handleLikes={handleLikes} setLikes={setLikes} id={thought._id} thought={thought} setThoughts={setThoughts} />
+          <ThoughtCards 
+            handleLikes={handleLikes} 
+            setLikes={setLikes} 
+            id={thought._id} 
+            thought={thought} 
+            setThoughts={setThoughts} />
         ))}
       </main>
     </>

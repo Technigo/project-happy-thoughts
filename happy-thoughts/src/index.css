@@ -18,6 +18,15 @@ h1 {
   text-shadow: black 2px 5px;
 }
 
+ul {
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+li {
+  list-style: none;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -110,6 +119,11 @@ textarea {
   color: #f21e1e;
 }
 
+.error-message {
+  color: #f21e1e;
+  overflow-wrap: break-word;
+}
+
 @media (min-width: 375px) {
   .cards {
     width: 300px;
@@ -119,6 +133,10 @@ textarea {
 @media (min-width: 768px) {
   h1 {
     font-size: 34px;
+  }
+
+  h1::first-letter {
+    font-size: 39px;
   }
 
   .cards {
