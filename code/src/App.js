@@ -1,9 +1,16 @@
 import React from 'react'
 
+import Messages from 'Components.js/Messages'
+import NewMessageForm from 'Components.js/NewMessageForm'
+
+
+
 export const App = () => {
+
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <section>
+      <NewMessageForm/>
+      <Messages/>
+    </section>
   )
 }
