@@ -1,4 +1,5 @@
 import React from "react";
+import { formatDistanceToNow } from 'date-fns';
 
 const Thoughts = ({ loading, thoughts, onHeartClick }) => {
 
@@ -16,7 +17,9 @@ const Thoughts = ({ loading, thoughts, onHeartClick }) => {
                   <button className={thought.hearts > 0 ? 'moreThanZeroClicks' : 'zeroClicks' } onClick={() => onHeartClick(thought._id)}><span className="heart-emoji">❤️</span></button>
                   <div className="thought-heart-times">x{thought.hearts}</div>
                 </div>
-                <p>{thought.createdAt}</p>
+                {/* <p>{formatRelative(thought.createdAt, new Date())}</p> */}
+                <p>{formatDistanceToNow(new Date(thought.createdAt))} ago</p>
+
               </div>
           </div>
         ))}
