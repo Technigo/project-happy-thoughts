@@ -12,7 +12,7 @@ const ThoughtCards = ({ thought, handleLikes, id }) => {
   }
 
   return (
-    <section className="thought-cards cards" key={thought._id}>
+    <>
       <p>{thought.message}</p>
       <div className="button-wrapper">
         <div>
@@ -25,7 +25,7 @@ const ThoughtCards = ({ thought, handleLikes, id }) => {
         </div>
         <TimeStamp createdAt={thought.createdAt} />
       </div>
-    </section>
+    </>
   );
 };
 

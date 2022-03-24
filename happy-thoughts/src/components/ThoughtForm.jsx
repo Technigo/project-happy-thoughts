@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
-const ThoughtForm = (props) => {
+const ThoughtForm = ({ setThoughts }) => {
   const [newThought, setNewThought] = useState("");
   const [errorMessage, setErrorMessage] = useState({})
   const [error, setError] = useState(false);
+
+  const checkThoughtLength = newThought.length < 6 || newThought.length > 140;
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -26,7 +28,7 @@ const ThoughtForm = (props) => {
           setError(true)
           setNewThought("")
         } else {
-          props.setThoughts((thoughts) => [newThought, ...thoughts])
+          setThoughts((thoughts) => [newThought, ...thoughts])
         }
       })
       .catch(error => console.error(error))
@@ -47,8 +49,7 @@ const ThoughtForm = (props) => {
             setError(false)
           }}
         />
-        {
-          error &&
+        { error &&
           <ul className="error-message">
             <li>Type of error: {errorMessage.name}</li>
             <li>Message: {errorMessage.message}</li>
@@ -62,8 +63,7 @@ const ThoughtForm = (props) => {
             Send Happy Thought
             <span role="img" aria-label="heart icon"> ❤️</span>
           </button>
-          <p
-            className={(newThought.length < 6 || newThought.length > 140 ? "red-message-length" : "message-length")}>
+          <p className={(checkThoughtLength ? "red-message-length" : "message-length")}>
             {newThought.length}/140
           </p>
         </div>

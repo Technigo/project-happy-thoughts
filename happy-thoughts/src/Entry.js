@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { Hearts } from 'react-loader-spinner'
+import { Hearts } from "react-loader-spinner";
 
 import Header from "components/Header";
 import ThoughtForm from "components/ThoughtForm";
 import ThoughtCards from "components/ThoughtCards";
 
-
 const Entry = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    fetchThoughts()
-  }, []);
+  const [loading, setLoading] = useState(false);
 
   const fetchThoughts = () => {
     setLoading(true)
     fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
       .then(res => res.json())
       .then(thoughts => setThoughts(thoughts))
-      .catch(error => console.log("error:", error))
+      .catch(error => console.error("error:", error))
       .finally(() => setLoading(false))
   }
+
+  useEffect(() => {
+    fetchThoughts()
+  }, []);
 
   const handleLikes = (id) => {
     const updatedLikes = thoughts.map((thought) => {
@@ -35,24 +34,26 @@ const Entry = () => {
 
   if (loading) {
     return (
-    <div className="loader">
-      <Hearts ariaLabel="loading-indicator" color="#f21e1e" height={80} width={80} />
-      <p>Loading happy thoughts...</p>
-    </div>
+      <div className="loader">
+        Loading happy thoughts
+        <Hearts ariaLabel="loading-indicator" color="#f21e1e" height={80} width={80} />
+      </div>
     )
-    }
+  }
 
   return (
-    <div class="app-container">
+    <div className="app-container">
       <Header />
       <main>
         <ThoughtForm setThoughts={setThoughts} />
         {thoughts.map(thought => (
-          <ThoughtCards 
-            handleLikes={handleLikes} 
-            id={thought._id} 
-            thought={thought}
-            setThoughts={setThoughts} />
+          <article key={thought._id} className="thought-cards cards">
+            <ThoughtCards
+              handleLikes={handleLikes}
+              id={thought._id}
+              thought={thought}
+              setThoughts={setThoughts} />
+          </article>
         ))}
       </main>
     </div>
