@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import moment from "moment";
 
-const ThoughtList = ({ oneThought, onLike }) => {
+const ThoughtList = ({ oneThought, handleLike }) => {
   return (
     <div className="thought-card">
       <p className="thought-text">{oneThought.message}</p>
       <div className="thought-info">
-        <button onClick={() => onLike(oneThought._id)} className="btn">
+        <button onClick={() => handleLike(oneThought._id)} className="btn">
           <span
             style={{
-              backgroundColor: oneThought.likes > 0 ? "#F381AF" : "#EAEAEA",
+              backgroundColor: oneThought.hearts > 0 ? "#F381AF" : "#EAEAEA",
             }}
             className="btn-heart"
             role="img"
@@ -16,8 +17,9 @@ const ThoughtList = ({ oneThought, onLike }) => {
           >
             ❤️
           </span>{" "}
-          x {oneThought.likes}
+          x {oneThought.hearts}
         </button>{" "}
+        <p className="date">posted {moment(oneThought.createdAt).fromNow()}</p>
       </div>
     </div>
   );

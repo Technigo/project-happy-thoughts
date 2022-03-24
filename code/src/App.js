@@ -4,7 +4,7 @@ import ThoughtList from "components/ThoughtList";
 import ThoughtInput from "components/ThoughtInput";
 
 const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
-const LIKES_URL =
+const LIKES_URL = (thoughtId) =>
   "https://happy-thoughts-technigo.herokuapp.com/thoughts/{Id}/like";
 
 export const App = () => {
@@ -66,6 +66,7 @@ export const App = () => {
           key={oneThought._id}
           oneThought={oneThought}
           fetchThoughts={fetchThoughts}
+          handleLike={handleLike}
         />
       ))}
     </section>
