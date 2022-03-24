@@ -16,12 +16,12 @@ const SendMessageCard = ({ setMessages }) => {
 
   return (
     <form className="message-form" onSubmit={handleOnSubmit}>
-      <label htmlFor="text area" className="message-question">
+      <label htmlFor="textArea" className="message-question">
         What's making you happy right now?
       </label>
 
       <textarea
-        id="text area"
+        id="textArea"
         type="text"
         className="message-input"
         value={messageInput}
