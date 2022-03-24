@@ -3,17 +3,20 @@ import { HeartIcon } from './HeartIcon'
 
 export const ThoughtsForm = ({onFormSubmit, setNewMessages, newMessages }) => { 
 
+    const handleChange = (event) => {
+        setNewMessages(event.target.value);
+    }
+
     return (
         <form onSubmit={onFormSubmit}>
             <h1>Welcome to write a message about you thoughts below</h1>
             <textarea 
             className='textinput'
             type="text"
-            id='newMessages'
             value={newMessages} 
-            onChange={setNewMessages}
+            onChange={handleChange}
             placeholder="Write your thought here . . ." 
-            rows="4">
+            >
             </textarea>
     
 

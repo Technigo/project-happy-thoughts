@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import {ThoughtsList} from './Components/ThoughtsList'
-import {ThoughtsForm} from 'Components/ThoughtsForm'
+import { ThoughtsList } from 'Components/ThoughtsList'
+import { ThoughtsForm } from 'Components/ThoughtsForm'
 
 
 export const App = () => {
@@ -49,7 +49,7 @@ export const App = () => {
        method: 'POST',
      }
 
-     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like` (thoughtId), options)
+     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
      .then((res) => res.json())
      .then((data) => {
        fetchList()
