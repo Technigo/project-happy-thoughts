@@ -62,6 +62,7 @@ const HappyThougts = () => {
         newThought={newThought}
         onFormSubmit={onFormSubmit}
         setNewThought={setNewThought}
+        handleNewThoughtChange={handleNewThoughtChange}
         
       />
 
