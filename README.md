@@ -1,13 +1,17 @@
-# Happy Thoughts
+## Happy Thoughts
 
-Replace this readme with your own information about your project.
+In this project, we created our own version of a twitter page where anyone can write
+and send a happy thought for everyone to enjoy. This is a React project and this week
+we started working with useEffect for the first time. We also had a design we needed to follow.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## The project
 
-## The problem
+I started with planning my work in figma, added the design, colors, and fonts I would need.
+laid out all of the requirements I needed to do and made a list of how I would structure my work.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This week we learned about the life cycle of components, how to use APIs in react and how we would
+use the useEffect with the props and useState that we recently learned.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Here is the link to my deployed page: https://happy-thoughts-mimmi.netlify.app/
