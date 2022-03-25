@@ -1,5 +1,5 @@
 import React from "react"
-
+// RENDERING LIKE BUTTON AND HOW MANY LIKES A MESSAGE HAS GOTTEN
 const LikeButton = ({ thought, messageID, onLikeMessage }) => {
 
   return (

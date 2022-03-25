@@ -2,6 +2,7 @@ import React from "react";
 import LikeButton from "./LikeButton";
 import { formatRelative } from "date-fns";
 
+// RENDERING THE API DATA/THOUGHTS FEED AND INJECTED BUTTON COMPONENT
 const Inputlist = ({ thought, messageID, onLikeMessage }) => {
   const time = formatRelative(new Date(thought.createdAt), new Date());
     return (

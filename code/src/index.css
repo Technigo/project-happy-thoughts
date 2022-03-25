@@ -1,3 +1,4 @@
+/* GENERAL STYLING FOR ENTIRE WEBPAGE */
 body {
   box-sizing: border-box;
   margin: 0;
@@ -20,6 +21,7 @@ main {
   flex-direction: column;
 }
 
+/* STYLING OF HEADER AND ITS CONTENT */
 header {
   display: flex;
   flex-direction: column;
@@ -37,6 +39,7 @@ form {
   box-shadow: 5px 5px;
 }
 
+/* STYLING OF FEED AND ITS CONTENT */
 .thoughts-container {
   display: flex;
   flex-direction: column;
@@ -52,6 +55,7 @@ form {
   box-shadow: 5px 5px;
 }
 
+/* STYLING OF BUTTONS */
 .form-button {
   width: fit-content; 
   margin-top: 10px;
@@ -69,6 +73,7 @@ form {
   background: #ECA6A6
 }
 
+/* STYLING OF SMALLER ELEMENTS AND FONTS */
 p, button, textarea {
   font-size: large;
 }
@@ -77,6 +82,7 @@ p, button, textarea {
   font-style: italic;
 }
 
+/* MEDIA QUERIES */
 @media (min-width: 667px) {
   form {
     width: 50%;

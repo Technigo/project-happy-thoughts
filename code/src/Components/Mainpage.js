@@ -4,13 +4,16 @@ import Input from "./Input";
 import Inputlist from "./Inputlist";
 
 export const Mainpage = () => {
+  // STATES FOR ENTIRE WEBPAGE
   const [thoughts, setThoughts] = useState([]);
   const [message, SetMessage] = useState('');
 
+  // USEEFFECT SO THAT THE FUNCTION IS CALLED UPON COMPONENT MOUNTING
   useEffect(() => {
     fetchThoughts();
   }, []);
 
+  // FETCHING OF API DATA
   const fetchThoughts = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
     .then(res => res.json())
@@ -18,6 +21,7 @@ export const Mainpage = () => {
     .catch(error => console.error(error))
   }
 
+  // ALLOWING TO POST TO API 
   const handleInputChange = (event) => {
     SetMessage(event.target.value);
   }
@@ -39,6 +43,7 @@ export const Mainpage = () => {
     .finally(() => SetMessage(''));
   }
 
+  // ALLOWING TO LIKE A MESSAGE
   const handlelikeMessage = (messageID) => {
     const options = {
       method: 'POST',

@@ -1,5 +1,5 @@
 import React from "react";
-
+// RENDERING OF INPUT FORM AND SEND BUTTON
 const Input = ({ message, onInputChange, onFormSubmit} ) => {
   return (
     <header>
