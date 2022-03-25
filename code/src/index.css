@@ -81,7 +81,7 @@ textarea {
 /*Thought Item*/
 .thought-container {
   background: var(--clr-white);
-  /* overflow-wrap: break-word; */
+  overflow-wrap: break-word;
 }
 
 .message {
@@ -99,4 +99,14 @@ textarea {
 }
 
 .like-counter {
+  color: var(--clr-grey);
+  margin-left: 8px;
+}
+
+.bad {
+  color: red;
+}
+
+.good {
+  color: green;
 }

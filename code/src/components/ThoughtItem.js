@@ -14,9 +14,8 @@ const ThoughtItem = ({ thought, onClickHeart }) => {
             <span role="img" aria-label="heart for likes">
               ❤️
             </span>{" "}
-            {thought.hearts}
           </button>
-          <p className="like-counter"></p>
+          <p className="like-counter"> x{thought.hearts}</p>
         </div>
         {/* &hearts; also works  */}
         <p className="date">{moment(thought.createdAt).fromNow()}</p>
