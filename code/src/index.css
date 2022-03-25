@@ -14,15 +14,33 @@ body {
 }
 
 .message-card {
-  margin: 25px;
-  border: 1px solid;
-  padding: 25px;
-  box-shadow: 5px 5px 0px 0px #000;
-  width: 300px;
+margin: 25px;
+border: 1px solid;
+padding: 25px;
+box-shadow: 5px 5px 0px 0px #000;
+width: 300px;
+
+word-wrap: break-word;
+overflow-wrap: break-word;
+-webkit-hyphens: auto;
+-moz-hyphens: auto;
+-ms-hyphens: auto;
+hyphens: auto;
 }
 
 .post-time {
 display: flex;  
-justify-content:flex-end;
+justify-content: flex-end;
 color: grey;
 }
+
+.posting-form {
+  margin: 25px;
+  border: 1px solid;
+  padding: 25px;
+  box-shadow: 5px 5px 0px 0px #000;
+  width: 300px;  
+  background-color: rgb(243, 240, 240);
+}
+
+

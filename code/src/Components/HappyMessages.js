@@ -1,8 +1,12 @@
 import React from 'react'
-// import { formatRelative } from 'date-fns';
 import moment from 'moment';
 
-export const HappyMessages = ({ twentyThoughts }) => {
+// 
+export const HappyMessages = ({ loading, twentyThoughts }) => { 
+
+           if (loading) {
+            return <h1>Loading happy thoughts ...</h1>
+    }
 
     return (
         <div className="message-card"> 
