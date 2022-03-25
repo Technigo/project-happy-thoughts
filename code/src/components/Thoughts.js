@@ -36,8 +36,6 @@ const Thoughts = () => {
         setNewThoughtLength(msg)
     }
 
-    
-
     const handleLikes = (id) => {
         fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
             method: 'POST',
@@ -62,13 +60,12 @@ const Thoughts = () => {
 			.then(json => setThoughts(json))
     }, [])
 
-    fetchThoughts();
-    setInterval(fetchThoughts, 5000);
 
-    // useEffect(() => {
-    //     fetchThoughts();
-    //     setInterval(fetchThoughts, 5000);
-    // }, [fetchThoughts]);
+    useEffect(() => {
+        fetchThoughts();
+    }, [])
+    
+    setInterval(fetchThoughts, 5000);
 
     return (
         <div>
