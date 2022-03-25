@@ -24,7 +24,8 @@ const SendThought = ({ onFormSubmit, newThought, onSetThoughtChange }) => {
 					className={newThought.length >= 5 ? 'send-btn' : 'send-btn disabled'}
 					disabled={newThought.length < 5 || newThought.length > 140}
 				>
-					&#9829; Send Happy Thought &#9829;
+					<span  role='img' aria-label='heart'>
+                    ❤️ Send Happy Thought ❤️</span>
 				</button>
 			</form>
 		</div>

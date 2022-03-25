@@ -33,7 +33,9 @@ const HappyThought = ({ thought, handleHeart }) => {
 				className={thought.hearts > 0 ? 'heart-btn clicked' : 'heart-btn'}
 				onClick={() => handleHeart(thought._id)}
 			>
-				&#9829;
+				<span role='img' aria-label='heart'>
+					❤️
+				</span>
 			</button>
 			<span className='heart-number'>✕{thought.hearts}</span>
 			<p className='time-created'>{timeCreated}</p>

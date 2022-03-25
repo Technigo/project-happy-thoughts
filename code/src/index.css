@@ -1,6 +1,17 @@
-body {
+* {
 	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
 	font-family: 'Fira Mono', monospace;
 	background: linear-gradient(
 		135deg,
@@ -24,7 +35,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	padding: 20px 20px 5px;
+	padding: 20px;
 	background-color: #fff;
 	justify-content: space-between;
 }
@@ -32,7 +43,7 @@ body {
 .thought-message {
 	width: 100%;
 	word-break: break-word;
-	margin: 0 0 10px;
+	margin: 0 0 20px;
 	font-weight: 500;
 	font-size: 17px;
 }
@@ -41,7 +52,7 @@ body {
 	resize: none;
 	width: 90%;
 	font-size: 16px;
-	border: 1px solid black;
+	border: 1px solid #000;
 }
 
 .heart-btn {
@@ -51,19 +62,10 @@ body {
 	border-radius: 50%;
 	cursor: pointer;
 	background-color: #eee;
-	font-family: 'Fira Mono', monospace;
-	font-size: 18px;
 }
 
 .clicked {
 	background-color: #ffd7d7;
-	color: #000;
-}
-
-.heart {
-	color: #000;
-	font-size: ;
-	font-weight: bold;
 }
 
 .heart-number {
@@ -79,6 +81,7 @@ body {
 
 h2 {
 	font-size: 18px;
+	margin: 0 0 10px;
 }
 
 .form {
