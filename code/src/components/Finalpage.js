@@ -18,7 +18,9 @@ const Finalpage = () => {
   const fetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data));
+      .then(() => {
+        setThoughts();
+      });
   };
 
   const handleFormSubmit = (event) => {
@@ -35,10 +37,10 @@ const Finalpage = () => {
     // Fetches the data and pushes it into the array
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => {
-        fetchThoughts(data);
+      .then(() => {
+        fetchThoughts();
       });
-    setNewThought("");
+    setNewThought(""); // reseting the form
   };
 
   const handleLikeIncrease = (thoughtId) => {
@@ -48,7 +50,7 @@ const Finalpage = () => {
 
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
-      .then((data) => {
+      .then(() => {
         fetchThoughts();
       });
   };
