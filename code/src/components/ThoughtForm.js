@@ -18,7 +18,13 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
         type="submit"
         className="send-button"
         >
+            <span role="img" aria-label="heart emoji">
+              ❤️
+            </span>
         Send Happy Thought!
+        <span role="img" aria-label="heart emoji">
+              ❤️
+            </span>
         </button>
       </form>
     );
