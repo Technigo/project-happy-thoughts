@@ -1,10 +1,8 @@
 # Happy Thoughts
 
-The assignment this week was to create a social media "wall" where happy thoughts can be posted. This is created with fetching data from an API and POSTing new data in a form. This is created with seperate components in React. The assignment was also to keep as close as possible to a given design. 
+The assignment this week was to create a social media "wall" where happy thoughts can be posted. This is created with fetching data from an API and POSTing new data in a form. This is also created with seperate components in React. The assignment was also to keep as close as possible to a given design. 
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 I started with creating the different components I thought I was going to need. After that I fetched the already existing statuses from the API. My next step was the CSS and creating the look of the form. I found it difficult to create the "like"-buttons and ended up spending alot of time figuring it out. If I had more time I would have created a counter for keeping track of how many likes the user has made. 
 
