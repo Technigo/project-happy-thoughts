@@ -2,6 +2,10 @@ import React from 'react'
  
 
 const Form = ({newMessage, onNewMessage, onFormSubmit}) => {
+
+    // if (newMessage.length > 10) {
+    //     return ( <p>Your message is too long</p>)
+    // }
     
 
 return(

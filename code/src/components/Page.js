@@ -50,10 +50,21 @@ const Page = () => {
             .then(res => res.json())
             .then(() => fetchRecentMessages())
             .finally(() => setNewMessage(''))
+
+
     }
 
 
     const onHeartSubmit = (thoughtId) => {
+
+            // const updatedLikes = recentMessages.map((singleMessage) => {
+            //   if (singleMessage._id === thoughtId) {
+            //     singleMessage.hearts += 1
+            //   }
+            //   return singleMessage;
+            // })
+            // setRecentMessages(updatedLikes)
+
 
 		const options = {
 			method: 'POST',
@@ -73,7 +84,7 @@ const Page = () => {
 
 return (
     <div className="container">
-        
+
         <Form newMessage={newMessage} onNewMessage={handleNewMessage} onFormSubmit={onFormSubmit}/>
         <Status loading={loading} recentMessages={recentMessages} onHeartSubmit={onHeartSubmit}/>
 
