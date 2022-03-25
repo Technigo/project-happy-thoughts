@@ -25,7 +25,7 @@ export const Mainpage = () => {
     SetMessage(event.target.value);
   }
 
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
@@ -42,7 +42,7 @@ export const Mainpage = () => {
     .finally(() => SetMessage(''));
   }
 
-  const likeMessage = (messageID) => {
+  const handlelikeMessage = (messageID) => {
     const options = {
       method: 'POST',
       headers: {
@@ -55,20 +55,29 @@ export const Mainpage = () => {
     .then(() => fetchThoughts())
   }
 
+  if (loading) {
+    return (
+    <section className="thoughts-container">
+      <div className="loading-page">
+      <h2>Loading...</h2>
+      </div>
+    </section>
+    )
+  }
+
       return (
         <main>
           <Input 
             message={message}
             onInputChange={handleInputChange}
-            onFormSubmit={onFormSubmit}
+            onFormSubmit={handleFormSubmit}
           />
           {thoughts.map(thought => (
           <Inputlist 
             key={thought._id}
-            loading={loading} 
             thought={thought}
             messageID={thought._id}
-            likeMessage={likeMessage}
+            onLikeMessage={handlelikeMessage}
           />
           ))}
         </main>
