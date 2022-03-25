@@ -1,31 +1,58 @@
 import React from 'react';
 
-const SendThought = ({ onFormSubmit, newThought, setNewThought }) => {
+const SendThought = ({ onFormSubmit, newThought, onSetThoughtChange }) => {
 	return (
-		<div>
-			<form id='postThoughtForm' onSubmit={onFormSubmit}>
-				<label className='thought-title'>
-					What's making you happy right now?
+		<div className='thought-container'>
+			<form onSubmit={onFormSubmit}>
+				<h2>What's making you happy?</h2>
+				<label htmlFor='new-thought'>
 					<textarea
 						className='thought-input'
-						id='newThought'
-						type='text'
-						maxLength='140'
+						id='new-thought'
 						value={newThought}
-						onChange={(event) => setNewThought(event.target.value)}
+						type='text'
+						placeholder='My happy thought'
+						onChange={onSetThoughtChange}
 					/>
 				</label>
 				<button
-					className='send-btn'
-					//disabled={!(newThought.length >= 5 && newThought.length <= 140)}
 					type='submit'
+					className='send-btn'
+					disabled={newThought.length < 5 || newThought.length > 140}
 				>
-					Send Happy Thought
+					&#9829; Send Happy Thought &#9829;
 				</button>
-				 
 			</form>
 		</div>
 	);
 };
+
+// const SendThought = ({ onFormSubmit, newThought, setNewThought }) => {
+// 	return (
+// 		<div className='thought-container'>
+// 			<form id='postThoughtForm' onSubmit={onFormSubmit}>
+// 				<label className='thought-title'>
+// 					What's making you happy?
+// 					<textarea
+// 						className='thought-input'
+// 						id='newThought'
+// 						type='text'
+// 						maxLength='140'
+// 						value={newThought}
+// 						onChange={(event) => setNewThought(event.target.value)}
+// 					/>
+// 				</label>
+// 				<button
+// 					className='send-btn'
+// 					//disabled={!(newThought.length >= 5 && newThought.length <= 140)}
+// 					type='submit'
+// 				>
+// 					Send Happy Thought
+// 				</button>
+
+// 			</form>
+// 		</div>
+// 	);
+// };
 
 export default SendThought;

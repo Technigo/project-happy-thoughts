@@ -31,12 +31,15 @@ body {
 	font-weight: 500;
 }
 
-.heart-button {
+.thought-input {
+	resize: none;
+}
+
+.heart-btn {
 	border: none;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
-	color: red;
 	cursor: pointer;
 }
 
@@ -46,5 +49,11 @@ body {
 }
 
 .time-created {
-  flex-grow: 0;
+	flex-grow: 0;
 }
+
+/* @media screen and (min-width: 768px) {
+	.container {
+		width: 500px;
+	}
+} */
