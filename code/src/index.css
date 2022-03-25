@@ -1,18 +1,92 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
+    font-family: 'Roboto Mono', monospace;
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace; */
+    font-family: 'Roboto Mono', monospace;
 }
 
+main {
+  margin: 30px;
+}
 
+.form-box {
+  display: grid;
+  row-gap: 30px;
+}
+
+.create-box {
+  border: solid 1px black;
+  box-shadow: 5px 5px;
+  padding: 10px;
+  background-color: rgb(242, 240, 240);
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 10px;
+}
+
+h2 {
+  font-size: 10px;
+  grid-column: 1 / span 2;
+}
+
+p {
+  font-size: 8px;
+  color: grey;
+
+}
 .message-box {
   border: solid 3px black;
+}
+
+.heart {
+  background-color: rgb(242, 240, 240);
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.send-button {
+  background-color: pink;
+  border: none;
+  width: 50%;
+  border-radius: 50px;
+  padding: 4px;
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+span {
+ padding-right: 6px;
+ padding-left: 2px;
+}
+
+.single-thoughts {
+  border: solid 1px black;
+  box-shadow: 5px 5px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.thoughts-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
 }

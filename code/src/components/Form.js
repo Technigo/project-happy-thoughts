@@ -44,14 +44,32 @@ const Form = () => {
         .then(data => fetchThoughts())
         .finally(() => setnewThought(''))
     }
+//start kopierad
+
+//     const onLikePost = (event) => {
+//         event.preventDefault()
+    
+//         const options = {
+//           method: 'POST',
+//           headers: {'Content-Type': 'application/json'},
+//         }
+    
+//         fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, options)
+//         .then(res => res.json())
+//         .then(data => console.log(data))
+      
+//     }
+// // slut på kopierad (obs..backticksen på rad 57) vad händer vid klicket, 
+// //addera counter och koppla till hjärtat. setstate-historia
     
 
     return (
-      <div>
+      <div className='form-box'>
         <Create 
           newThought={newThought} 
           onNewThoughtChange={handleNewThoughtChange} 
           onFormSubmit={onFormSubmit} 
+        //   onLikePost={onLikePost}
         />
         <Recent 
           loading={loading} 
