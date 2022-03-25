@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The goal of this project was to create a functioning interative feed, allowing you to take part of and like others "happy thougts" as well as posting your own. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The main challenge this week was to introduce useEffect in my code and know when to implement it. When time allows I will add a loading page for the entire webpage and also a charachter counter for the input field. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://sofiaringstedthappythoughts.netlify.app/
