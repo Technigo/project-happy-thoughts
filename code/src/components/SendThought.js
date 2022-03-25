@@ -11,7 +11,8 @@ const SendThought = ({ onFormSubmit, newThought, onSetThoughtChange }) => {
 						id='new-thought'
 						value={newThought}
 						type='text'
-						placeholder='My happy thought'
+                        rows='3'
+						//placeholder='My happy thought'
 						onChange={onSetThoughtChange}
 					/>
 				</label>

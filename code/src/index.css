@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	box-sizing: border-box;
 	font-family: 'Fira Mono', monospace;
 	background: linear-gradient(
 		135deg,
@@ -33,10 +34,14 @@ body {
 	word-break: break-word;
 	margin: 0 0 10px;
 	font-weight: 500;
+  font-size: 17px;
 }
 
 .thought-input {
 	resize: none;
+	width: 90%;
+	font-size: 16px;
+	border: 1px solid black;
 }
 
 .heart-btn {
@@ -55,10 +60,12 @@ body {
 .heart-number {
 	flex-grow: 1;
 	margin-left: 5px;
+  font-size: 15px;
 }
 
 .time-created {
 	flex-grow: 0;
+  font-size: 15px;
 }
 
 h2 {
@@ -69,18 +76,15 @@ h2 {
 	text-align: center;
 }
 
-.thought-input {
-	width: 90%;
-}
-
 .send-btn {
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;
 	height: 30px;
 	padding: 0 10px;
-	font-family: 'Fira Mono', monospace;
+  font-family: 'Fira Mono', monospace;
 	font-weight: 500;
+  font-size: 16px;
 	background: #ffd7d7;
 	margin: 10px 0;
 }
@@ -88,6 +92,7 @@ h2 {
 .disabled {
 	background-color: #eee;
 	color: #333;
+	cursor: default;
 }
 
 /* @media screen and (min-width: 768px) {
