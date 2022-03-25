@@ -13,7 +13,6 @@ const Button = ({message, className, type, disabled, onClick, thought=''}) => {
             id={thought._id}
         >
             {message}
-
         </button>
     )
 

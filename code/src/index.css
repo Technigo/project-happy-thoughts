@@ -64,8 +64,9 @@ label {
 .textarea {
   width: 100%;
   font-size: 1.2rem;
-  min-height: 7ch;
+  min-height: 10ch;
   margin: 1rem 0;
+  resize: none;
 }
 
 .length-counter {
@@ -81,6 +82,7 @@ button {
   display: inline-grid;
   justify-content: center;
   align-items: center;
+  font-size: 1.1rem;
 }
 
 button:hover {
@@ -121,4 +123,18 @@ button:disabled {
 .submit-button {
   grid-column: span 2;
   display: flex;
+}
+
+.footer {
+  text-align: center;
+  margin: 0;
+  padding: 2em;
+  font-size: .8rem;
+}
+
+.footer a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--indigo);
+  text-align: center;
 }

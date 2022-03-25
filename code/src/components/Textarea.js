@@ -11,7 +11,7 @@ const Textarea = ({newThought, handleNewThoughtSubmit, newThoughtLength, current
             <textarea 
                 name="textarea"
                 className='textarea'
-                placeholder='Doughnuts'
+                placeholder='...'
                 value={newThought}
                 onChange={handleNewThoughtSubmit}
             >
