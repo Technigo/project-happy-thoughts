@@ -46,10 +46,20 @@ export const App = () => {
             .finally(() => setNewMessage(''));
           }
 
-          // fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
-          //     method: 'POST',
-          //     headers: { 'Content-Type': 'application/json' }
-          // });
+
+  const handleHearts = (_id) => {
+
+    const options =  {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+    }
+  
+          fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+          .then(res => res.json())   
+          .then(() => fetchTwentyThoughts())
+        }
  
   return ( 
     <>
@@ -64,6 +74,7 @@ export const App = () => {
           key={twentyThoughts._id}
           twentyThoughts={twentyThoughts}
           loading={loading}
+          handleHearts={handleHearts}
         />
          ))}
     </>

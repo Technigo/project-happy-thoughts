@@ -5,7 +5,11 @@ export const Form = ({ newMessage, onNewMessage, onFormSubmit }) => {
 return (
         <form className="posting-form" onSubmit={onFormSubmit}>
             <h4>What's making you happy right now?</h4>
-            <textarea value={newMessage} onChange={onNewMessage} />
+            <textarea 
+            value={newMessage} 
+            onChange={onNewMessage} 
+            placeholder='type here...'
+            />
             <button type="submit" disabled={newMessage.length < 6 || newMessage.length > 140}>
             <span role="img" aria-label="heart">🧡 Send happy thought! 🧡</span>
             </button>
