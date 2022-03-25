@@ -131,6 +131,7 @@ h2 {
   align-items: center;
   margin: 0 0.5em;
   justify-content: center;
+  flex: auto;
 }
 
 .likes {
