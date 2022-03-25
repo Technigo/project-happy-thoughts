@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Status from './Status'
 import Form from './Form'
+import Footer from './Footer'
 
 const Page = () => {
     const [recentMessages, setRecentMessages] = useState([])
@@ -87,8 +88,10 @@ return (
 
         <Form newMessage={newMessage} onNewMessage={handleNewMessage} onFormSubmit={onFormSubmit}/>
         <Status loading={loading} recentMessages={recentMessages} onHeartSubmit={onHeartSubmit}/>
+        <Footer />
 
       </div>
+      
 )
 
 

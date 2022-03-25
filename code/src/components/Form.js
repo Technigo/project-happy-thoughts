@@ -21,6 +21,7 @@ return(
                     value={newMessage}
                     className="text-input" 
                     onChange={onNewMessage}
+                    
                     />
                     
                 </label>

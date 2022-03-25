@@ -8,10 +8,13 @@ const Status = ({ loading, recentMessages, onHeartSubmit}) => {
 
  return (
      <div>
+         
          {recentMessages.map((singleMessage) => (
              <article key={singleMessage._id}>
                 <p className="sent-messages">
-                     {singleMessage.message}</p>
+                     {singleMessage.message}
+                </p>
+            
 
                 <div className="btn-group">
                     <button 
