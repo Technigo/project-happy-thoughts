@@ -2,9 +2,7 @@ import React from 'react'
 import { formatDistanceToNow } from 'date-fns'
 
 const MessageDisplay = ({ apiData, getApiData }) => {
-
   const handleClick = async (_id) => {
-    
     const options = {
       method: 'POST',
       headers: {

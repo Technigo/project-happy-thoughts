@@ -6,11 +6,7 @@ import MessageDisplay from './components/MessageDisplay.js'
 export const App = () => {
   const [apiData, setApiData] = useState();
 
-  useEffect(() => {
-    getApiData();
-  }, [])
-
-  async function getApiData() {
+  const getApiData = async () => {
     const response = await fetch(
       'https://happy-thoughts-technigo.herokuapp.com/thoughts'
     )
@@ -18,11 +14,14 @@ export const App = () => {
     setApiData(data);
   }
 
+  useEffect(() => {
+    getApiData();
+  }, [])
+
   return (
     <div className="flex-parent">
-      <Form 
-        getApiData={getApiData}
-      />
+      <Form
+        getApiData={getApiData} />
       <MessageDisplay
         getApiData={getApiData}
         apiData={apiData} />
