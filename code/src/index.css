@@ -40,9 +40,15 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 375px;
+  justify-content: center;
+  width: 375px;
+}
+
+.container {
   width: 85%;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /* THOUGHTFORM*/

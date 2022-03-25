@@ -24,7 +24,7 @@ const ThoughtForm = (props) => {
 
     return (
 
-    <div className="thought-list-container">
+    <div className="container">
         <form onSubmit={handleFormSubmit}>
             
         
