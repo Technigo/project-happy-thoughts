@@ -29,6 +29,7 @@ body {
   display: block;
   margin: 10px 20px 10px 0px;
   width: 100%;
+  resize: none;
 }
 
 h1 {
@@ -68,6 +69,7 @@ button {
   border: 1px solid black;
   padding: 10px;
   box-shadow: 10px 10px black;
+  overflow-wrap: break-word;
 }
 
 .likesAmountContainer {
