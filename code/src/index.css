@@ -1,7 +1,11 @@
 body {
 	margin: 0;
 	font-family: 'Fira Mono', monospace;
-	background: linear-gradient(135deg, rgba(247, 148, 164, 1) 0%, rgba(253, 214, 189, 1) 100%);
+	background: linear-gradient(
+		135deg,
+		rgba(247, 148, 164, 1) 0%,
+		rgba(253, 214, 189, 1) 100%
+	);
 	background-attachment: fixed;
 }
 
@@ -41,6 +45,11 @@ body {
 	height: 30px;
 	border-radius: 50%;
 	cursor: pointer;
+	background-color: #eee;
+}
+
+.clicked {
+	background-color: #ffd7d7;
 }
 
 .heart-number {
@@ -50,6 +59,35 @@ body {
 
 .time-created {
 	flex-grow: 0;
+}
+
+h2 {
+	font-size: 18px;
+}
+
+.form {
+	text-align: center;
+}
+
+.thought-input {
+	width: 90%;
+}
+
+.send-btn {
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	height: 30px;
+	padding: 0 10px;
+	font-family: 'Fira Mono', monospace;
+	font-weight: 500;
+	background: #ffd7d7;
+	margin: 10px 0;
+}
+
+.disabled {
+	background-color: #eee;
+	color: #333;
 }
 
 /* @media screen and (min-width: 768px) {
