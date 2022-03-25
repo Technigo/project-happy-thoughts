@@ -29,6 +29,14 @@ body {
   resize: vertical;
 }
 
+.incorrect-number-of-characters {
+  color: red;
+}
+
+.correct-number-of-characters {
+  color: #000;
+}
+
 button {
   border-radius: 15px;
   background-color: rgb(245, 169, 169);
