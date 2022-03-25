@@ -1,12 +1,12 @@
 # Happy Thoughts
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This weeks project was to create a twitter inspired page about happy thoughts. The page have a form where anyone can post happy thoughts and it displays the 20 latest messages and have the possibility to like the messages with help of a like-button in the shape of a heart.
 
 ## The problem
+I started by creating a sketch and divided the project into smaller parts. I created different components, one for the form where a new thought can be sent, one for showing the latest posts and one for storing the URL for the API:s. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+My main problem for this week was to understand the useEffect and also how different part is connected with eachother. To solve my problem during the week I used StackOverflow, google and also had some code alongs with my team. 
+
+If I had more time I would try to understand the different parts of React (like useEffect) better.
 
 ## View it live
 
