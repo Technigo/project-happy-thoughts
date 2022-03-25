@@ -36,7 +36,7 @@ const Form = ({ thought, setThought }) => {
               counter < 6 || counter > 140 ? 'no-words' : 'word-counter'
             }
             type="text"
-            rows="4"
+            rows="5"
             id="newThought"
             value={newThought}
             onChange={newThoughtChange}
@@ -49,8 +49,8 @@ const Form = ({ thought, setThought }) => {
             disabled={newThought.length < 6 || newThought.length > 140}
           >
             {' '}
-            <span className="heart">&hearts;</span> Share thought!{' '}
-            <span className="heart">&hearts;</span>{' '}
+            <span className="hearts">❤️</span> Share thought!{' '}
+            <span className="hearts">❤️</span>{' '}
           </button>
         </form>
       </section>

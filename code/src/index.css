@@ -22,7 +22,7 @@ code {
 /*------Happy Thoughts------*/
 
 .main-container {
-  background-color: #e9e7e7;
+  background-color: #c1b5b5;
   border: 1px solid #000;
   padding: 1em;
   width: 350px;
@@ -38,7 +38,6 @@ textarea {
   padding-top: 1em;
   padding-left: 1em;
   margin: 0;
-  resize: none;
   min-width: 90%;
   max-width: 90%;
   min-height: 1em;
@@ -47,6 +46,9 @@ textarea {
   background-color: lightpink;
   font-size: 18px;
   font-weight: 700;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 2px 2px 0.5px 0.5px rgb(5 5 5 / 90%);
 }
 .heart {
   font: 2em;
@@ -55,10 +57,23 @@ textarea {
 label {
 }
 /*------ThoughtCard------*/
+
+.thought-container {
+  background-color: #ffffff;
+  border: 1px solid #000;
+  padding: 1em;
+  width: 350px;
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  box-shadow: 6px 6px 1px 1px rgb(5 5 5 / 90%);
+}
 form {
   text-align: center;
 }
 .message-text {
+  font-weight: 500px;
 }
 
 .text-thought {
@@ -69,18 +84,20 @@ form {
 }
 
 .likes-container {
-  padding: 0.5em;
   display: flex;
-  justify-content: center;
-  margin: 0.5em;
+  justify-content: space-between;
+  margin: 0.5em 0;
+  align-content: space-between;
 }
 .icons {
   border-radius: 50%;
   width: 40px;
+  background-color: #8080802b;
   height: 40px;
 }
 
 .time {
+  font-size: 12px;
 }
 p {
   padding: 0.5em;
