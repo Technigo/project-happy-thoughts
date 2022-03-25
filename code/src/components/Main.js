@@ -4,6 +4,7 @@ import Loader from "./Loader"
 import HeartFall from "./HeartFall"
 import ThoughtsList from "./ThoughtsList"
 import ThoughtForm from './ThoughtForm'
+import Footer from "./Footer"
 import { LIKES_API, THOUGHTS_API } from "./utils/urls"
 
 
@@ -73,6 +74,7 @@ const Main = () => {
             thoughts={thoughts}
             likeMessage={likeMessage}
             />
+            <Footer />
         </main>
     )
 }

@@ -136,13 +136,28 @@ textarea {
   align-items: center;
 }
 
+
+/**********FOOTER************/
+
+footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+
 /**********TEXT AND TITLES************/
 
 .form-title {
   font-size: 1.1rem;
   font-weight: normal;
   margin-bottom: 1rem;
-  font-family: 'Space Mono', monospace;;
+  font-family: 'Space Mono', monospace;
+}
+
+.footer-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--first);
 }
 
 
@@ -155,7 +170,7 @@ textarea {
   width: 100%;
   align-items: flex-end;
   margin-top: 15px;
-  font-family: 'Space Mono', monospace;;
+  font-family: 'Space Mono', monospace;
 }
 
 .send-button {
@@ -197,8 +212,6 @@ textarea {
 /* .liked {
   background-color: var(--second);
 } */
-
-
 
 
 /**********HEART ANIMATION************/
