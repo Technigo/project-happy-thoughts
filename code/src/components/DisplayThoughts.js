@@ -38,12 +38,12 @@ const DisplayThoughts = ({ newThought }) => {
         }
 
         return <div className="thought" key={thought._id}>
-            <p>{thought.message}</p>
+            <p className="messages">{thought.message}</p>
             <div className="likes-wrapper">
                 <div className="heart-icon-radius">
                     <img onClick={onLikeClickValueChange} className="heart-icon" src="./heart-icon.png" alt="heart" />
                 </div>
-                <p className='heart-count'>{thought.hearts}</p>
+                <p className='heart-count'>x {thought.hearts}</p>
                 <p className="date">
                     {formatDistance(new Date(thought.createdAt), Date.now(), {
                         addSuffix: true,

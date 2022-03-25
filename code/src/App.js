@@ -8,8 +8,11 @@ import './index.css';
 const App = () => {
   return (
     <main className="all-thoughts">
+      <h1>Happy Thoughts</h1>
       <PostThoughts />
       <DisplayThoughts />
+
+      <footer><a href='https://www.freepik.com/photos/glitter-pattern'>Background image from www.freepik.com</a></footer>
     </main>
   );
 }

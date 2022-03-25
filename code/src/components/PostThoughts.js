@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 
-const PostThoughts = ({ thoughts, setThoughts, fetchAllThoughts }) => {
+const PostThoughts = () => {
     const [newThought, setNewThought] = useState("");
 
     const onThoughtSubmit = (event) => {
@@ -28,17 +28,24 @@ const PostThoughts = ({ thoughts, setThoughts, fetchAllThoughts }) => {
     return (
         <section>
             <div className="post-thought-container">
-                <h1>What's making you happy right now?</h1>
+                <h2>What's making you happy right now?</h2>
                 <form className="post-thought-form" onSubmit={onThoughtSubmit}>
                     <label htmlFor="thought">
                         <textarea
                             value={newThought}
-                            placeholder="What's your happy thought?"
+                            placeholder="...makes me happy"
                             name="thought"
                             onChange={(event) => setNewThought(event.target.value)}
+                            maxLength="140"
                         />
                     </label>
-                    <button className="send-btn" type="submit" onSubmit={onThoughtSubmit}>Send Happy Thoughts</button>
+                    <button 
+                      className="send-btn" 
+                      type="submit" 
+                      onSubmit={onThoughtSubmit}
+                    >
+                       <span role="img" aria-label="heart emoji">💖</span> Send Happy Thoughts <span role="img" aria-label="heart emoji">💖</span>
+                    </button>
                 </form>
             </div>
         </section>
