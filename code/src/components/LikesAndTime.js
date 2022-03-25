@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatDistanceToNow } from 'date-fns'
 
 const LikesAndTime = ({apiData}) => {
     
@@ -40,7 +41,7 @@ const LikesAndTime = ({apiData}) => {
                 </span>
                 <span style={{ padding: '10px', color: 'grey' }}>x {hearts}</span>
               </p>
-              <p style={{ padding: '10px', color: 'grey' }}>Created: {createdAt}</p>
+              <p style={{ padding: '10px', color: 'grey' }}>Sent {formatDistanceToNow(new Date(createdAt))} ago</p>
             </span>
           </div>
         );
