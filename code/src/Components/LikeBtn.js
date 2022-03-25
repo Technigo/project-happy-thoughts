@@ -1,6 +1,6 @@
 import React from "react";
 
-const LikeBtn = ({ messageID, fetchMessage, messages }) => {
+const LikeBtn = ({ messageID, messages, fetchMessages }) => {
   const sendLike = () => {
     const options = {
       method: "POST",
@@ -14,7 +14,7 @@ const LikeBtn = ({ messageID, fetchMessage, messages }) => {
       options
     )
       .then((res) => res.json())
-      .then(() => fetchMessage);
+      .then(() => fetchMessages() );
   };
 
   return (

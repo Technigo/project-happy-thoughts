@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import ListOfMessages from "Components/ListOfMessages";
 import NewMessageForm from "Components/NewMessageForm";
 
+
 export const Main = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -54,7 +55,9 @@ export const Main = () => {
         loading={loading}
         messages={messages}
         fetchMessages={fetchMessages}
+        
       />
+      
     </section>
   );
 };
