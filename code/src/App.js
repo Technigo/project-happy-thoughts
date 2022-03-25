@@ -45,6 +45,11 @@ export const App = () => {
             // data => console.log(data)
             .finally(() => setNewMessage(''));
           }
+
+          // fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+          //     method: 'POST',
+          //     headers: { 'Content-Type': 'application/json' }
+          // });
  
   return ( 
     <>
