@@ -7,6 +7,7 @@ const API_THOUGHTS = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
 const API_LIKES = (thoughtId) =>
   `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
 
+
 const HappyThougts = () => {
   /* GET THOUGHTS AND LIKES */
   const [thougts, setThougts] = useState([])
@@ -26,7 +27,7 @@ const HappyThougts = () => {
 
     fetch(API_LIKES(thoughtId), option)
       .then((response) => response.json())
-      .then((json) => fetchThoughts())
+      .then(() => fetchThoughts())
   }
 
   /* POST THOUGHTS */
@@ -49,7 +50,7 @@ const HappyThougts = () => {
 
     fetch(API_THOUGHTS, option)
       .then((res) => res.json())
-      .then((data) => {
+      .then(() => {
         fetchThoughts()
         setNewThought("")
       })
@@ -61,9 +62,14 @@ const HappyThougts = () => {
         newThought={newThought}
         onFormSubmit={onFormSubmit}
         setNewThought={setNewThought}
+        
       />
 
-      <GetThoughts thougts={thougts} onPostLike={postLike} />
+      <GetThoughts 
+        thougts={thougts} 
+        onPostLike={postLike} 
+         
+    />
     </div>
   )
 }

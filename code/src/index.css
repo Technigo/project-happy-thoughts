@@ -53,8 +53,9 @@ textarea {
   background-color: rgb(253, 185, 185);
   margin-bottom: 10px;
   width: 50%;
-  font-size: 7px;
+  font-size: 6px;
   font-weight: bold;
+  
 }
 
 .thoughts { 
@@ -70,7 +71,6 @@ textarea {
  }
  
  .likes {
-  display: flex;
   justify-content: start;
   font-weight: normal;
  }
@@ -78,9 +78,45 @@ textarea {
  .heartbutton {
    border-radius: 50%;
    border: none;
+   margin-right: 3px;
+   vertical-align: sub;
  }
 
  .date {
    float: right;
    justify-content: end;
  }
+
+ @media screen and (min-width: 720px) {
+  .BoxContainer{
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  .thoughts, label {
+    font-size: 20px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+  }
+
+  textarea {
+    height: 55px;
+  }
+
+  textarea, placeholder {
+    font-size: 20px;
+  }
+  
+  .button {
+    font-size: 10px;
+    margin: 12px 0 18px 10px
+  }
+
+  .heartbutton {
+    vertical-align: middle;
+
+  }
+
+
+
+}
