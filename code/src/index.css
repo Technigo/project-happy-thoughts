@@ -85,5 +85,18 @@ form {
 }
 
 
+@media screen and (min-width: 668px) {
+  form {
+    width: 400px;
+  }
+
+  .message-container {
+    width: 400px;
+  }
+}
+  
+
+
+
 
 

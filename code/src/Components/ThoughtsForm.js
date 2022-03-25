@@ -15,7 +15,7 @@ export const ThoughtsForm = ({newMessages, setNewMessages, onFormSubmit }) => {
             type='text'
             value={newMessages} 
             onChange={handleChange}
-            placeholder= 'Type happy thought here'/>
+            placeholder= 'Type happy thought here...'/>
 
             <div className='text-container'>
               <button
