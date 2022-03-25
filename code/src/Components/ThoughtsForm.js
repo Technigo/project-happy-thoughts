@@ -27,6 +27,7 @@ export const ThoughtsForm = ({newMessages, setNewMessages, onFormSubmit }) => {
                   Submit form!
                   <HeartIcon symbol='❤️'/>
               </button>
+              <span>{newMessages.length}/140</span>
             </div>
         </form>
     )
