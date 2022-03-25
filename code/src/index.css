@@ -20,7 +20,7 @@ code {
   --clr-white: #fff;
   --clr-primary: #f7f1f1;
   --clr-secondary: #d1c4c4;
-  --clr-accent: #f8c4c4;
+  --clr-accent: #f8a6a6;
 }
 .main {
   max-width: 600px;
@@ -93,16 +93,16 @@ textarea:active {
 .btn {
   font-size: 0.9rem;
   font-family: "Roboto Mono", monospace;
-  font-weight: 400;
+  font-weight: 800;
   height: 45px;
   border: none;
   color: var(--clr-black);
   border-radius: 25px;
   cursor: pointer;
   margin-bottom: 10px;
-  width: 250px;
   background: var(--clr-accent);
   margin-right: 0.25em;
+  padding: 0 10px;
 }
 
 .btn:hover {
@@ -131,6 +131,14 @@ textarea:active {
 .likes {
   border: none;
   background: var(--clr-white);
+  font-size: 15px;
+  color: #948787;
+}
+
+.date {
+  font-size: 16px;
+  font-weight: 400;
+  color: #948787;
 }
 
 @media (min-width: 668px) {
