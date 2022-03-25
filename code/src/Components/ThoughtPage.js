@@ -49,7 +49,6 @@ export const ThoughtPage = () => {
             method: 'POST',
         }
 
-        //Sending in like but not doing anything with the data/remove it? 
         fetch(LIKED_THOUGHTS_URL(thoughtId), options)
             .then((res) => res.json())
             .then(() => {
