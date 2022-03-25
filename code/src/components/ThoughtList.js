@@ -6,7 +6,7 @@ const ThoughtList = ({ oneThought, handleLike }) => {
     <div className="thought-card">
       <p className="thought-text">{oneThought.message}</p>
       <div className="thought-info">
-        <button onClick={() => handleLike(oneThought._id)} className="btn">
+        <button onClick={() => handleLike(oneThought._id)} className="likes">
           <span
             style={{
               backgroundColor: oneThought.hearts > 0 ? "#F381AF" : "#EAEAEA",

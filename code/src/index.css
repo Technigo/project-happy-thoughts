@@ -30,6 +30,8 @@ code {
 h1 {
   font-family: "Shrikhand", cursive;
   font-size: 40px;
+  letter-spacing: 1px;
+  text-align: center;
 }
 .input-wrap,
 .thought-card {
@@ -55,6 +57,16 @@ h1 {
   overflow-wrap: break-word;
 }
 
+p {
+  padding: 10px 20px;
+}
+
+.thought-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
 .message-text {
   font-size: 1.1rem;
   margin-top: 0;
@@ -62,13 +74,6 @@ h1 {
 
 .likes-container {
   display: flex;
-}
-
-.like-counter {
-  color: var(--clr-secondary);
-  display: flex;
-  align-items: center;
-  margin: 0 0.5em;
 }
 
 label {
@@ -81,6 +86,8 @@ textarea:active {
   outline: none;
   border: 1px solid var(--clr-secondary);
   margin-bottom: 20px;
+  width: 100%;
+  min-height: 100px;
 }
 
 .btn {
@@ -93,6 +100,9 @@ textarea:active {
   border-radius: 25px;
   cursor: pointer;
   margin-bottom: 10px;
+  width: 250px;
+  background: var(--clr-accent);
+  margin-right: 0.25em;
 }
 
 .btn:hover {
@@ -105,19 +115,27 @@ textarea:active {
   transition: all 0.5s ease-in;
 }
 
-.btn {
-  width: 250px;
-  background: var(--clr-accent);
+.btn-heart {
+  font-size: 1.1rem;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 10px 12px;
   margin-right: 0.25em;
+}
+
+.likes {
+  border: none;
+  background: var(--clr-white);
 }
 
 @media (min-width: 668px) {
   label {
     font-size: 1.2rem;
-  }
-
-  button {
-    height: 50px;
   }
 
   .btn {

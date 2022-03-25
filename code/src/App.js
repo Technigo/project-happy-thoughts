@@ -5,7 +5,7 @@ import ThoughtInput from "components/ThoughtInput";
 
 const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
 const LIKES_URL = (thoughtId) =>
-  "https://happy-thoughts-technigo.herokuapp.com/thoughts/{Id}/like";
+  `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -16,7 +16,6 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => setThoughts(data));
   };
-
   const handleInputSubmit = (event) => {
     event.preventDefault();
 
@@ -42,6 +41,9 @@ export const App = () => {
   const handleLike = (thoughtId) => {
     const requestOptions = {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
     };
 
     fetch(LIKES_URL(thoughtId), requestOptions)
