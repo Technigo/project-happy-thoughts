@@ -60,15 +60,20 @@ form {
   justify-content: space-between;
 }
 
-.heart-button {
+button {
   border-radius: 50%;
   border: none;
   width: 40px;
   height: 40px;
+  background-color: pink;
 }
 
-.heart-button:hover {
-  background-color: pink;
+button:hover {
+  background-color: #e75480;
+}
+
+.zeroClicks {
+  background-color: lightgray;
 }
 
 .likes-container {
