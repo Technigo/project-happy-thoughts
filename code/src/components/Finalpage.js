@@ -18,8 +18,8 @@ const Finalpage = () => {
   const fetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
-      .then(() => {
-        setThoughts();
+      .then((data) => {
+        setThoughts(data);
       });
   };
 
@@ -37,8 +37,8 @@ const Finalpage = () => {
     // Fetches the data and pushes it into the array
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then(() => {
-        fetchThoughts();
+      .then((data) => {
+        fetchThoughts(data);
       });
     setNewThought(""); // reseting the form
   };
@@ -50,8 +50,8 @@ const Finalpage = () => {
 
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
-      .then(() => {
-        fetchThoughts();
+      .then((data) => {
+        fetchThoughts(data);
       });
   };
 
