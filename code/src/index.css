@@ -1,13 +1,13 @@
 body {
-  margin: 20px;
-  font-family: "Roboto","Helvetica Neue",sans-serif;
+    margin: 20px;
+    font-family: "Roboto","Helvetica Neue",sans-serif;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 form {
@@ -35,6 +35,7 @@ form {
 .text-input {
   height: 70px;
   margin-bottom: 13px;
+  resize: vertical;
 }
 
 .form-btn {
