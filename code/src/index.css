@@ -6,19 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.main-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 80%;
 }
 
 h1 {
@@ -28,14 +21,87 @@ h1 {
 
 .form {
   display: flex;
-  flex-direction: column;
-  padding: 10%;
+  flex-wrap: wrap;
+  min-width: 320px;
+  max-width: 400px;
+  padding: 4% 5%;
   margin: 5%;
-  background-color: pink;
+  background-color: #d3d3d363;
+  border: 1px solid;
+  box-shadow: 8px 8px;
 }
 
 .post {
-  padding: 10%;
+  min-width: 320px;
+  max-width: 400px;
+  padding: 5%;
   margin: 5%;
-  background-color: lightblue;
+  border: 1px solid;
+  box-shadow: 8px 8px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.date {
+  margin: 0;
+}
+
+.like-container {
+  display: flex;
+}
+
+.post-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #b0b0b0;
+  margin-top: 5%;
+}
+
+.like-button {
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+  background-color: #ff9fb0;
+}
+
+.numberOfLikes {
+  margin-top: 12px;
+  margin-left: 5px;
+}
+
+.submit-button {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 10px 30px;
+  margin-top: 10px;
+  background-color: #ff9fb0;
+  border: none;
+}
+
+.input-field {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 2%;
+}
+
+label,
+p,
+h1,
+h3 {
+  font-family: "Trispace",sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 2%;
+  word-wrap: break-word;
+}
+
+h1 {
+  background-color: rgb(255, 234, 237);
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px 5px white inset;
 }

@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { formatDistance } from "date-fns";
 
-export const ToughtList = ({ thoughtList, setThoughtList }) => {
+//useState and useEffect
+
+export const ToughtList = () => {
     const [updateLikes, setUpdateLikes] = useState('')
+    const [thoughtList, setThoughtList] = useState([])
         useEffect(() => {
         fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
             .then(res => res.json())
             .then(data => setThoughtList(data))
     })
+
+//likes
 
     const onMeLike = (postId) => {
         const options = {
@@ -27,9 +32,13 @@ export const ToughtList = ({ thoughtList, setThoughtList }) => {
                 <div className="post">
                 <div key={singlePost._id}>
                     <h3>{singlePost.message}</h3>
-                    <button onClick={() => onMeLike(singlePost._id)} >Me like</button>
-                    <p className="numberOfLikes"><span role="img" aria-label="heart">❤️</span> x {singlePost.hearts}</p>
-                    <p>Posted: {formatDistance(new Date (singlePost.createdAt), Date.now())}</p>
+                    <div className="post-details">
+                            <div className="like-container">
+                                <button className="like-button" onClick={() => onMeLike(singlePost._id)} ><span role="img" aria-label="heart">❤️</span></button>
+                                <p className="numberOfLikes"> x {singlePost.hearts}</p>
+                            </div>
+                        <p className="date" >{formatDistance(new Date (singlePost.createdAt), Date.now())} ago</p>
+                    </div>
                 </div>
                 </div>
             ))}

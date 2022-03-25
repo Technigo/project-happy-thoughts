@@ -2,7 +2,7 @@ import React from "react"
 
 const Header = () => {
     return (
-            <h1>Happy Thoughts</h1>
+            <h1><span role="img" aria-label="heart">❤️</span> Happy Thoughts <span role="img" aria-label="heart">❤️</span></h1>
     )
 }
 
