@@ -29,8 +29,8 @@ header {
 form {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin: 20vw;
+  width: 80%;
+  margin: 10vw;
   padding: 5vw;
   background: #EEEEEE;
   border: 1px solid black;
