@@ -1,7 +1,7 @@
 import React from "react";
 import Characters from "./Characters";
 
-const ThoughtForm = ({ onFormSubmit, newThought, SetNewThought }) => {
+const SendThought = ({ onFormSubmit, newThought, SetNewThought }) => {
   const checkKey = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       onFormSubmit(e);
@@ -34,13 +34,27 @@ const ThoughtForm = ({ onFormSubmit, newThought, SetNewThought }) => {
               emptyTextarea(newThought)
             }
           >
-            <span role="img" aria-label="heart">
-              ❤️
-            </span>{" "}
-            Send Happy Thought{" "}
-            <span role="img" aria-label="heart">
-              ❤️
-            </span>
+            <div>
+              <span>
+                <span className="emoji" role="img" aria-label="heart">
+                  ❤️
+                </span>
+
+                <p>Send Happy Thought</p>
+
+                <span className="emoji" role="img" aria-label="heart">
+                  ❤️
+                </span>
+              </span>
+            </div>
+            <div>
+              <span>
+                <p>Thanks For Sharing</p>
+                <span className="emoji" role="img" aria-label="letter">
+                  💌
+                </span>
+              </span>
+            </div>
           </button>
           <Characters counter={newThought.length} />
         </div>
@@ -49,4 +63,4 @@ const ThoughtForm = ({ onFormSubmit, newThought, SetNewThought }) => {
   );
 };
 
-export default ThoughtForm;
+export default SendThought;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import ThoughtForm from "./components/ThoughtForm";
-import ThoughtItem from "./components/ThoughtItem";
-import LoadingItem from "./components/LoadingItem";
+import SendThought from "./components/SendThought";
+import ThoughtMessage from "./components/ThoughtMessage";
+import LoadingCircle from "./components/LoadingCircle";
 import { API_URL, LIKES_URL } from "./utils/urls";
 
 export const App = () => {
@@ -36,10 +36,6 @@ export const App = () => {
     fetch(API_URL, options)
       .then((res) => res.json())
       .then((data) => {
-        // v1
-        // setThoughts([data, ...thoughts]);
-
-        //v2
         fetchThoughts();
       });
   };
@@ -52,33 +48,20 @@ export const App = () => {
     fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((data) => {
-        //increase likes only
-        // const updatedThoughts = thoughts.map((item) => {
-        //   if (item._id === data._id) {
-        //     item.hearts += 1;
-        //     return item;
-        //   } else {
-        //     return item;
-        //   }
-        // });
-        // setThoughts(updatedThoughts);
-
-        //v2
         fetchThoughts();
       });
   };
 
   return (
     <main>
-      {loading && <LoadingItem />}
-      <ThoughtForm
+      {loading && <LoadingCircle />}
+      <SendThought
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
         SetNewThought={SetNewThought}
       />
-
       {thoughts.map((thought) => (
-        <ThoughtItem
+        <ThoughtMessage
           key={thought._id}
           thought={thought}
           onClickHeart={handleClickHeart}
