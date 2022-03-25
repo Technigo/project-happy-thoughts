@@ -1,13 +1,13 @@
 body {
   margin: 0;
   padding: 15px;
-  font-family: sans-serif;
+  font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: monospace;
+  font-family: "Roboto Mono", monospace;
 }
 .form-container {
   display: flex;
@@ -47,12 +47,21 @@ code {
   align-items: center;
   margin-top: 20px;
 }
-.like-button {
+.liked-button {
   background-color: pink;
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  border: 1px solid pink;
+  border: 1px solid white;
+  align-content: center;
+  margin-top: 50px;
+}
+.like-button {
+  background-color: #99959552;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
   align-content: center;
   margin-top: 50px;
 }
