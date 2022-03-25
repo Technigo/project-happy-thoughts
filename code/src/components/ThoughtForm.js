@@ -15,7 +15,7 @@ const ThoughtForm = ({ newThought, setNewThought, onFormSubmit }) => {
             onChange={(event) => setNewThought(event.target.value)}
             placeholder="Share your happy thoughts here!"
           />
-          <p className="characters">{140 - newThought.length}/140</p>
+          <p className="characters">{newThought.length}/140</p>
           <button
             className="submit-button"
             disabled={newThought.length > 140}
