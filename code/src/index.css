@@ -1,5 +1,14 @@
+:root {
+  ---main: #F6BD60;
+  ---thought-input: #D4D3D3;
+  ---thought-card: #F7EDE2;
+  ---buttons: #FFB3C1;
+
+}
+
 body {
-    margin: 20px;
+    margin-top: 20px;
+    background-color: var(---main);
     font-family: "Roboto","Helvetica Neue",sans-serif;
     box-sizing: border-box;
     display: flex;
@@ -11,9 +20,9 @@ body {
 }
 
 form {
-  background-color: lightgray;
+  background-color: var(---thought-input);
   border: 1px solid #000;
-  width: 200px;
+  width: 250px;
   padding: 10px;
   margin-bottom: 20px;
   box-shadow: 8px 8px;
@@ -30,6 +39,7 @@ form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 14px;
 }
 
 .text-input {
@@ -39,20 +49,22 @@ form {
 }
 
 .form-btn {
-  background-color: pink;
+  background-color: var(---buttons);
   border: none;
   border-radius: 25px;
   height: 40px;
-  width: 205px;
+  width: 200px;
+  cursor: pointer;
 }
 
 .message-container {
-  background-color: #FFF;
+  background-color: var(---thought-card);
   border: 1px solid #000;
-  width: 200px;
+  width: 250px;
   padding: 10px;
   box-shadow: 8px 8px;
   margin-bottom: 20px;
+  overflow-wrap: break-word;
 }
 
 .input-container {
@@ -70,15 +82,16 @@ button {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background-color: pink;
+  background-color: var(---buttons);
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: #E75480;
+  background-color: #F28482;
 }
 
 .zeroClicks {
-  background-color: lightgray;
+  background-color: var(---thought-input);
 }
 
 

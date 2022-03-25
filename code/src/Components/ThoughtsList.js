@@ -12,7 +12,7 @@ export const ThoughtsList = ({ thoughts, onLikes }) => {
                         <button
                             className={thoughts.hearts > 0 ? 'moreThanZeroClicks' : 'zeroClicks'}
                             onClick={() => onLikes(thoughts._id)}>
-                            <HeartIcon symbol='❤️'/>
+                            <HeartIcon/>
                         </button>
 
                         <p className='likes-amount'> x {thoughts.hearts}</p>

@@ -15,7 +15,8 @@ export const ThoughtsForm = ({newMessages, setNewMessages, onFormSubmit }) => {
             type='text'
             value={newMessages} 
             onChange={handleChange}
-            placeholder= 'Type happy thought here...'/>
+            placeholder= 'Type happy thought here...'
+            />
 
             <div className='text-container'>
               <button
@@ -23,9 +24,9 @@ export const ThoughtsForm = ({newMessages, setNewMessages, onFormSubmit }) => {
               type='submit'
               disabled={newMessages.length < 6 || newMessages.length > 140}
               >
-                  <HeartIcon symbol='❤️'/>
-                  Submit form!
-                  <HeartIcon symbol='❤️'/>
+                  <HeartIcon label='heart'/>
+                  Send Happy Thought!
+                  <HeartIcon label='heart'/>
               </button>
               <span>{newMessages.length}/140</span>
             </div>
