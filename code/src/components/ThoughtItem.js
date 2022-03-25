@@ -1,5 +1,7 @@
 import React from 'react';
 
+import moment from 'moment';
+
 const ThoughtItem = ({ thought, onLikesIncrease }) => {
     return (
         <section className="thought-item">
