@@ -4,7 +4,6 @@ const Form = () => {
   const [userInput, setUserInput] = useState('');
 
   const handleSubmit = async () => {
-
     const options = {
       method: 'POST',
       headers: {

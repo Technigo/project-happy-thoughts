@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
 import Form from './components/Form.js'
-import LikesAndTime from './components/LikesAndTime.js'
+import MessageDisplay from './components/MessageDisplay.js'
 
 export const App = () => {
   const [apiData, setApiData] = useState();
 
-  //gör om till IIFE
+  // gör om till IIFE
   useEffect(() => {
     async function getApiData() {
       const response = await fetch(
@@ -26,9 +26,8 @@ export const App = () => {
   return (
     <div className="flex-parent">
       <Form />
-      <LikesAndTime 
-        apiData={apiData}
-      />
+      <MessageDisplay
+        apiData={apiData} />
     </div>
   )
 }
