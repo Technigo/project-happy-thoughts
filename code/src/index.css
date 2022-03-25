@@ -1,13 +1,50 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: 'Fira Mono', monospace;
+	background: linear-gradient(135deg, rgba(247, 148, 164, 1) 0%, rgba(253, 214, 189, 1) 100%);
+	background-attachment: fixed;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.container {
+	width: 320px;
+	margin: 50px auto;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.thought-container {
+	border: 1px solid;
+	box-shadow: 5px 5px 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 20px 20px 5px;
+	background-color: #fff;
+	justify-content: space-between;
+}
+
+.thought-message {
+	width: 100%;
+	word-break: break-word;
+	margin: 0 0 10px;
+	font-weight: 500;
+}
+
+.heart-button {
+	border: none;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	color: red;
+	cursor: pointer;
+}
+
+.heart-number {
+	flex-grow: 1;
+	margin-left: 5px;
+}
+
+.time-created {
+  flex-grow: 0;
 }
