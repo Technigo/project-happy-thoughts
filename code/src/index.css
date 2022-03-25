@@ -158,6 +158,7 @@ footer {
   font-family: 'Space Mono', monospace;
   font-size: 0.8rem;
   color: var(--first);
+  padding: 1rem;
 }
 
 
