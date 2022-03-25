@@ -6,13 +6,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /********FORM PARTS**********/
+
 form {
   border: 1px solid #000;
-  width: 250px;
+  width: 200px;
   background-color: lightgray;
   padding: 10px;
   margin-bottom: 20px;
@@ -20,14 +23,17 @@ form {
   display: flex;
   flex-direction: column;
 }
+
 .header-text {
   font-size: 14px;
   font-weight: bold;
 }
+
 .input {
-  height: 100px;
+  height: 70px;
   margin-bottom: 13px;
 }
+
 .form-button {
   background-color: pink;
   border: none;
@@ -35,56 +41,63 @@ form {
   height: 40px;
   width: 206px;
 }
+
 /*******MESSAGE PART***********/
+
 .message-container {
   border: 1px solid #000;
   background-color: #fff;
-  width: 250px;
+  width: 200px;
   padding: 10px;
   box-shadow: 8px 8px;
   margin-bottom: 20px;
 }
+
 .input-container {
   display: flex;
   justify-content: space-between;
 }
+
 .heart-button {
   border-radius: 50%;
   border: none;
   width: 40px;
   height: 40px;
 }
+
 .heart-button:hover {
   background-color: pink;
 }
+
 .likes-container {
   display: flex;
   flex-direction: row;
 }
+
 .x-heart {
   font-size: 12px;
   padding-left: 5px;
 }
+
 .time {
   font-size: 12px;
 }
 
-@media (min-width: 668px) {
-  form {
-    width: 400px;
-  }
-
-  .message-container {
-    width: 400px;
-  }
+.heart {
+  padding: 5px;
 }
 
-@media screen and (min-width: 1025px) {
-  form {
-    width: 600px;
-  }
+.text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+@media screen and (min-width: 668px) {
+  form {
+    width: 400px;
+  }
   .message-container {
-    width: 600px;
+    width: 400px;
   }
 }
