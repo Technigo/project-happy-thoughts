@@ -17,14 +17,15 @@ export const ThoughtPage = () => {
     const fetchList = () => {
         setLoading(true)
         fetch(HAPPY_THOUGHTS_URL)
-            .then(res => res.json())
-            .then(data => setList(data))
-            .catch(error => console.error(error))
+            .then((res) => res.json())
+            .then((data) => setList(data))
+            .catch((error) => console.error(error))
             .finally(() => setLoading(false))
     }
 
-    const onFormSubmit = (event) => {
+    const handleFormSubmit = (event) => {
         event.preventDefault()
+
         const options = {
             method: 'POST',
             headers: {
@@ -34,39 +35,42 @@ export const ThoughtPage = () => {
                 message: newMessages
             })
         }
+        
         fetch(HAPPY_THOUGHTS_URL, options)
-            .then(res => res.json())
+            .then((res) => res.json())
             .then((data) => {
-                fetchList()
+                fetchList();
+                setNewMessages('')
             })
-        }
+    }
 
     const handleLikes = (thoughtId) => {
         const options = {
             method: 'POST',
         }
-            fetch(LIKED_THOUGHTS_URL(thoughtId), options)
-                .then((res => res.json())
-                    .then((data) => {
-                        fetchList()
+        
+        fetch(LIKED_THOUGHTS_URL(thoughtId), options)
+            .then((res) => res.json())
+            .then(() => {
+                fetchList()
+            })
+    }
 
-                    })
-    
-                )}
     return (
         <div>
             {loading}
             <ThoughtsForm
+                onFormSubmit={handleFormSubmit}
                 newMessages={newMessages}
                 setNewMessages={setNewMessages}
-                onFormSubmit={onFormSubmit}
             />
- {list.map((thoughts) => (
-            <ThoughtsList
-                key={thoughts._id}
-                list={list}
-                onLikes={handleLikes}
-            />
+
+            {list.map((thoughts) => (
+                <ThoughtsList
+                    key={thoughts._id}
+                    thoughts={thoughts}
+                    onLikes={handleLikes}
+                />
             ))}
         </div>
     )

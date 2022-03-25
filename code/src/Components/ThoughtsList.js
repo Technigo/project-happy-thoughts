@@ -1,20 +1,25 @@
 import React from 'react'
 import moment from 'moment'
-import { HeartIcon } from 'Components/LikedThoughts'
+import { HeartIcon } from 'Components/HeartIcon'
 
 export const ThoughtsList = ({thoughts, onLikes}) => {
     return (
         <section>
-               < div >
+               <div className='message-container'>
                    <h4>{thoughts.message}</h4>
-                   <button onClick= {() => onLikes(thoughts._id) }>
+                   <div className='input-container'>
+                       <div className='likes-container'>
+                   <button 
+                   className='heart-btn' 
+                   onClick= {() => onLikes(thoughts._id) }>
                        <HeartIcon symbol='❤️'/>
                    </button>
                   
-                   <p> x {thoughts.hearts}</p>
-                   <p>{moment(thoughts.createdAt).fromNow()}</p>
+                   <p className='likes-amount'> x {thoughts.hearts}</p>
                    </div>
-           ))
+                   <p className='time'>{moment(thoughts.createdAt).fromNow()}</p>
+                   </div>
+                </div>
         </section>
     )
 }

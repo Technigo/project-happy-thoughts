@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const HeartIcon = (props) => (
-    <span >
+    <span className='heart' >
         {props.symbol}
     </span>
 )
