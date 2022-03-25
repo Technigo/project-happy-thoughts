@@ -26,6 +26,7 @@ body {
   width: 100%;
   height: 60px;
   margin: 10px 0;
+  resize: vertical;
 }
 
 button {
@@ -35,6 +36,13 @@ button {
   padding: 7px 12px;
   font-family: "Ubuntu Mono", "Courier New", monospace;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-text {
+  margin: 0 6px;
 }
 
 .happy-thought {
@@ -43,6 +51,7 @@ button {
 
 p.thought-message {
   margin: 0 0 20px 0;
+  overflow-wrap: break-word;
 }
 
 .thought-footer {
@@ -63,7 +72,7 @@ p.thought-message {
 .thought-heart button {
   border-radius: 50%;
   width: 50px;
-  height: 50px;
+  height: 50px; 
   font-size: 18px;
 }
 
