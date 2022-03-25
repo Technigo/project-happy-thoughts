@@ -1,9 +1,10 @@
 import React from 'react'
 import { formatDistanceToNow } from 'date-fns'
 
-const MessageDisplay = ({ apiData }) => {
-  const handleClick = async (_id, e) => {
-    e.preventDefault()
+const MessageDisplay = ({ apiData, getApiData }) => {
+
+  const handleClick = async (_id) => {
+    
     const options = {
       method: 'POST',
       headers: {
@@ -12,6 +13,7 @@ const MessageDisplay = ({ apiData }) => {
     }
 
     await fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+    getApiData();
   }
 
   const likesStyles = {
