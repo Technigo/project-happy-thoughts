@@ -11,6 +11,8 @@ const HappyThoughtCards = () => {
         .then(thoughts => setThoughts(thoughts))
 }, [])
 
+
+
 // Adding ThoughtForm, getting all the latest thoughts through mapping
 return (
 

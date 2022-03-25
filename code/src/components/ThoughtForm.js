@@ -29,10 +29,12 @@ const ThoughtForm = (props) => {
             
         
             <div className="thought-form">
-                <h2>What's making you happy right now?</h2>
+                <h2>
+                    <label htmlFor="thoughtInput">What's making you happy right now?</label></h2>
 
 
                 <textarea
+                id="thoughtInput"
                  className="text-input"
                  rows='5'
                  columns='140'
