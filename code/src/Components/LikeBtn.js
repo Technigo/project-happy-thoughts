@@ -14,12 +14,12 @@ const LikeBtn = ({ messageID, messages, fetchMessages }) => {
       options
     )
       .then((res) => res.json())
-      .then(() => fetchMessages() );
+      .then(() => fetchMessages());
   };
 
   return (
     <div>
-      <button onClick={sendLike}>hjärta</button>x{messages.hearts}
+      <button onClick={sendLike}><span role="img" aria-label="Heart-emoji">❤️</span></button>x{messages.hearts}
     </div>
   );
 };
