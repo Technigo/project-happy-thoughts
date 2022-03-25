@@ -1,23 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { formatDistance } from 'date-fns'
 
-const ThoughtsList = () => {
-    const [thoughtsList, setThoughtsList] = useState ([])
-    const [loading, setLoading] = useState (false)
+const ThoughtsList = ({ loading, thoughtsList, onLikesIncrease}) => {
+   
 
-    useEffect(() => {
-        fetchThoughts()    
-    }, [])
 
-    const fetchThoughts = () => {
-        setLoading(true)
-        fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-        .then(res => res.json())
-        .then(data => setThoughtsList(data))
-        .catch(error => console.error(error))
-        .finally(() => setLoading(false))
-
-    }
         if (loading) {
             return <h1>Loading in progess...</h1>
         }
@@ -29,10 +16,14 @@ const ThoughtsList = () => {
                    key = {singleThought._id}>
                    <div>
                       <h4 className="message-text">{singleThought.message}</h4>
-                      
-                      <input type="checkbox" checked={singleThought.isChecked} />
+                      <div className="heartandlikes">
+                        <button className={(singleThought.hearts === 0 ? "like-button" : "red-likebutton")} onClick={() => onLikesIncrease(singleThought._id)}> 
+                        <span className="emoji" role="img" aria-label="heart">❤️ </span> </button> 
+                        <p>   x {singleThought.hearts}</p>
+                    </div>
                       <p>{formatDistance(new Date(singleThought.createdAt), Date.now(), {addSuffix: true
-            })}     </p>
+                         })}
+                      </p>
 
                     </div>
                     </div>))}
