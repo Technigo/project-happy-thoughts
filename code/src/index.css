@@ -82,6 +82,9 @@ form {
   width: 300px; 
 }
 
+textarea {
+  resize: vertical;
+}
 label {
   font-weight: bolder;
   font-size: 14px;
@@ -182,7 +185,7 @@ label {
 }
 
 .loading-spinner {
-  color: #000000;
+  color: var(--white-but-not-white);
   font-size: 90px;
   text-indent: -9999em;
   overflow: hidden;

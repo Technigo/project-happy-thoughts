@@ -10,7 +10,7 @@ const ThoughtItem = ({ thought, onLikesIncrease }) => {
                 <p className="thought-text">{thought.message}</p>
               <div className="likes-container">
                     <div className="likes-wrapper">
-                    <button className="likebtn" onClick={() => onLikesIncrease(thought._id)}>
+                    <button className="likebtn" type="button" onClick={() => onLikesIncrease(thought._id)}>
                     {' '}
                     <Emoji symbol="❤️" label="heart"/> 
                     </button>

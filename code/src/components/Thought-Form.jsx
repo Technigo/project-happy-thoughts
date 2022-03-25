@@ -23,7 +23,7 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
 
             <button 
                 className="sendbtn" 
-                disabled={newThought.length < 5} 
+                disabled={newThought.length < 5 || newThought.length > 140} 
                 type="submit">
                 <Emoji symbol="❤️" label="heart"/> 
                  Send Happy Thoughts 
