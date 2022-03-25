@@ -73,7 +73,7 @@ h2 {
   padding: 12px;
   margin-top: 10px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .message-length-ok {
@@ -147,6 +147,12 @@ h2 {
   border-radius: 50%;
   border: none;
   padding: 12px;
+}
+
+.heart-icon {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
 }
 
 /* FOOTER */

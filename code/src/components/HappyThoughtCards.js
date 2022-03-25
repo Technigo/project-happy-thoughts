@@ -21,10 +21,8 @@ const onLike = (thoughtId) => {
     }).then(() => updateLikes(thoughtId))
   };
 
-  console.log(thought)
 
-
-// Function for updating text about hearts/nr of likes
+// Function for updating likes
 const updateLikes = (thoughtId) => {
     const updatedThoughts = thoughts.map(thought => {
       if (thought._id === thoughtId) {
@@ -58,7 +56,7 @@ return (
                 onClick={() => onLike(thought._id)}
                 >
                     
-                <span role="img" aria-label="heart icon">❤️</span>
+                <span role="img" aria-label="heart icon" className="heart-icon">❤️</span>
                 
                 </button>
 
