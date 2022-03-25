@@ -1,13 +1,89 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  margin: 20px;
+  font-family: "Roboto","Helvetica Neue",sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+form {
+  background-color: lightgray;
+  border: 1px solid #000;
+  width: 200px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 8px 8px;
+  display: flex;
+  flex-direction: column;
 }
+
+.header-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text-input {
+  height: 70px;
+  margin-bottom: 13px;
+}
+
+.form-btn {
+  background-color: pink;
+  border: none;
+  border-radius: 25px;
+  height: 40px;
+  width: 205px;
+}
+
+.message-container {
+  background-color: #FFF;
+  border: 1px solid #000;
+  width: 200px;
+  padding: 10px;
+  box-shadow: 8px 8px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.likes-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.heart-btn {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.likes-amount {
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.time {
+  font-size: 12px;
+}
+
+.heart {
+  padding: 5px;
+}
+
+
+
+

@@ -38,7 +38,7 @@ export const ThoughtPage = () => {
         
         fetch(HAPPY_THOUGHTS_URL, options)
             .then((res) => res.json())
-            .then((data) => {
+            .then(() => {
                 fetchList();
                 setNewMessages('')
             })
@@ -48,7 +48,8 @@ export const ThoughtPage = () => {
         const options = {
             method: 'POST',
         }
-        
+
+        //Sending in like but not doing anything with the data/remove it? 
         fetch(LIKED_THOUGHTS_URL(thoughtId), options)
             .then((res) => res.json())
             .then(() => {
