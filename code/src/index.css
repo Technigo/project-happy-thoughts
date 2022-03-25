@@ -20,7 +20,7 @@ code {
   --clr-white: #fff;
   --clr-primary: #f7f1f1;
   --clr-secondary: #d1c4c4;
-  --clr-accent: #f8a6a6;
+  --clr-pink: #f8a6a6;
 }
 .main {
   max-width: 600px;
@@ -100,7 +100,7 @@ textarea:active {
   border-radius: 25px;
   cursor: pointer;
   margin-bottom: 10px;
-  background: var(--clr-accent);
+  background: var(--clr-pink);
   margin-right: 0.25em;
   padding: 0 10px;
 }
