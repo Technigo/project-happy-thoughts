@@ -1,5 +1,8 @@
 import React from "react";
 
+import Heart from './Heart.js';
+
+
 const Form = ({ onNewThoughtChange, newThought, onFormSubmit }) => {
     
   return (
@@ -8,12 +11,12 @@ const Form = ({ onNewThoughtChange, newThought, onFormSubmit }) => {
           <label htmlFor="happythoughts">What's making you happy right now?</label>
           <textarea value={newThought} id="happythoughts" onChange={onNewThoughtChange} />
           <div class="thought-footer">
-            <button type="submit" disabled={newThought.length < 6 || newThought.length > 140} >
-                <span className="heart-emoji" role="img" aria-label="Heart">❤️</span> 
+            <button type="submit" disabled={newThought.length > 140} >
+                <Heart />
                 <span className="button-text">Send Happy Thought </span>
-                <span className="heart-emoji" role="img" aria-label="Heart">❤️</span>
+                <Heart />
             </button>
-            <p className={newThought.length < 6 || newThought.length > 140 ? "incorrect-number-of-characters" : "correct-number-of-characters"}>
+            <p className={newThought.length > 140 ? "incorrect-number-of-characters" : "correct-number-of-characters"}>
               {newThought.length}/140
             </p>
           </div>
