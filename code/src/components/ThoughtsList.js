@@ -2,14 +2,6 @@ import React from "react"
 import { formatRelative } from 'date-fns'
 
 const ThoughtsList = ({ thoughts, likeMessage }) => {
-    // const [buttonColor, setButtonColor] = useState("#feddf0")
-
-    // const toggleSendButton = (e) => {
-
-    //     const newButtonColor = buttonColor === "#feddf0" ? "#f7aed7" : "#feddf0"
-    //     setButtonColor(newButtonColor)
-    // }
-
     
     return (
         <>
@@ -20,13 +12,8 @@ const ThoughtsList = ({ thoughts, likeMessage }) => {
                         <div className="like-and-date-wrapper">
                             <div className="like">
                                 <button
-                                // style={{ backgroundColor: buttonColor}}
-                                // color={buttonColor}
-                                className="heart-button"
-                                onClick={() => {
-                                    likeMessage(thought._id)
-                                    // toggleSendButton()
-                                }}
+                                className={thought.hearts > 0 ? "heart-button-like" : "heart-button-no-like"}
+                                onClick={() => likeMessage(thought._id)}
                                 >
                                     <span className="heart"
                                     role="img"

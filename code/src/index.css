@@ -200,7 +200,22 @@ footer {
   color: var(--first);
 }
 
-.heart-button {
+.heart-button-no-like {
+  background-color: var(--third);
+  border-radius: 50%;
+  border: none;
+  position: relative;
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+}
+
+.heart-button-no-like:hover {
+  background-color: var(--fourth);
+}
+
+
+.heart-button-like {
   background-color: var(--second);
   border-radius: 50%;
   border: none;
@@ -210,17 +225,9 @@ footer {
   height: 45px;
 }
 
-.heart-button:hover {
-  background-color: var(--fourth);
-}
-
-.heart-button:active {
+.heart-button-like:hover {
   background-color: var(--third);
 }
-
-/* .liked {
-  background-color: var(--second);
-} */
 
 
 /**********HEART ANIMATION************/
@@ -279,12 +286,12 @@ footer {
   -ms-user-select:none;
   user-select:none;
   cursor:default;
-  -webkit-animation-name:heartsfall-fall,heartsfall-shake;
+  -webkit-animation-name: heartsfall-fall,heartsfall-shake;
   -webkit-animation-duration:10s,3s;
   -webkit-animation-timing-function:linear,ease-in-out;
   -webkit-animation-iteration-count:infinite,infinite;
   -webkit-animation-play-state:running,running;
-  animation-name:heartsfall-fall,heartsfall-shake;
+  animation-name: heartsfall-fall,heartsfall-shake;
   animation-duration:10s,3s;
   animation-timing-function:linear,ease-in-out;
   animation-iteration-count:infinite,infinite;
