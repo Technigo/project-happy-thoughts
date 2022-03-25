@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ThoughtForm from './ThoughtForm'
+import { formatDistance } from 'date-fns'
 
 // Creating HappyThoughtsCards, fetching thoughts data
 const HappyThoughtCards = ({thought}) => {
@@ -59,11 +60,15 @@ return (
                 <span role="img" aria-label="heart icon" className="heart-icon">❤️</span>
                 
                 </button>
+                    <p className="likes">x {thought.hearts}</p>
+        
 
-                <p className="likes">x {thought.hearts}</p>
+                <p className="date-text">
+                {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true, })}
+            </p>
             </div>
        
-        
+           
         </section>
                  ))}
     </div>
