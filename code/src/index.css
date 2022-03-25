@@ -78,7 +78,7 @@ h2 {
 
 .message-length-ok {
   color: var(--clr-grey);
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 12px;
 }
 
@@ -153,6 +153,7 @@ h2 {
   font-size: 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 /* FOOTER */
