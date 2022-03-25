@@ -34,7 +34,7 @@ body {
 	word-break: break-word;
 	margin: 0 0 10px;
 	font-weight: 500;
-  font-size: 17px;
+	font-size: 17px;
 }
 
 .thought-input {
@@ -51,21 +51,30 @@ body {
 	border-radius: 50%;
 	cursor: pointer;
 	background-color: #eee;
+	font-family: 'Fira Mono', monospace;
+	font-size: 18px;
 }
 
 .clicked {
 	background-color: #ffd7d7;
+	color: #000;
+}
+
+.heart {
+	color: #000;
+	font-size: ;
+	font-weight: bold;
 }
 
 .heart-number {
 	flex-grow: 1;
 	margin-left: 5px;
-  font-size: 15px;
+	font-size: 15px;
 }
 
 .time-created {
 	flex-grow: 0;
-  font-size: 15px;
+	font-size: 15px;
 }
 
 h2 {
@@ -82,21 +91,25 @@ h2 {
 	cursor: pointer;
 	height: 30px;
 	padding: 0 10px;
-  font-family: 'Fira Mono', monospace;
+	font-family: 'Fira Mono', monospace;
 	font-weight: 500;
-  font-size: 16px;
+	font-size: 16px;
 	background: #ffd7d7;
 	margin: 10px 0;
 }
 
 .disabled {
 	background-color: #eee;
-	color: #333;
+	color: #000;
 	cursor: default;
 }
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
 	.container {
 		width: 500px;
 	}
-} */
+
+	h2 {
+		font-size: 22px;
+	}
+}

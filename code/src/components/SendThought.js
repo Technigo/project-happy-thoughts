@@ -5,17 +5,20 @@ const SendThought = ({ onFormSubmit, newThought, onSetThoughtChange }) => {
 		<div className='thought-container form'>
 			<form onSubmit={onFormSubmit}>
 				<h2>What's making you happy?</h2>
-				<label htmlFor='new-thought'>
-					<textarea
-						className='thought-input'
-						id='new-thought'
-						value={newThought}
-						type='text'
-                        rows='3'
-						//placeholder='My happy thought'
-						onChange={onSetThoughtChange}
-					/>
-				</label>
+				<textarea
+					className='thought-input'
+					id='new-thought'
+					value={newThought}
+					type='text'
+					rows='3'
+					//placeholder='My happy thought'
+					onChange={onSetThoughtChange}
+				/>
+
+				{/* <p className='characters'>
+					{newThought.length > 140}
+					{newThought.length}/140
+				</p> */}
 				<button
 					type='submit'
 					className={newThought.length >= 5 ? 'send-btn' : 'send-btn disabled'}
