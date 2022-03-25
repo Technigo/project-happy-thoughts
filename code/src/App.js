@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { ThoughtsList } from "Components/ThoughtsList";
-import { ThoughtsForm } from "Components/ThoughtsForm";
+import { ThoughtsList } from "components/ThoughtsList";
+import { ThoughtsForm } from "components/ThoughtsForm";
 
 export const App = () => {
   const [list, setList] = useState([]);
