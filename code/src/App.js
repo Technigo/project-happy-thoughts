@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { HappyMessages } from "Components/HappyMessages"
-import { Form } from "Components/Form"
+import React, { useState, useEffect } from 'react';
+import { HappyMessages } from "Components/HappyMessages";
+import { Form } from "Components/Form";
 
 export const App = () => {
   const [twentyThoughts, setTwentyThoughts] = useState([]);
   // const [loading, setLoading] = useState(false);
+
+  const [newMessage, setNewMessage] = useState('');
+
+const handleNewMessageChange = (event) => {
+        setNewMessage(event.target.value)
+    }
 
   useEffect(() => {
     fetchTwentyThoughts();
@@ -22,10 +28,14 @@ export const App = () => {
 //         return <h1>Loading happy thoughts ...</h1>
 // }
 
+
   return ( 
     <>
 
-        <Form />
+        <Form 
+        newMessage={newMessage}
+        onNewMessage={handleNewMessageChange} //onNewMessage defined in Form onChange
+        />
 
 
         {twentyThoughts.map(twentyThoughts => (
