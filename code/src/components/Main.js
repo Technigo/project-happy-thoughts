@@ -2,10 +2,11 @@ import React, {useState, useEffect } from "react"
 
 import Loader from "./Loader"
 import HeartFall from "./HeartFall"
+import { LIKES_API, THOUGHTS_API } from "./utils/urls"
+
 import ThoughtsList from "./ThoughtsList"
 import ThoughtForm from './ThoughtForm'
 import Footer from "./Footer"
-import { LIKES_API, THOUGHTS_API } from "./utils/urls"
 
 
 const Main = () => {
