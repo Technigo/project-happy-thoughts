@@ -15,7 +15,7 @@ const Status = ({ loading, recentMessages, onHeartSubmit}) => {
 
                 <div className="btn-group">
                     <button 
-                    onClick= {() => onHeartSubmit(singleMessage._id)}
+                    onClick= {(event) => event.preventDefault(onHeartSubmit(singleMessage._id))}
                     className={singleMessage.hearts > 0 ? "heart-btn liked" : "heart-btn"}>
                     <span role="img" 
                     aria-label="heart emoji">❤️</span>

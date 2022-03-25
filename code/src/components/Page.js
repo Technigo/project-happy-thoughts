@@ -73,8 +73,9 @@ const Page = () => {
 
 return (
     <div className="container">
+        
         <Form newMessage={newMessage} onNewMessage={handleNewMessage} onFormSubmit={onFormSubmit}/>
-            <Status loading={loading} recentMessages={recentMessages} onHeartSubmit={onHeartSubmit}/>
+        <Status loading={loading} recentMessages={recentMessages} onHeartSubmit={onHeartSubmit}/>
 
       </div>
 )
