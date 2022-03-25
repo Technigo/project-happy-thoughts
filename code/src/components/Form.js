@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 
-const Form = () => {
+const Form = ({ getApiData }) => {
   const [userInput, setUserInput] = useState('');
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
     const options = {
       method: 'POST',
       headers: {
@@ -15,6 +17,7 @@ const Form = () => {
     }
 
     await fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    getApiData();
   }
 
   const updateUserInput = (e) => {
@@ -34,14 +37,14 @@ const Form = () => {
             value={userInput}
             onChange={updateUserInput} />
         </label>
+        <button
+          type="submit"
+          className="form-button">
+          <span role="img" aria-label="Red Heart">❤️</span>
+            Send happy thought
+          <span role="img" aria-label="Red Heart">❤️</span>
+        </button>
       </form>
-      <button
-        type="submit"
-        className="form-button">
-        <span role="img" aria-label="Red Heart">❤️</span>
-          Send happy thought
-        <span role="img" aria-label="Red Heart">❤️</span>
-      </button>
     </div>
   )
 }

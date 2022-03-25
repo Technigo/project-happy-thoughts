@@ -20,7 +20,9 @@ export const App = () => {
 
   return (
     <div className="flex-parent">
-      <Form />
+      <Form 
+        getApiData={getApiData}
+      />
       <MessageDisplay
         getApiData={getApiData}
         apiData={apiData} />
