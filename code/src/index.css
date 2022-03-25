@@ -4,13 +4,10 @@ body {
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f6f0c4;
-  background-image: linear-gradient(315deg, #f6f0c4 0%, #d99ec9 74%);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: monospace;
 }
 .form-container {
   display: flex;
@@ -19,16 +16,24 @@ code {
   align-items: center;
 }
 .main-container {
-  background-color: #f0f0f0;
+  background-color: #99959552;
   padding: 20px;
   margin-top: 20px;
   width: 300px;
   box-shadow: 0.7rem 0.5rem black;
   border: 1px solid black;
 }
+.main-listcontainer {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  width: 300px;
+  box-shadow: 0.7rem 0.5rem black;
+  border: 1px solid black;
+  word-wrap: break-word;
+}
 .submit-button {
-  background-color: #f6f0c4;
-  background-image: linear-gradient(315deg, #f6f0c4 0%, #d99ec9 74%);
+  background-color: pink;
   border-radius: 29px;
   padding: 10px;
   border: 1px solid pink;
@@ -38,25 +43,26 @@ code {
 }
 .Thoughtlist-container {
   display: flex;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  justify-content: center;
-  align-items: center;
+  margin-top: 20px;
 }
 .like-button {
-  background-color: #f6f0c4;
-  background-image: linear-gradient(315deg, #f6f0c4 0%, #d99ec9 74%);
+  background-color: pink;
   border-radius: 50%;
   width: 30px;
   height: 30px;
   border: 1px solid pink;
   align-content: center;
+  margin-top: 50px;
 }
 .like-button:hover {
   background-color: #6b0f1a;
   background-image: linear-gradient(315deg, #df5c6b 0%, #e23999 74%);
   transform: scale(1.3);
   cursor: pointer;
+}
+.time-created {
+  margin-left: 10rem;
+  margin-top: -20px;
 }
