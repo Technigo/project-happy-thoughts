@@ -16,7 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(circle, rgba(242,184,198,1) 0%, rgba(255,255,255,1) 50%, rgba(242,184,198,1) 100%);
+  background: radial-gradient(circle, var(--fourth) 0%, #ffffff 50%, var(--fourth) 100%);
 }
 
 code {
@@ -88,6 +88,12 @@ textarea {
   padding: 10px;
   font-family: 'Space Mono', monospace;
   border: 1px solid var(--first);
+}
+
+textarea:hover,
+textarea:focus {
+  border: 1px solid var(--second);
+  outline: none;
 }
 
 .thought-container {
@@ -186,6 +192,7 @@ footer {
   box-shadow: 0px 10px 10px -7px #d87093;
   font-size: 0.8rem;
   font-family: 'Space Mono', monospace;
+  color: var(--first);
 }
 
 .send-button:active {
@@ -202,14 +209,12 @@ footer {
   height: 45px;
 }
 
+.heart-button:hover {
+  background-color: var(--fourth);
+}
+
 .heart-button:active {
   background-color: var(--third);
-  border-radius: 50%;
-  border: none;
-  position: relative;
-  margin-right: 10px;
-  width: 45px;
-  height: 45px;
 }
 
 /* .liked {
