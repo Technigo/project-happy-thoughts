@@ -133,7 +133,7 @@ textarea:focus {
 .heart {
   font-size: 1.4rem;
   position: absolute;
-  right: 12px;
+  right: 10px;
   top: 9px;
 }
 
@@ -355,6 +355,12 @@ footer {
 @media screen and (min-width: 768px) {
   .thoughts-container {
     width: 550px;
+  }
+  .heart {
+    font-size: 1.4rem;
+    position: absolute;
+    right: 12px;
+    top: 9px;
   }
   .send-button {
     padding: 5px;
