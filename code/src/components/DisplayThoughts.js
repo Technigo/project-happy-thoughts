@@ -25,9 +25,6 @@ const DisplayThoughts = ({ newThought }) => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    message: newThought
-                })
             };
 
             fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`, options)
@@ -36,7 +33,7 @@ const DisplayThoughts = ({ newThought }) => {
                     fetchAllThoughts()
                 });
         }
-          {
+          
             return <div className="thought" key={thought._id}>
             <p className="messages">{thought.message}</p>
             <div className="likes-wrapper">
@@ -51,7 +48,7 @@ const DisplayThoughts = ({ newThought }) => {
                 </p>
                 </div>
         </div>;
-        }
+        
     });
     return (
         <section className="all-thoughts">
