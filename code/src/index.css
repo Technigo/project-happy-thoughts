@@ -18,13 +18,14 @@
   --clr-link: rgba(174, 9, 9, 0.933);
   --clr-error: red;
   --clr-send-btn: #ffadad;
+  --clar-bg-color: #ffe9e9;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inconsolata", "Courier New", Courier, monospace;
-  background: linear-gradient(230deg, #eea4a4 15%, #fff5f5 30%, #f8c6c6f0 40%);
+  background: var(--clar-bg-color);
   line-height: 1.7;
 }
 
@@ -35,7 +36,7 @@ header {
   margin-bottom: 20px;
   text-align: center;
   max-width: 375px;
-  color: var(--clr-white);
+  color: var(--clr-black);
 }
 
 .page {
