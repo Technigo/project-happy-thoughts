@@ -4,6 +4,7 @@ import { formatDistance } from "date-fns";
 
 
 const DisplayThoughts = ({ newThought }) => {
+    const [loading, setLoading] = useState(false)
     const [thoughts, setThoughts] = useState([]);
 
     useEffect(() => {
@@ -12,9 +13,11 @@ const DisplayThoughts = ({ newThought }) => {
 
 
     const fetchAllThoughts = () => {
+        setLoading(true)
         fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
             .then((res) => res.json())
             .then((data) => setThoughts(data))
+            .finally(() => setLoading(false));
     }
 
     const allThoughts = thoughts.map((thought) => {
@@ -36,8 +39,11 @@ const DisplayThoughts = ({ newThought }) => {
                     fetchAllThoughts()
                 });
         }
-
-        return <div className="thought" key={thought._id}>
+        
+        if (loading) {
+            return <p>Loading thoughts...</p>
+        } else {
+            return <div className="thought" key={thought._id}>
             <p className="messages">{thought.message}</p>
             <div className="likes-wrapper">
                 <div className="heart-icon-radius">
@@ -51,6 +57,7 @@ const DisplayThoughts = ({ newThought }) => {
                 </p>
                 </div>
         </div>;
+        }
     });
     return (
         <section className="all-thoughts">

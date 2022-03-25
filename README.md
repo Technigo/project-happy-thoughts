@@ -1,13 +1,13 @@
 # Happy Thoughts
+Users should be able to:
 
-Replace this readme with your own information about your project.
+1. view the optimal layout for the site depending on their device's screen size
+2. post new happy thoughts
+3. like a thought/thoughts and see the like count update real time
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I learned about a component's life cycle, APIs, useEffect and the return function in useEffect.
+This project is built with React, CSS and semantic html.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://illustrious-frangipane-e38a00.netlify.app/
