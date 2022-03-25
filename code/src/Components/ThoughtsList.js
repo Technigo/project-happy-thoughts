@@ -10,13 +10,13 @@ export const ThoughtsList = ({ thoughts, onLikes }) => {
         <div className="input-container">
           <div className="likes-container">
             <button
-              className="heart-button"
+              className={thoughts.hearts > 0 ? 'moreThanZeroClicks' : 'zeroClicks' }
               onClick={() => onLikes(thoughts._id)}
             >
               <HeartIcon symbol="❤️" label="heart" />
             </button>
 
-            <p className="x-heart">x {thoughts.hearts}</p>
+            <p className="x-heart">x {thoughts.hearts }</p>
           </div>
           <p className="time">{moment(thoughts.createdAt).fromNow()}</p>
         </div>
