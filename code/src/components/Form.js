@@ -42,16 +42,23 @@ const Form = ({ thought, setThought }) => {
             onChange={newThoughtChange}
             placeholder="Write a happy thought"
           />
-          <p> {140 - counter} / 140 characters left</p>
-          <button
-            className="happy-button"
-            type="submit"
-            disabled={newThought.length < 6 || newThought.length > 140}
-          >
-            {' '}
-            <span className="hearts">❤️</span> Share thought!{' '}
-            <span className="hearts">❤️</span>{' '}
-          </button>
+          <div className="main-container-lowerpart">
+            <p> {140 - counter} / 140 characters left</p>
+            <button
+              className="happy-button"
+              type="submit"
+              disabled={newThought.length < 6 || newThought.length > 140}
+            >
+              {' '}
+              <span role="img" aria-label="hearts">
+                ❤️
+              </span>{' '}
+              Send Happy Thought{' '}
+              <span role="img" aria-label="hearts">
+                ❤️
+              </span>{' '}
+            </button>
+          </div>
         </form>
       </section>
     </>

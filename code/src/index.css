@@ -11,30 +11,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 1em;
-  background-color: pink;
+  background-color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+button {
+  border: none;
+}
 /*------Happy Thoughts------*/
 
 .main-container {
-  background-color: #c1b5b5;
+  background-color: white;
   border: 1px solid #000;
   padding: 1em;
-  width: 350px;
+  max-width: 600px;
   margin: 1em auto;
   display: flex;
   flex-direction: column;
   justify-content: left;
   box-shadow: 6px 6px 1px 1px rgb(5 5 5 / 90%);
 }
-
+.main-container-lowerpart {
+  display: flex;
+  flex-direction: row-reverse;
+}
 textarea {
-  border: 0;
+  border: 1px solid black;
   padding-top: 1em;
   padding-left: 1em;
   margin: 0;
@@ -48,7 +53,8 @@ textarea {
   font-weight: 700;
   padding: 1em;
   border-radius: 1em;
-  box-shadow: 2px 2px 0.5px 0.5px rgb(5 5 5 / 90%);
+
+  cursor: pointer;
 }
 .heart {
   font: 2em;
@@ -62,7 +68,7 @@ label {
   background-color: #ffffff;
   border: 1px solid #000;
   padding: 1em;
-  width: 350px;
+  max-width: 600px;
   margin: 1em auto;
   display: flex;
   flex-direction: column;
@@ -92,8 +98,9 @@ form {
 .icons {
   border-radius: 50%;
   width: 40px;
-  background-color: #8080802b;
+  background-color: pink;
   height: 40px;
+  cursor: pointer;
 }
 
 .time {
