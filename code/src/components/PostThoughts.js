@@ -1,8 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 
 
-const PostThoughts = ({newThought, setNewThought}) => {
-
+const PostThoughts = ({ thoughts, setThoughts, fetchAllThoughts }) => {
+    const [newThought, setNewThought] = useState("");
 
     const onThoughtSubmit = (event) => {
 
@@ -14,16 +14,16 @@ const PostThoughts = ({newThought, setNewThought}) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                 message: newThought 
+                message: newThought
             })
         };
 
         fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", options)
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then(() => {
+                window.location.reload(true)
+            })
     }
-
-
 
     return (
         <section>
@@ -35,14 +35,11 @@ const PostThoughts = ({newThought, setNewThought}) => {
                             value={newThought}
                             placeholder="What's your happy thought?"
                             name="thought"
-                            onChange={(event)=>(setNewThought(event.target.value))}
+                            onChange={(event) => setNewThought(event.target.value)}
                         />
                     </label>
                     <button className="send-btn" type="submit" onSubmit={onThoughtSubmit}>Send Happy Thoughts</button>
-                    </form>
-    
-
-                    
+                </form>
             </div>
         </section>
     )

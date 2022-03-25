@@ -62,6 +62,10 @@ h1 {
   position: absolute;
 }
 
+.heart-count {
+  margin-right: 150px;
+}
+
 .date {
   font-size: .8em;
   color: grey;
