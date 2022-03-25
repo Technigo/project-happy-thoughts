@@ -3,7 +3,7 @@ import { formatDistance } from 'date-fns'
 
 const Status = ({ loading, recentMessages, onHeartSubmit}) => {
      if (loading) {
-            return (<p>Loading data...</p>)
+            return (<h1>Loading data...</h1>)
         }
 
  return (
@@ -45,7 +45,6 @@ const Status = ({ loading, recentMessages, onHeartSubmit}) => {
              </article>
              ))}
 
-            
      </div>
  )
 

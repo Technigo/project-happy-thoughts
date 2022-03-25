@@ -34,9 +34,7 @@ return(
                 disabled={newMessage.length < 5}
                 type="submit"
                 className="send-btn"> 
-                    <span role="img" aria-label="heart emoji">❤️</span>
-                    Send Happy Thought
-                    <span role="img" aria-label="heart emoji">❤️</span>
+                    <span role="img" aria-label="heart emoji">❤️ </span> Send Happy Thought <span role="img" aria-label="heart emoji"> ❤️</span>
                 </button>
 
                 <span 

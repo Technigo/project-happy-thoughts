@@ -21,7 +21,7 @@ code {
 
 article {
   border: solid 1px black;
-  margin: 20px 0 20px 0;
+  margin: 30px 0 30px 0;
   height: 180px;
   box-shadow: 10px 9px 0px -1px rgba(0,0,0,1);
   -webkit-box-shadow: 10px 9px 0px -1px rgba(0,0,0,1);
@@ -48,11 +48,11 @@ label {
   margin: 15px 0 10px 5px;
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Roboto', sans-serif;
 }
 
 .text-input {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   padding: 5px;
   margin: 10px 0 10px 15px;
@@ -62,7 +62,8 @@ label {
 .characters {
   margin-left: 15px;
   color:gray;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
 }
 
 .red-text {
@@ -70,7 +71,7 @@ label {
 }
 
 .send-btn {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: bold;
   background-color: #FFADAD;
@@ -114,7 +115,7 @@ label {
 
 .number-of-likes {
   margin: 0 0 0 5px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color:gray;
 }
@@ -132,7 +133,11 @@ footer {
   position:sticky;
   bottom: 0;
   background-color: #fff;
-  width: 390px;
+  width: 355px;
+  padding: 15px;
+  border-top: solid 1px black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
 }
 
 @media (min-width: 1025px) {

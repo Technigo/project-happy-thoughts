@@ -15,8 +15,8 @@ const Page = () => {
 
     useEffect(
         () => { 
-    fetchRecentMessages() },
-    [])
+        fetchRecentMessages()
+    },[])
 
     const fetchRecentMessages = () => {
         setLoading(true)
@@ -58,15 +58,6 @@ const Page = () => {
 
     const onHeartSubmit = (thoughtId) => {
 
-            // const updatedLikes = recentMessages.map((singleMessage) => {
-            //   if (singleMessage._id === thoughtId) {
-            //     singleMessage.hearts += 1
-            //   }
-            //   return singleMessage;
-            // })
-            // setRecentMessages(updatedLikes)
-
-
 		const options = {
 			method: 'POST',
 			headers: {
@@ -88,7 +79,7 @@ return (
 
         <Form newMessage={newMessage} onNewMessage={handleNewMessage} onFormSubmit={onFormSubmit}/>
         <Status loading={loading} recentMessages={recentMessages} onHeartSubmit={onHeartSubmit}/>
-        <Footer />
+        <Footer /> 
 
       </div>
       
