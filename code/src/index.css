@@ -40,7 +40,19 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 375px;
+  width: 85%;
+  justify-content: center;
 }
+
+/* .thought-container,
+.thought-list-cointainer,
+header,
+.footer-section,
+.thought-box {
+  max-width: 375px;
+  width: 85%;
+} */
 
 /* THOUGHTFORM*/
 
@@ -48,15 +60,12 @@ h2 {
   font-size: 18px;
 }
 
-main {
+/* main {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.thought-container {
-  width: 85%;
-}
+  max-width: 375px;
+} */
 
 .thought-form {
   margin-top: 20px;
@@ -93,6 +102,7 @@ main {
   font-size: 1rem;
   border: 1px solid var(--clr-grey);
   background: var(--clr-white);
+  padding: 5px;
 }
 
 /* THOUGHT MESSAGES */
@@ -103,6 +113,8 @@ main {
   box-shadow: 7px 10px;
   font-family: "Roboto", sans-serif;
   background: var(--clr-white);
+  max-width: 375px;
+  overflow-wrap: break-word;
 }
 
 .input-container-details {
