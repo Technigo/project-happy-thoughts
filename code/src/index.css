@@ -99,6 +99,8 @@ textarea.red-text {
   text-align: right;
 }
 
+/*---- MEDIA QUERIES ----*/
+
 @media (min-width: 768px) {
   .main-container {
     width: 450px;
