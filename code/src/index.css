@@ -182,9 +182,9 @@ footer {
   background-color: var(--third);
   width: fit-content;
   height: 40px;
-  padding: 5px;
+  padding: 3px;
   box-shadow: 0px 10px 10px -7px #d87093;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-family: 'Space Mono', monospace;
 }
 
@@ -351,6 +351,10 @@ footer {
 @media screen and (min-width: 768px) {
   .thoughts-container {
     width: 550px;
+  }
+  .send-button {
+    padding: 5px;
+    font-size: 0.9rem;
   }
 }
 
