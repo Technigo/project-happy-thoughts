@@ -17,7 +17,6 @@ code {
 }
 
 /* --------------form--------------- */
-
 .form {
   width: 425px;
   height: auto;
@@ -34,12 +33,11 @@ textarea {
   font-weight: 400;
   width: 400px;
   resize: none;
-
 }
+
 .text-input {
   border: 1px solid #c7c7c7;
   padding: 10px;
-
 }
 
 .send-button {
@@ -62,7 +60,6 @@ textarea {
 }
 
 /* -------------thought items----------- */
-
 .thought-item{
   width: 425px;
   margin: 0 auto;
@@ -91,10 +88,10 @@ textarea {
   border-radius: 50%;
   border: none;
 }
+
 .total-likes {
   color: lightgrey;
   margin-left: 10px;
-
 }
 
 .date {
@@ -108,7 +105,6 @@ textarea {
 }
 
 /* -------------loading----------- */
-
 .loading-overlay {
   position: absolute;
   top: 0;
@@ -119,7 +115,6 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .loading-spinner {
