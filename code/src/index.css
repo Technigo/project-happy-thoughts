@@ -192,11 +192,11 @@ footer {
   box-shadow: 0px 10px 10px -7px #d87093;
   font-size: 0.8rem;
   font-family: 'Space Mono', monospace;
-  color: var(--first);
 }
 
 .send-button:active {
   background-color: var(--third);
+  color: var(--first);
 }
 
 .heart-button {
