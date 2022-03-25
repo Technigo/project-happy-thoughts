@@ -35,7 +35,7 @@ export const ThoughtPage = () => {
                 message: newMessages
             })
         }
-        
+
         fetch(HAPPY_THOUGHTS_URL, options)
             .then((res) => res.json())
             .then(() => {

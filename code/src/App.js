@@ -4,7 +4,7 @@ import { ThoughtPage } from "Components/ThoughtPage"
 export const App = () => {
   return (
     <div>
-      <ThoughtPage/>
+      <ThoughtPage />
     </div>
   )
 }
