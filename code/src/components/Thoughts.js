@@ -14,7 +14,8 @@ const emotions = [
     'amused',
     'confident',
     'grateful',
-    'irritated'
+    'irritated',
+    'stressed'
 ]
 
 const Thoughts = () => {
