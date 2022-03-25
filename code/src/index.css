@@ -37,6 +37,8 @@ button {
 .main-container-lowerpart {
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 1em;
 }
 textarea {
   border: 1px solid black;
@@ -61,6 +63,7 @@ textarea {
   color: red;
 }
 label {
+  font-size: 20px;
 }
 /*------ThoughtCard------*/
 
@@ -107,5 +110,5 @@ form {
   font-size: 12px;
 }
 p {
-  padding: 0.5em;
+  padding: 1em;
 }
