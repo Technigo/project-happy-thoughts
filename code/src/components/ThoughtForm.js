@@ -4,7 +4,7 @@ import Counter from 'components/TextareaCounter';
 const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
   return (
     <form className="newThoughtForm" onSubmit={onFormSubmit}>
-        <label htmlFor="newThought">What's making you happy right now?</label>
+        <label htmlFor="newThought">What is making you happy right now?</label>
 
         <textarea 
         className="new-thought-textarea"
