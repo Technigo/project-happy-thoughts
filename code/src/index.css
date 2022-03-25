@@ -75,7 +75,6 @@ p, button, textarea {
 
 .date {
   font-style: italic;
-  font-size: smaller;
 }
 
 @media (min-width: 667px) {

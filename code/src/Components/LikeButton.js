@@ -7,7 +7,7 @@ const LikeButton = ({ thought, messageID, onLikeMessage }) => {
     <button 
       className="like-button" 
       onClick={() => onLikeMessage(messageID)}>
-        <span role="img" aria-label="like-emoji">💖</span></button>x{thought.hearts}
+        <span role="img" aria-label="like emoji">💖</span></button>x{thought.hearts}
     </div>
   )
 

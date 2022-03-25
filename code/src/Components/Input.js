@@ -4,8 +4,8 @@ const Input = ({ message, onInputChange, onFormSubmit} ) => {
   return (
     <header>
         <form onSubmit={onFormSubmit}>
-          <label htmlFor="thoughtInput" aria-label="thoughtInput">What's making you happy right now?</label>
-            <h3>What's making you happy right now?</h3>
+            <h1>What's making you happy right now?</h1>
+            <label htmlFor="thoughtInput" aria-label="thoughtInput">What's making you happy right now?</label>
             <textarea 
             value={message} 
             onChange={onInputChange}
