@@ -16,14 +16,14 @@ export const ThoughtsForm = ({ onFormSubmit, setNewMessages, newMessages }) => {
         onChange={handleChange}
         placeholder="Happy thought here"
       />
-      <div className="text-container">
+      <div className="counter-container">
         <button
           className="form-button"
           disabled={newMessages.length < 6 || newMessages.length > 140}
           type="submit"
         >
           <HeartIcon symbol="❤️" label="heart" />
-          Submit form!
+          Send Happy Thought 
           <HeartIcon symbol="❤️" label="heart" />
         </button>
         <span>{newMessages.length}/140</span>

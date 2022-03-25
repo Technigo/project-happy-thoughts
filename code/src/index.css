@@ -2,7 +2,7 @@ body {
   margin: 20px;
   font-family: "Roboto Mono", monospace;
   box-sizing: border-box;
-  background-color: pink;
+  background-color: #FFB6C1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,8 +15,8 @@ body {
 
 form {
   border: 1px solid #000;
-  width: 200px;
-  background-color: lightgray;
+  width: 250px;
+  background-color: #D4D3D3;
   padding: 10px;
   margin-bottom: 20px;
   box-shadow: 8px 8px;
@@ -36,11 +36,12 @@ form {
 }
 
 .form-button {
-  background-color: pink;
+  background-color: #FFB6C1;
   border: none;
   border-radius: 25px;
   height: 40px;
   width: 206px;
+  cursor: pointer;
 }
 
 /*******MESSAGE PART***********/
@@ -48,7 +49,7 @@ form {
 .message-container {
   border: 1px solid #000;
   background-color: #fff;
-  width: 200px;
+  width: 250px;
   padding: 10px;
   box-shadow: 8px 8px;
   margin-bottom: 20px;
@@ -65,7 +66,8 @@ button {
   border: none;
   width: 40px;
   height: 40px;
-  background-color: pink
+  background-color: #FFB6C1;
+  cursor: pointer;
 }
 
 button:hover {
@@ -73,7 +75,7 @@ button:hover {
 }
 
 .zeroClicks {
-  background-color: lightgray;
+  background-color: #D4D3D3;
 }
 
 .likes-container {
@@ -94,10 +96,11 @@ button:hover {
   padding: 5px;
 }
 
-.text-container {
+.counter-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 14px;
 }
 
 @media screen and (min-width: 668px) {
