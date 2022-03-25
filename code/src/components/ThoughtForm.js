@@ -10,6 +10,7 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
             rows="5"
             minLength="5"
             maxLength="140"
+            spellCheck="false"
             value={newThought}
             placeholder="React is making me happy!"
             onChange={onNewThoughtChange}
