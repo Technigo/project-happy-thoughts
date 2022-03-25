@@ -1,11 +1,25 @@
 import React from 'react'
 
-export const Form = (  { newMessage, onNewMessage }) => {
+export const Form = (  { newMessage, onNewMessage } ) => {
 
 const onFormSubmit = (event) => {
 event.preventDefault();
 
-fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+const options =  {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        //our messages space suit
+        message: newMessage
+        // "message": "My happy thought"
+    })
+}
+
+fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    .then(res => res.json()) //space suit
+    .then(data => console.log(data));
 }
 
 return (
