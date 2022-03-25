@@ -1,13 +1,76 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   font-family: 'Red Hat Mono';
+   font-weight: 500;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h3 {
+  font-size: 12px;
 }
+
+p {
+  font-size: 10px;
+  color: grey;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 60vw;
+  margin: 0 auto
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1vw;
+  border: grey 2px solid;
+  box-shadow: 5px 5px black;
+  word-break: break-word;
+  /* max-width: 80%; */
+  width: 80%;
+  min-height: 15vw;
+  max-height: auto;
+  margin-bottom: 5vw;
+}
+
+.bottom-card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2vw;
+  margin-top: auto;
+}
+
+.heart-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
+.likes-button {
+  border-radius: 50%;
+  border: none;
+  width: 7vw;
+  height: 7vw;
+}
+
+.heart-icon {
+  width: 3vw;
+}
+
+/* .time-stamp {
+  display: flex;
+} */
+

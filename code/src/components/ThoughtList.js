@@ -10,18 +10,23 @@ const ThoughtList = ({ loading, thoughtList, handleHeartLikes }) => {
          return (
              <section>
                  {thoughtList.map((singleThought) => (
-                     <div key={singleThought._id}>
-                         <div className='message'>
+                     <div key={singleThought._id} className='card'>
+                         <div>
                             <h3>{singleThought.message}</h3>
                          </div>
-                         <div className="heart-container">
-                            <button onClick={() => handleHeartLikes(singleThought._id)}>
-                                <span role='img' aria-label='heart emoji'>❤️</span>
-                            </button>
-                            <p>x {singleThought.hearts}</p>
-                         </div> 
-                         <div className='timestamp'>
-                            <p>{moment.utc(singleThought.createdAt).fromNow()}</p>
+                         <div className ="bottom-card-container">
+                            <div className="heart-container">
+                                <button
+                                    className="likes-button"
+                                    onClick={() => handleHeartLikes(singleThought._id)}
+                                >
+                                    <span className='heart-icon' role='img' aria-label='heart emoji'>❤️</span>
+                                </button>
+                                <p>x {singleThought.hearts}</p>
+                            </div>
+                            <div className='time-stamp'> 
+                                <p>{moment.utc(singleThought.createdAt).fromNow()}</p>
+                            </div>
                          </div>
                      </div>
                  ))}
