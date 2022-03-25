@@ -5,7 +5,6 @@ import Inputlist from "./Inputlist";
 
 export const Mainpage = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [message, SetMessage] = useState('');
 
   useEffect(() => {
@@ -13,12 +12,10 @@ export const Mainpage = () => {
   }, []);
 
   const fetchThoughts = () => {
-    setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
     .then(res => res.json())
     .then(data => setThoughts(data))
     .catch(error => console.error(error))
-    .finally(() => setLoading(false));
   }
 
   const handleInputChange = (event) => {
@@ -53,16 +50,6 @@ export const Mainpage = () => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`, options)
     .then(res => res.json())
     .then(() => fetchThoughts())
-  }
-
-  if (loading) {
-    return (
-    <section className="thoughts-container">
-      <div className="loading-page">
-      <h2>Loading...</h2>
-      </div>
-    </section>
-    )
   }
 
       return (
