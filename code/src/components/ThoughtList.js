@@ -1,28 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { formatDistance } from 'date-fns'
 
-const ThoughtList = () => {
-
-    const [thoughtList, setThoughtList] = useState([])
-    const [loading, setLoading] = useState(false)
-    //  const [newThought, setNewThought] = useState('')
-
-    useEffect(() => {
-        fetchThoughts()
-
-        // return () => {
-        //     console.log('I will be unmounted!')
-        // }
-    }, [])
-
-    const fetchThoughts = () => {
-            setLoading(true);
-            fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-                .then(res => res.json())
-                .then(data => setThoughtList(data))
-                .catch(error => console.error(error))
-                .finally(() => setLoading(false));
-    }
+const ThoughtList = ({ loading, thoughtList, handleLikesIncrease }) => {
 
     if (loading) {
         return <h1>Loading in progress...</h1>
@@ -33,12 +12,26 @@ const ThoughtList = () => {
 
         <section>
             {thoughtList.map(singleThought => (
-                <article key={singleThought._id}>
-                    <h4>{singleThought.message}</h4>
-                    <p>{formatDistance(new Date(singleThought.createdAt), Date.now(), {
+                <article className="card" key={singleThought._id}>
+                    <p className="thought-message">{singleThought.message}</p>
+                    <div className="likes">
+                        <div className="button-card">
+                            <button
+                                onClick={() => handleLikesIncrease(singleThought._id)}
+                                className="like-button"
+                            >
+                                <span className="heart" aria-label="heart-icon" role="img">
+                                    &#10084;&#65039;
+                                </span>
+                            </button>
+                            <span className="like-amount"> x {singleThought.hearts}</span>
+                        </div>
+                    </div> 
+                    <p className="date">{formatDistance(new Date(singleThought.createdAt), Date.now(), {
                         addSuffix: true,
                     })}
                     </p>
+
                 </article>
             ))}
         </section>

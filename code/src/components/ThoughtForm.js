@@ -1,39 +1,43 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const ThoughtForm = () => {
-// // { newThought, onNewThoughtChange, onFormSubmit }
-    const [newThought, setNewThought] = useState('')
-
-    const onNewThoughtChange = (event) => {
-        setNewThought(event.target.value)
-    }
-
-    const onFormSubmit = (event) => {
-        event.preventDefault()
-
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "message": newThought
-            })
-        }
-
-        fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }
+const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit, counter }) => {
 
     return (
-        <form onSubmit={onFormSubmit}>
-            <h1>Happy thoughts happy thoughts.</h1>
-            <textarea value={newThought} onChange={onNewThoughtChange} />
-            <button type="submit">Send happy thought</button>
+        <form className="form card" onSubmit={onFormSubmit}>
+            <div className="input-container">
+                <label htmlFor="newThought">
+                    What's making you happy right now?
+                </label>
+                <textarea 
+                    className={
+                        counter < 6 || counter > 140 ? 'disabled-textarea' : 'textarea'
+                    }
+                    rows="5"
+                    columns="150"
+                    id="newThought"
+                    type="text"
+                    value={newThought} 
+                    onChange={onNewThoughtChange} 
+                    placeholder="Please share your happiest thought."
+                />
+                <p className="characters-left">
+                    {140 - counter} / 140 characters left
+                </p>
+                <div className="form-container">  
+                    <button 
+                        type="submit"
+                        className="submit-button"
+                        disabled={newThought.length < 6 || newThought.length > 140}
+                        >
+                        <span role="img" aria-label="heart">
+                            {' '}
+                            &#10084;&#65039; Send Happy Thought &#10084;&#65039;{' '}
+                        </span>
+                    </button>
+                </div>
+            </div>
         </form>
     )
 }
 
 export default ThoughtForm;
-
