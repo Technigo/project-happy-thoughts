@@ -23,10 +23,11 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [timeoutId, setTimeoutId] = useState(undefined);
   const fetchThoughts = () => {
-    const timeout = setLoading(true);
-    setTimeout(() => {
+    setLoading(true);
+    const timeout = setTimeout(() => {
       httpRequest("", { method: "GET" })
         .then((data) => {
+          console.log("fetch");
           const sorted = data.sort((a, b) => {
             const curr = new Date(a.createdAt).getTime();
             const next = new Date(b.createdAt).getTime();
@@ -42,7 +43,7 @@ export const App = () => {
   useEffect(() => {
     fetchThoughts();
     return () => timeoutId && clearTimeout(timeoutId);
-  }, [timeoutId]);
+  }, []);
 
   const handleFormSubmit = (message) => {
     httpRequest("", { method: "POST", body: JSON.stringify({ message }) });

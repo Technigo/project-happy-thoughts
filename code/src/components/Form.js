@@ -38,15 +38,18 @@ const Form = ({ handleFormSubmit }) => {
           // eslint-disable-next-line react/jsx-closing-bracket-location
         />
       </label>
-      <button className="submit" type="submit">
-        <span role="img" aria-label="heart icon">
-          ❤️
-        </span>
-        &nbsp;Send Happy Thought&nbsp;
-        <span role="img" aria-label="heart icon">
-          ❤️
-        </span>
-      </button>
+      <div className="form-interaction">
+        <button className="submit" type="submit">
+          <span role="img" aria-label="heart icon">
+            ❤️
+          </span>
+          &nbsp;Send Happy Thought&nbsp;
+          <span role="img" aria-label="heart icon">
+            ❤️
+          </span>
+        </button>
+        <span className="message-counting">{message.length} / 140</span>
+      </div>
     </form>
   );
 };

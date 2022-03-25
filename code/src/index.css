@@ -10,6 +10,9 @@ body {
   width: 100vw;
 }
 
+button {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -32,6 +35,12 @@ code {
   border: 1px solid black;
   box-shadow: 7px 7px black;
   margin-top: 2rem;
+}
+
+.form-interaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .thought {
@@ -69,6 +78,11 @@ code {
   padding: 1rem;
 }
 
+.item-message {
+  height: 5rem;
+  overflow: auto;
+}
+
 .item-attributes {
   display: flex;
   justify-content: space-between;
@@ -96,4 +110,8 @@ code {
 
 .alert {
   color: red;
+}
+
+.message-counting {
+  color: grey;
 }

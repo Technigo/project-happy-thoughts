@@ -1,5 +1,5 @@
 import React from "react";
-import { formatRelative } from "date-fns";
+import { formatDistance } from "date-fns";
 
 const Item = ({ item, handleOnLike }) => {
   const { _id, message, hearts, createdAt } = item;
@@ -19,7 +19,7 @@ const Item = ({ item, handleOnLike }) => {
           <span className="count"> x {hearts}</span>
         </div>
         <div className="posted">
-          {formatRelative(new Date(createdAt), new Date())}
+          {formatDistance(new Date(createdAt), new Date())} ago
         </div>
       </div>
     </li>
