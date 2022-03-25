@@ -1,8 +1,6 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A Happy Thoughts site where you can collect your's and others happy thoughts. The API is public. Built in React.
 
 ## The problem
 
@@ -10,4 +8,4 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-happy-thoughts-linneafrisk.netlify.app/

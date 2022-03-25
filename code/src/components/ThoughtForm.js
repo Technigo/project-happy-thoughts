@@ -16,7 +16,7 @@ const ThoughtForm = ({onFormSubmit, setNewThought, newThought}) => {
           ></textarea>
             
           <div className="button-count">
-            <button disabled = {newThought.length<5  || newThought.length>140}type="submit" className="submit-button">
+            <button disabled = {newThought.length<5  || newThought.length>140} type="submit" className="submit-button">
               <div className="send-wrapper">
                 <img src={heart} alt="red heart" className="heart"></img> 
                 <span className="send-happy">Send Happy Thought</span>
@@ -32,6 +32,9 @@ const ThoughtForm = ({onFormSubmit, setNewThought, newThought}) => {
           )}
             {newThought.length >140 && (
             <p className="error-message"> Your message must be less than 140 characters long</p>
+          )}
+           {newThought.length >5  && newThought.length<140  && (
+            <p className="error-message"></p>
           )}
       </form>
 

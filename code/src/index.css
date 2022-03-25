@@ -219,4 +219,17 @@ h1 {
   .message-container, .form-container{
     width: 660px;
   }
+
+  
+}
+
+@media (max-width:667px) {
+  .character-count {
+    margin-right: 20px;
+  }
+
+  .send-wrapper img {
+    width: 50px;
+    
+  }
 }
