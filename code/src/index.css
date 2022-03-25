@@ -24,7 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inconsolata", "Courier New", Courier, monospace;
-  background: linear-gradient(228deg, #ffcfcf 15%, #fddada 30%, #f8c6c69e 40%);
+  background: linear-gradient(230deg, #eea4a4 15%, #fff5f5 30%, #f8c6c6f0 40%);
   line-height: 1.7;
 }
 
@@ -35,6 +35,7 @@ header {
   margin-bottom: 20px;
   text-align: center;
   max-width: 375px;
+  color: var(--clr-white);
 }
 
 .page {
@@ -58,10 +59,10 @@ h2 {
 .thought-form {
   margin-top: 20px;
   background: #f2f0f0;
-  padding: 20px;
+  padding: 17px;
   border: 1px solid;
   box-shadow: 5px 10px;
-  margin: 10px;
+  margin: 15px;
 }
 
 .btn-happy-thought {
@@ -77,6 +78,7 @@ h2 {
 .message-length-ok {
   color: var(--clr-grey);
   font-size: 14px;
+  margin-top: 12px;
 }
 
 .message-length-error {
@@ -96,7 +98,7 @@ h2 {
 /* THOUGHT MESSAGES */
 .thought-box {
   border: 1px solid black;
-  margin: 20px 10px 20px 10px;
+  margin: 20px 15px 20px 15px;
   padding: 1em;
   box-shadow: 7px 10px;
   font-family: "Roboto", sans-serif;
@@ -127,6 +129,7 @@ h2 {
   display: flex;
   align-items: center;
   margin: 0 0.5em;
+  margin-top: 0.2em;
 }
 
 .heart-btn {
@@ -153,9 +156,7 @@ h2 {
   font-size: 16px;
   text-align: center;
   color: var(--clr-black);
-  margin-top: 50px;
-  margin-bottom: 20px;
-  letter-spacing: 0.1px;
+  margin: 40px 20px 30px 20px;
 }
 
 .footer-link {

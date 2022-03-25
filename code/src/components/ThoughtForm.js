@@ -36,7 +36,7 @@ const ThoughtForm = (props) => {
                  className="text-input"
                  rows='5'
                  columns='140'
-                 placeholder="Write a happy thought..."
+                 placeholder="Type something... :)"
                  type="text"
                  name="thought"
                  value={newThought}

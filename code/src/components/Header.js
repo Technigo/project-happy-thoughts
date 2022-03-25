@@ -5,7 +5,7 @@ const Header = () => {
     return (
 
         <header>
-            <h1>Share your happy thoughts <span role="img" aria-label="sparkling emoji">✨ </span></h1>
+            <h1>Share your happy thoughts <span role="img" aria-label="heart emoji">💖 </span></h1>
 
         </header>
 
