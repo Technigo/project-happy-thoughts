@@ -210,11 +210,6 @@ footer {
   height: 45px;
 }
 
-.heart-button-no-like:hover {
-  background-color: var(--fourth);
-}
-
-
 .heart-button-like {
   background-color: var(--second);
   border-radius: 50%;
@@ -223,10 +218,6 @@ footer {
   margin-right: 10px;
   width: 45px;
   height: 45px;
-}
-
-.heart-button-like:hover {
-  background-color: var(--third);
 }
 
 
@@ -368,6 +359,12 @@ footer {
   .send-button {
     padding: 5px;
     font-size: 0.9rem;
+  }
+  .heart-button-no-like:hover {
+    background-color: var(--fourth);
+  }
+  .heart-button-like:hover {
+    background-color: var(--third);
   }
 }
 
