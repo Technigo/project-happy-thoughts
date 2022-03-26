@@ -1,21 +1,53 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
 }
 
-code {
-  font-family: 'Roboto Mono', monospace;
-}
+
 :root {
 	--clr-black: #111111;
 	--clr-white: #fff;
 	--clr-primary: #dbdbdb;
 	--clr-secondary: #afadad;
 	--clr-accent: #ffadad;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 54px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+  border: none;
+  border-radius: 20px;
+  animation: bgcolor 5s infinite;
+}
+
+@keyframes bgcolor {
+  0% {
+     color: #ffadad;
+  }
+  25% {
+      color: #fff3ad;
+  }
+  50% {
+      color: #adffd3;
+  }
+  75% {
+      color: #99d8ff;
+  }
+  100% {
+      color: #a299ff;
+  }
 }
 
 .mainContainer{
@@ -34,6 +66,14 @@ textarea, textarea:active {
   outline: none;
 }
 
+textarea,
+textarea:active,
+button,
+button:active {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
 /*=====THOUGHT FORM STYLES=====*/
 .formContainer{
   border: solid 1px #000;
@@ -67,8 +107,13 @@ textarea, textarea:active {
   font-weight: 900;
 }
 
+button{
+  transition: all 0.5s ease-in-out;
+  transform: scale(1);
+}
 button:hover{
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 .errorMsg{
@@ -89,10 +134,16 @@ button:hover{
   background-color: var(--clr-white);
   width: 80%;
   max-width: 500px;
-  height:120px;
+  height:200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.likesMainContainer{
+  color: var(--clr-secondary);
+  font-family: "Roboto",sans-serif;
+  font-size: 12px;
 }
 
 .likesContainer{
@@ -104,6 +155,20 @@ button:hover{
   font-size: 12px;
 }
 
+.messageContainer{
+  display: flex;
+  margin: auto 0;
+}
+.message{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  justify-self: center;
+}
+.yourLikes{
+  font-style: italic;
+  padding-top: 1rem;
+}
 .likeBtn-liked, .likeBtn-not-liked{
   width: fit-content;
   border-radius: 15px;
@@ -150,5 +215,46 @@ button:hover{
   }
   100%{
     transform: rotate(360deg)
+  }
+}
+
+/* =====TABLETS AND DESKTOP STYLING=====*/
+@media screen and (min-width: 670px){
+  .title{
+    font-size: 74px;
+  }
+  .thoughtForm, .message{
+    font-size:18px;
+  }
+  .likesMainContainer, .errorMsg, .likesContainer{
+    font-size: 14px;
+  }
+  .likeBtn-liked, .likeBtn-not-liked{
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  .heartEmoji, .sendBtn, textarea{
+    font-size: large;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .title{
+    font-size: 94px;
+  }
+  .thoughtForm, .message{
+    font-size:20px;
+  }
+  .likesMainContainer, .errorMsg, .likesContainer{
+    font-size: 16px;
+  }
+  .likeBtn-liked, .likeBtn-not-liked{
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+  }
+  .heartEmoji, .sendBtn, textarea{
+    font-size: x-large;
   }
 }

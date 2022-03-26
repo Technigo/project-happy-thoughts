@@ -2,10 +2,12 @@ import React from "react";
 import { Likes } from "./Likes";
 
 export const ThoughtItem = ({thought}) => {
-  console.log('thought:', thought.message);
+ 
     return(
             <div className="thoughtContainer">
-              <p>{thought.message}</p>
+              <div className="messageContainer">
+                <p className="message">{thought.message}</p>
+              </div>
               <Likes 
                 hearts={thought.hearts} 
                 id={thought._id} 

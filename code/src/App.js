@@ -58,7 +58,11 @@ export const App = () => {
 
 
   return (
-    <div className="mainContainer">
+    <div>
+    <header>
+      <h1 className="title">Happy thoughts</h1>
+    </header>
+    <main className="mainContainer">
       {loading && <LoadingItem />}
       <ThoughtForm 
         onFormSubmit={handleFormSubmit} 
@@ -73,6 +77,7 @@ export const App = () => {
           />
          
       ))}
+    </main>
     </div>
   )
 }
