@@ -72,11 +72,13 @@ body {
 	flex-grow: 1;
 	margin-left: 5px;
 	font-size: 15px;
+	color: #999;
 }
 
 .time-created {
 	flex-grow: 0;
 	font-size: 15px;
+	color: #999;
 }
 
 h2 {
