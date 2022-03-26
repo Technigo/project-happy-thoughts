@@ -1,4 +1,4 @@
-import { formatDistance, formatRelative } from "date-fns";
+import { formatDistance } from "date-fns";
 import React, { useState } from "react";
 import { postLikes } from "assets/networking";
 
@@ -8,10 +8,6 @@ const MessageCard = ({ _id, message, hearts, createdAt }) => {
   const [likeCount, setLikeCount] = useState(hearts);
 
   const date = formatDistance(new Date(createdAt), new Date(), { addSuffix: true });
-
-  // const handleOnClick = () => {
-  //   postLikes(_id, hearts, (data) => setLikeCount(data.hearts));
-  // };
 
   return (
     <div className="message-container">
