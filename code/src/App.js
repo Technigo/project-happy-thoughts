@@ -59,7 +59,7 @@ export const App = () => {
 
   return (
     <div>
-    <header>
+    <header className="header">
       <h1 className="title">Happy thoughts</h1>
     </header>
     <main className="mainContainer">
