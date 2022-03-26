@@ -31,13 +31,10 @@ const SendMessageCard = ({ setMessages }) => {
         maxLength="140"
         required
         autoFocus
-        onChange={(e) => setMessageInput(e.target.value)}
+        onChange={(event) => setMessageInput(event.target.value)}
       />
-      <button
-        type="submit"
-        className="message-send-button"
-        disabled={messageInput.length >= 5 ? false : true}
-      >
+      <p className="message-input-count">{messageInput.length} / 140</p>
+      <button type="submit" className="message-send-button" disabled={messageInput.length < 5}>
         <span role="img" aria-label="heart emoji">
           ❤️
         </span>{" "}
