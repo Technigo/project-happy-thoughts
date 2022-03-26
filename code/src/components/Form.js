@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+
 import Recent from './Recent'
 import Create from './Create'
 
@@ -25,8 +26,8 @@ const Form = () => {
     const handleNewThoughtChange = (event) => {
         setnewThought(event.target.value)
     }
-
-    const onFormSubmit = (event) => {
+   
+    const handleFormSubmit = (event) => {
         event.preventDefault()
     
         const options = {
@@ -44,36 +45,35 @@ const Form = () => {
         .then(data => fetchThoughts())
         .finally(() => setnewThought(''))
     }
-//start kopierad
 
-//     const onLikePost = (event) => {
-//         event.preventDefault()
-    
-//         const options = {
-//           method: 'POST',
-//           headers: {'Content-Type': 'application/json'},
-//         }
-    
-//         fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, options)
-//         .then(res => res.json())
-//         .then(data => console.log(data))
+
+    const handleLikeIncrease = (thoughts_id) => {
       
-//     }
-// // slut på kopierad (obs..backticksen på rad 57) vad händer vid klicket, 
-// //addera counter och koppla till hjärtat. setstate-historia
+        const options = {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+        }
     
-
+        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughts_id}/like`, options)
+        .then(res => res.json())
+        .then(() => {
+            fetchThoughts()
+        })
+        
+    }
+    
     return (
       <div className='form-box'>
         <Create 
           newThought={newThought} 
           onNewThoughtChange={handleNewThoughtChange} 
-          onFormSubmit={onFormSubmit} 
-        //   onLikePost={onLikePost}
+          onFormSubmit={handleFormSubmit} 
+      
         />
         <Recent 
           loading={loading} 
           thoughts={thoughts}
+          onLikeIncrease={handleLikeIncrease}
         />
       </div>
     )
