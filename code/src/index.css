@@ -1,13 +1,154 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: 'Roboto Mono', monospace;
+}
+:root {
+	--clr-black: #111111;
+	--clr-white: #fff;
+	--clr-primary: #dbdbdb;
+	--clr-secondary: #afadad;
+	--clr-accent: #ffadad;
+}
+
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+textarea{
+  height: 70px;
+}
+
+textarea, textarea:active {
+  outline: none;
+}
+
+/*=====THOUGHT FORM STYLES=====*/
+.formContainer{
+  border: solid 1px #000;
+  width: fit-content;
+  padding: 1rem;
+  box-shadow: 5px 5px var(--clr-black);
+  background-color: var(--clr-primary);
+  width: 80%;
+  max-width: 500px;
+}
+
+.thoughtForm{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sendContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sendBtn{
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 40px;
+  font-family: 'Roboto Mono', monospace;
+  border:none;
+  background-color: var(--clr-accent);
+  font-weight: 900;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.errorMsg{
+  color: red;
+  font-family: "Roboto",sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  margin:0;
+  padding: 0;
+}
+
+/*=====THOUGHT ITEM STYLES=====*/
+.thoughtContainer{
+  border: solid 1px #000;
+  width: fit-content;
+  padding: 1rem;
+  box-shadow: 5px 5px var(--clr-black);
+  background-color: var(--clr-white);
+  width: 80%;
+  max-width: 500px;
+  height:120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.likesContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--clr-secondary);
+  font-family: "Roboto",sans-serif;
+  font-size: 12px;
+}
+
+.likeBtn-liked, .likeBtn-not-liked{
+  width: fit-content;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+.likeBtn-liked{
+  background-color: var(--clr-accent);
+}
+.likeBtn-not-liked{
+  background-color: var(--clr-primary);
+}
+
+/*=====LOADING STYLES=====*/
+.loading-overlay{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner{
+  width: 50px;
+  height: 50px;
+  border: 5px solid #cdcdcd;
+  border-radius: 50%;
+  border-left: 5px solid #fff;
+  animation: spinner infinite 0.5s;
+  display: inline-block;
+}
+
+@keyframes spinner {
+  0%{
+    transform: rotate(0)
+  }
+  50%{
+    transform: rotate(180deg)
+  }
+  100%{
+    transform: rotate(360deg)
+  }
 }
