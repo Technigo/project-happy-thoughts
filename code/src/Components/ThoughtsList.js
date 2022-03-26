@@ -6,7 +6,7 @@ const ThoughtsList = ({ loading, thoughtsList, onLikesIncrease}) => {
 
 
         if (loading) {
-            return <h1>Loading in progess...</h1>
+            return <h1 className="load">Loading in progess...</h1>
         }
 
         return (
@@ -20,10 +20,11 @@ const ThoughtsList = ({ loading, thoughtsList, onLikesIncrease}) => {
                         <button className={(singleThought.hearts === 0 ? "like-button" : "red-likebutton")} onClick={() => onLikesIncrease(singleThought._id)}> 
                         <span className="emoji" role="img" aria-label="heart">❤️ </span> </button> 
                         <p>   x {singleThought.hearts}</p>
-                    </div>
+                        </div>
                       <p>{formatDistance(new Date(singleThought.createdAt), Date.now(), {addSuffix: true
                          })}
                       </p>
+                      
 
                     </div>
                     </div>))}
