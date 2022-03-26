@@ -8,7 +8,7 @@ const Form = ( { onFormSubmit, newThought, onSetThoughtChange } ) => {
                 onSubmit={onFormSubmit}
                 className='form-content'
             >
-                <h3>What's making you happy right now?</h3>
+                <h1>What's making you happy right now?</h1>
                 <label htmlFor='new-thought'>
                     <textarea 
                         className='input-text'
@@ -19,6 +19,7 @@ const Form = ( { onFormSubmit, newThought, onSetThoughtChange } ) => {
                         id='new-thought'
                         name='new-thought'
                         placeholder='A penny for your thought!'
+
                     />
                 </label>
                 <button 
