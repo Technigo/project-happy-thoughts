@@ -151,7 +151,7 @@ button:hover{
   background-color: var(--clr-white);
   width: 80%;
   max-width: 500px;
-  height:200px;
+  height:auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -172,10 +172,6 @@ button:hover{
   font-size: 12px;
 }
 
-.messageContainer{
-  display: flex;
-  margin: auto 0;
-}
 .message{
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -262,6 +258,9 @@ button:hover{
   .heartEmoji, .sendBtn, textarea{
     font-size: large;
   }
+  textarea{
+    height: 85px;
+  }
 }
 
 @media screen and (min-width: 1100px){
@@ -281,5 +280,8 @@ button:hover{
   }
   .heartEmoji, .sendBtn, textarea{
     font-size: x-large;
+  }
+  textarea{
+    height: 100px;
   }
 }
