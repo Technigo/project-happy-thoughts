@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { formatDistance } from 'date-fns'
 
 import API_URL from 'utils/Api'
 
@@ -27,9 +26,17 @@ export const Collection = () => {
             .finally(() => setLoading(false))
     }
 
+
+
     const onFormSubmit = (event) => {
         event.preventDefault()
 
+        const token = {
+            method: 'GET',
+            headers: {
+                Authorization: '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'
+            }
+        }
         const options = {
             method: 'POST',
             headers: {
@@ -38,7 +45,9 @@ export const Collection = () => {
             body: JSON.stringify({ message: newMessage }),
         }
 
-        fetch(API_URL, options)
+
+
+        fetch(API_URL, options, token)
             .then(res => res.json())
             .then(data => console.log(data))
             .finally(() => window.location.reload())
@@ -56,7 +65,6 @@ export const Collection = () => {
             .then((data) => setFetchThought(data))
     }, [])
 
-    console.log(fetchThought)
 
     return (
         <div>
@@ -66,20 +74,22 @@ export const Collection = () => {
                 onFormSubmit={onFormSubmit} />
 
             <SentMessage
-            newMessage={newMessage} />
-            <section className="sent-message-container">
-                {fetchThought.map(message => (
-                    <article key={message._id}>
-                        <p>{message.message}</p>
-                        <p>{formatDistance(new Date(message.createdAt), Date.now(), {
-                            addSuffix: true,
-                        })}</p>
-                    </article>
-                ))}
-            </section>
+                newMessage={newMessage}
+                fetchThought={fetchThought} />
         </div>
     )
 }
 
 
 export default Collection
+
+{/* <section className="sent-message-container">
+    {fetchThought.map(message => (
+        <article key={message._id}>
+            <p>{message.message}</p>
+            <p>{formatDistance(new Date(message.createdAt), Date.now(), {
+                addSuffix: true,
+            })}</p>
+        </article>
+    ))}
+</section> */}

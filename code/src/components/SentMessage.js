@@ -1,20 +1,32 @@
 import React from 'react'
 import { formatDistance } from 'date-fns'
-import Message from './Message'
 
-const SentMessage = ({ onFormSubmit, newMessage, setNewMessage, message }) => {
+
+const SentMessage = ({ onFormSubmit, fetchThought }) => {
 
     return (
         <div className="message-send-container">
-            
-            <form onSubmit={onFormSubmit} className="message-container">
-            <p className="sent-message-texts" >my thougt that I sent</p>
+            {fetchThought.map(message => (
+                <form onSubmit={onFormSubmit} key={message._id}>
+                    <section className="sent-message-container">
+                        <article key={message._id}>
+                            <p className="sent-message">{message.message}</p>
+                        </article>
 
-            <div className="like-counter-section">
-            <button className="like-btn" type="submit">💓</button>
-            <p>x</p>
-            </div>
-            </form>
+                        
+                        <div className="like-counter-section">
+                            <div className="button-and-likes">
+                            <button className="like-btn" type="submit"><span role="img" aria-label="heart emoji">💓</span></button>
+                            <p className="hearts-amount">x{message.hearts}</p>
+                            </div>
+                            <div className="date-container">
+                            <p className="date">{formatDistance(new Date(message.createdAt), Date.now(), { addSuffix: true, })}</p>
+                            </div>
+                        </div>
+
+                    </section>
+                </form>
+            ))}
         </div>
     )
 }
