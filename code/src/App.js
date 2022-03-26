@@ -46,7 +46,8 @@ export const App = () => {
             .finally(() => setNewMessage(''));
           }
 
-
+          // the amount of heart-likes are updated in the API element 'hearts' så what we do is fetch again after we clicked and 
+          // increased it and with id we target that exact heart-like they clicked on
   const handleHearts = (_id) => {
 
     const options =  {

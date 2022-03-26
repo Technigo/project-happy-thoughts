@@ -15,7 +15,8 @@ export const HappyMessages = ({ loading, twentyThoughts, handleHearts }) => {
             <button onClick={() => handleHearts(twentyThoughts._id)}>
             <span role="img" aria-label="heart">🧡</span>
             </button> 
-        </div> //fixa onClick som triggar fetchen... och en counter
+            <span> x {twentyThoughts.hearts}</span>
+        </div>
             )
         }
 
