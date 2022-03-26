@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The assigment is about fetching and using the happy-thoughts api, with the help of React applying it to the UI.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The approach was by React, momment.js for the time upload and some tachyons for some style. If I had more time, the next would be some animations, but it was a bit difficult.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://grand-paletas-f56f32.netlify.app/
