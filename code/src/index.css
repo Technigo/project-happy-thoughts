@@ -84,9 +84,7 @@ textarea, textarea:active {
 }
 
 textarea,
-textarea:active,
-button,
-button:active {
+textarea:active {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
