@@ -1,12 +1,7 @@
 import React from 'react'
 import moment from 'moment';
 
-// 
-export const HappyMessages = ({ loading, twentyThoughts, handleHearts }) => { 
-
-           if (loading) {
-            return <h1>Loading happy thoughts ...</h1>
-    }
+export const HappyMessages = ({ twentyThoughts, handleHearts }) => { 
 
     return (
         <div className="message-card"> 

@@ -4,8 +4,6 @@ import { Form } from "Components/Form";
 
 export const App = () => {
   const [twentyThoughts, setTwentyThoughts] = useState([]);
-   const [loading, setLoading] = useState(false);
-
   const [newMessage, setNewMessage] = useState('');
 
   useEffect(() => {
@@ -14,11 +12,9 @@ export const App = () => {
 
 
   const fetchTwentyThoughts = () => {
-    setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then(res => res.json())
-      .then(data => setTwentyThoughts(data))
-          .finally(() => setLoading(false));
+      .then(data => setTwentyThoughts(data));
       }
 
       const handleNewMessageChange = (event) => {
@@ -43,7 +39,7 @@ export const App = () => {
             .then(res => res.json()) //space suit
             .then(() => fetchTwentyThoughts()) //refetch data, make sure the message is posted without having to refresh 
             // data => console.log(data)
-            .finally(() => setNewMessage(''));
+            .finally(() => setNewMessage('')); //removes the happy thought from the form
           }
 
           // the amount of heart-likes are updated in the API element 'hearts' så what we do is fetch again after we clicked and 
@@ -74,7 +70,6 @@ export const App = () => {
         <HappyMessages
           key={twentyThoughts._id}
           twentyThoughts={twentyThoughts}
-          loading={loading}
           handleHearts={handleHearts}
         />
          ))}
