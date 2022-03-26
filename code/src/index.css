@@ -12,55 +12,119 @@ code {
     monospace;
 }
 
-.flex-container{
+.flex-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(to bottom right,#ff8d8c,#ffc6c6,#ffd1d1,#ffdddd);
-  
+  background-image: linear-gradient(
+    to bottom right,
+    #ff8d8c,
+    #ffc6c6,
+    #ffd1d1,
+    #ffdddd
+  );
 }
-.content-container{
+.content-container {
   width: 77vw;
 }
-.form-card{
-  border:solid 1px; 
+.form-card {
+  border: solid 1px;
   box-shadow: 15px 11px 1px -4px;
   margin: 20px 0;
-  width: 60vw;
-  height: 32vh;
+  width: 80vw;
+  height: 30vh;
   background-color: #f1eeeb;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Roboto Mono', monospace;
 }
 
-.form-heading h1{
-  font-size: 16px;
+.form-heading h1 {
+  font-size: 12px;
   font-weight: 500;
 }
-.textarea{
-  width: 45vw;
+.textarea {
+  width: 60vw;
   height: 10vh;
   margin-bottom: 20px;
 }
-.new-message-btn{
+.send-message-btn {
   width: 200px;
   height: 38px;
-  border-radius:20px 20px;
+  border-radius: 20px 20px;
   background-color: #ff8d8c;
-  border:transparent;
+  border: transparent;
   display: block;
 }
-.heart-emoji{
+.heart-emoji {
   margin: 5px;
 }
-.message-container{
-  border:solid 1px;
+.message-card {
+  border: solid 1px;
   background-color: white;
   box-shadow: 15px 11px 1px -4px;
   margin: 20px 0;
-  width: 60vw;
+  width: 80vw;
   height: 20vh;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+}
+.message-container {
+  word-wrap: break-word;
+  height: 65%;
+  width: 80%;
+  margin-top: 15px;
+  overflow:scroll;
+  font-size: 12px;
+}
+.likes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  width: 80%;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.likebtn {
+  border-radius: 50%;
+  border: transparent;
+  height: 39px;
+  width: 41px;
+}
+.likebtn:active{
+  background-color: #ff8d8c;
+}
+.likes {
+  color: gray;
+  margin-left: 10px;
+}
+@media screen and (min-width: 768px) {
+  .form-card {
+    width: 60vw;
+    height: 25vh;
+  }
+  .form-heading h1 {
+    font-size: 16px;
+  }
+  .message-card {
+    width: 60vw;
+    height: 15vh;
+  }
+  .textarea {
+    width: 45vw;
+    height: 10vh;
+  }
+  .message-container{
+    font-size: 16px;
+    overflow: hidden;
+  }
+.likes-container {
+  font-size: 16px;
+}
+
 }

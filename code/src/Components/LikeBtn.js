@@ -19,7 +19,12 @@ const LikeBtn = ({ messageID, messages, fetchMessages }) => {
 
   return (
     <div>
-      <button onClick={sendLike}><span role="img" aria-label="Heart-emoji">❤️</span></button>x{messages.hearts}
+      <button className="likebtn" onClick={sendLike}>
+        <span role="img" aria-label="Heart-emoji">
+          ❤️
+        </span>
+      </button>
+      <span className="likes">x{messages.hearts}</span>
     </div>
   );
 };

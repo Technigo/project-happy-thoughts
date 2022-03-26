@@ -10,15 +10,22 @@ const ListOfMessages = ({ loading, messages, fetchMessages }) => {
   return (
     <section>
       {messages.map((singleMessage) => (
-        <div key={singleMessage._id} className="message-container">
-          <p>{singleMessage.message}</p>
-
-          <p>{formatDistance(new Date(singleMessage.createdAt), Date.now())}</p>
-          <LikeBtn
-            messageID={singleMessage._id}
-            messages={singleMessage}
-            fetchMessages={fetchMessages}
-          />
+        <div key={singleMessage._id} className="message-card">
+          <div className="message-container">
+            <p>{singleMessage.message}</p>
+          </div>
+          <div className="likes-container">
+            <LikeBtn
+              messageID={singleMessage._id}
+              messages={singleMessage}
+              fetchMessages={fetchMessages}
+            />
+            <span className="likes">
+              <p>
+                {formatDistance(new Date(singleMessage.createdAt), Date.now())}
+              </p>
+            </span>
+          </div>
         </div>
       ))}
     </section>
