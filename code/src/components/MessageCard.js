@@ -16,7 +16,7 @@ const MessageCard = ({ _id, message, hearts, createdAt }) => {
         <div className="message-heart-group">
           <button
             type="button"
-            className={likeCount > 0 ? "message-heart-button clicked" : "message-heart-button"}
+            className={likeCount ? "message-heart-button clicked" : "message-heart-button"}
             onClick={() => postLikes(_id, hearts, (data) => setLikeCount(data.hearts))}
           >
             {" "}
