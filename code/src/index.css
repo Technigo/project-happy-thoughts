@@ -113,6 +113,16 @@ textarea:focus {
   margin-right: 10px;
 }
 
+.char-count {
+  font-size: .8em;
+  color: grey;
+  margin-left: 80px;
+}
+
+.loading-thoughts {
+  font-size: 3em;
+}
+
 footer a {
   text-decoration: none;
   color: black;

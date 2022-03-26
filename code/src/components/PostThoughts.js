@@ -3,6 +3,7 @@ import React, { useState } from "react"
 
 const PostThoughts = () => {
     const [newThought, setNewThought] = useState("");
+    const [charCount, setCharCount] = useState(0)
 
     const onThoughtSubmit = (event) => {
 
@@ -25,6 +26,10 @@ const PostThoughts = () => {
             })
     }
 
+    const onCharCountValueChange = (event) => {
+        setNewThought(event.target.value)
+        setCharCount(event.target.value.length)
+    }
     return (
         <section>
             <div className="post-thought-container">
@@ -35,7 +40,7 @@ const PostThoughts = () => {
                             value={newThought}
                             placeholder="...makes me happy"
                             name="thought"
-                            onChange={(event) => setNewThought(event.target.value)}
+                            onChange={onCharCountValueChange}
                             maxLength="140"
                         />
                     </label>
@@ -46,6 +51,7 @@ const PostThoughts = () => {
                     >
                        <span role="img" aria-label="heart emoji">💖</span> Send Happy Thoughts <span role="img" aria-label="heart emoji">💖</span>
                     </button>
+                    <span className="char-count">{charCount}/140</span>
                 </form>
             </div>
         </section>

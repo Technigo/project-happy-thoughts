@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { formatDistance } from "date-fns";
 
 
-const DisplayThoughts = ({ newThought }) => {
+const DisplayThoughts = () => {
     const [thoughts, setThoughts] = useState([]);
 
     useEffect(() => {
