@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week we practiced on fetching API with useEffect to render a list of public posts. The task was also being able to like and post a message using a form. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+A problem I encountered was clearing the input field after submitting a message. This was solved by adding an empty string in a function after fecthing and getting the response from the API. I also had difficulties to start working with the project after reading the course description. After doing some sketches on a piece of paper things became much more clearer and I could start working in VS code. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://polite-gumption-c6b3c8.netlify.app/
