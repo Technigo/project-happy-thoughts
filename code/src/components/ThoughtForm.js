@@ -11,16 +11,12 @@ const ThoughtForm = ( { onFormSubmit, newThought, setNewThought } ) => {
     id="newThought"
     type="text"
     value={newThought}
-onChange={(event) => setNewThought(event.target.value)} maxLength="140"
+onChange={(event) => setNewThought(event.target.value)} 
 placeholder="Type here..."
-rows="1">
+rows="4">
 </textarea>
 
-<div className="counter">
-    <span className={newThought.length < 140}>
-        {newThought.length}</span>140
-    
-</div>
+<div className="counter"></div>
 
 <button 
 className="big-button"

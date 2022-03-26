@@ -1,29 +1,26 @@
 import React from "react";
+import { formatDistance } from "date-fns";
 
+const ThoughtItem=({thought, onLikesIncrease}) => {
+  return(
+    <main>
+<div className="comment-container">COMMENT-CONTAINER</div>
+<p className="thought-text">THOUGHT MESSAGE</p>
 
-const ThoughtItem = ( { thought, onLikesIncrease } ) => {
+<div className="like-box">LIKE-BOX
+<div className="heart">HEART
+<button className="like-button" onClick={() => onLikesIncrease}>LIKE-BUTTON</button>
 
-return (
-    <div className="comment-container">
-        <p className="thought-text">{thought.message}</p>
+<p className="likes">LIKES</p>
+</div>
 
-<div className="like-box">
-    <div className="heart">
-        <button className="like-button" onClick={( ) => onLikesIncrease (thought._id)}>
-        {" "}
-    <span className="heart"></span>
-{thought.hearts}
-        </button> 
-
-    </div>
+<p className="date">DATE</p>
 
 
 </div>
 
-
-    </div>
-
-);
-};
+    </main>
+  )
+}
 
 export default ThoughtItem;
