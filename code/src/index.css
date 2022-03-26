@@ -68,6 +68,9 @@ button {
   height: 40px;
   background-color: #FFB6C1;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button:hover {
