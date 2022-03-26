@@ -57,6 +57,7 @@ code {
   padding: 0.5em;
   font-size: 16px;
   color: black;
+  resize: none;
 }
 
 .submit-btn {

@@ -47,7 +47,7 @@ export const Overview = () => {
 
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
       .then((res) => res.json())
-      . then(() => fetchThoughts())
+      .then(() => fetchThoughts())
   }
 
   return (
