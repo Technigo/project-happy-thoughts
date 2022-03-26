@@ -8,19 +8,22 @@ import { formatDistance } from 'date-fns';
 const RecentThoughts = ({ thoughts, handleLikesInc }) => {
   return (
     <section className='thoughts-container'>
-      <p>Recent Thoughts</p>
       {thoughts.map((thought) => (
         <div className='thoughts-message' key={thought._id}>
           <p className='thoughts-txt'>{thought.message}</p>
-          <button className='heart-btn' onClick={() => handleLikesInc(thought._id)}>
-            <span>{'❤️'}</span>
-          </button>
-          <span> x {thought.hearts}</span>
-          <p>
+          <div className='group-container'>
+            <div className='heart-times-gr'>
+            <button className='heart-btn' onClick={() => handleLikesInc(thought._id)}>
+              <span>{'❤️'}</span>
+            </button>
+            <span className='times-liked'> x {thought.hearts}</span>
+          </div>
+          <p className='time-txt'>
             {formatDistance(new Date(thought.createdAt), Date.now(), {
               addSuffix: true,
             })}
           </p>
+          </div>
         </div>
       ))}
     </section>

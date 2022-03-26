@@ -23,13 +23,38 @@ code {
 }
 
 .thoughts-container {
-  width: 65vw;
+  width: 60vw;
 }
 
 .thoughts-message {
   border-style: solid;
-  margin: 5px;
+  /* margin: 5px; */
+  margin-bottom: 30px;
+  padding: 0 10px 15px 10px;
   display: flex;
   flex-direction: column;
-  /* box-shadow: 7px 7px red; */
+  box-shadow: 5px 5px black;
 }
+
+.group-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.heart-times-gr {
+
+}
+
+.heart-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgb(234,234,234);
+  border-style: none;
+}
+
+.times-liked, .time-txt {
+  color: rgb(134,134,134);
+}
+
