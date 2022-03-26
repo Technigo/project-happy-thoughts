@@ -37,13 +37,15 @@ code {
 }
 
 .form-div {
-  background-color: lightgrey;
+  background-color: white;
+  border: 2px solid grey;
+  box-shadow: 8px 7px 5px black;
   margin: 30px;
   width: 80vw;
-  height: 40vh;
+  height: 60vh;
   padding-left: 20px;
   padding-right: 20px;
-  /* text-align: center; */
+  text-align: center;
 }
 
 .form-div input {
@@ -67,11 +69,37 @@ code {
   .form-div {
     margin: 30px;
     width: 30vw;
-    height: 30vh;
+    height: 50vh;
   }
   
   .form-div input {
     width: 30vw;
     height: 50px;
+  }
+
+  .form-button {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .form-div {
+    margin: 30px;
+    width: 30vw;
+    height: 30vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .form-div {
+    margin: 30px;
+    width: 30vw;
+    height: 35vh;
+  }
+  
+  .form-div input {
+    width: 20vw;
+    height: 30px;
   }
 }

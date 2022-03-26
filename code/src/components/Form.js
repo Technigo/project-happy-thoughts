@@ -15,7 +15,7 @@ const Form = ({ getApiData }) => {
         message: userInput
       })
     }
-
+    
     await fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
     getApiData();
   }
@@ -29,7 +29,7 @@ const Form = ({ getApiData }) => {
     <div className="form-div">
       <form onSubmit={handleSubmit}>
         <label htmlFor="form">
-          <h1>What&apos;s making you happy right now?</h1>
+          <h1 style={{color: 'pink'}}>What&apos;s making you happy right now?</h1>
           <input
             id="form"
             type="text"
