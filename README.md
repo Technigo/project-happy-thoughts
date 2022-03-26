@@ -10,4 +10,8 @@ If I had more time I would try to understand the different parts of React (like 
 
 ## View it live
 
+<<<<<<< HEAD
 https://haappythoughts.netlify.app/
+=======
+https://haappythoughts.netlify.app/
+>>>>>>> e2a6e6f0fea577f7531375510079ed42ec1849cc
