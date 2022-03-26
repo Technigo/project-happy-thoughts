@@ -82,14 +82,3 @@ export const Collection = () => {
 
 
 export default Collection
-
-{/* <section className="sent-message-container">
-    {fetchThought.map(message => (
-        <article key={message._id}>
-            <p>{message.message}</p>
-            <p>{formatDistance(new Date(message.createdAt), Date.now(), {
-                addSuffix: true,
-            })}</p>
-        </article>
-    ))}
-</section> */}
