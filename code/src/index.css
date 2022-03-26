@@ -44,6 +44,11 @@ body {
 
 }
 
+h3{
+  margin: 0.5rem;
+  text-align: center;
+}
+
 @keyframes bgcolor {
   0% {
      color: #ffadad;
@@ -115,7 +120,7 @@ button:active {
   border-radius: 40px;
   font-family: 'Roboto Mono', monospace;
   border:none;
-  background-color: var(--clr-accent);
+  background-color: #fff3ad;
   font-weight: 900;
 }
 
@@ -189,7 +194,7 @@ button:hover{
   border: none;
 }
 .likeBtn-liked{
-  background-color: var(--clr-accent);
+  background-color: #fff3ad;
 }
 .likeBtn-not-liked{
   background-color: var(--clr-primary);
@@ -230,8 +235,16 @@ button:hover{
   }
 }
 
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0 2.5rem 0;
+}
+
 /* =====TABLETS AND DESKTOP STYLING=====*/
-@media screen and (min-width: 670px){
+@media screen and (min-width: 768px){
   .title{
     font-size: 74px;
   }
@@ -251,7 +264,7 @@ button:hover{
   }
 }
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1100px){
   .title{
     font-size: 94px;
   }

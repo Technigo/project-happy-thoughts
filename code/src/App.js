@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react'
 import { ThoughtForm } from 'components/ThoughtForm'
 import { ThoughtItem } from 'components/ThoughtItem'
 import { LoadingItem } from 'components/LoadingItem'
+import { Header } from 'components/Header'
+import { Footer } from 'components/Footer'
 
 import  { API_URL } from './utils/urls'
 
@@ -59,9 +61,7 @@ export const App = () => {
 
   return (
     <div>
-    <header className="header">
-      <h1 className="title">Happy thoughts</h1>
-    </header>
+    <Header />
     <main className="mainContainer">
       {loading && <LoadingItem />}
       <ThoughtForm 
@@ -77,6 +77,7 @@ export const App = () => {
           />
          
       ))}
+      <Footer />
     </main>
     </div>
   )

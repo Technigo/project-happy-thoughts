@@ -30,7 +30,7 @@ return(
                     <span 
                     className="heartEmoji"
                     role="img" 
-                    aria-label="heart emoji">❤️</span></button>
+                    aria-label="heart emoji">💙</span></button>
                 <span> X {like}</span>
             </div>
             <p className="date">{moment(date).fromNow()}</p>
