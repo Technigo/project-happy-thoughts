@@ -10,7 +10,7 @@ const ListOfMessages = ({ loading, messages, fetchMessages }) => {
   return (
     <section>
       {messages.map((singleMessage) => (
-        <div key={singleMessage._id}>
+        <div key={singleMessage._id} className="message-container">
           <p>{singleMessage.message}</p>
 
           <p>{formatDistance(new Date(singleMessage.createdAt), Date.now())}</p>

@@ -44,18 +44,24 @@ export const Main = () => {
   };
 
   return (
-    <section>
-      <NewMessageForm
-        newMessage={newMessage}
-        onMessageSubmit={handleMessageSubmit}
-        onNewMessageSubmit={onNewMessageSubmit}
-      />
-      <ListOfMessages
-        loading={loading}
-        messages={messages}
-        fetchMessages={fetchMessages}
-      />
-    </section>
+    <main>
+      <div className="flex-container">
+        <div className="content-container">
+          <NewMessageForm
+            newMessage={newMessage}
+            onMessageSubmit={handleMessageSubmit}
+            onNewMessageSubmit={onNewMessageSubmit}
+          />
+        
+       
+          <ListOfMessages
+            loading={loading}
+            messages={messages}
+            fetchMessages={fetchMessages}
+          />
+        </div>
+      </div>
+    </main>
   );
 };
 export default Main;
