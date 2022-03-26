@@ -1,5 +1,5 @@
 .message-container {
-	display: block;
+  display: block;
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
   border: 1px solid black;
@@ -27,17 +27,25 @@
 }
 
 .message-heart-button {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
   border: none;
   border-radius: 50%;
   background-color: rgb(242, 240, 240);
   font-size: 12px;
+  cursor: pointer;
+}
+
+.clicked {
+  background-color: rgb(255, 173, 173, 1);
+}
+
+.message-heart {
+  font-size: 14px;
 }
 
 .message-heart-count,
 .message-date {
   color: grey;
-  font-size: 12px;
 }
