@@ -14,8 +14,14 @@ code {
 }
 
 p {
-  font-family: "Roboto", sans-serif;
+  font-family: "Trispace", sans-serif;
   word-wrap: break-word;
+}
+
+header{
+  justify-content: center;
+  display: flex;
+  margin: 30px;
 }
 
 .letter-counter {
@@ -66,6 +72,10 @@ textarea {
   margin: 10px 6px 0px 0px;
 }
 
+.like-heart {
+
+}
+
 .like-btn:hover {
   color: rgb(223, 200, 200);
   cursor: pointer;
@@ -78,7 +88,7 @@ textarea {
 
 .submit-btn {
   border: none;
-  background: #f737378e;  
+  background: #f737378e;
   border-radius: 30px;
   padding: 13px 30px;
   margin-bottom: 10px;

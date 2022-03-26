@@ -4,9 +4,7 @@ const RefreshBtn = ({ Refresh }) => {
   window.location.reload("Refresh")
 
   return (
-    <button value="Refresh" onClick={Refresh}>
-      Refresh feed
-    </button>
+    <button value="Refresh" onClick={Refresh}>Refresh</button>
   )
 }
 

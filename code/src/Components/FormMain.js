@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { formatRelative } from "date-fns";
 
 
 import FormInput from "Components/FormInput"
@@ -8,29 +7,29 @@ import FormList from "Components/FormList"
 
 //stores + tracks current state
 const FormMain = () => {
-  const [thoughts, setThoughts] = useState([])
+  const [thoughts, setThoughts] = useState([]) //Messages from others
+  const [load, setLoad] = useState(false) //
   const [newThought, setNewThought] = useState("")
   const [counter, setCounterValue] = useState(0)
-  const [load, setLoad] = useState(false)
 
-    const LIKES_URL = (thoughtId) => // API likes
+  const LIKES_URL = (thoughtId) => // API likes
   `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
 
-  // UseEffect hook gets all thoughts 
+  // UseEffect hook that tells what the components needs to do something after render
   useEffect(() => {
     fetchThoughts()
   }, [])
 
-  //Fetches the API and gives back the data through the state set
-  const fetchThoughts = () => {
-    setLoad(true)
-    fetch("//happy-thoughts-technigo.herokuapp.com/thoughts")
-      .then((res) => res.json())
-      .then((data) => setThoughts(data))
-      .finally(() => setLoad(false))
-  }
+     //Fetches the API and gives back the data through the state set
+     const fetchThoughts = () => {
+        setLoad(true)
+        fetch("//happy-thoughts-technigo.herokuapp.com/thoughts")
+          .then((res) => res.json())
+          .then((data) => setThoughts(data))
+          .finally(() => setLoad(false))
+      }
 
-  //POST-request to the API while submiting the input-form
+  //Sending a POST-request to the API while submiting the input-form
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -50,7 +49,7 @@ const FormMain = () => {
       })
   }
 
-  //Likes
+  //Sending a POST-request for the Likes
   const handleLikesIncrease = (thoughtId) => {
     const options = {
       method: "POST",
@@ -63,24 +62,17 @@ const FormMain = () => {
       })
   }
 
-  return (
+//Sends and presents values of FormInput and FormList trough props
+  return ( 
     <div>
         
       {load}
       <FormInput
-        onFormSubmit={handleFormSubmit}
-        newThought={newThought}
-        setNewThought={setNewThought}
-        counter={counter}
-        setCounterValue={setCounterValue}
+        setCounterValue={setCounterValue} newThought={newThought} onFormSubmit={handleFormSubmit} setNewThought={setNewThought} counter={counter}
       />
 
       {thoughts.map((thought) => (
-        <FormList
-          key={thought._id}
-          thought={thought}
-          newThought={newThought}
-          onLikesIncrease={handleLikesIncrease}
+        <FormList key={thought._id} newThought={newThought} thought={thought} onLikesIncrease={handleLikesIncrease}
         />
       ))}
     </div>

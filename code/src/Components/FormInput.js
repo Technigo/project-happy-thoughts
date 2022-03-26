@@ -1,5 +1,16 @@
 import React from "react"
 
+const setThought = (event, currentThought, setNewThought) => {
+    if (currentThought.length == 140) {
+        return 
+    }
+    else {
+        setNewThought(event.target.value)
+    }
+}
+
+
+
 const FormInput = ({
   onFormSubmit,
   setCounterValue,
@@ -7,8 +18,9 @@ const FormInput = ({
   setNewThought,
 }) => {
   const RefreshBtn = () => {
-    window.location.reload("Refresh")
+    window.location.reload("Refresh") // Look 
 }
+
 return (
   <>
     <div className="container">
@@ -16,10 +28,7 @@ return (
         
       </span>
       <div className="submit-wrapper">
-        <form
-          onSubmit={
-            ((e) => setCounterValue(e.target.value.length), onFormSubmit)
-          }
+        <form onSubmit={((event) => setCounterValue(event.target.value.length), onFormSubmit)}
         >
           <label htmlFor="newThought">
             <p>What is making you...</p>
@@ -30,9 +39,9 @@ return (
             type="text"
             placeholder="...happy right now?"
             value={newThought}
-            onChange={(e) => setNewThought(e.target.value)}
+            onChange={(event) => setThought(event, newThought, setNewThought)} 
           />
-          <p className="letter-counter">{140 - newThought.length} / 140</p>
+          <p className="letter-counter">{newThought.length} / 140</p> 
           
           <button
             className="submit-btn"
@@ -40,13 +49,10 @@ return (
             type="submit"
           >
             <span role="img" aria-label="heart">
-            </span>Send Happy Thought <span role="img" aria-label="heart"></span>
+            </span>Send a Happy Thought <span role="img" aria-label="heart"></span>
           </button>
           
-          <button
-          className="refresh-btn"
-          value="Refresh"
-          onClick={RefreshBtn}>
+          <button className="refresh-btn" value="Refresh" onClick={RefreshBtn}>
           Refresh
         </button>
         
