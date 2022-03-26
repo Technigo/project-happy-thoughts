@@ -13,6 +13,7 @@ export const App = () => {
     fetchThoughts();
   }, []);
 
+  //Get the thoughts from the API
   const fetchThoughts = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
@@ -26,6 +27,7 @@ export const App = () => {
     setNewThought(event.target.value)
   }
   
+  //Post a new thought to the API when clicking the button
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -40,6 +42,7 @@ export const App = () => {
     .finally(() => setNewThought(''));
   };
 
+  //When clicking the heart button post the like to the API for that specifik thought
   const onHeartClick = (thoughtId) => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: 'POST',

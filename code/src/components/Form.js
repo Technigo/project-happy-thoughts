@@ -2,7 +2,6 @@ import React from "react";
 
 import Heart from './Heart.js';
 
-
 const Form = ({ onNewThoughtChange, newThought, onFormSubmit }) => {
     
   return (
@@ -10,7 +9,7 @@ const Form = ({ onNewThoughtChange, newThought, onFormSubmit }) => {
       <form onSubmit={onFormSubmit}>
           <label htmlFor="happythoughts">What's making you happy right now?</label>
           <textarea value={newThought} id="happythoughts" onChange={onNewThoughtChange} />
-          <div class="thought-footer">
+          <div className="thought-footer">
             <button type="submit" disabled={newThought.length > 140} >
                 <Heart />
                 <span className="button-text">Send Happy Thought </span>
