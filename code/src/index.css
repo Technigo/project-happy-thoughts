@@ -19,6 +19,7 @@ border: 1px solid;
 padding: 25px;
 box-shadow: 5px 5px 0px 0px #000;
 width: 300px;
+background-color: rgb(141, 141, 170, 0.65);
 
 word-wrap: break-word;
 overflow-wrap: break-word;
@@ -29,17 +30,44 @@ hyphens: auto;
 }
 
 .post-time {
-display: flex;  
-justify-content: flex-end;
 color: grey;
 }
 
-.posting-form {
-  margin: 25px;
-  border: 1px solid;
-  padding: 25px;
-  box-shadow: 5px 5px 0px 0px #000;
-  width: 300px;  
-  background-color: rgb(243, 240, 240);
+.message-card-bottom-items {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin-top: 25px;
 }
 
+.posting-form {
+margin: 25px;
+border: 1px solid;
+padding: 25px;
+box-shadow: 5px 5px 0px 0px #000;
+width: 300px;  
+background-color: rgb(141, 141, 170);
+}
+
+.form-textarea {
+resize: none;  
+width: 225px;
+height: 55px;
+margin: 15px 0;
+}
+
+.form-button {
+padding: 5px 10px;
+border-radius: 100px;  
+background-color: rgb(245, 109, 145);
+border: 0;
+font-family: "Roboto Mono", monospace;
+}
+
+.heart-button {
+border-radius: 100px;
+padding: 7px;
+background-color: rgb(245, 109, 145);
+border: 0;
+}
