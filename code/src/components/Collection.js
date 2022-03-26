@@ -6,7 +6,7 @@ import Message from 'components/Message'
 import SentMessage from 'components/SentMessage'
 
 
-export const Collection = () => {
+const Collection = () => {
 
     const [fetchThought, setFetchThought] = useState([])
     const [newMessage, setNewMessage] = useState('')
@@ -46,11 +46,10 @@ export const Collection = () => {
         }
 
 
-
         fetch(API_URL, options, token)
             .then(res => res.json())
-            .then(data => console.log(data))
-            .finally(() => window.location.reload())
+            .then(data => setFetchThought([data, ...fetchThought]))
+            .finally(() => setNewMessage(''))
 
     }
 
@@ -58,12 +57,26 @@ export const Collection = () => {
         setNewMessage(event.target.value)
     }
 
-
     useEffect(() => {
         fetch(API_URL)
             .then((res) => res.json())
             .then((data) => setFetchThought(data))
     }, [])
+
+    const handleOnLikeChange = (likeID) => {
+        const options = {
+            method: 'POST',
+            headers: {
+                'Cotent-Type': 'application/json'
+            },
+        }
+
+        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${likeID}/like`, options)
+            .then((res) => res.json())
+            .then(() => setNewMessage())
+
+
+    }
 
 
     return (
@@ -75,7 +88,10 @@ export const Collection = () => {
 
             <SentMessage
                 newMessage={newMessage}
-                fetchThought={fetchThought} />
+                fetchThought={fetchThought}
+                onLikeChange={handleOnLikeChange}
+
+            />
         </div>
     )
 }
