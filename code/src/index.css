@@ -196,6 +196,11 @@ button:hover{
   background-color: var(--clr-primary);
 }
 
+.heartEmoji{
+  justify-self: center;
+  align-self: center;
+}
+
 /*=====LOADING STYLES=====*/
 .loading-overlay{
   position: absolute;
