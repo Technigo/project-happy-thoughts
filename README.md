@@ -8,4 +8,5 @@ I started by creating a sketch.I divided the project into smaller parts and star
 If I had more time I would add some animation.
 ## View it live
 
+https://happy-thoughts-week11-2022.netlify.app/
 
