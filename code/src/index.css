@@ -73,12 +73,12 @@ border: 0;
 }
 
 .clicked {
-  background-color: rgb(245, 109, 145);
+background-color: rgb(245, 109, 145);
 }
 
 .main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  }
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}

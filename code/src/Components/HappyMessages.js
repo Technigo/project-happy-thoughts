@@ -9,7 +9,7 @@ export const HappyMessages = ({ twentyThoughts, handleHearts }) => {
                 <div className="message-card-bottom-items">
                     <div>
                         <button className={twentyThoughts.hearts > 0 ? "heart-button clicked": "heart-button"}
-                        onClick={() => handleHearts(twentyThoughts._id)}>
+                          onClick={() => handleHearts(twentyThoughts._id)}>
                         <span role="img" aria-label="heart">❤️</span>
                         </button> 
                         <span> x {twentyThoughts.hearts}</span>
