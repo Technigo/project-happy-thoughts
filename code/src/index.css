@@ -30,7 +30,7 @@ code {
 }
 
 .thoughts-message {
-  width: 50vw;
+  width: 80vw;
   border-style: solid;
   margin-bottom: 30px;
   padding: 0 10px 15px 10px;
@@ -81,3 +81,16 @@ code {
   color: rgb(134,134,134);
 }
 
+/* tabet */
+@media (min-width: 768px) {
+  .thoughts-message {
+    width: 50vw;
+  }
+}
+
+/* desktop */
+@media (min-width: 1025px) {
+  .thoughts-message {
+    width: 40vw;
+  }
+}
