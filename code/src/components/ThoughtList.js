@@ -1,11 +1,11 @@
 import React from 'react'
 import moment from 'moment'
 
-const ThoughtList = ({ loading, thoughtList, handleHeartLikes }) => {
+const ThoughtList = ({ thoughtList, handleHeartLikes }) => {
 
-         if (loading) {
-             return <h1>Loading in progress...</h1>
-         }
+        //  if (loading) {
+        //      return <h1>Loading in progress...</h1>
+        //  }
 
          return (
              <section>

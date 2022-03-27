@@ -8,7 +8,7 @@ import ThoughtForm from 'components/ThoughtForm'
 export const App = () => {
 
     const [thoughtList, setThoughtList] = useState([])
-    const [loading, setLoading] =useState(false)
+    // const [loading, setLoading] = useState(false) - never used due loading on likes
     const [newThought, setNewThought] = useState ('')
 
     useEffect(() => {
@@ -17,11 +17,11 @@ export const App = () => {
   
     //fetch 20 latest thoughts
     const fetchThoughts = () => {
-      setLoading(true)
+      // setLoading(true)
       fetch(API_LIST)
         .then((res) => res.json())
         .then((data) => setThoughtList(data))
-        .finally (() => setLoading(false))
+        // .finally (() => setLoading(false))
     }
     //Set and post new thought
     const handleNewThought = (event) => {
@@ -57,21 +57,23 @@ export const App = () => {
   
       fetch(API_HEART(thoughtID), options)
         .then((res) => res.json())
-        .then(() => fetchThoughts())
-      }   
+        .then(() => {
+          fetchThoughts()
+        })
+    }   
 
   return (
-    <div>
+    <main>
+      {/* {loading && <Loading />} */}
       <ThoughtForm
         newThought={newThought}
         handleNewThought={handleNewThought}
         handleFormSubmit={handleFormSubmit}
       />
       <ThoughtList
-        loading={loading}
         thoughtList={thoughtList}
         handleHeartLikes={handleHeartLikes}
       />
-    </div>
+    </main>
   )
 }
