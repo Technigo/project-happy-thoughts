@@ -1,18 +1,12 @@
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif; */
-    font-family: 'Roboto Mono', monospace;
-  
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace; */
-    font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
 }
 
 main {
@@ -24,32 +18,73 @@ main {
   row-gap: 30px;
 }
 
+/* STYLING FOR SEND MESSAGES-BOX */
+
 .create-box {
   border: solid 1px black;
+  border-radius: 1%;
   box-shadow: 5px 5px;
-  padding: 10px;
+  padding: 10px 20px;
   background-color: rgb(242, 240, 240);
   display: flex;
   flex-direction: column;
 }
 
 h1 {
-  font-size: 10px;
+  font-size: 12px;
+  padding-bottom: 6px;
+}
+
+textarea {
+  border: solid 2px lightgrey;
+  border-radius: 5%;
+}
+
+.send-button {
+  background-color: pink;
+  border: none;
+  width: 175px;
+  border-radius: 50px;
+  padding: 6px 4px;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+/* STYLING FOR LATEST MESSAGES-BOXES */
+
+.thoughts-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+}
+
+.single-thoughts {
+  border: solid 1px black;
+  border-radius: 1%;
+  box-shadow: 5px 5px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
-  font-size: 10px;
+  font-size: 14px;
   grid-column: 1 / span 3;
   overflow-wrap: break-word;
 }
 
-p {
-  font-size: 8px;
-  color: grey;
-
+.thoughts-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
-.message-box {
-  border: solid 3px black;
+
+.thoughts-likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .heart {
@@ -65,35 +100,49 @@ p {
 
 .liked {
   background-color: pink;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.send-button {
-  background-color: pink;
-  border: none;
-  width: 50%;
-  border-radius: 50px;
-  padding: 4px;
-  font-size: 10px;
-  margin-top: 8px;
+.number-likes {
+  padding-left: 10px;
 }
 
-span {
- padding-right: 6px;
- padding-left: 2px;
+p {
+  font-size: 12px;
+  color: grey;
 }
 
-.single-thoughts {
-  border: solid 1px black;
-  box-shadow: 5px 5px;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.thoughtsDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.thoughts-box {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 30px;
+.thoughtsLikes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.numberOfLikes {
+  padding-left: 10px;
+}
+
+/* FOR TABLET */
+
+@media screen and (min-width: 768px) {
+  main {
+    margin: 30px 80px;
+  }
+}
+
+/* FOR LAPTOP */
+
+@media screen and (min-width: 768px) {
+  main {
+    margin: 30px 110px;
+  }
 }
 
