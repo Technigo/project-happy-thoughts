@@ -8,7 +8,7 @@ const ShowThoughtList = ({ thoughtList }) => {
     <section>
       {thoughtList &&
         thoughtList.map(singleThought => (
-          <Thought _id={singleThought._id} message={singleThought.message} hearts={singleThought.hearts} createdAt={singleThought.createdAt} />
+          <Thought key={singleThought._id} _id={singleThought._id} message={singleThought.message} hearts={singleThought.hearts} createdAt={singleThought.createdAt} />
         ))
 
       }
