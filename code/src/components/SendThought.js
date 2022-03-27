@@ -1,11 +1,11 @@
 import React from "react";
 import Characters from "./Characters";
 
-const SendThought = ({ onFormSubmit, newThought, SetNewThought }) => {
+const SendThought = ({ onFormSubmit, newThought, setNewThought }) => {
   const checkKey = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       onFormSubmit(e);
-      SetNewThought("");
+      setNewThought("");
       //this clears textarea and is in the onChange
     }
   };
@@ -22,7 +22,7 @@ const SendThought = ({ onFormSubmit, newThought, SetNewThought }) => {
           type="text"
           value={newThought}
           onKeyDown={(e) => checkKey(e)}
-          onChange={(e) => SetNewThought(e.target.value)}
+          onChange={(e) => setNewThought(e.target.value)}
         ></textarea>
         <div className="btn-container">
           <button

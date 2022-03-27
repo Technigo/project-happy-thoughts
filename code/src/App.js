@@ -8,7 +8,7 @@ import { API_URL, LIKES_URL } from "./utils/urls";
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [newThought, SetNewThought] = useState("");
+  const [newThought, setNewThought] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export const App = () => {
       <SendThought
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
-        SetNewThought={SetNewThought}
+        setNewThought={setNewThought}
       />
       {thoughts.map((thought) => (
         <ThoughtMessage
