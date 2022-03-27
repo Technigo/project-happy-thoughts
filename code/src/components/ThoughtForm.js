@@ -1,4 +1,6 @@
 import React from "react";
+import Emoji from "./Emoji";
+
 
 const ThoughtForm = ( { onFormSubmit, newThought, setNewThought } ) => {
     return(
@@ -12,7 +14,7 @@ const ThoughtForm = ( { onFormSubmit, newThought, setNewThought } ) => {
     type="text"
     value={newThought}
 onChange={(event) => setNewThought(event.target.value)} 
-placeholder="Type here..."
+placeholder="Type a happy thought here..."
 rows="4">
 </textarea>
 
@@ -25,7 +27,8 @@ rows="4">
 className="big-button"
 disabled={newThought.length < 5} 
 type="submit">
-Send Happy Thought! 
+<Emoji symbol="❤️"/>  Send Happy Thought!  <Emoji symbol="❤️"/>   
+
 </button>
 
 </form>  
