@@ -14,7 +14,8 @@ export const App = () => {
     useEffect(() => {
       fetchThoughts();
     }, []);
-      
+  
+    //fetch 20 latest thoughts
     const fetchThoughts = () => {
       setLoading(true)
       fetch(API_LIST)
@@ -22,11 +23,11 @@ export const App = () => {
         .then((data) => setThoughtList(data))
         .finally (() => setLoading(false))
     }
-
+    //Set and post new thought
     const handleNewThought = (event) => {
       setNewThought(event.target.value)
     }
-
+    
     const handleFormSubmit = (event) => {
       event.preventDefault()
     
@@ -45,7 +46,7 @@ export const App = () => {
           .then(() => fetchThoughts())
           .finally(() => setNewThought(''))
     }
-
+    //Update like via thought id
     const handleHeartLikes = (thoughtID) => {
       const options = {
         method: 'POST',
