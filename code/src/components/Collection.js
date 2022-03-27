@@ -10,7 +10,7 @@ const Collection = () => {
 
     const [fetchThought, setFetchThought] = useState([])
     const [newMessage, setNewMessage] = useState('')
-    const [loading, setLoading] = useState(false)
+    // const [loading, setLoading] = useState(false)
 
 
     useEffect(() => {
@@ -18,25 +18,19 @@ const Collection = () => {
     }, [])
 
     const fetchThoughts = () => {
-        setLoading(true)
+        // setLoading(true)
         fetch(API_URL)
             .then((res) => res.json())
-            .then(data => setNewMessage(data))
+            .then(data => setFetchThought(data))
             .catch(error => console.error(error))
-            .finally(() => setLoading(false))
+            // .finally(() => setLoading(false))
     }
-
 
 
     const onFormSubmit = (event) => {
         event.preventDefault()
 
-        const token = {
-            method: 'GET',
-            headers: {
-                Authorization: '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'
-            }
-        }
+       
         const options = {
             method: 'POST',
             headers: {
@@ -46,35 +40,26 @@ const Collection = () => {
         }
 
 
-        fetch(API_URL, options, token)
+        fetch(API_URL, options)
             .then(res => res.json())
-            .then(data => setFetchThought([data, ...fetchThought]))
+            .then(data => fetchThoughts([data, ...newMessage]))
             .finally(() => setNewMessage(''))
 
     }
+
 
     const onNewMessageChange = (event) => {
         setNewMessage(event.target.value)
     }
 
-    useEffect(() => {
-        fetch(API_URL)
-            .then((res) => res.json())
-            .then((data) => setFetchThought(data))
-    }, [])
-
     const handleOnLikeChange = (likeID) => {
         const options = {
             method: 'POST',
-            headers: {
-                'Cotent-Type': 'application/json'
-            },
         }
 
         fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${likeID}/like`, options)
-            .then((res) => res.json())
-            .then(() => setNewMessage())
-
+            .then(res => res.json())
+            .then(() => fetchThoughts())
 
     }
 
@@ -82,14 +67,18 @@ const Collection = () => {
     return (
         <div>
             <Message
-                loading={loading}
+                // loading={loading}
                 onNewMessageChange={onNewMessageChange}
-                onFormSubmit={onFormSubmit} />
+                onFormSubmit={onFormSubmit}
+                 />
 
             <SentMessage
+            
                 newMessage={newMessage}
                 fetchThought={fetchThought}
                 onLikeChange={handleOnLikeChange}
+                
+                
 
             />
         </div>
