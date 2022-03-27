@@ -1,24 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { formatDistance } from 'date-fns';
 
-const API_RECENT_URL='https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
-const Thoughts = () => {
-    const [thoughts, setThoughts] = useState([]);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        fetchThoughts()
-    }, []);
-
-    const fetchThoughts = () => {
-        setLoading(true);
-        fetch(API_RECENT_URL)
-        .then(res => res.json())
-        .then(data => setThoughts(data))
-        .catch(error => console.error(error))
-        .finally(() => setLoading(false));
-    }
+const Thoughts = ({ loading, thoughts }) => {
 
     if (loading) {
         return <h1>Loading in progress...</h1>

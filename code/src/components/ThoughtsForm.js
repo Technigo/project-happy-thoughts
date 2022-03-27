@@ -1,44 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import Button from 'components/Button';
-
-const API_RECENT_URL='https://happy-thoughts-technigo.herokuapp.com/thoughts'
-
-const ThoughtsForm = () => {
-    const [newThought, setNewThought] = useState('');
-    const onNewThoughtChange = (event) => {
-        setNewThought(event.target.value)
-    }
-
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                'message': 'My happy thought'
-            })
-        }
-
-        fetch(API_RECENT_URL, options)
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }
+const ThoughtsForm = ({ newThought, onNewThoughtChange, onFormSubmit}) => {
 
     return (
         <form onSubmit={onFormSubmit}>
             <p>Write your happy thought below</p>
             <textarea
-                value={newThought}
-                onChange={onNewThoughtChange}
+            value={newThought}
+            onChange={onNewThoughtChange}
+            placeholder='What is making you happy right now?'
             />
-            <button type="submit">
-                ♥️ SEND THOUGHT ♥️
+
+            <button 
+                className='submit-btn'
+                type="submit"
+                disabled={newThought.length < 5 || newThought.length > 140}>
+                <span role='img' aira-label='heart-emoji'>♥️ SEND THOUGHT ♥️</span>
             </button>
-            <Button />
         </form>
     )
 };
