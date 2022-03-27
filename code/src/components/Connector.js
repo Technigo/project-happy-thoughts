@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import Loader from 'components/Loader';
+import Footer from 'components/Footer'
 import ThoughtForm from 'components/ThoughtForm'
 import ThoughtItem from 'components/ThoughtItem';
-
+import { roundToNearestMinutes } from 'date-fns';
 
 const API_URL="https://happy-thoughts-technigo.herokuapp.com/thoughts"
 const LIKES_URL =(thoughtId) =>
@@ -30,13 +30,14 @@ export const App = () => {
 
  const handleFormSubmit = (event) => {
  event.preventDefault()
- 
+ }
+
  const options = { 
  method: 'POST',
  headers: {
  'Content-Type': 'application/json',
  },
- body: JSON.stringify({ message: newThought }),
+ body: JSON.stringify({ message: "hello world" }),
  }
 
  fetch(API_URL, options)
@@ -45,25 +46,25 @@ export const App = () => {
  fetchThoughts()
  setNewThought('') 
  })
-}
 
 const handleLikesIncrease = (thoughtId) => {
 const options = {
  method: 'POST',
   }
 
- fetch(LIKES_URL(thoughtId), options)
+  fetch(LIKES_URL(thoughtId), options)
   .then((res) => res.json())
    .then((data) => {
  fetchThoughts()
    })
+
  }
 
 
 
   return (
     <div className="container">
-    {loading && <Loader />}
+  
       <ThoughtForm
         onFormSubmit={handleFormSubmit}
         newThought={newThought}

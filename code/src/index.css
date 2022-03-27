@@ -29,34 +29,47 @@ footer{
   margin-top: auto;
 }
 
+button{
+  background-color: #ee9e9e;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15%;
+}
+
+/*THOUGHTFORM*/
+
 .form-container{
-  background-color: #f0f0f0;
-width: 50%;
-height: 30%;
-margin: 200px;
-box-shadow: 5px 6px;
-border-style:solid;
-border-width: thin;
-align-content: center;
-display:flex;
-flex-direction: column;
+  width: 500px;
+    margin: 200px;
+    box-shadow: 7px 7px;
+    border-style: solid;
+    border-width: thin;
+    display: flex;
+    flex-direction: column;
+background-color: #f0f0f0;
+ height: 275px;
 }
 
 .happy-label{
   font-size: 14pt;
   font-weight: bolder;
-  margin:10px;
-  padding:10px;
+  margin-left: 15px;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 .typing-area{
-  background-color: brown;
-  margin:5%;
-  padding:10%;
-  border-style: solid;
-  border-width: thin;
-  word-wrap: break-word;
-  white-space: pre-wrap;
+  background-color: #ffffff;
+    margin:15px;
+    padding:40px;
+    border-style: solid;
+    border-width: thin;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .big-button{
@@ -67,14 +80,44 @@ border-radius:30px;
 display: block;
 }
 
+.counter{
+  margin-left: 15px;
+  }
+
+  .big-button{
+    padding: 15px;
+    width: 250px;
+    margin: 15px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    border-radius: 30px;
+  }
+
+/*THOUGHTFORM*/
+
 .comment-container{
-  background-color: #ffffff;
-  width: 50%;
-  height: 30%;
-  margin: 200px;
-  box-shadow: 5px 6px;
-  border-style:solid;
+  width: 500px;
+  margin-left: 200px;
+  box-shadow: 7px 7px;
+  border-style: solid;
   border-width: thin;
-  align-content: center;
-  display: block;
+  display: flex;
+  flex-direction: column;
+background-color: #ffffff;
+height: 160px;
+}
+
+.thought-text{
+  height: 100px;
+padding: 15px;
+}
+
+.like-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.like-button{
+  border-radius: 50px;
+  padding: 10px;
 }

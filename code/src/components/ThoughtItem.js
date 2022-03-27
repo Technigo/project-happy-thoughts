@@ -5,16 +5,21 @@ const ThoughtItem=({thought, onLikesIncrease}) => {
   return(
     <main>
 <div className="comment-container">COMMENT-CONTAINER</div>
-<p className="thought-text">THOUGHT MESSAGE</p>
+<p className="thought-text">THOUGHT MESSAGE{thought.message}</p>
 
 <div className="like-box">LIKE-BOX
 <div className="heart">HEART
-<button className="like-button" onClick={() => onLikesIncrease}>LIKE-BUTTON</button>
+<button className="like-button" onClick={() => onLikesIncrease(thought._id)}>LIKE-BUTTON
+{' '}
+</button>
+{' '}
 
-<p className="likes">LIKES</p>
 </div>
 
-<p className="date">DATE</p>
+<p className="date">DATE
+            {formatDistance(new Date(thought.createdAt), new Date())} ago
+          </p>
+
 
 
 </div>

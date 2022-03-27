@@ -16,11 +16,14 @@ placeholder="Type here..."
 rows="4">
 </textarea>
 
-<div className="counter"></div>
+<div className="counter">
+<span className={newThought.length > 140}>
+                {newThought.length}</span>/140
+</div>
 
 <button 
 className="big-button"
-
+disabled={newThought.length < 5} 
 type="submit">
 Send Happy Thought! 
 </button>
