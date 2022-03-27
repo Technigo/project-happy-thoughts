@@ -15,7 +15,7 @@ const ThoughtForm = ( { onFormSubmit, newThought, setNewThought } ) => {
     value={newThought}
 onChange={(event) => setNewThought(event.target.value)} 
 placeholder="Type a happy thought here..."
-rows="4">
+rows="3">
 </textarea>
 
 <div className="counter">
@@ -28,7 +28,6 @@ className="big-button"
 disabled={newThought.length < 5} 
 type="submit">
 <Emoji symbol="❤️"/>  Send Happy Thought!  <Emoji symbol="❤️"/>   
-
 </button>
 
 </form>  

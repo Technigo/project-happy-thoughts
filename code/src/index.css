@@ -3,7 +3,6 @@
   margin: auto;
 }
 
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,7 +12,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Inconsolata', monospace;
   background-color: #fff1f1;
-
 }
 
 code {
@@ -40,14 +38,6 @@ button{
   display: flex;
   flex-direction: column;
 }
-
-
-.comment-container{
-  margin-top: 30px;
-background-color: #ffffff;
-height: 160px;
-}
-
 
 /*THOUGHTFORM*/
 
@@ -79,7 +69,7 @@ height: 160px;
 .big-button{
   padding:8px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
+ monospace;
 border-radius:30px; 
 display: block;
 }
@@ -96,21 +86,29 @@ display: block;
     border-radius: 30px;
   }
 
-/*THOUGHTFORM*/
+/*THOUGHTITEM*/
 
+.comment-container{
+  margin-top: 30px;
+background-color: #ffffff;
+height: 160px;
+}
 
 
 .thought-text{
   height: 100px;
   width:280px;
   padding: 20px;
-  font-size: 14pt;
+  font-size: 12pt;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 
 
 .like-box{
   justify-content: space-between;
+  font-size: 10pt;
 }
 
 
@@ -144,11 +142,13 @@ display: block;
 	background-color: #cc8383;
   }
 
-
-  
   .like-button:focus {
     background-color: rgb(234,234,234)
     }
+
+
+/*MEDIA QUERIES*/
+
 
     @media screen and (min-width: 500px){
       .form-container, .comment-container{
@@ -158,7 +158,7 @@ display: block;
         width:380px;
       }
       .time-tracker{
-        margin-left: 200px;
+        margin-left: 190px;
       }
 
     }

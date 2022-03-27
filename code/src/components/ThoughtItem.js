@@ -22,10 +22,6 @@ const ThoughtItem=({thought, onLikesIncrease}) => {
             {formatDistance(new Date(thought.createdAt), new Date())} ago
           </p>
 
-        
-         
-
-
 </div>
 </div>
     </main>

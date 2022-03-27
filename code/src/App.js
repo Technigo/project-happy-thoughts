@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
-import Loader from 'components/Loader';
 import ThoughtForm from 'components/ThoughtForm'
 import ThoughtItem from 'components/ThoughtItem';
 
@@ -14,18 +12,18 @@ export const App = () => {
 
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
-  const [loading, setLoading] = useState(false)
+
 
   useEffect(() => {
   fetchThoughts()
  }, []) 
 
   const fetchThoughts = () => {
-  setLoading(true)
+
   fetch(API_URL)
   .then((res) => res.json())
   .then((data) => setThoughts(data))
-  .finally(() => setLoading(false))  
+
   }
 
  const handleFormSubmit = (event) => {
@@ -59,11 +57,9 @@ const options = {
    })
  }
 
-
-
   return (
     <div className="container">
-    {loading && <Loader />}
+ 
       <ThoughtForm
         onFormSubmit={handleFormSubmit}
         newThought={newThought}
