@@ -5,7 +5,7 @@ const Create = ({ newThought, onNewThoughtChange, onFormSubmit}) => {
   return (
     <form className="create-box" onSubmit={onFormSubmit}>
       <h1>What´s making you happy right now?</h1>
-      <textarea value={newThought} onChange={onNewThoughtChange}/>
+      <textarea value={newThought} onChange={onNewThoughtChange} aria-label="happy thoughts input"/>
       <button 
         type="submit"
         className='send-button'
