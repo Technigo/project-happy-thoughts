@@ -2,7 +2,7 @@
 
 In this weeks project I created "Happy Thoughts" - a twitter like site focusing on positivity and friendliness where the user can post own thoughts, and read and like thoughts from others.
 
-# Learning Objectives:
+### Learning Objectives:
 
 * How to use APIs in React, firing requests within useEffect.
 * How to put the result of API responses into React state to show in the page.
