@@ -12,12 +12,12 @@ const ThoughtList = ({ loading, thoughtList, handleHeartLikes }) => {
                  {thoughtList.map((singleThought) => (
                      <div key={singleThought._id} className='card'>
                          <div>
-                            <h3>{singleThought.message}</h3>
+                            <h2>{singleThought.message}</h2>
                          </div>
                          <div className ="bottom-card-container">
                             <div className="heart-container">
                                 <button
-                                    className="likes-button"
+                                    className={singleThought.hearts > 0 ? 'likes-button clicked' : 'likes-button'}
                                     onClick={() => handleHeartLikes(singleThought._id)}
                                 >
                                     <span className='heart-icon' role='img' aria-label='heart emoji'>❤️</span>
