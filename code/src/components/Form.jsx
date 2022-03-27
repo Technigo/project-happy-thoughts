@@ -3,7 +3,7 @@ import Thought from './Thought';
 
 
 const HAPPY_THOUGHTS_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
-const LIKES_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+//const LIKES_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
 
 const Form = () => {
     const [thoughts, setThoughts] = useState([]);
@@ -25,8 +25,20 @@ const Form = () => {
     if (loading) {
         return <h1>Loading in progress...</h1>
     }
-     const handleLikes = (key) =>{
-
+     const handleLikes = (thoughtId, event) =>{
+         event.preventDefault();
+         const options = {
+             method:'POST'
+         }
+         const uri = `${HAPPY_THOUGHTS_URL}/${thoughtId}/like`;
+         fetch(uri, options)
+         .then(res => res.json())
+         .then(() => {
+             fetchList()
+         })
+         .catch((error) => {
+             console.error(error)
+         })
      }
 
   
@@ -51,7 +63,7 @@ const Form = () => {
         <form>
             <div>
                 {thoughts.map((thought) => (
-                    <Thought thought={thought} addLike={handleLikes}></Thought>
+                    <Thought key={thought._id} thought={thought} addLike={handleLikes}></Thought>
                 )
                 )};
             </div>
