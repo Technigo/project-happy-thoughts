@@ -35,10 +35,9 @@ code {
 
 .createFormFooter {
   margin-top: 12px;
-}
-
-.thoughtLengthCounter {
-  float:right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .submitFormButton {
@@ -97,4 +96,8 @@ code {
   border-radius: 100%;
   padding: 10px;
   background-color: #efefef;
+}
+
+.heartButtonWithLikes button {
+  background-color: #ffadad;
 }

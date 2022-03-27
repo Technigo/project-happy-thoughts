@@ -14,7 +14,7 @@ const Thought = (props) => {
         <div className="container thought" key={props._id}>
             <h4>{props.message}</h4>
             <div className="thoughtFooter">
-                <div className="heartButton">
+                <div className={"heartButton " + (props.hearts>0? "heartButtonWithLikes":"")}>
                     <button onClick={() => addLikeOnHeartClick(props._id)}><span className="heart">❤️</span></button>
                     <span className="numberOfHearts">x {props.hearts}</span>
                 </div>
