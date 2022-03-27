@@ -30,7 +30,7 @@ const Thoughts = () => {
     }
 
     const changeCurrentEmotion = () => {
-        setCurrentEmotion(emotions[Math.floor(Math.random() * emotions.length)])
+        setCurrentEmotion(emotions[Math.floor(Math.random() * emotions.length)-1])
     }
 
     const handleSubmitting = (event) => {
