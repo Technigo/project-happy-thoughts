@@ -111,6 +111,7 @@ textarea:focus {
 .message {
   height: 60px;
   padding: 1rem 0;
+  overflow: scroll;
 }
 
 .like-and-date-wrapper {
