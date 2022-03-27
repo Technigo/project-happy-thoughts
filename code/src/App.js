@@ -1,9 +1,19 @@
-import React from 'react'
+import React from 'react';
+
+import Wrappers from './components/Wrapper';
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <>
+      <div>
+        <div>
+          <h1>Happy Thoughts</h1>
+        </div>
+      </div>
+      <div>
+        <Wrappers />
+      </div>
+    </>
+
+  );
+};

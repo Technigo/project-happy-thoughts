@@ -1,13 +1,98 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Source Code Pro', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Anton', sans-serif;
+  text-shadow: 2px 2px whitesmoke;
 }
+.container{
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.new-thoughts-wrapper {
+  border: 1px solid black;
+  margin: 5% 5%;
+  padding: 20px;
+  box-shadow: 7px 7px black;
+  overflow-wrap: break-word;
+  background-color: white;
+  font-size: small;
+  background-color: rgb(236, 231, 231);
+}
+
+.textarea {
+  font-size: 1rem;
+  border: 1.5px solid #f7f7f7;
+  margin-top: 10px;
+  height: 70px;
+  width: 98%
+}
+
+.letter-counter {
+  font-size: .8rem;
+}
+
+.form-button {
+  background-color: #ffadad;
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+}
+
+.button-heart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.heart {
+  border-radius: 50%;
+  margin-right: 5px;
+  color: red;
+  background-color: pink;
+   width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.likes-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thoughts-wrapper {
+  border: 1px solid black;
+  margin: 2em 1em;
+  padding: 1rem;
+  box-shadow: 7px 7px black;
+  overflow-wrap: break-word;
+  background-color: white;
+  font-size: small;
+  background-color: white;
+}
+
+.date {
+  text-align: end;
+  font-size: .8rem;
+}
+
+
+
+
