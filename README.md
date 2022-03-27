@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a project built in React that works similarly to Twitter. The app is communicating with an API to create happy thoughts and show a feed of the latest 20 happy thoughts. There is also a like functionality. We use both useState and useEffect to manage the calls in a standarized React way.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I have split the project into different components based on the provided design. I have used useState and useEffect to manage the calls to the API and to automatically add freshly created thoughts to the feed.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://fay-happy-thoughts.netlify.app/
