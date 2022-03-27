@@ -11,3 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.container {
+  width: 450px;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 15px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  box-shadow: 10px 10px 0 0px black;
+}
+
+.createForm {
+  box-shadow: 10px 10px 0 0px black;
+}
+
+.createform textarea {
+  width: 100%;
+  margin-top: 10px
+}
+
+.createFormFooter {
+  margin-top: 10px;
+}
+
+.thoughtLengthCounter {
+  float:right;
+}
+
+.submitFormButton {
+  background: #ffadad;
+  color: black;
+  padding: 10px;
+  border-radius: 30px
+}
+
+.thought {
+  margin-top:50px
+}

@@ -5,7 +5,7 @@ import Thought from './Thought'
 
 const ShowThoughtList = ({ thoughtList }) => {
   return (
-    <section>
+    <section className="thoughtList">
       {thoughtList &&
         thoughtList.map(singleThought => (
           <Thought key={singleThought._id} _id={singleThought._id} message={singleThought.message} hearts={singleThought.hearts} createdAt={singleThought.createdAt} />
