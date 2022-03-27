@@ -3,8 +3,6 @@ import moment from 'moment'
 import { API_URL } from './utils/urls'
 
 
-
-
 export const App = () => {
 
 
@@ -24,11 +22,11 @@ export const App = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault()
-    // console.log("submitted: ", newThought)
     
     fetch( API_URL, 
         { method: 'POST', headers: { 'Content-Type': 'application/json',}, body: JSON.stringify({ message: newThought }) }
       ).then((res) => res.json()).then((data) => setThoughts([data, ...thoughts]))
+
       if (newThought.length < 4 ) {
         alert('Too few characters')
       }
@@ -36,7 +34,6 @@ export const App = () => {
         alert('Too many characters')
       } 
   }
-
 
 
   const addLike = (thoughtId) => {
@@ -53,43 +50,33 @@ export const App = () => {
           
           else { return item }
       })
-
       setThoughts(updateLikes)
-
     })
   }
 
-const characterStyling = (chars) => {
 
-  if (chars.length < 4  ||  chars.length > 140) {
-  return ('charactersNOTOK') }
-  else return ('charactersOK')
-}
+  const characterStyling = (chars) => {
 
-// const errorAlert = (input) => {
+    if (chars.length < 4  ||  chars.length > 140) {
+    return ('charactersNOTOK') }
+    else return ('charactersOK')
+  }
 
-
-//   if (input.length < 4 ) {
-//     alert('Too few characters')
-//   }
-//   else if ( input.length > 140 ) {
-//     alert('Too many characters')
-//   }
-// }
 
   return (
 
     <div className="thoughts-wrapper">
 
     <form onSubmit={onFormSubmit}> 
-      <label htmlFor="newThought" >What's making you happy right now?</label>
-      <input className={characterStyling(characters)} 
+      <label htmlFor="newThought">What's making you happy right now?</label>
+      <input 
+      className={characterStyling(characters)} 
       value={newThought} 
       onInput={(e) => setCharacters(e.target.value)}
-      onChange={(e) => setNewThought(e.target.value) }
+      onChange={(e) => setNewThought(e.target.value)}
       id={newThought}
       />
-     <p className="date" >Characters left: {140 - characters.length}</p>
+     <p className="date"> Characters left: {140 - characters.length}</p>
 
       <button  className="submit-btn" type="submit"><span role="img" aria-label="heart">💜</span> Send Happy Thought <span role="img" aria-label="heart">💜</span></button>
     </form>
@@ -105,11 +92,6 @@ const characterStyling = (chars) => {
 
       <div className="heart-count">
       
-      {/* { thought.hearts === 0 ? setColor('likedColorClass') : setColor('notLikedClass') } */}
-      
-      {/* This didn't work either: */}
-      {/* { thought.hearts === 0 ? {() => setColor('likedColorClass')} : {() => setColor('notLikedClass')} } */}
-
         <div>
           <button className={ thought.hearts === 0 ? 'notLikedClass' : 'likedColorClass' }
           onClick={() => addLike(thought._id)}>
@@ -122,29 +104,6 @@ const characterStyling = (chars) => {
         </div>
 
       </div>
-{/*           
-        {if ({thought.hearts} === 0) => {
-
-        <div className="unliked">
-          <button onClick={() => addLike(thought._id)}>
-          <span role="img" aria-label="heart">💜</span>
-          </button>
-        </div> 
-        }
-
-        else( 
-          <div className="liked">
-            <button onClick={() => addLike(thought._id)}>
-            <span role="img" aria-label="heart">💜</span>
-            </button>
-          </div> 
-        )} */}
-
-        {/* {thought.hearts === 0 ? console.log('NO HEARTS') : console.log('HAS HEARTS')} */}
-
-        
-
-
 
       <p className="date">Created: {moment(thought.createdAt).fromNow()} </p>
 

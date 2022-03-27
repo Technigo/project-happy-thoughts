@@ -83,17 +83,12 @@ input {
   align-items: center;
 }
 
-.heart-count div {
-
-}
-
 .date {
   text-align: right;
-  width: 300px;
+  width: 100%;
   font-size: 0.8rem;
   opacity: 0.5;
 }
-
 
 .likedColorClass {
   background-color: rgba(204, 146, 255, 0.349);
@@ -115,16 +110,13 @@ font-size: 1.3rem;
 
 .charactersNOTOK {
   color: red;
-  background-color: rgba(255, 0, 0, 0.16);
-
+  background-color: rgba(255, 0, 0, 0.105);
 }
 
 
-@media all and (max-width: 450px) {
+@media all and (max-width: 550px) {
 
-body {
-  /* background-color: red; */
-}
+
 p {
   margin: 0;
 }
@@ -140,9 +132,6 @@ form {
   width: 100%;
 }
 
-.date {
-  width: 100%;
-}
 .submit-btn {
   width: 100%;
 }
