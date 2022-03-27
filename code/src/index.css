@@ -41,9 +41,7 @@ code {
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  
 }
-
 
 .message-container {
   display: flex;
@@ -96,7 +94,6 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .button-and-likes {
@@ -129,3 +126,13 @@ margin-top: 13px;
   font-size: 15px;
   color: rgb(155, 155, 155);
 }
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+ .loading {
+   width: 10%;
+ }

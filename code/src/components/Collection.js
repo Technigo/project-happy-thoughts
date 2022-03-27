@@ -12,6 +12,7 @@ const Collection = () => {
     const [newMessage, setNewMessage] = useState('')
     const [loading, setLoading] = useState(false)
 
+// FETCHING THOUGHTS
 
     useEffect(() => {
         fetchThoughts()
@@ -26,11 +27,12 @@ const Collection = () => {
             .finally(() => setLoading(false))
     }
 
+// SUBMITTING THOUGHT
 
     const onFormSubmit = (event) => {
         event.preventDefault()
 
-       
+
         const options = {
             method: 'POST',
             headers: {
@@ -44,13 +46,13 @@ const Collection = () => {
             .then(res => res.json())
             .then(data => fetchThoughts([data, ...newMessage]))
             .finally(() => setNewMessage(''))
-
     }
-
 
     const onNewMessageChange = (event) => {
         setNewMessage(event.target.value)
     }
+
+    // WHEN CLICKING LIKE BUTTON
 
     const handleOnLikeChange = (likeID) => {
 
@@ -71,16 +73,13 @@ const Collection = () => {
                 loading={loading}
                 onNewMessageChange={onNewMessageChange}
                 onFormSubmit={onFormSubmit}
-                 />
+            />
 
             <SentMessage
-            
+
                 newMessage={newMessage}
                 fetchThought={fetchThought}
                 onLikeChange={handleOnLikeChange}
-                
-                
-
             />
         </div>
     )
