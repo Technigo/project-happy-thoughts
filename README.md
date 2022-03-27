@@ -5,7 +5,7 @@ We learned to use useEffect to do the fetch of the old happy-thought messages at
 We were given a design to follow for our app which consists of a form to post new happy-thoughts (6-140 characters or disabled button), previous happy-thoughts messages with a heart button rendering likes when pushed and that changes color when at least one like. 
 It also shows how many likes the message has recieved and how long ago it was posted.
 
-Regarding accessability I did cross-browser testing on Crome, Firefox and Edge and tabbing/enter works with typing, posting and liking on all of them. I used semantic html when possible. 
+Regarding accessability I did cross-browser testing on Crome, Firefox and Edge and tabbing/enter works with typing, posting and liking on all of them. I used semantic html when possible and aria span and labels on the emojis. 
 I used https://validator.w3.org/nu/ for validating, and https://wave.webaim.org/ helped me add a htmlFor label on the headline of my form to be better for screenreaders.
 
 ## The problem
