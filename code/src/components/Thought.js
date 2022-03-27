@@ -16,7 +16,7 @@ const Thought = (props) => {
             <div className="thoughtFooter">
                 {/* Ternary operator to change ClassName when hearts are 0 */}
                 <div className={"heartButton " + (props.hearts > 0 ? "heartButtonWithLikes" : "")}>
-                    <button onClick={() => addLikeOnHeartClick(props._id)}><span className="heart" role="img" alt="heart emoji">❤️</span></button>
+                    <button onClick={() => addLikeOnHeartClick(props._id)}><span className="heart" role="img" aria-label="heart emoji">❤️</span></button>
                     <span className="numberOfHearts">x {props.hearts}</span>
                 </div>
                 <span className="thoughtRelativeDate">{formatDistance(Date.parse(props.createdAt), new Date(), { addSuffix: true })}</span>
