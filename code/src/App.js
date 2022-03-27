@@ -7,11 +7,21 @@ export const App = () => {
   const [apiData, setApiData] = useState();
 
   const getApiData = async () => {
-    const response = await fetch(
-      'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-    )
-    const data = await response.json();
-    setApiData(data);
+    try {
+      const response = await fetch(
+        'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+      )
+      const data = await response.json();
+      setApiData(data);
+      if (!response.ok) {
+        throw new Error (
+          `HTTP error: The status is ${response.status}`
+        );
+      }
+      return data;
+    } catch(err) {
+      console.log(`error message: ${err.message}`);
+    }
   }
 
   useEffect(() => {

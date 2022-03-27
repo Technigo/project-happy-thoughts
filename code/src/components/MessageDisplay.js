@@ -2,8 +2,8 @@ import React from 'react'
 import { formatDistanceToNow } from 'date-fns'
 
 const MessageDisplay = ({ apiData, getApiData }) => {
-  
-  const handleClick = async (_id) => {
+
+  const incrementLikes = async (_id) => {
     const options = {
       method: 'POST',
       headers: {
@@ -11,7 +11,22 @@ const MessageDisplay = ({ apiData, getApiData }) => {
       }
     }
 
-    await fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+    try {
+    const response = await fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options);
+    const json = await response.json();
+      if (!response.ok) {
+        throw new Error (
+          `HTTP error: The status is ${response.status}`
+        );
+      }
+      return json;
+    } catch(err) {
+      console.log(`error message: ${err.message}`);
+    }
+  }
+
+  const handleClick = async (_id) => {
+    await incrementLikes(_id);
     getApiData();
   }
 

@@ -42,7 +42,7 @@ code {
   box-shadow: 8px 7px 5px black;
   margin: 30px;
   width: 80vw;
-  height: 60vh;
+  height: 80vh;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
@@ -50,7 +50,8 @@ code {
 
 .form-div input {
   width: 80vw;
-  height: 100px;
+  height: 50px;
+  font-size: 20px;
 }
 
 .form-button {
@@ -69,17 +70,17 @@ code {
   .form-div {
     margin: 30px;
     width: 30vw;
-    height: 50vh;
+    height: 70vh;
   }
   
   .form-div input {
     width: 30vw;
-    height: 50px;
+    height: 30px;
   }
 
   .form-button {
     font-size: 15px;
-    margin-top: 30px;
+    margin-top: 10px;
   }
 }
 
@@ -87,7 +88,7 @@ code {
   .form-div {
     margin: 30px;
     width: 30vw;
-    height: 30vh;
+    height: 60vh;
   }
 }
 
@@ -95,7 +96,7 @@ code {
   .form-div {
     margin: 30px;
     width: 30vw;
-    height: 35vh;
+    height: 55vh;
   }
   
   .form-div input {

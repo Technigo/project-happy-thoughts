@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 
 const Form = ({ getApiData }) => {
   const [userInput, setUserInput] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
 
+  const postMessage = async () => {
     const options = {
       method: 'POST',
       headers: {
@@ -15,8 +15,26 @@ const Form = ({ getApiData }) => {
         message: userInput
       })
     }
-    
-    await fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+
+    try {
+    const response = await fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options);
+    const json = await response.json();
+    setErrorMessage('');
+      if (!response.ok) {
+        throw new Error(JSON.stringify(json.errors.message.message));
+      }
+      return json;
+    } catch(err) {
+      let error = err.toString();
+      setErrorMessage(error);
+    }
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await postMessage();
+    setUserInput('');
     getApiData();
   }
 
@@ -24,18 +42,24 @@ const Form = ({ getApiData }) => {
     setUserInput(e.target.value);
   }
 
-  console.log(userInput)
   return (
     <div className="form-div">
       <form onSubmit={handleSubmit}>
         <label htmlFor="form">
-          <h1 style={{color: 'pink'}}>What&apos;s making you happy right now?</h1>
+          <h1 style={{ color: 'pink' }}>What&apos;s making you happy right now?</h1>
+          <p style={{fontSize: '12px', wordWrap: 'break-word'}}>{errorMessage}</p>
           <input
             id="form"
             type="text"
             name="message"
             value={userInput}
             onChange={updateUserInput} />
+            <p>
+              <span style={{color: userInput.length >= 140 ? 'red' : 'green' }}>
+                {userInput.length}
+              </span>
+                / 140 characters
+            </p>
         </label>
         <button
           type="submit"
