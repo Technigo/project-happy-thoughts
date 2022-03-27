@@ -25,11 +25,13 @@ const CreateThought = ({ setThoughts }) => {
             })
     }
 
+    const MAX_THOUGHT_LENGTH=140
     return (
         <form onSubmit={createThought}>
             <div>What's making you happy right now?</div>
             <textarea value={newThought} onChange={onNewThoughtChange} />
-            <button type='submit'>❤️Send Happy Thought❤️</button>
+            <button disabled={newThought.length<3 || newThought.length> 140} type='submit'>❤️Send Happy Thought❤️</button>
+            <span>{newThought.length}/{MAX_THOUGHT_LENGTH}</span>
         </form>
     )
 }
