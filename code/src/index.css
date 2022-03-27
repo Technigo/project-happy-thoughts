@@ -45,13 +45,13 @@ body {
 	word-break: break-word;
 	margin: 0 0 20px;
 	font-weight: 500;
-	font-size: 17px;
+	font-size: 1rem;
 }
 
 .thought-input {
 	resize: none;
 	width: 90%;
-	font-size: 16px;
+	font-size: 1rem;
 	border: 1px solid #000;
 }
 
@@ -71,18 +71,18 @@ body {
 .heart-number {
 	flex-grow: 1;
 	margin-left: 5px;
-	font-size: 15px;
+	font-size: 0.9rem;
 	color: #999;
 }
 
 .time-created {
 	flex-grow: 0;
-	font-size: 15px;
+	font-size: 0.9rem;
 	color: #999;
 }
 
 h2 {
-	font-size: 18px;
+	font-size: 1.2rem;
 	margin: 0 0 10px;
 }
 
@@ -98,9 +98,9 @@ h2 {
 	padding: 0 10px;
 	font-family: 'Fira Mono', monospace;
 	font-weight: 500;
-	font-size: 16px;
+	font-size: 1rem;
 	background: #ffd7d7;
-	margin: 10px 0;
+	margin: 10px 0 0;
 }
 
 .disabled {
@@ -115,6 +115,10 @@ h2 {
 	}
 
 	h2 {
-		font-size: 22px;
+		font-size: 1.6rem;
+	}
+
+	.thought-input {
+		width: 75%;
 	}
 }
