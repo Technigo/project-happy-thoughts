@@ -36,9 +36,8 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => {
-        fetchThoughts();
-      });
+      .then((data) => fetchThoughts())
+      .finally(() => setNewThought(""));
   };
 
   const handleClickHeart = (thoughtId) => {

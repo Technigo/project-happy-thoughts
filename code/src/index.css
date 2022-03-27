@@ -48,7 +48,6 @@ button {
   border-radius: 25px;
   font-size: 14px;
   font-weight: bold;
-  color: var(--clr-white);
 }
 
 .emoji {
@@ -81,6 +80,7 @@ textarea {
 .submit-btn {
   font-family: "Monaco", monospace;
   background: var(--clr-accent);
+  color: var(--clr-white);
   width: 260px;
   height: 50px;
   box-shadow: 0 0.4em 0.5em 0 var(--clr-grey);
@@ -138,10 +138,13 @@ textarea {
 }
 
 .like-btn {
-  background: var(--clr-lightgrey);
+  background-color: var(--clr-lightgrey);
 }
 
-.liked,
+.liked {
+  background-color: var(--clr-accent);
+}
+
 .like-btn:hover,
 .like-btn:active {
   -webkit-transform: translate(0px, 5px);
