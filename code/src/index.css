@@ -167,6 +167,18 @@ textarea {
   color: green;
 }
 
+/*Footer*/
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-text {
+  margin: 3px 0 3px;
+}
+
 @media screen and (min-width: 768px) {
   main {
     max-width: 600px;

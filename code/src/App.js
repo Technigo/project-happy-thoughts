@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import SendThought from "./components/SendThought";
 import ThoughtMessage from "./components/ThoughtMessage";
+import Footer from "./components/Footer";
 import LoadingCircle from "./components/LoadingCircle";
 import { API_URL, LIKES_URL } from "./utils/urls";
 
@@ -67,6 +68,7 @@ export const App = () => {
           onClickHeart={handleClickHeart}
         />
       ))}
+      <Footer />
     </main>
   );
 };
