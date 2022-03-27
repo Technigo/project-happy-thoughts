@@ -22,7 +22,7 @@ code {
 
 form {
   width: 500px;
-  height: 170px;
+  height: 200px;
   padding: 1rem;
   font-family: menlo;
   font-size: 1rem;
@@ -47,6 +47,10 @@ input {
   border: 3px solid rgba(128, 128, 128, 0.413);
   font-family: menlo;
   font-size: 0.9rem;
+}
+
+label {
+  margin: 1rem 0;
 }
 
 .submit-btn {
