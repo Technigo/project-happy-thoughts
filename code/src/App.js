@@ -1,9 +1,13 @@
 import React from 'react'
 
+import ThoughtForm from 'components/ThoughtForm'
+import ThoughtList from 'components/ThoughtList'
+
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <ThoughtForm />
+      <ThoughtList />
     </div>
   )
 }
