@@ -20,7 +20,7 @@ body {
 }
 
 main {
-  max-width: 600px;
+  max-width: 400px;
 }
 
 .form-container,
@@ -45,8 +45,10 @@ main {
 button {
   cursor: pointer;
   border: none;
-  color: var(--clr-black);
   border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--clr-white);
 }
 
 .emoji {
@@ -104,14 +106,6 @@ textarea {
   height: 50px;
 }
 
-.submit-btn div:nth-child(1) {
-  background-color: var(--clr-accent);
-}
-
-.submit-btn div:nth-child(2) {
-  background-color: var(--clr-hover);
-}
-
 .submit-btn:hover {
   background-color: var(--clr-hover);
 }
@@ -119,41 +113,6 @@ textarea {
 .submit-btn:hover div {
   transform: translateY(-51px);
 }
-
-.submit-btn p {
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--clr-white);
-}
-
-/* .submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-transition: all 0.2s;
-
-.submit-btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.submit-btn:after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.submit-btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-} */
 
 /*Thought Message*/
 .thought-container {
@@ -206,4 +165,10 @@ transition: all 0.2s;
 
 .good {
   color: green;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    max-width: 600px;
+  }
 }

@@ -8,8 +8,8 @@ const ThoughtMessage = ({ thought, onClickHeart }) => {
       <div className="btn-container">
         <div className="like-container">
           <button
-            onClick={() => onClickHeart(thought._id)}
             className={thought.heart > 0 ? "liked" : "no-likes"}
+            onClick={() => onClickHeart(thought._id)}
           >
             <span role="img" aria-label="heart for likes">
               ❤️
