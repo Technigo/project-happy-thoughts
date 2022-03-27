@@ -1,5 +1,4 @@
 import React from 'react'
-import { add, formatRelative } from 'date-fns'
 
 import Thought from './Thought'
 

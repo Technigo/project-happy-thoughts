@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { formatRelative } from 'date-fns'
 
 const Thought = (props) => {
 
@@ -18,7 +19,7 @@ const Thought = (props) => {
                     ❤️
                 </button>
                 x {props.hearts}</span>
-            <p>{props.createdAt}</p>
+            <p>{formatRelative(Date.parse(props.createdAt), new Date())}</p>
 
         </div>
     )
