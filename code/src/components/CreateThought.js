@@ -32,7 +32,7 @@ const CreateThought = ({ setThoughts }) => {
             <textarea value={newThought} onChange={onNewThoughtChange} />
             <div className="createFormFooter">
                 <button className="submitFormButton" disabled={newThought.length<6 || newThought.length> 140} type='submit'>
-                    <span className="heart">❤️</span>Send Happy Thought <span className="heart">❤️</span>
+                    <span className="heart" role="img" alt="heart emoji">❤️</span>Send Happy Thought <span className="heart" role="img" alt="heart emoji">❤️</span>
                 </button>
                 {/* Ternary operator to change ClassName when the length of characters is invalid */}
                 <span className={"thoughtLengthCounter" + (newThought.length > MAX_THOUGHT_LENGTH ? " invalidThoughtLength":"") }>{newThought.length}/{MAX_THOUGHT_LENGTH}</span>
