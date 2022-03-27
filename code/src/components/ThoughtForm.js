@@ -7,7 +7,6 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
             <label htmlFor="thoughtInput" className="form-title">What's making you happy right now?</label>
             <textarea
             id="thoughtInput"
-            rows="5"
             minLength="5"
             maxLength="140"
             spellCheck="false"
@@ -19,7 +18,7 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
                 <button
                 type="submit"
                 disabled={newThought.length < 5}
-                className="send-button"
+                className="submit-button"
                 >
                     <span className="send-heart"
                     role="img"

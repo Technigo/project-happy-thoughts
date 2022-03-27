@@ -183,7 +183,7 @@ footer {
   font-family: 'Space Mono', monospace;
 }
 
-.send-button {
+.submit-button {
   border-radius: 20px;
   border: none;
   background-color: var(--third);
@@ -195,8 +195,8 @@ footer {
   font-family: 'Space Mono', monospace;
 }
 
-.send-button:hover,
-.send-button:active {
+.submit-button:hover,
+.submit-button:active {
   background-color: var(--third);
   color: var(--first);
 }
@@ -363,7 +363,7 @@ footer {
     right: 12px;
     top: 9px;
   }
-  .send-button {
+  .submit-button {
     padding: 5px;
     font-size: 0.9rem;
   }
