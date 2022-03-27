@@ -101,3 +101,7 @@ code {
 .heartButtonWithLikes button {
   background-color: #ffadad;
 }
+
+.invalidThoughtLength {
+  color: red;
+}
