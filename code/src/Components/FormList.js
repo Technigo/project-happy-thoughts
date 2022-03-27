@@ -1,5 +1,4 @@
 import React from "react"
-import moment from 'moment'
 import { formatDistance } from "date-fns";  
 
 
@@ -14,9 +13,9 @@ const FormList = ({ thought, onLikesIncrease }) => {
         onClick={() => onLikesIncrease(thought._id)} 
         style={{ background: thought.hearts >= 1 ? "#f737378e" : "#eaeaea" }} >
           
-          <div className="like-heart" role="img" aria-label="heart">
-            <span>❤️</span>
-          </div>
+          <span className="like-heart" role="img" aria-label="heart">
+            ❤️
+          </span>
         </button>
         <span className="likes-counter">x{thought.hearts}</span>
         <p className="date">Created {formatDistance(new Date(thought.createdAt), Date.now())} ago</p> 
