@@ -1,13 +1,14 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This weeks project was about creating a feed fetching and posting data from an API. The project was created using React.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by creating a Main component to act as the parent component and then fetching the data from the API inside it. Then I created a new fetch for posting data to the API and divided part of the code into smaller components. In the end I added styling and animation features. 
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Link to my deployed project:
+https://happy-thoughts-happy.netlify.app/
