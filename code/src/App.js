@@ -59,7 +59,7 @@ export const App = () => {
         }
  
   return ( 
-    <>
+    <main className="main-container">
         <Form 
         newMessage={newMessage}
         onNewMessage={handleNewMessageChange} //onNewMessage defined in Form onChange
@@ -73,7 +73,7 @@ export const App = () => {
           handleHearts={handleHearts}
         />
          ))}
-    </>
+    </main>
   )
   }
 
