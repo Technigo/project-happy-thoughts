@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { formatRelative } from 'date-fns'
 
-const ThoughtList = () => {
-  const [thoughtList, setThoughtList] = useState([])
-
-  useEffect(() => {
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
-      .then(res => res.json())
-      .then(data => setThoughtList(data))
-  }, [])
-  console.log(thoughtList)
+const ShowThoughtList = ({thoughtList}) => {
   return (
     <section>
       { thoughtList &&
@@ -27,4 +19,4 @@ const ThoughtList = () => {
   )
 }
 
-export default ThoughtList;
+export default ShowThoughtList;
