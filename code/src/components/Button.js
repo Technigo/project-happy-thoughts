@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Button = ({message, className, type, disabled, onClick, thought=''}) => {
-    // console.log(thought.id, 'från button')
-
+const Button = ({
+    message,
+    className,
+    type,
+    disabled,
+    onClick,
+    thought=''
+    }) => {
 
     return (
         <button
@@ -15,20 +20,6 @@ const Button = ({message, className, type, disabled, onClick, thought=''}) => {
             {message}
         </button>
     )
-
-
-    // return (
-    //     <button
-    //         className={className}
-    //         type={type}
-    //         disabled={disabled}
-    //         id={thought._id}
-    //     >
-    //         {message}
-
-    //     </button>
-    // )
-
 }
 
 export default Button;

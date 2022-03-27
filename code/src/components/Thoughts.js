@@ -29,13 +29,29 @@ const Thoughts = () => {
         setNewThoughtLength(event.target.value.length);
     }
 
-    const handleNewThought = (msg) => {
-        setNewThought(msg)
+    const changeCurrentEmotion = () => {
+        setCurrentEmotion(emotions[Math.floor(Math.random() * emotions.length)])
     }
 
-    const handleNewThoughtLength = (msg) => {
-        setNewThoughtLength(msg)
-    }
+    const handleSubmitting = (event) => {
+        event.preventDefault();
+        fetch(thoughtsAPI, {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify({ message: newThought }),
+        }).then((results) => {
+            if (!results.ok) {
+                console.log("no success"); 
+            } else {
+                fetchThoughts();
+                setNewThought('');
+                setNewThoughtLength('')
+                changeCurrentEmotion();
+            }
+        });
+    };
 
     const handleLikes = (id) => {
         fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
@@ -51,16 +67,11 @@ const Thoughts = () => {
         });
     }
 
-    const handleCurrentEmotion = () => {
-        setCurrentEmotion(emotions[Math.floor(Math.random() * emotions.length)])
-    }
-    
     const fetchThoughts = useCallback(() => {
         fetch(thoughtsAPI)
 			.then(res => res.json())
 			.then(json => setThoughts(json))
     }, [])
-
 
     useEffect(() => {
         fetchThoughts();
@@ -73,15 +84,11 @@ const Thoughts = () => {
             <div>
                 <AddThought 
                     heartIcon={heartIcon}
-					thoughtsAPI={thoughtsAPI}
-                    fetchThoughts={fetchThoughts}
                     newThought={newThought}
-                    handleNewThought={handleNewThought}
                     newThoughtLength={newThoughtLength}
                     handleNewThoughtSubmit={handleNewThoughtSubmit}
-                    handleNewThoughtLength={handleNewThoughtLength}
                     currentEmotion={currentEmotion}
-                    setCurrentEmotion={handleCurrentEmotion}
+                    onSubmitting={handleSubmitting}
                 />
             </div>
             <div>

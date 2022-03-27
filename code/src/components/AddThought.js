@@ -3,41 +3,14 @@ import React from 'react'
 import Button from './Button';
 import Textarea from './Textarea';
 
-
 const AddThought = ({
     heartIcon,
-    thoughtsAPI,
-    fetchThoughts,
     newThought,
-    handleNewThought,
     newThoughtLength,
     handleNewThoughtSubmit,
-    handleNewThoughtLength,
     currentEmotion,
-    setCurrentEmotion
+    onSubmitting,
     }) => {
-    
-
-    const onSubmitting = (event) => {
-        event.preventDefault();
-        console.log("submitted")
-        fetch(thoughtsAPI, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json' 
-            },
-            body: JSON.stringify({ message: newThought }),
-        }).then((results) => {
-            if (!results.ok) {
-                console.log("no success"); 
-            } else {
-                fetchThoughts();
-                handleNewThought('');
-                handleNewThoughtLength('');
-                setCurrentEmotion();
-            }
-        });
-    };
 
     return (
         <form onSubmit={onSubmitting} className='card'>

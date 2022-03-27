@@ -5,7 +5,7 @@
   --pale-green: rgb(234, 248, 191);
   --blue-sapphire: rgb(0, 105, 146);
   --indigo: rgb(39, 71, 110);
-  --indigo-tranparent: rgba(39, 71, 110, 0.624);
+  --indigo-transparent: rgba(39, 71, 110, 0.624);
   --disabled-grey: rgba(191, 202, 157, 0.769);
 }
 
@@ -50,7 +50,7 @@ code {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  color: var(--indigo-tranparent);
+  color: var(--indigo-transparent);
   word-break: break-word;
   min-height: 10em;
 }

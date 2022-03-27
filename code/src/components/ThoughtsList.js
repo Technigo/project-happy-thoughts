@@ -1,5 +1,5 @@
 import React from 'react'
-import { /*formatRelative,*/ formatDistance } from 'date-fns';
+import { formatDistance } from 'date-fns';
 import parseISO from 'date-fns/parseISO';
 
 import Button from './Button'

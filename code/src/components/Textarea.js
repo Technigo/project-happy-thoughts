@@ -1,9 +1,11 @@
 import React from 'react'
 
-
-
-
-const Textarea = ({newThought, handleNewThoughtSubmit, newThoughtLength, currentEmotion}) => {
+const Textarea = ({
+    newThought,
+    handleNewThoughtSubmit,
+    newThoughtLength,
+    currentEmotion
+    }) => {
 
     return (
         <label>
