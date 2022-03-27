@@ -1,5 +1,5 @@
 import React from 'react'
-import { formatRelative } from 'date-fns'
+import { formatDistance } from 'date-fns'
 
 const Thought = (props) => {
 
@@ -7,20 +7,19 @@ const Thought = (props) => {
         fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }
-        })
-            ;
+        });
 
     }
     return (
         <div className="container thought" key={props._id}>
             <h4>{props.message}</h4>
-            <span>
-                <button onClick={() => addLikeOnHeartClick(props._id)}>
-                    ❤️
-                </button>
-                x {props.hearts}</span>
-            <p>{formatRelative(Date.parse(props.createdAt), new Date())}</p>
-
+            <div className="thoughtFooter">
+                <div className="heartButton">
+                    <button onClick={() => addLikeOnHeartClick(props._id)}><span className="heart">❤️</span></button>
+                    <span className="numberOfHearts">x {props.hearts}</span>
+                </div>
+                <span className="thoughtRelativeDate">{formatDistance(Date.parse(props.createdAt), new Date(), { addSuffix: true })}</span>
+            </div>
         </div>
     )
 }
