@@ -14,8 +14,9 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, onFormSubmit}) => {
             <button 
                 className='submit-btn'
                 type="submit"
-                disabled={newThought.length < 5 || newThought.length > 140}>
-                <span role='img' aira-label='heart-emoji'>♥️ SEND THOUGHT ♥️</span>
+                disabled={newThought.length < 5 || newThought.length > 140}
+            >
+                <span role='img' aria-label='heart-emoji'>♥️ SEND THOUGHT ♥️</span>
             </button>
         </form>
     )

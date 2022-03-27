@@ -2,7 +2,7 @@ import React from 'react';
 import { formatDistance } from 'date-fns';
 
 
-const Thoughts = ({ loading, thoughts }) => {
+const Thoughts = ({ loading, thoughts, onNewLikeSubmit }) => {
 
     if (loading) {
         return <h1>Loading in progress...</h1>
@@ -18,7 +18,15 @@ const Thoughts = ({ loading, thoughts }) => {
                             addSuffix: true
                         })}
                     </p>
-                    <p>{singleThought.hearts}</p>
+                    <section className='like-section'>
+                    <button
+                        className='like-btn'
+                        onClick={() => onNewLikeSubmit(singleThought._id)}
+                    >
+                        <span role='img' aria-label='heart-emoji'>♥️</span>
+                    </button>
+                    <p>x {singleThought.hearts}</p>
+                    </section>
                 </article>
             ))}
         </section>
