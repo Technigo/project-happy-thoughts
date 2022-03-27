@@ -4,7 +4,7 @@ import AddThought from './AddThought'
 import ThoughtsList from './ThoughtsList'
 
 const thoughtsAPI = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-const heartIcon = <img alt='heart-button' src={'assets/heart.png'} className='heart-icon'/>
+const heartIcon = <img alt='heart-icon' src={'assets/heart.png'} className='heart-icon'/>
 const emotions = [
     'happy',
     'sad',
