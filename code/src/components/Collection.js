@@ -10,7 +10,7 @@ const Collection = () => {
 
     const [fetchThought, setFetchThought] = useState([])
     const [newMessage, setNewMessage] = useState('')
-    // const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
 
 
     useEffect(() => {
@@ -18,12 +18,12 @@ const Collection = () => {
     }, [])
 
     const fetchThoughts = () => {
-        // setLoading(true)
+        setLoading(true)
         fetch(API_URL)
             .then((res) => res.json())
             .then(data => setFetchThought(data))
             .catch(error => console.error(error))
-            // .finally(() => setLoading(false))
+            .finally(() => setLoading(false))
     }
 
 
@@ -53,6 +53,7 @@ const Collection = () => {
     }
 
     const handleOnLikeChange = (likeID) => {
+
         const options = {
             method: 'POST',
         }
@@ -67,7 +68,7 @@ const Collection = () => {
     return (
         <div>
             <Message
-                // loading={loading}
+                loading={loading}
                 onNewMessageChange={onNewMessageChange}
                 onFormSubmit={onFormSubmit}
                  />
