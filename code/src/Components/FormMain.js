@@ -60,6 +60,7 @@ const FormMain = () => {
       .then((data) => {
         fetchThoughts()
       })
+      .catch((error) => error)
   }
 
 //Sends and presents values of FormInput and FormList trough props

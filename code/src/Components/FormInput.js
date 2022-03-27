@@ -1,15 +1,13 @@
 import React from "react"
 
 const setThought = (event, currentThought, setNewThought) => {
-    if (currentThought.length == 140) {
-        return 
+    if (currentThought.length ===! 140) {
+        return
     }
     else {
         setNewThought(event.target.value)
     }
 }
-
-
 
 const FormInput = ({
   onFormSubmit,
@@ -24,24 +22,24 @@ const FormInput = ({
 return (
   <>
     <div className="container">
-      <span className="refresh-wrapper">
-        
-      </span>
       <div className="submit-wrapper">
         <form onSubmit={((event) => setCounterValue(event.target.value.length), onFormSubmit)}
         >
           <label htmlFor="newThought">
-            <p>What is making you...</p>
+            <p>What is making you happy right now?</p>
           </label>
           <textarea
             rows="4"
             id="newThought"
             type="text"
-            placeholder="...happy right now?"
+            autoFocus
+            maxLength="140"
+            placeholder="Write a happy thought"
             value={newThought}
             onChange={(event) => setThought(event, newThought, setNewThought)} 
-          />
-          <p className="letter-counter">{newThought.length} / 140</p> 
+          />  
+ 
+          <p className="letter-counter">{newThought.length < 5 ? <span>Minimum 5 characters</span> : 140 - newThought.length}</p> 
           
           <button
             className="submit-btn"
@@ -49,7 +47,7 @@ return (
             type="submit"
           >
             <span role="img" aria-label="heart">
-            </span>Send a Happy Thought <span role="img" aria-label="heart"></span>
+            </span>Send<span role="img" aria-label="heart"></span>
           </button>
           
           <button className="refresh-btn" value="Refresh" onClick={RefreshBtn}>

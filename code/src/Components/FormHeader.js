@@ -3,7 +3,7 @@ import React from 'react'
 const FormHeader = () => {
     return(
         <header>
-        <h1>Happy Thoughts</h1>
+        <h1>Share your Happy Thoughts</h1>
         </header>
     )
 }
