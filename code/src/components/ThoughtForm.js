@@ -11,6 +11,7 @@ const ThoughtForm = ({newThought, handleNewThought, handleFormSubmit}) => {
               <label htmlFor='newThought'>
                 <h2>What's making you happy right now?</h2>
                     <textarea 
+                        htmlFor='newThought'
                         value={newThought} 
                         onChange={handleNewThought} 
                         placeholder ='Share your happy thought...'
