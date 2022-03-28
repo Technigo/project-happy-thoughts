@@ -6,13 +6,11 @@ const ThoughtForm = ({newThought, handleNewThought, handleFormSubmit}) => {
         <section>
             <form className='card grey' onSubmit={handleFormSubmit}>
                 <h2>What's making you happy right now?</h2>
-                <label htmlFor='add-thought'>
                     <textarea 
-                    className='text-field'
+                    htmlFor='add-thought'
                     value={newThought} 
                     onChange={handleNewThought} 
                     placeholder ='Share your happy thought...'/>
-                </label>
                 <button
                     className='form-button'
                     type='submit'
