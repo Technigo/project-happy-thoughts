@@ -10,8 +10,8 @@ const ThoughtForm = ({newThought, handleNewThought, handleFormSubmit}) => {
                 onSubmit={handleFormSubmit}
             >
                 <h2>What's making you happy right now?</h2>
+                <label htmlFor='add-thought'></label>
                 <textarea 
-                    htmlFor='add-thought'
                     value={newThought} 
                     onChange={handleNewThought} 
                     placeholder ='Share your happy thought...'
