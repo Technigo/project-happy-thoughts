@@ -1,13 +1,12 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+An app to list latest 20 posts with API and post new ones with POST method. 
+Additionally be able to count and update likes via other API endpoint and object id.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First planning which components to create - then trying to get all the data. When stucked I viewed the code along lessions, looked into SO, other people codes and googled. Had trouble getting the likes to increase, but after creating the Api component, I did get it to work out. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://clinquant-figolla-2cfc28.netlify.app/
