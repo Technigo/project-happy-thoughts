@@ -9,14 +9,13 @@ const ThoughtForm = ({newThought, handleNewThought, handleFormSubmit}) => {
                 className='card grey'
                 onSubmit={handleFormSubmit}
             >
+              <label htmlFor='add-thought'>
                 <h2>What's making you happy right now?</h2>
-                <label htmlFor='add-thought'>
                     <textarea 
                         value={newThought} 
                         onChange={handleNewThought} 
                         placeholder ='Share your happy thought...'
                     />
-                </label>
                 <button
                     className='form-button'
                     type='submit'
@@ -24,6 +23,7 @@ const ThoughtForm = ({newThought, handleNewThought, handleFormSubmit}) => {
                 >
                     <span className='heart-icon' role='img' aria-label='heart emoji'>❤️</span><span className='submit-message'>Send Happy Thought</span><span className='heart-icon' role='img' aria-label='heart emoji'>❤️</span>
                 </button>
+              </label>
             </form>
         </section>
     )
