@@ -58,6 +58,7 @@ section {
 }
 textarea {
   height: 15vh;
+  width: 100%;
   margin-bottom: 2vw;
   font-size: 10px;
   resize: none;
