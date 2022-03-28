@@ -1,7 +1,7 @@
 import React from "react"
 
-const setThought = (event, currentThought, setNewThought) => {
-    if (currentThought.length ===! 140) {
+const setThought = (event, currentThought, setNewThought) => { // Setting the input field with a max of 140 characters. 
+    if (currentThought.length ===! 140) { // No more characters can be typed after 140.
         return
     }
     else {
@@ -16,7 +16,7 @@ const FormInput = ({
   setNewThought,
 }) => {
   const RefreshBtn = () => {
-    window.location.reload("Refresh") // Look 
+    window.location.reload("Refresh") // Refresh button that refreshes the page 
 }
 
 return (
@@ -43,7 +43,7 @@ return (
           
           <button
             className="submit-btn"
-            disabled={newThought.length < 5 || newThought.length > 140} //Boolean expression. If characters less than 5 or greater than 140, button is disabled.
+            disabled={newThought.length < 5 || newThought.length > 140} //Boolean, If characters less than 5 or greater than 140, button is disabled. 
             type="submit"
           >
             <span role="img" aria-label="heart">

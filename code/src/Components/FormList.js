@@ -9,16 +9,16 @@ const FormList = ({ thought, onLikesIncrease }) => {
       <div className="thoughts-wrapper">
         <p className="thought-message">{thought.message}</p>
         
-        <button className="like-btn" 
+        <button className="like-btn" //Like button function that presents numbers of likes. onClick with styling that toggles between two colors.  
         onClick={() => onLikesIncrease(thought._id)} 
-        style={{ background: thought.hearts >= 1 ? "#f737378e" : "#eaeaea" }} >
+        style={{ background: thought.hearts >= 1 ? "#f737378e" : "#eaeaea" }} > 
           
-          <span className="like-heart" role="img" aria-label="heart">
+          <span className="like-heart" role="img" aria-label="heart"> 
             ❤️
           </span>
         </button>
         <span className="likes-counter">x{thought.hearts}</span>
-        <p className="date">Created {formatDistance(new Date(thought.createdAt), Date.now())} ago</p> 
+        <p className="date">Created {formatDistance(new Date(thought.createdAt), Date.now())} ago</p>
       </div>
     </div>
   )
