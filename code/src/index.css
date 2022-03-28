@@ -145,8 +145,7 @@ textarea {
   background-color: var(--clr-accent);
 }
 
-.like-btn:hover,
-.like-btn:active {
+.like-btn:hover {
   -webkit-transform: translate(0px, 5px);
   -ms-transform: translate(0px, 5px);
   transform: translate(0px, 5px);
