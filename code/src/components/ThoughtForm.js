@@ -5,14 +5,12 @@ const ThoughtForm = ({newThought, handleNewThought, handleFormSubmit}) => {
     return (
         <section>
             <form
-                htmlFor='addThoughtForm'
                 className='card grey'
                 onSubmit={handleFormSubmit}
             >
-              <label htmlFor='addThought'>
+              <label htmlFor='newThought'>
                 <h2>What's making you happy right now?</h2>
                     <textarea 
-                        htmlFor='textField'
                         value={newThought} 
                         onChange={handleNewThought} 
                         placeholder ='Share your happy thought...'
