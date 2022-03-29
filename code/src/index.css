@@ -61,6 +61,7 @@ textarea.red-text {
   border-radius: 20px;
   background-color: #ffadad;
   padding: 10px;
+  cursor: pointer;
 }
 
 .form p {
