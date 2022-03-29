@@ -121,16 +121,6 @@ form {
   cursor: pointer;
 }
 
-.emoji {
-  padding: 5px;
-}
-
-.emoji:hover {
-  transform: scale(1.8);
-  transition: smooth;
-  transition-timing-function: ease;
-}
-
 textarea {
   resize: none;
   padding: 7px;
