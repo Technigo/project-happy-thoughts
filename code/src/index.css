@@ -92,6 +92,7 @@ textarea.red-text {
   border-radius: 50%;
   height: 38px;
   width: 38px;
+  cursor: pointer;
 }
 
 .date {
