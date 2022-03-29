@@ -82,12 +82,9 @@ body {
   transition-timing-function: ease;
 }
 
-.submit-btn:disabled {
-  opacity: 50%;
-}
-
 .timestamp, .like-counter {
   font-size: 13px;
+  color: rgb(99, 99, 99);
 }
 
 
@@ -106,6 +103,11 @@ form {
   font-size: 16px;
   font-family: Monaco;
   text-align: center;
+}
+
+.submit-btn:disabled {
+  background-color: #fcdada;
+  color: grey;
 }
 
 .submit-btn {
