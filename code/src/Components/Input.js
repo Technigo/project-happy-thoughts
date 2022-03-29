@@ -6,6 +6,7 @@ const Input = ({ message, onInputChange, onFormSubmit} ) => {
         <form onSubmit={onFormSubmit}>
             <label htmlFor="thoughtInput" aria-label="thoughtInput"><h1>What's making you happy right now?</h1></label>
             <textarea 
+            id="thoughtInput"
             value={message} 
             onChange={onInputChange}
             placeholder="Week 11 is making me happy!"
