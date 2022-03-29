@@ -1,3 +1,5 @@
+/* GLOBAL TARGET */
+
 body {
   margin: 1em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +7,150 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  background: linear-gradient(120deg,
+  #FFA8A8,
+  #f8ffba); 
+  background-size: 500%;
+  animation-name: gradient;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes gradient {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 100%;
+  }
+}
+
+
+/* STYLING LIST OF THOUGHTS */
+
+.thoughts-container, .form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thoughts-cards, form {
+  padding: 20px;
+  border: 1px solid rgb(114, 114, 114);
+  background-color: #fbffd4;
+  width: 300px;
+  box-shadow: 5px 10px #4b433f;
+  margin-bottom: 30px;
+}
+
+.time-and-like-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+}
+
+.thoughts-message {
+  font-weight: 200;
+  font-size: 13px;
+}
+
+.no-like-btn, .like-btn {
+  height: 37px;
+  width: 37px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(240, 238, 238);
+  margin-right: 10px;
+  padding-left: 2px;
+  cursor: pointer;
+}
+
+.like-btn {
+  background-color: #FFA8A8;
+}
+
+.like-btn:hover, .no-like-btn:hover {
+  background-color: #fe8282;
+  transform: scale(1.05);
+  transition-timing-function: ease;
+}
+
+.submit-btn:disabled {
+  opacity: 50%;
+}
+
+.timestamp, .like-counter {
+  font-size: 13px;
+}
+
+
+/* STYLING FORM */
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color:#fffde6;
+}
+
+.form-title {
+  font-weight: 500;
+  font-size: 16px;
+  font-family: Monaco;
+  text-align: center;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  border-radius: 25px;
+  border: none;
+  width: 225px;
+  height: 50px;
+  background-color: #FFA8A8;
+  font-family: Monaco;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.emoji {
+  padding: 5px;
+}
+
+.emoji:hover {
+  transform: scale(1.8);
+  transition: smooth;
+  transition-timing-function: ease;
+}
+
+textarea {
+  resize: none;
+  padding: 7px;
+  color: #9d4f4f;
+}
+
+
+/* RESPONSIVENESS FOR TABLET AND DESKTOP */
+
+@media screen and (min-width: 480px) {
+
+  .thoughts-cards, form {
+    width: 400px;
+  }
+
+  .thoughts-message {
+    font-size: 15px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
 }

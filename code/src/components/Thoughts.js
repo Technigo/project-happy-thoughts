@@ -5,32 +5,34 @@ import { formatDistance } from 'date-fns';
 const Thoughts = ({ loading, thoughts, onNewLikeSubmit }) => {
 
     if (loading) {
-        return <h1>Loading in progress...</h1>
+        return <h4 className="loading-text">Happy tweets incoming in 3.. 2.. 1..</h4>
     }
 
     return (
-        <section>
+        <section className='thoughts-container'>
             {thoughts.map((thought) => ( 
-                <article key={thought._id}>
-                    <h4>{thought.message}</h4>
-                    <p>
-                        {formatDistance(new Date(thought.createdAt), Date.now(),{
-                            addSuffix: true
+                <article className='thoughts-cards' key={thought._id}>
+                    <h4 className='thoughts-message'>{thought.message}</h4>
+                    <div className='time-and-like-container'>
+                        <section className='like-container'>
+                            <button
+                                className={thought.hearts === 0 ? 'no-like-btn' : 'like-btn'}
+                                onClick={() => onNewLikeSubmit(thought._id)}
+                                >
+                                <span className= 'emoji' role='img' aria-label='heart-emoji'>💛</span>
+                            </button>
+                            <p className='like-counter'>x {thought.hearts}</p>
+                        </section>
+                        <p className='timestamp'>
+                            {formatDistance(new Date(thought.createdAt), Date.now(),{
+                             addSuffix: true
                         })}
-                    </p>
-                    <section className='like-section'>
-                    <button
-                        className='like-btn'
-                        onClick={() => onNewLikeSubmit(thought._id)}
-                    >
-                        <span role='img' aria-label='heart-emoji'>♥️</span>
-                    </button>
-                    <p>x {thought.hearts}</p>
-                    </section>
+                        </p>
+                    </div>
                 </article>
             ))}
         </section>
-    )
+    );
 };
 
 export default Thoughts;
