@@ -23,6 +23,7 @@ body {
   border: 1px solid black;
   box-shadow: 10px 10px black;
   height: 200px;
+  width: 300px;
 }
 
 .inputMessage {
@@ -64,7 +65,7 @@ button {
 .thoughtCard {
   margin: 15px;
   margin-bottom: 20px;
-  width: 85vw;
+  width: 300px;
   background-color: white;
   border: 1px solid black;
   padding: 10px;
@@ -108,17 +109,10 @@ button {
 @media screen and (min-width: 768px) {
   .thoughtCard,
   .newThoughtContainer {
-    width: 65vw;
+    width: 400px;
   }
 
   .inputMessage {
     width: 100%;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .thoughtCard,
-  .newThoughtContainer {
-    width: 25vw;
   }
 }
