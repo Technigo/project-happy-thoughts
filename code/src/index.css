@@ -52,7 +52,6 @@ main {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: 1em;
 	font-size: 0.8rem;
 }
 
@@ -62,9 +61,18 @@ main {
 	overflow-wrap: break-word;
 }
 
+.characters {
+	color: #444444;
+}
+
 .message-text {
 	font-size: 1.2rem;
 	margin-top: 0;
+}
+
+.error {
+	color: #aa0000;
+	font-size: 13px;
 }
 
 .likes-container {
@@ -104,6 +112,7 @@ button {
 	color: var(--clr-black);
 	border-radius: 25px;
 	cursor: pointer;
+	margin-top: 1em;
 }
 
 .send-btn:hover {

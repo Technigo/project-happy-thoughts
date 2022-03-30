@@ -3,10 +3,6 @@ import React from 'react'
 import Heart from '../assets/heart.png'
 
 export const ThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
-	// if (newThought.length < 5){
-	// 	{input= backgroundColor: 'pink'}
-	// }
-
 	const checkKey = (e) => {
 		if (e.key === 'Enter' && !e.shiftKey) {
 			onFormSubmit(e)
@@ -40,7 +36,20 @@ export const ThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
 						Happy Thought{' '}
 						<img src={Heart} alt='heart-icon' className='heart-icon' />
 					</button>
-					<div className='characters'>{140 - newThought.length}/140</div>
+					<div>
+						<div>
+							{' '}
+							{newThought.length > 0 && newThought.length < 5 && (
+								<p className='error'>Minimum: 5 characters</p>
+							)}
+							{newThought.length > 140 && (
+								<p className='error'>Maximum: 140 characters</p>
+							)}
+						</div>
+						<div className='characters'>
+							Characters left: {140 - newThought.length}
+						</div>
+					</div>
 				</div>
 			</div>
 		</form>
