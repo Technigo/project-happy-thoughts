@@ -11,7 +11,11 @@ return (
             {' '}
             &hearts; {thought.hearts}
             </button>
+<<<<<<< HEAD
             <div className="date">{moment(thought.createdAt).fromNow()}</div>
+=======
+           <div className="date">{moment(thought.createdAt).fromNow()}</div>
+>>>>>>> a64538eee69d16fbedfc034139876c504af3d825
      </div>
 ); 
 }; 
