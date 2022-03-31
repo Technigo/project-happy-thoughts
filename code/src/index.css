@@ -106,38 +106,12 @@ p, button, textarea {
 }
 
 /* MEDIA QUERIES */
-/* @media (min-width: 667px) {
+@media (max-width: 450px) {
   form {
-    width: 50%;
-    margin: 5vw;
-    padding: 5vw;
+    width: 90%;
   }
 
   .thought-box {
-    width: 50%;
-    margin: 5vw;
-    padding: 5vw;
-  }
-
-  p, button, textarea {
-    font-size: larger;
+    width: 90%;
   }
 }
-
-@media (min-width: 1024px) {
-  form {
-    width: 40%;
-    margin: 1vw;
-    padding: 1vw;
-  }
-
-  .thought-box {
-    width: 40%;
-    margin: 1vw;
-    padding: 1vw;
-  }
-
-  p, button, textarea {
-    font-size: larger;
-  }
-} */
