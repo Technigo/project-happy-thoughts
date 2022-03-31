@@ -2,7 +2,6 @@ import React from "react";
 // RENDERING OF INPUT FORM AND SEND BUTTON
 const Input = ({ message, onInputChange, onFormSubmit} ) => {
   return (
-    <header>
         <form onSubmit={onFormSubmit}>
             <label htmlFor="thoughtInput" aria-label="thoughtInput"><h1>What's making you happy right now?</h1></label>
             <textarea 
@@ -16,9 +15,7 @@ const Input = ({ message, onInputChange, onFormSubmit} ) => {
                 Send happy thought
               <span role="img" aria-label="like-emoji">💖</span>
             </button>
-        </form>
-    </header>
-  )
+        </form>  )
 }
 
 export default Input;

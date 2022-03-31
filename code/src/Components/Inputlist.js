@@ -8,13 +8,13 @@ const Inputlist = ({ thought, messageID, onLikeMessage }) => {
     return (
       <section className="thoughts-container">
             <div className="thought-box" key={thought._id}>
-            <p className="date">{time}</p>
             <p>{thought.message}</p>
             <LikeButton 
               messageID={messageID} 
               thought={thought}
               onLikeMessage={onLikeMessage}
               />
+              <p className="date">{time}</p>
             </div>
       </section>
     )

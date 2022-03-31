@@ -6,7 +6,7 @@ import Inputlist from "./Inputlist";
 export const Mainpage = () => {
   // STATES FOR ENTIRE WEBPAGE
   const [thoughts, setThoughts] = useState([]);
-  const [message, SetMessage] = useState('');
+  const [message, setMessage] = useState('');
 
   // USEEFFECT SO THAT THE FUNCTION IS CALLED UPON COMPONENT MOUNTING
   useEffect(() => {
@@ -23,7 +23,7 @@ export const Mainpage = () => {
 
   // ALLOWING TO POST TO API 
   const handleInputChange = (event) => {
-    SetMessage(event.target.value);
+    setMessage(event.target.value);
   }
 
   const handleFormSubmit = (event) => {
@@ -40,7 +40,7 @@ export const Mainpage = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
     .then(res => res.json())
     .then(() => fetchThoughts())
-    .finally(() => SetMessage(''));
+    .finally(() => setMessage(''));
   }
 
   // ALLOWING TO LIKE A MESSAGE
@@ -58,12 +58,15 @@ export const Mainpage = () => {
   }
 
       return (
-        <main>
+        <>
+        <header>
           <Input 
             message={message}
             onInputChange={handleInputChange}
             onFormSubmit={handleFormSubmit}
           />
+        </header>
+        <main>
           {thoughts.map(thought => (
           <Inputlist 
             key={thought._id}
@@ -73,5 +76,6 @@ export const Mainpage = () => {
           />
           ))}
         </main>
+        </>
       )
 }
