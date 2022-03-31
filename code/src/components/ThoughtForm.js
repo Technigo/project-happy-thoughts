@@ -34,7 +34,7 @@ return (
      
        <button className="add-thought_button" disabled={newThought.length < 5 } type="submit">
        <span role="img" aria-label="heart"> ❤️</span> Send thought
-       <span role="img" area-label="heart"> ❤️</span> </button>
+       <span role="img" aria-label="heart"> ❤️</span> </button>
     
     </form>
     </div>

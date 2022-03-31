@@ -42,7 +42,7 @@ const handleFormSubmit = (event) => {
   .then(res => res.json())
   .then((data) => {
 
-      fetchThoughts();
+      fetchThoughts(setNewThought(""));
   });
 };
 const handleLikesIncrease =(thoughtId)=>{

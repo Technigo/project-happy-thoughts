@@ -11,9 +11,7 @@ return (
             {' '}
             &hearts; {thought.hearts}
             </button>
-            <p className="date">
-            - Createt {moment (thought.createdA ).fromNow()}
-            </p>
+            <div className="date">{moment(thought.createdAt).fromNow()}</div>
      </div>
 ); 
 }; 
