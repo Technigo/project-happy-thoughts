@@ -14,7 +14,7 @@ const ThoughtCards = ({ thought, handleLikes, id }) => {
 
   return (
     <>
-      <p>{thought.message}</p>
+      <p className="thought-messages">{thought.message}</p>
       <div className="button-wrapper">
         <div>
           <button
