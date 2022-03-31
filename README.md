@@ -10,4 +10,4 @@ To understand the React-concept, and where to put different "things" to be able 
 
 ## View it live
 
-plese view it : 
+plese view it : https://happy-happy-by-mamite.netlify.app/
