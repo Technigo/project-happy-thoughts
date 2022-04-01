@@ -104,9 +104,8 @@ textarea:focus {
 }
 
 .message {
-  height: 60px;
-  padding: 1rem 0;
   height: fit-content;
+  padding: 1rem 0;
   overflow: scroll;
 }
 
@@ -350,9 +349,6 @@ footer {
   .thoughts-container {
     width: 550px;
   }
-  /* .message {
-    overflow: visible;
-  } */
   .heart {
     font-size: 1.4rem;
     position: absolute;
