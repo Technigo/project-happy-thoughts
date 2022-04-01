@@ -10,7 +10,11 @@ const Input = ({ message, onInputChange, onFormSubmit} ) => {
             onChange={onInputChange}
             placeholder="Week 11 is making me happy!"
             />
-            <button className="form-button" type="submit">
+            <button 
+              className="form-button" 
+              type="submit"
+              disabled={message.length < 5 || message.length > 140}
+              >
               <span role="img" aria-label="like-emoji">💖</span>
                 Send happy thought
               <span role="img" aria-label="like-emoji">💖</span>
