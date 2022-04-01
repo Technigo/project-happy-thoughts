@@ -350,9 +350,9 @@ footer {
   .thoughts-container {
     width: 550px;
   }
-  .message {
+  /* .message {
     overflow: visible;
-  }
+  } */
   .heart {
     font-size: 1.4rem;
     position: absolute;
