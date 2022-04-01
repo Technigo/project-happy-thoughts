@@ -16,13 +16,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Space Mono', monospace;
+  color: var(--first);
   background: radial-gradient(circle, var(--fourth) 0%, #ffffff 50%, var(--fourth) 100%);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Space Mono',
-    monospace;
-    color: var(--first);
 }
 
 
@@ -104,14 +100,14 @@ textarea:focus {
   padding: 1rem;
   box-shadow: 6px 6px var(--first);
   overflow-wrap: break-word;
-  font-family: 'Space Mono', monospace;
   background-color: #fff;
 }
 
 .message {
   height: 60px;
   padding: 1rem 0;
-  overflow: scroll;
+  height: fit-content;
+  /* overflow: scroll; */
 }
 
 .like-and-date-wrapper {
@@ -159,11 +155,9 @@ footer {
   font-size: 1.1rem;
   font-weight: normal;
   margin-bottom: 1rem;
-  font-family: 'Space Mono', monospace;
 }
 
 .footer-text {
-  font-family: 'Space Mono', monospace;
   font-size: 0.8rem;
   color: var(--first);
   margin: 0;
@@ -180,7 +174,6 @@ footer {
   width: 100%;
   align-items: flex-end;
   margin-top: 15px;
-  font-family: 'Space Mono', monospace;
 }
 
 .submit-button {
@@ -270,84 +263,84 @@ footer {
 }
 
 .heartfall {
-  position:fixed;
-  top:-10%;
-  z-index:9999;
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select:none;
-  user-select:none;
-  cursor:default;
-  -webkit-animation-name: heartsfall-fall,heartsfall-shake;
-  -webkit-animation-duration:10s,3s;
-  -webkit-animation-timing-function:linear,ease-in-out;
-  -webkit-animation-iteration-count:infinite,infinite;
-  -webkit-animation-play-state:running,running;
-  animation-name: heartsfall-fall,heartsfall-shake;
-  animation-duration:10s,3s;
-  animation-timing-function:linear,ease-in-out;
-  animation-iteration-count:infinite,infinite;
-  animation-play-state:running,running
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-animation-name: heartsfall-fall, heartsfall-shake;
+  -webkit-animation-duration: 10s,3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-name: heartsfall-fall, heartsfall-shake;
+  animation-duration: 10s,3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
 }
 
 .heartfall:nth-of-type(0) {
-  left:1%;
-  -webkit-animation-delay:0s,0s;
-  animation-delay:0s,0s
+  left: 1%;
+  -webkit-animation-delay: 0s,0s;
+  animation-delay: 0s,0s
 }
 
 .heartfall:nth-of-type(1) {
-  left:10%;
-  -webkit-animation-delay:1s,1s;
-  animation-delay:1s,1s
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s
 }
 
 .heartfall:nth-of-type(2) {
-  left:20%;
-  -webkit-animation-delay:6s,.5s;
-  animation-delay:6s,.5s
+  left: 20%;
+  -webkit-animation-delay: 6s, .5s;
+  animation-delay: 6s, .5s
 }
 
 .heartfall:nth-of-type(3) {
-  left:30%;
-  -webkit-animation-delay:4s,2s;
-  animation-delay:4s,2s
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s
 }
 
 .heartfall:nth-of-type(4) {
-  left:40%;
-  -webkit-animation-delay:2s,2s;
-  animation-delay:2s,2s
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s
 }
 
 .heartfall:nth-of-type(5) {
-  left:50%;
-  -webkit-animation-delay:8s,3s;
-  animation-delay:8s,3s
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s
 }
 
 .heartfall:nth-of-type(6) {
-  left:60%;
-  -webkit-animation-delay:6s,2s;
-  animation-delay:6s,2s
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s
 }
 
 .heartfall:nth-of-type(7) {
-  left:70%;
-  -webkit-animation-delay:2.5s,1s;
-  animation-delay:2.5s,1s
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s
 }
 
 .heartfall:nth-of-type(8) {
-  left:80%;
-  -webkit-animation-delay:1s,0s;
-  animation-delay:1s,0s
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s
 }
 
 .heartfall:nth-of-type(9) {
-  left:90%;
-  -webkit-animation-delay:3s,1.5s;
-  animation-delay:3s,1.5s
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s
 }
 
 
