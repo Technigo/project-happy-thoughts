@@ -107,7 +107,7 @@ textarea:focus {
   height: 60px;
   padding: 1rem 0;
   height: fit-content;
-  /* overflow: scroll; */
+  overflow: scroll;
 }
 
 .like-and-date-wrapper {
@@ -349,6 +349,9 @@ footer {
 @media screen and (min-width: 768px) {
   .thoughts-container {
     width: 550px;
+  }
+  .message {
+    overflow: unset;
   }
   .heart {
     font-size: 1.4rem;
