@@ -95,7 +95,7 @@ textarea:focus {
 .thought-container {
   width: 90%;
   border: 2px solid var(--first);
-  height: 140px;
+  height: fit-content;
   margin: 1rem 0;
   padding: 1rem;
   box-shadow: 6px 6px var(--first);
@@ -104,7 +104,8 @@ textarea:focus {
 }
 
 .message {
-  height: 100px;
+  min-height: 60px;
+  height: fit-content;
   padding: 1rem 0;
 }
 
