@@ -351,7 +351,7 @@ footer {
     width: 550px;
   }
   .message {
-    overflow: initial;
+    overflow: visible;
   }
   .heart {
     font-size: 1.4rem;
