@@ -133,9 +133,15 @@ textarea:focus {
   top: 9px;
 }
 
+.like-amount {
+  width: 30px;
+}
+
 .date {
   display: flex;
   align-items: center;
+  max-width: 250px;
+  margin-left: 3rem;
 }
 
 

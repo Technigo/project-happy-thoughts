@@ -21,7 +21,7 @@ const ThoughtsList = ({ thoughts, likeMessage }) => {
                                     💖
                                     </span>
                                 </button>
-                                <p>
+                                <p className="like-amount">
                                     x {thought.hearts}
                                 </p>
                             </div>
