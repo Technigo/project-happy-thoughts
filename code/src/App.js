@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import ThoughtForm from "components/ThoughtForm";
 import ThoughtList from "components/ThoughtList";
+import Footer from "components/Footer";
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([])
@@ -33,14 +34,28 @@ export const App = () => {
     }
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-      .then((res) => res.json())
+      .then(res => res.json())
       .then(() => {
         getThought(setNewThought(""))
       })
   }
 
+  const handleIncreaseLikes = (thoughtId) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    }
+
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
+      .then(res => res.json())
+      .then(() => getThought())
+      getThought()
+  }
+
 return (
-  <div>
+  <>
   <ThoughtForm 
   newThought={newThought}
   setNewThought={setNewThought}
@@ -49,7 +64,9 @@ return (
   <ThoughtList 
     thoughtList={thoughtList} 
     loading={loading}
+    onIncreaseLikes={handleIncreaseLikes}
   />
-  </div>
+  <Footer />
+  </>
 )
 }

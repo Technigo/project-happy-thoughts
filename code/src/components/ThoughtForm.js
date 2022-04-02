@@ -4,21 +4,23 @@ const ThoughtForm = ({ newThought, setNewThought, onFormSubmit }) => {
 
     return (
         <form onSubmit={onFormSubmit}>
-            <h1>What's making you happy right now?</h1>
+            <h1>What's making you happy right now? <span role="img" aria-label="lollipop emoji">🍭</span></h1>
             <textarea
             className="user-input"
             type="text"
             value={newThought}
             id="newThought"
+            placeholder="Type happy thought here..."
             onChange={(event) => setNewThought(event.target.value)}
-
+            maxLength={140}
             />
             <button
-            className="button" 
+            disabled={newThought.length < 6 || newThought.length > 140}
+            className="share-button" 
             type="submit">
-            <span role="img" aria-label="heart-emoji">💗{" "}</span>
-            Share some happiness! 
-            <span role="img" aria-label="heart-emoji">{" "}💗</span>
+            <span role="img" aria-label="heart emoji">💗{" "}</span>
+            Share Happy Thought! 
+            <span role="img" aria-label="heart emoji">{" "}💗</span>
             </button> 
         </form>
     )
