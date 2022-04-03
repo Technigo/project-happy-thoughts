@@ -1,15 +1,14 @@
 import React from 'react';
+import NewThought from './NewThought';
 
-const Header = () => {
+
+const Header = ({ handleFormSubmit }) => {
     return (
         <header>
-            <h1>
-            Spread the happiness, share your thoughts for today        
-            </h1>
+            <NewThought onThoughtSend={handleFormSubmit} />
         </header>
     )
 }
 
 export default Header
 
-//<span role="img" aria-label='smiling face with hearts emoji'>🥰</span>

@@ -1,14 +1,19 @@
 import React from 'react';
-import { formatDistanceToNow } from 'date-fns'; 
+import { formatDistanceToNow } from 'date-fns';
 
-const Thought = ({thought, addLike}) => {
+const Thought = ({ thought, addLike }) => {
     return (
-        <div>
+        <div className='thought-container'>
             <p>{thought.message}</p>
-            <p>{thought.hearts}</p>
-            <p>{formatDistanceToNow(new Date(thought.createdAt), {addSuffix: true})}
-            </p>
-            <button className='btn' onClick={(event) => addLike(thought._id, event)}>Like</button>
+            <div className="thought-info-container">
+                <button className='btn' onClick={(event) => addLike(thought._id, event)}>
+                    <span className='icon' role="img" aria-label="thumbsup" aria-hidden="false">👍</span>
+                    <span>x {thought.hearts}</span>
+                </button>
+               
+                <p>{formatDistanceToNow(new Date(thought.createdAt), { addSuffix: true })}</p>
+
+            </div>
         </div>
     );
 }
