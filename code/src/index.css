@@ -1,10 +1,9 @@
 body {
-  margin: 20px;
+  margin-top: 30px;
   font-family: 'Roboto mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(0.25turn, #CC95C0, #DBD4B4, #7AA1D2);
-  /* background: #D885A3; */
 }
 
 code {
@@ -15,14 +14,14 @@ code {
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&display=swap');
 
 form {
-  max-width: 500px;
+  max-width: 375px;
   border: 2px solid black;
   background: #F7F5F2;
-  box-shadow: 8px 8px;
+  box-shadow: 10px 10px;
 }
 
 textarea {
-  width: 400px;
+  width: 325px;
   height: 100px;
   border: 2px solid #DFDFDE;
   margin-left: 20px;
@@ -74,10 +73,10 @@ div {
 }
 
 .thought-cards {
-  max-width: 500px; 
+  width: 375px; 
   border: 2px solid black;
   background: #F7F5F2;
-  box-shadow: 8px 8px;
+  box-shadow: 10px 10px;
   margin-top: 40px;
   word-wrap: break-word;
 }
@@ -126,4 +125,17 @@ div {
   font-size: 20px;
 }
 
+@media (min-width: 667px) {
+  
+  form {
+    max-width: 500px;
+  }
 
+  textarea {
+    width: 425px;
+  }
+
+  .thought-cards {
+    width: 500px;
+  }
+}

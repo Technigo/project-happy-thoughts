@@ -10,7 +10,7 @@ const ThoughtForm = ({ newThought, setNewThought, onFormSubmit }) => {
             type="text"
             value={newThought}
             id="newThought"
-            placeholder="Type happy thought here..."
+            placeholder="Type a minimum of 6 characters :)"
             onChange={(event) => setNewThought(event.target.value)}
             maxLength={140}
             />
