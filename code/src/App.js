@@ -57,9 +57,9 @@ export const App = () => {
 return (
   <>
   <ThoughtForm 
-  newThought={newThought}
-  setNewThought={setNewThought}
-  onFormSubmit={onFormSubmit}
+    newThought={newThought}
+    setNewThought={setNewThought}
+    onFormSubmit={onFormSubmit}
   />
   <ThoughtList 
     thoughtList={thoughtList} 
