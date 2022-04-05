@@ -67,7 +67,6 @@ textarea:focus {
 }
 
 .send-btn:hover {
-  border: 2px solid pink;
   background-color: pink;
 }
 .likes-wrapper {
