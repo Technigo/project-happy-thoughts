@@ -1,6 +1,6 @@
 # Happy Thoughts
 
-This week project was fetching and posting data to an API. A simple API to collect haapy thoughts
+This week project was fetching and posting data to an API. A simple API to collect and post happy thoughts
 
 ## What I learnt
 -use the useEffect hook in React 
