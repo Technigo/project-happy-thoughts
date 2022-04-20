@@ -7,7 +7,7 @@ const Thought = ({ thought, addLike }) => {
             <p>{thought.message}</p>
             <div className="thought-info-container">
                 <button className='btn' onClick={(event) => addLike(thought._id, event)}>
-                    <span className='icon' role="img" aria-label="thumbsup" aria-hidden="false">👍</span>
+                    <span className='icon' role="img" aria-label="heart" aria-hidden="false">❤️</span>
                     <span>x {thought.hearts}</span>
                 </button>
                

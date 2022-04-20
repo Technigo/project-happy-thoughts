@@ -1,14 +1,12 @@
-import React from 'react';
+/*import React from 'react';
 
 const Emojis = (props) => (
     const {props, symbol} = props
 
-
-
     return (
-    <span className='face-hearts' role='img' aria-label='smiling-face-with-hearts'>🥰
+    <span className='heart' role='img' aria-label='shiny-heart'>💖
         {props.symbol}
     </span>
+    
 );
-export default Emojis
-//<span role="img" aria-label='smiling face with hearts emoji'>🥰</span>
+export default Emojis*/
