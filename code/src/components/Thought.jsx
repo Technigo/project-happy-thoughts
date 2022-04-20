@@ -4,7 +4,7 @@ import { formatDistanceToNow } from 'date-fns';
 const Thought = ({ thought, addLike }) => {
     return (
         <div className='thought-container'>
-            <p>{thought.message}</p>
+            <p className="thought-text">{thought.message}</p>
             <div className="thought-info-container">
                 <button className='btn' onClick={(event) => addLike(thought._id, event)}>
                     <span className='icon' role="img" aria-label="heart" aria-hidden="false">❤️</span>

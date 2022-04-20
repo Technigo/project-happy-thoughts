@@ -101,6 +101,11 @@ header {
   justify-content: space-between;
 }
 
+.thought-text {
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
 .icon {
   font-size: 20px;
   border-radius: 50%;
@@ -115,15 +120,16 @@ header {
 
 /*MEDIA QUERIES*/
 
-
-@media screen and (min-width: 767px) {
+/*Tablet*/
+@media screen and (min-width: 768px) {
   .container {
-    width: 50vw
+    width: 50vw;
   }
 }
 
+/* Desktop*/
 @media screen and (min-width: 1100px) {
   .container {
-    width: 30vw
+    width: 30vw;
   }
 }
