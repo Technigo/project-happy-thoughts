@@ -12,7 +12,7 @@ const DisplayThoughts = () => {
 
 
     const fetchAllThoughts = () => {
-        fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
+        fetch("https://happy-thoughts-api-rawi.herokuapp.com/thoughts")
             .then((res) => res.json())
             .then((data) => setThoughts(data))
     }
@@ -27,7 +27,7 @@ const DisplayThoughts = () => {
                 },
             };
 
-            fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thought._id}/like`, options)
+            fetch(`https://happy-thoughts-api-rawi.herokuapp.com/thoughts/${thought._id}/like`, options)
                 .then((res) => res.json())
                 .then(() => {
                     fetchAllThoughts()

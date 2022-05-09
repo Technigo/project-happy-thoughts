@@ -19,7 +19,7 @@ const PostThoughts = () => {
             })
         };
 
-        fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", options)
+        fetch("https://happy-thoughts-api-rawi.herokuapp.com/thoughts", options)
             .then((res) => res.json())
             .then(() => {
                 window.location.reload(true)

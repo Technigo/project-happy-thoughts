@@ -11,3 +11,4 @@ This project is built with React, CSS and semantic html.
 ## View it live
 
 https://illustrious-frangipane-e38a00.netlify.app/
+I have also added my own api. View the Api here: https://happy-thoughts-api-rawi.herokuapp.com/
