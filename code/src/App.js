@@ -4,9 +4,13 @@ import RecentThoughts from './components/RecentThoughts';
 import NewThoughts from './components/NewThoughts';
 
 export const App = () => {
-  const API_URL = 'https://happy-thoughts-projectapi.herokuapp.com/';
+  const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+  const API_LIKES = (thoughtId) =>
+    `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
+
   const [thoughts, setThoughts] = useState([]);
   const [newThoughts, setNewThoughts] = useState('');
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     fetchThoughts();
@@ -18,11 +22,9 @@ export const App = () => {
       .then((data) => setThoughts(data));
   };
 
-  // remove this later
-  // console.log(thoughts);
-
   const handleNewThoughtsChange = (e) => {
     setNewThoughts(e.target.value);
+    setCounter(e.target.value.length);
   };
 
   const handleFormSubmit = (event) => {
@@ -41,19 +43,40 @@ export const App = () => {
     fetch(API_URL, options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
-      .finally(() => setNewThoughts(''));
+      .finally(() => {
+        setNewThoughts('');
+        setCounter(0);
+      });
+  };
+
+  const handleLikesInc = (thoughtId) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+    };
+    fetch(API_LIKES(thoughtId), options)
+      .then((res) => res.json())
+      .then((data) => {
+        fetchThoughts(data);
+      });
   };
 
   return (
     <div className="main-container">
       <NewThoughts
         newThoughts={newThoughts}
+        setNewThoughts={setNewThoughts}
         onNewThoughtsChange={handleNewThoughtsChange}
         handleFormSubmit={handleFormSubmit}
+        counter={counter}
       />
-      <RecentThoughts thoughts={thoughts} />
+      <RecentThoughts thoughts={thoughts} handleLikesInc={handleLikesInc} />
     </div>
   );
 };
 
 // const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+// const API_URL = 'https://happy-thoughts-projectapi.herokuapp.com/';
+// const API_LIKES = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/happy-thoughts/${thoughtId}/like`;

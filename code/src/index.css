@@ -1,11 +1,11 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inconsolata', monospace;
+  font-size: 16px;
+  font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 code {
@@ -18,17 +18,79 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 65vw;
+  width: 100%;
   margin: auto;
 }
 
-.thoughts-container {
+
+/* new thoughts */
+
+.new-thoughts {
+    background-color: rgb(242,240,240);
 }
 
 .thoughts-message {
+  width: 80vw;
   border-style: solid;
-  margin: 5px;
+  margin-bottom: 30px;
+  padding: 0 10px 15px 10px;
   display: flex;
   flex-direction: column;
-  /* box-shadow: 7px 7px red; */
+  box-shadow: 5px 5px black;
+}
+
+.group-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.heart-times-gr {
+
+}
+
+
+.submit-btn {
+  background-color: rgb(255,173,173);
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 10px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* recent thoughts */
+
+.heart-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgb(234,234,234);
+  border-style: none;
+  cursor: pointer;
+}
+
+.heart-btn:hover {
+  background-color: rgb(255,173,173);
+}
+
+.times-liked, .time-txt {
+  color: rgb(134,134,134);
+}
+
+/* tabet */
+@media (min-width: 768px) {
+  .thoughts-message {
+    width: 50vw;
+  }
+}
+
+/* desktop */
+@media (min-width: 1025px) {
+  .thoughts-message {
+    width: 40vw;
+  }
 }
