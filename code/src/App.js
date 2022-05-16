@@ -4,7 +4,7 @@ import RecentThoughts from './components/RecentThoughts';
 import NewThoughts from './components/NewThoughts';
 
 export const App = () => {
-  const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+  const API_URL = 'https://happy-thoughts-projectapi.herokuapp.com/';
   const [thoughts, setThoughts] = useState([]);
   const [newThoughts, setNewThoughts] = useState('');
 
@@ -45,7 +45,7 @@ export const App = () => {
   };
 
   return (
-    <div className='main-container'>
+    <div className="main-container">
       <NewThoughts
         newThoughts={newThoughts}
         onNewThoughtsChange={handleNewThoughtsChange}
@@ -55,3 +55,5 @@ export const App = () => {
     </div>
   );
 };
+
+// const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
