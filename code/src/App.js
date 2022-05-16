@@ -4,7 +4,7 @@ import RecentThoughts from './components/RecentThoughts';
 import NewThoughts from './components/NewThoughts';
 
 export const App = () => {
-  const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+  const API_URL = 'https://happy-thoughts-projectapi.herokuapp.com/';
   const API_LIKES = (thoughtId) =>
     `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
 
