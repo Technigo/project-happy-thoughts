@@ -3,8 +3,8 @@ import ThoughtForm from './components/ThoughtForm'
 import ThoughtItem from './components/ThoughtItem'
 import HappyLoading from './components/HappyLoading';
 
-const HAPPY_API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-const LIKES_URL = (thoughtId) =>  `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
+const HAPPY_API = 'https://week19-happythoughts-api-frisk.herokuapp.com/thoughts'
+const LIKES_URL = (thoughtId) =>  `https://week19-happythoughts-api-frisk.herokuapp.com/thoughts/${thoughtId}/like`
 
 export const App = () => {
 
