@@ -4,9 +4,10 @@ import RecentThoughts from './components/RecentThoughts';
 import NewThoughts from './components/NewThoughts';
 
 export const App = () => {
-  const API_URL = 'https://happy-thoughts-projectapi.herokuapp.com/';
+  const API_URL =
+    'https://happy-thoughts-projectapi.herokuapp.com/happy-thoughts';
   const API_LIKES = (thoughtId) =>
-    `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
+    `https://happy-thoughts-projectapi.herokuapp.com/happy-thoughts/${thoughtId}/like`;
 
   const [thoughts, setThoughts] = useState([]);
   const [newThoughts, setNewThoughts] = useState('');
@@ -79,4 +80,5 @@ export const App = () => {
 
 // const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
 // const API_URL = 'https://happy-thoughts-projectapi.herokuapp.com/';
+// https://happy-thoughts-projectapi.herokuapp.com/happy-thoughts
 // const API_LIKES = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/happy-thoughts/${thoughtId}/like`;
