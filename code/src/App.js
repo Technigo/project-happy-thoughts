@@ -11,7 +11,7 @@ export const App = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
-  }, [])
+  }, [[], thoughts])
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
