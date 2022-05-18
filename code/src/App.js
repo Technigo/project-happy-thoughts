@@ -59,8 +59,8 @@ export const App = () => {
     };
     fetch(API_LIKES(thoughtId), options)
       .then((res) => res.json())
-      .then(() => {
-        fetchThoughts();
+      .then((data) => {
+        fetchThoughts(data);
       });
   };
 
