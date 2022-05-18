@@ -15,7 +15,7 @@ export const Mainpage = () => {
 
   // FETCHING OF API DATA
   const fetchThoughts = () => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://sofia-happy-thoughts-api.herokuapp.com/thoughts')
     .then(res => res.json())
     .then(data => setThoughts(data))
     .catch(error => console.error(error))
