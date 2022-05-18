@@ -37,7 +37,7 @@ export const Mainpage = () => {
       body: JSON.stringify({ message: message })
     }
   
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://sofia-happy-thoughts-api.herokuapp.com/thoughts', options)
     .then(res => res.json())
     .then(() => fetchThoughts())
     .finally(() => setMessage(''));
@@ -52,7 +52,7 @@ export const Mainpage = () => {
       },
     }
   
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`, options)
+    fetch(`https://sofia-happy-thoughts-api.herokuapp.com/thoughts/${messageID}/like`, options)
     .then(res => res.json())
     .then(() => fetchThoughts())
   }
