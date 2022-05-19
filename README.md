@@ -10,4 +10,6 @@ If I had more time I would try to understand the different parts of React (like 
 
 ## View it live
 
+
 https://haappythoughts.netlify.app/
+
