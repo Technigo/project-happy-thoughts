@@ -6,8 +6,8 @@ import NewThoughts from './components/NewThoughts';
 export const App = () => {
   const API_URL =
     'https://happy-thoughts-projectapi.herokuapp.com/happy-thoughts';
-  const API_LIKES = (thoughtId) =>
-    `https://happy-thoughts-projectapi.herokuapp.com/happy-thoughts/${thoughtId}/like`;
+  // const API_LIKES = (thoughtId) =>
+  //   `https://happy-thoughts-projectapi.herokuapp.com/happy-thoughts/${thoughtId}/like`;
 
   const [thoughts, setThoughts] = useState([]);
   const [newThoughts, setNewThoughts] = useState('');
@@ -57,10 +57,10 @@ export const App = () => {
         'Content-type': 'application/json',
       },
     };
-    fetch(API_LIKES(thoughtId), options)
+    fetch(`${API_URL}/${thoughtId}/like`, options)
       .then((res) => res.json())
-      .then((data) => {
-        fetchThoughts(data);
+      .then(() => {
+        fetchThoughts();
       });
   };
 
