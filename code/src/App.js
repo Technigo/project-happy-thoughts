@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import ThoughtForm from 'Components/ThoughtForm'
 import ThoughtItem from 'Components/ThoughtItem'
 
-const API_URL = 'https://happy-thoughts-level-up.herokuapp.com/'
+const API_URL = 'https://happy-thoughts-level-up.herokuapp.com/thoughts'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
