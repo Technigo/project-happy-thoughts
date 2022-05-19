@@ -9,11 +9,11 @@ export const App = () => {
 
   useEffect(() => {
     fetchList();
-  }, []);
+  }, [[],thoughts]);
 
   const fetchList = () => {
     setLoading(true);
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
+    fetch("https://happythoughts-backend.herokuapp.com/thoughts")
       .then((res) => res.json())
       .then((data) => setList(data))
       .catch((error) => console.error(error))
@@ -33,7 +33,7 @@ export const App = () => {
       }),
     };
 
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", options)
+    fetch("https://happythoughts-backend.herokuapp.com/thoughts", options)
       .then((res) => res.json())
       .then((data) => {
         fetchList();
@@ -47,7 +47,7 @@ export const App = () => {
     };
 
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`,
+      `https://happythoughts-backend.herokuapp.com/thoughts/${thoughtId}/like`,
       options
     )
       .then((res) => res.json())
