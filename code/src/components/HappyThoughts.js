@@ -3,9 +3,9 @@ import GetThoughts from "./GetThoughts"
 import PostThoughts from "./PostThoughts"
 // import {formatRelative } from 'date-fns'
 
-const API_THOUGHTS = "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const API_THOUGHTS = "https://heppy-thoughts-api.herokuapp.com/thoughts"
 const API_LIKES = (thoughtId) =>
-  `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
+  `https://heppy-thoughts-api.herokuapp.com/thoughts/${thoughtId}/like`
 
 
 const HappyThougts = () => {
