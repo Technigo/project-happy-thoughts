@@ -49,7 +49,6 @@ export const App = () => {
             return item
           }
         })
-
         setThoughts(updatedThoughts)
       })
   }
