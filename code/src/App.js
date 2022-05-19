@@ -39,6 +39,9 @@ export const App = () => {
   const handleLikesIncrease = (thoughtId) => {
     fetch(`${API_URL}/${thoughtId}/like`, {
       method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
     })
       .then((res) => res.json())
       .then(() => {
