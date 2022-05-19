@@ -64,6 +64,7 @@ textarea:focus {
   margin: 10px 0 10px 20px;
   padding: 5px 15px 5px 15px;
   border-radius: 20px;
+  border: 1px solid black;
 }
 
 .send-btn:hover {

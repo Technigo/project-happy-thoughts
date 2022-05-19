@@ -48,6 +48,7 @@ const PostThoughts = () => {
                       className="send-btn" 
                       type="submit" 
                       onSubmit={onThoughtSubmit}
+                      disabled={charCount < 5}
                     >
                        <span role="img" aria-label="heart emoji">💖</span> Send Happy Thoughts <span role="img" aria-label="heart emoji">💖</span>
                     </button>
