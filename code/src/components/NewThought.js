@@ -23,7 +23,7 @@ export const NewThought = () => {
 
 //fetch url
 
-        fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+        fetch('https://happy-thoughts-api-hanna.herokuapp.com/thoughts', options)
             .then((res) => res.json())
             .then((data) => setThoughts([data, thoughts])) 
     }

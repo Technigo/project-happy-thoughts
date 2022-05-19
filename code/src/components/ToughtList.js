@@ -7,7 +7,7 @@ export const ToughtList = () => {
     const [updateLikes, setUpdateLikes] = useState('')
     const [thoughtList, setThoughtList] = useState([])
         useEffect(() => {
-        fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+        fetch('https://happy-thoughts-api-hanna.herokuapp.com/thoughts')
             .then(res => res.json())
             .then(data => setThoughtList(data))
     })
@@ -19,7 +19,7 @@ export const ToughtList = () => {
             method: 'POST',
             headers: { 'content-type': 'application/json', },
         }
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${postId}/like`, options)
+        fetch(`https://happy-thoughts-api-hanna.herokuapp.com/thoughts/${postId}/likes`, options)
             .then(res => res.json())
             .then((data) =>  setUpdateLikes ([data, updateLikes]))
         }
