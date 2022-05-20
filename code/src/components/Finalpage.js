@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import ThoughtForm from "./ThoughtForm";
 import ThoughtList from "./ThoughtList";
 
-const API_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+const API_URL = "https://happy-thoughts-api11.herokuapp.com/thoughts";
 const LIKES_URL = (thoughtId) =>
-  `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
+  `https://happy-thoughts-api11.herokuapp.com/thoughts/${thoughtId}/like`;
 
 const Finalpage = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -20,6 +20,7 @@ const Finalpage = () => {
       .then((res) => res.json())
       .then((data) => {
         setThoughts(data);
+        console.log(data);
       });
   };
 
