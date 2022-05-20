@@ -8,8 +8,8 @@ const Page = () => {
     const [loading, setLoading] = useState(false)
     const [newMessage, setNewMessage] = useState('')
 
-    const ApiFetch = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-    const ApiLikes = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
+    const ApiFetch = 'https://project-happy-thoughts-api-app.herokuapp.com/'
+    const ApiLikes = (thoughtId) => `https://project-happy-thoughts-api-app.herokuapp.com/thoughts/${thoughtId}/like`
 
 
 
