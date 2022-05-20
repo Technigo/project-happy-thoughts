@@ -20,6 +20,7 @@ export const App = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
+      .catch((err) => console.error(err))
       .finally(() => setLoading(false));
   };
 
