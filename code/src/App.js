@@ -9,7 +9,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchList();
-  }, [[],thoughts]);
+  }, []);
 
   const fetchList = () => {
     setLoading(true);
