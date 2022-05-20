@@ -1,8 +1,8 @@
 import React from "react";
 import { Likes } from "./Likes";
 
-export const ThoughtItem = ({thought}) => {
- 
+export const ThoughtItem = ({thought, fetchThoughts}) => {
+
     return(
             <div className="thoughtContainer">
               <div className="messageContainer">
@@ -11,7 +11,9 @@ export const ThoughtItem = ({thought}) => {
               <Likes 
                 hearts={thought.hearts} 
                 id={thought._id} 
-                date={thought.createdAt}/>
+                date={thought.createdAt}
+                fetchThoughts={fetchThoughts}
+                />
             </div>
     )
 }

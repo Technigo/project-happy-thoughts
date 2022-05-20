@@ -15,6 +15,7 @@ export const App = () => {
   const [loading, setLoading] = useState(false)
 
 
+
   useEffect( () =>{
     fetchThoughts()
   }, [])
@@ -48,11 +49,7 @@ export const App = () => {
     fetch(API_URL, options)
     .then((res) => res.json())
     .then((data) => {
-      //v1
-      setThoughts([data,...thoughts])
-  
-      //v2
-      //fetchThoughts()
+      fetchThoughts()
     })
     setNewThought("");
     
@@ -74,6 +71,7 @@ export const App = () => {
         <ThoughtItem 
           key={thought._id}
           thought={thought}
+          fetchThoughts={fetchThoughts}
           />
          
       ))}

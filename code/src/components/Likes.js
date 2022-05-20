@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 import { LIKES_URL } from "utils/urls";
 
-export const Likes = ({ hearts, id, date }) => {
+export const Likes = ({ hearts, id, date, fetchThoughts }) => {
     const [like, setLike] = useState(hearts)
     const [yourLike, setYourLike] = useState(JSON.parse(localStorage.getItem(id)) + 0 )
+
+    useEffect( () =>{
+        fetchThoughts()
+      }, [like])
+
     
     const onLikesIncrease = () => {
+
         fetch(LIKES_URL(id), {
-          method: "POST",
-          body: "",
-          headers: { "Content-Type": "application/json" }
+            method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
         })
           .then((res) => res.json())
           .then(() => {}, []);
