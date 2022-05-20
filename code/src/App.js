@@ -6,12 +6,22 @@ import { ThoughtItem } from "./Components/ThoughtItem"
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState("")
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => setThoughts(data))
-  }, [[], thoughts])
+    if (loading) {
+      fetchTexts()
+    }
+  }, [loading])
+
+  const fetchTexts = async () => {
+    setLoading(true)
+    const response = await fetch(API_URL)
+    const data = await response.json()
+    setThoughts(data)
+    console.log(data)
+    setLoading(false)
+  }
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
@@ -26,7 +36,7 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]))
+      .then((data) => setThoughts([data.response, ...thoughts]))
       .finally(() => setNewThought(""))
   }
 
@@ -42,7 +52,7 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => {
         const updatedThoughts = thoughts.map((item) => {
-          if (item._id === data._id) {
+          if (item._id === data.response._id) {
             item.hearts = Number(item.hearts) + 1
             return item
           } else {
@@ -61,13 +71,14 @@ export const App = () => {
         setNewThought={setNewThought}
       />
 
-      {thoughts.map((thought) => (
-        <ThoughtItem
-          key={thought._id}
-          thought={thought}
-          onLikeIncrease={handleLikeIncrease}
-        />
-      ))}
+      {!loading &&
+        thoughts.map((thought) => (
+          <ThoughtItem
+            key={thought?._id}
+            thought={thought}
+            onLikeIncrease={handleLikeIncrease}
+          />
+        ))}
     </div>
   )
 }
