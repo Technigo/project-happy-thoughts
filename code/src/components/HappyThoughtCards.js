@@ -7,7 +7,7 @@ const HappyThoughtCards = ({thought}) => {
     const [thoughts, setThoughts] = useState([])
 
     useEffect (() => {
-        fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
+        fetch("https://emmas-happy-thoughts-api.herokuapp.com/thoughts")
         .then(res => res.json())
         .then(thoughts => setThoughts(thoughts))
 }, [])
@@ -15,7 +15,7 @@ const HappyThoughtCards = ({thought}) => {
 
 // Post likes to the API
 const onLike = (thoughtId) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
+    fetch(`https://emmas-happy-thoughts-api.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
       body: ''
