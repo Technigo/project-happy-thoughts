@@ -71,7 +71,6 @@ export const App = () => {
         <ThoughtItem 
           key={thought._id}
           thought={thought}
-          fetchThoughts={fetchThoughts}
           />
          
       ))}

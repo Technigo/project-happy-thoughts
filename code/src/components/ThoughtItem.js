@@ -1,7 +1,7 @@
 import React from "react";
 import { Likes } from "./Likes";
 
-export const ThoughtItem = ({thought, fetchThoughts}) => {
+export const ThoughtItem = ({thought}) => {
 
     return(
             <div className="thoughtContainer">
@@ -12,7 +12,6 @@ export const ThoughtItem = ({thought, fetchThoughts}) => {
                 hearts={thought.hearts} 
                 id={thought._id} 
                 date={thought.createdAt}
-                fetchThoughts={fetchThoughts}
                 />
             </div>
     )

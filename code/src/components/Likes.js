@@ -2,13 +2,9 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 import { LIKES_URL } from "utils/urls";
 
-export const Likes = ({ hearts, id, date, fetchThoughts }) => {
+export const Likes = ({ hearts, id, date }) => {
     const [like, setLike] = useState(hearts)
     const [yourLike, setYourLike] = useState(JSON.parse(localStorage.getItem(id)) + 0 )
-
-    useEffect( () =>{
-        fetchThoughts()
-      }, [like])
 
     
     const onLikesIncrease = () => {
@@ -20,7 +16,7 @@ export const Likes = ({ hearts, id, date, fetchThoughts }) => {
 			},
         })
           .then((res) => res.json())
-          .then(() => {}, []);
+          .then(() => {}, [])
     
           setLike((oldState) => oldState + 1)
           setYourLike((oldState) => oldState + 1)
