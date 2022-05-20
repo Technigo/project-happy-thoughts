@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-
 // Creating ThoughtForm for user to post new thoughts
 const ThoughtForm = (props) => {
 
@@ -12,7 +11,7 @@ const ThoughtForm = (props) => {
     event.preventDefault()
 
 
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", {
+    fetch("https://emmas-happy-thoughts-api.herokuapp.com/thoughts", {
         method: "POST",
         headers: {'Content-Type': "application/json"},
         body: JSON.stringify({ message: newThought })
