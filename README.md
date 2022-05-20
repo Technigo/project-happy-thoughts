@@ -12,6 +12,10 @@ laid out all of the requirements I needed to do and made a list of how I would s
 This week we learned about the life cycle of components, how to use APIs in react and how we would
 use the useEffect with the props and useState that we recently learned.
 
+Edit: I also added my own API using mongo db!
+
 ## View it live
 
 Here is the link to my deployed page: https://happy-thoughts-mimmi.netlify.app/
+
+Link to my own API: https://project-happy-thoughts-week-19.herokuapp.com/
