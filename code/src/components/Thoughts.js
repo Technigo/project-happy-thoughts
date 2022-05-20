@@ -16,10 +16,10 @@ const Thoughts = ({ loading, thoughts, onHeartClick }) => {
               <p className="thought-message">{thought.message}</p>
               <div className="thought-footer">
                 <div className="thought-heart">
-                  <button className={thought.hearts > 0 ? 'moreThanZeroClicks' : 'zeroClicks' } onClick={() => onHeartClick(thought._id)}>
+                  <button className={thought.like > 0 ? 'moreThanZeroClicks' : 'zeroClicks' } onClick={() => onHeartClick(thought._id)}>
                     <Heart />
                   </button>
-                  <div className="thought-heart-times">x{thought.hearts}</div>
+                  <div className="thought-heart-times">x{thought.like}</div>
                 </div>
                 <p>{formatDistanceToNow(new Date(thought.createdAt))} ago</p>
               </div>
