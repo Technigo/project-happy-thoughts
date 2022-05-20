@@ -16,7 +16,8 @@ export const App = () => {
   //Get the thoughts from the API
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    //Old API fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://joanna-project-happy-thoughts.herokuapp.com/thoughts')
       .then(res => res.json())
       .then(thoughts => setThoughts(thoughts))
       .catch(error => console.error(error))
@@ -31,7 +32,7 @@ export const App = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', {
+    fetch('https://joanna-project-happy-thoughts.herokuapp.com/thoughts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newThought })
@@ -44,7 +45,7 @@ export const App = () => {
 
   //When clicking the heart button post the like to the API for that specifik thought
   const onHeartClick = (thoughtId) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
+    fetch(`https://joanna-project-happy-thoughts.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     })
