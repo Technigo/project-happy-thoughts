@@ -20,7 +20,7 @@ export const App = () => {
       // setLoading(true)
       fetch(API_LIST)
         .then((res) => res.json())
-        .then((data) => setThoughtList(data))
+        .then((data) => setThoughtList(data.response))
         // .finally (() => setLoading(false))
     }
     //Set and post new thought
