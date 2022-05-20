@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The assignment this week was to create a social media "wall" where happy thoughts can be posted. This is created with fetching data from an API and POSTing new data in a form. This is also created with seperate components in React. The assignment was also to keep as close as possible to a given design. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with creating the different components I thought I was going to need. After that I fetched the already existing statuses from the API. My next step was the CSS and creating the look of the form. I found it difficult to make the like-buttons work and add likes. I ended up spending alot of time figuring that one out. If I had more time I would have created a counter for keeping track of how many likes the user has made. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Link to deployed page: https://jocular-trifle-d608b4.netlify.app/
