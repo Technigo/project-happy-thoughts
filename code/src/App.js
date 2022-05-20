@@ -26,6 +26,7 @@ export const App = () => {
   }
 
   const handleFormSubmit = (event) => {
+    
     event.preventDefault()
 
     const options = {
