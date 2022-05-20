@@ -8,9 +8,9 @@ const LikeBtn = ({ messageID, messages, fetchMessages }) => {
         "Content-Type": "application/json",
       },
     };
-
+//original url: `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`,
+      `https://happy-thoughts-api-frida.herokuapp.com/thoughts/${messageID}/like`,
       options
     )
       .then((res) => res.json())

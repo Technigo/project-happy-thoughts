@@ -12,8 +12,9 @@ export const Main = () => {
     fetchMessages();
   }, []);
 
+  // original url: "https://happy-thoughts-technigo.herokuapp.com/thoughts"
   const fetchMessages = () => {
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
+    fetch("https://happy-thoughts-api-frida.herokuapp.com/thoughts")
       .then((res) => res.json())
       .then((data) => setMessages(data))
       .catch((error) => console.error(error))
@@ -36,8 +37,8 @@ export const Main = () => {
         message: newMessage,
       }),
     };
-
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", options)
+// original url: "https://happy-thoughts-technigo.herokuapp.com/thoughts"
+    fetch("https://happy-thoughts-api-frida.herokuapp.com/thoughts", options)
       .then((res) => res.json())
       .then(() => fetchMessages())
       .finally(() => setNewMessage(""));
