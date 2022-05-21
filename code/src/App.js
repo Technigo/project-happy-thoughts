@@ -3,9 +3,9 @@ import ThoughtForm from 'components/ThoughtForm'
 import ThoughtItem from 'components/ThoughtItem';
 
 
-const API_URL="https://happy-thoughts-technigo.herokuapp.com/thoughts"
+const API_URL="https://jenny-happy-thought-api.herokuapp.com/thoughts"
 const LIKES_URL =(thoughtId) =>
-`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
+`https://jenny-happy-thought-api.herokuapp.com/thoughts/${thoughtId}/like`;
 
 
 export const App = () => {
