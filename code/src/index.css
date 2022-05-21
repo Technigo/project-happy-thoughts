@@ -55,6 +55,11 @@ body {
 	border: 1px solid #000;
 }
 
+.thought-input:focus {
+	outline: none;
+	padding: 2px;
+}
+
 .heart-btn {
 	border: none;
 	width: 30px;
