@@ -3,9 +3,9 @@ import Header from "components/Header";
 import ThoughtList from "components/ThoughtList";
 import ThoughtInput from "components/ThoughtInput";
 
-const THOUGHTS_URL = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+const THOUGHTS_URL = "https://justine-happy-api.herokuapp.com/thoughts";
 const LIKES_URL = (thoughtId) =>
-  `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`;
+  `https://justine-happy-api.herokuapp.com/thoughts/${thoughtId}/like`;
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
