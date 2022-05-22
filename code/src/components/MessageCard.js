@@ -17,7 +17,7 @@ const MessageCard = ({ _id, message, hearts, createdAt }) => {
           <button
             type="button"
             className={likeCount ? "message-heart-button clicked" : "message-heart-button"}
-            onClick={() => postLikes(_id, hearts, (data) => setLikeCount(data.hearts))}
+            onClick={() => postLikes(_id, hearts, (data) => setLikeCount(data.updated.hearts))}
           >
             {" "}
             <span className="message-heart" role="img" aria-label="heart emoji">

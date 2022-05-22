@@ -9,7 +9,7 @@ const SendMessageCard = ({ setMessages }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     postMessages(messageInput, (message) => {
-      setMessages((previousMessages) => [message, ...previousMessages]);
+      setMessages((previousMessages) => [message.created, ...previousMessages]);
     });
     setMessageInput("");
   };

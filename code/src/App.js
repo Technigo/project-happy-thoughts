@@ -6,7 +6,7 @@ import { fetchMessages } from "assets/networking";
 export const App = () => {
   const [messages, setMessages] = useState([]);
 
-  useEffect(() => fetchMessages((data) => setMessages(data)), []);
+  useEffect(() => fetchMessages((data) => setMessages(data.results)), []);
 
   return (
     <main>

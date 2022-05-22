@@ -1,4 +1,5 @@
-const messageUrl = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+// const messageUrl = "https://happy-thoughts-technigo.herokuapp.com/thoughts";
+const messageUrl = "https://thoughts-api.herokuapp.com/thoughts";
 
 const fetcher = (url, method, callback) => {
   fetch(url, method)
@@ -22,7 +23,7 @@ export const postMessages = (input, callback) =>
 
 export const postLikes = (id, count, callback) =>
   fetcher(
-    `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+    `https://thoughts-api.herokuapp.com/thoughts/${id}/like`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
