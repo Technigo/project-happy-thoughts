@@ -27,6 +27,8 @@ const Collection = () => {
             .finally(() => setLoading(false))
     }
 
+    
+
 // SUBMITTING THOUGHT
 
     const onFormSubmit = (event) => {
@@ -60,7 +62,7 @@ const Collection = () => {
             method: 'POST',
         }
 
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${likeID}/like`, options)
+        fetch(`https://happy-thoughts-own-api.herokuapp.com/thoughts/${likeID}/like`, options)
             .then(res => res.json())
             .then(() => fetchThoughts())
 

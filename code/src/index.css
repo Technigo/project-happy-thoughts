@@ -130,12 +130,33 @@ margin-top: 13px;
 .loading-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 120px;
   
 }
  .loading {
-   width: 10%;
- }
+   width: 25%;
+  
+    transform: scale(1);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      
+    }
+  
+    70% {
+      transform: scale(1);
+     
+    }
+  
+    100% {
+      transform: scale(0.95);
+      
+    }
+  }
+ 
 
  @media (min-width: 376px) and (max-width: 820px) {
    .loading {
