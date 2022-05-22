@@ -2,7 +2,7 @@ import React, {useState, useEffect } from "react"
 
 import Loader from "./Loader"
 import HeartFall from "./HeartFall"
-import { LIKES_API, THOUGHTS_API } from "./utils/urls"
+import { HAPPY_THOUGHTS_API, SEND_LIKE_API } from "./utils/urls"
 
 import ThoughtsList from "./ThoughtsList"
 import ThoughtForm from './ThoughtForm'
@@ -20,9 +20,9 @@ const Main = () => {
 
     const fetchThoughts = () => {
     setLoading(true)
-    fetch(THOUGHTS_API)
+    fetch(HAPPY_THOUGHTS_API)
         .then(res => res.json())
-        .then(data => setThoughts(data))
+        .then(data => setThoughts(data.response))
         .catch(error => console.error(error))  
         .finally(() => setLoading(false)) 
     }
@@ -44,7 +44,7 @@ const Main = () => {
             })
         }
 
-        fetch(THOUGHTS_API, options)
+        fetch(HAPPY_THOUGHTS_API, options)
             .then(res => res.json())
             .then(data => fetchThoughts())
             .catch(error => console.error(error)) 
@@ -56,7 +56,7 @@ const Main = () => {
             method: "POST",
         }
 
-        fetch(LIKES_API(thoughtId), options)
+        fetch(SEND_LIKE_API(thoughtId), options)
             .then(res => res.json())
             .then(data => fetchThoughts())
             .catch(error => console.error(error))
