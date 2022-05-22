@@ -22,11 +22,10 @@ code {
   margin: auto;
 }
 
-
 /* new thoughts */
 
 .new-thoughts {
-    background-color: rgb(242,240,240);
+  background-color: rgb(242, 240, 240);
 }
 
 .thoughts-message {
@@ -45,13 +44,12 @@ code {
   justify-content: space-between;
 }
 
-.heart-times-gr {
+/* .heart-times-gr {
 
-}
-
+} */
 
 .submit-btn {
-  background-color: rgb(255,173,173);
+  background-color: rgb(255, 173, 173);
   cursor: pointer;
   border-radius: 30px;
   border: none;
@@ -61,24 +59,24 @@ code {
   justify-content: center;
 }
 
-
 /* recent thoughts */
 
 .heart-btn {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: rgb(234,234,234);
+  background-color: rgb(234, 234, 234);
   border-style: none;
   cursor: pointer;
 }
 
 .heart-btn:hover {
-  background-color: rgb(255,173,173);
+  background-color: rgb(255, 173, 173);
 }
 
-.times-liked, .time-txt {
-  color: rgb(134,134,134);
+.times-liked,
+.time-txt {
+  color: rgb(134, 134, 134);
 }
 
 /* tabet */
