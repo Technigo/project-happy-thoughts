@@ -1,6 +1,8 @@
 # Happy Thoughts
 
-This week we created a Twitter-ish app that fetches from a public API with three endpoints to show the last 20 happy-thought messages, new messages and the number of likes on the individual messages.  
+This week we created a Twitter-ish app that fetches from an API with three endpoints to show the last 20 happy-thought messages, new messages and the number of likes on the individual messages. Originally this API was public but now a couple of weeks later replaced with my own MongoDB APIs from this project: 
+https://github.com/Kras053/project-happy-thoughts-api
+ 
 We learned to use useEffect to do the fetch of the old happy-thought messages at the exakt time when the fetch-component was mounted. 
 We were given a design to follow for our app which consists of a form to post new happy-thoughts (6-140 characters or disabled button), previous happy-thoughts messages with a heart button rendering likes when pushed and that changes color when at least one like. 
 It also shows how many likes the message has recieved and how long ago it was posted.
