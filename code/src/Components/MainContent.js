@@ -10,9 +10,8 @@ export const MainContent = () => {
     fetchTwentyThoughts();
    }, []); //when mounted
 
-
   const fetchTwentyThoughts = () => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://send-happy-thought-api.herokuapp.com/thoughts')
       .then(res => res.json())
       .then(data => setTwentyThoughts(data));
       }
@@ -35,7 +34,7 @@ export const MainContent = () => {
             })
         }
         
-        fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+        fetch('https://send-happy-thought-api.herokuapp.com/thoughts', options)
             .then(res => res.json()) //space suit
             .then(() => fetchTwentyThoughts()) //refetch data, make sure the message is posted without having to refresh 
             // data => console.log(data)
@@ -53,7 +52,7 @@ export const MainContent = () => {
       },
     }
   
-          fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+          fetch(`https://send-happy-thought-api.herokuapp.com/thoughts/${_id}/like`, options)
           .then(res => res.json())   
           .then(() => fetchTwentyThoughts())
         }
