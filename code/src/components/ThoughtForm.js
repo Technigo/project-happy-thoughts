@@ -17,7 +17,7 @@ const ThoughtForm = (props) => {
         body: JSON.stringify({ message: newThought })
 })
     .then((res) => res.json())
-    .then((newThought) => props.setThoughts((thoughts) => [newThought, ...thoughts]))
+    .then((newThought) => props.setThoughts((thoughts) => [newThought.response, ...thoughts]))
     .finally(() => setNewThought(''))
 }
 
