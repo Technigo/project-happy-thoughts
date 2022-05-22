@@ -61,7 +61,7 @@ export const App = () => {
     fetch(`${API_URL}/${thoughtId}/like`, options)
       .then((res) => res.json())
       .then((data) => {
-        fetchThoughts(data);
+        fetchThoughts(data.response);
       });
   };
 
