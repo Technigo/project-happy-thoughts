@@ -16,7 +16,7 @@ const RecentThoughts = ({ thoughts, handleLikesInc }) => {
               <button
                 // className="heart-btn"
                 className={`heart-btn ${
-                  thought.hearts === 0 ? 'not-liked' : 'liked'
+                  thought.like === 0 ? 'not-liked' : 'liked'
                 }`}
                 onClick={() => handleLikesInc(thought._id)}>
                 <span>{'❤️'}</span>

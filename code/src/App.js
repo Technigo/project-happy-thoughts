@@ -20,7 +20,8 @@ export const App = () => {
   const fetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
-      .then((data) => setThoughts(data));
+      .then((data) => setThoughts(data.response))
+      .catch((error) => console.error(error));
   };
 
   const handleNewThoughtsChange = (e) => {
@@ -59,8 +60,8 @@ export const App = () => {
     };
     fetch(`${API_URL}/${thoughtId}/like`, options)
       .then((res) => res.json())
-      .then(() => {
-        fetchThoughts();
+      .then((data) => {
+        fetchThoughts(data);
       });
   };
 
