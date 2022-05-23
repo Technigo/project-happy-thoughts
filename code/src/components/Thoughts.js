@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 
 import AddThought from './AddThought'
 import ThoughtsList from './ThoughtsList'
@@ -68,11 +68,11 @@ const Thoughts = () => {
         });
     }
 
-    const fetchThoughts = () => {
+    const fetchThoughts = useCallback(() => {
         fetch(thoughtsAPI)
 			.then(res => res.json())
 			.then(json => setThoughts(json.response))
-    }
+    }, [])
 
     fetchThoughts();
     
