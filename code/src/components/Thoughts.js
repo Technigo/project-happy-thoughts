@@ -76,7 +76,7 @@ const Thoughts = () => {
 
     useEffect(() => {
         fetchThoughts();
-    }, [])
+    }, [thoughtsAPI])
     
     setInterval(fetchThoughts, 5000);
 
