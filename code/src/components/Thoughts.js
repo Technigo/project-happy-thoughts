@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import AddThought from './AddThought'
 import ThoughtsList from './ThoughtsList'
@@ -68,15 +68,15 @@ const Thoughts = () => {
         });
     }
 
-    const fetchThoughts = useCallback(() => {
+    const fetchThoughts = () => {
         fetch(thoughtsAPI)
 			.then(res => res.json())
 			.then(json => setThoughts(json.response))
-    }, [])
+    }
 
-    fetchThoughts();
-    
-    setInterval(fetchThoughts, 5000);
+    useEffect(() => {
+        fetchThoughts();
+    }, [])
 
     return (
         <div>
