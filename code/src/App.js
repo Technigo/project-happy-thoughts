@@ -44,7 +44,7 @@ export const App = () => {
 
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then(() => fetchThoughts())
+      .then((data) => fetchThoughts(data.response))
       .finally(() => {
         setNewThoughts('');
         setCounter(0);
