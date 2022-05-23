@@ -72,7 +72,7 @@ const Thoughts = () => {
         fetch(thoughtsAPI)
 			.then(res => res.json())
 			.then(json => setThoughts(json.response))
-    }, [])
+    })
 
     useEffect(() => {
         fetchThoughts();
