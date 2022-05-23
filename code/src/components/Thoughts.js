@@ -3,7 +3,8 @@ import React, { useState, useEffect, useCallback } from 'react'
 import AddThought from './AddThought'
 import ThoughtsList from './ThoughtsList'
 
-const thoughtsAPI = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+// const thoughtsAPI = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+const thoughtsAPI = 'https://project-happythoughts-api.herokuapp.com/thoughts'
 const heartIcon = <img alt='heart-icon' src={'assets/heart.png'} className='heart-icon'/>
 const emotions = [
     'happy',
@@ -54,7 +55,7 @@ const Thoughts = () => {
     };
 
     const handleLikes = (id) => {
-        fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+        fetch(`${thoughtsAPI}/${id}/like`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -70,7 +71,7 @@ const Thoughts = () => {
     const fetchThoughts = useCallback(() => {
         fetch(thoughtsAPI)
 			.then(res => res.json())
-			.then(json => setThoughts(json))
+			.then(json => setThoughts(json.response))
     }, [])
 
     useEffect(() => {
