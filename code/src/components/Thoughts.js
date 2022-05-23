@@ -74,9 +74,7 @@ const Thoughts = () => {
 			.then(json => setThoughts(json.response))
     }
 
-    useEffect(() => {
-        fetchThoughts();
-    }, [thoughtsAPI])
+    fetchThoughts();
     
     setInterval(fetchThoughts, 5000);
 
