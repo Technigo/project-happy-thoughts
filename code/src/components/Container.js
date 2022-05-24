@@ -3,15 +3,11 @@ import React, { useState, useEffect } from 'react';
 import ThoughtsForm from 'components/ThoughtsForm';
 import Thoughts from 'components/Thoughts';
 
-// const API_URL = 'https://api-happy-tweets.herokuapp.com/thoughts'
-// const API_URL_LIKES = `https://api-happy-tweets.herokuapp.com/thoughts/${_id}/like`
-
 
 const Container = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
- 
 
   useEffect(() => {
     fetchThoughts();
