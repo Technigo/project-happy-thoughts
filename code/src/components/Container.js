@@ -21,7 +21,7 @@ const Container = () => {
     setLoading(true);
     fetch('https://api-happy-tweets.herokuapp.com/thoughts')
     .then(res => res.json())
-    .then(data => setThoughts(data))
+    .then(data => setThoughts(data.response))
     .catch(error => console.error(error))
     .finally(() => setLoading(''));
   };
@@ -61,7 +61,7 @@ const Container = () => {
     fetch(`https://api-happy-tweets.herokuapp.com/thoughts/${_id}/like`, options)
       .then((res) => res.json())
       .then((data) => {
-        fetchThoughts(data)
+        fetchThoughts(data.response._id)
       })
   };
 
