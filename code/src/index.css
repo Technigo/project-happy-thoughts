@@ -22,7 +22,7 @@ code {
 	--clr-accent: #ffadad;
 }
 
-/**   TYPOGRAOHY    **/
+/**   TYPOGRAPHY    **/
 .date-text,
 .characters {
 	font-family: 'Roboto', sans-serif;
@@ -63,6 +63,7 @@ main {
 
 .characters {
 	color: #444444;
+	font-size: 0.8rem;
 }
 
 .message-text {
@@ -72,7 +73,7 @@ main {
 
 .error {
 	color: #aa0000;
-	font-size: 13px;
+	font-size: 11px;
 }
 
 .likes-container {
@@ -134,7 +135,8 @@ img.likes {
 }
 
 .send-btn {
-	width: 250px;
+	width: 195px;
+	font-size: 0.75rem;
 	background: var(--clr-accent);
 	margin-right: 0.25em;
 }
@@ -202,6 +204,17 @@ img.likes {
 	}
 }
 
+@media (min-width: 450px) {
+	.error {
+		font-size: 13px;
+	}
+
+	.send-btn {
+		width: 225px;
+		font-size: 0.9rem;
+	}
+}
+
 @media (min-width: 668px) {
 	label {
 		font-size: 1.2rem;
@@ -213,7 +226,7 @@ img.likes {
 
 	.send-btn {
 		font-size: 1.1rem;
-		width: 320px;
+		width: 280px;
 	}
 
 	.heart-icon {

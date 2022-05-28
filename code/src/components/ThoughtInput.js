@@ -40,10 +40,10 @@ export const ThoughtInput = ({ onFormSubmit, newThought, setNewThought }) => {
 						<div>
 							{' '}
 							{newThought.length > 0 && newThought.length < 5 && (
-								<p className='error'>Minimum: 5 characters</p>
+								<p className='error'>Min: 5 char</p>
 							)}
 							{newThought.length > 140 && (
-								<p className='error'>Maximum: 140 characters</p>
+								<p className='error'>Max: 140 char</p>
 							)}
 						</div>
 						<div className='characters'>
