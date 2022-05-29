@@ -20,7 +20,7 @@ export const TaskForm = () => {
 
   const getThoughts = () => {
       // setLoading(true);
-      fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+      fetch('https://projecthappythoughtsapi.herokuapp.com/thoughts')
       .then(res => res.json())
       .then(data => setThoughts(data))
       // .finally(() => setLoading(false))
@@ -40,7 +40,7 @@ export const TaskForm = () => {
         })
       }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://projecthappythoughtsapi.herokuapp.com/thoughts', options)
     .then(res => res.json())
     .then(() => getThoughts())
     .finally(()=> setNewMessages(''))
@@ -54,7 +54,7 @@ export const TaskForm = () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }
         }
-            fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+            fetch(`https://projecthappythoughtsapi.herokuapp.com/thoughts/${_id}/like`, options)
               .then((res) => res.json())
               .then(() =>  getThoughts())
         }  
