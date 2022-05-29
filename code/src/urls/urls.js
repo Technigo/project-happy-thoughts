@@ -1,3 +1,3 @@
-export const API_URL = 'https://sarah-mottram-happy-thoughts.herokuapp.com/thoughts'
+export const API_URL = 'https://happy-thoughts-v2.herokuapp.com//thoughts'
 
-export const LIKES_URL = (thoughtId) => `https://sarah-mottram-happy-thoughts.herokuapp.com/thoughts/${thoughtId}/like`
+export const LIKES_URL = (thoughtId) => `https://happy-thoughts-v2.herokuapp.com//thoughts/${thoughtId}/like`
