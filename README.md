@@ -13,3 +13,6 @@ I really enjoyed trying to write components that were resuable, for this project
 ## View it live
 
 https://all-the-thoughts.netlify.app/
+
+api's repo 
+https://github.com/amandatange/project-happy-thoughts-api
