@@ -1,17 +1,11 @@
 # Happy Thoughts 💌
 
-The aim of the project was to build a twitter-like app and learn the life-cycle of a **React** component. We learn how the **useEffect** hook performs actions when the components mount, unmount or when state changes. We used **Happy Thoughts API** that shows previous happy messages, gives us the possibility to post messages and give a like to the existing messages.
+The aim of the project was to build a twitter-like app and learn the life-cycle of a **React** component. I learned how the **useEffect** hook performs actions when the components mount, unmount or when state changes. In this project I used Technigo's **Happy Thoughts API**, fetching previous happy messages, I also enabled users to post their own messages and give a likes to the existing messages.
 
-###Update:
-I have created my own **Happy Thoughts API** that I include in this project. It is an Express API using MongoDB Atlas and deployed in Heroku.
+### Update:
+I have created my own **Happy Thoughts API** that I included in this project. It is an Express API using MongoDB Atlas and deployed in Heroku.
 
-and and and the compent that collects and publishes happy thoughts. The projects is built using React useEffect hook, calling and fetching data from an API and putting the data into a state.
-
-This was an interesting project with many new features to learn in React. Although at first challenged with grapsing the flow of the fetching and posting data, I really enjoy working in react and looking forward to diving deeper. If I had more time I would liked to challenge myself to make a counter to keep track of the many different posts.
-
-## What I learned 💡
-
-- The project is built using 3 main components: App, Thought
+This was a fun project with many new features to learn in React. I really enjoyed working in react and I am looking forward to diving deeper and learning more. If I would continue to build on this project I would liked to make a counter to keep track of the many different posts.
 
 ## View it live
 
