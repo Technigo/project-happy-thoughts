@@ -51,6 +51,10 @@ textarea {
   box-sizing: border-box;
 }
 
+.disabled-textarea {
+  background-color: lightgrey;
+}
+
 .submit-button {
   border: none;
   border-radius: 20px;
