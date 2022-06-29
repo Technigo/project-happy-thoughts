@@ -38,7 +38,7 @@ export const App = () => {
 
   const addLike = (thoughtId) => {
 
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, 
+    fetch(`${API_URL}/${thoughtId}/like`, 
         { method: 'POST'}
 
     ).then((res) => res.json()).then((data) => {
