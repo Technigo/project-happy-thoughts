@@ -25,7 +25,7 @@ export const App = () => {
     
     fetch( API_URL, 
         { method: 'POST', headers: { 'Content-Type': 'application/json',}, body: JSON.stringify({ message: newThought }) }
-      ).then((res) => res.json()).then((data) => setThoughts([data, ...thoughts])).then(setNewThought(event.target.value))
+      ).then((res) => res.json()).then((data) => setThoughts([data, ...thoughts])).then(setNewThought(newThought))
 
       if (newThought.length < 4 ) {
         alert('Too few characters')
