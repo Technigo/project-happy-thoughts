@@ -20,20 +20,24 @@ export const App = () => {
   }, [] )
 
 
+
   const onFormSubmit = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     
     fetch( API_URL, 
         { method: 'POST', headers: { 'Content-Type': 'application/json',}, body: JSON.stringify({ message: newThought }) }
       ).then((res) => res.json()).then((data) => setThoughts([data, ...thoughts])).then(setNewThought(newThought))
 
-      if (newThought.length < 4 ) {
+      if (newThought.length < 5 ) {
         alert('Too few characters')
       }
       else if ( newThought.length > 140 ) {
         alert('Too many characters')
       } 
-  }
+      setThoughts(thoughts)
+    }
+
+    useEffect(() => { setThoughts(thoughts) }, [onFormSubmit])
 
 
   const addLike = (thoughtId) => {
@@ -57,7 +61,7 @@ export const App = () => {
 
   const characterStyling = (chars) => {
 
-    if (chars.length < 4  ||  chars.length > 140) {
+    if (chars.length < 5  ||  chars.length > 140) {
     return ('charactersNOTOK') }
     else return ('charactersOK')
   }
