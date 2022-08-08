@@ -36,7 +36,6 @@ export const App = () => {
       } 
     }
 
-    useEffect(() => { setThoughts(thoughts) }, [onFormSubmit])
 
 
   const addLike = (thoughtId) => {
