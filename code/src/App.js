@@ -34,7 +34,6 @@ export const App = () => {
       else if ( newThought.length > 140 ) {
         alert('Too many characters')
       } 
-      setThoughts(thoughts)
     }
 
     useEffect(() => { setThoughts(thoughts) }, [onFormSubmit])
