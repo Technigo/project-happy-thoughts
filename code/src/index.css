@@ -127,10 +127,7 @@ textarea:focus {
 }
 
 .heart {
-  font-size: 1.4rem;
-  position: absolute;
-  right: 10px;
-  top: 9px;
+  font-size: 1rem;
 }
 
 .like-amount {
@@ -356,10 +353,7 @@ footer {
     width: 550px;
   }
   .heart {
-    font-size: 1.4rem;
-    position: absolute;
-    right: 12px;
-    top: 9px;
+    font-size: 1.2rem;
   }
   .submit-button {
     padding: 5px;
