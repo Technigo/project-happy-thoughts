@@ -1,9 +1,11 @@
 import React from 'react';
 
+import TaskList from 'components/TaskList';
+
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <TaskList />
     </div>
-  );
+  )
 }
