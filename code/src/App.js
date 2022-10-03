@@ -1,9 +1,10 @@
 import React from 'react';
+import { FormContainer } from './components/FormContainer'
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <FormContainer />
     </div>
   );
 }
