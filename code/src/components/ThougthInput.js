@@ -1,13 +1,12 @@
 import React from 'react'
 
-export const ThougthInput = () => {
+const ThougthInput = ({ newThougth, onSend, onNewThougth }) => {
   return (
-    <article className="container-child">
-      <input type="text" className="input" />
+    <form onSubmit={onSend} className="container-child">
+      <textarea value={newThougth} onChange={onNewThougth} className="inputBox" />
       <p>Test</p>
-      <button onClick={[]} type="button" className="btn">Send you love</button>
-    </article>
+      <button type="submit" className="btn">Send you love</button>
+    </form>
   )
 }
-
-console.log(ThougthInput)
+export default ThougthInput;
