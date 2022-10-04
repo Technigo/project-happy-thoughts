@@ -1,16 +1,11 @@
-import React, { useEffect } from 'react';
-import TaskList from 'components/TaskList.js'
+import React from 'react';
+
+import Feed from 'components/Feed'
 
 export const App = () => {
-  useEffect(() => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-      .then((res) => res.json())
-    // .then((json) => setRecentThoughts(json.results) )
-  }, []);
-
   return (
-    <div>
-      <TaskList />
-    </div>
+    <main>
+      <Feed />
+    </main>
   )
 }

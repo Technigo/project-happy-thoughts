@@ -11,3 +11,51 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+p{
+  color:red;
+}
+
+
+/*---CONTAINERS---*/
+.feed-wrapper{    /*centers the feed with grid*/
+  display: grid;
+  justify-content: center;
+}
+ .send-wrapper, .post-container{
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 5x 5px 0px 1px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 5px 5px 0px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 0px 1px rgba(0,0,0,0.75);
+ }
+
+ .send-wrapper {
+  background-color: rgb(220, 220, 220);
+ }
+.like-wrapper{
+  border: 2px blue solid;
+}s
+
+.thought-message{
+  border: 2px green solid;
+}
+
+/*---BUTTONS----*/
+.like-button{
+  border: 2px blue solid;
+  border-radius: 50%;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+
+/*---Insert details like & date posted--*/
+.like-counter{
+  border: 2px blue solid;
+}
+
+.date-posted{
+  border: 2px rgb(122, 255, 197) solid;
+}
