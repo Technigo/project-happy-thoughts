@@ -3,7 +3,7 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
 
-const LikeButton = ({ tweet }) => {
+const Tweet = ({ tweet }) => {
   console.log(tweet)
   const handleLikeButton = (id) => {
     const ids = {
@@ -33,4 +33,4 @@ const LikeButton = ({ tweet }) => {
   )
 };
 
-export default LikeButton;
+export default Tweet;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LikeButton from './LikeButton';
+import Tweet from './Tweet';
 import NewTweet from './NewTweet';
 
 // handleFormSubmit, handleOnNewTweet
@@ -17,7 +17,7 @@ const Feed = () => {
     <section className="container">
       <NewTweet />
       {thoughts.map((tweet) => (
-        <LikeButton
+        <Tweet
           // eslint-disable-next-line no-underscore-dangle
           key={tweet._id}
           tweet={tweet} />
