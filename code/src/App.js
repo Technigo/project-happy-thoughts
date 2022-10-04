@@ -1,9 +1,9 @@
 import React from 'react';
 
-import HappyThoughts from './components/HappyThoughts'
+import { ThoughtsApp } from './components/ThoughtsApp';
 
 export const App = () => {
   return (
-    <HappyThoughts />
+    <ThoughtsApp />
   );
 }
