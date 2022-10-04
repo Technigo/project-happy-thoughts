@@ -1,5 +1,6 @@
 /* eslint-disable */ 
 import React, { useEffect, useState } from 'react'
+import { formatRelative } from 'date-fns';
 
 import GeneratedFeed from 'components/GeneratedFeed.js';
 import InputFeed from 'components/InputFeed';
@@ -60,6 +61,7 @@ const Feed = () => {
   }
   return (
     <div className="feed-wrapper">
+      {load}
       <InputFeed
         onFeedSubmit={handleFormSubmit}
         newThought={newThought}

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react'
+import { formatRelative } from 'date-fns';
 
 const GeneratedFeed = ({ thought, onLikesIncrease }) => {
   return (
@@ -16,7 +17,7 @@ const GeneratedFeed = ({ thought, onLikesIncrease }) => {
           </span>
         </button>
         <span className="like-counter"> x {thought.hearts}</span>
-        <p className="date-posted"> placeholder{thought.createdAt.date}</p>
+        <p className="date-posted"> {formatRelative(new Date(thought.createdAt), new Date())}</p>
       </div>
     </div>
   )
