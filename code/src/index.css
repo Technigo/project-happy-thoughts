@@ -72,6 +72,10 @@ textarea {
   color: #657786
 }
 
+.text {
+  color: #14171A;
+}
+
 /*LikeButton*/
 .like-button-container {
   background-color: rgb(245, 236, 236);
@@ -108,16 +112,38 @@ background-color: pink;
 }
 
 /*Media Queries*/
-@media (min-max: 1024px) {
+@media (min-widht: 1024px) {
   .container{
     width: 600px;
+  }
+
+  .input-textarea {
+    width: 300px;
   }
 
   .like-container{
     width: 500px;
   }
 
-  .input-textarea{
+  .form-container{
+    width: 500px;
+  }
+}
+
+@media (min-max: 768px) {
+  .container{
+    width: 600px;
+  }
+
+  .input-textarea {
+    width: 465px;
+  }
+
+  .like-container {
+    width: 500px;
+  }
+
+  .form-container {
     width: 550px;
   }
 }

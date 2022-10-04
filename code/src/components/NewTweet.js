@@ -28,7 +28,7 @@ const NewTweet = () => {
         <h1>What is making you happy right now?</h1>
         <label htmlFor="new-thought">
           <textarea
-            className="input-textarea"
+            className="input-textarea text"
             id="new-thought"
             name="new-thought"
             placeholder="Let us fill the day with kind thoughts! ^^"
@@ -42,9 +42,10 @@ const NewTweet = () => {
           className="submit-button"
           disabled={newTweets.length < 5 || newTweets.length > 140}>
           <span role="img" aria-label="heart">
-          ❤️ Send Happy Thought ❤️
+          ❤️ Send  Happy Thought ❤️
           </span>
         </button>
+        <p className="lenght-tweet">{newTweets.length} / 140</p>
       </form>
     </section>
 
