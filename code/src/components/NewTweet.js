@@ -1,7 +1,7 @@
 /* eslint-disable react/self-closing-comp */
 import React, { useState } from 'react';
 
-const Form = () => {
+const NewTweet = () => {
   const [newThought, setNewThought] = useState('')
 
   const handleFormSubmit = (e) => {
@@ -51,4 +51,4 @@ const Form = () => {
   )
 };
 
-export default Form;
+export default NewTweet;
