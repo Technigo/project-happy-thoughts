@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from 'react'
-// import SendMessage from './Components/SendMessage'
+import SendMessage from './Components/SendMessage'
 import ShowMessage from './Components/ShowMessage'
 
 export const App = () => {
-  // const [showMessage, setShowMessage] = useState('')
-  // const [sendMessage, setSendMessage] = useState('')
+  const [showMessage, setShowMessage] = useState('')
+  const [newMessage, setNewMessage] = useState('')
   const fetchMessages = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((data) => data.json())
-      .then((transformedData) => console.log(transformedData))
+      .then((transformedData) => setShowMessage(transformedData))
       .catch((error) => console.error(error))
       .finally(() => console.log('Everything works'))
   }
-  fetchMessages()
+
+  useEffect(() => {
+    fetchMessages()
+  }, [])
+
   return (
     <div className="outer-wrapper">
       <div className="inner-wrapper">
-        <ShowMessage />
-
+        <SendMessage newMessage={newMessage} setNewMessage={setNewMessage} />
+        <ShowMessage message={showMessage} />
       </div>
     </div>
-  );
+  )
 }

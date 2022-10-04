@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const ShowMessage = () => {
+const ShowMessage = ({ message }) => {
+  useEffect(() => {
+    console.log('component did mount')
+    return (
+      console.log('component unmounted')
+    )
+  })
   return (
-    <div>
-      Message
+    <div className="show-message">
+      MESSAGE
     </div>
   );
 }
