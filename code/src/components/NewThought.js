@@ -20,7 +20,7 @@ const NewThought = () => {
   };
   return (
     <form onSubmit={onFormSubmit}>
-      <textarea id="newThought" type="text" value={newThought} onChange={(event) => setNewThought(event.target.value)} />
+      <textarea id="newThought" type="text" value={newThought} maxLength="140" onChange={(event) => setNewThought(event.target.value)} />
       <button type="submit">Send happy thought</button>
     </form>
   )

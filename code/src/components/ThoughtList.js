@@ -34,10 +34,10 @@ const ThoughtList = ({ thoughtList, setThoughtList }) => {
       });
   };
   return (
-    <section>
+    <section className="thought-list">
       {thoughtList.map((singleTask) => {
         return (
-          <div key={singleTask._id}>
+          <div className="thought-list-box" key={singleTask._id}>
             <p>{singleTask.message}</p>
             <button type="button" onClick={() => onLikesIncrease(singleTask._id)}><span>&#10084;&#65039;</span></button>
             <p>x {singleTask.hearts}</p>

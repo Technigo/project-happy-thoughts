@@ -15,12 +15,14 @@ export const App = () => {
     setCounter(counter + 1);
   }
   return (
-    <div>
-      <Header />
-      <p>{counter}</p>
-      <button onClick={handleCounterIncreaseButtonClick} type="button">Counter increase</button>
-      <NewThought newThought={newThought} setNewThought={setNewThought} />
-      <ThoughtList thoughtList={thoughtList} setThoughtList={setThoughtList} />
+    <div className="outer-wrapper">
+      <div className="inner-wrapper">
+        <Header />
+        <p>{counter}</p>
+        <button onClick={handleCounterIncreaseButtonClick} type="button">Counter increase</button>
+        <NewThought newThought={newThought} setNewThought={setNewThought} />
+        <ThoughtList thoughtList={thoughtList} setThoughtList={setThoughtList} />
+      </div>
     </div>
   );
 }
