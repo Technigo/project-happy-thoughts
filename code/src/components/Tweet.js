@@ -1,9 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/self-closing-comp */
-import React from 'react';
+import React, { useState } from 'react';
 
 const Tweet = ({ tweet }) => {
+  const [counter, setCounter] = useState(tweet.hearts)
   console.log(tweet)
   const handleLikeButton = (id) => {
     const ids = {
@@ -12,7 +13,13 @@ const Tweet = ({ tweet }) => {
     }
 
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, ids)
-      .then((res) => res.json())
+      // eslint-disable-next-line no-return-assign
+      .then((res) => {
+        if (res.status === 200) {
+          console.log('Request successful')
+          setCounter(tweet.hearts += 1)
+        }
+      }) // it's a callback
   };
 
   return (
@@ -26,7 +33,7 @@ const Tweet = ({ tweet }) => {
             onClick={() => handleLikeButton(tweet._id)}>
             <span role="img" aria-label="heart">❤️</span>
           </button>
-          <span className="like-counter"> x {tweet.hearts}</span>
+          <span className="like-counter"> x {counter}</span>
         </div>
       </div>
     </section>
