@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 const NewTweet = () => {
-  const [newTweets, setNewTweets] = useState('')
+  const [newTweet, setNewTweet] = useState('')
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
@@ -10,16 +10,16 @@ const NewTweet = () => {
     const message = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: newTweets })
+      body: JSON.stringify({ message: newTweet })
     }
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', message)
       .then((res) => res.json())
-    setNewTweets('')
+    setNewTweet('')
   }
 
   const handleOnNewTweet = (e) => {
-    setNewTweets(e.target.value)
+    setNewTweet(e.target.value)
   }
 
   return (
@@ -32,7 +32,7 @@ const NewTweet = () => {
             id="new-thought"
             name="new-thought"
             placeholder="Let us fill the day with kind thoughts! ^^"
-            value={newTweets}
+            value={newTweet}
             onChange={handleOnNewTweet}
             rows="5"
             cols="33" />
@@ -40,12 +40,12 @@ const NewTweet = () => {
         <button
           type="submit"
           className="submit-button"
-          disabled={newTweets.length < 5 || newTweets.length > 140}>
+          disabled={newTweet.length < 5 || newTweet.length > 140}>
           <span role="img" aria-label="heart">
           ❤️ Send  Happy Thought ❤️
           </span>
         </button>
-        <p className="lenght-tweet">{newTweets.length} / 140</p>
+        <p className="lenght-tweet">{newTweet.length} / 140</p>
       </form>
     </section>
 

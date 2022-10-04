@@ -3,7 +3,7 @@
 /* eslint-disable react/self-closing-comp */
 import React from 'react';
 
-const LikeButton = ({ tweet, setThoughts }) => {
+const LikeButton = ({ tweet }) => {
   console.log(tweet)
   const handleLikeButton = (id) => {
     const ids = {
@@ -13,7 +13,6 @@ const LikeButton = ({ tweet, setThoughts }) => {
 
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, ids)
       .then((res) => res.json())
-    setThoughts('')
   };
 
   return (
