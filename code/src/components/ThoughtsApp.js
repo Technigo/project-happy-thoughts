@@ -52,10 +52,15 @@ export const ThoughtsApp = () => {
 		      .finally(() => setNewMessage(''));
 		  }
 
+// 			fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' }
+// });
+
   return (
     <div>
 			  <ThoughtsForm
-  newTodo={newMessage}
+  newMessage={newMessage}
   onNewTodoChange={handleNewMessageChange}
   onFormSubmit={onFormSubmit} />
       <ThoughtsList

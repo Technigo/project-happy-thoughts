@@ -4,13 +4,14 @@ const ThoughtsForm = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
   return (
 
     <form className="form-style" onSubmit={onFormSubmit}>
-      <h1>Welcome !</h1>
-      <textarea placeholder="Happy Thoughts" value={newMessage} onChange={onNewMessageChange} />
+      <h1>What is making you happy right now?</h1>
+      <textarea className="textBox" placeholder="Happy Thoughts here!" defaultValue={newMessage} onChange={onNewMessageChange} />
       <div className="main">
-        <button className="button" disabled={newMessage.length < 6 || newMessage.length > 140} type="submit">send</button>
+        <button className="button" type="submit"><span>❤️</span>Send Happy Thoughts<span>❤️</span></button>
       </div>
     </form>
   )
 }
-
 export default ThoughtsForm;
+
+// disabled={newMessage.length < 6 || newMessage.length > 140}

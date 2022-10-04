@@ -6,10 +6,9 @@
 
 import React from 'react';
 
-const ThoughtsList = ({ thoughtsList, setThoughtsList }) => {
-	return(
-		
-	)
+const ThoughtsList = () => {
+  return (<div> hello</div>
+  )
   //  const onThoughtsCheckChange = (thoughts) => {
   //     setThoughtsList(thoughtsList => thoughtsList.map(singleThoughts => {
   //         if(singleThoughts._id === thoughts._id) {
