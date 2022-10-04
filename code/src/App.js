@@ -1,17 +1,18 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable react/jsx-closing-bracket-location */
+/* eslint-disable spaced-comment */
 /* eslint-disable jsx-quotes */
-/* eslint-disable linebreak-style */
 import React from 'react';
+import ThoughtWrapper from 'components/ThoughtWrapper';
+import NewThoughts from 'components/NewThoughts';
 import Header from './components/Header';
-import NewThought from './components/NewThought';
-import ThoughtsList from './components/ThoughtsList';
 
 export const App = () => {
   return (
-    <div className='thoughts-wrapper'>
+    <div className='main'>
       <Header />
-      <NewThought />
-      <ThoughtsList />
+      <NewThoughts />
+      <ThoughtWrapper />
     </div>
   );
 };

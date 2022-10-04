@@ -1,21 +1,27 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable jsx-quotes */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable jsx-quotes */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
-const ThoughtsList = () => {
+const ThoughtsList = ({ thoughts }) => {
   return (
-    <div className='thoughts-list'>
-      <h1>All thoughts here with map</h1>
-      <div className='like'>
-        <button type='button' className='like-btn'>
-          {' '}
-          ❤️
-        </button>
-      </div>
-    </div>
-  );
+    <section className='thought-list'>
+      {thoughts.map((thought) => {
+        return (
+          <div className='thought-container' key={thought._id}>
+            <p>{thought.message}</p>
+            <button type='button' className='like-btn'>
+             ❤️
+            </button>
+          </div>
+        )
+      })}
+    </section>
+  )
 };
 
 export default ThoughtsList;
