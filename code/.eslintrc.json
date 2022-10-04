@@ -11,6 +11,7 @@
     "node": true,
     "browser": true
   },
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "parser": "@babel/eslint-parser",
     "requireConfigFile": false,
@@ -33,7 +34,7 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "linebreak-style": ["error","windows"],
+    "linebreak-style": 0,
     "arrow-body-style": "off",
     "class-methods-use-this": "off",
     "brace-style": [
