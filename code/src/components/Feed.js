@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import LikeButton from './LikeButton';
 import NewTweet from './NewTweet';
 
-const Feed = ({ handlelikeButton }) => {
+// handleFormSubmit, handleOnNewTweet
+
+const Feed = ({ handlelikeButton, newTweets }) => {
   const [thoughts, setThoughts] = useState([])
   /* Api Global */
   useEffect(() => {
@@ -13,7 +15,8 @@ const Feed = ({ handlelikeButton }) => {
 
   return (
     <section className="container">
-      <NewTweet />
+      <NewTweet
+        newTweets={newTweets} />
       {thoughts.map((tweet) => (
         <LikeButton
           // eslint-disable-next-line no-underscore-dangle

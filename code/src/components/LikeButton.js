@@ -22,11 +22,12 @@ const LikeButton = ({ tweet, setThoughts }) => {
         <p key={tweet._id}>{tweet.message}</p>
         <div className="info-like">
           <button
-            className={tweet.hearts > 0 ? 'btn-heart clicked' : 'btn-heart'}
+            className={tweet.hearts > 0 ? 'button-heart clicked' : 'button-heart'}
             // eslint-disable-next-line no-underscore-dangle
             onClick={() => handleLikeButton(tweet._id)}>
             <span role="img" aria-label="heart">❤️</span>
           </button>
+          <span className="like-counter"> x {tweet.hearts}</span>
         </div>
       </div>
     </section>

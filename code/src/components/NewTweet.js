@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 const NewTweet = () => {
-  const [newThought, setNewThought] = useState('')
+  const [newTweets, setNewTweets] = useState('')
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
@@ -10,16 +10,16 @@ const NewTweet = () => {
     const message = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: newThought })
+      body: JSON.stringify({ message: newTweets })
     }
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', message)
       .then((res) => res.json())
-    setNewThought('')
+    setNewTweets('')
   }
 
-  const handleOnNewThought = (e) => {
-    setNewThought(e.target.value)
+  const handleOnNewTweet = (e) => {
+    setNewTweets(e.target.value)
   }
 
   return (
@@ -32,15 +32,15 @@ const NewTweet = () => {
             id="new-thought"
             name="new-thought"
             placeholder="Let us fill the day with kind thoughts! ^^"
-            value={newThought}
-            onChange={handleOnNewThought}
+            value={newTweets}
+            onChange={handleOnNewTweet}
             rows="5"
             cols="33" />
         </label>
         <button
           type="submit"
           className="submit-button"
-          disabled={newThought.length < 5 || newThought.length > 140}>
+          disabled={newTweets.length < 5 || newTweets.length > 140}>
           <span role="img" aria-label="heart">
           ❤️ Send Happy Thought ❤️
           </span>
