@@ -1,31 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import TaskList from 'components/TaskList';
-import TaskForm from 'components/TaskForm';
+import MessageList from 'components/MessageList';
+import NewMessage from 'components/NewMessage';
 
 export const App = () => {
-  // const [counter, setCounter] = useState(0);
-  const [taskList, setTaskList] = useState([]);
+  const [newMessage, setNewMessage] = useState('');
+  const [messageList, setMessageList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [newTodo, setNewTodo] = useState('');
-
-  // useEffect(() => {
-  //   console.log('test');
-  //   document.title = `you clicked ${counter} times`;
-  // });
-
-  // useEffect(() => {
-  //   window.alert(`the counter is set to ${counter}`)
-  // }, [counter]);
-
-  // const handleCounterIncreaseButtonClick = () => {
-  //   setCounter(counter + 1);
-  // }
 
   const fetchTasks = () => {
     setLoading(true);
     fetch('https://week7-backend.herokuapp.com/tasks')
       .then((result) => result.json())
-      .then((data) => setTaskList(data))
+      .then((data) => setMessageList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -34,8 +20,8 @@ export const App = () => {
     fetchTasks();
   }, []);
 
-  const handleNewTodoChange = (event) => {
-    setNewTodo(event.target.value)
+  const handleNewMessageChange = (event) => {
+    setNewMessage(event.target.value)
   }
 
   const onFormSubmit = (event) => {
@@ -47,25 +33,25 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        description: newTodo
+        description: newMessage
       })
     }
     fetch('https://week7-backend.herokuapp.com/tasks', options)
-      .then((res) => res.json())
+      .then((result) => result.json())
       .then(() => fetchTasks())
-      .finally(() => setNewTodo(''));
+      .finally(() => setNewMessage(''));
   }
 
   return (
     <div>
-      <TaskForm
-        newTodo={newTodo}
-        onNewTodoChange={handleNewTodoChange}
+      <NewMessage
+        newMessage={newMessage}
+        onNewMessageChange={handleNewMessageChange}
         onFormSubmit={onFormSubmit} />
-      <TaskList
+      <MessageList
         loading={loading}
-        taskList={taskList}
-        setTaskList={setTaskList} />
+        messageList={messageList}
+        setMessageList={setMessageList} />
       {/* <p>{counter}</p>
       <button type="button" onClick={handleCounterIncreaseButtonClick}>counter increase</button> */}
 
