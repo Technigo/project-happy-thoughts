@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import Header from 'components/Header';
 import ThoughtList from 'components/ThoughtList';
+import NewThought from 'components/NewThought';
 
 export const App = () => {
   const [counter, setCounter] = useState(0);
   const [thoughtList, setThoughtList] = useState([]);
-
-  useEffect(() => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-      .then((data) => data.json())
-      .then((transformedData) => setThoughtList(transformedData))
-      .catch((error) => console.error(error))
-      .finally(() => console.log('everything is fine'))
-  }, []);
+  const [newThought, setNewThought] = useState('');
 
   useEffect(() => {
     // window.alert(`the current counter is ${counter}`)
@@ -21,9 +16,11 @@ export const App = () => {
   }
   return (
     <div>
+      <Header />
       <p>{counter}</p>
       <button onClick={handleCounterIncreaseButtonClick} type="button">Counter increase</button>
-      <ThoughtList list={thoughtList} />
+      <NewThought newThought={newThought} setNewThought={setNewThought} />
+      <ThoughtList thoughtList={thoughtList} setThoughtList={setThoughtList} />
     </div>
   );
 }
