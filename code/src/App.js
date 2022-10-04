@@ -1,9 +1,12 @@
 import React from 'react';
+import { SendThought } from 'components/SendThought/SendThought';
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
+    <div className="outer-wrapper">
+      <section className="thoughts-wrapper">
+        <SendThought />
+      </section>
     </div>
   );
-}
+};
