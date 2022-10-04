@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from 'components/Header';
-import ThoughtList from 'components/ThoughtList';
 import NewThought from 'components/NewThought';
+import ThoughtList from 'components/ThoughtList';
 
 export const App = () => {
   const [counter, setCounter] = useState(0);
