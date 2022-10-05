@@ -2,10 +2,10 @@ import React from 'react'
 
 const ThougthInput = ({ newThougth, onSend, onNewThougth }) => {
   return (
-    <form onSubmit={onSend} className="container-child">
-      <textarea value={newThougth} onChange={onNewThougth} className="inputBox" />
+    <form onSubmit={onSend} className="container-child-input">
       <p>Test</p>
-      <button type="submit" className="btn">Send you love</button>
+      <textarea value={newThougth} onChange={onNewThougth} className="inputBox" placeholder="What's on your mind? " />
+      <button type="submit" className="btn-send" disabled={newThougth.length < 6 || newThougth > 140}>  Send love ❤️</button>
     </form>
   )
 }

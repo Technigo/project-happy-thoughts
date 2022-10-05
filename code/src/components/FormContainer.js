@@ -2,16 +2,19 @@ import React, { useEffect, useState } from 'react'
 import ThougthInput from './ThougthInput'
 import ApiInput from './ApiInput'
 
-export const FormContainer = () => {
-  const [newThougth, setNewThugth] = useState([]);
+const LIKES_URL = (likeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${likeID}/like`
+
+const FormContainer = () => {
+  const [newThougth, setNewThugth] = useState('');
   const [ApiThougth, setApiThougth] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getData = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((Response) => Response.json())
       .then((data) => setApiThougth(data))
       .catch((error) => console.error(error))
-      /* .finally(() => ) */
+      .finally(() => setLoading(false))
   }
   useEffect(() => {
     getData();
@@ -20,12 +23,13 @@ export const FormContainer = () => {
   const handleNewThougth = (event) => {
     setNewThugth(event.target.value)
   }
+
   const onSend = (event) => {
     event.preventDefault();
     const test = {
       method: 'POST',
       headers: {
-        'content-Type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         message: newThougth
@@ -37,6 +41,22 @@ export const FormContainer = () => {
       .finally(() => setNewThugth(''))
   }
 
+  /* Add likes to messages  */
+
+  const handleOnlikeChange = (likeID) => {
+    const test = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(LIKES_URL(likeID), test)
+      .then((Response) => Response.json())
+      .then(console.log('likes work'))
+      .catch((error) => console.error(error))
+      .finally(() => getData())
+  }
+
   return (
     <section className="container">
       <h1>hello world</h1>
@@ -45,7 +65,10 @@ export const FormContainer = () => {
         onNewThougth={handleNewThougth}
         onSend={onSend} />
       <ApiInput
-        ApiThougth={ApiThougth} />
+        ApiThougth={ApiThougth}
+        loading={loading}
+        onLikeChange={handleOnlikeChange} />
     </section>
   )
 }
+export default FormContainer

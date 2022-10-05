@@ -20,8 +20,87 @@ code {
   margin-right: 50px; 
 }
 
+.container-child-input {
+  border: solid black 1px;
+  margin-top: 30px; 
+  margin-bottom: 30px;
+  padding-bottom:50px;
+  width: 500px;
+  height: 180px;
+  background-color: grey;
+  box-shadow: 5px 10px;
+
+}
+
+.inputBox {
+  width: 90%;
+  height: 50%; 
+  margin: auto;  
+  display: block;
+}
+
+.btn-send {
+  margin-top: 20px; 
+  margin-bottom: 50px;
+  margin-left: 30px; 
+  display: block;
+  padding: 10px;
+  width: 200px; 
+  border-radius: 20px;
+  
+
+}
+
+.btn-send :hover {
+  background-color: pink;
+  transition-duration: 0.4;
+}
+
 .container-child {
-  border: solid black 5px;
+  border: solid black 1px;
+  margin-top: 30px; 
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  width: 500px;
+  height: 180px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: 5px 10px;
+  
+}
+
+.message {
+  grid-column: span 4;
+  margin-left: 20px; 
+  margin-bottom: 100px;
+}
+
+.btn-container {
+  grid-column: 1 / 1 ;  
+}
+
+.btn-heart {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+  border: none; 
+}
+
+.likes {
+  margin-left: 70px;
+}
+
+.date {
+  grid-column: 3 / 4;
+}
+
+
+@media ( min-width: 768px ) {
+.container {
+  margin-left: 450px;
+  margin-right: 450px;
+}
   
 }
 
