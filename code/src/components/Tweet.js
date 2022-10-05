@@ -2,6 +2,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/self-closing-comp */
 import React, { useState } from 'react';
+import moment from 'moment';
 
 const Tweet = ({ tweet }) => {
   const [counter, setCounter] = useState(tweet.hearts)
@@ -34,6 +35,7 @@ const Tweet = ({ tweet }) => {
             <span role="img" aria-label="heart">❤️</span>
           </button>
           <span className="like-counter"> x {counter}</span>
+          <p className="date">{moment(tweet.createdAt).fromNow()}</p>
         </div>
       </div>
     </section>
