@@ -15,19 +15,19 @@ const Thoughts = ({ loading, thoughts, setThoughts }) => {
         }));
     }
     return (
-        <section>
-            {thoughts.reverse().map(thought => (
-                <div key={thought._id}>
-                    <p>{thought.message}</p>
-                    <input onChange={() => onThoughtCheckChange(thought)} type="checkbox" checked={thought.isChecked} />
-                    <p className="timestamp">
-                            {formatDistance(new Date(thought.createdAt), Date.now(),{
-                             addSuffix: true
-                        })}
-                        </p>
-                </div>
-            ))}
-        </section>
+            <section>
+                {thoughts.reverse().map(thought => (
+                    <div className="single-thought-container" key={thought._id}>
+                        <p>{thought.message}</p>
+                        <input onChange={() => onThoughtCheckChange(thought)} type="checkbox" checked={thought.isChecked} />
+                        <p className="timestamp">
+                                {formatDistance(new Date(thought.createdAt), Date.now(),{
+                                addSuffix: true
+                            })}
+                            </p>
+                    </div>
+                ))}
+            </section>
     );
 }
 
