@@ -26,17 +26,3 @@ code {
   width: 100%;
   background-color: whitesmoke;
 }
-
-.app-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  justify-items: center;
-  width: 50%;
-}
-
-@media (max-width: 650px) {
-  .app-wrapper {
-    width: 80%;
-  }
-}

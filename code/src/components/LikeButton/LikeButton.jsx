@@ -15,7 +15,13 @@ const LikeButton = ({ thought, thoughtId, handleMessageLiked }) => {
   };
 
   return (
-    <button className={thought.hearts === 0 ? styles.likeButton : styles.likedlikeButton} onClick={handleLikeButtonClick} type="button"><span role="img" aria-label="heart">❤️</span></button>
+    <button
+      className={thought.hearts === 0 ? styles.likeButton : styles.likedlikeButton}
+      onClick={handleLikeButtonClick}
+      type="button">
+      <span role="img" aria-label="heart">❤️</span>
+    </button>
   );
 };
+
 export default LikeButton;

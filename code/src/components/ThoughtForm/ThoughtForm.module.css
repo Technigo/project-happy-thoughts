@@ -1,35 +1,35 @@
-.thoughtFormContainer {
-  width: 100%;
-}
-
 .thoughtForm {
   background-color: rgb(229, 229, 229);
   border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
   box-shadow: 0.3rem 0.3rem black;
   margin-top: 1.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 textarea {
   resize: none;
-  margin-top: 1rem;
   width: 100%;
   height: 4rem;
+  margin: 1rem 0;
+  padding: 0.5rem 0 0 0.5rem;
 }
 
 .thoughtFormHeading {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .sendButton {
   background-color: pink;
   border: none;
   border-radius: 25px;
-  margin-bottom: 0.5rem;
-  padding: 0.8rem 1rem;
+  font-weight: 700;
+  padding: 0.8rem 1.2rem;
   width: fit-content;
+}
+
+.sendButton span {
+  font-size: 1rem;
 }

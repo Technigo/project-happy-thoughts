@@ -12,11 +12,10 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
       headers: { 'Content-Type': 'application/json' }
     })
       .then((res) => res.json())
+      .catch((error) => console.error(error))
       .then((newThought) => {
-        console.log(newThought)
         setThoughtsFeed((previousThoughts) => [newThought, ...previousThoughts])
       })
-      .catch((error) => console.error(error))
       .finally(setThought(''))
   };
 
@@ -25,7 +24,14 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
       <form onSubmit={handleFormSubmit} className={styles.thoughtForm}>
         <label className={styles.thoughtFormHeading} htmlFor="thought-input">
           What´s making you happy right now?
-          <textarea id="thought-input" value={thought} onChange={(event) => setThought(event.target.value)} minLength="" maxLength="140" placeholder="Type thoughts..." required />
+          <textarea
+            id="thought-input"
+            value={thought}
+            onChange={(event) => setThought(event.target.value)}
+            minLength="5"
+            maxLength="140"
+            placeholder="Type thoughts..."
+            required />
         </label>
         <button type="submit" className={styles.sendButton}><span role="img" aria-label="heart">❤️</span> Send Happy Thought <span role="img" aria-label="heart">❤️</span></button>
       </form>
