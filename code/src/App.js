@@ -1,10 +1,12 @@
 import React from 'react';
-import { Test } from './components/Test'
+import { SubmittedThoughts } from 'components/SubmittedThoughts';
+import { SubmitThought } from './components/SubmitThought'
 
 export const App = () => {
   return (
     <div>
-      <Test />
+      <SubmitThought />
+      <SubmittedThoughts />
     </div>
   );
 }
