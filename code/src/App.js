@@ -1,38 +1,59 @@
 import React, { useState, useEffect } from 'react';
 
-import TaskList from 'components/Tasklist'
+import TaskList from 'components/Tasklist';
+import TaskForm from 'components/TaskForm';
 
 export const App = () => {
-  const [counter, setCounter] = useState(0);
   const [taskList, setTaskList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [newTodo, setNewTodo] = useState('');
 
-  // useEffect with empty array [] call your functions on application start
-  // dummy toDo API -> 'https://week7-backend.herokuapp.com/tasks'
-  useEffect(() => {
-    // creating promise
+  const fetchTasks = () => {
+    setLoading(true);
     fetch('https://week7-backend.herokuapp.com/tasks')
-      .then((data) => data.json())
-      .then((transformedData) => setTaskList(transformedData))
+      .then((res) => res.json())
+      .then((data) => setTaskList(data))
       .catch((error) => console.error(error))
-      .finally(() => console.log('everything is fine'));
-  }, []);
+      .finally(() => setLoading(false));
+  }
 
-  // Will trigger first when app starts, and every time the variable in the dependency array changes
+  const handleNewTodoChange = (event) => {
+    setNewTodo(event.target.value)
+  }
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        description: newTodo
+      })
+    }
+
+    fetch('https://week7-backend.herokuapp.com/tasks', options)
+      .then((res) => res.json())
+      .then(() => fetchTasks())
+      .finally(() => setNewTodo(''));
+  }
 
   useEffect(() => {
-    // window.alert(`the current counter is ${counter}`);
-  }, [counter]);
-
-  const handleCounterIncreaseButtonClick = () => {
-    setCounter(counter + 1);
-  }
+    fetchTasks();
+  }, []);
 
   return (
     <div>
-      Find me in src/app.js!
-      <p>{counter}</p>
-      <button onClick={handleCounterIncreaseButtonClick} type="button">Counter Increase</button>
-      <TaskList list={taskList} />
+      <TaskForm
+        newTodo={newTodo}
+        onNewTodoChange={handleNewTodoChange}
+        onFormSubmit={onFormSubmit} />
+      <TaskList
+        loading={loading}
+        taskList={taskList}
+        setTaskList={setTaskList} />
     </div>
   );
 }
