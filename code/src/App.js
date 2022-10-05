@@ -6,7 +6,7 @@ import './reset.css';
 import './index';
 
 export const App = () => {
-  /* const [counter, setCounter] = useState(0);  */
+  const [counter, setCounter] = useState(0);
   const [taskList, setTaskList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newTodo, setNewTodo] = useState('');
@@ -18,10 +18,7 @@ export const App = () => {
       .then((transformedData) => setTaskList(transformedData))
       .catch((error) => console.error(error))
       .finally(() => console.log('everything is fine'));
-  }, []);
-  const onCounterIncrease = () => {
-    setCounter(counter + 1);
-  }  */
+  }, []); */
 
   useEffect(() => {
     fetchTasks();
@@ -34,6 +31,9 @@ export const App = () => {
       .then((data) => setTaskList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
+  }
+  const onCounterIncrease = () => {
+    setCounter(counter + 1);
   }
 
   /* useEffect(() => {
@@ -71,7 +71,9 @@ export const App = () => {
         <TaskList
           loading={loading}
           taskList={taskList}
-          setTaskList={setTaskList} />
+          setTaskList={setTaskList}
+          setCounter={onCounterIncrease}
+          counter={counter} />
       </div>
     </div>
   )

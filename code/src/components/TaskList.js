@@ -2,7 +2,7 @@
 import React from 'react';
 import { formatRelative } from 'date-fns';
 
-const TaskList = ({ loading, taskList, setTaskList }) => {
+const TaskList = ({ loading, taskList, setTaskList, onCounterIncrease, counter }) => {
   /*   useEffect(() => {
       console.log('component did mount');
       return (
@@ -39,12 +39,21 @@ const TaskList = ({ loading, taskList, setTaskList }) => {
       {taskList.reverse().map((task) => (
         <div className="other-tweets-container" key={task._id}>
           <h4 className="other-tweets-headline">{task.description}</h4>
-          <div className="flex">
-            <input className="other-tweets-input" onChange={() => onTaskCheckChange(task)} type="checkbox" checked={task.isChecked} />
+          <label htmlFor="test" className="test">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From oldest to newest
+            <input onChange={() => onTaskCheckChange(task)} type="checkbox" checked={task.isChecked} className="other-tweets-input" id="test" />
+          </label>
+          <div className="flex"><p>{counter}</p>
+            <button
+              onClick={onCounterIncrease}
+              type="button"
+              className="like-button">
+              <img src="https://img.icons8.com/emoji/48/000000/red-heart.png" alt="like" className="like-button-image" />
+            </button>
             <p className="other-tweets-date">{formatRelative(task.date, new Date())}</p>
           </div>
         </div>
       ))}
+
     </section>
   );
 }

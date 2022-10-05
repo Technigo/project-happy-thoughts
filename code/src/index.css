@@ -70,26 +70,46 @@ margin-bottom:2vh;
 }
 
 .other-tweets-headline{
-  background:purple;
+  /* background:purple; */
   align-self: flex-start;
   flex-wrap: nowrap;
+  margin-bottom: 10%;
 }
 
 .flex {
   display: inline-flex;
   justify-content: space-between;
 }
-.other-tweets-input{
-  border: 5px solid rgba(238, 205, 18, 0.87);
-  width: 35px;
-}
 
 .other-tweets-date{
-  background: green;
- 
-  position: right;
+  align-self: flex-end;
+  padding-bottom: 2%;
 }
 
+.like-button-image{
+  width: 70%;
+  padding: 10%;
+  height: auto;
+  background-color: rgba(255, 202, 202, 0.808);
+  border-radius: 50%;
+}
+
+.like-button {
+  border:none;
+  background-color: rgb(255, 255, 255);
+}
+
+.other-tweets-input{
+  position: absolute;
+  left: 2%;
+  top: 2%;
+ }
+
+ .test{
+  position: absolute;
+  left: 10%;
+  top: 2%;
+ }
 /* ------------------tablet section---------------------- */
 @media (min-width: 667px) and (max-width: 1024px) {
   .inner-container {
