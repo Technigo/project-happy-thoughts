@@ -6,7 +6,6 @@ import './reset.css';
 import './index';
 
 export const App = () => {
-  const [counter, setCounter] = useState(0);
   const [taskList, setTaskList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newTodo, setNewTodo] = useState('');
@@ -26,14 +25,11 @@ export const App = () => {
 
   const fetchTasks = () => {
     setLoading(true);
-    fetch('https://week7-backend.herokuapp.com/tasks')
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
       .then((data) => setTaskList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
-  }
-  const onCounterIncrease = () => {
-    setCounter(counter + 1);
   }
 
   /* useEffect(() => {
@@ -42,6 +38,13 @@ export const App = () => {
 
   const handleNewTodoChange = (event) => {
     setNewTodo(event.target.value)
+  }
+  const onLikes = (_id) => {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
+      method: 'POST'
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
   }
 
   const onFormSubmit = (event) => {
@@ -56,7 +59,7 @@ export const App = () => {
         description: newTodo
       })
     }
-    fetch('https://week7-backend.herokuapp.com/tasks', options)
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchTasks())
       .finally(() => setNewTodo(''));
@@ -72,8 +75,7 @@ export const App = () => {
           loading={loading}
           taskList={taskList}
           setTaskList={setTaskList}
-          setCounter={onCounterIncrease}
-          counter={counter} />
+          onLikes={onLikes} />
       </div>
     </div>
   )
