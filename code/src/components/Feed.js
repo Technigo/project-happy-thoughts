@@ -1,4 +1,3 @@
-/* eslint-disable */ 
 import React, { useEffect, useState } from 'react'
 
 import GeneratedFeed from 'components/GeneratedFeed.js';
@@ -31,7 +30,7 @@ const Feed = () => {
     fetchThoughts()
   }, [])
 
-  // POST FOR NEW THOUGHT 
+  // POST FOR NEW THOUGHT
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -66,23 +65,24 @@ const Feed = () => {
   }
   return (
     <>
-    <SiteHeader />
-    <div className="feed-wrapper">
-      <PostNewThought
-        onFeedSubmit={handleFormSubmit}
-        newThought={newThought}
-        setNewThought={setNewThought}
-        counter={counter}
-        setCounter={setCounter}/>
-
-      {thoughts.map((thought) => (
-        <GeneratedFeed
-          key={thought._id}
-          thought={thought}
+      <SiteHeader />
+      {load}
+      <div className="feed-wrapper">
+        <PostNewThought
+          onFeedSubmit={handleFormSubmit}
           newThought={newThought}
-          onLikesIncrease={handleLikesIncrease} />
-      ))}
-    </div>
+          setNewThought={setNewThought}
+          counter={counter}
+          setCounter={setCounter} />
+
+        {thoughts.map((thought) => (
+          <GeneratedFeed
+            key={thought._id}
+            thought={thought}
+            newThought={newThought}
+            onLikesIncrease={handleLikesIncrease} />
+        ))}
+      </div>
     </>
   )
 }
