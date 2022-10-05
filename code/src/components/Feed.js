@@ -1,3 +1,4 @@
+/* eslint no-underscore-dangle: 0 */
 import React, { useEffect, useState } from 'react'
 
 import GeneratedFeed from 'components/GeneratedFeed.js';
