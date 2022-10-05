@@ -76,7 +76,7 @@ textarea {
   color: #14171A;
 }
 
-/*LikeButton*/
+/*Tweet*/
 .like-button-container {
   background-color: rgb(245, 236, 236);
   box-shadow: 5px 5px;
@@ -93,7 +93,7 @@ textarea {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1em;
+  margin-top: 1.5em;
   font-size: 16px;
   color: #657786
 }
@@ -109,6 +109,14 @@ textarea {
 
 .clicked {
 background-color: pink;
+}
+
+.like-counter {
+  font-size: 14px;
+}
+
+.date {
+  font-size: 14px;
 }
 
 /*Media Queries*/
