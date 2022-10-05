@@ -1,9 +1,8 @@
 /* eslint-disable */ 
 import React, { useEffect, useState } from 'react'
-import { formatRelative } from 'date-fns';
 
 import GeneratedFeed from 'components/GeneratedFeed.js';
-import InputFeed from 'components/InputFeed';
+import PostNewThought from 'components/PostNewThought';
 
 const Feed = () => {
   const [thoughts, setThoughts] = useState([])
@@ -62,7 +61,7 @@ const Feed = () => {
   return (
     <div className="feed-wrapper">
       {load}
-      <InputFeed
+      <PostNewThought
         onFeedSubmit={handleFormSubmit}
         newThought={newThought}
         setNewThought={setNewThought}

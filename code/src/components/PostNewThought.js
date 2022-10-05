@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputFeed = ({
+const PostNewThought = ({
   onFeedSubmit,
   setCounterValue,
   newThought,
@@ -42,4 +42,4 @@ const InputFeed = ({
     </div>
   )
 }
-export default InputFeed;
+export default PostNewThought;
