@@ -19,26 +19,28 @@ const PostNewThought = ({
           } />
       </div>
       <section>
-        <p>What is making you happy right now?</p>
+        <p className="message-header">What is making you happy right now?</p>
       </section>
       <textarea
         rows="4"
         id="newThought"
         type="text"
-        placeholder="begin sharing positive"
+        placeholder="...what's on your heart?"
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)} />
 
       <p className="letter-counter">{140 - newThought.length} / 140</p>
-      <button
-        className="send-button"
-        disabled={newThought.length < 1 || newThought.length > 140}
-        type="submit"
-        onClick={onFeedSubmit}>
-        <span>Send</span>
-      </button>
+      <div className="buttons">
+        <button
+          className="send-button"
+          disabled={newThought.length < 1 || newThought.length > 140}
+          type="submit"
+          onClick={onFeedSubmit}>
+          <span> <span className="heart" role="img" aria-label="heart"> 🤍 </span> Send happy thought <span className="heart" role="img" aria-label="heart"> 🤍 </span></span>
+        </button>
 
-      <button type="button" className="update-button" value="refresh" onClick={updateBtn}> Update</button>
+        <button type="button" className="update-button" value="refresh" onClick={updateBtn}> Update</button>
+      </div>
     </div>
   )
 }

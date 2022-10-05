@@ -65,9 +65,9 @@ const Feed = () => {
       .catch((error) => error)
   }
   return (
+    <>
+    <SiteHeader />
     <div className="feed-wrapper">
-      <SiteHeader />
-      {load}
       <PostNewThought
         onFeedSubmit={handleFormSubmit}
         newThought={newThought}
@@ -83,6 +83,7 @@ const Feed = () => {
           onLikesIncrease={handleLikesIncrease} />
       ))}
     </div>
+    </>
   )
 }
 export default Feed;

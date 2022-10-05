@@ -11,7 +11,7 @@ const GeneratedFeed = ({ thought, onLikesIncrease }) => {
           type="button"
           className="like-button"
           onClick={() => onLikesIncrease(thought._id)}
-          style={{ background: thought.hearts >= 1 ? '#ffadad' : '#eaeaea' }}>
+          style={{ background: thought.hearts >= 1 ? '#de84b4' : '#eaeaea' }}>
           <span className="like-heart" role="img" aria-label="heart">
              🖤
           </span>

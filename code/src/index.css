@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #C6C9E0;
 }
 
 code {
@@ -12,8 +13,21 @@ code {
     monospace;
 }
 
+header{
+  font-family: 'Creepster', cursive;
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.message-header{
+  padding-left: 10px;
+  font-weight: 600;
+}
+
 p{
-  color:red;
+  color:#1E1E1E;
 }
 
 
@@ -25,6 +39,7 @@ p{
  .send-wrapper, .post-container{
   margin: 10px;
   padding: 10px;
+  width: 340px;
   border: 1px solid rgb(0, 0, 0);
   box-shadow: 5x 5px 0px 1px rgba(0,0,0,0.75);
   -webkit-box-shadow: 5px 5px 0px 1px rgba(0,0,0,0.75);
@@ -33,13 +48,14 @@ p{
 
  .post-container{
   font-family: 'Roboto Mono', monospace;
+  background-color: rgb(242, 241, 241);
  }
 
  .send-wrapper {
   background-color: rgb(220, 220, 220);
  }
 .like-wrapper{
-  border: 2px blue solid;
+  padding: 10px;
 }s
 
 .thought-message{
@@ -47,19 +63,99 @@ p{
 }
 
 /*---BUTTONS----*/
+.send-button, .update-button{
+  width: 190px;
+}
+
+.update-button{
+  width: 70px;
+}
+
+.send-button, .update-button{
+  height: 30px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  background:#1E1E1E;
+  color: rgb(255, 255, 255);
+  margin: 10px;
+}
+
+.buttons{
+  display: block;
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-top: 10px;
+
+}
+
 .like-button{
-  border: 2px blue solid;
+  border:none;
   border-radius: 50%;
   width: 30px;
   height: 30px;
 }
+/*-----New post-------*/ 
+textarea{
+  width: 320px;
+  display: flex;
+  margin: 0 auto;
+  border: none;
+}
+
+textarea[type=text]{
+  color:rgb(9, 9, 35);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  padding: 5px;
+}
+
+textarea::placeholder{
+  color: #8b8b8b;
+  padding-left: 5px;
+}
+
+/*romoves the blue outline when focus*/
+textarea:focus{  
+  outline-width: 0;
+}
+
+.letter-counter{
+  position: absolute;
+  left: 53%;
+  -ms-transform: translateY(-120%);
+  transform: translateY(-100%);
+  color:rgb(142, 142, 142);
+  font-size: 12px;
+  margin: 20px;
+  padding: 30px;
+}
+
+
 
 
 /*---Insert details like & date posted--*/
 .like-counter{
-  border: 2px blue solid;
+  font-size: 14px;
 }
 
 .date-posted{
-  border: 2px rgb(122, 255, 197) solid;
+  margin: 0;
+  position: absolute;
+  left: 53%;
+  -ms-transform: translateY(-120%);
+  transform: translateY(-120%);
+  color:rgb(142, 142, 142);
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .send-button:hover, .update-button:hover{
+    background:#D664A1;
+    color: rgb(255, 255, 255);
+  }
+  p:hover{
+    color:#D664A1;
+  }
+  
 }
