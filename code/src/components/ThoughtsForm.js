@@ -13,5 +13,3 @@ const ThoughtsForm = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
   )
 }
 export default ThoughtsForm;
-
-// disabled={newMessage.length < 6 || newMessage.length > 140}

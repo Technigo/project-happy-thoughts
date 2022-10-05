@@ -26,7 +26,6 @@ export const ThoughtsApp = () => {
 	}, []);
 
 	const fetchThoughts = () => {
-		// setLoading(true);
 		fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
 			// eslint-disable-next-line arrow-parens
 			.then(res => res.json())
@@ -74,7 +73,6 @@ const handleLikeOnClick = (_id) => {
   onNewMessageChange={handleNewMessageChange}
   onFormSubmit={onFormSubmit} />
 			<ThoughtsList
-				// loading={loading}
   thoughtsList={thoughtsList}
   setThoughtsList={setThoughtsList}
   handleLikeOnClick={handleLikeOnClick} />

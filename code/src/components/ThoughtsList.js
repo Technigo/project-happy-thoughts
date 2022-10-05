@@ -16,7 +16,7 @@ const ThoughtsList = ({ thoughtsList, handleLikeOnClick }) => {
           </div>
           <div className="like-box">
             <button className={(thought.hearts === 0 ? 'heart-button' : 'red-heartButton')} type="button" onClick={() => handleLikeOnClick(thought._id)}>❤️</button>
-            <p> X {thought.hearts}</p>
+            <p> x {thought.hearts}</p>
             <p className="moment">
               {moment(thought.createdAt).fromNow()}
             </p>

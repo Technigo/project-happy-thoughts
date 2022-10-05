@@ -8,14 +8,14 @@ body {
 
 .form-style{
  display: flex;
- justify-content: space-around;
+ justify-content:center;
  align-items: center;
  flex-direction: column;
- margin-top: 50px;
- margin-left: 30%;
+ margin: auto;
  width: 30%;
+ margin-top: 50px;
  border: 3px solid #5d1e1e;
- box-shadow: 5px 5px;
+ box-shadow: 6px 6px;
  padding: 20px;
 }
 
@@ -43,25 +43,22 @@ margin-top: 10px;
  width: 90%;
  height: 60px;
  border: 3px solid maroon;
- 
+ border-radius: 5px;
 }
 
 .thought-box{
 	display: flex;
 	flex-direction: column;
-	margin-top: 40px;
-	margin-left: 30%;
-	width: 30%;
-	height: 160px;
 	border: 3px solid #5d1e1e;
 	box-shadow: 5px 5px;
 	padding: 20px;
-	justify-content: space-evenly;
-
+	margin: auto;
+	width: 30%;
+	margin-top: 50px;
 }
 .heart-button{ 
   cursor:pointer;
-  background-color: #f5dede; 
+  background-color: #cdbbbb; 
   width: 40px;
   height: 40px;
   border-radius: 50px; 
@@ -81,11 +78,10 @@ margin-top: 10px;
 .like-box{
 	display: flex;
 	align-items:center; 
-	justify-content: flex-start;
 	color: rgb(84, 79, 76);
 }
 .moment{
-	margin-left: 58%;
+	margin-left: auto;
 }
 
 @media (max-width: 668px){
