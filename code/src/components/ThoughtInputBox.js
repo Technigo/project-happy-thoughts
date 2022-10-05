@@ -4,19 +4,34 @@ import SubmitButton from './SubmitButton';
 
 const ThoughtInputBox = () => {
   const [input, setInput] = useState('');
+
+  /*   handleUserInput = (event) => {
+    setInput(event.target.value);
+  } */
   return (
     <div className="thoughtInputBox-div">
       Thought Input Box
       <form>
-        <label htmlFor="label-thought">What is making you happy right now?<br />
-          <input className="input-field" type="text" id="label-thought" name="label-thought" onChange={setInput} value={input} maxLength="300" />
-        </label>
+        <label
+          className="input-field"
+          htmlFor="input">Whats making you happy right now?
+          <div>
+            <textarea
+              id="input"
+              className="input-field"
+              type="text"
+              rows="5"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Happy thought here!" />
 
-        {/*         <label htmlFor="lname">Last name:
-          <input type="text" id="lname" name="lname" />
-        </label> */}
+            <p className="letter-counter">
+              {140 - input.length} characters left
+            </p>
+          </div>
+        </label>
       </form>
-      <SubmitButton />
+      <SubmitButton input={input} setInput={setInput} />
     </div>
   )
 }

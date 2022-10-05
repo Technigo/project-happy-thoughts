@@ -1,10 +1,14 @@
 /* import React, { useEffetc } from 'react'; */
 import React from 'react';
 
-const SubmitButton = () => {
+const SubmitButton = ({ input }) => {
   return (
     <section>
-      <button type="button">❤️ Send Happy Thoughts! ❤️</button>
+      <button
+        type="submit"
+        disabled={input.length < 5 || input.length > 140}>
+      ❤️ Send Happy Thoughts! ❤️
+      </button>
     </section>
   )
 }

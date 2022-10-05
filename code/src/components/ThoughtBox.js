@@ -1,27 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { API_URL } from 'utils/urls';
 import LikeButton from './LikeButton';
 
 const ThoughtBox = () => {
-  const [happyThoughts, setHappyThoughts] = useState([]);
+  const [allThoughts, setAllThoughts] = useState([])
 
-  // creates promise
-  fetch(API_URL)
-    .then((data) => data.json()) // Here we name the info from API and make it json.
-    // New name and here we can set the data to a variable.
-    .then((transformedData) => setHappyThoughts(transformedData))
-  // This happens if error occurs
-    .catch((error) => console.log(error))
-    .finally(() => console.log({ happyThoughts }));
-  // will trigger always at the first time since it has a new value from start.
+  // This fetches all the data from the API
+  useEffect(() => {
+    fetch(API_URL)
+      .then((data) => data.json())
+      .then((transformedData) => setAllThoughts(transformedData))
+      .catch((error) => console.log(error))
+      .finally(() => console.log({ allThoughts }))
+  });
 
+  // This returns a div for each message in the API-array.
   return (
-    <div className="thoughtBox-div">
-      Thought Box
-      <div><p>{happyThoughts.message}</p></div>
-      <LikeButton />
-    </div>
-  )
-}
+    allThoughts.map((thought) => (
+      <div className="thoughtBox-div">
+        <p>{thought.message}</p>
+        <p>{thought.createdAt}</p>
+        <p>Likes: {thought.hearts}</p>
+        <LikeButton />
+      </div>)));
+};
 
 export default ThoughtBox
