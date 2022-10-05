@@ -37,10 +37,12 @@ const TaskList = ({ loading, taskList, setTaskList }) => {
   return (
     <section>
       {taskList.reverse().map((task) => (
-        <div key={task._id}>
-          <h4>{task.description}</h4>
-          <input onChange={() => onTaskCheckChange(task)} type="checkbox" checked={task.isChecked} />
-          <p>{formatRelative(task.date, new Date())}</p>
+        <div className="other-tweets-container" key={task._id}>
+          <h4 className="other-tweets-headline">{task.description}</h4>
+          <div className="flex">
+            <input className="other-tweets-input" onChange={() => onTaskCheckChange(task)} type="checkbox" checked={task.isChecked} />
+            <p className="other-tweets-date">{formatRelative(task.date, new Date())}</p>
+          </div>
         </div>
       ))}
     </section>
