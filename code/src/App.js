@@ -1,9 +1,11 @@
 import React from 'react';
+import MessageDisplay from 'components/MessageDisplay';
+import './index.css'
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <MessageDisplay />
     </div>
   );
 }
