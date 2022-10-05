@@ -11,11 +11,11 @@ const Feed = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
       .then((json) => setThoughts(json))
-  }, [])
+  }, [thoughts.length])
 
   return (
     <section className="container">
-      <NewTweet />
+      <NewTweet onTweetSubmitted={(newTweet) => thoughts.push(newTweet)} />
       {thoughts.map((tweet) => (
         <Tweet
           // eslint-disable-next-line no-underscore-dangle
