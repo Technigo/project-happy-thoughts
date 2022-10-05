@@ -7,7 +7,7 @@ const ThoughtsForm = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
       <h1>What is making you happy right now?</h1>
       <textarea className="textBox" placeholder="Happy Thoughts here!" defaultValue={newMessage} onChange={onNewMessageChange} />
       <div className="main">
-        <button className="button" type="submit"><span>❤️</span>Send Happy Thoughts<span>❤️</span></button>
+        <button className="button" disabled={newMessage.length < 4 || newMessage.length > 140} type="submit">❤️Send Happy Thoughts❤️</button>
       </div>
     </form>
   )
