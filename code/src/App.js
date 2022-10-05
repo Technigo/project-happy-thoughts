@@ -1,12 +1,14 @@
 // import { Card } from 'components/Card';
 import CreateThought from 'components/CreateThought';
 import React, { useEffect, useState } from 'react';
+import ThoughtsFeed from 'components/ThoughtsFeed';
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [newTodo, setNewTodo] = useState('');
+  const [newThought, setNewThought] = useState('');
 
+  /* Get all Thoughts from the API and add them to `thoughtsList` */
   const fetchThoughts = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
@@ -20,21 +22,16 @@ export const App = () => {
     fetchThoughts();
   }, []);
 
-  console.log({ thoughtList, loading, newTodo });
+  console.log({ thoughtList, loading, newThought });
 
   return (
     <div>
-      <CreateThought />
-      <section>
-        {thoughtList.reverse().map((thought) => (
-          <div key={thought._id}>
-            <h4>{thought.message}</h4>
-            <p>{thought.hearts}</p>
-
-            {/* <p>{formatRelative(task.date, new Date())}</p> */}
-          </div>
-        ))}
-      </section>
+      <CreateThought
+        newThought={newThought}
+        setNewThought={setNewThought}
+        fetchThoughts={fetchThoughts}
+      />
+      <ThoughtsFeed loading={loading} thoughtList={thoughtList} />
     </div>
   );
 };
