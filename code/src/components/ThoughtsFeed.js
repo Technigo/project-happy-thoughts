@@ -14,9 +14,11 @@ const ThoughtsFeed = ({ list }) => {
 
         return (
           <Thought
+            key={singleThought._id}
             id={singleThought._id}
             message={singleThought.message}
-            hearts={singleThought.hearts} />
+            hearts={singleThought.hearts}
+            createdAt={singleThought.createdAt} />
         )
       })}
     </section>
