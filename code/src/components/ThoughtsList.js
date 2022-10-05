@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
-// import { formatRelative } from 'date-fns';
+import React from 'react';
+import { formatDistance }  from 'date-fns';
+import { DotSpinner } from '@uiball/loaders'
 
-
-const ThoughtsList = ({ loading, thoughts, handleLikeCounter, colorBtn }) => {
+const ThoughtsList = ({ loading, thoughts, handleLikeCounter }) => {
 
   if (loading) {
-    return <h1>Loading in progress...</h1>
+    return (
+      <>
+      <h2>Loading..</h2>    
+      <DotSpinner size={40} speed={0.9} color="black" />
+      </>
+    )
   }
 
   return (
@@ -13,19 +18,23 @@ const ThoughtsList = ({ loading, thoughts, handleLikeCounter, colorBtn }) => {
       {thoughts.map((thought) => {
         return (
           <div className='thought-container' key={thought._id}>
-            <p className='all-thoughts'>{thought.message}</p>
-            <div className='like-container'>
-            <button 
-            type='button' 
-            className='like-btn' 
-            onClick={() => {
-              handleLikeCounter(thought._id);
-            }}
-            style={ {background : colorBtn } }>
-             ❤️ 
-            </button>
-            <p className='likes'>x {thought.hearts}</p>
-            <p className='created'>{thought.createdAt}</p>
+              <h2 className='all-thoughts'>{thought.message}</h2>
+            <div className='like-and-time'>
+              <div className='like-container'>
+                <button 
+                type='button' 
+                className='like-btn' 
+                onClick={() => {
+                  handleLikeCounter(thought._id);
+                }}
+                style={{ background: thought.hearts >= 1 ? '#e79898bd' : '#f2f2f2' }}>
+                ❤️ 
+                </button>
+                <p className='likes'>x {thought.hearts}</p>
+              </div>
+              <div className='timestamp'>
+                <p className='created'>{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix:true })}</p>
+              </div>
             </div>
           </div>
         )
@@ -35,3 +44,5 @@ const ThoughtsList = ({ loading, thoughts, handleLikeCounter, colorBtn }) => {
 };
 
 export default ThoughtsList;
+
+

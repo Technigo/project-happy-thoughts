@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const NewThoughts = ({  newThought, handleSubmit, newThoughtChange }) => {
- 
+const NewThoughts = ({  newThought, handleSubmit, newThoughtChange, input }) => {
+
   return (
     <div className='newthought-container'>
       <h2 className='newthought-header'>What`s making you happy right now?</h2>
@@ -13,8 +13,11 @@ const NewThoughts = ({  newThought, handleSubmit, newThoughtChange }) => {
         value={newThought} 
         onChange={newThoughtChange} 
         required
-        minlength="5"
-        maxlength="140" />
+        minLength="5"
+        maxLength="140" />
+        <div className="charLeft">
+          	{140 - input.length} characters left
+        </div>
         <button
           type='submit'
           className='submit-btn'>

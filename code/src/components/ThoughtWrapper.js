@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import ThoughtsList from './ThoughtsList';
 import NewThoughts from './NewThoughts'
 
+const LIKES_URL = (messageID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`
+
 const ThoughtWrapper = () => {
   const [thoughts, setThoughts] = useState([])
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('')
-  const [colorBtn, setColorBtn] = useState('#f2f2f2')
+  const [input, setInput] = useState("");
    
   const fetchThought = () => {
     setLoading(true);
@@ -14,8 +16,7 @@ const ThoughtWrapper = () => {
       .then((data) => data.json())
       .then((transformedData) => setThoughts(transformedData))
       .catch((error) => console.error(error))
-      .then(console.log('everything works'))
-      .then(console.log(thoughts))
+      .then(console.log('everything works', thoughts))
       .finally(() => setLoading(false));
   }
   
@@ -33,7 +34,8 @@ const ThoughtWrapper = () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify
-          ({ message: newThought })
+          ({ message: newThought }),
+
     }
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
@@ -44,10 +46,12 @@ const ThoughtWrapper = () => {
   }
   
   const newThoughtChange = (event) => {
+    event.preventDefault()
+    setInput(event.target.value);
     setNewThought(event.target.value)
   }
 
-  const handleLikeCounter = () => {
+  const handleLikeCounter = (messageID) => {
           
       const options = 
       {
@@ -57,10 +61,11 @@ const ThoughtWrapper = () => {
           },
       }
   
-      fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts/THOUGH_ID/like', options)
+      fetch(LIKES_URL(messageID), options)
           .then(res => res.json())
+          .then(console.log('likes work'))
           .catch((error) => console.error(error))
-          .finally(() => setColorBtn("#ffb3b3"));
+          .finally(() => fetchThought());
 
   };
 
@@ -69,12 +74,12 @@ const ThoughtWrapper = () => {
     <NewThoughts 
     newThought={newThought}  
     handleSubmit={handleSubmit} 
-    newThoughtChange={newThoughtChange} />
+    newThoughtChange={newThoughtChange} 
+    input={input} />
     <ThoughtsList 
     thoughts={thoughts}
     loading={loading}
-    handleLikeCounter={handleLikeCounter}
-    colorBtn={colorBtn} />
+    handleLikeCounter={handleLikeCounter}/>
     </>
   );
 };
