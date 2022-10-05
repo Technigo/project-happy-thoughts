@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatRelative } from 'date-fns';
+import { formatDistance }  from 'date-fns';
 
 const Thoughts = ({ loading, thoughts, setThoughts }) => {
 
@@ -20,6 +20,11 @@ const Thoughts = ({ loading, thoughts, setThoughts }) => {
                 <div key={thought._id}>
                     <p>{thought.message}</p>
                     <input onChange={() => onThoughtCheckChange(thought)} type="checkbox" checked={thought.isChecked} />
+                    <p className="timestamp">
+                            {formatDistance(new Date(thought.createdAt), Date.now(),{
+                             addSuffix: true
+                        })}
+                        </p>
                 </div>
             ))}
         </section>

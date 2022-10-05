@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Thoughts from 'components/Thoughts';
 import ThoughtsForm from 'components/ThoughtsForm';
+import TimeStamp from './TimeStamp';
 
 const Container = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -56,6 +57,8 @@ const Container = () => {
         setThoughts={setThoughts} />
     </div>
   );
+
+  
 }
 
 export default Container;
