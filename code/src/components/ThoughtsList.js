@@ -1,22 +1,32 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable jsx-quotes */
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useState } from 'react';
+// import { formatRelative } from 'date-fns';
 
-const ThoughtsList = ({ thoughts }) => {
+
+const ThoughtsList = ({ loading, thoughts, handleLikeCounter, colorBtn }) => {
+
+  if (loading) {
+    return <h1>Loading in progress...</h1>
+  }
+
   return (
     <section className='thought-list'>
       {thoughts.map((thought) => {
         return (
           <div className='thought-container' key={thought._id}>
-            <p>{thought.message}</p>
-            <button type='button' className='like-btn'>
-             ❤️
+            <p className='all-thoughts'>{thought.message}</p>
+            <div className='like-container'>
+            <button 
+            type='button' 
+            className='like-btn' 
+            onClick={() => {
+              handleLikeCounter(thought._id);
+            }}
+            style={ {background : colorBtn } }>
+             ❤️ 
             </button>
+            <p className='likes'>x {thought.hearts}</p>
+            <p className='created'>{thought.createdAt}</p>
+            </div>
           </div>
         )
       })}
