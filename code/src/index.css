@@ -7,7 +7,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.wrapper {
+  border: 2px solid yellow;
+}
+
+.inputWrapper{
+  background-color: lightgray;
+  border: 1px solid grey;
+}
+
+.card {
+  border: 2px solid hotpink;
+}
+
+.heartbutton {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+
+h1 {
+  font-size: 20px;
+}
+
+textarea {
+  width:80% ;
+  height: 50px;
+}
+
+button {
+  border-radius: 10px;
+  height: 30px;
 }
