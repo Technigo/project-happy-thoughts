@@ -12,3 +12,10 @@ code {
     monospace;
 }
 
+.message-box {
+  background-color: #F2F0F0;
+}
+
+.submit-Btn {
+  background-color: #FFADAD;
+}

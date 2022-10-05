@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "date-fns": "^2.29.3",
-    "eslint": "^8.24.0"
-  },
-  "devDependencies": {
-    "babel-preset-stage-0": "^6.24.1"
-  }
-}

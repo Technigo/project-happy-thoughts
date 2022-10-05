@@ -5,20 +5,20 @@ import NewMessage from 'components/NewMessage';
 export const App = () => {
   const [newMessage, setNewMessage] = useState('');
   const [messageList, setMessageList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  const fetchTasks = () => {
-    setLoading(true);
-    fetch('https://week7-backend.herokuapp.com/tasks')
+  const fetchMessages = () => {
+    setLoading(false);
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((result) => result.json())
-      .then((data) => setMessageList(data))
+      .then((json) => setMessageList(json))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
 
   useEffect(() => {
-    fetchTasks();
-  }, []);
+    fetchMessages();
+  }, [newMessage]);
 
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value)
@@ -33,12 +33,12 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        description: newMessage
+        message: newMessage
       })
     }
-    fetch('https://week7-backend.herokuapp.com/tasks', options)
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((result) => result.json())
-      .then(() => fetchTasks())
+      .then(() => fetchMessages())
       .finally(() => setNewMessage(''));
   }
 
@@ -52,8 +52,6 @@ export const App = () => {
         loading={loading}
         messageList={messageList}
         setMessageList={setMessageList} />
-      {/* <p>{counter}</p>
-      <button type="button" onClick={handleCounterIncreaseButtonClick}>counter increase</button> */}
 
     </div>
   );

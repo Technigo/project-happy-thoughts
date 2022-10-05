@@ -1,8 +1,0 @@
-{
-  "presets":[
-    "es2018", "react", "stage-0", "@babel/preset-env"
-  ],
-  "plugins": [
-    "babel-plugin-transform-object-rest-spread"
-  ]
-}
