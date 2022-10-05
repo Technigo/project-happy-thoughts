@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const ShowMessage = ({ newMessage, setNewMessage }) => {
+const ShowMessage = ({ message }) => {
   useEffect(() => {
     console.log('component did mount')
     return (
@@ -9,7 +9,7 @@ const ShowMessage = ({ newMessage, setNewMessage }) => {
   })
   return (
     <div className="show-message">
-      <p>message</p>
+      <p>message: {message}</p>
     </div>
   );
 }

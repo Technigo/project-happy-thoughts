@@ -20,7 +20,7 @@ export const App = () => {
     <div className="outer-wrapper">
       <div className="inner-wrapper">
         <SendMessage newMessage={newMessage} setNewMessage={setNewMessage} />
-        {showMessage.map(message => (
+        {showMessage.map((message) => (
           <ShowMessage message={message.message} />
         ))}
       </div>
