@@ -2,12 +2,9 @@
 import React, { useState } from 'react';
 import SubmitButton from './SubmitButton';
 
-const ThoughtInputBox = () => {
+const ThoughtInputBox = ({ setAllThoughts }) => {
   const [input, setInput] = useState('');
 
-  /*   handleUserInput = (event) => {
-    setInput(event.target.value);
-  } */
   return (
     <div className="thoughtInputBox-div">
       Thought Input Box
@@ -31,7 +28,7 @@ const ThoughtInputBox = () => {
           </div>
         </label>
       </form>
-      <SubmitButton input={input} setInput={setInput} />
+      <SubmitButton input={input} setInput={setInput} setAllThoughts={setAllThoughts} />
     </div>
   )
 }

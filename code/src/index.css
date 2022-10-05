@@ -37,14 +37,23 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Roboto Mono", monospace;;
+  font-family: "Roboto Mono", monospace;
 
 }
 
 header{
   width: 100vw;
   height: 10vw;
-  border: 1px solid blue;
+  background: #f9adad;
+  font-size:large;
+  font-family: "Roboto Mono", monospace;
+
+}
+
+h1{
+  text-align: center;
+  margin: 0px;
+  padding: 30px;
 }
 
 .thoughtInputBox-div{
@@ -82,6 +91,7 @@ footer{
   width: 100vw;
   height: 10vw;
   border: 1px solid tomato;
+  background: tomato;
 }
 
 button{
