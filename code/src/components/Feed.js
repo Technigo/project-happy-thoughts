@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Tweet from './Tweet';
 import NewTweet from './NewTweet';
 
-// handleFormSubmit, handleOnNewTweet
-
 const Feed = () => {
   const [thoughts, setThoughts] = useState([])
   /* Api Global */
@@ -16,7 +14,7 @@ const Feed = () => {
   return (
     <section className="container">
       <NewTweet onTweetSubmitted={(newTweet) => {
-        thoughts.push(newTweet)
+        setThoughts([newTweet, ...thoughts]) // Updating the state.
         console.log('onTweetSubmitted called')
       }} />
       {thoughts.map((tweet) => (

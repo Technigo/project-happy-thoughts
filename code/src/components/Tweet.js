@@ -6,7 +6,7 @@ import moment from 'moment';
 
 const Tweet = ({ tweet }) => {
   const [counter, setCounter] = useState(tweet.hearts)
-  console.log(tweet)
+  console.log(`Heart count: ${counter}`)
   const handleLikeButton = (id) => {
     const ids = {
       method: 'POST',
@@ -17,8 +17,11 @@ const Tweet = ({ tweet }) => {
       // eslint-disable-next-line no-return-assign
       .then((res) => {
         if (res.status === 200) {
-          console.log('Request successful')
-          setCounter(tweet.hearts += 1)
+          res.json()
+            .then((likedTweet) => {
+              console.log(`Request successful: ${JSON.stringify(likedTweet)}`)
+              setCounter(likedTweet.hearts)
+            })
         }
       }) // it's a callback
   };

@@ -13,9 +13,12 @@ const NewTweet = ({ onTweetSubmitted }) => {
       body: JSON.stringify({ message: newTweet })
     }
 
-    const responsePromise = fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', message)
-    responsePromise.then((res) => onTweetSubmitted(res.json()))
-    setNewTweet('')
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', message)
+      .then((res) => {
+        res.json()
+          .then((createdTweet) => onTweetSubmitted(createdTweet))
+          .then(() => setNewTweet(''))
+      })
   }
 
   const handleOnNewTweet = (e) => {
