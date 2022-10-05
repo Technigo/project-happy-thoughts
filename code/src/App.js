@@ -7,21 +7,53 @@ const api = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 export const App = () => {
   const [showMessage, setShowMessage] = useState([])
   const [newMessage, setNewMessage] = useState('')
+  const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
+  const fetchMessages = () => {
+    setLoading(false)
     fetch(api)
       .then((res) => res.json())
       .then((data) => setShowMessage(data))
       .catch((error) => console.error(error))
-      .finally(() => console.log('Everything works'))
+      .finally(() => setLoading(false))
+  }
+
+  useEffect(() => {
+    fetchMessages()
   }, [newMessage])
+
+  const handleNewMessageChange = (event) => {
+    setNewMessage(event.target.value)
+  }
+
+  const onFormSubmit = (event) => {
+    event.preventDefault()
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: newMessage
+      })
+    }
+
+    fetch(api, options)
+      .then((res) => res.json())
+      .then(() => fetchMessages())
+      .finally(() => setNewMessage(''))
+  }
 
   return (
     <div className="outer-wrapper">
       <div className="inner-wrapper">
-        <SendMessage newMessage={newMessage} setNewMessage={setNewMessage} />
+        <SendMessage
+          newMessage={newMessage}
+          handleNewMessageChange={handleNewMessageChange}
+          onFormSubmit={onFormSubmit} />
         {showMessage.map((message) => (
-          <ShowMessage message={message.message} />
+          <ShowMessage key={message._id} message={message.message} />
         ))}
       </div>
     </div>

@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,6 +8,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h2 {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .outer-wrapper {
@@ -30,8 +32,17 @@ code {
 }
 .write-message {
   border: solid 1px black;
+  box-shadow: 6px 6px 2px 1px black;
+  background-color: lightgray;
 }
 
 .show-message {
-  border: solid 1px red;
+  border: solid 2px black;
+  margin-top: 10px;; 
+  margin-bottom: 10px;
+  box-shadow: 6px 6px 2px 1px black;
+}
+
+.text-area {
+  z-index: 1;
 }

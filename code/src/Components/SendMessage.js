@@ -1,13 +1,23 @@
+/* eslint-disable */
 import React from 'react';
 
-const SendMessage = ({ newMessage, onNewMessageChange, setNewMessage }) => {
+const SendMessage = ({ newMessage, handleNewMessageChange, onFormSubmit }) => {
   return (
     <div className="write-message">
-      <form>
-        <h2>Write your message here</h2>
-        <textarea value={newMessage} onChange={onNewMessageChange} type="text" />
+      <form onSubmit={onFormSubmit}>
+        <h2>What is making you happy right now?</h2>
+        <textarea
+            value={newMessage}
+            type="text"
+            placeholder="My happy thought is..."
+            onChange={handleNewMessageChange}
+            className="text-area" />
+        <button 
+        type="submit"
+        className="send-btn">
+          ❤️Send happy thought❤️
+        </button>
       </form>
-      <button type="submit">Send</button>
     </div>
   )
 }
