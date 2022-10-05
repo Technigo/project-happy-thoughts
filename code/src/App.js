@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react'
 import SendMessage from './Components/SendMessage'
 import ShowMessage from './Components/ShowMessage'
@@ -24,6 +25,13 @@ export const App = () => {
 
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value)
+  }
+  const HandleClick = () => {
+    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
+      method: 'POST',
+      body: '',
+      headers: { 'Content-Type': 'application/json' }
+    }).then(() => onLiked(_id))
   }
 
   const onFormSubmit = (event) => {
@@ -53,7 +61,11 @@ export const App = () => {
           handleNewMessageChange={handleNewMessageChange}
           onFormSubmit={onFormSubmit} />
         {showMessage.map((message) => (
-          <ShowMessage key={message._id} message={message.message} />
+          <ShowMessage 
+            key={message._id}
+            message={message.message}
+            createdAt={message.createdAt}
+            hearts={message.hearts} />
         ))}
       </div>
     </div>
