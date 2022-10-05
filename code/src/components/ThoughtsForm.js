@@ -3,7 +3,7 @@ import React from 'react';
 const ThoughtsForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
   return (
     <form onSubmit={onFormSubmit}>
-      <p>What is making you happy right now?</p>
+      <h1>What is making you happy right now?</h1>
       <textarea
         value={newThought}
         onChange={onNewThoughtChange}

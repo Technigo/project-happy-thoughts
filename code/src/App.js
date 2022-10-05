@@ -9,11 +9,10 @@ export const App = () => {
   const [newThought, setNewThought] = useState('');
 
   const fetchTasks = () => {
-    // console.log("Hello world")
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((data) => setThoughts(data)) 
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -35,7 +34,7 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        description: newThought
+        message: newThought
       })
     }
 

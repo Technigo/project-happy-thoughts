@@ -18,7 +18,7 @@ const Thoughts = ({ loading, thoughts, setThoughts }) => {
         <section>
             {thoughts.reverse().map(thought => (
                 <div key={thought._id}>
-                    <h4>{thought.message}</h4>
+                    <p>{thought.message}</p>
                     <input onChange={() => onThoughtCheckChange(thought)} type="checkbox" checked={thought.isChecked} />
                 </div>
             ))}
