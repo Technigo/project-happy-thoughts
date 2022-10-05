@@ -1,14 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-/* import { formatDistance } from 'date-fns';
-import parseIso from 'date-fns/parseISO' */
+import { formatDistance } from 'date-fns';
 
 const GetThoughts = ({ getThoughts, handleLikeButtonOnClick }) => {
-  /*   const displayTimePostFromNow = formatDistance(
-      parseIso(getThoughts.createdAt),
-      new Date(),
-      { includeSeconds: true }
-    ) */
   return (
     <section className="thoughts wrapper">
       {getThoughts.map((thought) => (
@@ -18,9 +12,8 @@ const GetThoughts = ({ getThoughts, handleLikeButtonOnClick }) => {
           </div>
           <div className="thoughts-likes">
             <button className="btn-like" type="button" onClick={() => handleLikeButtonOnClick(thought._id)}>💗</button>
-            <p>x {thought.hearts}</p>
-            <p className="thoughts-time">{thought.createdAt}</p>
-            {/* <p>{displayTimePostFromNow}</p> */}
+            <p className="likes-counter">x {thought.hearts}</p>
+            <p className="thoughts-time">{formatDistance(new Date(thought.createdAt), new Date())} ago</p>
           </div>
         </div>
       ))}

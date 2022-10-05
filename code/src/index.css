@@ -28,7 +28,7 @@ code {
   margin: 0 auto;
   flex-direction: column;
   justify-content: center;
-  row-gap: 40px;
+  row-gap: 30px;
   align-items: center;
   margin-top: 10%;
   margin-bottom: 10%;
@@ -84,7 +84,12 @@ textarea:focus {
   align-items: center;
   column-gap: 5px;
   color: grey;
-  font-size: 14px;
+  font-size: 12px;
+  justify-content: space-between;
+}
+
+.likes-counter {
+  flex-grow: 2;
 }
 
 /* BUTTONS */
@@ -106,8 +111,18 @@ textarea:focus {
   cursor: pointer;
 }
 
-.btn-like @media (min-width: 668px) and (max-width: 1023px) {
+@media (min-width: 668px) and (max-width: 1023px) {
+  .inner-wrapper {
+    width: 60%;
+  }
 }
 
 @media (min-width: 1024px) {
+  .inner-wrapper {
+    width: 40%;
+  }
+
+  .btn-send-input {
+    width: 40%;
+  }
 }

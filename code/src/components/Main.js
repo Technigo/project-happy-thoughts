@@ -7,12 +7,23 @@ const Main = () => {
   const [getThoughts, setGetThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
 
-  useEffect(() => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+  const APIurl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+
+  const fetchAPI = () => {
+    fetch(APIurl)
       .then((res) => res.json())
       .then((data) => setGetThoughts(data))
       .catch((error) => console.error(error))
-      .finally(() => console.log('everything is fine'))
+      .finally(() => console.log('no errors'))
+  }
+
+  useEffect(() => {
+    fetchAPI()
+    const interval = setInterval(() => {
+      fetchAPI()
+    }, 10000)
+    // This line is clearing the interval when user f.ex. changes window or exit app
+    return () => clearInterval(interval)
   }, []);
 
   const handleNewThoughtChange = (event) => {
@@ -21,7 +32,7 @@ const Main = () => {
 
   const handleOnFormSubmit = (event) => {
     event.preventDefault();
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', {
+    fetch(APIurl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -32,7 +43,10 @@ const Main = () => {
       .then((updatedThought) => {
         setNewThought((previousThoughts) => [updatedThought, ...previousThoughts])
       })
-      .finally(() => setNewThought(''))
+      .finally(() => {
+        setNewThought('')
+        fetchAPI()
+      })
   }
 
   const handleLikeButtonOnClick = (_id) => {
@@ -40,7 +54,9 @@ const Main = () => {
       method: 'POST'
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then(() => {
+        fetchAPI()
+      })
   }
 
   return (
