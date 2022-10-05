@@ -1,7 +1,7 @@
 /* eslint-disable react/self-closing-comp */
 import React, { useState } from 'react';
 
-const NewTweet = () => {
+const NewTweet = ({ onTweetSubmitted }) => {
   const [newTweet, setNewTweet] = useState('')
 
   const handleFormSubmit = (e) => {
@@ -13,8 +13,8 @@ const NewTweet = () => {
       body: JSON.stringify({ message: newTweet })
     }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', message)
-      .then((res) => res.json())
+    const responsePromise = fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', message)
+    responsePromise.then((res) => onTweetSubmitted(res.json()))
     setNewTweet('')
   }
 

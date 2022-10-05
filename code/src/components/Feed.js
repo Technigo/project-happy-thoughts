@@ -15,7 +15,10 @@ const Feed = () => {
 
   return (
     <section className="container">
-      <NewTweet onTweetSubmitted={(newTweet) => thoughts.push(newTweet)} />
+      <NewTweet onTweetSubmitted={(newTweet) => {
+        thoughts.push(newTweet)
+        console.log('onTweetSubmitted called')
+      }} />
       {thoughts.map((tweet) => (
         <Tweet
           // eslint-disable-next-line no-underscore-dangle
