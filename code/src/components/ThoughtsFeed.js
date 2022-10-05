@@ -1,5 +1,7 @@
+/* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
+import Thought from './Thought';
 
 const ThoughtsFeed = ({ list }) => {
   useEffect(() => {
@@ -8,11 +10,13 @@ const ThoughtsFeed = ({ list }) => {
   return (
     <section>
       {list.map((singleThought) => {
+        console.log(singleThought)
+
         return (
-          <div className="thought" key={singleThought._id}>
-            <p>{singleThought.message}</p>
-            <p>hearts: {singleThought.__v}</p>
-          </div>
+          <Thought
+            id={singleThought._id}
+            message={singleThought.message}
+            hearts={singleThought.hearts} />
         )
       })}
     </section>

@@ -9,7 +9,7 @@ export const App = () => {
   // create promise
   const fetchThoughts = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-      .then((data) => data.json())
+      .then((response) => response.json())
       .then((transformedData) => setThoughts(transformedData))
       .catch((error) => console.error(error))
       .finally(() => console.log('all the promises are resolved'))
@@ -35,19 +35,21 @@ export const App = () => {
       })
     }
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((lastThought) => setThoughts((previousThoughts) => [lastThought, ...previousThoughts]))
       .finally(() => setNewThought(''));
   })
-  console.log(thoughts)
-
   return (
-    <div className="outer-wrapper">
-      <Form
-        onFormSubmit={handleSubmit}
-        newThought={newThought}
-        onNewThoughtChange={handleNewThoughtChange} />
-      <ThoughtsFeed list={thoughts} />
+    <div className="container">
+      <div className="inner-container">
+        <Form
+          onFormSubmit={handleSubmit}
+          onNewThought={newThought}
+          onNewThoughtChange={handleNewThoughtChange} />
+        <ThoughtsFeed
+          list={thoughts}
+          fetchThoughts={fetchThoughts} />
+      </div>
     </div>
   );
 }
