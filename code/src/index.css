@@ -4,11 +4,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(255, 202, 202, 0.795);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+.inner-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .form-container {
@@ -17,7 +27,8 @@ code {
   padding: 1.5vh;
   border: 2px solid black;
   box-shadow: 5px 5px;
-  background-color: rgba(128, 128, 128, 0.13);
+  background-color: rgba(211, 211, 211, 0.534);
+  margin-top: 20%;
 }
 
 .form-headline{
@@ -31,21 +42,37 @@ background-color:brown;
 padding:1vh;
 margin-bottom:2vh;
 }
+.form-submit-button-image {
+  width: 10%;
+  height: auto;
+}
 
 .form-submit-button {
   border-radius: 40vh;
   background: rgba(250, 128, 119, 0.658);
   align-self: flex-start;
-  padding:1vh;
+  padding-top:1vh;
+  padding-bottom:1vh;
   border: none;
   color: black;
   display: flex;
   justify-content: center;
   align-items:center;
+  width: 70%;
 }
 
-.form-submit-button-image {
-  width: 10%;
-  height: auto;
-  background: black;
+
+
+/* ------------------tablet section---------------------- */
+@media (min-width: 667px) and (max-width: 1024px) {
+  .inner-container {
+  width: 50%;
+  }
+}
+
+/* ------------------computer section---------------------*/
+@media (min-width: 1025px) {
+  .inner-container {
+  width: 30%;
+  }
 }

@@ -63,14 +63,16 @@ export const App = () => {
   }
   return (
     <div className="outer-container">
-      <TaskForm
-        newTodo={newTodo}
-        onNewTodoChange={handleNewTodoChange}
-        onFormSubmit={onFormSubmit} />
-      <TaskList
-        loading={loading}
-        taskList={taskList}
-        setTaskList={setTaskList} />
+      <div className="inner-container">
+        <TaskForm
+          newTodo={newTodo}
+          onNewTodoChange={handleNewTodoChange}
+          onFormSubmit={onFormSubmit} />
+        <TaskList
+          loading={loading}
+          taskList={taskList}
+          setTaskList={setTaskList} />
+      </div>
     </div>
   )
 

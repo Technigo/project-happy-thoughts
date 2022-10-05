@@ -8,7 +8,7 @@ const TaskForm = ({ newTodo, onNewTodoChange, onFormSubmit }) => {
       <textarea className="form-textarea" type="text" id="label-id" value={newTodo} onChange={onNewTodoChange} />
       <button type="submit" className="form-submit-button" disabled={newTodo.length < 6 || newTodo.length > 140}>
         <img src="https://img.icons8.com/emoji/48/000000/red-heart.png" alt="like" className="form-submit-button-image" />
-        <span>Send Happy Thought</span>
+        <span>&nbsp; Send Happy Thought &nbsp;</span>
         <img src="https://img.icons8.com/emoji/48/000000/red-heart.png" alt="like" className="form-submit-button-image" />
       </button>
     </form>
