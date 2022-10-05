@@ -1,6 +1,9 @@
 .likeButton {
-  background-color: pink;
+  background-color: rgb(236, 236, 236);
   border: none;
   border-radius: 50%;
-  padding: 0.3rem;
+  font-size: 1rem;
+  padding: 0.7rem;
 }
+
+/* change color to pink when clicked */

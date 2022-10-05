@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
 }
 
@@ -26,10 +27,9 @@ code {
   background-color: whitesmoke;
 }
 
-.thoughts-wrapper {
-  width: 70%;
+.app-wrapper {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 2rem;
   justify-items: center;
-  background-color: white;
 }

@@ -1,21 +1,33 @@
-.sendThoughtContainer {
+.thoughtFormContainer {
+  width: 100%;
+}
+
+.thoughtForm {
   background-color: rgb(236, 236, 236);
-  box-shadow: 0.4rem 0.4rem black;
-  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  box-shadow: 0.3rem 0.3rem black;
+  margin-top: 1.5rem;
+  padding: 1rem;
 }
 
-.sendThoughtForm {
-  display: flex;
-  flex-direction: column;
+textarea {
+  resize: none;
+  width: 100%;
+  height: 4rem;
 }
 
-#happy-thoughts {
-  font-family: 'Menlo';
+.formHeading {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
+
 .sendButton {
   background-color: pink;
   border: none;
-  border-radius: 20px;
-  padding: 0.3rem;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
   width: fit-content;
 }
