@@ -11,7 +11,7 @@ const LikeButton = ({ thoughtId, handleMessageLiked }) => {
       method: 'POST',
       headers: { 'Content-type': 'application/json' }
     }).then(() => {
-      handleMessageLiked.handleMessageLiked(thoughtId);
+      handleMessageLiked(thoughtId);
     })
   };
 
