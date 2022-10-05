@@ -1,3 +1,4 @@
+/* eslint-disable*/
 import React, { useState } from 'react';
 
 const ThoughtForm = (props) => {
@@ -27,7 +28,7 @@ const ThoughtForm = (props) => {
             className="text-input"
             rows="5"
             columns="140"
-            placeholder="test :)"
+            placeholder="Type something...:)"
             type="text"
             name="thought"
             value={newThought}
