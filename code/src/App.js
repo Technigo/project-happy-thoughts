@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-template-curly-in-string */
 /* eslint-disable quote-props */
 /* eslint-disable no-use-before-define */
 import React, { useEffect, useState } from 'react';
@@ -36,7 +38,7 @@ export const App = () => {
       },
       body: JSON.stringify({
         // eslint-disable-next-line quotes
-        message: 'have a good day'
+        message: newThought
       })
     }
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', option)
@@ -44,8 +46,21 @@ export const App = () => {
       .then(() => fetchThought())
       .finally(() => setNewThought(''))
   }
+
+  const handleLikes = (_id) => {
+    const option = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, option)
+      .then((res) => res.json())
+      .then(() => fetchThought())
+  }
+
   return (
-    <div>
+    <div className="main-container">
       <ThoughtForm
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChange}
@@ -53,7 +68,9 @@ export const App = () => {
       <ThoughtList
         loading={loading}
         thoughtList={thoughtList}
-        setThoughtList={setThoughtList} />
+        setThoughtList={setThoughtList}
+        handleLikes={handleLikes} />
     </div>
+
   );
 }
