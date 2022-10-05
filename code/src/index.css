@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h1 {
+  border: solid pink;
+}
+
+.thoughtForm-container {
+  border: solid red;
+}
+
+h2 {
+  border: solid green;
+}

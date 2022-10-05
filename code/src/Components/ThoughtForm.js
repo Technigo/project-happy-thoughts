@@ -19,7 +19,7 @@ const ThoughtForm = (props) => {
     <div className="thoughtForm-container">
       <form onSubmit={handleFormSubmit}>
         <div className="thought-form">
-          <h2>
+          <h2 className="thought-form-header">
             <label htmlFor="thoughtInput">What makes you happy right now?</label>
           </h2>
           <textarea
@@ -32,6 +32,17 @@ const ThoughtForm = (props) => {
             name="thought"
             value={newThought}
             onChange={(event) => setNewThought(event.target.value)} />
+        </div>
+        <div className="thought-input-details">
+          <button
+            className="submitBtn"
+            type="button"
+            disabled={newThought.length < 5 || newThought.length > 140}>
+            <span>❤️Send Happy Thought❤️</span>
+          </button>
+          <div className="counter">
+            <p>{0 + newThought.length} / 140</p>
+          </div>
         </div>
       </form>
     </div>
