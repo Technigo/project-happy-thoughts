@@ -6,4 +6,10 @@
   padding: 0.7rem;
 }
 
-/* change color to pink when clicked */
+.likedlikeButton {
+  background-color: pink;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  padding: 0.7rem;
+}

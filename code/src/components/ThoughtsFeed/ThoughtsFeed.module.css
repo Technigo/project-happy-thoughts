@@ -11,11 +11,12 @@
 
 .thoughtCard {
   background-color: white;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   box-shadow: 0.3rem 0.3rem black;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .thoughtMessage {

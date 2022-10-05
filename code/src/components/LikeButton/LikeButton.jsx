@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './LikeButton.module.css';
 
 /* make it change color when clicking/liking a thought */
-const LikeButton = ({ thoughtId, handleMessageLiked }) => {
+const LikeButton = ({ thought, thoughtId, handleMessageLiked }) => {
   console.log(thoughtId)
   const handleLikeButtonClick = () => {
     console.log(thoughtId)
@@ -16,7 +16,7 @@ const LikeButton = ({ thoughtId, handleMessageLiked }) => {
   };
 
   return (
-    <button className={styles.likeButton} onClick={handleLikeButtonClick} type="button">❤️</button>
+    <button className={thought.hearts === 0 ? styles.likeButton : styles.likedlikeButton} onClick={handleLikeButtonClick} type="button"><span role="img" aria-label="heart">❤️</span></button>
   );
 };
 export default LikeButton;

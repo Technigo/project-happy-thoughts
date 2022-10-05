@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import moment from 'moment';
 
 import LikeButton from '../LikeButton/LikeButton';
 import styles from './ThoughtsFeed.module.css';
@@ -32,7 +33,9 @@ const ThoughtsFeed = ({ loading, thoughtsFeed, setThoughtsFeed }) => {
                 handleMessageLiked={handleMessageLiked} />
               <p className={styles.amountOfLikes}> x {thought.hearts}</p>
             </div>
-            <p className={styles.timePosted}>{thought.createdAt}</p>
+            <p className={styles.timePosted}>
+              {moment(thought.createdAt).fromNow()}
+            </p>
           </div>
         </div>
       ))}
