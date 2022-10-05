@@ -4,7 +4,6 @@ import styles from './LikeButton.module.css';
 
 /* make it change color when clicking/liking a thought */
 const LikeButton = ({ thought, thoughtId, handleMessageLiked }) => {
-  console.log(thoughtId)
   const handleLikeButtonClick = () => {
     console.log(thoughtId)
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
