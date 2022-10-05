@@ -19,13 +19,13 @@ const PostNewThought = ({
           } />
       </div>
       <section>
-        <p>What is making you...</p>
+        <p>What is making you happy right now?</p>
       </section>
       <textarea
         rows="4"
         id="newThought"
         type="text"
-        placeholder="...happy"
+        placeholder="begin sharing positive"
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)} />
 

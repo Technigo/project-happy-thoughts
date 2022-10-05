@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 
 import GeneratedFeed from 'components/GeneratedFeed.js';
 import PostNewThought from 'components/PostNewThought';
+import SiteHeader from 'components/SiteHeader';
 
 const Feed = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
-  const [counter, setCounterValue] = useState(0)
+  const [counter, setCounter] = useState(0)
   const [load, setLoad] = useState(false)
 
   const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
@@ -18,15 +19,19 @@ const Feed = () => {
     fetch('//happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
-      .finally(() => setLoad(false))
+      .finally(() => {
+        setLoad(false)
+        setNewThought('');
+        setCounter(0);
+      })
   }
 
-  // UseEffect hook gets all thoughts
+  // UseEffect hook gets all 20 thoughts
   useEffect(() => {
     fetchThoughts()
   }, [])
 
-  // POST-request to the API while submiting the input-form
+  // POST FOR NEW THOUGHT 
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -43,9 +48,10 @@ const Feed = () => {
       .then((data) => {
         fetchThoughts(data)
         setNewThought('')
+        setCounter(0)
       })
   }
-  // Sending a POST-request for the Likes
+  // POST FOR LIKES
   const handleLikesIncrease = (thoughtId) => {
     const options = {
       method: 'POST'
@@ -60,13 +66,14 @@ const Feed = () => {
   }
   return (
     <div className="feed-wrapper">
+      <SiteHeader />
       {load}
       <PostNewThought
         onFeedSubmit={handleFormSubmit}
         newThought={newThought}
         setNewThought={setNewThought}
         counter={counter}
-        setCounterValue={setCounterValue} />
+        setCounter={setCounter}/>
 
       {thoughts.map((thought) => (
         <GeneratedFeed

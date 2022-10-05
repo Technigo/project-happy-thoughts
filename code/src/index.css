@@ -31,6 +31,10 @@ p{
   -moz-box-shadow: 5px 5px 0px 1px rgba(0,0,0,0.75);
  }
 
+ .post-container{
+  font-family: 'Roboto Mono', monospace;
+ }
+
  .send-wrapper {
   background-color: rgb(220, 220, 220);
  }
@@ -46,8 +50,8 @@ p{
 .like-button{
   border: 2px blue solid;
   border-radius: 50%;
-  padding-right: 3px;
-  padding-left: 3px;
+  width: 30px;
+  height: 30px;
 }
 
 
