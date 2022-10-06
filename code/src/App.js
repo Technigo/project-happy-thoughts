@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react'
 import SendMessage from './Components/SendMessage'
 import ShowMessage from './Components/ShowMessage'
