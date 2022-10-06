@@ -1,9 +1,22 @@
-import React from 'react';
+/* eslint-disable */
+import React, { useEffect, useState } from 'react';
+
+import Thoughts from 'components/Thoughts';
+// import NewThought from 'components/NewThought';
 
 export const App = () => {
+  const [thoughts, setThoughts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  // const [newThought, setNewThought] = useState('');
+
+  // useEffect(() => {
+  //   Thoughts();
+  // }, [setThoughts]);
+
+  console.log(thoughts)
   return (
     <div>
-      Find me in src/app.js!
+      <Thoughts thoughts={thoughts} setThoughts={setThoughts} />
     </div>
   );
 }
