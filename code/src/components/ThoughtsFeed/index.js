@@ -1,19 +1,17 @@
+import Thought from 'components/Thought';
 import React from 'react';
 // import { formatRelative } from 'date-fns';
 
-const ThoughtsFeed = ({ loading, thoughtList }) => {
-  if (loading) {
+const ThoughtsFeed = (props) => {
+  if (props.loading) {
     return <h1>Loading in progress...</h1>;
   }
 
   return (
     <section>
-      {loading && <h1>Loading in progress...</h1>}
-      {thoughtList.map((thought) => (
-        <div key={thought._id}>
-          <h4>{thought.message}</h4>
-          <p>{thought.hearts}</p>
-        </div>
+      {props.loading && <h1>Loading in progress...</h1>}
+      {props.thoughtList.map((thought) => (
+        <Thought thought={thought} />
       ))}
     </section>
   );

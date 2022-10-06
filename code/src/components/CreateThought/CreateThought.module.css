@@ -1,0 +1,17 @@
+.button {
+  background-color: #f48d8d;
+  border-radius: 16px;
+  padding: 10px;
+  border: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
