@@ -57,6 +57,12 @@ textarea {
   border-color: #fab8b8;;
 }
 
+.charactersLeft {
+  align-self: flex-end;
+  font-size: 12px;
+  color: #818080;
+}
+
 .new-thought-button {
   background-color:  #f9d4d4;
   width: 100%;
