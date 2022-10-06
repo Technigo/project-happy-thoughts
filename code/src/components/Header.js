@@ -5,7 +5,7 @@ const Header = () => {
     <header>
       <h1>❤️ Happy Thoughts board ❤️</h1>
     </header>
-  )
+  );
 };
 
 export default Header;
