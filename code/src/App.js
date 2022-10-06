@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import ThoughtsList from 'components/ThoughtsList'
 import ThoughtsForm from 'components/ThoughtsForm'
 
@@ -6,24 +7,30 @@ import ThoughtsForm from 'components/ThoughtsForm'
 export const App = () => {
 
 const [thoughtsList, setThoughtsList] = useState([])
-const [thoughtsForm, setThoughtsForm] = useState([])
 const [newThought, setNewThought] = useState('');
 
+// const [thoughts, setThoughts] = useState([]);
+
 useEffect(()=> {
-  fetchThoughts();
+  fetchTasks();
 }, []);
 
-const fetchThoughts = () => {
-  fetch('http://week7-backend.herokuapp.com/tasks')
+const handleNewThoughtChange = (event) => {
+  setNewThought(event.target.value)
+}
+
+const fetchTasks = () => { //Extracted in a function not to repeat itself
+  fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
   .then((data) => data.json())
-  .then((transformedData) => setThoughtsList(transformedData))
+  .then((addingNewThought) => setThoughtsList(addingNewThought))
   .catch(error => console.error(error))
   .finally(() => console.log('everything is fine'))
 }
 
 
+//Send Happy thoughts button
 const handleFormSubmit = (event) => {
-  event.preventDefault();
+  event.preventDefault(); //single page application, don't want to reload. Default behavior = reload
 
   const options = {
     method: "POST",
@@ -33,25 +40,24 @@ const handleFormSubmit = (event) => {
     body: JSON.stringify({ message: newThought }),
   }
 
-    fetch('http://week7-backend.herokuapp.com/tasks', option)
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((data) => data.json())
-      .then((transformedData) => setThoughtsList(transformedData))
-      .finally(() => setNewThought(''))
+      .then(() => {fetchTasks()})
   };
-
 
 
   return (
   <>
     <ThoughtsForm 
-    onFormSubmit={handleFormSubmit}
-    thoughtForm = {thoughtsForm} 
-    setThoughtForm = {setThoughtsForm}/>
-
-
+    newThought={newThought}
+    handleNewThoughtChange={handleNewThoughtChange}
+    onFormSubmit={handleFormSubmit} />
+   
     <ThoughtsList 
-    thoughtslist = {thoughtsList}
-    setThoughtList = {setThoughtsList} />
-  </>
+    list = {thoughtsList}
+    />
+    </>
+
+
   ); }
 

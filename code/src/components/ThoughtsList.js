@@ -1,23 +1,23 @@
-
 import React from 'react';
 
 
-const ThoughtsList =( { thought, thoughtslist, setThoughtsList } ) => {
+const ThoughtsList =( { list } ) => {
 
     
     return (    
         <div className="wrapper">
-
-                {thoughtslist.map(message => {
+            
+                {list.map(happyThought => {
                 
                 return (
-                <div className="Card">
-                <div key ={message._id}>
-                <p>{message.description}</p>
-                
+   
+                <div key ={happyThought._id}>
+                <p>{happyThought.message}</p>
+                <p>{happyThought.createdAt}</p>
                 <button className="heartbutton">❤️</button>
+                <p>{happyThought.__v}</p>
                 </div>
-                </div>
+       
     
                 )
                 })} 
