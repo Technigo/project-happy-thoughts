@@ -45,6 +45,7 @@ export const App = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data))
+      .finally(() => fetchTasks());
   }
 
   const onFormSubmit = (event) => {
@@ -56,14 +57,22 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        description: newTodo
+        message: newTodo
       })
     }
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      .then(() => fetchTasks())
-      .finally(() => setNewTodo(''));
+      /* .then(() => fetchTasks()) */
+      /* .finally(() => setNewTodo('')); */
+      .then((updatedThought) => {
+        setNewTodo((previousThoughts) => [updatedThought, ...previousThoughts])
+      })
+      .finally(() => {
+        setNewTodo('')
+        fetchTasks()
+      })
   }
+
   return (
     <div className="outer-container">
       <div className="inner-container">
@@ -79,8 +88,8 @@ export const App = () => {
       </div>
     </div>
   )
-
-  /* return (
+}
+/* return (
     <div>
       Find me src/app.js!
       {<><p>{counter}</p><button onClick={onCounterIncrease} type="button">
@@ -89,8 +98,7 @@ export const App = () => {
       {counter === 1 && (<TaskList list={taskList} />)}}
       <TaskList list={taskList} />
     </div>
-  ); */
-}
+  ); } */
 
 /* dummy toDo API => https://week7-backend.herokuapp.com/tasks */
 

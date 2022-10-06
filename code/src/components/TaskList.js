@@ -31,17 +31,25 @@ const TaskList = ({ loading, taskList, setTaskList, onLikes }) => {
     setTaskList((taskList) => taskList.map((singleTask) => {
       if (singleTask._id === task._id) {
         return { ...singleTask, isChecked: !singleTask.isChecked };
+        /* (previousThoughts) => [updatedThought, ...previousThoughts] */
       }
       return singleTask;
     }));
   }
+
   return (
     <section>
-      {taskList.reverse().map((task) => (
+      {taskList.map((task) => (
         <div className="other-tweets-container" key={task._id}>
           <h4 className="other-tweets-headline">{task.message}</h4>
-          <label htmlFor="test" className="test">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From oldest to newest
-            <input onChange={() => onTaskCheckChange(task)} type="checkbox" checked={task.isChecked} className="other-tweets-input" id="test" />
+          <label htmlFor="test" className="test">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From oldest to newest
+            <input
+              onChange={() => onTaskCheckChange(task)}
+              type="checkbox"
+              checked={task.isChecked}
+              className="other-tweets-input"
+              id="test" />
           </label>
           <div className="flex">
             <button
