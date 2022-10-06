@@ -17,7 +17,7 @@ const ThoughtWrapper = () => {
       .then((data) => data.json())
       .then((transformedData) => setThoughts(transformedData))
       .catch((error) => console.error(error))
-      .then(console.log('everything works', thoughts))
+      .then(console.log('everything works'))
       .finally(() => setLoading(false));
   };
 
