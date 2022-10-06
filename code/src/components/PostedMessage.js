@@ -7,7 +7,7 @@ const PostedMessage = ({ messages }) => {
     return (
       <div key={message._id} className="message-container">
         <p className="message-text">{message.message}</p>
-        <TimesLiked timesLiked={message.hearts} />
+        <TimesLiked timesLiked={message.hearts} id={message._id} />
         <p className="time-stamp">{message.createdAt}</p>
       </div>
     )
