@@ -11,7 +11,9 @@ const SendMessage = ({ newMessage, handleNewMessageChange, onFormSubmit }) => {
             type="text"
             placeholder="My happy thought is..."
             onChange={handleNewMessageChange}
-            className="text-area" />
+            className="text-area"
+            maxLength="140"
+            minLength="10" />
           <button
             type="submit"
             className="send-btn"
@@ -19,9 +21,13 @@ const SendMessage = ({ newMessage, handleNewMessageChange, onFormSubmit }) => {
             ❤️ Send happy thought ❤️
           </button>
         </form>
+        <p className={newMessage.length === 140 ? 'red-font' : 'normal-font'}>Remaining characters:{140 - newMessage.length}</p>
       </div>
     </section>
   )
 }
 
 export default SendMessage
+
+// eslint-disable-next-line max-len
+// {/* {newMessage.length < 10 && (alert('Your thought needs to be at least 10 characters long ☁️'))} Denna ska ha en useEffect?? och ligga mellan rad 24 och 25?*/}

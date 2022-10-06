@@ -20,9 +20,13 @@ const ShowMessage = ({ message, createdAt, hearts, id, onLiked, loading }) => {
       <div className="inner-show-message">
         <p className="message">{message}</p>
         <div className="heart-and-counter-container">
-          <span className="heart-counter"><button
-            className={hearts === 0 ? 'heart-btn-no-like' : 'heart-btn-like'}
-            onClick={handleClick}>❤️</button> x {hearts}</span>
+          <span className="heart-counter">
+            <button
+              className={hearts === 0 ? 'heart-btn-no-like' : 'heart-btn-like'}
+              onClick={handleClick}>
+              ❤️
+            </button> x {hearts}
+          </span>
           <p className="created-at"><Moment fromNow ago>{createdAt}</Moment> ago</p>
         </div>
       </div>
