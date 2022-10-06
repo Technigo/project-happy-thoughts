@@ -10,17 +10,20 @@ const ThoughtGenerator = ({ onLikesIncrease, thoughts }) => {
           className="Thoughts"
           key={thoughts._id}>
           <h4>{thought.message}</h4>
-          <p>{thought.hearts}</p>
-          <p>{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
-          <button
-            type="button"
-            className="like-button"
-            onClick={() => onLikesIncrease(thought._id)}
-            style={{ background: thought.hearts >= 1 ? '#de84b4' : '#eaeaea' }}>
-            <span className="like-heart" role="img" aria-label="heart">
-             🖤
-            </span>
-          </button>
+          <div className="LikesAndDate">
+            <div className="Likes">
+              <p>+{thought.hearts}</p>
+              <button
+                type="button"
+                className="heartButton"
+                onClick={() => onLikesIncrease(thought._id)}>
+                <span className="likeHeart" style={{ background: thought.hearts >= 1 ? 'rgb(243, 167, 167)' : 'lightgrey' }}>
+             ❤️
+                </span>
+              </button>
+            </div>
+            <p>{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
+          </div>
         </div>
       ))}
     </section>

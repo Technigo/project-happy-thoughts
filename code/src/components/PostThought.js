@@ -6,8 +6,8 @@ const PostThought = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
     <div className="PostThought">
       <form onSubmit={onFormSubmit}>
         <h1>What is making you happy right now?</h1>
-        <textarea value={newThought} onChange={onNewThoughtChange} />
-        <button type="submit">Send happy thought</button>
+        <textarea className="TextArea" value={newThought} onChange={onNewThoughtChange} />
+        <button className="Submit" type="submit">❤️ Send Happy Thought ❤️</button>
       </form>
     </div>
   )
