@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react'
 import SendMessage from './Components/SendMessage'
 import ShowMessage from './Components/ShowMessage'
@@ -38,7 +39,6 @@ export const App = () => {
         message: newMessage
       })
     }
-
 
     fetch(api, options)
       .then((res) => res.json())
