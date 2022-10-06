@@ -5,7 +5,7 @@ import { formatDistance } from 'date-fns';
 
 const TweetList = ({ loading, tweetList, onNewLikeSubmit }) => {
   if (loading) {
-    return <h3>Loading in progress...</h3>;
+    return <h3 className="loading-text">Loading in progress...</h3>;
   }
 
   return (
@@ -14,7 +14,7 @@ const TweetList = ({ loading, tweetList, onNewLikeSubmit }) => {
         <div className="tweet-box" key={tweet._id}>
           <h4 className="message-box">{tweet.message}</h4>
           <div className="like-time-box">
-            <section className="like">
+            <div className="like">
               <button
                 type="button"
                 className={tweet.hearts}
@@ -22,8 +22,8 @@ const TweetList = ({ loading, tweetList, onNewLikeSubmit }) => {
                 <span className="heart">🧡</span>
               </button>
               <p className="heart-counter">x {tweet.hearts}</p>
-            </section>
-            <p className="timestamp">
+            </div>
+            <p className="time-stamp">
               {formatDistance(new Date(tweet.createdAt), Date.now(), { addSuffix: true })}
             </p>
           </div>

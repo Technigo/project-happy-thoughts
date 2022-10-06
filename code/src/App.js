@@ -66,13 +66,10 @@ export const App = () => {
         newTweet={newTweet}
         onNewTweetChange={handleNewTweetChange}
         handleFormSubmit={handleFormSubmit} />
-
-      <div className="tweets-wrapper">
-        <TweetList
-          loading={loading}
-          tweetList={tweetList}
-          handleNewLikeSubmit={handleNewLikeSubmit} />{' '}
-      </div>
+      <TweetList
+        loading={loading}
+        tweetList={tweetList}
+        handleNewLikeSubmit={handleNewLikeSubmit} />{' '}
     </section>
   );
 };

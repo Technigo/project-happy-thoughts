@@ -3,19 +3,22 @@ import React from 'react';
 const TweetForm = ({ newTweet, onNewTweetChange, handleFormSubmit }) => {
   console.log('newTweet', newTweet);
   return (
-    <div className="tweets">
+    <div className="input-box">
       <form onSubmit={handleFormSubmit}>
-        <h1>Spread some love! What make you happy right now?</h1>
+        <h1>Spread some love!</h1>
+        <h3>What makes you happy right now?</h3>
         <textarea
           value={newTweet}
           onChange={onNewTweetChange}
-          placeholder="What made you smile today?"
+          placeholder="Write something that made you smile today.."
           rows="6"
           cols="30" />
-        <button
-          type="submit"
-          disabled={newTweet.length < 5 || newTweet.length > 140}>Send happy thought!
-        </button>
+        <div className="button-wrapper">
+          <button
+            type="submit"
+            disabled={newTweet.length < 5 || newTweet.length > 140}>Send happy thought!
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -4,37 +4,137 @@
 }
 
 body {
-  
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    background-color: rgb(243, 209, 209);
-    width: 100%;
-    color: rgb(77, 77, 84);
+  color:rgb(57, 55, 55);
+
+  background: linear-gradient(120deg,
+  #FFA8A8,
+  #f8ffba); 
+  background-size: 500%;
+  animation-name: gradient;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  /* https://www.youtube.com/watch?v=f3mwKLXpOLk */
+}
+
+@keyframes gradient {
+  from {
+    background-position: 0%;
   }
+  to {
+    background-position: 100%;
+  }
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+/* FORM */
 
-.container{
-margin-top: 30px;
+.input-container{
+  margin: 30px auto 0;
+  border: solid 1px rgb(57, 55, 55);
+  width: 32%;
+}
+
+.input-box{
+  border: solid 1px rgb(57, 55, 55);
+  box-shadow: 5px 10px;
+  padding: 30px;
+  background-color: #f5a6a6;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+textarea{
+  border: solid 1px rgb(57, 55, 55);
+
+}
+.button-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+button{
+  background-color: pink;
+  border-radius: 30px;
+  padding: 12px;
+  font-size: 15px;
+  color: rgb(83, 67, 67);
+  margin: 20px;
+  width: 200px;
+
 
 }
 
+/* TWEETS */
+
+.loading-text{
+  text-align: center;
+}
+
+.tweets-wrapper{
+  border: solid 3px black;
+  width: 32%;
+}
+
+.tweet-box{
+  border: solid 3px black;
+  background-color: #f5a6a6;
+}
+
+.message-box{
+  border: solid 3px black;
+}
+
+.like-time-box{
+  border: solid 3px black;
+}
+
+.like{
+  border: solid 3px black;
+}
+
+.heart{
+  border: solid 3px black;
+}
+
+.heart-counter{
+  border: solid 3px black;
+}
+
+.time-stamp{
+  border: solid 3px black;
+}
+
+
+
+
+
+
+/* 
 .form{
+  border: solid 3px black;
   background-color: rgb(255, 222, 243);
   border: 1px solid;
   box-shadow: 5px 10px;
   padding: 30px;
   width: 32%;
   margin: 0 auto;
-  /* max-width: 900px; */
-}
+  max-width: 900px; 
+ 
 
 .tweets-wrapper{
   margin-top: 20px;
@@ -49,9 +149,9 @@ margin-top: 30px;
   padding: 30px;
   width: 32%;
   margin: 0 auto;
-  /* max-width: 900px; */
+  /* max-width: 900px; 
 
-}
+
 .value{
   background-color: rgb(255, 222, 243);
 
@@ -72,4 +172,4 @@ background-color: rgb(255, 222, 243);
 button{
   background-color: rgb(255, 222, 243);
 
-}
+} */ 
