@@ -26,13 +26,6 @@ export const App = () => {
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value)
   }
-  const HandleClick = () => {
-    fetch(`https://technigo-thoughts.herokuapp.com/${_id}/like`, {
-      method: 'POST',
-      body: '',
-      headers: { 'Content-Type': 'application/json' }
-    }).then(() => onLiked(_id))
-  }
 
   const onFormSubmit = (event) => {
     event.preventDefault()
@@ -54,13 +47,13 @@ export const App = () => {
   }
 
   const onLiked = (thoughtId) => {
-    const updatedNewMessage = showMessage.map(message => {
+    const updatedShowMessage = showMessage.map(message => {
       if (message._id === thoughtId) {
         message.hearts += 1
       }
       return message
     })
-    setNewMessage(updatedNewMessage)
+    setShowMessage(updatedShowMessage)
   }
 
   return (
