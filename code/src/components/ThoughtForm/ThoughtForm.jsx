@@ -17,11 +17,11 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
     setRemainingChars(maxChars);
   };
 
-  const handleButtonClick = () => {
+  /*   const handleButtonClick = () => {
     if (thought.length < 5) {
-      alert('You have to type something first ^_^')
+      alert('Your message must be at least 5 characters ☺️');
     }
-  };
+  }; */
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -34,7 +34,8 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
       .catch((error) => console.error(error))
       .then((newThought) => {
         if (newThought.message === 'Could not save thought') {
-          alert(newThought.message)
+          alert('Your message must be at least 5 characters ☺️');
+          console.log(newThought.message)
         } else {
           setThoughtsFeed((previousThoughts) => [newThought, ...previousThoughts])
         }
@@ -45,8 +46,8 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
   return (
     <div className={styles.thoughtFormContainer}>
       <form onSubmit={handleFormSubmit} className={styles.thoughtForm}>
-        <label htmlFor="thought-input" className={styles.thoughtFormHeading}>
-          What´s making you happy right now?
+        <label htmlFor="thought-input">
+          <h1 className={styles.thoughtFormHeading}>What&apos;s making you happy right now?</h1>
           <textarea
             id="thought-input"
             maxLength={maxChars}
@@ -58,10 +59,12 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
           <button
             disabled={thought.length > 140}
             className={styles.sendButton}
-            onClick={handleButtonClick}
+            // onClick={handleButtonClick}
             type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought <span role="img" aria-label="heart">❤️</span>
           </button>
-          <p className={styles.remainingChars}>{remainingChars}/140</p>
+          <p className={remainingChars > 135 ? styles.notEnoughChars : styles.remainingChars}>
+            {remainingChars}<span className={styles.remainingChars}> / 140</span>
+          </p>
         </div>
       </form>
     </div>
