@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatDistance } from 'date-fns';
 
-const Thoughts = ({ loading, thoughts }) => {
+const Thoughts = ({ loading, thoughts, handleLikeCounter }) => {
   if (loading) {
     return <p>Loading some thoughts...</p>
   }
@@ -16,7 +16,7 @@ const Thoughts = ({ loading, thoughts }) => {
             <div className="like-container">
               <button
                 className="like-btn"
-                onClick={() => onThoughtLikeChange(thought._id)}
+                onClick={() => handleLikeCounter(thought._id)}
                 type="button">
                 <span className="emoji" role="img" aria-label="heart-emoji">❤️</span>
               </button>
