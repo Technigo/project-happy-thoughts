@@ -5,7 +5,7 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
     <form
       onSubmit={onFormSubmit}
       className="thought-form-container">
-      <h2>Happy Thought</h2>
+      <h2>Happy 💖 Thought</h2>
       <div className="post-thought">
         <p>What&apos;s making you happy right now?</p>
         <textarea
