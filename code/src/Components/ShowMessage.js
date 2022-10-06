@@ -3,20 +3,22 @@ import React, { useEffect } from 'react';
 
 const api = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
-const ShowMessage = ({ message, createdAt, hearts }) => {
-  const handleClick = () => {
-    fetch(api, {
-      method: 'POST',
-      body: '',
-      headers: {'Content-Type': 'application/json'}
-    }).then(() => console.log('It is working to like!'))
-  }
+const ShowMessage = ({ message, createdAt, hearts, id, onLiked }) => {
   useEffect(() => {
     console.log('component did mount')
     return (
       console.log('component unmounted')
     )
   })
+
+  const handleClick = () => {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+      method: "POST",
+      body: "",
+      headers: { "Content-Type": "application/json" }
+    }).then(() => onLiked(id))
+  }
+
   return (
     <section className="outer-show-message">
       <div className="inner-show-message">

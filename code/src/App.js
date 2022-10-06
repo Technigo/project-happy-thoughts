@@ -53,6 +53,16 @@ export const App = () => {
       .finally(() => setNewMessage(''))
   }
 
+  const onLiked = (thoughtId) => {
+    const updatedNewMessage = showMessage.map(message => {
+      if (message._id === thoughtId) {
+        message.hearts += 1
+      }
+      return message
+    })
+    setNewMessage(updatedNewMessage)
+  }
+
   return (
     <div className="outer-wrapper">
       <div className="inner-wrapper">
@@ -65,7 +75,9 @@ export const App = () => {
             key={message._id}
             message={message.message}
             createdAt={message.createdAt}
-            hearts={message.hearts} />
+            hearts={message.hearts}
+            id={message._id}
+            onLiked={onLiked}/>
         ))}
       </div>
     </div>
