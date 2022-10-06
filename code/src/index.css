@@ -44,10 +44,7 @@ button {
   margin: 0 10px;
 }
 
-main {
-  
-}
-
+/* FORM CONTAINER */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -61,8 +58,10 @@ main {
 
 textarea {
   width: 50vw;
+  height: 50px;
 }
 
+/* SINGLE THOUGHT CONTAINER */
 .single-thought-container {
   /* border: 1px solid #000; */
   box-shadow: 7px 7px #000;
