@@ -29,7 +29,7 @@ h2 {
   min-width: 50%;
 }
 
-/*Send thought - Submit form*/
+/*SendThought - Submit form*/
 .message-submit {
   border: solid 1px black;
   box-shadow: 6px 6px 2px 1px black;
@@ -41,7 +41,23 @@ h2 {
   width: 90%;
 }
 
-/*See thoughts - Message list*/
+button {
+  border:none;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 30px;
+  margin: 10px;
+  background-color: #ffadad;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.04);
+}
+
+/*MessageList - See submitted thoughts - */
 .message-box {
   background-color: #F2F0F0;
   border: solid 1px black;
@@ -52,22 +68,3 @@ h2 {
 }
 
 
-button {
-  width: 260px;
-  font-family: 'Roboto Mono', monospace;
-  border-radius: 30px;
-  padding: 10px;
-  margin: 10px;
-  background-color: #ffadad;
-  color: #000000;
-  cursor: pointer;
-  font-weight: 600;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s ease-in-out;
-}
-
-button:hover {
-  transform: scale(1.04);
-}

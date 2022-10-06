@@ -13,6 +13,13 @@ const SendMessage = ({ newMessage, onNewMessageChange, onNewMessageSubmit }) => 
           onChange={onNewMessageChange}
           className="text-area" />
 
+        <p
+        className="text-counter"
+        //Condition to change text color to red when there are only 10 characters left to reach max
+        style={{ color: newMessage.length > 130 ? "red" : "black" }}>
+        {140 - newMessage.length} characters left
+        </p>
+
         <button
           type="submit"
           disabled={newMessage.length < 6 || newMessage.length > 140}

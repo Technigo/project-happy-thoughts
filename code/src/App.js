@@ -1,4 +1,4 @@
-/* eslint disable */
+/* eslint-disabled */
 
 import React, { useState, useEffect } from 'react';
 import SendThought from './components/SendThought';
@@ -14,8 +14,8 @@ export const App = () => {
   const fetchMessages = () => {
     setLoading(false);
     fetch(API)
-      .then((result) => result.json())
-      .then((json) => setMessageList(json))
+      .then((res) => res.json())
+      .then((data) => setMessageList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -24,7 +24,7 @@ export const App = () => {
     fetchMessages();
   }, [newMessage]);
 
-  const handleNewMessageChange = (event) => {
+  const onNewMessageChange = (event) => {
     setNewMessage(event.target.value)
   }
 
@@ -33,16 +33,16 @@ export const App = () => {
 
     const options = {
       method: 'POST',
+      body: JSON.stringify({
+        message: newMessage
+      }),
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        message: newMessage
-      })
     }
 
     fetch(API, options)
-      .then((result) => result.json())
+      .then((res) => res.json())
       .then(() => fetchMessages())
       .finally(() => setNewMessage(''))
   }
@@ -53,7 +53,7 @@ export const App = () => {
 
         <SendThought
           newMessage={newMessage}
-          onNewMessageChange={handleNewMessageChange}
+          onNewMessageChange={onNewMessageChange}
           onNewMessageSubmit={onNewMessageSubmit} />
 
         <MessageList
