@@ -61,7 +61,7 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
             onClick={handleButtonClick}
             type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought <span role="img" aria-label="heart">❤️</span>
           </button>
-          <p className={styles.remainingChars}>Characters left: {remainingChars}</p>
+          <p className={styles.remainingChars}>{remainingChars}/140</p>
         </div>
       </form>
     </div>
