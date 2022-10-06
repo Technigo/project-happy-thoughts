@@ -1,13 +1,73 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto Mono', monospace;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h2 {
+  font-size: 20px;
+}
+.outer-wrapper {
+  width: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.inner-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  position: relative;
+  min-width: 50%;
+}
+
+/*Send thought - Submit form*/
+.message-submit {
+  border: solid 1px black;
+  box-shadow: 6px 6px 2px 1px black;
+  background-color: #F2F0F0;
+  padding: 20px;
+}
+
+.text-area {
+  width: 90%;
+}
+
+/*See thoughts - Message list*/
+.message-box {
+  background-color: #F2F0F0;
+  border: solid 1px black;
+  box-shadow: 6px 5px 2px 1px black;
+  background-color: white;
+  margin-top: 40px;
+  padding:10px;
+}
+
+
+button {
+  width: 260px;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #ffadad;
+  color: #000000;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.04);
 }
