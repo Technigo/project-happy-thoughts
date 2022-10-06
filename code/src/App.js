@@ -10,18 +10,9 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [newTodo, setNewTodo] = useState('');
 
-  /* useEffect(() => { */
-  /* console.log('test'); */
-  /*   fetch('https://week7-backend.herokuapp.com/tasks')
-      .then((data) => data.json())
-      .then((transformedData) => setTaskList(transformedData))
-      .catch((error) => console.error(error))
-      .finally(() => console.log('everything is fine'));
-  }, []); */
-
   useEffect(() => {
     fetchTasks();
-  }, []);
+  }, [loading]);
 
   const fetchTasks = () => {
     setLoading(true);
@@ -31,10 +22,6 @@ export const App = () => {
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
-
-  /* useEffect(() => {
-     window.alert(`the current counter is ${counter}`)
-  }, [counter]) */
 
   const handleNewTodoChange = (event) => {
     setNewTodo(event.target.value)
@@ -62,8 +49,6 @@ export const App = () => {
     }
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      /* .then(() => fetchTasks()) */
-      /* .finally(() => setNewTodo('')); */
       .then((updatedThought) => {
         setNewTodo((previousThoughts) => [updatedThought, ...previousThoughts])
       })
@@ -81,7 +66,6 @@ export const App = () => {
           onNewTodoChange={handleNewTodoChange}
           onFormSubmit={onFormSubmit} />
         <TaskList
-          loading={loading}
           taskList={taskList}
           setTaskList={setTaskList}
           onLikes={onLikes} />
@@ -89,13 +73,4 @@ export const App = () => {
     </div>
   )
 }
-/* return (
-    <div>
-      Find me src/app.js!
-      {<><p>{counter}</p><button onClick={onCounterIncrease} type="button">
-      counter increase
-      </button></>
-      {counter === 1 && (<TaskList list={taskList} />)}}
-      <TaskList list={taskList} />
-    </div>
-  ); } */
+export default App;
