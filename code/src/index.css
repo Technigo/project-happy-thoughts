@@ -23,7 +23,7 @@ h2 {
 }
 
 .inner-wrapper {
-  width: 50%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   margin-top: 20vh;
@@ -104,4 +104,10 @@ h2 {
 .created-at {
   align-self: end;
   color: gray;
+}
+
+@media (min-width: 1025px){ 
+  .inner-wrapper {
+    width: 50%;
+}
 }
