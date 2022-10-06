@@ -70,7 +70,7 @@ export const ThoughtsPage = () => {
     return <p>page loading..</p>;
   }
   return (
-    <div>
+    <div className="main-container">
       <ThoughtsForm
         newThought={newThought}
         onNewThoughtChange={onNewThoughtChange}

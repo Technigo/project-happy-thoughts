@@ -7,8 +7,8 @@ export const ThoughtsForm = ({
   onFormSubmit,
 }) => {
   return (
-    <div className="form-container">
-      <form onSubmit={onFormSubmit}>
+    <div className="input-wrapper">
+      <form className="form-container" onSubmit={onFormSubmit}>
         <h2>Send happy thoughts!</h2>
         <textarea
           value={newThought}

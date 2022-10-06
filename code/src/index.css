@@ -11,20 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.form-container {
-  padding: 10px;
-  border: 2px solid black;
-  box-shadow: 5px 5px;
-  background-color: rgba(137, 43, 226, 0.27);
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.form-container,
 .thought-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
   border: 2px solid black;
   box-shadow: 5px 5px;
   background-color: rgba(226, 43, 223, 0.166);
+  width: 50vw;
+}
+.form-container {
+  background-color: rgba(137, 43, 226, 0.27);
+  justify-self: center;
 }
 .like-container {
   display: flex;
   align-items: center;
+  gap: 10px;
 }

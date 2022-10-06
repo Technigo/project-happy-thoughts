@@ -9,7 +9,7 @@ export const ThoughtsList = ({ thoughts }) => {
       {thoughts.map((thought) => {
         console.log(thought.description);
         return (
-          <div key={thought._id}>
+          <div className="input-wrapper" key={thought._id}>
             <SingleThought description={thought.description} />
           </div>
         );
