@@ -1,4 +1,10 @@
 body {
+  /* GRADIENT ANIMATION--> */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100%;
+  /* --> */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -21,8 +27,8 @@ h1, p, button {
 
 /* BUTTON STYLES */
 button {
-  background-color: #D198C5FF;
-  border-color: #D198C5FF;
+  background-color: #ea9ccb;
+  border-color: #ea9ccb;
   border-style: none;
 }
 
@@ -34,54 +40,77 @@ button {
   margin: 20px 0;
 }
 
-.like-btn {
-  border: none;
-  border-radius: 25px;
-  padding: 5px 17px;
+.submit-btn:hover {
+  background-color: #db7db6;
+  /*  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+	transform: scale(1.1); */
 }
 
-.heart-counter {
-  margin: 0 10px;
+.like-btn {
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 13px;
 }
 
 /* FORM CONTAINER */
 .form-container {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid #000; */
   box-shadow: 7px 7px #000;
   width: 50vw;
   margin: 30px auto;
   padding: 20px 25px 5px;
-  background-color: #E0C568FF;
+  background-color: #d5d4d5;
 }
 
 textarea {
-  width: 50vw;
+  width: calc(50vw - 50px);
   height: 50px;
 }
 
 /* SINGLE THOUGHT CONTAINER */
 .single-thought-container {
-  /* border: 1px solid #000; */
   box-shadow: 7px 7px #000;
   width: 50vw;
   margin: 30px auto;
   padding: 20px 25px 5px;
-  background-color: rgba(224, 198, 104, 0.601);
+  background-color: #f3efe9;
+}
+
+.thought-message {
+  word-wrap: break-word;
 }
 
 .like-and-time-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin: 20px 0;
+  margin-bottom: 13px;
 }
 
 .like-container {
   display: flex;
+  align-items: center;
+}
+
+.heart-counter {
+  margin: 0 10px;
 }
 
 .timestamp {
-  color: #aaa;
+  color: rgb(132, 132, 132);
+}
+
+/* GRADIENT ANIMATION */
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

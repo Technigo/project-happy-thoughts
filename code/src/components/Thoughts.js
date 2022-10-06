@@ -11,14 +11,17 @@ const Thoughts = ({ loading, thoughts, onNewLikeSubmit }) => {
     <section>
       {thoughts.map((thought) => (
         <div className="single-thought-container" key={thought._id}>
-          <p>{thought.message}</p>
+          <p className="thought-message">{thought.message}</p>
           <div className="like-and-time-container">
 
             <div className="like-container">
               <button
+                type="button"
                 className="like-btn"
                 onClick={() => { onNewLikeSubmit(thought._id) }}
-                type="button">
+                style={{
+                  background: thought.hearts >= 1 ? '#ea9ccb' : '#d5d4d5'
+                }}>
                 <span className="emoji" role="img" aria-label="heart-emoji">❤️</span>
               </button>
 

@@ -26,6 +26,7 @@ const Container = () => {
     setNewThought(event.target.value)
   }
 
+  /* SUBMITTING NEW THOUGHT  */
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -45,6 +46,7 @@ const Container = () => {
       .finally(() => setNewThought(''));
   };
 
+  /* ADDING LIKES TO THOUGHTS  */
   const onNewLikeSubmit = (_id) => {
     const options = {
       method: 'POST',
