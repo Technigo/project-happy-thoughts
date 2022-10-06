@@ -1,20 +1,19 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { formatRelative } from 'date-fns';
 
-const ThoughtsFlow = ({ loading, thoughtsFlow, /* setThoughtsFlow, */ onLikesIncrease }) => {
+export const ThoughtsFlow = ({ loading, thoughts, onLikesIncrease }) => {
   if (loading) {
     return <h1>Loading in progress...</h1>
-  } 
+  }
   return (
     <section>
-      {thoughtsFlow.reverse().map((list) => (
+      {thoughts.map((list) => (
         <div className="Thoughts" key={list._id}>
-          <h4>{list.message}</h4>
+          <p className="thought-text">{list.message}</p>
           <div className="likes">
             <div className="heartlikes">
-              <button className={(list.likes === 0 ? 'like-btn' : 'red-likebtn')} onClick={() => onLikesIncrease(list._id)}>
-                <span className="emoji" role="img">❤️</span>
-              </button>
+              <button className="Heart-btn" type="button" onClick={() => onLikesIncrease(list._id)}>❤️</button>
               <p>x {list.likes}</p>
             </div>
             <p className="date">
@@ -26,8 +25,6 @@ const ThoughtsFlow = ({ loading, thoughtsFlow, /* setThoughtsFlow, */ onLikesInc
     </section>
   );
 }
-
-export default ThoughtsFlow;
 
 /*
     const onTaskCheckChange = (list) => {

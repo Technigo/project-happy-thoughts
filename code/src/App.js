@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
-import ThoughtsFlow from 'components/ThoughtsFlow';
-import ThoughtsForm from 'components/ThoughtsForm';
+import { ThoughtsFlow } from 'components/ThoughtsFlow';
+import { ThoughtsForm } from 'components/ThoughtsForm';
 
 export const App = () => {
-  const [thoughtsFlow, setThoughtsFlow] = useState([]);
+  const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newMessage, setNewMessage] = useState('');
+
+  const handleNewThoughtsChange = (event) => {
+    setNewMessage(event.target.value)
+  }
 
   const fetchThoughts = () => {
     setLoading(true)
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setThoughtsFlow(data))
+      .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false))
   }
@@ -20,10 +24,6 @@ export const App = () => {
   useEffect(() => {
     fetchThoughts();
   }, []);
-
-  const handleNewThoughtsChange = (event) => {
-    setNewMessage(event.target.value)
-  }
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -44,14 +44,14 @@ export const App = () => {
       .finally(() => setNewMessage(''));
   }
 
-  const onLikesIncrease = (thoughtId) => {
+  const onLikesIncrease = (listid) => {
     const options = {
       method: 'POST'
     }
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/likes`, options)
+    fetch(`https://happythoughtsapiproject.herokuapp.com/thoughts/${listid}/likes`, options)
       .then((res) => res.json())
       .then((data) => {
-        fetchThoughts(data)
+        setNewMessage(data)
       })
   }
 
@@ -59,12 +59,12 @@ export const App = () => {
     <div>
       <ThoughtsForm
         newMessage={newMessage}
-        onNewTodoChange={handleNewThoughtsChange}
+        handleNewThoughtsChange={handleNewThoughtsChange}
         onFormSubmit={onFormSubmit} />
       <ThoughtsFlow
         loading={loading}
-        thoughtsFlow={thoughtsFlow}
-        setThoughtsFlow={setThoughtsFlow} />
+        thoughts={thoughts}
+        onLikesIncrease={onLikesIncrease} />
     </div>
   )
 }
