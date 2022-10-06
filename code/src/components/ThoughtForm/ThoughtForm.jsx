@@ -3,13 +3,23 @@ import styles from './ThoughtForm.module.css';
 
 const ThoughtForm = ({ setThoughtsFeed }) => {
   const [thought, setThought] = useState('');
-  const [charCount, setCharCount] = useState(0);
+  const maxChars = 140;
+  const [remainingChars, setRemainingChars] = useState(maxChars);
 
-  const handleKeyPress = (addOrDel) => {
-    if (addOrDel) {
-      setCharCount(charCount + 1);
-    } else if (!addOrDel) {
-      setCharCount(charCount - 1);
+  const handleInputChange = (event) => {
+    const input = event.target.value;
+    setThought(input);
+    setRemainingChars(maxChars - input.length);
+  };
+
+  const handleInputCleanup = () => {
+    setThought('');
+    setRemainingChars(maxChars);
+  };
+
+  const handleButtonClick = () => {
+    if (thought.length < 5) {
+      alert('You have to type something first ^_^')
     }
   };
 
@@ -23,9 +33,11 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
       .then((res) => res.json())
       .catch((error) => console.error(error))
       .then((newThought) => {
-        setThoughtsFeed((previousThoughts) => [newThought, ...previousThoughts])
+        if (newThought.length < 5) {
+          setThoughtsFeed((previousThoughts) => [newThought, ...previousThoughts])
+        }
       })
-      .finally(setThought(''), setCharCount(0))
+      .finally(handleInputCleanup);
   };
 
   return (
@@ -35,17 +47,20 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
           What´s making you happy right now?
           <textarea
             id="thought-input"
-            value={thought}
-            onChange={(event) => setThought(event.target.value)}
-            onKeyDown={8 ? () => handleKeyPress(false) : () => handleKeyPress(true)}
-            placeholder="Type thoughts..." />
+            maxLength={maxChars}
+            onChange={handleInputChange}
+            placeholder="Type thoughts..."
+            value={thought} />
         </label>
-        <button
-          disabled={thought.length < 6 || thought.length > 140}
-          type="submit"
-          className={styles.sendButton}><span role="img" aria-label="heart">❤️</span> Send Happy Thought <span role="img" aria-label="heart">❤️</span>
-        </button>
-        <p>{charCount}</p>
+        <div className={styles.sendButtonAndCharsContainer}>
+          <button
+            disabled={thought.length > 140}
+            className={styles.sendButton}
+            onClick={handleButtonClick}
+            type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought <span role="img" aria-label="heart">❤️</span>
+          </button>
+          <p className={styles.remainingChars}>Characters left: {remainingChars}</p>
+        </div>
       </form>
     </div>
   );

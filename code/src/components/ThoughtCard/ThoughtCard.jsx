@@ -12,7 +12,7 @@ const ThoughtCard = ({ thoughtsFeed, setThoughtsFeed }) => {
         thought.hearts += 1
       }
       return thought
-    })
+    });
     setThoughtsFeed(updatedThoughtsFeed);
   };
 
@@ -34,9 +34,9 @@ const ThoughtCard = ({ thoughtsFeed, setThoughtsFeed }) => {
             </p>
           </div>
         </div>
-      ))}
+      ))};
     </>
-  )
-}
+  );
+};
 
 export default ThoughtCard;

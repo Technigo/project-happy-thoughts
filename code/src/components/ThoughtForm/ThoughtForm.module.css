@@ -21,6 +21,9 @@ textarea {
 }
 
 .sendButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background-color: pink;
   border: none;
   border-radius: 25px;
@@ -37,4 +40,14 @@ textarea {
 .sendButton:disabled {
   color: black;
   cursor: no-drop;
+}
+
+.sendButtonAndCharsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.remainingChars {
+  color: gray;
+  font-size: 0.8rem;
 }

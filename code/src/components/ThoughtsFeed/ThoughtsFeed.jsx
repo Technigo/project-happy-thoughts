@@ -31,7 +31,7 @@ const ThoughtsFeed = () => {
       <ThoughtForm setThoughtsFeed={setThoughtsFeed} />
       <ThoughtCard thoughtsFeed={thoughtsFeed} setThoughtsFeed={setThoughtsFeed} />
     </section>
-  )
+  );
 };
 
 export default ThoughtsFeed;
