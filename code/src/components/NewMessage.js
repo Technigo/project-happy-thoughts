@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Dummy = () => {
+const NewMessage = () => {
   const [newPost, setNewPost] = useState('')
   const handleSubmit = (event) => {
     const endpoint = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
@@ -21,7 +21,7 @@ const Dummy = () => {
 
   return (
     <div className="message-post message-container">
-      <form onSubmit={handleSubmit} action="https://happy-thoughts-technigo.herokuapp.com/thoughts" method="POST">
+      <form onSubmit={handleSubmit}>
         <label htmlFor="message-input"> <p>What is making you happy right now?</p>
           <input
             name="message"
@@ -35,5 +35,4 @@ const Dummy = () => {
     </div>
   )
 }
-
-export default Dummy
+export default NewMessage;
