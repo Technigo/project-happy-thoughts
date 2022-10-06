@@ -22,7 +22,7 @@ const SingleThought = ({ description }) => {
           type="button">
           ❤️
         </button>
-        <p>{counter}</p>
+        <p>x{counter}</p>
       </div>
     </div>
   );

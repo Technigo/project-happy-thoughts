@@ -12,10 +12,17 @@ code {
     monospace;
 }
 
+.form-container {
+  padding: 10px;
+  border: 2px solid black;
+  box-shadow: 5px 5px;
+  background-color: rgba(137, 43, 226, 0.27);
+}
 .thought-card {
   padding: 10px;
   border: 2px solid black;
   box-shadow: 5px 5px;
+  background-color: rgba(226, 43, 223, 0.166);
 }
 .like-container {
   display: flex;
