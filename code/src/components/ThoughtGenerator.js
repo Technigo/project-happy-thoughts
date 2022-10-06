@@ -1,33 +1,29 @@
-/* eslint-disable */
-
-import React from "react";
+/* eslint no-underscore-dangle: 0 */
+import React from 'react';
 import { formatDistance } from 'date-fns';
 
-const ThoughtGenerator = ( {loading, thoughts, setThoughts} ) => {
+const ThoughtGenerator = ({ onLikesIncrease, thoughts }) => {
+  return (
+    <section>
+      {thoughts.map((thought) => (
+        <div key={thoughts._id}>
+          <h4>{thought.message}</h4>
+          <p>{thought.hearts}</p>
+          <p>{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
+          <button
+            type="button"
+            className="like-button"
+            onClick={() => onLikesIncrease(thought._id)}
+            style={{ background: thought.hearts >= 1 ? '#de84b4' : '#eaeaea' }}>
+            <span className="like-heart" role="img" aria-label="heart">
+             🖤
+            </span>
+          </button>
 
-const onThoughtCheckChange = (thought) => {
-    setThoughts(thoughts => thoughts.map(singleThought => {
-      if(singleThought._id === thought._id) {
-        return {
-          singleThought, isChecked: !singleThought.isChecked
-        };
-      }
-      return singleThought;
-    }));
-  }
-
-return (
-  <section>
-    {thoughts.map(thought => (
-      <div key={thoughts._id}>
-        <h4>{thought.message}</h4>
-        <p>{thought.hearts}</p>
-        <input onChange={() => onThoughtCheckChange(thought)} type="checkbox" checked={thought.isChecked} />
-        <p>{formatDistance(new Date(thought.createdAt), Date.now(), {addSuffix: true})}</p>
-     </div>  
-))}
-  </section>
-    )
+        </div>
+      ))}
+    </section>
+  )
 }
 
 export default ThoughtGenerator
