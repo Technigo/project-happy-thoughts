@@ -9,21 +9,17 @@ const Feed = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
   const [counter, setCounter] = useState(0)
-  const [load, setLoad] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
 
   // FETCH API
   const fetchThoughts = () => {
-    setLoad(true)
+    setLoading(true)
     fetch('//happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
-      .finally(() => {
-        setLoad(false)
-        setNewThought('');
-        setCounter(0);
-      })
+      .finally(() => setLoading(false))
   }
 
   // UseEffect hook gets all 20 thoughts
@@ -51,6 +47,7 @@ const Feed = () => {
         setCounter(0)
       })
   }
+
   // POST FOR LIKES
   const handleLikesIncrease = (thoughtId) => {
     const options = {
@@ -67,7 +64,6 @@ const Feed = () => {
   return (
     <>
       <SiteHeader />
-      {load}
       <div className="feed-wrapper">
         <PostNewThought
           onFeedSubmit={handleFormSubmit}
@@ -75,7 +71,7 @@ const Feed = () => {
           setNewThought={setNewThought}
           counter={counter}
           setCounter={setCounter} />
-
+        {loading}
         {thoughts.map((thought) => (
           <GeneratedFeed
             key={thought._id}

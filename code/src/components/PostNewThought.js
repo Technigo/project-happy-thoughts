@@ -25,7 +25,7 @@ const PostNewThought = ({
         rows="4"
         id="newThought"
         type="text"
-        placeholder="...what's on your heart?"
+        placeholder="* good vibes only*"
         value={newThought}
         onChange={(e) => setNewThought(e.target.value)} />
 
