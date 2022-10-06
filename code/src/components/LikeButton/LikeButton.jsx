@@ -3,7 +3,6 @@ import styles from './LikeButton.module.css';
 
 const LikeButton = ({ thought, thoughtId, handleMessageLiked }) => {
   const handleLikeButtonClick = () => {
-    console.log(thoughtId)
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: 'POST',
       headers: { 'Content-type': 'application/json' }
