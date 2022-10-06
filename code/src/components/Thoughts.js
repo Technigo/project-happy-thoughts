@@ -1,12 +1,48 @@
 import React from 'react';
-import { formatDistance }  from 'date-fns';
+import { formatDistance } from 'date-fns';
 
-const Thoughts = ({ loading, thoughts, setThoughts }) => {
+const Thoughts = ({ loading, thoughts }) => {
+  if (loading) {
+    return <p>Loading some thoughts...</p>
+  }
 
-    if (loading) {
-        return <p>Loading some thoughts...</p>
-    }
-    const onThoughtCheckChange = (thought) => {
+  return (
+    <section>
+      {thoughts.map((thought) => (
+        <div className="single-thought-container" key={thought._id}>
+          <p>{thought.message}</p>
+          <div className="like-and-time-container">
+
+            <div className="like-container">
+              <button
+                className="like-btn"
+                onClick={() => onThoughtLikeChange(thought._id)}
+                type="button">
+                <span className="emoji" role="img" aria-label="heart-emoji">❤️</span>
+              </button>
+
+              <div className="heart-counter">
+                <p>x {thought.hearts}</p>
+              </div>
+
+            </div>
+
+            <p className="timestamp">
+              {formatDistance(new Date(thought.createdAt), Date.now(), {
+                addSuffix: true
+              })}
+            </p>
+          </div>
+        </div>
+      ))}
+    </section>
+  );
+}
+
+export default Thoughts;
+
+/*
+const onThoughtLikeChange = (thought) => {
         setThoughts(thoughts => thoughts.map(singleThought => {
             if(singleThought._id === thought._id) {
                 return {...singleThought, isChecked: !singleThought.isChecked};
@@ -14,21 +50,4 @@ const Thoughts = ({ loading, thoughts, setThoughts }) => {
             return singleThought;
         }));
     }
-    return (
-            <section>
-                {thoughts.reverse().map(thought => (
-                    <div className="single-thought-container" key={thought._id}>
-                        <p>{thought.message}</p>
-                        <input onChange={() => onThoughtCheckChange(thought)} type="checkbox" checked={thought.isChecked} />
-                        <p className="timestamp">
-                                {formatDistance(new Date(thought.createdAt), Date.now(),{
-                                addSuffix: true
-                            })}
-                            </p>
-                    </div>
-                ))}
-            </section>
-    );
-}
-
-export default Thoughts;
+    */

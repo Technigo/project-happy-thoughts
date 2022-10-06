@@ -12,10 +12,28 @@ code {
     monospace;
 }
 
+/* FONT STYLES */
 h1, p, button {
   font-family: 'Inconsolata', monospace;
   font-weight: 500;
   font-size: 17px;
+}
+
+/* BUTTON STYLES */
+button {
+  background-color: #db4d60;
+  border-color: #db4d60;
+  border-style: none;
+}
+
+.submit-btn {
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+
+.like-btn {
+  padding: 10px 12px;
+  border-radius: 50%;
 }
 
 main {
@@ -30,14 +48,6 @@ main {
   padding: 20px 25px 5px;
   position: relative;
   background-color: #f5e5d5;
-}
-
-button {
-  background-color: #db4d60;
-  padding: 10px 15px;
-  border-color: #db4d60;
-  border-style: none;
-  border-radius: 25px;
 }
 
 .single-thought-container {

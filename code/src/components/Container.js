@@ -2,24 +2,23 @@ import React, { useState, useEffect } from 'react';
 
 import Thoughts from 'components/Thoughts';
 import ThoughtsForm from 'components/ThoughtsForm';
-import TimeStamp from './TimeStamp';
 
 const Container = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
 
-  const fetchTasks = () => {
+  const fetchThoughts = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setThoughts(data)) 
+      .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
 
   useEffect(() => {
-    fetchTasks();
+    fetchThoughts();
   }, []);
 
   const handleNewThoughtChange = (event) => {
@@ -41,7 +40,7 @@ const Container = () => {
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      .then(() => fetchTasks())
+      .then(() => fetchThoughts())
       .finally(() => setNewThought(''));
   }
 
@@ -57,8 +56,6 @@ const Container = () => {
         setThoughts={setThoughts} />
     </div>
   );
-
-  
 }
 
 export default Container;
