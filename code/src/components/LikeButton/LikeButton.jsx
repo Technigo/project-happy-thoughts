@@ -1,8 +1,6 @@
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import styles from './LikeButton.module.css';
 
-/* make it change color when clicking/liking a thought */
 const LikeButton = ({ thought, thoughtId, handleMessageLiked }) => {
   const handleLikeButtonClick = () => {
     console.log(thoughtId)
@@ -16,7 +14,7 @@ const LikeButton = ({ thought, thoughtId, handleMessageLiked }) => {
 
   return (
     <button
-      className={thought.hearts === 0 ? styles.likeButton : styles.likedlikeButton}
+      className={thought.hearts === 0 ? styles.likeButton : styles.clickedLikeButton}
       onClick={handleLikeButtonClick}
       type="button">
       <span role="img" aria-label="heart">❤️</span>
