@@ -5,6 +5,7 @@ const ApiInput = ({ ApiThought, loading, handleOnlikeChange }) => {
   if (loading) {
     return <h1>loading in progress... </h1>
   }
+
   return (
     <section className="test">
       {ApiThought.map((thought) => {
@@ -20,6 +21,9 @@ const ApiInput = ({ ApiThought, loading, handleOnlikeChange }) => {
                   onClick={() => {
                   // eslint-disable-next-line no-underscore-dangle
                     handleOnlikeChange(thought._id)
+                  }}
+                  style={{
+                    background: thought.hearts >= 1 ? '#F6C6E9' : '#f2f2f2'
                   }}>
                   <span aria-label="heart emoji" className="heart-emoji"> ❤️
                   </span>
@@ -36,4 +40,5 @@ const ApiInput = ({ ApiThought, loading, handleOnlikeChange }) => {
     </section>
   )
 }
+
 export default ApiInput
