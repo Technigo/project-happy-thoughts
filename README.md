@@ -1,13 +1,10 @@
-# Happy Thoughts
+# A Fake Twitter but with Happy Thoughts! 
 
-Replace this readme with your own information about your project.
+This week we practiced on fetching API with useEffect to render a list of public posts. The task was also being able to like and post a message using a form.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+I was able to finish the project several days before the hand-in so I'm happy with the result but I realized that I have to improve and understand some basic concepts in Programmation like Fetch API, Objects and how UseState and UseEffect works in React.
 
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
+It was a good project and I enjoyed doing it. 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+You can see it ---> https://happy-thoughts-antonella.netlify.app/
