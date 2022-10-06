@@ -7,6 +7,11 @@ const SingleThought = ({ description }) => {
   const handleCounterIncreaseButtonClick = () => {
     setCounter(counter + 1);
   };
+
+  if (description === undefined) {
+    return '';
+  }
+
   return (
     <div className="thought-card">
       <p>{description}</p>
