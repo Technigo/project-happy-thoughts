@@ -51,6 +51,7 @@ textarea {
 .remainingChars {
   color: gray;
   font-size: 0.8rem;
+  margin-right: 0.2rem;
 }
 
 .charsLeft {
@@ -65,5 +66,8 @@ textarea {
   .thoughtFormHeading {
     font-size: 0.9rem;
     font-weight: 700;
+  }
+  .charsLeft {
+    margin-right: 0;
   }
 }

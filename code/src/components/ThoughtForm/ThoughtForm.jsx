@@ -33,7 +33,9 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
       .then((res) => res.json())
       .catch((error) => console.error(error))
       .then((newThought) => {
-        if (newThought.length < 5) {
+        if (newThought.message === 'Could not save thought') {
+          alert(newThought.message)
+        } else {
           setThoughtsFeed((previousThoughts) => [newThought, ...previousThoughts])
         }
       })
@@ -60,7 +62,7 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
             type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought <span role="img" aria-label="heart">❤️</span>
           </button>
           <p className={styles.remainingChars}>
-            <span className={window.innerWidth > 704 ? styles.charsLeft : styles.hideChar}>
+            <span className={window.innerWidth > 720 ? styles.charsLeft : styles.hideChar}>
               Characters left:
             </span>
             {remainingChars}
