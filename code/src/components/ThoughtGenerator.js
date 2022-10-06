@@ -6,7 +6,9 @@ const ThoughtGenerator = ({ onLikesIncrease, thoughts }) => {
   return (
     <section>
       {thoughts.map((thought) => (
-        <div key={thoughts._id}>
+        <div
+          className="Thoughts"
+          key={thoughts._id}>
           <h4>{thought.message}</h4>
           <p>{thought.hearts}</p>
           <p>{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
@@ -19,7 +21,6 @@ const ThoughtGenerator = ({ onLikesIncrease, thoughts }) => {
              🖤
             </span>
           </button>
-
         </div>
       ))}
     </section>

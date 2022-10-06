@@ -1,5 +1,4 @@
-// /* eslint-disable */
-// /*import Components from 'eslint-plugin-react/lib/util/Components';*/
+
 import React, { useState, useEffect } from 'react';
 import ThoughtGenerator from 'components/ThoughtGenerator'
 import PostThought from 'components/PostThought'
