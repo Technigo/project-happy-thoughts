@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 const NewMessage = () => {
   const [newPost, setNewPost] = useState('')
   const handleSubmit = (event) => {
-    const endpoint = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
     event.preventDefault();
     fetch(
-      endpoint,
+      'https://happy-thoughts-technigo.herokuapp.com/thoughts',
       {
         method: 'POST',
         headers: {
@@ -22,12 +21,11 @@ const NewMessage = () => {
   return (
     <div className="message-post message-container">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="message-input"> <p>What is making you happy right now?</p>
-          <input
+        <label htmlFor="text-input"> <p>What is making you happy right now?</p>
+          <textarea
             name="message"
             className="text-input"
-            id="message-input"
-            type="text"
+            id="text-input"
             onChange={(event) => setNewPost(event.target.value)} />
         </label>
         <button type="submit">❤️ Send happy thought ❤️</button>
