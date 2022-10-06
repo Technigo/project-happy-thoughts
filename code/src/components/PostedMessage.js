@@ -1,15 +1,13 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import TimesLiked from './TimesLiked';
 
 const PostedMessage = ({ messages }) => {
   const AllMessages = messages.map((message) => {
     return (
       <div key={message._id} className="message-container">
         <p className="message-text">{message.message}</p>
-        <div className="liked-container">
-          <div className="heart-container">❤️</div>
-          <p className="times-liked">x {message.hearts}</p>
-        </div>
+        <TimesLiked timesLiked={message.hearts} />
         <p className="time-stamp">{message.createdAt}</p>
       </div>
     )
