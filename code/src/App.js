@@ -1,62 +1,59 @@
- /* eslint-disable */ 
-
 import React, { useState, useEffect } from 'react';
-import Tweet from 'components/Tweet';
+import TweetForm from 'components/TweetForm';
+import TweetList from 'components/TweetList';
 
 export const App = () => {
   // const [userInput, setUserInput] = useState(0);
-  const [Tweets, setTweets] = useState([]);
+  const [tweetList, setTweetList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newTweet, setNewTweet] = useState('');
 
-
-  ///fetch the data///
-  const fetchThoughts= ()=>{
+  /// fetch the data///
+  const fetchTweets = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-        .then((data) => data.json())
-        .then((transformedData) => setTweets(transformedData)
+      .then((data) => data.json())
+      .then((transformedData) => setTweetList(transformedData)
         .catch((error) => console.log.error(error))
-        .finally(() => setLoading(false))
-        );
-      }
-        // console.log('once when site reloads'), []};
-      
-
-
-
-  useEffect = () => {
-    console.log('each time change'), [userInput]
+        .finally(() => setLoading(false)));
   };
 
-  // const handleCounterButtonClick = () => {
-  //   setCounter(counter + 1); // Här ska den skicka värdet till component Se video
-  // }
+  useEffect(() => {
+    fetchTweets();
+  }, []); // console.log('happens once when site reloads'), []};
+
+  // Handling the
+  function handleNewTweetChange(event) {
+    setNewTweet(event.target.value);
+  }
+  // Handling the form to it's natural behaviour
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    // object to store data we need
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({ message: newTweet })
+    };
+
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+      .then((res) => res.json())
+      .then((newTweet) => setTweetList((previousTweet) => [newTweet, ...previousTweet]))
+  };
 
   return (
     // Form you add userinput//
-    <section className ="container">
-      <div className ="form">
-        <h1>Spread some love! What make you happy right now?</h1>
-        <div className ="input-box" />
-        <input>
+    <section className="input-container">
+      <TweetForm
+        newTweet={newTweet}
+        onNewTweetChange={handleNewTweetChange}
+        onFormSubmit={onFormSubmit} />
 
-        </input>
-        {/* <div>{counter}</div> */}
-        {/* <button onClick={handleCounterButtonClick} type="button">Send happy thought!</button> */}
-
-        <p><button type="button">Send happy thought!</button></p>
-        {/* {counter === 1 && (<TaskList
-          list="test lista" />)} */}
+      <div className="tweets-wrapper">
+        <TweetList
+          loading={loading}
+          tweetList={tweetList}
+          setTweetList={setTweetList} />
       </div>
-      <div className ="tweets-wrapper">
-      <Tweet />
-      </div>
-
-
     </section>
-
-
-
   );
-}
+};
