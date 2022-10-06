@@ -3,6 +3,7 @@
 This week's project we got to practice our React state skills by fetching and posting data to an API.
 
 **What we needed to do:**
+
 ✓ Your page should follow the design as closely as possible
 
 ✓ You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
