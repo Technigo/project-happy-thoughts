@@ -42,6 +42,21 @@ const Container = () => {
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => setNewThought(''));
+  };
+
+  const handleNewLikeSubmit = (_id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+      .then((res) => res.json())
+      .then((data) => {
+        fetchThoughts(data.response._id)
+      })
   }
 
   return (
@@ -53,7 +68,7 @@ const Container = () => {
       <Thoughts
         loading={loading}
         thoughts={thoughts}
-        setThoughts={setThoughts} />
+        setThoughts={handleNewLikeSubmit} />
     </div>
   );
 }

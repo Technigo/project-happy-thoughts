@@ -16,7 +16,7 @@ const Thoughts = ({ loading, thoughts, onNewLikeSubmit }) => {
             <div className="like-container">
               <button
                 className="like-btn"
-                onClick={() => onNewLikeSubmit(thought._id)}
+                onClick={() => { onNewLikeSubmit(thought._id) }}
                 type="button">
                 <span className="emoji" role="img" aria-label="heart-emoji">❤️</span>
               </button>
