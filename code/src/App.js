@@ -99,6 +99,3 @@ export const App = () => {
       <TaskList list={taskList} />
     </div>
   ); } */
-
-/* dummy toDo API => https://week7-backend.herokuapp.com/tasks */
-
