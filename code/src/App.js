@@ -15,7 +15,7 @@ export const App = () => {
 
   const fetchTasks = () => {
     setLoading(true);
-    fetch('https://week7-backend.herokuapp.com/tasks')
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
       .then((data) => setTaskList(data))
       .catch((error) => console.error(error))
@@ -35,11 +35,11 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        description: newTodo
+        message: newTodo
       })
     }
 
-    fetch('https://week7-backend.herokuapp.com/tasks', options)
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchTasks())
       .finally(() => setNewTodo(''));
