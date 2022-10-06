@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react'
+import { formatDistance } from 'date-fns';
 
 const ThoughtList = ({ thoughts, onLikesIncrease }) => {
   return (
@@ -16,6 +17,7 @@ const ThoughtList = ({ thoughts, onLikesIncrease }) => {
                 className="like-btn">❤️
               </button>
               <p className="like-counter">x {thought.hearts}</p>
+              <p>{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
             </div>
           </div>
         </div>

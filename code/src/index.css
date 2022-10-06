@@ -17,15 +17,60 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4vh;
 }
 
-.input-wrapper {
-  padding: 10px;
+.input-container {
+  background-color: rgb(219, 219, 219);
+  box-sizing: border-box;
   border: 2px solid black;
   box-shadow: 5px 5px;
-  background-color: rgb(219, 219, 219);
-  margin: 4vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px 14px;
+  height: 180px;
+  width: 90%;
+  max-width: 550px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 15px;
+  font-weight: 500;
 }
+
+.text-input {
+  word-wrap: break-word;
+  padding: 5px;
+  resize: none;
+}
+
+.button-container {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.thought-btn {
+  background-color: rgb(223, 157, 157);
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  font-size: 12px;
+  width: 170px;
+  border: 0;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+  /*.btn-send-input {
+    background-color: pink;
+    border: 0;
+    height: 40px;
+    border-radius: 20px;
+    width: 70%;
+    cursor: pointer;
+}*/
 
 .list-card {
   box-sizing: border-box;
@@ -44,18 +89,10 @@ code {
   font-weight: 500;
 }
 
-.input-container {
-  word-wrap: break-word;
-  padding: 5px;
-  resize: none;
-}
-
-.thought-btn {
-  background-color: rgb(223, 157, 157);
-  border: none;
-  border-radius: 40px;
-  font-family: "Roboto Mono", monospace;
-  cursor: pointer;
+.like-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .like-btn {
@@ -72,5 +109,6 @@ code {
 
 h1 {
   font-family: "Roboto Mono", monospace;
-  margin: 0%;
+  margin: 0;
+  padding: 0;
 }

@@ -1,21 +1,22 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react'
 
 const ThoughtInput = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
   return (
-    <section className="input-wrapper">
-      <form
-        className="input-card"
-        onSubmit={onFormSubmit}>
-        <h1>What&apos;s making you happy right now?</h1>
-        <textarea
-          className="input-container"
-          value={newThought}
-          onChange={onNewThoughtChange}
-          autoComplete="off"
-          placeholder="Write your happy thought here" />
+    <form
+      className="input-container"
+      onSubmit={onFormSubmit}>
+      <label htmlFor="newThought">What&apos;s making you happy right now?</label>
+      <textarea
+        className="text-input"
+        value={newThought}
+        onChange={onNewThoughtChange}
+        autoComplete="off"
+        placeholder="Write your happy thought here" />
+      <div className="button-container">
         <button className="thought-btn" type="submit"> ❤️ Send Happy Thought ❤️ </button>
-      </form>
-    </section>
+      </div>
+    </form>
   )
 }
 
