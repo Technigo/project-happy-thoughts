@@ -27,6 +27,7 @@ textarea {
   background-color: pink;
   border: none;
   border-radius: 25px;
+  color: black;
   cursor: pointer;
   font-weight: 700;
   padding: 0.8rem 1.2rem;
@@ -50,4 +51,12 @@ textarea {
 .remainingChars {
   color: gray;
   font-size: 0.8rem;
+}
+
+@media (max-width: 705px) {
+  .sendButton {
+    gap: 0.2rem;
+    padding: 0.6rem 1rem;
+    width: fit-content;
+  }
 }
