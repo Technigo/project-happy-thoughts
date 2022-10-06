@@ -1,9 +1,13 @@
 import React from 'react';
 
+import Overview from './components/Overview';
+
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <section className="outer-wrapper">
+      <section className="inner-wrapper">
+        <Overview />
+      </section>
+    </section>
   );
 }
