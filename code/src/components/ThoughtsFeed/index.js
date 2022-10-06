@@ -3,6 +3,7 @@ import React from 'react';
 // import { formatRelative } from 'date-fns';
 
 const ThoughtsFeed = (props) => {
+  console.log({ props });
   if (props.loading) {
     return <h1>Loading in progress...</h1>;
   }
@@ -11,7 +12,7 @@ const ThoughtsFeed = (props) => {
     <section>
       {props.loading && <h1>Loading in progress...</h1>}
       {props.thoughtList.map((thought) => (
-        <Thought thought={thought} />
+        <Thought key={thought._id} thought={thought} />
       ))}
     </section>
   );

@@ -2,7 +2,7 @@ import { Card } from 'components/Card';
 import React from 'react';
 import styles from './CreateThought.module.css';
 
-const CreateThoughts = ({ newThought, setNewThought, fetchThoughts }) => {
+const CreateThoughts = (props) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -12,18 +12,18 @@ const CreateThoughts = ({ newThought, setNewThought, fetchThoughts }) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        message: newThought
+        message: props.newThought
       })
     };
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      .then(() => fetchThoughts())
-      .finally(() => setNewThought(''));
+      .then(() => props.fetchThoughts())
+      .finally(() => props.setNewThought(''));
   };
 
   const handleChange = (event) => {
-    setNewThought(event.target.value);
+    props.setNewThought(event.target.value);
   };
 
   return (
@@ -32,7 +32,7 @@ const CreateThoughts = ({ newThought, setNewThought, fetchThoughts }) => {
         <h1>What&apos;s making you happy right now?</h1>
         <textarea
           className={styles.textarea}
-          value={newThought}
+          value={props.newThought}
           onChange={handleChange}
         />
 

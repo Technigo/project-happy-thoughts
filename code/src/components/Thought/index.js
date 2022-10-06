@@ -1,12 +1,30 @@
 import { Card } from 'components/Card';
-import React from 'react';
+import React, { useState } from 'react';
 
 const Thought = (props) => {
+  console.log(props.thought);
+  const [likes, setLikes] = useState(props.thought.hearts);
+
+  const handleClick = () => {
+    fetch(
+      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${props.thought._id}/like`,
+      {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+    setLikes(likes + 1);
+  };
+
   return (
-    <Card key={props.thought._id} type="card2">
+    <Card type="card2">
       <div>
         <h4>{props.thought.message}</h4>
-        <p>{props.thought.hearts}</p>
+        <button type="button" onClick={handleClick}>
+          {likes}
+        </button>
       </div>
     </Card>
   );
