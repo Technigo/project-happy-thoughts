@@ -4,15 +4,15 @@ This week's project we got to practice our React state skills by fetching and po
 
 **What we needed to do:**
 
-✓ Your page should follow the design as closely as possible
+✓ Follow the design given to us as closely as possible
 
-✓ You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
+✓ List the most recent thoughts at the top and older thoughts at the bottom (sorted)
 
-✓ Your thoughts should show the content of the message and how many likes they've received
+✓ Thoughts should show the content of the message and how many likes they've received
 
-✓ You should have a form to post new thoughts
+✓ Have a form to post new thoughts
 
-✓ You should implement the heart button to send likes on a thought
+✓ Implement the heart button to send likes on a thought
 
 ## The problem
 
