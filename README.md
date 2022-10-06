@@ -1,13 +1,22 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This week's project we got to practice our React state skills by fetching and posting data to an API.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+**What we needed to do:**
+✓ Your page should follow the design as closely as possible
+✓ You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
+✓ Your thoughts should show the content of the message and how many likes they've received
+✓ You should have a form to post new thoughts
+✓ You should implement the heart button to send likes on a thought
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This was a great exercise in passing different datatypes as props from one component to another, learning more about the flow of it all 😃. I started out with three components and by the time I was finished I had five.
+
+Since this was the first time making post requests to an api that whole thing was a bit tricky, but I learned a lot from changing some things back and forth, error messages etc.
+
+I found Stack Overflow very helpful for this project. I know it's a great resource but I haven't been using it as much in the previous projects.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://gladatankar.netlify.app/
