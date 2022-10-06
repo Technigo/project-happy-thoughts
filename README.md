@@ -1,12 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project focus on changes in state or a component mounting using useEffect. And what it's like to work with an API which you both send and receive data from.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Working with the material, the previous projects and example projects worked well together. It was a lot of learning from the previous projects that applied here as well
+and made me understand the previous work better. If I had more time I would add animations on new thoughts and learn how to store amount of likes. 
 
 ## View it live
 
