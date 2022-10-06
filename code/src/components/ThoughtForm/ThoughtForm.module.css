@@ -58,10 +58,11 @@ textarea {
   margin-right: 0.5rem;
 }
 
-.hideChar {
+.hide {
   visibility: hidden;
 }
 
+/*
 @media (max-width: 720px) {
   .thoughtFormHeading {
     font-size: 0.9rem;
@@ -71,3 +72,4 @@ textarea {
     margin-right: 0;
   }
 }
+*/

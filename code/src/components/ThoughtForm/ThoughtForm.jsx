@@ -62,7 +62,7 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
             type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought <span role="img" aria-label="heart">❤️</span>
           </button>
           <p className={styles.remainingChars}>
-            <span className={window.innerWidth > 720 ? styles.charsLeft : styles.hideChar}>
+            <span className={window.innerWidth > 720 ? styles.charsLeft : styles.hide}>
               Characters left:
             </span>
             {remainingChars}
