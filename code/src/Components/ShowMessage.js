@@ -1,16 +1,18 @@
-/* eslint-disable */
 import React from 'react';
 import Moment from 'react-moment'
 
-const ShowMessage = ({ message, createdAt, hearts, id, onLiked }) => {
-  const handleClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
-      method: "POST",
-      body: "",
-      headers: { "Content-Type": "application/json" }
-    }).then(() => onLiked(id))
+const ShowMessage = ({ message, createdAt, hearts, id, onLiked, loading }) => {
+  if (loading) {
+    return <h1>Loading in progress</h1>
   }
 
+  const handleClick = () => {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+      method: 'POST',
+      body: '',
+      headers: { 'Content-Type': 'application/json' }
+    }).then(() => onLiked(id))
+  }
 
   return (
     <section className="outer-show-message">
@@ -21,7 +23,7 @@ const ShowMessage = ({ message, createdAt, hearts, id, onLiked }) => {
           <p className="created-at"><Moment fromNow ago>{createdAt}</Moment> ago</p>
         </div>
       </div>
-    </section> 
+    </section>
   );
 }
 

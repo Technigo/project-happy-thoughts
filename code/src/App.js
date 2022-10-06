@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react'
 import SendMessage from './Components/SendMessage'
 import ShowMessage from './Components/ShowMessage'
@@ -47,7 +46,7 @@ export const App = () => {
   }
 
   const onLiked = (thoughtId) => {
-    const updatedShowMessage = showMessage.map(message => {
+    const updatedShowMessage = showMessage.map((message) => {
       if (message._id === thoughtId) {
         message.hearts += 1
       }
@@ -64,13 +63,13 @@ export const App = () => {
           handleNewMessageChange={handleNewMessageChange}
           onFormSubmit={onFormSubmit} />
         {showMessage.map((message) => (
-          <ShowMessage 
+          <ShowMessage
             key={message._id}
             message={message.message}
             createdAt={message.createdAt}
             hearts={message.hearts}
             id={message._id}
-            onLiked={onLiked}/>
+            onLiked={onLiked} />
         ))}
       </div>
     </div>
