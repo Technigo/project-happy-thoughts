@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 
 import Thoughts from 'components/Thoughts';
@@ -54,13 +55,9 @@ const Container = () => {
 
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
       .then((res) => res.json())
-      .then((data) => {
-        fetchThoughts(data.response._id)
-      })
-
-    /*  fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
-      .then((res) => res.json())
-      .finally(() => fetchThoughts()); */
+      .then(console.log('yey it works.'))
+      .catch((error) => console.error(error))
+      .finally(() => fetchThoughts())
   }
 
   return (
@@ -72,7 +69,7 @@ const Container = () => {
       <Thoughts
         loading={loading}
         thoughts={thoughts}
-        setThoughts={onNewLikeSubmit} />
+        onNewLikeSubmit={onNewLikeSubmit} />
     </div>
   );
 }
