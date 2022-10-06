@@ -20,7 +20,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchMessages()
-  }, [newMessage])
+  }, [newMessage, showMessage])
 
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value)
@@ -38,6 +38,7 @@ export const App = () => {
         message: newMessage
       })
     }
+
 
     fetch(api, options)
       .then((res) => res.json())
@@ -69,7 +70,8 @@ export const App = () => {
             createdAt={message.createdAt}
             hearts={message.hearts}
             id={message._id}
-            onLiked={onLiked} />
+            onLiked={onLiked}
+            loading={loading} />
         ))}
       </div>
     </div>
