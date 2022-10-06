@@ -5,18 +5,8 @@ import { formatDistanceToNow } from 'date-fns';
 
 const ThoughtList = ({ loading, thoughtList, onThoughtLikeChange }) => {
   if (loading) {
-    return <h1>loading...</h1>
+    return <h1 className="loading">😬 loading 😬</h1>
   }
-
-  /* const onThoughtLikeChange = (thought) => {
-    setThoughtList((thoughtList) => thoughtList.map((singleThought) => {
-      // eslint-disable-next-line no-underscore-dangle
-      if (singleThought._id === thought._id) {
-        return { singleThought, isChecked: !singleThought.isChecked };
-      }
-      return singleThought;
-    }));
-  } */
 
   return (
     <section className="thought-list-container">
