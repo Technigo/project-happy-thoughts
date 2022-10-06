@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   box-shadow: 0.3rem 0.3rem black;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 textarea {
@@ -30,7 +30,7 @@ textarea {
   color: black;
   cursor: pointer;
   font-weight: 700;
-  padding: 0.8rem 1.2rem;
+  padding: 0.7rem 0.8rem;
   width: fit-content;
 }
 
@@ -53,10 +53,17 @@ textarea {
   font-size: 0.8rem;
 }
 
-@media (max-width: 705px) {
-  .sendButton {
-    gap: 0.2rem;
-    padding: 0.6rem 1rem;
-    width: fit-content;
+.charsLeft {
+  margin-right: 0.5rem;
+}
+
+.hideChar {
+  visibility: hidden;
+}
+
+@media (max-width: 720px) {
+  .thoughtFormHeading {
+    font-size: 0.9rem;
+    font-weight: 700;
   }
 }
