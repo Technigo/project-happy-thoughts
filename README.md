@@ -1,6 +1,6 @@
 # Happy Thoughts
 
-This project focus on changes in state or a component mounting using useEffect. And what it's like to work with an API which you both send and receive data from.
+This project focus on changes in state or a component mounting using useEffect in React. And what it's like to work with an API which you both send and receive data from.
 
 ## The problem
 
