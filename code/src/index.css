@@ -11,3 +11,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+header {
+  border: solid yellow 2px;
+}
+
+/* CONTAINER */
+
+.main-feed {
+  display: grid;
+  justify-content: center;
+  border: solid magenta 2px;
+}
+
+/* NEW THOUGHT */
+
+.new-container {
+  border: solid red 2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: left
+}
+
+.new-header {
+  border: solid green 1px;
+}
+
+textarea {
+  font-family: 'Roboto mono', monospace;
+  border: solid violet 1px;
+}
+
+.send-button {
+  background-color: pink;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 40px;
+  font-family: 'Lato', sans-serif;
+  margin: 5px;
+  width: 180px;
+  border: none;
+  box-sizing: unset;
+}
+
+/* THOUGHTS */
+
+.thoughts-feed {
+  border: solid blue 2px;
+}
+
+.thought-container {
+  font-family: 'Roboto mono', monospace;
+  border: solid greenyellow 2px;
+  margin: 5px;
+}
+
+.non-statics-box {
+  border: solid orange 1px;
+  margin: 5px;
+}
+
+.likes {
+  border: solid green 1px;
+}

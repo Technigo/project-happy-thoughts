@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { useEffect } from 'react';
+import moment from 'moment';
 
 const Thoughts = ({ thoughts, setThoughts }) => {
   useEffect(() => {
@@ -23,10 +24,9 @@ const Thoughts = ({ thoughts, setThoughts }) => {
         const updatedThoughts = thoughts.map((thought) => {
           if (thought._id === data._id) {
             thought.hearts += 1;
-            return thought;
-          } else {
-            return thought;
           }
+
+          return thought;
         });
         setThoughts(updatedThoughts);
       });
@@ -38,12 +38,12 @@ const Thoughts = ({ thoughts, setThoughts }) => {
         return (
           <div className="thought-container" key={thought._id}>
             <p className="thought-message">{thought.message}</p>
-            <div className="like-time-box">
-              <div className="likes-box">
-                <button type="button" className="like" onClick={() => onLikesIncrease(thought._id)}><span> &#10084 </span></button>
+            <div className="non-statics-box">
+              <div className="likes">
+                <button type="button" className="like" onClick={() => onLikesIncrease(thought._id)}><span> ❤️ </span></button>
                 <p className="likes-amount">x {thought.hearts}</p>
               </div>
-              <p className="date-time">Posted: </p>
+              <p className="thought-posted">{moment(thought.createdAt).fromNow()}</p>
             </div>
           </div>
         )
