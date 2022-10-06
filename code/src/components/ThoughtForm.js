@@ -15,8 +15,7 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
           placeholder="write something nice here..." />
         <button
           type="submit"
-          className="submit-button"
-          disabled={newThought.length < 10 || newThought.length > 140}>
+          className="submit-button">
            💖Send happy thought💖
         </button>
       </div>

@@ -16,7 +16,7 @@ export const App = () => {
   }, []);
 
   const fetchThought = () => {
-    setLoading(true);
+    setLoading(true); // animation
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughtList(data))
@@ -47,7 +47,7 @@ export const App = () => {
       .finally(() => setNewThought(''))
   }
 
-  const handleLikes = (_id) => {
+  const onThoughtLikeChange = (_id) => {
     const option = {
       method: 'POST',
       headers: {
@@ -69,7 +69,7 @@ export const App = () => {
         loading={loading}
         thoughtList={thoughtList}
         setThoughtList={setThoughtList}
-        handleLikes={handleLikes} />
+        onThoughtLikeChange={onThoughtLikeChange} />
     </div>
 
   );
