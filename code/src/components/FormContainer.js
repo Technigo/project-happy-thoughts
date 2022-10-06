@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ThougthInput from './ThougthInput'
 import ApiInput from './ApiInput'
 
-const LIKES_URL = (messageID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`
+const LIKES_URL = (LikeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`
 
 const FormContainer = () => {
   const [newThought, setNewThought] = useState('');
@@ -44,16 +44,16 @@ const FormContainer = () => {
 
   /* Add likes to messages  */
 
-  const handleOnlikeChange = (messageID) => {
+  const handleOnlikeChange = (LikeID) => {
     const test = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    fetch(LIKES_URL(messageID), test)
+    fetch(LIKES_URL(LikeID), test)
       .then((Response) => Response.json())
-      .then(console.log('likes work'))
+      .then(console.log('yey it works.'))
       .catch((error) => console.error(error))
       .finally(() => getData())
   }
