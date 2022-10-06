@@ -17,6 +17,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(245, 245, 245);
 }
 
 .inner-wrapper {
@@ -26,6 +27,48 @@ code {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+h1 {
+  color: rgb(76, 70, 70);
+}
+
+.new-thought-box {
+  width: 100%;
+  /*box-shadow: 4px 6px #333;*/
+  margin-bottom: 20px;
+  box-shadow: 7px 7px 0px 1px rgba(0, 0, 0, 0.42);
+  background-color: white;
+  border: 1px solid rgb(187, 185, 185);
+  border-radius: 4px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+textarea {
+  height: 40px;
+  margin-top: 10px;
+  border-color: #fab8b8;;
+}
+
+.new-thought-button {
+  background-color:  #f9d4d4;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  cursor: grab;
+  margin: 20px auto 0;
+}
+
+.new-thought-button:hover {
+  background-color:  #fab8b8;
 }
 
 .thought-list {
@@ -39,6 +82,93 @@ code {
 }
 
 .thought-list-box {
-  width: 50%;
-  border: 2px solid #333;
+  width: 100%;
+  border: 1px solid rgb(187, 185, 185);
+  border-radius: 4px;
+  /*box-shadow: 4px 6px #333;*/
+  box-shadow: 7px 7px 0px 1px rgba(0, 0, 0, 0.42);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.thought-list-item {
+  width: 100%;
+  text-align: center;
+}
+
+.likes-date-wrapper {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto 20px;
+  flex-wrap: wrap;
+}
+
+.likes-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.heart {
+  background-color: #f9d4d4;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: grab;
+}
+
+.heart:hover {
+  background-color:  #fab8b8;
+}
+
+.likes-amount {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.post-date {
+  font-size: 12px;
+  color: #818080;
+}
+
+/**** Tablet ****/
+@media (min-width: 668px) {
+  .new-thought-box {
+    width: 75%;
+  }
+
+  .new-thought-button {
+    width: 50%;
+  }
+
+  .thought-list-box {
+    width: 75%;
+  }
+
+  .likes-wrapper {
+    width: 20%;
+  }
+}
+
+/**** Deskstop *****/
+
+@media (min-width: 1025px) {
+  .new-thought-box {
+    width: 50%;
+  }
+
+  .new-thought-button {
+    width: 50%;
+  }
+
+  .thought-list-box {
+    width: 50%;
+  }
+
+  .likes-wrapper {
+    width: 20%;
+  }
 }

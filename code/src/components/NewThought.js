@@ -19,10 +19,20 @@ const NewThought = () => {
       .then((data) => setThoughts([data, ...thoughts]));
   };
   return (
-    <form onSubmit={onFormSubmit}>
-      <textarea id="newThought" type="text" value={newThought} maxLength="140" onChange={(event) => setNewThought(event.target.value)} />
-      <button type="submit">Send happy thought</button>
-    </form>
+    <div className="new-thought-box">
+      <form onSubmit={onFormSubmit}>
+        <label htmlFor="newThought">What is making you happy right now?
+          <textarea
+            id="newThought"
+            type="text"
+            value={newThought}
+            maxLength="140"
+            onChange={(event) => setNewThought(event.target.value)} />
+          <p className="charactersLeft" style={{ color: newThought.length > 130 ? 'red' : 'black' }}>{newThought.length}/140</p>
+          <button type="submit" className="new-thought-button"><span>💗</span> Send Happy Thought <span>💗</span></button>
+        </label>
+      </form>
+    </div>
   )
 }
 export default NewThought

@@ -38,10 +38,14 @@ const ThoughtList = ({ thoughtList, setThoughtList }) => {
       {thoughtList.map((singleTask) => {
         return (
           <div className="thought-list-box" key={singleTask._id}>
-            <p>{singleTask.message}</p>
-            <button type="button" onClick={() => onLikesIncrease(singleTask._id)}><span>&#10084;&#65039;</span></button>
-            <p>x {singleTask.hearts}</p>
-            <p>Posted: {moment(singleTask.createdAt).fromNow()}</p>
+            <p className="thought-list-item">{singleTask.message}</p>
+            <div className="likes-date-wrapper">
+              <div className="likes-wrapper">
+                <button type="button" className="heart" onClick={() => onLikesIncrease(singleTask._id)}><span>💗</span></button>
+                <p className="likes-amount">x {singleTask.hearts}</p>
+              </div>
+              <p className="post-date">Posted: {moment(singleTask.createdAt).fromNow()}</p>
+            </div>
           </div>
         )
       })}
