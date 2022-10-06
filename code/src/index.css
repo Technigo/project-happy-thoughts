@@ -39,6 +39,14 @@ h2{
   text-align: center;
   margin: 2% auto;
 }
+
+.loading{
+  text-align: center;
+}
+
+p{
+  font-size: 15px;
+}
 .thought-form-container{
   
   display: flex;
@@ -55,10 +63,6 @@ textarea {
 }
 
 .post-thought{
-  /* margin-top: 30px;
-  padding: 20px 30px;
-  border: 1px solid black;
-  box-shadow: 13px 13px 0px -5px #000000; margin-bottom: 20px;*/
   width: 400px;
   margin: 15px auto;
   padding: 40px 30px;
@@ -115,7 +119,7 @@ textarea {
  border: 1px solid black;
  box-shadow: 13px 13px 0px -5px #000000;
  height: 150px;
- background-color: #fffbfb;
+ background-color: #ffffff;
 }
 
 .thought-detail{
