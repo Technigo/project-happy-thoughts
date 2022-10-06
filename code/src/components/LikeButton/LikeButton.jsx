@@ -1,7 +1,19 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import styles from './LikeButton.module.css';
 
-const LikeButton = ({ thought, thoughtId, handleMessageLiked }) => {
+const LikeButton = ({ postedThought, thoughtId, thoughtsFeed, setThoughtsFeed }) => {
+  console.log(postedThought)
+  const handleMessageLiked = (likedThoughtId) => {
+    const updatedThoughtsFeed = thoughtsFeed.map((happyThought) => {
+      if (happyThought._id === likedThoughtId) {
+        happyThought.hearts += 1
+      }
+      return happyThought
+    });
+    setThoughtsFeed(updatedThoughtsFeed);
+  };
+
   const handleLikeButtonClick = () => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: 'POST',
@@ -13,7 +25,7 @@ const LikeButton = ({ thought, thoughtId, handleMessageLiked }) => {
 
   return (
     <button
-      className={thought.hearts === 0 ? styles.likeButton : styles.clickedLikeButton}
+      className={postedThought.hearts === 0 ? styles.likeButton : styles.clickedLikeButton}
       onClick={handleLikeButtonClick}
       type="button">
       <span role="img" aria-label="heart">❤️</span>
