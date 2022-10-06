@@ -1,7 +1,6 @@
 /* eslint-disable */
-import React, { useEffect } from 'react';
-
-const api = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+import React from 'react';
+import Moment from 'react-moment'
 
 const ShowMessage = ({ message, createdAt, hearts, id, onLiked }) => {
   const handleClick = () => {
@@ -19,7 +18,7 @@ const ShowMessage = ({ message, createdAt, hearts, id, onLiked }) => {
         <p className="message">{message}</p>
         <div className="heart-and-counter-container">
           <span className="heart-counter"><button className="heart-btn" onClick={handleClick}>❤️</button> x {hearts}</span>
-          <p className="created-at">{createdAt}</p>
+          <p className="created-at"><Moment fromNow ago>{createdAt}</Moment> ago</p>
         </div>
       </div>
     </section> 
