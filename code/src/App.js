@@ -13,7 +13,7 @@ export const App = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setTweetList(data.response)); // Add transformedData.respons here?
+      .then((data) => setTweetList(data)); // Add transformedData.respons here?
     // .catch((error) => console.log.error(error));
     // .finally(() => setLoading(false)); // instead of false '' samma sak?
   };

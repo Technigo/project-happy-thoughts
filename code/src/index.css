@@ -40,7 +40,7 @@ code {
 
 .input-container{
   margin: 30px auto 0;
-  border: solid 1px rgb(57, 55, 55);
+  /* border: solid 1px rgb(57, 55, 55); */
   width: 32%;
 }
 
@@ -86,37 +86,40 @@ button{
 }
 
 .tweets-wrapper{
-  border: solid 3px black;
-  width: 32%;
+  /* border: solid 3px black; */
+
+ 
 }
 
 .tweet-box{
-  border: solid 3px black;
+  border: solid 1px black;
   background-color: #f5a6a6;
+  margin: 20px 0;
+
 }
 
 .message-box{
-  border: solid 3px black;
+  /* border: solid 3px black; */
 }
 
 .like-time-box{
-  border: solid 3px black;
+  /* border: solid 3px black; */
 }
 
 .like{
-  border: solid 3px black;
+  /* border: solid 3px black; */
 }
 
 .heart{
-  border: solid 3px black;
+  /* border: solid 3px black; */
 }
 
 .heart-counter{
-  border: solid 3px black;
+  /* border: solid 3px black; */
 }
 
 .time-stamp{
-  border: solid 3px black;
+  /* border: solid 3px black; */
 }
 
 
