@@ -15,7 +15,6 @@ code {
 .container {
   display: flex;
   flex-direction: column;
-  gap: 50px; 
   margin-left: 50px; 
   margin-right: 50px; 
 }
@@ -25,12 +24,18 @@ code {
   margin-top: 30px; 
   margin-bottom: 30px;
   padding-bottom:50px;
+  margin-right: 30px; 
   width: 500px;
   height: 180px;
-  background-color: grey;
+  background-color: #F6F6F6;
   box-shadow: 5px 10px;
 
 }
+
+.header {
+  margin-left: 25px;  
+}
+
 
 .inputBox {
   width: 90%;
@@ -47,13 +52,16 @@ code {
   padding: 10px;
   width: 200px; 
   border-radius: 20px;
+  border:none; 
+  color: black; 
+  background-color:#FCAFE7 ;
   
 
 }
 
-.btn-send :hover {
-  background-color: pink;
-  transition-duration: 0.4;
+.btn-send:hover {
+  background-color: #F6C6E9;
+  /* transition-duration: 0.4; */
 }
 
 .container-child {
@@ -64,19 +72,28 @@ code {
   width: 500px;
   height: 180px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-column: 1fr 1fr 1fr;
   box-shadow: 5px 10px;
+  gap: 50px; 
   
 }
 
+.like-contianer {
+  display: flex;
+  flex-direction: row; 
+  grid-column: 1 / 2;
+}
+
+
 .message {
-  grid-column: span 4;
   margin-left: 20px; 
-  margin-bottom: 100px;
+  margin-top: 20px;
+  margin-right: 20px; 
+  height: 50px; 
 }
 
 .btn-container {
-  grid-column: 1 / 1 ;  
+  display: grid;
 }
 
 .btn-heart {
@@ -87,14 +104,18 @@ code {
   border: none; 
 }
 
-.likes {
-  margin-left: 70px;
+.btn-heart:hover {
+  background-color: #F6C6E9;
 }
 
-.date {
+ .likes {
+  margin-left: 3px;
+}
+
+.time {
+  display: grid;
   grid-column: 3 / 4;
 }
-
 
 @media ( min-width: 768px ) {
 .container {
@@ -103,5 +124,6 @@ code {
 }
   
 }
+
 
 

@@ -2,17 +2,18 @@ import React, { useEffect, useState } from 'react'
 import ThougthInput from './ThougthInput'
 import ApiInput from './ApiInput'
 
-const LIKES_URL = (likeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${likeID}/like`
+const LIKES_URL = (messageID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`
 
 const FormContainer = () => {
-  const [newThougth, setNewThugth] = useState('');
-  const [ApiThougth, setApiThougth] = useState([]);
+  const [newThought, setNewThought] = useState('');
+  const [ApiThought, setApiThought] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const getData = () => {
+    setLoading(true)
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((Response) => Response.json())
-      .then((data) => setApiThougth(data))
+      .then((data) => setApiThought(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false))
   }
@@ -20,8 +21,8 @@ const FormContainer = () => {
     getData();
   }, [])
 
-  const handleNewThougth = (event) => {
-    setNewThugth(event.target.value)
+  const handleNewThought = (event) => {
+    setNewThought(event.target.value)
   }
 
   const onSend = (event) => {
@@ -32,25 +33,25 @@ const FormContainer = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        message: newThougth
+        message: newThought
       })
     }
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', test)
       .then((Response) => Response.json())
       .then(() => getData())
-      .finally(() => setNewThugth(''))
+      .finally(() => setNewThought(''))
   }
 
   /* Add likes to messages  */
 
-  const handleOnlikeChange = (likeID) => {
+  const handleOnlikeChange = (messageID) => {
     const test = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    fetch(LIKES_URL(likeID), test)
+    fetch(LIKES_URL(messageID), test)
       .then((Response) => Response.json())
       .then(console.log('likes work'))
       .catch((error) => console.error(error))
@@ -59,15 +60,14 @@ const FormContainer = () => {
 
   return (
     <section className="container">
-      <h1>hello world</h1>
       <ThougthInput
-        newThougth={newThougth}
-        onNewThougth={handleNewThougth}
+        newThought={newThought}
+        onNewThought={handleNewThought}
         onSend={onSend} />
       <ApiInput
-        ApiThougth={ApiThougth}
+        ApiThought={ApiThought}
         loading={loading}
-        onLikeChange={handleOnlikeChange} />
+        handleOnlikeChange={handleOnlikeChange} />
     </section>
   )
 }

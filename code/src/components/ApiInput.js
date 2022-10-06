@@ -1,28 +1,35 @@
 import React from 'react'
 import { formatDistance } from 'date-fns'
 
-const ApiInput = ({ ApiThougth, loading, onLikeChange }) => {
+const ApiInput = ({ ApiThought, loading, handleOnlikeChange }) => {
   if (loading) {
     return <h1>loading in progress... </h1>
   }
   return (
     <section className="test">
-      {ApiThougth.map((thougth, hearts) => {
+      {ApiThought.map((thought) => {
         return (
-          <div key={thougth.id} className="container-child">
-            <p className="message">{thougth.message}</p>
+          // eslint-disable-next-line no-underscore-dangle
+          <div key={thought._id} className="container-child">
+            <p className="message">{thought.message}</p>
             <div className="btn-container">
-              <button
-                type="button"
-                className="btn-heart"
-                key={hearts.id}
-                onClick={() => onLikeChange([hearts.id])}>
-                <span aria-label="heart emoji" className="heart-emoji"> ❤️
-                </span>
-              </button>
-              <p className="likes"> x {thougth.hearts} </p>
+              <div className="like-contianer">
+                <button
+                  type="button"
+                  className="btn-heart"
+                  onClick={() => {
+                  // eslint-disable-next-line no-underscore-dangle
+                    handleOnlikeChange(thought._id)
+                  }}>
+                  <span aria-label="heart emoji" className="heart-emoji"> ❤️
+                  </span>
+                </button>
+                <p className="likes"> x {thought.hearts} </p>
+              </div>
+              <div className="time">
+                <p className="date">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })} </p>
+              </div>
             </div>
-            <p className="date">{formatDistance(new Date(thougth.createdAt), Date.now())} </p>
           </div>
         )
       })}
