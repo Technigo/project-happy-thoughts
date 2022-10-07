@@ -6,16 +6,8 @@ const ThoughtForm = (props) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: newThought })
-    })
-      .then((res) => res.json())
-      .then((newThought) => props.setThought((thoughts) => [newThought.response, ...thoughts]))
-      .finally(() => setNewThought(''))
   }
+  
   return (
     <div className="thoughtForm-container">
       <form onSubmit={handleFormSubmit}>
@@ -31,6 +23,7 @@ const ThoughtForm = (props) => {
             placeholder="Type something...:)"
             type="text"
             name="thought"
+            maxLength="140"
             value={newThought}
             onChange={(event) => setNewThought(event.target.value)} />
         </div>
