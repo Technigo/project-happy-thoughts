@@ -35,8 +35,9 @@ const HappyThoughtsEntry = ({ id, message, hearts, createdAt }) => {
     <article className="happy-thoughts-entry">
       <p className="happy-thoughts-entry-text">{message}</p>
       <div className="likes-and-time-stamp">
-        <button className={likedByMe ? ' button-likes button-likes-haslikes' : 'button-likes button-likes-nolikes'} onClick={addHeart} type="button">❤️</button>
-        <span className="happy-thoughts-entry-heart-counter">x {heartsCounter}</span>
+        <span className="happy-thoughts-entry-heart-counter">
+          <button className={likedByMe ? ' button-likes button-likes-haslikes' : 'button-likes button-likes-nolikes'} onClick={addHeart} type="button">❤️</button>x {heartsCounter}
+        </span>
         <span className="happy-thoughts-entry-date-stamp">{formattedDate.fromNow()}</span>
       </div>
     </article>
