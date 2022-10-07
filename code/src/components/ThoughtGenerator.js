@@ -9,10 +9,11 @@ const ThoughtGenerator = ({ onLikesIncrease, thoughts }) => {
         <div
           className="Thoughts"
           key={thoughts._id}>
-          <h4>{thought.message}</h4>
+          <div className="Text">
+            <h4>{thought.message}</h4>
+          </div>
           <div className="LikesAndDate">
             <div className="Likes">
-              <p>+{thought.hearts}</p>
               <button
                 type="button"
                 className="heartButton"
@@ -21,6 +22,7 @@ const ThoughtGenerator = ({ onLikesIncrease, thoughts }) => {
              ❤️
                 </span>
               </button>
+              <p>+{thought.hearts}</p>
             </div>
             <p>{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
           </div>

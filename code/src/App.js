@@ -77,17 +77,20 @@ export const App = () => {
   }
 
   return (
-    <div>
-      <PostThought
-        newThought={newThought}
-        onNewThoughtChange={onNewThoughtChange}
-        onFormSubmit={onFormSubmit} />
-      <ThoughtGenerator
-        loading={loading}
-        thoughts={thoughts}
-        setThoughts={setThoughts}
-        onLikesIncrease={handleLikesIncrease} />
-    </div>
+    <>
+      <h1>❤️ Happy thoughts ❤️ </h1>
+      <div className="Container">
+        <PostThought
+          newThought={newThought}
+          onNewThoughtChange={onNewThoughtChange}
+          onFormSubmit={onFormSubmit} />
+        <ThoughtGenerator
+          loading={loading}
+          thoughts={thoughts}
+          setThoughts={setThoughts}
+          onLikesIncrease={handleLikesIncrease} />
+      </div>
+    </>
   );
 }
 
