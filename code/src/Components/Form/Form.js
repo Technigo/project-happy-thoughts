@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
+import styles from './Form.module.css'
 
 // Creating ThoughtForm for user to post new thoughts
 const Form = (props) => {
@@ -22,17 +23,17 @@ const Form = (props) => {
 
   return (
 
-    <div className="container">
+    <div className={styles.container}>
       <form onSubmit={handleFormSubmit}>
 
-        <div className="thought-form">
+        <div className={styles.thoughtForm}>
           <h2>
-            <label htmlFor="thoughtInput">What`s making you happy right now?</label>
+            <label htmlFor={styles.thoughtInput}>What`s making you happy right now?</label>
           </h2>
 
           <textarea
             id="thoughtInput"
-            className="text-input"
+            className={styles.textInput}
             rows="5"
             columns="140"
             placeholder="Type something... :)"
@@ -41,12 +42,12 @@ const Form = (props) => {
             value={newThought}
             onChange={(event) => setNewThought(event.target.value)} />
 
-          <div className="input-container-details">
+          <div className={styles.inputContainerDetails}>
 
             <div>
               <button
                 disabled={!!(newThought.length < 6 || newThought.length > 140)}
-                className="btn-happy-thought"
+                className={styles.btnHappyThought}
                 type="submit">
 
                 <span role="img" aria-label="heart emoji">❤️ </span>

@@ -1,24 +1,26 @@
+/* eslint-disable arrow-parens */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-shadow */
 /* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react'
 import { formatDistance } from 'date-fns'
-import Form from './Form'
+import Form from '../Form/Form'
+import styles from './HappyCards.module.css'
 
-// Creating HappyThoughtsCards, fetching thoughts data
+// Creating HappyCards, fetching thoughts data
 const HappyCards = () => {
   const [thoughts, setThoughts] = useState([])
 
   useEffect(() => {
-    fetch('https://happy-thoughts-api.herokuapp.com/thoughts')
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
       .then((thoughts) => setThoughts(thoughts))
   }, [])
 
   // Post likes to the API
   const onLike = (thoughtId) => {
-    fetch(`https://happy-thoughts-api.herokuapp.com/thoughts/${thoughtId}/like`, {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: ''
@@ -45,26 +47,30 @@ const HappyCards = () => {
     <>
       <Form setThoughts={setThoughts} />
 
-      <div className="container">
+      <div className={styles.container}>
 
-        {thoughts.map((thought) => (
-          <section className="thought-box" key={thought._id} thought={thought} onLike={onLike}>
-            <p className="message">
+        {thoughts.map(thought => (
+          <section
+            className={styles.thoughtBox}
+            key={thought._id}
+            thought={thought}
+            onLike={onLike}>
+            <p className={styles.message}>
               {thought.message}
 
             </p>
 
-            <div className="likes-container">
+            <div className={styles.likesContainer}>
               <button
                 className={(thought.hearts === 0 ? 'heart-btn' : 'heart-btn red-heart-btn')}
                 onClick={() => onLike(thought._id)}>
 
-                <span role="img" aria-label="heart icon" className="heart-icon">❤️</span>
+                <span role="img" aria-label="heart icon" className={styles.heartIcon}>❤️</span>
 
               </button>
-              <p className="likes">x {thought.hearts}</p>
+              <p className={styles.likes}>x {thought.hearts}</p>
 
-              <p className="date-text">
+              <p className={styles.dateText}>
                 {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
               </p>
             </div>

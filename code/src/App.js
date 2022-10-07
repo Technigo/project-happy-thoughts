@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './Components/Header'
-import HappyCards from './Components/HappyCards'
-import Footer from './Components/Footer'
+import Header from './Components/Header/Header'
+import HappyCards from './Components/HappyCards/HappyCards'
+import Footer from './Components/Footer/Footer'
 
 export const App = () => {
   return (
