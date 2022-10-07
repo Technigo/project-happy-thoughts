@@ -20,7 +20,7 @@ const Thought = (props) => {
 
   return (
     <Card type="card2">
-      <div>
+      <div className="testlength">
         <h4>{props.thought.message}</h4>
         <button type="button" onClick={handleClick}>
           {likes}

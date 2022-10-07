@@ -3,9 +3,16 @@
   padding: 16px;
   border: solid 2px #b3a9a9;
   box-shadow: 8px 8px;
-  margin-bottom: 48px;
+  margin-top: 48px;
+  max-width: 500px;
 }
 
 .card2 {
   background-color: white;
+}
+
+@media (max-width: 667px) {
+  .card {
+    max-width: 270px;
+  }
 }
