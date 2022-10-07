@@ -28,4 +28,4 @@ const ThoughtForm = ( { onFormSubmit, newThought, onSetThoughtChange } ) => {
     )
 }
 
-export default ThoughtForm;
+export default ThoughtForm

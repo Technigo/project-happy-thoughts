@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { formatRelative } from 'date-fns';
 
 const ThoughtList = ({thought, handleLikes}) => {
 
@@ -18,7 +18,7 @@ const ThoughtList = ({thought, handleLikes}) => {
                     </button>
                     <span className='like-counter'> x {thought.hearts}</span>
                 </div>
-                <div className='date'> {thought.createdAt}</div>
+                <p className="date"> {formatRelative(new Date(thought.createdAt), new Date())}</p>
             </div>
         </form>   
     </section>
