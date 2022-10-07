@@ -13,11 +13,29 @@ code {
 }
 
 .outer-wrapper {
-  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-wrapper {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 30px;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.input-wrapper,
+.list-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 4vh;
+  row-gap: 30px;
+  width: 100%;
 }
 
 .input-container {
@@ -29,7 +47,7 @@ code {
   justify-content: space-around;
   flex-direction: column;
   padding: 10px 14px;
-  height: 180px;
+  height: 200px;
   width: 90%;
   max-width: 550px;
   font-family: "Roboto Mono", monospace;
@@ -41,36 +59,27 @@ code {
   word-wrap: break-word;
   padding: 5px;
   resize: none;
+  height: 8vh;
 }
 
-.button-container {
+.btn-container {
   display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1vh;
+  margin-top: 1vh;
 }
 
 .thought-btn {
   background-color: rgb(223, 157, 157);
-  font-family: "Roboto Mono", monospace;
   font-weight: 600;
-  font-size: 12px;
-  width: 170px;
+  font-size: 15px;
   border: 0;
-  border-radius: 35px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+  height: 40px;
+  border-radius: 20px;
+  width: 50%;
   cursor: pointer;
 }
-  /*.btn-send-input {
-    background-color: pink;
-    border: 0;
-    height: 40px;
-    border-radius: 20px;
-    width: 70%;
-    cursor: pointer;
-}*/
 
 .list-card {
   box-sizing: border-box;
@@ -79,7 +88,6 @@ code {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  margin: 4vh;
   padding: 10px 14px;
   height: 180px;
   width: 90%;
@@ -92,6 +100,11 @@ code {
 .like-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  column-gap: 5px;
+  color: rgb(45, 45, 45);
+  font-size: 15px;
   justify-content: space-between;
 }
 
@@ -105,10 +118,27 @@ code {
   width: 50px;
   cursor: pointer;
   transition: all 0.2s ease;
+  margin-left: 10px;
 }
 
-h1 {
-  font-family: "Roboto Mono", monospace;
+.thought-text {
+  word-wrap: break-word;
+  margin: 1vh;
+}
+
+.lable-text {
+  font-weight: 600;
+  font-size: large;
+  padding: 1vh;
+  margin-bottom: 1vh;
+}
+
+.like-counter {
+  flex-grow: 2px;
+  margin-right: 200px; 
+}
+
+.counter {
   margin: 0;
-  padding: 0;
+  margin-left: 1vh;
 }
