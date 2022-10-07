@@ -70,27 +70,34 @@ code {
   font-size: 0.9em;
 }
 
+.happy-thoughts-entry-date-stamp {
+  display: flex;
+}
+
 .happy-thoughts-entry-heart-counter {
   font-size: 0.8em;
   color: lightslategray;
+  margin-left: 8px;
+  justify-content: left;
 }
 
+
+.button-likes {
+  border-radius: 20px;
+  border: 0;
+  padding: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .button-likes-haslikes {
-  border-radius: 20px;
-  border: 0;
-  padding: 7px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.button-likes-nolikes {
-  border-radius: 20px;
-  border: 0;
-  padding: 7px;
-  padding-left: 10px;
-  padding-right: 10px;
   background-color: #FFADAD;
 }
+.button-likes-nolikes {
+  background-color: F2F0F0;
+}
 
-
-
+.happy-thoughts-entry-date-stamp {
+  font-size: 0.8em;
+  color: rgb(181, 181, 181);
+  justify-content: right;
+}

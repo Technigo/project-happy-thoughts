@@ -8,7 +8,9 @@ const HappyThoughtsList = ({ list }) => {
         return (
           <HappyThoughtsEntry
             key={happyThoughtsEntry._id}
+            id={happyThoughtsEntry._id}
             message={happyThoughtsEntry.message}
+            createdAt={happyThoughtsEntry.createdAt}
             hearts={happyThoughtsEntry.hearts} />
         )
       })}

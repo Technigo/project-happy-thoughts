@@ -1,29 +1,46 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-const SingleTask = ({ message, hearts }) => {
-  const [singleTaskChecked, setSingleTaskChecked] = useState(hearts > 0);
+import moment from 'moment'
+
+const HappyThoughtsEntry = ({ id, message, hearts, createdAt }) => {
+  const [likedByMe, setLikedByMe] = useState(false)
   const [heartsCounter, setHearts] = useState(hearts);
-  const onSingleTaskCheckboxChange = () => {
-    setSingleTaskChecked(!singleTaskChecked);
-  }
-  const incrementHeart = () => {
-    setHearts(heartsCounter + 1);
+
+  const sendHeartToApi = () => {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    }).then((res) => res.json())
+      .then((data) => {
+        // Fetch the number of hearts fresh from API
+        setHearts(data.hearts);
+      })
   }
 
-  if (!message) {
-    return (
-      <p>No data</p>
-    )
+  const addHeart = () => {
+    setLikedByMe(true)
+    setHearts(heartsCounter + 1)
+    // skip posting you have already liked this once
+    if (!likedByMe) {
+      sendHeartToApi()
+    }
   }
+
+  const formattedDate = moment(
+    createdAt,
+    'YYYY-MM-DDTHH:mm:ss.SSSZ'
+  )
+
   return (
     <article className="happy-thoughts-entry">
       <p className="happy-thoughts-entry-text">{message}</p>
-      <input type="checkbox" checked={singleTaskChecked} onChange={onSingleTaskCheckboxChange} />
-      <button className={hearts === 0 ? 'button-likes-haslikes' : 'button-likes-nolikes'} onClick={incrementHeart} type="button">❤️</button>
-      <span className="happy-thoughts-entry-heart-counter">{' '}x {heartsCounter}</span>
+      <div className="likes-and-time-stamp">
+        <button className={likedByMe ? ' button-likes button-likes-haslikes' : 'button-likes button-likes-nolikes'} onClick={addHeart} type="button">❤️</button>
+        <span className="happy-thoughts-entry-heart-counter">x {heartsCounter}</span>
+        <span className="happy-thoughts-entry-date-stamp">{formattedDate.fromNow()}</span>
+      </div>
     </article>
   )
 }
 
-export default SingleTask;
+export default HappyThoughtsEntry;
