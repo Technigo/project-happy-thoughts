@@ -29,6 +29,14 @@ h2 {
   min-width: 50%;
 }
 
+.header-container {
+  padding: 30px;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  
+}
+
 /*SendThought - Submit form*/
 .message-submit {
   border: solid 1px black;
@@ -41,7 +49,7 @@ h2 {
   width: 90%;
 }
 
-.submit-button {
+button {
   border:none;
   font-family: 'Roboto Mono', monospace;
   border-radius: 30px;
@@ -53,16 +61,10 @@ h2 {
   transition: 0.3s ease-in-out;
 }
 
-.submit-button:hover {
+button:hover {
   transform: scale(1.04);
 }
 
-.heart-button {
-  padding: 12px;
-  margin-right: 7px;
-  border: none;
-  border-radius: 50%;
-}
 
 /*MessageList - See submitted thoughts - */
 .message-box {

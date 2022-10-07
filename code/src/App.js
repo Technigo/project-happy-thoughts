@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import SendThought from './components/SendThought';
 import MessageList from './components/MessageList';
+import SiteHeader from './components/SiteHeader';
 
 const LIKES_API = (LikeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`
 const API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
@@ -70,7 +71,7 @@ const onLikesIncrease = (LikeID) => {
   return (
     <div className="outer-wrapper">
       <div className="inner-wrapper">
-
+        <SiteHeader />
         <SendThought
           newMessage={newMessage}
           onNewMessageChange={onNewMessageChange}
