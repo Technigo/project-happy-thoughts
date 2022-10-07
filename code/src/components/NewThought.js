@@ -8,12 +8,11 @@ const NewThought = ({ handleFormSubmit, onNewThoughtChange, newThought }) => {
           <textarea
             id="newThought"
             type="text"
-            placeholder="Share your happy thought with us..."
             value={newThought}
             maxLength="140"
             onChange={onNewThoughtChange} />
           <p className="charactersLeft" style={{ color: newThought.length > 130 ? 'red' : 'black' }}>{newThought.length}/140</p>
-          <button type="submit" className="new-thought-button"><span>💗</span> Send Happy Thought <span>💗</span></button>
+          <button type="submit" className="new-thought-button"><span>❤️️</span> Send Happy Thought <span>❤️️</span></button>
         </label>
       </form>
     </div>

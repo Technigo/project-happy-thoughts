@@ -125,12 +125,12 @@ textarea {
 }
 
 .heart {
-  background-color: #f9d4d4;
+  background-color: #fabdbd;
   border: none;
-  padding: 10px;
   border-radius: 50%;
   cursor: grab;
-  font-size: large;
+  width: 40px;
+  height: 40px;
 }
 
 .heart:hover {

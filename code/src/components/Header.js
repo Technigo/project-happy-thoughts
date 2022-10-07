@@ -4,9 +4,9 @@ const Header = () => {
   return (
     <header>
       <h1>
-        <span>💗 </span>
+        <span>❤️️ </span>
         Happy Thoughts
-        <span> 💗</span>
+        <span> ❤️️</span>
       </h1>
     </header>
   );
