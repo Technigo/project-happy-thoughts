@@ -13,16 +13,15 @@ const SingleTask = ({ message, hearts }) => {
 
   if (!message) {
     return (
-      <p>NO DATA</p>
+      <p>No data</p>
     )
   }
   return (
-    <article>
-      <p>{message}</p>
+    <article className="happy-thoughts-entry">
+      <p className="happy-thoughts-entry-text">{message}</p>
       <input type="checkbox" checked={singleTaskChecked} onChange={onSingleTaskCheckboxChange} />
-
       <button className={hearts === 0 ? 'button-likes-haslikes' : 'button-likes-nolikes'} onClick={incrementHeart} type="button">❤️</button>
-      {' '}x {heartsCounter}
+      <span className="happy-thoughts-entry-heart-counter">{' '}x {heartsCounter}</span>
     </article>
   )
 }

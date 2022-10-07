@@ -54,12 +54,12 @@ export const App = () => {
   }
 
   return (
-    <>
+    <div className="terrible-wrapper">
       <HappyThoughtsForm
         handleFormSubmit={handleFormSubmit}
         onAddNewThought={onAddNewThought}
         newThought={newThought} />
       <HappyThoughtsList list={happyThoughtsList} />
-    </>
+    </div>
   );
 }
