@@ -29,7 +29,9 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
   };
 
   const handleTooShortThought = () => {
-    if (thought.length < 5) {
+    if (!thought.length) {
+      setTooShortThought('Nothing? 😢');
+    } else if (thought.length < 5) {
       setTooShortThought('Too short! ☺️');
     }
   };
@@ -56,7 +58,7 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
       .catch((error) => console.error(error))
       .then((newThought) => {
         if (newThought.message === 'Could not save thought') {
-          handleTooShortThought(newThought.message);
+          handleTooShortThought();
         } else {
           setThoughtsFeed((previousThoughts) => [newThought, ...previousThoughts])
         }
