@@ -58,6 +58,7 @@ button {
 .form-container {
   display: flex;
   flex-direction: column;
+  border: 1px solid #000;
   box-shadow: 7px 7px #000;
   width: 50vw;
   margin: 30px auto;
@@ -66,14 +67,22 @@ button {
 }
 
 textarea {
-  width: calc(50vw - 50px);
+  width: calc(50vw - 6px);
   height: 50px;
   outline-color: #e73c7e;
   resize: none;
 }
 
+.counter {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: right;
+}
+
 /* SINGLE THOUGHT CONTAINER */
 .single-thought-container {
+  border: 1px solid #000;
   box-shadow: 7px 7px #000;
   width: 50vw;
   margin: 30px auto;
@@ -104,8 +113,8 @@ textarea {
   color: rgb(132, 132, 132);
 }
 
+/* FOOTER */
 .footer {
-  
   margin: 50px auto 25px;
   text-align: center;
 }

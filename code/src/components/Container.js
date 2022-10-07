@@ -68,6 +68,7 @@ const Container = () => {
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChange}
         onFormSubmit={onFormSubmit} />
+
       <Thoughts
         loading={loading}
         thoughts={thoughts}

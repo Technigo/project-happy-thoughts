@@ -8,11 +8,14 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
         <textarea
           value={newThought}
           onChange={onNewThoughtChange}
-          placeholder="Type your happy thoughts here..." />
+          placeholder="Type your happy thoughts here..."
+          maxLength="140" />
+        <div className="counter">{0 + newThought.length} / {140 - newThought.length} </div>
         <button
           className="submit-btn"
           type="submit">
-          <span className="emoji" role="img" aria-label="heart-emoji">❤️</span> Send happy thought! <span role="img" aria-label="heart-emoji">❤️</span></button>
+          <span className="emoji" role="img" aria-label="heart-emoji">❤️</span> Send happy thought! <span role="img" aria-label="heart-emoji">❤️</span>
+        </button>
       </form>
     </div>
   )
