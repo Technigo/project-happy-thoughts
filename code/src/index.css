@@ -157,6 +157,7 @@ textarea[type=text]{
   font-family: 'Roboto Mono', monospace;
   font-size: 14px;
   padding: 5px;
+  resize: none;
 }
 
 textarea::placeholder{
@@ -177,7 +178,7 @@ textarea:focus{
   color:rgb(142, 142, 142);
   font-size: 12px;
   margin: 20px;
-  padding: 30px;
+  padding: 35px;
 }
 
 
