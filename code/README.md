@@ -1,19 +1,18 @@
-# Technigo React Starter App
+# Project Happy Thoughts
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+A twitter-like feed with posts of happy thoughts. You can read and like other peoples happy thoughts or post your own. 
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+Built using: React, HTML5, CSS3 (useEffect, useState, form validation, props, API:s) 
 
-## Usage
+## Fulfilled requirements
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+✓ Your page should follow the design as closely as possible - The feed matches the design but I've added a background image for a personal touch
 
-Alternatively, if you don't want a new git repo on your account;
+✓ You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+✓ Your thoughts should show the content of the message and how many likes they've received
+
+✓ You should have a form to post new thoughts
+
+✓ You should implement the heart button to send likes on a thought
+
