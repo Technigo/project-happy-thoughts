@@ -21,7 +21,7 @@ const SingleTask = ({ message, hearts }) => {
       <p>{message}</p>
       <input type="checkbox" checked={singleTaskChecked} onChange={onSingleTaskCheckboxChange} />
 
-      <button onClick={incrementHeart} type="button">❤️</button>
+      <button className={hearts === 0 ? 'button-likes-haslikes' : 'button-likes-nolikes'} onClick={incrementHeart} type="button">❤️</button>
       {' '}x {heartsCounter}
     </article>
   )

@@ -5,18 +5,15 @@ import HappyThoughtsForm from 'components/HappyThoughtsForm';
 
 export const App = () => {
   const [happyThoughtsList, setHappyThoughtsList] = useState([]);
-  const [newTask, setNewTask] = useState('');
+  const [newThought, setNewThought] = useState('');
   const [loading, setLoading] = useState(false);
-
-  // useEffect with empty array [] call  your functions on application start
-  // dummy todo API -> ' https://week7-backend.herokuapp.com/tasks'
 
   const fetchData = () => {
     setLoading(true);
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((data) => data.json())
-      .then((transformedData) => setHappyThoughtsList(transformedData.reverse()))
+      .then((transformedData) => setHappyThoughtsList(transformedData))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -25,12 +22,12 @@ export const App = () => {
     fetchData();
   }, []);
 
-  const onNewTaskChange = (event) => {
-    setNewTask(event.target.value);
+  const onAddNewThought = (event) => {
+    setNewThought(event.target.value);
   }
 
   const handleFormCleanup = () => {
-    setNewTask('');
+    setNewThought('');
     setLoading(false);
   }
   const handleFormSubmit = (event) => {
@@ -39,7 +36,7 @@ export const App = () => {
     const options = {
       method: 'POST',
       body: JSON.stringify({
-        message: newTask
+        message: newThought
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -48,25 +45,21 @@ export const App = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((data) => data.json())
-      .then((data) => {
-        console.log(data)
-        return data
-      })
       .then(() => fetchData())
       .catch((error) => console.error(error))
       .finally(() => handleFormCleanup());
   }
   if (loading) {
-    <p>THE PAGE IS LOADING</p>
+    <p>The page is loading...</p>
   }
 
   return (
-    <div>
+    <>
       <HappyThoughtsForm
         handleFormSubmit={handleFormSubmit}
-        onNewTaskChange={onNewTaskChange}
-        newTask={newTask} />
+        onAddNewThought={onAddNewThought}
+        newThought={newThought} />
       <HappyThoughtsList list={happyThoughtsList} />
-    </div>
+    </>
   );
 }
