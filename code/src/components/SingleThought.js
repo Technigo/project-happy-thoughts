@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { formatDistance } from 'date-fns';
 
 const SingleThought = ({ message, hearts, createdAt }) => {
   const [counter, setCounter] = useState(0);
@@ -24,7 +25,9 @@ const SingleThought = ({ message, hearts, createdAt }) => {
         </button>
         <p>x{counter}</p>
         <p>Likes:{hearts}</p>
-        <p>Time:{createdAt}</p>
+        <p>
+          {formatDistance(new Date(createdAt), Date.now(), { addSuffix: true })}
+        </p>
       </div>
     </div>
   );
