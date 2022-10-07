@@ -1,7 +1,8 @@
 import React from "react";
+import { formatDistance }  from 'date-fns';
 
 
-const MessageList = ({ loading, messageList, hearts, addLike, id, setMessageList }) => {
+const MessageList = ({ loading, messageList, hearts, addLike, id,  }) => {
   if (loading) {
     return (
     <h1>Loading in progress...</h1>
@@ -22,7 +23,7 @@ const MessageList = ({ loading, messageList, hearts, addLike, id, setMessageList
     //has been clicked and send that data in the callback function to App component
     let clicks = 0;
     clicks += 1;
-    fetch(`https://vane-happy-thoughts.herokuapp.com/thoughts/${id}/like`, {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       //addLike is a function we got from App sent as prop, and is responsible for visually
@@ -48,7 +49,9 @@ const MessageList = ({ loading, messageList, hearts, addLike, id, setMessageList
                 </span>
                 
               </div>
-
+              <p className="date">
+              {formatDistance(new Date(event.createdAt), Date.now(), { addSuffix: true })}
+            </p>
             </div>
             
           ))}

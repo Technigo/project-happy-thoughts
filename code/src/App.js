@@ -56,8 +56,8 @@ export const App = () => {
 
    const addLike = (id, clicks) => {
     //addLike gets an id as an argument which is the id we got from the function
-    //handleLikes, which is the function posting thoughts to the API. This was we make
-    //sure we are adding the like to the right thought. addLike will add +1 to the
+    //handleLikes, which is the function posting thoughts to the API.
+    // addLike will add +1 to the
     //amount of hearts that thought had previously and show that in the browser
     //right away without triggering a new fetch. That way the user gets inmediate
     //confirmation that the like went thru. We check if the thought.id is equal to
@@ -68,18 +68,17 @@ export const App = () => {
       }
       return thought;
     });
-    //we setThoughts again so the thoughts now show with the updated amount of hearts
+    // setMessageList again so the thoughts now show with the updated amount of hearts
     setMessageList(updatedLikes);
-    //Created a State for clickCounts which will show how many time the Heart button
+    
+    //a State for clickCounts which will show how many time the Heart button
     //has been clicked, we get the number of clicks from the callback function in
-    //ThoughtCard component and add it to the existing clickCounts
+    //MessageList component and add it to the existing clickCounts
     setClickCounts(clicks + clickCounts);
   };
 
-  
 
 /* */ 
-
 
 
   return (
