@@ -2,25 +2,24 @@
 import React from 'react';
 import styles from './LikeButton.module.css';
 
-const LikeButton = ({ postedThought, thoughtId, thoughtsFeed, setThoughtsFeed }) => {
-  console.log(postedThought)
+const LikeButton = ({ postedThought, postedThoughtId, thoughtsFeed, setThoughtsFeed }) => {
   const handleMessageLiked = (likedThoughtId) => {
-    const updatedThoughtsFeed = thoughtsFeed.map((happyThought) => {
-      if (happyThought._id === likedThoughtId) {
-        happyThought.hearts += 1
+    const updatedThoughtsFeed = thoughtsFeed.map((item) => {
+      if (item._id === likedThoughtId) {
+        item.hearts += 1
       }
-      return happyThought
+      return item
     });
     setThoughtsFeed(updatedThoughtsFeed);
   };
 
   const handleLikeButtonClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${postedThoughtId}/like`, {
       method: 'POST',
       headers: { 'Content-type': 'application/json' }
     }).then(() => {
-      handleMessageLiked(thoughtId);
-    })
+      handleMessageLiked(postedThoughtId);
+    });
   };
 
   return (

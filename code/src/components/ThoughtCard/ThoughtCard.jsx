@@ -14,20 +14,18 @@ const ThoughtCard = ({ thoughtsFeed, setThoughtsFeed }) => {
           <div className={styles.likesAndTimeContainer}>
             <div className={styles.likesContainer}>
               <LikeButton
-                thoughtId={postedThought._id}
                 postedThought={postedThought}
+                postedThoughtId={postedThought._id}
                 thoughtsFeed={thoughtsFeed}
                 setThoughtsFeed={setThoughtsFeed} />
-              <p className={styles.amountOfLikes}> x {postedThought.hearts}</p>
+              <p> x {postedThought.hearts}</p>
             </div>
-            <p className={styles.timePosted}>
-              {moment(postedThought.createdAt).fromNow()}
-            </p>
+            <p className={styles.timePosted}>{moment(postedThought.createdAt).fromNow()}</p>
           </div>
         </div>
-      ))};
+      ))}
     </>
-  );
-};
+  )
+}
 
 export default ThoughtCard;
