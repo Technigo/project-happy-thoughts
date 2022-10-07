@@ -19,7 +19,7 @@ const TaskList = ({ loading, taskList, onLikes }) => {
               className="like-button">
               <img src="https://img.icons8.com/emoji/48/000000/red-heart.png" alt="like" className="like-button-image" />
             </button>
-            <p className="like-counter">x {task.hearts}</p>
+            <p className="like-counter">x{task.hearts}</p>
             <p className="other-tweets-date">{formatDistance(new Date(task.createdAt), Date.now(), { addSuffix: true })}</p>
           </div>
         </div>
