@@ -10,6 +10,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchMessages = () => {
+    console.log('Reload')
     setLoading(false);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((result) => result.json())
@@ -48,6 +49,7 @@ export const App = () => {
   }
 
   if (loading) {
+    setInterval(fetchMessages, 5 * 60 * 1000);
     return (
       <p>Loading in progress...</p>
     )

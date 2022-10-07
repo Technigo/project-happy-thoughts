@@ -16,6 +16,7 @@ const NewMessage = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
       <textarea
         className="text-area"
         rows="3"
+        cols="32"
         placeholder="Type your thoughts here..."
         value={newMessage}
         /* onKeyDown={checkKeyPress} */

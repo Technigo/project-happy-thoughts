@@ -9,12 +9,14 @@ const MessageList = ({ loading, setLoading, messageList, setNewLike }) => {
       {messageList.map((event) => (
         <div key={event._id} className="message-box">
           <p className="message">{event.message}</p>
-          <LikeBtn
-            setNewLike={setNewLike}
-            event={event}
-            loading={loading}
-            setLoading={setLoading} />
-          <TimeStamp event={event} />
+          <div className="likes-and-time">
+            <LikeBtn
+              setNewLike={setNewLike}
+              event={event}
+              loading={loading}
+              setLoading={setLoading} />
+            <TimeStamp event={event} />
+          </div>
         </div>
       ))}
     </section>
