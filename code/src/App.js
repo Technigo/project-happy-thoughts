@@ -44,16 +44,7 @@ export const App = () => {
       .finally(() => setNewMessage(''));
   }
 
-  const onLikesIncrease = (listid) => {
-    const options = {
-      method: 'POST'
-    }
-    fetch(`https://happythoughtsapiproject.herokuapp.com/thoughts/${listid}/likes`, options)
-      .then((res) => res.json())
-      .then((data) => {
-        setNewMessage(data)
-      })
-  }
+  
 
   return (
     <div>
@@ -64,7 +55,7 @@ export const App = () => {
       <ThoughtsFlow
         loading={loading}
         thoughts={thoughts}
-        onLikesIncrease={onLikesIncrease} />
+        setNewMessage={setNewMessage} />
     </div>
   )
 }
