@@ -7,10 +7,10 @@ export const ThoughtsList = ({ thoughts }) => {
   return (
     <section>
       {thoughts.map((thought) => {
-        console.log(thought.description);
+        console.log(thought.message);
         return (
           <div className="input-wrapper" key={thought._id}>
-            <SingleThought description={thought.description} />
+            <SingleThought description={thought.message} />
           </div>
         );
       })}

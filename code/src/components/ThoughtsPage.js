@@ -13,8 +13,7 @@ export const ThoughtsPage = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-
-    fetch('https://week7-backend.herokuapp.com/tasks')
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((data) => data.json())
       .then((transformedData) => setThoughts(transformedData.reverse()))
       .catch((error) => console.error(error))
@@ -50,16 +49,16 @@ export const ThoughtsPage = () => {
     event.preventDefault();
 
     const options = {
-      method: 'post',
+      method: 'POST',
       body: JSON.stringify({
-        description: newThought,
+        message: newThought,
       }),
       headers: {
         'Content-Type': 'application/json',
       },
     };
     setLoading(true);
-    fetch('https://week7-backend.herokuapp.com/tasks', options)
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((data) => data.json())
       .then(() => fetchThoughts())
       .catch((error) => console.error(error))

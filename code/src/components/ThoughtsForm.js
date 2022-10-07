@@ -9,19 +9,21 @@ export const ThoughtsForm = ({
   return (
     <div className="input-wrapper">
       <form className="form-container" onSubmit={onFormSubmit}>
-        <h2>Send happy thoughts!</h2>
+        <h2>Whats making you happy right now?</h2>
         <textarea
           value={newThought}
           onChange={onNewThoughtChange}
-          minLength="4"
-          maxLength="140"
           required
           placeholder="Write a happy thought here">
           Text here
         </textarea>
         <p className="textCounter">{newThought.length}/140</p>
-        <button type="submit" className="post-button" value="Post btn">
-          Post
+        <button
+          type="submit"
+          className="post-button"
+          value="Post btn"
+          disabled={newThought.length < 6 || newThought.length > 140}>
+          ❤️ Send Happy thought ❤️
         </button>
       </form>
     </div>
