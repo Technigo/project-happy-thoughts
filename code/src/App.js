@@ -1,63 +1,75 @@
-import React, { useState, useEffect } from 'react';
-
-import ThoughtsList from 'components/ThoughtsList'
-import ThoughtsForm from 'components/ThoughtsForm'
+import { useState, useEffect } from 'react'
+import ThoughtForm from 'components/ThoughtForm'
+import ThoughtList from 'components/ThoughtList'
 
 
 export const App = () => {
+  const [thoughts, setThoughts] = useState([])
+  const [newThought, setNewThought] = useState('')
 
-const [thoughtsList, setThoughtsList] = useState([])
-const [newThought, setNewThought] = useState('');
-
-// const [thoughts, setThoughts] = useState([]);
-
-useEffect(()=> {
-  fetchTasks();
-}, []);
-
-const handleNewThoughtChange = (event) => {
-  setNewThought(event.target.value)
-}
-
-const fetchTasks = () => { //Extracted in a function not to repeat itself
-  fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-  .then((data) => data.json())
-  .then((addingNewThought) => setThoughtsList(addingNewThought))
-  .catch(error => console.error(error))
-  .finally(() => console.log('everything is fine'))
-}
-
-
-//Send Happy thoughts button
-const handleFormSubmit = (event) => {
-  event.preventDefault(); //single page application, don't want to reload. Default behavior = reload
-
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ message: newThought }),
+  const handleOnNewThought = (event) => {
+    setNewThought(event.target.value)
   }
 
+
+  useEffect(()=> {
+    fetchThoughts();
+  }, [])
+
+
+  const fetchThoughts = () => {
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    .then(res => res.json())
+    .then(data => setThoughts(data))
+  }
+
+
+//Button Send Happy Thoughts
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+
+    const options = { 
+      method: 'POST', 
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: newThought })
+    }
+  
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-      .then((data) => data.json())
-      .then(() => {fetchTasks()})
-  };
+      .then((res) => res.json())
+      .then(() => fetchThoughts())
+      .finally(()=> setNewThought(''))
+  }
+
+
+//Like button
+  const handleLikes = (id) => {
+
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    }
+
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, options)
+      .then((res) => res.json())
+      .then(() => fetchThoughts())
+  }
 
 
   return (
-  <>
-    <ThoughtsForm 
-    newThought={newThought}
-    handleNewThoughtChange={handleNewThoughtChange}
-    onFormSubmit={handleFormSubmit} />
-   
-    <ThoughtsList 
-    list = {thoughtsList}
-    />
-    </>
+    <section className='mainWrapper'>
+      <ThoughtForm 
+        onFormSubmit={handleFormSubmit}
+        newThought={newThought}
+        onSetThoughtChange={handleOnNewThought}/>
 
-
-  ); }
+      {thoughts.map((thought)=> (
+      <ThoughtList
+        key={thought._id}
+        thought={thought}
+        handleLikes={handleLikes}
+        />
+      ))}
+    </section>
+  )
+}
 
