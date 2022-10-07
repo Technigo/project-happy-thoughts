@@ -1,33 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const NewThought = () => {
-  const [thoughts, setThoughts] = useState([]);
-  const [newThought, setNewThought] = useState('');
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: newThought })
-    };
-
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-      .then((res) => res.json())
-      .then((data) => setThoughts([data, ...thoughts]));
-  };
+const NewThought = ({ handleFormSubmit, onNewThoughtChange, newThought }) => {
   return (
     <div className="new-thought-box">
-      <form onSubmit={onFormSubmit}>
+      <form onSubmit={handleFormSubmit}>
         <label htmlFor="newThought">What is making you happy right now?
           <textarea
             id="newThought"
             type="text"
+            placeholder="Share your happy thought with us..."
             value={newThought}
             maxLength="140"
-            onChange={(event) => setNewThought(event.target.value)} />
+            onChange={onNewThoughtChange} />
           <p className="charactersLeft" style={{ color: newThought.length > 130 ? 'red' : 'black' }}>{newThought.length}/140</p>
           <button type="submit" className="new-thought-button"><span>💗</span> Send Happy Thought <span>💗</span></button>
         </label>
