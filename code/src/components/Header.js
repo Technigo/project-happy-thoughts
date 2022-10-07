@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <section className="header">
       <header>
-      Think Happy Thoughts!
+      Happy Thoughts &#128140;
       </header>
     </section>
   )

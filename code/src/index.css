@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("images/heartbox.jpg");
+  background-color: #cccccc;
+  background-size: contain;
 }
 
 code {
@@ -12,8 +15,21 @@ code {
     monospace;
 }
 
+/* MAIN FEED AND HEADER */
+
+.feed-conatiner{
+  display: grid;
+  justify-items: center;
+}
+
 header {
-  border: solid yellow 2px;
+  font-family: 'Roboto mono', monospace;
+  font-size: 43px;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 0px 20px 0px;
+  padding: 10px 26px;
+  background-color: rgba(244, 240, 240, 0.574);
 }
 
 /* CONTAINER */
@@ -21,7 +37,6 @@ header {
 .main-feed {
   display: grid;
   justify-content: center;
-  border: solid magenta 2px;
 }
 
 /* NEW THOUGHT */
@@ -30,9 +45,10 @@ header {
   padding: 10px 15px;
   border: solid rgb(107, 106, 106) 1px;
   margin-top: 30px;
-  width: 350px;
-  background-color: rgb(244, 240, 240) ;
+  width: 345px;
+  background-color: rgb(244, 240, 240);
   box-shadow: 6px 6px black;
+  font-family: 'Calibri', 'Candara', 'Segoe', "Segoe UI", 'Optima', 'Arial', sans-serif;
 }
 
 form {
@@ -45,13 +61,14 @@ form {
   font-size: 11px;
   font-weight: bold;
   margin: 5px 0px 10px 0px;
-  /* border: solid green 1px; */
+  font-family: 'Calibri', 'Trebuchet MS', sans-serif;
 }
 
 textarea {
   font-family: 'Roboto mono', monospace;
   border: solid darkgrey 1px;
   height: 40px;
+  resize: none;
 }
 
 .send-button {
@@ -64,7 +81,7 @@ textarea {
   font-weight: bold;
   cursor: pointer;
   border-radius: 40px;
-  /* font-family: 'Lato', sans-serif; */
+  font-family: 'Calibri', 'Trebuchet MS', sans-serif;
   margin: 10px 0px 5px 0px;
   width: 155px;
   height: 25px;
@@ -74,13 +91,10 @@ textarea {
 
 /* THOUGHTS */
 
-.thoughts-feed {
-  /* border: solid blue 2px; */
-}
-
 .thought-container {
+  background-color: white;
   border: solid rgb(107, 106, 106) 1px;
-  width: 350px;
+  width: 345px;
   padding: 10px 15px;
   margin-top: 30px;
   box-shadow: 6px 6px black;
@@ -95,25 +109,37 @@ textarea {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 10px;
-  /* border: solid orange 1px; */
+  font-family: 'Calibri', 'Trebuchet MS', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
   margin: 5px;
 }
 
 .likes {
   display: flex;
   flex-direction: row;
-  border: solid green 1px;
-  color: grey;
+  color: rgb(153, 151, 151);
 }
 
-.like {
+.notLiked {
   cursor: pointer;
   border-radius: 50%;
   border: none;
   box-sizing: unset;
   padding: 10px;
   margin-right: 5px;
+  width: 18px;
+}
+
+.liked {
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  box-sizing: unset;
+  padding: 10px;
+  margin-right: 5px;
+  width: 18px;
+  background-color: rgba(248, 153, 153, 0.832);
 }
 
 .thought-posted {

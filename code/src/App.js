@@ -8,15 +8,18 @@ import Header from 'components/Header';
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newThought, setNewThought] = useState('');
-  const onFormSubmit = (event) => {
-    event.preventDefault();
 
-}
   return (
     <section className="main-feed">
-      {/* <Header /> */}
-      <NewThought newThought={newThought} setNewThought={setNewThought} />
-      <Thoughts thoughts={thoughts} setThoughts={setThoughts} />
+      <div className="feed-conatiner">
+        <Header />
+        <NewThought 
+          newThought={newThought} 
+          setNewThought={setNewThought} 
+          thoughts={thoughts} 
+          setThoughts={setThoughts} />
+        <Thoughts thoughts={thoughts} setThoughts={setThoughts} />
+      </div>
     </section>
   );
 }

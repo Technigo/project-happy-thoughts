@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import moment from 'moment';
 
 const Thoughts = ({ thoughts, setThoughts }) => {
+  // get list of thoughts but only once
   useEffect(() => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
@@ -11,6 +12,7 @@ const Thoughts = ({ thoughts, setThoughts }) => {
       .finally(() => console.log('list of thoughts'))
   }, []);
 
+  // add likes to server and GUI when clicking the heart
   const onLikesIncrease = (thoughtId) => {
     const options = {
       method: 'post',
@@ -18,16 +20,21 @@ const Thoughts = ({ thoughts, setThoughts }) => {
         'content-type': 'application/json'
       }
     };
+    // increases likes count on server for specific thought id
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
-      .then((res) => res.json())
+    // updates the list with new likes count  
+    .then((res) => res.json())
       .then((data) => {
+        // create new list of thoughts with new likes count
         const updatedThoughts = thoughts.map((thought) => {
+          // updates like count for the thought that was liked
           if (thought._id === data._id) {
             thought.hearts += 1;
           }
 
           return thought;
         });
+        // updates thought with new likes count
         setThoughts(updatedThoughts);
       });
   }
@@ -40,7 +47,7 @@ const Thoughts = ({ thoughts, setThoughts }) => {
             <p className="thought-message">{thought.message}</p>
             <div className="non-statics-box">
               <div className="likes">
-                <button type="button" className="like" onClick={() => onLikesIncrease(thought._id)} ><span> ❤️ </span></button>
+                <button type="button" className={ thought.hearts === 0 ? 'notLiked' : 'liked' } onClick={() => onLikesIncrease(thought._id)} ><span> ❤️ </span></button>
                 <p className="likes-amount">x {thought.hearts}</p>
               </div>
               <p className="thought-posted">{moment(thought.createdAt).fromNow()}</p>

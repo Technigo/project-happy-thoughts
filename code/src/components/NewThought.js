@@ -1,17 +1,25 @@
 import React from 'react';
 
-const NewThought = ({ newThought, setNewThought, onFormSubmit, thoughts, setThoughts }) => {
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ message: newThought })
-  };
+const NewThought = ({ newThought, setNewThought, thoughts, setThoughts }) => {
+  const onFormSubmit = (event) => {
+    // prevent form submit from reloading page
+    event.preventDefault();
 
-  fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-    .then((res) => res.json())
-    .then((data) => setThoughts([data, ...thoughts]));
+    // save thought on server
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message: newThought })
+    })
+      .then((res) => res.json())
+      // update list of thoughts
+      .then((data) => setThoughts([data, ...thoughts]));
+
+    // clear form
+    setNewThought('')
+  }
 
   return (
     <section className="new-container">
