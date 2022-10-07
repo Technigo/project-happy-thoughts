@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import moment from 'moment';
 
@@ -10,7 +10,7 @@ const Thoughts = ({ thoughts, setThoughts }) => {
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
       .finally(() => console.log('list of thoughts'))
-  }, []);
+  }, [setThoughts]);
 
   // add likes to server and GUI when clicking the heart
   const onLikesIncrease = (thoughtId) => {
@@ -22,8 +22,8 @@ const Thoughts = ({ thoughts, setThoughts }) => {
     };
     // increases likes count on server for specific thought id
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
-    // updates the list with new likes count  
-    .then((res) => res.json())
+    // updates the list with new likes count
+      .then((res) => res.json())
       .then((data) => {
         // create new list of thoughts with new likes count
         const updatedThoughts = thoughts.map((thought) => {
@@ -47,7 +47,7 @@ const Thoughts = ({ thoughts, setThoughts }) => {
             <p className="thought-message">{thought.message}</p>
             <div className="non-statics-box">
               <div className="likes">
-                <button type="button" className={ thought.hearts === 0 ? 'notLiked' : 'liked' } onClick={() => onLikesIncrease(thought._id)} ><span> ❤️ </span></button>
+                <button type="button" className={thought.hearts === 0 ? 'notLiked' : 'liked'} onClick={() => onLikesIncrease(thought._id)}><span> ❤️ </span></button>
                 <p className="likes-amount">x {thought.hearts}</p>
               </div>
               <p className="thought-posted">{moment(thought.createdAt).fromNow()}</p>
