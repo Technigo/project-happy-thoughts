@@ -25,9 +25,21 @@ const Thought = (props) => {
       <div className="testlength">
         <h4>{props.thought.message}</h4>
         <div className={styles.likeAndDate}>
-          <button type="button" onClick={handleClick}>
+          <div className={styles.like}>
+            <button
+              className={
+                props.thought.hearts === 0
+                  ? styles.button
+                  : styles.clickedButton
+              }
+              type="button"
+              onClick={handleClick}
+            >
+              <span className={styles.heart}>❤️ </span>
+            </button>
+            <p>x</p>
             {likes}
-          </button>
+          </div>
           <p>{moment(props.thought.createdAt).fromNow()}</p>
         </div>
       </div>

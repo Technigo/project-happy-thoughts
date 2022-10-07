@@ -37,7 +37,7 @@ const CreateThoughts = (props) => {
         />
 
         <button className={styles.button} type="submit">
-          &#10084; Send Happy Thought &#10084;
+          ❤️ Send Happy Thought ❤️
         </button>
       </form>
     </Card>
