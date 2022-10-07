@@ -25,13 +25,19 @@ code {
   justify-content: center;
   margin: 20px;
 }
+
+.text-counter {
+  text-align: right;
+  font-size: 12px;
+  color: grey;
+}
+
 .form-container,
 .thought-card {
   text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 10px;
+  padding: 25px;
   border: 2px solid black;
   box-shadow: 5px 5px;
   background-color: rgba(226, 43, 223, 0.166);
@@ -46,9 +52,48 @@ code {
   align-items: center;
   gap: 10px;
 }
-
+.post-button {
+  border: none;
+  border-radius: 60px;
+  background: #ffb6c1;
+  color: #000;
+  padding: 15px 25px;
+  font-size: 16px;
+  width: fit-content;
+  margin: 0 auto;
+}
+.heart-button {
+  border-radius: 100%;
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 16px;
+}
 .thought {
   word-break: break-word;
+  margin-top: 0;
+}
+
+.likes-time-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: grey;
+}
+
+.time {
+  align-self: flex-end;
+  font-size: 12px;
+  color: rgba(128, 128, 128, 0.651);
+  font-style: italic;
 }
 
 .page-loading {
