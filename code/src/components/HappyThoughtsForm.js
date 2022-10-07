@@ -1,22 +1,40 @@
 import React from 'react';
 
-const HappyThoughtsForm = ({ newHappyThought, onNewThoughtChange, onFormSubmit }) => {
+const HappyThoughtsForm = ({ newHappyThought, fetchHappyThoughts, setNewHappyThought }) => {
+  const onFormSubmit = (event) => event.preventDefault();
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      message: newHappyThought
+    })
+  };
+
+  fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    .then((res) => res.json())
+    .then(() => fetchHappyThoughts())
+    .finally(() => setNewHappyThought(''));
+
+  const onNewThoughtChange = (event) => {
+    setNewHappyThought(event.target.value);
+  };
+
   return (
     <div className="thoughtform-container">
-      <form onSubmit={onFormSubmit}>
+      <form className="thoughtsForm" onSubmit={onFormSubmit}>
         <p className="form-title">Spread some joy, post a happy tweet below</p>
-        {/* <span className="emoji" role="img" aria-label="ice-cream-emoji">🍭</span> */}
         <textarea
           value={newHappyThought}
           onChange={onNewThoughtChange}
-          placeholder="For example, how many dogs did you pet today?"
-          rows="5"
-          cols="30" />
+          placeholder="For example, how many dogs did you pet today?" />
         <button
           className="submit-btn"
           type="submit"
           disabled={newHappyThought.length < 5 || newHappyThought.length > 140}>
-          Send Thought <span role="img" aria-label="heart-emoji">❤️‍🔥</span>
+          Send thought <span role="img" aria-label="heart-emoji">❤️‍🔥</span>
         </button>
       </form>
     </div>
