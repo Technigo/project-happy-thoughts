@@ -3,6 +3,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Roboto Mono', monospace;
+  background-color: #f0dede;
 }
 
 code {
@@ -13,9 +14,11 @@ code {
 h2 {
   font-size: 20px;
 }
+
 .outer-wrapper {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items:center;
   justify-content: center;
 }
@@ -31,10 +34,9 @@ h2 {
 
 .header-container {
   padding: 30px;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 600;
   text-align: center;
-  
 }
 
 /*SendThought - Submit form*/
@@ -86,3 +88,11 @@ button:hover {
   flex-direction: row;
   align-items: center;
 }
+
+/*
+@media (max-width: 700px){ 
+  .header-container {
+    font-size: 20px;
+    font-weight: 400;
+}
+}*/

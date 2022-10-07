@@ -17,7 +17,7 @@ const SendMessage = ({ newMessage, onNewMessageChange, onNewMessageSubmit }) => 
         className="text-counter"
         //Condition to change text color to red when there are only 10 characters left to reach max
         style={{ color: newMessage.length > 130 ? "red" : "black" }}>
-        {140 - newMessage.length} characters left
+        {140 - newMessage.length}/140
         </p>
 
         <button

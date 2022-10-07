@@ -70,8 +70,9 @@ const onLikesIncrease = (LikeID) => {
 
   return (
     <div className="outer-wrapper">
+      <SiteHeader />
       <div className="inner-wrapper">
-        <SiteHeader />
+        
         <SendThought
           newMessage={newMessage}
           onNewMessageChange={onNewMessageChange}
