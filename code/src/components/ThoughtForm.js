@@ -13,7 +13,10 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit, onThoughtLi
           onChange={onNewThoughtChange}
           className="thought"
           placeholder="write something nice here..." />
-        <p>{140 - newThought.length} / 140</p>
+        <p
+          className="character-counter">
+          {140 - newThought.length} / 140
+        </p>
         <button
           type="submit"
           className="submit-button"

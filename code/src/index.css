@@ -45,6 +45,10 @@ p{
   text-align: center;
 }
 
+.character-counter{
+  font-size: 13px;
+}
+
 /* buttons */
 button{
   font-size: 12px;
