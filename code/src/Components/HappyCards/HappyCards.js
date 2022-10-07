@@ -8,7 +8,6 @@ import { formatDistance } from 'date-fns'
 import Form from '../Form/Form'
 import styles from './HappyCards.module.css'
 
-// Creating HappyCards, fetching thoughts data
 const HappyCards = () => {
   const [thoughts, setThoughts] = useState([])
 
@@ -18,7 +17,6 @@ const HappyCards = () => {
       .then((thoughts) => setThoughts(thoughts))
   }, [])
 
-  // Post likes to the API
   const onLike = (thoughtId) => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
       method: 'POST',
@@ -27,7 +25,6 @@ const HappyCards = () => {
     }).then(() => updateLikes(thoughtId))
   };
 
-  // Function for updating likes
   const updateLikes = (thoughtId) => {
     // eslint-disable-next-line no-shadow
     const updatedThoughts = thoughts.map((thought) => {
@@ -37,17 +34,14 @@ const HappyCards = () => {
       return thought;
     })
     setThoughts(updatedThoughts)
-    // The state is changed with the updated thoughts, based on new number of likes
   };
 
-  /* Returning section with key=id, message, hearts
-  (nr of likes) and time created for each thought from the API */
   return (
 
     <>
       <Form setThoughts={setThoughts} />
 
-      <div className={styles.container}>
+      <div className={styles.thoughtContainer}>
 
         {thoughts.map(thought => (
           <section

@@ -36,7 +36,7 @@ const Form = (props) => {
             className={styles.textInput}
             rows="5"
             columns="140"
-            placeholder="Type something... :)"
+            placeholder="Submit a happy thought..."
             type="text"
             name="thought"
             value={newThought}

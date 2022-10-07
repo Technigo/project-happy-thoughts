@@ -1,0 +1,21 @@
+.thoughtForm {
+    background-color: rgb(189, 183, 195);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+    margin-right: 300px;
+    box-shadow: 5px 10px #000000;
+    
+    }
+    .thoughtForm .label {
+        text-align: center;
+    }    
+
+.thoughtInput {
+    text-align: center;
+}
+
+.textInput {
+    resize: none;      
+}
