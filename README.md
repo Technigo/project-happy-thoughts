@@ -1,6 +1,5 @@
 # Happy Thoughts
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 For week seven of the Technigo bootcamp (week three of the React sprint) our assignment was to create a "twitter-like" web app to practice fetching and posting to APIs.
 
 ## The problem
