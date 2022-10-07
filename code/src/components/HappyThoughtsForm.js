@@ -1,22 +1,7 @@
 import React from 'react';
 
-const HappyThoughtsForm = ({ newHappyThought, fetchHappyThoughts, setNewHappyThought }) => {
+const HappyThoughtsForm = ({ newHappyThought, setNewHappyThought }) => {
   const onFormSubmit = (event) => event.preventDefault();
-
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      message: newHappyThought
-    })
-  };
-
-  fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-    .then((res) => res.json())
-    .then(() => fetchHappyThoughts())
-    .finally(() => setNewHappyThought(''));
 
   const onNewThoughtChange = (event) => {
     setNewHappyThought(event.target.value);
@@ -25,7 +10,7 @@ const HappyThoughtsForm = ({ newHappyThought, fetchHappyThoughts, setNewHappyTho
   return (
     <div className="thoughtform-container">
       <form className="thoughtsForm" onSubmit={onFormSubmit}>
-        <p className="form-title">Spread some joy, post a happy tweet below</p>
+        <p className="form-title">Spread some joy! Post your happy thoughts below</p>
         <textarea
           value={newHappyThought}
           onChange={onNewThoughtChange}

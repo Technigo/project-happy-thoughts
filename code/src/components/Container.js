@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import HappyThoughts from './HappyThoughts';
 import HappyThoughtsForm from './HappyThoughtsForm';
 
@@ -21,15 +21,23 @@ const Container = () => {
   }, []);
 
   return (
-    <div>
-      <HappyThoughtsForm
-        newHappyThought={newHappyThought}
-        fetchHappyThoughts={fetchHappyThoughts} />
+    <>
+      <div>
+        <HappyThoughtsForm
+          newHappyThought={newHappyThought}
+          fetchHappyThoughts={fetchHappyThoughts}
+          setNewHappyThought={setNewHappyThought} />
+        <div className="bunny-container" />
+        <span className="bunny">   /)   /)<br />
+        (ᵔ ᵕ ᵔ) <br />
+        / づ  づ ~ ♡
+        </span>
+      </div>
       <HappyThoughts
         loading={loading}
         happyThoughts={happyThoughts}
         setNewHappyThought={setNewHappyThought} />
-    </div>
+    </>
   )
 };
 export default Container;
