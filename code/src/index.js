@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
+// eslint-disable-next-line import/no-cycle
 import { App } from './App';
 
 const container = document.getElementById('root');
