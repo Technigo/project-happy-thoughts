@@ -1,11 +1,15 @@
 import React from 'react';
 
 import Container from 'components/Container';
+import Footer from 'components/Footer';
 
 export const App = () => {
   return (
-    <main>
-      <Container />
-    </main>
+    <div>
+      <main>
+        <Container />
+      </main>
+      <Footer />
+    </div>
   )
 };

@@ -1,6 +1,6 @@
 body {
   /* GRADIENT ANIMATION--> */
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ffdede, #e73c7e, #ccffec, #fdfdc4);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100%;
@@ -27,8 +27,8 @@ h1, p, button {
 
 /* BUTTON STYLES */
 button {
-  background-color: #ea9ccb;
-  border-color: #ea9ccb;
+  background-color: #ffdede;
+  border-color: #ffdede;
   border-style: none;
 }
 
@@ -41,7 +41,7 @@ button {
 }
 
 .submit-btn:hover {
-  background-color: #db7db6;
+  background-color: #e73c7e;
   /*  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
 	transform: scale(1.1); */
 }
@@ -68,6 +68,8 @@ button {
 textarea {
   width: calc(50vw - 50px);
   height: 50px;
+  outline-color: #e73c7e;
+  resize: none;
 }
 
 /* SINGLE THOUGHT CONTAINER */
@@ -100,6 +102,16 @@ textarea {
 
 .timestamp {
   color: rgb(132, 132, 132);
+}
+
+.footer {
+  
+  margin: 50px auto 25px;
+  text-align: center;
+}
+.footer p {
+  font-size: 15px;
+  line-height: 1px;
 }
 
 /* GRADIENT ANIMATION */
