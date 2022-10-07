@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
+const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit, onThoughtLikeChange }) => {
   return (
     <form
       onSubmit={onFormSubmit}
@@ -15,7 +15,8 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
           placeholder="write something nice here..." />
         <button
           type="submit"
-          className="submit-button">
+          className="submit-button"
+          onChange={onThoughtLikeChange}>
            💖Send happy thought💖
         </button>
       </div>

@@ -2,7 +2,7 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-shadow */
 import React from 'react';
-import { formatDistance } from 'date-fns';
+import { formatDistance } from 'date-fns'; // did npm install date-fns
 
 const ThoughtList = ({ loading, thoughtList, onThoughtLikeChange }) => {
   if (loading) {
@@ -17,6 +17,9 @@ const ThoughtList = ({ loading, thoughtList, onThoughtLikeChange }) => {
           <div className="thought-detail">
             <button
               type="button"
+              /* an if conditional that says if the count of the heart is zero,
+              then the className would be empty-button,
+              otherwise it would be like-button */
               className={thought.hearts === 0 ? 'empty-button' : 'like-button'}
               onClick={() => onThoughtLikeChange(thought._id)}>💖
             </button>
