@@ -2,23 +2,11 @@
 import React from 'react';
 import { formatRelative } from 'date-fns';
 
-export const ThoughtsFlow = ({ loading, thoughts, setNewMessage }) => {
+export const ThoughtsFlow = ({ loading, thoughts, onLikesIncrease }) => {
   if (loading) {
     return <h1>Loading in progress...</h1>
-  }
-  const onLikesIncrease = (LikeID) => {
-    const options = {
-      method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-  }
-
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`, options)
-      .then((res) => res.json())
-      .then((data) => {
-        .then(() => fetchThoughts())
-      })
-  }
+  } 
+ 
 
   return (
 

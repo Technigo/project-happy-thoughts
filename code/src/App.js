@@ -43,9 +43,19 @@ export const App = () => {
       .then(() => fetchThoughts())
       .finally(() => setNewMessage(''));
   }
+  const onLikesIncrease = (LikeID) => {
+    const options = {
+      method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+  }
 
-  
-
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`, options)
+      .then((res) => res.json())
+      .then((data) => {
+        .then(() => fetchThoughts())
+      })
+  }
   return (
     <div>
       <ThoughtsForm
@@ -55,7 +65,7 @@ export const App = () => {
       <ThoughtsFlow
         loading={loading}
         thoughts={thoughts}
-        setNewMessage={setNewMessage} />
+        onLikesIncrease={onLikesIncrease} />
     </div>
   )
 }
