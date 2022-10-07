@@ -27,24 +27,25 @@ background-color: rgb(242, 241, 241);
 
   .submitTitle {
     font-size: 80%;
+    margin: 2%;
   }
 
   .inputArea {
     height: 10%;
     width: 95%;
-    /* margin: 0 auto; */
+    margin: 2%;
   }
 
   .submitButton {
-    width: 50%;
+    width: 60%;
     border-radius: 25px;
     padding: 2%;
-   /*  margin: 2% auto; */
+    margin: 2% 2% 5% 2%;
     background-color: #FFADAD;
   }
 
-  .heart {
-    color: red;
+  .submitButton:hover {
+    opacity: 0.5;
   }
 
 .box {
@@ -53,4 +54,55 @@ background-color: rgb(242, 241, 241);
   margin: 3% auto;
   border: 1px solid black;
   box-shadow: 5px 5px;
+}
+
+.boxCard {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.postedThought {
+  margin: 5%;
+  flex-basis: 100%;
+  height: 1;
+  overflow: scroll;
+}
+
+.noLikesButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  margin: 5% 2% 5% 5%;
+  background-color: rgb(242, 241, 241)
+}
+
+.noLikesButton:hover {
+  background-color: #FFADAD;
+}
+
+.likeButton {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border: none;
+background-color: #FFADAD;
+margin: 5% 2% 5% 5%;
+}
+
+.likeButton:hover{
+  opacity: 0.5;
+}
+
+.likes {
+  justify-content: left;
+  width: fit-content;
+  margin: 10% 2% 5% 2%;
+}
+
+.postedTime{
+  margin-left: auto;
+  margin-top: 10%;
+  padding-right: 5%;
+  
 }
