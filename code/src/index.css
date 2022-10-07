@@ -49,13 +49,12 @@ margin-bottom:0.5vh;
 
 .form-submit-button {
   border-radius: 40vh;
-  background: rgba(250, 128, 119, 0.658);
+  background-color: rgba(250, 128, 119, 0.658);
   align-self: flex-start;
   padding-top:1vh;
   padding-bottom:1vh;
-  border: none;
-  color: black;
   display: flex;
+  border: none;
   justify-content: center;
   align-items:center;
   width: 70%;
@@ -64,7 +63,7 @@ margin-bottom:0.5vh;
 .form-submit-button:hover {
   scale:1.05;
   background: rgba(250, 128, 119, 0.904);
-}
+  }
 
 .other-tweets-container {
   display: flex;
