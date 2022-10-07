@@ -82,6 +82,7 @@ h2 {
 .message {
   margin-top: 0px;
   margin-bottom: 10px;
+  overflow: auto;
 }
 
 .heart-and-counter-container {
