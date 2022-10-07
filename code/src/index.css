@@ -41,11 +41,10 @@ h1 {
 
 .new-thought-box {
   width: 100%;
-  /*box-shadow: 4px 6px #333;*/
   margin-bottom: 20px;
-  box-shadow: 7px 7px 0px 1px rgba(0, 0, 0, 0.42);
+  box-shadow: 7px 7px 0px 1px #333;
   background-color: white;
-  border: 1px solid rgb(187, 185, 185);
+  border: 1px solid #333;
   border-radius: 4px;
 }
 
@@ -58,7 +57,6 @@ label {
 textarea {
   height: 50px;
   margin-top: 10px;
-  border-color: #fab8b8;
   border-radius: 4px;
   padding: 10px;
 }
@@ -95,13 +93,13 @@ textarea {
 
 .thought-list-box {
   width: 100%;
-  border: 1px solid rgb(187, 185, 185);
   border-radius: 4px;
-  box-shadow: 7px 7px 0px 1px rgba(0, 0, 0, 0.42);
   display: flex;
   flex-direction: column;
   background-color: white;
   word-wrap: break-word;
+  box-shadow: 7px 7px 0px 1px #333;
+  border: 1px solid #333;
 }
 
 .thought-list-item {
@@ -166,7 +164,6 @@ textarea {
 }
 
 /**** Deskstop *****/
-
 @media (min-width: 1025px) {
   .new-thought-box {
     width: 50%;
