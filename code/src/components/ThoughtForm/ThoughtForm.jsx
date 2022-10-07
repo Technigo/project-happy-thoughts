@@ -6,19 +6,32 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
   // with the form further down
   const [thought, setThought] = useState('');
 
+  // for handling when a message is too short to be posted
+  const [tooShortThought, setTooShortThought] = useState('');
+
   // these things are for the character countdown
   const maxChars = 140;
   const [remainingChars, setRemainingChars] = useState(maxChars);
 
-  // Since two things had to be handled when the textarea input changes:
-  // The actual input value/thought state will be set
-  // and used in the POST request further down.
-  // And also the counting down the characters being typed in
+  // Two things had to be handled when the textarea input changes:
+  // On form submit the input value/thought state
+  // will be used in the POST request further down.
+  // But since it's an onChange event it's also used for
+  // counting down characters left while something is being typed in.
   // That's why I put both of these things in the same function.
   const handleInputChange = (event) => {
     const input = event.target.value;
     setThought(input);
     setRemainingChars(maxChars - input.length);
+    if (remainingChars < 135) {
+      setTooShortThought('');
+    }
+  };
+
+  const handleTooShortThought = () => {
+    if (thought.length < 5) {
+      setTooShortThought('Too short! ☺️');
+    }
   };
 
   // A function for empyting the textarea input after post request is done
@@ -27,12 +40,6 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
     setThought('');
     setRemainingChars(maxChars);
   };
-
-  /*   const handleButtonClick = () => {
-    if (thought.length < 5) {
-      alert('Your message must be at least 5 characters ☺️');
-    }
-  }; */
 
   // Post request when clicking the send-button in the form
   const handleFormSubmit = (event) => {
@@ -49,8 +56,7 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
       .catch((error) => console.error(error))
       .then((newThought) => {
         if (newThought.message === 'Could not save thought') {
-          alert('Your message must be at least 5 characters ☺️');
-          console.log(newThought.message)
+          handleTooShortThought(newThought.message);
         } else {
           setThoughtsFeed((previousThoughts) => [newThought, ...previousThoughts])
         }
@@ -66,7 +72,7 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
           id="thought-input"
           maxLength={maxChars}
           onChange={handleInputChange}
-          placeholder="Type thoughts..."
+          placeholder="Type happy thought..."
           value={thought} />
       </label>
       <div className={styles.sendButtonAndCharsContainer}>
@@ -79,9 +85,12 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
           type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought <span role="img" aria-label="heart">❤️</span>
         </button>
         {/* if you haven't typed 5 or more characters the counter will be red, else gray */}
-        <p className={remainingChars > 135 ? styles.notEnoughChars : styles.remainingChars}>
-          {remainingChars}<span className={styles.remainingChars}> / 140</span>
-        </p>
+        <div className={styles.charsAndTooShortContainer}>
+          <p className={remainingChars > 135 ? styles.notEnoughChars : styles.remainingChars}>
+            {remainingChars}<span className={styles.remainingChars}> / 140</span>
+          </p>
+          <p className={styles.tooShort}>{tooShortThought}</p>
+        </div>
       </div>
     </form>
   );

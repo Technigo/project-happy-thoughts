@@ -4,11 +4,6 @@
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
+  width: 90%;
   max-width: 700px;
-}
-
-@media (max-width: 720px) {
-  .feedGrid {
-    width: 90%;
-  }
 }
