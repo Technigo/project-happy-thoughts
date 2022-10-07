@@ -15,7 +15,7 @@ export const ThoughtsPage = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((data) => data.json())
-      .then((transformedData) => setThoughts(transformedData.reverse()))
+      .then((transformedData) => setThoughts(transformedData))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   };
