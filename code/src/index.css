@@ -134,7 +134,7 @@ textarea {
 
 .the-thought {
   height: 30px;
-  overflow: scroll;
+  overflow: auto;
   overflow-wrap: break-word;
   font-size: 15px;
   margin-bottom: 0;

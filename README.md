@@ -8,5 +8,4 @@ I attended the live sessions, read all the materials and watched the recorded vi
 If I had more time, I would use it to rewatch more all the videos and maybe put more fun stuff on the page like putting in your username, but for now I'm happy with it.
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://sage-sable-b6a30a.netlify.app
