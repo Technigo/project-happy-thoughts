@@ -1,4 +1,4 @@
-# Happy Thoughts
+# ❤️ Happy Thoughts ❤️
 
 This project was done during week 7 of Technigo's Boot Camp. It is about working with changes in state or a component mounting using useEffect in React, as well as fetching and posting data to an API.
 
