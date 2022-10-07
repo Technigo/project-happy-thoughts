@@ -30,6 +30,7 @@ code {
   margin-top: 2em;
   margin-bottom: 2em;
   color: #14171A;
+  word-wrap: break-word;
 }
 
 /*NewTweet*/
