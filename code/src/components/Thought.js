@@ -4,9 +4,11 @@ import Heart from './Heart';
 
 const Thought = ({ id, message, hearts, createdAt }) => {
   const [heartCount, setHeartCounter] = useState(hearts)
+  const [clicked, setClicked] = useState(false)
 
   const handleHeartBtnClick = () => {
-    console.log(id)
+    setClicked(true)
+
     const options = {
       method: 'POST',
       headers: {
@@ -15,7 +17,10 @@ const Thought = ({ id, message, hearts, createdAt }) => {
     }
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, options)
       .then((response) => response.json())
-      .then(() => setHeartCounter(heartCount + 1))
+      .then(() => {
+        setHeartCounter(heartCount + 1)
+        setTimeout(() => { setClicked(false); }, 600);
+      })
   }
 
   return (
@@ -24,8 +29,9 @@ const Thought = ({ id, message, hearts, createdAt }) => {
       <div className="metadata">
         <div className="likes">
           <Heart
-            likes={heartCount}
+            clicked={clicked}
             heartBtnClick={handleHeartBtnClick}
+            likes={heartCount}
             thoughtId={id} />
           <p> x {heartCount}</p>
         </div>

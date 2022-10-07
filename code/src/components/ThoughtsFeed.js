@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect } from 'react';
 import Thought from './Thought';
@@ -10,8 +9,6 @@ const ThoughtsFeed = ({ list }) => {
   return (
     <section>
       {list.map((singleThought) => {
-        console.log(singleThought)
-
         return (
           <Thought
             key={singleThought._id}

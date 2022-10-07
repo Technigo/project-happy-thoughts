@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=JetBrains+Mono&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Roboto&display=swap');
 body {
   margin: 0;
-  font-family: 'DM Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,6 +33,7 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   width: 100%;
   box-sizing: border-box;
   border: 2px solid black;
@@ -40,14 +41,70 @@ form {
   background-color: #E1E1E1;
   margin-bottom: 30px;
   box-shadow: 5px 5px 0px 0px #000000;
+  
+}
+form p {
+  color: #7f7f7f;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  position: absolute;
+  bottom: 2px;
+  right: 1px;
+  text-align: right;
+  padding: 0px 5px 2px 0px;
+  box-sizing: border-box;
+  background-color: white;
 }
 
-form button {
+button {
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.send-button {
   background-color: #FFA1A1 ;
   border: none;
   border-radius: 20px;
   height: 40px;
   font-weight: 700;
+  transition: all 0.1s ease-in-out;
+  padding: 0px 16px;
+  transition: all 0.5s ease-in-out;
+
+}
+
+button:hover {
+  background-color: #ff6262;
+}
+
+.send-button:active {
+  background-color: #ff6262;
+  color: white;
+  transform: translateY(4px);
+}
+.text-input {
+  border: 1px solid darkgrey;
+  width: 100%;
+  background-color: white;
+  border: 1px solid rgb(133, 133, 133);
+  position: relative;
+}
+.text-input:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+.textarea {
+  min-height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  padding-bottom: 14px;
+}
+.disabled-textarea {
+  color: red;
+  min-height: 60px;
 }
 
 .thought {
@@ -58,6 +115,7 @@ form button {
   margin-bottom: 30px;
   box-shadow: 5px 5px 0px 0px #000000;
 }
+
 .message {
   font-family: 'JetBrains Mono', monospace;
   padding: 10px 0px;
@@ -74,7 +132,8 @@ form button {
 
 .likes {
   display: flex;
-  align-items: baseline;}
+  align-items: baseline;
+}
 
 .heart-no-likes {
   background-color: #E1E1E1;
@@ -90,20 +149,29 @@ form button {
   border-radius: 50%;
   margin-right: 6px;
   border: none;
-
 }
-button {
-  font-family: 'JetBrains Mono', monospace;
-  margin-top: 20px;
-  cursor: pointer;
+.heart-like {
+animation: rotation 0.3s;
+animation-iteration-count: 1;
 }
 
-textarea {
-  height: 60px;
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
 }
+
 
 @media (min-width: 667px) {
   .inner-container {
-    max-width: 625px;
+    max-width: 800px;
   }
+
+  /* form button {
+    min-width: 315px;
+    width: 50%;
+  } */
 }

@@ -5,8 +5,8 @@ import Form from 'components/Form';
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
+  const [charactersCount, setCharactersCount] = useState(0)
 
-  // create promise
   const fetchThoughts = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((response) => response.json())
@@ -20,6 +20,7 @@ export const App = () => {
 
   const handleNewThoughtChange = ((event) => {
     setNewThought(event.target.value)
+    setCharactersCount(event.target.value.length)
   })
 
   const handleSubmit = ((event) => {
@@ -36,7 +37,13 @@ export const App = () => {
     }
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((response) => response.json())
-      .then((lastThought) => setThoughts((previousThoughts) => [lastThought, ...previousThoughts]))
+      .then((lastThought) => {
+        if (lastThought.errors) {
+          window.alert('Your message is too short or too long. Rephrase your thought and try again! 💭');
+        } else {
+          setThoughts((previousThoughts) => [lastThought, ...previousThoughts])
+        }
+      })
       .finally(() => setNewThought(''));
   })
   return (
@@ -45,7 +52,8 @@ export const App = () => {
         <Form
           onFormSubmit={handleSubmit}
           onNewThought={newThought}
-          onNewThoughtChange={handleNewThoughtChange} />
+          onNewThoughtChange={handleNewThoughtChange}
+          charactersCount={charactersCount} />
         <ThoughtsFeed
           list={thoughts}
           fetchThoughts={fetchThoughts} />
