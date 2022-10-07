@@ -4,7 +4,6 @@ import ThoughtGenerator from 'components/ThoughtGenerator'
 import PostThought from 'components/PostThought'
 
 export const App = () => {
-  // const [counter, setCounter]=useState(0);
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');

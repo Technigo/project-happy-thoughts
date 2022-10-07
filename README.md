@@ -1,13 +1,18 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This week assignment was to create a "Twitter-similar" site and practice our React state skills by fetching and posting data to an API.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+We worked with a Happy Thoughts API which showcases previously posted thoughts, gives us the possibility to post new thoughts and also give likes to the already existing ones.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Criterias:
+✓ The page should follow a predefined design as closely as possible
+✓ You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
+✓ Your thoughts should show the content of the message and how many likes they've received
+✓ You should have a form to post new thoughts
+✓ You should implement the heart button to send likes on a thought
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://steady-faun-1238b0.netlify.app/
