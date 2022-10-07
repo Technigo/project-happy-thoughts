@@ -1,7 +1,8 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-shadow */
 import React from 'react';
-import { formatDistanceToNow } from 'date-fns';
+import { formatDistance } from 'date-fns';
 
 const ThoughtList = ({ loading, thoughtList, onThoughtLikeChange }) => {
   if (loading) {
@@ -17,15 +18,13 @@ const ThoughtList = ({ loading, thoughtList, onThoughtLikeChange }) => {
             <button
               type="button"
               className={thought.hearts === 0 ? 'empty-button' : 'like-button'}
-              onClick={() => onThoughtLikeChange(thought._id)}><span>💖</span>
+              onClick={() => onThoughtLikeChange(thought._id)}>💖
             </button>
             <p className="likes">x{thought.hearts}</p>
             <p className="time-detail">
-              {formatDistanceToNow(
-                new Date(thought.createdAt),
-                Date.now(),
-                { addSuffix: true }
-              )}
+              {formatDistance(new Date(thought.createdAt), Date.now(), {
+                addSuffix: true,
+              })}
             </p>
           </div>
         </div>
