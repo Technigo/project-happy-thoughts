@@ -8,7 +8,6 @@ const ThoughtList = ({ thoughts, onLikesIncrease }) => {
       {thoughts.map((thought) => (
         <div className="list-card" key={thought._id}>
           <p className="thought-text">{thought.message}</p>
-
           <div className="like-container">
             <button
               onClick={() => onLikesIncrease(thought._id)}
@@ -16,7 +15,7 @@ const ThoughtList = ({ thoughts, onLikesIncrease }) => {
               className="like-btn">❤️
             </button>
             <p className="like-counter">x {thought.hearts}</p>
-            <p>{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
+            <p className="time-p">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
           </div>
         </div>
       ))}
