@@ -4,6 +4,7 @@ import ThoughtGenerator from 'components/ThoughtGenerator'
 import PostThought from 'components/PostThought'
 
 export const App = () => {
+  // const [counter, setCounter]=useState(0);
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
@@ -77,7 +78,7 @@ export const App = () => {
 
   return (
     <>
-      <h1>❤️ Happy thoughts ❤️ </h1>
+      <h1>❤️ Happy thoughts ❤️</h1>
       <div className="Container">
         <PostThought
           newThought={newThought}
