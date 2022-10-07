@@ -13,9 +13,10 @@ const ThoughtList = ({ loading, thoughtList, handleNewLikeChange }) => {
         <div className="message-wrapper" key={thought._id}>
           <h4>{thought.message}</h4>
           <div className="heart-counter-wrapper">
-            <p className="heart-count"> </p>
-            <button className="heart-button" type="button" onClick={() => handleNewLikeChange(thought._id)}>❤️</button>
-            <p> {thought.hearts}</p>
+            <div className="heart-details">
+              <button className="heart-button" type="button" onClick={() => handleNewLikeChange(thought._id)}>❤️</button>
+              <p className="heart-count"> {thought.hearts}</p>
+            </div>
             <p className="timestamp">{formatDistance(new Date(thought.createdAt), Date.now(), {
               addSuffix: true
             })}

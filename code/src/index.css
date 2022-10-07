@@ -1,10 +1,11 @@
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(255,173,173);
+  background: radial-gradient(circle, rgba(255,173,173,1) 35%, rgba(255,255,255,1) 100%);
 }
 
 h1 {
@@ -15,61 +16,46 @@ font-weight: 200;
 
 h4{
   font-size: 18px;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 200;
 }
 
 p {
   font-size:16px;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Roboto Mono', monospace;
+  margin: 10px 0px 5px 5px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.thoughtinput-wrapper {
+.thought-input-wrapper {
   border: 1px solid #000;
   box-shadow: 7px 7px #000;
   width: 50vw;
-  height: 13vw;
+  height: 25vh;
   margin: 30px auto;
-  padding: 0px 25px 5px 5px;
-  position: relative;
+  padding: 0px 25px 5px 25px;
   background-color: #F2F0F0;
+  position:relative;
 }
 
-
-.add-thought-input-field {
-  width: calc(50vw - 50px);
-  height: 60px;
-  font-family: "Inconsolata", monospace;
-  padding: 10px;
-  margin: 10px auto 5px auto;
-  resize: none;
-  outline-color: #ffadad;
-}
-
-.add-thought-button {
+.send-thought-button {
   border: none;
   border-radius: 25px;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 16px;
   background: #ffadad;
   padding: 10px 15px;
-  margin: 0 0 15px 0;
-}
-
-.add-thought-button {
+  margin: 10px 0 15px 0;
   outline-color: #ffadad;
+  position: absolute;
+  display: flex;
 }
 
 .text-input-area {
   width: calc(50vw - 50px);
   height: 60px;
-  font-family: "Inconsolata",monospace;
+  font-family: 'Roboto Mono',monospace;
   padding: 10px;
-  margin: 10px auto 5px;
+  margin: 0px auto 5px;
   resize: none;
   outline-color:#ffadad;
 }
@@ -78,22 +64,31 @@ code {
   border: 1px solid #000;
   box-shadow: 7px 7px #000;
   width: 50vw;
-  height: 13vw;
+  height: 15vh;
   margin: 30px auto;
-  padding: 0px 25px 5px 5px;
+  padding: 0px 25px 5px 25px;
   position: relative;
+  background-color: white;
 }
 
 .heart-counter-wrapper {
-  display:flex;
+  display: flex;
+  justify-content: space-between;
 }
 
 .heart-button {
   border: none;
-  border-radius: 50px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
   font-size: 16px;
-  padding: 10px 5px;
+  padding: 5px 5px;
   background-color: #F2F0F0;
+  display: inline-block;
+}
+
+.heart-count {
+  display: inline-block;
 }
 
 .heart-button:active {
@@ -101,7 +96,6 @@ code {
 }
 
 .timestamp {
-  position: absolute;
   right: 5%;
 }
 
@@ -112,7 +106,7 @@ code {
   }
 }
 @media (max-width: 768px) {
-  .thought-wrapper {
+  .thought-input-wrapper {
     width: 70vw;
   }
 
@@ -126,7 +120,7 @@ code {
   }
 }
 @media (max-width: 560px) {
-  .thought__wrapper {
+  .thought-input-wrapper {
     width: 90vw;
   }
 
