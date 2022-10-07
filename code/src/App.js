@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import TaskList from 'components/TaskList';
-import TaskForm from 'components/TaskForm';
+import HappyThoughtsList from 'components/HappyThoughtsList';
+import HappyThoughtsForm from 'components/HappyThoughtsForm';
 
 export const App = () => {
-  const [counter, setCounter] = useState(0);
-  const [taskList, setTaskList] = useState([]);
+  const [happyThoughtsList, setHappyThoughtsList] = useState([]);
   const [newTask, setNewTask] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -15,9 +14,9 @@ export const App = () => {
   const fetchData = () => {
     setLoading(true);
 
-    fetch('https://week7-backend.herokuapp.com/tasks')
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((data) => data.json())
-      .then((transformedData) => setTaskList(transformedData.reverse()))
+      .then((transformedData) => setHappyThoughtsList(transformedData.reverse()))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -25,16 +24,6 @@ export const App = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
-  // will trigger first when app starts, and every time the variable in the dependency array changes
-
-  useEffect(() => {
-    // window.alert(`the current counter is ${counter}`);
-  }, [counter]);
-
-  const handleCounterIncreaseButtoncClick = () => {
-    setCounter(counter + 1);
-  }
 
   const onNewTaskChange = (event) => {
     setNewTask(event.target.value);
@@ -50,15 +39,19 @@ export const App = () => {
     const options = {
       method: 'POST',
       body: JSON.stringify({
-        description: newTask
+        message: newTask
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     }
     setLoading(true);
-    fetch('https://week7-backend.herokuapp.com/tasks', options)
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((data) => data.json())
+      .then((data) => {
+        console.log(data)
+        return data
+      })
       .then(() => fetchData())
       .catch((error) => console.error(error))
       .finally(() => handleFormCleanup());
@@ -69,13 +62,11 @@ export const App = () => {
 
   return (
     <div>
-      <p>{counter}</p>
-      <button onClick={handleCounterIncreaseButtoncClick} type="button">counter increase</button>
-      <TaskForm
+      <HappyThoughtsForm
         handleFormSubmit={handleFormSubmit}
         onNewTaskChange={onNewTaskChange}
         newTask={newTask} />
-      <TaskList list={taskList} />
+      <HappyThoughtsList list={happyThoughtsList} />
     </div>
   );
 }
