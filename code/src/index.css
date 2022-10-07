@@ -11,6 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app {
+  min-height: 100vh;
+}
 .main-container {
   display: flex;
   flex-direction: column;
@@ -45,4 +49,11 @@ code {
 
 .thought {
   word-break: break-word;
+}
+
+.page-loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(137, 43, 226, 0.229);
 }

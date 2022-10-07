@@ -3,16 +3,18 @@
 import React from 'react';
 import SingleThought from './SingleThought';
 
-export const ThoughtsList = ({ thoughts }) => {
+export const ThoughtsList = ({ thoughts, fetchThoughts }) => {
   return (
     <section>
       {thoughts.map((thought) => {
         return (
           <div className="input-wrapper" key={thought._id}>
             <SingleThought
+              id={thought._id}
               message={thought.message}
               hearts={thought.hearts}
               createdAt={thought.createdAt}
+              fetchThoughts={fetchThoughts}
             />
           </div>
         );

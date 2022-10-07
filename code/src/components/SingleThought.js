@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable comma-dangle */
+import React from 'react';
 import { formatDistance } from 'date-fns';
 
-const SingleThought = ({ message, hearts, createdAt }) => {
-  const [counter, setCounter] = useState(0);
-  useEffect(() => {}, [counter]);
+const SingleThought = ({ message, hearts, createdAt, id, fetchThoughts }) => {
+  const API_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
 
-  const handleHeartClick = () => {
-    setCounter(counter + 1);
+  const onThoughtLike = (event) => {
+    event.preventDefault();
+
+    const options = {
+      method: 'POST',
+    };
+    fetch(API_URL, options)
+      .then((data) => data.json())
+      .then(() => fetchThoughts())
+      .catch((error) => console.error(error));
   };
 
   if (message === undefined) {
@@ -19,12 +27,11 @@ const SingleThought = ({ message, hearts, createdAt }) => {
       <div className="like-container">
         <button
           className="heart-button"
-          onClick={handleHeartClick} // Måste vara kopplad till API
+          onClick={onThoughtLike} // Måste vara kopplad till API
           type="button">
-          ❤️
+          {hearts === 0 ? '🤍' : '❤️'}
         </button>
-        <p>x{counter}</p>
-        <p>Likes:{hearts}</p>
+        <p>{hearts > 0 && `x ${hearts}`}</p>
         <p>
           {formatDistance(new Date(createdAt), Date.now(), { addSuffix: true })}
         </p>

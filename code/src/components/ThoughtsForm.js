@@ -4,11 +4,11 @@ import React from 'react';
 export const ThoughtsForm = ({
   newThought,
   onNewThoughtChange,
-  onFormSubmit,
+  onThoughtPost,
 }) => {
   return (
     <div className="input-wrapper">
-      <form className="form-container" onSubmit={onFormSubmit}>
+      <form className="form-container" onSubmit={onThoughtPost}>
         <h2>Whats making you happy right now?</h2>
         <textarea
           value={newThought}
