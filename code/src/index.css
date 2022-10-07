@@ -13,12 +13,22 @@ line-height: 0px;
 font-weight: 200;
 }
 
+h4{
+  font-size: 18px;
+  font-family: "Inconsolata", monospace;
+}
+
+p {
+  font-size:16px;
+  font-family: "Inconsolata", monospace;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.thought-input-wrapper {
+.thoughtinput-wrapper {
   border: 1px solid #000;
   box-shadow: 7px 7px #000;
   width: 50vw;
@@ -43,6 +53,7 @@ code {
 .add-thought-button {
   border: none;
   border-radius: 25px;
+  font-family: "Inconsolata", monospace;
   font-size: 16px;
   background: #ffadad;
   padding: 10px 15px;
@@ -63,3 +74,74 @@ code {
   outline-color:#ffadad;
 }
 
+.message-wrapper {
+  border: 1px solid #000;
+  box-shadow: 7px 7px #000;
+  width: 50vw;
+  height: 13vw;
+  margin: 30px auto;
+  padding: 0px 25px 5px 5px;
+  position: relative;
+}
+
+.heart-counter-wrapper {
+  display:flex;
+}
+
+.heart-button {
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  padding: 10px 5px;
+  background-color: #F2F0F0;
+}
+
+.heart-button:active {
+  background: rgba(255, 173, 173, 0.8);
+}
+
+.timestamp {
+  position: absolute;
+  right: 5%;
+}
+
+@media (min-width: 1024px) {
+  .heart-counter-wrapper {
+    right: 24vw;
+    top: 24vh;
+  }
+}
+@media (max-width: 768px) {
+  .thought-wrapper {
+    width: 70vw;
+  }
+
+  .thought-input-field {
+    width: calc(70vw - 50px);
+  }
+
+  .heart-counter-wrapper {
+    top: 24vh;
+    right: 18vw;
+  }
+}
+@media (max-width: 560px) {
+  .thought__wrapper {
+    width: 90vw;
+  }
+
+  .thought-input-field {
+    width: calc(90vw - 50px);
+  }
+
+  .heart-counter-wrapper {
+    top: 24vh;
+    right: 11vw;
+  }
+}
+@media (max-width: 375px) {
+  .heart-counter-wrapper {
+    top: 27vh;
+    right: -2vw;
+  }
+}

@@ -10,14 +10,17 @@ const ThoughtList = ({ loading, thoughtList, handleNewLikeChange }) => {
     <section>
       {thoughtList.map((thought) => (
         // eslint-disable-next-line no-underscore-dangle
-        <div key={thought._id}>
+        <div className="message-wrapper" key={thought._id}>
           <h4>{thought.message}</h4>
-          <button type="button" onClick={() => handleNewLikeChange(thought._id)}>❤️</button>
-          <p> {thought.hearts}</p>
-          <p>{formatDistance(new Date(thought.createdAt), Date.now(), {
-            addSuffix: true
-          })}
-          </p>
+          <div className="heart-counter-wrapper">
+            <p className="heart-count"> </p>
+            <button className="heart-button" type="button" onClick={() => handleNewLikeChange(thought._id)}>❤️</button>
+            <p> {thought.hearts}</p>
+            <p className="timestamp">{formatDistance(new Date(thought.createdAt), Date.now(), {
+              addSuffix: true
+            })}
+            </p>
+          </div>
         </div>
       ))}
     </section>
