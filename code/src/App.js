@@ -5,16 +5,13 @@ import HappyThoughtList from 'Components/HappyThoughtList'
 import Footer from 'Components/Footer';
 import Header from './Components/Header'
 
-const LIKES_URL = (LikeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`
+const LIKES_URL = (messageID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [loading, setLoading] = useState(false)
   const [newMessage, setNewMessage] = useState('')
-
-  const handleNewThoughtsChange = (event) => {
-    setNewMessage(event.target.value)
-  }
+  const [input, setInput] = useState('')
 
   const fetchThoughts = () => {
     setLoading(true)
@@ -28,6 +25,12 @@ export const App = () => {
   useEffect(() => {
     fetchThoughts()
   }, [])
+
+  const handleNewThoughtsChange = (event) => {
+    event.preventDefault()
+    setInput(event.target.value)
+    setNewMessage(event.target.value)
+  }
 
   const onFormSubmit = (event) => {
     event.preventDefault()
@@ -48,13 +51,15 @@ export const App = () => {
       .finally(() => setNewMessage(''))
   }
 
-  const onLikeIncrese = (LikeID) => {
-    const options = { method: 'POST',
+  const onLikeIncrese = (messageID) => {
+    const options = {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      } }
+      }
+    }
 
-    fetch(LIKES_URL(LikeID), options)
+    fetch(LIKES_URL(messageID), options)
       .then((res) => res.json())
       .then(console.log('it works'))
       .catch((error) => console.error(error))
@@ -62,12 +67,13 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="main">
       <Header />
       <ThoughtForm
         newMessage={newMessage}
         handleNewThoughtsChange={handleNewThoughtsChange}
-        onFormSubmit={onFormSubmit} />
+        onFormSubmit={onFormSubmit}
+        input={input} />
       <HappyThoughtList
         loading={loading}
         thoughts={thoughts}
