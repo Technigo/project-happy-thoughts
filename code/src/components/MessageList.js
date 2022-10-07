@@ -1,41 +1,32 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import TimeStamp from './TimeStamp';
+// eslint-disable-next-line import/no-named-as-default-member
+import LikeBtn from './LikeBtn';
+/* , setMessageList, onMessageLiked */
 
-const MessageList = ({ loading, messageList, setMessageList }) => {
-  if (loading === true) {
-    return <h1>Loading in progress...</h1>
-  }
-
-  const onTaskCheckChange = (event) => {
-    event.preventDefault();
-    setMessageList(() => messageList.map((singleMessage) => {
-      if (singleMessage._id === event._id) {
-        return {
-          ...singleMessage, isChecked: !singleMessage.isChecked
-        };
-      }
-      return singleMessage;
-    }));
-  }
-
+const MessageList = ({ loading, setLoading, messageList, setNewLike }) => {
   return (
     <section>
       {messageList.map((event) => (
         <div key={event._id} className="message-box">
-          {console.log(event)}
-          <p>{event.message}</p>
-          <input
-            type="checkbox"
-            value={event}
-            placeholder="Type your thoughts here..."
-            onChange={() => onTaskCheckChange(event)}
-            checked={event.isChecked} />
+          {/* {console.log(event)} */}
+          <p className="message">{event.message}</p>
+          <LikeBtn
+            setNewLike={setNewLike}
+            event={event}
+            loading={loading}
+            setLoading={setLoading} />
           <TimeStamp event={event} />
         </div>
       ))}
     </section>
   )
 }
-
+/*          <LikeBtn
+            event={event}
+            messageList={messageList}
+            setMessageList={setMessageList}
+            onMessageLiked={onMessageLiked} />
+ */
 export default MessageList;

@@ -1,9 +1,11 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import MessageList from 'components/MessageList';
 import NewMessage from 'components/NewMessage';
 
 export const App = () => {
   const [newMessage, setNewMessage] = useState('');
+  const [newLike, setNewLike] = useState(false)
   const [messageList, setMessageList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -18,12 +20,14 @@ export const App = () => {
 
   useEffect(() => {
     fetchMessages();
-  }, [newMessage]);
+    setNewLike(false);
+  }, [newMessage, newLike]);
 
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value)
   }
 
+  // Function that adds the users message to the database.
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -39,20 +43,30 @@ export const App = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((result) => result.json())
       .then(() => fetchMessages())
+      .catch((error) => console.error(error))
       .finally(() => setNewMessage(''));
   }
 
-  return (
-    <div>
-      <NewMessage
-        newMessage={newMessage}
-        onNewMessageChange={handleNewMessageChange}
-        onFormSubmit={onFormSubmit} />
-      <MessageList
-        loading={loading}
-        messageList={messageList}
-        setMessageList={setMessageList} />
+  if (loading) {
+    return (
+      <p>Loading in progress...</p>
+    )
+  }
 
+  return (
+    <div className="outer-wrapper">
+      <div className="inner-wrapper">
+        <NewMessage
+          newMessage={newMessage}
+          onNewMessageChange={handleNewMessageChange}
+          onFormSubmit={onFormSubmit} />
+        <MessageList
+          setNewLike={setNewLike}
+          loading={loading}
+          setLoading={setLoading}
+          messageList={messageList}
+          setMessageList={setMessageList} />
+      </div>
     </div>
   );
 }

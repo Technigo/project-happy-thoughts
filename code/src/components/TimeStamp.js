@@ -5,7 +5,7 @@ const TimeStamp = ({ event }) => {
   const timeStamp = time.toLocaleTimeString([], { timeStyle: 'short' });
 
   return (
-    <p>{timeStamp}</p>
+    <p className="timestamp">{timeStamp}</p>
 
   )
 }
