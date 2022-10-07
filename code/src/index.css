@@ -23,7 +23,7 @@ code {
 .input-wrapper {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 10px auto;
 }
 
 .text-counter {
@@ -41,7 +41,7 @@ code {
   border: 2px solid black;
   box-shadow: 5px 5px;
   background-color: rgba(226, 43, 223, 0.166);
-  width: 50vw;
+  width: 80vw;
 }
 .form-container {
   background-color: rgba(137, 43, 226, 0.27);
@@ -72,9 +72,13 @@ code {
   border: none;
   font-size: 16px;
 }
+.heart-button:hover {
+  font-size: 20px;
+}
 .thought {
   word-break: break-word;
   margin-top: 0;
+  font-weight: normal;
 }
 
 .likes-time-wrapper {
@@ -101,4 +105,26 @@ code {
   display: flex;
   justify-content: center;
   background-color: rgba(137, 43, 226, 0.229);
+}
+footer {
+  color: grey;
+  background-color: rgba(128, 128, 128, 0.088);
+  text-align: center;
+  padding: 10px;
+}
+a:-webkit-any-link {
+  color: grey;
+}
+@media only screen and (min-width: 768px) {
+  .form-container,
+  .thought-card {
+    width: 50vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .form-container,
+  .thought-card {
+    width: 30vw;
+  }
 }

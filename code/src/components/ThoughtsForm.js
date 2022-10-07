@@ -24,7 +24,7 @@ export const ThoughtsForm = ({
           className="post-button"
           value="Post btn"
           disabled={newThought.length < 6 || newThought.length > 140}>
-          ❤️ Send Happy thought ❤️
+          ❤️ Send Happy Thought ❤️
         </button>
       </form>
     </div>
