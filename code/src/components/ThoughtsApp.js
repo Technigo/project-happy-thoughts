@@ -12,7 +12,6 @@ import ThoughtsForm from './ThoughtsForm';
 
 export const ThoughtsApp = () => {
 	const [thoughtsList, setThoughtsList] = useState([]);
-	// const [loading, setLoading] = useState(false);
 	const [newMessage, setNewMessage] = useState('');
 
 	useEffect(() => {
