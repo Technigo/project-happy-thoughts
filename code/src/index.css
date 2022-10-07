@@ -41,7 +41,7 @@ h2 {
   width: 90%;
 }
 
-button {
+.submit-button {
   border:none;
   font-family: 'Roboto Mono', monospace;
   border-radius: 30px;
@@ -53,8 +53,15 @@ button {
   transition: 0.3s ease-in-out;
 }
 
-button:hover {
+.submit-button:hover {
   transform: scale(1.04);
+}
+
+.heart-button {
+  padding: 12px;
+  margin-right: 7px;
+  border: none;
+  border-radius: 50%;
 }
 
 /*MessageList - See submitted thoughts - */
@@ -67,4 +74,13 @@ button:hover {
   padding:10px;
 }
 
+.heart-counter-container {
+  justify-content: space-between;
+  
+}
 
+.heart-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
