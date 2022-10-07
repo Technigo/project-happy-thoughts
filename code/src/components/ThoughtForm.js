@@ -10,8 +10,6 @@ const ThoughtForm = ( { onFormSubmit, newThought, onSetThoughtChange } ) => {
                 <label htmlFor='new-thought'>
                     <textarea 
                         className='input-text'
-                        rows="5"
-                        cols="30"
                         onChange={onSetThoughtChange}
                         value={newThought}
                         id='new-thought'
@@ -20,14 +18,14 @@ const ThoughtForm = ( { onFormSubmit, newThought, onSetThoughtChange } ) => {
                          />
                 </label>
 
-                    <button 
-                        type='submit'
-                        className='submit-button'>
-                        <span  role='img' aria-label='heart'>❤️ Send Happy Thought ❤️</span>
-                     </button>
+                <button 
+                    type='submit'
+                    className='submit-button'>
+                    <span  role='img' aria-label='heart'>❤️ Send Happy Thought ❤️</span>
+                </button>
         </form>
        </section>
     )
 }
 
-export default ThoughtForm
+export default ThoughtForm;

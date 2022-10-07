@@ -11,11 +11,9 @@ export const App = () => {
     setNewThought(event.target.value)
   }
 
-
   useEffect(()=> {
     fetchThoughts();
   }, [])
-
 
   const fetchThoughts = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
@@ -37,12 +35,13 @@ export const App = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
-      .finally(()=> setNewThought(''))
+      .finally(()=> setNewThought('')) //Extract it to another function to cleans up the input
   }
 
 
 //Like button
-  const handleLikes = (id) => {
+  const handleLikes = ((id) => {
+    event.preventDefault()
 
     const options = {
       method: 'POST',
@@ -54,7 +53,8 @@ export const App = () => {
       .then(() => fetchThoughts())
   }
 
-
+  );
+  
   return (
     <section className='mainWrapper'>
       <ThoughtForm 
@@ -68,8 +68,8 @@ export const App = () => {
         thought={thought}
         handleLikes={handleLikes}
         />
-      ))}
+      ))};
     </section>
-  )
-}
+  );
+};
 

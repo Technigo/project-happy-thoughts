@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightgoldenrodyellow;
 }
 
 code {
@@ -14,9 +13,9 @@ code {
 }
 
 .mainWrapper{
+  width: 400px;
   border: 2px solid yellow;
 }
-
 
 /*ThoughtForm wrapper*/
 .thoughtform-wrapper {
@@ -32,6 +31,8 @@ h1 {
 }
 
 .input-text {
+  resize: none;
+  height: 70px;
   margin-left: 20px;
   width: 80%;
 }
@@ -44,24 +45,54 @@ h1 {
   border: none;
   padding: 10px;
   width: 250px;
-  font-weight: bold;
+  font-weight:600;
+  font-size: 15px;
 }
 
 
-
-.post-container {
-  margin-left: 20px;
+/*ThoughtList wrapper*/
+.thoughtlist-wrapper  {
+  border: 2px solid rgb(165, 165, 165);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 150px;
   background-color: white;
-  margin: 10px;
+  margin-top: 20px;
   box-shadow: 6px 6px;
+}
+
+.message-card {
+  height: 150px;
+  width: 90%;
+  overflow-wrap: break-word; 
+}
+
+.messages {
+  height: 70px;
+  font-size: large;
+}
+
+.likedate-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .button-heart {
   border-radius: 50%;
+  border: none;
   height: 35px;
   width: 35px;
 }
 
+.clicked {
+  background-color: pink;
+}
+
+.like-counter {
+  color:grey;
+}
 
 
