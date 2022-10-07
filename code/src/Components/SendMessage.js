@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
 const SendMessage = ({ newMessage, handleNewMessageChange, onFormSubmit }) => {
@@ -5,7 +6,7 @@ const SendMessage = ({ newMessage, handleNewMessageChange, onFormSubmit }) => {
     <section className="outer-send-message-container">
       <div className="inner-send-message-container">
         <form onSubmit={onFormSubmit}>
-          <h2>What is making you happy right now?</h2>
+          <h2>What's making you happy right now?</h2>
           <textarea
             value={newMessage}
             type="text"
@@ -17,7 +18,8 @@ const SendMessage = ({ newMessage, handleNewMessageChange, onFormSubmit }) => {
           <button
             type="submit"
             className="send-btn"
-            onClick="">
+            onClick=""
+            disabled={newMessage.length < 5}>
             ❤️ Send happy thought ❤️
           </button>
         </form>
@@ -28,6 +30,3 @@ const SendMessage = ({ newMessage, handleNewMessageChange, onFormSubmit }) => {
 }
 
 export default SendMessage
-
-// eslint-disable-next-line max-len
-// {/* {newMessage.length < 10 && (alert('Your thought needs to be at least 10 characters long ☁️'))} Denna ska ha en useEffect?? och ligga mellan rad 24 och 25?*/}
