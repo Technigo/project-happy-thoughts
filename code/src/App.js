@@ -1,28 +1,38 @@
 import React, { useState, useEffect } from 'react';
 
-import TaskList from 'components/TaskList';
-import TaskForm from 'components/TaskForm';
+import ThoughtList from 'components/ThoughtList';
+import ThoughtForm from 'components/ThoughtForm';
 
 export const App = () => {
-  const [taskList, setTaskList] = useState([]);
+  const [thoughtList, setThoughtList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [newTodo, setNewTodo] = useState('');
+  const [newThought, setNewThought] = useState('');
 
-  const fetchTasks = () => {
+  const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://week7-backend.herokuapp.com/tasks')
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setTaskList(data))
+      .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
 
   useEffect(() => {
-    fetchTasks();
+    fetchThoughts();
   }, []);
 
-  const handleNewTodoChange = (event) => {
-    setNewTodo(event.target.value)
+  const handleNewLikeChange = (_id) => {
+    const options = { method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      } }
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+      .then((res) => res.json())
+      .then(() => fetchThoughts())
+  }
+
+  const handleNewThoughtChange = (event) => {
+    setNewThought(event.target.value)
   }
 
   const onFormSubmit = (event) => {
@@ -34,26 +44,26 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        description: newTodo
+        message: newThought
       })
     }
 
-    fetch('https://week7-backend.herokuapp.com/tasks', options)
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      .then(() => fetchTasks())
-      .finally(() => setNewTodo(''));
+      .then(() => fetchThoughts())
+      .finally(() => setNewThought(''));
   }
-
   return (
     <div>
-      <TaskForm
-        newTodo={newTodo}
-        onNewTodoChange={handleNewTodoChange}
+      <ThoughtForm
+        newThought={newThought}
+        onNewThoughtChange={handleNewThoughtChange}
         onFormSubmit={onFormSubmit} />
-      <TaskList
+      <ThoughtList
         loading={loading}
-        taskList={taskList}
-        setTaskList={setTaskList} />
+        thoughtList={thoughtList}
+        setThoughtList={setThoughtList}
+        handleNewLikeChange={handleNewLikeChange} />
     </div>
   );
 }

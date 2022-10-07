@@ -7,7 +7,59 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+font-size: 16px;
+line-height: 0px;
+font-weight: 200;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.thought-input-wrapper {
+  border: 1px solid #000;
+  box-shadow: 7px 7px #000;
+  width: 50vw;
+  height: 13vw;
+  margin: 30px auto;
+  padding: 0px 25px 5px 5px;
+  position: relative;
+  background-color: #F2F0F0;
+}
+
+
+.add-thought-input-field {
+  width: calc(50vw - 50px);
+  height: 60px;
+  font-family: "Inconsolata", monospace;
+  padding: 10px;
+  margin: 10px auto 5px auto;
+  resize: none;
+  outline-color: #ffadad;
+}
+
+.add-thought-button {
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  background: #ffadad;
+  padding: 10px 15px;
+  margin: 0 0 15px 0;
+}
+
+.add-thought-button {
+  outline-color: #ffadad;
+}
+
+.text-input-area {
+  width: calc(50vw - 50px);
+  height: 60px;
+  font-family: "Inconsolata",monospace;
+  padding: 10px;
+  margin: 10px auto 5px;
+  resize: none;
+  outline-color:#ffadad;
+}
+
