@@ -16,14 +16,14 @@ const NewThought = ({ newThought, setNewThought, onFormSubmit, thoughts, setThou
   return (
     <section className="new-container">
       <form onSubmit={onFormSubmit}>
-        <p className="new-header">What is making you happy right now?</p>
+        <p className="new-header">What&apos;s making you happy right now?</p>
         <textarea
           id="newThought"
           type="text"
           value={newThought}
           maxLength="140"
           onChange={(event) => setNewThought(event.target.value)} />
-        <button className="send-button" type="submit">&#10084;&#65039; Send Happy Thought! &#10084;&#65039;</button>
+        <button className="send-button" type="submit">&#10084;&#65039; Send Happy Thought &#10084;&#65039;</button>
       </form>
     </section>
   )

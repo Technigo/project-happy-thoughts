@@ -27,7 +27,12 @@ header {
 /* NEW THOUGHT */
 
 .new-container {
-  border: solid red 2px;
+  padding: 10px 15px;
+  border: solid rgb(107, 106, 106) 1px;
+  margin-top: 30px;
+  width: 350px;
+  background-color: rgb(244, 240, 240) ;
+  box-shadow: 6px 6px black;
 }
 
 form {
@@ -37,26 +42,32 @@ form {
 }
 
 .new-header {
-  border: solid green 1px;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 5px 0px 10px 0px;
+  /* border: solid green 1px; */
 }
 
 textarea {
   font-family: 'Roboto mono', monospace;
-  border: solid violet 1px;
+  border: solid darkgrey 1px;
+  height: 40px;
 }
 
 .send-button {
-  background-color: pink;
+  background-color: rgba(248, 153, 153, 0.832);
   color: black;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: bold;
   cursor: pointer;
   border-radius: 40px;
-  font-family: 'Lato', sans-serif;
-  margin: 5px;
-  width: 180px;
+  /* font-family: 'Lato', sans-serif; */
+  margin: 10px 0px 5px 0px;
+  width: 155px;
+  height: 25px;
   border: none;
   box-sizing: unset;
 }
@@ -64,20 +75,47 @@ textarea {
 /* THOUGHTS */
 
 .thoughts-feed {
-  border: solid blue 2px;
+  /* border: solid blue 2px; */
 }
 
 .thought-container {
+  border: solid rgb(107, 106, 106) 1px;
+  width: 350px;
+  padding: 10px 15px;
+  margin-top: 30px;
+  box-shadow: 6px 6px black;
+}
+
+.thought-message {
   font-family: 'Roboto mono', monospace;
-  border: solid greenyellow 2px;
-  margin: 5px;
+  overflow-wrap: break-word; 
 }
 
 .non-statics-box {
-  border: solid orange 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 10px;
+  /* border: solid orange 1px; */
   margin: 5px;
 }
 
 .likes {
+  display: flex;
+  flex-direction: row;
   border: solid green 1px;
+  color: grey;
+}
+
+.like {
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  box-sizing: unset;
+  padding: 10px;
+  margin-right: 5px;
+}
+
+.thought-posted {
+  color: rgb(188, 186, 186);
 }

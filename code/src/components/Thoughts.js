@@ -40,7 +40,7 @@ const Thoughts = ({ thoughts, setThoughts }) => {
             <p className="thought-message">{thought.message}</p>
             <div className="non-statics-box">
               <div className="likes">
-                <button type="button" className="like" onClick={() => onLikesIncrease(thought._id)}><span> ❤️ </span></button>
+                <button type="button" className="like" onClick={() => onLikesIncrease(thought._id)} ><span> ❤️ </span></button>
                 <p className="likes-amount">x {thought.hearts}</p>
               </div>
               <p className="thought-posted">{moment(thought.createdAt).fromNow()}</p>

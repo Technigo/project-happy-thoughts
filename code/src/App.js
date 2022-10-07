@@ -7,7 +7,6 @@ import Header from 'components/Header';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -15,7 +14,7 @@ export const App = () => {
 }
   return (
     <section className="main-feed">
-      <Header />
+      {/* <Header /> */}
       <NewThought newThought={newThought} setNewThought={setNewThought} />
       <Thoughts thoughts={thoughts} setThoughts={setThoughts} />
     </section>
