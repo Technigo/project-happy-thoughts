@@ -2,7 +2,7 @@ import React from "react";
 import { formatDistance }  from 'date-fns';
 
 
-const MessageList = ({ loading, messageList, hearts, addLike, id,  }) => {
+const MessageList = ({ loading, messageList, onLikesIncrease }) => {
   if (loading) {
     return (
     <h1>Loading in progress...</h1>
@@ -16,13 +16,9 @@ const MessageList = ({ loading, messageList, hearts, addLike, id,  }) => {
       body: '',
       headers: { 'Content-Type': 'application/json' }
     }).then(() => onLiked(id))
-  }   */
+  }   
 
   const handleLikes = () => {
-    //Stretch goal: created a click counter so we know how many times the Heart button
-    //has been clicked and send that data in the callback function to App component
-    let clicks = 0;
-    clicks += 1;
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,6 +28,7 @@ const MessageList = ({ loading, messageList, hearts, addLike, id,  }) => {
       addLike(id, clicks);
     });
   };
+  */
   
   return (
     <section>
@@ -41,12 +38,12 @@ const MessageList = ({ loading, messageList, hearts, addLike, id,  }) => {
               <p className="message">{event.message}</p>
               
               <div className="heart-counter-container">
-                <span className="heart-counter">
-                  <button 
-                  className="heart-button" 
-                  onClick={handleLikes}>❤️</button> x {hearts}
+
+                <div className="heart-counter">
+                <button className={(event.hearts === 0 ? 'like-btn' : 'no-like-btn')} onClick={() => onLikesIncrease(event._id)}>❤️</button>
+                <p className="counter">x {event.hearts}</p>
                   
-                </span>
+                </div>
                 
               </div>
               <p className="date">
