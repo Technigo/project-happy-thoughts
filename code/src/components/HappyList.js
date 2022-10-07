@@ -1,23 +1,36 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable no-underscore-dangle */
+import React from 'react';
+import HappySingleThought from './HappySingleThought';
 
-import HappyListItem from 'components/HappyListItem'
-
-const HappyList = () => {
-  const [thoughtList, setThoughtList] = useState([]);
-
-  useEffect(() => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-      .then((response) => response.json())
-      .then((transformedResponse) => setThoughtList(transformedResponse))
-      .catch((error) => console.error(error))
-      .finally(() => console.log('everything is fine'));
-  }, []);
-
+const HappyList = ({ thoughtList, handleHeartClick }) => {
   return (
-    <section>
-      <HappyListItem list={thoughtList} />
+    <section className="happy-list">
+      {thoughtList.map((thought) => (
+        <HappySingleThought
+          key={thought._id}
+          thoughtId={thought._id}
+          message={thought.message}
+          hearts={thought.hearts}
+          creationDate={thought.createdAt}
+          handleHeartClick={handleHeartClick} />
+      ))}
     </section>
   );
 }
 
 export default HappyList
+
+/* <section>
+      {thoughtList.map((singleThought) => {
+        return (
+          <section className="thought-card" key={singleThought._id}>
+            <div>{singleThought.message}</div>
+            <div>
+              <button type="button" onClick={() => handleHeartClick(singleThought._id)}>❤</button>
+               x{singleThought.hearts}
+            </div>
+            <div>{singleThought.createdAt}</div>
+          </section>
+        )
+      })}
+    </section> */
