@@ -1,5 +1,7 @@
 import { Card } from 'components/Card';
 import React, { useState } from 'react';
+import moment from 'moment';
+import styles from './Thought.module.css';
 
 const Thought = (props) => {
   console.log(props.thought);
@@ -22,9 +24,12 @@ const Thought = (props) => {
     <Card type="card2">
       <div className="testlength">
         <h4>{props.thought.message}</h4>
-        <button type="button" onClick={handleClick}>
-          {likes}
-        </button>
+        <div className={styles.likeAndDate}>
+          <button type="button" onClick={handleClick}>
+            {likes}
+          </button>
+          <p>{moment(props.thought.createdAt).fromNow()}</p>
+        </div>
       </div>
     </Card>
   );
