@@ -5,9 +5,12 @@ import SubmitButton from './SubmitButton';
 const ThoughtInputBox = ({ setAllThoughts }) => {
   const [input, setInput] = useState('');
 
+  const handleInputChange = (event) => {
+    setInput(event.target.value);
+  }
+
   return (
     <div className="thoughtInputBox-div">
-      Thought Input Box
       <form>
         <label
           className="input-field"
@@ -19,8 +22,8 @@ const ThoughtInputBox = ({ setAllThoughts }) => {
               type="text"
               rows="5"
               value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Happy thought here!" />
+              onChange={handleInputChange}
+              placeholder="Add your Happy thoughts here!" />
 
             <p className="letter-counter">
               {140 - input.length} characters left

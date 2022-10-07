@@ -13,7 +13,9 @@ const SubmitButton = ({ input, setInput, setAllThoughts }) => {
     };
     fetch(API_URL, options)
       .then((res) => res.json())
-      .then(() => { setAllThoughts(); setInput(input = ''); });
+      .then(() => { setAllThoughts(); setInput(input = ''); })
+      .catch((error) => console.log(error))
+      .finally(() => setInput(''));
   };
 
   return (
