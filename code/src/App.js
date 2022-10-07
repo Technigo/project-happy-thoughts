@@ -5,17 +5,17 @@ import SendThought from './components/SendThought';
 import MessageList from './components/MessageList';
 
 const LIKES_API = (LikeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`
+const API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
 export const App = () => {
   const [newMessage, setNewMessage] = useState('');
   const [messageList, setMessageList] = useState([]);
   const [loading, setLoading] = useState(true);
  
-
   //Fetch API
   const fetchMessages = () => {
     setLoading(false);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch(API)
       .then((res) => res.json())
       .then((data) => setMessageList(data))
       .catch((error) => console.error(error))
@@ -25,14 +25,14 @@ export const App = () => {
   //UseEffect hook gets all 20 recent thoughts
   useEffect(() => {
     fetchMessages();
-  }, [newMessage]);
+  }, [newMessage, MessageList]);
 
- 
+
+  //To post new thought
   const onNewMessageChange = (event) => {
     setNewMessage(event.target.value)
   }
 
-  //Post for new thought
   const onNewMessageSubmit = (event) => {
     event.preventDefault();
 
@@ -46,13 +46,13 @@ export const App = () => {
       },
     }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch(API, options)
       .then((res) => res.json())
       .then(() => fetchMessages())
       .finally(() => setNewMessage(''))
   }
 
-/* Post for like */
+/* Shows likes */
 const onLikesIncrease = (LikeID) => {
   const options = { method: 'POST',
     headers: {
