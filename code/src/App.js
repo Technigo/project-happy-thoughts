@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { ThoughtsFlow } from 'components/ThoughtsFlow';
 import { ThoughtsForm } from 'components/ThoughtsForm';
 
+const LIKES_URL = (LikeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`
+
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -44,18 +46,18 @@ export const App = () => {
       .finally(() => setNewMessage(''));
   }
   const onLikesIncrease = (LikeID) => {
-    const options = {
-      method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
+    const options = { method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      } }
+
+    fetch(LIKES_URL(LikeID), options)
+      .then((res) => res.json())
+      .then(console.log('yey it works.'))
+      .catch((error) => console.error(error))
+      .finally(() => fetchThoughts())
   }
 
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`, options)
-      .then((res) => res.json())
-      .then((data) => {
-        .then(() => fetchThoughts())
-      })
-  }
   return (
     <div>
       <ThoughtsForm
