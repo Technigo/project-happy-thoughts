@@ -1,11 +1,9 @@
 import React from 'react';
+import moment from 'moment';
 
 const TimeStamp = ({ event }) => {
-  const time = new Date(event.createdAt);
-  const timeStamp = time.toLocaleTimeString([], { timeStyle: 'short' });
-
   return (
-    <p className="timestamp">{timeStamp}</p>
+    <p className="timestamp">{moment(event.createdAt).fromNow()}</p>
 
   )
 }
