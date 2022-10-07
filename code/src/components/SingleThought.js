@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
 
-const SingleThought = ({ description }) => {
+const SingleThought = ({ message, hearts, createdAt }) => {
   const [counter, setCounter] = useState(0);
   useEffect(() => {}, [counter]);
 
-  const handleCounterIncreaseButtonClick = () => {
+  const handleHeartClick = () => {
     setCounter(counter + 1);
   };
 
-  if (description === undefined) {
+  if (message === undefined) {
     return '';
   }
 
   return (
     <div className="thought-card">
-      <p>{description}</p>
+      <p className="thought">{message}</p>
       <div className="like-container">
         <button
           className="heart-button"
-          onClick={handleCounterIncreaseButtonClick}
+          onClick={handleHeartClick} // Måste vara kopplad till API
           type="button">
           ❤️
         </button>
         <p>x{counter}</p>
+        <p>Likes:{hearts}</p>
+        <p>Time:{createdAt}</p>
       </div>
     </div>
   );
