@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.singleThought {
+  border: 2px solid;
+  margin:20px;
+  box-shadow: 10px 10px;
+  width: 60%;
+  background-color: antiquewhite;
+}
+
+.singleThought p {
+  text-align: center;
+}
+
+.heartBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
