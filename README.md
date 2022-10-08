@@ -1,6 +1,6 @@
 # Happy Thoughts [View Live &#10555;](https://dontworry-behappy.netlify.app/)
 
-In this project I have created a "twitter-like" app which is fetching and posting data to an API, using useState and useEffect.
+In this project I have created a "twitter-like" app in React which is fetching and posting data to an API, using useState and useEffect.
 
 ## The problem
 
