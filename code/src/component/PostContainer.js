@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import NewPost from './NewPost'; 
 import PostList from "./PostList";
 
@@ -10,7 +10,7 @@ const PostContainer = () => {
     
     const [newPost, setNewPost] = useState(''); //store new posts value 
     const [loading, setLoading] = useState(false);
-    const [posts, setPosts] = useState ([]); //store existing and new posts
+    const [posts, setPosts] = useState ([]); //store all posts including the old and new
 
     /* creating a function here to 
     1)set the loading variable to true, 
@@ -35,26 +35,40 @@ const PostContainer = () => {
         event.preventDefault();
 
         const options = {
-            method:POST,
+            method:'POST',
             headers: {
-                //http header fileds 
-                'Content-Type': 'application/json'
+                //http header fields 
+                'Content-Type': 'application/json',
               },
               body: JSON.stringify({ messsage: newPost })
-        }
+        };
         
         fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
             .then(res => res.json())
             .then(() => fetchPosts()) //if successful the fetchPosts will be fetched again
-            .finally(() => setNewPost('')) //the new post will be set to an empty string 
+            .finally(() => setNewPost('')) //the new value will be set to an empty string 
     }
     
     // the new posts input 
     const onNewPostChange = (event) => {
+        event.preventDefault();
         setNewPost(event.target.value); //getting the value of the new posts 
     }
 
     //to complete the like and liked function 
+    const handleLiked = (likesID) => {
+     const options = {
+        method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+              },
+     };
+     fetch(likes(likesID),options)
+     .then(res=>res.json)
+     /* .then() */
+     .catch(error => console.error(error))
+     .finally(()=>fetchPosts())
+    }
 
     return ( 
         <div className="posts-container">

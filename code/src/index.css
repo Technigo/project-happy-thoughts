@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  padding:0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -10,4 +12,75 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form{
+  margin-top: 2rem;
+  background-color: #F2F0F0;
+  padding: 1rem;
+  border: 1px solid black;
+  box-shadow: 8px 8px;
+  margin-bottom: 20px;
+}
+
+#newInput{
+  width: 90%;
+  height: 4rem;
+  border: 1px solid lightgray;
+}
+
+.send-btn{
+  background-color: #FFADAD;
+  border: none;
+  font-weight: bold;
+  border-radius: 2rem;
+  padding:15px;
+}
+
+.warning{
+  margin-left: 1rem;
+}
+
+.all-post{
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+.single-post{
+  border: 1px solid black;
+  box-shadow: 5px 5px;
+  margin: 15px 0 15px 0;
+  overflow: scroll;
+}
+
+h4{
+  text-align: start;
+  padding: 15px;
+  width: 90%;
+}
+
+.like-details{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.heartBtn{
+  border-style: none;
+  width: 30px;
+  height:30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.likes{
+  display: flex;
+  align-items: center;
 }
