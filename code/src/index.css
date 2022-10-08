@@ -131,25 +131,8 @@ p {
     top: 24vh;
   }
 
-  .thought-form-details{
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .send-thought-button {
-    font-size: 13px;
-     width: 85%;
-  }
-
-  .character-counter {
-    font-size: 11px;
-    display: flex;
-    justify-content: end;
-    margin: -3px 15px 5px 0px;
-  }
-
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .thought-input-wrapper {
     width: 40vw;
   }
@@ -171,7 +154,7 @@ p {
   .character-counter {
     font-size: 11px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin: -3px 15px 5px 0px;
   }
 
