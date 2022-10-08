@@ -77,8 +77,8 @@ export const App = () => {
           onNewThought={newThought}
           onNewThoughtChange={handleNewThoughtChange}
           charactersCount={charactersCount} />
-        {totalLikes > 0
-        && <div className="like-counter">You have hearted {totalLikes} thoughts! 🖤 </div>}
+        {totalLikes !== 0
+          && <div className="like-counter">You have hearted {totalLikes} thoughts! 🖤 </div>}
         <ThoughtsFeed
           posted={newPost}
           list={thoughts}
