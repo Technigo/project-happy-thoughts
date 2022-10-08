@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -9,11 +8,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color:rgb(57, 55, 55);
+  color: rgb(57, 55, 55);
 
-  background: linear-gradient(120deg,
-  #FFA8A8,
-  #f8ffba); 
+  background: linear-gradient(120deg, #ffa8a8, #f8ffba);
   background-size: 500%;
   animation-name: gradient;
   animation-duration: 3s;
@@ -38,36 +35,35 @@ code {
 
 /* FORM */
 
-.input-container{
+.input-container {
   margin: 30px auto 0;
   /* border: solid 1px rgb(57, 55, 55); */
   width: 32%;
 }
 
-.input-box{
+.input-box {
   border: solid 1px rgb(57, 55, 55);
   box-shadow: 5px 10px;
   padding: 30px;
   background-color: #f5a6a6;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
 }
 
-textarea{
+textarea {
   border: solid 1px rgb(57, 55, 55);
-
 }
-.button-wrapper{
+.button-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
-button{
+.button-form {
   background-color: pink;
   border-radius: 30px;
   padding: 12px;
@@ -75,57 +71,64 @@ button{
   color: rgb(83, 67, 67);
   margin: 20px;
   width: 200px;
-
-
+  border: none;
 }
 
 /* TWEETS */
 
-.loading-text{
+.loading-text {
   text-align: center;
 }
 
-.tweets-wrapper{
+.tweets-wrapper {
   /* border: solid 3px black; */
-
- 
 }
 
-.tweet-box{
-  border: solid 1px black;
-  background-color: #f5a6a6;
+.tweet-box {
   margin: 20px 0;
-
+  border: solid 1px rgb(57, 55, 55);
+  box-shadow: 5px 10px;
+  padding: 30px;
+  background-color: #f5a6a6;
 }
 
-.message-box{
-  /* border: solid 3px black; */
+.message-box {
 }
 
-.like-time-box{
-  /* border: solid 3px black; */
+.like-time-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.like{
-  /* border: solid 3px black; */
+.like-container {
+  display: flex;
+  align-items: center;
 }
 
-.heart{
-  /* border: solid 3px black; */
+.button-likes, .button-no-likes {
+  background-color: pink;
+  border-radius: 30px;
+  padding: 5px;
+  font-size: 15px;
+  color: rgb(83, 67, 67);
+  margin-right: 10px;
+  width: 32px;
+  border: none;
 }
 
-.heart-counter{
-  /* border: solid 3px black; */
+.button-no-likes {
+  background-color: rgb(255, 255, 255);
 }
 
-.time-stamp{
-  /* border: solid 3px black; */
+.heart-counter {
+  margin: 0;
 }
 
-
-
-
-
+.time-stamp {
+  justify-content: end;
+}
 
 /* 
 .form{
@@ -172,7 +175,4 @@ background-color: rgb(255, 222, 243);
 
 }
 
-button{
-  background-color: rgb(255, 222, 243);
-
-} */ 
+} */

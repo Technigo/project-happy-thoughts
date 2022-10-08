@@ -15,8 +15,10 @@ const TweetForm = ({ newTweet, onNewTweetChange, handleFormSubmit }) => {
           cols="30" />
         <div className="button-wrapper">
           <button
+            className="button-form"
             type="submit"
-            disabled={newTweet.length < 5 || newTweet.length > 140}>Send happy thought!
+            disabled={newTweet.length < 5 || newTweet.length > 140}>
+            <span className="heart">🧡</span>Send happy thought!<span className="heart">🧡</span>
           </button>
         </div>
       </form>

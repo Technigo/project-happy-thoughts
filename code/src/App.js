@@ -8,55 +8,58 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [newTweet, setNewTweet] = useState('');
 
+  const LIKES_URL = (tweetId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${tweetId}/like`
+
   /// fetch the data///
   const fetchTweets = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setTweetList(data)); // Add transformedData.respons here?
-    // .catch((error) => console.log.error(error));
-    // .finally(() => setLoading(false)); // instead of false '' samma sak?
+      .then((data) => setTweetList(data))
+      .catch((error) => console.error('error1', error).finally(() => setLoading(false)));
   };
 
   useEffect(() => {
     fetchTweets();
   }, []); // console.log('happens once when site reloads'), []};
 
-  // Handling the
+  /// What happens when someone click on submit the form with a new tweet///////////////////////
+
   const handleNewTweetChange = (event) => {
     setNewTweet(event.target.value);
   };
   // Handling the form to it's natural behaviour
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    // object to store data we need
+    // object to store data
 
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newTweet })
-    }; // addin header here?
-
+    };
+    /// /    Lägger man till option datan här?
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      .then(() => fetchTweets())
-      .finally(() => setNewTweet(''));
+      .then((data) => {
+        fetchTweets(data); // hämtar man alla tweets och skickar med option data.
+        setNewTweet('');
+        // setNewCounter(0);
+      });
   };
 
-  const handleNewLikeSubmit = (_id) => {
+  // function that handels if anyone click on like, pass the uniq id for that tweet
+  const handleNewLikeSubmit = (tweetId) => {
     const options = {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' } // kolla om den här behövs.. pitfalls
     };
 
-    fetch(
-      `https://api-happy-tweets.herokuapp.com/thoughts/${_id}/like`,
-      options
-    )
+    fetch(LIKES_URL(tweetId), options) // fetches the data uniqe and adds object option
       .then((res) => res.json())
-      .then((data) => {
-        fetchTweets(data.response._id);
-      });
+      .then(console.log('likes work'))
+      .then((data) => { fetchTweets(data) })
+      .catch((error) => console.error('error3', error))
   };
 
   return (
@@ -69,7 +72,7 @@ export const App = () => {
       <TweetList
         loading={loading}
         tweetList={tweetList}
-        handleNewLikeSubmit={handleNewLikeSubmit} />{' '}
+        onNewLikeSubmit={handleNewLikeSubmit} />{' '}
     </section>
   );
 };
@@ -90,4 +93,11 @@ export const App = () => {
       .then((res) => res.json())
       .then((newTweet) => setTweetList((previousTweet) => [newTweet, ...previousTweet]));
   };
+*/
+
+/*
+// Handling the
+const handleNewTweetChange = (event) => {
+  setNewTweet(event.target.value);
+};
 */
