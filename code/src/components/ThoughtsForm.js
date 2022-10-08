@@ -1,5 +1,7 @@
 import React from 'react';
 
+// This component renders a thought submission form.
+// Submit button is disabled if string entered in textarea is <5 or >140 characters
 const ThoughtsForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
   return (
     <div className="form-container">

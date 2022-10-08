@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 import ThoughtsForm from 'components/ThoughtsForm';
 import Thoughts from 'components/Thoughts';
+// import Components from 'eslint-plugin-react/lib/util/Components';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
 
-  // This function fetches thoughts from the HappyTweets API and stores the API's
-  // response array in setThoughts
+  // This function fetches 20 thoughts from the HappyThoughts API and stores the
+  // array in setThoughts/thoughts, which initially starts as an empty array
   const fetchThoughts = () => {
     console.log('fetchThoughts invoked')
     setLoading(true);
@@ -41,6 +42,7 @@ export const App = () => {
   // 3) invokes the fetchThoughts function
   // 4) clears setNewThought to an empty string again
   const handleFormSubmit = (event) => {
+    console.log('handleFormSubmit invoked')
     event.preventDefault();
     fetch(
       'https://happy-thoughts-technigo.herokuapp.com/thoughts',
@@ -56,8 +58,10 @@ export const App = () => {
   };
 
   // This function is invoked on clicking a heart button.
-
+  // It sends an empty POST request to the API,
+  // which adds one 'heart' to the associated thought.
   const handleNewLikeSubmit = (_id) => {
+    console.log('handleNewLikeSubmit invoked')
     fetch(
       `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`,
       { method: 'POST',
@@ -70,6 +74,15 @@ export const App = () => {
       })
   };
 
+  // Finally, we have the actual components: ThoughtsForm and Thoughts, each with 3 props.
+  // ThoughtsForm props:
+  // **newThought**: starts as an empty string, updated via onNewThoughtChange
+  // **onFormSubmit**: on clicking the button, invokes the handleFormSubmit function
+  // **onNewThoughtChange**: any new input in the form invokes the handleNewThoughtChange function
+  // Thoughts props:
+  // **loading**: adds 'Happy thoughts incoming' notifier when state is set to true (fetchThoughts)
+  // **thoughts**: latest 20 'thought' objects loaded from the API
+  // **onNewLikeSubmit**: on clicking the button, invokes the handleNewLikeSubmit function
   return (
     <div>
       <ThoughtsForm

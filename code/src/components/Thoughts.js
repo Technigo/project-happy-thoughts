@@ -1,6 +1,13 @@
 import React from 'react';
 import { formatDistance } from 'date-fns';
 
+// This component renders an array of thoughts from the HappyThoughts API
+// The fetchThoughts function populates the thoughts array with 20 thoughts
+// They are rendered in this component using the map method, which
+// ensures each of the 20 objects is rendered in the format below
+// While the API request is being handled, the 'loading' state is set to true,
+// rendering a loading notifier which disappears once the state is set back to false
+// The function also renders a like button for each thought
 const Thoughts = ({ loading, thoughts, onNewLikeSubmit }) => {
   if (loading) {
     return <h4 className="loading-text">Happy thoughts incoming...</h4>
