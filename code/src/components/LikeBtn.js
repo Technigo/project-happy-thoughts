@@ -1,16 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 
-const LikeBtn = ({ event, loading, setNewLike }) => {
+const LikeBtn = ({ event, setNewLike }) => {
   const [liked, setLiked] = useState(false);
-  if (loading) {
-    return <h1>Loading in progress...</h1>
-  }
 
   const handleNewLikeChange = () => {
     setNewLike(true)
   }
 
+  // The function that registers the users like to the database, it also
   const onButtonClick = (event2) => {
     event2.preventDefault();
 
@@ -22,7 +20,7 @@ const LikeBtn = ({ event, loading, setNewLike }) => {
         },
         body: ''
       }
-      console.log(event._id);
+
       fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${event._id}/like`, options)
         .then((result) => result.json())
         .catch((error) => console.error(error))

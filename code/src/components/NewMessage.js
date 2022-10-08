@@ -1,33 +1,38 @@
 import React from 'react';
 
-const NewMessage = ({ newMessage, onNewMessageChange, onFormSubmit }) => {
-  // Enables the user to use the enter-key to progress
-
-  // const checkKeyPress = (event) => {
-  //   const { keyCode } = event;
-  //   if (keyCode === 13) {
-  //     onNewMessageChange();
-  //   }
-  // };
-
+const NewMessage = ({ count, newMessage, onNewMessageChange, onFormSubmit }) => {
   return (
-    <form onSubmit={onFormSubmit} className="new-message-box">
-      <p className="new-message">What´s making you happy right now?</p>
-      <textarea
-        className="text-area"
-        rows="3"
-        cols="32"
-        placeholder="Type your thoughts here..."
-        value={newMessage}
-        /* onKeyDown={checkKeyPress} */
-        onChange={onNewMessageChange} />
-      <button
-        type="submit"
-        className="submit-Btn"
-        disabled={newMessage.length < 1 || newMessage.length > 140}>
+    <div className="inner-wrapper">
+      <form onSubmit={onFormSubmit} className="new-message-box">
+        <p className="new-message">What´s making you happy right now?</p>
+        <textarea
+          className="text-area"
+          // Sets the height of the text-area
+          rows="3"
+          // // Sets the width of the text-area
+          // cols="30"
+          placeholder="Type your thoughts here..."
+          value={newMessage}
+          onChange={onNewMessageChange} />
+        <p
+          className="counter"
+          // Makes the text of the character-counter red if
+          // it's less than 1 or more than 140 characters
+          style={{
+            color: count <= 0 || count > 140 ? 'red' : ''
+          }}>
+          {count}/140
+        </p>
+        <button
+          type="submit"
+          className="submit-Btn"
+          // Makes the button un-clickable if it's
+          // less than 1 or more than 140 characters
+          disabled={newMessage.length < 1 || newMessage.length > 140}>
           ❤️ Send Happy Thought ❤️
-      </button>
-    </form>
+        </button>
+      </form>
+    </div>
 
   )
 }
