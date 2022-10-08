@@ -4,6 +4,16 @@ import Form from 'components/Form';
 import Loader from 'components/Loader';
 
 export const App = () => {
+  if (localStorage.getItem('clickcount') === null) {
+    console.log('clickcount is null, resetting to 0')
+    localStorage.clickcount = 0
+  } else if (localStorage.clickcount === 'NaN') {
+    console.log('clickcount is NaN, resetting to 0')
+    localStorage.clickcount = 0
+  } else {
+    console.log(`clickcount is set to ${Number(localStorage.clickcount)} at start`)
+  }
+
   const [thoughts, setThoughts] = useState([])
   const [newThought, setNewThought] = useState('')
   const [charactersCount, setCharactersCount] = useState(0)
@@ -26,10 +36,13 @@ export const App = () => {
     fetchThoughts();
   }, []);
 
+  useEffect(() => {
+    console.log('total likes are', totalLikes)
+  }, [totalLikes]);
+
   const handleTotalLikesCallback = () => {
     setTotalLikes(totalLikes + 1)
-    localStorage.clickcount = Number(localStorage.clickcount) + 1;
-    console.log('total likes are', totalLikes)
+    localStorage.clickcount = Number(localStorage.clickcount) + 1
   }
 
   const handleNewThoughtChange = ((event) => {
