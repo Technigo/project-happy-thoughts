@@ -12,6 +12,8 @@ h1 {
 font-size: 16px;
 line-height: 0px;
 font-weight: 200;
+display: flex;
+justify-content: center;
 }
 
 h4{
@@ -29,12 +31,22 @@ p {
 .thought-input-wrapper {
   border: 1px solid #000;
   box-shadow: 7px 7px #000;
-  width: 50vw;
+  width: 40vw;
   height: 25vh;
   margin: 30px auto;
   padding: 0px 25px 5px 25px;
   background-color: #F2F0F0;
   position:relative;
+}
+
+.thought-form-details{
+display:flex;
+justify-content: space-between;
+
+}
+
+.character-counter{
+padding-right: 5%;
 }
 
 .send-thought-button {
@@ -44,14 +56,12 @@ p {
   font-size: 16px;
   background: #ffadad;
   padding: 10px 15px;
-  margin: 10px 0 15px 0;
+  margin: 2px 0 15px 0;
   outline-color: #ffadad;
-  position: absolute;
-  display: flex;
 }
 
 .text-input-area {
-  width: calc(50vw - 50px);
+  width: calc(40vw - 50px);
   height: 60px;
   font-family: 'Roboto Mono',monospace;
   padding: 10px;
@@ -63,36 +73,44 @@ p {
 .message-wrapper {
   border: 1px solid #000;
   box-shadow: 7px 7px #000;
-  width: 50vw;
-  height: 15vh;
+  width: 40vw;
+  height: auto;
   margin: 30px auto;
   padding: 0px 25px 5px 25px;
   position: relative;
   background-color: white;
 }
 
+.thought-message {
+  overflow: auto;
+  overflow-wrap: break-word;
+}
+
 .heart-counter-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2%;
 }
 
-.heart-button {
-  border: none;
+.no-likes-button{
+  background-color: #e0dfdf;
+}
+
+.has-likes-button {
+  display: block;
+  background-color:#ffadad;
+}
+
+.has-likes-button,
+.no-likes-button{
   border-radius: 50%;
-  height: 30px;
   width: 30px;
-  font-size: 16px;
-  padding: 5px 5px;
-  background-color: #F2F0F0;
-  display: inline-block;
+  height: 30px;
+  border: 0px;
 }
 
-.heart-count {
-  display: inline-block;
-}
-
-.heart-button:active {
-  background: rgba(255, 173, 173, 0.8);
+.heart-details{
+  display: flex;
 }
 
 .timestamp {
