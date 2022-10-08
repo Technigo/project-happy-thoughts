@@ -19,10 +19,10 @@ const HappyThoughtsEntry = ({ id, message, hearts, createdAt }) => {
 
   const addHeart = () => {
     setLikedByMe(true)
-    setHearts(heartsCounter + 1)
     // skip posting you have already liked this once
     if (!likedByMe) {
       sendHeartToApi()
+      setHearts(heartsCounter + 1)
     }
   }
 
