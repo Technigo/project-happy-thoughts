@@ -1,23 +1,36 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useEffect } from 'react';
+import React from 'react';
 import Thought from './Thought';
 
-const ThoughtsFeed = ({ list }) => {
-  useEffect(() => {
-    console.log('component mounted')
-  }, [])
+const ThoughtsFeed = ({ handleTotalLikesCallback, list, posted }) => {
   return (
     <section>
-      {list.map((singleThought) => {
-        return (
-          <Thought
-            key={singleThought._id}
-            id={singleThought._id}
-            message={singleThought.message}
-            hearts={singleThought.hearts}
-            createdAt={singleThought.createdAt} />
-        )
+      {list.map((singleThought, index) => {
+        if (index < 1) {
+          return (
+            <Thought
+              createdAt={singleThought.createdAt}
+              handleTotalLikesCallback={handleTotalLikesCallback}
+              hearts={singleThought.hearts}
+              id={singleThought._id}
+              key={singleThought._id}
+              message={singleThought.message}
+              posted={posted} />
+          )
+        } else {
+          return (
+            <Thought
+              createdAt={singleThought.createdAt}
+              handleTotalLikesCallback={handleTotalLikesCallback}
+              hearts={singleThought.hearts}
+              id={singleThought._id}
+              key={singleThought._id}
+              message={singleThought.message}
+              posted={false} />
+          )
+        }
       })}
+
     </section>
   )
 }
