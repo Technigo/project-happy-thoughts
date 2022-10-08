@@ -1,38 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
-import HappyThoughtsList from 'components/HappyThoughtsList';
-import HappyThoughtsForm from 'components/HappyThoughtsForm';
+import HappyThoughtsList from 'components/HappyThoughtsList'
+import HappyThoughtsForm from 'components/HappyThoughtsForm'
+import Spinner from 'components/Spinner'
 
 export const App = () => {
-  const [happyThoughtsList, setHappyThoughtsList] = useState([]);
-  const [newThought, setNewThought] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [happyThoughtsList, setHappyThoughtsList] = useState([])
+  const [newThought, setNewThought] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const fetchData = () => {
-    setLoading(true);
+    setLoading(true)
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((data) => data.json())
       .then((transformedData) => setHappyThoughtsList(transformedData))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+      .finally(() => setLoading(false))
   }
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   const onAddNewThought = (event) => {
-    setNewThought(event.target.value);
+    setNewThought(event.target.value)
   }
 
   const handleFormCleanup = () => {
-    setNewThought('');
-    setLoading(false);
+    setNewThought('')
+    setLoading(false)
   }
 
   const handleFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const options = {
       method: 'POST',
@@ -43,15 +44,15 @@ export const App = () => {
         'Content-Type': 'application/json'
       }
     }
-    setLoading(true);
+    setLoading(true)
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((data) => data.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))
-      .finally(() => handleFormCleanup());
+      .finally(() => handleFormCleanup())
   }
   if (loading) {
-    <p>Loading...</p>
+    return <Spinner />
   }
 
   return (
@@ -62,5 +63,5 @@ export const App = () => {
         newThought={newThought} />
       <HappyThoughtsList list={happyThoughtsList} />
     </>
-  );
+  )
 }
