@@ -8,6 +8,7 @@ const UserInput = ({ handleNewThoughtChange, handleOnFormSubmit, newThought }) =
         onSubmit={handleOnFormSubmit}>
         <h1>What&apos;s making you happy right now?</h1>
         <textarea
+          style={newThought.length > 140 ? { color: 'red' } : {}}
           value={newThought}
           onChange={handleNewThoughtChange}
           placeholder="Type your happy thought here" />
