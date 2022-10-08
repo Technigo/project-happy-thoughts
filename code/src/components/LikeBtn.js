@@ -29,22 +29,24 @@ const LikeBtn = ({ event, loading, setNewLike }) => {
         .finally(() => {
           setLiked(true)
           handleNewLikeChange()
-          // setLoading(true)
         })
     }
   }
 
   return (
-    <>
+    <div className="like-grid">
       <button
         type="button"
         className="like-btn"
+        style={{
+          backgroundColor: liked ? '#FFADAD' : ''
+        }}
         value={event}
         onClick={onButtonClick}>
         <span>❤️</span>
       </button>
       <p className="number-of-likes">x {event.hearts}</p>
-    </>
+    </div>
   )
 }
 
