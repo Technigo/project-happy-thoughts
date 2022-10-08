@@ -72,7 +72,6 @@ button {
   transition: all 0.1s ease-in-out;
   padding: 0px 16px;
   transition: all 0.5s ease-in-out;
-
 }
 
 button:hover {
@@ -115,6 +114,7 @@ button:hover {
   margin-bottom: 30px; 
   text-align: center;
   font-size: 13px;
+  animation: fadeIn 1s; 
 }
 
 .thought {
@@ -161,8 +161,8 @@ button:hover {
   border: none;
 }
 .heart-like {
-animation: rotation 0.3s;
-animation-iteration-count: 1;
+  animation: rotation 0.3s;
+  animation-iteration-count: 1;
 }
 
 @keyframes rotation {

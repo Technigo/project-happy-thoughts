@@ -6,7 +6,7 @@ import Loader from 'components/Loader';
 export const App = () => {
   // the clickcounter tend sometimes to be not a number, so this is to reset the counter
   // It then remains a number even if the page is refreshed
-  if (localStorage.clickcount === 'NaN') {
+  if (localStorage.clickcount === 'NaN' || localStorage.clickcount === undefined) {
     localStorage.clickcount = 0
   }
 
