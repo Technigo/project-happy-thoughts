@@ -27,19 +27,20 @@ const ThoughtBox = () => {
     return () => clearInterval(interval)
   }, []);
 
-  // This returns a div for each message in the API-array. Every message is called a thought here.
+  // This returns a div for each item in the API-array. Every API-item is called named a "thought" here.
   return (
     allThoughts.map((thought) => (
       <div className="thoughtBox-div" key={thought._id}>
-        <p>{thought.message}</p>
+        <p className="message-p">{thought.message}</p>
         {/* This updates the date-format to "X minutes" ago.  */}
-        <p>{formatDistance(new Date(thought.createdAt), new Date())} ago</p>
+        <p className="faded-p">{formatDistance(new Date(thought.createdAt), new Date())} ago</p>
         <div className="like-div">
           <LikeButton getHappyThoughts={getHappyThoughts} thought={thought} hearts={thought.hearts} />
-          <p>x {thought.hearts}
+          <p className="faded-p">x {thought.hearts}
           </p>
         </div>
-      </div>)));
+      </div>
+    )));
 };
 
 export default ThoughtBox

@@ -19,9 +19,10 @@ const ThoughtInputBox = ({ setAllThoughts }) => {
             id="input"
             className="input-field"
             type="text"
-            rows="5"
+            rows="10"
             value={input}
             onChange={handleInputChange}
+            // placesholder decides what the textarea should say before any input is given.
             placeholder="Add your Happy thoughts here!" />
           <div className="letter-counter">
             <p>{140 - input.length} characters left</p>

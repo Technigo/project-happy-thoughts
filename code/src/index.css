@@ -46,7 +46,6 @@ header{
   width: 100vw;
   height: 10vw;
   background: #f9adad;
-  font-size:large;
   font-family: "Roboto Mono", monospace;
 
 }
@@ -54,15 +53,12 @@ header{
 h1{
   text-align: center;
   margin: 0px;
-  padding: 30px;
-}
-
-textarea{
-  margin-bottom:0px;
+  padding-top: 15px;
+  font-size: 19px;
 }
 
 .thoughtInputBox-div{
-  width: 40vw;
+  width: 41vw;
   display: flex;
   flex-direction: column;
   align-items: center;  
@@ -83,9 +79,27 @@ textarea{
   display: flex;
   flex-direction: column;
   align-items: center; 
-  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   box-shadow: 5px 5px; 
-  word-break: break-all; 
+}
+
+.faded-p{
+  color: rgb(128, 125, 125);
+}
+.message-p{
+  max-width: 35vw;
+  word-wrap: break-word;
+}
+
+.input-field{
+width: 190px;
+}
+
+textarea{
+  resize: none;
+  min-width: 40vw;
+  min-height: 4vw;
 }
 
 .letter-counter{
@@ -98,12 +112,6 @@ textarea{
 
 .letter-counter p{
   margin-top: 0px;
-}
-
-.input-field{
-  height: 5vw;
-  width: 20vw;
-  margin-bottom: 20px;
 }
 
 footer{
@@ -126,9 +134,14 @@ button{
   background-color: #f9adad;
   border-radius: 50px;
   border: none;
-  height: 2vw;
+  height: 4vw;
   font-size: 16px;
   font-weight: bold;
+}
+
+.submit-button{
+position: relative;
+margin-bottom:20px;
 }
 
 .like-button-pink{
@@ -155,3 +168,73 @@ button:disabled{
   background-color: grey;
   color: lightgrey;
 }
+
+@media (min-width: 667px) and (max-width: 1024px){
+
+  header{
+    width: 100vw;
+    height: 10vw;
+    background: #f9adad;
+    font-family: "Roboto Mono", monospace;
+  
+  }
+  
+  h1{
+    text-align: center;
+    margin: 0px;
+    padding-top: 35px;
+    font-size: 25px;
+  }
+
+  textarea{
+    min-width: 30vw;
+    min-height: 6vw;
+  }
+
+  .like-button-grey, .like-button-pink{
+    border-radius: 50%;
+    height: 2px;
+  }
+
+  .submit-button{
+    height: 2vw;
+    font-size: 16px;
+  }
+
+
+}
+
+
+@media (min-width: 1025px){
+
+  header{
+    width: 100vw;
+    height: 10vw;
+    background: #f9adad;
+    font-family: "Roboto Mono", monospace;
+  
+  }
+  
+  h1{
+    text-align: center;
+    margin: 0px;
+    padding-top: 50px;
+    font-size: 30px;
+  }
+
+  textarea{
+    min-width: 30vw;
+    min-height: 6vw;
+  }
+
+  .submit-button{
+    height: 2vw;
+    font-size: 18px;
+  }
+
+  .like-button-grey, .like-button-pink{
+    border-radius: 50%;
+    height: 2px;
+  }
+
+} 
