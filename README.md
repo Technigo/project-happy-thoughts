@@ -1,13 +1,21 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project aims to practice and understand useEffect hook and increase my skills with the useState hook,
+fetching and posting data to an API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The project was approached as following:
+-Inspecting and understanding the respons and info from the API.
+-Trying to break down the wished result into small fragments.
+-Creating components for every fragment and keeping it simple to follow the code.
+-Styling the components as close as possible to the provided design sketch
+
+If I had more time I would have tried to:
+-Implement a local storage counter that keeps track of the amount of likes you clicked.
+-Implement a loader when the pages loads.
+-Implement an animation every time a new message is shown. Some kind of "entering" effect.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-better-life.netlify.app/
