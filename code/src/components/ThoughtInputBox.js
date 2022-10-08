@@ -14,20 +14,17 @@ const ThoughtInputBox = ({ setAllThoughts }) => {
       <form>
         <label
           className="input-field"
-          htmlFor="input">Whats making you happy right now?
-          <div>
-            <textarea
-              id="input"
-              className="input-field"
-              type="text"
-              rows="5"
-              value={input}
-              onChange={handleInputChange}
-              placeholder="Add your Happy thoughts here!" />
-
-            <p className="letter-counter">
-              {140 - input.length} characters left
-            </p>
+          htmlFor="input"><h3>What&apos;s making you happy right now?</h3>
+          <textarea
+            id="input"
+            className="input-field"
+            type="text"
+            rows="5"
+            value={input}
+            onChange={handleInputChange}
+            placeholder="Add your Happy thoughts here!" />
+          <div className="letter-counter">
+            <p>{140 - input.length} characters left</p>
           </div>
         </label>
       </form>

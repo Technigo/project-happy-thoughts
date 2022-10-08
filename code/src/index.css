@@ -57,6 +57,10 @@ h1{
   padding: 30px;
 }
 
+textarea{
+  margin-bottom:0px;
+}
+
 .thoughtInputBox-div{
   width: 40vw;
   display: flex;
@@ -81,6 +85,19 @@ h1{
   align-items: center; 
   padding: 10px;
   box-shadow: 5px 5px; 
+  word-break: break-all; 
+}
+
+.letter-counter{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.letter-counter p{
+  margin-top: 0px;
 }
 
 .input-field{
@@ -97,30 +114,44 @@ footer{
   align-items: center;
   padding-top: 3vw;
   padding-bottom: 3vw;
+  color: rgb(78, 74, 74);
 }
 
-a{
+footer a{
   text-decoration: none;
-  color: black;
+  color: rgb(78, 74, 74);
 }
 
 button{
   background-color: #f9adad;
   border-radius: 50px;
   border: none;
-  height: 150%;
+  height: 2vw;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.like-button{
-  height: 100%;
-  padding: 10px 10px;
-  border-radius: 100px;
+.like-button-pink{
+  padding: 12px 12px 32px 12px;
+  margin: 6px;
+  border-radius: 50%;
   font-size: 20px;
+}
+.like-div{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.like-button-grey{
+  padding: 12px 12px 32px 12px;
+  margin: 6px;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: lightgrey;
 }
 
 button:disabled{
   background-color: grey;
-  border-radius: 50px;
-  border: none;
-  height: 150%;
+  color: lightgrey;
 }
