@@ -4,6 +4,8 @@ import ThoughtList from './ThoughtList'; // eslint-disable-line
 import ThoughtForm from './ThoughtForm';
 import { HAPPY_URL, LIKES_URL } from './Urls';
 
+/* MainForm component, where all the other components are imported to be printed */
+
 const MainForm = () => {
   const [taskList, setTaskList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -46,6 +48,7 @@ const MainForm = () => {
       .finally(() => setNewTodo(''));
   }
 
+  /* Here we target the LIKE_URLs id, to print (like) the right thought. */
   const handleLikesIncrease = (id) => {
     const options = {
       method: 'POST',

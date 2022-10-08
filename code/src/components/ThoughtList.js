@@ -1,6 +1,9 @@
 import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
 
+/* Thoughtlist component, where all the "old" thougts are printed, and here you can like the
+  post. The background around the like button (the heart) is transparent until you "like it"
+  (click it) the loading will show when (if) the pages rerenders */
 const ThoughtList = ({ loading, taskList, handleLikesIncrease }) => {
   if (loading) {
     return <h1>Loading in progress...</h1>
@@ -9,13 +12,15 @@ const ThoughtList = ({ loading, taskList, handleLikesIncrease }) => {
   return (
     <section className="thoughts-container">
       {taskList.map((task) => (
-        <div className="thougts-boxes" key={task._id}> {/* eslint-disable-line */}
+        <div className="thoughts-boxes" key={task._id}> {/* eslint-disable-line */}
           <div className="thoughts-message">
             <h4>{task.message}</h4>
           </div>
           <div className="thoughts-like-section">
             <div className="btn-parent">
-            <button className="btn" type="button" onClick={(event) => handleLikesIncrease(task._id, event)}> {/* eslint-disable-line */}
+              {/* button with a conditional thats and if or else, if user pressed button "not liked"
+              else "liked" with diffrent background color */}
+            <button className={task.hearts > 0 ? "likeBtn-liked" : "likeBtn-not-liked"} onClick={(event) => handleLikesIncrease(task._id, event)}> {/* eslint-disable-line */}
                 <span className="icon" role="img" aria-label="heart" aria-hidden="false">❤️</span>
             </button> {/* eslint-disable-line */}
               <span>x {task.hearts}</span>
