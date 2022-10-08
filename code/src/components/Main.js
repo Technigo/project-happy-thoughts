@@ -4,49 +4,59 @@ import GetThoughts from './GetThoughts';
 import UserInput from './UserInput';
 
 const Main = () => {
-  const [getThoughts, setGetThoughts] = useState([])
-  const [newThought, setNewThought] = useState('')
+  const [getThoughts, setGetThoughts] = useState([]);
+  const [newThought, setNewThought] = useState('');
+  /* const [loading, setLoading] = useState(false); */
 
   const APIurl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
   const fetchAPI = () => {
+    /* setLoading(true) */
     fetch(APIurl)
       .then((res) => res.json())
       .then((data) => setGetThoughts(data))
       .catch((error) => console.error(error))
-      .finally(() => console.log('no errors'))
+      .finally(() => console.log('no errors')/* setLoading(false) */)
   }
 
   useEffect(() => {
     fetchAPI()
-    const interval = setInterval(() => {
-      fetchAPI()
-    }, 10000)
-    // This line is clearing the interval when user f.ex. changes window or exit app
-    return () => clearInterval(interval)
+    /*   const interval = setInterval(() => {
+        fetchAPI()
+      }, 60000)
+      // This line is clearing the interval when user f.ex. changes window or exit app
+      return () => clearInterval(interval) */
   }, []);
 
   const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value)
   }
 
+  const handleCleanUp = () => {
+    setNewThought('')
+    fetchAPI()
+    /* setLoading(false) */
+  }
+
   const handleOnFormSubmit = (event) => {
     event.preventDefault();
-    fetch(APIurl, {
+
+    const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought })
-    })
+      body: JSON.stringify({
+        message: newThought
+      })
+    }
+    /* setLoading(true) */
+    fetch(APIurl, options)
       .then((res) => res.json())
       .then((updatedThought) => {
         setNewThought((previousThoughts) => [updatedThought, ...previousThoughts])
       })
-      .finally(() => {
-        setNewThought('')
-        fetchAPI()
-      })
+      .finally(() => handleCleanUp())
   }
 
   const handleLikeButtonOnClick = (_id) => {
@@ -58,6 +68,13 @@ const Main = () => {
         fetchAPI()
       })
   }
+
+  /*   if (loading) {
+      return (
+        // eslint-disable-next-line react/self-closing-comp
+        <div className="loader"><div></div></div>
+      )
+    } */
 
   return (
     <>

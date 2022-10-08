@@ -16,7 +16,12 @@ const UserInput = ({ handleNewThoughtChange, handleOnFormSubmit, newThought }) =
             {newThought.length}/140
           </p>
         </div>
-        <button disabled={newThought.length < 6 || newThought.length > 140} className="btn-send-input" type="submit">💗 Send Happy Thought 💗</button>
+        <button
+          disabled={newThought.length < 6 || newThought.length > 140}
+          className="btn-send-input"
+          type="submit">
+          💗 Send Happy Thought 💗
+        </button>
       </form>
     </section>
   )
