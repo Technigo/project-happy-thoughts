@@ -4,11 +4,14 @@ In this project I have created a "twitter-like" app which is fetching and postin
 
 ## The problem
 
-I started off by building the two components and then added code to follow instructions and fulfill requirements, the app should:
-  * Have a form to post new thoughts
-  * Show all the written me and how many likes it has recieved. List the latest message on top, oldest in the bottom (sorted).
-  * Add a heart-button for users to send likes on each thought. The colour of the button should vary depending on if it has got any likes or not.
-  * Should follow a given design.
+I started off by building the two components with API and then added code according to instructions and requirements:
+  * Made a form to post new thoughts.
+  * Made the app show all the written messages and how many likes each has recieved.
+  * Listed the latest message on top, oldest in the bottom (sorted).
+  * Created a heart-button for users to send likes on each thought.
+  * Made the colour of the button vary depending on if it has got any likes or not.
+  * Followed a given design-guideline.
+
   * I also made a counter for letters written in the form.
 
  Next steps would be:
