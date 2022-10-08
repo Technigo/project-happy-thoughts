@@ -44,7 +44,7 @@ code {
 
 header{
   width: 100vw;
-  height: 10vw;
+  height: 20vw;
   background: #f9adad;
   font-family: "Roboto Mono", monospace;
 
@@ -58,7 +58,7 @@ h1{
 }
 
 .thoughtInputBox-div{
-  width: 41vw;
+  width: 65vw;
   display: flex;
   flex-direction: column;
   align-items: center;  
@@ -72,7 +72,7 @@ h1{
 
 .thoughtBox-div{
   background-color: white;
-  width: 40vw;
+  width: 60vw;
   min-height: 10vw;
   border: 2px solid black;
   margin: 2vw;
@@ -88,30 +88,39 @@ h1{
   color: rgb(128, 125, 125);
 }
 .message-p{
+  margin-top: 30px;
+  margin-bottom: 20px;
   max-width: 35vw;
   word-wrap: break-word;
 }
 
 .input-field{
 width: 190px;
+margin-left: 22px;
+}
+
+h3{
+  text-align:center ;
 }
 
 textarea{
   resize: none;
   min-width: 40vw;
   min-height: 4vw;
+  outline: none; /*Removes the border when text area is selected*/
 }
 
 .letter-counter{
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 0px;
   margin-bottom: 20px;
 }
 
 .letter-counter p{
   margin-top: 0px;
+  text-align: center;
 }
 
 footer{
@@ -134,7 +143,7 @@ button{
   background-color: #f9adad;
   border-radius: 50px;
   border: none;
-  height: 4vw;
+  height: 6vw;
   font-size: 16px;
   font-weight: bold;
 }
@@ -150,10 +159,12 @@ margin-bottom:20px;
   border-radius: 50%;
   font-size: 20px;
 }
+
 .like-div{
   display: flex;
   flex-direction: row;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .like-button-grey{
@@ -186,10 +197,16 @@ button:disabled{
     font-size: 25px;
   }
 
+
   textarea{
-    min-width: 30vw;
+    min-width: 25vw;
     min-height: 6vw;
   }
+
+  .input-field{
+    width: 35vw;
+    margin-left: 22px;
+    }
 
   .like-button-grey, .like-button-pink{
     border-radius: 50%;
@@ -197,10 +214,17 @@ button:disabled{
   }
 
   .submit-button{
-    height: 2vw;
+    height: 4vw;
     font-size: 16px;
   }
 
+  .thoughtInputBox-div{
+    width: 42vw;
+  }
+
+  .thoughtBox-div{
+    width: 40vw;
+  }
 
 }
 
@@ -228,13 +252,25 @@ button:disabled{
   }
 
   .submit-button{
-    height: 2vw;
+    height: 3vw;
     font-size: 18px;
   }
 
   .like-button-grey, .like-button-pink{
     border-radius: 50%;
     height: 2px;
+  }
+
+  .thoughtInputBox-div{
+    width: 42vw;
+  }
+
+  .thoughtBox-div{
+    width: 40vw;
+  }
+
+  .like-div{
+    margin-bottom: 1vw;
   }
 
 } 
