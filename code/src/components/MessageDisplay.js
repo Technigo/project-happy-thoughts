@@ -16,7 +16,6 @@ const MessageDisplay = () => {
 
   return (
     <main>
-
       <section>
         <NewMessage messages={messages} />
       </section>

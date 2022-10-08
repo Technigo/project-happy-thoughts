@@ -9,6 +9,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: aqua;
+  display: flex;
+  justify-content: center;
 }
 
 .message-container {
@@ -36,13 +38,23 @@ button {
   padding: 0.5rem;
   border-radius: 10rem;
   font-family: 'Roboto Mono', monospace;
+  margin-top: 0.5rem;
 }
 
 .text-input {
-  margin: 1rem 0;
+  margin: 1rem 0 0;
   width: 100%;
   height: 3rem;
   font-size: 16px;
+  word-wrap: break-word;
+}
+
+.red-text{
+  color: #ff0000;
+}
+
+.black-text {
+  color: #000;
 }
 
 .message-text {
@@ -76,4 +88,8 @@ button {
   font-size: 14px;
   color: #726f6f;
   justify-self: flex-end;
+}
+
+.number-of-characters {
+  justify-self: flex-start;
 }
