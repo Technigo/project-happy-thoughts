@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 import moment from 'moment'
 
 const HappyThoughtsEntry = ({ id, message, hearts, createdAt }) => {
   const [likedByMe, setLikedByMe] = useState(false)
-  const [heartsCounter, setHearts] = useState(hearts);
+  const [heartsCounter, setHearts] = useState(hearts)
 
   const sendHeartToApi = () => {
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {

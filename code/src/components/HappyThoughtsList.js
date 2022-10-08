@@ -1,5 +1,5 @@
-import React from 'react';
-import HappyThoughtsEntry from './HappyThoughtsEntry';
+import React from 'react'
+import HappyThoughtsEntry from './HappyThoughtsEntry'
 
 const HappyThoughtsList = ({ list }) => (
   <section>
