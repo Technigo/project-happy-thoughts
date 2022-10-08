@@ -28,7 +28,8 @@ export const App = () => {
 
   const handleTotalLikesCallback = () => {
     setTotalLikes(totalLikes + 1)
-    localStorage.clickcount = Number(localStorage.clickcount) + 1
+    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+    console.log('total likes are', totalLikes)
   }
 
   const handleNewThoughtChange = ((event) => {
