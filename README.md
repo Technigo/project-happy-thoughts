@@ -21,6 +21,14 @@ I started off by building the two components with API and then added code accord
   * Cunter for how many different posts you have liked 
   * Animation for new thought added
 
+TECH used:
+ * React
+ * useEffect Hook
+ * useState Hook
+ * Fetch
+ * Postman
+ * CSS
+
 ## View it live
 https://dontworry-behappy.netlify.app/
 
