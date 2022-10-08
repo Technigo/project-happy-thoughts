@@ -30,6 +30,7 @@ export const App = () => {
     setNewThought('');
     setLoading(false);
   }
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
