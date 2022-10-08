@@ -114,8 +114,15 @@ padding-right: 5%;
   display: flex;
 }
 
+.heart-count {
+  margin-left: 10px;
+  margin-top:4px;
+  color:rgb(127, 127, 127);
+}
+
 .timestamp {
   right: 5%;
+  color:rgb(178, 174, 174)
 }
 
 @media (min-width: 1024px) {
