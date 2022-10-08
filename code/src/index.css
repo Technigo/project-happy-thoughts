@@ -10,10 +10,123 @@
 }
 
 body {
-  margin: 0;
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #5F7161;
 }
 
-/* word-wrap: break-word; för att begränsa texten till rutan */
+.happy-page {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 2rem auto;
+  word-wrap: break-word;
+}
+
+.form,
+.card {
+  border: 1px solid black;
+  box-shadow: .4rem .4rem black;
+  margin: 1.5rem 1rem;
+}
+
+.form {
+  background-color: #EFEAD8;
+  padding: .5rem;
+}
+
+.thought-length span {
+  font-size: 0.8rem;
+  color: gray
+}
+
+.thought-input {
+  width: 100%;
+  padding: 0.3rem;
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+  resize: none;
+}
+
+.send-thought-btn {
+  border-radius: 20px;
+  border: none;
+  padding: .3rem;
+  background-color: #5F7161;
+  color: #fff;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.button-text {
+  font-size: .8rem;
+  padding: .5rem;
+}
+
+.card {
+  background-color: #EFEAD8;
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 1rem;
+}
+
+.card-bottom p,
+.card-bottom span {
+  font-size: .8rem;
+  color: gray;
+}
+
+.heart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  cursor: pointer;
+}
+
+.card-bottom-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-background {
+  background-color: #fff;
+}
+
+.green-background {
+  background-color: #5F7161;
+}
+
+/* TABLET and DESKTOP */
+
+@media screen and (min-width: 768px) {
+  .happy-page {
+    width: 450px;
+  }
+}
+
+/* DESKTOP  */
+
+@media screen and (min-width: 992px) {
+  .card:hover {
+    background-color: whitesmoke;
+  }
+
+  .heart-button:hover {
+    transform: scale(1.1);
+  }
+}

@@ -19,18 +19,3 @@ const HappyList = ({ thoughtList, handleHeartClick }) => {
 }
 
 export default HappyList
-
-/* <section>
-      {thoughtList.map((singleThought) => {
-        return (
-          <section className="thought-card" key={singleThought._id}>
-            <div>{singleThought.message}</div>
-            <div>
-              <button type="button" onClick={() => handleHeartClick(singleThought._id)}>❤</button>
-               x{singleThought.hearts}
-            </div>
-            <div>{singleThought.createdAt}</div>
-          </section>
-        )
-      })}
-    </section> */

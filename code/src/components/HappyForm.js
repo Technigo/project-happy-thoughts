@@ -6,17 +6,23 @@ const HappyForm = ({ handleFormSubmit, newThought, handleNewThoughtChange }) => 
 
   return (
     <form className="form" onSubmit={handleFormSubmit}>
-      <label htmlFor="user-thought">What is making you happy right now?</label>
+      <label htmlFor="thought-input">What is making you happy right now?</label>
       <textarea
-        className="user-thought"
+        className="thought-input"
         id="user-thought"
         value={newThought}
         onChange={handleNewThoughtChange}
-        rows="4"
-        cols="30"
+        rows="3"
         placeholder="Add your happy thought here!" />
-      <button className="send-thought-btn" type="submit" disabled={isSubmitButtonDisabled}>
-        <span className="button-text">Send Happy Thought</span>
+      <div className="thought-length">
+        <span>{newThought.length}/140 </span>
+        {newThought.length > 140 && <span>Your thought is too long!</span>}
+      </div>
+      <button
+        className="send-thought-btn"
+        type="submit"
+        disabled={isSubmitButtonDisabled}>
+        <span className="button-text">🤍 Send Happy Thought 🤍</span>
       </button>
     </form>
   )

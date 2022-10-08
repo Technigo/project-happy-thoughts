@@ -54,7 +54,7 @@ const HappyPage = () => {
       .then(() => getHappyThoughts())
   }
   return (
-    <main>
+    <main className="happy-page">
       <HappyForm
         handleFormSubmit={handleFormSubmit}
         handleNewThoughtChange={handleNewThoughtChange}
