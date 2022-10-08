@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from 'react';
 
-import TaskList from 'components/Tasklist';
-import TaskForm from 'components/TaskForm';
+import Header from 'components/Header';
+import Feed from 'components/Feed';
+// import PostItem from 'components/PostItem';
+import NewPost from 'components/NewPost';
+// import LikeButton from 'components/LikeButton';
 
 export const App = () => {
-  const [taskList, setTaskList] = useState([]);
+  const [feed, setFeed] = useState([]);
+  const [newPost, setNewPost] = useState('');
   const [loading, setLoading] = useState(false);
-  const [newTodo, setNewTodo] = useState('');
 
-  const fetchTasks = () => {
+  const fetchPosts = () => {
     setLoading(true);
-    fetch('https://week7-backend.herokuapp.com/tasks')
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setTaskList(data))
+      .then((data) => setFeed(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
 
   const handleNewTodoChange = (event) => {
-    setNewTodo(event.target.value)
+    setNewPost(event.target.value)
   }
 
   const onFormSubmit = (event) => {
@@ -30,30 +33,31 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        description: newTodo
+        description: newPost
       })
     }
 
-    fetch('https://week7-backend.herokuapp.com/tasks', options)
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      .then(() => fetchTasks())
-      .finally(() => setNewTodo(''));
+      .then(() => fetchPosts())
+      .finally(() => setNewPost(''));
   }
 
   useEffect(() => {
-    fetchTasks();
+    fetchPosts();
   }, []);
 
   return (
     <div>
-      <TaskForm
-        newTodo={newTodo}
+      <Header title="Happy Thoughts" />
+      <NewPost
+        newTodo={newPost}
         onNewTodoChange={handleNewTodoChange}
         onFormSubmit={onFormSubmit} />
-      <TaskList
+      <Feed
         loading={loading}
-        taskList={taskList}
-        setTaskList={setTaskList} />
+        taskList={feed}
+        setTaskList={setFeed} />
     </div>
   );
 }
