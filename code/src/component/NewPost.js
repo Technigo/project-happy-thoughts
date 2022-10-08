@@ -1,4 +1,4 @@
-const NewPost = ({ handlePostSubmit, onNewPostChange, newPost}) => {
+const NewPost = ({ handlePostSubmit, onNewPostChange, newPost, textarea }) => {
     return ( 
         <form onSubmit={handlePostSubmit}>
             <h2>What&#39;s making you happy now?</h2>
@@ -8,7 +8,12 @@ const NewPost = ({ handlePostSubmit, onNewPostChange, newPost}) => {
             name='newInput'
             id='newInput'
             cols='30'
-            rows='10'></textarea>
+            rows='10'
+            required
+            maxLength='140'
+            > 
+            </textarea>
+            <p className='warning'>140 - {newPost.length} characters left</p>
             <button type='submit'>❤️ Send Happy Thoughts ❤️</button>
         </form>
      );
