@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.message-container, .submit-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.submit-btn {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+textarea {
+  width:  500px;
+  height: 85px;
+}
