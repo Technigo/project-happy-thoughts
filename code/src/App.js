@@ -1,5 +1,3 @@
-/* eslint-disabled */
-
 import React, { useState, useEffect } from 'react';
 import SendThought from './components/SendThought';
 import MessageList from './components/MessageList';
@@ -12,8 +10,8 @@ export const App = () => {
   const [newMessage, setNewMessage] = useState('');
   const [messageList, setMessageList] = useState([]);
   const [loading, setLoading] = useState(true);
- 
-  //Fetch API
+
+  // Fetch API
   const fetchMessages = () => {
     setLoading(false);
     fetch(API)
@@ -23,13 +21,12 @@ export const App = () => {
       .finally(() => setLoading(false));
   }
 
-  //UseEffect hook gets all 20 recent thoughts
+  // UseEffect hook gets all 20 recent thoughts
   useEffect(() => {
     fetchMessages();
   }, [newMessage, MessageList]);
 
-
-  //To post new thought
+  // To post new thought
   const onNewMessageChange = (event) => {
     setNewMessage(event.target.value)
   }
@@ -44,7 +41,7 @@ export const App = () => {
       }),
       headers: {
         'Content-Type': 'application/json'
-      },
+      }
     }
 
     fetch(API, options)
@@ -53,39 +50,33 @@ export const App = () => {
       .finally(() => setNewMessage(''))
   }
 
-/* Shows likes */
-const onLikesIncrease = (LikeID) => {
-  const options = { method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    } }
+  /* Shows likes */
+  const onLikesIncrease = (LikeID) => {
+    const options = { method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      } }
 
-  fetch(LIKES_API(LikeID), options)
-    .then((res) => res.json())
-    .then(console.log('yey it works.'))
-    .catch((error) => console.error(error))
-    .finally(() => fetchMessages())
+    fetch(LIKES_API(LikeID), options)
+      .then((res) => res.json())
+      .then(console.log('yey it works.'))
+      .catch((error) => console.error(error))
+      .finally(() => fetchMessages())
   }
-
 
   return (
     <div className="outer-wrapper">
       <SiteHeader />
       <div className="inner-wrapper">
-        
         <SendThought
           newMessage={newMessage}
           onNewMessageChange={onNewMessageChange}
           onNewMessageSubmit={onNewMessageSubmit} />
-
         <MessageList
           loading={loading}
           messageList={messageList}
           setMessageList={setMessageList}
-          
-          onLikesIncrease={onLikesIncrease}
-           />
-
+          onLikesIncrease={onLikesIncrease} />
       </div>
     </div>
 

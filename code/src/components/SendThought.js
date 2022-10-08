@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 
 const SendMessage = ({ newMessage, onNewMessageChange, onNewMessageSubmit }) => {
@@ -14,10 +15,10 @@ const SendMessage = ({ newMessage, onNewMessageChange, onNewMessageSubmit }) => 
           className="text-area" />
 
         <p
-        className="text-counter"
-        //Condition to change text color to red when there are only 10 characters left to reach max
-        style={{ color: newMessage.length > 130 ? "red" : "black" }}>
-        {140 - newMessage.length}/140
+          className="text-counter"
+          // Condition to change text color to red when there are only 10 characters left to reach max
+          style={{ color: newMessage.length > 130 ? 'red' : 'black' }}>
+          {140 - newMessage.length}/140
         </p>
 
         <button
