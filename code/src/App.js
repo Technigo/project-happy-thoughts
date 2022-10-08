@@ -51,7 +51,7 @@ export const App = () => {
       .finally(() => handleFormCleanup());
   }
   if (loading) {
-    <p>The page is loading...</p>
+    <p>Loading...</p>
   }
 
   return (
