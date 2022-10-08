@@ -30,7 +30,7 @@ h1 {
 .thoughtForm-container {
   background-color: #F6F6F6;
   margin-left: 10px;
-  margin-right: 20px;
+  margin-right: 35px;
   padding-left: 10px;
   height: 240px;
   width: 330px;
@@ -48,13 +48,11 @@ h1 {
   font-size: 16px;
 }
 
-.container {
-  width: 340px;
-  height: 100px;
-}
-
 .thoughtMsg {
   overflow-wrap: break-word;
+  margin-left: 20px;
+  padding-top: 15px;
+  font-size: 12px;
 }
 
 h2 {
@@ -89,47 +87,44 @@ h2 {
   background-color: #FA7070;
 }
 
-.counter {
-  margin-left: 5px;
-  margin-top: 17px;
-  color: #7F8487;
-  font-size: 12px;
-}
-
 .container {  
   background-color: white;
-  margin: 30px 15px 30px 10px;
+  width: 340px;
+  height: 100px;
+  margin: 30px 35px 25px 10px;
   box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
   -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
 }
 
-.thoughtMsg {
-  margin-left: 20px;
-  font-size: 14px;
-}
-
 .likes {
   display: flex;
   flex-direction: row;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-left: 8px;
+  margin-top: 8px;
 }
 
 .like-btn {
   border-radius: 50%;
   border: none;
   background-color: #DDDDDD;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
 }
 
 .no-like-btn {
   border-radius: 50%;
   border: none;
   background-color: #FA7070;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
+}
+
+.counter {
+  margin-left: 5px;
+  margin-top: 10px;
+  color: #7F8487;
+  font-size: 10px;
 }
 
 /* FOOTER */
@@ -156,8 +151,18 @@ h2 {
     font-size: 32px;
   }
 
- .container, .thoughtForm-container {
+  h2 {
+    font-size: 20px;
+  }
+
+ .container {
   width: 500px;
+  height: 120px;
+ }
+
+ .thoughtForm-container {
+  width: 500px;
+  height: 230px;
  }
 
  .footer-container {
@@ -169,6 +174,29 @@ h2 {
   font-size: 14px;
   margin-top: 40px;
 }
+
+.text-input {
+  width: 470px;
+}
+
+.like-btn, .no-like-btn {
+  height: 40px;
+  width: 40px;
+}
+
+.thoughtMsg {
+  font-size: 14px;
+}
+
+.counter {
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.likes {
+  padding-top: 20px;
+}
+
 }
 
 @media (min-width: 992px) {
@@ -193,5 +221,9 @@ h2 {
     font-size: 14px;
     margin-top: 70px;
    }
+
+   .text-input {
+    width: 470px;
+  }
 }
 
