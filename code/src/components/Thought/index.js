@@ -27,11 +27,7 @@ const Thought = (props) => {
         <div className={styles.likeAndDate}>
           <div className={styles.like}>
             <button
-              className={
-                props.thought.hearts === 0
-                  ? styles.button
-                  : styles.clickedButton
-              }
+              className={likes === 0 ? styles.button : styles.clickedButton}
               type="button"
               onClick={handleClick}
             >

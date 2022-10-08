@@ -29,8 +29,9 @@ const CreateThoughts = (props) => {
   return (
     <Card>
       <form className={styles.form} onSubmit={onFormSubmit}>
-        <h1>What&apos;s making you happy right now?</h1>
+        <h1 className={styles.h1}>What&apos;s making you happy right now?</h1>
         <textarea
+          placeholder="Happy thoughts here..."
           className={styles.textarea}
           value={props.newThought}
           onChange={handleChange}

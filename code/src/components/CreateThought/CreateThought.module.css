@@ -1,5 +1,5 @@
 .button {
-  background-color: #f48d8d;
+  background-color: pink;
   border-radius: 16px;
   padding: 10px;
   border: none;
@@ -11,7 +11,16 @@
   align-items: flex-start;
 }
 
+.h1 {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
 .textarea {
   width: 100%;
   margin-bottom: 10px;
+  resize: none;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
