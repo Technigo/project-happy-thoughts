@@ -129,4 +129,8 @@ body {
   .heart-button:hover {
     transform: scale(1.1);
   }
+
+  .send-thought-btn:hover {
+    transform: scale(1.04)
+  }
 }
