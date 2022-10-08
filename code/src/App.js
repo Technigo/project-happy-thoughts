@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ThoughtsFeed from 'components/ThoughtsFeed';
 import Form from 'components/Form';
+import Loader from 'components/Loader';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -9,8 +10,6 @@ export const App = () => {
   const [loading, setLoading] = useState(false)
   const [newPost, setNewPost] = useState(false)
   const [totalLikes, setTotalLikes] = useState(Number(localStorage.clickcount))
-
-  console.log(`initial localStorage.clickcount = ${Number(localStorage.clickcount)}`)
 
   const fetchThoughts = () => {
     setLoading(true)
@@ -30,7 +29,6 @@ export const App = () => {
   const handleTotalLikesCallback = () => {
     setTotalLikes(totalLikes + 1)
     localStorage.clickcount = Number(localStorage.clickcount) + 1
-    // console.log(`initial localStorage.clickcount = ${localStorage.clickcount}`)
   }
 
   const handleNewThoughtChange = ((event) => {
@@ -68,10 +66,7 @@ export const App = () => {
 
   if (loading) {
     return (
-      <div className="page-loader">
-        <h1>Page is loading</h1>
-        <div className="loader" />
-      </div>
+      <Loader />
     )
   }
   return (
@@ -82,7 +77,8 @@ export const App = () => {
           onNewThought={newThought}
           onNewThoughtChange={handleNewThoughtChange}
           charactersCount={charactersCount} />
-        <div className="like-counter">You have hearted {totalLikes} thoughts! 🖤 </div>
+        {totalLikes > 0
+        && <div className="like-counter">You have hearted {totalLikes} thoughts! 🖤 </div>}
         <ThoughtsFeed
           posted={newPost}
           list={thoughts}
