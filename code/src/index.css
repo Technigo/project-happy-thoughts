@@ -152,6 +152,10 @@ textarea{
   border: none;
 }
 
+.thought-message{
+  overflow-wrap: break-word; 
+}
+
 textarea[type=text]{
   color:rgb(9, 9, 35);
   font-family: 'Roboto Mono', monospace;
