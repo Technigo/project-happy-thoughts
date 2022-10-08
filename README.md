@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The aim of this project was to build a page with React that fetch data from an API and also post new data. This page is filled with happy thought that people post and that the users can like/"heart". 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I bumped into a lot of different problems this time. But i managed to solve them by asking for help from teammates and reading questions asked in Stack Overflow. I had a lot more time for coding this week wich gave me an oppertunity to try to reach the stretch goals, wich was really fun! 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://postyourhappythoughts.netlify.app 
