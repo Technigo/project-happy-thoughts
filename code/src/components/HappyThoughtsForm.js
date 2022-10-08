@@ -13,4 +13,4 @@ const HappyThoughtForm = ({ handleFormSubmit, onAddNewThought, newThought }) => 
   );
 }
 
-export default HappyThoughtForm
+export default HappyThoughtForm;

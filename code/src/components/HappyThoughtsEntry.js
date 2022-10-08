@@ -19,7 +19,7 @@ const HappyThoughtsEntry = ({ id, message, hearts, createdAt }) => {
 
   const addHeart = () => {
     setLikedByMe(true)
-    // skip posting you have already liked this once
+    // Skip posting you have already liked something once
     if (!likedByMe) {
       sendHeartToApi()
       setHearts(heartsCounter + 1)
@@ -36,7 +36,7 @@ const HappyThoughtsEntry = ({ id, message, hearts, createdAt }) => {
       <p className="happy-thoughts-entry-text">{message}</p>
       <div className="likes-and-time-stamp">
         <span className="happy-thoughts-entry-heart-counter">
-          <button className={likedByMe ? ' button-likes button-likes-haslikes' : 'button-likes button-likes-nolikes'} onClick={addHeart} type="button">❤️</button>x {heartsCounter}
+          <button className={likedByMe ? ' button-likes has-likes' : 'button-likes no-likes'} onClick={addHeart} type="button">❤️</button>x {heartsCounter}
         </span>
         <span className="happy-thoughts-entry-date-stamp">{formattedDate.fromNow()}</span>
       </div>
