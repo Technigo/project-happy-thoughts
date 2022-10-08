@@ -127,6 +127,16 @@ h2 {
   font-size: 10px;
 }
 
+.date {
+  font-size: 10px;
+  margin: 0;
+  position: absolute;
+  left: 65%;
+  -ms-transform: translateY(-120%);
+  transform: translateY(-120%);
+  color: grey;
+}
+
 /* FOOTER */
 .footer-container {
   height: 50px;
@@ -224,6 +234,10 @@ h2 {
 
    .text-input {
     width: 470px;
+  }
+
+  .date {
+    left: 57%;
   }
 }
 

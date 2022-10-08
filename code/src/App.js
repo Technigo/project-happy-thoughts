@@ -11,7 +11,6 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [loading, setLoading] = useState(false)
   const [newMessage, setNewMessage] = useState('')
-  const [input, setInput] = useState('')
 
   const fetchThoughts = () => {
     setLoading(true)
@@ -28,7 +27,6 @@ export const App = () => {
 
   const handleNewThoughtsChange = (event) => {
     event.preventDefault()
-    setInput(event.target.value)
     setNewMessage(event.target.value)
   }
 
@@ -72,11 +70,11 @@ export const App = () => {
       <ThoughtForm
         newMessage={newMessage}
         handleNewThoughtsChange={handleNewThoughtsChange}
-        onFormSubmit={onFormSubmit}
-        input={input} />
+        onFormSubmit={onFormSubmit} />
       <HappyThoughtList
         loading={loading}
         thoughts={thoughts}
+        setThoughts={setThoughts}
         onLikeIncrese={onLikeIncrese} />
       <Footer />
     </div>
