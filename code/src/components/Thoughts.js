@@ -20,7 +20,7 @@ const Thoughts = ({ loading, thoughts, onNewLikeSubmit }) => {
                 className="like-btn"
                 onClick={() => { onNewLikeSubmit(thought._id) }}
                 style={{
-                  background: thought.hearts >= 1 ? '#ffdede' : '#d5d4d5'
+                  background: thought.hearts >= 1 ? '#f2ccd8' : '#d5d4d5'
                 }}>
                 <span className="emoji" role="img" aria-label="heart-emoji">❤️</span>
               </button>
