@@ -21,6 +21,7 @@ h2 {
   flex-direction: column;
   align-items:center;
   justify-content: center;
+  
 }
 
 .inner-wrapper {
@@ -33,10 +34,12 @@ h2 {
 }
 
 .header-container {
-  padding: 30px;
-  font-size: 35px;
+  padding: 20px;
+  font-size: 60px;
   font-weight: 600;
   text-align: center;
+  font-family: 'Patrick Hand SC', cursive;
+  text-shadow: 5px 5px 10px rgb(255, 188, 188);
 }
 
 /*SendThought - Submit form*/
@@ -49,6 +52,13 @@ h2 {
 
 .text-area {
   width: 90%;
+}
+
+.text-counter {
+  font-size: 15px;
+  width: 90%;
+  text-align: end;
+  padding: 0px;
 }
 
 button {
@@ -89,10 +99,19 @@ button:hover {
   align-items: center;
 }
 
-/*
-@media (max-width: 700px){ 
+
+@media (max-width: 667px){ 
   .header-container {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  .inner-wrapper {
+    min-width: 85%;
+  }
 }
-}*/
+  @media (min-width: 668px) and (max-width:1025px){
+    .inner-wrapper {
+      min-width: 85%;
+  }
+}

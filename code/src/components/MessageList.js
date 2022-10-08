@@ -21,7 +21,7 @@ const MessageList = ({ loading, messageList, onLikesIncrease }) => {
                   then the className would be like-btn, otherwise it would be no-like-btn */
                   className={(event.hearts === 0 ? 'like-btn' : 'no-like-btn')} onClick={() => onLikesIncrease(event._id)}
                    //Condition to determine heart button's back color depending on the amount of hears it has
-                  style={{ backgroundColor: event.hearts > 0 ? "#ffadad" : "#f2f0f0" }}>❤️</button>
+                  style={{ backgroundColor: event.hearts > 0 ? "#ffadad" : "#f2f0f0" }} aria-label="Heart emoji">❤️</button>
                 <p className="counter">x {event.hearts}</p>
                 </div>
               </div>
