@@ -1,9 +1,11 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import Tweet from './Tweet';
 import NewTweet from './NewTweet';
 
 const Feed = () => {
   const [thoughts, setThoughts] = useState([])
+
   /* Api Global */
   useEffect(() => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
@@ -19,8 +21,7 @@ const Feed = () => {
       }} />
       {thoughts.map((tweet) => (
         <Tweet
-          // eslint-disable-next-line no-underscore-dangle
-          key={tweet._id}
+          key={tweet._id} // property key(clave) - property value
           tweet={tweet} />
       ))}
     </section>

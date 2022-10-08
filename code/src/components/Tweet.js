@@ -14,7 +14,6 @@ const Tweet = ({ tweet }) => {
     }
 
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, ids)
-      // eslint-disable-next-line no-return-assign
       .then((res) => {
         if (res.status === 200) {
           res.json()
@@ -33,7 +32,6 @@ const Tweet = ({ tweet }) => {
         <div className="info-like">
           <button
             className={tweet.hearts > 0 ? 'button-heart clicked' : 'button-heart'}
-            // eslint-disable-next-line no-underscore-dangle
             onClick={() => handleLikeButton(tweet._id)}>
             <span role="img" aria-label="heart">❤️</span>
           </button>
