@@ -133,4 +133,10 @@ body {
   .send-thought-btn:hover {
     transform: scale(1.04)
   }
+
+  .send-thought-btn:disabled {
+    background-color: lightgrey;
+    color: black;
+    cursor: not-allowed;
+  }
 }
