@@ -41,13 +41,13 @@ p {
 }
 
 .thought-form-details{
-display:flex;
-justify-content: space-between;
-
+ display:flex;
+ justify-content: space-between;
 }
 
 .character-counter{
-padding-right: 5%;
+ padding-right: 5%;
+ color: rgb(178, 174, 174)
 }
 
 .send-thought-button {
@@ -125,19 +125,54 @@ padding-right: 5%;
   color:rgb(178, 174, 174)
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .heart-counter-wrapper {
     right: 24vw;
     top: 24vh;
   }
+
+  .thought-form-details{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .send-thought-button {
+    font-size: 13px;
+     width: 85%;
+  }
+
+  .character-counter {
+    font-size: 11px;
+    display: flex;
+    justify-content: end;
+    margin: -3px 15px 5px 0px;
+  }
+
 }
 @media (max-width: 768px) {
   .thought-input-wrapper {
-    width: 70vw;
+    width: 40vw;
   }
 
   .thought-input-field {
     width: calc(70vw - 50px);
+  }
+
+  .thought-form-details{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .send-thought-button {
+    font-size: 13px;
+     width: 85%;
+  }
+
+  .character-counter {
+    font-size: 11px;
+    display: flex;
+    justify-content: end;
+    margin: -3px 15px 5px 0px;
   }
 
   .heart-counter-wrapper {
@@ -147,7 +182,7 @@ padding-right: 5%;
 }
 @media (max-width: 560px) {
   .thought-input-wrapper {
-    width: 90vw;
+    width: 40vw;
   }
 
   .thought-input-field {
@@ -159,9 +194,18 @@ padding-right: 5%;
     right: 11vw;
   }
 }
-@media (max-width: 375px) {
+/*@media (max-width: 375px) {
+
+  .thought-input-wrapper {
+    width: 40vw;
+  }
+
+  .thought-input-field {
+    width: calc(90vw - 50px);
+  }
+
   .heart-counter-wrapper {
     top: 27vh;
     right: -2vw;
   }
-}
+}*/
