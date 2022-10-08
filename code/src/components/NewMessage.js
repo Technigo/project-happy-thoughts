@@ -35,7 +35,7 @@ const NewMessage = () => {
   return (
     <article className="message-post message-container">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="text-input"> <p>What is making you happy right now?</p>
+        <label htmlFor="text-input"> <h1>What is making you happy right now?</h1>
           <textarea
             maxLength={140}
             name="message"

@@ -10,16 +10,14 @@ const MessageDisplay = () => {
       .then((data) => data.json())
       .then((fetchedMessages) => setMessages(fetchedMessages))
       .catch((error) => console.error(error))
-      .finally(() => console.log('everything is fine'));
   }, []);
-  console.log(messages)
 
   return (
     <main>
       <section>
         <NewMessage messages={messages} />
       </section>
-      <section>
+      <section role="feed">
         <PostedMessage messages={messages} />
       </section>
     </main>
