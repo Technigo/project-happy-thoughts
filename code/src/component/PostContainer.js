@@ -40,7 +40,7 @@ const PostContainer = () => {
                 //http header fields 
                 'Content-Type': 'application/json',
               },
-              body: JSON.stringify({ messsage: newPost })
+              body: JSON.stringify({ message: newPost })
         };
         
         fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
