@@ -1,13 +1,96 @@
+:root {
+  --clr-lightgrey: #eaeaea;
+  --clr-black: #000;
+  --clr-pink: #c16c7a;
+  --clr-lightpink: #dcb7bd;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:var(--clr-lightpink);
+  display: flex;
+  align-items: center; 
+  flex-direction: column;
+  font-family: monospace;
+}
+
+.header {
+  text-align: center;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: monospace;
+}
+
+section {
+  max-width: 370px;
+}
+
+/* thought form*/
+
+form {
+  background-color:var(--clr-lightgrey);
+  border: 1px solid var(--clr-black);
+  box-shadow: 5px 5px var(--clr-black);
+  display: flex;
+  flex-direction: column;
+  margin: 2em 1em;
+  padding: 1em;
+}
+
+.counter-characters {
+  text-align: right;
+}
+
+.section-form {
+display: flex;
+flex-direction: column;
+margin: 2em 1em;
+
+border: 1px solid var(--clr-black);
+box-shadow: 5px 5px var(--clr-black);
+  
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 1.5em;
+  color: #eaeaea;
+}
+
+.submit-btn {
+  background-color:var(--clr-pink) ;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 40px;
+  display: flex;
+  font-family: monospace;
+  text-align: right;
+}
+
+.submit-btn:disabled {
+  background-color: lightgrey;
+  cursor: not-allowed;
+}
+
+/*thought list*/
+
+.thoughts-messages {
+  background: #fafafa;
+  box-shadow: 5px 5px var(--clr-black);
+  display: flex;
+  margin: 2em 1em;
+  padding: 1em;
+  flex-direction: column;
+  }
+
+.like-button {
+  background-color: #c67784;
+  color: white;
+  border-style: none;
+  border-radius: 40px;
+  font-weight: 700;
+  cursor: pointer;
 }
