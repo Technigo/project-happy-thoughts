@@ -81,7 +81,7 @@ const PostContainer = () => {
             <PostList
             loading={loading}
             posts={posts}
-            
+            handleLiked={handleLiked}
             />
         </div>
      );
