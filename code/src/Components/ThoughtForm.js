@@ -25,7 +25,7 @@ const ThoughtForm = (props) => {
             name="thought"
             maxLength="140"
             value={newThought}
-            onChange={(event) => setNewThought(event.target.value)} />
+            onChange={setNewThought} />
         </div>
         <div className="thought-input-details">
           <button
