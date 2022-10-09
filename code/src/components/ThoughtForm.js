@@ -5,7 +5,7 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit, onThoughtLi
     <form
       onSubmit={onFormSubmit}
       className="thought-form">
-      <h1>Happy 💖 Thought</h1>
+      <h1>Happy ❤️ Thought</h1>
       <div className="post-thought">
         <p>What&apos;s making you happy right now?</p>
         <textarea
@@ -21,7 +21,7 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit, onThoughtLi
           type="submit"
           className="submit-button"
           onChange={onThoughtLikeChange}>
-           💖Send happy thought💖
+           ❤️Send happy thought❤️
         </button>
       </div>
     </form>

@@ -21,7 +21,7 @@ const ThoughtList = ({ loading, thoughtList, onThoughtLikeChange }) => {
               then the className would be empty-button,
               otherwise it would be like-button */
               className={thought.hearts === 0 ? 'empty-button' : 'like-button'}
-              onClick={() => onThoughtLikeChange(thought._id)}>💖
+              onClick={() => onThoughtLikeChange(thought._id)}>❤️
             </button>
             <p className="likes">x{thought.hearts}</p>
             <p className="time-detail">

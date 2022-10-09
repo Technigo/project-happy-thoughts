@@ -22,7 +22,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(177deg, #f3f7b8, #f9c6e0, #d7f7b8, #f3f7b8);
+  background: linear-gradient(177deg, #f3f7b8, #ffadad, #f3f7b8, #d7f7b8 );
   background-size: 800% 800%;
   -webkit-animation: AnimationName 10s ease infinite;
   -moz-animation: AnimationName 10s ease infinite;
@@ -70,7 +70,7 @@ button{
 .submit-button,
 .like-button {
   display: block;
-  background-color: rgb(207, 238, 176);
+  background-color: #ffadad;
 }
 
 .like-button,
