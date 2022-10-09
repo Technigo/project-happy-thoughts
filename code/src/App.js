@@ -38,10 +38,8 @@ export const App = () => {
     };
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      // why are we calling collect thoughts again?
       .then(() => collectThoughts())
       .catch((error) => console.error(error))
-      // why are we doing this finally?
       .finally(() => setNewThought(''));
   };
 

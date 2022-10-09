@@ -5,7 +5,7 @@ import ThoughtHeader from './ThoughtHeader';
 
 const ThoughtList = ({ thoughtList, loading }) => {
   if (loading) {
-    return <h1 className="loading">Loading in progress...</h1>;
+    return <h1 className="loading">Happy thoughts in 3... 2... 1... </h1>;
   }
 
   return (
@@ -15,10 +15,7 @@ const ThoughtList = ({ thoughtList, loading }) => {
           // eslint-disable-next-line no-underscore-dangle
           <article key={thought._id} className="thought-cards">
             <ThoughtHeader message={thought.message} />
-            <ThoughtDetails
-              createdAt={thought.createdAt}
-              hearts={thought.hearts}
-            />
+            <ThoughtDetails thought={thought} />
           </article>
         );
       })}

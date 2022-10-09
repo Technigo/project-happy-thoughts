@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Open+Sans&family=Roboto+Mono&display=swap');
+
 body {
   margin: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -45,8 +47,17 @@ textarea {
 
   padding: 10px;
   border: 2px solid #dfdfde;
-  /* margin-left: 20px; */
-  /* margin-right: 20px; */
+}
+
+.character-container {
+  font-size: 14px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.minimum-characters {
+  color: red;
 }
 
 .share-button {
@@ -55,11 +66,35 @@ textarea {
   font-size: 16px;
   padding: 10px 20px;
   background: #ffadad;
+  font-family: 'Roboto mono', monospace;
+  transition: 0.3s ease-in-out;
+}
+
+.share-button-active {
   color: black;
   cursor: pointer;
-  font-family: 'Roboto mono', monospace;
-  /* margin: 30px; */
-  /* transition: 0.4s ease-in-out; */
+  margin: 10px 0;
+}
+
+.share-button-inactive {
+  opacity: 0.5;
+  color: grey;
+  cursor: default;
+}
+
+.happy-hearts-container {
+  display: flex;
+  gap: 10px;
+}
+
+.happy-hearts {
+  margin: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.share-button-active:hover .happy-hearts {
+  transform: scale(1.5);
+  /* display: none; */
 }
 
 /* ThoughtList */
@@ -133,16 +168,21 @@ h1 {
   }
 
   .form-container {
-    width: 500px;
+    width: 460px;
   }
 
   textarea {
+    height: 70px;
     max-width: 430px;
     max-height: 200px;
     min-width: 250px;
     min-height: 30px;
     width: 425px;
   }
+  .character-container {
+    font-size: 16px;
+  }
+
   .thought-cards {
     width: 500px;
   }
