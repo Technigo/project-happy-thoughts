@@ -9,4 +9,5 @@ With the given design I used a scatchpad to structure and naming the different c
 If I'd had more time I would try to get the character counter to display in the color red when, les then 4 or 140 caracters where used, to visualize this step. I would also try to extract the button as it's own component probobly also make a specific button css file.
 ## View it live
 
+Netlify : https://happy-thought-nina-berggren.netlify.app/
 
