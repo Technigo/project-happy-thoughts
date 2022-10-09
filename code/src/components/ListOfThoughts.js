@@ -9,23 +9,24 @@ export const ListOfThoughts = ({ loading, listOfThoughts, onThoughtLikeChange })
   }
 
   return (
-    <div className="thought-wrapper">
-      <section className="thought-list-container">
-        {listOfThoughts.map((thought) => (
-          <div key={thought._id} className="thought-msg">
-            <h4>{thought.message}</h4>
-            <div className="like-stats-container">
-              <button
-                type="button"
-                className={thought.hearts === 0 ? 'empty-button' : 'like-button'}
-                onClick={() => onThoughtLikeChange(thought._id)}>hartimg?
-              </button>
-              <p className="likes">x{thought.hearts}</p>
-              <p>{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
-            </div>
+    <section className="thought-list-container">
+      {listOfThoughts.map((thought) => (
+        <div key={thought._id} className="thought-msg">
+          <h4>{thought.message}</h4>
+          <div className="like-stats-container">
+            <button
+              type="button"
+              className={thought.hearts === 0 ? 'empty-btn' : 'like-btn'}
+              onClick={() => onThoughtLikeChange(thought._id)}>
+              <span className="heart" role="img" aria-label="heart symbol">
+              ❤️
+              </span>
+            </button>
+            <p className="likes">x{thought.hearts}</p>
+            <p className="time">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
           </div>
-        ))}
-      </section>
-    </div>
+        </div>
+      ))}
+    </section>
   );
 }
