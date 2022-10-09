@@ -1,0 +1,41 @@
+.container  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 75px;
+    padding-left: 75px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 45px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 10px 8px 10px #888888;
+    background-color: rgba(243, 229, 208, 0.647);
+    max-width: 80%;
+}
+
+input {
+    visibility: hidden;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.textSpace {
+    width: 60%;
+}
+
+.hearth {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
