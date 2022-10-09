@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from 'components/Header';
-import ThoughtCountainer from 'components/ThoughtContainer';
+import Thoughts from 'components/Thoughts';
 
 export const App = () => {
   return (
     <div className="main">
       <Header />
-      <ThoughtCountainer />
+      <Thoughts />
     </div>
   )
 }

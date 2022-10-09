@@ -1,8 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { formatDistance } from 'date-fns';
 
-const AllThoughts = ({ loading, thoughts, handleLikeChange }) => {
+const ThoughtList = ({ AllThoughts, loading, handleLikeChange }) => {
   if (loading) {
     return (
       <h2>Loading..</h2>
@@ -10,10 +9,11 @@ const AllThoughts = ({ loading, thoughts, handleLikeChange }) => {
   }
 
   return (
-    <section className="thoight-list">
-      {thoughts.map((thought) => {
+    <section className="thought-list">
+      {AllThoughts.map((thought) => {
         return (
           <div key={thought._id} className="thought-container">
+            <p className="message">{thought.message} </p>
             <div className="btn-container">
               <div className="like-container">
                 <button
@@ -27,11 +27,6 @@ const AllThoughts = ({ loading, thoughts, handleLikeChange }) => {
                 </button>
                 <p className="likes"> {thought.hearts} </p>
               </div>
-              <div className="time">
-                <p className="timecreated">
-                  {formatDistance(new Date(thought.createAt), Date.now(), { addSuffix: true })}
-                </p>
-              </div>
             </div>
           </div>
         )
@@ -40,4 +35,4 @@ const AllThoughts = ({ loading, thoughts, handleLikeChange }) => {
   )
 }
 
-export default AllThoughts
+export default ThoughtList

@@ -1,30 +1,33 @@
+/* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react';
-import AllThoughts from 'components/AllThoughts';
+import ThoughtsList from 'components/ThoughtList';
 import NewThought from 'components/NewThought';
 
 const likesnumber = (messageID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`;
 
-const ThoughtContainer = () => {
-  const [thoughts, setThoughts] = useState([]);
+const Thoughts = () => {
+  const [AllThoughts, setAllThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
-
-  const fetchThought = () => {
-    setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-      .then((data) => data.json())
-      .then((transformedData) => setThoughts(transformedData))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  }
 
   useEffect(() => {
     fetchThought();
   }, []);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const fetchThought = () => {
+    setLoading(true);
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+      .then((Response) => Response.json())
+      .then((data) => setAllThoughts(data))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  }
 
+  const newThoughtChange = (event) => {
+    setNewThought(event.target.value)
+  }
+  const onFormSubmit = (event) => {
+    event.preventDefault();
     const options = {
       method: 'POST',
       headers: {
@@ -34,14 +37,9 @@ const ThoughtContainer = () => {
     }
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-      .then((Response) => Response.json())
+      .then((res) => res.json())
       .then(() => fetchThought())
       .finally(() => setNewThought(''));
-  }
-
-  const newThoughtChange = (event) => {
-    event.preventDefault();
-    setNewThought(event.target.value)
   }
 
   const handleLikeChange = (messageID) => {
@@ -61,15 +59,15 @@ const ThoughtContainer = () => {
   return (
     <div>
       <NewThought
-        NewThought={NewThought}
+        newThought={newThought}
         newThoughtChange={newThoughtChange}
-        onSubmit={handleSubmit} />
-      <AllThoughts
-        thoughts={thoughts}
+        onFormSubmit={onFormSubmit} />
+      <ThoughtsList
+        AllThoughts={AllThoughts}
         loading={loading}
         handleLikeChange={handleLikeChange} />
     </div>
   )
 }
 
-export default ThoughtContainer;
+export default Thoughts;
