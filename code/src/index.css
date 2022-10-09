@@ -107,6 +107,14 @@ code {
   .inner-show-msg-wrapper {
     max-width: 35%;
   }
+  .heart-counter {
+    position:absolute;
+    left: 10%;
+    bottom: 8%;
+  }
+  .send-btn {
+    max-width: 20vw;
+  }
 }
 
 
