@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 import React, { useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
-import { HandleLikeButtonClick } from './util';
+import { handleLikeButtonClick } from './util';
 
 const ThoughtDetails = ({ thought }) => {
-  // destructuring of variables from the thought object
+  // Destructuring of variables from the thought object
   const { createdAt, hearts, _id } = thought;
 
   // Local state variable linked to the API to update only the thought that was liked
@@ -15,24 +15,39 @@ const ThoughtDetails = ({ thought }) => {
     Number(localStorage.getItem(`localLikes ${_id}`))
   );
 
-  const handleHeartButtonClick = () => {
+  const hiddenHeartToggle = (event) => {
+    // targets the hidden heart element
+    const animatedHeart = event.target.closest('.heart-button').firstChild;
+    // toggles the hidden class for 1 second
+    animatedHeart.classList.remove('hidden-heart');
+    setTimeout(() => animatedHeart.classList.add('hidden-heart'), 1000);
+  };
+
+  const handleHeartButtonClick = (event) => {
     // 1. sends a new heart to the api for the current thought
-    HandleLikeButtonClick(_id, setLikes);
+    handleLikeButtonClick(_id, setLikes);
     // 2. updates local state variable which reloads the component
     setLocalLikes(localLikes + 1);
     // 3. updates localStorage which keeps track of how many times user has liked something locally
     localStorage.setItem(`localLikes ${_id}`, JSON.stringify(localLikes));
+    // 4. remove hidden for 1 second for the duration of the animation
+    hiddenHeartToggle(event);
   };
 
   return (
-    <div className="bajs">
+    <div>
       <div className="thought-detail-container">
         <div className="button-container">
           <button
-            className="heart-button"
+            className={
+              localLikes > 0
+                ? 'heart-button heart-button-liked'
+                : 'heart-button'
+            }
             type="submit"
             onClick={handleHeartButtonClick}
           >
+            <span className="animate hidden-heart">❤️</span>
             <span className="heart-emoji" role="img" aria-label="heart emoji">
               💕
             </span>

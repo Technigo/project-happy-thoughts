@@ -1,6 +1,6 @@
 // Exported helpers functions to not clutter up components
 
-export const CollectThoughts = (setLoading, setHappyThoughts) => {
+export const collectThoughts = (setLoading, setHappyThoughts) => {
   setLoading(true);
   fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
     .then((res) => res.json())
@@ -9,7 +9,7 @@ export const CollectThoughts = (setLoading, setHappyThoughts) => {
     .finally(() => setLoading(false));
 };
 
-export const HandleLikeButtonClick = (id, setLikes) => {
+export const handleLikeButtonClick = (id, setLikes) => {
   // posts a new like to the like endpoint for the current thought
   fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
     method: 'post',
