@@ -166,6 +166,9 @@ header {
 
 @media (min-width: 1024px) {
   .thought-btn {
-    width: 60%;
+    width: 50%;
+  }
+  .input-container {
+    min-width: 550px;
   }
 }

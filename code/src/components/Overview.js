@@ -10,7 +10,6 @@ const Overview = () => {
   const [thoughts, setThoughts] = useState([]);
 
   const APIurl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-  // const APIlikes = ('https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`)
 
   const fetchThoughts = () => {
     fetch(APIurl)
