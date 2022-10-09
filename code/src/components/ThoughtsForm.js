@@ -6,7 +6,7 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
   return (
     <div className="form-container">
       <form onSubmit={onFormSubmit}>
-        <p className="form-title">Happy and you know it? Share your thought!</p>
+        <p className="form-title">Happy and you know it? Share your thought! 😍</p>
         <textarea
           value={newThought}
           onChange={onNewThoughtChange}
@@ -18,7 +18,7 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
           className="submit-btn"
           type="submit"
           disabled={newThought.length < 5 || newThought.length > 140}>
-           Send!
+           SEND
         </button>
       </form>
     </div>

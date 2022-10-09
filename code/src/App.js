@@ -9,7 +9,7 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
 
-  // This function fetches 20 thoughts from the HappyThoughts API and stores the
+  // This function fetches 20 objects ('thoughts') from the HappyThoughts API and stores the
   // array in setThoughts/thoughts, which initially starts as an empty array
   const fetchThoughts = () => {
     console.log('fetchThoughts invoked')

@@ -26,7 +26,7 @@ const Thoughts = ({ loading, thoughts, onNewLikeSubmit }) => {
                 className={thought.hearts === 0 ? 'no-like-btn' : 'like-btn'}
                 // eslint-disable-next-line no-underscore-dangle
                 onClick={() => onNewLikeSubmit(thought._id)}>
-                Submit
+                <span className="emoji" role="img">💖</span>
               </button>
               <p className="like-counter">x {thought.hearts}</p>
             </section>
