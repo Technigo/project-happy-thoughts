@@ -28,13 +28,11 @@ export const ThoughtForm = ({
           type="submit"
           className="submit-btn"
           onChange={onThoughtLikeChange}>
-          <span className="heart" role="img" aria-label="heart symbol">
-            ❤️
-          </span>{' '}
-          Send Happy Thoughts!{' '}
-          <span className="heart" role="img" aria-label="heart symbol">
-            ❤️
-          </span>
+          <span className="heart" role="img" aria-label="heart symbol" />
+          ❤️
+          Send Happy Thoughts!
+          ❤️
+          <span className="heart" role="img" aria-label="heart symbol" />
         </button>
       </form>
     </div>

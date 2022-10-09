@@ -47,7 +47,6 @@ body {
   border: 1px solid var(--clr-black);
   box-shadow: 10px 10px var(--clr-black);
   background-color: var(--clr-light-grey);
-  /* position: relative; */
 }
 
 input {
@@ -72,11 +71,8 @@ input {
 .add-thought-word-count {
   font-size: 0.75rem;
   text-align: right;
-  border: 1px solid red;
 }
-.red-text {
-  color: red;
-}
+
 
 
 /* ------- THOUGHT LIST --------- */
@@ -126,10 +122,8 @@ h4 {
 }
 
 
-
-
-
 /* ------- SUBMIT BUTTON THOUGHTS --------- */
+
 button {
 border: none
 }
