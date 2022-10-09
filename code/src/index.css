@@ -201,6 +201,7 @@ h1 {
 }
 
 .like-text {
+  font-size: 14px;
   color: grey;
   margin: 0;
   padding: 0 20px 15px;
@@ -248,11 +249,14 @@ footer {
     min-height: 30px;
     width: 425px;
   }
-  .character-container {
-    font-size: 16px;
-  }
 
   .thought-cards {
     width: 500px;
+  }
+  .character-container {
+    font-size: 16px;
+  }
+  .like-text {
+    font-size: 16px;
   }
 }
