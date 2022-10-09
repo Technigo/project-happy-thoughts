@@ -1,16 +1,11 @@
 /* eslint-disable*/
-import React, { useState } from 'react';
+import React from 'react';
 
-const ThoughtForm = (props) => {
-  const [newThought, setNewThought] = useState('')
+const ThoughtForm = ({ newThought, setNewThought, onFormSubmit }) => {
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault()
-  }
-  
   return (
     <div className="thoughtForm-container">
-      <form onSubmit={handleFormSubmit}>
+      <form onSubmit={onFormSubmit}>
         <div className="thought-form">
           <h2 className="thought-form-header">
             <label htmlFor="thoughtInput">What makes you happy right now?</label>

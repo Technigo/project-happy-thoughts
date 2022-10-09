@@ -10,7 +10,7 @@ const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [loading, setLoading] = useState(false)
-  const [newMessage, setNewMessage] = useState('')
+  const [newThought, setNewThought] = useState('')
 
   const fetchThoughts = () => {
     setLoading(true)
@@ -26,12 +26,11 @@ export const App = () => {
   }, [])
 
   const handleNewThoughtsChange = (event) => {
-    event.preventDefault()
-    setNewMessage(event.target.value)
+    setNewThought(event.target.value)
   }
 
   const handleFormCleanup = () => {
-    setNewMessage('')
+    setNewThought('')
     setLoading(false)
   }
 
@@ -40,18 +39,19 @@ export const App = () => {
 
     const options = {
       method: 'POST',
+      body: JSON.stringify({
+        message: newThought
+      }),
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        message: newMessage
-      })
+      }
     }
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
-      .finally(() => setNewMessage(''))
+      .catch((error) => console.error(error))
+      .finally(() => handleFormCleanup(false))
   }
 
   const onLikeIncrese = (thoughtId) => {
@@ -63,8 +63,6 @@ export const App = () => {
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .then(console.log('it works'))
-      .catch((error) => console.error(error))
-      .finally(() => fetchThoughts)
       .finally(() => handleFormCleanup(false))
   }
 
@@ -72,8 +70,7 @@ export const App = () => {
     <div className="main">
       <Header />
       <ThoughtForm
-        newMessage={newMessage}
-        setNewMessage={setNewMessage}
+        newThought={newThought}
         handleNewThoughtsChange={handleNewThoughtsChange}
         onFormSubmit={onFormSubmit} />
       <HappyThoughtList
