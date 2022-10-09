@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { NewThought } from 'components/NewThought';
+import { NewThoughtsForm } from 'components/NewThought';
 import { Thoughts } from 'components/Thoughts';
 
 export const App = () => {
   const [newMessage, setNewMessage] = useState('');
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false)
-
-  const handleNewMessageChange = (event) => {
-    setThoughts(event.target.value)
-  }
 
   const fetchThoughts = () => {
     setLoading(true)
@@ -24,12 +20,18 @@ export const App = () => {
     fetchThoughts();
   }, []);
 
+  const handleNewThoughtChange = (event) => {
+    setNewMessage(event.target.value)
+  }
+
   const onFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
       method: 'POST',
-      headers: { 'Content/Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         message: newMessage
       })
@@ -40,7 +42,7 @@ export const App = () => {
       .then(() => fetchThoughts())
       .finally(() => setNewMessage(''));
   }
-  const onNewThoughtSubmit = (_id) => {
+  const onNewHeartSubmit = (_id) => {
     const options = { method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -54,14 +56,14 @@ export const App = () => {
 
   return (
     <div>
-      <NewThought
+      <NewThoughtsForm
         newMessage={newMessage}
-        handleNewMessageChange={handleNewMessageChange}
+        handleNewThoughtChange={handleNewThoughtChange}
         onFormSubmit={onFormSubmit} />
       <Thoughts
         loading={loading}
         thoughts={thoughts}
-        onNewThoughtSubmit={onNewThoughtSubmit} />
+        onNewHeartSubmit={onNewHeartSubmit} />
     </div>
   )
-};
+}

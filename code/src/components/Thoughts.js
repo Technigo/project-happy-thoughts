@@ -2,7 +2,7 @@
 import React from 'react';
 import { formatDistance } from 'date-fns';
 
-export const Thoughts = ({ loading, thoughts, onNewThoughtSubmit }) => {
+export const Thoughts = ({ loading, thoughts, onNewHeartSubmit }) => {
   if (loading) {
     return <p>Loading in progress...</p>
   }
@@ -18,7 +18,7 @@ export const Thoughts = ({ loading, thoughts, onNewThoughtSubmit }) => {
               <button
                 type="button"
                 className="like-btn"
-                onClick={() => { onNewThoughtSubmit(list._id) }}
+                onClick={() => { onNewHeartSubmit(list._id) }}
                 style={{
                   background: list.hearts >= 1 ? '#ffdede' : '#d5d4d5'
                 }}>
@@ -42,4 +42,3 @@ export const Thoughts = ({ loading, thoughts, onNewThoughtSubmit }) => {
     </section>
   );
 }
-
