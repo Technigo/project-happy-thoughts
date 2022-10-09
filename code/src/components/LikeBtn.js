@@ -37,7 +37,8 @@ const LikeBtn = ({ event, setNewLike }) => {
         type="button"
         className="like-btn"
         style={{
-          backgroundColor: liked ? '#FFADAD' : ''
+          backgroundColor: liked ? '#FFADAD' : '',
+          color: liked ? 'black' : ''
         }}
         value={event}
         onClick={onButtonClick}>
