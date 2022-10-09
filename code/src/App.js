@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 import NewThoughtForm from 'components/NewThoughtForm';
 import ThoughtList from 'components/ThoughtList';
+import { CollectThoughts } from 'components/util';
 import React, { useEffect, useState } from 'react';
 
 export const App = () => {
@@ -8,23 +9,16 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
 
-  const collectThoughts = () => {
-    setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-      .then((res) => res.json())
-      .then((data) => setHappyThoughts(data))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  };
-
   const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value);
   };
 
+  // Loads the 20 latest happy thoughts on component mount
   useEffect(() => {
-    collectThoughts();
+    CollectThoughts(setLoading, setHappyThoughts);
   }, []);
 
+  // posts a new happy thought to the thoughts endpoint
   const onFormSubmit = (event) => {
     event.preventDefault();
     const options = {
@@ -38,12 +32,10 @@ export const App = () => {
     };
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      .then(() => collectThoughts())
+      .then(() => CollectThoughts(setLoading, setHappyThoughts))
       .catch((error) => console.error(error))
       .finally(() => setNewThought(''));
   };
-
-  console.log(happyThoughts);
 
   return (
     <main>
