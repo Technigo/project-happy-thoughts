@@ -1,10 +1,10 @@
 import React from 'react';
-import ThoughtsFeed from 'components/ThoughtsFeed/ThoughtsFeed';
+import Feed from 'components/Feed/Feed';
 
 const App = () => {
   return (
     <div className="outer-wrapper">
-      <ThoughtsFeed />
+      <Feed />
     </div>
   );
 };

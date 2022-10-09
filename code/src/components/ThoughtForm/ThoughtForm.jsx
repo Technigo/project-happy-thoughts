@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './ThoughtForm.module.css';
 
-const ThoughtForm = ({ setThoughtsFeed }) => {
+const ThoughtForm = ({ setFeed }) => {
   // State for dealing with new thoughts posted
   // with the form further down
   const [thought, setThought] = useState('');
@@ -37,7 +37,7 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
   };
 
   // A function for empyting the textarea input after post request is done
-  // and resetting the remaining character counter to 140
+  // and resetting the remaining characters counter to 140
   const handleInputCleanup = () => {
     setThought('');
     setRemainingChars(maxChars);
@@ -60,7 +60,7 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
         if (newThought.message === 'Could not save thought') {
           handleTooShortThought();
         } else {
-          setThoughtsFeed((previousThoughts) => [newThought, ...previousThoughts])
+          setFeed((previousThoughts) => [newThought, ...previousThoughts])
         }
       })
       .finally(handleInputCleanup);
@@ -79,15 +79,12 @@ const ThoughtForm = ({ setThoughtsFeed }) => {
       </label>
       <div className={styles.sendButtonAndCharsContainer}>
         <button
-          // no real need to disable the button since
-          // the maxLength of the textarea is set to 140
-          disabled={thought.length > 140}
           className={styles.sendButton}
           // onClick={handleButtonClick}
           type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought <span role="img" aria-label="heart">❤️</span>
         </button>
-        {/* if you haven't typed 5 or more characters the counter will be red, else gray */}
         <div className={styles.charsAndTooShortContainer}>
+          {/* if you haven't typed 5 or more characters the counter will be red, else gray */}
           <p className={remainingChars > 135 ? styles.notEnoughChars : styles.remainingChars}>
             {remainingChars}<span className={styles.remainingChars}> / 140</span>
           </p>

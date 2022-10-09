@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 
 import ThoughtForm from 'components/ThoughtForm/ThoughtForm';
 import ThoughtCard from 'components/ThoughtCard/ThoughtCard';
-import styles from './ThoughtsFeed.module.css';
+import styles from './Feed.module.css';
 
-const ThoughtsFeed = () => {
+const Feed = () => {
   // One state for the api response which will be the feed with thoughts
   // when map through in the ThoughtCard component:
   // And another for the loading message
-  const [thoughtsFeed, setThoughtsFeed] = useState([]);
+  const [feed, setFeed] = useState([]);
   const [loading, setLoading] = useState(false);
 
   // A separate function for the GET request to the api
@@ -19,7 +19,7 @@ const ThoughtsFeed = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setThoughtsFeed(data))
+      .then((data) => setFeed(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   };
@@ -43,10 +43,10 @@ const ThoughtsFeed = () => {
   // LikeButton mounted in the ThoughtCard component
   return (
     <section className={styles.feedGrid}>
-      <ThoughtForm setThoughtsFeed={setThoughtsFeed} />
-      <ThoughtCard thoughtsFeed={thoughtsFeed} setThoughtsFeed={setThoughtsFeed} />
+      <ThoughtForm setFeed={setFeed} />
+      <ThoughtCard feed={feed} setFeed={setFeed} />
     </section>
   );
 };
 
-export default ThoughtsFeed;
+export default Feed;

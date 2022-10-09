@@ -2,18 +2,18 @@
 import React from 'react';
 import styles from './LikeButton.module.css';
 
-const LikeButton = ({ postedThought, postedThoughtId, thoughtsFeed, setThoughtsFeed }) => {
+const LikeButton = ({ postedThought, postedThoughtId, feed, setFeed }) => {
   // this function maps through the thoughts and adds
   // 1 like to the thought with the matching ID of
   // the liked thought, and then updates the feed:
   const handleMessageLiked = (likedThought) => {
-    const updatedThoughtsFeed = thoughtsFeed.map((item) => {
+    const updatedFeed = feed.map((item) => {
       if (item._id === likedThought) {
         item.hearts += 1
       }
       return item
     });
-    setThoughtsFeed(updatedThoughtsFeed);
+    setFeed(updatedFeed);
   };
   // when clicking the like button a post request to that particular thought
   // is sent and then we invoke the handleMessageLiked function
@@ -22,7 +22,7 @@ const LikeButton = ({ postedThought, postedThoughtId, thoughtsFeed, setThoughtsF
       method: 'POST',
       headers: { 'Content-type': 'application/json' }
     }).then(() => {
-      handleMessageLiked(postedThoughtId);
+      handleMessageLiked(postedThoughtId)
     });
   };
 
