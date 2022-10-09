@@ -1,14 +1,12 @@
 import React from 'react';
 
-const NewThought = ({ newThought, newThoughtChange, onThoughtSubmit }) => {
+const NewThought = ({ newThought, newThoughtChange, handleSubmit }) => {
   return (
-    <div className="newthought-container">
-      <form onSubmit={onThoughtSubmit}>
-        <h2 className="newthought-question"> What is making you happy right now?</h2>
-        <textarea value={newThought} onChange={newThoughtChange} />
-        <button type="submit" className="submit-button"> ❤️ Send Happy Thought ❤️ </button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <h2 className="newthought-question"> What is making you happy right now?</h2>
+      <textarea value={newThought} onChange={newThoughtChange} />
+      <button type="submit"> ❤️ Send Happy Thought ❤️ </button>
+    </form>
   )
 }
 
