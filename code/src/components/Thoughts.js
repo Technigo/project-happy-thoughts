@@ -17,7 +17,7 @@ const Thoughts = () => {
   const fetchThought = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-      .then((Response) => Response.json())
+      .then((res) => res.json())
       .then((data) => setAllThoughts(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
@@ -42,7 +42,7 @@ const Thoughts = () => {
       .finally(() => setNewThought(''));
   }
 
-  const handleLikeChange = (messageID) => {
+  const onThoughtChange = (messageID) => {
     const options = {
       method: 'POST',
       headers: {
@@ -60,12 +60,12 @@ const Thoughts = () => {
     <div>
       <NewThought
         newThought={newThought}
-        newThoughtChange={newThoughtChange}
+        onNewThoughtChange={newThoughtChange}
         onFormSubmit={onFormSubmit} />
       <ThoughtsList
         AllThoughts={AllThoughts}
         loading={loading}
-        handleLikeChange={handleLikeChange} />
+        onThoughtChange={onThoughtChange} />
     </div>
   )
 }

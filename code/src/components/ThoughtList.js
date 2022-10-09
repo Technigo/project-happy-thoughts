@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 
-const ThoughtList = ({ AllThoughts, loading, handleLikeChange }) => {
+const ThoughtList = ({ AllThoughts, loading, onThoughtChange }) => {
   if (loading) {
     return (
       <h2>Loading..</h2>
@@ -19,7 +19,7 @@ const ThoughtList = ({ AllThoughts, loading, handleLikeChange }) => {
                 <button
                   type="button"
                   className="btn-like"
-                  onClick={() => handleLikeChange(thought._id)}
+                  onClick={() => onThoughtChange(thought._id)}
                   style={{
                     background: thought.hearts >= 1 ? '#f6c6e5' : '#f2f2f2'
                   }}>

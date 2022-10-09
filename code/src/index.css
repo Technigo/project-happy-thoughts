@@ -1,13 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
-body {
-  margin: 0;
+* {
   font-family: 'Roboto Mono', monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  -webkit-box-smoothing: border-box;
+  -moz-box-smoothing: border-box;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-code {
-  font-family: 'Roboto Mono', monospace;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono'
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+h2 {
+  text-align: center;
+}
+
+:root {
+    --clr-black: #111;
+    --clr-white: #fff;
+    --clr-light-grey: #e3e1e1;
+    --clr-rose: #ffadad;
+    --clr-rose2: #fd9d9d;
+}
+
+/* ------- NEW THOUGHT --------- */
+
+.thought-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 85vw;
+  margin: 30px;
+  padding:20px 25px 5px;
+  border: 1px solir var(--clr-black);
+  box-shadow: 10px 10px var(--clr-black);
+  background-color: var(--clr-light-grey);
+}
+
+input {
+  display: none;
+}
+
+#thought-input {
+  width: calc(90vw - 90px);
+  font-size: 16px;
+  height: 65px;
+  padding: 10px;
+  margin: 10px auto 5px auto;
+  outline-color: var(--clr--rose);
+}
+
+.newthought-question {
+  font-size: 16px;
+}
+
+/* ------- BUTTONS --------- */
+
+.submit-btn {
+  height: 2.5rem;
+  border-radius: 25px;
+  padding: 5px 10px 5px;
+  margin: 10px 0;
+  background-color: var(--clr-rose);
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--clr-rose2)
 }
