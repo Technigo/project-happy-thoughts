@@ -36,12 +36,13 @@ export const App = () => {
     setTotalLikes(totalLikes + 1)
     localStorage.clickcount = Number(localStorage.clickcount) + 1
   }
-  // -----POSTING A NEW THOUGHT----
+  // ----when writing a new thought---
   const handleNewThoughtChange = ((event) => {
     setNewThought(event.target.value)
     setCharactersCount(event.target.value.length)
   })
 
+  // ----when posting a new thought---
   const handleSubmit = ((event) => {
     event.preventDefault()
 
@@ -61,6 +62,7 @@ export const App = () => {
           window.alert('Your message is too short or too long. Rephrase your thought and try again! 💭');
         } else {
           setThoughts((previousThoughts) => [lastThought, ...previousThoughts])
+          // sets a temporary class for (to add a animation) a new thought/post
           setNewPost(true)
         }
       })

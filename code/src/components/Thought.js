@@ -5,7 +5,6 @@ import Heart from './Heart';
 const Thought = ({ handleTotalLikesCallback, id, message, hearts, createdAt, posted }) => {
   const [heartCount, setHeartCounter] = useState(hearts)
   const [clicked, setClicked] = useState(false)
-  // const [totalLikes, setTotalLikes] = useState(Number(localStorage.clickcount) + 1)
 
   const handleHeartBtnClick = () => {
     setClicked(true)
@@ -25,8 +24,8 @@ const Thought = ({ handleTotalLikesCallback, id, message, hearts, createdAt, pos
       })
   }
   return (
-    <div className={`${posted ? 'newPost' : 'thought'}`} key={id}>
-      <p className="message">{message}</p>
+    <div className={`${posted ? 'newPost' : 'thought-item'}`} key={id}>
+      <p className="thought-message">{message}</p>
       <div className="metadata">
         <div className="likes">
           <Heart
@@ -36,7 +35,6 @@ const Thought = ({ handleTotalLikesCallback, id, message, hearts, createdAt, pos
             thoughtId={id} />
           <p> x {heartCount}</p>
         </div>
-        {/* <div> you like this x {totalLikes}</div> */}
         <Moment fromNow>{createdAt}</Moment>
       </div>
     </div>
