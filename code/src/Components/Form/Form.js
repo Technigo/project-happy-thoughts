@@ -2,11 +2,9 @@
 import React, { useState } from 'react'
 import styles from './Form.module.css'
 
-// Creating ThoughtForm for user to post new thoughts
 const Form = (props) => {
   const [newThought, setNewThought] = useState('')
 
-  // Prevents default for form
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -17,7 +15,7 @@ const Form = (props) => {
     })
       .then((res) => res.json())
       // eslint-disable-next-line no-shadow
-      .then((newThought) => props.setThoughts((thoughts) => [newThought.response, ...thoughts]))
+      .then((newThought) => props.setThoughts((thoughts) => [newThought, ...thoughts]))
       .finally(() => setNewThought(''))
   }
 
@@ -28,7 +26,10 @@ const Form = (props) => {
 
         <div className={styles.thoughtForm}>
           <h2>
-            <label htmlFor={styles.thoughtInput}>What`s making you happy right now?</label>
+            <label
+              className={styles.label}
+              htmlFor={styles.thoughtInput}>What`s making you happy right now?
+            </label>
           </h2>
 
           <textarea
@@ -40,13 +41,14 @@ const Form = (props) => {
             type="text"
             name="thought"
             value={newThought}
+            maxLength="140"
             onChange={(event) => setNewThought(event.target.value)} />
 
           <div className={styles.inputContainerDetails}>
 
             <div>
               <button
-                disabled={!!(newThought.length < 6 || newThought.length > 140)}
+                disabled={!!(newThought.length < 5 || newThought.length > 140)}
                 className={styles.btnHappyThought}
                 type="submit">
 
@@ -56,11 +58,8 @@ const Form = (props) => {
               </button>
 
             </div>
-            <p className={
-              newThought.length < 6 || newThought.length <= 140 ? 'message-length-ok' : 'message-length-error'
-            }>
+            <p className={newThought.length >= 5 && newThought.length < 130 ? 'message-length-ok' : 'message-length-error'}>
               {newThought.length} / 140
-
             </p>
           </div>
 

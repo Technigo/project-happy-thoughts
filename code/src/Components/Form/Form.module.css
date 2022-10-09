@@ -1,21 +1,35 @@
 .thoughtForm {
-    background-color: rgb(189, 183, 195);
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    margin-left: 300px;
-    margin-right: 300px;
+    background-color: rgb(235, 231, 231);
+    width: 500px;
+    margin-top: 20px;
     box-shadow: 5px 10px #000000;
+    border: 1px solid black;  
+    padding: 15px;
     
-    }
-    .thoughtForm .label {
-        text-align: center;
-    }    
+}
 
-.thoughtInput {
-    text-align: center;
+.label {
+    margin-left: 20px;
 }
 
 .textInput {
-    resize: none;      
+    resize: none;   
+    width: 450px;
+    margin-left: 20px;
+    justify-content: center;
+    font-size: 15px;
 }
+
+
+
+.btnHappyThought {
+    background-color: pink;
+    color:#000000;
+    height: 40px;
+    border-radius: 25px ;
+    margin-left: 20px;
+    border: none;
+    font-size: 15px;
+}
+
+
