@@ -1,33 +1,32 @@
 import React, { useState, useEffect } from 'react';
 
-import TaskList from 'components/TaskList';
-import TaskForm from 'components/TaskForm';
+import MessageList from 'components/MessageList';
+import MessageForm from 'components/MessageForm';
 
 export const App = () => {
-  const [taskList, setTaskList] = useState([]);
+  const [messageList, setMessageList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [newTodo, setNewTodo] = useState('');
+  const [newMessage, setNewMessage] = useState('');
 
-  const fetchTasks = () => {
+  const fetchMessages = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
-    // fetch('https://week7-backend.herokuapp.com/tasks')
       .then((res) => res.json())
-      .then((data) => setTaskList(data))
+      .then((data) => setMessageList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
 
   useEffect(() => {
-    fetchTasks();
+    fetchMessages();
   }, []);
 
-  const handleNewTodoChange = (event) => {
-    setNewTodo(event.target.value)
+  const handleNewMessageChange = (event) => {
+    setNewMessage(event.target.value)
   }
 
   const handleFormCleanup = () => {
-    setNewTodo('');
+    setNewMessage('');
     setLoading(false);
   }
 
@@ -40,28 +39,42 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        message: newTodo
+        message: newMessage
       })
     }
 
-    // fetch('https://week7-backend.herokuapp.com/tasks', options)
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      .then(() => fetchTasks())
-      .finally(() => handleFormCleanup()); // setNewTodo
+      .then(() => fetchMessages())
+      .finally(() => handleFormCleanup());
+  }
+
+  const handleLikes = (_id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+      .then((res) => res.json())
+      .then(() => fetchMessages())
+      .finally(() => setNewMessage());
   }
 
   return (
     <div className="outerWrapper">
       <div className="innerWrapper">
-        <TaskForm
-          newTodo={newTodo}
-          onNewTodoChange={handleNewTodoChange}
+        <MessageForm
+          newMessage={newMessage}
+          onNewMessageChange={handleNewMessageChange}
           onFormSubmit={onFormSubmit} />
-        <TaskList
+        <MessageList
           loading={loading}
-          taskList={taskList}
-          setTaskList={setTaskList} />
+          messageList={messageList}
+          setMessageList={setMessageList}
+          handleLikes={handleLikes} />
       </div>
     </div>
   )
