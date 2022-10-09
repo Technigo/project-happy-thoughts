@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: Monaco, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,79 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.formWrapper, .thoughtWrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  width: 80vh;
+  background-color: #F0F0F0;
+  border: solid black;
+  box-shadow: 10px 10px;
+  padding: 2%;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 15px;
+  font-family: Monaco;
+}
+
+.textArea {
+  width: 100%;
+  height: 50%;
+  resize: none;
+  border: solid #C0C0C0;
+}
+
+.thoughtButton {
+  border: none;
+  background-color: #f3b1af;
+  border-radius: 30px;
+  height: 40%;
+  width: 50%;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 4%;
+  font-family: Monaco;
+}
+
+.thoughtContainer {
+  height: 20vh;
+  width: 85vh;
+  border: solid black;
+  box-shadow: 10px 10px;
+  padding: 2% 2% 0% 2%;
+  margin-top: 5%;
+}
+
+.heartButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  margin-right: 5px;
+}
+
+.cardFooter {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+
+}
+
+.heartCount{
+  display: flex;
+  flex-direction: row;
+}
+
+p{
+  font-size: 15px;
+  color: #7f7f7f;
 }
