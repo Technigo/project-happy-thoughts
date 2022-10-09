@@ -28,6 +28,7 @@ p {
   margin: 10px 0px 5px 5px;
 }
 
+/*Styling for content in the first box: Thought input-box*/
 .thought-input-wrapper {
   border: 1px solid #000;
   box-shadow: 7px 7px #000;
@@ -71,6 +72,7 @@ p {
   outline-color:#ffadad;
 }
 
+/*Styling for the message-boxes*/
 .message-wrapper {
   border: 1px solid #000;
   box-shadow: 7px 7px #000;
@@ -125,6 +127,8 @@ p {
   color:rgb(178, 174, 174)
 }
 
+/*Styling for screens of different sizes specified here*/
+
 @media (min-width: 768px) {
   .thought-input-wrapper {
     width: 40vw;
@@ -178,7 +182,7 @@ p {
      color: black;
      white-space: nowrap;
      overflow: hidden;
-     text-overflow: ellipsis;
+     text-overflow: ellipsis; /*This makes the text in the button stay inside the button*/
   }
 
   .character-counter{
@@ -190,7 +194,7 @@ p {
 
   .thought-form-details{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; /*Makes the heart-counter and time-stamp switch places*/
   }
 
   .heart-counter-wrapper {
