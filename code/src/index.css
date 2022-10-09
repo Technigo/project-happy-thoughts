@@ -161,7 +161,7 @@ p {
 @media (max-width: 767px) {
   .thought-input-wrapper {
     width: 50vw;
-    margin-top: 100px;
+    margin-top: 70px;
   }
 
   .message-wrapper{
