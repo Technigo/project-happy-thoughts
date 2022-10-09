@@ -47,7 +47,7 @@ p {
 
 .character-counter{
  padding-right: 5%;
- color: rgb(178, 174, 174)
+ color: rgb(178, 174, 174);
 }
 
 .send-thought-button {
@@ -125,14 +125,7 @@ p {
   color:rgb(178, 174, 174)
 }
 
-@media (min-width: 769px) {
-  .heart-counter-wrapper {
-    right: 24vw;
-    top: 24vh;
-  }
-
-}
-@media (max-width: 1200px) {
+@media (min-width: 768px) {
   .thought-input-wrapper {
     width: 40vw;
   }
@@ -141,18 +134,17 @@ p {
     width: calc(70vw - 50px);
   }
 
+  .send-thought-button{
+    width:260px
+  }
+
   .thought-form-details{
     display: flex;
     flex-direction: column-reverse;
   }
 
-  .send-thought-button {
-    font-size: 13px;
-     width: 85%;
-  }
-
   .character-counter {
-    font-size: 11px;
+    font-size: 14px;
     display: flex;
     justify-content: flex-end;
     margin: -3px 15px 5px 0px;
@@ -160,35 +152,52 @@ p {
 
   .heart-counter-wrapper {
     top: 24vh;
-    right: 18vw;
+    right: 11vw;
+    display: flex;
+    flex-direction: column;
   }
 }
-@media (max-width: 560px) {
+
+@media (max-width: 767px) {
   .thought-input-wrapper {
     width: 40vw;
   }
 
-  .thought-input-field {
-    width: calc(90vw - 50px);
+  .text-input-area {
+    width: calc(45vw - 50px);
+  }
+
+  .send-thought-button {
+    font-size: 8px;
+     width: 150px;
+  }
+
+  .character-counter{
+    font-size: 10px;
+    display:flex;
+    justify-content: flex-end;
+    margin-top:0px;
+  }
+
+  .thought-form-details{
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .heart-counter-wrapper {
     top: 24vh;
     right: 11vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heart-count {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .timestamp {
+    font-size: 12px;
+    display:flex;
+    justify-content: flex-end;
   }
 }
-/*@media (max-width: 375px) {
-
-  .thought-input-wrapper {
-    width: 40vw;
-  }
-
-  .thought-input-field {
-    width: calc(90vw - 50px);
-  }
-
-  .heart-counter-wrapper {
-    top: 27vh;
-    right: -2vw;
-  }
-}*/
