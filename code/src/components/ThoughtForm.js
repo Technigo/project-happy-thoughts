@@ -21,11 +21,11 @@ const ThoughtForm = ( { onFormSubmit, newThought, onSetThoughtChange } ) => {
                 <button 
                     type='submit'
                     className='submit-button'>
-                    <span  role='img' aria-label='heart'>❤️ Send Happy Thought ❤️</span>
+                    <span role='img' aria-label='heart'>❤️ Send Happy Thought ❤️</span>
                 </button>
         </form>
        </section>
-    )
-}
+    );
+};
 
-export default ThoughtForm
+export default ThoughtForm;

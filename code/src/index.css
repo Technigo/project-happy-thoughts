@@ -13,14 +13,18 @@ code {
 }
 
 .mainWrapper{
-  width: 400px;
-  border: 2px solid yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 /*ThoughtForm wrapper*/
 .thoughtform-wrapper {
   background-color: rgb(240, 236, 236);
+  border: 2px solid rgb(165, 165, 165);
   height: 200px;
+  width: 400px;
   box-shadow: 6px 6px;
 }
 
@@ -32,7 +36,7 @@ h1 {
 
 .input-text {
   resize: none;
-  height: 70px;
+  height: 65px;
   margin-left: 20px;
   width: 80%;
 }
@@ -43,7 +47,7 @@ h1 {
   background-color: #ffadad;
   border-radius: 20px;
   border: none;
-  padding: 10px;
+  padding: 7px;
   width: 250px;
   font-weight:600;
   font-size: 15px;
@@ -57,6 +61,7 @@ h1 {
   align-items: center;
   justify-content: center;
   height: 150px;
+  width: 400px;
   background-color: white;
   margin-top: 20px;
   box-shadow: 6px 6px;
@@ -69,7 +74,7 @@ h1 {
 }
 
 .messages {
-  height: 70px;
+  height: 60px;
   font-size: large;
 }
 
@@ -93,6 +98,11 @@ h1 {
 
 .like-counter {
   color:grey;
+}
+
+.date {
+  color:grey;
+  font-style: italic;
 }
 
 
