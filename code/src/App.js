@@ -57,7 +57,7 @@ export const App = () => {
       <Feed
         loading={loading}
         taskList={feed}
-        setTaskList={setFeed} />
+        setFeed={setFeed} />
     </div>
   );
 }

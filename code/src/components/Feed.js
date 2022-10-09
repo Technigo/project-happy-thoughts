@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import PostItem from 'components/PostItem';
 import { formatRelative } from 'date-fns';
 
 const TaskList = ({ loading, taskList, setTaskList }) => {
   if (loading) {
-    return <h1>Loading in progress...</h1>
+    return <h1>Loading thoughts...</h1>
   }
   const onTaskCheckChange = (task) => {
     setTaskList(() => taskList.map((singleTask) => {
