@@ -48,6 +48,13 @@ export const App = () => {
       <footer>
         <h3>© Joel Öhman</h3>
         <h3>Technigo Boot Camp autumn 2022, week 7 project</h3>
+        <a
+          className="footer-link"
+          href="mailto:j.ohman@hotmail.com"
+          alt="e-mail"
+        >
+          💌
+        </a>
       </footer>
     </main>
   );

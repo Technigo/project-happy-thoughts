@@ -97,6 +97,20 @@ textarea {
   color: white;
 }
 
+@keyframes addedThought {
+  0% {
+    opacity: 0;
+    transform: translate(4px, -40px) scale(0);
+  }
+  50% {
+    transform: translate(-2px, -20px) scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: translate(1) scale(1);
+  }
+}
+
 .thought-cards {
   width: 350px;
   border: 2px solid grey;
@@ -106,6 +120,8 @@ textarea {
   margin-top: 40px;
   word-wrap: break-word;
   transition: 0.3s ease-in-out;
+  -webkit-animation: addedThought 1s ease;
+  animation: addedThought 1s ease;
 }
 
 h1 {
@@ -203,8 +219,14 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
   padding: 5rem 0 2.5rem;
+}
+
+.footer-link {
+  font-size: 20px;
+  padding: 5px;
 }
 
 /* MEDIA */
