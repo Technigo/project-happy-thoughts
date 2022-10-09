@@ -135,7 +135,8 @@ p {
   }
 
   .send-thought-button{
-    width:260px
+    width:260px;
+    color:black;
   }
 
   .thought-form-details{
@@ -170,6 +171,9 @@ p {
   .send-thought-button {
     font-size: 8px;
      width: 150px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
   }
 
   .character-counter{
