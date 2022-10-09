@@ -25,7 +25,7 @@ export const App = () => {
     fetchThoughts()
   }, [])
 
-  const handleNewThoughtsChange = (event) => {
+  const onNewThoughtChange = (event) => {
     setNewThought(event.target.value)
   }
 
@@ -71,7 +71,7 @@ export const App = () => {
       <Header />
       <ThoughtForm
         newThought={newThought}
-        handleNewThoughtsChange={handleNewThoughtsChange}
+        onNewThoughtChange={onNewThoughtChange}
         onFormSubmit={onFormSubmit} />
       <HappyThoughtList
         loading={loading}

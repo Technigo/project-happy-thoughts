@@ -1,7 +1,7 @@
 /* eslint-disable*/
 import React from 'react';
 
-const ThoughtForm = ({ newThought, setNewThought, onFormSubmit }) => {
+const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
 
   return (
     <div className="thoughtForm-container">
@@ -11,16 +11,12 @@ const ThoughtForm = ({ newThought, setNewThought, onFormSubmit }) => {
             <label htmlFor="thoughtInput">What makes you happy right now?</label>
           </h2>
           <textarea
-            id="thoughtInput"
             className="text-input"
-            rows="5"
-            columns="140"
-            placeholder="Type something...:)"
+            placeholder="Type a happy thought!"
             type="text"
-            name="thought"
             maxLength="140"
             value={newThought}
-            onChange={setNewThought} />
+            onChange={onNewThoughtChange} />
         </div>
         <div className="thought-input-details">
           <button
