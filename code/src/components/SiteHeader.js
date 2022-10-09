@@ -4,7 +4,7 @@ const SiteHeader = () => {
   return (
     <section className="header-container">
       <header>
-      Happy Thoughts Board
+        Happy Thoughts Board
       </header>
     </section>
   )

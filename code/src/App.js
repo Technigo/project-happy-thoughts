@@ -50,7 +50,7 @@ export const App = () => {
       .finally(() => setNewMessage(''))
   }
 
-  /* Shows likes */
+  // Shows likes
   const onLikesIncrease = (LikeID) => {
     const options = { method: 'POST',
       headers: {

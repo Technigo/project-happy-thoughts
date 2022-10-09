@@ -3,12 +3,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Roboto Mono', monospace;
-  background-color: #f0dede;
+  background-color: #dad5e4;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 h2 {
@@ -21,7 +20,6 @@ h2 {
   flex-direction: column;
   align-items:center;
   justify-content: center;
-  
 }
 
 .inner-wrapper {
@@ -31,15 +29,34 @@ h2 {
   margin: 20px;
   position: relative;
   min-width: 50%;
+  padding-bottom: 60px;
 }
 
 .header-container {
   padding: 20px;
+  padding-bottom: 10px;
   font-size: 60px;
   font-weight: 600;
   text-align: center;
   font-family: 'Patrick Hand SC', cursive;
-  text-shadow: 5px 5px 10px rgb(255, 188, 188);
+  text-shadow: 5px 5px 10px #ffffff;
+  color: #3b3b3b;
+}
+
+button {
+  border:none;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 30px;
+  margin: 10px;
+  background-color: #ffadad;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.04);
 }
 
 /*SendThought - Submit form*/
@@ -61,24 +78,7 @@ h2 {
   padding: 0px;
 }
 
-button {
-  border:none;
-  font-family: 'Roboto Mono', monospace;
-  border-radius: 30px;
-  margin: 10px;
-  background-color: #ffadad;
-  cursor: pointer;
-  font-weight: 600;
-  padding: 10px;
-  transition: 0.3s ease-in-out;
-}
-
-button:hover {
-  transform: scale(1.04);
-}
-
-
-/*MessageList - See submitted thoughts - */
+/*MessageList - See submitted thoughts */
 .message-box {
   background-color: #F2F0F0;
   border: solid 1px black;
@@ -90,7 +90,6 @@ button:hover {
 
 .heart-counter-container {
   justify-content: space-between;
-  
 }
 
 .heart-counter {
@@ -98,7 +97,6 @@ button:hover {
   flex-direction: row;
   align-items: center;
 }
-
 
 @media (max-width: 667px){ 
   .header-container {
@@ -110,8 +108,9 @@ button:hover {
     min-width: 85%;
   }
 }
-  @media (min-width: 668px) and (max-width:1025px){
-    .inner-wrapper {
-      min-width: 85%;
+
+@media (min-width: 668px) and (max-width:1025px){
+  .inner-wrapper {
+    min-width: 85%;
   }
 }
