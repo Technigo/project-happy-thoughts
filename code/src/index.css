@@ -62,6 +62,7 @@ h2 {
 
 .submit-btn {
   background-color:var(--clr-pink) ;
+  color: white;
   cursor: pointer;
   border-style: none;
   border-radius: 40px;
