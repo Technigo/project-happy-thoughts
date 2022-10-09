@@ -21,6 +21,21 @@ code {
   flex-direction: column;
 }
 
+/* 
+.taskFormContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.taskListContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+} */
+
 .taskForm {
   display: grid;
   grid-template-columns: 1fr;
@@ -38,6 +53,7 @@ code {
 .thoughtsTextArea {
   border: 2px grey solid;
   padding-bottom: 30px;
+
 }
 
 .thoughtsBtn {
@@ -69,7 +85,16 @@ code {
 .thoughtsMessage {
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  overflow: scroll;
 
+}
+
+.likeBtn {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+  border: none;
 }

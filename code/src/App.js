@@ -13,7 +13,7 @@ export const App = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setTaskList(data))
+      .then((data) => setTaskList(data.reverse()))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -25,7 +25,7 @@ export const App = () => {
   }, []);
 
   const handleNewTodoChange = (event) => {
-    setNewTodo(event.target.value)
+    setNewTodo(event.target.value);
   }
   // what daniel calls onNewTaskChange
 
@@ -48,20 +48,44 @@ export const App = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchTasks())
+      .catch((error) => console.error(error))
       .finally(() => setNewTodo(''));
   }
   // what daniel calls handleFormSubmit
 
+  const onLikesIncrease = () => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts/_id/like', options)
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json)
+      })
+      .catch((error) => console.error(error))
+      .finally(() => fetchTasks())
+  }
+
   return (
     <div className="outerContainer">
+      {/* <div className="taskFormContainer"> */}
       <TaskForm
         newTodo={newTodo}
         onNewTodoChange={handleNewTodoChange}
         onFormSubmit={onFormSubmit} />
+      {/* </div>
+      <div className="taskListContainer"> */}
       <TaskList
         loading={loading}
         taskList={taskList}
-        setTaskList={setTaskList} />
+        setTaskList={setTaskList}
+        onLikesIncrease={onLikesIncrease} />
+
+      {/* </div> */}
     </div>
   )
 }
