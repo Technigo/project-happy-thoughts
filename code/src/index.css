@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,3 +9,108 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.outer-send-msg-wrapper {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #DDA3D0;
+  box-shadow: 8px 8px 1px #131314;
+  background-color: #F9EBEA;
+  margin: 40px 20px;
+  padding: 20px 20px;
+  width: 55%;
+
+}
+
+.send-btn {
+  border-radius: 20px;
+  max-width: 35vw;
+  background-color: #FB9D96;
+  color: #636161;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.outer-show-msg-wrapper {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-show-msg-wrapper {
+  display:flex;
+  flex-direction: column;
+  /*justify-items:space-between;*/
+  border: 2px solid #DDA3D0;
+  box-shadow: 8px 8px 1px #131314;
+  background-color: #F9EBEA;
+  margin: 40px 20px;
+  padding: 10px 5px 20px 10px;
+  overflow-wrap: break-word;
+  width: 55%;
+  height: fit-content;
+  position: relative;
+}
+
+.message {
+  margin-top: 1px;
+  margin-bottom: 50px;
+  overflow: auto;
+ 
+  
+}
+
+.heart-btn-like {
+  background-color: #F9B1D7;
+  padding: 5px;
+  border-radius: 50%;
+  border: none;
+  width: 35px;
+  height: 35px;
+  position:absolute;
+  left: 2%;
+  bottom: 5%;
+}
+
+.heart-counter {
+  color: #636161;
+  font-weight:200;
+  position:absolute;
+  left: 15%;
+  bottom: 8%;
+}
+
+.created-at {
+  text-align: end;
+  color: #636161;
+  font-weight:200;
+  position:absolute;
+  right: 2%;
+  bottom: -10%;
+}
+
+@media (min-width: 1025px){
+  .form-container {
+    max-width: 35%;
+  }
+  .inner-show-msg-wrapper {
+    max-width: 35%;
+  }
+}
+
+
+
+
+
+
