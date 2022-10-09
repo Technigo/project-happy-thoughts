@@ -4,11 +4,13 @@ import React, { useState } from 'react';
 const LikeBtn = ({ event, setNewLike }) => {
   const [liked, setLiked] = useState(false);
 
+  // the function that enables the likes-count to update in the App-component
   const handleNewLikeChange = () => {
     setNewLike(true)
   }
 
   // The function that registers the users like to the database, it also
+  // triggers the state-hook that makes the button change color
   const onButtonClick = (event2) => {
     event2.preventDefault();
 

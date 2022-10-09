@@ -10,6 +10,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(0);
 
+  // Function that calls the messages from the database
   const fetchMessages = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((result) => result.json())
@@ -21,6 +22,7 @@ export const App = () => {
       })
   }
 
+  // useEffect is triggered on restart, newLike and loading
   useEffect(() => {
     // Restricts that the fetchMessages will only run when the newLike or loading
     // is set to true, otherwise it runs twice for every change.
@@ -29,6 +31,8 @@ export const App = () => {
     }
   }, [newLike, loading]);
 
+  // Function that handles the user-input so the text is shown then the user types it
+  // and that the character-count is updating in real time
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value)
     setCount(event.target.value.length)
@@ -54,6 +58,7 @@ export const App = () => {
       .finally(() => setNewMessage(''));
   }
 
+  // Updates the page every 5 minutes if no other way of update has been triggered
   if (loading) {
     setInterval(fetchMessages, 5 * 60 * 1000);
     return (

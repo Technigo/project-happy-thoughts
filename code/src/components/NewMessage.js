@@ -1,5 +1,6 @@
 import React from 'react';
 
+// the component that handles the message that the user can add
 const NewMessage = ({ count, newMessage, onNewMessageChange, onFormSubmit }) => {
   return (
     <div className="inner-wrapper">
