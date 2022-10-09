@@ -11,3 +11,65 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.outerContainer {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.taskForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  background-color: lightgray;
+  border: 2px black solid;
+  padding: 20px;
+  width: 40%;
+  height: 180px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 10px 10px;
+}
+
+.thoughtsTextArea {
+  border: 2px grey solid;
+  padding-bottom: 30px;
+}
+
+.thoughtsBtn {
+  margin-top: 20px;
+  margin-left: 15px;
+  display: block;
+  width: 200px;
+  border-radius: 30px;
+  border: none;
+  color: black;
+  background-color: darksalmon;
+}
+
+
+.taskList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  background-color: lightgray;
+  border: 2px black solid;
+  padding: 20px;
+  width: 40%;
+  height: 180px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 10px 10px;
+}
+
+.thoughtsMessage {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+}
