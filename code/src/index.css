@@ -69,9 +69,8 @@ button {
   border-radius: 20px;
   height: 40px;
   font-weight: 700;
-  transition: all 0.1s ease-in-out;
   padding: 0px 16px;
-  transition: all 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out, transform 0.1s ease-in-out; 
 }
 
 button:hover {
@@ -90,8 +89,9 @@ button:hover {
   border: 1px solid rgb(133, 133, 133);
   position: relative;
 }
-.text-input:focus-visible {
+.textarea:focus-visible { 
   outline: -webkit-focus-ring-color auto 1px;
+  outline-offset: 1px;
 }
 
 .textarea {
@@ -224,8 +224,5 @@ button:hover {
     max-width: 800px;
   }
 
-  /* form button {
-    min-width: 315px;
-    width: 50%;
-  } */
+
 }
