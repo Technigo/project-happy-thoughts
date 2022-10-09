@@ -1,13 +1,13 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Built with React, this app allows the user to send messages of up to 140 characters to an API and view messages other users have submitted to the API as well. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Still catching up on React after taking a 2-week hiatus from Technigo, so I found this project very challenging. I'm happy with the end result, but I've relied a lot on peeking at other people's code. My focus was on ensuring that I properly understood how the app works, and I did so by adding thorough explanations for every block of code via comments.
+
+If I'd had more time, I would have tried adding additional features such as restricting the number of times a user can press the 'like' button to only once.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://jnbjensen-happy-thoughts.netlify.app/
