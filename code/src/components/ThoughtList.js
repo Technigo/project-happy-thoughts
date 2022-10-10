@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 
-const ThoughtList = ({ AllThoughts, loading, onThoughtChange }) => {
+const ThoughtList = ({ allThoughts, loading, onThoughtChange }) => {
   if (loading) {
     return (
       <h2>Loading..</h2>
@@ -10,7 +10,7 @@ const ThoughtList = ({ AllThoughts, loading, onThoughtChange }) => {
 
   return (
     <section className="thought-list">
-      {AllThoughts.map((thought) => {
+      {allThoughts.map((thought) => {
         return (
           <div key={thought._id} className="thought-message">
             <h3>{thought.message} </h3>

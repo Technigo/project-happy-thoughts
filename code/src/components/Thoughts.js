@@ -3,16 +3,12 @@ import React, { useState, useEffect } from 'react';
 import ThoughtsList from 'components/ThoughtList';
 import NewThought from 'components/NewThought';
 
-const likesnumber = (messageID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`;
+const likesnumber = (LikeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`;
 
 const Thoughts = () => {
-  const [AllThoughts, setAllThoughts] = useState([]);
+  const [allThoughts, setAllThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
-
-  useEffect(() => {
-    fetchThought();
-  }, []);
 
   const fetchThought = () => {
     setLoading(true);
@@ -23,15 +19,19 @@ const Thoughts = () => {
       .finally(() => setLoading(false));
   }
 
+  useEffect(() => {
+    fetchThought();
+  }, []);
+
   const newThoughtChange = (event) => {
     setNewThought(event.target.value)
-  }
+  };
   const onFormSubmit = (event) => {
     event.preventDefault();
     const options = {
       method: 'POST',
       headers: {
-        ' Content-Type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({ message: newThought })
     }
@@ -39,31 +39,31 @@ const Thoughts = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThought())
-      .finally(() => setNewThought(''));
+      .finally(() => setNewThought(''))
   }
 
-  const onThoughtChange = (messageID) => {
+  const onThoughtChange = (LikeID) => {
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    fetch(likesnumber(messageID), options)
+    fetch(likesnumber(LikeID), options)
       .then((res) => res.json())
       .then(console.log('likes counting'))
       .catch((error) => console.error(error))
       .finally(() => fetchThought());
-  }
+  };
 
   return (
     <div>
       <NewThought
         newThought={newThought}
-        onNewThoughtChange={newThoughtChange}
+        newThoughtChange={newThoughtChange}
         onFormSubmit={onFormSubmit} />
       <ThoughtsList
-        AllThoughts={AllThoughts}
+        allThoughts={allThoughts}
         loading={loading}
         onThoughtChange={onThoughtChange} />
     </div>
