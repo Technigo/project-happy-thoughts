@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: bisque;
 }
 
 code {
@@ -12,18 +13,45 @@ code {
     monospace;
 }
 
-section {
+.wrapper {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
 }
 
+form {
+  display: flex;
+    border: solid 5px;
+    margin: 10px 20px 0px 0px;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    background-color: antiquewhite;
+}
+
+form h2, textarea {
+  padding:10px;
+  text-align: center;
+  margin: 10px;
+}
+
+textarea{
+  width: 60%;
+  border: solid #666;
+}
+form button {
+  width: fit-content;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+}
 .singleThought {
   border: 2px solid;
   margin:20px;
   box-shadow: 10px 10px;
-  width: 60%;
+  width: 80%;
   background-color: antiquewhite;
 }
 
@@ -36,4 +64,8 @@ section {
   flex-direction: row;
   justify-content: space-between;
   padding: 0px 20px;
+}
+
+button:hover {
+  background-color: #ECB3B3;
 }

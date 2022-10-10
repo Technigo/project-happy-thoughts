@@ -36,7 +36,7 @@ export const App = () => {
     const options = {
       method: 'POST',
       body: JSON.stringify({
-        description: newThought
+        message: newThought
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -47,10 +47,10 @@ export const App = () => {
       .then((data) => data.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))
-      .finally(() => console.log('everything is fine in fetch'));
+      .finally(() => setNewThought(''));
   }
   return (
-    <div>
+    <div className="wrapper">
       <ThoughtForm
         handleFormSubmit={handleFormSubmit}
         newThought={newThought}
