@@ -18,6 +18,7 @@ const ThoughtForm = ({ handleFormSubmit, onNewThoughtChange, newThought }) => {
 
     <div className="submit-button">
      
+
       <button
       className="submit-btn" type="submit" 
       disabled={newThought.length < 5 || newThought.length > 140} >

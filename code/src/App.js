@@ -15,7 +15,7 @@ export const App = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((response) => response.json())
-      .then((Data) => setThoughts(Data)) //no reverse to get the latest post to show at first in list
+      .then((Data) => setThoughts(Data)) 
       .catch((error) => console.error(error))
       .then(console.log('works'))
       .finally(() => setLoading(false));
@@ -25,39 +25,32 @@ export const App = () => {
     fetchData();
   }, []); 
 
+
   // will trigger first when app starts, and every time the variable in the dependency array changes
   useEffect(() => {
-  //window.alert(`the current counter is ${counter}`);
-  }, [counter]);
-
-  //const handleCounterIncreaseButtonClick = () => {
-    //setCounter(counter + 1);
-  //}
+    //window.alert(`the current counter is ${counter}`);
+    }, [counter]);
+  
 
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value);
   }
 
 
-const handleHeartCounter = (heartCounterID) => {
+const handleHeartCounter = (_ID) => {
   const options = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
   };
-//  get heart counter
-  fetch( `https://happy-thoughts-technigo.herokuapp.com/thoughts/${heartCounterID}/like`, options)
+
+//  get likes 
+  fetch( `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_ID}/like`, options)
     then((response) => response.json())
     .finally(() => fetchThought());
 };
 
-
-
-  const handleFormCleanup = () => {
-  setNewThought('');
-   setLoading(false);
-   }
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -70,19 +63,25 @@ const handleHeartCounter = (heartCounterID) => {
         'Content-Type': 'application/json'
       }
     }
+
+    // get 
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((response) => response.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))
-          //.then(() => handleFormCleanup());
       .finally(() => setNewThought(''));
     }
-    if (loading) {
-    return (
-      <p>THE PAGE IS LOADING</p>
-    )
-  }
+
+  
+  if (loading) {
+    // uppdate page every 10 min
+  //  setInterval(fetchData, 10 * 60 * 1000);
+  return (
+  <p>THE PAGE IS LOADING</p>
+   )}
+
+
   return (
      <section className="section">
     <h2 className="header">Share happiness with happy thought!❤️</h2>
@@ -93,6 +92,7 @@ const handleHeartCounter = (heartCounterID) => {
         onNewThoughtChange={onNewThoughtChange}
       />
       <ThoughtsList
+     
       thoughts={thoughts}
       handleHeartCounter={handleHeartCounter}
       />
@@ -101,5 +101,17 @@ const handleHeartCounter = (heartCounterID) => {
   );
   }
  
-  //<p>{counter}</p>
+  //const handleFormCleanup = () => {
+  //setNewThought('');
+   //setLoading(false); }
+ 
+   //<p>{counter}</p>
   //<button onClick={handleCounterIncreaseButtonClick} type="button">counter increase</button>
+
+   // will trigger first when app starts, and every time the variable in the dependency array changes
+  //useEffect(() => {
+  //window.alert(`the current counter is ${counter}`);
+ // }, [counter]);
+
+  //const handleHeartCounter = () => {
+  //setCounter(counter + 1);}
