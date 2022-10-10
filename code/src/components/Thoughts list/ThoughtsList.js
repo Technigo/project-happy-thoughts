@@ -18,7 +18,7 @@ const ThoughtsList = ({ loading, thoughtsList, setThoughtsList, onNewHearthSubmi
 
   return (
     <section>
-      {thoughtsList.reverse().map(thought => (
+      {thoughtsList.map(thought => (
         <div className="container" key={thought._id}>
           <div className='textSpace'>
           <h4>{thought.message}</h4>

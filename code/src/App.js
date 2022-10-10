@@ -48,7 +48,7 @@ export const App = () => {
       } }
 
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
-      .then((res) => res.json())
+      .then(res => res.json())
       .catch((error) => console.error(error))
       .finally(() => fetchThoughts())
   }
