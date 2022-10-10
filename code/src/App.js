@@ -59,7 +59,6 @@ export const App = () => {
 
     fetch(LIKES_API(LikeID), options)
       .then((res) => res.json())
-      .then(console.log('yey it works.'))
       .catch((error) => console.error(error))
       .finally(() => fetchMessages())
   }
