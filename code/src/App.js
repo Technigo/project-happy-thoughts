@@ -49,18 +49,21 @@ export const App = () => {
       .then(() => fetchMessages())
       .finally(() => setNewMessage(''))
   }
+      
 
   // Shows likes
-  const onLikesIncrease = (LikeID) => {
-    const options = { method: 'POST',
+  function onLikesIncrease(LikeID) {
+    const options = {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      } }
+      }
+    };
 
     fetch(LIKES_API(LikeID), options)
       .then((res) => res.json())
       .catch((error) => console.error(error))
-      .finally(() => fetchMessages())
+      .finally(() => fetchMessages());
   }
 
   return (
