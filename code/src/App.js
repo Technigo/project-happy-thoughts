@@ -36,7 +36,6 @@ export const App = () => {
     setNewThought(event.target.value);
   }
 
-
 const handleHeartCounter = (_ID) => {
   const options = {
     method: 'POST',
