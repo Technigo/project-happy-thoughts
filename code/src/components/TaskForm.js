@@ -2,6 +2,7 @@
 import React from 'react';
 
 const TaskForm = ({ newTodo, onNewTodoChange, onFormSubmit }) => {
+
   return (
     <form onSubmit={onFormSubmit} className="form-container">
       <h2 className="form-headline">What&apos;s making you happy right now?</h2>

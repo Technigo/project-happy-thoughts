@@ -5,7 +5,7 @@ import TaskForm from 'components/TaskForm';
 import './reset.css';
 import './index';
 
-export const App = () => {
+  const App = () => {
   const [taskList, setTaskList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newTodo, setNewTodo] = useState('');
