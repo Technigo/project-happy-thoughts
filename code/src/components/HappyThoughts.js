@@ -1,10 +1,23 @@
 import React from 'react';
 import { formatDistance } from 'date-fns';
 
-const HappyThoughts = ({ loading, happyThoughts, onNewLikeSubmit }) => {
+const HappyThoughts = ({ loading, happyThoughts, fetchHappyThoughts }) => {
   if (loading) {
     return <h3 className="loading-text">Happy thoughts are loading..</h3>
   }
+
+  const onNewLikeSubmit = (_id) => {
+    fetch(
+      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`,
+      { method: 'POST',
+        headers: { 'Content-Type': 'application/json' } }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        // eslint-disable-next-line no-underscore-dangle
+        fetchHappyThoughts(data._id)
+      })
+  };
 
   return (
     <section className="thoughts-container">

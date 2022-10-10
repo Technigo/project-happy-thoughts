@@ -23,20 +23,29 @@ const Container = () => {
   return (
     <>
       <div>
-        <HappyThoughtsForm
-          newHappyThought={newHappyThought}
-          fetchHappyThoughts={fetchHappyThoughts}
-          setNewHappyThought={setNewHappyThought} />
         <div className="bunny-container" />
         <span className="bunny">   /)   /)<br />
         (ᵔ ᵕ ᵔ) <br />
         / づ  づ ~ ♡
         </span>
       </div>
+      <HappyThoughtsForm
+        newHappyThought={newHappyThought}
+        setNewHappyThought={setNewHappyThought}
+        fetchHappyThoughts={fetchHappyThoughts} />
+      <div className="cat-container">
+        <span className="cat">
+        &nbsp;╱|、<br />
+        (`   -  7 <br />
+       |、⁻〵 <br />
+        じしˍ,)ノ
+        </span>
+      </div>
       <HappyThoughts
         loading={loading}
         happyThoughts={happyThoughts}
-        setNewHappyThought={setNewHappyThought} />
+        setNewHappyThought={setNewHappyThought}
+        fetchHappyThoughts={fetchHappyThoughts} />
     </>
   )
 };
