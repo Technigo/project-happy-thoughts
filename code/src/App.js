@@ -10,10 +10,10 @@ export const App = () => {
 
   useEffect(() => {
     // eslint-disable-next-line no-use-before-define
-    fetchTasks();
+    fetchThoughts();
   }, []);
 
-  const fetchTasks = () => {
+  const fetchThoughts = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
@@ -41,7 +41,7 @@ export const App = () => {
 
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      .then(() => fetchTasks())
+      .then(() => fetchThoughts())
       .finally(() => setNewThought(''));
   }
 

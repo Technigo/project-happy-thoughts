@@ -5,22 +5,22 @@ const ThoughtItem = ({ loading, thoughtItem, setThoughtItem }) => {
   if (loading) {
     return <h1>Loading in progress...</h1>
   }
-  const onTaskCheckChange = (task) => {
-    setThoughtItem((thoughtItem) => thoughtItem.map((singleTask) => {{/* eslint-disable-line */}
-            if(singleTask._id === task._id) {{/* eslint-disable-line */}
-        return { ...singleTask, isChecked: !singleTask.isChecked };
+  const onThoughtCheckChange = (thought) => {
+    setThoughtItem((thoughtItem) => thoughtItem.map((singleThought) => {{/* eslint-disable-line */}
+            if(singleThought._id === thought._id) {{/* eslint-disable-line */}
+        return { ...singleThought, isChecked: !singleThought.isChecked };
       }
-      return singleTask;
+      return singleThought;
     }));
   }
   return (
     <section>
-      {thoughtItem.map((task) => (
-        <div key={task._id}>{/* eslint-disable-line */}
-          <h4>{task.description}</h4>
-          <input onChange={() => onTaskCheckChange(task)} type="checkbox" checked={task.isChecked} />
+      {thoughtItem.map((thought) => (
+        <div key={thought._id}>{/* eslint-disable-line */}
+          <h4>{thought.message}</h4>
+          <input onChange={() => onThoughtCheckChange(thought)} type="checkbox" checked={thought.isChecked} />
           <p>{formatDistanceToNow(
-            new Date(task.createdAt),
+            new Date(thought.createdAt),
             Date.now(),
             { addSuffix: true }
           )}
