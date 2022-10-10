@@ -107,6 +107,11 @@ button:hover {
 .disabled-textarea {
   color: red;
   min-height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
 }
 
 .like-counter {
