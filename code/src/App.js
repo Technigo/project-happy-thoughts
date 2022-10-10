@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import ThoughtForm from 'Components/ThoughtForm';
 import HappyThoughtList from 'Components/HappyThoughtList'
 import Footer from 'Components/Footer';

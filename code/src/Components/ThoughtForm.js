@@ -21,7 +21,7 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
         <div className="thought-input-details">
           <button
             className="submitBtn"
-            type="button"
+            type="submit"
             disabled={newThought.length < 5 || newThought.length > 140}>
             <span>❤️Send Happy Thought❤️</span>
           </button>
