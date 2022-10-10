@@ -10,7 +10,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: rgb(57, 55, 55);
 
-  background: linear-gradient(120deg, #ffa8a8, #f8ffba);
+  background: linear-gradient(120deg, #f97c7c, #fdf7c1);
   background-size: 500%;
   animation-name: gradient;
   animation-duration: 3s;
@@ -129,50 +129,3 @@ textarea {
 .time-stamp {
   justify-content: end;
 }
-
-/* 
-.form{
-  border: solid 3px black;
-  background-color: rgb(255, 222, 243);
-  border: 1px solid;
-  box-shadow: 5px 10px;
-  padding: 30px;
-  width: 32%;
-  margin: 0 auto;
-  max-width: 900px; 
- 
-
-.tweets-wrapper{
-  margin-top: 20px;
-}
-
-
-.tweet{
-  display: flex;
-  background-color: rgb(255, 222, 243);
-  border: 1px solid;
-  box-shadow: 5px 10px;
-  padding: 30px;
-  width: 32%;
-  margin: 0 auto;
-  /* max-width: 900px; 
-
-
-.value{
-  background-color: rgb(255, 222, 243);
-
-}
-
-.heart{
-  background-color: rgb(255, 222, 243);
-
-
-}
-
-.time{
-
-background-color: rgb(255, 222, 243);
-
-}
-
-} */

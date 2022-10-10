@@ -76,28 +76,3 @@ export const App = () => {
     </section>
   );
 };
-
-/*
-//BU Handling the form to it's natural behaviour
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    // object to store data we need
-
-    const options = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: newTweet })
-    }; // addin header here?
-
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-      .then((res) => res.json())
-      .then((newTweet) => setTweetList((previousTweet) => [newTweet, ...previousTweet]));
-  };
-*/
-
-/*
-// Handling the
-const handleNewTweetChange = (event) => {
-  setNewTweet(event.target.value);
-};
-*/
