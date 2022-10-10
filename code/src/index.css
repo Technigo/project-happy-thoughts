@@ -2,15 +2,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #ff9494;
+  --secondary: #ffd1d1;
+  --third: #ffe3e1;
+  --fourth: #fff5e4;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: rgb(57, 55, 55);
 
-  background: linear-gradient(120deg, #f97c7c, #fdf7c1);
+/* BACKGROUND ANIMATION */
+
+  background: linear-gradient(120deg, var(--primary), var(--fourth));
   background-size: 500%;
   animation-name: gradient;
   animation-duration: 3s;
@@ -28,33 +38,47 @@ body {
   }
 }
 
+h1 {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  padding-top: 30px;
+}
+
+h1,h3 {
+  padding-left: 10px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+.container {
+  margin: 30px auto 0;
+  width: 80%;
+}
+
 /* FORM */
 
-.input-container {
-  margin: 30px auto 0;
-  /* border: solid 1px rgb(57, 55, 55); */
-  width: 32%;
-}
-
-.input-box {
-  border: solid 1px rgb(57, 55, 55);
-  box-shadow: 5px 10px;
-  padding: 30px;
-  background-color: #f5a6a6;
-}
-
-form {
+.form-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  box-shadow: 7px 10px;
+  background-color: var(--secondary);
+  border: solid 1px var(--primary);
 }
 
 textarea {
-  border: solid 1px rgb(57, 55, 55);
+  width: 260px;
+  margin: 10px;
+}
+
+.textarea-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 .button-wrapper {
   display: flex;
@@ -64,13 +88,13 @@ textarea {
 }
 
 .button-form {
-  background-color: pink;
+  background-color: var(--primary);
   border-radius: 30px;
   padding: 12px;
   font-size: 15px;
   color: rgb(83, 67, 67);
   margin: 20px;
-  width: 200px;
+  width: 210px;
   border: none;
 }
 
@@ -80,19 +104,21 @@ textarea {
   text-align: center;
 }
 
-.tweets-wrapper {
-  /* border: solid 3px black; */
-}
-
-.tweet-box {
+.tweet-container {
   margin: 20px 0;
-  border: solid 1px rgb(57, 55, 55);
-  box-shadow: 5px 10px;
   padding: 30px;
-  background-color: #f5a6a6;
+  box-shadow: 7px 10px;
+  background-color: var(--secondary);
+  border: solid 1px var(--primary);
 }
 
 .message-box {
+  overflow-wrap: break-word;
+}
+
+.like-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .like-time-box {
@@ -102,13 +128,9 @@ textarea {
   justify-content: space-between;
 }
 
-.like-container {
-  display: flex;
-  align-items: center;
-}
-
-.button-likes, .button-no-likes {
-  background-color: pink;
+.button-likes,
+.button-no-likes {
+  background-color:var(--primary);
   border-radius: 30px;
   padding: 5px;
   font-size: 15px;
@@ -119,7 +141,7 @@ textarea {
 }
 
 .button-no-likes {
-  background-color: rgb(255, 255, 255);
+  background-color:var(--fourth);
 }
 
 .heart-counter {
@@ -128,4 +150,15 @@ textarea {
 
 .time-stamp {
   justify-content: end;
+}
+
+@media (min-width: 667px) {
+  .container {
+    margin: 30px auto 0;
+    width: 500px;
+  }
+
+  textarea {
+    width: 360px;
+  }
 }
