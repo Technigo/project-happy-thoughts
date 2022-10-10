@@ -82,6 +82,7 @@ h2 {
   box-shadow: 5px 5px var(--clr-black);
   margin: 2em 1em;
   padding: 1em;
+  display:flex;
   flex-direction: column;
   }
   
