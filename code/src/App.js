@@ -1,8 +1,7 @@
-/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
-
+import Header from 'components/Header';
+import NewPost from 'components/NewPost';
 import PostList from 'components/PostList';
-import PostForm from 'components/PostForm';
 
 export const App = () => {
   const [postList, setPostList] = useState([]);
@@ -13,7 +12,7 @@ export const App = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((data) => data.json())
-      .then((transformedData) => setPostList(transformedData.reverse()))
+      .then((transformedData) => setPostList(transformedData))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -37,7 +36,7 @@ export const App = () => {
     event.preventDefault();
 
     const options = {
-      method: 'POST',
+      method: 'post',
       body: JSON.stringify({
         message: newPost
       }),
@@ -45,30 +44,53 @@ export const App = () => {
         'Content-Type': 'application/json'
       }
     }
-
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((data) => data.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))
-      .finally(() => handleFormCleanup())
+      .finally(() => handleFormCleanup());
   }
-
   if (loading) {
     return (
-      <p>Page is loading</p>
+      <p>THE PAGE IS LOADING...</p>
     )
   }
-
+  const onLikesIncrease = (thoughtId) => {
+    const options = {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      }
+    };
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
+      .then((res) => res.json())
+      .then((data) => {
+        const updatedThoughts = postList.map((item) => {
+          // eslint-disable-next-line no-underscore-dangle
+          if (item._id === data._id) {
+            item.hearts += 1;
+            return item;
+          } else {
+            return item;
+          }
+        });
+        setPostList(updatedThoughts);
+      });
+  };
   return (
-    <div>
-      <PostForm
-        handleFormSubmit={handleFormSubmit}
-        onNewPostChange={onNewPostChange}
-        newPost={newPost} />
-      <PostList
-        postList={postList}
-        setPostList={setPostList} />
+    <div className="outer-wrapper">
+      <div className="inner-wrapper">
+        <Header />
+        <NewPost
+          handleFormSubmit={handleFormSubmit}
+          onNewPostChange={onNewPostChange}
+          newPost={newPost} />
+        <PostList
+          postList={postList}
+          setPostList={setPostList}
+          onLikesIncrease={onLikesIncrease} />
+      </div>
     </div>
   );
 }

@@ -1,14 +1,29 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import SinglePost from './SinglePost';
+import moment from 'moment';
 
-const PostList = ({ thoughtList }) => {
+const PostList = ({ postList, onLikesIncrease }) => {
   return (
-    <section>
-      {thoughtList.map((singlePost) => {
+    <section className="thought-list">
+      {postList.map((thoughtMessage) => {
         return (
-          <div key={singlePost._id}>
-            <SinglePost message={singlePost.message} checked={singlePost.isChecked} />
+          <div className="thought-list-box" key={thoughtMessage._id}>
+            <p className="thought-list-item">{thoughtMessage.message}</p>
+            <div className="likes-date-wrapper">
+              <div className="likes-wrapper">
+                <button
+                  type="button"
+                  className="heart"
+                  onClick={() => onLikesIncrease(thoughtMessage._id)}
+                  style={{ background: thoughtMessage.hearts >= 1 ? '#f9d4d4' : '#e9e7e7' }}>
+                  <span>
+                    ❤️️
+                  </span>
+                </button>
+                <p className="likes-amount">x {thoughtMessage.hearts}</p>
+              </div>
+              <p className="post-date">Posted: {moment(thoughtMessage.createdAt).fromNow()}</p>
+            </div>
           </div>
         )
       })}
