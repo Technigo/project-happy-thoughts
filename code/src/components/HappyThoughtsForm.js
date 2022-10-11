@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const HappyThoughtForm = ({ handleFormSubmit, onAddNewThought, newThought }) => {
   return (
@@ -13,4 +13,4 @@ const HappyThoughtForm = ({ handleFormSubmit, onAddNewThought, newThought }) => 
   );
 }
 
-export default HappyThoughtForm;
+export default HappyThoughtForm
