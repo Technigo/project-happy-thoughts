@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import Header from 'components/Header';
 import NewPost from 'components/NewPost';
 import PostList from 'components/PostList';
@@ -15,26 +16,23 @@ export const App = () => {
       .then((transformedData) => setPostList(transformedData))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
-  }
+  };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  // will trigger first when app starts, and every time the variable in the dependency array changes
-
   const onNewPostChange = (event) => {
     setNewPost(event.target.value);
-  }
+  };
 
   const handleFormCleanup = () => {
     setNewPost('');
     setLoading(false);
-  }
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-
     const options = {
       method: 'post',
       body: JSON.stringify({
@@ -43,19 +41,21 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }
+    };
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((data) => data.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))
       .finally(() => handleFormCleanup());
-  }
+  };
+
   if (loading) {
     return (
       <p>THE PAGE IS LOADING...</p>
     )
   }
+
   const onLikesIncrease = (thoughtId) => {
     const options = {
       method: 'post',
@@ -63,6 +63,7 @@ export const App = () => {
         'content-type': 'application/json'
       }
     };
+
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
       .then((res) => res.json())
       .then((data) => {
@@ -78,9 +79,10 @@ export const App = () => {
         setPostList(updatedThoughts);
       });
   };
+
   return (
-    <div className="outer-wrapper">
-      <div className="inner-wrapper">
+    <div>
+      <div>
         <Header />
         <NewPost
           handleFormSubmit={handleFormSubmit}

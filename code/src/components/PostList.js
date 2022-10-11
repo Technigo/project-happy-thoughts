@@ -4,31 +4,30 @@ import moment from 'moment';
 
 const PostList = ({ postList, onLikesIncrease }) => {
   return (
-    <section className="thought-list">
+    <section>
       {postList.map((thoughtMessage) => {
         return (
-          <div className="thought-list-box" key={thoughtMessage._id}>
-            <p className="thought-list-item">{thoughtMessage.message}</p>
-            <div className="likes-date-wrapper">
-              <div className="likes-wrapper">
+          <div key={thoughtMessage._id}>
+            <p>{thoughtMessage.message}</p>
+            <div>
+              <div>
                 <button
                   type="button"
-                  className="heart"
                   onClick={() => onLikesIncrease(thoughtMessage._id)}
                   style={{ background: thoughtMessage.hearts >= 1 ? '#f9d4d4' : '#e9e7e7' }}>
                   <span>
                     ❤️️
                   </span>
                 </button>
-                <p className="likes-amount">x {thoughtMessage.hearts}</p>
+                <p>x {thoughtMessage.hearts}</p>
               </div>
-              <p className="post-date">Posted: {moment(thoughtMessage.createdAt).fromNow()}</p>
+              <p>Posted: {moment(thoughtMessage.createdAt).fromNow()}</p>
             </div>
           </div>
         )
       })}
     </section>
   );
-}
+};
 
 export default PostList;
