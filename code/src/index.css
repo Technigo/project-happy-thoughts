@@ -23,7 +23,7 @@ body {
   background: linear-gradient(120deg, var(--primary), var(--fourth));
   background-size: 500%;
   animation-name: gradient;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   /* https://www.youtube.com/watch?v=f3mwKLXpOLk */

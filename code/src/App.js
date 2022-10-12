@@ -50,8 +50,7 @@ export const App = () => {
   // function that handels when the like-button gets a click, pass the uniq id for that tweet
   const handleNewLikeSubmit = (tweetId) => {
     const options = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' } // do I need this?
+      method: 'POST'
     };
 
     // increases likes count on server for uniq tweet id
