@@ -17,12 +17,14 @@ const ThoughtList = ({ thought, handleLikes }) => {
                 </button>
                 <p> x {singleThought.hearts}</p>
               </div>
-              <p>{formatRelative(
-                new Date(singleThought.createdAt),
-                Date.now(),
+              <p>{// fixing the date format
+                formatRelative(
+                  new Date(singleThought.createdAt),
+                  Date.now(),
 
-                { addSuffix: true }
-              )}
+                  { addSuffix: true }
+                )
+              }
               </p>
             </div>
 

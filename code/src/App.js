@@ -3,7 +3,6 @@ import ThoughtList from 'components/ThoughtList';
 import ThoughtForm from 'components/ThoughtForm';
 
 export const App = () => {
-  const [counter, setCounter] = useState(0);
   const [thoughtList, setThoughtList] = useState([]);
   const [newThought, setNewThought] = useState('');
   // const [like, setLike] = useState();
@@ -18,14 +17,6 @@ export const App = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
-  useEffect(() => {
-    // console.log('change effect with counter change')
-  }, [counter]);
-
-  const handleCounterIncreaseButtonClick = () => {
-    setCounter(counter + 1);
-  }
 
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value)
@@ -57,11 +48,8 @@ export const App = () => {
         handleFormSubmit={handleFormSubmit}
         newThought={newThought}
         onNewThoughtChange={onNewThoughtChange} />
-      {counter >= 1
-      && (<ThoughtList
-        thought={thoughtList} />)}
-      <p>{counter}</p>
-      <button onClick={handleCounterIncreaseButtonClick} type="button">Counter increase</button>
+      <ThoughtList
+        thought={thoughtList} />
     </div>
-  );
+  )
 }
