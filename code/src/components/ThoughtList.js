@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 // import React, { useState, useEffect } from 'react';
 import React from 'react';
+import { formatRelative } from 'date-fns';
 
-const ThoughtList = ({ thought }) => {
+const ThoughtList = ({ thought, handleLikes }) => {
   return (
     <section>
       {thought.map((singleThought) => {
@@ -9,12 +11,23 @@ const ThoughtList = ({ thought }) => {
           <div className="singleThought" key={singleThought._id}>
             <p>{singleThought.message}</p>
             <div className="heartBtn">
-              <button>{singleThought.hearts}</button>
-              <p>{singleThought.createdAt}</p>
+              <div className="likeCounter">
+                <button
+                  onClick={() => handleLikes(singleThought._id)}>❤️
+                </button>
+                <p> x {singleThought.hearts}</p>
+              </div>
+              <p>{formatRelative(
+                new Date(singleThought.createdAt),
+                Date.now(),
+
+                { addSuffix: true }
+              )}
+              </p>
             </div>
 
           </div>
-        )
+        );
       })}
     </section>
   )

@@ -6,6 +6,7 @@ export const App = () => {
   const [counter, setCounter] = useState(0);
   const [thoughtList, setThoughtList] = useState([]);
   const [newThought, setNewThought] = useState('');
+  // const [like, setLike] = useState();
 
   const fetchData = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
@@ -49,13 +50,16 @@ export const App = () => {
       .catch((error) => console.error(error))
       .finally(() => setNewThought(''));
   }
+
   return (
     <div className="wrapper">
       <ThoughtForm
         handleFormSubmit={handleFormSubmit}
         newThought={newThought}
         onNewThoughtChange={onNewThoughtChange} />
-      {counter >= 1 && (<ThoughtList thought={thoughtList} />)}
+      {counter >= 1
+      && (<ThoughtList
+        thought={thoughtList} />)}
       <p>{counter}</p>
       <button onClick={handleCounterIncreaseButtonClick} type="button">Counter increase</button>
     </div>
