@@ -5,8 +5,8 @@ import ThoughtForm from 'components/ThoughtForm';
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([]);
   const [newThought, setNewThought] = useState('');
-  // const [like, setLike] = useState();
 
+  /* Fetching data from API */
   const fetchData = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((data) => data.json())
@@ -18,6 +18,7 @@ export const App = () => {
     fetchData();
   }, []);
 
+  /* posting new post to API */
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value)
   }
@@ -42,6 +43,22 @@ export const App = () => {
       .finally(() => setNewThought(''));
   }
 
+  /* post data for like button */
+
+  const handleLikesChange = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, options)
+      .then((data) => data.json())
+      .then(console.log('jupi'))
+      .catch((error) => console.error(error))
+      .finally(() => fetchData());
+  }
+
   return (
     <div className="wrapper">
       <ThoughtForm
@@ -49,7 +66,8 @@ export const App = () => {
         newThought={newThought}
         onNewThoughtChange={onNewThoughtChange} />
       <ThoughtList
-        thought={thoughtList} />
+        thought={thoughtList}
+        handleLikesChange={handleLikesChange} />
     </div>
   )
 }

@@ -3,7 +3,7 @@
 import React from 'react';
 import { formatRelative } from 'date-fns';
 
-const ThoughtList = ({ thought, handleLikes }) => {
+const ThoughtList = ({ thought, handleLikesChange }) => {
   return (
     <section>
       {thought.map((singleThought) => {
@@ -13,7 +13,7 @@ const ThoughtList = ({ thought, handleLikes }) => {
             <div className="heartBtn">
               <div className="likeCounter">
                 <button
-                  onClick={() => handleLikes(singleThought._id)}>❤️
+                  onClick={() => handleLikesChange(singleThought._id)}>❤️
                 </button>
                 <p> x {singleThought.hearts}</p>
               </div>
@@ -22,7 +22,7 @@ const ThoughtList = ({ thought, handleLikes }) => {
                   new Date(singleThought.createdAt),
                   Date.now(),
 
-                  { addSuffix: true }
+                  { addSuffix: true /* removed error in console */ }
                 )
               }
               </p>
