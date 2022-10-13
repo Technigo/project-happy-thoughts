@@ -4,8 +4,8 @@ const TweetForm = ({ newTweet, onNewTweetChange, handleFormSubmit }) => {
   return (
     <div className="form-container">
       <form onSubmit={handleFormSubmit}>
-        <h1>Spread some love!</h1>
-        <h3>What makes you happy right now?</h3>
+        <h1 className="title">Spread some love!</h1>
+        <h3 className="sub-title">What makes you happy right now?</h3>
         <div className="textarea-wrapper">
           <textarea
             value={newTweet}
