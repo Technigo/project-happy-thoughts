@@ -11,8 +11,10 @@ const TweetForm = ({ newTweet, onNewTweetChange, handleFormSubmit }) => {
             value={newTweet}
             onChange={onNewTweetChange}
             placeholder="Write something that made you smile today.."
-            rows="6"
+            rows="7"
             cols="30" />
+          <p className="counter">{140 - newTweet.length} / 140</p>
+
         </div>
 
         <div className="button-wrapper">
@@ -20,8 +22,8 @@ const TweetForm = ({ newTweet, onNewTweetChange, handleFormSubmit }) => {
             className="button-form"
             type="submit"
             disabled={newTweet.length < 5 || newTweet.length > 140}>
-            <span className="heart">🧡&nbsp;</span>Send happy thought!
-            <span className="heart">&nbsp; 🧡</span>
+            <span className="heart">🧡&nbsp;</span><strong>Send a happy thought!</strong>
+            <span className="heart">&nbsp;🧡</span>
           </button>
         </div>
       </form>
