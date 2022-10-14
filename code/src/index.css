@@ -1,3 +1,7 @@
+/* * { 
+  outline: 1px solid red;
+}  // code used to debuging CSS */ 
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -18,16 +22,16 @@ code {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  margin-top: 10px;
 }
 
 form {
   display: flex;
-    border: solid 5px;
-    margin: 10px 20px 0px 0px;
-    align-items: center;
-    flex-direction: column;
-    width: 60%;
-    background-color: antiquewhite;
+  border: solid 5px;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  background-color: antiquewhite;
 }
 
 form h2, textarea {
@@ -41,6 +45,7 @@ textarea{
   width: 60%;
   border: solid #666;
 }
+
 form button {
   width: fit-content;
   align-items: center;
@@ -56,18 +61,23 @@ section{
   align-items: center;
 }
 
+/* Single though component styling */
+
 .singleThought {
   border: 2px solid;
   margin:20px;
+  padding: 5px;
   box-shadow: 10px 10px;
   width: 80%;
   background-color: antiquewhite;
+  overflow: auto; /* stop long message go out of the borders */
 }
 
 .singleThought p {
   text-align: center;
 }
 
+/* Like buttons styling and hover */
 .heartBtn {
   display: flex;
   flex-direction: row;
@@ -89,3 +99,21 @@ button:hover {
 .likeCounter {
   display: inline-flex;
 }
+
+/* Responsive page mobile */
+
+@media screen and (max-width: 480px) {
+  form {
+    width:80vw;
+  }
+
+  .singleThought {
+    width: 80vw;
+  }
+
+  textarea {
+    font-size: 16px;
+  }
+}
+
+
