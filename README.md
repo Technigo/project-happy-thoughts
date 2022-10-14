@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Week 7 of Technigo Bootcamp. Project Happy Thoughts communicator
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Project was an interesting way of making recap of everything I have learned until now. The biggest problem was to understand how fetch get and fetch post works together, and how to connect everything together. Coding sessions as well help from team and classmates made this journey fun and challenging. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happythoughtsbykajawilbik.netlify.app/
