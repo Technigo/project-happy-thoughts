@@ -1,0 +1,15 @@
+.sectionSingleText p {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sectionSingleText {
+  display: flex;
+  text-align:start;
+  padding-left:1.5rem;
+  max-width: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

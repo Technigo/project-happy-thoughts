@@ -1,0 +1,81 @@
+.sectionForm {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+form {
+  width: 80%;
+  height: 250px;
+  background-color: rgb(130, 196, 225);
+  box-shadow: 7px 7px rgb(28, 31, 97);
+  padding: 10px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: beige;
+  justify-content: center;
+  border-radius: 8px;
+  letter-spacing: 0.2px;
+}
+
+textarea {
+  border-radius: 8px;
+  background-color: beige;
+  max-width: 25vw;
+  max-height: 50px;
+  margin-bottom: 1rem;
+  box-shadow: 3px 3px beige;
+  border-color: gray 1px;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+textarea placeholder {
+  font: size 12px;
+  color: white;
+}
+.buttonSubmitt {
+  cursor: pointer;
+  box-shadow: 0 10px 10px rgb(174, 167, 167);
+  border-radius: 15px;
+  height: 40px;
+  border-style: none !important;
+  color: gray;
+  font-weight: bold;
+  margin-top: 1rem;
+  letter-spacing: 0.4px;
+  width: 25vw;
+}
+
+button:active {
+  transform: translateY(4px);
+}
+button:hover {
+  height: 45px;
+  background-color: rgb(40, 45, 134);
+  color: white;
+  font-size: 16px;
+}
+.buttonSubmitt span {
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 375px) {
+  .sectionForm {
+    width: 100%;
+  }
+  .buttonSubmitt {
+    width: 70%;
+  }
+  textarea {
+    max-width: 100%;
+  }
+}

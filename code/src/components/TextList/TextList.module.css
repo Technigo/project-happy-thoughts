@@ -1,0 +1,36 @@
+.wrapper {
+  width: 60vw;
+  border-radius: 8px;
+  position: relative;
+  margin: 1rem auto;
+}
+
+.sectionDescription {
+  border: 1px solid#5a5656;
+  box-shadow: 7px 7px rgb(28, 31, 97);
+  background-color: rgb(130, 196, 225);
+  margin-top: 1.8rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.likeDatediv {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.likeDatediv p {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 375px) {
+  .wrapper {
+    width: 90%;
+  }
+}
