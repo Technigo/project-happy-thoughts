@@ -1,33 +1,20 @@
-import React , { useState } from 'react';
-import styles from './LikeButton.module.css'
+import React from "react";
+import styles from "./LikeButton.module.css";
 
-const LikeButton = (props) => {
-  const like_url= `https://technigo-thoughts.herokuapp.com/${props._id}/like`;
+const LikeButton = ({ data, handleLikeSubmit }) => {
 
-  const [countLike, setCountLike] = useState(0);
-
-
-  const handleClick= () => {
- setCountLike(countLike + 1);
-    fetch(like_url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body:""
-    }).then(() => {
-props.onMessageLiked(props._id)
-    })
-    ;
-  }
-
-  //  console.log("Hej ", setCountLike);
   return (
-    <>
-      <button onclick={handleClick} className={styles.likeButton}> ❤️</button>
-
-    </>
+    <section>
+      <button
+        type="submit"
+        onclick={() => handleLikeSubmit(data._id)}
+        className={styles.likeButton}
+      >
+        <span className="heart-span" role="img" aria-label="heart emoji"> ❤️ </span>
+      </button>
+      <p className={styles.likeCounter}> × 0</p>
+    </section>
   );
-}
- 
+};
+
 export default LikeButton;

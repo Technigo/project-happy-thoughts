@@ -4,12 +4,21 @@ import styles from "./TextList.module.css";
 import { formatRelative } from "date-fns";
 import LikeButton from "../LikeButton/LikeButton";
 
-const TextList = ({ list }) => {
+/* 
+- This component renders an array of thoughts from the HappyThoughts API making a list and rendered the list by using the map method.
+- While the API request is being handled, the 'loading' state is set to true. 
+- 
+*/
+
+const TextList = ({ list, loading }) => {
+  if(loading) {
+    return <h4>Happy thoughts incoming...</h4>;
+  }
   console.log(list);
 
   return (
     <div className={styles.wrapper}>
-      <section>
+     
         {list.map((singleText) => {
           return (
             <section>
@@ -18,15 +27,18 @@ const TextList = ({ list }) => {
                   description={singleText.description}
                   checked={singleText.isChecked}
                 />
+
                 <div className={styles.likeDatediv}>
                   <LikeButton />
                   <p>{formatRelative(singleText.date, new Date())}</p>
                 </div>
+
               </div>
             </section>
           );
         })}
-      </section>
+     
+      
     </div>
   );
 };

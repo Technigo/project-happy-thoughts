@@ -28,7 +28,7 @@ textarea {
   border-radius: 8px;
   background-color: beige;
   max-width: 25vw;
-  max-height: 50px;
+  max-height: 55px;
   margin-bottom: 1rem;
   box-shadow: 3px 3px beige;
   border-color: gray 1px;
@@ -52,7 +52,8 @@ textarea placeholder {
   font-weight: bold;
   margin-top: 1rem;
   letter-spacing: 0.4px;
-  width: 25vw;
+  max-width: 35vw;
+  background-color: beige;
 }
 
 button:active {

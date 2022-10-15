@@ -1,19 +1,25 @@
 import React from "react";
 import styles from "./TaskForm.module.css";
 
-const TaskForm = ({ newTextChange, newText, handleFormSubmit }) => {
+// This component renders a thought submission form.
+// Submit button is disabled if string entered in textarea is <5 or >140 characters
+const TaskForm = ({newText, newTextChange, handleFormSubmit }) => {
   return (
     <section className={styles.sectionForm}>
       <form onSubmit={handleFormSubmit} className={styles.form}>
-        <h2>Submit your thoughts below!</h2>
+        <h2>Submit your thoughts below! 😍 </h2>
         <textarea
           value={newText}
           onChange={newTextChange}
           placeholder="... make me Happy! "
-        ></textarea>
-        <button type="submit" className={styles.buttonSubmitt}>
+        />
+
+        <button type="submit" 
+        className={styles.buttonSubmitt}
+        disabled={newText.length < 5 || newText.length >140}
+        >
           Submit your Text
-          <span role="img" aria-label="heart">
+          <span aria-label="heart">
             ❤️
           </span>
         </button>
