@@ -4,13 +4,13 @@ import moment from 'moment';
 
 const PostList = ({ postList, onLikesIncrease }) => {
   return (
-    <section>
+    <section className="postList-wrapper">
       {postList.map((thoughtMessage) => {
         return (
-          <div key={thoughtMessage._id}>
+          <div className="post-wrapper" key={thoughtMessage._id}>
             <p>{thoughtMessage.message}</p>
-            <div>
-              <div>
+            <div className="post-gutter">
+              <div className="like-button">
                 <button
                   type="button"
                   onClick={() => onLikesIncrease(thoughtMessage._id)}
@@ -19,9 +19,9 @@ const PostList = ({ postList, onLikesIncrease }) => {
                     ❤️️
                   </span>
                 </button>
-                <p>x {thoughtMessage.hearts}</p>
+                <p className="footnote">x {thoughtMessage.hearts}</p>
               </div>
-              <p>Posted: {moment(thoughtMessage.createdAt).fromNow()}</p>
+              <p className="footnote">Posted: {moment(thoughtMessage.createdAt).fromNow()}</p>
             </div>
           </div>
         )

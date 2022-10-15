@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -12,7 +14,101 @@ code {
     monospace;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'JetBrains Mono', monospace;
+}
 
-.tomato {
-  background-color: tomato;
+header {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 13px 15px 13px 15px;
+  background-color: #FFADAD;
+  font-size: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+label {
+  flex-direction: column;
+}
+
+.outer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 20px 56px 20px;
+}
+
+.newPost-wrapper {
+  border: 1px solid black;
+  padding: 24px;
+  background-color: #F2F0F0;
+  box-shadow: 10px 10px 0px 2px rgba(0,0,0,1);
+  -webkit-box-shadow: 10px 10px 0px 2px rgba(0,0,0,1);
+  -moz-box-shadow: 10px 10px 0px 2px rgba(0,0,0,1);
+}
+
+.postList-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.post-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: 1px solid black;
+  padding: 24px;
+  background-color: #FFF;
+  box-shadow: 10px 10px 0px 2px rgba(0,0,0,1);
+  -webkit-box-shadow: 10px 10px 0px 2px rgba(0,0,0,1);
+  -moz-box-shadow: 10px 10px 0px 2px rgba(0,0,0,1);
+}
+
+.newPost-label {
+  display: flex;
+  gap: 16px;
+}
+
+.post-gutter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.like-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footnote {
+  margin: auto;
+  margin-right: 0;
+  color: #9d9d9d;
+  font-size: 0.9em;
+}
+
+.newPost-input {
+  resize: none;
 }

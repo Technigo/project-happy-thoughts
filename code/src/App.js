@@ -81,9 +81,9 @@ export const App = () => {
   };
 
   return (
-    <div>
-      <div>
-        <Header />
+    <div className="outer-wrapper">
+      <Header />
+      <div className="inner-wrapper">
         <NewPost
           handleFormSubmit={handleFormSubmit}
           onNewPostChange={onNewPostChange}
