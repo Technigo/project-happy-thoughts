@@ -14,7 +14,7 @@ const PostList = ({ postList, onLikesIncrease }) => {
                 <button
                   type="button"
                   onClick={() => onLikesIncrease(thoughtMessage._id)}
-                  style={{ background: thoughtMessage.hearts >= 1 ? '#f9d4d4' : '#e9e7e7' }}>
+                  style={{ background: thoughtMessage.hearts >= 1 ? '#FFADAD' : '#F2F0F0' }}>
                   <span>
                     ❤️️
                   </span>

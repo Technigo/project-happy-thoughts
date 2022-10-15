@@ -111,4 +111,19 @@ label {
 
 .newPost-input {
   resize: none;
+  padding: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .outer-wrapper {
+    align-items: center;
+  }
+
+  .inner-wrapper {
+    width: 500px;
+  }
+
+  button {
+    max-width: 260px;
+  }
 }
