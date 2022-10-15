@@ -1,13 +1,21 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+Happy Thought app, is a single-page application to which user can submit New Text on this app. 
+-There is a form to post new thoughts and submit button. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+-Users can see a list of the most recent thoughts at the top and older thoughts at the bottom. 
+
+-In this project I work with useEffect to call an API, then use GET- and POST-requests to display and add new thoughts/likes to a list of happy thoughts.
+-All components have their own CSS styling components.
+-In app.jsx I made Props and used them in different components according to the needs.
+
+This project has been very helpful for me to understand the concept of React components, usage of states, and sending data through functions and props, and a better understanding of the app.js component which holds all the data and pass it down the waterfall.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- I spent a good amount of time trying to display when a thought was liked. 
+- That was a bit difficult to connected all components to each others, by using reverse method solve that problem. 
+- If I would have more time I would make another components to count heart or likes.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thought-c4ab8d.netlify.app
