@@ -98,7 +98,6 @@ const App = () => {
       />
       <TextList
         list={textList}
-        // setTextList={setTextList}
         onNewLikeSubmit={handleLikeSubmit}
       />
 

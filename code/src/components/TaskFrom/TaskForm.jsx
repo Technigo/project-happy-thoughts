@@ -23,6 +23,7 @@ const TaskForm = ({newText, newTextChange, handleFormSubmit }) => {
             ❤️
           </span>
         </button>
+        
       </form>
     </section>
   );

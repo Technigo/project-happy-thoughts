@@ -24,8 +24,8 @@ const TextList = ({ list, loading, handleLikeSubmit, data }) => {
               <SingleText
                 description={singleText.description}
                 checked={singleText.isChecked}
+                heart={singleText.hearts}
               />
-
               <div className={styles.likeDatediv}>
                 <div className={styles.likePlusLikeCounter}>
                   <button
@@ -42,7 +42,7 @@ const TextList = ({ list, loading, handleLikeSubmit, data }) => {
                     </span>
                   </button>
 
-                  <p className={styles.likeCounter}> × 0</p>
+                  <p className={styles.likeCounter}> × 0 {singleText.hearts} </p>
                 </div>
                 <p>{formatRelative(singleText.date, new Date())}</p>
               </div>
