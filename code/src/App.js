@@ -9,7 +9,7 @@ export const App = () => {
 
   const LIKES_URL = (tweetId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${tweetId}/like`;
 
-  /// fetch the data
+  /// function fetching the tweet data
   const fetchTweets = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
@@ -28,6 +28,8 @@ export const App = () => {
     setNewTweet(event.target.value);
   };
 
+  /** **** Writing a Tweet and sumbit ****** */
+
   // prevents forms natural behaviour to submit when reloading page
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -38,7 +40,7 @@ export const App = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newTweet })
     };
-    // Gets all tweets and updates width option data.
+    // Gets all tweets and updates width option data when page reload.
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
       .then((data) => {
@@ -47,6 +49,7 @@ export const App = () => {
       });
   };
 
+  /** **** LIKES ****** */
   // function that handels when the like-button gets a click, pass the uniq id for that tweet
   const handleNewLikeSubmit = (tweetId) => {
     const options = {

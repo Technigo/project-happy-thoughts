@@ -82,6 +82,7 @@ code {
 
 .textarea-wrapper {
   align-items: center;
+  display: flex;
   justify-content: center;
   width: auto;
   font-family: "Courier New", Courier, monospace;
@@ -179,10 +180,6 @@ textarea:focus {
   margin: 0;
 }
 
-.time-stamp {
-  justify-content: end;
-}
-
 @media (min-width: 667px) {
   .container {
     margin: 30px auto 0;
@@ -195,8 +192,6 @@ textarea:focus {
 
   .title {
     font-size: 26px;
-    padding: 40px;
-  
   }
   
   .sub-title {
