@@ -1,22 +1,25 @@
 # Happy Thoughts
-In this project we created a site in react that was fetching and posting data from an API.
-On the site you can post a tweet, see other tweets and like a tweet.
 
-Requirements
+During this project we were learning how to use the `useEffect` hook in React to perform actions when components mount, unmount, or when state changes, how to call APIs from React and put the data into state and work with an API which you both send and receive data from.
 
-✓ Your page should follow the design as closely as possible
+Requirements for the project:
 
-✓ You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
+* Your page should follow the design as closely as possible
 
-✓ Your thoughts should show the content of the message and how many likes they've received
+* You should list the most recent thoughts at the top and older thoughts at the bottom (sorted)
 
-✓ You should have a form to post new thoughts
+* Your thoughts should show the content of the message and how many likes they've received
 
-✓ You should implement the heart button to send likes on a thought
+* You should have a form to post new thoughts
+
+* You should implement the heart button to send likes on a thought
+<img width="644" alt="Screenshot 2022-10-16 at 10 47 16" src="https://user-images.githubusercontent.com/108176641/196026711-7444e6b5-0cd1-4698-b670-52f2539c09ca.png">
+
 
 ## The problem
 
-I made a figma-file to plan the week and the design. I started working on fetching the tweets first, then the form. I added some design before I finally managed to create a like function, updating the likes. The last part was a bit challanging and I got stuck. Happy to solve it at the end.
+As usual, I planned the week in figma, gathered the requirements and tried to break down the problem. I followed the instructions from the course and it went pretty well. 
 
 ## View it live
 
+https://project-happy-thought-petra.netlify.app/
