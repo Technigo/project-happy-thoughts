@@ -25,5 +25,3 @@ I found Stack Overflow very helpful for this project. I know it's a great resour
 ## View it live
 
 https://gladatankar.netlify.app/
-
-![project-happy-thoughts](https://user-images.githubusercontent.com/97528034/196678126-95400c8a-80b8-4fe0-a041-f9f1110a2ac0.png
