@@ -1,13 +1,13 @@
 # Happy Thoughts
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The happy thoughts project, now you can finally post HAPPY THOUGHTS
+on social media. Using technigos public backend (a personal backend will be added soon) fetching
+previous posts.
 
 ## The problem
+The assignement was to produce a twitter-style app using react, an API and POST and practice using the {useEffect} hook. 
+All incapsulated and presented in a very early world-wide-web-retro-style. 
+<img width="288" alt="Screenshot 2022-10-07 at 14 45 39" src="https://user-images.githubusercontent.com/105229808/197238390-9b44a404-88ca-47c9-b45a-215352570a21.png">
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://onlyhappythoughts.netlify.app
