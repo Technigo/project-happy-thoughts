@@ -36,6 +36,16 @@ h2 {
     --clr-rose2: #fd9d9d;
 }
 
+.thought-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+  margin: 30px;
+  padding:20px 25px 5px;
+}
+
 /* ------- NEW THOUGHT --------- */
 
 .thought-wrapper {

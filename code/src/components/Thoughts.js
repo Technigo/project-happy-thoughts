@@ -57,7 +57,7 @@ const Thoughts = () => {
   };
 
   return (
-    <div>
+    <div className="thought-container">
       <NewThought
         newThought={newThought}
         newThoughtChange={newThoughtChange}
