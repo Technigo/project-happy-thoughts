@@ -15,7 +15,8 @@ export const App = () => {
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
       .then((data) => setTweetList(data))
-      .catch((error) => console.error('error1', error).finally(() => setLoading(false)));
+      .catch((error) => console.error('error1', error))
+      .finally(() => setLoading(false));
   };
 
   // happens once when site reloads'), []};
@@ -34,17 +35,19 @@ export const App = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    // creats object to store the data (message)
+    // creats object to store the data (message). This is a standard set of keys
+    // that Backend needs/expect when communicating with your app.
+    // Body is storing your content/data.
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newTweet })
     };
     // Gets all tweets and updates width option data when page reload.
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options) // Catch (POST) updated data thoughts + new thought/tweet
       .then((res) => res.json())
       .then((data) => {
-        fetchTweets(data);
+        fetchTweets(data); // GET all data (including updated data)
         setNewTweet('');
       });
   };
@@ -56,14 +59,13 @@ export const App = () => {
       method: 'POST'
     };
 
-    // increases likes count on server for uniq tweet id
-    fetch(LIKES_URL(tweetId), options) // fetches the data uniqe and adds object option
+    // Increases likes count on server for uniq tweet id
+    fetch(LIKES_URL(tweetId), options) // Catch the data and update with uniqe object (option)
       .then((res) => res.json())
-      .then(console.log('likes work'))
       .then((data) => {
-        fetchTweets(data);
+        fetchTweets(data); // Gets/request all data again
       })
-      .catch((error) => console.error('error3', error));
+      .catch((error) => console.error('error2', error));
   };
 
   return (
@@ -75,7 +77,7 @@ export const App = () => {
       <TweetList
         loading={loading}
         tweetList={tweetList}
-        onNewLikeSubmit={handleNewLikeSubmit} />{' '}
+        onNewLikeSubmit={handleNewLikeSubmit} />
     </section>
   );
 };

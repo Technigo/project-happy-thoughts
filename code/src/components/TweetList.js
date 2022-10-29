@@ -1,7 +1,10 @@
 import React from 'react';
 import { formatDistance } from 'date-fns';
 
-const TweetList = ({ tweetList, onNewLikeSubmit }) => {
+const TweetList = ({ loading, tweetList, onNewLikeSubmit }) => {
+  if (loading) {
+    return <h4 className="loading-text">Loading 3.. 2.. 1..</h4>
+  }
   return (
     <section className="tweets-wrapper">
       {tweetList.map((tweet) => {
