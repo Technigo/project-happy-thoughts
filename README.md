@@ -1,6 +1,6 @@
 # Happy Thoughts
 
-Happy Thought app, is a single-page application to which user can submit New Text on this app. 
+Happy Thought is a single-page application which user can submit New Text on this app. 
 -There is a form to post new thoughts and submit button. 
 
 -Users can see a list of the most recent thoughts at the top and older thoughts at the bottom. 
