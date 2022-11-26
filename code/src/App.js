@@ -1,47 +1,35 @@
 /* eslint-disable linebreak-style */
 import React, { useState, useEffect } from 'react';
 
-import TaskForm from 'components/TaskForm';
-import TaskList from 'components/TaskList';
+import HappyList from 'components/HappyList';
+import NewThought from 'components/NewThought';
 
 export const App = () => {
-  const [taskList, setTaskList] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [newTodo, setNewTodo] = useState('');
-  const [counter, setCounter] = useState(0);
+  const [happyList, setHappyList] = useState([]);
+  const [newThought, setNewThought] = useState('');
+  const [loading, setLoading] = useState(true);
 
-  const fetchTasks = () => {
-    setLoading(true);
-    fetch('https://week7-backend.herokuapp.com/tasks')
-      .then((res) => res.json())
-      .then((data) => setTaskList(data))
+  const fetchMessage = () => {
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+      .then((result) => result.json())
+      .then((json) => setHappyList(json))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false)
+      })
   }
 
   useEffect(() => {
-    fetchTasks();
-  }, []);
+    fetchMessage();
+  }, [newThought, happyList]);
 
-  /* if (loading) {
-    return (
-      <p>THE PAGE IS LOADING</p>
-    )
-  } */
+  // will trigger first when app starts, and every time the variable in the dependency array changes
 
-  useEffect(() => {
-    // window.alert(`the current counter is ${counter}`);
-  }, [counter]);
-
-  const handleCounterIncreaseButtonClick = () => {
-    setCounter(counter + 1);
+  const onNewThoughtChange = (event) => {
+    setNewThought(event.target.value);
   }
 
-  const handleNewTodoChange = (event) => {
-    setNewTodo(event.target.value)
-  }
-
-  const onFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const options = {
@@ -50,34 +38,31 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        description: newTodo
+        message: newThought
       })
     }
-
-    setLoading(true);
-    fetch('https://week7-backend.herokuapp.com/tasks', options)
+    // setLoading(true);
+    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
       .then((res) => res.json())
-      .then(() => fetchTasks())
+      .then(() => fetchMessage())
       .catch((error) => console.error(error))
-      .finally(() => setNewTodo(''));
+      .finally(() => setNewThought(''));
   }
-
+  if (loading) {
+    return (
+      <p>PAGE IS LOADING</p>
+    )
+  }
   return (
-    <div>
-      <p>{counter}</p>
-      <button
-        onClick={handleCounterIncreaseButtonClick}
-        type="button">counter increase
-      </button>
-      <TaskForm
-        newTodo={newTodo}
-        onNewTodoChange={handleNewTodoChange}
-        onFormSubmit={onFormSubmit} />
-      <TaskList
-        loading={loading}
-        taskList={taskList}
-        setTaskList={setTaskList} />
+    <div className="outer-wrapper">
+      <div className="inner-wrapper">
+        <NewThought
+          newThought={newThought}
+          handleFormSubmit={handleFormSubmit}
+          onNewThoughtChange={onNewThoughtChange} />
+        <HappyList
+          happyList={happyList} />
+      </div>
     </div>
   );
 }
-

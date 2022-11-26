@@ -6,11 +6,88 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: antiquewhite;
-  padding-top: 5%;
-  padding-left: 20%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.outer-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+}
+
+.inner-wrapper {
+  width: 80%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  min-width: 50%;
+  border: 2px solid blue;
+}
+
+/* styling of top container aka New Thought */
+.new-thought-container {
+  border: solid 1px black;
+  box-shadow: 5px 6px 2px 1px black;
+  background-color: rgb(240, 238, 238);
+  padding: 10px 20px 15px 20px;
+}
+
+.inner-container { 
+  padding: 5px;
+  margin: 0px;
+  border: solid 3px yellow;
+}
+
+.text-area {
+  max-width: 80%;
+  padding: 10px;
+  border: solid 1px black;
+}
+
+.send-btn {
+  border: none;
+  border-radius: 25px;
+  padding: 10px 15px 10px 15px;
+  background-color: #f6a6a5;
+  margin-top: 10px;
+}
+.red-font {
+  color: red;
+  font-size: 13px;
+}
+
+.normal-font {
+  color: black;
+  font-size: 13px;
+}
+/* styling of lowe container aka Happy List */
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border: 2px solid green;
+}
+
+.list-box {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 5px 6px 2px 1px black;
+  width: 90%;
+  height: 100px;
+  margin: 3% 0%;
+  padding: 3%;
 }
