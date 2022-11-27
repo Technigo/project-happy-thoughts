@@ -3,17 +3,18 @@ import React, { useState, useEffect } from 'react';
 import TaskList from 'components/TaskList';
 import TaskForm from 'components/TaskForm';
 
+const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
+
 export const App = () => {
   const [taskList, setTaskList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newTodo, setNewTodo] = useState('');
-  // from taskform
 
   const fetchTasks = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setTaskList(data.reverse()))
+      .then((data) => setTaskList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -53,7 +54,7 @@ export const App = () => {
   }
   // what daniel calls handleFormSubmit
 
-  const onLikesIncrease = () => {
+  const onLikesIncrease = (thoughtId) => {
     const options = {
       method: 'POST',
       headers: {
@@ -61,7 +62,7 @@ export const App = () => {
       }
     }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts/_id/like', options)
+    fetch(LIKES_URL(thoughtId), options)
       .then((res) => res.json())
       .then((json) => {
         console.log(json)

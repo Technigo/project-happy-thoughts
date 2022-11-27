@@ -10,10 +10,11 @@ const TaskForm = ({ newTodo, onNewTodoChange, onFormSubmit }) => {
         className="thoughtsTextArea"
         value={newTodo}
         onChange={onNewTodoChange}
+        type="text"
         maxLength="140"
         placeholder="Insert happy thoughts here <3" />
 
-      <div className="maxLength">{140 - newTodo.length}  characters left</div>
+      <p className="maxLength">{140 - newTodo.length} characters left</p>
       <button
         className="thoughtsBtn"
         type="submit">❤️ Send Happy Thought ❤️

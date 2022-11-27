@@ -1,50 +1,27 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
-// import { formatRelative } from 'date-fns';
-import Moment from 'react-moment';
-import 'moment-timezone';
+import { formatDistance } from 'date-fns';
 
-const dateToFormat = '1976-04-19T12:59-0500';
-
-// const onMessageLiked = (likedMessageId) => {
-//   const updatedMessages = messages.map((message) => {
-//     if (message._id === likedMessageId) {
-//       message.hearts += 1
-//     }
-//     return message
-//   })
-//   setMessages(updatedMessages)
-// }
-
-const TaskList = ({ taskList, setTaskList, onLikesIncrease }) => {
-  // const onLikeBtnClick = (task) => {
-  //   setTaskList((taskList) => taskList.map((singleTask) => {
-  //     if (singleTask._id === task._id) {
-  //       return { ...singleTask, isChecked: !singleTask.isChecked };
-
-  //       // some imput here to get the hearts
-  //     }
-  //     return singleTask;
-  //   }));
-  // }
+const TaskList = ({ loading, taskList, onLikesIncrease }) => {
+  if (loading) {
+    return <h1>Loading in progress...</h1>
+  }
   return (
     <section>
-      {taskList.reverse().map((task) => (
-        /* eslint no-underscore-dangle: 0 */
+      {taskList.map((thought) => (
         <div
-          className="taskList"
-          key={task._id}>
-          <h4 className="thoughtsMessage">{task.message}</h4>
+          key={thought._id}
+          className="taskList">
+          <h4 className="thoughtsMessage">{thought.message}</h4>
           <div className="likeContainer">
             <button
-              className="likeBtn"
-              // checked={task.isChecked}
-              onClick={() => onLikesIncrease(task._id)}
-              type="button">❤️
+              type="button"
+              className={(thought.hearts === 0 ? 'like-btn' : 'no-like-btn')}
+              onClick={() => onLikesIncrease(thought._id)}>❤️
             </button>
-
+            <p className="counter">x {thought.hearts}</p>
           </div>
-          <Moment className="howLongAgo" date={dateToFormat} />
-          {/* <p>{formatRelative(task.date, new Date())}</p> */}
+          <p className="date">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
         </div>
       ))}
     </section>
