@@ -21,6 +21,10 @@ code {
   flex-direction: column;
 }
 
+.innerContainer {
+  width: 40%;
+}
+
 /* 
 .taskFormContainer {
   display: flex;
@@ -36,41 +40,40 @@ code {
   flex-direction: column;
 } */
 
-.taskForm {
+
+.thoughtForm {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
   background-color: lightgray;
   border: 2px black solid;
   padding: 20px;
-  width: 40%;
   height: 180px;
   margin-top: 30px;
   margin-bottom: 30px;
   box-shadow: 10px 10px;
 }
 
-.taskList {
+.thoughtList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  background-color: lightgray;
+  background-color: white;
   border: 2px black solid;
   padding: 20px;
-  width: 40%;
   height: 180px;
   margin-top: 30px;
   margin-bottom: 30px;
   box-shadow: 10px 10px;
 }
 
-.thoughtsTextArea {
+.thoughtTextArea {
   border: 2px grey solid;
   padding-bottom: 30px;
 
 }
 
-.thoughtsBtn {
+.thoughtBtn {
   margin-top: 20px;
   margin-left: 15px;
   display: block;
@@ -83,7 +86,7 @@ code {
 }
 
 
-.thoughtsMessage {
+.thoughtMessage {
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
   grid-column-start: 1;
@@ -109,3 +112,9 @@ code {
   margin-left: 20px;
   border: none;
 }
+
+/* .likeContainer {
+  display: flex;
+  flex-direction: row;
+
+} */

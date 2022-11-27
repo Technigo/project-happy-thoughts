@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-
-import TaskList from 'components/TaskList';
-import TaskForm from 'components/TaskForm';
+import ThoughtList from 'components/ThoughtList';
+import ThoughtForm from 'components/ThoughtForm';
 
 const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
+const API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
 
 export const App = () => {
-  const [taskList, setTaskList] = useState([]);
+  const [thoughtList, setThoughtList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [newTodo, setNewTodo] = useState('');
+  const [newThought, setNewThought] = useState('');
 
-  const fetchTasks = () => {
+  const fetchThoughts = () => {
     setLoading(true);
     fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
       .then((res) => res.json())
-      .then((data) => setTaskList(data))
+      .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -22,11 +22,11 @@ export const App = () => {
   // fetchData
 
   useEffect(() => {
-    fetchTasks();
+    fetchThoughts();
   }, []);
 
-  const handleNewTodoChange = (event) => {
-    setNewTodo(event.target.value);
+  const onNewThoughtChange = (event) => {
+    setNewThought(event.target.value);
   }
   // what daniel calls onNewTaskChange
 
@@ -35,25 +35,19 @@ export const App = () => {
 
     const options = {
       method: 'POST',
-      // because of posting something
       headers: {
         'Content-Type': 'application/json'
       },
-      // what are we sending, contenttype. 'application/json' because we are sending
-      // json in the body (?!?!??!?!??!?!??!?!?!??!)
       body: JSON.stringify({
-        message: newTodo
+        message: newThought
       })
-      // sending what back end wants us to send
     }
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch(API, options)
       .then((res) => res.json())
-      .then(() => fetchTasks())
+      .then(() => fetchThoughts())
       .catch((error) => console.error(error))
-      .finally(() => setNewTodo(''));
+      .finally(() => setNewThought(''));
   }
-  // what daniel calls handleFormSubmit
-
   const onLikesIncrease = (thoughtId) => {
     const options = {
       method: 'POST',
@@ -68,25 +62,26 @@ export const App = () => {
         console.log(json)
       })
       .catch((error) => console.error(error))
-      .finally(() => fetchTasks())
+      .finally(() => fetchThoughts())
   }
 
   return (
     <div className="outerContainer">
-      {/* <div className="taskFormContainer"> */}
-      <TaskForm
-        newTodo={newTodo}
-        onNewTodoChange={handleNewTodoChange}
-        onFormSubmit={onFormSubmit} />
-      {/* </div>
-      <div className="taskListContainer"> */}
-      <TaskList
-        loading={loading}
-        taskList={taskList}
-        setTaskList={setTaskList}
-        onLikesIncrease={onLikesIncrease} />
-
-      {/* </div> */}
+      <div className="innerContainter>">
+        {/* <div className="thoughtFormContainer"> */}
+        <ThoughtForm
+          newThought={newThought}
+          onNewThoughtChange={onNewThoughtChange}
+          onFormSubmit={onFormSubmit} />
+        {/* </div> */}
+        {/* <div className="thoughtListContainer"> */}
+        <ThoughtList
+          loading={loading}
+          thoughtList={thoughtList}
+          setThoughtList={setThoughtList}
+          onLikesIncrease={onLikesIncrease} />
+        {/* </div> */}
+      </div>
     </div>
   )
 }
