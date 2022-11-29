@@ -18,7 +18,7 @@ const AllForm = () => {
   /* first fetch of the list of post */
   const fetchThought = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-thr246hagq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
@@ -47,21 +47,21 @@ const AllForm = () => {
         message: newThought // message is the key in API
       })
     }
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', option)
+    fetch('https://project-happy-thoughts-api-thr246hagq-lz.a.run.app/thoughts', option)
       .then((res) => res.json())
       .then(() => fetchThought())
       .finally(() => setNewThought('')) // shows the new thought as it targets the value on the input you posted
   }
 
   /* onThoughtLikeChange allows us to fetch info of how much likes (or hearts) a post gets */
-  const onThoughtLikeChange = (_id) => {
+  const onThoughtLikeChange = (id) => {
     const option = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, option) // _id is the key in API
+    fetch(`https://project-happy-thoughts-api-thr246hagq-lz.a.run.app/thoughts/${id}/like` /* 'https://project-happy-thoughts-api-thr246hagq-lz.a.run.app/thoughts/:_id/heart' */, option) // _id is the key in API
       .then((res) => res.json())
       .then(() => fetchThought()) // update the data, hence redoing the fetchThought
   }
