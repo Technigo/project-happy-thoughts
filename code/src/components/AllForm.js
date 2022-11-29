@@ -61,7 +61,7 @@ const AllForm = () => {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://project-happy-thoughts-api-thr246hagq-lz.a.run.app/thoughts/${_id}/like` /* 'https://project-happy-thoughts-api-thr246hagq-lz.a.run.app/thoughts/:_id/heart' */, option) // _id is the key in API
+    fetch(`https://project-happy-thoughts-api-thr246hagq-lz.a.run.app/thoughts/${_id}/hearts` /* 'https://project-happy-thoughts-api-thr246hagq-lz.a.run.app/thoughts/:_id/heart' */, option) // _id is the key in API
       .then((res) => res.json())
       .then(() => fetchThought()) // update the data, hence redoing the fetchThought
   }
