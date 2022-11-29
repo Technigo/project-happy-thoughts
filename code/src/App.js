@@ -53,6 +53,19 @@ export const App = () => {
       <p>PAGE IS LOADING</p>
     )
   }
+
+  const onGiveHeartChange = (_id) => {
+    const option = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, option) // _id is the key in API
+      .then((res) => res.json())
+      .then(() => fetchMessage()) // update the data, hence redoing the fetchThought
+  }
+
   return (
     <div className="outer-wrapper">
       <div className="inner-wrapper">
@@ -61,7 +74,8 @@ export const App = () => {
           handleFormSubmit={handleFormSubmit}
           onNewThoughtChange={onNewThoughtChange} />
         <HappyList
-          happyList={happyList} />
+          happyList={happyList}
+          onGiveHeartChange={onGiveHeartChange} />
       </div>
     </div>
   );
