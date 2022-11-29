@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import ThoughtsList from './ThoughtsList';
-import NewThoughts from './NewThoughts';
+import ThoughtsList from 'components/ThoughtsList';
+import NewThoughts from 'components/NewThoughts';
 
 const LIKES_URL = (messageID) =>
-  `https://happy-thoughts-technigo.herokuapp.com/thoughts/${messageID}/like`;
+  `https://project-happy-thoughts-api-7kza2noima-lz.a.run.app/thoughts/${messageID}/like`;
 
 const ThoughtWrapper = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -13,7 +13,7 @@ const ThoughtWrapper = () => {
 
   const fetchThought = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-7kza2noima-lz.a.run.app/thoughts')
       .then((data) => data.json())
       .then((transformedData) => setThoughts(transformedData))
       .catch((error) => console.error(error))
@@ -36,7 +36,7 @@ const ThoughtWrapper = () => {
       body: JSON.stringify({ message: newThought }),
     };
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://project-happy-thoughts-api-7kza2noima-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThought())
       .finally(() => setNewThought(''));
@@ -50,7 +50,7 @@ const ThoughtWrapper = () => {
 
   const handleLikeCounter = (messageID) => {
     const options = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
