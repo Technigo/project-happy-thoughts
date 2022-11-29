@@ -31,7 +31,7 @@ const ApiInput = ({ ApiThought, loading, handleOnlikeChange }) => {
                 <p className="likes"> x {thought.hearts} </p>
               </div>
               <div className="time">
-                <p className="date">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })} </p>
+                <p className="date">{formatDistance(new Date(thought.creadedAt), Date.now(), { addSuffix: true })} </p>
               </div>
             </div>
           </div>

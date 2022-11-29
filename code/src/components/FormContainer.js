@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react'
 import ThougthInput from './ThougthInput'
 import ApiInput from './ApiInput'
 
-const LIKES_URL = (LikeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`
-
 const FormContainer = () => {
   const [newThought, setNewThought] = useState('');
   const [ApiThought, setApiThought] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const LIKES_URL = (LikeID) => `https://project-happy-thoughts-api-icpo5wm3kq-uc.a.run.app/thoughts/${LikeID}/like`
+
   const getData = () => {
     setLoading(true)
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-icpo5wm3kq-uc.a.run.app/thoughts')
       .then((Response) => Response.json())
       .then((data) => setApiThought(data))
       .catch((error) => console.error(error))
@@ -27,7 +27,7 @@ const FormContainer = () => {
 
   const onSend = (event) => {
     event.preventDefault();
-    const test = {
+    const option = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -36,22 +36,21 @@ const FormContainer = () => {
         message: newThought
       })
     }
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', test)
+    fetch('https://project-happy-thoughts-api-icpo5wm3kq-uc.a.run.app/thoughts', option)
       .then((Response) => Response.json())
       .then(() => getData())
       .finally(() => setNewThought(''))
   }
-
   /* Add likes to messages  */
 
   const handleOnlikeChange = (LikeID) => {
-    const test = {
+    const option = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    fetch(LIKES_URL(LikeID), test)
+    fetch(LIKES_URL(LikeID), option)
       .then((Response) => Response.json())
       .then(console.log('yey it works.'))
       .catch((error) => console.error(error))
