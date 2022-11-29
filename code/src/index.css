@@ -25,21 +25,10 @@ code {
   width: 40%;
 }
 
-/* 
-.taskFormContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.thoughtHeading {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 }
-
-.taskListContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-} */
-
 
 .thoughtForm {
   display: grid;
@@ -55,9 +44,9 @@ code {
 }
 
 .thoughtList {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background-color: white;
   border: 2px black solid;
   padding: 20px;
@@ -76,6 +65,7 @@ code {
 .thoughtBtn {
   margin-top: 20px;
   margin-left: 15px;
+  font-weight: 400;
   display: block;
   width: 200px;
   border-radius: 30px;
@@ -88,6 +78,7 @@ code {
 
 .thoughtMessage {
   font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
   font-size: 20px;
   grid-column-start: 1;
   grid-column-end: 3;
@@ -113,8 +104,26 @@ code {
   border: none;
 }
 
-/* .likeContainer {
+.likeContainer {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 
-} */
+.date {
+  color: gray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.buttonAndCounter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: gray;
+}
+
+.counter {
+  margin-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

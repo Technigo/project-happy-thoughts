@@ -21,10 +21,11 @@ const ThoughtList = ({ loading, thoughtList, onLikesIncrease }) => {
                 onClick={() => onLikesIncrease(thought._id)}>❤️
               </button>
               <p className="counter">x {thought.hearts}</p>
-              <p className="date">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
             </div>
+            <p className="date">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
           </div>
         </div>
+
       ))}
     </section>
   );
