@@ -13,9 +13,9 @@ code {
 }
 
 header {
-  font-size: 35px;
+  font-size: 30px;
   font-family: "Roboto Mono", monospace;
-  letter-spacing: 5px;
+  letter-spacing: 1px;
   background-color: rgba(219, 120, 120, 0.265);
   padding: 5vh;
   border-radius: 40%;
@@ -31,11 +31,13 @@ header {
 .inner-wrapper {
   display: flex;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
   flex-direction: column;
   justify-content: center;
   row-gap: 30px;
   align-items: center;
-  margin-top: 5%;
+  margin-top: 2rem;
   margin-bottom: 10%;
 }
 
@@ -160,7 +162,14 @@ header {
 
 @media (min-width: 668px) and (max-width: 1023px) {
   .thought-btn {
-    width: 50%;
+    width: 60%;
+  }
+  header {
+    font-size: 35px;
+    letter-spacing: 5px;
+  }
+  .inner-wrapper {
+    margin-top: 2rem;
   }
 }
 
@@ -170,5 +179,12 @@ header {
   }
   .input-container {
     min-width: 550px;
+  }
+  header {
+    font-size: 45px;
+    letter-spacing: 5px;
+  }
+  .inner-wrapper {
+    margin-top: 2rem;
   }
 }
