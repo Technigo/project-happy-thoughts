@@ -46,10 +46,11 @@ const ThoughtForm = ({ setFeed }) => {
   // Post request when clicking the send-button in the form
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', {
+    // https://happy-thoughts-technigo.herokuapp.com/thoughts
+    fetch('https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts', {
       method: 'POST',
       // When posting to the api the format must be "converted" to
-      // something the works for the api (JSON in our case),
+      // something the works for the api (json in our case),
       // so that's being done here:
       body: JSON.stringify({ message: thought }),
       headers: { 'Content-Type': 'application/json' }

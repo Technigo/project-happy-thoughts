@@ -17,7 +17,8 @@ const Feed = () => {
   // when this component is mounted (in the App.jsx)
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    // https://happy-thoughts-technigo.herokuapp.com/thoughts
+    fetch('https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setFeed(data))
       .catch((error) => console.error(error))

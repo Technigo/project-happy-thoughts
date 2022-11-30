@@ -18,7 +18,8 @@ const LikeButton = ({ postedThought, postedThoughtId, feed, setFeed }) => {
   // when clicking the like button a post request to that particular thought
   // is sent and then the handleMessageLiked function is being invoked
   const handleLikeButtonClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${postedThoughtId}/like`, {
+    // https://happy-thoughts-technigo.herokuapp.com/thoughts/${postedThoughtId}/like
+    fetch(`https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts/${postedThoughtId}/like`, {
       method: 'POST',
       headers: { 'Content-type': 'application/json' }
     }).then(() => {
