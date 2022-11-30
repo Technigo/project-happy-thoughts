@@ -12,11 +12,11 @@ const Feed = () => {
   const [loading, setLoading] = useState(false)
 
   const LIKES_URL = (thoughtId) => `https://happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts/${thoughtId}/like`
-  
+
   // FETCH API
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts')
+    fetch('//happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .finally(() => setLoading(false))
@@ -39,7 +39,7 @@ const Feed = () => {
       body: JSON.stringify({ message: newThought })
     }
 
-    fetch('https://happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts', options)
+    fetch('//happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts(data)
@@ -51,7 +51,7 @@ const Feed = () => {
   // POST FOR LIKES
   const handleLikesIncrease = (thoughtId) => {
     const options = {
-      method: 'POST'
+      method: 'PATCH'
     }
 
     fetch(LIKES_URL(thoughtId), options)
