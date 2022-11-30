@@ -2,6 +2,7 @@
 import CreateThought from 'components/CreateThought';
 import React, { useEffect, useState } from 'react';
 import ThoughtsFeed from 'components/ThoughtsFeed';
+import { getThoughts } from 'lib/api';
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([]);
@@ -11,8 +12,7 @@ export const App = () => {
   /* Get all Thoughts from the API and add them to `thoughtsList` */
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://project-happy-thoughts-api-p52jzdhmrq-lz.a.run.app/thoughts')
-      .then((res) => res.json())
+    getThoughts()
       .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));

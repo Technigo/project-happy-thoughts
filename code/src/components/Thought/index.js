@@ -2,22 +2,15 @@ import { Card } from 'components/Card';
 import React, { useState } from 'react';
 import moment from 'moment';
 import styles from './Thought.module.css';
+import { likeThought } from '../../lib/api';
 
 const Thought = (props) => {
   console.log(props.thought);
   const [likes, setLikes] = useState(props.thought.hearts);
 
   const handleClick = () => {
-    fetch(
-      `
-      https://project-happy-thoughts-api-p52jzdhmrq-lz.a.run.app/thoughts/${props.thought._id}/like`,
-      {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-    );
+    console.log(props, props.thought, props.thought._id);
+    likeThought(props.thought._id);
     setLikes(likes + 1);
   };
 
