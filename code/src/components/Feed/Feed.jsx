@@ -19,7 +19,7 @@ const Feed = () => {
     setLoading(true);
     fetch('https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts')
       .then((res) => res.json())
-      .then((data) => setFeed(data))
+      .then((data) => setFeed(data.response))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   };

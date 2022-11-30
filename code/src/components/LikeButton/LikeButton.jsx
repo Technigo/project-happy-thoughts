@@ -19,11 +19,9 @@ const LikeButton = ({ postedThought, postedThoughtId, feed, setFeed }) => {
   // is sent and then the handleMessageLiked function is being invoked
   const handleLikeButtonClick = () => {
     fetch(`https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts/${postedThoughtId}/like`, {
-      method: 'POST',
+      method: 'PATCH',
       headers: { 'Content-type': 'application/json' }
-    }).then(() => {
-      handleMessageLiked(postedThoughtId)
-    });
+    }).then(() => handleMessageLiked(postedThoughtId));
   };
 
   return (

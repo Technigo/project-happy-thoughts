@@ -56,12 +56,10 @@ const ThoughtForm = ({ setFeed }) => {
     })
       .then((res) => res.json())
       .then((newThought) => {
-        console.log(newThought)
-        console.log(newThought.message)
-        if (!newThought.length) {
+        if (!newThought.response) {
           handleTooShortThought();
         } else {
-          setFeed((previousThoughts) => [newThought, ...previousThoughts]);
+          setFeed((previousThoughts) => [newThought.response, ...previousThoughts]);
         }
       })
       .catch((error) => console.error(error))
