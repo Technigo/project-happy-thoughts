@@ -8,7 +8,7 @@ const Feed = () => {
 
   /* Api Global */
   useEffect(() => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-7jpb7hb2ja-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((json) => setThoughts(json))
   }, [thoughts.length])

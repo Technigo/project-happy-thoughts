@@ -13,7 +13,7 @@ const Tweet = ({ tweet }) => {
       headers: { 'Content-Type': 'application/json' }
     }
 
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, ids)
+    fetch(`https://project-happy-thoughts-api-7jpb7hb2ja-lz.a.run.app/thoughts/${id}/like`, ids)
       .then((res) => {
         if (res.status === 200) {
           res.json()

@@ -13,7 +13,7 @@ const NewTweet = ({ onTweetSubmitted }) => {
       body: JSON.stringify({ message: newTweet })
     }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', message)
+    fetch('https://project-happy-thoughts-api-7jpb7hb2ja-lz.a.run.app/thoughts', message)
       .then((res) => {
         res.json()
           .then((createdTweet) => onTweetSubmitted(createdTweet))
