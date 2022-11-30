@@ -9,12 +9,15 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
 
-  const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
+  // OLD API: const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
+
+  // MY CREATED API:
+  const LIKES_URL = (thoughtId) => `https://project-happy-thoughts-api-iag2wpyvvq-lz.a.run.app/thoughts/${thoughtId}/like`
 
   // FETCH API
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-iag2wpyvvq-lz.a.run.app/thoughts')
       .then((data) => data.json())
       .then((transformedData) => setThoughts(transformedData))
       .catch((error) => console.error(error))
@@ -50,7 +53,7 @@ export const App = () => {
       }
     }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://project-happy-thoughts-api-iag2wpyvvq-lz.a.run.app/thoughts', options)
       .then((data) => data.json())
       .then(() => fetchThoughts())
       .catch((error) => console.error(error))
