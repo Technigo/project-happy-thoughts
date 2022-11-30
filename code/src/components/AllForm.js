@@ -56,7 +56,7 @@ const AllForm = () => {
   /* onThoughtLikeChange allows us to fetch info of how much likes (or hearts) a post gets */
   const onThoughtLikeChange = (_id) => {
     const option = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       }
