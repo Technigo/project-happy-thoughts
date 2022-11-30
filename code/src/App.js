@@ -3,8 +3,12 @@ import SendThought from './components/SendThought';
 import MessageList from './components/MessageList';
 import SiteHeader from './components/SiteHeader';
 
-const LIKES_API = (LikeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`
-const API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+//const LIKES_API = (LikeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`
+//const API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+
+const LIKES_API = (LikeID) => `https://project-happy-thoughts-api-easgcdauca-lz.a.run.app/thoughts/${LikeID}/like`
+const API = 'https://project-happy-thoughts-api-easgcdauca-lz.a.run.app/thoughts'
+
 
 export const App = () => {
   const [newMessage, setNewMessage] = useState('');
