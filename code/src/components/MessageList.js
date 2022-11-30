@@ -19,7 +19,7 @@ const MessageList = ({ loading, setLoading, messageList, setNewLike }) => {
             <TimeStamp event={event} />
           </div>
         </div>
-      ))}
+      )).reverse()}
     </section>
   )
 }

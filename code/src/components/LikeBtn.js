@@ -16,15 +16,15 @@ const LikeBtn = ({ event, setNewLike }) => {
 
     if (liked === false) {
       const options = {
-        method: 'POST',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
         body: ''
       }
 
-      fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${event._id}/like`, options)
-        .then((result) => result.json())
+      fetch(`https://project-happy-thoughts-api-auhzlcxnrq-lz.a.run.app/messages/${event._id}/like`, options)
+        .then((data) => data.json())
         .catch((error) => console.error(error))
         .finally(() => {
           setLiked(true)
@@ -46,7 +46,7 @@ const LikeBtn = ({ event, setNewLike }) => {
         onClick={onButtonClick}>
         <span>❤️</span>
       </button>
-      <p className="number-of-likes">x {event.hearts}</p>
+      <p className="number-of-likes">x {event.like}</p>
     </div>
   )
 }

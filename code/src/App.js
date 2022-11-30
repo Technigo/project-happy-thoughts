@@ -12,9 +12,9 @@ export const App = () => {
 
   // Function that calls the messages from the database
   const fetchMessages = () => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-auhzlcxnrq-lz.a.run.app/messages')
       .then((result) => result.json())
-      .then((json) => setMessageList(json))
+      .then((json) => setMessageList(json.response))
       .catch((error) => console.error(error))
       .finally(() => {
         setLoading(false)
@@ -51,9 +51,9 @@ export const App = () => {
         message: newMessage
       })
     }
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://project-happy-thoughts-api-auhzlcxnrq-lz.a.run.app/messages', options)
       .then((result) => result.json())
-      .then(() => fetchMessages())
+      .then((data) => fetchMessages(data.response))
       .catch((error) => console.error(error))
       .finally(() => setNewMessage(''));
   }
