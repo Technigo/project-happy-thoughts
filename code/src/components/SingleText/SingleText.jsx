@@ -8,7 +8,7 @@ const SingleText = ({ description , heart}) => {
   return (
     <section className={styles.sectionSingleText}>
       <p>{description}</p>
-      <p>{heart}</p>
+      
      
     </section>
   );

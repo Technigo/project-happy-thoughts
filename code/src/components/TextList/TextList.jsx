@@ -1,7 +1,7 @@
 import React from "react";
 import SingleText from "../SingleText/SingleText";
 import styles from "./TextList.module.css";
-import { formatRelative } from "date-fns";
+import { format } from "date-fns";
 
 /* 
 - This component renders an array of thoughts from the HappyThoughts API making a list and rendered the list by using the map method.
@@ -9,20 +9,20 @@ import { formatRelative } from "date-fns";
 - 
 */
 
-const TextList = ({ list, loading, handleLikeSubmit, data }) => {
-  if (loading) {
+const TextList = (props) => {
+  if (props.loading) {
     return <h4>Happy thoughts incoming...</h4>;
   }
-  console.log(list);
+  console.log('###### list', props);
 
   return (
     <div className={styles.wrapper}>
-      {list.map((singleText) => {
+      {props.list.map((singleText) => {
         return (
           <section>
             <div key={singleText._id} className={styles.sectionDescription}>
               <SingleText
-                description={singleText.description}
+                description={singleText.message}
                 checked={singleText.isChecked}
                 heart={singleText.hearts}
               />
@@ -30,7 +30,7 @@ const TextList = ({ list, loading, handleLikeSubmit, data }) => {
                 <div className={styles.likePlusLikeCounter}>
                   <button
                     type="submit"
-                    onClick={() => handleLikeSubmit(data._id)}
+                    onClick={() => props.onNewLikeSubmit(singleText._id)}
                     className={styles.likeButton}
                   >
                     <span
@@ -42,9 +42,12 @@ const TextList = ({ list, loading, handleLikeSubmit, data }) => {
                     </span>
                   </button>
 
-                  <p className={styles.likeCounter}> × 0 {singleText.hearts} </p>
+                  <p className={styles.likeCounter}>
+                    {" "}
+                    ×  {singleText.hearts|| 0}{" "}
+                  </p>
                 </div>
-                <p>{formatRelative(singleText.date, new Date())}</p>
+                <p>{format(new Date(singleText.createdAt), 'yyyy-MM-dd')}</p>
               </div>
             </div>
           </section>

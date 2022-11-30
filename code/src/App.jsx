@@ -3,7 +3,6 @@ import "./App.css";
 import TextList from "./components/TextList/TextList";
 import TaskForm from "./components/TaskFrom/TaskForm";
 
-
 const App = () => {
   const [textList, setTextList] = useState([]);
   const [newText, setNewText] = useState("");
@@ -17,11 +16,13 @@ const App = () => {
   const fetchData = () => {
     setLoading(true);
     /* execute a fetch to from the URL & convert to JSON()*/
-    fetch("https://week7-backend.herokuapp.com/tasks")
+    // fetch("https://week7-backend.herokuapp.com/tasks")
+    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
       .then((res) => res.json())
-      .then((data) => setTextList(data.reverse()))
+      // .then((data)=>console.log(data))
+      .then((data) => setTextList(data))
       .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
+      .finally(() => setLoading(""));
     /* set the loading variable to false when everything went well*/
   };
   useEffect(() => {
@@ -40,7 +41,7 @@ const App = () => {
   /**
    -clears setNewText to an empty string again
    */
-  const handleFormClean = () => {
+  const handleNewText = () => {
     setNewText("");
     setLoading(false);
   };
@@ -61,28 +62,35 @@ const App = () => {
       }),
     };
 
-    fetch("https://week7-backend.herokuapp.com/tasks", options)
+    // fetch("https://week7-backend.herokuapp.com/tasks", options)
+    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", options)
       .then((res) => res.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))
-      .finally(() => handleFormClean());
+      .finally(() => handleNewText(""));
   };
 
   /*
   -This function is invoked on clicking a heart button.
    */
-  const likeSubmit = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-  };
 
-  const handleLikeSubmit = (_id) => {
+  const handleLikeSubmit = (id) => {
+    console.log(
+      "ID is a ",
+      id);
+      console.log(
+      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
+    );
+    const likeSubmit = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    };
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`,
-      likeSubmit)
-      .then(res => res.json())
-      .then(data =>fetchData(data._id))
-    
+      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+      likeSubmit
+    )
+      .then((res) => res.json())
+      .then((data) => fetchData(data._id));
   };
 
   if (loading) {
@@ -92,15 +100,11 @@ const App = () => {
   return (
     <div className="App">
       <TaskForm
+        newText={newText}
         handleFormSubmit={handleFormSubmit}
         newTextChange={newTextChange}
-        newText={newText}
       />
-      <TextList
-        list={textList}
-        onNewLikeSubmit={handleLikeSubmit}
-      />
-
+      <TextList list={textList} onNewLikeSubmit={handleLikeSubmit} />
     </div>
   );
 };

@@ -14,16 +14,16 @@ const TaskForm = ({newText, newTextChange, handleFormSubmit }) => {
           placeholder="... make me Happy! "
         />
 
-        <button type="submit" 
-        className={styles.buttonSubmitt}
-        disabled={newText.length < 5 || newText.length >140}
+        <button
+          type="submit"
+          className={styles.buttonSubmitt}
+          disabled={newText.length < 5 || newText.length > 140}
         >
           Submit your Text
-          <span aria-label="heart">
+          <span aria-label="heart-emoji" role="img">
             ❤️
           </span>
         </button>
-        
       </form>
     </section>
   );
