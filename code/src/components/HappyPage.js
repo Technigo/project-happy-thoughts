@@ -8,7 +8,7 @@ const HappyPage = () => {
   const [newThought, setNewThought] = useState('');
 
   const getHappyThoughts = () => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-6qo7rnfiya-lz.a.run.app/thoughts')
       .then((data) => data.json())
       .then((transformedData) => setThoughtList(transformedData))
       .catch((error) => console.error(error))
@@ -39,7 +39,7 @@ const HappyPage = () => {
         'Content-Type': 'application/json'
       }
     }
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://project-happy-thoughts-api-6qo7rnfiya-lz.a.run.app/thoughts', options)
       .then((data) => data.json())
       .then(() => getHappyThoughts())
       .catch((error) => console.error(error))
@@ -47,7 +47,7 @@ const HappyPage = () => {
   }
 
   const handleHeartClick = (thoughtId) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, {
+    fetch(`https://project-happy-thoughts-api-6qo7rnfiya-lz.a.run.app/thoughts/${thoughtId}/like`, {
       method: 'POST'
     })
       .then((res) => res.json())
