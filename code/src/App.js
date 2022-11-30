@@ -69,7 +69,7 @@ export const App = () => {
   // POST FOR LIKES
   const handleLikesIncrease = (thoughtId) => {
     const options = {
-      method: 'POST'
+      method: 'PATCH'
     }
 
     fetch(LIKES_URL(thoughtId), options)
