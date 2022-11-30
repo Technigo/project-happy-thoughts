@@ -16,7 +16,10 @@ const CreateThoughts = (props) => {
       })
     };
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch(
+      'https://project-happy-thoughts-api-p52jzdhmrq-lz.a.run.app/thoughts',
+      options
+    )
       .then((res) => res.json())
       .then(() => props.fetchThoughts())
       .finally(() => props.setNewThought(''));

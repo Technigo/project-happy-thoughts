@@ -11,7 +11,7 @@ export const App = () => {
   /* Get all Thoughts from the API and add them to `thoughtsList` */
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-p52jzdhmrq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))

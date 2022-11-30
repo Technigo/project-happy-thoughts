@@ -9,7 +9,8 @@ const Thought = (props) => {
 
   const handleClick = () => {
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${props.thought._id}/like`,
+      `
+      https://project-happy-thoughts-api-p52jzdhmrq-lz.a.run.app/thoughts/${props.thought._id}/like`,
       {
         method: 'post',
         headers: {
