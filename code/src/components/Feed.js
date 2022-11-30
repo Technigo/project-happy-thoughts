@@ -16,7 +16,7 @@ const Feed = () => {
   // FETCH API
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('//happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts')
+    fetch('https://happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .finally(() => setLoading(false))
@@ -39,7 +39,7 @@ const Feed = () => {
       body: JSON.stringify({ message: newThought })
     }
 
-    fetch('//happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts', options)
+    fetch('https://happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts(data)
