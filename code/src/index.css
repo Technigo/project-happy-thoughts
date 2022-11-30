@@ -13,12 +13,22 @@ code {
     monospace;
 }
 
-h2 {
-  font-size: 20px;
+h1 {
+  font-size: 18px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 400;
 }
 
-h3 {
-  font-size: 18px;
+h2 {
+  font-size: 16px; 
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-size: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
 }
 
 .outer-wrapper {
@@ -34,7 +44,7 @@ h3 {
   margin: 5%;
   display: flex;
   flex-direction: column;
-  min-width: 50%;
+  min-width: 80%;
   border: 2px solid blue;
 }
 
@@ -42,51 +52,58 @@ h3 {
 .new-thought-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: solid 1px black;
   box-shadow: 5px 6px 2px 1px black;
   background-color: rgb(240, 238, 238);
-  padding: 10px 20px 15px 20px;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .inner-container { 
-  padding: 5px;
-  margin: 0px;
-  border: solid 3px yellow;
- 
-}
-
-.happy-question {
-  border: 2px solid royalblue;
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  border: solid 1px yellow;
 }
 
 .text-area-wrapper {
-  border: 2px solid burlywood;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 4px 0px;
 }
 
 .text-area {
-  max-width: 80%;
+  width: 93%;
   padding: 10px;
-  border: solid 1px black;
+  border: solid 1px grey;
 }
 
 .send-btn {
   border: none;
   border-radius: 25px;
-  padding: 10px 15px 10px 15px;
+  padding: 10px 12px;
   background-color: #f6a6a5;
-  margin-top: 10px;
+  align-items: center;
 }
+
+.counter {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 11%;
+}
+
 .red-font {
   color: red;
-  font-size: 13px;
 }
 
 .normal-font {
   color: black;
-  font-size: 13px;
 }
 
-/* styling of lowe container aka Happy List */
+/* styling of lower container aka Happy List */
 .list-wrapper {
   display: flex;
   flex-direction: column;
@@ -101,30 +118,45 @@ h3 {
   background-color: white;
   border: 2px solid black;
   box-shadow: 5px 6px 2px 1px black;
-  width: 90%;
-  height: 100px;
-  margin: 3% 0%;
-  padding: 3%;
+  width: 95%;
+  height: 8em;
+  margin: 3%;
+  padding: 2%;
   position: relative;
+
 }
 
 .list-message {
-  border: 2px solid yellowgreen;
   position: absolute;
-  top: 1%;
+  width: 95%;
+  top: 2%;
+  left: 2%;
 }
 
 .list-details {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
   width: 95%;
-  border: 2px solid violet;
   position: absolute;
-  bottom: 1%;
+  bottom: 4%;
 }
 
+.give-heart-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid lightgrey;
+  height: 30px;
+  width: 30px;
+  margin-left: 1%;
+}
+.give-heart {
+  margin-left: 2%;
+}
+
+
 .time-stamp {
-  justify-self: flex-end;
-  color: blueviolet;
+  margin-left: 58%;
 }
