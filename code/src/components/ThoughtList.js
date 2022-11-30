@@ -23,7 +23,7 @@ const ThoughtList = ({ loading, thoughtList, onThoughtLikeChange }) => {
               className={thought.hearts === 0 ? 'empty-button' : 'like-button'}
               onClick={() => onThoughtLikeChange(thought._id)}>❤️
             </button>
-            <p className="likes">x{thought.hearts}</p>
+            <p className="likes">x{thought.heart}</p>
             <p className="time-detail">
               {formatDistance(new Date(thought.createdAt), Date.now(), {
                 addSuffix: true,
