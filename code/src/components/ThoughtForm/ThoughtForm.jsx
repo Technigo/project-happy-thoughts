@@ -46,7 +46,6 @@ const ThoughtForm = ({ setFeed }) => {
   // Post request when clicking the send-button in the form
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    // https://happy-thoughts-technigo.herokuapp.com/thoughts
     fetch('https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts', {
       method: 'POST',
       // When posting to the api the format must be "converted" to
@@ -56,14 +55,16 @@ const ThoughtForm = ({ setFeed }) => {
       headers: { 'Content-Type': 'application/json' }
     })
       .then((res) => res.json())
-      .catch((error) => console.error(error))
       .then((newThought) => {
-        if (newThought.message === 'Could not save thought') {
+        console.log(newThought)
+        console.log(newThought.message)
+        if (!newThought.length) {
           handleTooShortThought();
         } else {
-          setFeed((previousThoughts) => [newThought, ...previousThoughts])
+          setFeed((previousThoughts) => [newThought, ...previousThoughts]);
         }
       })
+      .catch((error) => console.error(error))
       .finally(handleInputCleanup);
   };
 

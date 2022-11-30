@@ -17,7 +17,6 @@ const Feed = () => {
   // when this component is mounted (in the App.jsx)
   const fetchThoughts = () => {
     setLoading(true);
-    // https://happy-thoughts-technigo.herokuapp.com/thoughts
     fetch('https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setFeed(data))
@@ -36,7 +35,7 @@ const Feed = () => {
     return <h3>❤️ Loading ❤️</h3>
   }
 
-  // Here I'm mounting the two "main" components
+  // Mounting the two "main" components
   // and passing setThoughtsFeed to both of them
   // because it will be needed for dealing with
   // new posts posted with the ThoughtForm
