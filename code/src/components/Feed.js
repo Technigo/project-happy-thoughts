@@ -11,12 +11,12 @@ const Feed = () => {
   const [counter, setCounter] = useState(0)
   const [loading, setLoading] = useState(false)
 
-  const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
-
+  const LIKES_URL = (thoughtId) => `https://happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts/${thoughtId}/like`
+  
   // FETCH API
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('//happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .finally(() => setLoading(false))
@@ -39,7 +39,7 @@ const Feed = () => {
       body: JSON.stringify({ message: newThought })
     }
 
-    fetch('//happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts(data)
