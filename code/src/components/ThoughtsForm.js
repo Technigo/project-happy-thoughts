@@ -1,8 +1,11 @@
+/* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable comma-dangle */
 import React from 'react';
 
 export const ThoughtsForm = ({
+  newName,
   newThought,
+  onNewNameChange,
   onNewThoughtChange,
   onThoughtPost,
 }) => {
@@ -10,6 +13,15 @@ export const ThoughtsForm = ({
     <div className="input-wrapper">
       <form className="form-container" onSubmit={onThoughtPost}>
         <h2>Whats making you happy right now?</h2>
+        <textarea
+          rows="1"
+          value={newName}
+          onChange={onNewNameChange}
+          required
+          placeholder="Name">
+          Name here
+        </textarea>
+
         <textarea
           rows="5"
           value={newThought}

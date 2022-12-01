@@ -11,6 +11,7 @@ export const ThoughtsList = ({ thoughts, fetchThoughts }) => {
           <div className="input-wrapper" key={thought._id}>
             <SingleThought
               id={thought._id}
+              name={thought.name}
               message={thought.message}
               hearts={thought.hearts}
               createdAt={thought.createdAt}

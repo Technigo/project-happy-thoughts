@@ -14,6 +14,7 @@ export const ThoughtsPage = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
+  const [newName, setNewName] = useState('');
 
   const fetchThoughts = () => {
     setLoading(true);
@@ -29,6 +30,9 @@ export const ThoughtsPage = () => {
     fetchThoughts();
   }, []);
 
+  const onNewNameChange = (event) => {
+    setNewName(event.target.value);
+  };
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value);
 
@@ -38,6 +42,7 @@ export const ThoughtsPage = () => {
   // This code empties the form
   const handleFormCleanup = () => {
     setNewThought('');
+    setNewName('');
     setLoading(false);
   };
 
@@ -47,6 +52,7 @@ export const ThoughtsPage = () => {
     const options = {
       method: 'POST',
       body: JSON.stringify({
+        name: newName,
         message: newThought,
       }),
       headers: {
@@ -68,7 +74,9 @@ export const ThoughtsPage = () => {
   return (
     <div className="main-container">
       <ThoughtsForm
+        newName={newName}
         newThought={newThought}
+        onNewNameChange={onNewNameChange}
         onNewThoughtChange={onNewThoughtChange}
         onThoughtPost={onThoughtPost}
       />
