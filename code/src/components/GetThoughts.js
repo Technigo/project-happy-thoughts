@@ -10,6 +10,7 @@ const GetThoughts = ({ getThoughts, handleLikeButtonOnClick }) => {
           className="thoughts card"
           key={thought._id}>
           <div className="thoughts-text">
+            <p>{thought.userName}:</p>
             <p>{thought.message}</p>
           </div>
           <div className="thoughts-likes">

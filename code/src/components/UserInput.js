@@ -1,11 +1,19 @@
 import React from 'react';
 
-const UserInput = ({ handleNewThoughtChange, handleOnFormSubmit, newThought }) => {
+const UserInput = ({
+  handleNewThoughtChange,
+  handleOnFormSubmit,
+  newThought,
+  handleOnChangeSubmit
+}) => {
   return (
     <section className="input wrapper">
       <form
         className="input card"
         onSubmit={handleOnFormSubmit}>
+        <label htmlFor="name-input">
+          <input placeholder="Type your name" id="name-input" type="text" onChange={handleOnChangeSubmit} />
+        </label>
         <h1>What&apos;s making you happy right now?</h1>
         <textarea
           style={newThought.length > 140 ? { color: 'red' } : {}}
@@ -28,3 +36,4 @@ const UserInput = ({ handleNewThoughtChange, handleOnFormSubmit, newThought }) =
   )
 }
 export default UserInput;
+

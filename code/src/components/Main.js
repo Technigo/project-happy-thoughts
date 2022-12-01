@@ -6,6 +6,7 @@ import UserInput from './UserInput';
 const Main = () => {
   const [getThoughts, setGetThoughts] = useState([]);
   const [newThought, setNewThought] = useState('');
+  const [newUserName, setNewUserName] = useState('');
   /* const [loading, setLoading] = useState(false); */
 
   // const APIurl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
@@ -39,6 +40,10 @@ const Main = () => {
     /* setLoading(false) */
   }
 
+  const handleOnChangeSubmit = (event) => {
+    setNewUserName(event.target.value)
+  }
+
   const handleOnFormSubmit = (event) => {
     event.preventDefault();
 
@@ -48,7 +53,8 @@ const Main = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        message: newThought
+        message: newThought,
+        userName: (newUserName.toUpperCase() || 'ANONYMOUS')
       })
     }
     /* setLoading(true) */
@@ -82,7 +88,8 @@ const Main = () => {
       <UserInput
         handleNewThoughtChange={handleNewThoughtChange}
         handleOnFormSubmit={handleOnFormSubmit}
-        newThought={newThought} />
+        newThought={newThought}
+        handleOnChangeSubmit={handleOnChangeSubmit} />
       <GetThoughts
         getThoughts={getThoughts}
         handleLikeButtonOnClick={handleLikeButtonOnClick} />
