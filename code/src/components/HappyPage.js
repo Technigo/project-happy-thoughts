@@ -48,7 +48,7 @@ const HappyPage = () => {
 
   const handleHeartClick = (thoughtId) => {
     fetch(`https://project-happy-thoughts-api-6qo7rnfiya-lz.a.run.app/thoughts/${thoughtId}/like`, {
-      method: 'POST'
+      method: 'PATCH'
     })
       .then((res) => res.json())
       .then(() => getHappyThoughts())
