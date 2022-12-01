@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import GeneratedFeed from 'components/GeneratedFeed.js';
 import PostNewThought from 'components/PostNewThought';
 import SiteHeader from 'components/SiteHeader';
+import Footer from './Footer';
 
 const Feed = () => {
   const [thoughts, setThoughts] = useState([])
@@ -16,7 +17,7 @@ const Feed = () => {
   // FETCH API
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts')
+    fetch('//happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .finally(() => setLoading(false))
@@ -39,7 +40,7 @@ const Feed = () => {
       body: JSON.stringify({ message: newThought })
     }
 
-    fetch('https://happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts', options)
+    fetch('//happythoughts-iwmxwmfrcq-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then((data) => {
         fetchThoughts(data)
@@ -80,6 +81,7 @@ const Feed = () => {
             onLikesIncrease={handleLikesIncrease} />
         ))}
       </div>
+      <Footer />
     </>
   )
 }

@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,71 +6,93 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #a28dae;
+  width: 100%;
+  background: rgb(168,15,72);
+  background: linear-gradient(0deg, rgba(168,15,72,1) 0%, rgba(235,38,110,1) 35%, rgba(246,90,148,1) 100%);
+  background-attachment: fixed;
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+.header-container{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
 header{
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Bebas Neue', cursive;
   font-weight: 600;
-  padding: 30px;
-  font-size: 40px;
+  font-size: 60px;
   text-align: center;
-  margin: 0 auto;
-  color:rgb(242, 241, 241);
-  text-shadow: 0px 0px 6px #666565;
-  animation: myAnim 2s ease-in 0s 1 normal forwards;
 }
 
-@keyframes myAnim {
-	0% {
-		animation-timing-function: ease-in;
-		opacity: 1;
-		transform: translateY(-45px);
-	}
-
-	24% {
-		opacity: 1;
-	}
-
-	40% {
-		animation-timing-function: ease-in;
-		transform: translateY(-24px);
-	}
-
-	65% {
-		animation-timing-function: ease-in;
-		transform: translateY(-12px);
-	}
-
-	82% {
-		animation-timing-function: ease-in;
-		transform: translateY(-6px);
-	}
-
-	93% {
-		animation-timing-function: ease-in;
-		transform: translateY(-4px);
-	}
-
-	25%,
-	55%,
-	75%,
-	87% {
-		animation-timing-function: ease-out;
-		transform: translateY(0px);
-	}
-
-	100% {
-		animation-timing-function: ease-out;
-		opacity: 1;
-		transform: translateY(0px);
-	}
+.logo b{
+  color: rgb(255, 255, 255);
+  text-shadow: 0 -40px 100px, 0 0 1px, 0 0 0.3em #f392cb, 0 0 0.4em #fff3f3, 0 0 0.1em #ffffff, 0 3px  rgb(97, 83, 91);
 }
+.logo b span{
+  animation: blink linear infinite 2s;
+
+}
+.logo b span:nth-of-type(2){
+  animation: blink linear infinite 3s;
+}
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+     color:  #f65a94;
+  }
+  80% {
+    
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color:  #f65a94;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #f65a94;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+.scroll-wrap{
+  display: grid;
+  justify-content: center;
+  place-items: center;
+  font-size: 1rem;
+  color:rgb(197, 13, 93)
+}
+
+.scroll-down{
+  font-size: 2.5rem;
+  line-height: 0.1rem;
+}
+
+
+
 .message-header{
   padding-left: 10px;
   font-weight: 600;
@@ -78,7 +101,6 @@ header{
 p{
   color:#1E1E1E;
 }
-
 
 /*---CONTAINERS---*/
 .feed-wrapper{    /*centers the feed with grid*/
@@ -97,19 +119,15 @@ p{
 
  .post-container{
   font-family: 'Roboto Mono', monospace;
-  background-color: rgb(242, 241, 241);
+  background-color: rgb(255, 255, 255);
  }
 
  .send-wrapper {
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(255, 255, 255);
  }
 .like-wrapper{
   padding: 10px;
 }s
-
-.thought-message{
-  border: 2px green solid;
-}
 
 /*---BUTTONS----*/
 .send-button, .update-button{
@@ -125,25 +143,30 @@ p{
   border-radius: 12px;
   border: none;
   font-weight: 600;
-  background:#1E1E1E;
+  background: #f65a94;
   color: rgb(255, 255, 255);
   margin: 10px;
 }
 
 .buttons{
-  display: block;
-  margin: 0 auto;
-  padding-left: 5%;
+  display: flex;
+  justify-content: center;
   padding-top: 10px;
 
 }
 
 .like-button{
-  border:none;
+  border: none;
   border-radius: 50%;
   width: 30px;
   height: 30px;
 }
+.like-heart{
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
 /*-----New post-------*/ 
 textarea{
   width: 320px;
@@ -157,7 +180,7 @@ textarea{
 }
 
 textarea[type=text]{
-  color:rgb(9, 9, 35);
+  color: rgba(235,38,110,1);
   font-family: 'Roboto Mono', monospace;
   font-size: 14px;
   padding: 5px;
@@ -185,7 +208,9 @@ textarea:focus{
   padding: 35px;
 }
 
-
+.message-header{
+  color: rgba(235,38,110,1);
+}
 /*---Insert details like & date posted--*/
 .like-counter{
   font-size: 14px;
@@ -194,7 +219,7 @@ textarea:focus{
 .date-posted{
   margin: 0;
   position: absolute;
-  left: 53%;
+  left: 52%;
   -ms-transform: translateY(-120%);
   transform: translateY(-120%);
   color:rgb(142, 142, 142);
@@ -203,11 +228,27 @@ textarea:focus{
 
 @media (min-width: 768px) {
   .send-button:hover, .update-button:hover{
-    background:#D664A1;
+    background:#eb266e;
     color: rgb(255, 255, 255);
   }
   p:hover{
-    color:#D664A1;
+    color:#eb266e;
   }
   
+}
+
+/* --FOOTER---*/
+.footer{
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+} 
+
+h3{
+  color:rgb(220, 220, 220);
+  font-weight: 300;
+  font-size: 1rem;
+  text-align: center;
+  width: 350px;
+  font-family: 'Roboto Mono', monospace;
 }
