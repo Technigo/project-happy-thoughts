@@ -3,13 +3,13 @@ import React from 'react';
 import { formatDistance } from 'date-fns';
 
 const SingleThought = ({ message, hearts, createdAt, id, fetchThoughts }) => {
-  const API_URL = `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`;
+  const API_URL = `https://project-happy-thoughts-api-yx6zp5dfjq-lz.a.run.app/thoughts/${id}/like`;
 
   const onThoughtLike = (event) => {
     event.preventDefault();
 
     const options = {
-      method: 'POST',
+      method: 'PATCH',
     };
     fetch(API_URL, options)
       .then((data) => data.json())

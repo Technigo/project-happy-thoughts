@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable comma-dangle */
 /* eslint-disable react/jsx-closing-bracket-location */
 import React, { useState, useEffect } from 'react';
@@ -6,7 +7,8 @@ import { ThoughtsForm } from './ThoughtsForm';
 import { ThoughtsList } from './ThoughtsList';
 import { LoadingPage } from './LoadingPage';
 
-const API_URL = 'https://happy-thoughts-technigo.herokuapp.com/thoughts';
+const API_URL =
+  'https://project-happy-thoughts-api-yx6zp5dfjq-lz.a.run.app/thoughts';
 
 export const ThoughtsPage = () => {
   const [thoughts, setThoughts] = useState([]);
