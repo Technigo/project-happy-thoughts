@@ -16,7 +16,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
