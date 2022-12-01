@@ -57,8 +57,8 @@ export const ThoughtsApp = () => {
 			.finally(() => setNewMessage(''));
 	}
 const handleLikeOnClick = (_id) => {
-				fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
-	    method: 'POST',
+				fetch(`https://project-happy-thoughts-api-rew4wd5yjq-lz.a.run.app/thoughts/${_id}/like`, {
+	    method: 'PATCH',
 	    headers: { 'Content-Type': 'application/json' }
 	})
 	     .then((res) => res.json())
