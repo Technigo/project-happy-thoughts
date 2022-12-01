@@ -29,7 +29,7 @@ const NewMessage = ({ count, newMessage, onNewMessageChange, onFormSubmit }) => 
           className="submit-Btn"
           // Makes the button un-clickable if it's
           // less than 1 or more than 140 characters
-          disabled={newMessage.length < 1 || newMessage.length > 140}>
+          disabled={newMessage.length < 5 || newMessage.length > 140}>
           ❤️ Send Happy Thought ❤️
         </button>
       </form>

@@ -16,7 +16,7 @@ const LikeBtn = ({ event, setNewLike }) => {
 
     if (liked === false) {
       const options = {
-        method: 'PATCH',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
