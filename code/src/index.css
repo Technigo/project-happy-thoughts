@@ -19,7 +19,7 @@ body {
 .happy-page {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 90%;
   margin: 2rem auto;
   word-wrap: break-word;
 }
@@ -115,13 +115,17 @@ body {
 
 @media screen and (min-width: 768px) {
   .happy-page {
-    width: 450px;
+    width: 50%;
   }
 }
 
 /* DESKTOP  */
 
 @media screen and (min-width: 992px) {
+  .happy-page {
+    width: 30%;
+  }
+
   .card:hover {
     background-color: whitesmoke;
   }
