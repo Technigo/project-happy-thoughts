@@ -1,19 +1,22 @@
-# Technigo React Starter App
+# Happy Thoughts (fullstack project) - UPDATED version
+The happy thoughts project, now you can finally post HAPPY THOUGHTS
+on social media. 
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+## The problem
+The assignement was to produce a twitter-style app using react, an API and POST and practice using the {useEffect} hook. 
+All incapsulated and presented in a very early world-wide-web-retro-style. 
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+## Updated verison, backend added
+The project was recently updated with a personal API to 
+be able to store the thoughts in a project specific API, instead
+of a public one - as previous 
 
-## Usage
+### BACKEND REPO
+https://github.com/Sneezan/happy-thoughts-backend
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+### New color scheme
+A new color scheme was added in a bright pink hue and neon sign.
+Still styled in a 90's theme.  
 
-Alternatively, if you don't want a new git repo on your account;
-
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+## View it live
+https://onlyhappythoughts.netlify.app 
