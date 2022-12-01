@@ -23,7 +23,7 @@ export const App = () => {
     fetchMessage();
   }, [newThought, happyList]);
 
-  // will trigger first when app starts, and every time the variable in the dependency array changes
+  // will be triggered first when app starts
 
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value);
@@ -63,7 +63,7 @@ export const App = () => {
     }
     fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, option) // _id is the key in API
       .then((res) => res.json())
-      .then(() => fetchMessage()) // update the data, hence redoing the fetchThought
+      .then(() => fetchMessage())
   }
 
   return (

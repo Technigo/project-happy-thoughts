@@ -36,7 +36,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid red;
 }
 
 .inner-wrapper {
@@ -45,7 +44,6 @@ p {
   display: flex;
   flex-direction: column;
   min-width: 80%;
-  border: 2px solid blue;
 }
 
 /* styling of top container aka New Thought */
@@ -65,7 +63,6 @@ p {
   display: flex;
   flex-direction: column;
   width: 98%;
-  border: solid 1px yellow;
 }
 
 .text-area-wrapper {
@@ -92,7 +89,7 @@ p {
 .counter {
   display: flex;
   justify-content: flex-end;
-  margin-left: 11%;
+  margin-left: 20%;
 }
 
 .red-font {
@@ -156,7 +153,26 @@ p {
   margin-left: 2%;
 }
 
-
 .time-stamp {
   margin-left: 58%;
+}
+
+@media screen and (min-width: 668px) {
+  .inner-wrapper {
+    width: 70%;
+    min-width: 70%;
+  }
+  .counter {
+    margin-left: 30%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .inner-wrapper {
+    width: 60%;
+    min-width: 60%;
+  }
+  .counter {
+    margin-left: 45%;
+  }
 }
