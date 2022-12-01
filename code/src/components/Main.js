@@ -61,7 +61,7 @@ const Main = () => {
   }
 
   const handleLikeButtonOnClick = (_id) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
+    fetch(`https://project-happy-thoughts-api-dxrcv2y6yq-lz.a.run.app/thoughts/${_id}/like`, {
       method: 'POST'
     })
       .then((res) => res.json())
