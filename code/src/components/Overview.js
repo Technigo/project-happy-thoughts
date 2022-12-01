@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-template-curly-in-string */
 import React, { useState, useEffect } from 'react';
-/* import { API_URL, LIKES_URL } from './utils'; */
+import { API_URL } from './utils';
 import ThoughtInput from './ThoughtInput'
 import ThoughtList from './ThoughtList'
 
@@ -9,12 +9,8 @@ const Overview = () => {
   const [newThought, setNewThought] = useState('');
   const [thoughts, setThoughts] = useState([]);
 
-  const APIurl = 'https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts'
-
-  /* const APIurl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts' */
-
   const fetchThoughts = () => {
-    fetch(APIurl)
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
@@ -31,7 +27,7 @@ const Overview = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    fetch(APIurl, {
+    fetch(API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -48,7 +44,7 @@ const Overview = () => {
       })
   }
   const handleLikeIncrease = (_id) => {
-    fetch(`https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}/like`, /* LIKES_URL(id), `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like` */ {
+    fetch(`https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}/like`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
