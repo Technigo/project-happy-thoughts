@@ -2,7 +2,7 @@
 
 export const collectThoughts = (setLoading, setHappyThoughts) => {
   setLoading(true);
-  fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+  fetch('https://project-happy-thoughts-api-rwwjpm7rkq-uc.a.run.app/thoughts')
     .then((res) => res.json())
     .then((data) => setHappyThoughts(data))
     .catch((error) => console.error(error))
@@ -11,13 +11,16 @@ export const collectThoughts = (setLoading, setHappyThoughts) => {
 
 export const handleLikeButtonClick = (id, setLikes) => {
   // posts a new like to the like endpoint for the current thought
-  fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: ''
-  })
+  fetch(
+    `https://project-happy-thoughts-api-rwwjpm7rkq-uc.a.run.app/thoughts/${id}/like`,
+    {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: ''
+    }
+  )
     // then receives an updated thought
     .then((res) => res.json())
     // re-renders that thought by setting new state

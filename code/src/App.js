@@ -30,7 +30,10 @@ export const App = () => {
         message: newThought
       })
     };
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch(
+      'https://project-happy-thoughts-api-rwwjpm7rkq-uc.a.run.app/thoughts',
+      options
+    )
       .then((res) => res.json())
       .then(() => collectThoughts(setLoading, setHappyThoughts))
       .catch((error) => console.error(error))
