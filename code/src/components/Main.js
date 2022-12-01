@@ -15,7 +15,7 @@ const Main = () => {
     /* setLoading(true) */
     fetch(APIurl)
       .then((res) => res.json())
-      .then((data) => setGetThoughts(data))
+      .then((data) => setGetThoughts(data.response))
       .catch((error) => console.error(error))
       .finally(() => console.log('no errors')/* setLoading(false) */)
   }
@@ -62,7 +62,7 @@ const Main = () => {
 
   const handleLikeButtonOnClick = (_id) => {
     fetch(`https://project-happy-thoughts-api-dxrcv2y6yq-lz.a.run.app/thoughts/${_id}/like`, {
-      method: 'POST'
+      method: 'PATCH'
     })
       .then((res) => res.json())
       .then(() => {
