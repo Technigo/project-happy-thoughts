@@ -1,15 +1,27 @@
-# Happy Thoughts
+# Happy Thoughts (fullstack project) - UPDATED version
 The happy thoughts project, now you can finally post HAPPY THOUGHTS
-on social media. Using technigos public backend (a personal backend will be added soon) fetching
-previous posts.
+on social media. 
 
 ## The problem
 The assignement was to produce a twitter-style app using react, an API and POST and practice using the {useEffect} hook. 
 All incapsulated and presented in a very early world-wide-web-retro-style. 
 
+## Updated verison, backend added
+The project was recently updated with a personal API to 
+be able to store the thoughts in a project specific API, instead
+of a public one - as previous 
 
-<img width="288" alt="Screenshot 2022-10-07 at 14 45 39" src="https://user-images.githubusercontent.com/105229808/197238390-9b44a404-88ca-47c9-b45a-215352570a21.png">
+### BACKEND REPO
+https://github.com/Sneezan/happy-thoughts-backend
 
+### New color scheme
+A new color scheme was added in a bright pink hue and neon sign.
+Still styled in a 90's theme
 
 ## View it live
 https://onlyhappythoughts.netlify.app
+
+#Images
+![Screenshot 2022-12-01 at 12 17 47 (2)](https://user-images.githubusercontent.com/105229808/205039710-66c38e29-d7ab-4264-956c-d68e0e932b4e.png)
+ 
+![Screenshot 2022-12-01 at 12 18 03 (2)](https://user-images.githubusercontent.com/105229808/205039747-d400fb5c-3464-4b77-9f45-9c2fd2799bb6.png)
