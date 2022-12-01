@@ -10,7 +10,7 @@ const PostedMessage = ({ messages }) => {
       <article key={message._id} className="message-container" tabIndex={0}>
         <p className="message-text">{message.message}</p>
         <div className="info-container">
-          <TimesLiked timesLiked={message.hearts} id={message._id} />
+          <TimesLiked timesLiked={message.likes} id={message._id} />
           <p className="message-info">{formatDistance(new Date(message.createdAt), new Date())} ago</p>
         </div>
       </article>

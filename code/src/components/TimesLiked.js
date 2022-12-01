@@ -8,7 +8,7 @@ const TimesLiked = ({ timesLiked, id }) => {
     event.preventDefault();
     setNumberOfHearts(numberOfHearts + 1)
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+      `https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts/${id}/like`,
       { method: 'POST' }
     )
       .then(() => {

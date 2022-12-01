@@ -7,7 +7,7 @@ const NewMessage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch(
-      'https://happy-thoughts-technigo.herokuapp.com/thoughts',
+      'https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts',
       {
         method: 'POST',
         headers: {
