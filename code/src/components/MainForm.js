@@ -51,7 +51,7 @@ const MainForm = () => {
   /* Here we target the LIKE_URLs id, to print (like) the right thought. */
   const handleLikesIncrease = (id) => {
     const options = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       }

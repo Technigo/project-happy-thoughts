@@ -20,10 +20,10 @@ const ThoughtList = ({ loading, taskList, handleLikesIncrease }) => {
             <div className="btn-parent">
               {/* button with a conditional thats and if or else, if user pressed button "not liked"
               else "liked" with diffrent background color */}
-            <button className={task.hearts > 0 ? "likeBtn-liked" : "likeBtn-not-liked"} onClick={(event) => handleLikesIncrease(task._id, event)}> {/* eslint-disable-line */}
+            <button className={task.hearth > 0 ? "likeBtn-liked" : "likeBtn-not-liked"} onClick={(event) => handleLikesIncrease(task._id, event)}> {/* eslint-disable-line */}
                 <span className="icon" role="img" aria-label="heart" aria-hidden="false">❤️</span>
             </button> {/* eslint-disable-line */}
-              <span>x {task.hearts}</span>
+              <span>x {task.hearth}</span>
             </div>
             {formatDistanceToNow(
               new Date(task.createdAt),
