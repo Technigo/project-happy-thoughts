@@ -47,14 +47,18 @@ const Overview = () => {
         fetchThoughts()
       })
   }
-  const handleLikeIncrease = (id) => {
-    fetch(`https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${id}/likes`, /* LIKES_URL(_id), `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like` */ {
-      method: 'POST'
+  const handleLikeIncrease = (_id) => {
+    fetch(`https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}/like`, /* LIKES_URL(id), `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like` */ {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
       .then((res) => res.json())
       .then(() => {
         fetchThoughts();
-      });
+      })
+      .catch((err) => console.error(err))
   };
 
   return (
