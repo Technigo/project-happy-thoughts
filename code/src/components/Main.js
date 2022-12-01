@@ -8,7 +8,8 @@ const Main = () => {
   const [newThought, setNewThought] = useState('');
   /* const [loading, setLoading] = useState(false); */
 
-  const APIurl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+  // const APIurl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+  const APIurl = 'https://project-happy-thoughts-api-dxrcv2y6yq-lz.a.run.app/thoughts'
 
   const fetchAPI = () => {
     /* setLoading(true) */
