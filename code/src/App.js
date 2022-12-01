@@ -55,10 +55,10 @@ export const App = () => {
   }
       
 
-  // Shows likes
+  // Shows likes, changed POST to PATCH
   function onLikesIncrease(LikeID) {
     const options = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       }
@@ -68,7 +68,7 @@ export const App = () => {
       .then((res) => res.json())
       .catch((error) => console.error(error))
       .finally(() => fetchMessages());
-  }
+  };
 
   return (
     <div className="outer-wrapper">
