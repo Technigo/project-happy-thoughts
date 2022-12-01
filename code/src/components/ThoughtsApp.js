@@ -25,7 +25,8 @@ export const ThoughtsApp = () => {
 	}, []);
 
 	const fetchThoughts = () => {
-		fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+		fetch('https://project-happy-thoughts-api-rew4wd5yjq-lz.a.run.app/thoughts')
+		// fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
 			// eslint-disable-next-line arrow-parens
 			.then(res => res.json())
 			.then((data) => setThoughtsList(data.response))
@@ -50,7 +51,7 @@ export const ThoughtsApp = () => {
 			})
 		}
 
-		fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+		fetch('https://project-happy-thoughts-api-rew4wd5yjq-lz.a.run.app/thoughts', options)
 			// eslint-disable-next-line arrow-parens
 			.then(res => res.json())
 			.then(() => fetchThoughts())
