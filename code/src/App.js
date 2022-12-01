@@ -6,7 +6,7 @@ export const App = () => {
     <div className="app">
       <ThoughtsPage />
       <footer>
-        <p>Created as a project at Technigo</p>
+        <p>Frontend & backend created by</p>
         <p>
           © <a href="mailto: saralie.bognandi@gmail.com">Saralie Bognandi</a>{' '}
           2022
