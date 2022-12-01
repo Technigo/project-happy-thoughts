@@ -10,7 +10,8 @@ export const App = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    // fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-kjtbrarzja-uc.a.run.app/thoughts')
       .then((data) => data.json())
       .then((transformedData) => setThoughtList(transformedData))
       .catch((error) => console.error(error))
@@ -45,7 +46,8 @@ export const App = () => {
       }
     }
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    // fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://project-happy-thoughts-api-kjtbrarzja-uc.a.run.app/thoughts', options)
       .then((data) => data.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))
@@ -58,12 +60,13 @@ export const App = () => {
   }
   const onLikesIncrease = (thoughtId) => {
     const options = {
-      method: 'post',
+      method: 'patch',
       headers: {
         'content-type': 'application/json'
       }
     };
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
+    // fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
+    fetch(`https://project-happy-thoughts-api-kjtbrarzja-uc.a.run.app/thoughts/${thoughtId}/like`, options)
       .then((res) => res.json())
       .then((data) => {
         const updatedThoughts = thoughtList.map((item) => {
