@@ -4,6 +4,7 @@ import styles from "./TaskForm.module.css";
 // This component renders a thought submission form.
 // Submit button is disabled if string entered in textarea is <5 or >140 characters
 const TaskForm = ({newText, newTextChange, handleFormSubmit }) => {
+  // console.log(newText)
   return (
     <section className={styles.sectionForm}>
       <form onSubmit={handleFormSubmit} className={styles.form}>

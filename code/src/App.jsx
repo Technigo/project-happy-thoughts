@@ -16,13 +16,12 @@ const App = () => {
   const fetchData = () => {
     setLoading(true);
     /* execute a fetch to from the URL & convert to JSON()*/
-    // fetch("https://week7-backend.herokuapp.com/tasks")
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
+    // fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
+    fetch("https://api-happy-tweets.herokuapp.com/thoughts")
       .then((res) => res.json())
-      // .then((data)=>console.log(data))
-      .then((data) => setTextList(data))
+      .then((data) => setTextList(data.response))
       .catch((err) => console.error(err))
-      .finally(() => setLoading(""));
+      .finally(() => setLoading(false));
     /* set the loading variable to false when everything went well*/
   };
   useEffect(() => {
@@ -36,6 +35,7 @@ const App = () => {
   const newTextChange = (e) => {
     console.log("handleNewTextChange invoked");
     setNewText(e.target.value);
+    console.log(newTextChange);
   };
 
   /**
@@ -62,8 +62,8 @@ const App = () => {
       }),
     };
 
-    // fetch("https://week7-backend.herokuapp.com/tasks", options)
-    fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", options)
+    // fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", options)
+    fetch("https://api-happy-tweets.herokuapp.com/thoughts", options)
       .then((res) => res.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))
@@ -75,18 +75,16 @@ const App = () => {
    */
 
   const handleLikeSubmit = (id) => {
-    console.log(
-      "ID is a ",
-      id);
-      console.log(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`
-    );
+    console.log("ID is a ", id);
+
     const likeSubmit = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     };
+
     fetch(
-      `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+      // `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
+      `https://api-happy-tweets.herokuapp.com/thoughts/${id}/like`,
       likeSubmit
     )
       .then((res) => res.json())
@@ -104,7 +102,7 @@ const App = () => {
         handleFormSubmit={handleFormSubmit}
         newTextChange={newTextChange}
       />
-      <TextList list={textList} onNewLikeSubmit={handleLikeSubmit} />
+      <TextList list={textList} onNewLikeSubmit={handleLikeSubmit} loading={loading} />
     </div>
   );
 };

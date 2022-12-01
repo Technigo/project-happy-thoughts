@@ -19,8 +19,8 @@ const TextList = (props) => {
     <div className={styles.wrapper}>
       {props.list.map((singleText) => {
         return (
-          <section>
-            <div key={singleText._id} className={styles.sectionDescription}>
+          <section key={singleText._id}>
+            <div className={styles.sectionDescription}>
               <SingleText
                 description={singleText.message}
                 checked={singleText.isChecked}
@@ -44,10 +44,10 @@ const TextList = (props) => {
 
                   <p className={styles.likeCounter}>
                     {" "}
-                    ×  {singleText.hearts|| 0}{" "}
+                    × {singleText.hearts || 0}{" "}
                   </p>
                 </div>
-                <p>{format(new Date(singleText.createdAt), 'yyyy-MM-dd')}</p>
+                <p>{format(new Date(singleText.createdAt), "yyyy-MM-dd")}</p>
               </div>
             </div>
           </section>
