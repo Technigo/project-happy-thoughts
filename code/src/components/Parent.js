@@ -47,7 +47,7 @@ const Parent = () => {
 
   const onThoughtLikeChange = (_id) => {
     const option = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       }
