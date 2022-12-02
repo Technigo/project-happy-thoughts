@@ -21,7 +21,7 @@ export const App = () => {
     fetch(API)
       .then((res) => res.json())
       .then((data) => setMessageList(data))
-      .catch((error) => console.error(error))
+      .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }
 
@@ -66,7 +66,7 @@ export const App = () => {
 
     fetch(LIKES_API(LikeID), options)
       .then((res) => res.json())
-      .catch((error) => console.error(error))
+      .catch((error) => console.log(error))
       .finally(() => fetchMessages());
   };
 

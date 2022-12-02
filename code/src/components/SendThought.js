@@ -22,7 +22,7 @@ const SendMessage = ({ newMessage, onNewMessageChange, onNewMessageSubmit }) => 
 
         <button
           type="submit"
-          disabled={newMessage.length < 3 || newMessage.length > 140}
+          disabled={newMessage.length < 5 || newMessage.length > 140}
           className="submit-button">
           ❤️ Send happy thought ❤️
         </button>
