@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
-
 import ThoughtForm from 'components/ThoughtForm/ThoughtForm';
 import ThoughtCard from 'components/ThoughtCard/ThoughtCard';
 import styles from './Feed.module.css';
@@ -9,6 +8,7 @@ const Feed = () => {
   // One state for the api response which will be the feed with thoughts
   // when map through in the ThoughtCard component:
   // And another for the loading message
+  const [page, setPage] = useState(1);
   const [feed, setFeed] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -17,23 +17,32 @@ const Feed = () => {
   // when this component is mounted (in the App.jsx)
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts')
+    fetch(`https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts?page=${page}&perPage=10`)
       .then((res) => res.json())
       .then((data) => setFeed(data.response))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+
+    setFeed((prev) => [...prev, ...feed])
+    console.log(...feed)
+    setLoading(false);
+  };
+
+  const handleScroll = () => {
+    if (window.innerHeight + document.documentElement.scrollTop + 1
+       >= document.documentElement.scrollHeight) {
+      setLoading(true)
+      setPage((prev) => prev + 1);
+    }
   };
 
   useEffect(() => {
-    fetchThoughts();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // if loading is true this little text will show up
-  // and disappear when it's set to false
-  // after the get- request is done (line 24)
-  if (loading) {
-    return <h3>❤️ Loading ❤️</h3>
-  }
+  useEffect(() => {
+    fetchThoughts();
+  }, [page]);
 
   // Mounting the two "main" components
   // and passing setThoughtsFeed to both of them
@@ -45,6 +54,7 @@ const Feed = () => {
     <section className={styles.feedGrid}>
       <ThoughtForm setFeed={setFeed} />
       <ThoughtCard feed={feed} setFeed={setFeed} />
+      {loading && <h3>❤️ Loading ❤️</h3>}
     </section>
   );
 };

@@ -80,7 +80,6 @@ const ThoughtForm = ({ setFeed }) => {
       <div className={styles.sendButtonAndCharsContainer}>
         <button
           className={styles.sendButton}
-          // onClick={handleButtonClick}
           type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought <span role="img" aria-label="heart">❤️</span>
         </button>
         <div className={styles.charsAndTooShortContainer}>
