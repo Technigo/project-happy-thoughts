@@ -9,7 +9,7 @@ const Tweet = ({ tweet }) => {
   console.log(`Heart count: ${counter}`)
   const handleLikeButton = (id) => {
     const ids = {
-      method: 'POST',
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' }
     }
 

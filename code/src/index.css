@@ -105,7 +105,7 @@ textarea {
   margin-right: 0.5em;
   border: none;
   font-size: 16px;
-  background-color: #1DA1F2;
+  /* background-color: #1DA1F2; */
 }
 
 .clicked {
