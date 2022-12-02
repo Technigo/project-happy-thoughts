@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ThoughtList from 'components/ThoughtList';
 import ThoughtForm from 'components/ThoughtForm';
 
-const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
-const API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+const LIKES_URL = (thoughtId) => `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`
+const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([]);
@@ -12,7 +12,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch(API)
       .then((res) => res.json())
       .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
