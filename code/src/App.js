@@ -10,7 +10,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchMessage = () => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((result) => result.json())
       .then((json) => setHappyList(json))
       .catch((error) => console.error(error))
@@ -42,7 +42,7 @@ export const App = () => {
       })
     }
     // setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchMessage())
       .catch((error) => console.error(error))
@@ -61,7 +61,7 @@ export const App = () => {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, option) // _id is the key in API
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, option) // _id is the key in API
       .then((res) => res.json())
       .then(() => fetchMessage())
   }

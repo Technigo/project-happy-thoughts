@@ -165,14 +165,20 @@ p {
   .counter {
     margin-left: 30%;
   }
+  .time-stamp {
+    margin-left: 65%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .inner-wrapper {
     width: 60%;
-    min-width: 60%;
+    min-width: 50%;
   }
   .counter {
-    margin-left: 45%;
+    margin-left: 50%;
+  }
+  .time-stamp {
+    margin-left: 70%;
   }
 }
