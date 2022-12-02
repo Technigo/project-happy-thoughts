@@ -14,7 +14,7 @@ const SendMessage = ({ newMessage, handleNewMessageChange, onFormSubmit }) => {
             onChange={handleNewMessageChange}
             className="text-area"
             maxLength="140"
-            minLength="10" />
+            minLength="5" />
           <button
             type="submit"
             className="send-btn"
