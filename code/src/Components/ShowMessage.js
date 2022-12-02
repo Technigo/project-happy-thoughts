@@ -8,8 +8,8 @@ const ShowMessage = ({ message, createdAt, hearts, id, onLiked, loading }) => {
   }
 
   const handleClick = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
-      method: 'POST',
+    fetch(`https://project-happy-thoughts-api-2su4jgkxaa-lz.a.run.app/thoughts/${id}/like`, {
+      method: 'PATCH',
       body: '',
       headers: { 'Content-Type': 'application/json' }
     }).then(() => onLiked(id))

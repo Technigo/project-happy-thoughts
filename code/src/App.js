@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import SendMessage from './Components/SendMessage'
 import ShowMessage from './Components/ShowMessage'
 
-const api = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
+const api = 'https://project-happy-thoughts-api-2su4jgkxaa-lz.a.run.app/thoughts'
 
 export const App = () => {
   const [showMessage, setShowMessage] = useState([])
