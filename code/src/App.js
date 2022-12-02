@@ -7,12 +7,12 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [newTweet, setNewTweet] = useState('');
 
-  const LIKES_URL = (tweetId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${tweetId}/like`;
+  const LIKES_URL = (tweetId) => `https://project-happy-thoughts-api-xjix6ss5fq-lz.a.run.app/thoughts/${tweetId}/like`;
 
   /// function fetching the tweet data
   const fetchTweets = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-xjix6ss5fq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setTweetList(data))
       .catch((error) => console.error('error1', error))
@@ -43,8 +43,9 @@ export const App = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newTweet })
     };
+
     // Gets all tweets and updates width option data when page reload.
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options) // Catch (POST) updated data thoughts + new thought/tweet
+    fetch('https://project-happy-thoughts-api-xjix6ss5fq-lz.a.run.app/thoughts', options) // Catch (POST) updated data thoughts + new thought/tweet
       .then((res) => res.json())
       .then((data) => {
         fetchTweets(data); // GET all data (including updated data)
