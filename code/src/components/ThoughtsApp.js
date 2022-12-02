@@ -29,7 +29,7 @@ export const ThoughtsApp = () => {
 		// fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
 			// eslint-disable-next-line arrow-parens
 			.then(res => res.json())
-			.then((data) => setThoughtsList(data.response))
+			.then((data) => setThoughtsList(data))
 			.catch((error) => console.error(error))
 			.finally(() => console.log('test'))
 	}
