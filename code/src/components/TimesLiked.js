@@ -9,7 +9,7 @@ const TimesLiked = ({ timesLiked, id }) => {
     setNumberOfHearts(numberOfHearts + 1)
     fetch(
       `https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts/${id}/like`,
-      { method: 'POST' }
+      { method: 'PATCH' }
     )
       .then(() => {
         window.location.reload()
