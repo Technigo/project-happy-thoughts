@@ -13,7 +13,7 @@ const MessageDisplay = () => {
     fetch('https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts')
       .then((data) => data.json())
       .then(setIsLoading(false))
-      .then((fetchedMessages) => setMessages(fetchedMessages))
+      .then((fetchedMessages) => setMessages(fetchedMessages.thoughts))
       .catch((error) => console.error(error))
   }, []);
 
@@ -22,7 +22,7 @@ const MessageDisplay = () => {
       <section>
         <NewMessage messages={messages} />
       </section>
-      <section role="feed">
+      <section className="feed" role="feed">
         {isloading ? <LoadingComponent /> : <PostedMessage messages={messages} />}
 
       </section>

@@ -10,8 +10,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 1rem;
 }
 
 h1 {
@@ -19,6 +20,11 @@ h1 {
   font-weight: 400;
 }
 
+.feed {
+  overflow-y: scroll;
+  max-height: 70vh;
+  margin-bottom: 2rem;
+}
 .message-container {
   border: 2px solid black;
   padding: 1rem;
