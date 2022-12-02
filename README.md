@@ -1,6 +1,6 @@
 # Happy Thoughts
 
-For week seven of the Technigo bootcamp (week three of the React sprint) our assignment was to create a "twitter-like" web app to practice fetching and posting to APIs.
+For week seven of the Technigo boot camp (week three of the React sprint) our assignment was to create a "twitter-like" web app to practice fetching and posting to APIs. The API used is this one: https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/ , which I made, together with the connected database, during week 15 of the boot camp.
 
 ## The problem
 
