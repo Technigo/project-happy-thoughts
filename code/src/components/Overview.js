@@ -1,13 +1,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-template-curly-in-string */
 import React, { useState, useEffect } from 'react';
-import { API_URL } from './utils';
 import ThoughtInput from './ThoughtInput'
 import ThoughtList from './ThoughtList'
 
-const Overview = () => {
+const Overview = ({ _id }) => {
   const [newThought, setNewThought] = useState('');
   const [thoughts, setThoughts] = useState([]);
+  const [newName, setNewName] = useState('')
+
+  const API_URL = 'https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts'
+  const LIKES_URL = `https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}/like`
+  const DELETE_URL = `https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}`
 
   const fetchThoughts = () => {
     fetch(API_URL)
@@ -21,6 +25,10 @@ const Overview = () => {
     fetchThoughts();
   }, []);
 
+  const handleNewNameChange = (event) => {
+    setNewName(event.target.value)
+  };
+
   const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value)
   };
@@ -32,20 +40,35 @@ const Overview = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought })
+      body: JSON.stringify({ name: newName, message: newThought })
     })
       .then((res) => res.json())
-      .then((newUserThought) => {
+      /* .then((newUserThought) => {
         setNewThought((previousThoughts) => [newUserThought, ...previousThoughts])
-      })
+      }) */
       .finally(() => {
         setNewThought('')
+        setNewName('')
         fetchThoughts()
       })
   }
-  const handleLikeIncrease = (_id) => {
-    fetch(`https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}/like`, {
+  const handleLikeIncrease = () => {
+    fetch(LIKES_URL, {
       method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((res) => res.json())
+      .then(() => {
+        fetchThoughts();
+      })
+      .catch((err) => console.error(err))
+  };
+
+  const handleThoughtDelete = () => {
+    fetch(DELETE_URL, {
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
       }
@@ -62,10 +85,13 @@ const Overview = () => {
       <ThoughtInput
         onNewThoughtChange={handleNewThoughtChange}
         onFormSubmit={handleFormSubmit}
+        onNewNameChange={handleNewNameChange}
+        newName={newName}
         newThought={newThought} />
       <ThoughtList
         thoughts={thoughts}
-        onLikesIncrease={handleLikeIncrease} />
+        onLikesIncrease={handleLikeIncrease}
+        onThoughtDelete={handleThoughtDelete} />
     </>
   )
 }

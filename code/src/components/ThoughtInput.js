@@ -1,7 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react'
 
-const ThoughtInput = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
+const ThoughtInput = ({
+  newName,
+  newThought,
+  onNewNameChange,
+  onNewThoughtChange,
+  onFormSubmit
+}) => {
   return (
     <>
       <header>HAPPY THOUGHTS</header>
@@ -10,6 +16,12 @@ const ThoughtInput = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
           className="input-container"
           onSubmit={onFormSubmit}>
           <label className="lable-text" htmlFor="newThought">What&apos;s making you happy right now?</label>
+          <textarea
+            className="name-input"
+            value={newName}
+            onChange={onNewNameChange}
+            autoComplete="off"
+            placeholder="Enter your name here" />
           <textarea
             className="text-input"
             value={newThought}

@@ -80,6 +80,11 @@ header {
   height: 8vh;
 }
 
+.name-input {
+  word-wrap: break-word;
+  resize: none;
+}
+
 .counter {
   margin: 0;
   margin-left: 1vh;
@@ -124,6 +129,13 @@ header {
 .thought-text {
   word-wrap: break-word;
   margin: 2vh;
+}
+
+.name-display {
+  word-wrap: break-word;
+  margin-left: 2vh;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .like-container {
