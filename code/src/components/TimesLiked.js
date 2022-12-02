@@ -1,14 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 
-const TimesLiked = ({ timesLiked, id }) => {
+const TimesLiked = ({ timesLiked, thoughtId }) => {
   const [numberOfHearts, setNumberOfHearts] = useState(timesLiked)
 
   const handleHeartButtonClick = (event) => {
     event.preventDefault();
     setNumberOfHearts(numberOfHearts + 1)
     fetch(
-      `https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts/${id}/like`,
+      `https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts/${thoughtId}/like`,
       { method: 'PATCH' }
     )
       .then(() => {
