@@ -23,7 +23,7 @@ const Feed = () => {
     setFeed((prev) => [...prev, ...feed])
     console.log(...feed)
     setLoading(false);
-  }, [feed, page]);
+  }, [page]);
 
   const handleScroll = () => {
     if (window.innerHeight + document.documentElement.scrollTop + 1
