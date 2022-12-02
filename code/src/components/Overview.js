@@ -4,20 +4,20 @@ import React, { useState, useEffect } from 'react';
 import ThoughtInput from './ThoughtInput'
 import ThoughtList from './ThoughtList'
 
-const Overview = ({ _id }) => {
+const Overview = () => {
   const [newThought, setNewThought] = useState('');
   const [thoughts, setThoughts] = useState([]);
   const [newName, setNewName] = useState('')
 
   const API_URL = 'https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts'
-  const LIKES_URL = `https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}/like`
-  const DELETE_URL = `https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}`
+  /*   const LIKES_URL = `https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}/like`
+  const DELETE_URL = `https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}` */
 
   const fetchThoughts = () => {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
-      .catch((error) => console.error(error))
+      .catch((err) => console.error(err))
       .finally(() => console.log('All good!'));
   }
 
@@ -43,17 +43,18 @@ const Overview = ({ _id }) => {
       body: JSON.stringify({ name: newName, message: newThought })
     })
       .then((res) => res.json())
-      /* .then((newUserThought) => {
+      .then((newUserThought) => {
         setNewThought((previousThoughts) => [newUserThought, ...previousThoughts])
-      }) */
+      })
+      .catch((err) => console.error(err))
       .finally(() => {
         setNewThought('')
         setNewName('')
         fetchThoughts()
       })
   }
-  const handleLikeIncrease = () => {
-    fetch(LIKES_URL, {
+  const handleLikeIncrease = (_id) => {
+    fetch(`https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}/like`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
@@ -66,8 +67,8 @@ const Overview = ({ _id }) => {
       .catch((err) => console.error(err))
   };
 
-  const handleThoughtDelete = () => {
-    fetch(DELETE_URL, {
+  const handleThoughtDelete = (_id) => {
+    fetch(`https://project-happy-thoughts-api-wqvqkjwgmq-lz.a.run.app/thoughts/${_id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
