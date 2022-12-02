@@ -11,8 +11,8 @@ export const Thought = () => {
   /* first fetch  */
   const fetchThought = () => {
     setLoading(true);
-    // 1 ändra url
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+
+    fetch('https://project-happy-thoughts-api-cslqliynka-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setListOfThoughts(data))
       .catch((error) => console.error(error))
@@ -42,8 +42,8 @@ export const Thought = () => {
         message: newThought
       })
     }
-    // 2 ändra url
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+
+    fetch('https://project-happy-thoughts-api-cslqliynka-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThought())
       .finally(() => setNewThought(''));
@@ -55,8 +55,8 @@ export const Thought = () => {
         'Content-Type': 'application/json'
       }
     }
-    // 3 ändra url
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, option) // _id is the key in API
+
+    fetch(`https://project-happy-thoughts-api-cslqliynka-lz.a.run.app/thoughts/${_id}/like`, option) // _id is the key in API
       .then((res) => res.json())
       .then(console.log('likes work'))
       .catch((error) => console.error(error))
