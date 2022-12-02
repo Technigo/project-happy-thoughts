@@ -19,6 +19,8 @@ export const ThoughtForm = ({
           value={newThought}
           onChange={onNewThoughtChange}
           placeholder="Type your thoughts here..."
+          required
+          minLength="5"
           maxLength="140" />
         <p className="add-thought-word-count">
           {/* {`${textColor}`} */}
@@ -29,9 +31,7 @@ export const ThoughtForm = ({
           className="submit-btn"
           onChange={onThoughtLikeChange}>
           <span className="heart" role="img" aria-label="heart symbol" />
-          ❤️
-          Send Happy Thoughts!
-          ❤️
+          ❤️ Send Happy Thoughts! ❤️
           <span className="heart" role="img" aria-label="heart symbol" />
         </button>
       </form>
