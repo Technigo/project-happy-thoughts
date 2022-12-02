@@ -6,7 +6,7 @@ const NewThought = ({ newThought, setNewThought, thoughts, setThoughts }) => {
     event.preventDefault();
 
     // save thought on server
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', {
+    fetch('https://project-happy-thoughts-api-o4o7j2ybmq-lz.a.run.app/thoughts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

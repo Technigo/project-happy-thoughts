@@ -5,7 +5,7 @@ import moment from 'moment';
 const Thoughts = ({ thoughts, setThoughts }) => {
   // get list of thoughts but only once
   useEffect(() => {
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-o4o7j2ybmq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
@@ -21,7 +21,7 @@ const Thoughts = ({ thoughts, setThoughts }) => {
       }
     };
     // increases likes count on server for specific thought id
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
+    fetch(`https://project-happy-thoughts-api-o4o7j2ybmq-lz.a.run.app/thoughts/${thoughtId}/like`, options)
     // updates the list with new likes count
       .then((res) => res.json())
       .then((data) => {
