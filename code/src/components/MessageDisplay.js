@@ -1,16 +1,19 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import PostedMessage from './PostedMessage';
 import NewMessage from './NewMessage';
+import LoadingComponent from './LoadingComponent';
 
 const MessageDisplay = () => {
   const [messages, setMessages] = useState([])
+  const [isloading, setIsLoading] = useState(true)
 
   useEffect(() => {
     fetch('https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts')
       .then((data) => data.json())
+      .then(setIsLoading(false))
       .then((fetchedMessages) => setMessages(fetchedMessages))
-      .then(console.log(messages))
       .catch((error) => console.error(error))
   }, []);
 
@@ -20,7 +23,8 @@ const MessageDisplay = () => {
         <NewMessage messages={messages} />
       </section>
       <section role="feed">
-        <PostedMessage messages={messages} />
+        {isloading ? <LoadingComponent /> : <PostedMessage messages={messages} />}
+
       </section>
     </main>
   )

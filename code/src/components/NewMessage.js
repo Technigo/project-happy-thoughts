@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 const NewMessage = () => {
   const [newPost, setNewPost] = useState('')
   const [maxWarning, setMaxWarning] = useState(false)
+  // const [tooShort, setTooShort] = useState(false)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -38,6 +39,7 @@ const NewMessage = () => {
         <label htmlFor="text-input"> <h1>What is making you happy right now?</h1>
           <textarea
             maxLength={140}
+            minLength={5}
             name="message"
             className={`text-input ${maxWarning ? 'red-text' : 'black-text'}`}
             id="text-input"
