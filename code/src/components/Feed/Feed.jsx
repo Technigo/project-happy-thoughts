@@ -21,7 +21,6 @@ const Feed = () => {
       .catch((error) => console.error(error))
 
     setFeed((prev) => [...prev, ...feed])
-    console.log(...feed)
     setLoading(false);
   }, [page]);
 
@@ -47,8 +46,8 @@ const Feed = () => {
   return (
     <section className={styles.feedGrid}>
       <ThoughtForm setFeed={setFeed} />
-      <ThoughtCard feed={feed} setFeed={setFeed} />
       {loading && <h3>❤️ Loading ❤️</h3>}
+      <ThoughtCard feed={feed} setFeed={setFeed} />
     </section>
   );
 };
