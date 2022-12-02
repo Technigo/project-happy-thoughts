@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import ThoughtForm from 'components/ThoughtForm/ThoughtForm';
@@ -12,10 +13,7 @@ const Feed = () => {
   const [feed, setFeed] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // A separate function for the GET request to the api
-  // being invoked in the useEffect hook further down
-  // when this component is mounted (in the App.jsx)
-  const fetchThoughts = () => {
+  useEffect(() => {
     setLoading(true);
     fetch(`https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts?page=${page}&perPage=10`)
       .then((res) => res.json())
@@ -25,7 +23,7 @@ const Feed = () => {
     setFeed((prev) => [...prev, ...feed])
     console.log(...feed)
     setLoading(false);
-  };
+  }, [page]);
 
   const handleScroll = () => {
     if (window.innerHeight + document.documentElement.scrollTop + 1
@@ -39,10 +37,6 @@ const Feed = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    fetchThoughts();
-  }, [page]);
 
   // Mounting the two "main" components
   // and passing setThoughtsFeed to both of them
