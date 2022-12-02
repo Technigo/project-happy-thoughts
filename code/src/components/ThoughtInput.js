@@ -21,6 +21,7 @@ const ThoughtInput = ({
             value={newName}
             onChange={onNewNameChange}
             autoComplete="off"
+            required
             placeholder="Enter your name here" />
           <textarea
             className="text-input"
