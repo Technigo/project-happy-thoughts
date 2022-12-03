@@ -11,7 +11,7 @@ const Container = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-afgzgbi3gq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
@@ -40,7 +40,7 @@ const Container = () => {
       })
     }
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-afgzgbi3gq-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => setNewThought(''));
@@ -63,8 +63,8 @@ const Container = () => {
   } */
 
   const onNewLikeSubmit = (_id) => {
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, {
-      method: 'POST'
+    fetch(`https://project-happy-thoughts-api-afgzgbi3gq-lz.a.run.app/thoughts/${_id}/like`, {
+      method: 'PATCH'
     })
       .then((res) => res.json())
       .then(console.log('yey it works.'))
