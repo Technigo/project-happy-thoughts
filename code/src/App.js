@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import ThoughtList from 'components/ThoughtList';
 import ThoughtForm from 'components/ThoughtForm';
 
+// const API_URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/'
+const API_URL = 'https://project-happy-thoughts-api-ircjrh2jfq-lz.a.run.app/'
+
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -10,7 +13,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch(`${API_URL}thoughts`)
       .then((res) => res.json())
       .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
@@ -26,7 +29,7 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       } }
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+    fetch(`${API_URL}thoughts/${_id}/like`, options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
   }
@@ -48,10 +51,11 @@ export const App = () => {
       })
     }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch(`${API_URL}thoughts`, options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => setNewThought(''));
+    // .catch((err) => console.error(err));
   }
   return (
     <div>
