@@ -10,10 +10,13 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   // useEffect with empty array [] call your functions on application start
   
+
+  // https://project-happy-thoughts-api-lsdubteuzq-lz.a.run.app/
   
   const fetchData = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    //fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-lsdubteuzq-lz.a.run.app/thoughts')
       .then((response) => response.json())
       .then((Data) => setThoughts(Data)) 
       .catch((error) => console.error(error))
@@ -45,7 +48,8 @@ const handleHeartCounter = (_ID) => {
   };
 
 //  get likes 
-  fetch( `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_ID}/like`, options)
+  //fetch( `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_ID}/like`, options)
+  fetch(`https://project-happy-thoughts-api-lsdubteuzq-lz.a.run.app/thoughts/${_ID}/like`, options)
     then((response) => response.json())
     .finally(() => fetchThought());
 };
@@ -65,7 +69,8 @@ const handleHeartCounter = (_ID) => {
 
     // get 
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    //fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://project-happy-thoughts-api-lsdubteuzq-lz.a.run.app/thoughts', options)
       .then((response) => response.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))

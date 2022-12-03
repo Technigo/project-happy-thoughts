@@ -23,7 +23,7 @@ const ThoughtForm = ({ handleFormSubmit, onNewThoughtChange, newThought }) => {
       className="submit-btn" type="submit" 
       disabled={newThought.length < 5 || newThought.length > 140} >
       <span className="heart-emoji" role="image" aria-label="heart"/>
-      <p>Send happiness ❤️</p>
+      <p>❤️ Send happiness ❤️</p>
       </button>
       </div>
     
