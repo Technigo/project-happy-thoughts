@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 const NewMessage = () => {
   const [newPost, setNewPost] = useState('')
-  const [thinkersName, setThinkersName] = useState('')
+  // const [thinkersName, setThinkersName] = useState('')
   const [maxWarning, setMaxWarning] = useState(false)
 
   const handleSubmit = (event) => {
-    console.log(thinkersName)
     event.preventDefault();
     fetch(
       'https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts',
@@ -15,16 +14,16 @@ const NewMessage = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ message: newPost, name: thinkersName })
+        body: JSON.stringify({ message: newPost/* , name: thinkersName */ })
       }
     ).then(() => {
       window.location.reload()
     })
   }
 
-  const handleInputNameChange = (event) => {
+  /* const handleInputNameChange = (event) => {
     setThinkersName(event.target.value);
-  }
+  } */
   const handleInputTextChange = (event) => {
     setNewPost(event.target.value);
   }
@@ -41,10 +40,10 @@ const NewMessage = () => {
     <article className="message-post message-container">
       <form onSubmit={handleSubmit}>
         <label htmlFor="text-input"> <h1>What is making you happy right now?</h1>
-          <input
+          {/* <input
             type={"text'"}
             placeholder="What is your name?"
-            onChange={handleInputNameChange} />
+            onChange={handleInputNameChange} /> */}
           <textarea
             maxLength={140}
             minLength={5}
