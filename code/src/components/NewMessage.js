@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 const NewMessage = () => {
   const [newPost, setNewPost] = useState('')
+  // const [thinkersName, setThinkersName] = useState('')
   const [maxWarning, setMaxWarning] = useState(false)
-  // const [tooShort, setTooShort] = useState(false)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,13 +14,16 @@ const NewMessage = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ message: newPost })
+        body: JSON.stringify({ message: newPost/* , name: thinkersName */ })
       }
     ).then(() => {
       window.location.reload()
     })
   }
 
+  /* const handleInputNameChange = (event) => {
+    setThinkersName(event.target.value);
+  } */
   const handleInputTextChange = (event) => {
     setNewPost(event.target.value);
   }
@@ -37,6 +40,10 @@ const NewMessage = () => {
     <article className="message-post message-container">
       <form onSubmit={handleSubmit}>
         <label htmlFor="text-input"> <h1>What is making you happy right now?</h1>
+          {/* <input
+            type={"text'"}
+            placeholder="What is your name?"
+            onChange={handleInputNameChange} /> */}
           <textarea
             maxLength={140}
             minLength={5}
