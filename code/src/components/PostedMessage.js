@@ -8,6 +8,7 @@ const PostedMessage = ({ messages }) => {
   const AllMessages = messages.map((message) => {
     return (
       <article key={message._id} className="message-container" tabIndex={0}>
+        <p className="message-text">{message.name}</p>
         <p className="message-text">{message.message}</p>
         <div className="info-container">
           <TimesLiked timesLiked={message.likes} thoughtId={message._id} />

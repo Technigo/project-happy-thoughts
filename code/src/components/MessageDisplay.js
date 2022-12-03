@@ -12,9 +12,9 @@ const MessageDisplay = () => {
   useEffect(() => {
     fetch('https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts')
       .then((data) => data.json())
-      .then(setIsLoading(false))
       .then((fetchedMessages) => setMessages(fetchedMessages.thoughts))
       .catch((error) => console.error(error))
+      .finally(setIsLoading(false))
   }, []);
 
   return (
