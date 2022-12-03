@@ -44,14 +44,3 @@ const Thoughts = ({ loading, thoughts, onNewLikeSubmit }) => {
 }
 
 export default Thoughts;
-
-/*
-const onThoughtLikeChange = (thought) => {
-        setThoughts(thoughts => thoughts.map(singleThought => {
-            if(singleThought._id === thought._id) {
-                return {...singleThought, isChecked: !singleThought.isChecked};
-            }
-            return singleThought;
-        }));
-    }
-    */

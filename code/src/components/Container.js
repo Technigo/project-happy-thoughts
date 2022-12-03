@@ -11,7 +11,7 @@ const Container = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
@@ -40,26 +40,35 @@ const Container = () => {
       })
     }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => setNewThought(''));
   };
 
   /* ADDING LIKES TO THOUGHTS  */
-  const onNewLikeSubmit = (_id) => {
+  /* const onNewLikeSubmit = (_id) => {
     const options = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       }
     };
 
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, options)
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/${_id}/like`, options)
       .then((res) => res.json())
       .then(console.log('yey it works.'))
       .catch((error) => console.error(error))
       .finally(() => fetchThoughts())
+  } */
+
+  const onNewLikeSubmit = (_id) => {
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, {
+      method: 'POST'
+    })
+      .then((res) => res.json())
+      .then(console.log('yey it works.'))
+      .then(() => fetchThoughts())
   }
 
   return (
