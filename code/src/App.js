@@ -4,7 +4,10 @@ import HappyThoughtList from 'Components/HappyThoughtList'
 import Footer from 'Components/Footer';
 import Header from './Components/Header'
 
-const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
+// OLD API
+// const LIKES_URL = (thoughtId) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`
+
+const LIKES_URL = (thoughtId) => `https://project-happy-thoughts-api-doim2lnzba-lz.a.run.app/thoughts/${thoughtId}/like`
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -13,7 +16,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-doim2lnzba-lz.a.run.app/')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
@@ -46,7 +49,7 @@ export const App = () => {
       }
     }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://project-happy-thoughts-api-doim2lnzba-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .catch((error) => console.error(error))
@@ -55,7 +58,7 @@ export const App = () => {
 
   const onLikeIncrese = (thoughtId) => {
     const options = {
-      method: 'POST'
+      method: 'PATCH'
     }
 
     fetch(LIKES_URL(thoughtId), options)
