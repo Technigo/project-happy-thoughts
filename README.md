@@ -24,3 +24,6 @@ As usual, I planned the week in figma, gathered the requirements and tried to br
 ## View it live
 
 https://project-happy-thought-petra.netlify.app/
+
+<img width="650" alt="Screenshot 2022-12-04 at 18 53 28" src="https://user-images.githubusercontent.com/108176641/205507133-2945684d-6102-419e-a085-3824bcf31f73.png">
+
