@@ -1,6 +1,7 @@
 # Happy Thoughts
 
-The task was to build a simple Twitter-like app in order to practice fetching and posting data using React. The API is shared for all students in the course.
+The task was to build a simple Twitter-like app in order to practice fetching and posting data using React. 
+It uses an API deployed on Google Cloud - [source repo here](https://github.com/a-well/project-happy-thoughts-api).
 
 ## The problem
 
