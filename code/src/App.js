@@ -16,7 +16,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://project-happy-thoughts-api-doim2lnzba-lz.a.run.app/')
+    fetch('https://project-happy-thoughts-api-doim2lnzba-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
