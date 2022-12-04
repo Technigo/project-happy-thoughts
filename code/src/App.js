@@ -28,43 +28,34 @@ export const App = () => {
     fetchData();
   }, []); 
 
-
   // will trigger first when app starts, and every time the variable in the dependency array changes
   useEffect(() => {
     //window.alert(`the current counter is ${counter}`);
     }, [counter]);
   
-
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value);
   }
 
-const handleHeartCounter = (_ID) => {
+const handleHeartCounter = (_id) => {
   const options = {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers: {'Content-Type': 'application/json',},
   };
-
-//  get likes 
+ //GET LIKES 
   //fetch( `https://happy-thoughts-technigo.herokuapp.com/thoughts/${_ID}/like`, options)
-  fetch(`https://project-happy-thoughts-api-lsdubteuzq-lz.a.run.app/thoughts/${_ID}/like`, options)
+  fetch(`https://project-happy-thoughts-api-lsdubteuzq-lz.a.run.app/thoughts/${_id}/like`, options)
     then((response) => response.json())
-    .finally(() => fetchThought());
+    .finally(() => fetchThought(data));
 };
-
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-
     const options = {
       method: 'POST',
       body: JSON.stringify
       ({message: newThought }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      headers: {'Content-Type': 'application/json'}
     }
 
     // get 
@@ -76,30 +67,23 @@ const handleHeartCounter = (_ID) => {
       .catch((error) => console.error(error))
       .finally(() => setNewThought(''));
     }
-
-  
   if (loading) {
-    // uppdate page every 10 min
-  //  setInterval(fetchData, 10 * 60 * 1000);
   return (
-  <p>THE PAGE IS LOADING</p>
-   )}
-
+  <p>THE PAGE IS LOADING</p> )}
 
   return (
-     <section className="section">
+    <section className="section">
     <h2 className="header">Share happiness with happy thought!❤️</h2>
    
       <ThoughtForm
         newThought={newThought}
         handleFormSubmit={handleFormSubmit}
-        onNewThoughtChange={onNewThoughtChange}
-      />
+        onNewThoughtChange={onNewThoughtChange}/>
+      
       <ThoughtsList
-     
       thoughts={thoughts}
-      handleHeartCounter={handleHeartCounter}
-      />
+      setThoughts={setThoughts}
+      handleHeartCounter={handleHeartCounter}/>
     </section>
     
   );
@@ -119,3 +103,6 @@ const handleHeartCounter = (_ID) => {
 
   //const handleHeartCounter = () => {
   //setCounter(counter + 1);}
+
+   //if loading  uppdate page every 10 min
+  //  setInterval(fetchData, 10 * 60 * 1000);
