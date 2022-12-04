@@ -13,3 +13,6 @@ The assignment was to create an app to collect happy thoughts, in a twitter-like
 ## View it live - and share your happy thoughts! ❤️
 
 https://our-happy-thoughts.netlify.app/
+
+**Backend API**
+https://project-happy-thoughts-api-easgcdauca-lz.a.run.app/

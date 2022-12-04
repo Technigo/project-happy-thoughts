@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SendThought from './components/SendThought';
 import MessageList from './components/MessageList';
-import SiteHeader from './components/SiteHeader';
 
 //const LIKES_API = (LikeID) => `https://happy-thoughts-technigo.herokuapp.com/thoughts/${LikeID}/like`
 //const API = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
@@ -55,7 +54,7 @@ export const App = () => {
   }
       
 
-  // Shows likes, changed POST to PATCH
+  // Shows likes
   function onLikesIncrease(LikeID) {
     const options = {
       method: 'PATCH',
@@ -72,7 +71,6 @@ export const App = () => {
 
   return (
     <div className="outer-wrapper">
-      <SiteHeader />
       <div className="inner-wrapper">
         <SendThought
           newMessage={newMessage}
