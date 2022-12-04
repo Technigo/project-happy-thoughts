@@ -58,7 +58,7 @@ export const App = () => {
 
   const onLikesIncrease = (thoughtId) => {
     const options = {
-      method: 'post',
+      method: 'PATCH',
       headers: {
         'content-type': 'application/json'
       }
@@ -67,17 +67,9 @@ export const App = () => {
     fetch(`https://project-happy-thoughts-api-rqleaq4bsa-lz.a.run.app/thoughts/${thoughtId}/like`, options)
       .then((res) => res.json())
       .then((data) => {
-        const updatedThoughts = postList.map((item) => {
-          // eslint-disable-next-line no-underscore-dangle
-          if (item._id === data._id) {
-            item.hearts += 1;
-            return item;
-          } else {
-            return item;
-          }
-        });
-        setPostList(updatedThoughts);
-      });
+        fetchData(data)
+      })
+      .catch((error) => error)
   };
 
   return (
