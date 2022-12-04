@@ -23,7 +23,7 @@ const LikeBtn = ({ event, setNewLike }) => {
         body: ''
       }
 
-      fetch(`https://project-happy-thoughts-api-auhzlcxnrq-lz.a.run.app/messages/${event._id}/like`, options)
+      fetch(`https://project-happy-thoughts-api-auhzlcxnrq-lz.a.run.app/messages/${event.id}/like`, options)
         .then((data) => data.json())
         .catch((error) => console.error(error))
         .finally(() => {
