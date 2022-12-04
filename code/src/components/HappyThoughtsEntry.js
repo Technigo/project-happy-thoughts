@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 
 import moment from 'moment'
 
+import { baseUrl } from '../config'
+
 const HappyThoughtsEntry = ({ id, message, hearts, createdAt }) => {
   const [likedByMe, setLikedByMe] = useState(false)
   const [heartsCounter, setHearts] = useState(hearts)
 
   const sendHeartToApi = () => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+    fetch(`${baseUrl}/thoughts/${id}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     }).then((res) => res.json())

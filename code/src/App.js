@@ -4,6 +4,8 @@ import HappyThoughtsList from 'components/HappyThoughtsList'
 import HappyThoughtsForm from 'components/HappyThoughtsForm'
 import Spinner from 'components/Spinner'
 
+import { baseUrl } from './config'
+
 export const App = () => {
   const [happyThoughtsList, setHappyThoughtsList] = useState([])
   const [newThought, setNewThought] = useState('')
@@ -12,7 +14,7 @@ export const App = () => {
   const fetchData = () => {
     setLoading(true)
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch(`${baseUrl}/thoughts`)
       .then((data) => data.json())
       .then((transformedData) => setHappyThoughtsList(transformedData))
       .catch((error) => console.error(error))
@@ -45,7 +47,7 @@ export const App = () => {
       }
     }
     setLoading(true)
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch(`${baseUrl}/thoughts`, options)
       .then((data) => data.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))
