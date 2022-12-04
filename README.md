@@ -1,4 +1,4 @@
-# Happy Thoughts
+# Happy Thoughts + Backend (API) from week 15
 
 During this project we were learning how to use the `useEffect` hook in React to perform actions when components mount, unmount, or when state changes, how to call APIs from React and put the data into state and work with an API which you both send and receive data from.
 
@@ -13,8 +13,9 @@ Requirements for the project:
 * You should have a form to post new thoughts
 
 * You should implement the heart button to send likes on a thought
-<img width="644" alt="Screenshot 2022-10-16 at 10 47 16" src="https://user-images.githubusercontent.com/108176641/196026711-7444e6b5-0cd1-4698-b670-52f2539c09ca.png">
 
+During week 15 we created our own API and this projcet is now updated with that URL, saving data in mongoDB.
+You can view that project here.
 
 ## The problem
 
