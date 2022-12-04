@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable indent */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
@@ -5,7 +8,9 @@ import { formatDistance } from 'date-fns';
 
 export const ThoughtsFlow = ({ loading, thoughts, onLikesIncrease }) => {
   if (loading) {
-    return <h1>Loading in progress...</h1>
+    return <div className="Loading">Loading
+    <span></span>
+  </div>
   }
 
   return (
