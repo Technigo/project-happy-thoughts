@@ -1,4 +1,5 @@
 import { Card } from 'components/Card';
+import { createThought } from 'lib/api';
 import React from 'react';
 import styles from './CreateThought.module.css';
 
@@ -6,21 +7,7 @@ const CreateThoughts = (props) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        message: props.newThought
-      })
-    };
-
-    fetch(
-      'https://project-happy-thoughts-api-p52jzdhmrq-lz.a.run.app/thoughts',
-      options
-    )
-      .then((res) => res.json())
+    createThought(props.newThought)
       .then(() => props.fetchThoughts())
       .finally(() => props.setNewThought(''));
   };

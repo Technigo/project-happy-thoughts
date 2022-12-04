@@ -18,3 +18,19 @@ export const likeThought = async (thoughtId) => {
   const json = await res.json();
   return json;
 };
+
+export const createThought = async (message) => {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      message
+    })
+  };
+
+  const res = await fetch(`${BASE_URL}/thoughts`, options);
+  const json = await res.json();
+  return json;
+};
