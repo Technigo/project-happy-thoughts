@@ -1,15 +1,19 @@
 import React from 'react';
 import { formatDistance } from 'date-fns';
-import loadingimg from 'Images/Spinner.gif'
 
 const MessageList = ({ loading, messageList, onLikesIncrease }) => {
   if (loading) {
     return (
-      <>
-      <h1>Loading in progress...</h1>
-      <div className='loadingImg'><img src= {loadingimg} />
-      </div>
-      </>
+      <p className="loading">
+        <p>LOADING...</p>
+        {/* // spinner: */}
+        <div
+          className="loadingio-eclipse">
+          <div className="ldio-rpinwye8j0b">
+            <div />
+          </div>
+        </div>
+      </p>
     )
   }
 
