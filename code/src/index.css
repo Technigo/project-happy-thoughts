@@ -19,6 +19,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--fifth);
+  
+
 
   /* BACKGROUND ANIMATION */
 
@@ -41,17 +43,26 @@ body {
 }
 
 .title {
-  font-family: "Helvetica Neue", sans-serif;
-  font-weight: 900;
-  font-size: 19px;
-  padding: 40px 0 0 5px;
-  margin: 0;
+  font-family: 'Chango', cursive;
+  /* font-weight: 900; */
+  font-size: 85px;
+  text-align: center;
+  color: var(--primary);
+  padding: 10px 0 20px 0;
+  margin: 70px 0 0 0;
+
 }
 
 .sub-title {
-  margin: 5px 0 25px;
-  font-size: 14px;
+  margin: 25px 0 0 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 36px;
   padding-left: 5px;
+  transform: rotate(-9deg);
+  position: absolute;
+  top: 25px;
+  left: 55px;
+
 }
 
 code {
@@ -62,6 +73,9 @@ code {
 .container {
   margin: 30px auto 0;
   width: 75%;
+}
+.top-contatiner{
+  position: relative;
 }
 
 /**** FORM ****/
@@ -120,11 +134,11 @@ textarea:focus {
 .button-form {
   background-color: var(--primary);
   color: var(--sixth);
-  border-radius: 30px;
   padding: 12px;
   font-size: 15px;
-  margin: 20px;
+  margin: 40px;
   border: none;
+  border-radius: 30px;
 }
 .button-form:hover {
   /* background: var(--secondary); */
@@ -191,16 +205,7 @@ font-size: 16px;
   }
 
   textarea {
-    width: 375px;
+    width: 310px;
   }
-
-  .title {
-    font-size: 26px;
-  }
-  
-  .sub-title {
-    font-size: 15px;
-    padding-left: 0;
-  } 
   
 }

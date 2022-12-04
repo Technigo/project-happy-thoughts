@@ -29,7 +29,7 @@ export const App = () => {
     setNewTweet(event.target.value);
   };
 
-  /** **** Writing a Tweet and sumbit ****** */
+  /** Writing a Tweet and sumbit ** */
 
   // prevents forms natural behaviour to submit when reloading page
   const handleFormSubmit = (event) => {
@@ -56,15 +56,17 @@ export const App = () => {
   /** **** LIKES ****** */
   // function that handels when the like-button gets a click, pass the uniq id for that tweet
   const handleNewLikeSubmit = (tweetId) => {
+    console.log('tweetId', tweetId)
     const options = {
-      method: 'POST'
+      method: 'PATCH'
     };
 
     // Increases likes count on server for uniq tweet id
     fetch(LIKES_URL(tweetId), options) // Catch the data and update with uniqe object (option)
       .then((res) => res.json())
       .then((data) => {
-        fetchTweets(data); // Gets/request all data again
+        fetchTweets(data)
+        console.log('data2', data); // Gets/request all data again
       })
       .catch((error) => console.error('error2', error));
   };

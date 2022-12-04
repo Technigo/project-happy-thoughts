@@ -2,6 +2,7 @@ import React from 'react';
 import { formatDistance } from 'date-fns';
 
 const TweetList = ({ loading, tweetList, onNewLikeSubmit }) => {
+  console.log('tweetList', tweetList)
   if (loading) {
     return <h4 className="loading-text">Loading 3.. 2.. 1..</h4>
   }
@@ -15,13 +16,13 @@ const TweetList = ({ loading, tweetList, onNewLikeSubmit }) => {
               <div className="like-wrapper">
                 <button
                   className={
-                    tweet.hearts === 0 ? 'button-no-likes' : 'button-likes'
+                    tweet.heart === 0 ? 'button-no-likes' : 'button-likes'
                   }
                   type="button"
                   onClick={() => onNewLikeSubmit(tweet._id)}>
                   <span className="heart">🧡</span>
                 </button>
-                <p className="heart-counter">x {tweet.hearts}</p>
+                <p className="heart-counter">x {tweet.heart}</p>
               </div>
               <p className="time-stamp">
                 {formatDistance(new Date(tweet.createdAt), Date.now(), {
