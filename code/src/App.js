@@ -11,7 +11,7 @@ export const App = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://project-happy-thoughts-api-rqleaq4bsa-lz.a.run.app/thoughts')
       .then((data) => data.json())
       .then((transformedData) => setPostList(transformedData))
       .catch((error) => console.error(error))
@@ -43,7 +43,7 @@ export const App = () => {
       }
     };
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://project-happy-thoughts-api-rqleaq4bsa-lz.a.run.app/thoughts', options)
       .then((data) => data.json())
       .then(() => fetchData())
       .catch((error) => console.error(error))
@@ -64,7 +64,7 @@ export const App = () => {
       }
     };
 
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${thoughtId}/like`, options)
+    fetch(`https://project-happy-thoughts-api-rqleaq4bsa-lz.a.run.app/thoughts/${thoughtId}/like`, options)
       .then((res) => res.json())
       .then((data) => {
         const updatedThoughts = postList.map((item) => {
