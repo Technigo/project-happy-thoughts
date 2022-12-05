@@ -46,7 +46,7 @@ const Feed = () => {
   return (
     <section className={styles.feedGrid}>
       <ThoughtForm setFeed={setFeed} />
-      {loading && <h3>❤️ Loading ❤️</h3>}
+      {loading ? <h3>❤️ Loading ❤️</h3> : null}
       <ThoughtCard feed={feed} setFeed={setFeed} />
     </section>
   );
