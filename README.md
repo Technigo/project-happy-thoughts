@@ -7,3 +7,5 @@ A great exercise in passing different datatypes as props from one component to a
 ## View it live
 
 https://gladatankar.netlify.app/
+
+Back-end done with node/express and mongoDB/mongoose: https://github.com/karlfredrikholm/project-happy-thoughts-api
