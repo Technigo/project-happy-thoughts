@@ -7,7 +7,7 @@ import PostList from './PostList';
 
 const PostContainer = () => {
 	const likes = (likesID) =>
-		`https://project-happy-thoughts-api-fg6vuzfhaa-ez.a.run.app/thoughts${likesID}/like`;
+		`https://project-happy-thoughts-api-fg6vuzfhaa-ez.a.run.app/thoughts/${likesID}/like`;
 	const [newPost, setNewPost] = useState(''); //store new posts value
 	const [loading, setLoading] = useState(false);
 	const [posts, setPosts] = useState([]); //store all posts including the old and new
