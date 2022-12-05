@@ -7,7 +7,7 @@ import PostList from './PostList';
 
 const PostContainer = () => {
 	const likes = (likesID) =>
-		`https://project-happy-thoughts-api-fg6vuzfhaa-ez.a.run.app/thoughts/${likesID}/like`;
+		`https://project-happy-thoughts-api-fg6vuzfhaa-ez.a.run.app/thoughts${likesID}/like`;
 	const [newPost, setNewPost] = useState(''); //store new posts value
 	const [loading, setLoading] = useState(false);
 	const [posts, setPosts] = useState([]); //store all posts including the old and new
@@ -21,7 +21,7 @@ const PostContainer = () => {
 		setLoading(true);
 		fetch('https://project-happy-thoughts-api-fg6vuzfhaa-ez.a.run.app/thoughts')
 			.then((res) => res.json())
-			.then((data) => setPosts(data).reverse())
+			.then((data) => setPosts(data.response))
 			.catch((error) => console.error(error))
 			.finally(() => setLoading(false));
 	};
@@ -51,7 +51,7 @@ const PostContainer = () => {
 			.then(() => fetchPosts()) //if successful the fetchPosts will be fetched again
 			.finally(() => setNewPost('')); //the new value will be set to an empty string
 	};
-
+	console.log(posts);
 	// the new posts input
 	const onNewPostChange = (event) => {
 		event.preventDefault();
