@@ -15,13 +15,17 @@ const App = () => {
 
   const fetchData = () => {
     setLoading(true);
-    /* execute a fetch to from the URL & convert to JSON()*/
-    // fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts")
-    fetch("https://api-happy-tweets.herokuapp.com/thoughts")
-      .then((res) => res.json())
-      .then((data) => setTextList(data.response))
+    
+    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+      .then((res) => {
+        console.log("res", res)
+        return res.json()})
+      .then((data) => { 
+        console.log("data", data)
+        setTextList(data)})
       .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
+      .finally(() => setLoading(false))
+    .then(()=> console.log(textList));
     /* set the loading variable to false when everything went well*/
   };
   useEffect(() => {
@@ -63,11 +67,12 @@ const App = () => {
     };
 
     // fetch("https://happy-thoughts-technigo.herokuapp.com/thoughts", options)
-    fetch("https://api-happy-tweets.herokuapp.com/thoughts", options)
-      .then((res) => res.json())
-      .then(() => fetchData())
-      .catch((error) => console.error(error))
-      .finally(() => handleNewText(""));
+    // fetch("https://api-happy-tweets.herokuapp.com/thoughts", options)
+      fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
+        .then((res) => res.json())
+        .then(() => fetchData())
+        .catch((error) => console.error(error))
+        .finally(() => handleNewText(""));
   };
 
   /*
@@ -84,7 +89,8 @@ const App = () => {
 
     fetch(
       // `https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`,
-      `https://api-happy-tweets.herokuapp.com/thoughts/${id}/like`,
+      // `https://api-happy-tweets.herokuapp.com/thoughts/${id}/like`,
+        `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/${id}/like`,
       likeSubmit
     )
       .then((res) => res.json())
