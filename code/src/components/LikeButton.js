@@ -6,8 +6,8 @@ import React from 'react';
 const LikeButton = ({ thought, getHappyThoughts, hearts }) => {
   // this function posts the likes to the API where it's stored
   const handleHeartClick = (_id) => {
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
-      method: 'POST'
+    fetch(`https://project-happy-thoughts-api-ysfn4yodaa-lz.a.run.app/thoughts/${_id}/like`, {
+      method: 'PATCH'
     })
       .then((res) => res.json())
       .then(() => {
