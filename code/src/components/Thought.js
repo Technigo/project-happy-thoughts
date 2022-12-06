@@ -10,12 +10,12 @@ const Thought = ({ handleTotalLikesCallback, id, message, hearts, createdAt, pos
     setClicked(true)
 
     const options = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, options)
+    fetch(`https://project-happy-thoughts-api-dsxqivtt3a-lz.a.run.app/thoughts/${id}/heart`, options)
       .then((response) => response.json())
       .then(() => {
         setHeartCounter(heartCount + 1)

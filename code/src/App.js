@@ -1,7 +1,9 @@
+/* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import ThoughtsFeed from 'components/ThoughtsFeed';
 import Form from 'components/Form';
 import Loader from 'components/Loader';
+import { Pagination } from 'components/Pagination';
 
 export const App = () => {
   // the clickcounter tend sometimes to be not a number, so this is to reset the counter
@@ -17,20 +19,34 @@ export const App = () => {
   const [newPost, setNewPost] = useState(false)
   const [totalLikes, setTotalLikes] = useState(Number(localStorage.clickcount))
 
-  const fetchThoughts = () => {
+  const [currentPage, setCurrentPage] = useState(1)
+  const [thoughtsPerPage] = useState(20)
+
+  // get current posts
+  const indexOfLastThought = currentPage * thoughtsPerPage
+  const indexOfFirstThought = indexOfLastThought - thoughtsPerPage
+  const currentThoughts = thoughts.slice(indexOfFirstThought, indexOfLastThought)
+
+  console.log(currentThoughts)
+
+  // change page
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
+
+  const fetchThoughts = async () => {
     setLoading(true)
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    await fetch('https://project-happy-thoughts-api-dsxqivtt3a-lz.a.run.app/thoughts?page=1&perPage=100')
       .then((response) => response.json())
-      .then((transformedData) => setThoughts(transformedData))
-      .catch((error) => console.error(error))
-      .finally(() => {
-        setLoading(false)
+      .then((transformedData) => {
+        setThoughts(transformedData.response)
       })
+    setLoading(false)
   }
 
   useEffect(() => {
-    fetchThoughts();
-  }, []);
+    fetchThoughts()
+  }, [currentPage])
 
   const handleTotalLikesCallback = () => {
     setTotalLikes(totalLikes + 1)
@@ -55,19 +71,25 @@ export const App = () => {
         message: newThought
       })
     }
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
-      .then((response) => response.json())
-      .then((lastThought) => {
-        if (lastThought.errors) {
-          window.alert('Your message is too short or too long. Rephrase your thought and try again! 💭');
-        } else {
-          setThoughts((previousThoughts) => [lastThought, ...previousThoughts])
-          // sets a temporary class for (to add a animation) a new thought/post
-          setNewPost(true)
+    fetch('https://project-happy-thoughts-api-dsxqivtt3a-lz.a.run.app/thoughts', options)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.status)
         }
+        return response.json()
+      })
+      .then((lastThought) => {
+        setThoughts((previousThoughts) => [lastThought.response, ...previousThoughts])
+        // sets a temporary class for (to add a animation) a new thought/post
+        setNewPost(true)
+      })
+      .catch((error) => {
+        window.alert('Your message is too short or too long. Rephrase your thought and try again! 💭');
+        console.error(error)
       })
       .finally(() => {
         setNewThought('')
+        setCharactersCount(0)
         setTimeout(() => { setNewPost(false); }, 1000);
       });
   })
@@ -87,13 +109,15 @@ export const App = () => {
           charactersCount={charactersCount} />
         {totalLikes === 1
           && <div className="like-counter">You have hearted {totalLikes} thought! 🖤 </div>}
-        {totalLikes > 1
+        {totalLikes > 1 > 9
           && <div className="like-counter">You have hearted {totalLikes} thoughts! 🖤 </div>}
+        {totalLikes > 10
+          && <div className="like-counter">You have hearted {totalLikes} thoughts! 🖤 You are quite a lover! </div>}
         <ThoughtsFeed
           posted={newPost}
-          list={thoughts}
-          handleTotalLikesCallback={handleTotalLikesCallback}
-          fetchThoughts={fetchThoughts} />
+          list={currentThoughts}
+          handleTotalLikesCallback={handleTotalLikesCallback} />
+        <Pagination postsPerPage={thoughtsPerPage} totalPosts={thoughts.length} paginate={paginate} />
       </div>
     </div>
   );
