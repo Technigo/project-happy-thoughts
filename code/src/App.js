@@ -67,20 +67,16 @@ export const App = () => {
 
   return (
     <div className="outerContainer">
-      <div className="innerContainter>">
-        {/* <div className="thoughtFormContainer"> */}
+      <div className="innerContainer">
         <ThoughtForm
           newThought={newThought}
           onNewThoughtChange={onNewThoughtChange}
           onFormSubmit={onFormSubmit} />
-        {/* </div> */}
-        {/* <div className="thoughtListContainer"> */}
         <ThoughtList
           loading={loading}
           thoughtList={thoughtList}
           setThoughtList={setThoughtList}
           onLikesIncrease={onLikesIncrease} />
-        {/* </div> */}
       </div>
     </div>
   )
