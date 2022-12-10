@@ -1,7 +1,10 @@
 # Happy Thoughts
 
-A twitter like app that gets and sends happy thoughts from an API.
+A twitter like app where you can POST and GET happy thoughts from an API.
+The API is created with MongoDB and mongoose, using GET, POST and PATCH
 
 ## View it live
+Backend server: https://project-happy-thoughts-3asmq7u3ga-lz.a.run.app 
+backend Github repo:https://github.com/Archkrull/project-happy-thoughts-api
 
-https://happy-thoughts-neahr.netlify.app/
+Frontend: https://happy-thoughts-neahr.netlify.app/
