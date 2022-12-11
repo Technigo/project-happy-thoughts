@@ -44,39 +44,6 @@ header{
 .logo b span:nth-of-type(2){
   animation: blink linear infinite 3s;
 }
-@keyframes blink {
-  78% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  79%{
-     color:  #f65a94;
-  }
-  80% {
-    
-    text-shadow: none;
-  }
-  81% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  82% {
-    color:  #f65a94;
-    text-shadow: none;
-  }
-  83% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  92% {
-    color: #f65a94;
-    text-shadow: none;
-  }
-  92.5% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-}
 
 .scroll-wrap{
   display: grid;
@@ -219,7 +186,8 @@ textarea:focus{
 .date-posted{
   margin: 0;
   position: absolute;
-  left: 52%;
+  width: 150px;
+  left: 54%;
   -ms-transform: translateY(-120%);
   transform: translateY(-120%);
   color:rgb(142, 142, 142);
