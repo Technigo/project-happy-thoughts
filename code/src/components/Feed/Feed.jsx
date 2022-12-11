@@ -12,7 +12,6 @@ const Feed = () => {
   const [page, setPage] = useState(1);
   const [feed, setFeed] = useState([]);
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     setLoading(true);
     fetch(`https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts?page=${page}&perPage=10`)
@@ -27,7 +26,6 @@ const Feed = () => {
   const handleScroll = () => {
     if (window.innerHeight + document.documentElement.scrollTop + 1
        >= document.documentElement.scrollHeight) {
-      setLoading(true)
       setPage((prev) => prev + 1);
     }
   };
@@ -46,7 +44,7 @@ const Feed = () => {
   return (
     <section className={styles.feedGrid}>
       <ThoughtForm setFeed={setFeed} />
-      {loading ? <h3>❤️ Loading ❤️</h3> : null}
+      {loading && <h3>❤️ Loading ❤️</h3>}
       <ThoughtCard feed={feed} setFeed={setFeed} />
     </section>
   );
