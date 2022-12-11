@@ -67,7 +67,7 @@ const PostContainer = () => {
 			},
 		};
 		fetch(likes(likesID), options)
-			.then((res) => res.json)
+			.then((res) => res.json())
 			//.then((data) => data.hearts)
 			.catch((error) => console.error(error))
 			.finally(() => fetchPosts());
