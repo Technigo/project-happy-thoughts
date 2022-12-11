@@ -61,14 +61,14 @@ const PostContainer = () => {
 	//to complete the like and liked function
 	const handleLiked = (likesID) => {
 		const options = {
-			method: 'POST',
+			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 		};
 		fetch(likes(likesID), options)
 			.then((res) => res.json)
-			/* .then() */
+			//.then((data) => data.hearts)
 			.catch((error) => console.error(error))
 			.finally(() => fetchPosts());
 	};
