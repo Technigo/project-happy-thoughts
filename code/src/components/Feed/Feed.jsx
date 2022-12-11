@@ -18,9 +18,10 @@ const Feed = () => {
       .then((res) => res.json())
       .then((data) => setFeed(data.response))
       .catch((error) => console.error(error))
-
-    setFeed((prev) => [...prev, ...feed])
-    setLoading(false);
+      .finally(() => {
+        setFeed((prev) => [...prev, ...feed])
+        setLoading(false)
+      });
   }, [page]);
 
   const handleScroll = () => {
