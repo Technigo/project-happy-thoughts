@@ -6,6 +6,7 @@ import { format } from "date-fns";
 /* 
 - This component renders an array of thoughts from the HappyThoughts API making a list and rendered the list by using the map method.
 - While the API request is being handled, the 'loading' state is set to true. 
+- 
 */
 
 const TextList = (props) => {
