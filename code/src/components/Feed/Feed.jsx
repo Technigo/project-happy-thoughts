@@ -37,6 +37,7 @@ const Feed = () => {
     <section className={styles.feedGrid}>
       <ThoughtForm loading={loading} setFeed={setFeed} />
       <ThoughtCard feed={feed} setFeed={setFeed} />
+      {!loading &&
       <div className={styles.buttonContainer}>
         <button
           className={styles.olderButton}
@@ -51,7 +52,7 @@ const Feed = () => {
           disabled={page === 1}>
           Newer thoughts
         </button>
-      </div>
+      </div>}
     </section>
   );
 };
