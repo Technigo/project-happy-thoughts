@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import ThoughtForm from 'components/ThoughtForm/ThoughtForm';
 import ThoughtCard from 'components/ThoughtCard/ThoughtCard';
+import { API_URL } from 'components/utils/api';
 import styles from './Feed.module.css';
 
 const Feed = () => {
@@ -16,12 +17,13 @@ const Feed = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts?page=${page}&perPage=4`)
+    fetch(`${API_URL('thoughts')}?page=${page}&perPage=10`)
       .then((res) => res.json())
       .then((data) => setFeed(data.response))
       .catch((error) => console.error(error))
       .finally(() => {
         setLoading(false)
+        window.scroll(0, 0)
       });
   }, [page]);
 

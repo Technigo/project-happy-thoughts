@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import { API_URL } from 'components/utils/api';
 import styles from './LikeButton.module.css';
 
 const LikeButton = ({ postedThought, postedThoughtId, feed, setFeed }) => {
@@ -18,7 +19,7 @@ const LikeButton = ({ postedThought, postedThoughtId, feed, setFeed }) => {
   // when clicking the like button a post request to that particular thought
   // is sent and then the handleMessageLiked function is being invoked
   const handleLikeButtonClick = () => {
-    fetch(`https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts/${postedThoughtId}/like`, {
+    fetch(`${API_URL('thoughts')}/${postedThoughtId}/like`, {
       method: 'PATCH',
       headers: { 'Content-type': 'application/json' }
     }).then(() => handleMessageLiked(postedThoughtId));

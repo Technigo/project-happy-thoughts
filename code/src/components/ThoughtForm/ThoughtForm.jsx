@@ -1,10 +1,10 @@
 /* eslint-disable indent */
 import React, { useState } from 'react';
+import { API_URL } from 'components/utils/api';
 import styles from './ThoughtForm.module.css';
 
 const ThoughtForm = ({ loading, setFeed }) => {
-  // State for dealing with new thoughts posted
-  // with the form further down
+  // State for dealing with new thoughts
   const [thought, setThought] = useState('');
 
   // for handling when a message is too short to be posted
@@ -47,7 +47,7 @@ const ThoughtForm = ({ loading, setFeed }) => {
   // Post request when clicking the send-button in the form
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    fetch('https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts', {
+    fetch(API_URL('thoughts'), {
       method: 'POST',
       // When posting to the api the format must be "converted" to
       // something the works for the api (json in our case),

@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import moment from 'moment';
-
 import LikeButton from 'components/LikeButton/LikeButton';
 import styles from './ThoughtCard.module.css';
 
