@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
@@ -12,29 +13,17 @@ const Feed = () => {
   const [page, setPage] = useState(1);
   const [feed, setFeed] = useState([]);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     setLoading(true);
-    fetch(`https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts?page=${page}&perPage=10`)
+    fetch(`https://happy-thoughts-api-5gwus5mtja-lz.a.run.app/thoughts?page=${page}&perPage=4`)
       .then((res) => res.json())
       .then((data) => setFeed(data.response))
       .catch((error) => console.error(error))
       .finally(() => {
-        setFeed((prev) => [...prev, ...feed])
         setLoading(false)
       });
   }, [page]);
-
-  const handleScroll = () => {
-    if (window.innerHeight + document.documentElement.scrollTop + 1
-       >= document.documentElement.scrollHeight) {
-      setPage((prev) => prev + 1);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Mounting the two "main" components
   // and passing setThoughtsFeed to both of them
@@ -44,9 +33,23 @@ const Feed = () => {
   // LikeButton mounted in the ThoughtCard component
   return (
     <section className={styles.feedGrid}>
-      <ThoughtForm setFeed={setFeed} />
-      {loading && <h3>❤️ Loading ❤️</h3>}
+      <ThoughtForm loading={loading} setFeed={setFeed} />
       <ThoughtCard feed={feed} setFeed={setFeed} />
+      <div className={styles.buttonContainer}>
+        <button
+          className={styles.olderButton}
+          type="button"
+          onClick={() => setPage(page + 1)}>
+          Older thoughts
+        </button>
+        {page > 1 &&
+      <button
+        className={styles.newerButton}
+        type="button"
+        onClick={() => setPage(page - 1)}>
+          Newer thoughts
+      </button>}
+      </div>
     </section>
   );
 };

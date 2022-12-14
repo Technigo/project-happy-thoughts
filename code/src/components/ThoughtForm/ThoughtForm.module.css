@@ -69,6 +69,20 @@ textarea {
   gap: 0.2rem;
 }
 
+.loading {
+  text-align: center;
+  animation: blink .6s infinite;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 700px) {
   .thoughtFormHeading {
     font-size: .9rem;

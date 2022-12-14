@@ -1,7 +1,8 @@
+/* eslint-disable indent */
 import React, { useState } from 'react';
 import styles from './ThoughtForm.module.css';
 
-const ThoughtForm = ({ setFeed }) => {
+const ThoughtForm = ({ loading, setFeed }) => {
   // State for dealing with new thoughts posted
   // with the form further down
   const [thought, setThought] = useState('');
@@ -78,10 +79,12 @@ const ThoughtForm = ({ setFeed }) => {
           value={thought} />
       </label>
       <div className={styles.sendButtonAndCharsContainer}>
-        <button
-          className={styles.sendButton}
-          type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought <span role="img" aria-label="heart">❤️</span>
-        </button>
+        {loading
+          ? <h3 className={styles.loading}>❤️ Loading ❤️</h3>
+          : <button
+              className={styles.sendButton}
+              type="submit"><span role="img" aria-label="heart">❤️</span>Send Happy Thought <span role="img" aria-label="heart">❤️</span>
+            </button>}
         <div className={styles.charsAndTooShortContainer}>
           {/* if you haven't typed 5 or more characters the counter will be red, else gray */}
           <p className={remainingChars > 135 ? styles.notEnoughChars : styles.remainingChars}>
