@@ -44,13 +44,13 @@ const Feed = () => {
           onClick={() => setPage(page + 1)}>
           Older thoughts
         </button>
-        {page > 1 &&
-      <button
-        className={styles.newerButton}
-        type="button"
-        onClick={() => setPage(page - 1)}>
+        <button
+          className={styles.newerButton}
+          type="button"
+          onClick={() => setPage(page - 1)}
+          disabled={page === 1}>
           Newer thoughts
-      </button>}
+        </button>
       </div>
     </section>
   );

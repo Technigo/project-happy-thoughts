@@ -41,3 +41,7 @@
   width: fit-content;
   height: fit-content;
 }
+
+.newerButton:disabled {
+  text-decoration: line-through;
+}
