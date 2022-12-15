@@ -4,13 +4,8 @@ import { API_URL } from 'components/utils/api';
 import styles from './ThoughtForm.module.css';
 
 const ThoughtForm = ({ loading, setFeed }) => {
-  // State for dealing with new thoughts
   const [thought, setThought] = useState('');
-
-  // for handling when a message is too short to be posted
   const [tooShortThought, setTooShortThought] = useState('');
-
-  // these things are for the character countdown
   const maxChars = 140;
   const [remainingChars, setRemainingChars] = useState(maxChars);
 
@@ -49,15 +44,12 @@ const ThoughtForm = ({ loading, setFeed }) => {
     event.preventDefault();
     fetch(API_URL('thoughts'), {
       method: 'POST',
-      // When posting to the api the format must be "converted" to
-      // something the works for the api (json in our case),
-      // so that's being done here:
       body: JSON.stringify({ message: thought }),
       headers: { 'Content-Type': 'application/json' }
     })
       .then((res) => res.json())
       .then((newThought) => {
-        if (!newThought.response) {
+        if (!newThought.success) {
           handleTooShortThought();
         } else {
           setFeed((previousThoughts) => [newThought.response, ...previousThoughts]);
