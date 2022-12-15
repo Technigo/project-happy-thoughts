@@ -27,9 +27,10 @@ const ThoughtForm = ({ loading, setFeed }) => {
   const handleTooShortThought = () => {
     if (!thought.length) {
       setTooShortThought('Nothing? 😢');
-    } else if (thought.length < 5) {
+    } else if (thought.trim().length < 5) {
       setTooShortThought('Too short! ☺️');
     }
+    setTimeout(() => setTooShortThought(''), 2000);
   };
 
   // A function for empyting the textarea input after post request is done
@@ -53,6 +54,7 @@ const ThoughtForm = ({ loading, setFeed }) => {
           handleTooShortThought();
         } else {
           setFeed((previousThoughts) => [newThought.response, ...previousThoughts]);
+          setTooShortThought('')
         }
       })
       .catch((error) => console.error(error))
