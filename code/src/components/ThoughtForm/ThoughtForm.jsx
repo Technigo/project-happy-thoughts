@@ -25,7 +25,7 @@ const ThoughtForm = ({ loading, setFeed }) => {
   };
 
   const handleTooShortThought = () => {
-    if (!thought.length) {
+    if (!thought.trim().length) {
       setTooShortThought('Nothing? 😢');
     } else if (thought.trim().length < 5) {
       setTooShortThought('Too short! ☺️');
