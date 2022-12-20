@@ -10,11 +10,11 @@ const PostList = ({ postList, onLikesIncrease }) => {
           <div className="post-wrapper" key={thoughtMessage._id}>
             <p>{thoughtMessage.message}</p>
             <div className="post-gutter">
-              <div className="like-button">
+              <div className="like-container">
                 <button
                   type="button"
                   onClick={() => onLikesIncrease(thoughtMessage._id)}
-                  style={{ background: thoughtMessage.hearts >= 1 ? '#FFADAD' : '#F2F0F0' }}>
+                  className={thoughtMessage.hearts >= 1 ? 'like-button pink' : 'like-button'}>
                   <span>
                     ❤️️
                   </span>

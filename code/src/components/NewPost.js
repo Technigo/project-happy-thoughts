@@ -12,10 +12,10 @@ const NewPost = ({ handleFormSubmit, onNewPostChange, newPost }) => {
             value={newPost}
             maxLength="140"
             onChange={onNewPostChange}
-            rows="3"
+            rows="4"
             cols="40" />
           <p style={{ color: newPost.length > 130 ? 'red' : 'black' }}>{newPost.length}/140</p>
-          <button type="submit"><span>❤️️</span> Send Happy Thought <span>❤️️</span></button>
+          <button className="submit-button" type="submit"><span>❤️️</span> Send Happy Thought <span>❤️️</span></button>
         </label>
       </form>
     </div>

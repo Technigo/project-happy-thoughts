@@ -29,11 +29,14 @@ button {
   border: none;
   border-radius: 30px;
   padding: 13px 15px 13px 15px;
-  background-color: #FFADAD;
   font-size: 1em;
 }
 
-button:hover {
+.submit-button {
+  background-color: #FFADAD;
+}
+
+.submit-button:hover {
   background-color: #ff9797;
 }
 
@@ -100,10 +103,26 @@ label {
   align-items: flex-end;
 }
 
-.like-button {
+.like-container {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.like-button {
+  background-color: #F2F0F0;
+}
+
+.like-button:hover {
+  background-color: #e2e2e2;
+}
+
+.pink {
+  background-color: #FFADAD;
+}
+
+.pink:hover {
+  background-color: #ff9797;
 }
 
 .footnote {
