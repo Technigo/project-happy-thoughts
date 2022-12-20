@@ -1,8 +1,6 @@
 # Happy Thoughts
 This weeks project in the Technigo Bootcamp was to use React to build a Twitter-like app to fetch and post data to an API.
 
-## The problem
-
 ## Learning objectives
 * How to use APIs in React, firing requests within useEffect
 * Learn more about working with useState
