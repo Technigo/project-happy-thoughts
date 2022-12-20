@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Header from 'components/Header';
 import NewPost from 'components/NewPost';
 import PostList from 'components/PostList';
+import Loader from 'components/Loader';
 
 export const App = () => {
   const [postList, setPostList] = useState([]);
@@ -52,7 +53,7 @@ export const App = () => {
 
   if (loading) {
     return (
-      <p>THE PAGE IS LOADING...</p>
+      <Loader />
     )
   }
 
