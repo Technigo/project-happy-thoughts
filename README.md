@@ -1,13 +1,17 @@
 # Happy Thoughts
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This weeks project in the Technigo Bootcamp was to use React to build a Twitter-like app to fetch and post data to an API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Learning objectives
+* How to use APIs in React, firing requests within useEffect
+* Learn more about working with useState
+* How to put the result of API responses into React state to show in the page
+* What it's like to work with an API which you both send and receive data from
+* Implement a given design
 
 ## View it live
+https://lehappythoughts.netlify.app/
 
-https://papaya-mousse-c4e23d.netlify.app/
+**update** Find the API I created for this project here:
+https://project-happy-thoughts-api-rqleaq4bsa-lz.a.run.app
