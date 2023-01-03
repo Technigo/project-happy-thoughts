@@ -1,5 +1,4 @@
 # Happy Thoughts
-(OBS! This project is under construction!)
 
 In this project I created a friendly Twitter feed, where the user can post happy thoughts and then heart-like the thoughts in the feed. Here I practiced my React state skills by fetching and posting data to an API.
 
@@ -16,4 +15,4 @@ If I had more time, I would've love to have the functionality to show a counter 
 
 ## View it live
 
-maria-wellanders-happy-thoughts.netlify.app
+https://maria-wellanders-happy-thoughts.netlify.app/
