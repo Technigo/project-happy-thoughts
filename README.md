@@ -16,4 +16,4 @@ If I had more time, I would've love to have the functionality to show a counter 
 
 ## View it live
 
-https://maria-wellanders-happy-thoughts.netlify.app/
+maria-wellanders-happy-thoughts.netlify.app
