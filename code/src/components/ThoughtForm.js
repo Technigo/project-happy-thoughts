@@ -2,14 +2,14 @@ import React from 'react';
 
 const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
   return (
-    <form onSubmit={onFormSubmit}>
-      <h1>
+    <form className="thoughtForm" onSubmit={onFormSubmit}>
+      <h3>
         {`
         What's making you happy right now?
         `}
-      </h1>
-      <textarea value={newThought} onChange={onNewThoughtChange} />
-      <button type="submit">Submit form!</button>
+      </h3>
+      <textarea className="textArea" value={newThought} onChange={onNewThoughtChange} />
+      <button className="formBtn" type="submit">❤️ Send Happy Thought! ❤️</button>
     </form>
   )
 }

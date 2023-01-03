@@ -1,29 +1,33 @@
 import React, { useState, useEffect } from 'react';
 
-import ThoughtItem from 'components/ThoughtItem';
+import ThoughtList from 'components/ThoughtList';
 import ThoughtForm from 'components/ThoughtForm';
 
 export const App = () => {
-  const [thoughtItem, setThoughtItem] = useState([]);
+  const [thoughtList, setThoughtList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
 
-  useEffect(() => {
-    // eslint-disable-next-line no-use-before-define
-    fetchThoughts();
-  }, []);
-
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts')
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json())
-      .then((data) => setThoughtItem(data))
+      .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
 
+  useEffect(() => {
+    fetchThoughts();
+  }, []);
+
   const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value)
+  }
+
+  const handleFormCleanup = () => {
+    setNewThought('');
+    setLoading(false);
   }
 
   const onFormSubmit = (event) => {
@@ -39,22 +43,39 @@ export const App = () => {
       })
     }
 
-    fetch('https://happy-thoughts-technigo.herokuapp.com/thoughts', options)
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
-      .finally(() => setNewThought(''));
+      .finally(() => handleFormCleanup(''));
+  }
+
+  const handleLikes = (_id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, options)
+      .then((res) => res.json())
+      .then(() => fetchThoughts())
+      .finally(() => setNewThought());
   }
 
   return (
-    <div>
-      <ThoughtForm
-        newThought={newThought}
-        onNewThoughtChange={handleNewThoughtChange}
-        onFormSubmit={onFormSubmit} />
-      <ThoughtItem
-        loading={loading}
-        thoughtItem={thoughtItem}
-        setThoughtItem={setThoughtItem} />
+    <div className="outerWrapper">
+      <div className="innerWrapper">
+        <ThoughtForm
+          newThought={newThought}
+          onNewThoughtChange={handleNewThoughtChange}
+          onFormSubmit={onFormSubmit} />
+        <ThoughtList
+          loading={loading}
+          thoughtList={thoughtList}
+          setThoughtList={setThoughtList}
+          handleLikes={handleLikes} />
+      </div>
     </div>
   );
 }
