@@ -11,4 +11,4 @@ place it when needed, but I look forward to understand it better.
 To solve problems - a lot of help with eslint and other error msg in our slack channel. Google is my friend.
 
 ## View it live
-https://coruscating-bombolone-e9077a.netlify.app 
+https://give-me-happy-thoughts.netlify.app
