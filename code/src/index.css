@@ -88,9 +88,14 @@ form {
 }
 
 .submit-btn:disabled {
-  background-color: rgb(253, 206, 206);
+  background-color: rgb(255, 186, 186);
   color: rgb(128, 128, 128);
   text-shadow: none;
+}
+
+.submit-btn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .submit-btn {
@@ -102,9 +107,9 @@ form {
   background-color: rgb(255 168 168);
   font-family: Monaco;
   font-size: 1.4em;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   cursor: pointer;
-  text-shadow: 1px 1px 1px black;
+  border-bottom: 1px solid black;
 }
 
 textarea {

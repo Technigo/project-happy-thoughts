@@ -64,7 +64,7 @@ export const App = () => {
     console.log('handleNewLikeSubmit invoked')
     fetch(
       `https://project-happy-thoughts-api-oqoo5bxyya-lz.a.run.app/thoughts/${_id}/hearts`,
-      { method: 'POST',
+      { method: 'PATCH',
         headers: { 'Content-Type': 'application/json' } }
     )
       .then((res) => res.json())

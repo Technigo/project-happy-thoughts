@@ -6,11 +6,11 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
   return (
     <div className="form-container">
       <form onSubmit={onFormSubmit}>
-        <p className="form-title">Happy and you know it? Share your thought! 😍</p>
+        <p className="form-title">What&apos;s making you happy right now?</p>
         <textarea
           value={newThought}
           onChange={onNewThoughtChange}
-          placeholder="Happy? Tell the world why!"
+          placeholder="Share those positive vibes!"
           rows="5"
           cols="30" />
 
