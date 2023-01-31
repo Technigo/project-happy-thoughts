@@ -28,7 +28,6 @@ export const App = () => {
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value);
   }
-  // what daniel calls onNewTaskChange
 
   const onFormSubmit = (event) => {
     event.preventDefault();
