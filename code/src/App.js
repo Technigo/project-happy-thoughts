@@ -16,7 +16,7 @@ import './index';
 
   const fetchTasks = () => {
     setLoading(true);
-    fetch('https://project-happy-thoughts-api-b7tcqolsoq-lz.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-b7tcqolsoq-lz.a.run.app/info')
       .then((res) => res.json())
       .then((data) => setTaskList(data))
       .catch((error) => console.error(error))
@@ -29,7 +29,7 @@ import './index';
   // const onLikes = (_id) => {
   //   fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${_id}/like`, {
       const onLikes = (_id) => {
-        fetch(`https://project-happy-thoughts-api-b7tcqolsoq-lz.a.run.app/thoughts/${_id}/like`, {
+        fetch(`https://project-happy-thoughts-api-b7tcqolsoq-lz.a.run.app/info/${_id}/like`, {
       method: 'PATCH'
     })
       .then((res) => res.json())
@@ -49,7 +49,7 @@ import './index';
         message: newTodo
       })
     }
-    fetch('https://project-happy-thoughts-api-b7tcqolsoq-lz.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-b7tcqolsoq-lz.a.run.app/info', options)
       .then((res) => res.json())
       .then((updatedThought) => {
         setNewTodo((previousThoughts) => [updatedThought, ...previousThoughts])
