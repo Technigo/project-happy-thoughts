@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import MessageList from 'components/MessageList';
 import NewMessage from 'components/NewMessage';
+import Footer from 'components/Footer';
 
 export const App = () => {
   const [newMessage, setNewMessage] = useState('');
@@ -79,6 +80,7 @@ export const App = () => {
         setLoading={setLoading}
         messageList={messageList}
         setMessageList={setMessageList} />
+      <Footer />
     </div>
   );
 }

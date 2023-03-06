@@ -155,6 +155,48 @@ body {
   border-radius: 25px 25px;
 }
 
+.footer {
+  margin: 3% 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.footer p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: darkred;
+}
+
+.footer:hover a {
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  }
+
+.linux-img {
+  display: block;
+  height: 100px;
+  width: auto;
+}
+
+.pi-img {
+  display: block;
+  margin-top: 3%;
+  height: 65px;
+  width: auto;
+}
+
 @media (min-width: 350px) {
   .submit-Btn {
     width: 250px;
