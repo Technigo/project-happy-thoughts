@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <div className="footer">
       <p>This is a project made by Linda Malm for educational purposes</p>
-      <p><a href="https://github.com/malmen237/project-todos">Check out my code in GitHub</a></p>
-      <p>This page is hosted on a server that I built myself.</p>
+      <p><a href="https://github.com/malmen237/project-happy-thoughts">Check out my code in GitHub</a></p>
+      <p>This page is hosted on a server that was built by me.</p>
       <div className="image-wrapper">
         <img src={piImg} className="pi-img" alt="raspberry pi logo" />
         <img src={linuxImg} className="linux-img" alt="linux penguin logo" />
