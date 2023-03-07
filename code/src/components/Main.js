@@ -7,27 +7,19 @@ const Main = () => {
   const [getThoughts, setGetThoughts] = useState([]);
   const [newThought, setNewThought] = useState('');
   const [newUserName, setNewUserName] = useState('');
-  /* const [loading, setLoading] = useState(false); */
-
-  // const APIurl = 'https://happy-thoughts-technigo.herokuapp.com/thoughts'
-  const APIurl = 'https://project-happy-thoughts-api-dxrcv2y6yq-lz.a.run.app/thoughts'
+  
+  const APIurl = 'https://happy-thoughts-thl7.onrender.com'
 
   const fetchAPI = () => {
-    /* setLoading(true) */
     fetch(APIurl)
       .then((res) => res.json())
       .then((data) => setGetThoughts(data.response))
       .catch((error) => console.error(error))
-      .finally(() => console.log('no errors')/* setLoading(false) */)
+      .finally(() => console.log('no errors'))
   }
 
   useEffect(() => {
     fetchAPI()
-    /*   const interval = setInterval(() => {
-        fetchAPI()
-      }, 60000)
-      // This line is clearing the interval when user f.ex. changes window or exit app
-      return () => clearInterval(interval) */
   }, []);
 
   const handleNewThoughtChange = (event) => {
@@ -37,7 +29,6 @@ const Main = () => {
   const handleCleanUp = () => {
     setNewThought('')
     fetchAPI()
-    /* setLoading(false) */
   }
 
   const handleOnChangeSubmit = (event) => {
@@ -57,7 +48,7 @@ const Main = () => {
         userName: (newUserName.toUpperCase() || 'ANONYMOUS')
       })
     }
-    /* setLoading(true) */
+
     fetch(APIurl, options)
       .then((res) => res.json())
       .then((updatedThought) => {
@@ -75,13 +66,6 @@ const Main = () => {
         fetchAPI()
       })
   }
-
-  /*   if (loading) {
-      return (
-        // eslint-disable-next-line react/self-closing-comp
-        <div className="loader"><div></div></div>
-      )
-    } */
 
   return (
     <>
