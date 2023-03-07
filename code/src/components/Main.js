@@ -8,7 +8,7 @@ const Main = () => {
   const [newThought, setNewThought] = useState('');
   const [newUserName, setNewUserName] = useState('');
 
-  const APIurl = 'https://happy-thoughts-thl7.onrender.com'
+  const APIurl = 'https://happy-thoughts-thl7.onrender.com/thoughts'
 
   const fetchAPI = () => {
     fetch(APIurl)
