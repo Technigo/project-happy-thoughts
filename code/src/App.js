@@ -14,7 +14,7 @@ export const App = () => {
   const fetchThoughts = () => {
     console.log('fetchThoughts invoked')
     setLoading(true);
-    fetch('https://project-happy-thoughts-api-oqoo5bxyya-lz.a.run.app/thoughts')
+    fetch('https://happy-thoughts-ofua.onrender.com/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
@@ -45,7 +45,7 @@ export const App = () => {
     console.log('handleFormSubmit invoked')
     event.preventDefault();
     fetch(
-      'https://project-happy-thoughts-api-oqoo5bxyya-lz.a.run.app/thoughts',
+      'https://happy-thoughts-ofua.onrender.com/thoughts',
       { method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -63,7 +63,7 @@ export const App = () => {
   const handleNewLikeSubmit = (_id) => {
     console.log('handleNewLikeSubmit invoked')
     fetch(
-      `https://project-happy-thoughts-api-oqoo5bxyya-lz.a.run.app/thoughts/${_id}/hearts`,
+      `https://happy-thoughts-ofua.onrender.com/thoughts/${_id}/hearts`,
       { method: 'PATCH',
         headers: { 'Content-Type': 'application/json' } }
     )
