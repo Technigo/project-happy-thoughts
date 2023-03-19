@@ -11,3 +11,132 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* FORM */ 
+
+.happy-thought-form {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px black solid;
+  padding: 15px;
+  padding-top: 3px;
+  background-color: #F2F0F0;
+  box-shadow: 5px 7px 0px 0px black;
+  width: 350px;
+}
+
+.happy-thought-input-tabel {
+  font-size: 0.8em;
+  padding: 0;
+}
+
+.happy-thought-input {
+  resize: none;
+  width: 97%;
+  margin-bottom: 10px;
+  font-family: 'Roboto Mono', monospace;
+  padding: 5px;
+  border: 1px lightslategray solid;
+}
+
+.button-submit {
+  font-size: 11px;
+  border-radius: 20px;
+  border: 0;
+  padding: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #FFADAD;
+  letter-spacing: 0.5px;
+}
+
+/* ENTRY */ 
+
+.happy-thoughts-entry {
+  width: 350px;
+  margin: auto;
+  border: 1px black solid;
+  padding: 15px;
+  padding-top: 5px;
+  background-color: white;
+  box-shadow: 5px 7px 0px 0px black;
+  margin-bottom: 30px;
+  overflow-wrap: break-word;
+}
+
+.happy-thoughts-entry-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9em;
+}
+.likes-and-time-stamp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.happy-thoughts-entry-heart-counter {
+  font-size: 0.8em;
+  color: lightslategray;
+}
+
+.button-likes {
+  border-radius: 20px;
+  border: 0;
+  padding: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.has-likes {
+  background-color: #FFADAD;
+}
+
+.no-likes {
+  background-color: #F2F0F0;
+}
+
+.happy-thoughts-entry-date-stamp {
+  font-size: 0.8em;
+  color: rgb(181, 181, 181);
+  display: flex;
+  align-items: center;
+}
+
+.loading-thoughts {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px black solid;
+  padding: 15px;
+  padding-top: 3px;
+  background-color: #F2F0F0;
+  box-shadow: 5px 7px 0px 0px black;
+  width: 350px;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9em;
+}
+
+.loading-thoughts-spinner {
+  animation-name: loadspinner;
+  display: block;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  margin-top: 30px;
+  margin: 30px auto;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes loadspinner {
+from {
+    transform: rotate(0deg)
+
+  } 
+to {
+    transform: rotate(360deg)
+  }
+}
