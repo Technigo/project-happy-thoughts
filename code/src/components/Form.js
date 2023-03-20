@@ -4,7 +4,7 @@ export const Form = (props) => {
   return (
     <div>
       <form className="happy-thought-form" onSubmit={props.OnSubmitForm}>
-        {/* <label htmlFor="newThougt">What´s making you happy right now?</label> */}
+        {/* <label htmlFor="newThougt">Whats making you happy right now?</label> */}
         <textarea
           className="new-message"
           cols="20"
