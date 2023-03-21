@@ -8,10 +8,6 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [newTodo, setNewTodo] = useState('');
 
-  useEffect(() => {
-    fetchTasks();
-  }, []);
-
   const fetchTasks = () => {
     setLoading(true);
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
@@ -20,6 +16,10 @@ export const App = () => {
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
+
+  useEffect(() => {
+    fetchTasks();
+  }, []);
 
   const handleNewTodoChange = (event) => {
     setNewTodo(event.target.value)
