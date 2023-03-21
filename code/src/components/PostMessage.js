@@ -1,7 +1,12 @@
 import React from 'react';
 
-export const PostMessage = ({ message, onFormSubmit, handleNewMessage }) => {
+export const PostMessage = ({ newMessage, onFormSubmit, handleNewMessage }) => {
   return (
-    <h1>hej!</h1>
+
+    <form onSubmit={onFormSubmit}>
+      <h1>hej!</h1>
+      <textarea value={newMessage} onChange={handleNewMessage} />
+      <button type="submit">Send happy thought!</button>
+    </form>
   )
 }

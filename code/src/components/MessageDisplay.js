@@ -11,9 +11,9 @@ export const MessageDisplay = ({ loading, messageList }) => {
     )
   }
   return (
-    <div>
+    <div className="message-list-container">
       {messageList.map((message) => (
-        <div>
+        <div className="message-box">
           <p key={message._id}>{message.message}</p>
           <p>{formatDistance(new Date(message.createdAt), Date.now(), { addSuffix: true })}</p>
         </div>

@@ -20,39 +20,39 @@ export const App = () => {
     fetchMessages();
   }, []);
 
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-  }
-
   const handleNewMessage = (event) => {
     setNewMessage(event.target.value)
   }
 
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      message: newMessage
-    })
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: newMessage
+      })
+    }
+
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+      .then((result) => result.json())
+      .then(() => fetchMessages())
+      .finally(() => setNewMessage(''))
   }
-
-  fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
-    .then((result) => result.json())
-    .then(() => fetchMessages())
-    .finally(() => setNewMessage(''))
-
   return (
-    <div>
-      <MessageDisplay
-        loading={loading}
-        messageList={messageList}
-        setMessageList={setMessageList} />
+    <div className="happy-thoughts-box">
       <PostMessage
         newMessage={newMessage}
         onFormSubmit={onFormSubmit}
         handleNewMessage={handleNewMessage} />
+      <MessageDisplay
+        loading={loading}
+        messageList={messageList}
+        setMessageList={setMessageList} />
+
     </div>
   );
 }
