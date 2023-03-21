@@ -17,9 +17,17 @@ const Feed = () => {
   return (
     <>
       {!loading && thoughtsList.map((thought) => {
-        return (<p key={thought._id}>{thought.message}</p>)
+        return (
+          <div key={thought._id} className="postFeed">
+            <p className="feedText">{thought.message}</p>
+            <button type="button" className="likeBtn">
+              <span>❤️</span>
+            </button>
+            <span className="sumOfLikes"> x {thought.hearts}</span>
+            <p className="dateOfPost">Monday 12:00</p>
+          </div>)
       })}
-      {loading && (<p>Loading..</p>)}
+      {loading && (<div className="lds-spinner"><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /></div>)}
     </>
   )
 };
