@@ -9,7 +9,8 @@ const TaskList = ({ loading, taskList, setTaskList }) => {
     const onTaskCheckChange = (task) => {
         setTaskList(taskList => taskList.map(singleTask => {
             if(singleTask._id === task._id) {
-                return {...singleTask, isChecked: !singleTask.isChecked};
+                return {
+                    ...singleTask, isChecked: !singleTask.isChecked};
             }
             return singleTask;
         }));
