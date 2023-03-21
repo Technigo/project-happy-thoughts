@@ -4,14 +4,15 @@ import { SendThoughtForm } from 'SendThoughtForm';
 import { Thought } from 'Thought';
 
 export const Feed = () => {
-  const [thoughtList, setThoughtList] = useState([])
+  const [thoughtsList, setThoughtsList] = useState([])
   const [loading, setLoading] = useState(false)
+  const [newThought, setNewThought] = useState('')
 
   const fetchThoughts = () => {
     setLoading(true);
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((response) => response.json())
-      .then((data) => setThoughtList(data))
+      .then((data) => setThoughtsList(data))
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false) })
   }
@@ -20,11 +21,28 @@ export const Feed = () => {
     fetchThoughts()
   }, []);
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+      method: 'POST',
+      body: JSON.stringify({ message: newThought })
+    })
+      .then((response) => response.json())
+      .then((newThoughtInput) => {
+        setNewThought((previousThoughts) => [newThoughtInput, ...previousThoughts])
+      })
+      .catch((error) => console.log(error))
+  }
+
   return (
     <div>
-      <SendThoughtForm />
+      <SendThoughtForm
+        onNewThoughtChange={(event) => {
+          setNewThought(event.target.value)
+        }}
+        handleFormSubmit={handleFormSubmit()} />
       <h1>Somethingsomething title here</h1>
-      {!loading && thoughtList.map((thought) => {
+      {!loading && thoughtsList.map((thought) => {
         console.log('each thought', thought)
         return (
           <Thought
@@ -33,8 +51,7 @@ export const Feed = () => {
             timeStamp={thought.createdAt} />
         )
       })}
-      {loading && (<h2>LOADING</h2>)}
+      {loading && (<h2>Loading happy thoughts...</h2>)}
     </div>
   );
 }
-
