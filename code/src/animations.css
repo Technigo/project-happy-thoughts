@@ -1,0 +1,120 @@
+/* BACKGROUND */
+.smileys span {
+    position: fixed;
+    bottom: -80px;
+    animation: animate 10s linear infinite;
+    font-size: 60px;
+    z-index: -1;
+    }
+    
+    .smileys span:nth-child(1){
+      left: 60px;
+      animation-delay: 0.6s;    
+    }
+    .smileys span:nth-child(2){
+      left: 10%;
+      animation-delay: 3s;  
+    }
+    .smileys span:nth-child(3){
+      left: 20%;
+      animation-delay: 2s;    
+    }
+    .smileys span:nth-child(4){
+      left: 30%;
+      animation-delay: 5s;   
+    }
+    .smileys span:nth-child(5){
+      left: 40%;
+      animation-delay: 1s;    
+    }
+    .smileys span:nth-child(6){
+      left: 50%;
+      animation-delay: 7s;    
+    }
+    .smileys span:nth-child(7){
+      left: 60%;
+      animation-delay: 6s;  
+    }
+    .smileys span:nth-child(8){
+      left: 70%;
+      animation-delay: 8s;    
+    }
+    .smileys span:nth-child(9){
+      left: 80%;
+      animation-delay: 6s;  
+    }
+    .smileys span:nth-child(10){
+      left: 90%;
+      animation-delay: 4s;    
+    }
+    
+    @keyframes animate{
+      0% {
+        transform: translateY(0);
+          opacity: 1
+      }
+      70%{
+          opacity: .8;
+      }
+      100% {
+        transform: translateY(-800px) rotate(360deg);	
+          opacity: 0
+      }
+    }
+
+    /* HEADER */
+    header {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      padding: 30px;
+      font-size: 22px;
+      text-align: center;
+      margin: 0 auto;
+      color: rgb(198, 228, 254);
+      text-transform: uppercase;
+      text-shadow: 0px 0px 6px #666565;
+      animation: myAnim 2s ease-in 0s 1 normal forwards;
+    }
+    
+    @keyframes myAnim {
+      0% {
+        animation-timing-function: ease-in;
+        opacity: 1;
+        transform: translateY(-45px);
+      }
+    
+      24% {
+        opacity: 1;
+      }
+    
+      40% {
+        animation-timing-function: ease-in;
+        transform: translateY(-24px);
+      }
+    
+      65% {
+        animation-timing-function: ease-in;
+        transform: translateY(-12px);
+      }
+    
+      82% {
+        animation-timing-function: ease-in;
+        transform: translateY(-6px);
+      }
+    
+      93% {
+        animation-timing-function: ease-in;
+        transform: translateY(-4px);
+      }
+    
+      25%,55%,75%,87% {
+        animation-timing-function: ease-out;
+        transform: translateY(0px);
+      }
+    
+      100% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
