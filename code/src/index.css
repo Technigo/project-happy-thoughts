@@ -11,3 +11,67 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  max-height: fit-content;
+  width: 100vw;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.inputBox {
+  display: flex;
+  max-width: 500px;
+  width: 85vw;
+  height: 18vh;
+  flex-direction: column;
+  padding: 10px;
+  background-color: lightgray;
+  justify-content: space-between;
+  box-shadow: 5px 5px black;
+  margin: 10px 0px;
+  border-style: solid;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace
+}
+
+.inputBox p {
+  margin-bottom: 5px;
+  margin-top: 0px;
+  font-size: 14px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace
+}
+
+.inputfield {
+  height: 40%;
+}
+
+.sendButton {
+  border-radius: 50px;
+  border-style: hidden;
+  height: 25%;
+  width: 50%;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+    min-width: fit-content;
+}
+
+.sendButton:hover {
+  background-color: rgb(240, 145, 160);
+}
+
+.outputBox {
+  display: flex;
+  max-width: 500px;
+  width: 85vw;
+  height: 18vh;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-between;
+  box-shadow: 5px 5px black;
+  margin: 10px 0px;
+  border-style: solid;
+}
