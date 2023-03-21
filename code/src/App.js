@@ -1,56 +1,57 @@
 import React, { useState, useEffect } from 'react'
-import { baseURL } from './urls/urls'
-
-import { Form } from './components/Form'
-import { CardContainer } from './components/CardContainer'
+import TaskForm from './components/TaskForm'
+import TaskList from './components/TaskList'
+// import { baseURL } from './urls/urls'
 
 export const App = () => {
-  const [thoughtsList, setThoughtsList] = useState([])
-  const [thoughtsNew, setThoughtsNew] = useState('')
-  const [loader, setLoader] = useState(true)
-
+  const [taskList, setTaskList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [newTodo, setNewTodo] = useState('');
 
   useEffect(() => {
-    fetchThoughtsList()
-  }, [thoughtsList])
+    fetchTasks();
+  }, []);
 
-/*Get the URL for thoughts from user*/
-  const fetchThoughtsList = () => {
-    fetch(baseURL)
+  const fetchTasks = () => {
+    setLoading(true);
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json())
-      .then((thoughts) => setThoughtsList(thoughts))
-      .then(setLoader(false))
+      .then((data) => setTaskList(data))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   }
 
-  const HandleThoughtsNew = (event) => {
-    setThoughtsNew(event.target.value)
+  const handleNewTodoChange = (event) => {
+    setNewTodo(event.target.value)
   }
 
-  const HandleSubmitForm = (event) => {
-    event.preventDefault()
+  const onFormSubmit = (event) => {
+    event.preventDefault();
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: thoughtsNew })
+      body: JSON.stringify({
+        description: newTodo
+      })
     }
-
-    fetch(baseURL, options)
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
-      .then((recivedThought) => setThoughtsList([...thoughtsList, recivedThought]))
-    setThoughtsNew('')
+      .then(() => fetchTasks())
+      .finally(() => setNewTodo(''));
   }
-    })
 
-    return (
-    <div className="main">
-      {/* {loader === true && <div className="lds-heart"><div /></div>} */}
-      <Form />
-        {/* // thoughtsNew={thoughtsNew}
-        // OnThoughtsNew={HandleThoughtsNew}
-        // OnSubmitForm={HandleSubmitForm} /> */}
-      <CardContainer />
-    
+  return (
+    <div>
+      <TaskForm
+        newTodo={newTodo}
+        onNewTodoChange={handleNewTodoChange}
+        onFormSubmit={onFormSubmit} />
+      <TaskList
+        loading={loading}
+        taskList={taskList}
+        setTaskList={setTaskList} />
     </div>
-  )
+  );
+}
