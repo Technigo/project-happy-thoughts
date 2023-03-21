@@ -1,4 +1,5 @@
 import React from 'react';
+import '../animations.css';
 
 const Header = () => {
   return (

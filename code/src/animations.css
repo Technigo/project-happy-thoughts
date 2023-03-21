@@ -73,10 +73,10 @@
       color: rgb(198, 228, 254);
       text-transform: uppercase;
       text-shadow: 0px 0px 6px #666565;
-      animation: myAnim 2s ease-in 0s 1 normal forwards;
+      animation: bounce 2s ease-in 0s 1 normal forwards;
     }
     
-    @keyframes myAnim {
+    @keyframes bounce {
       0% {
         animation-timing-function: ease-in;
         opacity: 1;
