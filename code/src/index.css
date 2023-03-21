@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* General formatting */
+:root {
+  --general-padding: 25px;
+}
+
+
+/* Main container */
+
+.main-wrapper {
+  background-color: rgb(247, 210, 231);
+  margin: 20px auto;
+  padding: var(--general-padding);
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Header */
+
+header {
+  background-color: rgb(200, 206, 255);
+  margin: 0;
+  padding: 5px var(--general-padding);
+}
+
+/* Post New Message */
+
+.post-wrapper {
+  background-color: rgb(249, 255, 200);
+  margin: 0;
+  padding: 5px var(--general-padding);
+  min-height: 200px;
+}
+
+/* Message List container */
+
+.list-wrapper {
+  background-color: rgb(200, 251, 255);
+  margin: 0;
+  padding: 5px var(--general-padding);
+  min-height: 500px;
+}
+
+/* Footer */
+
+footer {
+  background-color: rgb(186, 240, 200);
+  margin: 0;
+  padding: 5px var(--general-padding);
+}
