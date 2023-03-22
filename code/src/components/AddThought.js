@@ -1,10 +1,12 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react'
 import ListThought from './ListThought';
 import CreateThought from './CreateThought';
 import Loading from './Loading';
 
 const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
-const LIKES = (thoughtId) => `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`
+const LIKES_URL = (id) => `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
 
 const AddThought = () => {
   const [posts, setPosts] = useState([]);
@@ -13,6 +15,11 @@ const AddThought = () => {
   const [name, setName] = useState('');
 
   /* Fetch data */
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   const fetchData = () => {
     fetch(API)
       .then((res) => res.json())
@@ -20,15 +27,9 @@ const AddThought = () => {
       .finally(() => setLoading.false)
   }
 
-  useEffect(() => {
-    fetchData()
-  }, [])
-
   /* Onclick event from create */
 
-  const handleSubmitMessages = (event) => {
-    event.preventDefault()
-
+  const handleSubmitMessages = () => {
     const options = {
       method: 'POST',
       headers: {
@@ -38,7 +39,7 @@ const AddThought = () => {
     };
     fetch(API, options)
       .then((res) => res.json())
-      .then((data) => {
+      .then(() => {
         fetchData();
         setMessage('');
         setName('');
@@ -46,15 +47,17 @@ const AddThought = () => {
   }
 
   /* Onclick event from the like button list */
-  const handleLikes = (thoughtId) => {
+  const handleLikes = (id) => {
     const options = {
-      method: 'POST'
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
     }
 
-    fetch(LIKES(thoughtId), options)
+    fetch(LIKES_URL(id), options)
       .then((res) => res.json())
-      .then((data) => {
-        fetchData();
+      .catch((error) => console.log(error))
+      .finally(() => {
+        fetchData('')
       })
   }
 
@@ -68,7 +71,7 @@ const AddThought = () => {
       <div>{loading && <Loading />}</div>
 
       {posts.map((post) => (
-        <ListThought key={post.id} post={post} handleLikes={handleLikes} />
+        <ListThought key={post._id} post={post} handleLikes={handleLikes} />
       ))}
     </div>
   )
