@@ -1,9 +1,25 @@
 .new-post-wrapper {
+    grid-area: 1 / 2 / 2 / 4;
     display: flex;
     flex-direction: column;
     align-content: center;
     border: solid #000000 1px;
-    padding: 10px 150px 10px 20px;
-    margin: 100px 400px;
-    box-shadow: 7px 6px 0px 0px rgba(0,0,0,1);
+    box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+    background-color: rgb(232, 232, 232);
+    padding: 10px;
+}
+
+/*Tablet media query*/
+@media (min-width: 667px) {
+    .new-post-wrapper {
+        grid-area: 1 / 2 / 2 / 7;
+    }
+}
+
+
+/*Desktop media query*/
+@media (min-width: 1025px) {
+    .new-post-wrapper {
+        grid-area: 1 / 2 / auto / 12;
+    }
 }

@@ -1,7 +1,10 @@
 import React from 'react';
+import './PostContent.css';
 
 export const PostContent = () => {
   return (
-    <h2 className="post-content">Post content</h2>
+    <div className="post-content">
+      <h2>Post content</h2>
+    </div>
   )
 }
