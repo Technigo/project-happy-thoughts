@@ -5,12 +5,12 @@ const NewPost = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const options = {
+    const Submit = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newPost })
     }
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', Submit)
       .then((response) => response.json())
       .then(() => {
         window.location.reload();
@@ -34,9 +34,9 @@ const NewPost = () => {
           type="submit"
           disabled={newPost.length < 5 || newPost.length > 140}>
           <span>
-            <span className="heart" role="img" aria-label="heart"> ❤️ </span>
+            <span role="img" aria-label="heart">❤️ </span>
           Send happy thought
-            <span className="heart" role="img" aria-label="heart"> ❤️ </span>
+            <span role="img" aria-label="heart"> ❤️</span>
           </span>
         </button>
 
