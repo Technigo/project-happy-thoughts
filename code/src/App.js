@@ -16,8 +16,6 @@ export const App = () => {
       .finally(() => { setLoading(false) });
   }
 
-  console.log(thoughtsList)
-
   useEffect(() => {
     fetchToughts();
   }, []);
@@ -42,18 +40,35 @@ export const App = () => {
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((response) => response.json())
       .then(() => fetchToughts())
+      .catch((error) => console.log(error))
       .finally(() => setNewThought(''))
   }
 
+  /* post data for like buttpn */
+  const handleLikeChange = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+      .then((response) => response.json())
+      .then(console.log('hurray'))
+      .catch((error) => console.error(error))
+      .finally(() => fetchToughts(''))
+  }
+
   return (
-    <div>
+    <div className="app">
       <SendThoughts
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChanges}
         onFormSubmit={onFormSubmit} />
       <ListThoughts
         loading={loading}
-        thoughtsList={thoughtsList} />
+        thoughtsList={thoughtsList}
+        handleLikeChange={handleLikeChange} />
     </div>
   );
 }

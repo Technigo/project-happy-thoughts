@@ -2,21 +2,10 @@
 import React from 'react';
 import moment from 'moment';
 
-export const ListThoughts = ({ loading, thoughtsList }) => {
+export const ListThoughts = ({ loading, thoughtsList, handleLikeChange }) => {
   if (loading) {
     return <h1>Loading in progress</h1>
   }
-
-  console.log({ thoughtsList })
-
-  // const onThoughtChange = (thought) => {
-  //   setThoughtsList((thoughtsList) => thoughtsList.map((singleTought) => {
-  //     if (singleTought._id === thought._id) {
-  //       return {...singleTought, isChecked: !singleTought.isChecked};
-  //     }
-  //     return singleTought;
-  //   }));
-  // }
 
   return (
     <section className="thought-list">
@@ -24,10 +13,15 @@ export const ListThoughts = ({ loading, thoughtsList }) => {
         return (
           <div className="single-thought">
             <p key={thought._id}>{thought.message}</p>
-            <button className="heart-wrapper" type="submit">❤️</button>
-            <p>
-              {moment(thought.createdAt).fromNow()}
-            </p>
+            <div className="thought-details">
+              <div className="likes-section">
+                <button key={thought._id} className="heart-wrapper" type="submit" onClick={() => handleLikeChange(thought._id)}>❤️</button>
+                <p>x{thought.hearts}</p>
+              </div>
+              <p>
+                {moment(thought.createdAt).fromNow()}
+              </p>
+            </div>
           </div>
         )
       })}
