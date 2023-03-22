@@ -33,16 +33,38 @@ form {
   align-self: center;
   gap: 10px;
   padding: 10px;
+  background-color: #f2f0f0;
+  box-shadow: 5px 5px black;
+}
+h1 {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+textarea {
+  border: 2px solid #d0cfcf;
+  height: 50px;
+  padding: 7px;
+}
+
+textarea:focus {
+  outline-color: black;
 }
 
 .post-button {
   width: 60%;
-  padding: 5px;
+  padding: 8px 10px;
   border-radius: 20px;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
 }
 
-h1 {
-  font-size: 16px;
+button {
+  background-color: #ffadad;
+}
+
+button:disabled {
+  background-color: #eaeaea;
 }
 
 .thought-list {
@@ -73,18 +95,43 @@ h1 {
 .thought-details p {
   color:grey;
   font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .likes-section {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 5px;
 }
 
-.heart-wrapper {
+.heart-wrapper-nolikes, .heart-wrapper {
   height: 40px;
   width: 40px;
-  background-color: lightgray;
   border-radius: 50%;
   border: none;
+  background-color: #ffadad;
+}
+
+.heart-wrapper-nolikes {
+  background-color: #eaeaea;
+}
+
+@media (min-width: 668px) {
+  form {
+    width: 60%;
+  }
+
+  .thought-list {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  form {
+    width: 50%;
+  }
+
+  .thought-list {
+    width: 50%;
+  }
 }
