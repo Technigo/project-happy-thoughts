@@ -37,7 +37,7 @@ const NewPost = () => {
           rows="4"
           value={newPost}
           onChange={(event) => setNewPost(event.target.value)} />
-        <p className="counter">{140 - newPost.length} / 140</p>
+        <p className={newPost.length > 140 ? 'counterTooMany' : 'counter'}>{140 - newPost.length} / 140</p>
         <button className="postBtn" type="submit">
           <span>
             <span role="img" aria-label="heart">❤️ </span>

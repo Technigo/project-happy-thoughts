@@ -74,11 +74,18 @@ main {
   width: 100%;
 }
 
-.counter {
+.counter, .counterTooMany {
   position: relative;
   float: right;
   font-size: 12px;
+}
+
+.counter {
   color: grey;
+}
+
+.counterTooMany {
+  color: red;
 }
 
 .postBtn {
