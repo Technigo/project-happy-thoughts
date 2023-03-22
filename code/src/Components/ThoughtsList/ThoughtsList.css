@@ -1,0 +1,75 @@
+.thoughts-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  height: 130px;
+  margin-top:20px;  
+  margin-bottom: 20px; 
+  padding:20px; 
+  font-size:16px;
+  box-shadow: 10px 5px black;
+  border: 2px solid;
+  background-color: white;
+  position: relative;
+  font-family: futura;
+
+}
+
+.like-count-time-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: grey;
+  width: 95%;
+  margin-bottom: 10px;
+  position: absolute;
+  justify-content: space-between;
+  bottom: 0;
+  margin-bottom: 17px;
+  font-family: futura;
+
+}
+
+.like-button {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(251, 171, 171);
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.unliked-button {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: lightgrey;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.counter-time-container {
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  padding-right: 15px;
+}
+
+.counter {
+  margin-right: 0%;
+  width: 30px;
+  font-size: 14px;
+}
+
+.time-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 215px;
+  font-size: 14px;
+}
