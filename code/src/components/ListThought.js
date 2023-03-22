@@ -23,4 +23,4 @@ const ListThought = ({ post, handleLikes }) => {
   )
 }
 
-export default ListThought
+export default ListThought;
