@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 
-const LikeBtn = ({ event, setNewLike }) => {
+const LikeBtn = ({ thought, setNewLike }) => {
   const [liked, setLiked] = useState(false);
 
   // the function that enables the likes-count to update in the App-component
@@ -11,8 +12,8 @@ const LikeBtn = ({ event, setNewLike }) => {
 
   // The function that registers the users like to the database, it also
   // triggers the state-hook that makes the button change color
-  const onButtonClick = (event2) => {
-    event2.preventDefault();
+  const onButtonClick = (like) => {
+    like.preventDefault();
 
     if (liked === false) {
       const options = {
@@ -23,7 +24,7 @@ const LikeBtn = ({ event, setNewLike }) => {
         body: ''
       }
 
-      fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${event._id}/like`, options)
+      fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, options)
         .then((data) => data.json())
         .catch((error) => console.error(error))
         .finally(() => {
@@ -42,11 +43,11 @@ const LikeBtn = ({ event, setNewLike }) => {
           backgroundColor: liked ? '#FFADAD' : '',
           color: liked ? 'black' : ''
         }}
-        value={event}
+        value={thought}
         onClick={onButtonClick}>
         <span>❤️</span>
       </button>
-      <p className="number-of-likes">x {event.hearts}</p>
+      <p className="number-of-likes">x {thought.hearts}</p>
     </div>
   )
 }

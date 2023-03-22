@@ -6,13 +6,13 @@ import LikeBtn from './LikeBtn';
 const MessageList = ({ loading, setLoading, messageList, setNewLike }) => {
   return (
     <section className="message-boxes">
-      {messageList.map((event) => (
-        <div key={event._id} className="message-box">
-          <p className="message">{event.message}</p>
+      {messageList.map((thought) => (
+        <div key={thought._id} className="message-box">
+          <p className="message">{thought.message}</p>
           <div className="likes-and-time">
             <LikeBtn
               setNewLike={setNewLike}
-              event={event}
+              thought={thought}
               loading={loading}
               setLoading={setLoading} />
           </div>

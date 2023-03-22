@@ -9,18 +9,17 @@ const NewThoughts = ({ count, newThoughts, onNewThoughtChange, onFormSubmit }) =
         <p className="new-thought">What´s making you happy right now?</p>
         <textarea
           className="text-area"
-          // Sets the height of the text-area
-          // // Sets the width of the text-area
-          // cols="30"
+          style={{
+            color: count <= 5 || count > 140 ? 'red' : ''
+          }}
           placeholder="Type your thoughts here..."
           value={newThoughts}
           onChange={onNewThoughtChange} />
         <p
           className="counter"
           // Makes the text of the character-counter red if
-          // it's less than 1 or more than 140 characters
           style={{
-            color: count <= 0 || count > 140 ? 'black' : ''
+            color: count <= 5 || count > 140 ? 'red' : ''
           }}>
           {count}/140
         </p>
