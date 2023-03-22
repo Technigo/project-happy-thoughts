@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react'
 import ListThought from './ListThought';
 import CreatePost from './CreatePost';
