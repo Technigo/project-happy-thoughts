@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
-import NewPost from './NewPost';
+import NewPost from './NewPost.js';
+import { formatRelative } from 'date-fns';
 
 const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 
