@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import FetchAPIData from 'components/FetchAPIData';
 
 export const App = () => {
+  const [happyThoughtsList, setHappyThoughtsList] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  );
+    <>
+      <h1>YO</h1>
+      <FetchAPIData
+        happyThoughtsList={happyThoughtsList}
+        setHappyThoughtsList={setHappyThoughtsList}
+        loading={loading}
+        setLoading={setLoading} />
+    </>
+  )
 }
