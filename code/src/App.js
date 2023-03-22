@@ -41,6 +41,21 @@ export const App = () => {
       .then(() => fetchThoughts())
       .then(() => setNewThought(''));
   }
+
+  const handleLikeChange = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+      .then((res) => res.json())
+      .then(console.log('bajskorv'))
+      .then((error) => console.error(error))
+      .finally(() => fetchThoughts(''));
+  }
+
   return (
     <div>
       <ThoughtForm
@@ -50,7 +65,8 @@ export const App = () => {
       <ThoughtList
         loading={loading}
         thoughtList={thoughtList}
-        setThoughtList={setThoughtList} />
+        handleLikeChange={handleLikeChange} />
     </div>
   );
 }
+

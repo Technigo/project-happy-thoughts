@@ -1,7 +1,8 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react'
 import moment from 'moment';
 
-export const ThoughtList = ({ loading, thoughtList }) => {
+export const ThoughtList = ({ loading, thoughtList, handleLikeChange }) => {
   if (loading) {
     return <h1> Loading in progress...</h1>
   }
@@ -11,13 +12,21 @@ export const ThoughtList = ({ loading, thoughtList }) => {
   //   return singleThought;
   //  }
   return (
-    <section>
-      {thoughtList.map((thought) => (
-        <div key={thought.id}>
-          <h4>{thought.message}</h4>
-          <p>{moment(thought.createdAt).fromNow()}</p>
-        </div>
-      ))}
+    <section className="thought-list">
+      {thoughtList.map((thought) => {
+        return (
+          <div className="single-thought">
+            <p key={thought._id}>{thought.message} </p>
+            <div className="thought-specs">
+              <div className="likes-section">
+                <button className="heart-container" type="submit" onClick={() => handleLikeChange(thought._id)}>🖤</button>
+                <p>x{thought.hearts}</p>
+              </div>
+              <p>{moment(thought.createdAt).fromNow()}</p>
+            </div>
+          </div>
+        )
+      })}
     </section>
   )
 }
