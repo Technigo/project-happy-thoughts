@@ -4,7 +4,6 @@ export const LikeButton = () => {
   return (
     <div>
       <button type="submit">Like</button>
-      <p>counter</p>
     </div>
 
   )

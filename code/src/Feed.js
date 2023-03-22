@@ -9,7 +9,6 @@ export const Feed = () => {
   const [newThought, setNewThought] = useState('')
 
   const fetchThoughts = () => {
-    setLoading(true);
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((response) => response.json())
       .then((data) => setThoughtsList(data))
@@ -18,6 +17,7 @@ export const Feed = () => {
   }
 
   useEffect(() => {
+    setLoading(true);
     fetchThoughts()
   }, []);
 
@@ -25,6 +25,7 @@ export const Feed = () => {
     event.preventDefault()
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newThought })
     })
       .then((response) => response.json())
@@ -33,6 +34,7 @@ export const Feed = () => {
       })
       .catch((error) => console.log(error))
   }
+  console.log('new thought', newThought)
 
   return (
     <div>
@@ -40,8 +42,8 @@ export const Feed = () => {
         onNewThoughtChange={(event) => {
           setNewThought(event.target.value)
         }}
-        handleFormSubmit={handleFormSubmit()} />
-      <h1>Somethingsomething title here</h1>
+        handleFormSubmit={handleFormSubmit} />
+
       {!loading && thoughtsList.map((thought) => {
         console.log('each thought', thought)
         return (
