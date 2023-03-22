@@ -1,7 +1,8 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
-import { MessageDisplay } from './components/MessageDisplay'
-import { PostMessage } from './components/PostMessage'
+import { MessageDisplay } from './components/MessageDisplay/MessageDisplay.js'
+import { PostMessage } from './components/PostMessage/PostMessage'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([])
@@ -53,14 +54,14 @@ export const App = () => {
   const LikeCounter = (LikeID) => {
     // options-object decides how changes in the API should look
     const options = {
-      method: 'PATCH',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
     }
 
-    // 2nd fetch-request
-    fetch(`https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts/${LikeID}/like`, options)
+    // 3rd fetch-request
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${LikeID}/like`, options)
       .then((result) => result.json())
       .then(() => fetchMessages())
       .catch((error) => console.error(error))
