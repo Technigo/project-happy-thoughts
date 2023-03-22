@@ -43,9 +43,9 @@ const NewPost = () => {
           <p className={newPost.length > 140 ? 'counterTooMany' : 'counter'}>{140 - newPost.length} / 140</p>
           <button className="postBtn" type="submit">
             <span>
-              <span role="img" aria-label="heart">❤️ </span>
+              <span className="heart" role="img" aria-label="heart">❤️ </span>
             Send happy thought
-              <span role="img" aria-label="heart"> ❤️</span>
+              <span className="heart" role="img" aria-label="heart"> ❤️</span>
             </span>
           </button>
         </form>

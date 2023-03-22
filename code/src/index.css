@@ -95,6 +95,8 @@ main {
   border: none;
   padding: 6px 8px;
   font-family: 'Nunito';
+  font-weight: 600;
+  color: white;
 }
 
 .postText {
@@ -102,10 +104,14 @@ main {
   font-size: 14px;
 }
 
+.heart {
+  font-size: 12px;
+}
+
 .likesBtn, .noLikesBtn {
   border: none;
   border-radius: 50%;
-  padding: 4px 6px;
+  padding: 5px 6px;
 }
 
 .likesBtn {

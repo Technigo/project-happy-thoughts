@@ -40,7 +40,7 @@ const Feed = () => {
           <div key={thought._id} className="feedWrapper">
             <p className="postText">{thought.message}</p>
             <button type="button" className={thought.hearts === 0 ? 'noLikesBtn' : 'likesBtn'} onClick={() => HandleLike(thought._id)}>
-              <span role="img" aria-label="Like this post">❤️</span>
+              <span className="heart" role="img" aria-label="Like this post">❤️</span>
             </button>
             <span className="sumOfLikes">x {thought.hearts}</span>
             <p className="dateOfPost"><ReactTimeAgo date={thought.createdAt} locale="en-US" timeStyle="round-minute" /></p>
