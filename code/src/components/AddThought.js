@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import ListThought from './ListThought';
 import CreatePost from './CreatePost';
 import Loading from './Loading';
+import '../index.css'
 
 const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 const LIKES_URL = (id) => `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
@@ -63,13 +64,12 @@ const AddThought = () => {
   }
 
   return (
-    <div>
+    <div className="main-container">
+      <div>{loading && <Loading />}</div>
       <CreatePost
         handleSubmitPosts={handleSubmitPosts}
         newPost={newPost}
         setNewPost={setNewPost} />
-      <div>{loading && <Loading />}</div>
-
       {posts.map((post) => (
         <ListThought key={post._id} post={post} handleLikes={handleLikes} />
       ))}
