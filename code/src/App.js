@@ -1,12 +1,27 @@
 import InputBox from 'components/InputBox';
 import ThoughtBox from 'components/ThoughtBox';
-import React from 'react';
+import React, { useState } from 'react';
 
 export const App = () => {
+  const [thoughts, setThoughts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const fetchThoughts = () => {
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+      .then((response) => response.json())
+      .then((data) => setThoughts(data))
+      .catch((error) => console.log(error))
+      .finally(() => { setLoading(false) })
+  }
   return (
     <div>
-      <InputBox />
-      <ThoughtBox />
+      <InputBox fetchThoughts={fetchThoughts} />
+      <ThoughtBox
+        thoughts={thoughts}
+        setThoughts={setThoughts}
+        loading={loading}
+        setLoading={setLoading}
+        fetchThoughts={fetchThoughts} />
     </div>
   );
 }
