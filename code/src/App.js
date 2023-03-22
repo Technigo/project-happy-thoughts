@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { HappyList } from './components/HappyList'
 import { HappyForm } from './components/HappyForm'
+import './index.css';
+import './reset.css';
 
 export const App = () => {
   const [loading, setLoading] = useState(false)
@@ -11,35 +13,37 @@ export const App = () => {
   useEffect(() => {
     setLoading(true);
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => setHappyList(data))
-      .catch((error) => console.erroe(error))
-      .finally(() => setLoading(false))
-  }, []);
+      .catch((error) => console.log(error))
+      .finally(() => { setLoading(false) })
+  }, [])
+
+  /* posting new post to API */
   const onAddNewThought = (event) => {
     setNewThought(event.target.value)
   }
-  const onFormSubmit = (event) => {
-    event.preventDefault();
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ description: newThought })
+      body: JSON.stringify({ thought: newThought })
     }
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
-      .then((res) => res.json())
-      .then(() => setHappyList)
+      .then((response) => response.json())
+      .then((data) => setHappyList(data))
       .finally(() => setNewThought(''));
   }
-
   return (
-    <div>
+    <div className="happy-container">
       <HappyForm
         newThought={newThought}
         onAddNewThought={onAddNewThought}
-        onFormSubmit={onFormSubmit} />
+        handleFormSubmit={handleFormSubmit} />
 
       <HappyList
         loading={loading}

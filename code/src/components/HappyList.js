@@ -3,16 +3,18 @@ import React from 'react'
 // npm install date-fns
 /* eslint-disable no-underscore-dangle */
 
-export const HappyList = (loading, happyList) => {
+export const HappyList = ({ loading, happyList }) => {
   if (loading) {
     return <h1 className="loading">Happy thoughts coming soon</h1>
   }
   return (
-    <section className="thought-list-container">
-      {happyList.map((thought) => {
-        return (<p key={thought._id}>{thought.message}</p>)
-      })}
-    </section>
+    <div>
+      <section className="thought-list-container">
+        {!loading && happyList.map((thoughts) => {
+          return (<p key={thoughts._id} className="thoughts-p">{thoughts.message}</p>)
+        })}
+      </section>
+    </div>
   )
 }
 

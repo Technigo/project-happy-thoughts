@@ -5,9 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.happyform{
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: rgb(236, 236, 236);
+  justify-items: center;
+}
+.newThought{
+  grid-column: 1/2;
+  justify-self: center;
+}
+.loveBtn{
+  grid-column: 1/2;
+  justify-self: center;
+}
+
+
+.thoughts-p{
+  border: red solid 2px;
+  padding: 10px;
 }

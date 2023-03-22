@@ -2,7 +2,7 @@ import React from 'react'
 
 export const HappyForm = ({ onFormSubmit, newThought, onAddNewThought }) => {
   return (
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit} className="happyform">
       <label htmlFor="newThought">
         <h1>What make&apos;s you happy?</h1>
         <textarea
