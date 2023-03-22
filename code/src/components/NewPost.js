@@ -31,16 +31,18 @@ const NewPost = () => {
     <>
       {confetti.showConfetti && <Confetti numberOfPieces={200} />}
       <div className="newPostWrapper">
-        <h3 className="newPostTitle">What is making you happy right now?</h3>
         <form onSubmit={HandleFormSubmit}>
-          <textarea
-            id="newPost"
-            type="text"
-            placeholder="Type something here.."
-            rows="4"
-            value={newPost}
-            onChange={(event) => setNewPost(event.target.value)} />
-          <p className={newPost.length > 140 ? 'counterTooMany' : 'counter'}>{140 - newPost.length} / 140</p>
+          <label htmlFor="newPost" className="newPostTitle">What is making you happy right now?
+            <textarea
+              id="newPost"
+              type="text"
+              placeholder="Type something here.."
+              rows="4"
+              cols="40"
+              value={newPost}
+              onChange={(event) => setNewPost(event.target.value)} />
+          </label>
+          <p className={newPost.length > 140 ? 'counterTooMany' : 'counter'}>{newPost.length} / 140</p>
           <button className="postBtn" type="submit">
             <span>
               <span className="heart" role="img" aria-label="heart">❤️ </span>
