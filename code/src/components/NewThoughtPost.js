@@ -9,7 +9,7 @@ export const NewThoughtPost = ({ newThought, onNewThoughtChange, onFormSubmit })
         className="submit-btn"
         type="submit"
         disabled={newThought.length < 5 || newThought.length > 140}>
-        ❤︎ Share Happy Thought ❤︎
+        <span className="heart-span">❤︎</span> Share Happy Thought <span className="heart-span">❤︎</span>
       </button>
     </form>
   )

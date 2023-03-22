@@ -14,10 +14,17 @@ export const ListOfThoughts = ({ thoughtsList, loading, handleLikeChange }) => {
         return (
           <div className="thought-box">
             <p key={thought._id}>{thought.message}</p>
-            <div className="likes-section">
-              <button className="heart-box" type="submit" onClick={() => handleLikeChange(thought._id)}>❤︎</button>
-              <p>x{thought.hearts}</p>
-              <p>
+            <div className="likes-and-time">
+              <div className="likes-section">
+                <button
+                  className="heart-btn"
+                  type="submit"
+                  onClick={() => handleLikeChange(thought._id)}>
+                  ❤︎
+                </button>
+                <p>x{thought.hearts}</p>
+              </div>
+              <p className="time-show">
                 {moment(thought.createdAt).fromNow()}
               </p>
             </div>

@@ -10,35 +10,89 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.app-container {
-  border: solid 3px red;
+.app-container,
+.thought-form,
+.thoughts-list,
+.thought-box {
   display: flex;
   flex-direction: column;
+}
+
+.app-container {
   gap: 20px;
+  padding: 20px;
+}
+
+.thought-form,
+.thought-box {
+  border: solid 1px black;
+  box-shadow: 5px 5px black;
   padding: 20px;
 }
 
 .thought-form {
-  border: solid 1px black;
-  display: flex;
-  flex-direction: column;
   gap: 10px;
+  background-color: lightgray;
+}
+
+h1 {
+  font-size: 20px;
 }
 
 .thoughts-list {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 }
 
 .thought-box {
-  border: solid 1px black;
-  padding: 20px;
+  gap: 20px;
+  font-weight: bold;
+}
+
+.likes-section,
+.likes-and-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .likes-section {
-  display: flex;
-  flex-direction: row;
+  gap: 5px;
+}
+
+.likes-and-time {
+  justify-content: space-between;
+  font-weight: normal;
+}
+
+.time-show {
+  font-weight: bolder;
+  color: lightgray;
+}
+
+/* BUTTONS */
+.submit-btn {
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: lightpink;
+}
+
+.heart-btn {
+  border: none;
+  color: red;
+  font-size: 20px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.heart-span {
+  color: red;
+  font-size: 20px;
 }
 
 button:hover {
