@@ -1,0 +1,9 @@
+.new-post-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: solid #000000 1px;
+    padding: 10px 150px 10px 20px;
+    margin: 100px 400px;
+    box-shadow: 7px 6px 0px 0px rgba(0,0,0,1);
+}
