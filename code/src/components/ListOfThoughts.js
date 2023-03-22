@@ -17,7 +17,7 @@ export const ListOfThoughts = ({ thoughtsList, loading, handleLikeChange }) => {
             <div className="likes-and-time">
               <div className="likes-section">
                 <button
-                  className="heart-btn"
+                  className={thought.hearts === 0 ? 'heart-btn' : 'liked-heart-btn'}
                   type="submit"
                   onClick={() => handleLikeChange(thought._id)}>
                   ❤︎
