@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import { LikeButton } from './LikeButton';
 
 export const ThoughtsOutput = (props) => {
   return (
@@ -7,8 +8,13 @@ export const ThoughtsOutput = (props) => {
       return (
         <div className="outputBox" key={thought._id}>
           <p>{thought.message}</p>
-          {/* Like-button here */}
-          {/* timestamp here */}
+          <div className="outputBottom">
+            <LikeButton id={thought._id} hearts={thought.hearts} />
+            <div className="date-display">
+              Posted:
+              {(thought.createdAt)}
+            </div>
+          </div>
         </div>
       )
     })
