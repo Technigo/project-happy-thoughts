@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react'
 import ListThought from './ListThought';
-import CreateThought from './CreateThought';
+import CreatePost from './CreatePost';
 import Loading from './Loading';
 
 const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
@@ -10,64 +10,64 @@ const LIKES_URL = (id) => `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/though
 
 const AddThought = () => {
   const [posts, setPosts] = useState([]);
-  const [message, setMessage] = useState('');
+  const [newPost, setNewPost] = useState('');
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState('');
 
-  /* Fetch data */
+  /* Fetch posts */
 
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  const fetchData = () => {
+  const fetchPosts = () => {
     fetch(API)
       .then((res) => res.json())
       .then((data) => setPosts(data))
-      .finally(() => setLoading.false)
+      .finally(() => setLoading(false))
   }
 
-  /* Onclick event from create */
+  useEffect(() => {
+    fetchPosts()
+  }, [])
 
-  const handleSubmitMessages = () => {
+  /* Onclick event from Create post */
+
+  const handleSubmitPosts = (event) => {
+    event.preventDefault()
+
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message, name })
+      body: JSON.stringify({ message: newPost })
     };
     fetch(API, options)
       .then((res) => res.json())
       .then(() => {
-        fetchData();
-        setMessage('');
-        setName('');
+        fetchPosts();
+        setNewPost('');
       })
   }
 
-  /* Onclick event from the like button list */
-  const handleLikes = (id) => {
+  /* Onclick event from the ListThought */
+
+  const handleLikes = (_id) => {
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     }
 
-    fetch(LIKES_URL(id), options)
+    fetch(LIKES_URL(_id), options)
       .then((res) => res.json())
       .catch((error) => console.log(error))
       .finally(() => {
-        fetchData('')
+        fetchPosts('')
       })
   }
 
   return (
     <div>
-      <CreateThought
-        handleSubmitMessages={handleSubmitMessages}
-        message={message}
-        setMessage={setMessage}
-        name={setName} />
+      <CreatePost
+        handleSubmitPosts={handleSubmitPosts}
+        newPost={newPost}
+        setNewPost={setNewPost} />
       <div>{loading && <Loading />}</div>
 
       {posts.map((post) => (

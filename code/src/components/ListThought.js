@@ -2,11 +2,10 @@
 import React from 'react';
 import moment from 'moment'
 
-const ListThought = ({ post, handleLikes, name }) => {
+const ListThought = ({ post, handleLikes }) => {
   return (
     <div>
       <div>
-        <p>{name}</p>
         <p>{post.message}</p>
       </div>
       <button
