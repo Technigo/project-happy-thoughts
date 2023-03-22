@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import confetti from 'https://esm.run/canvas-confetti@1';
+import Confetti from 'react-confetti';
 
 const NewPost = () => {
   const [newPost, setNewPost] = useState('');
+  const [confetti, setConfetti] = useState({ showConfetti: false })
 
   const HandleFormSubmit = (event) => {
     event.preventDefault();
@@ -16,38 +17,40 @@ const NewPost = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: newPost })
       };
-      confetti({ particleCount: 700, spread: 90 })
       fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', Submit)
         .then((response) => response.json())
         .then(() => {
-          window.location.reload();
+          setConfetti({ showConfetti: true })
           setNewPost('');
+          setTimeout(() => window.location.reload(), 3000)
         })
     }
   };
 
   return (
-    <div className="newPostWrapper">
-      <h3 className="newPostTitle">What is making you happy right now?</h3>
-      <form onSubmit={HandleFormSubmit}>
-        <textarea
-          id="newPost"
-          type="text"
-          placeholder="Type something here.."
-          rows="4"
-          value={newPost}
-          onChange={(event) => setNewPost(event.target.value)} />
-        <p className={newPost.length > 140 ? 'counterTooMany' : 'counter'}>{140 - newPost.length} / 140</p>
-        <button className="postBtn" type="submit">
-          <span>
-            <span role="img" aria-label="heart">❤️ </span>
-          Send happy thought
-            <span role="img" aria-label="heart"> ❤️</span>
-          </span>
-        </button>
-
-      </form>
-    </div>
+    <>
+      {confetti.showConfetti && <Confetti numberOfPieces={200} />}
+      <div className="newPostWrapper">
+        <h3 className="newPostTitle">What is making you happy right now?</h3>
+        <form onSubmit={HandleFormSubmit}>
+          <textarea
+            id="newPost"
+            type="text"
+            placeholder="Type something here.."
+            rows="4"
+            value={newPost}
+            onChange={(event) => setNewPost(event.target.value)} />
+          <p className={newPost.length > 140 ? 'counterTooMany' : 'counter'}>{140 - newPost.length} / 140</p>
+          <button className="postBtn" type="submit">
+            <span>
+              <span role="img" aria-label="heart">❤️ </span>
+            Send happy thought
+              <span role="img" aria-label="heart"> ❤️</span>
+            </span>
+          </button>
+        </form>
+      </div>
+    </>
   )
 };
 
