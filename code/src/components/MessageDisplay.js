@@ -2,7 +2,7 @@
 import React from 'react';
 import { formatDistance } from 'date-fns';
 
-export const MessageDisplay = ({ loading, messageList }) => {
+export const MessageDisplay = ({ loading, messageList, LikeCounter }) => {
   if (loading) {
     return (
       <div>
@@ -12,10 +12,12 @@ export const MessageDisplay = ({ loading, messageList }) => {
   }
   return (
     <div className="message-list-container">
-      {messageList.map((message) => (
+      {messageList.map((list) => (
         <div className="message-box">
-          <p key={message._id}>{message.message}</p>
-          <p>{formatDistance(new Date(message.createdAt), Date.now(), { addSuffix: true })}</p>
+          <p key={list._id}>{list.message}</p>
+          <p>{formatDistance(new Date(list.createdAt), Date.now(), { addSuffix: true })}</p>
+          <div className="like-button-box" />
+          <button onClick={() => LikeCounter(list._id)}>❤️</button>
         </div>
       ))}
     </div>
