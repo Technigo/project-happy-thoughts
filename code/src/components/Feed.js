@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
+import ReactTimeAgo from 'react-time-ago';
 import NewPost from './NewPost.js';
-import { formatRelative } from 'date-fns';
 
 const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 
@@ -43,7 +43,7 @@ const Feed = () => {
               <span role="img" aria-label="Like this post">❤️</span>
             </button>
             <span className="sumOfLikes">x {thought.hearts}</span>
-            <p className="dateOfPost">Monday 12:00</p>
+            <p className="dateOfPost"><ReactTimeAgo date={thought.createdAt} locale="en-US" timeStyle="round-minute" /></p>
           </div>)
       })}
       {loading && (<div className="lds-spinner"><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /></div>)}
