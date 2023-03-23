@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import '../index.css';
 import './ThoughtsList.css';
+import LikeButton from './LikeButton'
 
 export const ThoughtsList = () => {
   const [thoughtsList, setThoughtsList] = useState([]);
@@ -22,8 +23,8 @@ export const ThoughtsList = () => {
           <div className="single-thought-div">
             <p key={thought._id}>{thought.message}</p>
             <div className="thought-footer">
-              <div className="heart-button"><span className="heart-emoji">❤️</span><p>x {thought.hearts}</p></div>
-              <p>posted {thought.createdAt}</p>
+              <LikeButton thought={thought} />
+              <p className="thought-date" key={thought.createdAt}>posted {thought.createdAt}</p>
             </div>
           </div>)
       })}

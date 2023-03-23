@@ -1,12 +1,11 @@
 
 .send-thought-div {
-  display: flex;
-  flex-direction: column;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 textarea {
+  display: flex;
     font-family: Cutive Mono;
     font-size: 15px;
     width: 400px;
@@ -17,10 +16,15 @@ textarea {
     border: 1px solid black;
     background-color: rgb(255, 246, 246);
     box-shadow: 5px 5px 0px 0px black;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+  }
+
+  textarea:focus {
+    outline:none !important;
   }
 
   .send-thought-btn {
+    display: flex;
     font-family: Cutive Mono;
     background: rgb(255, 122, 122);
     border: 0px;
@@ -29,4 +33,5 @@ textarea {
     font-size: 15px;
     padding: 5px 15px 5px 15px;
     width: fit-content;
+    cursor: pointer;
   }

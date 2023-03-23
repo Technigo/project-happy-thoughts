@@ -14,45 +14,8 @@ code {
     monospace;
 }
 
-.header-div {
-  height: 50px;
-  padding: 30px 0px 70px 0px;
-  width: fit-content;
-  margin: auto;
-}
-
-.footer-div {
-  width: fit-content;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.footer-icons {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-icons i {
-  transition: transform 0.2s ease-in-out;
-}
-
-.footer-icons i:hover {
-color: white;
-transform: scale(1.5);
-}
-
-h1 {
-  color: white;
-  padding: 10px;
-  font-size: 32px;
-  letter-spacing: .15em;
-  font-family: "Press Start 2P";
-}
-
 .app-wrapper {
-  width: 500px;
+  width: 475px;
   display: flex;
   gap: 30px;
   flex-direction: column;
@@ -62,4 +25,51 @@ h1 {
   border-radius: 10px;
   padding-bottom: 50px;
   margin-bottom: 50px;
+}
+
+.music-btn {
+  background: none;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.music-btn:hover {
+  cursor: pointer;
+}
+
+.music-emoji {
+  font-size: 25px;
+}
+
+.bunny-icon {
+  height: 50px;
+  width: 50px;
+  margin-left: 80%;
+position: absolute;
+margin-top: -45px;
+transition: transform 0.2s ease-in-out;
+}
+
+.bunny-icon:hover {
+  transform: scale(1.7);
+}
+
+@media (min-width: 1024px) {
+  .bunny-icon {
+    margin-left: 60%;
+  position: absolute;
+  }
+
+  .app-wrapper {
+    width: 500px;
+  }
+
+  .music-btn {
+    top: 20px;
+    right: 20px;
+  }
 }

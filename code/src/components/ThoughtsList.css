@@ -23,7 +23,7 @@
 }
 
 .heart-emoji:hover {
-    background-color: rgb(255, 95, 95);
+    background-color: rgb(255, 234, 234);
     cursor: pointer;
 }
 
@@ -37,4 +37,12 @@
     align-items: center;
     gap: 10px;
     height: 35px;
+}
+
+.heart-button button {
+    border: none;
+}
+
+.thought-date {
+    font-size: 12px;
 }
