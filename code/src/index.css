@@ -90,8 +90,7 @@ code {
 }
 .giveLove{
   display: flex;
-  flex-direction: row;
-  justify-content: end;
+justify-content: flex-end;
   width: 335px;
 }
 .likes {
@@ -102,7 +101,7 @@ code {
   opacity: .7;
     position: relative;
     display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding-bottom: 10px;
 }
 .like-btn,
