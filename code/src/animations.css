@@ -115,8 +115,7 @@
 
     /* LOADING */
     .lds-spinner {
-      display: inline-block;
-      position: relative;
+      margin: 40px auto;
       width: 100px;
       height: 100px;
     }
