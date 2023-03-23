@@ -11,6 +11,7 @@ export const SendThoughtForm = (props) => {
           onChange={props.onNewThoughtChange}
           placeholder="Type your happy thought here..."
           maxLength="140" />
+        <div className="characterCounter">{props.characterCounter} characters left</div>
         <button type="submit" onClick={() => { textInput.value = '' }}>Send Happy Thought</button>
       </form>
     </div>

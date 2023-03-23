@@ -39,6 +39,7 @@ export const Feed = () => {
         onNewThoughtChange={(event) => {
           setNewThought(event.target.value)
         }}
+        characterCounter={140 - newThought.length}
         handleFormSubmit={handleFormSubmit} />
 
       {!loading && thoughtsList.map((thought) => {
