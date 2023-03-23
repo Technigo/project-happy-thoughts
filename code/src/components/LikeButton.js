@@ -21,6 +21,7 @@ export const LikeButton = (props) => {
   return (
     <div>
       <button
+        aria-label="Like-button"
         type="button"
         className={`likeButton${likeButtonToggle}`}
         disabled={like}

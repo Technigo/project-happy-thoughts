@@ -11,7 +11,7 @@ export const ThoughtsInput = (props) => {
   return (
     <form onSubmit={onSubmit}>
       <div className="inputBox">
-        <p>&apos;Whats making you happy right now?</p>
+        <p>What&apos;s making you happy right now?</p>
         <textarea
           className="inputfield"
           value={message}
