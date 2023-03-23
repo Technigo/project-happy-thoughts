@@ -1,13 +1,9 @@
 # Happy Thoughts
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week's assignment was about practising our React skills by fetching and posting data to an API, building a Twitter-like app. We had a design spec to follow and the app should list the most recent posts/thoughts at the top of and older thoughts at the bottom. It should contain a form to post new thoughts, a heart button to send likes and number of likes should be displayed.  
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by coding an example project in order to get a better grasp of how to structure the app. We were a couple of students in our group who hung out in our jitsi room while working on our respective projects, helping each other out if anyone got stuck. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://jovial-hamster-0bbfb9.netlify.app/
