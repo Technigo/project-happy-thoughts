@@ -1,7 +1,10 @@
 import React from 'react'
 import { formatDistance } from 'date-fns'
 
-const ThoughtItem = ({ thought }) => {
+const ThoughtItem = ({ loading, thought }) => {
+  if (loading) {
+    return <h1>Loading in progress...</h1>
+  }
   return (
     <div className="card">
       <p className="thought-text">{thought.message}</p>

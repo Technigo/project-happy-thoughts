@@ -7,12 +7,15 @@ const FETCH_API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
+  const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('')
 
   const fetchThoughts = () => {
+    setLoading(true)
     fetch(FETCH_API)
       .then((res) => res.json())
       .then((data) => setThoughts(data))
+      .finally(() => setLoading(false));
   }
 
   useEffect(() => {
@@ -59,6 +62,7 @@ export const App = () => {
 
       {thoughts.map((thought) => (
         <ThoughtItem
+          loading={loading}
           key={thought._id}
           thought={thought}
           onLikesIncrease={handleLikesIncrease} />
