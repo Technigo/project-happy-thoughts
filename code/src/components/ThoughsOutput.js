@@ -12,7 +12,6 @@ export const ThoughtsOutput = (props) => {
           <div className="outputBottom">
             <LikeButton id={thought._id} hearts={thought.hearts} />
             <div className="date-display">
-              Posted:
               {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
             </div>
           </div>
