@@ -15,7 +15,7 @@ export const App = () => {
       .then((response) => response.json)
       .then((data) => setNewThoughts(data))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false))
+      .finally(() => { setLoading(false); setNewThoughts('') })
   }
 
   useEffect(() => {
@@ -53,19 +53,22 @@ export const App = () => {
   }
 
   return (
-    <div className="feed">
-      <Header />
-      <Thoughtlist
-        handleFormSubmit={handleFormSubmit}
-        newThoughts={newThoughts}
-        thoughts={setThoughts} />
+    <div className="outerWrapper">
+      <div className="innerWrapper">
+        <Header />
+        <Thoughtlist
+          handleFormSubmit={handleFormSubmit}
+          newThoughts={newThoughts}
+          thoughts={setThoughts} />
 
-      {thoughts.map((thought) => (
-        <NewThoughts
-          key={thought._id}
-          thought={thought}
-          onLikeIncrease={handleLikeIncrease} />
-      ))}
+        {thoughts.map((thought) => (
+          <NewThoughts
+            key={thought._id}
+            thought={thought}
+            loading={loading}
+            onLikeIncrease={handleLikeIncrease} />
+        ))}
+      </div>
     </div>
   )
 }
