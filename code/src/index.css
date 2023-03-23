@@ -203,10 +203,17 @@ footer {
 .contactMe {
   margin: 0 0 0 20px;
   border-radius: 15px;
-  border: none;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
   padding: 10px;
   font-size: 12px;
   font-weight: 600;
+}
+
+.contactMe:hover {
+  background: white;
+  color: black;
 }
 
 /* RESPONSIVE DEISGN */
