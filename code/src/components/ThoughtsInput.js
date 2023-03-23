@@ -4,7 +4,6 @@ import { SendButton } from 'components/SendButton';
 
 export const ThoughtsInput = (props) => {
   const [message, setMessage] = useState('')
-
   const onSubmit = (e) => {
     e.preventDefault()
     props.submitHandler(message)
@@ -17,14 +16,17 @@ export const ThoughtsInput = (props) => {
           className="inputfield"
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          placeholder="React is making me happy!"
-          minLength="5"
-          maxLength="140" />
+          placeholder="React is making me happy!" />
         <div className="inputbottom">
-          <SendButton />
-          <div className="lengthdisplay">{0 + message.length}/140</div>
-        </div>
+          <SendButton message={message} />
+          <div className="lengthdisplay">{message.length < 5 || message.length > 140 ? (
+            <p className="redtext">{message.length}/140</p>
+          ) : (
+            <p className="normaltext">{message.length}/140</p>
+          )}
+          </div>
 
+        </div>
       </div>
     </form>
   )

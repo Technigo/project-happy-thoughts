@@ -7,7 +7,7 @@ export const App = () => {
   const [thoughtList, setThoughtList] = useState([])
   const [loading, setLoading] = useState(false)
   const submitHandler = (message) => {
-    if (message.length <= 5 && message.length >= 140) {
+    if (message.length >= 5 || message.length <= 140) {
       fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
         method: 'POST',
         body: JSON.stringify({ message }),

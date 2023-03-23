@@ -46,10 +46,11 @@ code {
   font-weight: 900;
 }
 
-.outputBox p {
+.thoughtOutputText {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   font-weight: 900;
+  line-break: anywhere;
 }
 
 .inputfield {
@@ -107,4 +108,12 @@ code {
 
 .date-display {
   color: rgb(211, 211, 211);
+}
+
+.redtext {
+  color: red;
+}
+
+.normaltext {
+  color: rgb(0, 0, 0);
 }

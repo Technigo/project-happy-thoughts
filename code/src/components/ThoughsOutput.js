@@ -8,7 +8,7 @@ export const ThoughtsOutput = (props) => {
     props.map((thought) => {
       return (
         <div className="outputBox" key={thought._id}>
-          <p>{thought.message}</p>
+          <p className="thoughtOutputText">{thought.message}</p>
           <div className="outputBottom">
             <LikeButton id={thought._id} hearts={thought.hearts} />
             <div className="date-display">

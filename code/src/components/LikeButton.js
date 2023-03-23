@@ -4,7 +4,7 @@ export const LikeButton = (props) => {
   const [like, setLike] = useState(false);
   const [hearts, setHearts] = useState(props.hearts)
   const likeButtonToggle = like ? ' on ' : '';
-  /* will post the like, keep count of likes and can be deselected */
+  /* will post the like, keep count of likes */
   const postLike = () => {
     return fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${props.id}/like`, {
       method: 'POST'
