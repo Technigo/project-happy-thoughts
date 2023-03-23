@@ -64,6 +64,7 @@ export const App = () => {
   return (
     <div className="content-container">
       <NewThoughts
+        className="NewThoughts"
         newThoughts={newThoughts}
         loading={loading}
         onNewThoughtChange={handleNewThought}

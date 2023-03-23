@@ -2,7 +2,9 @@
 .thought-container {
     display: flex;
     justify-content: center;
-    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
 .new-thought-box {
@@ -10,9 +12,10 @@
     flex-direction: column;
     background-color: #f2f0f0;
     border: solid 1px black;
-    padding: 5%;
+    padding: 20px;
     box-shadow: black 10px 10px;
     margin: 3%;
+    width: 600px;
   }
 
   .new-thought {
