@@ -6,14 +6,15 @@ export const Submit = () => {
   const submitThought = (event) => {
     event.preventDefault();
     console.log(inputText);
-    // Replace console.log with api-post
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
       method: 'POST',
-      body: JSON.stringify(inputText)
+      body: JSON.stringify({ message: `${inputText}` }),
+      headers: { 'Content-Type': 'application/json' }
     })
       .then((response) => response.json())
       .then((newThought) => {
-        console.log(newThought)
+        console.log(newThought);
+        // setResponse(newThought); Needs to be passed somewhere!
       })
     setInputText('');
   };
