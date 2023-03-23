@@ -2,75 +2,74 @@
 import React, { useState, useEffect } from 'react'
 import Header from 'components/Header'
 import NewThoughts from 'components/NewThoughts'
-import Thoughtlist from 'components/Thoughtlist'
+import ThoughtList from 'components/Thoughtlist'
 
 export const App = () => {
   const [newThoughts, setNewThoughts] = useState('')
-  const [thoughts, setThoughts] = useState([])
+  const [thoughtList, setThoughtList] = useState([])
   const [loading, setLoading] = useState(false)
 
-  const fetchThoughts = () => {
+  const handleNewThoughts = (event) => {
+    setNewThoughts(event.target.value);
+  }
+
+  const fetchData = () => {
     setLoading(true)
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
-      .then((res) => res.json)
-      .then((data) => setNewThoughts(data))
+      .then((res) => res.json())
+      .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
-      .finally(() => { setLoading(false); setNewThoughts('') })
+      .finally(() => { setLoading(false); setThoughtList('') })
   }
 
   useEffect(() => {
-    fetchThoughts()
+    fetchData()
   }, [])
 
-  const handleNewThought = (event) => {
-    event.preventDefault()
-  }
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+    const options = {
       method: 'POST',
       headers: {
         'Content-type': 'aplication/json'
       },
       body: JSON.stringify({ message: newThoughts })
-    })
+    }
+
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
-      .then(() => {
-        fetchThoughts()
-        setNewThoughts('')
-      })
+      .then(() => fetchData())
+      .finally(() => setNewThoughts(''))
   }
 
-  const handleLikeIncrease = (thoughtsId) => {
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtsId}/like`, {
-      method: 'POST',
+  const handleLikeIncrease = (thoughtId) => {
+    const options = { method: 'POST',
       headers: {
         'Content-type': 'aplication/json'
-      }
-    })
+      } }
+
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, options)
       .then((res) => res.json())
-      .then(() => {
-        fetchThoughts()
-      })
+      .catch((error) => console.error(error))
+      .finally(() => fetchData())
   }
 
   return (
-    <div className="outer-wrapper">
-      <div className="inner-wrapper">
-        <Header />
-        <Thoughtlist
-          handleFormSubmit={handleFormSubmit}
-          newThoughts={newThoughts}
-          handleNewThought={handleNewThought} />
+    <div>
 
-        {thoughts.map((thought) => <NewThoughts
-          thoughts={thoughts}
-          key={thought._id}
-          setThoughts={setThoughts}
-          loading={loading}
-          onLikeIncrease={handleLikeIncrease} />)}
-      </div>
+      <Header />
+      <NewThoughts
+        handleFormSubmit={handleFormSubmit}
+        handleNewThoughts={handleNewThoughts}
+        newThoughts={newThoughts} />
+
+      <ThoughtList
+        thoughtList={thoughtList}
+        setThoughtList={setThoughtList}
+        loading={loading}
+        onLikeIncrease={handleLikeIncrease} />
     </div>
+
   )
 }

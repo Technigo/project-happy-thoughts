@@ -1,22 +1,33 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-underscore-dangle */
 import React from 'react'
-import moment from 'moment'
+import { formatDistance } from 'date-fns';
 
-const Thoughtlist = ({ thoughts, onLikesIncrease }) => {
+const Thoughtlist = ({ loading, thoughtList, onLikesIncrease }) => {
+  // if (!Array.isArray(thoughtList)) {
+  //   return null
+  // }
+
+  if (loading) {
+    return <div className="Loading">Loading...<span /></div>
+  }
+
   return (
-    <div className="thought-list">
-      <p className="thought-message">{thoughts.message}</p>
-
-      <div className="likes-date-wrapper">
-        <div className="likes-wrapper">
-          <button type="button" className="like-btn" onClick={() => onLikesIncrease(thoughts._id)} style={{ background: thoughts.hearts >= 1 ? '#f65a94' : '#eaeaea' }}>
-            <span>❤️️</span>
-          </button>
-          <p className="like-counter"> x {thoughts.hearts}</p>
+    <section>
+      {thoughtList.map((list) => (
+        <div className="thought-list-box" key={list._id}>
+          <p className="thought-message">{list.message}</p>
+          <div className="likes">
+            <button className={(list.hearts === 0 ? 'like-btn' : 'no-like-btn')} onClick={() => onLikesIncrease(list._id)}>
+              <span>❤️️</span>
+            </button>
+            <p className="like-counter"> x {list.hearts}</p>
+            <p className="date"> {formatDistance(new Date(list.createdAt), Date.now(), { addSuffix: true })}
+            </p>
+          </div>
         </div>
-        <p className="date">Posted: {moment(thoughts.createdAt).fromNow()}</p>
-      </div>
-    </div>
+      ))}
+    </section>
   )
 }
 export default Thoughtlist
