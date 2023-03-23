@@ -17,7 +17,7 @@ export const ThoughtList = ({ loading, thoughts, onLikesIncrease }) => {
         <div className="Thoughts" key={list._id}>
           <p className="thought-text">{list.message}</p>
           <div className="likes">
-            <button type="button" className={(list.hearts === 0 ? 'like-btn' : '')} onClick={() => onLikesIncrease(list._id)}>❤️</button>
+            <button type="button" className={(list.hearts === 0 ? 'like-btn' : 'no-like-btn')} onClick={() => onLikesIncrease(list._id)}>:heart:</button>
             <p className="counter">x {list.hearts}</p>
             <p className="date">
               {formatDistance(new Date(list.createdAt), Date.now(), { addSuffix: true })}

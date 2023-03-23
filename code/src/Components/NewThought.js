@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 export const NewThought = ({ newMessage, handleNewThoughtsChange, onFormSubmit }) => {
   const [remainingChars, setRemainingChars] = useState(160 - newMessage.length);
 
+  /* This state variable to hold the remaining characters
+  count, and then update it every time the user types in the input field. */
   const handleInputChange = (event) => {
     const input = event.target.value;
     const remaining = 160 - input.length;
@@ -22,7 +24,7 @@ export const NewThought = ({ newMessage, handleNewThoughtsChange, onFormSubmit }
       <div className="main">
         <div className="char-count">{remainingChars} characters remaining</div>
         <button className="submit-btn" type="submit" disabled={newMessage.length < 1 || newMessage.length > 160}>
-          ❤️Send a Happy Thought❤️
+          :heart: Send a Happy Thought :heart:
         </button>
       </div>
     </form>
