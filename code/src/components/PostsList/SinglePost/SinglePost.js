@@ -7,7 +7,7 @@ export const SinglePost = ({ thought }) => {
   return (
     <section className="single-post-wrapper">
       <PostContent message={thought.message} />
-      <PostFooter likes={thought.hearts} />
+      <PostFooter likes={thought.hearts} time={thought.createdAt} />
     </section>
   )
 }
