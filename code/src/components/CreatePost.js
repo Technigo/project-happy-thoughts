@@ -9,14 +9,16 @@ const CreatePost = ({ handleSubmitPosts, newPost, setNewPost, id }) => {
           <textarea
             type="text"
             id="textarea"
+            className={newPost.length > 140 ? 'long-textarea' : 'textarea'}
             value={newPost}
             onChange={(e) => setNewPost(e.target.value)} />
         </div>
+        <p className="character-counter">Characters: {newPost.length} / 140</p>
         <div>
           <button
             type="submit"
             className="new-post-button"
-            disabled={newPost.length < 6 || newPost.length > 140}>
+            disabled={newPost.length < 5 || newPost.length > 140}>
            ❤️ Send happy thought ❤️
           </button>
         </div>
