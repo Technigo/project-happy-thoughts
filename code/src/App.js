@@ -58,6 +58,7 @@ export const App = () => {
 
   return (
     <div className="App">
+      <div className="title">Spread some happy vibes!</div>
       <ThoughtForm
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChange}
