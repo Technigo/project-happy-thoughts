@@ -4,3 +4,7 @@
     border-radius: 50%;
     border: none;
 }
+
+.like-btn:hover {
+    cursor: pointer;
+}

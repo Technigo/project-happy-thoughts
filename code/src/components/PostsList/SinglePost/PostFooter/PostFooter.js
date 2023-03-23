@@ -1,5 +1,5 @@
 import { LikeBtn } from 'components/Buttons/LikeBtn/LikeBtn';
-import React from 'react';
+import React, { useState } from 'react';
 import './PostFooter.css';
 import { formatDistanceToNow, parseISO } from 'date-fns';
 
@@ -13,18 +13,25 @@ import { formatDistanceToNow, parseISO } from 'date-fns';
 // if conditional (has like)
 // }
 
-export const PostFooter = ({ likes, time }) => {
-  const dateObject = parseISO(time);
+export const PostFooter = ({ thought }) => {
+  const [currentThought, setCurrentThought] = useState(thought);
+
+  const dateObject = parseISO(thought.createdAt);
   const timeAgo = formatDistanceToNow(dateObject, { addSuffix: true })
+
+  const onHeartCountIncrease = () => {
+    setCurrentThought({ ...currentThought, hearts: currentThought.hearts + 1 });
+  }
+
   return (
-    <footer className="post-footer">
+    <section className="post-footer">
       <div className="likes">
-        <LikeBtn />
-        <p>x {likes}</p>
+        <LikeBtn thought={currentThought} onHeartCountIncrease={onHeartCountIncrease} />
+        <p>x {currentThought.hearts}</p>
       </div>
       <div className="time-ago">
         <p>{timeAgo}</p>
       </div>
-    </footer>
+    </section>
   )
 }

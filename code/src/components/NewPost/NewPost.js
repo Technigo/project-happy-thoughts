@@ -44,12 +44,12 @@ export const NewPost = ({ newPost, fetchThoughts }) => {
 
       <form onSubmit={handleFormSubmit}>
         <textarea
+          className="textarea"
           name=""
           value={newThought}
           onChange={(event) => setNewThought(event.target.value)}
-          cols="30"
-          rows="2" />
-        <SendBtn />
+          rows="3" />
+        <SendBtn message={newThought} />
       </form>
     </section>
   )

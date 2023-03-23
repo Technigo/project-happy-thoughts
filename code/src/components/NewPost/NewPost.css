@@ -9,6 +9,10 @@
     padding: 10px;
 }
 
+.textarea {
+    width: 80%;
+}
+
 /*Tablet media query*/
 @media (min-width: 667px) {
     .new-post-wrapper {

@@ -6,3 +6,7 @@
     border-radius: 20px;
     width: 180px;
 }
+
+.send-btn:hover {
+    cursor: pointer;
+}
