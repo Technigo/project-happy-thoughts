@@ -17,13 +17,14 @@ code {
 .App {
 display: flex; 
 flex-direction: column;
-gap: 20px; 
+gap: 30px; 
+margin: 30px; 
 }
 
 .submit-form {
   background-color: rgb(249, 243, 243); 
   border: 1px solid black; 
-  width: 50%; 
+  width: 40%; 
   box-shadow: 10px 10px black;
   padding: 10px; 
   gap: 20px; 
@@ -45,7 +46,7 @@ gap: 20px;
 .thought-list {
   display: flex; 
   flex-direction: column; 
-  gap: 20px; 
+  gap: 30px; 
   align-items: center; 
 }
 
@@ -53,7 +54,7 @@ gap: 20px;
   display: flex; 
   flex-direction: column; 
   border: 1px solid black; 
-  width: 50%; 
+  width: 40%; 
   padding: 10px; 
   justify-content: center;
   box-shadow: 10px 10px black;
@@ -62,10 +63,12 @@ gap: 20px;
 
 .thought-text {
   font-family: 'Courier New', Courier, monospace;
-  font-weight: 700; 
+  font-weight: 600; 
+  font-size: 20px; 
 }
 
 .submit-button {
+  font-family:'Lucida Sans', sans-serif; 
   display: flex; 
   flex-direction: row;
   background-color: rgb(251, 159, 175); 
@@ -74,9 +77,10 @@ gap: 20px;
   height: 40px; 
   border: none; 
   align-items: center; 
-  gap: 5px; 
+  gap: 10px; 
   padding: 10px 20px; 
   font-size:16px; 
+  margin: 10px 0px; 
 }
 
 .thought-specs {
