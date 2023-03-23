@@ -11,7 +11,7 @@ const LIKES_URL = (id) => `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/though
 const AddThought = () => {
   const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   /* Fetch posts */
 

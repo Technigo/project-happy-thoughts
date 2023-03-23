@@ -68,6 +68,10 @@ p {
   padding: 0.8rem;
 }
 
+.post-message-wrapper {
+  overflow-wrap: break-word;
+}
+
 .post-bottom {
   display: flex;
   flex-direction: row;
