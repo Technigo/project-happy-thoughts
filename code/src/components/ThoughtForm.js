@@ -10,7 +10,7 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
         value={newThought}
         onChange={(event) => setNewThought(event.target.value)} />
       <div className="form-container">
-        <button className="submit-button" type="submit">Click</button>
+        <button className="submit-button" type="submit">❤️ Send Happy Thought ❤️</button>
         <span role="img" aria-label="heart">❤️</span>
       </div>
     </form>

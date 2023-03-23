@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import ThoughtForm from 'components/ThoughtForm'
 import ThoughtItem from 'components/ThoughtItem'
+import Spinner from 'components/Spinner'
 
 const FETCH_API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 
@@ -51,6 +52,9 @@ export const App = () => {
       .then(() => {
         fetchThoughts()
       })
+  }
+  if (loading) {
+    return <Spinner />
   }
 
   return (
