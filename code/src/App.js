@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import Header from 'components/Header'
 import NewThoughts from 'components/NewThoughts'
-import Thoughtlist from 'components/Thoughtlist';
+import Thoughtlist from 'components/Thoughtlist'
 
 export const App = () => {
   const [newThoughts, setNewThoughts] = useState('')
@@ -12,7 +12,7 @@ export const App = () => {
   const fetchData = () => {
     setLoading(true)
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
-      .then((response) => response.json)
+      .then((res) => res.json)
       .then((data) => setNewThoughts(data))
       .catch((error) => console.error(error))
       .finally(() => { setLoading(false); setNewThoughts('') })
@@ -32,7 +32,7 @@ export const App = () => {
       },
       body: JSON.stringify({ message: newThoughts })
     })
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then(() => {
         fetchData()
         setNewThoughts('')
@@ -46,15 +46,15 @@ export const App = () => {
         'Content-type': 'aplication/json'
       }
     })
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then(() => {
         fetchData()
       })
   }
 
   return (
-    <div className="outerWrapper">
-      <div className="innerWrapper">
+    <div className="outer-wrapper">
+      <div className="inner-wrapper">
         <Header />
         <Thoughtlist
           handleFormSubmit={handleFormSubmit}

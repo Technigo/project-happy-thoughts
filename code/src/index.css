@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -56,33 +60,11 @@ h1 {
   box-sizing: border-box;
   }
 
-  .newThought {
-    padding-left: 10px;
-    font-weight: 600;
+  .characters {
+    align-self: flex-end;
+  font-size: 12px;
+  color: #818080;
   }
-  
-  p {
-    color:#1E1E1E;
-  }
-
-  .message-container, .thought-list{
-    margin: 10px;
-    padding: 10px;
-    width: 340px;
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: 5x 5px 0px 1px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 5px 5px 0px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 5px 5px 0px 1px rgba(0,0,0,0.75);
-   }
-  
-   .thought-list{
-    font-family: 'Roboto Mono', monospace;
-    background-color: rgb(255, 255, 255);
-   }
-  
-   .message-container {
-    background-color: rgb(255, 255, 255);
-   }
 
   .submit-btn {
     background-color:  #f9d4d4;
@@ -99,66 +81,97 @@ h1 {
   }
 
   .thought-list {
-  box-sizing: border-box;
-  background-color: #fff;
-  border: 1px solid #000;
-  margin: 20px 0;
-  padding: 15px;
-  box-shadow: 5px 5px;
-  overflow-wrap: break-word;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px 0;
   }
  
-  .thought-message {
-    margin: 0;
-    padding: 10px 0;
-    min-height: 40px;
+  .thought-list-box {
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    word-wrap: break-word;
+    box-shadow: 7px 7px 0px 1px #333;
+    border: 1px solid #333;
   }
-  .likes {
-      width: 80%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin: 0 auto 20px;
-      flex-wrap: wrap;
-      /* gap: 5px; */
-    }
-    
-    .like-btn {
-        border: none;
-        border-radius: 50%;
-        cursor: grab;
-        width: 40px;
-        height: 40px;
-      }
-      
-      .like-btn:hover {
-        background-color:  #fab8b8;
-      }
 
-      .like-counter {
-        font-size: 10px;
-        font-weight: 400;
-      }
+  .thought-message {
+   margin: 30px auto;
+   max-width: 90%;
+  } 
 
-      .date {
-        font-size: 12px;
-        color: #818080;
-        text-align: right;
-      }
-    
+  .likes-date-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto 20px;
+    flex-wrap: wrap;
+  }
+  
+  .likes-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  
+  .heart {
+    border: none;
+    border-radius: 50%;
+    cursor: grab;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .heart:hover {
+    background-color:  #fab8b8;
+  }
+  
+  .like-counter {
+    font-size: 10px;
+    font-weight: 400;
+  }
+  
+  .date {
+    font-size: 12px;
+    color: #818080;
+  }
+
       /**** Tablet ****/
 @media (min-width: 668px) {
  
-  .feed {
+  .message-container {
+    width: 75%;
+  }
+
+  .submit-btn {
     width: 50%;
+  }
+
+  .likes-wrapper {
+    width: 20%;
   }
 
 }
 
 /**** Deskstop *****/
-@media (min-width: 1025px) {
-  .feed {
-    width: 50%;
-  }
+  @media (min-width: 1025px) {
 
+    .message-container {
+      width: 50%;
+    }
+  
+    .submit-btn {
+      width: 50%;
+    }
+  
+    .likes-wrapper {
+      width: 20%;
+    }
 }
