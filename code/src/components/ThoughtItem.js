@@ -2,9 +2,6 @@ import React from 'react'
 import { formatDistance } from 'date-fns'
 
 const ThoughtItem = ({ thought }) => {
-  // if (loading) {
-  //   return <Spinner />
-  // }
   return (
     <div className="card">
       <p className="thought-text">{thought.message}</p>
