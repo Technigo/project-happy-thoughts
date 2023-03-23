@@ -12,11 +12,17 @@ code {
     monospace;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+
 /* ---- General formatting */
 :root {
   --general-padding: 35px;
   --general-smaller-padding: 15px;
+  --general-mini-padding: 5px;
   --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  --main-width: 70%;
 }
 
 .emoji {
@@ -27,29 +33,41 @@ code {
 /* ---- Main container */
 
 .main-wrapper {
-  background-color: rgb(247, 210, 231);
+  border: 1px solid hotpink;
   margin: 20px auto;
-  padding: var(--general-padding);
+  padding: 5px var(--general-padding);
   width: 50%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 15px;
-
 }
 
 /* ---- Header */
 
 header {
-  background-color: rgb(200, 206, 255);
   margin: 0;
   padding: 5px var(--general-padding);
   text-align: center;
 }
 
+h1 {
+  /*font-family: 'Merriweather Sans', sans-serif;*/
+  /*font-family: 'Abril Fatface', cursive;*/
+  font-family: 'Abril Fatface';
+  font-size: 72px;
+  font-weight: 800;
+  background: -webkit-linear-gradient(45deg, #ff199f, #bae25b, #7e6ed8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
 /* ---- Post New Message */
 
 .post-wrapper {
-  background-color: rgb(254, 255, 203);
+  background-color: rgb(235, 235, 235);
   margin: 0;
   padding: 5px var(--general-padding);
   min-height: 200px;
@@ -60,6 +78,7 @@ header {
   gap: 10px;
   box-shadow: var(--box-shadow);
   -webkit-box-shadow: var(--box-shadow);
+  width: var(--main-width);
 }
 
 .post-wrapper h2 {
@@ -73,13 +92,16 @@ header {
   margin: 10px 0 10px 0;
 }
 
-
 .post-wrapper button {
   background-color: rgb(255, 183, 210);
   border-radius: 25px;
-  padding: 10px 30px;
-  /*width: 250px;
-  height: 50px;*/
+  padding: 5px 10px;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 /* ---- Message List container */
@@ -88,7 +110,7 @@ header {
   background-color: rgb(200, 251, 255);
   margin: 0;
   padding: 5px var(--general-padding);
-  min-height: 500px;
+  width: var(--main-width);
 }
 
 /* Single message */
