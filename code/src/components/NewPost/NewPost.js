@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Header } from './Header/Header';
 import './NewPost.css';
 
-export const NewPost = ({ newPost }) => {
+export const NewPost = ({ newPost, fetchThoughts }) => {
   const [newThought, setNewThought] = useState('');
 
   useEffect(() => {
@@ -29,6 +29,7 @@ export const NewPost = ({ newPost }) => {
         .then((data) => {
           newPost(data);
           setNewThought('');
+          fetchThoughts();
         })
         .catch((error) => console.log(error));
     } else if (newThought.length <= 5) {

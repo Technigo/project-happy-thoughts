@@ -12,12 +12,12 @@ import './PostFooter.css';
 // if conditional (has like)
 // }
 
-export const PostFooter = () => {
+export const PostFooter = ({ likes }) => {
   return (
     <footer className="post-footer">
       <div className="likes">
         <LikeBtn />
-        <p>x Likes</p>
+        <p>x {likes}</p>
       </div>
       <div className="time-ago">
         <p>x time ago</p>

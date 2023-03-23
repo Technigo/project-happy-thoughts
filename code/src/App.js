@@ -7,7 +7,7 @@ export const App = () => {
   const [postList, setPostList] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
+  const fetchThoughts = () => {
   // Just for fun, delete later
   // window.alert('❤️ Ready to share some happy thoughts? ❤️')
     setLoading(true);
@@ -16,6 +16,10 @@ export const App = () => {
       .then((data) => setPostList(data))
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false) })
+  }
+
+  useEffect(() => {
+    fetchThoughts();
   }, []);
 
   const addNewPost = (newPost) => {
@@ -24,7 +28,7 @@ export const App = () => {
 
   return (
     <main className="main-wrapper">
-      <NewPost newPost={addNewPost} />
+      <NewPost newPost={addNewPost} fetchThoughts={fetchThoughts} />
       <PostList postList={postList} loading={loading} />
     </main>
   );
