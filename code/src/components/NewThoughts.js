@@ -1,16 +1,14 @@
 import React from 'react'
 
-const NewThoughts = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
+const NewThoughts = ({ newThought, handleNewThoughts, onFormSubmit }) => {
   return (
-    <div className="message-container">
-      <form onSubmit={handleFormSubmit}>
-        <label htmlFor="newThought">What is making you happy?
-          <textarea id="newThought" type="text" value={newThought} maxLength="140" onChange={onNewThoughtChange} />
-          <p className="characters" style={{ color: newThought.length > 130 ? 'red' : 'black' }}>{newThought.length}/140</p>
-          <button className="submit-btn" type="submit"><span>❤️️</span> Send a happy thought <span>❤️️</span></button>
-        </label>
-      </form>
-    </div>
+    <form className="message-container" onSubmit={onFormSubmit}>
+      <p clasname="newThought">What is making you happy?</p>
+      <textarea placeholder="What's on your mind?" value={newThought} onChange={handleNewThoughts} />
+      <div className="characters">
+        <button className="submit-btn" type="submit" disabled={newThought.length < 6 || newThought.length > 140}><span>❤️️</span> Send a happy thought <span>❤️️</span></button>
+      </div>
+    </form>
   )
 }
 export default NewThoughts

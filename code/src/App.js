@@ -9,7 +9,7 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [loading, setLoading] = useState(false)
 
-  const fetchData = () => {
+  const fetchThoughts = () => {
     setLoading(true)
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json)
@@ -19,13 +19,12 @@ export const App = () => {
   }
 
   useEffect(() => {
-    fetchData()
+    fetchThoughts()
   }, [])
 
-  const onNewThoughtChange = (event) => {
-    event.target.value()
+  const handleNewThought = (event) => {
+    event.preventDefault()
   }
-
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -38,7 +37,7 @@ export const App = () => {
     })
       .then((res) => res.json())
       .then(() => {
-        fetchData()
+        fetchThoughts()
         setNewThoughts('')
       })
   }
@@ -52,7 +51,7 @@ export const App = () => {
     })
       .then((res) => res.json())
       .then(() => {
-        fetchData()
+        fetchThoughts()
       })
   }
 
@@ -63,12 +62,14 @@ export const App = () => {
         <Thoughtlist
           handleFormSubmit={handleFormSubmit}
           newThoughts={newThoughts}
-          onNewThoughtChange={onNewThoughtChange} />
-        <NewThoughts
+          handleNewThought={handleNewThought} />
+
+        {thoughts.map((thought) => <NewThoughts
           thoughts={thoughts}
+          key={thought._id}
           setThoughts={setThoughts}
           loading={loading}
-          onLikeIncrease={handleLikeIncrease} />
+          onLikeIncrease={handleLikeIncrease} />)}
       </div>
     </div>
   )
