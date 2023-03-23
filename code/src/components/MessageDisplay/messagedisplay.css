@@ -10,7 +10,7 @@
     background-color: #ffffff;
     border: 2px solid black;
     box-shadow: 10px 9px black;
-    gap: 15px;
+    gap: 20px;
     padding: 15px;
   }
 
@@ -36,9 +36,21 @@
     color: #c3c2c2;
 }
 
-.like-button{
+.no-like-button{
     border: none; 
     border-radius: 50px;
-    padding: 6px;
+    padding: 10px;
     font-size: 18px;
+}
+
+.no-like-button:hover{
+  background-color: #ffadad;
+}
+
+.like-button{
+  background-color: #ffadad;
+  border: none; 
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 18px;
 }

@@ -19,7 +19,7 @@ export const MessageDisplay = ({ loading, messageList, LikeCounter }) => {
           <p className="message-text">{list.message}</p>
           <div className="like-and-date">
             <div className="button-and-counter">
-              <button className="like-button" onClick={() => LikeCounter(list._id)}>❤️</button>
+              <button className={(list.hearts === 0 ? 'no-like-button' : 'like-button')} onClick={() => LikeCounter(list._id)}>❤️</button>
               <p className="counter">x {list.hearts}</p>
             </div>
             <p className="date-text">{formatDistance(new Date(list.createdAt), Date.now(), { addSuffix: true })}</p>

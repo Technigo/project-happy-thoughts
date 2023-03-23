@@ -10,9 +10,26 @@
     display: flex;
     flex-direction: column;
     justify-content: left;
-    gap: 10px;
+    gap: 20px;
 }
 
 .info-text {
     font-family: 'Poppins', sans-serif;
+}
+
+.submit-btn{
+    width: 235px;
+    border: none; 
+    border-radius: 50px;
+    padding: 6px;
+    font-size: 18px;
+    background-color: #ffadad;
+    font-family:'Poppins', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.text-box {
+    border: 2px solid #c3c2c2;
+
 }
