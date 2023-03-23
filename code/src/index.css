@@ -31,6 +31,8 @@ header h1{
   width: 350px;
   text-align: center;
   background-color:rgb(210, 210, 210);
+  border: solid 1px black;
+  box-shadow: 5px 6px 2px 1px black;
   margin:10px;
   padding:10px;
   }
