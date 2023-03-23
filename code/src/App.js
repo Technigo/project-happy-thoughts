@@ -12,7 +12,7 @@ export const App = () => {
   const [loading, setLoading] = useState(false)
   const [happyList, setHappyList] = useState([])
   const [newThought, setNewThought] = useState('')
-  const [onAddNewThought] = useState('')
+  // const [onAddNewThought] = useState('')
 
   useEffect(() => {
     setLoading(true);
@@ -27,7 +27,10 @@ export const App = () => {
     event.preventDefault()
     const options = {
       method: 'POST',
-      body: JSON.stringify({ message: newThought })
+      body: JSON.stringify({
+        message: `${newThought}`
+      }),
+      headers: { 'Content-Type': 'application/json' }
     }
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((response) => response.json())
@@ -41,7 +44,7 @@ export const App = () => {
       <main className="happy-container">
         <HappyForm
           newThought={newThought}
-          onAddNewThought={onAddNewThought}
+          setNewThought={setNewThought}
           handleFormSubmit={handleFormSubmit} />
 
         <HappyList
