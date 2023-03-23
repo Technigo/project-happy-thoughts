@@ -8,17 +8,35 @@ body {
   box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(44deg, rgb(252, 219, 225), rgb(248, 173, 185), rgb(245, 134, 153));
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 15s ease infinite;
+  -moz-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 67%}
+  50%{background-position:100% 34%}
+  100%{background-position:0% 67%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 67%}
+  50%{background-position:100% 34%}
+  100%{background-position:0% 67%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 67%}
+  50%{background-position:100% 34%}
+  100%{background-position:0% 67%}
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-/* 
-.form-container, .thought-article-container{
-  font-family:monospace;
-  margin:2em;
-  align-self: center;
-  
-} */
 
 .feed-wrapper{
   font-family:monospace;
@@ -50,7 +68,7 @@ textarea{
 .characterCounter{
   font-size: 0.8em;
   display:flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .send-button{
@@ -95,6 +113,7 @@ textarea{
   display: flex;
   flex-direction: column;
   padding:1em;
+  background-color: white;
   border: solid 1px black;
   box-shadow: 5px 5px #1d1d1d;
 }
@@ -127,3 +146,5 @@ textarea{
     width:80vw;
 }
 } 
+
+
