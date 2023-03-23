@@ -4,18 +4,18 @@ import React from 'react';
 import { formatDistance } from 'date-fns';
 import './messagedisplay.css'
 
-export const MessageDisplay = ({ loading, messageList, LikeCounter }) => {
+export const MessageDisplay = ({ loading, messageList, LikeCounter, latestMessage }) => {
   if (loading) {
     return (
       <div>
-        <h1>Loading in progress...</h1>
+        <span className="loader" />
       </div>
     )
   }
   return (
     <div className="message-list-container">
       {messageList.map((list) => (
-        <div className="message-box" key={list._id}>
+        <div className={`message-box ${list._id === latestMessage ? 'fade-in' : ''}`} key={list._id}>
           <p className="message-text">{list.message}</p>
           <div className="like-and-date">
             <div className="button-and-counter">

@@ -8,6 +8,7 @@ export const App = () => {
   const [messageList, setMessageList] = useState([])
   const [loading, setLoading] = useState(false);
   const [newMessage, setNewMessage] = useState('');
+  const [latestMessage, setLatestMessage] = useState(null)
 
   // FETCH MESSAGES-FUNCTION: used for fetching messages
   // 1st fetch request included in this function
@@ -46,7 +47,10 @@ export const App = () => {
     // 2nd fetch request within OnFormSubmit
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((result) => result.json())
-      .then((data) => { setMessageList([data, ...messageList]) })
+      .then((data) => {
+        setMessageList([data, ...messageList])
+        setLatestMessage(data._id)
+      })
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false); setNewMessage('') })
   }
@@ -77,6 +81,7 @@ export const App = () => {
   }
 
   // RETURN-SECTION HERE (Mounting the components)
+
   return (
     <div className="happy-thoughts-box">
       <PostMessage
@@ -85,10 +90,11 @@ export const App = () => {
         handleNewMessage={handleNewMessage} />
       <div>
         <MessageDisplay
-          loading={loading}
+          latestMessage={latestMessage}
           messageList={messageList}
           setMessageList={setMessageList}
-          LikeCounter={LikeCounter} />
+          LikeCounter={LikeCounter}
+          loading={loading} />
 
       </div>
     </div>
