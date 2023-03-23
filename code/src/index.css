@@ -45,10 +45,22 @@ textarea {
   border: 2px solid #d0cfcf;
   height: 50px;
   padding: 7px;
+  font-size: 16px;
 }
 
 textarea:focus {
   outline-color: black;
+}
+
+.counter, .counter-red {
+  align-self: flex-end;
+  color:grey;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.counter-red {
+  color: red;
 }
 
 .post-button {
@@ -57,6 +69,7 @@ textarea:focus {
   border-radius: 20px;
   border: none;
   font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
 }
 
 button {
@@ -78,6 +91,7 @@ button:disabled {
 .single-thought {
   display: flex;
   flex-direction: column;
+  overflow-wrap: break-word;
   gap: 10px;
   border: 2px solid black;
   padding: 10px;
@@ -128,10 +142,10 @@ button:disabled {
 
 @media (min-width: 1024px) {
   form {
-    width: 50%;
+    width: 30%;
   }
 
   .thought-list {
-    width: 50%;
+    width: 30%;
   }
 }

@@ -4,7 +4,7 @@ import moment from 'moment';
 
 export const ListThoughts = ({ loading, thoughtsList, handleLikeChange }) => {
   if (loading) {
-    return <h1>Loading in progress</h1>
+    return <h1>Loading in progress...</h1>
   }
 
   return (

@@ -54,9 +54,17 @@ export const App = () => {
     }
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
       .then((response) => response.json())
-      .then(console.log('hurray'))
-      .catch((error) => console.error(error))
-      .finally(() => fetchToughts(''))
+      .then((data) => {
+        const UpdateLikes = thoughtsList.map((like) => {
+          // eslint-disable-next-line no-underscore-dangle
+          if (like._id === data._id) {
+            like.hearts += 1
+            return like
+          } else { return like }
+        })
+        setThoughtsList(UpdateLikes)
+      })
+      // .finally(() => fetchToughts(''))
   }
 
   return (
