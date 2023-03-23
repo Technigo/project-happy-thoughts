@@ -1,4 +1,17 @@
 .thought-box {
+    box-sizing: border-box;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    max-width: 600px;
+    height: 175px;
+    border: 1px black solid;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 0 30px 0 30px;
+    box-shadow: 5px 10px 0px .1px black; 
+    /* box-shadow values: displacement on x-axis / displacement on y-axis / sharpness - bigger numbers are fuzzier / size of shadow */
     background-color: white;
     font-size: 18px;
     overflow: hidden;

@@ -1,24 +1,29 @@
 import React, { useState } from 'react';
+// import Confetti from 'react-confetti';
+
 import Button from './Button';
 
 const InputBox = ({ fetchThoughts, clickCount }) => {
   const [newThought, setNewThought] = useState('');
   const [characters, setCharacters] = useState(0);
+  // const [confetti, setConfetti] = useState(false)
 
   const handleThoughtChange = (e) => {
     setNewThought(e.target.value);
     setCharacters(e.target.value.length);
   }
 
-  const handleErrorMessage = (error) => {
-    alert(error)
+  const handleErrorMessage = () => {
+    if (characters < 5) {
+      alert('Please enter more than 5 characters for your happy thought.')
+    } else if (characters > 140) {
+      alert('Please enter less than 140 characters for your happy thought.')
+    }
   }
 
   const onFormSubmit = (e) => {
+    // setConfetti(true)
     e.preventDefault();
-    // if (characters < 5 || characters > 140) {
-    //   alert('err')
-    // }
 
     const options = {
       method: 'POST',
@@ -33,10 +38,12 @@ const InputBox = ({ fetchThoughts, clickCount }) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.errors) {
-          handleErrorMessage(data.errors.message.message)
+          handleErrorMessage()
         } else fetchThoughts()
       })
-      .finally(() => setNewThought(''))
+      .finally(() => {
+        setNewThought('');
+      })
   }
   const handleEnterKey = (event) => {
     if (event.KeyCode === 13) {
@@ -45,6 +52,8 @@ const InputBox = ({ fetchThoughts, clickCount }) => {
   };
   return (
     <form className="input-box" onSubmit={onFormSubmit}>
+      {/* eslint-disable-next-line max-len */}
+      {/* {confetti && <Confetti colors={['#f44336', '#e91e63']} recycle={false} numberOfPieces={60} />} */}
       <p>What&apos;s making you happy?</p>
       <input type="text" className="new-thought-input" onChange={handleThoughtChange} onKeyDown={handleEnterKey} value={newThought} />
       <div className="counters">

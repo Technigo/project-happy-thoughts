@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
+import Footer from 'components/Footer';
 import InputBox from 'components/InputBox';
 import ThoughtBox from 'components/ThoughtBox';
-import React, { useState } from 'react';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -25,6 +26,7 @@ export const App = () => {
         fetchThoughts={fetchThoughts}
         clickCount={clickCount}
         setClickCount={setClickCount} />
+      <Footer />
     </div>
   );
 }

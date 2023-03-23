@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useReward } from 'react-rewards';
 
 const HeartButton = ({
   buttonText,
@@ -15,6 +16,7 @@ const HeartButton = ({
   setClickCount
 }) => {
   const [hover, setHover] = useState(false);
+  const { reward, isAnimating } = useReward('rewardId', 'confetti')
 
   const handleMouseEnter = () => {
     setHover(true);
@@ -31,8 +33,8 @@ const HeartButton = ({
     height: `${buttonHeight}`,
     borderRadius: `${buttonRadius}`
   }
-  const onLikeSubmit = (e) => {
-    e.preventDefault();
+  const onLikeSubmit = () => {
+    // e.preventDefault();
     setClickCount(clickCount + 1)
 
     const options = {
@@ -49,11 +51,16 @@ const HeartButton = ({
 
   return (
     <button
-      onClick={onLikeSubmit}
+      disabled={isAnimating}
+      onClick={() => {
+        onLikeSubmit();
+        reward();
+      }}
       type="button"
       style={buttonStyle}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
+      <span id="rewardId" />
       {buttonText}
     </button>
   )
