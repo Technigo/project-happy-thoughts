@@ -3,9 +3,9 @@
     flex-direction: row;
     align-items: flex-start;
     width: 100%;
-    max-width: 440px;
+    max-width: 270px;;
     margin: auto;
-    height: 40px;
+    height: 30px;
     margin-top:20px;  
     margin-bottom: 20px; 
     font-size:16px;
@@ -14,15 +14,51 @@
     background-color: rgb(251, 171, 171);
     position: relative;
     font-family: futura;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .footer-box img {
-    height: 11px;
+    height: 6px;
     border: solid 1px;
 }
 
 .footer-text {
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 15px;
 }
+
+@media (min-width: 375px) {
+    .footer-box {
+      max-width: 310px;
+      height: 35px;
+      font-size: 13px;
+    }
+    .footer-box img {
+        height: 5px;
+        border: solid 1px;
+    }
+    .footer-text {
+      margin-top: 10px;
+      margin-left: 10px;
+      font-size: 12px;
+  }
+  }
+
+  @media (min-width: 667px) {
+    .footer-box {
+      max-width: 440px;
+      height: 40px;
+      font-size: 16px;
+    }
+
+    .footer-box img {
+        height: 12px;
+        border: solid 1px;
+    }
+
+    .footer-text {
+      margin-top: 10px;
+      margin-left: 12px;
+      font-size: 17px;
+  }
+  }

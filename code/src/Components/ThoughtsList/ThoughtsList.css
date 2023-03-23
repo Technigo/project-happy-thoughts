@@ -3,19 +3,19 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 400px;
   margin: auto;
-  height: 130px;
+  max-width: 230px;
+  height: 150px;
   margin-top:20px;  
   margin-bottom: 20px; 
   padding:20px; 
-  font-size:16px;
+  font-size:13px;
   box-shadow: 10px 5px black;
   border: 2px solid;
   background-color: white;
   position: relative;
   font-family: futura;
-
+  white-space: break-spaces;
 }
 
 .like-count-time-container {
@@ -43,6 +43,10 @@
   cursor: pointer;
 }
 
+.like-button:hover {
+  background-color: rgb(236, 132, 132);
+}
+
 .unliked-button {
   border-radius: 50%;
   height: 50px;
@@ -51,6 +55,10 @@
   border: none;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.unliked-button:hover {
+  background-color: rgb(167, 159, 159);
 }
 
 .counter-time-container {
@@ -70,6 +78,25 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-left: 215px;
+  margin-left: 30px;
   font-size: 14px;
+}
+
+@media (min-width: 375px) {
+  .thoughts-list-container {
+    max-width: 270px;
+  }
+
+  .time-div {
+    margin-left: 120px;
+  }
+}
+@media (min-width: 667px) {
+  .thoughts-list-container {
+    max-width: 400px;
+  }
+
+  .time-div {
+    margin-left: 220px;
+  }
 }

@@ -46,7 +46,7 @@ export const App = () => {
   // This function takes an object as a parameter.
   // The object in this case is the text the user writes
   // The event.preventDefault prevents the default behavior for the form
-  // to refresh the page on submission. ??
+  // to refresh the page when pressing the submit button.
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -66,7 +66,7 @@ export const App = () => {
 
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
-      .then(() => fetchThoughts())
+      .then((data) => { setThoughts([data, ...thoughts]) })
       .finally(() => setNewMessage(''));
   }
 

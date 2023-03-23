@@ -2,7 +2,7 @@
     background-color: rgb(228, 228, 228);
     margin-bottom: 20px; 
     width: 100%;
-    max-width: 400px;
+    max-width: 230px;
     box-shadow: 10px 5px black;
     margin: auto;
     margin-top:20px;  
@@ -19,13 +19,16 @@
     border-color:rgb(183, 179, 179);
     color: black;
     font-family: futura;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 40px;  
     resize: none;  
+    word-wrap: wrap;
+    word-break: break-word;
+    position: relative;
 }
 
 .thoughts-input-box-title {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
     font-family: futura;
     padding-bottom: 15px;
@@ -39,7 +42,7 @@
     border: none;
     color: black;
     padding: 12px 24px 12px 24px;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 500;
     font-family: futura;
 }
@@ -47,3 +50,16 @@
 .thoughts-input-box-textarea-text {
     color: black;
 }
+
+@media (min-width: 375px) {
+.thoughts-input-box-container {
+    max-width: 270px;
+    }
+}
+
+@media (min-width: 667px) {
+    .thoughts-input-box-container {
+        max-width: 400px;
+        }
+    
+    }
