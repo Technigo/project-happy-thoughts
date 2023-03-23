@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffeeff;
 }
 
 code {
@@ -35,6 +36,7 @@ form {
   padding: 10px;
   background-color: #f2f0f0;
   box-shadow: 5px 5px black;
+  margin-top: 15px;
 }
 h1 {
   font-size: 14px;
@@ -63,7 +65,7 @@ textarea:focus {
 }
 
 .post-button {
-  width: 60%;
+  width: fit-content;
   padding: 8px 10px;
   border-radius: 20px;
   border: none;
@@ -99,6 +101,7 @@ button:disabled {
   padding: 10px;
   width: 100%;
   box-shadow: 5px 5px black;
+  background-color: white;
 }
 
 .thought-details {
