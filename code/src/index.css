@@ -23,15 +23,14 @@ code {
   display: grid;
   grid-template-columns: 1fr;
   margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+ padding: 10px;
   border: 1px black solid;
-  padding: 15px;
   padding-top: 3px;
   background-color: #F2F0F0;
   box-shadow: 5px 7px 0px 0px black;
-  width: 350px;
+  width: 90%;
 }
+
 .newThought{
   grid-column: 1/2;
   justify-self: center;

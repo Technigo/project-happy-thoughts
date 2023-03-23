@@ -39,6 +39,7 @@ export const App = () => {
 
   return (
     <div>
+
       <main className="happy-container">
         <HappyForm
           newThought={newThought}
