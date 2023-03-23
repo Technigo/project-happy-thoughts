@@ -22,11 +22,19 @@ code {
   --general-smaller-padding: 15px;
   --general-mini-padding: 5px;
   --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
-  --main-width: 70%;
+  --main-width-mobile: 90%;
+  --main-width-desktop: 70%;
+
+  --hover-color: rgb(255, 199, 220);
 }
 
 .emoji {
   font-size: 24px;
+}
+
+p {
+  word-break: break-all;
+  white-space: normal;
 }
 
 
@@ -36,18 +44,18 @@ code {
   border: 1px solid hotpink;
   margin: 20px auto;
   padding: 5px var(--general-padding);
-  width: 50%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
 }
 
 /* ---- Header */
 
 header {
   margin: 0;
-  padding: 5px var(--general-padding);
+  padding: 0 var(--general-padding);
   text-align: center;
 }
 
@@ -55,9 +63,9 @@ h1 {
   /*font-family: 'Merriweather Sans', sans-serif;*/
   /*font-family: 'Abril Fatface', cursive;*/
   font-family: 'Abril Fatface';
-  font-size: 72px;
+  font-size: 46px;
   font-weight: 800;
-  background: -webkit-linear-gradient(45deg, #ff199f, #bae25b, #7e6ed8);
+  background: -webkit-linear-gradient(45deg, #ff199f, #cd8cdd, #5be288, #bef146, #7e6ed8);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -69,16 +77,16 @@ h1 {
 .post-wrapper {
   background-color: rgb(235, 235, 235);
   margin: 0;
-  padding: 5px var(--general-padding);
-  min-height: 200px;
+  padding: 5px var(--general-padding) 15px var(--general-padding);
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
   box-shadow: var(--box-shadow);
   -webkit-box-shadow: var(--box-shadow);
-  width: var(--main-width);
+  width: var(--main-width-mobile);
 }
 
 .post-wrapper h2 {
@@ -90,6 +98,7 @@ h1 {
   font-size: 18px;
   width: 100%;
   margin: 10px 0 10px 0;
+  background: -webkit-linear-gradient(45deg, #fdd7ed, #f0ffce, #d5cdff);
 }
 
 .post-wrapper button {
@@ -102,6 +111,11 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
+}
+
+.post-wrapper button:hover {
+  background-color: var(--hover-color);
 }
 
 /* ---- Message List container */
@@ -110,20 +124,28 @@ h1 {
   background-color: rgb(200, 251, 255);
   margin: 0;
   padding: 5px var(--general-padding);
-  width: var(--main-width);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }
 
 /* Single message */
 
 .message {
+  border: 1px solid green;
   background-color: white;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: var(--general-smaller-padding)
+  padding: var(--general-smaller-padding);
+  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
 }
 
 .message p {
-  background-color: rgb(186, 202, 191);
+  background-color: rgb(222, 226, 223);
 }
 
 .info-wrapper {
@@ -142,6 +164,14 @@ h1 {
   padding: 10px;
   border-radius: 50%;
   border: none;
+}
+
+.info-like button:hover {
+  background-color: var(--hover-color);
+}
+
+#likeBtn {
+  cursor: pointer;
 }
 
 .num-likes {
@@ -169,4 +199,31 @@ footer {
 /* To add when user has liked a post */
 .liked {
   background-color: rgb(243, 180, 180);
+}
+
+
+/* --- TABLET & DESKTOP VERSION --- */
+
+@media (min-width: 675px) {
+
+  .main-wrapper {
+    width: 60%;
+  }
+
+  .post-wrapper {
+    width: var(--main-width-desktop);
+  }
+
+  .list-wrapper {
+    width: var(--main-width-desktop);
+  }
+
+  .message {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 62px;
+  }
+
 }

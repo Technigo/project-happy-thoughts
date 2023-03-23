@@ -13,7 +13,7 @@ const SingleMessage = ({ key, singleMessage }) => {
           <button type="button" id="likeBtn"><span className="emoji" aria-label="like button">❤️</span></button>
           <span className="num-likes">x{singleMessage.hearts}</span>
         </div>
-        <div className="info-time">Time since last post</div>
+        <div className="info-time">Time</div>
       </div>
     </div>
   );

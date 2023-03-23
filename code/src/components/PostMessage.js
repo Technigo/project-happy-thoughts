@@ -4,7 +4,7 @@ const PostMessage = () => {
   return (
     <div className="post-wrapper">
       <h2>What is making you happy right now?</h2>
-      <textarea>Pizza</textarea>
+      <textarea rows="3" placeholder="Kittens?" />
       <button type="submit" id="submitPostBtn"><span className="emoji" aria-label="heart emoji">❤️</span> Send Happy Thought <span className="emoji" aria-label="heart emoji">❤️</span></button>
     </div>
   );
