@@ -12,13 +12,12 @@ export const Submit = () => {
     })
       .then((response) => response.json())
       .then((newThought) => {
-        console.log(newThought);
+        console.log(newThought)
         // setThoughts(newThought); Needs to be passed somewhere!
       })
     setInputText('');
   };
 
-  // The return works
   return (
     <div className="submit-div">
       <form onSubmit={handleFormSubmit}>

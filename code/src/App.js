@@ -20,7 +20,7 @@ export const App = () => {
 
   return (
     <>
-      <Submit thoughtsList={thoughtsList} setThoughtsList={setThoughtsList} />
+      <Submit />
       <Thoughts thoughts={thoughtsList} loading={loading} />
     </>
   );

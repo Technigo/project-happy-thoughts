@@ -15,7 +15,7 @@ export const Thoughts = ({ thoughts, loading }) => {
             <div key={thought._id}>
               <p>{thought.message}</p>
               <button onClick={likePost} type="button" className="heart-button">
-              &#x2764;
+              ❤️
               </button>
             </div>
           )
