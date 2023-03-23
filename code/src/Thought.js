@@ -25,8 +25,6 @@ export const Thought = (props) => {
           </div>
         </div>
       </article>
-
     </div>
-
   )
 }

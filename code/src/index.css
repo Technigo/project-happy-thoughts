@@ -26,7 +26,6 @@ code {
   display: flex;
   justify-content: center;
  
-  
 }
 
 .send-thought-form{
@@ -36,7 +35,6 @@ code {
   background:rgb(223, 219, 219);
   font-size:1em;
   min-height:150px;
-  max-width:700px;
   border: solid 1px black;
   box-shadow: 5px 5px #1d1d1d;
 }
@@ -87,13 +85,13 @@ textarea{
 .thought-article-container{
   margin-top:3em;
   margin-bottom:3em;
+  width:50vw;
 }
 
 .thought-article{
   display: flex;
   flex-direction: column;
   padding:1em;
-  max-width:700px;
   border: solid 1px black;
   box-shadow: 5px 5px #1d1d1d;
 }
@@ -119,10 +117,10 @@ textarea{
 }
 
 
-/* @media (min-width: 700px) or (orientation: landscape)  {
+ @media (max-width: 600px)  {
  
   .form-container, .thought-article-container{
     font-family:monospace;
-    margin:2em 10em;
+    width:80vw;
 }
-} */
+} 

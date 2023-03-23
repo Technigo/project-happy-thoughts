@@ -19,7 +19,6 @@ export const Feed = () => {
   useEffect(() => {
     setIsLoading(true);
     fetchThoughts();
-    // Thoughts are refreshed at intervals so that it mimics a real feed update
   }, []);
 
   const handleFormSubmit = (event) => {
