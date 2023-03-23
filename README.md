@@ -1,13 +1,16 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this week's project, we practiced React state skills by fetching and posting data to an API.
+The site had a design we were to follow closely. 
+It should list the most recent thoughts at the top and older thoughts at the bottom (sorted).
+The posts should show the content of the message and how many likes they've received.
+There was to be a form to post new thoughts.
+The heart button was to send likes on a thought.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I used React for this project. The example project for this week was a big help for this. I also googled and used StackOverflow to answer questions.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://enchanting-halva-88064a.netlify.app
