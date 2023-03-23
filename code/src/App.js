@@ -22,6 +22,10 @@ export const App = () => {
     fetchData()
   }, [])
 
+  const onNewThoughtChange = (event) => {
+    event.target.value()
+  }
+
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -59,15 +63,12 @@ export const App = () => {
         <Thoughtlist
           handleFormSubmit={handleFormSubmit}
           newThoughts={newThoughts}
-          thoughts={setThoughts} />
-
-        {thoughts.map((thought) => (
-          <NewThoughts
-            key={thought._id}
-            thought={thought}
-            loading={loading}
-            onLikeIncrease={handleLikeIncrease} />
-        ))}
+          onNewThoughtChange={onNewThoughtChange} />
+        <NewThoughts
+          thoughts={thoughts}
+          setThoughts={setThoughts}
+          loading={loading}
+          onLikeIncrease={handleLikeIncrease} />
       </div>
     </div>
   )
