@@ -11,11 +11,12 @@
     border: 2px solid black;
     box-shadow: 10px 9px black;
     gap: 20px;
-    padding: 15px;
+    padding: 20px;
   }
 
   .message-text {
     font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
   }
   
   .button-and-counter {
