@@ -1,6 +1,12 @@
 import React from 'react';
 
 const CreatePost = ({ handleSubmitPosts, newPost, setNewPost, id }) => {
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmitPosts();
+    }
+  };
   return (
     <form onSubmit={handleSubmitPosts} key={id}>
       <div className="main-post">
@@ -11,7 +17,8 @@ const CreatePost = ({ handleSubmitPosts, newPost, setNewPost, id }) => {
             id="textarea"
             className={newPost.length > 140 ? 'long-textarea' : 'textarea'}
             value={newPost}
-            onChange={(e) => setNewPost(e.target.value)} />
+            onChange={(e) => setNewPost(e.target.value)}
+            onKeyDown={handleKeyDown} />
         </div>
         <p className="character-counter">Characters: {newPost.length} / 140</p>
         <div>
