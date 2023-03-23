@@ -28,7 +28,7 @@ code {
   padding-top: 3px;
   background-color: #F2F0F0;
   box-shadow: 5px 7px 0px 0px black;
-  width: 100%;
+  width: 360px;
 }
 
 .newThought{
@@ -61,15 +61,11 @@ code {
 }
 
 /* msg*/
-.thoughts-container{
-    display: flex;
-    flex-direction: column;
-  }
 
   .thoughts{
-    display: flex;
-    flex-direction: column;
+    display: grid;
     justify-content: center;
+    justify-self: center;
     border: solid 2px rgb(226, 225, 225);
     justify-content: space-between;
     width: 50vw;
@@ -96,6 +92,7 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: end;
+  width: 335px;
 }
 .likes {
  margin: 5px;
@@ -111,8 +108,8 @@ code {
 .like-btn,
 .empty-btn {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 
 .empty-btn {
@@ -125,7 +122,7 @@ code {
 
 footer {
   text-align: center;
-  font-size: 15px;
+  font-size: 10px;
   margin: 50px auto 30px;
 }
 
