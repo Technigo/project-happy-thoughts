@@ -1,0 +1,18 @@
+.loading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+    height: 40px;
+    margin-top:20px;  
+    margin-bottom: 20px; 
+    font-size:16px;
+    box-shadow: 10px 5px black;
+    border: 2px solid;
+    background-color: rgb(251, 171, 171);
+    position: relative;
+    font-family: futura;
+    font-size: 30px;
+}

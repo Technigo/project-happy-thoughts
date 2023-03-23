@@ -6,6 +6,7 @@
 import React from 'react';
 import { formatDistance } from 'date-fns';
 import './ThoughtsList.css';
+import { Loading } from 'Components/Loading/Loading';
 
 // /////////////// COMPONENT //////////////////////// //
 
@@ -13,14 +14,12 @@ import './ThoughtsList.css';
 // Prop 1 = loading = if loading === true it returns a <div> "loading..." text.
 // IF loading === false then the <section> is displayed.
 // Prop 2 = thoughts = is the array with all thoughts that gets map:ed.
-// Prop 3 = onLikesIncrease = Inscreases the like with onClick.
+// Prop 3 = theLikeIncreaser = Inscreases the like with onClick.
 
 export const ThoughtsList = ({ loading, thoughts, theLikeIncreaser }) => { // <-- destructured props
   if (loading) {
     return (
-      <div className="Loading">
-      Loading...
-      </div>
+      <Loading />
     );
   }
 
