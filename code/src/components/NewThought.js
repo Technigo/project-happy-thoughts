@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 
 const NewThought = ({ newThought, handleNewThoughtChange, handleFormSubmit }) => {
   return (
     <form onSubmit={handleFormSubmit} className="new-thought-form">
-      <label htmlFor="newThought" className="new-thought-label">What makes you happy?</label>
+      <label htmlFor="newThought" className="new-thought-label" />
       <textarea
         id="newThought"
         onChange={handleNewThoughtChange}

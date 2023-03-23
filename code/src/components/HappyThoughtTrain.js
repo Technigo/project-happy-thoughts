@@ -1,9 +1,8 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable padded-blocks */
+
 import React from 'react';
 import { formatDistanceStrict } from 'date-fns';
-// eslint-disable-next-line max-len
+
 const HappyThoughtTrain = ({ happyThoughtTrain, onGiveHeartChange }) => {
   return (
     <section className="list-wrapper">
