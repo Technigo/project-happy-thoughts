@@ -1,0 +1,22 @@
+.postlist {
+    grid-area: 2 / 2 / auto / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/*Tablet media query*/
+@media (min-width: 667px) {
+    .postlist {
+        grid-area: 2 / 2 / auto / 7;
+    }
+}
+
+
+/*Desktop media query*/
+@media (min-width: 1025px) {
+    .postlist {
+        grid-area: 2 / 2 / auto / 12;
+    }
+}

@@ -1,6 +1,6 @@
 .main-wrapper {
     display: grid;
-    grid-template-columns: 1fr repeat(2, 150px) 1fr;
+    grid-template-columns: 1fr repeat(2, 160px) 1fr;
     row-gap: 30px;
     margin-top: 20px;
 }
@@ -8,7 +8,7 @@
 /*Tablet media query*/
 @media (min-width: 667px) {
     .main-wrapper {
-        grid-template-columns: 1fr repeat(5, 80px) 1fr;
+        grid-template-columns: 1fr repeat(5, 90px) 1fr;
         margin-top: 40px;
     }
 }

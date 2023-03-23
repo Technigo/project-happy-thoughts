@@ -2,6 +2,16 @@ import { LikeBtn } from 'components/Buttons/LikeBtn/LikeBtn';
 import React from 'react';
 import './PostFooter.css';
 
+// see setcolorvariable in live session tues min37
+// to change button after it has a like
+// if conditional (has like)
+// use custom Hook
+// const useBtnStyleEffect = (callbackFunction) => useEffect(callbackFunction, [callbackFunction]);
+
+// const btnStyleFunction = () => {
+// if conditional (has like)
+// }
+
 export const PostFooter = () => {
   return (
     <footer className="post-footer">
