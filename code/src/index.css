@@ -38,11 +38,18 @@ body {
   border: solid 1px black;
   box-shadow: 5px 5px black;
   padding: 20px;
+  max-width: 550px;
 }
 
 .thought-form {
   gap: 10px;
   background-color: lightgray;
+}
+
+textarea {
+  padding: 12px;
+  line-height: 20px;
+  height: fit-content;
 }
 
 textarea:focus {
@@ -118,9 +125,3 @@ button:hover {
 }
 
 /* https://stackoverflowteams.com/c/technigo/questions/3669 */
-
-@media (min-width: 668px) {
-  .app-container {
-    max-width: 70%;
-  }
-}
