@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 export const Submit = () => {
   const [inputText, setInputText] = useState('');
 
-  const submitThought = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(inputText);
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
       method: 'POST',
       body: JSON.stringify({ message: `${inputText}` }),
@@ -14,19 +13,22 @@ export const Submit = () => {
       .then((response) => response.json())
       .then((newThought) => {
         console.log(newThought);
-        // setResponse(newThought); Needs to be passed somewhere!
+        // setThoughts(newThought); Needs to be passed somewhere!
       })
     setInputText('');
   };
 
+  // The return works
   return (
-    <form onSubmit={submitThought}>
-      <label htmlFor="text-area">Whats making you happy right now?
-        <textarea name="text-area" id="text-area" value={inputText} onChange={((event) => setInputText(event.target.value))} />
-        <button type="submit">
-            &#x2764;Send Happy Thought&#x2764;
-        </button>
-      </label>
-    </form>
+    <div className="submit-div">
+      <form onSubmit={handleFormSubmit}>
+        <label htmlFor="text-area">Whats making you happy right now?
+          <textarea name="text-area" id="text-area" value={inputText} onChange={((event) => setInputText(event.target.value))} />
+          <button className="submit-button" type="submit">
+          ❤️Send Happy Thought❤️
+          </button>
+        </label>
+      </form>
+    </div>
   )
 }
