@@ -21,7 +21,6 @@ export const App = () => {
   }, [newThought, happyThoughtTrain]);
 
   const handleNewThoughtChange = (event) => {
-    console.log(event.target.value)
     setNewThought(event.target.value)
   }
 
