@@ -21,7 +21,8 @@ export const LikeBtn = ({ thought, onHeartCountIncrease }) => {
       onClick={onHeartCountIncreaseButtonClick}
       type="button"
       className="like-btn">
-      ❤️
+      <span className="heart">❤️</span>
+      <span className="heart-hover">💘</span>
     </button>
   )
 }

@@ -8,3 +8,15 @@
 .like-btn:hover {
     cursor: pointer;
 }
+
+.like-btn .heart-hover {
+    display: none;
+  }
+  
+  .like-btn:hover .heart {
+    display: none;
+  }
+  
+  .like-btn:hover .heart-hover {
+    display: inline;
+  }
