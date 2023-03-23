@@ -46,9 +46,17 @@ export const App = () => {
     // 2nd fetch request within OnFormSubmit
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((result) => result.json())
-      .then(() => fetchMessages())
-      .finally(() => setNewMessage(''))
+      .then((data) => { setMessageList([data, ...messageList]) })
+      .catch((error) => console.log(error))
+      .finally(() => { setLoading(false); setNewMessage('') })
   }
+
+  // { setThoughtsList([data, ...thoughtsList])}
+
+  /* .then((response) => response.json())
+      .then((data) => { setThoughtsList([data, ...thoughtsList]) })
+      .catch((error) => console.log(error))
+      .finally(() => { setLoading(false) }) */
 
   // LIKEINCREASE-FUNCTION
   const LikeCounter = (LikeID) => {
@@ -64,7 +72,8 @@ export const App = () => {
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${LikeID}/like`, options)
       .then((result) => result.json())
       .then(() => fetchMessages())
-      .catch((error) => console.error(error))
+      .catch((error) => console.log(error))
+      .finally(() => { setLoading(false) })
   }
 
   // RETURN-SECTION HERE (Mounting the components)
