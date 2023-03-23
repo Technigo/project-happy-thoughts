@@ -7,6 +7,8 @@ export const Feed = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [newThought, setNewThought] = useState('')
+  const [like, setLike] = useState(false);
+  const likeButtonColorToggle = like ? ' on ' : '';
 
   const fetchThoughts = () => {
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
@@ -47,6 +49,9 @@ export const Feed = () => {
 
       {!isLoading && thoughtsList.map((thought) => {
         const handleLikeSubmit = () => {
+          if (!like) {
+            setLike(true);
+          }
           fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
             method: 'POST'
           })
@@ -59,7 +64,8 @@ export const Feed = () => {
             thoughtMessage={thought.message}
             timeStamp={thought.createdAt}
             handleLikeSubmit={handleLikeSubmit}
-            likesCounter={thought.hearts} />
+            likesCounter={thought.hearts}
+            likeButtonColorToggle={likeButtonColorToggle} />
         )
       })}
       {isLoading && (<h2>Loading happy thoughts...</h2>)}
