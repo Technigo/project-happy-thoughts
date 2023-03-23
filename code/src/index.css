@@ -144,9 +144,8 @@ h1 {
   border: none;
 }
 
-/* To add when user has liked a post */
-.liked {
-  background-color: rgb(243, 180, 180);
+.num-likes {
+  margin-left: 5px;
 }
 
 
@@ -162,4 +161,12 @@ footer {
   background-color: rgb(186, 240, 200);
   margin: 0;
   padding: 5px var(--general-padding);
+}
+
+
+/* ---------- Toggle effects ----- */
+
+/* To add when user has liked a post */
+.liked {
+  background-color: rgb(243, 180, 180);
 }
