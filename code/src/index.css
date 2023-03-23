@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -22,21 +26,6 @@ body, h1, p, label, textarea {
   font-family: 'Nunito';
 }
 
-textarea {
-  padding: 5px;
-  max-width: 315px;
-  background-color: rgb(251, 241, 243);
-  border: none;
-  border-radius: 8px;
-  color: black;
-}
-
-textarea:focus {
-  outline: none;
-  background-color: white;
-  border: 2px solid pink;
-}
-
 h1 {
   font-family: 'Chewy';
   font-size: 42px;
@@ -57,6 +46,7 @@ main {
 }
 
 .feedWrapper, .newPostWrapper {
+  box-sizing: border-box;
   background-color: white;
   margin: 10px;
   width: 320px;
@@ -67,13 +57,9 @@ main {
   -moz-box-shadow: 3px 3px 0px 1px rgba(56, 56, 56, 0.75);
 }
 
+/* NEW POST */
 .newPostWrapper {
   padding: 14px;
-}
-
-.feedWrapper {
-  opacity: 0.9;
-  padding: 12px;
 }
 
 .newPostTitle {
@@ -84,6 +70,21 @@ main {
 
 #newPost {
   width: 100%;
+}
+
+textarea {
+  padding: 5px;
+  max-width: 315px;
+  background-color: rgb(251, 241, 243);
+  border: none;
+  border-radius: 8px;
+  color: black;
+}
+
+textarea:focus {
+  outline: none;
+  background-color: white;
+  border: 2px solid pink;
 }
 
 .counter, .counterTooMany {
@@ -111,8 +112,18 @@ main {
   color: white;
 }
 
+/* FEED */
+.feedWrapper {
+  opacity: 0.9;
+  padding: 12px;
+  margin: 10px auto;
+}
+
 .postText {
   margin: 5px 5px 10px 5px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  height: auto;
   font-size: 14px;
 }
 
@@ -144,6 +155,61 @@ main {
   margin-top: 10px;
 }
 
+.feedContainer {
+  height: 57vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Customized scroll (hide) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* FOOTER */
+footer {
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.6;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 5px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.contactMe {
+  margin: 0 0 0 20px;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* RESPONSIVE DEISGN */
 @media (min-width: 667px){
   h1 {
     font-size: 62px;
