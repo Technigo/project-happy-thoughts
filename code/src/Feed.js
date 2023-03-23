@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { SendThoughtForm } from 'SendThoughtForm';
 import { Thought } from 'Thought';
+import { Header } from 'Header';
 
 export const Feed = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [newThought, setNewThought] = useState('')
-  const [like, setLike] = useState(false);
-  const likeButtonColorToggle = like ? ' on ' : '';
+  const [myLikesCount, setMyLikesCount] = useState(0)
 
   const fetchThoughts = () => {
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
@@ -40,6 +40,7 @@ export const Feed = () => {
 
   return (
     <div>
+      <Header myLikesCount={myLikesCount} />
       <SendThoughtForm
         onNewThoughtChange={(event) => {
           setNewThought(event.target.value)
@@ -49,12 +50,10 @@ export const Feed = () => {
 
       {!isLoading && thoughtsList.map((thought) => {
         const handleLikeSubmit = () => {
-          if (!like) {
-            setLike(true);
-          }
           fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
             method: 'POST'
           })
+            .then(() => setMyLikesCount(myLikesCount + 1))
             .then(() => fetchThoughts())
             .catch((error) => console.log(error))
         }
@@ -64,8 +63,7 @@ export const Feed = () => {
             thoughtMessage={thought.message}
             timeStamp={thought.createdAt}
             handleLikeSubmit={handleLikeSubmit}
-            likesCounter={thought.hearts}
-            likeButtonColorToggle={likeButtonColorToggle} />
+            likesCounter={thought.hearts} />
         )
       })}
       {isLoading && (<h2>Loading happy thoughts...</h2>)}

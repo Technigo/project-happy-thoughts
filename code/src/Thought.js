@@ -9,7 +9,7 @@ export const Thought = (props) => {
         <div className="like-counter-date-container">
           <div className="like-counter-container">
             <button
-              className={`like-button${props.likeButtonColorToggle}`}
+              className={`like-button${props.likesCounter > 0 ? ' on' : ''} `}
               aria-label="like-button"
               type="button"
               onClick={props.handleLikeSubmit}>

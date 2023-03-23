@@ -6,28 +6,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  
 }
 
 body {
   background: linear-gradient(44deg, rgb(252, 219, 225), rgb(248, 173, 185), rgb(245, 134, 153));
   background-size: 600% 600%;
 
-  -webkit-animation: AnimationName 15s ease infinite;
-  -moz-animation: AnimationName 15s ease infinite;
-  animation: AnimationName 15s ease infinite;
+  -webkit-animation: GradientBackground 15s ease infinite;
+  -moz-animation: GradientBackground 15s ease infinite;
+  animation: GradientBackground 15s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes GradientBackground {
   0%{background-position:0% 67%}
   50%{background-position:100% 34%}
   100%{background-position:0% 67%}
 }
-@-moz-keyframes AnimationName {
+@-moz-keyframes GradientBackground {
   0%{background-position:0% 67%}
   50%{background-position:100% 34%}
   100%{background-position:0% 67%}
 }
-@keyframes AnimationName {
+@keyframes GradientBackground {
   0%{background-position:0% 67%}
   50%{background-position:100% 34%}
   100%{background-position:0% 67%}
@@ -44,6 +45,66 @@ code {
   display: flex;
   justify-content: center;
  
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(223, 219, 219);
+  overflow: hidden;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border: solid 1px black;
+  box-shadow: 5px 5px #1d1d1d;
+  font-size: 16px;
+}
+
+.navbar-logo{
+  align-self: center;
+  text-align: center;
+  padding-left:5px; 
+}
+
+.navbar-links{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+ul, li, .hamburger-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+ul{
+  padding:0;
+}
+
+li{
+  padding: 5px;
+}
+
+.posts-liked{
+  padding: 10px;
+  
+}
+
+.my-likes{
+  background-color: rgb(248, 194, 203);
+  padding:5px;
+}
+
+.hamburger-div{
+  display: flex;
+  justify-content: flex-end;
+ margin-right:0;
+}
+
+input[type=checkbox]{
+  opacity: 0;
 }
 
 .send-thought-form{
@@ -99,9 +160,6 @@ textarea{
 .on {
   background-color: rgb(248, 173, 185);
 }
-/* .like-button:focus {     
-  background-color: rgb(248, 173, 185);  
-} */
 
 .thought-article-container{
   margin-top:3em;
