@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [clickCount, setClickCount] = useState(0)
 
   const fetchThoughts = () => {
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
@@ -15,13 +16,15 @@ export const App = () => {
   }
   return (
     <div>
-      <InputBox fetchThoughts={fetchThoughts} />
+      <InputBox fetchThoughts={fetchThoughts} clickCount={clickCount} />
       <ThoughtBox
         thoughts={thoughts}
         setThoughts={setThoughts}
         loading={loading}
         setLoading={setLoading}
-        fetchThoughts={fetchThoughts} />
+        fetchThoughts={fetchThoughts}
+        clickCount={clickCount}
+        setClickCount={setClickCount} />
     </div>
   );
 }

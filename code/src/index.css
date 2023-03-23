@@ -24,46 +24,5 @@ button {
   /* border-radius: 20px; */
   border: none;
   padding: 5px 10px;
-}
-
-input {
-  font-family: 'Roboto Mono', monospace;
-}
-
-.input-box, .thought-box {
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  width: 85vw;
-  max-width: 600px;
-  height: 200px;
-  border: 1px black solid;
-  background-color: #e6e6e6;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  padding: 0 0 0 10px;
-  box-shadow: 5px 10px 0px .1px black; 
-  /* box-shadow values: displacement on x-axis / displacement on y-axis / sharpness - bigger numbers are fuzzier / size of shadow */
-}
-
-.new-thought-input {
-  height: 50px;
-  width: 90%;
-}
-
-.thought-box {
-  background-color: white;
-  font-size: 18px;
-}
-
-.thought-buttons-counters {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.thought-buttons-counters p {
-  color: gray;
   font-size: 14px;
-  margin: 0 5px;
 }

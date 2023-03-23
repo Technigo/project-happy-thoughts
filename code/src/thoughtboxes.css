@@ -1,0 +1,29 @@
+.thought-box {
+    background-color: white;
+    font-size: 18px;
+    overflow: hidden;
+  }
+  
+  .thought-details {
+    display: grid;
+    width: 100%;
+    grid-template-columns: [first] 50% [line2] 50% ;
+    align-items: center;
+  }
+  
+  .thought-details p {
+    color: gray;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+  
+  .thought-button-counter {
+    display: flex;
+    align-items: center;
+  }
+  
+  .timestamp {
+    justify-self: end;
+    margin: 0 10px;
+  }
+  
