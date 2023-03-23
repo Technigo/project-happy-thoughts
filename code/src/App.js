@@ -13,9 +13,8 @@ export const App = () => {
   const [happyList, setHappyList] = useState([])
   const [newThought, setNewThought] = useState('')
 
-  // const [onAddNewThought] = useState('')
-
   useEffect(() => {
+    console.log('useEffect triggered');
     setLoading(true);
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((response) => response.json())
@@ -25,12 +24,11 @@ export const App = () => {
   }, [])
 
   const handleFormSubmit = (event) => {
+    console.log('form submitted');
     event.preventDefault()
     const options = {
       method: 'POST',
-      body: JSON.stringify({
-        message: `${newThought}`
-      }),
+      body: JSON.stringify({ message: newThought }),
       headers: { 'Content-Type': 'application/json' }
     }
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
@@ -39,6 +37,8 @@ export const App = () => {
       .catch((error) => console.log(error))
       .finally(() => setNewThought(''));
   }
+
+  console.log(loading, happyList);
 
   return (
     <div>
@@ -54,7 +54,7 @@ export const App = () => {
           setHappyList={setHappyList} />
       </main>
       <footer>
-        <p>A website made by Movimiento © 2023</p>
+        <p>A website made by Movimiento © 2023 sudent @ Technigo </p>
         <div className="iconslinkedin">
           <a href="https://www.linkedin.com/in/irup%C3%A9-pozo-graviz-119112266/">
             <img src={linkedin} alt="button to linkedin black" />
