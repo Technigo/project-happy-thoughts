@@ -4,7 +4,7 @@ import { Feed } from 'Feed';
 
 export const App = () => {
   return (
-    <div>
+    <div className="feed-container">
       <Feed />
     </div>
   );

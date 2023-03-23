@@ -11,9 +11,9 @@ export const Thought = (props) => {
             className="like-button"
             type="button"
             onClick={props.handleLikeSubmit}>
-            ❤️ Like
+            ❤️
           </button>
-          <p>like counter</p>
+          <p>x{props.likesCounter}</p>
         </div>
         <div>
           <p>{formatDistance(new Date(props.timeStamp), Date.now(), {

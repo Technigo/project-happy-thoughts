@@ -18,7 +18,8 @@ export const Feed = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetchThoughts()
+    setInterval(fetchThoughts(), 10)
+    // Thoughts are refreshed at intervals so that it mimics a real feed update
   }, []);
 
   const handleFormSubmit = (event) => {
@@ -53,7 +54,8 @@ export const Feed = () => {
             key={thought._id}
             thoughtMessage={thought.message}
             timeStamp={thought.createdAt}
-            handleLikeSubmit={handleLikeSubmit} />
+            handleLikeSubmit={handleLikeSubmit}
+            likesCounter={thought.hearts} />
         )
       })}
       {loading && (<h2>Loading happy thoughts...</h2>)}
