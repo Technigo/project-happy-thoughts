@@ -1,0 +1,40 @@
+.thoughts-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.single-thought-div {
+    border: 1px solid black;
+    width: 400px;
+    height: 150px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 5px 5px 0px 0px black;
+}
+
+.heart-emoji {
+    background-color: rgb(255, 204, 212);
+    padding: 10px 10px 10px 10px;
+    border-radius: 100%;
+}
+
+.heart-emoji:hover {
+    background-color: rgb(255, 95, 95);
+    cursor: pointer;
+}
+
+.thought-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.heart-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 35px;
+}
