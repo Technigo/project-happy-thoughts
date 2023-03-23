@@ -6,7 +6,7 @@ import linkedin from './images/blacklinkedinicon.svg'
 import './index.css';
 import './reset.css';
 
-const FETCHAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+// const FETCHAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 
 export const App = () => {
   const [loading, setLoading] = useState(false)
@@ -14,39 +14,31 @@ export const App = () => {
   const [newThought, setNewThought] = useState('')
   const [onAddNewThought] = useState('')
 
-  const fetchThoughts = () => {
-    fetch(FETCHAPI)
+  useEffect(() => {
+    setLoading(true);
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((response) => response.json())
       .then((data) => setHappyList(data))
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false) })
-  }
-  useEffect(() => {
-    fetchThoughts()
   }, [])
-
-  /* posting new post to API */
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-
-    fetch(FETCHAPI, {
+    const options = {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
       body: JSON.stringify({ message: newThought })
-    })
-      .then((res) => res.json())
-      .then(() => {
-        fetchThoughts()
-        setNewThought('')
-      })
+    }
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+      .then((response) => response.json())
+      .then((data) => setHappyList(data))
+      .catch((error) => console.log(error))
+      .finally(() => setNewThought(''));
   }
 
   return (
     <div>
-      <div className="happy-container">
+      <main className="happy-container">
         <HappyForm
           newThought={newThought}
           onAddNewThought={onAddNewThought}
@@ -56,7 +48,7 @@ export const App = () => {
           loading={loading}
           happyList={happyList}
           setHappyList={setHappyList} />
-      </div>
+      </main>
       <footer>
         <p>A website made by Movimiento © 2023</p>
         <div className="iconslinkedin">
@@ -74,27 +66,30 @@ export const App = () => {
 
 // https://happy-thoughts-ux7hkzgmwa-uc.a.run.app
 
-/* useEffect(() => {
-    setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+/* const fetchThoughts = () => {
+    fetch(FETCHAPI)
       .then((response) => response.json())
       .then((data) => setHappyList(data))
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false) })
+  }
+  useEffect(() => {
+    fetchThoughts()
   }, [])
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    const options = {
+
+    fetch(FETCHAPI, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ thought: newThought })
-    }
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
-      .then((response) => response.json())
-      .then((data) => setHappyList(data))
-      .catch((error) => console.log(error))
-      .finally(() => setNewThought(''));
+      body: JSON.stringify({ message: newThought })
+    })
+      .then((res) => res.json())
+      .then(() => {
+        fetchThoughts()
+        setNewThought('')
+      })
   } */
