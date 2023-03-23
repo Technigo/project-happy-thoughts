@@ -15,3 +15,21 @@ code {
 
 
 
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thought-container {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.new-thought-box {
+  background-color: #f2f0f0;
+  border: solid 1px black;
+  padding: 5%;
+  box-shadow: black 10px 10px;
+}

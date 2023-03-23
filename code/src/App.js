@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import MessageList from 'components/MessageList';
 import NewThoughts from 'components/NewThoughts';
+import AnimatedPage from 'components/AnimatedPage';
 import './index.css';
 
 export const App = () => {
@@ -13,33 +14,29 @@ export const App = () => {
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(0);
 
-  // useEffect is triggered on restart, newLike and loading
   useEffect(() => {
-    // Restricts that the fetchMessages will only run when the newLike or loading
-    // is set to true, otherwise it runs twice for every change.
     fetchMessages();
   }, [newLike]);
 
-  // Function that calls the messages from the database
   const fetchMessages = () => {
-    setLoading(false)
+    setLoading(true)
+    // const options = {
+    //   method: 'GET'
+    // }
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((response) => response.json())
       .then((data) => setMessageList(data))
-      .catch((error) => console.error(error))
+      .catch((error) => console.log(error))
       .finally(() => {
-        setNewLike(false)
+        setLoading(false)
       })
   }
 
-  // Function that handles the user-input so the text is shown when the user types it
-  // and that the character-count is updating in real time
   const handleNewThought = (event) => {
     setNewThoughts(event.target.value)
     setCount(event.target.value.length)
   }
 
-  // Function that adds the users message to the database.
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -48,20 +45,18 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        message: newThoughts
-      })
+      body: JSON.stringify({ message: `${newThoughts}` })
     }
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((result) => result.json())
-      .then((data) => fetchMessages(data.response))
-      .catch((error) => console.error(error))
-      .finally(() => setNewThoughts(''));
+      .then((data) => { setMessageList([data, ...messageList]) })
+      .catch((error) => console.log(error))
+      .finally(() => { setLoading(false) });
   }
 
   if (loading) {
     return (
-      <p>Loading in progress...</p>
+      <p>Loading...</p>
     )
   }
 

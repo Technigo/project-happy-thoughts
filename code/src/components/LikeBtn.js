@@ -1,13 +1,14 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
+import NewThoughts from './NewThoughts';
 
 const LikeBtn = ({ thought, setNewLike }) => {
   const [liked, setLiked] = useState(false);
 
   // the function that enables the likes-count to update in the App-component
   const handleNewLikeChange = () => {
-    setNewLike(true)
+    setNewLike(false)
   }
 
   // The function that registers the users like to the database, it also
@@ -25,11 +26,13 @@ const LikeBtn = ({ thought, setNewLike }) => {
       }
 
       fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, options)
-        .then((data) => data.json())
-        .catch((error) => console.error(error))
+        .then((response) => response.json())
+        .then((data) => { console.log(data) })
+        .catch((error) => console.log(error))
         .finally(() => {
           setLiked(true)
           handleNewLikeChange()
+          NewThoughts('')
         })
     }
   }
