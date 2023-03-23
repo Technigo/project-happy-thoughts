@@ -23,6 +23,10 @@ export const App = () => {
     fetchThoughts()
   }, [])
 
+  const handleFormCleanup = () => {
+    setNewThought('')
+    setLoading(false)
+  }
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -51,6 +55,7 @@ export const App = () => {
       .then((res) => res.json())
       .then(() => {
         fetchThoughts()
+          .finally(() => handleFormCleanup())
       })
   }
   if (loading) {
