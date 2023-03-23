@@ -5,22 +5,105 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* 
+.form-container, .thought-article-container{
+  font-family:monospace;
+  margin:2em;
+  align-self: center;
+  
+} */
 
-form{
+.feed-wrapper{
+  font-family:monospace;
+  margin:2em;
   display: flex;
-  flex-direction: column;
-  width:60%;
-  border: solid 1px black;
+  justify-content: center;
+ 
+  
 }
 
-article{
+.send-thought-form{
+  display: flex;
+  flex-direction: column;   
+  padding:1em;
+  background:rgb(223, 219, 219);
+  font-size:1em;
+  min-height:150px;
+  max-width:700px;
   border: solid 1px black;
+  box-shadow: 5px 5px #1d1d1d;
+}
+
+textarea{
+  min-height:80px;
+}
+
+.send-thought-form h1{
+  font-size:1.2em;
+}
+
+.characterCounter{
+  font-size: 0.8em;
+  display:flex;
+  justify-content: end;
+}
+
+.send-button{
+  font-family:monospace;
+  background-color:rgb(248, 194, 203);
+  border:none;
+  padding:10px;
+  max-width:250px;
+  border-radius: 20px;
+}
+
+.send-button:hover{
+  background-color: rgb(248, 173, 185);
+}
+
+.like-button{
+  background: rgb(223, 219, 219);;
+  border:none;
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+}
+
+.like-button:hover{
+  background-color: rgb(248, 173, 185);
+}
+
+.like-button:focus {     
+  background-color: rgb(248, 173, 185);  
+}
+
+.thought-article-container{
+  margin-top:3em;
+  margin-bottom:3em;
+}
+
+.thought-article{
+  display: flex;
+  flex-direction: column;
+  padding:1em;
+  max-width:700px;
+  border: solid 1px black;
+  box-shadow: 5px 5px #1d1d1d;
+}
+
+.thought-message{
+  max-width:90%;
+  overflow-wrap: break-word;
+  font-family:monospace;
+  font-size: 1.2em;
+  
 }
 
 .like-counter-date-container{
@@ -34,3 +117,12 @@ article{
   flex-direction: row;
   gap:10px;
 }
+
+
+/* @media (min-width: 700px) or (orientation: landscape)  {
+ 
+  .form-container, .thought-article-container{
+    font-family:monospace;
+    margin:2em 10em;
+}
+} */

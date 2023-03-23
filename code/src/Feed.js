@@ -5,7 +5,7 @@ import { Thought } from 'Thought';
 
 export const Feed = () => {
   const [thoughtsList, setThoughtsList] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [newThought, setNewThought] = useState('')
 
   const fetchThoughts = () => {
@@ -13,24 +13,28 @@ export const Feed = () => {
       .then((response) => response.json())
       .then((data) => setThoughtsList(data))
       .catch((error) => console.log(error))
-      .finally(() => { setLoading(false) })
+      .finally(() => { setIsLoading(false) })
   }
 
   useEffect(() => {
-    setLoading(true);
-    setInterval(fetchThoughts(), 10)
+    setIsLoading(true);
+    fetchThoughts();
     // Thoughts are refreshed at intervals so that it mimics a real feed update
   }, []);
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: newThought })
-    })
-      .then(() => fetchThoughts())
-      .catch((error) => console.log(error))
+    if (newThought.length < 5) {
+      return alert('Please enter atleast 5 charcaters.')
+    } else {
+      fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: newThought })
+      })
+        .then(() => fetchThoughts())
+        .catch((error) => console.log(error))
+    }
   }
 
   return (
@@ -42,7 +46,7 @@ export const Feed = () => {
         characterCounter={140 - newThought.length}
         handleFormSubmit={handleFormSubmit} />
 
-      {!loading && thoughtsList.map((thought) => {
+      {!isLoading && thoughtsList.map((thought) => {
         const handleLikeSubmit = () => {
           fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
             method: 'POST'
@@ -59,7 +63,7 @@ export const Feed = () => {
             likesCounter={thought.hearts} />
         )
       })}
-      {loading && (<h2>Loading happy thoughts...</h2>)}
+      {isLoading && (<h2>Loading happy thoughts...</h2>)}
     </div>
   );
 }
