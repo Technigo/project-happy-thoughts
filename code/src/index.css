@@ -37,13 +37,12 @@ form {
   box-shadow: 5px 5px black;
 }
 h1 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: lighter;
 }
 
 textarea {
   border: 2px solid #d0cfcf;
-  height: 50px;
   padding: 7px;
   font-size: 16px;
 }
@@ -86,6 +85,9 @@ button:disabled {
   align-items: center;
   width: 80%;
   gap: 20px;
+  height: 55vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .single-thought {
