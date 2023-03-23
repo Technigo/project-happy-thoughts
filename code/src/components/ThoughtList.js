@@ -6,11 +6,7 @@ export const ThoughtList = ({ loading, thoughtList, handleLikeChange }) => {
   if (loading) {
     return <h1> Preparing some happiness..</h1>
   }
-  //  const onThoughtLikeChange = (thought) => {
-  //  setThoughtList((thoughtLists) => thoughtLists.map((singleThought) => {
-  //    }
-  //   return singleThought;
-  //  }
+
   return (
     <section className="thought-list">
       {thoughtList.map((thought) => {
