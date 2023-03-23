@@ -1,9 +1,8 @@
 import React from 'react';
+import { ThoughtFeed } from 'components/ThoughtFeed';
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  );
+    <ThoughtFeed />
+  )
 }
