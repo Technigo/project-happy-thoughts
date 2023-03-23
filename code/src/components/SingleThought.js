@@ -20,7 +20,7 @@ export const SingleThought = ({ thought }) => {
     .finally(() => { console.log('heart count increased') })
 
   return (
-    <div>
+    <div className="button-container">
       {/* eslint-disable-next-line no-underscore-dangle */}
       <p className="thoughts-p" key={thought._id}>{thought.message}</p>
       {/* eslint-disable-next-line no-underscore-dangle */}

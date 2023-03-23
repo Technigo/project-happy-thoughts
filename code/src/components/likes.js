@@ -15,7 +15,7 @@ export const Likes = (love, thought) => {
     })
   }
   return (
-    <div>
+    <div className="giveLove">
       <button
         aria-label="Like-button"
         type="button"
