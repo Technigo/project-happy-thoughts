@@ -73,7 +73,7 @@ code {
 }
 
 .sendButton:hover {
-  background-color: rgb(240, 145, 160);
+  background-color: rgb(237, 164, 175);
 }
 
 .outputBox {
@@ -97,7 +97,7 @@ code {
 }
 
 .on {
-  background-color: rgb(240, 145, 160);
+  background-color: rgb(237, 164, 175);
 }
 
 .outputBottom {
