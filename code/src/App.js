@@ -12,6 +12,7 @@ export const App = () => {
   const [loading, setLoading] = useState(false)
   const [happyList, setHappyList] = useState([])
   const [newThought, setNewThought] = useState('')
+
   // const [onAddNewThought] = useState('')
 
   useEffect(() => {
