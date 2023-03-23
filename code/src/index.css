@@ -11,29 +11,67 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+/* Whole page */
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgb(206, 202, 202);
+  background: #ffeef1;
+  width: 100%;
 }
-
-/* Input field with send button */
+header {
+  padding: 10px;
+}
+/* Input field with send button BOX */
 form.message-container {
   border: 1px solid black;
   text-align: center;
   padding: 10px;
-  margin: 20px;
+  margin: 40px;
+  top: 10px;
+  width: 520px;
+  height: 210px;
+  position: relative;
+  top: -30px;
+  background-color: #f2f0f0;
+  border: 2px solid #7c7c7c;
+  box-shadow: 5px 5px;
 }
 
+
+/* Whats on your mind*/
+textarea {
+  width: 400px;
+  height: 100px;
+}
+/* User´s thoughts boxes */
 div.Thoughts {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  padding: 10px;
   margin: 20px;
+  background-color: #f2f0f0;
+  border: 2px solid #7c7c7c;
+  box-shadow: 5px 5px;
+  width: 450px;
+  height: 170px;
 }
-
+/* User´s box container */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+button.submit-btn {
+  cursor: pointer;
+  margin: 10px;
+  color: black;
+  background: #ffffffed;
+  border-radius: 16px;
+}
+p.thought-text {
+  text-align: center;
+}
 p.date {
   display: flex;
   flex-direction: row;
@@ -41,10 +79,93 @@ p.date {
   justify-content: flex-end;
   font-size: 12px;
 }
+.no-like-btn {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  left: -35px;
+  border: none;
+  background: pink;
+  border-radius: 21px;
+}
+.no-like-btn:hover {
+  background-color: #d4acb4;
+}
+
+p.counter {
+  display: flex;
+  flex-direction: column;
+  /* left: -141px; */
+  font-size: 12px;
+ 
+}
 
 div.likes {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  bottom: -76px;
+}
+/* counting the text-characters */
+.char-count {
+  text-align: right;
+  font-size: 9px;
+  left: 2px;
+  position: relative;
+  left: -59px;
+  font-style: oblique;
 }
 
+/* the like <3 button */
+.no-like-btn {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  left: -35px;
+  border: none;
+  background: pink;
+  border-radius: 21px;
+  animation: bounce 0.5s;
+}
+.no-like-btn:hover {
+  background-color: #d4acb4;
+}
+
+/* Define the animation */
+@keyframes bounce {
+  0%, 100% { transform: scale(2); }
+  50% { transform: scale(1.2); }
+}
+/*Define the animation */
+ @keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+} 
+
+/* Apply the animation to the icon element when clicked */
+ .react-icon:active {
+  animation: bounce 0.5s;
+} 
+
+/* TABLET */
+@media (min-width: 668px) and (max-width: 1024px) {
+  main {
+    width: 70vw;
+  }
+  .notify {
+    width: 70vw;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1025px) {
+  main {
+    width: 35vw
+    ;
+  }
+  .notify {
+    width: 35vw;
+  }
+}
