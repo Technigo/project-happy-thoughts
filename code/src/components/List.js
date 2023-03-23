@@ -1,12 +1,12 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 
-export const List = (props) => {
-  console.log(props.thoughts);
+export const List = ({ thoughts, setThoughts }) => {
   return (
     <div className="list">
       <ul>
-        {props.thoughts.map((thought) => (
+        {thoughts.map((thought) => (
           <div key={thought._id}>
             <p>{thought.message}</p>
             <div>

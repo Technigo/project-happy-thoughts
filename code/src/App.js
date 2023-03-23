@@ -6,30 +6,28 @@ import { Input } from 'components/Input';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
-  const [newPost, setNewPost] = useState([]);
+  const [newPost, setNewPost] = useState('');
 
   useEffect(() => {
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => {
         setThoughts(data);
-      });
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   return (
     <div>
-      <Input
-        thoughts={thoughts}
-        setThoughts={setThoughts}
-        newPost={newPost}
-        setNewPost={setNewPost}
-      />
-      <List
-        thoughts={thoughts}
-        setThoughts={setThoughts}
-        newPost={newPost}
-        setNewPost={setNewPost}
-      />
+      {thoughts && (
+        <Input
+          thoughts={thoughts}
+          setThoughts={setThoughts}
+          newPost={newPost}
+          setNewPost={setNewPost}
+        />
+      )}
+      {thoughts && <List thoughts={thoughts} setThoughts={setThoughts} />}
     </div>
   );
 };
