@@ -1,6 +1,8 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This app is a project in wich we practice to fetch data from an API, manage state using hooks, and render the data in a simple user interface. 
+
+The NewThought component allows users to add new thoughts, and the ThoughtList component displays a list of thoughts with the option to increase the number of hearts.is readme with your own information about your project.
 
 Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
