@@ -14,7 +14,6 @@ export const App = () => {
   const [newThought, setNewThought] = useState('')
 
   useEffect(() => {
-    console.log('useEffect triggered');
     setLoading(true);
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((response) => response.json())
@@ -33,12 +32,10 @@ export const App = () => {
     }
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((response) => response.json())
-      .then((data) => setHappyList(data))
+      .then((data) => setHappyList([data, ...happyList]))
       .catch((error) => console.log(error))
       .finally(() => setNewThought(''));
   }
-
-  console.log(loading, happyList);
 
   return (
     <div>

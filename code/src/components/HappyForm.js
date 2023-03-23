@@ -3,8 +3,7 @@ import React from 'react'
 export const HappyForm = ({ handleFormSubmit, newThought, setNewThought }) => {
   return (
     <form onSubmit={handleFormSubmit} className="happyform">
-
-      <h1>What make&apos;s you happy?</h1>
+      <h1>What makes you happy?</h1>
       <textarea
         id="w3review"
         rows="4"
@@ -12,10 +11,13 @@ export const HappyForm = ({ handleFormSubmit, newThought, setNewThought }) => {
         value={newThought}
         onChange={(event) => setNewThought(event.target.value)}
         placeholder="Happy thought here!" />
-      <button type="submit" className="loveBtn">Happy thoughts</button>
+      <p className="character-counter">Characters: {newThought.length} / 140</p>
+      <button
+        type="submit"
+        className="loveBtn"
+        disabled={newThought.length < 5 || newThought.length > 140}>
+          Happy thoughts
+      </button>
     </form>
   );
 }
-
-// <input type="text" value={secondInput} onChange={(event) => s
-// etSecondInput(event.target.value)} />
