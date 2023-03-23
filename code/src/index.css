@@ -1,13 +1,141 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --lightgrey: #dcdcdc;
+  --grey: #808080;
+  --pink: #faaab7;
+}
+
+* {
+  font-size: 16px;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.happy-page {
+  margin: 1rem auto;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.happy-page h1 {
+  align-self: center;
+  font-size: 1.4rem;
+}
+
+.form,
+.card {
+  border: 1px solid var(--black);
+  box-shadow: 0.4rem 0.4rem var(--black);
+  margin: 1.5rem 1rem;
+}
+
+.emoji {
+  margin: 0 0.3rem;
+}
+
+.form {
+  background-color: var(--lightgrey);
+  padding: 0.5rem 1rem;
+}
+
+.thought-length span {
+  font-size: 0.8rem;
+}
+
+.thought-input {
+  width: 100%;
+  padding: 0.3rem;
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+  resize: vertical;
+}
+
+.send-thought-button {
+  background-color: var(--pink);
+  border: none;
+  border-radius: 20px;
+  padding: 0.3rem;
+  margin: 0.5rem 0;
+}
+
+.send-thought-button > span {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85em;
+}
+
+.card {
+  background-color: var(--white);
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 1rem;
+}
+
+.card-bottom span,
+.card-bottom p {
+  color: var(--grey);
+  font-size: 0.8rem;
+}
+
+.card-bottom-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+}
+
+.lightgrey-background {
+  background-color: var(--lightgrey);
+}
+
+.pink-background {
+  background-color: var(--pink);
+}
+
+/* ===== TABLET and DESKTOP ===== */
+
+@media screen and (min-width: 768px) {
+  .happy-page {
+    width: 450px;
+  }
+}
+
+/* ===== DESKTOP ===== */
+
+@media screen and (min-width: 992px) {
+  .card:hover {
+    background-color: pink;
+  }
 }
