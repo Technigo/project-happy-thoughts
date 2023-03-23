@@ -1,7 +1,5 @@
 import React from 'react'
-// import { formatDistance } from 'date-fns';
 import { SingleThought } from './SingleThought';
-// npm install date-fns
 /* eslint-disable no-underscore-dangle */
 
 export const HappyList = ({ loading, happyList }) => {
@@ -26,3 +24,6 @@ export const HappyList = ({ loading, happyList }) => {
 /* I set my my heart fetch to: .finally(() => fetchThoughts(''))
  and it refreshes the page with the new heart likes
  */
+
+/* {happyList.map((thought) => (
+          <div key={thought._id} className="thoughts"> */
