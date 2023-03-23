@@ -7,6 +7,7 @@ body {
   font-family:'Courier New', Courier, monospace; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(184, 224, 230);
 }
 
 code {
@@ -22,7 +23,7 @@ margin: 30px;
 }
 
 .submit-form {
-  background-color: rgb(249, 243, 243); 
+  background-color: rgb(245, 212, 212); 
   border: 1px solid black; 
   width: 40%; 
   box-shadow: 10px 10px black;
@@ -59,6 +60,7 @@ margin: 30px;
   justify-content: center;
   box-shadow: 10px 10px black;
   align-content: space-between; 
+  background-color: white;
 }
 
 .thought-text {
