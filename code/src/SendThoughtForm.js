@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const SendThoughtForm = (props) => {
+  let textInput;
   return (
     <div>
       <form onSubmit={props.handleFormSubmit}>
@@ -10,7 +11,7 @@ export const SendThoughtForm = (props) => {
           onChange={props.onNewThoughtChange}
           placeholder="Type your happy thought here..."
           maxLength="140" />
-        <button type="submit">Send Happy Thought</button>
+        <button type="submit" onClick={() => { textInput.value = '' }}>Send Happy Thought</button>
       </form>
     </div>
   )

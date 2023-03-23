@@ -7,7 +7,12 @@ export const Thought = (props) => {
       <p>{props.thoughtMessage}</p>
       <div className="like-counter-date-container">
         <div className="like-counter-container">
-          <button type="submit" handleLikeSubmit={props.handleLikeSubmit}> ❤️ Like</button>
+          <button
+            className="like-button"
+            type="button"
+            onClick={props.handleLikeSubmit}>
+            ❤️ Like
+          </button>
           <p>like counter</p>
         </div>
         <div>

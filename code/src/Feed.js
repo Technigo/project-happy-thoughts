@@ -28,13 +28,9 @@ export const Feed = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newThought })
     })
-      .then((response) => response.json())
-      .then((newThoughtInput) => {
-        setNewThought((previousThoughts) => [newThoughtInput, ...previousThoughts])
-      })
+      .then(() => fetchThoughts())
       .catch((error) => console.log(error))
   }
-  console.log('new thought', newThought)
 
   return (
     <div>
@@ -45,12 +41,19 @@ export const Feed = () => {
         handleFormSubmit={handleFormSubmit} />
 
       {!loading && thoughtsList.map((thought) => {
-        console.log('each thought', thought)
+        const handleLikeSubmit = () => {
+          fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
+            method: 'POST'
+          })
+            .then(() => fetchThoughts())
+            .catch((error) => console.log(error))
+        }
         return (
           <Thought
             key={thought._id}
             thoughtMessage={thought.message}
-            timeStamp={thought.createdAt} />
+            timeStamp={thought.createdAt}
+            handleLikeSubmit={handleLikeSubmit} />
         )
       })}
       {loading && (<h2>Loading happy thoughts...</h2>)}
