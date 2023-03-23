@@ -40,6 +40,7 @@ const AddThought = () => {
     };
     fetch(API, options)
       .then((res) => res.json())
+      .then((error) => alert(`Something went wrong! 😭 Please reload and try again. The error is: ${error.errors.message.message}`))
       .then(() => {
         fetchPosts();
         setNewPost('');
