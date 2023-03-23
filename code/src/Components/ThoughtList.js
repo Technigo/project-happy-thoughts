@@ -10,6 +10,11 @@ export const ThoughtList = ({ loading, thoughts, onLikesIncrease }) => {
     return <div className="Loading">Loading</div>
   }
 
+  /* för att kunna kontrollera klick-eventet (OBS omjag tar bort denna kom ihåg att
+  ändra i handleOnLikesIncrease till onLikesIncrease) */
+  const handleOnLikesIncrease = (id) => {
+    onLikesIncrease(id);
+  }
   return (
 
     <section>
@@ -17,7 +22,7 @@ export const ThoughtList = ({ loading, thoughts, onLikesIncrease }) => {
         <div className="Thoughts" key={list._id}>
           <p className="thought-text">{list.message}</p>
           <div className="likes">
-            <button type="button" className={(list.hearts === 0 ? 'like-btn' : 'no-like-btn')} onClick={() => onLikesIncrease(list._id)}>:heart:</button>
+            <button type="button" className={(list.hearts === 0 ? 'like-btn' : 'no-like-btn')} onClick={() => handleOnLikesIncrease(list._id)}>❤️</button>
             <p className="counter">x {list.hearts}</p>
             <p className="date">
               {formatDistance(new Date(list.createdAt), Date.now(), { addSuffix: true })}
