@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
+  const [textColor, setTextColor] = useState('black');
+
+  useEffect(() => {
+    if (newThought.length < 5 || newThought.length > 140) {
+      setTextColor('red')
+    } else { setTextColor('black') }
+  }, [newThought, textColor])
+
   return (
-    <form onSubmit={onFormSubmit}>
-      <h2> Project Happy Thoughts </h2>
-      <textarea value={newThought} onChange={onNewThoughtChange} />
-      <button type="submit"> Send thought! </button>
+    <form className="submit-form" onSubmit={onFormSubmit}>
+      <h2 className="question"> What&#39;s making you happy right now? </h2>
+      <textarea
+        className="text-area"
+        style={{ color: `${textColor}` }}
+        value={newThought}
+        onChange={onNewThoughtChange}
+        placeholder="Type your happy thought here.." />
+      <button
+        className="submit-button"
+        type="submit"
+        disabled={newThought.length < 5 || newThought.length > 140}>
+        <span className="hearts">❤️</span>Send Happy Thought!<span className="hearts">❤️</span>
+      </button>
     </form>
   )
 }

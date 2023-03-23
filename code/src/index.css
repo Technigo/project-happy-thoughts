@@ -1,8 +1,10 @@
+* {
+  box-sizing: border-box; 
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family:'Courier New', Courier, monospace; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +12,107 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App {
+display: flex; 
+flex-direction: column;
+gap: 20px; 
+}
+
+.submit-form {
+  background-color: rgb(249, 243, 243); 
+  border: 1px solid black; 
+  width: 50%; 
+  box-shadow: 10px 10px black;
+  padding: 10px; 
+  gap: 20px; 
+  align-self: center; 
+}
+
+.question {
+  font-size: 16px; 
+}
+.text-area{
+  font-family:'Courier New', Courier, monospace; 
+  font-size: 16px; 
+  font-weight: 600; 
+  width: 90%; 
+  height: 100px;  
+  border: 1px solid lightgrey;
+}
+
+.thought-list {
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+  align-items: center; 
+}
+
+.thought-boxes {
+  display: flex; 
+  flex-direction: column; 
+  border: 1px solid black; 
+  width: 50%; 
+  padding: 10px; 
+  justify-content: center;
+  box-shadow: 10px 10px black;
+  align-content: space-between; 
+}
+
+.thought-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700; 
+}
+
+.submit-button {
+  display: flex; 
+  flex-direction: row;
+  background-color: rgb(251, 159, 175); 
+  border-radius: 30px; 
+  width: fit-content; 
+  height: 40px; 
+  border: none; 
+  align-items: center; 
+  gap: 5px; 
+  padding: 10px 20px; 
+  font-size:16px; 
+}
+
+.thought-specs {
+  display: flex; 
+  align-items: space-between; 
+  justify-content: space-between;
+}
+
+.likes-section {
+  display:flex; 
+  color: grey; 
+  gap:10px; 
+}
+
+.minutes {
+display: flex;   
+color: grey; 
+
+}
+
+.minutes-text {
+  display: flex; 
+  align-self: flex-end;
+}
+
+.heart-passive, .heart-active {
+  border: none; 
+  color:red; 
+  background-color: lightgrey;
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  border: none; 
+  font-size: 16px; 
+}
+
+.heart-active {
+  background-color: lightpink; 
 }

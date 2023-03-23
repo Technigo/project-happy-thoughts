@@ -57,7 +57,7 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="App">
       <ThoughtForm
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChange}
