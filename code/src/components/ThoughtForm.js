@@ -18,6 +18,13 @@ export const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) =>
         value={newThought}
         onChange={onNewThoughtChange}
         placeholder="Type your happy thought here.." />
+
+      <div className="counter">
+        <span className={newThought.length > 140}>
+          {newThought.length}
+        </span>/140
+      </div>
+
       <button
         className="submit-button"
         type="submit"
