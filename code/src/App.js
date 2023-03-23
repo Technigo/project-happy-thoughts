@@ -69,12 +69,14 @@ export const App = () => {
         onNewThoughtChange={handleNewThought}
         onFormSubmit={onFormSubmit}
         count={count} />
-      <MessageList
-        setNewLike={setNewLike}
-        loading={loading}
-        setLoading={setLoading}
-        messageList={messageList}
-        setMessageList={setMessageList} />
+      <AnimatedPage>
+        <MessageList
+          setNewLike={setNewLike}
+          loading={loading}
+          setLoading={setLoading}
+          messageList={messageList}
+          setMessageList={setMessageList} />
+      </AnimatedPage>
     </div>
   );
 }

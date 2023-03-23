@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 600px;
+    width: 100%;
   }
 
 .message-box {
@@ -43,4 +43,6 @@
 
   .timestamp, .number-of-likes {
     color: #bebebe;
+    font-size: 1em;
+    vertical-align: middle;
   }

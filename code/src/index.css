@@ -17,8 +17,10 @@ code {
 
 .content-container {
   align-items: center;
+  justify-items: center;
   display: flex;
   flex-direction: column;
-  margin: 0 5%;
+  width: 100%;
+  margin: 0 auto;
 }
 
