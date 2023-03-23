@@ -68,6 +68,7 @@ margin: 30px;
   box-shadow: 10px 10px black;
   align-content: space-between; 
   background-color: white;
+  overflow-wrap: break-word;
 }
 
 .thought-text {
