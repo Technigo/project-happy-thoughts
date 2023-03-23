@@ -1,5 +1,6 @@
 /* eslint-disable no-shadow */
 import React from 'react';
+import './newThoughts.css';
 
 const NewThoughts = ({ count, newThoughts, onNewThoughtChange, onFormSubmit }) => {
   return (

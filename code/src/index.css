@@ -16,20 +16,9 @@ code {
 
 
 .content-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 0 5%;
 }
 
-.thought-container {
-  display: flex;
-  justify-content: center;
-  max-width: 600px;
-}
-
-.new-thought-box {
-  background-color: #f2f0f0;
-  border: solid 1px black;
-  padding: 5%;
-  box-shadow: black 10px 10px;
-}

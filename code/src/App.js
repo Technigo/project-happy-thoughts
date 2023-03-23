@@ -11,7 +11,7 @@ export const App = () => {
   const [newThoughts, setNewThoughts] = useState('');
   const [newLike, setNewLike] = useState(false)
   const [messageList, setMessageList] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export const App = () => {
   }, [newLike]);
 
   const fetchMessages = () => {
-    setLoading(true)
+    setLoading(false)
     // const options = {
     //   method: 'GET'
     // }
@@ -29,6 +29,7 @@ export const App = () => {
       .catch((error) => console.log(error))
       .finally(() => {
         setLoading(false)
+        setNewLike(false)
       })
   }
 
@@ -45,13 +46,13 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: `${newThoughts}` })
+      body: JSON.stringify({ message: newThoughts })
     }
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((result) => result.json())
       .then((data) => { setMessageList([data, ...messageList]) })
       .catch((error) => console.log(error))
-      .finally(() => { setLoading(false) });
+      .finally(() => { setNewThoughts('')(setLoading(false)) });
   }
 
   if (loading) {

@@ -1,8 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import ReactTimeAgo from 'react-time-ago'
+import ReactTimeAgo from 'react-time-ago';
 import LikeBtn from './LikeBtn';
+import './messageList.css';
 
 // the component that sets every message posted to the database in a list
 const MessageList = ({ loading, setLoading, messageList, setNewLike }) => {
