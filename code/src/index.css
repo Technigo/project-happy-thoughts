@@ -56,10 +56,15 @@ code {
   height: 40%;
 }
 
+.inputbottom {
+  display: flex;
+  justify-content: space-between;
+}
+
 .sendButton {
   border-radius: 50px;
   border-style: hidden;
-  height: 25%;
+  height: 40px;
   width: 50%;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

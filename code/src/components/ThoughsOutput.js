@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import { formatDistance } from 'date-fns';
 import { LikeButton } from './LikeButton';
 
 export const ThoughtsOutput = (props) => {
@@ -12,7 +13,7 @@ export const ThoughtsOutput = (props) => {
             <LikeButton id={thought._id} hearts={thought.hearts} />
             <div className="date-display">
               Posted:
-              {(thought.createdAt)}
+              {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
             </div>
           </div>
         </div>
