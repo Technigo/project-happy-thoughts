@@ -12,42 +12,77 @@ code {
     monospace;
 }
 
-/* General formatting */
+/* ---- General formatting */
 :root {
-  --general-padding: 25px;
+  --general-padding: 35px;
+  --general-smaller-padding: 15px;
+  --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.emoji {
+  font-size: 24px;
 }
 
 
-/* Main container */
+/* ---- Main container */
 
 .main-wrapper {
   background-color: rgb(247, 210, 231);
   margin: 20px auto;
   padding: var(--general-padding);
-  width: 75%;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+
 }
 
-/* Header */
+/* ---- Header */
 
 header {
   background-color: rgb(200, 206, 255);
   margin: 0;
   padding: 5px var(--general-padding);
+  text-align: center;
 }
 
-/* Post New Message */
+/* ---- Post New Message */
 
 .post-wrapper {
-  background-color: rgb(249, 255, 200);
+  background-color: rgb(254, 255, 203);
   margin: 0;
   padding: 5px var(--general-padding);
   min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
 }
 
-/* Message List container */
+.post-wrapper h2 {
+  font-size: 26px;
+  margin: 5px 0 0 0;
+}
+
+.post-wrapper textarea {
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 0 10px 0;
+}
+
+
+.post-wrapper button {
+  background-color: rgb(255, 183, 210);
+  border-radius: 25px;
+  padding: 10px 30px;
+  /*width: 250px;
+  height: 50px;*/
+}
+
+/* ---- Message List container */
 
 .list-wrapper {
   background-color: rgb(200, 251, 255);
@@ -56,7 +91,50 @@ header {
   min-height: 500px;
 }
 
-/* Footer */
+/* Single message */
+
+.message {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: var(--general-smaller-padding)
+}
+
+.message p {
+  background-color: rgb(186, 202, 191);
+}
+
+.info-wrapper {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.info-like {
+  border: 1px solid red;
+}
+
+.info-like button {
+  background-color: rgb(209, 209, 209);
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+}
+
+/* To add when user has liked a post */
+.liked {
+  background-color: rgb(243, 180, 180);
+}
+
+
+.info-time {
+  border: 1px solid green;
+}
+
+
+
+/* ---- Footer */
 
 footer {
   background-color: rgb(186, 240, 200);
