@@ -6,6 +6,9 @@ export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([]);
   const [likedThoughts, setLikedThoughts] = useState([]);
   const happyEndpoint = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
+  const [likedPostsCount, setLikedPostsCount] = useState(
+    Number(localStorage.getItem('likedPostsCount')) || 0
+  );
 
   const fetchHappy = () => {
     fetch(happyEndpoint)
@@ -46,6 +49,12 @@ export const App = () => {
       })
     setLikedThoughts([...likedThoughts, thought._id]);
 
+    // Update the liked posts count
+    if (!likedThoughts.includes(thought._id)) {
+      setLikedPostsCount(likedPostsCount + 1);
+      localStorage.setItem('likedPostsCount', likedPostsCount + 1);
+    }
+
     setTimeout(() => {
       setLikedThoughts(likedThoughts.filter((id) => id !== thought._id));
     }, 1000);
@@ -65,6 +74,7 @@ export const App = () => {
 
   return (
     <div className="cards">
+      <p className="header"> Make stranger&apos;s hearts beat by clicking the ❤️! Also, keep track of how many posts you&apos;ve liked with the beat counter: {likedPostsCount}</p>
       <div className="Card">
         <h1>What is making you happy now?</h1>
         <input
@@ -81,6 +91,7 @@ export const App = () => {
       <div>
         {thoughtsList.map((thought) => (
           <div className="messages-card" key={thought._id}>
+            {/* Display the message and like button */}
             <div className="interior">
               <p className="msg">{thought.message}</p>
               <p>
@@ -88,13 +99,14 @@ export const App = () => {
                   className={`like-button${likedThoughts.includes(thought._id) ? ' beat' : ''}`}
                   onClick={() => { increaseLike(thought) }}
                   type="button">
-                     ❤️
+               ❤️
                 </button>
                 <span className="x"> x {thought.hearts}
                 </span>
               </p>
               <p className="timestamp">{formatTimestamp(thought.createdAt)} minutes</p>
             </div>
+
           </div>
         ))}
       </div>

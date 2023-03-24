@@ -16,6 +16,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.header{
+  position: relative;
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 6px 6px black;
+  padding: 24px 24px 32px 24px;
+  width: 390px;
+  font-weight: 700;
+  color: rgb(85, 84, 84);
+}
+
+
 .cards {
   display: flex;
   flex-direction: column;
@@ -29,7 +43,9 @@ code {
   border: 1px solid black;
   box-shadow: 6px 6px black;
   padding: 24px 24px 32px 24px;
+  width: 390px;
 }
+
 
 input {
   resize: none;
@@ -55,7 +71,7 @@ h1{
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: rgb(249, 164, 178);
+  background-color: rgb(247, 192, 201);
   border: none;
   border-radius: 25px;
   color: rgb(46, 46, 46);
@@ -65,6 +81,10 @@ h1{
   font-size: 1rem;
   font-family: monospace;
   font-weight: 600;
+}
+
+.send:hover{
+  background-color: rgba(255, 255, 255, 0.721);
 }
 
 .like-button {
