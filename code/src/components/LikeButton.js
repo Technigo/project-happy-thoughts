@@ -1,9 +1,12 @@
 import React from 'react';
 
 const LikeButton = ({ thought }) => {
-  const onHeartCountIncreaseButtonClick = () => {
+  const onHeartButtonClick = () => {
     const options = {
-      method: 'POST'
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      }
     }
     console.log('options', options)
     // eslint-disable-next-line no-underscore-dangle
@@ -16,7 +19,7 @@ const LikeButton = ({ thought }) => {
   }
 
   return (
-    <div className="heart-button"><button type="button" className="heart-emoji" onClick={onHeartCountIncreaseButtonClick}>❤️</button><p>x {thought.hearts}</p></div>
+    <div className="heart-button"><button type="button" className="heart-emoji" onClick={onHeartButtonClick}>❤️</button><p>x {thought.hearts}</p></div>
   )
 }
 

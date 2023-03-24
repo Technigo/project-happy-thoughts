@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import './SendThoughtForm.css';
 
 export const SendThoughtForm = ({ sendThought, setSendThought }) => {
-  const [thoughtsList, setThoughtsList] = useState('')
+  const [thoughtsList, setThoughtsList] = useState([])
   const [loading, setLoading] = useState(false);
-  const handleSendThoughtChange = (event) => {
+
+  const handleSendThought = (event) => {
     setSendThought(event.target.value);
   }
+
   const handleFormSubmit = (event) => {
     console.log(loading)
     event.preventDefault()
-    setLoading(true);
-    const options = {
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
       method: 'POST',
       body: JSON.stringify({
         message: `${sendThought}`
       }),
       headers: { 'Content-Type': 'application/json' }
-    }
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    })
       .then((response) => response.json())
       .then((data) => { setThoughtsList([data, ...thoughtsList]) })
       .catch((error) => console.log(error))
@@ -34,7 +34,7 @@ export const SendThoughtForm = ({ sendThought, setSendThought }) => {
         <textarea
           placeholder="My happy thought..."
           value={sendThought}
-          onChange={handleSendThoughtChange} />
+          onChange={handleSendThought} />
         <button
           type="submit"
           className="send-thought-btn">&#128140; Send Happy Thought &#128140;
