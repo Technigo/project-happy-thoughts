@@ -48,12 +48,22 @@ export const App = () => {
   // excecute the fetch happy on the first render since the array is empty
   useEffect(fetchHappy, []);
 
+  const formatTimestamp = (timestamp) => {
+    const date = new Date(timestamp);
+    const formattedDate = new Intl.DateTimeFormat('en-US', {
+      minute: '2-digit'
+    }).format(date);
+
+    return formattedDate;
+  };
+
   return (
     <>
       <div className="Card">
         <h1>What is making you happy now?</h1>
         <input
           type="text"
+          maxLength="140"
           value={stateVariable}
           onChange={(event) => setStateVariable(event.target.value)} />
         <button
@@ -64,24 +74,21 @@ export const App = () => {
       </div>
       <div>
         {thoughtsList.map((thought) => (
-          <div className="messages" key={thought._id}>
-
-            <div>
-
-              <p key={thought._id}>{thought.message}</p>
+          <div className="messages-card" key={thought._id}>
+            <div className="interior">
+              <p className="msg">{thought.message}</p>
               <p>
                 <button className="like-button" onClick={() => { increaseLike(thought) }} type="button">
-                ❤️
+                  ❤️
                 </button>
-                <span> x {thought.hearts}</span>
-
+                <span className="x"> x {thought.hearts}
+                </span>
               </p>
+              <p className="timestamp">{formatTimestamp(thought.createdAt)} minutes</p>
             </div>
           </div>
         ))}
       </div>
-
     </>
-  );
-};
-
+  )
+}

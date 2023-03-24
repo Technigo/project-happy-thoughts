@@ -36,7 +36,7 @@ input {
   padding: 8px 0 0 0;
 }
 h1{
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .send{
@@ -46,12 +46,13 @@ h1{
   background-color: rgb(249, 164, 178);
   border: none;
   border-radius: 25px;
-  color: black;
+  color: rgb(46, 46, 46);
   cursor: pointer;
-  font-weight: 700;
   padding: 0.7rem 0.8rem;
   width: fit-content;
   font-size: 1rem;
+  font-family: monospace;
+  font-weight: 600;
 }
 
 .like-button {
@@ -69,12 +70,31 @@ background-color: rgba(249, 164, 178, 0.548);
 
 
 
-.messages {
+.messages-card {
   margin: 20px;
   background-color:white;
   border: 1px solid black;
   box-shadow: 6px 6px black;
-  padding: 24px 24px 32px 24px;
-  height: fit-content;
+  padding: 44px 24px 32px 24px;
   width: 350px;
+}
+
+.msg {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: monospace;
+  font-weight: 600;
+  font-size: larger;
+}
+
+.timestamp {
+
+ color: gray;
+ padding-left: 250px;
+
+}
+
+.interior {
+  display: flex;
+  flex-direction: column;
 }
