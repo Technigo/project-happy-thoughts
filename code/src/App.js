@@ -9,8 +9,6 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
 
   const fetchThoughts = () => {
-  // Just for fun, delete later
-  // window.alert('❤️ Ready to share some happy thoughts? ❤️')
     setLoading(true);
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((response) => response.json())
