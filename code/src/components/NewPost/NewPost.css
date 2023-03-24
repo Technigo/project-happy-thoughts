@@ -11,7 +11,27 @@
 
 .textarea {
     width: 80%;
+    font-family: 'Noto Sans Mono', monospace;
+    padding: 4px;
+    font-size: 16px;
 }
+
+.character-count {
+    display: flex;
+    width: 80%;
+    justify-content: flex-end;
+}
+
+.character-count .character-count-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin: 5px 0;
+  }
 
 /*Tablet media query*/
 @media (min-width: 667px) {

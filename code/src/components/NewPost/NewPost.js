@@ -5,17 +5,20 @@ import './NewPost.css';
 
 export const NewPost = ({ newPost, fetchThoughts }) => {
   const [newThought, setNewThought] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     console.log(newThought);
     if (newThought.length >= 141) {
-      window.alert('💔 Your message is too long. Max 140 characters 💔')
+      setErrorMessage('💔 Your message is too long. Max 140 characters 💔');
+    } else {
+      setErrorMessage('');
     }
   }, [newThought])
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    if (newThought.length > 5) {
+    if (newThought.length > 4) {
       const options = {
         method: 'POST',
         headers: {
@@ -33,23 +36,30 @@ export const NewPost = ({ newPost, fetchThoughts }) => {
         })
         .catch((error) => console.log(error));
     } else if (newThought.length <= 5) {
-      window.alert('💔 Your message is too short. Min 5 characters 💔');
+      setErrorMessage('💔 Your message is too short. Min 5 characters 💔');
     }
   }
 
   return (
     <section className="new-post-wrapper">
-
       <Header />
-
       <form onSubmit={handleFormSubmit}>
-        <textarea
-          className="textarea"
-          name=""
-          value={newThought}
-          onChange={(event) => setNewThought(event.target.value)}
-          rows="3" />
-        <SendBtn message={newThought} />
+        <label htmlFor="textarea">
+          <textarea
+            className="textarea"
+            name="textarea"
+            value={newThought}
+            onChange={(event) => setNewThought(event.target.value)}
+            rows="3"
+            spellCheck="true"
+            aria-label="Write your happy thought here"
+            aria-describedby="error-message" />
+        </label>
+        <p id="error-message" aria-live="polite" className="error-message">{errorMessage}</p>
+        <div className="character-count">
+          <p className="character-count-text">{newThought.length} / 140</p>
+        </div>
+        <SendBtn message={newThought} ariaLabel="Send your happy thought" />
       </form>
     </section>
   )
