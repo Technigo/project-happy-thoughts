@@ -34,7 +34,7 @@ export const App = () => {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application.json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({ message: newThought })
     };
@@ -51,6 +51,7 @@ export const App = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     postNewThought();
+    setNewThought('')
   };
 
   /* Function that posts new likes to API - CURRENTLY NOT WORKING
