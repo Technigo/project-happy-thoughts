@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Build an application where you can send and recieve messages using React and especially UseEffect
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I looked at the example project and previous students apps. Think I could use a lot from the example project and just adjust it to this. If I had more time I would work more on the styling (now it's not responsive) and add some more features as error messages and loading.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-emilia-saberski.netlify.app/
