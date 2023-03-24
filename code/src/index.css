@@ -4,6 +4,29 @@
   box-sizing: border-box;
 }
 
+.loading-dots {
+  animation: jump 1.5s infinite linear;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  16% {
+    transform: translate(0, -15px);
+  }
+
+  33% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -58,6 +81,13 @@ textarea:focus {
 
 h1 {
   font-size: 20px;
+}
+
+.post-length {
+  display: flex;
+  align-self: flex-end;
+  font-size: 14px;
+
 }
 
 .thought-box,
