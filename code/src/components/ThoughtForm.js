@@ -2,8 +2,9 @@
 import React from 'react';
 
 const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
+  const isSubmitButtonDisabled = newThought.length < 6 || newThought.length > 140;
   return (
-    <div className="form-wrapper">
+    <section className="form-section">
       <form className="form" onSubmit={onFormSubmit}>
         <label className="label" htmlFor="thought-input">
           What&apos;s making you happy right now?
@@ -14,9 +15,14 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
             value={newThought}
             onChange={onNewThoughtChange} />
         </label>
-        <button type="submit">Send Happy Thought</button>
+        <button
+          className="submit-button"
+          type="submit"
+          disabled={isSubmitButtonDisabled}>
+          💗 Send Happy Thought 💗
+        </button>
       </form>
-    </div>)
+    </section>)
 }
 
 export default ThoughtForm

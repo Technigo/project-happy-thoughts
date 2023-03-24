@@ -1,9 +1,8 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { formatDistanceToNow } from 'date-fns';
 
-const ThoughtList = ({ loading, thoughtList, handleLikes }) => {
+const ThoughtList = ({ loading, thoughtList }) => {
   if (loading) {
     return <p>Loading is happening...</p>
   }
@@ -17,18 +16,12 @@ const ThoughtList = ({ loading, thoughtList, handleLikes }) => {
               <div className="likes-wrapper">
                 <button
                   className={thought.hearts === 0 ? 'hearts-wrapper-nolikes' : 'hearts-wrapper'}
-                  type="button"
-                  onClick={() => handleLikes(thought._id)}>
+                  type="button">
                   💗
                 </button>
                 <span>x {thought.hearts}</span>
               </div>
-              <div className="time-wrapper">
-                {formatDistanceToNow(
-                  new Date(thought.createdAt),
-                  Date.now(),
-                  { addSuffix: true }
-                )}
+              <div className="time-wrapper">TIME
               </div>
             </div>
           </div>
@@ -40,3 +33,6 @@ const ThoughtList = ({ loading, thoughtList, handleLikes }) => {
 }
 
 export default ThoughtList
+
+/* for submit-button
+ onClick={() => handleLikes(thought._id)} */
