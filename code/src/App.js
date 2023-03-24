@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 export const App = () => {
   const [stateVariable, setStateVariable] = useState('');
   const [thoughtsList, setThoughtsList] = useState([]);
+  const [likedThoughts, setLikedThoughts] = useState([]);
   const happyEndpoint = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
 
   const fetchHappy = () => {
@@ -33,7 +34,6 @@ export const App = () => {
       method: 'POST'
     }
 
-    console.log('options', options)
     // eslint-disable-next-line no-underscore-dangle
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like
     `, options)
@@ -44,7 +44,13 @@ export const App = () => {
         fetchHappy();
         console.log('heart count increased');
       })
+    setLikedThoughts([...likedThoughts, thought._id]);
+
+    setTimeout(() => {
+      setLikedThoughts(likedThoughts.filter((id) => id !== thought._id));
+    }, 1000);
   }
+
   // excecute the fetch happy on the first render since the array is empty
   useEffect(fetchHappy, []);
 
@@ -78,8 +84,11 @@ export const App = () => {
             <div className="interior">
               <p className="msg">{thought.message}</p>
               <p>
-                <button className="like-button" onClick={() => { increaseLike(thought) }} type="button">
-                  ❤️
+                <button
+                  className={`like-button${likedThoughts.includes(thought._id) ? ' beat' : ''}`}
+                  onClick={() => { increaseLike(thought) }}
+                  type="button">
+                     ❤️
                 </button>
                 <span className="x"> x {thought.hearts}
                 </span>
