@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
-import DataList from 'components/DataList';
-import InputForm from 'components/InputForm';
+import React from 'react';
+import SingleThought from './SingleThought';
 
-export const App = () => {
-  const [happyThoughtsList, setHappyThoughtsList] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [newThought, setNewThought] = useState('');
-
-  const onHeartClick = (thought) => {
+const DataList = ({ happyThoughtsList, setHappyThoughtsList, onHeartClick }) => {
+  const heartCountClick = (thought) => {
+    onHeartClick(thought)
     const options = {
       method: 'POST'
     };
@@ -36,16 +32,15 @@ export const App = () => {
         console.log('heart count increased')
       });
   };
+
   return (
-    <>
-      <InputForm
-        loading={loading}
-        setLoading={setLoading}
-        newThought={newThought}
-        setNewThought={setNewThought}
-        setHappyThoughtsList={setHappyThoughtsList}
-        happyThoughtsList={happyThoughtsList} />
-      <DataList happyThoughtsList={happyThoughtsList} onHeartClick={onHeartClick} />
-    </>
+    <div className="listItems">
+      {happyThoughtsList.map((thought) => (
+        // eslint-disable-next-line no-underscore-dangle
+        <SingleThought key={thought._id} thought={thought} onHeartClick={heartCountClick} />
+      ))}
+    </div>
   )
 };
+
+export default DataList;
