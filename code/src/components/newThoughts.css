@@ -14,8 +14,8 @@
     border: solid 1px black;
     padding: 20px;
     box-shadow: black 10px 10px;
-    margin: 3%;
-    width: 500px;
+    margin: 10px 0;
+    width: 100%;
   }
 
   .new-thought {
@@ -30,7 +30,7 @@
     background-color: #ffadad;
     padding: 3%;
     border: none;
-    width: 50%;
+    width: 60%;
 }
 
 .counter {
