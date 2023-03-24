@@ -37,11 +37,11 @@ export const LikeButton = ({ event, setNewlike }) => {
     return (
         <div className="likeBtnBox">
             <button
-            type ="button"
-            className="likeBtn"
-            value={event}
-            onClick={onButtonClick}>
-            <span>❤️</span>
+                type="button"
+                className="likeBtn"
+                value={event}
+                onClick={onButtonClick}>
+                <span>❤️</span>
             </button>
             <p> x {event.like}</p>
         </div>

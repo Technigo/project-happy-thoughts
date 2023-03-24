@@ -72,7 +72,7 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="happy-thought-wrapper">
       <NewThoughtsForm
         newThoughts={newThoughts}
         onNewThoughtsChange={handleNewThoughtsChange}
