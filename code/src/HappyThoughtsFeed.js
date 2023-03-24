@@ -2,6 +2,7 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable no-trailing-spaces */
 import React, { useState, useEffect } from 'react';
+import NewHappyThought from 'NewHappyThought';
 import HappyThought from './HappyThought';
 import Footer from './Footer';
 import './index.css';
@@ -53,6 +54,7 @@ const HappyThoughtsFeed = () => {
             onChange={handleChange} />
           <button type="submit">Klicka här</button>
         </form>
+        <NewHappyThought />
       </div>
       {!loading && thoughtsList.map((thought) => (
         <HappyThought

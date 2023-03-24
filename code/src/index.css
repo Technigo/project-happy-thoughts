@@ -40,3 +40,28 @@ code {
   flex-direction: row;
   justify-content: space-between;
 }
+
+.happy-thought-card {
+
+}
+
+.heart-btn-pink {
+  background-color: pink;
+  border-radius: 80rem;
+}
+
+.heart-btn-grey {
+  background-color: lightgrey;
+}
+
+.card-bottom {
+
+}
+
+.card-bottom-left {
+
+}
+
+.card-bottom-right-timestamp {
+
+}
