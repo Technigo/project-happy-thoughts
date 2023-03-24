@@ -28,7 +28,7 @@ export const NewThought = () => {
   return (
     <section className="mainContainer">
       <form onSubmit={HandleFormSubmit} className="formCard">
-        <label htmlFor="newThought" className="headThought">What is making you happy right now?
+        <label htmlFor="newThought" className="headThought">What&apos;s making you happy right now?
           <textarea
             id="newThought"
             type="text"

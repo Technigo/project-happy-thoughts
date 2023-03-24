@@ -20,13 +20,6 @@ code {
   margin: 0 auto;
 }
 
-.formContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
 .formCard {
   box-sizing: border-box;
   background-color: #ffadad38;
@@ -76,6 +69,7 @@ textarea {
   margin: 18px 0;
   padding: 10px 20px;
   box-shadow: 4.5px 5px #e2016a;
+  overflow-wrap: break-word;
 }
 
 .postText {
@@ -85,6 +79,16 @@ textarea {
   margin: 0;
   padding: 18px 0;
   min-height: 20px;
+}
+
+.heartEmo {
+  font-size: 12px;
+  transition: font-size 0.1s ease-in-out;
+}
+
+.heartEmo:hover {
+  cursor: pointer;
+  font-size: 18px;
 }
 
 .hearts {
@@ -118,6 +122,8 @@ textarea {
   color: #fc7acc;
   text-align: right;
   margin: 0;
+  position: absolute;
+  margin-top: 10px;
 }
 
 .date {
