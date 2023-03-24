@@ -41,7 +41,7 @@ form.message-container {
   top: -30px;
   background-color: #f2f0f0;
   border: 2px solid #7c7c7c;
-  box-shadow: 5px 5px;
+  box-shadow: 2px 3px 17px 14px rgba(96, 105, 126, 0.3);
   padding-bottom: 22px;
 }
 /* Whats on your mind*/
@@ -57,7 +57,7 @@ div.Thoughts {
   margin: 20px;
   background-color: #f2f0f0;
   border: 2px solid #7c7c7c;
-  box-shadow: 5px 5px;
+  box-shadow: 2px 3px 17px 14px rgba(96, 105, 126, 0.3);
   width: 450px;
   height: 170px;
 }
