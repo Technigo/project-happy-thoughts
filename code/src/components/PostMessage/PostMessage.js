@@ -13,6 +13,7 @@ export const PostMessage = ({ newMessage, onFormSubmit, handleNewMessage }) => {
         <button
           className="submit-btn"
           type="submit"
+          aria-label="like button"
           disabled={newMessage.length < 5}> ❤️ Send happy thought! ❤️
         </button>
       </form>
