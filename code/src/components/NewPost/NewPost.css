@@ -38,6 +38,10 @@
     .new-post-wrapper {
         grid-area: 1 / 2 / 2 / 7;
     }
+
+    .character-count .character-count-text {
+        font-size: 16px;
+    }
 }
 
 
