@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import MessageList from 'components/MessageList';
 import NewThoughts from 'components/NewThoughts';
 import AnimatedPage from 'components/AnimatedPage';
+import Footer from 'components/Footer';
 import './index.css';
 
 export const App = () => {
@@ -16,7 +17,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchMessages();
-  }, [newLike]);
+  }, [newLike, loading]);
 
   const fetchMessages = () => {
     setLoading(false)
@@ -55,12 +56,6 @@ export const App = () => {
       .finally(() => { setNewThoughts('')(setLoading(false))(setCount('0')) });
   }
 
-  if (loading) {
-    return (
-      <p>Loading...</p>
-    )
-  }
-
   return (
     <div className="content-container">
       <NewThoughts
@@ -78,6 +73,7 @@ export const App = () => {
           messageList={messageList}
           setMessageList={setMessageList} />
       </AnimatedPage>
+      <Footer />
     </div>
   );
 }
