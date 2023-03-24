@@ -3,8 +3,11 @@
 import React from 'react';
 import { formatDistance } from 'date-fns';
 import './messagedisplay.css'
+import { useReward } from 'react-rewards';
 
 export const MessageDisplay = ({ loading, messageList, LikeCounter, latestMessage }) => {
+  const { reward, isAnimating } = useReward('rewardId', 'confetti')
+
   if (loading) {
     return (
       <div>
@@ -19,7 +22,7 @@ export const MessageDisplay = ({ loading, messageList, LikeCounter, latestMessag
           <p className="message-text">{list.message}</p>
           <div className="like-and-date">
             <div className="button-and-counter">
-              <button className={(list.hearts === 0 ? 'no-like-button' : 'like-button')} onClick={() => LikeCounter(list._id)}>❤️</button>
+              <button className={(list.hearts === 0 ? 'no-like-button' : 'like-button')} disabled={isAnimating} onClick={() => { LikeCounter(list._id); reward() }}> <span id="rewardId" />❤️</button>
               <p className="counter">x {list.hearts}</p>
             </div>
             <p className="date-text">{formatDistance(new Date(list.createdAt), Date.now(), { addSuffix: true })}</p>

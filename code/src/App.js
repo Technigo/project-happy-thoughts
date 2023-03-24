@@ -5,10 +5,10 @@ import { MessageDisplay } from './components/MessageDisplay/MessageDisplay.js'
 import { PostMessage } from './components/PostMessage/PostMessage'
 
 export const App = () => {
-  const [messageList, setMessageList] = useState([])
-  const [loading, setLoading] = useState(false);
-  const [newMessage, setNewMessage] = useState('');
-  const [latestMessage, setLatestMessage] = useState(null)
+  const [messageList, setMessageList] = useState([]) // Keeps track of the list of messages
+  const [loading, setLoading] = useState(false); // used for loading
+  const [newMessage, setNewMessage] = useState(''); // keeps track of the user input of new message
+  const [latestMessage, setLatestMessage] = useState(null) // helps ypu keep track of the latest message in order to add animation when added
 
   // FETCH MESSAGES-FUNCTION: used for fetching messages
   // 1st fetch request included in this function
@@ -49,18 +49,11 @@ export const App = () => {
       .then((result) => result.json())
       .then((data) => {
         setMessageList([data, ...messageList])
-        setLatestMessage(data._id)
+        setLatestMessage(data._id) // this sets the LatestMessage to the latest message using the data._id
       })
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false); setNewMessage('') })
   }
-
-  // { setThoughtsList([data, ...thoughtsList])}
-
-  /* .then((response) => response.json())
-      .then((data) => { setThoughtsList([data, ...thoughtsList]) })
-      .catch((error) => console.log(error))
-      .finally(() => { setLoading(false) }) */
 
   // LIKEINCREASE-FUNCTION
   const LikeCounter = (LikeID) => {
