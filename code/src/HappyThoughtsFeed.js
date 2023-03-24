@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable no-trailing-spaces */
 import React, { useState, useEffect } from 'react';
