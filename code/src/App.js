@@ -52,7 +52,7 @@ export const App = () => {
       .then((result) => result.json())
       .then((data) => { setMessageList([data, ...messageList]) })
       .catch((error) => console.log(error))
-      .finally(() => { setNewThoughts('')(setLoading(false)) });
+      .finally(() => { setNewThoughts('')(setLoading(false))(setCount('0')) });
   }
 
   if (loading) {
