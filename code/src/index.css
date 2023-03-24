@@ -4,28 +4,6 @@
   box-sizing: border-box;
 }
 
-.loading-dots {
-  animation: jump 1.5s infinite linear;
-}
-
-@keyframes jump {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  16% {
-    transform: translate(0, -15px);
-  }
-
-  33% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
 
 body {
   -webkit-font-smoothing: antialiased;
