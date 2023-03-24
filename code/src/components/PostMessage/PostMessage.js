@@ -8,14 +8,13 @@ export const PostMessage = ({ newMessage, onFormSubmit, handleNewMessage }) => {
     <div className="form-box">
       <h1 className="info-text">What is making you happy right now?</h1>
       <form onSubmit={onFormSubmit}>
-        <textarea className="text-box" value={newMessage} onChange={handleNewMessage} maxLength={maxCharacterCount} />
-        <p className="character-count"> {newMessage.length} / {maxCharacterCount}</p>
+        <textarea className="text-box" aria-label="textarea for text input" value={newMessage} onChange={handleNewMessage} maxLength={maxCharacterCount} />
+        <p className="character-count" aria-label="counter of characters, max amount is 140"> {newMessage.length} / {maxCharacterCount}</p>
         <button
           className="submit-btn"
           type="submit"
           disabled={newMessage.length < 5}> ❤️ Send happy thought! ❤️
         </button>
-
       </form>
     </div>
   )
