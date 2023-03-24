@@ -20,7 +20,7 @@ export const Feed = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchThoughts();
+    setInterval(fetchThoughts(), 2000);
   }, []);
 
   const handleFormSubmit = (event) => {
@@ -53,7 +53,8 @@ export const Feed = () => {
           fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
             method: 'POST'
           })
-            .then(() => setMyLikesCount(myLikesCount + 1))
+            .then(() => localStorage.getItem(myLikesCount))
+            .then(() => localStorage.setItem(setMyLikesCount(myLikesCount + 1)))
             .then(() => fetchThoughts())
             .catch((error) => console.log(error))
         }

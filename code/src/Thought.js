@@ -12,7 +12,6 @@ export const Thought = (props) => {
               className={`like-button${props.likesCounter > 0 ? ' on' : ''} `}
               aria-label="like-button"
               type="button"
-              isClick={props.isClick}
               onClick={props.handleLikeSubmit}>
             ❤️{props.heart}
             </button>
