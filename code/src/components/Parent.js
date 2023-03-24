@@ -36,8 +36,8 @@ const Parent = () => {
 
     fetch(API_URL, options)
       .then((response) => response.json())
-      .then((responseData) => {
-        setThoughtList((prevList) => [responseData, ...prevList]);
+      .then((resData) => {
+        setThoughtList((prevList) => [resData, ...prevList]);
       });
   };
 
@@ -50,19 +50,24 @@ const Parent = () => {
   const handleNewThoughtChange = (event) => setNewThought(event.target.value);
 
   const handleHeartClick = (thoughtId) => {
-    const options = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' }
-    };
-
-    fetch(`${API_URL}${thoughtId}/like`, options)
-      .then((res) => res.json())
-      .then(() => getHappyThougths());
+    fetch(`${API_URL}/${thoughtId}/like`, { method: 'POST' })
+      .then((response) => response.json())
+      .then((data) => {
+        const UpdateLikes = thoughtList.map((like) => {
+          if (like.id === data.id) {
+            like.hearts += 1;
+            return like;
+          } else {
+            return like;
+          }
+        });
+        setThoughtList(UpdateLikes);
+      });
   };
 
   return (
     <main className="happy-page">
-      <img src={myImage} alt="header" />
+      <img className="header-image" src={myImage} alt="header" />
       <Form
         onFormSubmit={handleSubmit}
         newThought={newThought}

@@ -1,10 +1,12 @@
 import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
-import Emoji from './Emoji.js';
+import Emoji from './Emoji';
 
 const ListItem = ({ thoughtId, message, likes, creationDate, onHeartClick }) => {
   const creationDateObject = new Date(creationDate);
   const formattedCreationDate = formatDistanceToNow(creationDateObject, { addSuffix: true });
+
+  // Two different heart backgrounds depending on if there are likes or not
 
   const buttonWithGreyBackground = (
     <button
