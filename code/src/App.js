@@ -26,7 +26,7 @@ export const App = () => {
   return (
     <>
       <Submit thoughtAdder={thoughtAdder} />
-      <Thoughts thoughts={thoughtsList} loading={loading} />
+      <Thoughts thoughtsList={thoughtsList} setThoughtsList={setThoughtsList} loading={loading} />
     </>
   );
 }

@@ -1,27 +1,37 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useState } from 'react';
+import React from 'react';
 
-export const Thoughts = ({ thoughts, loading }) => {
- /*  const [likedThoughtId, setLikedThoughtId] = useState('');
-  
-  const handleLike = ({ id }) => {
+export const Thoughts = ({ thoughtsList, setThoughtsList, loading }) => {
+  const increaseHeartCount = (updatedData) => {
+    const updatedThoughtsList = thoughtsList.map((thought) => {
+      if (thought._id === updatedData._id) {
+        return { ...thought, hearts: updatedData.hearts };
+      } else {
+        return thought;
+      }
+    });
+    setThoughtsList(updatedThoughtsList);
+  };
+
+  const handleLike = (id) => {
     console.log(id);
-    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     })
-    .then((response) => response.json())
-    .then(newHeartCount => {
-
-    })
-  }; */
+      .then((response) => response.json())
+      .then((updatedData) => {
+        // Add the new heart count to existing list
+        increaseHeartCount(updatedData);
+      })
+  };
 
   return (
     <div>
       {loading ? (
         <h2>Loading...</h2>
       ) : (
-        thoughts.map((thought) => {
+        thoughtsList.map((thought) => {
           return (
             <div key={thought._id}>
               <p>{thought.message}</p>
@@ -35,30 +45,3 @@ export const Thoughts = ({ thoughts, loading }) => {
     </div>
   )
 }
-
-/* export const Thoughts = ({ thoughts }) => {
-  return (
-    <div>
-      {thoughts.map((thought) => {
-        return (
-          <div key={thought._id}>
-            <p>{thought.message}</p>
-            <button type="button" className="heart-button">
-              &#x2764;
-            </button>
-          </div>
-        )
-      })}
-    </div>
-  )
-} */
-/* export const Thoughts = ({ message }) => {
-  return (
-    <div>
-      <h2>{message}</h2>
-      <button type="button" className="heart-button">
-        &#x2764;
-      </button>
-    </div>
-  )
-} */
