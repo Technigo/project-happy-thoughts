@@ -64,7 +64,7 @@ export const App = () => {
   };
 
   return (
-    <>
+    <div className="cards">
       <div className="Card">
         <h1>What is making you happy now?</h1>
         <input
@@ -98,6 +98,6 @@ export const App = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }

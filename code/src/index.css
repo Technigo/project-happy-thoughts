@@ -7,7 +7,8 @@
     align-items: center; 
     flex-direction: column;
     font-family: monospace;
-    background-color: rgb(249, 185, 196);
+    background-color: rgb(245, 190, 199);
+   
   }
 
 
@@ -15,17 +16,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
 
 .Card {
+  position: relative;
   margin-top: 20px;
   background-color: rgb(229, 229, 229);
   border: 1px solid black;
   box-shadow: 6px 6px black;
   padding: 24px 24px 32px 24px;
-  height: fit-content;
-  width: 350px;
 }
 
 input {
@@ -34,9 +37,18 @@ input {
   height: 40px;
   margin: 16px 0;
   padding: 8px 0 0 0;
+  border: none;
+  font-family: monospace;
+  font-size: 1em;
+  font-weight: 700px;
 }
+
+input:focus {
+  outline: 2px solid pink;
+}
+
 h1{
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 .send{
