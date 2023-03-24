@@ -19,6 +19,7 @@ export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [latestMessage, setLatestMessage] = useState(null)
   const audioRef = useRef(bgMusic);
 
   // This little function plays the music when pressing the music button,
@@ -46,17 +47,18 @@ export const App = () => {
     fetchThoughts();
   }, [])
 
-  const onHeartButtonClick = (thought) => {
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought.id}/like
-        `, {
+  const onHeartButtonClick = (_id) => {
+    const options = {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
       }
-    })
+    }
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, options)
       .then((response) => response.json())
       .then(() => fetchThoughts())
-      .finally(() => fetchThoughts())
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false), console.log('new like'))
   }
 
   // The function below sends the message to the API and updates the thoughtsList-component
@@ -71,7 +73,10 @@ export const App = () => {
       headers: { 'Content-Type': 'application/json' }
     })
       .then((response) => response.json())
-      .then((data) => { setThoughtsList([data, ...thoughtsList]) })
+      .then((data) => {
+        setThoughtsList([data, ...thoughtsList])
+        setLatestMessage(data._id)
+      })
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false); setSendThought('') })
   }
@@ -89,6 +94,7 @@ export const App = () => {
         <ThoughtsList
           onHeartButtonClick={onHeartButtonClick}
           thoughtsList={thoughtsList}
+          latestMessage={latestMessage}
           loading={loading} />
       </div>
       <Footer />

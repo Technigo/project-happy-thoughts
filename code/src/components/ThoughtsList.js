@@ -1,12 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { formatDistance } from 'date-fns'
-import { LikeButton } from './LikeButton'
 import { Loading } from './Loading'
 import '../index.css';
 import './ThoughtsList.css';
 
-export const ThoughtsList = ({ loading, thoughtsList }) => {
+export const ThoughtsList = ({ loading, thoughtsList, onHeartButtonClick, latestMessage }) => {
   if (loading) {
     return <Loading />
   }
@@ -14,10 +13,13 @@ export const ThoughtsList = ({ loading, thoughtsList }) => {
     <div className="thoughts-list-wrapper">
       {thoughtsList.map((thought) => {
         return (
-          <div className="single-thought-div">
-            <p key={thought._id}>{thought.message}</p>
+          <div className={`single-thought-div ${thought._id === latestMessage ? 'fade-in' : ''}`} key={thought._id}>
+            <p>{thought.message}</p>
             <div className="thought-footer">
-              <LikeButton thought={thought} />
+              <div className="heart-button">
+                <button type="button" className="heart-emoji" onClick={() => onHeartButtonClick(thought._id)}>❤️</button>
+                <p>x {thought.hearts}</p>
+              </div>
               <p className="thought-date" key={thought.createdAt}>posted {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
             </div>
           </div>)

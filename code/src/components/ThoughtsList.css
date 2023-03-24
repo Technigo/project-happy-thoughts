@@ -16,6 +16,20 @@
     box-shadow: 5px 5px 0px 0px black;
 }
 
+.single-thought-div.fade-in {
+    opacity: 0;
+    animation: fade-in 0.9s ease forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
 .heart-emoji {
     background-color: rgb(255, 204, 212);
     padding: 10px 10px 10px 10px;
