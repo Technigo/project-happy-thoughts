@@ -1,5 +1,4 @@
 *{
-  box-sizing: border-box;
   overflow-x: hidden;
 }
 
@@ -10,11 +9,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
 }
 
 .main-container{
@@ -25,19 +29,26 @@ code {
   gap: 30px;
   padding: 30px;
   margin: 0 auto;
+  width: 600px;
+  max-width: 80%;
 }
 
 .submit-container{
   background-color: rgb(242, 240, 240);
   border: 1px solid black;
-  box-shadow: 5px 5px black;
+  box-shadow: 10px 10px black;
   padding: 15px;
   margin: 0 10px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 label{
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 10px;
 }
 
 .thoughts-container{
@@ -50,18 +61,48 @@ label{
 }
 
 .single-thought {
-  box-shadow: 5px 5px black;
+  box-shadow: 10px 10px black;
   border: 1px solid black;
-  display: flex;
-  justify-content: flex-start;
   max-width: 100%;
   overflow: hidden;
+  padding-left: 15px;
 }
 
 .submit-button{
   border-style: none;
   border-radius: 30px;
-  background-color: #daa7a7;
-
+  background-color: rgb(255 173 173);
+  padding: 10px;
 }
 
+.heart-button{
+  border-style: none;
+  background-color: rgb(234 234 234);
+  padding: 10px; 
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+.heart-span{
+  display: flex;
+  color: rgb(192 192 192);
+  gap: 8px;
+}
+
+/* @media (min-width: 668px){
+  .main-container{
+    width: 600px;
+  }
+} */
