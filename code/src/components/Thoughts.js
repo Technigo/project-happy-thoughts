@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import { formatDistance } from 'date-fns';
 
 export const Thoughts = ({ thoughtsList, setThoughtsList, loading }) => {
   const increaseHeartCount = (updatedData) => {
@@ -36,10 +37,11 @@ export const Thoughts = ({ thoughtsList, setThoughtsList, loading }) => {
             <div className="single-thought" key={thought._id}>
               <p>{thought.message}</p>
               <span className="heart-span">
-                <button onClick={() => handleLike(thought._id)} type="button" className="heart-button">
-                ❤️
-                </button>
-                <p>x {thought.hearts} </p>
+                <div className="heart-div">
+                  <button onClick={() => handleLike(thought._id)} type="button" className="heart-button">❤️</button>
+                  <p>x {thought.hearts} </p>
+                </div>
+                <p>{formatDistance(new Date(thought.createdAt), new Date())}</p>
               </span>
             </div>
           )

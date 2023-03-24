@@ -3,8 +3,13 @@ import React, { useState } from 'react';
 export const Submit = ({ thoughtsList, setThoughtsList }) => {
   const [inputText, setInputText] = useState('');
 
+  // needs more work
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    if (inputText.length < 5) {
+      console.log('too short')
+    } else { console.log('enough') }
+
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
       method: 'POST',
       body: JSON.stringify({ message: `${inputText}` }),
@@ -29,7 +34,7 @@ export const Submit = ({ thoughtsList, setThoughtsList }) => {
     <div className="submit-container">
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="text-area">Whats making you happy right now?
-          <textarea name="text-area" id="text-area" rows={4} cols={70} minLength={5} maxLength={140} value={inputText} onChange={((event) => setInputText(event.target.value))} />
+          <textarea name="text-area" id="text-area" rows={3} cols={70} minLength={5} value={inputText} onChange={((event) => setInputText(event.target.value))} />
           <button className="submit-button" type="submit">
           ❤️Send Happy Thought❤️
           </button>
