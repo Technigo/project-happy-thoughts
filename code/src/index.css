@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.happy-thoughts-form-wrapper {
+  display: flex;
+  align-self: center;
+  background: yellow;
+  width: auto;
+  height: 20rem;
+}
+
+.happy-thoughts-wrapper {
+  display: flex;
+  align-self: center;
+  background: blue;
+  width: auto;
+  height: 20rem;
+}
+
+.data-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
