@@ -104,12 +104,22 @@ div.likes {
   font-size: smaller;
 }
 
+button {
+  cursor: pointer;
+}
+.like-btn:hover {
+  background-color:rgb(255, 163, 179);
+}
+
+.no-like-btn:hover {
+  background-color: rgb(233, 233, 233);
+}
+
 button.like-btn {
   border-radius: 50%;
   height: 40px;
   width: 40px;
   border-style: none;
-  background-color:rgb(255, 163, 179);
 }
 
 button.no-like-btn {
@@ -117,10 +127,6 @@ button.no-like-btn {
   height: 40px;
   width: 40px;
   border-style: none;
-  background-color: rgb(233, 233, 233);
 }
 
-button.like-btn:hover {
-  background-color:rgb(255, 163, 179)
-}
 
