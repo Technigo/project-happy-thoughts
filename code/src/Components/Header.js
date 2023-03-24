@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header>
       <h1>
-        ♥️ What´s on your mind? ♥️
+        What´s on your mind?
       </h1>
     </header>
   );
