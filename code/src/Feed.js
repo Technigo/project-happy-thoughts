@@ -53,8 +53,7 @@ export const Feed = () => {
           fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
             method: 'POST'
           })
-            .then(() => localStorage.getItem(myLikesCount))
-            .then(() => localStorage.setItem(setMyLikesCount(myLikesCount + 1)))
+            .then(() => setMyLikesCount(myLikesCount + 1))
             .then(() => fetchThoughts())
             .catch((error) => console.log(error))
         }
