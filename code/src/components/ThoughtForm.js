@@ -15,6 +15,7 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
             value={newThought}
             onChange={onNewThoughtChange} />
         </label>
+        <p className="character-count">{newThought.length} / 140</p>
         <button
           className="submit-button"
           type="submit"

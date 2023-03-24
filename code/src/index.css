@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&family=Roboto+Mono&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  background-color: white;
 }
 
 code {
@@ -12,9 +16,28 @@ code {
     monospace;
 }
 
+/* Header and main */
+.header-text {
+  font-family: 'Press Start 2P', cursive;
+  color: #ffadad;
+  text-align: center;
+}
+
+main {
+  min-width: 340px;
+  max-width: 500px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  margin: auto;
+}
+
+/* Form section */
 .form-section {
-  width: 30rem;
-  margin-left: 2rem;
+  border: black solid 1.4px;
+  background-color: #f2f0f0;
+  box-shadow: 0.4rem 0.4rem black;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .form {
@@ -25,8 +48,89 @@ code {
 .label {
   display: flex;
   flex-direction: column;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .thought-input {
-  margin: 1rem 0 1rem 0;
+  margin: 1rem 0 0 0;
+  padding: 0.4rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.8rem;
+}
+
+.form p {
+  margin: 0.3rem 0 0 0;
+  text-align: right;
+  font-size: 0.8rem;
+  color:#6b6b6b;
+}
+
+.submit-button {
+  background-color: #ffadad;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.7em 1rem;
+  width: fit-content;
+  border-radius: 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #fdbebe;
+}
+
+/*Thought list section*/
+.thought-section {
+  margin-top: 2.5rem;
+}
+
+.single-thought {
+  border: black solid 1.4px;
+  margin: 1.5rem 1rem 1rem 1rem;
+  box-shadow: 0.4rem 0.4rem black;
+  padding: 1.2rem;
+}
+
+.single-thought p {
+  margin: 0.5rem auto 1.5rem auto;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.thought-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.heart-button,
+.heart-button-nolikes {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 100%;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.heart-button {
+  background-color: #ffadad;
+}
+
+.heart-button:hover {
+  background-color: #fdbebe;
+}
+
+.heart-button-nolikes {
+  background-color: #f2f0f0;
+}
+
+.heart-button-nolikes:hover {
+  background-color: #fdbebe;
+}
+
+.time {
+  color: #939292;
 }
