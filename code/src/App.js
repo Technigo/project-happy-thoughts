@@ -1,17 +1,14 @@
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
-import { ThoughtsList } from 'components/ThoughtsList';
-// import NewThought from 'components/NewThought';
-
-// import { LikeButton } from 'components/LikeButton';
-// import { SingleThought } from 'components/SingleThought';
+import { ThoughtInput } from 'components/ThoughtInput';
+import { EachThought } from 'components/EachThought';
 
 export const App = () => {
-  const [newThought, setNewThought] = useState('');
+  const [eachThought, setEachThought] = useState('');
   // because a new thought has no value and then changes state to having a value
 
-  const [thoughtsList, setThoughtsList] = useState([]);
-  // because the Thoughts List changes state when a new thought is added
+  const [thoughtInput, setThoughtInput] = useState([]);
+  // because the Thought Input changes state when a new thought is added
 
   // const [like, setLike] = useState(false);
 
@@ -20,7 +17,7 @@ export const App = () => {
   const fetchThoughts = () => {
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json()) // converts the 'response' object to a JSON object
-      .then((data) => setThoughtsList(data)) // updates the state with the data from the
+      .then((data) => setThoughtInput(data)) // updates the state with the data from the
     // response using the 'setThoughtsList' function
       .catch((error) => console.error(error)) // catches errors
       .finally(() => { console.log('fetch was successful') }) // this is where setLoading(false)); would go
@@ -32,9 +29,9 @@ export const App = () => {
   // every time the page is mounted/reloaded - so we use an empty array as a dependency
   }, []);
 
-  // const handleNewThoughtChange = (event) => {
-  //   setNewThought(event.target.value)
-  // } // think I don't need this here because it is all done in the app?
+  const onEachThoughtChange = (event) => {
+    setEachThought(event.target.value)
+  }
 
   const onFormSubmit = (event) => { // difference between onFormSubmit and handleFormSubmit - the same thing
     event.preventDefault(); // prevents from reloading entirely when user submits a thought
@@ -47,7 +44,7 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        message: newThought
+        message: eachThought
       })
     }
 
@@ -69,27 +66,41 @@ export const App = () => {
   // })
 
   // event handler where setNewThought state updates?
-  const onNewThoughtChange = (event) => {
-    setNewThought(event.target.value)
-  }
 
   return (
     <div>
-      <ThoughtsList newThought={newThought} onNewThoughtChange={onNewThoughtChange} onFormSubmit={onFormSubmit} />
-      {thoughtsList.map((thought) => {
-        // eslint-disable-next-line no-underscore-dangle
-        return (<p key={thought._id}>{thought.message}</p>)
-      })}
-      {/* <NewThought
-        newThought={newThought} /> */}
-      {/* <SingleThought singleThought={singleThought} /> */}
-      {/* <LikeButton /> */}
+      <ThoughtInput
+        eachThought={eachThought}
+        onEachThoughtChange={onEachThoughtChange}
+        onFormSubmit={onFormSubmit} />
+      <EachThought thoughtInput={thoughtInput} />
+      {/* {thoughtInput.map((thought) => (
+        <Hearts
+          // eslint-disable-next-line no-underscore-dangle
+          key={thought._id}
+          thought={thought}
+          fetchThoughts={fetchThoughts} />
+      ))} */}
     </div>
   )
 }
 
+//       <ThoughtsList newThought={newThought} onNewThoughtChange={onNewThoughtChange} onFormSubmit={onFormSubmit} />
+//       {thoughtsList.map((thought) => {
+//         // eslint-disable-next-line no-underscore-dangle
+//         return (<p key={thought._id}>{thought.message}</p>)
+//       })}
+//       {/* <NewThought
+//         newThought={newThought} /> */}
+//       {/* <SingleThought singleThought={singleThought} /> */}
+//       {/* <LikeButton /> */}
+//     </div>
+//   )
+// }
+
 // <div>
 //   <ThoughtsList newThought={newThought} onNewThoughtChange={onNewThoughtChange} onFormSubmit={onFormSubmit} />
+//
 //   <ThoughtsList
 //     newThought={newThought}
 //     onNewThoughtChange={onNewThoughtChange}

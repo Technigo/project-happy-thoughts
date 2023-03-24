@@ -1,10 +1,10 @@
-import React from 'react';
-import SingleThought from './SingleThought';
+// import React from 'react';
+// import Hearts from './Hearts';
 
-export const NewThought = ({ thoughtsList }) => {
-  return thoughtsList.map((thought) => {
-    // eslint-disable-next-line no-underscore-dangle
-    return (<SingleThought key={thought._id} thought={thought} />)
-  });
-}
+// export const NewThought = ({ thoughtInput }) => {
+//   return thoughtInput.map((thought) => {
+//     // eslint-disable-next-line no-underscore-dangle
+//     return (<Hearts key={thought._id} thought={thought} />)
+//   });
+// }
 
