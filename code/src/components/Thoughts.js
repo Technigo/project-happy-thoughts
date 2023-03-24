@@ -1,10 +1,21 @@
 /* eslint-disable no-underscore-dangle */
-import React from 'react';
+import React, { useState } from 'react';
 
 export const Thoughts = ({ thoughts, loading }) => {
-  const likePost = () => {
-    console.log('liked post');
-  };
+ /*  const [likedThoughtId, setLikedThoughtId] = useState('');
+  
+  const handleLike = ({ id }) => {
+    console.log(id);
+    fetch(`https://happy-thoughts-technigo.herokuapp.com/thoughts/${id}/like`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then((response) => response.json())
+    .then(newHeartCount => {
+
+    })
+  }; */
+
   return (
     <div>
       {loading ? (
@@ -14,8 +25,8 @@ export const Thoughts = ({ thoughts, loading }) => {
           return (
             <div key={thought._id}>
               <p>{thought.message}</p>
-              <button onClick={likePost} type="button" className="heart-button">
-              ❤️
+              <button onClick={() => handleLike(thought._id)} type="button" className="heart-button">
+                {thought.hearts} ❤️
               </button>
             </div>
           )

@@ -5,7 +5,12 @@ import { Thoughts } from 'components/Thoughts';
 
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([]);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+
+  const thoughtAdder = (newThought) => {
+    setThoughtsList([newThought, ...thoughtsList]);
+    console.log(thoughtsList);
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -20,7 +25,7 @@ export const App = () => {
 
   return (
     <>
-      <Submit />
+      <Submit thoughtAdder={thoughtAdder} />
       <Thoughts thoughts={thoughtsList} loading={loading} />
     </>
   );

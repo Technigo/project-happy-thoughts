@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Submit = () => {
+export const Submit = ({ thoughtAdder }) => {
   const [inputText, setInputText] = useState('');
 
   const handleFormSubmit = (event) => {
@@ -12,10 +12,9 @@ export const Submit = () => {
     })
       .then((response) => response.json())
       .then((newThought) => {
-        console.log(newThought)
+        thoughtAdder(newThought);
         // setThoughts(newThought); Needs to be passed somewhere!
       })
-    setInputText('');
   };
 
   return (
