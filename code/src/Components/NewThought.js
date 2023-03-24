@@ -15,6 +15,7 @@ export const NewThought = ({ newMessage, handleNewThoughtsChange, onFormSubmit }
   };
 
   return (
+
     <form className="message-container" onSubmit={onFormSubmit}>
       <p className="thought-text">Share a happy thought!</p>
       <textarea
@@ -28,5 +29,6 @@ export const NewThought = ({ newMessage, handleNewThoughtsChange, onFormSubmit }
         </button>
       </div>
     </form>
+
   );
 };
