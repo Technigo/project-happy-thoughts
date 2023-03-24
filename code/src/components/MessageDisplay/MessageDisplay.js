@@ -5,16 +5,9 @@ import { formatDistance } from 'date-fns';
 import './messagedisplay.css'
 import { useReward } from 'react-rewards';
 
-export const MessageDisplay = ({ loading, messageList, LikeCounter, latestMessage }) => {
+export const MessageDisplay = ({ messageList, LikeCounter, latestMessage }) => {
   const { reward, isAnimating } = useReward('rewardId', 'confetti')
 
-  if (loading) {
-    return (
-      <div>
-        <span className="loader" />
-      </div>
-    )
-  }
   return (
     <div className="message-list-container">
       {messageList.map((list) => (

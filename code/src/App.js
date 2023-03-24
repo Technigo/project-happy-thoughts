@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { MessageDisplay } from './components/MessageDisplay/MessageDisplay.js'
 import { PostMessage } from './components/PostMessage/PostMessage'
+import { Loading } from './components/Loading/Loading'
+import { Footer } from './components/Footer/Footer'
 
 export const App = () => {
   const [messageList, setMessageList] = useState([]) // Keeps track of the list of messages
@@ -76,19 +78,22 @@ export const App = () => {
   // RETURN-SECTION HERE (Mounting the components)
 
   return (
-    <div className="happy-thoughts-box">
-      <PostMessage
-        newMessage={newMessage}
-        onFormSubmit={onFormSubmit}
-        handleNewMessage={handleNewMessage} />
-      <div>
-        <MessageDisplay
-          latestMessage={latestMessage}
-          messageList={messageList}
-          setMessageList={setMessageList}
-          LikeCounter={LikeCounter}
-          loading={loading} />
-
+    <div>
+      {loading && <div className="loading-container"><Loading /></div>}
+      <div className="happy-thoughts-box">
+        <PostMessage
+          newMessage={newMessage}
+          onFormSubmit={onFormSubmit}
+          handleNewMessage={handleNewMessage} />
+        <div className="message-conatiner">
+          <MessageDisplay
+            latestMessage={latestMessage}
+            messageList={messageList}
+            setMessageList={setMessageList}
+            LikeCounter={LikeCounter}
+            loading={loading} />
+          <div className="footer"><Footer /></div>
+        </div>
       </div>
     </div>
   );
