@@ -16,11 +16,14 @@ export const LikeBtn = ({ thought, onHeartCountIncrease }) => {
       .catch((error) => console.log(error))
       .finally(() => { console.log('heart count increased') })
   }
+
+  const likeBtnColor = thought.hearts > 0 ? 'like-btn like-btn-active' : 'like-btn';
+
   return (
     <button
       onClick={onHeartCountIncreaseButtonClick}
       type="button"
-      className="like-btn">
+      className={likeBtnColor}>
       <span className="heart">❤️</span>
       <span className="heart-hover">💘</span>
     </button>

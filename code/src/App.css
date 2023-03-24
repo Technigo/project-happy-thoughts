@@ -1,6 +1,6 @@
 .main-wrapper {
     display: grid;
-    grid-template-columns: 1fr repeat(2, 160px) 1fr;
+    grid-template-columns: 1fr repeat(2, 150px) 1fr;
     row-gap: 30px;
     margin-top: 20px;
 }

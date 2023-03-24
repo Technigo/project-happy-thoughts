@@ -1,5 +1,5 @@
 .send-btn {
-    background-color: #ffb3c6;
+    background-color: #ffc0cb;
     margin-top: 10px;
     border: none;
     padding: 6px;
@@ -10,3 +10,9 @@
 .send-btn:hover {
     cursor: pointer;
 }
+
+.send-btn:disabled {
+    background-color: #cccccc;
+    color: #999999;
+    cursor: not-allowed;
+  }

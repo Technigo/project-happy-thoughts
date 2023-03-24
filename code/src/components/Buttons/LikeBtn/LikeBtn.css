@@ -9,6 +9,10 @@
     cursor: pointer;
 }
 
+.like-btn-active {
+  background-color: #ffc0cb;
+}
+
 .like-btn .heart-hover {
     display: none;
   }
