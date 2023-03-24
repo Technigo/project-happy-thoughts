@@ -5,9 +5,12 @@ import './SinglePost.css';
 
 export const SinglePost = ({ thought }) => {
   return (
-    <section className="single-post-wrapper">
+    <section
+      className="single-post-wrapper"
+      aria-label={`Thought: ${thought.message}`}
+      role="article">
       <PostContent message={thought.message} />
       <PostFooter thought={thought} />
     </section>
-  )
-}
+  );
+};

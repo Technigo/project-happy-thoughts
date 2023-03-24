@@ -1,6 +1,6 @@
 import { SendBtn } from 'components/Buttons/SendBtn/SendBtn';
 import React, { useEffect, useState } from 'react';
-import { Header } from './Header/Header';
+import { Headline } from './Headline/Headline';
 import './NewPost.css';
 
 export const NewPost = ({ newPost, fetchThoughts }) => {
@@ -35,26 +35,25 @@ export const NewPost = ({ newPost, fetchThoughts }) => {
           fetchThoughts();
         })
         .catch((error) => console.log(error));
-    } else if (newThought.length <= 5) {
+    } else if (newThought.length < 5) {
       setErrorMessage('💔 Your message is too short. Min 5 characters 💔');
     }
   }
 
   return (
     <section className="new-post-wrapper">
-      <Header />
+      <Headline />
       <form onSubmit={handleFormSubmit}>
-        <label htmlFor="textarea">
-          <textarea
-            className="textarea"
-            name="textarea"
-            value={newThought}
-            onChange={(event) => setNewThought(event.target.value)}
-            rows="3"
-            spellCheck="true"
-            aria-label="Write your happy thought here"
-            aria-describedby="error-message" />
-        </label>
+        <textarea
+          className="textarea"
+          name="textarea"
+          id="textarea"
+          value={newThought}
+          onChange={(event) => setNewThought(event.target.value)}
+          rows="3"
+          spellCheck="true"
+          aria-label="Write your happy thought here"
+          aria-describedby="error-message" />
         <p id="error-message" aria-live="polite" className="error-message">{errorMessage}</p>
         <div className="character-count">
           <p className="character-count-text">{newThought.length} / 140</p>

@@ -23,7 +23,9 @@ export const LikeBtn = ({ thought, onHeartCountIncrease }) => {
     <button
       onClick={onHeartCountIncreaseButtonClick}
       type="button"
-      className={likeBtnColor}>
+      className={likeBtnColor}
+      aria-label="Like this thought"
+      aria-pressed={thought.hearts > 0 ? 'true' : 'false'}>
       <span className="heart">❤️</span>
       <span className="heart-hover">💘</span>
     </button>

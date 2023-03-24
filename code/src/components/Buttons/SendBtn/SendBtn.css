@@ -6,7 +6,7 @@
     border: none;
     padding: 4px;
     border-radius: 20px;
-    width: 180px;
+    width: 70%;
 }
 
 .send-btn:hover {
@@ -18,3 +18,18 @@
     color: #999999;
     cursor: not-allowed;
   }
+
+/*Tablet media query*/
+@media (min-width: 667px) {
+    .send-btn {
+        width: 45%;
+    }
+}
+
+
+/*Desktop media query*/
+@media (min-width: 1025px) {
+    .send-btn {
+        width: 40%;
+    }
+}

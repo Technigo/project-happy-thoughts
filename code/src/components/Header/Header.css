@@ -1,0 +1,23 @@
+h1 {
+    font-family: 'Noto Sans Mono', monospace;
+    font-weight: bold;
+    font-size: 46px;
+    margin: 30px;
+    text-align: center;
+    color: rgb(248, 108, 132);
+}
+
+/*Tablet media query*/
+@media (min-width: 667px) {
+    h1 {
+        font-size: 52px;
+    }
+}
+
+
+/*Desktop media query*/
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 60px;
+    }
+}
