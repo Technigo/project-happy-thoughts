@@ -25,12 +25,14 @@ export const App = () => {
       .finally(() => setLoading(false))
   } //end of fetch-function 
   
-  //The useEffect hook is used to fetch the data from the API when the component mounts, and the fetched data is set to the thoughts state using the setThoughts function.
+  //The useEffect hook is used to fetch the data from the API when the component mounts, 
+  //and the fetched data is set to the thoughts state using the setThoughts function.
   useEffect(() => {
     fetchThoughts();
   }, []);
 
-  //The onFormSubmit function is called when the user submits a new thought. It makes a POST request to the API with the new thought message and updates the thoughts state variable.
+  //The onFormSubmit function is called when the user submits a new thought. 
+  //It makes a POST request to the API with the new thought message and updates the thoughts state variable.
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -49,6 +51,7 @@ export const App = () => {
       .then(() => fetchThoughts())
       .finally(() => setNewMessage(''));
   }
+
   const onLikesIncrease = (LikeID) => {
     const options = { method: 'PATCH',
       headers: {

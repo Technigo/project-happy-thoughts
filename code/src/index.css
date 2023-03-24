@@ -43,6 +43,7 @@ div.letter-count {
   justify-content: flex-end;
   align-items: flex-end;
   margin-right: 65px;
+  color: rgba(0, 0, 0, 0.255);
 }
 
 div.Thoughts {
