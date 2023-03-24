@@ -5,12 +5,12 @@ import NewThoughts from 'components/NewThoughts'
 import ThoughtList from 'components/Thoughtlist'
 
 export const App = () => {
-  const [newThoughts, setNewThoughts] = useState('')
+  const [newThought, setNewThought] = useState('')
   const [thoughtList, setThoughtList] = useState([])
   const [loading, setLoading] = useState(false)
 
-  const handleNewThoughts = (event) => {
-    setNewThoughts(event.target.value);
+  const onNewThoughtsChange = (event) => {
+    setNewThought(event.target.value);
   }
 
   const fetchData = () => {
@@ -19,14 +19,14 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
-      .finally(() => { setLoading(false); setThoughtList('') })
+      .finally(() => setLoading(false))
   }
 
   useEffect(() => {
     fetchData()
   }, [])
 
-  const handleFormSubmit = (event) => {
+  const onFormSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -34,16 +34,17 @@ export const App = () => {
       headers: {
         'Content-type': 'aplication/json'
       },
-      body: JSON.stringify({ message: newThoughts })
+      body: JSON.stringify({ message: newThought })
     }
 
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchData())
-      .finally(() => setNewThoughts(''))
+      .catch((error) => console.error(error))
+      .finally(() => setNewThought(''))
   }
 
-  const handleLikeIncrease = (thoughtId) => {
+  const onLikesIncrease = (thoughtId) => {
     const options = { method: 'POST',
       headers: {
         'Content-type': 'aplication/json'
@@ -60,15 +61,15 @@ export const App = () => {
 
       <Header />
       <NewThoughts
-        handleFormSubmit={handleFormSubmit}
-        handleNewThoughts={handleNewThoughts}
-        newThoughts={newThoughts} />
+        newThought={newThought}
+        onNewThoughtsChange={onNewThoughtsChange}
+        onFormSubmit={onFormSubmit} />
 
       <ThoughtList
-        thoughtList={thoughtList}
-        setThoughtList={setThoughtList}
         loading={loading}
-        onLikeIncrease={handleLikeIncrease} />
+        thoughtList={thoughtList}
+        // setThoughtList={setThoughtList}
+        onLikesIncrease={onLikesIncrease} />
     </div>
 
   )

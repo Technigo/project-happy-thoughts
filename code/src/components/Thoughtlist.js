@@ -1,13 +1,9 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-underscore-dangle */
 import React from 'react'
-import { formatDistance } from 'date-fns';
+import moment from 'moment'
 
 const Thoughtlist = ({ loading, thoughtList, onLikesIncrease }) => {
-  // if (!Array.isArray(thoughtList)) {
-  //   return null
-  // }
-
   if (loading) {
     return <div className="Loading">Loading...<span /></div>
   }
@@ -22,7 +18,7 @@ const Thoughtlist = ({ loading, thoughtList, onLikesIncrease }) => {
               <span>❤️️</span>
             </button>
             <p className="like-counter"> x {list.hearts}</p>
-            <p className="date"> {formatDistance(new Date(list.createdAt), Date.now(), { addSuffix: true })}
+            <p className="date"> Posted: {moment(list.createdAt).fromNow()}
             </p>
           </div>
         </div>
