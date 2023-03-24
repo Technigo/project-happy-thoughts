@@ -1,0 +1,81 @@
+ .box {
+    font-family: "Sora";
+    font-family: 700;
+    color: whitesmoke;
+    text-align: center;
+    padding: 40px 0 10px 0;
+    width: 84%;
+    margin: 10% auto;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #0068ff, #0057e6);
+    box-shadow:  7px 7px 14px #003fa6,
+                 -7px -7px 14px #0083ff;
+    border:none;
+  }
+ 
+  .box-card {
+    display: flex;
+    flex-wrap: wrap;
+  }
+ 
+  .posted-thought {
+    margin: 5%;
+    flex-basis: 100%;
+    height: 1;
+    overflow: scroll;
+    font-size: 22px;
+  }
+ 
+  .heart-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+.no-likes-button {
+  margin: 6.3% 2% 5% 8%;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #0057e6, #0068ff);
+  box-shadow:  7px 7px 14px #003fa6, -7px -7px 14px #0083ff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.like-button {
+  margin: 6.3% 2% 5% 8%;
+  background: linear-gradient(145deg, #0068ff, #0057e6);
+  box-shadow:  7px 7px 14px #003285, -7px -7px 14px #0090ff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.likes {
+  justify-content: left;
+  width: fit-content;
+  margin: 8% 2% 5% 2%;
+  font-size: 18;
+  font-family: "sora";
+  font-weight: 600;
+}
+
+.posted-time {
+  margin-left: auto;
+  margin-top: 8%;
+  padding-right: 5%;
+  font-size: 18;
+  font-family: "sora";
+  font-weight: 600;
+}

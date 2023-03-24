@@ -1,0 +1,104 @@
+.submit-box {
+    margin: 0 0 0px 0 ;
+    padding-bottom: 0px;
+    }
+   
+  .submit-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 14% 10% 20% 10%;
+  
+    }
+  
+      .submit-title {
+        color: whitesmoke;
+        text-align: center;
+        font-weight: 700;
+        margin: -2px -48px 46px -40px;
+        font-size: 26px;
+      }
+   
+      .input-width {
+        padding: 6% 0% 0% 0%;
+        border: none;
+      }
+  
+      .input-area {
+        display: flex;
+        align-items: center;
+        font-family: "Sora";
+        font-weight: 800;
+        font-size: 14px;
+        letter-spacing: 1.4;
+        color: black;
+        padding: 20px 30px 4px 42px;
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        border-radius: 15px;
+        background: #ffffff;
+        box-shadow: inset 4px 4px 8px #d1d1d1,
+                    inset -8px -8px 16px #ffffff;
+                    box-shadow:  12px 12px 14px rgba(255, 255, 255, 1)
+                    -12px -12px 14px rgba(255, 254, 254, 1);           
+      }
+  
+      ::placeholder {
+        color:rgb(146, 146, 146);
+        font-family: "Sora";
+        font-size: 14px;
+        font-weight: 700;
+        padding-top: 2px;
+        letter-spacing: 0.26px;
+        text-transform: capitalize;
+      }
+  
+      .error-message {
+        font-family: "Sora";
+        text-transform:uppercase;
+        font-weight: 800;
+        Font-size: 14px;
+        position:absolute;
+        top: 86px;
+        color: rgb(255, 102, 0);
+      }
+   
+      .submit-button {
+        color: whitesmoke;
+        font-family: 'Sora';
+        font-weight: 700;
+        font-size: 20px;;
+        text-align: center;
+        width: 60%;
+        border:none;
+        border-radius: 25px;
+        padding: 20px 10px 20px 10px;
+        margin: 18% 2% -50px 2%;
+        border-radius: 15px;
+        background: linear-gradient(145deg, #0068ff, #0057e6);
+        box-shadow:  7px 7px 14px #003fa6,
+                     -7px -7px 14px #0083ff;
+      }
+   
+      .submit-button:hover {
+        opacity: 0.7;
+      }
+  
+  /* .input-area.focus {
+   
+    outline: 2px solid tomato ;
+    opacity: 1;
+  } 
+
+  
+  .input-area.error {
+
+    outline: 2px solid tomato ;
+    opacity: 1;
+  }
+  
+  .input-area.success {
+    border-color:  green;
+  } */
