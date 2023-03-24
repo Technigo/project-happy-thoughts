@@ -1,15 +1,15 @@
 
-  body {
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: flex;
-    align-items: center; 
-    flex-direction: column;
-    font-family: monospace;
-    background-color: rgb(245, 190, 199);
-   
-  }
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: monospace;
+  background-color: rgb(245, 190, 199);
+  overflow-x: hidden;
+}
 
 
 code {
@@ -144,5 +144,30 @@ background-color: rgba(249, 164, 178, 0.548);
   25% {
     transform: scale(2);
   }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .messages-card {
+    width: 200px;
+    float: inline-end;
+  }
+
+  .Card {
+  width: 200px;
+  float: inline-end;
+  }
+
+  .header{
+    width: 250px;
+   float: inline-end;
+  }
+
+  .timestamp {
+
+    color: gray;
+    padding-left: 100px;
+
+}
 
 }

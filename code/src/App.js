@@ -74,7 +74,7 @@ export const App = () => {
 
   return (
     <div className="cards">
-      <p className="header"> Make stranger&apos;s hearts beat by clicking the ❤️! Also, keep track of how many posts you&apos;ve liked with the beat counter: {likedPostsCount}</p>
+      <p className="header"> Make stranger&apos;s hearts beat by clicking the ❤️! Your beat counter here: {likedPostsCount}</p>
       <div className="Card">
         <h1>What is making you happy now?</h1>
         <input
