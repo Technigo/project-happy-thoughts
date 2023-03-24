@@ -18,7 +18,7 @@ export const Submit = ({ thoughtAdder }) => {
   };
 
   return (
-    <div className="submit-div">
+    <div className="submit-container">
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="text-area">Whats making you happy right now?
           <textarea name="text-area" id="text-area" value={inputText} onChange={((event) => setInputText(event.target.value))} />

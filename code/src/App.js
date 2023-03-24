@@ -9,7 +9,6 @@ export const App = () => {
 
   const thoughtAdder = (newThought) => {
     setThoughtsList([newThought, ...thoughtsList]);
-    console.log(thoughtsList);
   };
 
   useEffect(() => {
@@ -24,9 +23,13 @@ export const App = () => {
   }, []);
 
   return (
-    <>
+    <div className="main-container">
       <Submit thoughtAdder={thoughtAdder} />
-      <Thoughts thoughtsList={thoughtsList} setThoughtsList={setThoughtsList} loading={loading} />
-    </>
+      <Thoughts
+        thoughtsList={thoughtsList}
+        setThoughtsList={setThoughtsList}
+        loading={loading} />
+    </div>
+
   );
 }

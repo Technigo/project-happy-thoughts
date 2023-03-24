@@ -27,13 +27,13 @@ export const Thoughts = ({ thoughtsList, setThoughtsList, loading }) => {
   };
 
   return (
-    <div>
+    <div className="thoughts-container">
       {loading ? (
         <h2>Loading...</h2>
       ) : (
         thoughtsList.map((thought) => {
           return (
-            <div key={thought._id}>
+            <div className="single-thought" key={thought._id}>
               <p>{thought.message}</p>
               <button onClick={() => handleLike(thought._id)} type="button" className="heart-button">
                 {thought.hearts} ❤️
