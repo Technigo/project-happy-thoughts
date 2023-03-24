@@ -17,7 +17,7 @@ export const NewThought = ({ newMessage, handleNewThoughtsChange, onFormSubmit }
   return (
 
     <form className="message-container" onSubmit={onFormSubmit}>
-      <p className="thought-text">Share a happy thought!</p>
+      <p className="thought-text">Whats your happy thought?</p>
       <textarea
         placeholder="What's on your mind?"
         value={newMessage}
