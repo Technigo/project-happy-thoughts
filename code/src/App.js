@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import Header from 'Components/Header';
 import { NewThought } from 'Components/NewThought';
 import { ThoughtList } from 'Components/ThoughtList';
+import { Footer } from './Components/Footer';
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([]); //variable is used to store an array of objects, which will represent the thoughts fetched from the API.
@@ -86,6 +87,7 @@ export const App = () => {
           thoughts={thoughts}
           onLikesIncrease={onLikesIncrease}
           clickCount={clickCount} />
+        <Footer />
       </div>
     </div>
   );

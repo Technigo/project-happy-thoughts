@@ -83,6 +83,9 @@ section {
     height: 30px;
     top: -9px;
 }
+.submit-btn:hover {
+  background-color: rgb(161, 95, 115);
+}
 /* how many likes x1 */
 p.counter {
   display: flex;
@@ -126,10 +129,10 @@ p.date {
   height: 40px;
 }
 .like-btn:hover {
-color: rgb(227, 124, 124);
+  background-color: rgb(161, 95, 115);
 }
 .no-like-btn:hover {
-background: rgb(227, 124, 124);
+  background-color: rgb(161, 95, 115);
 }
 .no-like-btn {
   cursor: pointer;
@@ -149,9 +152,7 @@ background: rgb(227, 124, 124);
   0%, 100% { transform: scale(1); }
   50% { transform: scale(2.2); }
 } */
-.button:hover {
-  background-color: #d4acb4;
-}
+
 /* likes, time container*/
 div.likes {
   display: flex;
@@ -171,18 +172,29 @@ div.likes {
   font-style: oblique;
 }
 
+.svg-icon {
+  width: 4%;
+  fill: black;
+}
+.svg-icon:hover {
+  fill: rgb(161, 95, 115);
+}
+.github {
+  text-align: center;
+}
+
+
 /* Mobile devices */
 @media only screen and (max-width: 768px) {
   .main-container {
-    padding: 0;
+    padding-bottom: 5px;
   }
   form.message-container {
     width: 90%;
-    margin: 20px auto;
-    
+    margin: 20px auto; 
   }
   textarea {
-    width: 100%;
+    width: 95%;
   }
   div.Thoughts {
     width: 90%;
@@ -190,6 +202,7 @@ div.likes {
   }
   section {
     width: 100%;
+    margin: -2px;
   }
   .like-btn, .no-like-btn {
     height: 20px;
