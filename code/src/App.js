@@ -34,9 +34,8 @@ export const App = () => {
   //The onFormSubmit function is called when the user submits a new thought. It makes a POST request to the API with the new thought message and updates the thoughts state variable.
   const onFormSubmit = (event) => {
     event.preventDefault();
-
     const options = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -50,19 +49,23 @@ export const App = () => {
       .then(() => fetchThoughts())
       .finally(() => setNewMessage(''));
   }
-  const onLikesIncrease = (LikeID) => {
-    const options = { method: 'PATCH',
+  const onLikesIncrease = (thoughtId, event) => {
+    event.preventDefault();
+    const options = { 
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
-      } }
-
-    fetch(`https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts/${LikeID}/like`, options)
-      .then((res) => res.json())
-      .then(console.log('yey it works.'))
-      .catch((error) => console.error(error))
-      .finally(() => fetchThoughts())
+      },
+      body: JSON.stringify({
+        hearts: 1
+      }) 
+    }
+  
+    fetch(`https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts/${thoughtId}/like`, options)
+      .then(() => fetchThoughts())
+      .catch((error) => console.error(error));
   }
-
+  
   return (
     <div className="main-container">
       <Header />

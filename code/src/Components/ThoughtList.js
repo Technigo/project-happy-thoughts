@@ -11,16 +11,22 @@ export const ThoughtList = ({ loading, thoughts, onLikesIncrease }) => {
   }
 
   return (
-
     <section>
       {thoughts.map((list) => (
         <div className="Thoughts" key={list._id}>
           <p className="thought-text">{list.message}</p>
           <div className="likes">
-            <button type="button" className={(list.hearts === 0 ? 'like-btn' : 'no-like-btn')} onClick={() => onLikesIncrease(list._id)}>❤️</button>
+            <button
+              type="button"
+              className={list.hearts === 0 ? 'like-btn' : 'no-like-btn'}
+              onClick={(event) => onLikesIncrease(list._id, event)}>
+              ❤️
+            </button>
             <p className="counter">x {list.hearts}</p>
             <p className="date">
-              {formatDistance(new Date(list.createdAt), Date.now(), { addSuffix: true })}
+              {formatDistance(new Date(list.createdAt), Date.now(), {
+                addSuffix: true
+              })}
             </p>
           </div>
         </div>

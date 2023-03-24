@@ -178,6 +178,7 @@ div.likes {
   form.message-container {
     width: 90%;
     margin: 20px auto;
+    
   }
   textarea {
     width: 100%;
@@ -192,8 +193,10 @@ div.likes {
   .like-btn, .no-like-btn {
     height: 20px;
     width: 30px;
+    margin: -18px;
   }
   .char-count {
     font-size: 8px;
+    left: -4px;
   }
 }
