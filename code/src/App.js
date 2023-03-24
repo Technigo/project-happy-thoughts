@@ -69,7 +69,6 @@ export const App = () => {
       `https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts/${LikeID}/like`,
       options
     )
-    // DU BEHÖVER INTE ANROPA FETCHTHOUGHTS HÄR IGEN, SÅ TABORT DET 
       .then((res) => res.json())
       .catch((error) => error);
   };
