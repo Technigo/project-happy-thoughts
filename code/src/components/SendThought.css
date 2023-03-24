@@ -46,3 +46,7 @@ textarea {
     width: fit-content;
     cursor: pointer;
   }
+
+  .send-thought-btn:active {
+    transform: scale(0.95);
+  }

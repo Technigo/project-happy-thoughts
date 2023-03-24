@@ -1,28 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SendThought.css';
 
-export const SendThought = ({ sendThought, setSendThought }) => {
-  const [thoughtsList, setThoughtsList] = useState([])
-  const [loading, setLoading] = useState(false);
-
+export const SendThought = ({ sendThought, setSendThought, handleFormSubmit }) => {
   const handleSendThought = (event) => {
     setSendThought(event.target.value);
-  }
-
-  const handleFormSubmit = (event) => {
-    console.log(loading)
-    event.preventDefault()
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
-      method: 'POST',
-      body: JSON.stringify({
-        message: `${sendThought}`
-      }),
-      headers: { 'Content-Type': 'application/json' }
-    })
-      .then((response) => response.json())
-      .then((data) => { setThoughtsList([data, ...thoughtsList]) })
-      .catch((error) => console.log(error))
-      .finally(() => { setLoading(false); setSendThought('') })
   }
 
   return (
