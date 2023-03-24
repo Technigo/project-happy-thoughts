@@ -7,9 +7,9 @@ export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const thoughtAdder = (newThought) => {
+  /*  const thoughtAdder = (newThought) => {
     setThoughtsList([newThought, ...thoughtsList]);
-  };
+  }; */
 
   useEffect(() => {
     setLoading(true);
@@ -24,7 +24,7 @@ export const App = () => {
 
   return (
     <div className="main-container">
-      <Submit thoughtAdder={thoughtAdder} />
+      <Submit thoughtsList={thoughtsList} setThoughtsList={setThoughtsList} />
       <Thoughts
         thoughtsList={thoughtsList}
         setThoughtsList={setThoughtsList}
