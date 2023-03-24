@@ -2,10 +2,6 @@
   "extends": [
     "airbnb"
   ],
-  "linebreak-style": [
-    "off",
-    "unix"
-  ],
   "globals": {
     "document": true,
     "window": true,
