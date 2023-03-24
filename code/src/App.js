@@ -67,7 +67,7 @@ export const App = () => {
       }
     }
 
-    // 3rd fetch-request
+    // 3rd fetch-request for the likes
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${LikeID}/like`, options)
       .then((result) => result.json())
       .then(() => fetchMessages())
@@ -79,6 +79,7 @@ export const App = () => {
 
   return (
     <div>
+      {/* the loading-container was added to be able to make the loading page go ontop. */}
       {loading && <div className="loading-container"><Loading /></div>}
       <div className="happy-thoughts-box">
         <PostMessage
@@ -92,7 +93,9 @@ export const App = () => {
             setMessageList={setMessageList}
             LikeCounter={LikeCounter}
             loading={loading} />
-          <div className="footer"><Footer /></div>
+          <div className="footer">
+            <Footer />
+          </div>
         </div>
       </div>
     </div>

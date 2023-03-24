@@ -6,11 +6,13 @@ import './messagedisplay.css'
 import { useReward } from 'react-rewards';
 
 export const MessageDisplay = ({ messageList, LikeCounter, latestMessage }) => {
+  // This is a React package that is imported for adding the confetti when user presses the likes. a span is added next to the button-text that is triggered when the user clicks the button.
   const { reward, isAnimating } = useReward('rewardId', 'confetti')
 
   return (
     <div className="message-list-container">
       {messageList.map((list) => (
+        {/*the comparision below checks if the list._id is the same as the id of the latestMessage, if yes the fade-in css class will be applied */}
         <div className={`message-box ${list._id === latestMessage ? 'fade-in' : ''}`} key={list._id}>
           <p className="message-text">{list.message}</p>
           <div className="like-and-date">
