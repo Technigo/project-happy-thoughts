@@ -8,25 +8,27 @@ import { NewThought } from 'Components/NewThought';
 import { ThoughtList } from 'Components/ThoughtList';
 
 export const App = () => {
-  const [thoughts, setThoughts] = useState([]); //variable is used to store an array of objects, which will represent the thoughts fetched from the API. 
-  const [loading, setLoading] = useState(false); // a boolean value that indicates whether the API call is in progress. 
+  const [thoughts, setThoughts] = useState([]); //variable is used to store an array of objects, which will represent the thoughts fetched from the API.
+  const [loading, setLoading] = useState(false); // a boolean value that indicates whether the API call is in progress.
   const [newMessage, setNewMessage] = useState(''); //variable to store the value of the text area in the NewThought component.
+
+  // A clickcount state wich handles clicks
+  const [clickCount, setClickCount] = useState(0);
 
   //handleNewThoughtsChange is a function that updates the newMessage state variable when the user types in the text area.
   const handleNewThoughtsChange = (event) => {
-    setNewMessage(event.target.value)
-  } 
-  //fetchThoughts function makes a GET request to the API to retrieve the thoughts and update the thoughts state variable. 
+    setNewMessage(event.target.value);
+  };
+
   const fetchThoughts = () => {
-    setLoading(true)
+    setLoading(true);
     fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts')
-      .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((data) => data.json())
+      .then((jsonData) => setThoughts(jsonData))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false))
-  } //end of fetch-function 
-  
-  //The useEffect hook is used to fetch the data from the API when the component mounts, and the fetched data is set to the thoughts state using the setThoughts function.
+      .finally(() => setLoading(false));
+  };
+
   useEffect(() => {
     fetchThoughts();
   }, []);
@@ -34,38 +36,44 @@ export const App = () => {
   //The onFormSubmit function is called when the user submits a new thought. It makes a POST request to the API with the new thought message and updates the thoughts state variable.
   const onFormSubmit = (event) => {
     event.preventDefault();
+
     const options = {
-      method: 'PATCH',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         message: newMessage
       })
-    }
+    };
 
-    fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts', options)
+    fetch(
+      'https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts',
+      options
+    )
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => setNewMessage(''));
-  }
-  const onLikesIncrease = (thoughtId, event) => {
-    event.preventDefault();
-    const options = { 
+  };
+
+  const onLikesIncrease = (LikeID) => {
+    setClickCount(clickCount + 1);
+    const options = {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        hearts: 1
-      }) 
-    }
-  
-    fetch(`https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts/${thoughtId}/like`, options)
-      .then(() => fetchThoughts())
-      .catch((error) => console.error(error));
-  }
-  
+        'content-type': 'application/json'
+      }
+    };
+
+    fetch(
+      `https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts/${LikeID}/like`,
+      options
+    )
+    // DU BEHÖVER INTE ANROPA FETCHTHOUGHTS HÄR IGEN, SÅ TABORT DET 
+      .then((res) => res.json())
+      .catch((error) => error);
+  };
+
   return (
     <div className="main-container">
       <Header />
@@ -77,7 +85,8 @@ export const App = () => {
         <ThoughtList
           loading={loading}
           thoughts={thoughts}
-          onLikesIncrease={onLikesIncrease} />
+          onLikesIncrease={onLikesIncrease}
+          clickCount={clickCount} />
       </div>
     </div>
   );
