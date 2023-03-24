@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './SendThoughtForm.css';
+import './SendThought.css';
 
-export const SendThoughtForm = ({ sendThought, setSendThought }) => {
+export const SendThought = ({ sendThought, setSendThought }) => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [loading, setLoading] = useState(false);
 
@@ -35,6 +35,7 @@ export const SendThoughtForm = ({ sendThought, setSendThought }) => {
           placeholder="My happy thought..."
           value={sendThought}
           onChange={handleSendThought} />
+        <div className="character-div"><p className="character-count">{sendThought.length} / 140</p></div>
         <button
           type="submit"
           className="send-thought-btn">&#128140; Send Happy Thought &#128140;

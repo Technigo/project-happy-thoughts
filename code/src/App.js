@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { SendThoughtForm } from './components/SendThoughtForm';
+import { SendThought } from './components/SendThought';
 import { ThoughtsList } from './components/ThoughtsList';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -31,7 +31,7 @@ export const App = () => {
       <Header />
       <img alt="jumping bunny" className="bunny-icon" src={bunnyIcon} />
       <div className="app-wrapper">
-        <SendThoughtForm sendThought={sendThought} setSendThought={setSendThought} />
+        <SendThought sendThought={sendThought} setSendThought={setSendThought} />
         <ThoughtsList />
       </div>
       <Footer />
