@@ -4,6 +4,7 @@ import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
 import heart from './assets/heart.png'
 
+/* a component that contains the list of posted thoughts */
 const ThoughtList = ({ loading, thoughtList, handleLike }) => {
   if (loading) {
     return <div className="loading-animation"><img src={heart} alt="a heart" /></div>
@@ -17,6 +18,7 @@ const ThoughtList = ({ loading, thoughtList, handleLike }) => {
             <div className="thought-details">
               <div className="likes-wrapper">
                 <button
+                  /* different class-names depending on number og likes */
                   className={thought.hearts === 0 ? 'heart-button-nolikes' : 'heart-button'}
                   type="button"
                   onClick={() => handleLike(thought._id)}>
