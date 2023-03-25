@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { formatDistance } from 'date-fns';
 import { NewThought } from './NewThought';
-// import { Loading } from './Loading'
+import { Loading } from './Loading'
 
 const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 
@@ -52,6 +52,7 @@ export const ThoughtFeed = () => {
           )
         })}
       </section>
+      {loading && (<Loading />)}
     </>
   )
 };

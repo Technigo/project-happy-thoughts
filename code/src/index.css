@@ -53,8 +53,15 @@ textarea {
   border-radius: 50px;
   color: #380118;
   background-color: #ffadad;
-  padding: 10px 20px;
+  padding: 8px 12px;
   cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: #e2016a80;
+  border: #f872c0;
+  box-shadow: 0 0 5px #f872c0;
+  color: #ffca68;
 }
 
 .heart {
@@ -118,10 +125,13 @@ textarea {
 
 .sumHearts,
 .counter {
-  font-size: 12px;
+  font-size: 10px;
   color: #fc7acc;
   text-align: right;
   margin: 0;
+}
+
+.sumHearts {
   position: absolute;
   margin-top: 10px;
 }
@@ -129,22 +139,58 @@ textarea {
 .date {
     float: right;
     position: relative;
-    font-size: 12px;
+    font-size: 10px;
     color: #fc7acc;
     text-align: right;
 }
 
 .loading {
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  border: 1px #fc7acc solid;
-  padding: 40px;
-  background-color: #ffbae529;
-  color: #e22a01;
-  box-shadow: 5px 7px 0px 0px rgb(246, 42, 184);
-  width: 350px;
-  text-align: center;
+  box-sizing: border-box;
+  background-color: #fff;
+  height: 100px;
+  border: 1px solid #fc7acc;
+  border-radius: 10px;  
+  margin: 20px 0;
+  box-shadow: 4.5px 5px #e2016a;
+}
+
+h2 {
+  padding: 35px;
+  font-family: "Courier New";
+  color: #e2016a;
   font-size: 20px;
-  line-height: 40px;
+  font-weight: lighter;
+}
+
+.footContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.icon {
+  color: #ffadad88;
+  font-size: 28px;
+  padding: 0 18px;
+}
+
+.icon:hover {
+  color: #e2016a;
+}
+
+.byFoot {
+  font-family: "Courier New";
+  font-size: 12px;
+  color:#b64d7e;
+}
+
+.Technigo {
+  width: 40px;
+  opacity: 60%;
+  margin-bottom: 20px;
+}
+
+.Technigo:hover {
+  opacity: 1000%;
 }
