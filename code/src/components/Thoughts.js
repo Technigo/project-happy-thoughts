@@ -1,36 +1,26 @@
-/* eslint no-underscore-dangle: 0 */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { formatDistanceToNow } from 'date-fns';
+import { ThoughtsList } from './ThoughtsList'
 
 export const Thoughts = (props) => {
-  if (props.loading) {
-    return (
-      <h1>Loading...</h1>
-    )
+  const [isLoading, setIsLoading] = useState(false);
+  const [thoughtsArray, setThoughtsArray] = useState([]);
+
+  const fetchHappyThoughts = () => {
+    setIsLoading(true);
+    fetch(props.api_url)
+      .then((response) => response.json())
+      .then((data) => setThoughtsArray(data))
+      .catch((error) => console.log(error))
+      .finally(() => setIsLoading(false));
   }
+
+  useEffect(() => {
+    fetchHappyThoughts();
+  }, [])
+
   return (
-    <section className="thoughts">
-      {props.thoughts.map((thought) => {
-        return (
-          <div className="thought" key={thought._id}>
-
-            <p className="thought-message-text">{thought.message}</p>
-            <span className="thought-hearts-counter">
-              {thought.hearts}
-            </span>
-            <p className="thought-created-time">
-              {formatDistanceToNow(
-                new Date(thought.createdAt),
-                Date.now(),
-                { addSuffix: true }
-              )}
-            </p>
-          </div>
-
-        )
-      })}
-    </section>
+    <ThoughtsList thoughts={thoughtsArray} loading={isLoading} />
   )
 }
