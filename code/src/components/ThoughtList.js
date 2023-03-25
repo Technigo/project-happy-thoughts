@@ -1,5 +1,7 @@
 /* eslint-disable */
 import React from 'react';
+import { formatDistanceToNow } from 'date-fns';
+
 
 export const ThoughtList = ({ loading, thoughtList, handleLike }) => {
     if (loading) {
@@ -28,8 +30,8 @@ export const ThoughtList = ({ loading, thoughtList, handleLike }) => {
                         { addSuffix: true }
                     )}
                     </span>
-                        </div>
-                    </div>
+                </div>
+                </div>
                 </div>
             )})}
         </section>
