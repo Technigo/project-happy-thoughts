@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 
 import Form from './Form';
@@ -50,33 +52,28 @@ const Parent = () => {
     fetch(API_URL, options)
       .then((res) => res.json())
       .then(() => fetchMessages())
-      .finally(() => postNewThought());
+      .finally(() => setNewThought());
   };
 
-  const handleHeartClick = (thoughtId) => {
-    fetch(`${API_URL}/${thoughtId}/like`, { method: 'POST' })
+  const handleLikes = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
       .then((res) => res.json())
-      .then((data) => {
-        const UpdateLikes = thoughtList.map((like) => {
-          if (like.id === data.id) {
-            like.hearts += 1;
-            return like;
-          } else {
-            return like;
-          }
-        });
-        setThoughtList(UpdateLikes);
-      });
+      .then(console.log('bajskorv'))
+      .then((error) => console.error(error))
+      .finally(() => fetchMessages(''));
   };
 
   return (
     <main className="happy-page">
       <img className="header-image" src={myImage} alt="header" />
-      <Form
-        onFormSubmit={onFormSubmit}
-        newThought={newThought}
-        onNewThoughtChange={handleNewThoughtChange} />
-      <List isLoading={isLoading} thoughtList={thoughtList} onHeartClick={handleHeartClick} />
+      <Form newThought={newThought} setNewThought={setNewThought} onFormSubmit={onFormSubmit} />
+      <List isLoading={isLoading} thoughtList={thoughtList} handleLikes={handleLikes} />
     </main>
   );
 };

@@ -2,11 +2,7 @@
 import React from 'react';
 import ListItem from './ListItem';
 
-const List = ({ isLoading, thoughtList, onHeartClick }) => {
-  if (isLoading) {
-    return <h1>Loading in progress...</h1>;
-  }
-
+const List = ({ thoughtList, handleLikes }) => {
   return (
     <section className="happy-list">
       {thoughtList.map((thought) => (
@@ -16,7 +12,7 @@ const List = ({ isLoading, thoughtList, onHeartClick }) => {
           message={thought.message}
           likes={thought.hearts}
           creationDate={thought.createdAt}
-          onHeartClick={onHeartClick} />
+          handleLikes={handleLikes} />
       ))}
     </section>
   );

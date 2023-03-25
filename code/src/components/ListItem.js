@@ -1,8 +1,7 @@
 import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
-import Emoji from './Emoji';
 
-const ListItem = ({ thoughtId, message, likes, creationDate, onHeartClick }) => {
+const ListItem = ({ thoughtId, message, likes, creationDate, handleLikes }) => {
   const creationDateObject = new Date(creationDate);
   const formattedCreationDate = formatDistanceToNow(creationDateObject, { addSuffix: true });
 
@@ -12,8 +11,8 @@ const ListItem = ({ thoughtId, message, likes, creationDate, onHeartClick }) => 
     <button
       type="button"
       className="heart-button grey-background"
-      onClick={() => onHeartClick(thoughtId)}>
-      <Emoji symbol="❤️" label="heart" />
+      onClick={() => handleLikes(thoughtId)}>
+      ❤️
     </button>
   );
 
@@ -21,8 +20,8 @@ const ListItem = ({ thoughtId, message, likes, creationDate, onHeartClick }) => 
     <button
       type="button"
       className="heart-button pink-background"
-      onClick={() => onHeartClick(thoughtId)}>
-      <Emoji symbol="❤️" label="heart" />
+      onClick={() => handleLikes(thoughtId)}>
+      ❤️
     </button>
   );
 

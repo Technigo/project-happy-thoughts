@@ -1,5 +1,4 @@
 import React from 'react';
-import Emoji from './Emoji';
 
 const Form = ({ onFormSubmit, newThought, onNewThoughtChange }) => {
   const isSubmitButtonDisabled = newThought.length < 6 || newThought.length > 140;
@@ -22,9 +21,7 @@ const Form = ({ onFormSubmit, newThought, onNewThoughtChange }) => {
         {newThought.length > 140 && <span>Your thought is too long!</span>}
       </div>
       <button className="send-thought-button" type="submit" disabled={isSubmitButtonDisabled}>
-        <Emoji symbol="❤️" label="heart" />
-        <span className="button-text">Send Happy Thought</span>
-        <Emoji symbol="❤️" label="heart" />
+        <span className="button-text">❤️ Send Happy Thought ❤️</span>
       </button>
     </form>
   );
