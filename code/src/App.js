@@ -81,17 +81,15 @@ export const App = () => {
   }
 
   return (
-    <div className="outer-wrapper">
-      <div className="inner-wrapper">
-        <ThoughtForm
-          newThought={newThought}
-          onNewThoughtChange={handleNewThoughtChange}
-          onFormSubmit={onFormSubmit} />
-        <ThoughtList
-          loading={loading}
-          thoughtList={thoughtList}
-          handleLikes={handleLikes} />
-      </div>
+    <div className="container">
+      <ThoughtForm
+        newThought={newThought}
+        onNewThoughtChange={handleNewThoughtChange}
+        onFormSubmit={onFormSubmit} />
+      <ThoughtList
+        loading={loading}
+        thoughtList={thoughtList}
+        handleLikes={handleLikes} />
     </div>
   );
 }
