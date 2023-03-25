@@ -39,7 +39,7 @@ export const Thoughts = ({ thoughtsList, setThoughtsList, loading }) => {
               <span className="heart-span">
                 <div className="heart-div">
                   <button onClick={() => handleLike(thought._id)} type="button" className="heart-button">❤️</button>
-                  <p>x {thought.hearts} </p>
+                  <p>x{thought.hearts} </p>
                 </div>
                 <p>{formatDistance(new Date(thought.createdAt), new Date())}</p>
               </span>
