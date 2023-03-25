@@ -1,0 +1,33 @@
+.box {
+  background-color: rgb(250, 255, 253);
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid black;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin: 2rem;
+}
+
+.input-box {
+  background-color: rgb(234, 233, 233);
+}
+
+.input-box * {
+  padding: 0 1rem 0 1rem;
+}
+
+label {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+input {
+  width: 100%;
+  min-height: 5rem;
+  border: 1px solid gray;
+  background-color: rgb(254, 254, 254);
+}

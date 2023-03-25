@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import './Input.css';
 
 export const Input = ({ newPost, setNewPost, thoughts, setThoughts }) => {
   const handleFormSubmit = (event) => {
@@ -23,13 +24,14 @@ export const Input = ({ newPost, setNewPost, thoughts, setThoughts }) => {
   };
   return (
     <div>
-      <form onSubmit={handleFormSubmit}>
-        <label htmlFor="thoughts">
+      <form onSubmit={handleFormSubmit} className="box input-box">
+        <label htmlFor="thoughts" className="input-heading">
           Whats making you happy right now?
           <input
             name="thoughts"
             type="text"
             value={newPost}
+            placeholder="Write something nice"
             onChange={(e) => {
               setNewPost(e.target.value);
             }}
