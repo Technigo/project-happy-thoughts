@@ -32,11 +32,11 @@ const Parent = () => {
     setNewThought(event.target.value);
   };
 
-  // new post clean up
-  //   const postNewThought = () => {
-  //     setNewThought('');
-  //     setIsLoading(false);
-  //   };
+  //   new post clean up
+  const postNewThought = () => {
+    setNewThought('');
+    setIsLoading(false);
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -52,7 +52,7 @@ const Parent = () => {
     fetch(API_URL, options)
       .then((res) => res.json())
       .then(() => fetchMessages())
-      .finally(() => setNewThought());
+      .then(() => setNewThought(''));
   };
 
   // like button function
@@ -75,7 +75,7 @@ const Parent = () => {
       <img className="header-image" src={myImage} alt="header" />
       <Form
         newThought={newThought}
-        handleNewThoughtChange={handleNewThoughtChange}
+        onNewThoughtChange={handleNewThoughtChange}
         onFormSubmit={onFormSubmit} />
       <List isLoading={isLoading} thoughtList={thoughtList} handleLikes={handleLikes} />
     </main>
