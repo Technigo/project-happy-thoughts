@@ -65,11 +65,11 @@ export const App = () => {
   // excecute the fetch happy on the first render since the array is empty
   useEffect(fetchHappy, []);
   const formatTimestamp = (timestamp) => {
-    const date = new Date(timestamp);
-    const formattedDate = new Intl.DateTimeFormat('en-US', {
-      minute: '2-digit'
-    }).format(date);
-    return formattedDate;
+    const currentTime = new Date();
+    const messageTime = new Date(timestamp);
+    const diffInMilliseconds = currentTime - messageTime;
+    const diffInMinutes = Math.floor(diffInMilliseconds / (1000 * 60));
+    return `${diffInMinutes}`;
   };
 
   return (
