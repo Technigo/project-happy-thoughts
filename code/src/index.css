@@ -12,16 +12,78 @@ code {
     monospace;
 }
 
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: fit-content;
+  width: 100vw;  
+  flex-wrap: wrap;
+  align-content: center;
+  padding-top: 20px;
+
+}
+
+h1 {
+  font-size: 15px;
+}
+.thoughtInput {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  max-width: 500px;
+  margin-bottom: 20px;
+  border-style: solid;
+  box-shadow: 5px 5px black;
+  padding: 40px;
+  background-color: rgba(234, 229, 229, 0.899); font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+  
+}
+
+.submitButtonText {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 .submitButton {
   border-radius: 50px;
   border-style: hidden;
   height: 40px;
   width: 50%;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
   min-width: fit-content;
 }
 
 .submitButton:hover {
   background-color: rgb(237, 164, 175);
+}
+
+.eachThought {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  padding: 10px;
+  border-style: solid;
+  box-shadow: 5px 5px black;
+  margin: 20px 0px;
+}
+
+.eachThought p {
+  font-size: 18px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+
+}
+
+
+.heartsSection {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.heartButton {
+  border-radius: 50px;
+  width: 45px;
+  height: 45px;
+  border-style: hidden;
 }

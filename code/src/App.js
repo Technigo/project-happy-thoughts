@@ -52,7 +52,7 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => console.log(data)) // Don't put setThoughtsList or setNewThoughts, as the whole thing will be replaced
       .catch((error) => console.error(error)) // catches errors
-      .finally(() => { fetchThoughts(); onEachThoughtChange(''); }); // This collects all the updated thoughts including the one you just posted in line 34, and displays
+      .finally(() => { fetchThoughts(); setEachThought(''); }); // This collects all the updated thoughts including the one you just posted in line 34, and displays
   };
 
   // THIS IS ANOTHER WAY OF DOING IT
@@ -66,7 +66,7 @@ export const App = () => {
   // })
 
   return (
-    <div>
+    <div className="mainContainer">
       <ThoughtInput
         eachThought={eachThought}
         onEachThoughtChange={onEachThoughtChange}

@@ -20,9 +20,9 @@ export const Hearts = ({ thought, fetchThoughts }) => {
     // eslint-disable-next-line react/jsx-no-comment-textnodes
     <div>
       {/* <p key={thought._id}>{thought.message}</p> */}
-      <p>Hearts:
-        <span>{thought.hearts}</span>
-        <button onClick={onHeartCountIncreaseButtonClick} type="button">Increase heart count</button>
+      <p className="heartsSection">
+        <button className="heartButton" onClick={onHeartCountIncreaseButtonClick} type="button">❤️</button>
+        <p>x:<span>{thought.hearts}</span></p>
       </p>
     </div>
   )
