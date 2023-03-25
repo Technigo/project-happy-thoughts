@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Confetti from 'react-confetti';
 import { ListThoughts } from './components/ListThoughts';
 import { SendThoughts } from './components/SendThoughts';
 
@@ -6,6 +7,7 @@ export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([]);
   const [newThought, setNewThought] = useState('');
   const [loading, setLoading] = useState(false);
+  const [confetti, setConfetti] = useState({ showConfetti: false })
 
   const fetchToughts = () => {
     setLoading(true);
@@ -39,9 +41,11 @@ export const App = () => {
 
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((response) => response.json())
-      .then(() => fetchToughts())
-      .catch((error) => console.log(error))
-      .finally(() => setNewThought(''))
+      .then(() => {
+        setConfetti({ showConfetti: true })
+        setNewThought('');
+        setTimeout(() => window.location.reload(), 3000)
+      })
   }
 
   /* post data for like buttpn */
@@ -64,11 +68,11 @@ export const App = () => {
         })
         setThoughtsList(UpdateLikes)
       })
-      // .finally(() => fetchToughts(''))
   }
 
   return (
     <div className="app">
+      {confetti.showConfetti && <Confetti color={['#ff9aa2', '#ffb7b2', '#ffdac1', '#e2f0cb', '#b5ead7', '#c7ceea']} numberOfPieces={200} />}
       <SendThoughts
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChanges}
