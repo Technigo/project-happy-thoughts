@@ -16,7 +16,7 @@ The fourth was to like messages, sending increased likes to the API and having i
 
 The fifth was adding some extra features, like having the time since posted show up, having error messages show up when the user has written too short or long messages, adding a count for number of characters, etc.
 
-And then finally, styling! Playing around with colors, animations and other stuff.
+And then finally, styling! Since we had a design to follow, I could not go too crazy. But I still managed to play around a bit with colors and animations.
 
 ## View it live
 
