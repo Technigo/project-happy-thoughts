@@ -1,11 +1,11 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
-import { ThoughtsList } from 'components/ThoughtsList'
-import { NewThought } from 'components/NewThought'
+import { ThoughtList } from 'components/ThoughtList';
+import { NewThought } from 'components/NewThought';
 
 export const App = () => {
 
-  const [thoughtsList, setThoughtsList] = useState ([]);
+  const [thoughtList, setThoughtList] = useState ([]);
   const [loading, setLoading] = useState(false);
   const [newTodo, setNewTodo] = useState('');
 
@@ -26,7 +26,7 @@ const handleNewTodoChange = (event) => {
   setNewTodo(event.target.value)
 }
 
-const handleFormSubmit = (event) => {
+const onFormSubmit = (event) => {
   event.preventDefault()
 
   const options = 
@@ -46,7 +46,6 @@ const handleFormSubmit = (event) => {
     .finally(() => setNewTodo(''));
 }
 
-
   return (
     <div>
       Here goes the heart ❤️
@@ -57,12 +56,9 @@ const handleFormSubmit = (event) => {
       />
       <ThoughtsList
         loading={loading}
-        thoughtsList={thoughtsList}
-        setThoughtsList={setThoughtsList}
+        thoughtList={thoughtList}
+        setThoughtList={setThoughtList}
       />
     </div>
   );
 }
-
-//button type="submit"
-// Other components: ThoughtsList look at TaskList.js createdAt instead of date
