@@ -1,9 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 
-import React, { useState } from 'react';
+import React from 'react';
 
-const LikeBtn = ({ thought, handleLike }) => {
-  const [currentThought, setCurrentThought] = useState(thought);
+const LikeBtn = ({ currentThought, handleLike, setCurrentThought }) => {
+//   const [currentThought, setCurrentThought] = useState(thought);
   return (
     <div>
       <button

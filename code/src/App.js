@@ -38,9 +38,10 @@ export const App = () => {
 
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((response) => response.json())
-      .then((newThoughts) => {
-        setThoughts([newThoughts, ...thoughts])
-      })
+      // .then((newThoughts) => {
+      //   setThoughts([newThoughts, ...thoughts])
+      // })
+      .then(() => { fetchThoughts() })
       .catch((error) => console.error(error))
       .finally(() => {
         setNewThought('')

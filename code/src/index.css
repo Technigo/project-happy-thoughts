@@ -12,6 +12,14 @@ code {
     monospace;
 }
 
+/* form */
+.form {
+  width: 310px;
+  background: yellow;
+}
+
+/* feed */
+
 
 .more-likes {
   background-color: aqua;
