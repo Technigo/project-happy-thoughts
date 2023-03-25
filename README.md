@@ -1,12 +1,12 @@
 # Happy Thoughts
+In this week's project, you'll be able to practice your React state skills by fetching and posting data to an API.
 
-Replace this readme with your own information about your project.
+✓ Your page should follow the design as closely as possible ✓ You should list the most recent thoughts at the top and older thoughts at the bottom (sorted) ✓ Your thoughts should show the content of the message and how many likes they've received ✓ You should have a form to post new thoughts ✓ You should implement the heart button to send likes on a thought.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Had issues with date-fns.
 
 ## View it live
 
