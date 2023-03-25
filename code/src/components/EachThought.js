@@ -9,18 +9,13 @@ export const EachThought = ({ thoughtInput, fetchThoughts }) => {
     return (
       <div className="eachThought" key={thought._id}>
         <p>{thought.message}</p>
-        <Hearts
-          thought={thought}
-          fetchThoughts={fetchThoughts} />
-        <p className="timeStamp">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
-
+        <div className="eachThoughtLower">
+          <Hearts
+            thought={thought}
+            fetchThoughts={fetchThoughts} />
+          <p className="timeStamp date">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
+        </div>
       </div>
     )
-    // return (
-    //   <>
-    //     {/* <p key={thought._id}>{thought.message}</p> */}
-    //     <Hearts key={thought._id} thought={thought} />
-    //   </>
-    // )
   });
 }

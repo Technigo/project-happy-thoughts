@@ -19,8 +19,7 @@ code {
   width: 100vw;  
   flex-wrap: wrap;
   align-content: center;
-  padding-top: 20px;
-
+  padding-top: 30px;
 }
 
 h1 {
@@ -32,15 +31,13 @@ h1 {
 .thoughtInput {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  max-width: 500px;
+  max-width: 600px;
   margin-bottom: 20px;
   border-style: solid;
   box-shadow: 5px 5px black;
-  padding: 40px;
+  padding: 20px 15px;
   background-color: rgba(234, 229, 229, 0.899); font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
-  
 }
 
 .submitButtonText {
@@ -55,6 +52,21 @@ h1 {
   width: 50%;
   min-width: fit-content;
   background-color: rgb(237, 164, 175);
+  margin-top: 2px;
+}
+
+.characterCount {
+ display: flex;
+ align-self: flex-end;
+ 
+}
+
+.redText {
+  color: red;
+}
+
+.normalText {
+  color: rgb(0, 0, 0);
 }
 
 /* EACH THOUGHT */
@@ -62,10 +74,11 @@ h1 {
 .eachThought {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 0px 15px;
   border-style: solid;
   box-shadow: 5px 5px black;
   margin: 20px 0px;
+  max-width: 600px;
 }
 
 .eachThought p {
@@ -74,16 +87,27 @@ h1 {
     monospace;
 }
 
+.eachThoughtLower {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .timeStamp {
   color:rgba(162, 157, 157, 0.899);
 }
 
+.timeStamp.date {
+  font-size: 15px;
+}
 
 /* HEARTS */
 
 .heartsSection {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10px;
 }
 
@@ -91,10 +115,17 @@ h1 {
   color:  rgba(105, 102, 102, 0.899);
 }
 
-
 .heartButton {
   border-radius: 50px;
   width: 45px;
   height: 45px;
   border-style: hidden;
+}
+
+.heartCount {
+  font-size: 15px !important;
+}
+
+.heartCountNumber {
+  font-size: 15px;
 }

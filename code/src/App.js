@@ -10,22 +10,18 @@ export const App = () => {
   const [thoughtInput, setThoughtInput] = useState([]);
   // because the Thought Input changes state when a new thought is added
 
-  // const [like, setLike] = useState(false);
-
-  // const [addNewLike, setAddNewLike] = useState(false); // if a new like has been added or not.
-
   const fetchThoughts = () => {
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json()) // converts the 'response' object to a JSON object
       .then((data) => setThoughtInput(data)) // updates the state with the data from the
-    // response using the 'setThoughtsList' function
+    // response using the 'setThoughtInput' function
       .catch((error) => console.error(error)) // catches errors
       .finally(() => { console.log('fetch was successful') }) // this is where setLoading(false)); would go
   }
 
   useEffect(() => {
     fetchThoughts();
-  // we want to fetch the most recent thoughts as a side effect
+  // we want to fetch the most recent thoughts from the API
   // every time the page is mounted/reloaded - so we use an empty array as a dependency
   }, []);
 
@@ -33,7 +29,7 @@ export const App = () => {
     setEachThought(event.target.value)
   }
 
-  const onFormSubmit = (event) => { // difference between onFormSubmit and handleFormSubmit - the same thing
+  const onFormSubmit = (event) => {
     event.preventDefault(); // prevents from reloading entirely when user submits a thought
 
     // Note that const onFormSubmit includes everything from line 31 to line 51.
