@@ -38,7 +38,7 @@ export const App = () => {
       .finally(() => fetchThoughts());
   };
   return (
-    <div>
+    <div className="container">
       <Input
         thoughts={thoughts}
         setThoughts={setThoughts}
