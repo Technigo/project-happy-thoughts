@@ -29,12 +29,11 @@ code {
   color: rgb(85, 84, 84);
 }
 
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.cards {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
 
 .Card {
   position: relative;
@@ -144,7 +143,24 @@ background-color: rgba(249, 164, 178, 0.548);
   25% {
     transform: scale(2);
   }
+}
 
+
+@keyframes slicing {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.messages-card {
+  animation-name: slicing;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
 }
 
 @media only screen and (max-width: 600px) {
@@ -155,11 +171,15 @@ background-color: rgba(249, 164, 178, 0.548);
 
   .Card {
   width: 200px;
-  float: inline-end;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
   }
 
   .header{
-    width: 250px;
+    width: 240px;
    float: inline-end;
   }
 
@@ -169,5 +189,4 @@ background-color: rgba(249, 164, 178, 0.548);
     padding-left: 100px;
 
 }
-
 }

@@ -62,13 +62,11 @@ export const App = () => {
 
   // excecute the fetch happy on the first render since the array is empty
   useEffect(fetchHappy, []);
-
   const formatTimestamp = (timestamp) => {
     const date = new Date(timestamp);
     const formattedDate = new Intl.DateTimeFormat('en-US', {
-      minute: '2-digit'
+      second: '2-digit'
     }).format(date);
-
     return formattedDate;
   };
 
@@ -104,7 +102,7 @@ export const App = () => {
                 <span className="x"> x {thought.hearts}
                 </span>
               </p>
-              <p className="timestamp">{formatTimestamp(thought.createdAt)} minutes</p>
+              <p className="timestamp">{formatTimestamp(thought.createdAt)} seconds</p>
             </div>
 
           </div>
