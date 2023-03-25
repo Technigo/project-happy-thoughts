@@ -9,6 +9,7 @@ export const App = () => {
       <div className="thought-container">
         <Thoughts API_URL={API_URL} />
       </div>
+
     </div>
   );
 }

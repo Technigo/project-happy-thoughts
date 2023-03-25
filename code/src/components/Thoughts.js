@@ -1,11 +1,14 @@
 /* eslint-disable no-underscore-dangle */
+/* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 
 import { ThoughtsList } from './ThoughtsList'
+import { ThoughtsForm } from './ThoughtsForm'
 
 export const Thoughts = ({ API_URL }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [thoughtsArray, setThoughtsArray] = useState([]);
+  const [newThought, setNewThought] = useState('');
 
   const fetchHappyThoughts = () => {
     setIsLoading(true);
@@ -19,6 +22,35 @@ export const Thoughts = ({ API_URL }) => {
   useEffect(() => {
     fetchHappyThoughts();
   }, [])
+
+  /* eslint-disable no-unused-vars */
+  const handleNewThoughtChange = (event) => {
+    setNewThought(event.target.value);
+  }
+
+  const handleFormCleanup = () => {
+    setNewThought('');
+    setIsLoading(false);
+  }
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: newThought
+      })
+    }
+
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+      .then((res) => res.json())
+      .then(() => fetchHappyThoughts())
+      .finally(() => handleFormCleanup());
+  }
 
   const handleLikes = (thoughtId) => {
     fetch(`${API_URL}/${thoughtId}/like`, { method: 'POST' })
@@ -38,6 +70,11 @@ export const Thoughts = ({ API_URL }) => {
   };
 
   return (
-    <ThoughtsList thoughts={thoughtsArray} loading={isLoading} handleLikes={handleLikes} />
+    <div className="thoughts-container">
+      <div className="form-container">
+        <ThoughtsForm newThought={newThought} setNewThought={setNewThought} onFormSubmit={onFormSubmit} />
+      </div>
+      <ThoughtsList thoughts={thoughtsArray} loading={isLoading} handleLikes={handleLikes} />
+    </div>
   )
 }
