@@ -3,7 +3,7 @@
 import React from 'react';
 import moment from 'moment';
 
-const Thoughtlist = ({ loading, thoughtList, onLikesIncrease }) => {
+const ThoughtList = ({ loading, thoughtList, onLikesIncrease }) => {
   if (loading) {
     return <div className="Loading">Loading...<span /></div>
   }
@@ -26,4 +26,4 @@ const Thoughtlist = ({ loading, thoughtList, onLikesIncrease }) => {
     </section>
   )
 }
-export default Thoughtlist;
+export default ThoughtList;
