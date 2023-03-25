@@ -1,10 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 
-const SingleMessage = ({ key, singleMessage }) => {
-  console.log('key', key);
-  console.log('singleMessage._id', singleMessage._id);
-  console.log('singleMessage', singleMessage);
+const SingleMessage = ({ singleMessage }) => {
+  // console.log('key', key);
+  // console.log('singleMessage._id', singleMessage._id);
+  // console.log('singleMessage', singleMessage);
   return (
     <div className="message">
       <p key={singleMessage._id}>{singleMessage.message}</p>

@@ -8,7 +8,7 @@ import SingleMessage from './SingleMessage';
 // 3. It takes the map and sends it into the SingleMessage component, where we decide what to show,
 // It creates a "copy" of component SingleMessage for each time it is mapped over one item ('singleMessage')
 const MessageList = ({ messageList }) => {
-  console.log(messageList)
+  // console.log(messageList)
   return (
     <div className="list-wrapper">
       {messageList.map((singleMessage) => (
