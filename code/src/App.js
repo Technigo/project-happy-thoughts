@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Header from 'components/Header'
 import NewThoughts from 'components/NewThoughts'
-import ThoughtList from 'components/List'
+import List from 'components/List'
 
 export const App = () => {
   const [newThought, setNewThought] = useState('')
@@ -65,7 +65,7 @@ export const App = () => {
         onNewThoughtsChange={onNewThoughtsChange}
         onFormSubmit={onFormSubmit} />
 
-      <ThoughtList
+      <List
         loading={loading}
         thoughtList={thoughtList}
         onLikesIncrease={onLikesIncrease} />
