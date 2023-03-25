@@ -25,6 +25,8 @@ const Parent = () => {
     getHappyThougths();
   }, []);
 
+  const handleNewThoughtChange = (event) => setNewThought(event.target.value);
+
   const postNewThought = () => {
     const options = {
       method: 'POST',
@@ -46,8 +48,6 @@ const Parent = () => {
     postNewThought();
     setNewThought('');
   };
-
-  const handleNewThoughtChange = (event) => setNewThought(event.target.value);
 
   const handleHeartClick = (thoughtId) => {
     fetch(`${API_URL}/${thoughtId}/like`, { method: 'POST' })

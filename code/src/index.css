@@ -124,7 +124,7 @@ body {
   background-color: var(--pink);
 }
 
-/* ===== TABLET and DESKTOP ===== */
+/* TABLET and DESKTOP */
 
 @media screen and (min-width: 768px) {
   .happy-page {
@@ -132,7 +132,7 @@ body {
   }
 }
 
-/* ===== DESKTOP ===== */
+/* DESKTOP */
 
 @media screen and (min-width: 992px) {
   .card:hover {
