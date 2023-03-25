@@ -3,7 +3,7 @@
 import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
 
-const ThoughtList = ({ loading, thoughtList }) => {
+const ThoughtList = ({ loading, thoughtList, handleLike }) => {
   if (loading) {
     return <p>Loading is happening...</p>
   }
@@ -17,7 +17,8 @@ const ThoughtList = ({ loading, thoughtList }) => {
               <div className="likes-wrapper">
                 <button
                   className={thought.hearts === 0 ? 'heart-button-nolikes' : 'heart-button'}
-                  type="button">
+                  type="button"
+                  onClick={() => handleLike(thought._id)}>
                   💗
                 </button>
                 <span>x {thought.hearts}</span>
@@ -40,6 +41,3 @@ const ThoughtList = ({ loading, thoughtList }) => {
 }
 
 export default ThoughtList
-
-/* for submit-button
- onClick={() => handleLikes(thought._id)} */

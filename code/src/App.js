@@ -54,30 +54,24 @@ export const App = () => {
     setNewThought('')
   };
 
-  /* Function that posts new likes to API - CURRENTLY NOT WORKING
-  const handleLikes = (_id) => {
-    const options = {
-      method: 'POST',
-      headers: {
-        'content-type:': 'application/json'
-      }
-    }
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, options)
-      .then((res) => res.json())
-      .then((data) => {
-        const updatedLikes = thoughtList.map((thought) => {
-          if (thought._id === data._id) {
-            return {
-              ...thought,
-              hearts: data.hearts
-            };
-          }
-          return thought;
-        });
-        setThoughtList(updatedLikes)
+  /* Function that posts new likes to API */
+  const handleLike = (_id) => {
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
+      .then((res) => {
+        return res.json();
       })
-      .catch((error) => console.error(error))
-  } */
+      .then((data) => {
+        const updateLikes = thoughtList.map((like) => {
+          if (like._id === data._id) {
+            like.hearts += 1;
+            return like;
+          } else {
+            return like;
+          }
+        });
+        setThoughtList(updateLikes)
+      })
+  }
 
   return (
     <div>
@@ -89,7 +83,8 @@ export const App = () => {
           onNewThoughtChange={handleNewThoughtChange} />
         <ThoughtList
           loading={loading}
-          thoughtList={thoughtList} />
+          thoughtList={thoughtList}
+          handleLike={handleLike} />
       </main>
     </div>
   );
