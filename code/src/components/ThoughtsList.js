@@ -16,9 +16,8 @@ export const ThoughtsList = ({ loading, setLoading, thoughtList, setNewLike }) =
                         <LikeButton
                             setNewLike={setNewLike}
                             thought={singleThought}
-                            // loading={loading}
-                            // setLoading={setLoading}
-                            
+                            loading={loading}
+                            setLoading={setLoading}
                         />
                         <TimeStamp thought={singleThought} />
                     </div>

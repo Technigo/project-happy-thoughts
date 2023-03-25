@@ -91,6 +91,7 @@ code {
   background-color: #FFFFFF;
   margin: 3% 0px;
   padding: 5%;
+  overflow: hidden;
   
 }
 .thoughts{
@@ -125,12 +126,10 @@ code {
   padding: 15px 15px;
   border-radius: 25px 25px;
   transition: all 0.1s ease-in-out; 
-  opacity: 0.5;
-  
+
 }
 .likeBtn:hover{
-  transform: scale(1.1);
-  opacity: 1;
+  transform: scale(1.3);
 }
 .likeBtnBox p{
   padding: 20px;
