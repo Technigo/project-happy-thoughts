@@ -52,8 +52,8 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => console.log(data)) // Don't put setThoughtsList or setNewThoughts, as the whole thing will be replaced
       .catch((error) => console.error(error)) // catches errors
-      .finally(() => fetchThoughts()); // This collects all the updated thoughts including the one you just posted in line 34, and displays
-  }
+      .finally(() => { fetchThoughts(); onEachThoughtChange(''); }); // This collects all the updated thoughts including the one you just posted in line 34, and displays
+  };
 
   // THIS IS ANOTHER WAY OF DOING IT
   // .then((res) => res.json())
@@ -65,58 +65,13 @@ export const App = () => {
   // new thought to the array as an object and adds the previous thoughts to it after
   // })
 
-  // event handler where setNewThought state updates?
-
   return (
     <div>
       <ThoughtInput
         eachThought={eachThought}
         onEachThoughtChange={onEachThoughtChange}
         onFormSubmit={onFormSubmit} />
-      <EachThought thoughtInput={thoughtInput} />
-      {/* {thoughtInput.map((thought) => (
-        <Hearts
-          // eslint-disable-next-line no-underscore-dangle
-          key={thought._id}
-          thought={thought}
-          fetchThoughts={fetchThoughts} />
-      ))} */}
+      <EachThought thoughtInput={thoughtInput} fetchThoughts={fetchThoughts} />
     </div>
   )
 }
-
-//       <ThoughtsList newThought={newThought} onNewThoughtChange={onNewThoughtChange} onFormSubmit={onFormSubmit} />
-//       {thoughtsList.map((thought) => {
-//         // eslint-disable-next-line no-underscore-dangle
-//         return (<p key={thought._id}>{thought.message}</p>)
-//       })}
-//       {/* <NewThought
-//         newThought={newThought} /> */}
-//       {/* <SingleThought singleThought={singleThought} /> */}
-//       {/* <LikeButton /> */}
-//     </div>
-//   )
-// }
-
-// <div>
-//   <ThoughtsList newThought={newThought} onNewThoughtChange={onNewThoughtChange} onFormSubmit={onFormSubmit} />
-//
-//   <ThoughtsList
-//     newThought={newThought}
-//     onNewThoughtChange={onNewThoughtChange}
-//     onFormSubmit={onFormSubmit} />
-//   {thoughtsList.map((thought) => (
-//     <SingleThought
-//       // eslint-disable-next-line no-underscore-dangle
-//       key={thought._id}
-//       thought={thought}
-//       fetchThoughts={fetchThoughts} />
-//   ))}
-
-//   {/* <NewThought
-//     newThought={newThought} /> */}
-//   <SingleThought />
-// </div>
-
-// THIS IS HOW I DID IT BEFORE - when it worked without SingleThought
-

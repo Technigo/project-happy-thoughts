@@ -12,8 +12,8 @@ export const Hearts = ({ thought, fetchThoughts }) => {
       .then((res) => res.json())
       .then((data) => console.log(data))
       .catch((error) => console.log(error)) // catches errors
-      //   .finally(() => { console.log('heart count increase') })
-      .finally(() => fetchThoughts(''))
+      .finally(() => fetchThoughts())
+    console.log('heart count increase')
   }
 
   return (
@@ -27,3 +27,5 @@ export const Hearts = ({ thought, fetchThoughts }) => {
     </div>
   )
 }
+
+// fetchThoughts={fetchThoughts}
