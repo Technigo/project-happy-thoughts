@@ -1,0 +1,48 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #958f8f;
+    width: 80%;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 8px 7px #7a7a7a;
+    background-color: #e6b3c4;
+}
+
+.question {
+    font-size: 20px;
+    margin-bottom: 7px;
+    color: #3e3d3d;
+}
+
+.thought-input {
+    border: 1px solid #3e3d3d;
+    height: 70px;
+    background-color: whitesmoke;
+    margin: 5px 0px 10px 0px;
+}
+
+.submit-button {
+    border: none;
+    font-size: 14px;
+    font-family:Arial, Helvetica, sans-serif;
+    width: fit-content;
+    color: black;
+    background-color: #cbe1b5;
+    border-radius: 23px;
+    padding: 5px 12px 6px 12px;
+    margin: 5px 0px 0px 0px;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    background-color: #88be86;
+}
+
+@media (min-width: 558px) {
+
+    .form-container {
+        width: 450px;
+    }
+
+}
