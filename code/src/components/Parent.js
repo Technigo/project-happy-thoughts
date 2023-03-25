@@ -33,10 +33,10 @@ const Parent = () => {
   };
 
   // new post clean up
-  const postNewThought = () => {
-    setNewThought('');
-    setIsLoading(false);
-  };
+  //   const postNewThought = () => {
+  //     setNewThought('');
+  //     setIsLoading(false);
+  //   };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -73,7 +73,10 @@ const Parent = () => {
   return (
     <main className="happy-page">
       <img className="header-image" src={myImage} alt="header" />
-      <Form newThought={newThought} setNewThought={setNewThought} onFormSubmit={onFormSubmit} />
+      <Form
+        newThought={newThought}
+        handleNewThoughtChange={handleNewThoughtChange}
+        onFormSubmit={onFormSubmit} />
       <List isLoading={isLoading} thoughtList={thoughtList} handleLikes={handleLikes} />
     </main>
   );

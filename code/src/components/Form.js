@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form = ({ onFormSubmit, newThought, onNewThoughtChange }) => {
+const Form = ({ onFormSubmit, newThought, handleNewThoughtChange }) => {
   const isSubmitButtonDisabled = newThought.length < 6 || newThought.length > 140;
 
   return (
@@ -11,7 +11,7 @@ const Form = ({ onFormSubmit, newThought, onNewThoughtChange }) => {
           className="thought-input"
           id="thought-input"
           value={newThought}
-          onChange={onNewThoughtChange}
+          onChange={handleNewThoughtChange}
           rows="4"
           cols="30"
           placeholder="Type your happy thought here (6 to 140 characters)" />
