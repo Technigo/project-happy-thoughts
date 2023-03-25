@@ -25,6 +25,7 @@ code {
   max-width: 600px;
   flex-direction: column;
   justify-content: center;
+  padding-left: 15px;
 }
 .newThoughtsbox{
   display: flex;
@@ -38,7 +39,7 @@ code {
   padding: 5%
 }
 
-.newThoughtsbox p{
+.newThoughtQuestion{
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   line-height: 20px;
@@ -48,29 +49,35 @@ code {
 .newThoughtsbox textarea{
   width: 95%;
   height: 120px;
-
+  resize: none;
+  font-size: 16px;
+  line-height: 20px;
+}
+.count-words{
+  align-self: flex-end;
+  /*font size not working*/
+  font-size: 14px;
+  color: #818080;
+  margin-right: 15px;
 }
 
 .newThoughtsbox button{
   background-color: pink;
-  font-size: 18px;
+  font-size: 14px;
   border: none;
   border-radius: 25px 25px;
   padding: 12px;
-  margin-top: 20px;
-  width: 60%;
+  width: 90%;
 }
-
-
-
 
 /*thought list */
 .thoughtsListWrapper{
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: left;
   width: 100vw;
   max-width: 600px;
+  padding-left: 15px;
 }
 .thoughtBox{
   display: flex;
@@ -86,7 +93,7 @@ code {
   padding: 5%;
   
 }
-.thoughtBox p{
+.thoughts{
   font-family: 'Noto Sans Mono', monospace;
   font-size: 20px;
   line-height: 25px;
@@ -99,16 +106,52 @@ code {
 
 .likeBtnBox{
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  grid-column-start: 1;
 }
-.likeBtnBox button{
+.number-likes{
+  color: #a3a3a3;
+  font-size: 16px;
+  line-height: 20px;
+  padding-left: 2%;
+
+}
+.likeBtn{
+  font-size: 17px;  
+  line-height: 20px;
   background-color: #f3f3f3;
   border: #f3f3f3;
-  font-size: 17px;
   text-align: center;
   padding: 15px 15px;
   border-radius: 25px 25px;
+  
 }
 .likeBtnBox p{
   padding: 20px;
 }
+
+/**** Tablet ****/
+@media (min-width: 668px){
+  .newThoughtsbox button{
+    background-color: pink;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px 25px;
+    padding: 12px;
+    width: 70%;
+  }
+  
+
+}
+/**** Deskstop *****/
+@media (min-width: 1025px) {
+  .newThoughtsbox button{
+    background-color: pink;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px 25px;
+    padding: 12px;
+    width: 60%;
+  }
+ 
+  }

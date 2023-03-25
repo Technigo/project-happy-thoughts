@@ -10,6 +10,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true);
   const [newThoughts, setNewThoughts] = useState("");
   const [newLike, setNewLike] = useState(false);
+  const [count, setCount] = useState(0);
 
   // create function to fetch thoughts from database
   const fetchThoughts = () => {
@@ -39,11 +40,11 @@ export const App = () => {
   const handleNewThoughtsChange = (event) => {
     // console.log("handleNewThoughtsChange")
     setNewThoughts(event.target.value)
+    setCount(event.target.value.length)
   }
 
   //create function to handle submission(add users' thoughts to database)
   const onFormSubmit = (event) => {
-    // console.log("onFormSubmit")
     event.preventDefault();
 
 
@@ -54,7 +55,7 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        description: newThoughts
+        message: newThoughts
       })
     }
 
@@ -62,7 +63,6 @@ export const App = () => {
       .then((result) => result.json())
       .then((data) => {
         fetchThoughts()   //data.response)
-        console.log("fetch in submit")
         console.log(data)
       }
       )
@@ -77,9 +77,12 @@ export const App = () => {
         newThoughts={newThoughts}
         onNewThoughtsChange={handleNewThoughtsChange}
         onFormSubmit={onFormSubmit}
+        count={count}
       />
       <ThoughtsList
+        setNewLike={setNewLike}
         loading={loading}
+        setLoading={setLoading}
         thoughtList={thoughtsList}
         setThoughtsList={setThoughtsList}
       />

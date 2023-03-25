@@ -39,11 +39,15 @@ export const LikeButton = ({ event, setNewlike }) => {
             <button
                 type="button"
                 className="likeBtn"
+                style={{
+                    backgroundColor: liked ? '#FFADAD' : '',
+                    color: liked ? 'black' : ''
+                  }}
                 value={event}
                 onClick={onButtonClick}>
                 <span>❤️</span>
             </button>
-            <p> x {event.like}</p>
+            <p className="number-likes"> x {event.like}</p>
         </div>
     )
 }

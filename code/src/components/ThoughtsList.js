@@ -3,6 +3,7 @@
 import React from "react";
 import { LikeButton } from "./LikeButton";
 
+
 export const ThoughtsList = ({ loading, setLoading, thoughtList, setNewLike }) => {
 
     console.log (thoughtList)
