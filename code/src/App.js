@@ -68,7 +68,6 @@ export const App = () => {
       <ThoughtList
         loading={loading}
         thoughtList={thoughtList}
-        // setThoughtList={setThoughtList}
         onLikesIncrease={onLikesIncrease} />
     </div>
 
