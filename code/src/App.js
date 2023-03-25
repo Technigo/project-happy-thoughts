@@ -74,7 +74,7 @@ export const App = () => {
 
   return (
     <div className="cards">
-      <p className="header"> Make stranger&apos;s hearts beat by clicking the ❤️! Your beat counter here: {likedPostsCount}</p>
+      <p className="header"> Make stranger&apos;s hearts beat by clicking the ❤️! Your love counter here: {likedPostsCount}</p>
       <div>
         <Card
           stateVariable={stateVariable}
