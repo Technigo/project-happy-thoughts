@@ -16,8 +16,9 @@ export const App = () => {
   const [newMessage, setNewMessage] = useState('');
 
   // Here we are calling the API and gets the JSON.
-  // The setLoading true shows "loading text" if the API call is delayed.
+  // The setLoading (true) shows "loading text" if the API call is delayed.
   // .catch is catching eventual errors and displays them in a consol.log
+  // No options is created for this request its per default a GET
 
   const fetchThoughts = () => {
     setLoading(true)
@@ -34,10 +35,11 @@ export const App = () => {
   useEffect(() => {
     fetchThoughts(); // <--- This is a callback function. Its executed on every render of the page
   }, []); // <--- This is the dependency array. When you put something(variables) in here
-  //  it executs everytime the array change. But when its empty its only called when mounted.
+  //  it executes every time the array change. But when its empty its only called when mounted.
+  // And ofcourse every time the fetchThouths function is called.
 
   // This function sets the value of the,
-  // event wich is when the user writes a new thought.
+  // event which is when the user writes a new thought.
 
   const handleNewThoughtsChange = (event) => {
     setNewMessage(event.target.value)
@@ -61,9 +63,6 @@ export const App = () => {
       body: JSON.stringify({ message: newMessage })
     }
 
-    // Here the fetchThoughts-function is executed again using
-    // a GET request to fetch the updated list of thoughts.
-
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then((data) => { setThoughts([data, ...thoughts]) })
@@ -72,7 +71,7 @@ export const App = () => {
 
   // This function increases the number of likes for a specific(ID) thought.
   // The function creates this object called options with three key-values:
-  // PATCH is an HTTP method that in this case updates the number of likes.
+  // POST is an HTTP method that in this case updates the number of likes.
 
   const theLikeIncreaser = (LikeID) => {
     const options = { method: 'POST',
@@ -82,7 +81,7 @@ export const App = () => {
 
     // In this fetch (network request) the argument is a url with the ID of the thought
     // witch number of likes should be updated
-    // the options after the url is the object created above.
+    // the options in this request is set to POST for we want to send a new heart-value.
 
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${LikeID}/like`, options)
       .then((res) => res.json())
@@ -95,9 +94,10 @@ export const App = () => {
 
   // /////////////// MAIN APP RETURNS JXS //////////////////////// //
 
-  // The return displays two components inside a <div> ThoughtsForm & ThoughtsFlow
+  // The return displays three components inside a <div> ThoughtsForm,  ThoughtsFlow, Footer
   // The ThoughtForm component is passed 3 props that handle the form submission of new "thoughts"
   // The ThoughtsFlow component is passed 2 props loading and thoughts.
+  // Footer is a "dumb component" that just display text and a picture.
 
   return (
     <div>

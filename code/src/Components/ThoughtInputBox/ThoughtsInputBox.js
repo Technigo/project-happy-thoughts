@@ -5,7 +5,7 @@ import './ThoughtsInputBox.css';
 
 // /////////////// COMPONENT //////////////////////// //
 
-// This functional component takes three props
+// This functional component takes three props:
 // 1 newMessage = That is displayed in the textarea
 // 2 handleNewThoughtsChange = Handles changes to the text area input
 // 3 onFormSubmit = When the form is submitted this prop is called and submits the data to the API

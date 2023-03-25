@@ -16,6 +16,7 @@
   position: relative;
   font-family: futura;
   white-space: break-spaces;
+  word-break: break-all
 }
 
 .like-count-time-container {

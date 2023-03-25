@@ -20,11 +20,10 @@
     color: black;
     font-family: futura;
     font-size: 13px;
-    line-height: 40px;  
     resize: none;  
     word-wrap: wrap;
-    word-break: break-word;
-    position: relative;
+    word-break: break-all
+
 }
 
 .thoughts-input-box-title {
@@ -58,8 +57,8 @@
 }
 
 @media (min-width: 667px) {
-    .thoughts-input-box-container {
-        max-width: 400px;
-        }
-    
+.thoughts-input-box-container {
+    max-width: 400px;
     }
+    
+}
