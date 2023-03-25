@@ -6,6 +6,7 @@ export const App = () => {
   const [happyThoughtsList, setHappyThoughtsList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
+  const [charCount, setCharCount] = useState(140);
 
   const onHeartClick = (thought) => {
     const options = {
@@ -44,7 +45,9 @@ export const App = () => {
         newThought={newThought}
         setNewThought={setNewThought}
         setHappyThoughtsList={setHappyThoughtsList}
-        happyThoughtsList={happyThoughtsList} />
+        happyThoughtsList={happyThoughtsList}
+        charCount={charCount}
+        setCharCount={setCharCount} />
       <DataList happyThoughtsList={happyThoughtsList} onHeartClick={onHeartClick} />
     </>
   )

@@ -6,7 +6,9 @@ const InputForm = ({
   newThought,
   setNewThought,
   setHappyThoughtsList,
-  happyThoughtsList
+  happyThoughtsList,
+  charCount,
+  setCharCount
 }) => {
   const updateThoughtsList = () => {
     setLoading(true);
@@ -48,12 +50,19 @@ const InputForm = ({
         setLoading(false);
         console.log(happyThoughtsList)
         setNewThought(''); // clear textarea
+        setCharCount(140);
       });
   };
 
   useEffect(() => {
     updateThoughtsList();
   }, []);
+
+  const handleInputChange = (event) => {
+    const { value } = event.target;
+    setNewThought(value);
+    setCharCount(140 - value.length); // update character count
+  };
 
   if (loading) {
     return (<h2>loading in process...</h2>);
@@ -62,9 +71,13 @@ const InputForm = ({
   return (
     <div className="inputForm">
       <form onSubmit={handleFormSubmit}>
-        <h3>Submit thought below</h3>
-        <textarea value={newThought} onChange={(event) => setNewThought(event.target.value)} />
-        <button type="submit">❤ Send Happy Thought ❤</button>
+        <h3>What&apos;s making you happy right now?</h3>
+        <textarea
+          value={newThought}
+          onChange={handleInputChange}
+          maxLength="140" />
+        <div id="counter">140/{charCount}</div>
+        <button type="submit"><span id="heart"> Send Happy Thought </span></button>
       </form>
     </div>
   );

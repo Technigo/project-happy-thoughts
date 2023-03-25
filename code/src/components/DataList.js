@@ -4,6 +4,7 @@ import SingleThought from './SingleThought';
 const DataList = ({ happyThoughtsList, setHappyThoughtsList, onHeartClick }) => {
   const heartCountClick = (thought) => {
     onHeartClick(thought)
+    console.log('like-click')
     const options = {
       method: 'POST'
     };
