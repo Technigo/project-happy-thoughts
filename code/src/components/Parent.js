@@ -10,24 +10,35 @@ const Parent = () => {
   const [thoughtList, setThoughtList] = useState([]);
   const [newThought, setNewThought] = useState('');
 
+  // get list of posts
   const API_URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
 
-  const getHappyThougths = () => {
+  const fetchMessages = () => {
     setIsLoading(true);
     fetch(API_URL)
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
       .finally(() => setIsLoading(false));
   };
 
   useEffect(() => {
-    getHappyThougths();
+    fetchMessages();
   }, []);
 
-  const handleNewThoughtChange = (event) => setNewThought(event.target.value);
+  const handleNewThoughtChange = (event) => {
+    setNewThought(event.target.value);
+  };
 
+  // new post clean up
   const postNewThought = () => {
+    setNewThought('');
+    setIsLoading(false);
+  };
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
     const options = {
       method: 'POST',
       headers: {
@@ -37,21 +48,14 @@ const Parent = () => {
     };
 
     fetch(API_URL, options)
-      .then((response) => response.json())
-      .then((resData) => {
-        setThoughtList((prevList) => [resData, ...prevList]);
-      });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    postNewThought();
-    setNewThought('');
+      .then((res) => res.json())
+      .then(() => fetchMessages())
+      .finally(() => postNewThought());
   };
 
   const handleHeartClick = (thoughtId) => {
     fetch(`${API_URL}/${thoughtId}/like`, { method: 'POST' })
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         const UpdateLikes = thoughtList.map((like) => {
           if (like.id === data.id) {
@@ -69,7 +73,7 @@ const Parent = () => {
     <main className="happy-page">
       <img className="header-image" src={myImage} alt="header" />
       <Form
-        onFormSubmit={handleSubmit}
+        onFormSubmit={onFormSubmit}
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChange} />
       <List isLoading={isLoading} thoughtList={thoughtList} onHeartClick={handleHeartClick} />
