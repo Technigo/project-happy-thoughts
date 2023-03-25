@@ -196,9 +196,11 @@ h2 {
   opacity: 100%;
 }
 
-@media (max-width: 667px) {
+@media (min-width: 320px) and (max-width: 400px) {
 
   .mainContainer {
-    min-width: 320px;
+    width: 316px;
+    padding: 0 2px;
   }
+  
 }
