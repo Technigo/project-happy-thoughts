@@ -199,6 +199,6 @@ h2 {
 @media (max-width: 667px) {
 
   .mainContainer {
-    width: 320px;
+    min-width: 320px;
   }
 }
