@@ -11,7 +11,7 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([]); //variable is used to store an array of objects, which will represent the thoughts fetched from the API. 
   const [loading, setLoading] = useState(false); // a boolean value that indicates whether the API call is in progress. 
   const [newMessage, setNewMessage] = useState(''); //variable to store the value of the text area in the NewThought component.
-
+  const [clickCount, setClickCount] = useState(0);
   //handleNewThoughtsChange is a function that updates the newMessage state variable when the user types in the text area.
   const handleNewThoughtsChange = (event) => {
     setNewMessage(event.target.value)
@@ -21,7 +21,7 @@ export const App = () => {
     setLoading(true)
     fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts')
       .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((data) => { setThoughts(data); console.log(data) })
       .catch((error) => console.error(error))
       .finally(() => setLoading(false))
   } //end of fetch-function 
@@ -29,6 +29,7 @@ export const App = () => {
   //The useEffect hook is used to fetch the data from the API when the component mounts, and the fetched data is set to the thoughts state using the setThoughts function.
   useEffect(() => {
     fetchThoughts();
+    console.log(fetchThoughts)
   }, []);
 
   //The onFormSubmit function is called when the user submits a new thought. It makes a POST request to the API with the new thought message and updates the thoughts state variable.
@@ -51,6 +52,7 @@ export const App = () => {
       .finally(() => setNewMessage(''));
   }
   const onLikesIncrease = (LikeID) => {
+    setClickCount(clickCount + 1); //makes it update every click by 1
     const options = { method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
@@ -60,11 +62,11 @@ export const App = () => {
       .then((res) => res.json())
       .then(console.log('yey it works.'))
       .catch((error) => console.error(error))
-      .finally(() => fetchThoughts())
+      .finally(() => fetchThoughts()) //this updates the whole page after clicking like
   }
 
   return (
-    <div className="main-container">
+    <div>
       <Header />
       <div className="thoughts">
         <NewThought
@@ -74,8 +76,11 @@ export const App = () => {
         <ThoughtList
           loading={loading}
           thoughts={thoughts}
-          onLikesIncrease={onLikesIncrease} />
+          onLikesIncrease={onLikesIncrease} 
+          //SKICKA MED CLICKCOUNT SOM PROPS HÄR
+          clickCount={clickCount} />
       </div>
     </div>
+   
   );
 };
