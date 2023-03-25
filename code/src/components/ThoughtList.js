@@ -2,10 +2,11 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
+import heart from './assets/heart.png'
 
 const ThoughtList = ({ loading, thoughtList, handleLike }) => {
   if (loading) {
-    return <p>Loading is happening...</p>
+    return <div className="loading-animation"><img src={heart} alt="a heart" /></div>
   }
   return (
     <section className="thought-section">

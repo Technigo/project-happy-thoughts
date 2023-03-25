@@ -100,7 +100,7 @@ main {
   background-color: #fdbebe;
 }
 
-/*Animation for thoughts appearing on the list*/
+/*Keyframes for thought-list section*/
 @keyframes rotate {
   0% {
     transform: rotateX(-90deg)
@@ -113,7 +113,23 @@ main {
   }
 }
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 /*Thought list section*/
+.loading-animation {
+  display: block;
+  margin: 1.5rem auto 1.5rem auto;
+  width: fit-content;
+  animation: rotation 0.8s;
+}
+
 .thought-section {
   margin-top: 4rem;
 }

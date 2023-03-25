@@ -1,19 +1,10 @@
-# Technigo React Starter App
+# The project
+For this project, we had to create "nice twitter" app, that fetches thoughts from and API, and posts new thought to that API as well. We had include a like-button as well.
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+## Problems and tools
+This project was a struggle to begin with, and it took some time to get the post-requests to work. In one case, it turned out to be a minor typo bugging everything up. Getting an overview of the components + what goes is still a challenge. 
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+Tools used for this project:
+Html, CSS, JavaScript, React, Canva, Postman.
 
-## Usage
-
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
-
-Alternatively, if you don't want a new git repo on your account;
-
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+### Link to deployed site
