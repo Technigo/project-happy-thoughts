@@ -27,9 +27,9 @@ export const Input = ({ newPost, setNewPost, thoughts, setThoughts }) => {
       <form onSubmit={handleFormSubmit} className="box input-box">
         <label htmlFor="thoughts" className="input-heading">
           Whats making you happy right now?
-          <input
+          <textarea
             name="thoughts"
-            type="text"
+            rows="4"
             value={newPost}
             placeholder="Write something nice"
             onChange={(e) => {
