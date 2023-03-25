@@ -1,5 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
+import { MessageCard } from 'components/Messagecard';
+import { Card } from 'components/Card'
 
 export const App = () => {
   const [stateVariable, setStateVariable] = useState('');
@@ -73,39 +75,19 @@ export const App = () => {
   return (
     <div className="cards">
       <p className="header"> Make stranger&apos;s hearts beat by clicking the ❤️! Your beat counter here: {likedPostsCount}</p>
-      <div className="Card">
-        <h1>What is making you happy now?</h1>
-        <input
-          type="text"
-          maxLength="140"
-          value={stateVariable}
-          onChange={(event) => setStateVariable(event.target.value)} />
-        <button
-          className="send"
-          type="button"
-          onClick={() => { sendHappy() }}>❤️ Send happy thought ❤️
-        </button>
+      <div>
+        <Card
+          stateVariable={stateVariable}
+          setStateVariable={setStateVariable}
+          sendHappy={sendHappy} />
       </div>
       <div>
         {thoughtsList.map((thought) => (
-          <div className="messages-card" key={thought._id}>
-            {/* Display the message and like button */}
-            <div className="interior">
-              <p className="msg">{thought.message}</p>
-              <p>
-                <button
-                  className={`like-button${likedThoughts.includes(thought._id) ? ' beat' : ''}`}
-                  onClick={() => { increaseLike(thought) }}
-                  type="button">
-               ❤️
-                </button>
-                <span className="x"> x {thought.hearts}
-                </span>
-              </p>
-              <p className="timestamp">{formatTimestamp(thought.createdAt)} seconds</p>
-            </div>
-
-          </div>
+          <MessageCard
+            thought={thought}
+            likedThoughts={likedThoughts}
+            increaseLike={increaseLike}
+            formatTimestamp={formatTimestamp} />
         ))}
       </div>
     </div>
