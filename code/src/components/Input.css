@@ -22,12 +22,26 @@ label {
   width: 100%;
   font-size: 1.2rem;
   font-weight: 700;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
 }
 
-input {
+textarea {
   width: 100%;
-  min-height: 5rem;
+  margin: 0.5rem 0 0 0;
   border: 1px solid gray;
   background-color: rgb(254, 254, 254);
+}
+
+.input-box button {
+  height: 3rem;
+  font-weight: 700;
+  background-color: rgba(229, 3, 3, 0.5);
+  border: none;
+  border-radius: 20px;
+  margin: 0.5rem 1rem 1rem;
+}
+
+.input-box button:hover,
+.input-box button:focus {
+  background-color: rgb(229, 3, 3);
 }

@@ -7,27 +7,52 @@ import { Input } from 'components/Input';
 export const App = () => {
   const [thoughts, setThoughts] = useState([]);
   const [newPost, setNewPost] = useState('');
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const fetchThoughts = () => {
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => {
         setThoughts(data);
       })
+      .finally(() => setLoading(false))
       .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fetchThoughts();
   }, []);
 
+  const handleLikeChange = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    fetch(
+      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
+      options
+    )
+      .catch((error) => console.log(error))
+      .finally(() => fetchThoughts());
+  };
   return (
     <div>
+      <Input
+        thoughts={thoughts}
+        setThoughts={setThoughts}
+        newPost={newPost}
+        setNewPost={setNewPost}
+      />
+      {loading && <p>Thoughts is loading...</p>}
       {thoughts && (
-        <Input
+        <List
           thoughts={thoughts}
           setThoughts={setThoughts}
-          newPost={newPost}
-          setNewPost={setNewPost}
+          handleLikeChange={handleLikeChange}
         />
       )}
-      {thoughts && <List thoughts={thoughts} setThoughts={setThoughts} />}
     </div>
   );
 };

@@ -1,9 +1,12 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import moment from 'moment';
 import './List.css';
 
-export const List = ({ thoughts, setThoughts }) => {
+export const List = ({ thoughts, setThoughts, handleLikeChange }) => {
   return (
     <div className="list">
       <ul>
@@ -13,12 +16,12 @@ export const List = ({ thoughts, setThoughts }) => {
             <div className="stats-container">
               <div className="like-container">
                 <div className="heart">
-                  <p>❤️</p>
+                  <p onClick={() => handleLikeChange(thought._id)}>❤️</p>
                 </div>
                 <p>x{thought.hearts}</p>
               </div>
               <div className="time">
-                <p>{thought.createdAt}</p>
+                <p>{moment(thought.createdAt).fromNow()}</p>
               </div>
             </div>
           </div>
