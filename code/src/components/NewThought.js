@@ -33,6 +33,7 @@ export const NewThought = () => {
             id="newThought"
             type="text"
             placeholder="Type happiness here.."
+            aria-label="type-happines"
             rows="4"
             cols="40"
             value={newThought}

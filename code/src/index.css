@@ -43,6 +43,7 @@ textarea {
     margin: 15px 0 10px;
     width: 100%;
     box-sizing: border-box;
+    resize: none;
 }
 
 .submitBtn {
