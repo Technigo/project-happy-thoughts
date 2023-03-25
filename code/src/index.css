@@ -83,6 +83,31 @@ main {
   background-color: #fdbebe;
 }
 
+/*Animation for thoughts appearing on the list*/
+@keyframes rotate {
+  0% {
+    transform: rotateX(-90deg)
+  }
+  70% {
+    transform: rotateX(20deg) 
+  }
+  100% {
+    transform: rotateX(0deg) 
+  }
+}
+
+@keyframes growDown {
+  0% {
+      transform: scaleY(0)
+  }
+  80% {
+      transform: scaleY(1.1)
+  }
+  100% {
+      transform: scaleY(1)
+  }
+}
+
 /*Thought list section*/
 .thought-section {
   margin-top: 2.5rem;
@@ -93,6 +118,8 @@ main {
   margin: 1.5rem 1rem 1rem 1rem;
   box-shadow: 0.4rem 0.4rem black;
   padding: 1.2rem;
+  animation: rotate 700ms ease-in-out forwards;
+  transform-origin: top center;
 }
 
 .single-thought p {
