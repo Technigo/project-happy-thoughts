@@ -55,6 +55,7 @@ const Parent = () => {
       .finally(() => setNewThought());
   };
 
+  // like button function
   const handleLikes = (id) => {
     const options = {
       method: 'POST',
