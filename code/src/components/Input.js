@@ -37,7 +37,13 @@ export const Input = ({ newPost, setNewPost, thoughts, setThoughts }) => {
             }}
           />
         </label>
-        <button type="submit"> ❤️ Send happy thought ❤️</button>
+        <button
+          type="submit"
+          disabled={newPost.length < 5 || newPost.length > 140}
+        >
+          {' '}
+          ❤️ Send happy thought ❤️
+        </button>
       </form>
     </div>
   );
