@@ -46,6 +46,9 @@
   align-items: center;
   background-color: rgb(253, 254, 254);
 }
+.heart:hover {
+  cursor: pointer;
+}
 
 .time {
   display: flex;
