@@ -10,12 +10,17 @@
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   margin: 2rem;
 }
+
+.list {
+  width: 80%;
+}
 .message-text {
   font-family: 'Roboto Mono', monospace;
   width: 100%;
   font-size: 1.2rem;
   font-weight: 700;
   padding: 0 0 0 1rem;
+  overflow-wrap: break-word;
 }
 .stats-container {
   width: 100%;

@@ -40,8 +40,16 @@ textarea {
   border-radius: 20px;
   margin: 0.5rem 1rem 1rem;
 }
+button:hover {
+  cursor: pointer;
+}
 
-.input-box button:hover,
 .input-box button:focus {
-  background-color: rgb(229, 3, 3);
+  border: 2px solid black;
+}
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
