@@ -2,19 +2,26 @@
 
 import React from 'react';
 
-const LikeBtn = ({ currentThought, handleLike, setCurrentThought }) => {
-//   const [currentThought, setCurrentThought] = useState(thought);
+const LikeBtn = ({ currentThought, handleLike, setCurrentThought, wobble, setWobble }) => {
   return (
-    <div>
+    <div className="likes-container">
       <button
         key={currentThought._id}
-        className={currentThought.hearts === 0
-          ? 'likes-btn' : 'more-likes'}
+        className={`likes-btn ${currentThought.hearts > 0
+          ? 'more-likes' : ''}`}
         type="button"
         onClick={() => {
-          handleLike(currentThought._id, currentThought.hearts, currentThought, setCurrentThought);
-        }}> ❤️
-      </button><p>x {currentThought.hearts} </p>
+          handleLike(
+            currentThought._id,
+            currentThought.hearts,
+            currentThought,
+            setCurrentThought,
+            setWobble
+          );
+        }}
+        onAnimationEnd={() => setWobble(0)}
+        wobble={wobble}> <span>❤️</span>
+      </button><p className="single-thought-likes-counter">x {currentThought.hearts} </p>
     </div>
   )
 }

@@ -5,16 +5,18 @@ import LikeBtn from './LikeBtn.js'
 
 const SingleThought = ({ thought, handleLike }) => {
   const [currentThought, setCurrentThought] = useState(thought);
+  const [wobble, setWobble] = React.useState(0)
   return (
     <section className="single-thought-section" key={thought._id}>
-      <div>{thought.message}</div>
-      <div>
+      <p className="single-thought-message">{thought.message}</p>
+      <div className="single-thought-like">
         <LikeBtn
-          thought={thought}
           handleLike={handleLike}
           currentThought={currentThought}
-          setCurrentThought={setCurrentThought} />
-        <div>
+          setCurrentThought={setCurrentThought}
+          wobble={wobble}
+          setWobble={setWobble} />
+        <div className="single-thought-date">
           {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
         </div>
       </div>

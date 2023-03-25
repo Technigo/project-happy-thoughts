@@ -53,10 +53,11 @@ export const App = () => {
     currentThoughtID,
     currentThoughtHearts,
     currentThought,
-    setCurrentThought
+    setCurrentThought,
+    setWobble
   ) => {
     setCurrentThought({ currentThought, hearts: currentThoughtHearts + 1 });
-
+    setWobble(1)
     setCountLikes(countLikes + 1)
     console.log(countLikes)
     const options = { method: 'POST',
@@ -71,7 +72,7 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="container">
       <Form
         newThought={newThought}
         setNewThought={setNewThought}

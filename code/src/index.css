@@ -1,30 +1,150 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: Noto Sans Mono, monospace,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  background: rgb(19, 43, 80, .04);
+  font-size: 15px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+
+.container {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
 }
 
 /* form */
-.form {
-  width: 310px;
-  background: yellow;
+.form-section {
+  background-color: #e8e8e8;
+  padding: 20px 15px;
+  width: 300px;
+  border: 1px solid #000;
+  box-shadow: 6px 6px 0 0 #000;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.form-question {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.form-counter {
+  align-self: flex-end;
+  padding: 20px 0;
+}
+
+.form-btn {
+  border-radius: 20px;
+  padding: 10px;
+  background-color: rgb(248 188 188);
+  border: hidden;
+  inline-size: fit-content;
+  font-family: Noto Sans Mono, monospace,
+    sans-serif;
+  font-size: 1em;
 }
 
 /* feed */
+.thoughts-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 
+.single-thought-section {
+  padding: 20px 15px;
+  width: 300px;
+  border: 1px solid #000;
+  box-shadow: 6px 6px 0 0 #000;
+  box-sizing: border-box;
+}
 
-.more-likes {
-  background-color: aqua;
+.single-thought-message {
+  inline-size: 100%;
+  overflow-wrap: break-word;
+  padding: 15px 0;
+}
+
+.likes-container {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .likes-btn {
-  background-color: blanchedalmond;
+  background-color: #e6e5e3;
+  border: none;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+
+.likes-btn.more-likes {
+  background-color: rgb(248 188 188);
+}
+
+.single-thought-like {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single-thought-likes-counter,
+.single-thought-date {
+  opacity: 50%;
+  font-size: 0.8em;
+}
+
+/* like button animation */
+.likes-btn:focus,
+.likes-btn:hover {
+  animation: wobble 1s 1;
+  cursor: pointer;
+}
+
+@keyframes wobble {
+  25% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(-30deg);
+  }
+
+  75% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+
+  .form-section,
+  .single-thought-section {
+    width: 450px;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+  .form-section,
+  .single-thought-section {
+    width: 550px;
+  }
 }
