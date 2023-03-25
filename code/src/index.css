@@ -19,7 +19,7 @@ code {
 /* ---- General formatting */
 :root {
   --general-padding: 35px;
-  --general-smaller-padding: 15px;
+  --general-smaller-padding: 20px;
   --general-mini-padding: 5px;
   --box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
   --main-width-mobile: 90%;
@@ -35,6 +35,11 @@ code {
 p {
   word-break: break-all;
   white-space: normal;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -76,6 +81,7 @@ h1 {
 
 .post-wrapper {
   background-color: rgb(235, 235, 235);
+  border: 1px solid rgb(105, 105, 105);
   margin: 0;
   padding: 5px var(--general-padding) 15px var(--general-padding);
   display: flex;
@@ -101,14 +107,35 @@ h1 {
 .post-wrapper textarea {
   font-size: 18px;
   width: 100%;
-  margin: 10px 0 10px 0;
+  margin: 10px 0 2px 0;
   background: -webkit-linear-gradient(45deg, #fdd7ed, #f0ffce, #d5cdff);
+}
+
+.post-length {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.length {
+  color: grey;
+  margin: 0;
+  min-width: 50px;
+}
+
+.error {
+  font-size: 16px;
+  color: grey;
+  margin: 0;
 }
 
 .post-wrapper button {
   background-color: rgb(255, 183, 210);
   border-radius: 25px;
   padding: 5px 10px;
+  margin: 0 0 5px 0;
   border: none;
   font-size: 18px;
   display: flex;
@@ -125,7 +152,6 @@ h1 {
 /* ---- Message List container */
 
 .list-wrapper {
-  background-color: rgb(200, 251, 255);
   margin: 0;
   padding: 5px var(--general-padding);
   width: 100%;
@@ -138,7 +164,7 @@ h1 {
 /* Single message */
 
 .message {
-  border: 1px solid green;
+  border: 1px solid rgb(105, 105, 105);
   background-color: white;
   width: 100%;
   display: flex;
@@ -149,33 +175,28 @@ h1 {
 }
 
 .message p {
-  background-color: rgb(222, 226, 223);
+  margin: 10px 0 15px 0;
+  font-size: 18px;
 }
 
 .info-wrapper {
-  border: 1px solid blue;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px;
 }
 
-.info-like {
-  border: 1px solid red;
-}
-
-.info-like button {
+.like-button {
   background-color: rgb(209, 209, 209);
   padding: 10px;
   border-radius: 50%;
   border: none;
-}
-
-.info-like button:hover {
-  background-color: var(--hover-color);
-}
-
-#likeBtn {
   cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+.like-button:hover {
+  background-color: var(--hover-color);
 }
 
 .num-likes {
@@ -184,7 +205,7 @@ h1 {
 
 
 .info-time {
-  border: 1px solid green;
+  color: grey;
 }
 
 
@@ -192,19 +213,47 @@ h1 {
 /* ---- Footer */
 
 footer {
-  background-color: rgb(186, 240, 200);
   margin: 0;
   padding: 5px var(--general-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .emoji {
+  font-size: 42px;
+  animation: pulse 2s infinite;
+  margin-bottom: 10px;
+}
+
+a:hover {
+  font-weight: bold;
 }
 
 
-/* ---------- Toggle effects ----- */
+/* ---------- Toggle effects & animations ----- */
 
 /* To add when user has liked a post */
 .liked {
-  background-color: rgb(243, 180, 180);
+  background-color: rgb(238, 139, 180);
 }
 
+/* To add when the post has too many characters */
+.red {
+  color: red;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 /* --- TABLET & DESKTOP VERSION --- */
 

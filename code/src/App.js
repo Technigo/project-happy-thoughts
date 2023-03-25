@@ -40,7 +40,7 @@ export const App = () => {
     <div className="main-wrapper">
       <Header />
       <PostMessage newMessage={addNewPost} fetchPosts={fetchPosts} />
-      <MessageList loading={loading} messageList={messageList} setMessageList={setMessageList} />
+      <MessageList loading={loading} messageList={messageList} setMessageList={setMessageList} fetchPosts={fetchPosts} />
       <Footer />
     </div>
   );
