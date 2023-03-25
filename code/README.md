@@ -8,3 +8,4 @@ Tools used for this project:
 Html, CSS, JavaScript, React, Canva, Postman.
 
 ### Link to deployed site
+https://marvelous-taffy-d68f75.netlify.app/
