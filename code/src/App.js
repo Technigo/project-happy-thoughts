@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { MessageCard } from 'components/Messagecard';
-import { Card } from 'components/Card'
+import { Card } from 'components/Card';
 
 export const App = () => {
   const [stateVariable, setStateVariable] = useState('');
@@ -67,7 +67,7 @@ export const App = () => {
   const formatTimestamp = (timestamp) => {
     const date = new Date(timestamp);
     const formattedDate = new Intl.DateTimeFormat('en-US', {
-      second: '2-digit'
+      minute: '2-digit'
     }).format(date);
     return formattedDate;
   };

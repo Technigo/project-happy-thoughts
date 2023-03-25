@@ -17,7 +17,7 @@ export const MessageCard = ({ thought, likedThoughts, increaseLike, formatTimest
           <span className="x"> x {thought.hearts}
           </span>
         </p>
-        <p className="timestamp">{formatTimestamp(thought.createdAt)} seconds</p>
+        <p className="timestamp">{formatTimestamp(thought.createdAt)} minutes ago</p>
       </div>
     </div>
   );
