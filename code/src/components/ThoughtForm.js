@@ -3,6 +3,13 @@ import React from 'react';
 
 const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
   const isSubmitButtonDisabled = newThought.length < 6 || newThought.length > 140;
+  const characterWarning = () => {
+    if (newThought.length > 140) {
+      return (<p className="character-warning">Your thought is too long, I&apos;m afraid!</p>)
+    } else {
+      return (<p className="character-count">{newThought.length} / 140</p>)
+    }
+  }
   return (
     <section className="form-section">
       <form className="form" onSubmit={onFormSubmit}>
@@ -15,7 +22,7 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
             value={newThought}
             onChange={onNewThoughtChange} />
         </label>
-        <p className="character-count">{newThought.length} / 140</p>
+        {characterWarning()}
         <button
           className="submit-button"
           type="submit"

@@ -59,11 +59,13 @@ main {
   font-size: 0.8rem;
 }
 
-.form p {
+.character-count,
+.character-warning {
   margin: 0.3rem 0 0 0;
   text-align: right;
   font-size: 0.8rem;
   color:#6b6b6b;
+  margin-bottom: 1rem;
 }
 
 .submit-button {
