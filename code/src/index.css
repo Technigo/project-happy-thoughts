@@ -17,10 +17,23 @@ code {
 }
 
 /* Header and main */
+/* styling for old header
 .header-text {
   font-family: 'Press Start 2P', cursive;
   color: #ffadad;
   text-align: center;
+}*/
+
+.image-wrapper {
+  display: block;
+  margin: 3rem auto 1.5rem auto;
+  max-width: 520px;
+  min-width: 350px;
+}
+
+.logo {
+  width: 100%;
+  padding-top: 2rem;
 }
 
 main {
@@ -28,14 +41,18 @@ main {
   max-width: 500px;
   font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
-  margin: auto;
+  margin: 3rem auto 1rem auto;
+  padding: 10px 12px 5px 10px;
+  background-color: #fbe5e5;
+  border-radius: 5px;
 }
 
 /* Form section */
 .form-section {
-  border: black solid 1.4px;
+  border: rgb(66, 63, 63) solid 1.4px;
+  border-radius: 3px;
   background-color: #f2f0f0;
-  box-shadow: 0.4rem 0.4rem black;
+  box-shadow: 0.3rem 0.3rem rgb(66, 63, 63);
   padding: 1rem;
   margin: 1rem;
 }
@@ -96,27 +113,17 @@ main {
   }
 }
 
-@keyframes growDown {
-  0% {
-      transform: scaleY(0)
-  }
-  80% {
-      transform: scaleY(1.1)
-  }
-  100% {
-      transform: scaleY(1)
-  }
-}
-
 /*Thought list section*/
 .thought-section {
-  margin-top: 2.5rem;
+  margin-top: 4rem;
 }
 
 .single-thought {
   border: black solid 1.4px;
+  border-radius: 4px;
+  background-color: white;
   margin: 1.5rem 1rem 1rem 1rem;
-  box-shadow: 0.4rem 0.4rem black;
+  box-shadow: 0.3rem 0.3rem rgb(66, 63, 63);
   padding: 1.2rem;
   animation: rotate 700ms ease-in-out forwards;
   transform-origin: top center;
