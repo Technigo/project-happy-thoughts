@@ -166,7 +166,6 @@ background-color: rgba(249, 164, 178, 0.548);
 @media only screen and (max-width: 600px) {
   .messages-card {
     width: 200px;
-    float: inline-end;
   }
 
   .Card {
@@ -180,7 +179,6 @@ background-color: rgba(249, 164, 178, 0.548);
 
   .header{
     width: 240px;
-   float: inline-end;
   }
 
   .timestamp {
