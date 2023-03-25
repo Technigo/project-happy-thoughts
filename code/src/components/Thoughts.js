@@ -7,7 +7,9 @@ const Thoughts = ({ thoughts, handleLike }) => {
     <section className="thoughts-section">
       {thoughts.map((thought) => {
         return (
-          <SingleThought thought={thought} handleLike={handleLike} />
+          <SingleThought
+            thought={thought}
+            handleLike={handleLike} />
         )
       })}
     </section>

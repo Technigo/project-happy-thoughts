@@ -37,7 +37,16 @@ body {
   padding: 10px 0;
 }
 
+.error-msg {
+  font-size: 0.8em;
+  padding: 5px 0;
+  color: rgb(245, 120, 120);
+}
+
 .form-counter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   align-self: flex-end;
   padding: 20px 0;
 }

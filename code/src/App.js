@@ -9,6 +9,7 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([])
   const [countLikes, setCountLikes] = useState(0)
   const [characters, setCharacters] = useState(0)
+  const [errorMsg, setErrorMsg] = useState(false)
   const url = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
 
   const fetchThoughts = () => {
@@ -22,7 +23,7 @@ export const App = () => {
   useEffect(() => {
     fetchThoughts()
   }, [])
-
+  console.log(errorMsg)
   const handleFormSubmit = (event) => {
     console.log(newThought)
     event.preventDefault()
@@ -35,17 +36,19 @@ export const App = () => {
         message: newThought
       })
     }
+    if (newThought.length > 4) {
+      fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+        .then((response) => response.json())
+        .then(() => { fetchThoughts() })
+        .catch((error) => console.error(error))
+        .finally(() => {
+          setNewThought('')
+        })
+      setErrorMsg(false);
+    } else if (newThought.length < 5) {
+      setErrorMsg(true);
+    }
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
-      .then((response) => response.json())
-      // .then((newThoughts) => {
-      //   setThoughts([newThoughts, ...thoughts])
-      // })
-      .then(() => { fetchThoughts() })
-      .catch((error) => console.error(error))
-      .finally(() => {
-        setNewThought('')
-      })
     console.log(thoughts)
   }
 
@@ -53,13 +56,10 @@ export const App = () => {
     currentThoughtID,
     currentThoughtHearts,
     currentThought,
-    setCurrentThought,
-    setWobble
+    setCurrentThought
   ) => {
     setCurrentThought({ currentThought, hearts: currentThoughtHearts + 1 });
-    setWobble(1)
     setCountLikes(countLikes + 1)
-    console.log(countLikes)
     const options = { method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -82,10 +82,14 @@ export const App = () => {
         handleFormSubmit={handleFormSubmit}
         countLikes={countLikes}
         characters={characters}
-        setCharacters={setCharacters} />
+        setCharacters={setCharacters}
+        errorMsg={errorMsg} />
       {loading && (<Loading />)}
       {!loading && (
-        <Thoughts thoughts={thoughts} handleLike={handleLike} url={url} />
+        <Thoughts
+          thoughts={thoughts}
+          handleLike={handleLike}
+          url={url} />
       )}
     </div>
 
