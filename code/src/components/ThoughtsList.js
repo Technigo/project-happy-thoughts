@@ -2,25 +2,30 @@
 
 import React from "react";
 import { LikeButton } from "./LikeButton";
+import { TimeStamp } from "./TimeStamp";
 
 
 export const ThoughtsList = ({ loading, setLoading, thoughtList, setNewLike }) => {
-
-    console.log (thoughtList)
+    
     return (
         <section className="thoughtsListWrapper" >
-            {thoughtList.map((event) => (
-                <div key={event._id} className="thoughtBox">
-                    <p className="thoughts">{event.message}</p>
+            {thoughtList.map((singleThought) => (
+                <div key={singleThought._id} className="thoughtBox">
+                    <p className="thoughts">{singleThought.message}</p>
                     <div className="likethought">
                         <LikeButton
                             setNewLike={setNewLike}
-                            event={event}
-                            loading={loading}
-                            setLoading={setLoading} />
+                            thought={singleThought}
+                            // loading={loading}
+                            // setLoading={setLoading}
+                            
+                        />
+                        <TimeStamp thought={singleThought} />
                     </div>
+                    {/* console.log(singleThought); */}
                 </div>
             ))}
+            
         </section>
     )
 

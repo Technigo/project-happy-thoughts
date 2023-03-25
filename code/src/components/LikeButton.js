@@ -2,17 +2,16 @@
 
 import React, { useState } from "react";
 
-export const LikeButton = ({ event, setNewlike }) => {
+export const LikeButton = ({ thought, setNewLike }) => {
     const [liked, setLiked] = useState(false)
-
     //create a function to handle like-count
-    const handleNewlikeChange = () => {
-        setNewlike(true)
+    const handleNewLikeChange = () => {
+        setNewLike(true)
     }
 
     // create a function to collect users'like to database
-    const onButtonClick = (e) => {
-        e.preventDefault
+    const onButtonClick = (event) => {
+        event.preventDefault
         if (liked === false) {
             const options = {
                 method: 'POST',
@@ -22,12 +21,14 @@ export const LikeButton = ({ event, setNewlike }) => {
                 body: ''
             }
 
-            fetch(`https://project-happy-thoughts-api-auhzlcxnrq-lz.a.run.app/messages/${event.id}/like`, options)
+            fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, options)
                 .then((data) => data.json())
-                .catch((error) => console.error(error))
+                .catch((error) => {
+                    console.error(error)
+                })
                 .finally(() => {
                     setLiked(true)
-                    handleNewlikeChange()
+                    handleNewLikeChange()
                 })
         }
     }
@@ -43,11 +44,11 @@ export const LikeButton = ({ event, setNewlike }) => {
                     backgroundColor: liked ? '#FFADAD' : '',
                     color: liked ? 'black' : ''
                   }}
-                value={event}
+                value={thought}
                 onClick={onButtonClick}>
                 <span>❤️</span>
             </button>
-            <p className="number-likes"> x {event.like}</p>
+            <p className="number-likes">x {thought.hearts}</p>
         </div>
     )
 }

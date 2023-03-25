@@ -20,7 +20,7 @@ export const App = () => {
       .then((result) => result.json())
       .then((json) => {
         setThoughtsList(json)
-        console.log(json)
+        // console.log(json)
       })
       .catch(error => console.log(error))
       .finally(() => { setLoading(false), setNewLike(false) })
@@ -63,7 +63,7 @@ export const App = () => {
       .then((result) => result.json())
       .then((data) => {
         fetchThoughts()   //data.response)
-        console.log(data)
+//        console.log(data)
       }
       )
       .catch((error) => console.error(error))
