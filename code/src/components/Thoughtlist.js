@@ -1,7 +1,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-underscore-dangle */
-import React from 'react'
-import moment from 'moment'
+import React from 'react';
+import moment from 'moment';
 
 const Thoughtlist = ({ loading, thoughtList, onLikesIncrease }) => {
   if (loading) {
@@ -26,4 +26,4 @@ const Thoughtlist = ({ loading, thoughtList, onLikesIncrease }) => {
     </section>
   )
 }
-export default Thoughtlist
+export default Thoughtlist;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const NewThoughts = ({ newThought, onNewThoughtsChange, onFormSubmit }) => {
   return (
@@ -13,4 +13,4 @@ const NewThoughts = ({ newThought, onNewThoughtsChange, onFormSubmit }) => {
 
   )
 }
-export default NewThoughts
+export default NewThoughts;

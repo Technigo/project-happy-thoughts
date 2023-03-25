@@ -32,7 +32,7 @@ export const App = () => {
     const options = {
       method: 'POST',
       headers: {
-        'Content-type': 'aplication/json'
+        'Content-type': 'application/json'
       },
       body: JSON.stringify({ message: newThought })
     }
@@ -47,7 +47,7 @@ export const App = () => {
   const onLikesIncrease = (thoughtId) => {
     const options = { method: 'POST',
       headers: {
-        'Content-type': 'aplication/json'
+        'Content-type': 'application/json'
       } }
 
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, options)
