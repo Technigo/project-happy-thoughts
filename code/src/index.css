@@ -21,19 +21,15 @@ body {
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffe0e5;
 }
 
 .happy-page {
-  margin: 1rem auto;
+  margin: 0 auto;
   width: 375px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
-
-.happy-page h1 {
-  align-self: center;
-  font-size: 1.4rem;
 }
 
 .form,
@@ -41,10 +37,6 @@ body {
   border: 1px solid var(--black);
   box-shadow: 0.4rem 0.4rem var(--black);
   margin: 1.5rem 1rem;
-}
-
-.emoji {
-  margin: 0 0.3rem;
 }
 
 .form {
@@ -106,6 +98,7 @@ body {
 }
 
 .heart-button {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,7 +121,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .happy-page {
-    width: 500px;
+    width: 600px;
   }
 }
 
@@ -136,6 +129,6 @@ body {
 
 @media screen and (min-width: 992px) {
   .card:hover {
-    background-color: pink;
+    background-color: var(--pink);
   }
 }
