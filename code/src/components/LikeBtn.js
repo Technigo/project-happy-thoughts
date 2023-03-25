@@ -21,7 +21,7 @@ const LikeBtn = ({
             setCurrentThought
           );
         }}> <span>❤️</span>
-      </button><p className="single-thought-likes-counter">x {currentThought.hearts} </p>
+      </button><p className="single-thought-likes-counter"> x {currentThought.hearts} </p>
     </div>
   )
 }

@@ -37,9 +37,25 @@ body {
   padding: 10px 0;
 }
 
+.character-counter {
+  font-size: 0.8em;
+}
+
+.textarea-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.form-textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .error-msg {
   font-size: 0.8em;
-  padding: 5px 0;
   color: rgb(245, 120, 120);
 }
 
@@ -49,6 +65,14 @@ body {
   gap: 5px;
   align-self: flex-end;
   padding: 20px 0;
+}
+
+.total-likes {
+  background-color: #b7b5b5;
+  opacity: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  color: #ffffff;
 }
 
 .form-btn {
