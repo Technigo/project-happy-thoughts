@@ -6,8 +6,8 @@ In this week's project, you'll be able to practice your React state skills by fe
 
 ## The problem
 
-Had issues with date-fns.
+Had issues with date-fns
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://app.netlify.com/sites/project-happy-thought/overview
