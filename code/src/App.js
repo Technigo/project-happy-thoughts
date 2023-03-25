@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <div className="app-container">
       <div className="thought-container">
-        <Thoughts api_url={API_URL} />
+        <Thoughts API_URL={API_URL} />
       </div>
     </div>
   );
