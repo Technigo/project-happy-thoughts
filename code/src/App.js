@@ -41,7 +41,7 @@ export const App = () => {
       .then((response) => response.json())
       .then(() => fetchMessage())
       .catch((error) => console.error(error))
-      .finally(() => setNewThought(''));
+      .finally(() => setNewThought(''))
   }
   if (loading) {
     return (

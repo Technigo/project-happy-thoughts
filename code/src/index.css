@@ -40,6 +40,7 @@ header h1{
     width: 93%;
     padding: 10px;
     border: solid 1px grey;
+    margin-bottom: 10px;
   }
 
 .char-counter{
@@ -64,7 +65,7 @@ header h1{
   width: 350px;
   border: solid 1px black;
   box-shadow: 5px 6px 2px 1px black;
-  margin-bottom:10px;
+  margin-bottom:15px;
   padding:10px;
 }
 .give-heart-btn{
