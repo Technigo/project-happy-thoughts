@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import { formatDistance } from 'date-fns';
 import { Hearts } from './Hearts';
 
 export const EachThought = ({ thoughtInput, fetchThoughts }) => {
@@ -11,6 +12,8 @@ export const EachThought = ({ thoughtInput, fetchThoughts }) => {
         <Hearts
           thought={thought}
           fetchThoughts={fetchThoughts} />
+        <p className="timeStamp">{formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
+
       </div>
     )
     // return (

@@ -22,7 +22,7 @@ export const Hearts = ({ thought, fetchThoughts }) => {
       {/* <p key={thought._id}>{thought.message}</p> */}
       <p className="heartsSection">
         <button className="heartButton" onClick={onHeartCountIncreaseButtonClick} type="button">❤️</button>
-        <p>x:<span>{thought.hearts}</span></p>
+        <p>x <span>{thought.hearts}</span></p>
       </p>
     </div>
   )

@@ -26,6 +26,9 @@ code {
 h1 {
   font-size: 15px;
 }
+
+/* THOUGHT INPUT */
+
 .thoughtInput {
   display: flex;
   flex-direction: column;
@@ -51,16 +54,14 @@ h1 {
   height: 40px;
   width: 50%;
   min-width: fit-content;
-}
-
-.submitButton:hover {
   background-color: rgb(237, 164, 175);
 }
+
+/* EACH THOUGHT */
 
 .eachThought {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   padding: 10px;
   border-style: solid;
   box-shadow: 5px 5px black;
@@ -71,15 +72,25 @@ h1 {
   font-size: 18px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-
 }
 
+.timeStamp {
+  color:rgba(162, 157, 157, 0.899);
+}
+
+
+/* HEARTS */
 
 .heartsSection {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
+
+.heartsSection p {
+  color:  rgba(105, 102, 102, 0.899);
+}
+
 
 .heartButton {
   border-radius: 50px;
