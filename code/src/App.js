@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Header from 'components/Header'
 import NewThoughts from 'components/NewThoughts'
-import ThoughtList from 'components/ThoughtList'
+import ThoughtList from 'components/List'
 
 export const App = () => {
   const [newThought, setNewThought] = useState('')
