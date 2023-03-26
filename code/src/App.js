@@ -1,9 +1,16 @@
 import React from 'react';
+import { ThoughtFeed } from 'components/ThoughtFeed';
+import { NewThought } from 'components/NewThought';
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  );
+    <>
+      <section>
+        <NewThought />
+      </section>
+      <section>
+        <ThoughtFeed />
+      </section>
+    </>
+  )
 }

@@ -5,9 +5,178 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.main-container {
+  padding: 0 18px;
+  box-sizing: border-box;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.form-card {
+  box-sizing: border-box;
+  background-color: #f0f0f0f3;
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #000000;
+  box-shadow: 4px 4px #000000;
+}
+
+.head-thought {
+  font-family: "Courier New";
+  font-weight: bold;
+  font-size: 15px;
+}
+
+textarea {
+    border: none;
+    color: #000;
+    padding: 8px;
+    margin: 15px 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.submitBtn {
+  font-family: "Courier New";
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  color: #380118;
+  background-color: #ffadad;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 45px;
+}
+
+.heart {
+  margin: 8px;
+}
+
+.img {
+  margin: 0px 2px;
+}
+
+.card {
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #000000; 
+  margin: 18px 0;
+  padding: 10px 20px;
+  box-shadow: 4.5px 5px #000000;
+  overflow-wrap: break-word;
+  font-weight: bold;
+}
+
+.post-text {
+  font-family: "Courier New";
+  font-size: 13px;
+  color: black;
+  margin: 0;
+  padding: 18px 0;
+  min-height: 20px;
+}
+
+.heartEmo {
+  font-size: 12px;
+  transition: font-size 0.1s ease-in-out;
+}
+
+.heartEmo:hover {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.hearts {
+  margin-right: 10px;
+  border: none;
+  border-radius: 50%;
+  height: 38px;
+  width: 38px;
+  cursor: pointer;
+  background-color: #e2016a51;
+}
+
+.likesBtn,
+.noLikesBtn {
+  background-color: #ffacac;
+  margin-right: 8px;
+  border: none;
+  border-radius: 55%;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.noLikesBtn {
+  background-color: #f3f3f3a4;
+}
+
+.sum-hearts,
+.counter {
+  font-size: 12px;
+  color: #7d7a7af3;
+  text-align: right;
+  margin: 0;
+  position: absolute;
+  margin-top: 10px;
+}
+
+.date {
+    float: right;
+    position: relative;
+    font-size: 12px;
+    color: #7d7a7af3;
+    text-align: right;
+}
+
+.loading-spinner {
+  animation-name: loadspinner;
+  display: block;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  margin-top: 30px;
+  margin: 30px auto;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes loadspinner {
+from {
+    transform: rotate(0deg)
+
+  } 
+to {
+    transform: rotate(360deg)
+  }
+}
+
+  
+
+/*--MEDIA QUERIES--*/
+
+@media (min-width: 768px) {
+  .mainContainer {
+    width: 450px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mainContainer {
+    width: 500px;
+  }
 }
