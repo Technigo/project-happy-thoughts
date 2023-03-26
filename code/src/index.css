@@ -1,67 +1,100 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+  
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  
+  .happy-thoughts-form-wrapper {
+    display: flex;
+    align-self: center;
+    background: yellow;
+    width: auto;
+    height: 20rem;
+  }
+  
+  .happy-thoughts-wrapper {
+    display: flex;
+    align-self: center;
+    background: blue;
+    width: auto;
+    height: 20rem;
+  }
+  
+  .data-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .happy-thought-card {
+  
+  }
+  
+  .heart-btn-pink {
+    background-color: pink;
+    border-radius: 80rem;
+  }
+  
+  .heart-btn-grey {
+    background-color: lightgrey;
+  }
+  
+  .card-bottom {
+  
+  }
+  
+  .card-bottom-left {
+  
+  }
+  
+  .card-bottom-right-timestamp {
+  
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.App {
-  font-family: sans-serif;
-  text-align: center;
-  margin-left: 25%;
-  margin-right: 25%;
-}
-
-.happy-thoughts-form-wrapper {
-  display: flex;
-  align-self: center;
-  background: yellow;
-  width: auto;
-  height: 20rem;
-}
-
-.happy-thoughts-wrapper {
-  display: flex;
-  align-self: center;
-  background: blue;
-  width: auto;
-  height: 20rem;
-}
-
-.data-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.happy-thought-card {
-
-}
-
-.heart-btn-pink {
-  background-color: pink;
-  border-radius: 80rem;
-}
-
-.heart-btn-grey {
-  background-color: lightgrey;
-}
-
-.card-bottom {
-
-}
-
-.card-bottom-left {
-
-}
-
-.card-bottom-right-timestamp {
-
-}
+  .loading-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgb(255, 173, 173);
+    border-radius: 50%;
+    border-left: 5px solid #fff;
+    animation: spinner infinite 1s;
+  }
+  
+  @keyframes spinner {
+    0% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

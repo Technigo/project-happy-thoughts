@@ -4,11 +4,11 @@
 /* eslint-disable no-trailing-spaces */
 import React from 'react';
 
-const NewHappyThought = ({ onFormSubmit, newHappyThought, onNewHappyThoughtChange }) => {
+const NewHappyThought = ({ handleFormSubmit, newHappyThought, onNewHappyThoughtChange }) => {
   const isSubmitButtonDisabled = newHappyThought.length < 5 || newHappyThought.length > 140;
 
   return (
-    <form className="new-happy-thought-form-wrapper" onSubmit={onFormSubmit}>
+    <form className="new-happy-thought-form-wrapper" onSubmit={handleFormSubmit}>
       <label htmlFor="thought-input">
             What makes you happy right now?
         <textarea
@@ -16,6 +16,7 @@ const NewHappyThought = ({ onFormSubmit, newHappyThought, onNewHappyThoughtChang
           id="thought-input"
           value={newHappyThought}
           onChange={onNewHappyThoughtChange}
+          // onChange={(event) => onNewHappyThoughtChange(event.target.value)}
           rows="4"
           cols="30"
           placeholder="Write your happy thought here (at least 5 characters and up to 140 characters)" />
@@ -26,7 +27,7 @@ const NewHappyThought = ({ onFormSubmit, newHappyThought, onNewHappyThoughtChang
       </div>
       <button className="send-new-thought-btn" type="submit" disabled={isSubmitButtonDisabled}>
             HEART - add emoji here
-        <span className="button-text">Share Happy Thought</span>
+        <span className="button-text">❤️ Share Happy Thought ❤️</span>
       </button>
     </form>
   );
