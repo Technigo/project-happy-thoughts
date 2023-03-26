@@ -21,6 +21,8 @@ const characterWarning = () => {
                 className="new-thought"
                 id="new-thought"
                 placeholder="Share your happy thought here..."
+                rows="4"
+                cols="40"
                 value={newThought} 
                 onChange={onNewThoughtChange} />
             </label>

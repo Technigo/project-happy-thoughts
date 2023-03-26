@@ -70,6 +70,7 @@ const handleLike = (_id) => {
 
   return (
     <div>
+      <main>
       <ThoughtForm
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChange}
@@ -80,6 +81,7 @@ const handleLike = (_id) => {
         thoughtList={thoughtList}
         handleLike={handleLike}
       />
+      </main>
     </div>
   );
 }

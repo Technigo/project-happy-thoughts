@@ -16,10 +16,11 @@ export const ThoughtList = ({ loading, thoughtList, handleLike }) => {
                     <h4>{thought.message}</h4>
                 <div className="thought-details"> 
                     <div className="likes-wrapper">
-                        <button>
+                        <button
                             className={thought.hearts === 0 ? 'heart-button-nolikes' : 'heart-button'}
                             type="button"
-                            onClick={() => handleLike(thought._id)}
+                            onClick={() => handleLike(thought._id)}>
+                                ❤️
                         </button>
                         <span>x {thought.hearts}</span>
                 </div>
@@ -29,6 +30,7 @@ export const ThoughtList = ({ loading, thoughtList, handleLike }) => {
                         Date.now(),
                         { addSuffix: true }
                     )}
+                    &nbsp;ago
                     </span>
                 </div>
                 </div>
