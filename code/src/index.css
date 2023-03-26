@@ -37,9 +37,16 @@ font-size: 16px;
 text-align: center;
 }
 
+.whole-webpage {
+  width: 320px;
+  max-width:320px;
+}
+
 .footer-container {
   
   height: 600px;
+  max-width: 320px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,9 +90,11 @@ flex-direction: row;
 display: flex;
 align-items: center;  
 position: absolute;
+overflow: hidden;
 }
 
 .rotate-scale-up {
+  overflow: hidden;
 	-webkit-animation: rotate-scale-up 80s cubic-bezier(.32,.42,.79,.80) infinite both;
 	        animation: rotate-scale-up 80s cubic-bezier(.32,.42,.79,.80) infinite both;
 
@@ -95,41 +104,41 @@ position: absolute;
 
 @-webkit-keyframes rotate-scale-up {
   0% {
-    -webkit-transform: scale(0.4) rotateZ(1);
-            transform: scale(0.4) rotateZ(1);
+    -webkit-transform: scale(0.5) rotateZ(1);
+            transform: scale(0.5) rotateZ(1);
   }
   50% {
-    -webkit-transform: scale(0.8) rotateZ(45deg);
-            transform: scale(0.8) rotateZ(45deg);
+    -webkit-transform: scale(0.4) rotateZ(45deg);
+            transform: scale(0.4) rotateZ(45deg);
   }
 
   75% {
-    -webkit-transform: scale(0.6) rotateZ(90deg);
-            transform: scale(0.6) rotateZ(90deg);
+    -webkit-transform: scale(0.3) rotateZ(90deg);
+            transform: scale(0.3) rotateZ(90deg);
   }
 
   100% {
-    -webkit-transform: scale(0.2) rotateZ(1);
-            transform: scale(0.2) rotateZ(1);
+    -webkit-transform: scale(0.5) rotateZ(1);
+            transform: scale(0.5) rotateZ(1);
   }
 }
 @keyframes rotate-scale-up {
   0% {
-    -webkit-transform: scale(0.4) rotateZ(1);
-            transform: scale(0.4) rotateZ(1);
+    -webkit-transform: scale(0.5) rotateZ(1);
+            transform: scale(0.5) rotateZ(1);
   }
   50% {
-    -webkit-transform: scale(0.8) rotateZ(45deg);
-            transform: scale(0.8) rotateZ(45deg);
+    -webkit-transform: scale(0.4) rotateZ(45deg);
+            transform: scale(0.4) rotateZ(45deg);
   }
 
   75% {
-    -webkit-transform: scale(0.6) rotateZ(90deg);
-            transform: scale(0.6) rotateZ(90deg);
+    -webkit-transform: scale(0.3) rotateZ(90deg);
+            transform: scale(0.3) rotateZ(90deg);
   }
 
   100% {
-    -webkit-transform: scale(0.2) rotateZ(1);
-            transform: scale(0.2) rotateZ(1);
+    -webkit-transform: scale(0.5) rotateZ(1);
+            transform: scale(0.5) rotateZ(1);
   }
 }

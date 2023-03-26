@@ -105,7 +105,7 @@ const Parent = () => {
   // The ThoughtsFlow component is passed 2 props loading and thoughts.
 
   return (
-    <div>
+    <div className="whole-webpage">
       <SubmitForm
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChange}
