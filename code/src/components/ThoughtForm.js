@@ -45,4 +45,4 @@ const ThoughtForm = ({ newThought, setNewThought, onFormSubmit }) => {
   )
 }
 
-export default ThoughtForm
+export default ThoughtForm;

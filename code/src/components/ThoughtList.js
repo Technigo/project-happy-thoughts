@@ -2,7 +2,7 @@
 import React from 'react';
 import { formatDistanceToNow } from 'date-fns'
 
-const ThoughtList = ({ loading, thoughtList }) => {
+const ThoughtList = ({ loading, thoughtList, handleLikes }) => {
   if (loading) {
     return <h3 className="loading">Tokenizing real life...</h3>
   }
