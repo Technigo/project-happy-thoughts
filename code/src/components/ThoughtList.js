@@ -24,14 +24,14 @@ export const ThoughtList = ({ loading, thoughtList, handleLike }) => {
                         </button>
                         <span>x {thought.hearts}</span>
                 </div>
-                <div className="time-wrapper">
-                    <span className="time">{formatDistanceToNow(
+                <div className="time-wrapper"> 
+                    <span className="time">{formatDistanceToNow( //shows how long it has been since a message was posted
                         new Date (thought.createdAt),
                         Date.now(),
-                        { addSuffix: true }
+                        { addSuffix: true } 
                     )}
                     &nbsp;ago
-                    </span>
+                    </span> 
                 </div>
                 </div>
                 </div>

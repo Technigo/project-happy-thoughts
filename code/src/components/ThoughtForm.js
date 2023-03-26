@@ -3,6 +3,7 @@ import React from 'react';
 
 export const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
 
+//The submit button is disabled if the message contains less than six characters or more than 140 characters.
 const isSubmitButtonDisabled = newThought.length < 6 || newThought.length > 140;
 const characterWarning = () => {
     if (newThought.length > 140 ) {
@@ -21,8 +22,8 @@ const characterWarning = () => {
                 className="new-thought"
                 id="new-thought"
                 placeholder="Share your happy thought here..."
-                rows="4"
-                cols="40"
+                rows="4"  //maximum of four rows per message
+                cols="40" //maximum of 40 characters per row.
                 value={newThought} 
                 onChange={onNewThoughtChange} />
             </label>

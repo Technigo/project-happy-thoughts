@@ -9,7 +9,7 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
 
-
+//Fetching the latest 20 thoughts from the API
 const fetchThoughts = () => {
   setLoading(true);
   fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
@@ -27,6 +27,7 @@ const handleNewThoughtChange = (event) => {
   setNewThought(event.target.value)
 }
 
+//Posting a new thought to the API
 const postNewThought = () => {
     const options = 
     {
@@ -50,6 +51,7 @@ const handleFormSubmit = (event) => {
   setNewThought('')
 };
 
+//Handle likes from users when the heart icon has been clicked. The number of likes will be increased by one every time the heart is clicked.
 const handleLike = (_id) => {
   fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
   .then((res) => {
