@@ -10,7 +10,7 @@ const MessageCard = ({ item, sendLike }) => {
         <div className="messageCard">
             <p>{item.message}</p>
             <div className="heartRow">
-                <div>
+                <div className="heartBtnSection">
                     <button className="heartBtn" type="button" onClick={sendHearts}> ❤️ </button>  x   {item.hearts}
                 </div>
                 <p className="timeStamp">
