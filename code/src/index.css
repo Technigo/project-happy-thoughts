@@ -46,7 +46,7 @@ h1 {
 }
  
 .thought-list-box {
-  width: 400px;
+  width: 350px;
   margin:auto;  
   margin-bottom: 20px; 
   padding:20px; 
@@ -58,7 +58,7 @@ h1 {
 }
 
 .message-container {
-  width: 400px;
+  width: 350px;
   margin: auto;
   margin-top:20px;  
   margin-bottom: 20px; 
@@ -115,3 +115,24 @@ textarea {
   box-shadow:0 0 20px rgba(0,0,0,.5);
 }
 
+/*--MEDIA QUERIES--*/
+
+@media (min-width: 768px) {
+  .message-container {
+    width: 450px;
+  }
+
+  .thought-list-box {
+    width: 450px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .message-container {
+    width: 500px;
+  }
+  
+  .thought-list-box {
+    width: 500px;
+  }
+}
