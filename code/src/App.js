@@ -1,8 +1,9 @@
-/* eslint-disable */
+/* eslint no-underscore-dangle: 0 */
 import React, { useState, useEffect } from 'react';
-import ThoughtForm from 'components/ThoughtForm';
 import ThoughtList from 'components/ThoughtList';
-import Picture from './assets/dog.png';
+import MainForm from 'components/MainForm';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 export const App = () => {
   const [thoughtList, setThoughtList] = useState([]);
@@ -19,7 +20,7 @@ export const App = () => {
         setThoughtList(data);
       })
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false))
+      .finally(() => setLoading(false));
   }
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export const App = () => {
     setNewThought(event.target.value);
   }
 
-  const handleFormCleanup = (event) => {
+  const handleFormCleanup = () => {
     setNewThought('');
     setLoading(false);
   }
@@ -84,9 +85,9 @@ export const App = () => {
 
   return (
     <div className="outer-wrapper">
-      <a href="<a href='https://pngtree.com/so/Cute'>" title="creativity stickers"> <img src={Picture} alt="noding head" className="picture" /> </a>
+      <Header />
       <div className="inner-wrapper">
-        <ThoughtForm 
+        <MainForm
           newThought={newThought}
           setNewThought={setNewThought}
           onFormSubmit={onFormSubmit} />
@@ -95,6 +96,7 @@ export const App = () => {
           thoughtList={thoughtList}
           handleLikes={handleLikes} />
       </div>
+      <Footer />
     </div>
   );
 }

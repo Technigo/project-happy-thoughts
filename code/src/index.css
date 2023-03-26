@@ -13,15 +13,31 @@ code {
     monospace;
 }
 
+/* Main body */ 
+.outer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:auto;
+}
+
+.inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+/* Main form */ 
 .thought-form {
+  width: 80%;
   padding: 20px 30px;
   background: linear-gradient(
     120deg,
     #fdaeea74, 
     #f7e779c8
   );
-  /*background: url(./assets/sun.jpg);
-  background-size: auto; */ 
+
   max-width: 600px;
   background-repeat: no-repeat;
   box-shadow: 10px 10px #9383C5;
@@ -56,4 +72,60 @@ code {
 
 .picture {
   max-width: 270px;
+}
+
+/* Footer */ 
+
+footer {
+
+}
+
+.links-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.credits-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  color: black;
+  text-align: center;
+}
+
+.icon-contact {
+  opacity: 1;
+  object-fit: cover;
+}
+
+.icon-contact:hover {
+  opacity: .6;
+  transform: scale(1.1);
+  transform: rotate(11deg); 
+}
+
+.color1 {
+  padding: 5px;
+  color: white;
+  background: linear-gradient(
+    120deg,
+    #9383C5, 
+    #56E3FA
+  );
+  transition: .5s ease;
+}
+
+/* ---- DESKTOP ----- */
+@media only screen and (min-width: 1280px) { 
+  .single-thought h2 {
+    max-height: 3rem;
+  }
 }

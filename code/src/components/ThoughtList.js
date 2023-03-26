@@ -1,6 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 import React from 'react';
-import { formatDistanceToNow } from 'date-fns'
+import { formatDistanceToNow } from 'date-fns';
 
 const ThoughtList = ({ loading, thoughtList, handleLikes }) => {
   if (loading) {
@@ -18,21 +18,20 @@ const ThoughtList = ({ loading, thoughtList, handleLikes }) => {
                 type="button"
                 className="like-btn"
                 onClick={() => { handleLikes(thought._id, thought.hearts); }}
-                style={{ background: thought.hearts >= 1 ? 'rgb(237, 164, 175)' : 'lightgrey' }}>
-                                ❤️
+                style={{ background: thought.hearts >= 1 ? 'rgb(237, 164, 175)' : 'green' }}>
+                💜
               </button>
               <span className="counter">x {thought.hearts}</span>
             </div>
             <p className="time">{formatDistanceToNow(
-              new Date(thought.createAt),
+              new Date(thought.createdAt),
               Date.now(),
               { addSuffix: true }
-            )}
+            )} ago
             </p>
           </div>
         </div>
       ))}
-
     </section>
   )
 }
