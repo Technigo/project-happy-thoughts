@@ -15,7 +15,7 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => {
         setThoughts(data)
-      })
+      }).catch((error) => console.log(error))
   }
   const sendMessage = (event) => {
     event.preventDefault()
@@ -24,19 +24,25 @@ export const App = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newThought })
     })
-      .then((res) => res.json())
-      .then((data) => {
-        fetchMessage()
-      })
+      .then(() => setNewThought(''))
+      .catch((error) => console.log(error))
   }
+
+  const sendLike = (_id) => {
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    }).catch((error) => console.log(error))
+  }
+
   useEffect(() => {
     fetchMessage();
-  }, []);
+  });
 
   return (
-    <div>
+    <div className="content">
       <ThoughtForm newThought={newThought} setNewThought={setNewThought} onFormSubmit={sendMessage} />
-      <ThoughtList thoughts={thoughts} />
+      <ThoughtList thoughts={thoughts} sendLike={sendLike} />
     </div>
   );
 }
