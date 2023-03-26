@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+
 import React, { useState } from 'react';
 
 export const ThoughtsForm = ({ newThought, setNewThought, onFormSubmit }) => {
@@ -25,24 +27,27 @@ export const ThoughtsForm = ({ newThought, setNewThought, onFormSubmit }) => {
       }}
       aria-label="Happy Thoughts Form">
       <h2 aria-hidden="true">{'What\'s making you happy right now?'}</h2>
-      <label htmlFor="happy-thought-input" className="sr-only">
+      <label htmlFor="thought-text-input" className="sr-only">
         Type your happy thought here:
-        <textarea
-          id="happy-thought-input"
-          placeholder="Type your happy thought here"
-          className="text-area"
-          value={newThought}
-          onChange={handleNewThoughtChange}
-          maxLength={1000}
-          aria-label="Happy thought input"
-          aria-invalid={isOverLimit} />
       </label>
-      <div className="char-count" style={{ color: isOverLimit ? 'red' : 'inherit' }}>
-        {isOverLimit ? <span>{charCount}</span> : <span>{charCount}</span>}/140
-      </div>
-      <button className="form-btn" type="submit" disabled={isOverLimit}>
+      <textarea
+        id="thought-text-input"
+        placeholder="Type your happy thought here"
+        className="form-text-input"
+        value={newThought}
+        onChange={handleNewThoughtChange}
+        maxLength={1000}
+        aria-label="Happy thought input"
+        aria-invalid={isOverLimit} />
+      <div className="form-bottom">
+        <div className="form-input-length" style={{ color: isOverLimit ? 'red' : 'inherit' }}>
+          {isOverLimit ? <span>{charCount}</span> : <span>{charCount}</span>}/140
+        </div>
+        <button className="form-submit-btn" type="submit" disabled={isOverLimit}>
         ❤️ Send Happy Thought! ❤️
-      </button>
+        </button>
+      </div>
+
     </form>
   );
 };

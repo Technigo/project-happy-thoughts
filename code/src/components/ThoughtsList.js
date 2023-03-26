@@ -17,23 +17,31 @@ export const ThoughtsList = ({ loading, thoughts, handleLikes }) => {
           <div className="thought" key={thought._id}>
 
             <p className="thought-message-text">{thought.message}</p>
-            <button
-              aria-label="Like-button"
-              type="button"
-              className="like-btn"
-              onClick={() => { handleLikes(thought._id, thought.hearts); }}
-              style={{ background: thought.hearts >= 1 ? 'rgb(237, 164, 175)' : 'lightgrey' }}>
+            <div className="thought-box-bottom">
+              <div className="thought-box-bottom-left">
+                <button
+                  aria-label="Like-button"
+                  type="button"
+                  className="thought-heart-btn"
+                  onClick={() => { handleLikes(thought._id, thought.hearts); }}
+                  style={{ background: thought.hearts >= 1 ? 'rgb(237, 164, 175)' : 'lightgrey' }}>
               ❤️
-            </button>
-            <span className="thought-hearts-counter"> x {thought.hearts}
-            </span>
-            <p className="thought-created-time">
-              {formatDistanceToNow(
-                new Date(thought.createdAt),
-                Date.now(),
-                { addSuffix: true }
-              )}
-            </p>
+                </button>
+
+                <span className="thought-hearts-counter"> x {thought.hearts}
+                </span>
+              </div>
+              <div className="thought-box-bottom-right">
+
+                <p className="thought-created-time">
+                  {formatDistanceToNow(
+                    new Date(thought.createdAt),
+                    Date.now(),
+                    { addSuffix: true }
+                  )}
+                </p>
+              </div>
+            </div>
           </div>
 
         )

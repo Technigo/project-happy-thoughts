@@ -1,13 +1,142 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --lightgrey: #dcdcdc;
+  --grey: #808080;
+  --pink: #faaab7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffe0e5;
+}
+
+.app-container {
+  margin: 0 auto;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.thought-form,
+.thought {
+  border: 1px solid var(--black);
+  box-shadow: 0.4rem 0.4rem var(--black);
+  margin: 1.5rem 1rem;
+}
+
+.thought-form {
+  background-color: var(--lightgrey);
+  padding: 0.5rem 1rem;
+}
+
+.form-input-length + span {
+  font-size: 0.8rem;
+}
+
+.form-text-input {
+  width: 100%;
+  padding: 0.3rem;
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+  resize: vertical;
+}
+
+.form-submit-btn {
+  background-color: var(--pink);
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  padding: 0.3rem;
+  margin: 0.5rem 0;
+}
+
+.form-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.form-input-length {
+  display: flex;
+  align-self: center;
+}
+
+.thought {
+  background-color: var(--white);
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+}
+
+.thought-box-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 1rem;
+}
+
+.thought-box-bottom span,
+.thought-box-bottom p {
+  color: var(--grey);
+  font-size: 0.8rem;
+}
+
+.thought-box-bottom-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thought-heart-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* TABLET and DESKTOP */
+
+@media screen and (min-width: 768px) {
+  .happy-page {
+    width: 600px;
+  }
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 992px) {
+  .card:hover {
+    background-color: var(--pink);
+  }
 }
