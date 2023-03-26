@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import ThoughtCard from 'components/ThoughtCard';
 import SubmitForm from 'components/SubmitForm';
 import Footer from 'components/Footer';
+import Loader from 'Loader';
 
 // *************** MAIN APP ***************  //
 
@@ -84,16 +85,19 @@ const Parent = () => {
 
   return (
     <div className="whole-webpage">
-      <SubmitForm
-        sendThought={sendThought}
-        setSendThought={setSendThought}
-        onSubmit={onSubmit} />
-      <ThoughtCard
-        onHeartButtonClick={onHeartButtonClick}
-        thoughtsList={thoughtsList}
-        latestMessage={latestMessage}
-        loading={loading} />
-      <Footer />
+      {loading && <div className="loader-container"><Loader /></div>}
+      <div className={`content-container ${loading ? '' : 'visible'}`}>
+        <SubmitForm
+          sendThought={sendThought}
+          setSendThought={setSendThought}
+          onSubmit={onSubmit} />
+        <ThoughtCard
+          onHeartButtonClick={onHeartButtonClick}
+          thoughtsList={thoughtsList}
+          latestMessage={latestMessage}
+          loading={loading} />
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -4,10 +4,11 @@ import { formatDistanceToNow } from 'date-fns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import './ThoughtCard.css';
+import Loader from 'Loader';
 
 const ThoughtCard = ({ loading, thoughtsList, onHeartButtonClick }) => {
   if (loading) {
-    return <h1>Loading in progress...</h1>
+    return <Loader />
   }
 
   return (
