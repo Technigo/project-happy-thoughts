@@ -53,6 +53,7 @@ textarea {
   height: fit-content;
 }
 
+
 textarea:focus {
   outline-color: red;
 }
@@ -96,6 +97,7 @@ h1 {
 
 .thought-box {
   background-color: white;
+  word-break: break-all;
 }
 
 /* BUTTONS */
