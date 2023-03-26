@@ -6,13 +6,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --primary: #002a3a;
-  --secondary: #FBF8F3;
-  --third: #ff8f33;
-  --dark-box-shadow: 5px 7px 41px 9px rgba(255,255,255,0.002),6px 6px 25px -10px rgba(255,255,255,0.8);
-}
-
 
 body {
   margin: 0;
@@ -37,11 +30,7 @@ font-size: 16px;
 text-align: center;
 }
 
-.whole-webpage {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
+
 
 .footer-container {
   
@@ -91,11 +80,9 @@ flex-direction: row;
 display: flex;
 align-items: center;  
 position: absolute;
-overflow: hidden;
 }
 
 .rotate-scale-up {
-  overflow: hidden;
 	-webkit-animation: rotate-scale-up 80s cubic-bezier(.32,.42,.79,.80) infinite both;
 	        animation: rotate-scale-up 80s cubic-bezier(.32,.42,.79,.80) infinite both;
 

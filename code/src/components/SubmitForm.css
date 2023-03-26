@@ -98,19 +98,22 @@
         opacity: 0.7;
       }
   
-  /* .input-area.focus {
-   
-    outline: 2px solid tomato ;
-    opacity: 1;
-  } 
 
-  
-  .input-area.error {
+      .input-area.fade-in {
+        opacity: 0;
+        animation: fade-in 0.9s ease forwards;
+      }
 
-    outline: 2px solid tomato ;
-    opacity: 1;
-  }
-  
-  .input-area.success {
-    border-color:  green;
-  } */
+      .input-area.fade-in {
+        opacity: 0;
+        animation: fade-in 0.9s ease forwards;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable no-underscore-dangle */
 
+import React, { useState, useEffect } from 'react';
 import ThoughtCard from 'components/ThoughtCard';
 import SubmitForm from 'components/SubmitForm';
 import Footer from 'components/Footer';
@@ -10,9 +11,10 @@ import Footer from 'components/Footer';
 // the variables and sets the useState value.
 
 const Parent = () => {
-  const [thoughts, setThoughts] = useState([]);
+  const [latestMessage, setLatestMessage] = useState(null)
+  const [thoughtsList, setThoughtsList] = useState([]);
+  const [sendThought, setSendThought] = useState('');
   const [loading, setLoading] = useState(false);
-  const [newThought, setNewThought] = useState('');
 
   // Here we are calling the API and gets the JSON.
   // The setLoading true shows "loading text" if the API call is delayed.
@@ -22,7 +24,7 @@ const Parent = () => {
     setLoading(true);
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((data) => setThoughtsList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -35,68 +37,44 @@ const Parent = () => {
   }, []); // <--- This is the dependency array. When you put something(variables) in here
   //  it executs everytime the array change. But when its empty its only called when mounted.
 
-  // This function sets the value of the,
-  // event wich is when the user writes a new thought.
-  const handleNewThoughtChange = (event) => {
-    setNewThought(event.target.value)
-  }
-
-  // This function takes an object as a parameter.
-  // The object in this case is the text the user writes
-  // The event.preventDefault prevents the default behavior for the form
-  // to refresh the page on submission. ??
-
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-
-    // The onFormSubmit function creates this object called option with three key-values:
-    // POST indicates that the data(event) will be sent as a Post request to the API.
-    // The headers is indicates that the content being sent in in JSON format.
-
+  const onHeartButtonClick = (_id) => {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        message: newThought
-      })
-    }
-
-    // Here the fetchThoughts-function is executed again using
-    // a GET request to fetch the updated list of thoughts.
-
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
-      .then((res) => res.json())
-      .then(() => fetchThoughts())
-      .finally(() => setNewThought(''));
-
-  // This function increases the number of likes for a specific(ID) thought.
-  // The function creates this object called options with three key-values:
-  // POST is an HTTP method that in this case updates the number of likes.
-  }
-
-  const onThoughtLikeChange = (_id) => {
-    console.log('Heart button clicked:', _id);
-    const option = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
+        'Content-type': 'application/json'
       }
     }
-
-    // In this fetch (network request) the argument is a url with the ID of the thought
-    // witch number of likes should be updated
-    // the options after the url is the object created above.
-
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, option) // _id is the key in API
-      .then((res) => res.json())
-      .catch((error) => console.error(error))
-      .then(() => fetchThoughts()) // update the data, hence redoing the fetchThought
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, options)
+      .then((response) => response.json())
+      .then(() => fetchThoughts())
+      .catch((error) => console.log(error))
+      .finally(() => {
+        setLoading(false);
+        console.log('new heart');
+      });
   }
 
-  // After the request is completed the fetchThoughts function is executed
-  // This updates the list of thoughts and also updates the number of likes in them
+  const submitThought = () => {
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+      method: 'POST',
+      body: JSON.stringify({
+        message: `${sendThought}`
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setThoughtsList([data, ...thoughtsList])
+        setLatestMessage(data._id)
+      })
+      .catch((error) => console.log(error))
+      .finally(() => { setLoading(false); setSendThought('') });
+  }
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    submitThought();
+  }
 
   // *************** MAIN APP RETURNS JXS ***************  //
 
@@ -107,14 +85,14 @@ const Parent = () => {
   return (
     <div className="whole-webpage">
       <SubmitForm
-        newThought={newThought}
-        onNewThoughtChange={handleNewThoughtChange}
-        onFormSubmit={onFormSubmit} />
+        sendThought={sendThought}
+        setSendThought={setSendThought}
+        onSubmit={onSubmit} />
       <ThoughtCard
-        loading={loading}
-        thoughts={thoughts}
-        setThoughts={setThoughts}
-        onThoughtLikeChange={onThoughtLikeChange} />
+        onHeartButtonClick={onHeartButtonClick}
+        thoughtsList={thoughtsList}
+        latestMessage={latestMessage}
+        loading={loading} />
       <Footer />
     </div>
   );

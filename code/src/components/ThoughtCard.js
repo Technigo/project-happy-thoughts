@@ -5,20 +5,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import './ThoughtCard.css';
 
-const ThoughtCard = ({ loading, thoughts, onThoughtLikeChange }) => {
+const ThoughtCard = ({ loading, thoughtsList, onHeartButtonClick }) => {
   if (loading) {
     return <h1>Loading in progress...</h1>
   }
 
   return (
-    <section>
-      {thoughts.map((thought) => (
-        <div key={thought._id} className="box box-card">
+    <section className="thoughts-section">
+      {thoughtsList.map((thought) => (
+        <div key={thought._id} className="box thought-box">
           <h4 className="posted-thought">{thought.message}</h4>
           <button
             type="button"
             className={thought.hearts === 0 ? 'no-likes-button' : 'like-button'}
-            onClick={() => onThoughtLikeChange(thought._id)}>
+            onClick={() => onHeartButtonClick(thought._id)}>
             <FontAwesomeIcon
               icon={faHeart}
               style={{
@@ -28,7 +28,7 @@ const ThoughtCard = ({ loading, thoughts, onThoughtLikeChange }) => {
               }} />
           </button>
 
-          <p className="likes">x {thought.hearts}</p>
+          <p className="likes-count">x {thought.hearts}</p>
           <p className="posted-time">
             {formatDistanceToNow(new Date(thought.createdAt), Date.now(), {
               addSuffix: true

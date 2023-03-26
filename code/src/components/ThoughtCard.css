@@ -13,7 +13,7 @@
     border:none;
   }
  
-  .box-card {
+  .thought-box {
     display: flex;
     flex-wrap: wrap;
   }
@@ -62,7 +62,7 @@
   border: none;
 }
 
-.likes {
+.likes-count {
   justify-content: left;
   width: fit-content;
   margin: 8% 2% 5% 2%;
