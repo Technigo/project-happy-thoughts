@@ -38,6 +38,12 @@ export const Feed = () => {
     }
   }
 
+  const handleEnterKey = (event) => {
+    if (event.KeyCode === 13) {
+      handleFormSubmit();
+    }
+  };
+
   return (
     <div>
       <Header myLikesCount={myLikesCount} />
@@ -46,7 +52,8 @@ export const Feed = () => {
           setNewThought(event.target.value)
         }}
         characterCounter={140 - newThought.length}
-        handleFormSubmit={handleFormSubmit} />
+        handleFormSubmit={handleFormSubmit}
+        handleEnterKey={handleEnterKey} />
 
       {!isLoading && thoughtsList.map((thought) => {
         const handleLikeSubmit = () => {

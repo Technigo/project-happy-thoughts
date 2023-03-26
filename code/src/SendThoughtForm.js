@@ -12,7 +12,7 @@ export const SendThoughtForm = (props) => {
           placeholder="Type your happy thought here..."
           maxLength="140" />
         <div className="characterCounter">{props.characterCounter} characters left</div>
-        <button className="send-button" type="submit" onClick={() => {}}> ❤️ Send Happy Thought ❤️ </button>
+        <button className="send-button" type="submit" onKeyDown={props.handleEnterKey}> ❤️ Send Happy Thought ❤️ </button>
       </form>
     </div>
   )
