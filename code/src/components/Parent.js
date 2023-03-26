@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import ThoughtCard from 'components/ThoughtCard';
 import SubmitForm from 'components/SubmitForm';
+import Footer from 'components/Footer';
 
 // *************** MAIN APP ***************  //
 
@@ -114,6 +115,7 @@ const Parent = () => {
         thoughts={thoughts}
         setThoughts={setThoughts}
         onThoughtLikeChange={onThoughtLikeChange} />
+      <Footer />
     </div>
   );
 }

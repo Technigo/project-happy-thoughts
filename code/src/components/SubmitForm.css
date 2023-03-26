@@ -12,11 +12,14 @@
     }
   
       .submit-title {
-        color: whitesmoke;
+        
         text-align: center;
         font-weight: 700;
         margin: -2px -48px 50px -40px;
         font-size: 26px;
+        color: whitesmoke;
+        text-shadow: 0 0 120px rgb(1, 1, 1);
+        background: #0061ff;
       }
    
       .input-width {
