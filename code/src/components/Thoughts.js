@@ -1,5 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable max-len */
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useState, useEffect } from 'react';
 
 import { ThoughtsList } from './ThoughtsList'
