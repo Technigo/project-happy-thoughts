@@ -22,6 +22,10 @@ export const App = () => {
     fetchThoughts()
   }, [])
 
+  const handleThoughtChange = (event) => {
+    setSubmitThoughts(event.target.value)
+  }
+
   const handleFormSubmit = (event) => {
     event.preventDefault()
     setLoading(true)
@@ -35,18 +39,30 @@ export const App = () => {
       .then((response) => response.json())
       .then((data) => { setThoughtsList([data, ...thoughtsList]) })
       .catch((error) => console.log(error))
-      .finally(() => { setLoading(false) })
+      .finally(() => { setLoading(false); setSubmitThoughts('') })
+  }
+
+  const handleLikeChange = (id) => {
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    }
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+      .then((res) => res.json())
+      .catch((error) => console(error))
+      .finally(() => fetchThoughts(''))
   }
 
   return (
-    <div>
+    <section className="mainBody">
       <SubmitThoughts
         submitThoughts={submitThoughts}
-        setSubmitThoughts={setSubmitThoughts}
+        handleThoughtChange={handleThoughtChange}
         handleFormSubmit={handleFormSubmit} />
       <ListThoughts
         loading={loading}
-        thoughtsList={thoughtsList} />
-    </div>
+        thoughtsList={thoughtsList}
+        handleLikeChange={handleLikeChange} />
+    </section>
   );
 }
