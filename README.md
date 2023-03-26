@@ -10,10 +10,6 @@ What you will learn
 
 ✓ What it's like to work with an API which you both send and receive data from.
 
-## The problem
-
-
-
 ## View it live
 
 https://amandas-happy-thoughts.netlify.app/
