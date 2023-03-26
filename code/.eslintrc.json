@@ -46,6 +46,10 @@
       "error",
       "never"
     ],
+     "linebreak-style":[
+      "off",
+      "unix"
+    ],
     "consistent-return": "off",
     "curly": "error",
     "eol-last": "off",
