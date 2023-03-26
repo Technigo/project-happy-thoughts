@@ -56,7 +56,7 @@ form.message-container {
   margin-right: auto;
   margin-left: auto;
   top: 10px;
-  width: 520px;
+  width: 80%;
   position: relative;
   top: -30px;
   background-color: #efcece;
@@ -67,7 +67,7 @@ form.message-container {
 }
 /* Whats on your mind*/
 textarea {
-  width: 400px;
+  width: 80%;
   height: 100px;
 }
 /* User´s thoughts boxes */
