@@ -18,7 +18,7 @@ const ThoughtList = ({ loading, thoughtList, handleLikes }) => {
                 type="button"
                 className="like-btn"
                 onClick={() => { handleLikes(thought._id, thought.hearts); }}
-                style={{ background: thought.hearts >= 1 ? 'rgb(237, 164, 175)' : 'green' }}>
+                style={{ background: thought.hearts >= 1 ? '#9383C5' : '#56E3FA' }}>
                 💜
               </button>
               <span className="counter">x {thought.hearts}</span>

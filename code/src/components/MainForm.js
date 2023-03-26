@@ -31,13 +31,12 @@ const MainForm = ({ newThought, setNewThought, onFormSubmit }) => {
       // The label element also has a class name of sr-only.
       // This is a utility class that is used to visually hide the label while still making it available to screen readers.
       aria-label="Happy Thoughts Form">
-      <h2 aria-hidden="true">{'What\'s making you happy right now?'}</h2>
-      <label htmlFor="happy-thought-input" className="sr-only">
-        Type your happy thought here:
+      <h2 className="header-form" aria-hidden="true">What&apos;s making you happy right now?</h2>
+      <label htmlFor="happy-thought-input" className="sr-only"> Share your happy thought!
       </label>
       <textarea
         id="happy-thought-input"
-        placeholder="Type your happy thought here"
+        placeholder="Type your idea here"
         className="text-area"
         value={newThought}
         onChange={handleNewThoughtChange}
