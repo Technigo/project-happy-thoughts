@@ -3,11 +3,249 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+    
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 1500px
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    monospace; 
 }
+div#root {
+  width: 100%;
+  background: radial-gradient(rgb(236, 163, 213) 7%, rgb(213, 145, 162) 100%);
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffeef1;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 2px 17px 9px rgb(12, 16, 15);
+color: #21dad8;
+font-family: Inconsolata, monospace;
+margin-bottom: 40px;
+font-size: 2.5em;
+}
+ h2 {
+  text-align: center;
+  text-shadow: 19px -3px 29px rgb(223 237 16);
+  color: rgb(231 17 164);
+font-family: Inconsolata, monospace;
+margin-bottom: 40px;
+ }
+header {
+  padding: 15px;
+}
+/* Input field with send button BOX */
+h3 {
+  font-size: 10px;
+  text-align: center;
+}
+
+form.message-container {
+  text-align: center;
+  padding: 9px;
+  margin-right: auto;
+  margin-left: auto;
+  top: 10px;
+  width: 80%;
+  position: relative;
+  top: -30px;
+  background-color: #efcece;
+  border: 2px solid #7c7c7c;
+  box-shadow: 2px 3px 17px 14px rgba(147, 213, 233, 0.3);
+  padding-bottom: 22px;
+  border-radius: 33px 32px;
+}
+/* Whats on your mind*/
+textarea {
+  width: 80%;
+  height: 100px;
+}
+/* User´s thoughts boxes */
+div.Thoughts {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 20px;
+ background: rgba(207, 72, 196, 0.2);
+  border: dotted 2px solid #7c7c7c;
+  box-shadow: 2px 3px 17px 14px rgba(96, 105, 126, 0.3);
+  width: 450px;
+  height: 170px;
+  border-radius: 32px 32px;;
+}
+.thought-text {
+background: rgba(247, 222, 233, 0.5);
+font-size: 1.5em;
+font-weight: ;
+
+}
+/* User´s box container */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Send button */
+.submit-btn {
+    cursor: pointer;
+    margin: 10px;
+    color: black;
+    background: rgb(240, 151, 232);
+    border-radius: 16px;
+    align-items: 20px;
+    left: 137px;
+    height: 30px;
+    top: -9px;
+    box-shadow: 2px 3px 17px 14px rgba(96, 105, 126, 0.3);
+   
+}
+
+.submit-btn:hover {
+  background-color: rgb(246, 61, 114);
+  color: aliceblue;
+}
+/* how many likes x1 */
+p.counter {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  margin-left: -71px;
+}
+/* user´s message */
+p.thought-text {
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+  border: 2px solid solid #00000069;
+  border-radius: 17px 17px;
+  box-shadow: 2px 3px 17px 14px rgba(96, 105, 126, 0.3);
+  padding: 30px;
+  margin-left: 29px;
+  margin-right: 29px;
+  margin-bottom: 10px;
+  height: 86px;
+}
+/* time when message´s was sent */
+p.date {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 12px;
+  position: relative;
+  right: -36px;
+}
+
+.buttoncounter {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 13px;
+}
+
+/* the like <3 button */
+.like-btn {
+  cursor: pointer;
+  left: -35px;
+  border: none;
+  background: pink;
+  border-radius: 21px;
+  animation: bounce 0.5s;
+  left: 32px;
+  position: absolute;
+  height: 25px;
+  width: 60px;
+  
+}
+
+.like-btn:hover {
+color: rgb(227, 124, 217);
+}
+
+.no-like-btn:hover {
+background: rgb(227, 124, 124);
+}
+
+.no-like-btn {
+  cursor: pointer;
+  left: -35px;
+  border: none;
+  background: pink;
+  border-radius: 21px;
+  animation: bounce 0.5s;
+  left: 32px;
+  position: absolute;
+  height: 25px;
+  width: 60px;
+  
+}
+/* Define the animation */
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(2.2); }
+}
+.button:hover {
+  background-color: #d4acb4;
+}
+/* likes, time container*/
+div.likes {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 20px;
+
+}
+/* counting the text-characters */
+.char-count {
+  text-align: right;
+  font-size: 9px;
+  left: 2px;
+  position: relative;
+  left: -59px;
+  font-style: oblique;
+}
+
+/* Mobile devices */
+@Media only screen and (max-width: 768px) {
+  .main-container {
+    padding: 0;
+  }
+  form.message-container {
+    width: 90%;
+    margin: 9px auto;
+}
+p.counter {
+  margin-left: 20px;
+}
+  }
+  textarea {
+    width: 80%;
+  }
+  div.Thoughts {
+    width: 90%;
+    margin: 20px auto;
+  }
+  section {
+    width: 100%;
+  }
+  .like-btn, .no-like-btn {
+    height: 40px;
+    width: 40px;
+    margin: -18px;
+  }
+  .char-count {
+    font-size: 8px;
+  }
