@@ -2,31 +2,31 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-// import { formatRelative } from 'date-fns'
+import moment from 'moment'
 
-export const HappyList = ({ loading, happyThoughts, setHappyThoughts }) => {
+export const HappyList = ({ loading, happyThoughts, handleLikeChange }) => {
   if (loading) {
-    return <h1>Loading in progress...</h1>
+    return <h2 className="loading-time">Loading happy times...</h2>
   }
 
-  const onHappyListChange = (happy) => {
-    setHappyThoughts((happyThoughts) => happyThoughts.map((individualHappy) => {
-      if (individualHappy._id === happy._id) {
-        return {
-          individualHappy
-        }
-      }
-      return individualHappy
-    }))
-  }
   return (
-    <section>
+    <section className="thought-list">
       {happyThoughts.map((happy) => (
-        <div key={happy._id}>
-          <h4>{happy.description}</h4>
-          <input onChange={() => onHappyListChange(happy)} />
+        <div className="all-thought-boxes">
+          <p key={happy._id}>{happy.message} </p>
+          <div className="likes-section">
+            <button
+              className={happy.hearts === 0 ? 'heart-passive' : 'heart-active'}
+              type="submit"
+              onClick={() => handleLikeChange(happy._id)}>❤️
+            </button>
+            <p className="number-likes">x{happy.hearts}</p>
+          </div>
+          <div className="minutes">
+            <p> {moment(happy.createdAt).fromNow()} </p>
+          </div>
         </div>
-      )).reverse()}
+      ))}
     </section>
   )
 }

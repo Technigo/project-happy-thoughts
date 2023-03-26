@@ -45,8 +45,21 @@ export const App = () => {
       .finally(() => setNewHappyThoughts(''))
   }
 
+  const handleLikeChange = (id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+      .then((res) => res.json())
+      .then(console.log('Like'))
+      .then((error) => console.error(error))
+      .finally(() => fetchThoughts(''));
+  }
   return (
-    <>
+    <div className="app">
       <HappyThoughtsForm
         newThought={newHappyThoughts}
         onNewThoughtChange={handleNewHappyThought}
@@ -54,7 +67,8 @@ export const App = () => {
       <HappyList
         loading={loading}
         happyThoughts={happyThoughts}
-        setHappyThoughts={setHappyThoughts} />
-    </>
+        setHappyThoughts={setHappyThoughts}
+        handleLikeChange={handleLikeChange} />
+    </div>
   );
 }
