@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #ffadad17;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -10,4 +11,198 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.mainContainer {
+  padding: 0 18px;
+  box-sizing: border-box;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.formCard {
+  box-sizing: border-box;
+  background-color: #ffadad38;
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #e2016a;
+  box-shadow: 4px 4px #e2016a;
+}
+
+.headThought {
+  font-family: "Courier New";
+  font-weight: bold;
+  font-size: 15px;
+  color:#690133;
+}
+
+textarea {
+    border: none;
+    color: #000;
+    padding: 8px;
+    margin: 15px 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    font-family: "Courier New";
+}
+
+.submitBtn {
+  font-family: "Courier New";
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  color: #380118;
+  background-color: #ffadad;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: #e2016a80;
+  border: #f872c0;
+  box-shadow: 0 0 5px #f872c0;
+  color: #ffca68;
+}
+
+.heart {
+  margin: 8px;
+}
+
+.card {
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #fc7acc;
+  border-radius: 10px;  
+  margin: 18px 0;
+  padding: 10px 20px;
+  box-shadow: 4.5px 5px #e2016a;
+  overflow-wrap: break-word;
+}
+
+.postText {
+  font-family: "Courier New";
+  font-size: 13px;
+  color: #691501;
+  margin: 0;
+  padding: 18px 0;
+  min-height: 20px;
+}
+
+.heartEmo {
+  font-size: 12px;
+  transition: font-size 0.1s ease-in-out;
+}
+
+.heartEmo:hover {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.hearts {
+  margin-right: 10px;
+  border: none;
+  border-radius: 50%;
+  height: 38px;
+  width: 38px;
+  cursor: pointer;
+  background-color: #e2016a51;
+}
+
+.likesBtn,
+.noLikesBtn {
+  background-color: #ffadad47;
+  margin-right: 8px;
+  border: none;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.noLikesBtn {
+  background-color: #a2a0a047;
+}
+
+.sumHearts,
+.counter {
+  font-size: 10px;
+  color: #fc7acc;
+  text-align: right;
+  margin: 0;
+}
+
+.sumHearts {
+  position: absolute;
+  margin-top: 10px;
+}
+
+.date {
+    float: right;
+    position: relative;
+    font-size: 10px;
+    color: #fc7acc;
+    text-align: right;
+}
+
+.loading {
+  box-sizing: border-box;
+  background-color: #fff;
+  height: 100px;
+  border: 1px solid #fc7acc;
+  border-radius: 10px;  
+  margin: 20px 0;
+  box-shadow: 4.5px 5px #e2016a;
+}
+
+h2 {
+  padding: 35px;
+  font-family: "Courier New";
+  color: #e2016a;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.footContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.icon {
+  color: #ffadad88;
+  font-size: 23px;
+  padding: 0 18px 0 18px;
+}
+
+.icon:hover {
+  color: #e2016a;
+}
+
+.byFoot {
+  font-family: "Courier New";
+  font-size: 12px;
+  color:#b64d7e;
+  margin: 10px 0 14px 0;
+}
+
+.Technigo {
+  width: 40px;
+  opacity: 60%;
+  margin-bottom: 18px;
+}
+
+.Technigo:hover {
+  opacity: 100%;
+}
+
+@media (min-width: 320px) and (max-width: 400px) {
+
+  .mainContainer {
+    width: 316px;
+    padding: 0 2px;
+  }
+  
 }
