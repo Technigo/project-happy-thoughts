@@ -32,7 +32,7 @@ export const App = () => {
   const onFormSubmit = (event) => {
     event.preventDefault(); // prevents from reloading entirely when user submits a thought
 
-    // Note that const onFormSubmit includes everything from line 31 to line 51.
+    // Note that const onFormSubmit includes everything from line 32 to line 52.
 
     const options = {
       method: 'POST',
@@ -46,9 +46,9 @@ export const App = () => {
 
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
-      .then((data) => console.log(data)) // Don't put setThoughtsList or setNewThoughts, as the whole thing will be replaced
+      .then((data) => console.log(data)) // Don't put setThoughtInput as the whole thing will be replaced
       .catch((error) => console.error(error)) // catches errors
-      .finally(() => { fetchThoughts(); setEachThought(''); }); // This collects all the updated thoughts including the one you just posted in line 34, and displays
+      .finally(() => { fetchThoughts(); setEachThought(''); }); // This collects all the updated thoughts and updated likes
   };
 
   // THIS IS ANOTHER WAY OF DOING IT

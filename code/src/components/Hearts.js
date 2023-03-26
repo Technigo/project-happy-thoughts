@@ -11,7 +11,7 @@ export const Hearts = ({ thought, fetchThoughts }) => {
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, options)
       .then((res) => res.json())
       .then((data) => console.log(data))
-      .catch((error) => console.log(error)) // catches errors
+      .catch((error) => console.log(error))
       .finally(() => fetchThoughts())
     console.log('heart count increase')
   }

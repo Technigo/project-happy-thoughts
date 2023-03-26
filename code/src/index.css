@@ -35,7 +35,7 @@ h1 {
   margin-bottom: 20px;
   border-style: solid;
   box-shadow: 5px 5px black;
-  padding: 20px 15px;
+  padding: 20px 20px;
   background-color: rgba(234, 229, 229, 0.899); font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
 }
@@ -52,13 +52,13 @@ h1 {
   width: 50%;
   min-width: fit-content;
   background-color: rgb(237, 164, 175);
-  margin-top: 2px;
+  margin-top: -10px;
 }
 
 .characterCount {
  display: flex;
  align-self: flex-end;
- 
+ font-size: 14px;
 }
 
 .redText {
@@ -66,7 +66,7 @@ h1 {
 }
 
 .normalText {
-  color: rgb(0, 0, 0);
+  color: rgb(97, 92, 92);
 }
 
 /* EACH THOUGHT */
@@ -74,7 +74,7 @@ h1 {
 .eachThought {
   display: flex;
   flex-direction: column;
-  padding: 0px 15px;
+  padding: 20px 20px;
   border-style: solid;
   box-shadow: 5px 5px black;
   margin: 20px 0px;
