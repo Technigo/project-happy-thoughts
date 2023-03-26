@@ -60,10 +60,8 @@ export const App = () => {
 
     fetch(`https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts/${LikeID}/like`, options)
       .then((res) => res.json())
-      .then(console.log('yey it works.'))
       .catch((error) => console.error(error))
-      .finally(() => fetchThoughts()) //this updates the whole page after clicking like
-  }
+  };
 
   return (
     <div>
