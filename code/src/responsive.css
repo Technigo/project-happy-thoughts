@@ -24,6 +24,11 @@
         display: flex;
         align-items: center;
     }
+
+    .sendBtn {
+        width: 50%;
+
+    }
 }
 
 @media screen and (min-width: 801px) and (max-width: 1023px) {
