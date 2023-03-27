@@ -1,4 +1,5 @@
-https://user-images.githubusercontent.com/112956568/227894465-06ae9faa-c9fb-46ae-b722-7c417bf3b760.jpg
+
+![og-image-survey](https://user-images.githubusercontent.com/112956568/227894906-f7cb0d3a-5038-4ca9-9645-7ce4e05e4eda.jpg)
 
 
 
