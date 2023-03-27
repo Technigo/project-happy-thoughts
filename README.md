@@ -1,3 +1,7 @@
+https://user-images.githubusercontent.com/112956568/227894465-06ae9faa-c9fb-46ae-b722-7c417bf3b760.jpg
+
+
+
 # Happy Thoughts
 
 In this week's project we practice React state skills by fetching and posting data to an API.
@@ -32,7 +36,7 @@ CSS files for styling :
 	3	index.css: This file contains the global styles for the application.
 
 ## View it live
-![og-image-survey](https://user-images.githubusercontent.com/112956568/227894465-06ae9faa-c9fb-46ae-b722-7c417bf3b760.jpg)
+
 
 My mobile site:
 
