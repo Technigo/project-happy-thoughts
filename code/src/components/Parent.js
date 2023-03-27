@@ -18,9 +18,9 @@ const Parent = () => {
   const [loading, setLoading] = useState(false);
 
   // Here we are calling the API and gets the JSON.
-  // The setLoading true shows "loading text" if the API call is delayed.
+  // The setLoading true shows "Loader" if the API call is delayed.
   // .catch is catching eventual errors and displays them in a consol.log
-
+  // When everything is loaded we set loading (and loader) to false
   const fetchThoughts = () => {
     setLoading(true);
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
@@ -38,6 +38,7 @@ const Parent = () => {
   }, []); // <--- This is the dependency array. When you put something(variables) in here
   //  it executs everytime the array change. But when its empty its only called when mounted.
 
+  // Handles heart button click, sends a POST request to increase the likes
   const onHeartButtonClick = (_id) => {
     const options = {
       method: 'POST',
@@ -55,6 +56,8 @@ const Parent = () => {
       });
   }
 
+  // Submits a new thought by sending a POST request to the API.
+
   const submitThought = () => {
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
       method: 'POST',
@@ -71,7 +74,12 @@ const Parent = () => {
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false); setSendThought('') });
   }
+  // data represents the new thought object received after submitting the form.
+  // ...thoughtsList expands the elements of the current thoughtsList array.
+  // The new array is created by combining data and the expanded thoughtsList.
+  // The setThoughtsList function updates the state of thoughtsList with the new array.
 
+  // Handles form submission for the new thought.
   const onSubmit = (event) => {
     event.preventDefault();
     submitThought();
@@ -101,6 +109,23 @@ const Parent = () => {
     </div>
   );
 }
+
+// The code above checks if the loading state is true. //
+// If it is, it renders a Loader component inside a div with a className of "loader-container".
+// This is used to display a loading animation while the API call is in progress. //
+
+// The next div has a dynamic className. It starts with "content-container" and adds "visible"//
+// only when loading is false. This is used to control the visibility of the content
+// once the data has been fetched from the API.//
+
+// SubmitForm component is responsible for rendering a form to submit new thoughts.
+// It receives the sendThought, setSendThought, and onSubmit props to manage the
+// form data and handle the submission process.
+
+// ThoughtCard component displays the list of thoughts fetched from the API.
+// It receives the onHeartButtonClick, thoughtsList, latestMessage, and loading props
+// to handle the heart button click event, display the thoughts, show the latest message,
+// and manage the loading state, respectively.
 
 export default Parent;
 
