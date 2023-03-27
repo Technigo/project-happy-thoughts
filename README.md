@@ -4,7 +4,6 @@ In this project I created a friendly Twitter feed, where the user can post happy
 
 ## The problem
 
-Describe how you approached to problem,
 Initially, I tried to understand the actual assignement - it was actually quite tricky. After getting a hold of it I created a plan.
 
 My plan was to follow the example from the lectures and then build from there. I wanted to have a steady base to start from to add the functions that later was needed from me. After creating the JS I did the CSS and the README. I closely followed the design sketch that we needed to style from. In the end I deployed the project to Netlify.
