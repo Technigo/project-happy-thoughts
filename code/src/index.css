@@ -51,7 +51,6 @@ textarea {
   font-size: 14px;
   color: rgb(55, 27, 16);
   outline-color: goldenrod;
-  overflow-wrap: anywhere;
 }
 
 button {
@@ -124,6 +123,7 @@ button {
   margin-left: 10px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 .list {
