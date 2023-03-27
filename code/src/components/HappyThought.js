@@ -6,7 +6,7 @@ import moment from 'moment';
 // {props.text}
 
 // const HappyThought = (props) => {
-const HappyThought = ({ thoughtId, messageText, hearts, timestamp, handleHearts }) => {
+const HappyThought = ({ thoughtId, text, hearts, timestamp, handleHearts }) => {
   
   const heartButtonGrey = (
     <button
@@ -28,7 +28,7 @@ const HappyThought = ({ thoughtId, messageText, hearts, timestamp, handleHearts 
   
   return (
     <article className="happy-thought-card">
-      <p>{messageText}</p>
+      <p>{text}</p>
       <div className="card-bottom">
         <div className="card-bottom-left">
           {hearts !== 0 ? heartButtonPink : heartButtonGrey}

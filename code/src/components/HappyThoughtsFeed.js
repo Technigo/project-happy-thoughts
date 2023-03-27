@@ -10,12 +10,11 @@ import NewHappyThought from 'components/NewHappyThought';
 import HappyThoughtsList from './HappyThoughtsList';
 import Loading from './Loading';
 import Footer from './Footer';
-import 'index.css';
 
 const HappyThoughtsFeed = () => {
   const [thoughtsList, setThoughtsList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [happyThought, setHappyThought] = useState('');
+  // const [newHappyThought, setNewHappyThought] = useState('');
 
   const API_URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
   
@@ -32,21 +31,23 @@ const HappyThoughtsFeed = () => {
     fetchThoughts();
   }, []);
 
-  const handleFormSubmit = (event) => {
-    setHappyThought(event.target.value);
-  };
+  // const onFormSubmit = (event) => {
+  //   setNewHappyThought(event.target.value);
+  // };
 
-  const newHappyThought = () => {
-    setHappyThought('');
-    setLoading(false);
-  };
+  // const newHappyThought = () => {
+  //   setNewHappyThought('');
+  //   setLoading(false);
+  // };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-  
+
+    const val = event.target['thought-input'].value;
+
     const options = {
       method: 'POST',
-      body: JSON.stringify({ message: happyThought }),
+      body: JSON.stringify({ message: val }),
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json' 
@@ -55,14 +56,11 @@ const HappyThoughtsFeed = () => {
 
     fetch(API_URL, options)
       .then((response) => response.json())
-      .then((data) => { setThoughtsList([data, ...thoughtsList]) })
+      .then((data) => { setThoughtsList([data, ...thoughtsList]);
+      })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
-  }
-
-  useEffect(() => {
-    setThoughtsList('');
-  }, [thoughtsList]);
+  };
 
   const handleHearts = (id) => {
     const options = {
@@ -83,11 +81,10 @@ const HappyThoughtsFeed = () => {
     <main className="happy-thoughts-app">
       <h1>Happy Thoughts!</h1>
       <NewHappyThought
-        newHappyThought={newHappyThought}
-        handleChange={handleFormSubmit}
-        onFormSubmit={onFormSubmit} />
+        handleFormSubmit={onFormSubmit}
+      />
       <HappyThoughtsList 
-        loading={loading && (<Loading />)}
+        loading={loading}
         thoughtsList={thoughtsList}
         handleHearts={handleHearts}
       />
@@ -100,7 +97,7 @@ const HappyThoughtsFeed = () => {
           handleHearts={() => handleHearts(thought._id)}
         />
       ))} */}
-      {loading && (<Loading />)}
+      {loading && <Loading />}
       <div className="footer">
         <Footer />
       </div>
