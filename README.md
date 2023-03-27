@@ -3,7 +3,7 @@
 
 
 
-# Happy Thoughts
+# Happy Thoughts aka Junior Science Lab
 
 In this week's project we practice React state skills by fetching and posting data to an API.
 
