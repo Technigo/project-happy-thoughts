@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import './SubmitForm.css';
 
+// Define the SubmitForm component with props for managing input and form submission
 const SubmitForm = ({ sendThought, setSendThought, onSubmit }) => {
+  // Declare state variables for input focus, input length, and the latest post
   const [isInputFocused, setIsInputFocused] = useState(false);
   const isTextTooShort = sendThought.length < 5;
+  // eslint-disable-next-line no-unused-vars
   const [latestPost, setLatestPost] = useState(null);
-
+  /* eslint-enable no-unused-vars, no-underscore-dangle */
+  // Set the input className based on input focus, input length, and latest post
   let inputClassName = 'input-area';
   if (isInputFocused) {
     inputClassName += ' focus';
@@ -15,13 +19,13 @@ const SubmitForm = ({ sendThought, setSendThought, onSubmit }) => {
   }
   inputClassName += latestPost ? ' fade-in' : '';
 
+  // Display a warning message if the input text is too short
   let warningText = null;
   if (isTextTooShort && !isInputFocused && sendThought.length > 0) {
     warningText = <span className="error-message">Too short</span>;
   }
 
-  console.log(setLatestPost)
-
+  // Render the SubmitForm component
   return (
     <div className="submit-box">
       <form className="submit-form" onSubmit={onSubmit}>
@@ -38,11 +42,12 @@ const SubmitForm = ({ sendThought, setSendThought, onSubmit }) => {
             placeholder="My next project is on..." />
           {warningText}
         </div>
+        {/* Render the submit button and disable it if the input text is too short */}
         <button
           className="submit-button"
           type="submit"
           disabled={isTextTooShort}>
-        Send
+              Send
         </button>
       </form>
     </div>
