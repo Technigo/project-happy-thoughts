@@ -12,8 +12,7 @@
     box-shadow: 10px 9px black;
     gap: 20px;
     padding: 20px;
-    height: auto;
-    overflow: auto;
+    word-wrap: break-word;
   }
 
   .message-box.fade-in {
