@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
+import { BASE_URL } from 'url';
 
 const TimesLiked = ({ timesLiked, thoughtId }) => {
   const [numberOfHearts, setNumberOfHearts] = useState(timesLiked)
@@ -8,7 +9,7 @@ const TimesLiked = ({ timesLiked, thoughtId }) => {
     event.preventDefault();
     setNumberOfHearts(numberOfHearts + 1)
     fetch(
-      `https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts/${thoughtId}/like`,
+      `${BASE_URL}${thoughtId}/like`,
       { method: 'PATCH' }
     )
       .then(() => {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BASE_URL } from 'url';
 
 const NewMessage = () => {
   const [newPost, setNewPost] = useState('')
@@ -8,7 +9,7 @@ const NewMessage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch(
-      'https://project-happy-thoughts-api-tyqwqvxomq-lz.a.run.app/thoughts',
+      BASE_URL,
       {
         method: 'POST',
         headers: {
