@@ -3,10 +3,11 @@
 /* eslint-disable padded-blocks */
 /* eslint-disable no-trailing-spaces */
 import React, { useState } from 'react';
+import JSConfetti from 'js-confetti';
 
 const NewHappyThought = ({ handleFormSubmit }) => {
   const [newThought, setNewThought] = useState('');
-
+  const jsConfetti = new JSConfetti();
   const isSubmitButtonDisabled = newThought.length < 5 || newThought.length > 140;
 
   return (
@@ -30,7 +31,16 @@ const NewHappyThought = ({ handleFormSubmit }) => {
       <button
         className="send-new-thought-button"
         type="submit"
-        disabled={isSubmitButtonDisabled}>
+        disabled={isSubmitButtonDisabled}
+        onClick={() => {
+          (jsConfetti.addConfetti({
+            confettiRadius: 8,
+            confettiNumber: 500,
+            confettiColors: [
+              '#d44e62', '#fcfee1', '#eebed9', '#b4c8b7', '#fb91c6', '#a0bbd0'
+            ]
+          }))
+        }}>
         <span className="button-text">❤️ Share Happy Thought ❤️</span>
       </button>
     </form>
