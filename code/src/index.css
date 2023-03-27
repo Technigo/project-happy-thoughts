@@ -51,6 +51,7 @@ textarea {
   font-size: 14px;
   color: rgb(55, 27, 16);
   outline-color: goldenrod;
+  overflow-wrap: anywhere;
 }
 
 button {
