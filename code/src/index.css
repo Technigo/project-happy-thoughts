@@ -67,6 +67,7 @@ header h1{
   box-shadow: 5px 6px 2px 1px black;
   margin-bottom:15px;
   padding:10px;
+  overflow-wrap: break-word;
 }
 .give-heart-btn{
   background-color: #ffcfce;
@@ -79,6 +80,7 @@ header h1{
   display:flex;
   flex-direction: column;
   align-items: flex-end;
+  overflow-wrap: break-word;
 }
 .give-heart{
   margin-top: 0;
