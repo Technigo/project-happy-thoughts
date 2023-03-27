@@ -33,8 +33,6 @@ export const LikeButton = ({ thought, setNewLike }) => {
         }
     }
 
-
-
     return (
         <div className="likeBtnBox">
             <button
