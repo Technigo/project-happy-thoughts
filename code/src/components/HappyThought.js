@@ -11,7 +11,7 @@ const HappyThought = ({ thoughtId, text, hearts, timestamp, handleHearts }) => {
   const heartButtonGrey = (
     <button
       type="submit"
-      className="heart-btn-grey"
+      className="heart-button grey-background"
       onClick={() => handleHearts(thoughtId)}>
       ❤️
     </button>
@@ -20,7 +20,7 @@ const HappyThought = ({ thoughtId, text, hearts, timestamp, handleHearts }) => {
   const heartButtonPink = (
     <button
       type="submit"
-      className="heart-btn-pink"
+      className="heart-button pink-background"
       onClick={() => handleHearts(thoughtId)}>
       ❤️
     </button>

@@ -28,7 +28,7 @@ const NewHappyThought = ({ handleFormSubmit }) => {
         {newThought.length > 140 && <span>Sorry it`&apos;`s too long, please keep within the maximum of 140 characters!</span>}
       </div>
       <button
-        className="send-new-thought-btn"
+        className="send-new-thought-button"
         type="submit"
         disabled={isSubmitButtonDisabled}>
         <span className="button-text">❤️ Share Happy Thought ❤️</span>
