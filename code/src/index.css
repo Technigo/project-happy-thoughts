@@ -57,6 +57,8 @@ code {
   padding: 10px;
   box-shadow: 7px 7px;
   font-size: 14px;
+  display: grid;
+  justify-content: center;
 }
 
 .likeAndTime{ 
