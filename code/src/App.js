@@ -18,7 +18,7 @@ export const App = () => {
   //fetchThoughts function makes a GET request to the API to retrieve the thoughts and update the thoughts state variable. 
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts')
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
@@ -46,19 +46,19 @@ export const App = () => {
       })
     }
 
-    fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts', options)
+    fetch('POST https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => setNewMessage(''));
   }
 
   const onLikesIncrease = (LikeID) => {
-    const options = { method: 'PATCH',
+    const options = { method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       } }
-
-    fetch(`https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts/${LikeID}/like`, options)
+      
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${LikeID}/like`, options)
       .then((res) => res.json())
       .then(console.log('yey it works.'))
       .catch((error) => console.error(error))

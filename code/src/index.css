@@ -42,7 +42,7 @@ div.letter-count {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-right: 65px;
+  margin-right: 45px;
   color: rgba(0, 0, 0, 0.255);
 }
 
@@ -100,6 +100,10 @@ div.likes {
   color: black;
 }
 
+.submit-btn:hover {
+  background-color: rgb(254, 181, 193);
+}
+
 .letter-count {
   font-size: smaller;
 }
@@ -107,11 +111,12 @@ div.likes {
 button {
   cursor: pointer;
 }
-.like-btn:hover {
+
+button.like-btn:hover {
   background-color:rgb(255, 163, 179);
 }
 
-.no-like-btn:hover {
+button.no-like-btn:hover {
   background-color: rgb(233, 233, 233);
 }
 

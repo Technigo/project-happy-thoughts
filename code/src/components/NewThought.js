@@ -16,6 +16,8 @@ export const NewThought = ({ newMessage, handleNewThoughtsChange, onFormSubmit }
       <textarea
         className="input-message"
         placeholder="What's on your mind?"
+        rows="4"
+        cols="30"
         value={newMessage}
         onChange={handleInputChange} />
       <div className="main">
