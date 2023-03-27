@@ -1,13 +1,15 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Week 7 project with React - the task was to fetch happy thoughts from an API and showing them in a list plus have a form for new happy thoughts where people could post their happy thoughts in and make the new thoughts to also show up in the list.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This week started off very good but ended in a catastrophical way for me...
+With some help from a former student I managed to solve the problem and finally got my code to work - YEY! Big shoutout to Agnes Ahlman for helping me out.
+
+I had the basic functions working but then when I wanted to add more functionality it just didn't work out and the page was completely blank/white with nothing showing up.
+I've been crying, laughing and overall struggling this week but now with a working project I'm so happy and grateful.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-w7-ylva-karlsson.netlify.app/
