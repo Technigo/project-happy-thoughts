@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
-// import Confetti from 'react-confetti';
-
+import React, { useEffect, useState } from 'react';
+import Confetti from 'react-confetti';
+import { useWindowSize } from 'react-use';
 import Button from './Button';
 
 const InputBox = ({ fetchThoughts, clickCount }) => {
   const [newThought, setNewThought] = useState('');
   const [characters, setCharacters] = useState(0);
-  // const [confetti, setConfetti] = useState(false)
+  const [confetti, setConfetti] = useState(false)
+  const { width, height } = useWindowSize()
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    confetti && setTimeout(() => { setConfetti(false) }, 5000)
+  }, [confetti])
 
   const handleThoughtChange = (e) => {
     setNewThought(e.target.value);
@@ -22,7 +28,6 @@ const InputBox = ({ fetchThoughts, clickCount }) => {
   }
 
   const onFormSubmit = (e) => {
-    // setConfetti(true)
     e.preventDefault();
 
     const options = {
@@ -43,6 +48,7 @@ const InputBox = ({ fetchThoughts, clickCount }) => {
       })
       .finally(() => {
         setNewThought('');
+        setConfetti(true);
       })
   }
   const handleEnterKey = (event) => {
@@ -53,7 +59,7 @@ const InputBox = ({ fetchThoughts, clickCount }) => {
   return (
     <form className="input-box" onSubmit={onFormSubmit}>
       {/* eslint-disable-next-line max-len */}
-      {/* {confetti && <Confetti colors={['#f44336', '#e91e63']} recycle={false} numberOfPieces={60} />} */}
+      {confetti && <Confetti colors={['#f44336', '#e91e63']} recycle={false} numberOfPieces={200} gravity={0.5} width={width} height={height} />}
       <p>What&apos;s making you happy?</p>
       <input type="text" className="new-thought-input" onChange={handleThoughtChange} onKeyDown={handleEnterKey} value={newThought} />
       <div className="counters">
