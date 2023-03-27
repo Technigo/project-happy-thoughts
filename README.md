@@ -12,6 +12,10 @@ In this week's project we practice React state skills by fetching and posting da
 
 ## The problem
 
+Finland has just been selected (6th time in a row) as the happiest country, even if we genuinely love darkness, depression, heavy metal, booze, and knives.
+Did you see Antonia’s amazing happy thoughts projects?!? –It was fantastic!! …But because she already shared all the happy thoughts we have in our dear country 😉 I chose to break some rules and do something slightly different:
+A website for Junior Science Lab. It’s a website where tech kiddos can share with the rest of the group the project they want to work on next.
+
 Biggest problems just adapting all the new stuff and things we have learned with JS and React...
 This week I had time to do site for just mobile.  ...Or the resto of it works as weell but it doesn't look too good
 
@@ -28,6 +32,7 @@ CSS files for styling :
 	3	index.css: This file contains the global styles for the application.
 
 ## View it live
+![og-image-survey](https://user-images.githubusercontent.com/112956568/227894465-06ae9faa-c9fb-46ae-b722-7c417bf3b760.jpg)
 
 My mobile site:
 
