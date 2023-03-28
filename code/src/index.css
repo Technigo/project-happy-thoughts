@@ -136,7 +136,7 @@ h3 {
 @media (min-width:700px) {
 
   .feed-container {
-    max-height: 60vh;
+    max-height: 57vh;
     width: 100%;
     overflow: scroll;
     padding-bottom: 20px;
