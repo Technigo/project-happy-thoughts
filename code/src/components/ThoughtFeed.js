@@ -1,4 +1,4 @@
-/* eslint-disable no-underscore-dangle */
+/* eslint no-underscore-dangle: 0 */
 import React, { useState, useEffect } from 'react';
 import { formatDistance } from 'date-fns';
 import { ThoughtForm } from './ThoughtForm';
@@ -18,22 +18,34 @@ export const ThoughtFeed = () => {
   }
 
   useEffect(() => {
+    setIsLoading(true);
     fetchThoughts();
   }, []);
 
-  const HandleLikes = (thoughtId) => {
-    fetch(`${API}/${thoughtId}/like`, { method: 'POST' })
-      .then((response) => response.json())
-      .then((data) => {
-        const changeLikeCount = thoughtList.map((like) => {
-          if (like._id === data._id) {
-            like.hearts += 1
-            return like
-          } else { return like }
-        })
-        setThoughtList(changeLikeCount)
+  const handleLikes = (_id) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`${API}/${_id}/like`, options)
+      .then((res) => {
+        return res.json();
       })
-  };
+      .then((data) => {
+        const updatedThoughtList = thoughtList.map((thought) => {
+          if (thought._id === data._id) {
+            return {
+              ...thought, hearts: data.hearts
+            };
+          }
+          return thought;
+        });
+        setThoughtList(updatedThoughtList);
+      })
+      .catch((error) => console.error(error));
+  }
 
   return (
     <>
@@ -44,11 +56,11 @@ export const ThoughtFeed = () => {
         {!isLoading && thoughtList.map((thought) => {
           return (
             <div key={thought._id} className="card">
-              <p>{thought.message}</p>
+              <p className="happy-message">{thought.message}</p>
               <div className="card-details">
-                <div>
-                  <button type="button" className={`heart-button ${thought.hearts === 0 ? 'heart-active' : ''}`} onClick={() => HandleLikes(thought._id)}>
-                    <span role="img" aria-label="Like post">❤️</span>
+                <div className="heart-container">
+                  <button type="button" className={`heart-button ${thought.hearts > 0 ? 'heart-active' : ''}`} onClick={() => { handleLikes(thought._id, thought.hearts); }}>
+                    <span role="img" className="heart-icon" aria-label="Like post">❤️</span>
                   </button>
                   <span className="total-hearts">x {thought.hearts}</span>
                 </div>
