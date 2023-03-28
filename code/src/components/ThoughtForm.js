@@ -50,7 +50,11 @@ export const ThoughtForm = () => {
           placeholder="Type your happy thought..." />
       </label>
       <div className="form-details">
-        <p><span className={`number-count ${minMaxCount ? 'red-number' : ''}`}>{newThought.length}</span> / 140</p>
+        <p>
+          <span className={`number-count ${minMaxCount ? 'red-number' : ''}`}>
+            {newThought.length}
+          </span> / 140
+        </p>
         <button
           className="send-button"
           type="submit">

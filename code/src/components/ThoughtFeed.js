@@ -59,12 +59,22 @@ export const ThoughtFeed = () => {
               <p className="happy-message">{thought.message}</p>
               <div className="card-details">
                 <div className="heart-container">
-                  <button type="button" className={`heart-button ${thought.hearts > 0 ? 'heart-active' : ''}`} onClick={() => { handleLikes(thought._id, thought.hearts); }}>
-                    <span role="img" className="heart-icon" aria-label="Like post">❤️</span>
+                  <button
+                    type="button"
+                    className={`heart-button ${thought.hearts > 0 ? 'heart-active' : ''}`}
+                    onClick={() => { handleLikes(thought._id, thought.hearts); }}>
+                    <span
+                      role="img"
+                      className="heart-icon"
+                      aria-label="Like post">
+                      ❤️
+                    </span>
                   </button>
                   <span className="total-hearts">x {thought.hearts}</span>
                 </div>
-                <p className="date"> {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
+                <p className="date">
+                  {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
+                </p>
               </div>
             </div>
           )
