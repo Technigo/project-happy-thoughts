@@ -28,7 +28,7 @@ code {
 
 .card, .form-container {
   border: 1px solid #343434;
-  width: 300px;
+  width: 350px;
   box-shadow: 7px 7px 0px 0px #343434;
   -webkit-box-shadow: 7px 7px 0px 0px #343434;
   -moz-box-shadow: 7px 7px 0px 0px #343434;
@@ -144,6 +144,13 @@ h3 {
 
 }
 
+@media (max-width:400px) {
+
+ .card, .form-container {
+    width: 300px;
+  }
+}
+
 @media (max-width:350px) {
 
  .card, .form-container {
@@ -153,5 +160,4 @@ h3 {
   .send-button {
     margin-top: 20px;
   } 
-
 }
