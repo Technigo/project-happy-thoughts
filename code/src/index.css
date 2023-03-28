@@ -27,11 +27,11 @@ code {
 }
 
 .card, .form-container {
-  border: 1px solid black;
+  border: 1px solid #343434;
   width: 300px;
-  box-shadow: 7px 7px 0px 0px black;
-  -webkit-box-shadow: 7px 7px 0px 0px black;
-  -moz-box-shadow: 7px 7px 0px 0px black;
+  box-shadow: 7px 7px 0px 0px #343434;
+  -webkit-box-shadow: 7px 7px 0px 0px #343434;
+  -moz-box-shadow: 7px 7px 0px 0px #343434;
   padding: 10px 20px 20px 20px;
   overflow-wrap: break-word;
 }
