@@ -15,7 +15,7 @@ const Parent = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://project-happy-thoughts-3asmq7u3ga-lz.a.run.app/thoughts')
+    fetch('https://happy-thoughts-api.onrender.com/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
@@ -39,7 +39,7 @@ const Parent = () => {
       })
     }
 
-    fetch('https://project-happy-thoughts-3asmq7u3ga-lz.a.run.app/thoughts', options)
+    fetch('https://happy-thoughts-api.onrender.com/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => setNewThought(''));
@@ -52,7 +52,7 @@ const Parent = () => {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://project-happy-thoughts-3asmq7u3ga-lz.a.run.app/thoughts/${_id}/hearts`, option) // _id is the key in API
+    fetch(`https://happy-thoughts-api.onrender.com/thoughts/${_id}/hearts`, option) // _id is the key in API
       .then((res) => res.json())
       .then(() => fetchThoughts()) // update the data, hence redoing the fetchThought
   }
