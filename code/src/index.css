@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1650963310446-011fc6a28367?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80);
+  background-size: cover;
 }
 
 code {
@@ -54,8 +56,10 @@ code {
 
 h3 {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
   margin: 16px 0 5px 0;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 
 .form-details p {
@@ -65,18 +69,18 @@ h3 {
 }
 
 .send-button {
-  background-color: #ffadad;
+  background-color: #ffbdda;
   border: none;
   border-radius: 20px;
   font-family: Segoe UI,sans-serif;
-  padding: 8px 13px;
-  border: 1px solid  #ffadad;
+  padding: 10px 15px;
+  border: 1px solid #ffbdda;
 }
 
 .send-button:hover {
-  color: tomato;
+  color: #ff3f31;
   background-color: white;
-  border: 1px solid tomato;
+  border: 1px solid #ff3f31;
 }
 
 .send-button span {
@@ -85,10 +89,14 @@ h3 {
 }
 
 .red-text, .red-number {
-  color: tomato;
+  color: #ff3f31;
 }
 
 /* MESSAGE LIST STYLE */
+
+.card {
+  background-color: white;
+}
 
 .card-details {
   display: flex;
@@ -122,7 +130,7 @@ h3 {
 }
 
 .heart-active {
-  background-color: #ffadad;
+  background-color: #ffbdda;
 }
 
 .date {
