@@ -8,4 +8,4 @@ Create fetches to both post to and get data from the API. Create like button. Fo
 
 ## View it live
 
-https://app.netlify.com/sites/mellow-duckanoo-8fdcc7/overview
+https://mellow-duckanoo-8fdcc7.netlify.app/
