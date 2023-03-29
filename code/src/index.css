@@ -19,6 +19,7 @@ code {
   display: flex;
   flex-direction: column;
   gap: 2em;
+  word-wrap: break-word;
 }
 
 .singleListItem,
@@ -36,6 +37,7 @@ code {
 h3 {
   display: block;
   margin-left: 5%;
+  margin-right: 5%;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
