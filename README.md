@@ -14,4 +14,4 @@ This was a fun project and I learned a lot!
 
 ## View it live
 
-https://ephemeral-mooncake-b052eb.netlify.app
+https://happy-thoughts-annikasonnek.netlify.app
