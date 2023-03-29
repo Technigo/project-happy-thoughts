@@ -14,7 +14,7 @@ export const ThoughtFeed = () => {
       .then((response) => response.json())
       .then((data) => setThoughtList(data))
       .catch((error) => console.log(error))
-      /* .finally(() => { setIsLoading(false) }) */
+      .finally(() => { setIsLoading(false) })
   }
 
   useEffect(() => {
