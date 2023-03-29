@@ -80,7 +80,7 @@ export const ThoughtFeed = () => {
           )
         })}
       </section>
-      {isLoading && (<h3 className="is-loading">Loading in progress...</h3>)}
+      {isLoading && (<span className="is-loading" />)}
     </>
   )
 }
