@@ -1,10 +1,9 @@
 import React from 'react';
 import SingleThought from './SingleThought';
 
-const DataList = ({ happyThoughtsList, setHappyThoughtsList, onHeartClick }) => {
-  const heartCountClick = (thought) => {
-    onHeartClick(thought)
-    console.log('like-click')
+const DataList = ({ loading, setLoading, happyThoughtsList, setHappyThoughtsList }) => {
+  const updateList = (thought) => {
+    setLoading(true)
     const options = {
       method: 'POST'
     };
@@ -25,13 +24,23 @@ const DataList = ({ happyThoughtsList, setHappyThoughtsList, onHeartClick }) => 
           return thoughtItem;
         });
 
+        if (loading) {
+          return (<h2>loading in process...</h2>);
+        }
+
         // set the updated thoughts list
         setHappyThoughtsList(updatedThoughtsList);
       })
       .catch((error) => console.log(error))
       .finally(() => {
+        setLoading(false);
         console.log('heart count increased')
       });
+  };
+
+  const heartCountClick = (thought) => {
+    console.log('like-click')
+    updateList(thought);
   };
 
   return (

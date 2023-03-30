@@ -18,7 +18,7 @@ const SingleThought = ({ thought, onHeartClick }) => {
     <div className="singleListItem">
       <h3 id="stretched">{thought.message}</h3>
       <div className="buttonTimestampBox">
-        <div className="heartCounter"><button onClick={() => onHeartClick(thought)} type="button"><span>🧡</span></button>
+        <div className="heartCounter"><button onClick={() => onHeartClick(thought)} type="button"><span id="heartButton">🧡</span></button>
           <span> x {thought.hearts}</span>
         </div>
         <p className="timeStamp">{timeStamp}</p>

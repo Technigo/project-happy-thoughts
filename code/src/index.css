@@ -64,6 +64,15 @@ font-size: medium;
 cursor: pointer;
 }
 
+button:active {
+  background-color: white;
+  border: 1px solid red;
+}
+
+button:active #heartButton {
+  filter:contrast(50%);
+}
+
 .noWrapButton {
   white-space:nowrap;
 }
