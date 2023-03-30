@@ -78,7 +78,7 @@ const InputForm = ({
           onChange={handleInputChange}
           maxLength="140" />
         <div id="counter">140/{charCount}</div>
-        <button type="submit"><span id="heart"> Send Happy Thought </span></button>
+        <button type="submit"><span id="heart"> Send Happy Thought&nbsp;</span></button>
       </form>
     </div>
   );

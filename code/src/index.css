@@ -43,11 +43,11 @@ h3 {
 }
 
 textarea {
-  margin-left: 5%;
-  margin-right: 5%;
-  width:90%;
+  margin-left: 2em;
+  margin-right: 1em;
+  width: calc(95% - 3em);
   height: 4em;
-  content: 🧡;
+  caret-color: rgb(197, 62, 57);
 }
 
 button {
@@ -55,7 +55,7 @@ margin-left: 5%;
 margin-top: 1em;
 margin-bottom: 1.5em;
 width: 45%;
-padding: 10px 0 10px 0;
+padding: 10px 10px 10px 10px;
 border-radius: 20px;
 border: none;
 background-color: rgb(252, 166, 163);
@@ -64,15 +64,20 @@ font-size: medium;
 cursor: pointer;
 }
 
+.noWrapButton {
+  white-space:nowrap;
+}
+
 #heart::before,
 #heart::after {
   content: '🧡';
 }
 
-#click-heart {
+.buttonTimestampBox button {
   width: 3em;
   height: 3em;
   border-radius: 50%;
+  margin-bottom: 16px;
 }
 
 #stretched {
@@ -84,7 +89,29 @@ cursor: pointer;
   margin-left: 5%;
 }
 
+.buttonTimestampBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 1em;
+  margin-right: 2em;
+}
+
+.heartCounter {
+  white-space: nowrap;
+  align-self: flex-end;
+}
+
 .timeStamp {
   display: inline-block;
- margin-left: 65%;
+ align-self: center;
 }
+
+@media screen and (max-width: 667px) {
+  .inputForm,
+  .listItems {
+    margin-left: 1em;
+    margin-right: 2em;
+  }
+}
+  
