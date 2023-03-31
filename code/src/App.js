@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 /* eslint-disable spaced-comment */
 /* eslint-disable no-trailing-spaces */
@@ -51,17 +52,33 @@ export const App = () => {
       .then(() => fetchThoughts())
       .finally(() => setNewMessage(''));
   }
+  //takie the like ID from prev function, gthoughtsvariable. If 
+  const upDateSingleLikeIncrease = (LikeID) => {
+    // eslint-disable-next-line no-shadow
+    setThoughts((thoughts) => thoughts.map((singleThougt) => {
+      // eslint-disable-next-line no-underscore-dangle
+      if (singleThougt._id === LikeID) { //if singleThought id is equal to the LikeID then it will increase the heart (property inside the object) by 1. 
+        singleThougt.hearts += 1
+      }
+      return singleThougt //if the id is not pressed (likeknappen trycks) the 
+    }))
+  }
   const onLikesIncrease = (LikeID) => {
-    setClickCount(clickCount + 1); //makes it update every click by 1
-    const options = { method: 'PATCH',
+    // VARJE GÅNG MAN GÖR EN LIKE, SÄTTER DU CLICKCOUNT + 1 
+    /*  setClickCount(clickCount + 1); */
+    const options = {
+      method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json'
-      } }
+        'content-type': 'application/json'
+      }
+    };
 
     fetch(`https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts/${LikeID}/like`, options)
       .then((res) => res.json())
+      .then((data) => console.log(data))
       .catch((error) => console.error(error))
-  };
+      .finally(() => upDateSingleLikeIncrease(LikeID)) //this updates the whole page after clicking like
+  }
 
   return (
     <div>

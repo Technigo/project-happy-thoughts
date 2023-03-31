@@ -8,9 +8,8 @@ import { formatDistance } from 'date-fns';
 // increase the number of hearts for a specific thought.
 export const ThoughtList = ({ loading, thoughts, onLikesIncrease, clickCount }) => {
   if (loading) {
-    return <div className="Loading">Loading</div>
+    return <div className="Loading">Loading</div>;
   }
-
   const OnLikesIncrease = (id) => {
     onLikesIncrease(id);
   }
@@ -22,7 +21,12 @@ export const ThoughtList = ({ loading, thoughts, onLikesIncrease, clickCount }) 
           <div className="Thoughts" key={list._id}>
             <p className="thought-text">{list.message}</p>
             <div className="likes">
-              <button type="button" className={(list.hearts === 0 ? 'like-btn' : 'no-like-btn')} onClick={() => OnLikesIncrease(list._id)}>❤️</button>
+              <button
+                type="button"
+                className={(list.hearts === 0 ? 'like-btn' : 'no-like-btn')}
+                onClick={() => OnLikesIncrease(list._id)}>
+                ❤️
+              </button>
               <p className="counter">x {list.hearts + clickCount}</p>
               {/*  <p className="counter">x {list.hearts}</p> */}
               <p className="date">
