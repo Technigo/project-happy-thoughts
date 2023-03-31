@@ -72,7 +72,7 @@ export const App = () => {
       .then((result) => result.json())
       .then(() => fetchMessages())
       .catch((error) => console.log(error))
-      .finally(() => { setLoading(false) })
+      .finally(() => { setLoading(true) })
   }
 
   // RETURN-SECTION HERE (Mounting the components)
