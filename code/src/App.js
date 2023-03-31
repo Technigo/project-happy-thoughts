@@ -1,3 +1,4 @@
+
 /* eslint-disable max-len */
 /* eslint-disable spaced-comment */
 /* eslint-disable no-trailing-spaces */
@@ -18,8 +19,8 @@ export const App = () => {
   //fetchThoughts function makes a GET request to the API to retrieve the thoughts and update the thoughts state variable. 
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
-      .then((res) => res.json())
+    fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts')
+      .then((response) => response.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false))
@@ -46,25 +47,26 @@ export const App = () => {
       })
     }
 
-    fetch('POST https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
-      .then((res) => res.json())
+    fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts', options)
+      .then((response) => response.json())
+      .then(console.log('Posted :)'))
       .then(() => fetchThoughts())
       .finally(() => setNewMessage(''));
   }
-
-  const onLikesIncrease = (LikeID) => {
+  //like-button
+  const onLikesIncrease = (_id) => {
     const options = { method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       } }
       
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${LikeID}/like`, options)
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, options)
       .then((res) => res.json())
-      .then(console.log('yey it works.'))
+      .then(console.log('Post liked :)'))
       .catch((error) => console.error(error))
       .finally(() => fetchThoughts())
   }
-
+  
   return (
     <div className="main-container">
       <div className="thoughts">
@@ -80,3 +82,22 @@ export const App = () => {
     </div>
   );
 };
+/*
+  const handleLike = (_id) => {
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        const updateLikes = thoughtList.map((like) => {
+          if (like._id === data._id) {
+            like.hearts += 1;
+            return like;
+          } else {
+            return like;
+          }
+        });
+        setThoughtList(updateLikes)
+      })
+  }
+*/

@@ -5,7 +5,7 @@ import { formatDistance } from 'date-fns';
 
 export const ThoughtList = ({ loading, thoughts, onLikesIncrease }) => {
   if (loading) {
-    return <div className="Loading">Loading</div>
+    return <div className="loader"> </div>
   }
 
   const handleOnLikesIncrease = (id) => {
