@@ -61,8 +61,9 @@ const InputForm = ({
 
   const handleInputChange = (event) => {
     const { value } = event.target;
+    setCharCount(0 + value.length); // update character count
+    console.log(charCount)
     setNewThought(value);
-    setCharCount(140 - value.length); // update character count
   };
 
   if (loading) {
@@ -74,11 +75,12 @@ const InputForm = ({
       <form onSubmit={handleFormSubmit}>
         <h3>What&apos;s making you happy right now?</h3>
         <textarea
+          className={charCount < 5 ? 'tooFewChar' : ''}
           value={newThought}
           onChange={handleInputChange}
           maxLength="140" />
-        <div id="counter">140/{charCount}</div>
-        <button type="submit"><span id="heart"> Send Happy Thought&nbsp;</span></button>
+        <div id="counter">{charCount}/140</div>
+        <button type="submit" disabled={newThought.length < 5}><span id="heart"> Send Happy Thought&nbsp;</span></button>
       </form>
     </div>
   );

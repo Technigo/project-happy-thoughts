@@ -7,6 +7,7 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [newThought, setNewThought] = useState('');
   const [charCount, setCharCount] = useState(140);
+  const [charCountColor, setCharCountColor] = useState('red');
 
   return (
     <>
@@ -18,7 +19,9 @@ export const App = () => {
         setHappyThoughtsList={setHappyThoughtsList}
         happyThoughtsList={happyThoughtsList}
         charCount={charCount}
-        setCharCount={setCharCount} />
+        setCharCount={setCharCount}
+        charCountColor={charCountColor}
+        setCharCountColor={setCharCountColor} />
       <DataList
         loading={loading}
         setLoading={setLoading}
