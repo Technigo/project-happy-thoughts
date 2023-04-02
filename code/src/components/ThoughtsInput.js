@@ -18,7 +18,9 @@ export const ThoughtsInput = (props) => {
           onChange={(event) => setMessage(event.target.value)}
           placeholder="React is making me happy!" />
         <div className="inputbottom">
-          <SendButton message={message} />
+          <SendButton disabled={message.length < 5 || message.length > 140}>
+            {message.length < 5 || message.length > 140 ? 'Please enter a message between 5-140 characters' : '❤️Send a Happy Thought❤️'}
+          </SendButton>
           <div className="lengthdisplay">{message.length < 5 || message.length > 140 ? (
             <p className="redtext">{message.length}/140</p>
           ) : (

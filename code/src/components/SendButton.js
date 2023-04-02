@@ -1,12 +1,12 @@
 import React from 'react';
 
-export const SendButton = (message) => {
+export const SendButton = ({ children, disabled }) => {
   return (
     <button
       type="submit"
       className="sendButton"
-      disabled={message.length < 6 || message.length > 140}>
-      ❤️Send a Happy Thought❤️
+      disabled={disabled}>
+      {children}
     </button>
   )
 }

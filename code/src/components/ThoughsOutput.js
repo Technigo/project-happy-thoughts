@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { formatDistance } from 'date-fns';
+import { formatDistance } from 'date-fns/esm';
 import { LikeButton } from './LikeButton';
 
 export const ThoughtsOutput = (props) => {
