@@ -1,13 +1,15 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+My own version of Twitter. Consists of a main form with an input, and below the answers in the form are shown. 
+Happy, pastel lights colors were used to build the web. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- My third project using React and building different components. Playing around with importing and exporting, writng a clear and easy to follow code using this Java Script library. 
+- Second project with the State Hook and the first with the Effect Hook. 
+- Fatching data with a public API (this API was shared with other students for the sue of their project).
+- User can write their own happy thoughts and like some of the already published: when the user clicks the heart button on a thought, it sends a POST request (with no body) to the API URL, and the icon changes the color. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://flourishing-creponne-c72c1d.netlify.app/
