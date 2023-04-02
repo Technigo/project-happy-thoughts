@@ -17,8 +17,10 @@ export const Input = ({ newPost, setNewPost, thoughts, setThoughts }) => {
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then((newThought) => {
-        console.log(newThought);
         setThoughts((prevThoughts) => [newThought, ...prevThoughts]);
+      })
+      .finally(() => {
+        setNewPost('');
       })
       .catch((error) => console.log(error));
   };
