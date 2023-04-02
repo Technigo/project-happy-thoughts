@@ -106,6 +106,13 @@ input:focus {
   margin-top: 20px;
 }
 
+.time-posted {
+  color: gray;
+  padding-left: 80px;
+  padding-top: 5px;
+  white-space:nowrap;
+}
+
 .like-section {
   padding: 5px;
 }
@@ -183,5 +190,11 @@ input:focus {
 
   .send {
     width: 50%;
+  }
+
+  .time-posted {
+    color: gray;
+    padding-left: 220px;
+    white-space:nowrap;
   }
 }

@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 
 const Feed = () => {
   const [stateVariable, setStateVariable] = useState('');
@@ -76,8 +77,8 @@ const Feed = () => {
                 ❤️
                 </button>
                 <span> x {thought.hearts}</span>
-
               </div>
+              <div className="time-posted">{moment(thought.createdAt).fromNow()}</div>
             </div>
           </div>
         ))}
