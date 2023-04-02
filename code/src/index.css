@@ -16,7 +16,8 @@ code {
   display: flex;
   flex-direction: column;
   max-height: fit-content;
-  width: 100vw;  
+  width: 100%; 
+  min-width: 320px; 
   flex-wrap: wrap;
   align-content: center;
   padding-top: 30px;
@@ -129,3 +130,4 @@ h1 {
 .heartCountNumber {
   font-size: 15px;
 }
+
