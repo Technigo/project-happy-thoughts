@@ -52,7 +52,7 @@ const Feed = () => {
 
   return (
     <>
-      <div className="Card">
+      <div className="card">
         <h1>What is making you happy now?</h1>
         <input
           type="text"
@@ -64,20 +64,20 @@ const Feed = () => {
           onClick={() => { postHappy() }}>❤️ Send happy thought ❤️
         </button>
       </div>
-      <div>
+      <div className="messages-wrapper">
         {thoughtsList.map((thought) => (
           <div className="messages" key={thought._id}>
 
-            <div>
+            <div className="post-text">
 
               <p key={thought._id}>{thought.message}</p>
-              <p>
+              <div className="like-section">
                 <button className="like-button" onClick={() => { increaseLike(thought) }} type="button">
                 ❤️
                 </button>
                 <span> x {thought.hearts}</span>
 
-              </p>
+              </div>
             </div>
           </div>
         ))}
