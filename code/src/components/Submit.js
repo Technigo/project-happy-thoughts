@@ -34,7 +34,7 @@ export const Submit = ({ thoughtsList, setThoughtsList }) => {
     <div className="submit-container">
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="text-area">What´s making you happy right now?
-          <textarea name="text-area" id="text-area" rows={3} cols={70} minLength={5} value={inputText} onChange={((event) => setInputText(event.target.value))} />
+          <textarea name="text-area" id="text-area" placeholder="Type your happy thought here :)" rows={3} cols={70} minLength={5} value={inputText} onChange={((event) => setInputText(event.target.value))} />
           <button className="submit-button" type="submit">
           ❤️Send Happy Thought❤️
           </button>
