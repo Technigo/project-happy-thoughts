@@ -1,0 +1,52 @@
+@media screen and (max-width: 800px) {
+
+    /*Mobile*/
+    .messageCard {
+        width: 80%;
+        margin-bottom: 25px;
+    }
+
+    .textBox {
+        scale: 80%;
+    }
+
+    .inputField {
+        scale: 90%;
+    }
+
+    .heartBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .heartBtnSection {
+        display: flex;
+        align-items: center;
+    }
+
+    .sendBtn {
+        width: 50%;
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1023px) {
+
+    /*Tablet*/
+    .messageCard {
+        width: 70%;
+        margin-bottom: 25px;
+    }
+
+    .textArea {
+        width: 80%;
+
+    }
+
+    .inputField {
+
+        width: 90%;
+
+    }
+}

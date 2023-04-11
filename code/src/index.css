@@ -1,13 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'VT323', monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.textArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #dae0e6;
+  width: 467px;
+  box-shadow: 5px 10px;
+}
+
+.textBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+}
+
+.inputField {
+  resize: none;
+  outline: none;
+  border: 1px solid;
+  padding: 10px;
+  background: aliceblue;
+  width: 390px;
+  font-size: 16px;
+  font-family: 'VT323', monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.messageCard {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  background: aliceblue;
+  width: 445px;
+}
+
+.messageList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  overflow-wrap: break-word;
+}
+
+.sendBtn {
+  margin: 15px;
+  font-family: 'VT323', monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  border-radius: 10px;
+  height: 40px;
+  width: 180px;
+  font-size: 15px;
+}
+
+.sendBtn:hover {
+  background-color: rgba(255, 173, 173, 255);
+}
+
+.timeStamp {
+  text-align: end;
+}
+
+.heartRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heartBtn {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(234, 234, 234, 255);
+}
+
+.heartBtn:hover {
+  background-color: rgba(255, 173, 173, 255);
+}
+
+.heartBtn:active {
+  background: rgba(255, 173, 173, 255);
+}
+
+.heartBtn:focus {
+  background: rgba(255, 173, 173, 255);
 }
