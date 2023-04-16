@@ -1,9 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Post } from 'components/Post';
+import { Feed } from './components/Feed';
 
 export const App = () => {
+  const [feed, setFeed] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [newPost, setNewPost] = useState('');
+
+  const fetchPost = () => {
+    setLoading(true);
+
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+      .then((res) => res.json())
+      .then((data) => setFeed(data))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  }
+
+  useEffect(() => {
+    fetchPost();
+  }, [])
+
+  const handleNewPost = (event) => {
+    setNewPost(event.target.value)
+  }
+
+  const onPostSubmit = (event) => {
+    event.preventDefault()
+    const option = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: newPost
+      })
+    }
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', option)
+      .then((res) => res.json())
+      .catch((error) => console.error(error))
+      .then(() => fetchPost())
+      .finally(() => setNewPost(''));
+  }
+
   return (
     <div>
-      Find me in src/app.js!
+      <Post
+        newPost={newPost}
+        onNewPostChange={handleNewPost}
+        onPostSubmit={onPostSubmit} />
+      <Feed
+        loading={loading}
+        feed={feed}
+        setFeed={setFeed} />
     </div>
   );
 }
