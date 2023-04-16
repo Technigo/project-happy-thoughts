@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
+
 import React, { useState, useEffect } from 'react';
 import { Post } from 'components/Post';
 import { Feed } from './components/Feed';
@@ -15,7 +17,7 @@ export const App = () => {
       .then((data) => setFeed(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
-  }
+  };
 
   useEffect(() => {
     fetchPost();
@@ -23,7 +25,7 @@ export const App = () => {
 
   const handleNewPost = (event) => {
     setNewPost(event.target.value)
-  }
+  };
 
   const onPostSubmit = (event) => {
     event.preventDefault()
@@ -41,7 +43,21 @@ export const App = () => {
       .catch((error) => console.error(error))
       .then(() => fetchPost())
       .finally(() => setNewPost(''));
-  }
+  };
+
+  const onLike = (event, post) => {
+    event.preventDefault()
+    const option = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${post._id}/like`, option)
+      .then((res) => res.json())
+      .catch((error) => console.error(error))
+      .then(() => fetchPost())
+  };
 
   return (
     <div>
@@ -52,7 +68,8 @@ export const App = () => {
       <Feed
         loading={loading}
         feed={feed}
-        setFeed={setFeed} />
+        setFeed={setFeed}
+        onLike={onLike} />
     </div>
   );
 }
