@@ -1,0 +1,19 @@
+.title {
+    color: rgb(238,174,202);
+    font-family: Press Start\ 2P;
+    font-size: 20px;
+    letter-spacing: .15em;
+    padding: 10px;
+    text-align: center;
+}
+
+.backgroundBubble {
+    animation: 1.2s ease-in 0s 1 normal none running iAjNNh;
+    margin: auto;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%;
+    box-shadow: rgba(89, 52, 96, 0.2) 0px 5px 10px 0px, rgba(135, 41, 113, 0.19) 0px 6px 20px 0px;
+}

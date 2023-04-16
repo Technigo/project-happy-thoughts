@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Post } from 'components/Post';
+import { Footer } from 'components/footer/Footer';
 import { Feed } from './components/Feed';
+import './App.css';
 
 export const App = () => {
   const [feed, setFeed] = useState([]);
@@ -10,8 +12,6 @@ export const App = () => {
   const [newPost, setNewPost] = useState('');
 
   const fetchPost = () => {
-    setLoading(true);
-
     fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setFeed(data))
@@ -20,6 +20,7 @@ export const App = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     fetchPost();
   }, [])
 
@@ -60,16 +61,20 @@ export const App = () => {
   };
 
   return (
-    <div>
-      <Post
-        newPost={newPost}
-        onNewPostChange={handleNewPost}
-        onPostSubmit={onPostSubmit} />
-      <Feed
-        loading={loading}
-        feed={feed}
-        setFeed={setFeed}
-        onLike={onLike} />
-    </div>
+    <>
+      <h1 className="title"> InspireFeed </h1>
+      <div className="backgroundBubble">
+        <Post
+          newPost={newPost}
+          onNewPostChange={handleNewPost}
+          onPostSubmit={onPostSubmit} />
+        <Feed
+          loading={loading}
+          feed={feed}
+          setFeed={setFeed}
+          onLike={onLike} />
+      </div>
+      <Footer />
+    </>
   );
 }
