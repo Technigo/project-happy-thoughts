@@ -36,7 +36,6 @@ export const App = () => {
 
   const handleNewThought = (event) => {
     setNewThoughts(event.target.value)
-    setCount(event.target.value.length)
   }
 
   const onFormSubmit = (event) => {
@@ -53,7 +52,7 @@ export const App = () => {
       .then((result) => result.json())
       .then((data) => { setMessageList([data, ...messageList]) })
       .catch((error) => console.log(error))
-      .finally(() => { setNewThoughts('')(setLoading(false))(setCount('0')) });
+      .finally(() => { setNewThoughts('')(setLoading(false)) });
   }
 
   return (
@@ -63,7 +62,7 @@ export const App = () => {
         loading={loading}
         onNewThoughtChange={handleNewThought}
         onFormSubmit={onFormSubmit}
-        count={count} />
+        count={newThoughts.length} />
       <AnimatedPage>
         <MessageList
           setNewLike={setNewLike}

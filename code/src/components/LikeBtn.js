@@ -29,7 +29,7 @@ const LikeBtn = ({ thought, setNewLike }) => {
         .then((data) => data.json())
         .catch((error) => console.log(error))
         .finally(() => {
-          setLiked(true)
+          setLiked(false)
           handleNewLikeChange()
         })
     }
