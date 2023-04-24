@@ -12,6 +12,7 @@ const ThoughtForm = ({ onFormSubmit, newThought, setNewThought }) => {
       <div className="form-container">
         <button className="submit-button" type="submit">❤️ Send Your Happy Thought ❤️</button>
         <span role="img" aria-label="heart">❤️</span>
+        <p className="character-count-text">{newThought.length} / 140</p>
       </div>
     </form>
   )
