@@ -23,10 +23,10 @@ export const App = () => {
     fetchThoughts()
   }, [])
 
-  const handleFormCleanup = () => {
-    setNewThought('')
-    setLoading(false)
-  }
+  // const handleFormCleanup = () => {
+  //   setNewThought('')
+  //   setLoading(false)
+  // }
   const handleFormSubmit = (event) => {
     event.preventDefault()
 
@@ -44,20 +44,20 @@ export const App = () => {
       })
   }
 
-  const handleLikesIncrease = (thoughtId) => {
-    fetch(`${FETCH_API}/${thoughtId}/like`, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      }
+  // const handleLikesIncrease = (thoughtId) => {
+  //   fetch(`${FETCH_API}/${thoughtId}/like`, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-type': 'application/json'
+  //     }
 
-    })
-      .then((res) => res.json())
-      .then(() => {
-        fetchThoughts()
-          .finally(() => handleFormCleanup())
-      })
-  }
+  //   })
+  //     .then((res) => res.json())
+  //     .then(() => {
+  //       fetchThoughts()
+  //         .finally(() => handleFormCleanup())
+  //     })
+  // }
   if (loading) {
     return <Spinner />
   }
@@ -74,7 +74,9 @@ export const App = () => {
           loading={loading}
           key={thought._id}
           thought={thought}
-          onLikesIncrease={handleLikesIncrease} />
+          thoughtId={thought._id}
+          // onLikesIncrease={handleLikesIncrease}
+        />
       ))}
     </main>
   )

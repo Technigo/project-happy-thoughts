@@ -1,9 +1,9 @@
 import React from 'react'
 import { formatDistance } from 'date-fns'
 
-export const ThoughtItem = ({ thought, thoughtId, handleLikesIncrease }) => {
+export const ThoughtItem = ({ thought, thoughtId }) => {
   const sendHearts = () => {
-    handleLikesIncrease();
+    // handleLikesIncrease();
     const options = {
       method: 'POST'
     }
