@@ -11,13 +11,12 @@ export const App = () => {
 
   const fetchToughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-c6cfxyvlgq-lz.a.run.app/thoughts')
       .then((response) => response.json())
-      .then((data) => setThoughtsList(data))
+      .then((data) => setThoughtsList(data.response))
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false) });
   }
-
   useEffect(() => {
     fetchToughts();
   }, []);
@@ -39,7 +38,7 @@ export const App = () => {
       })
     }
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-c6cfxyvlgq-lz.a.run.app/thoughts', options)
       .then((response) => response.json())
       .then(() => {
         setConfetti({ showConfetti: true })
@@ -56,12 +55,12 @@ export const App = () => {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+    fetch(`https://project-happy-thoughts-api-c6cfxyvlgq-lz.a.run.app/thoughts/${id}/like`, options)
       .then((response) => response.json())
       .then((data) => {
         const UpdateLikes = thoughtsList.map((like) => {
           // eslint-disable-next-line no-underscore-dangle
-          if (like._id === data._id) {
+          if (like._id === data.response._id) {
             like.hearts += 1
             return like
           } else { return like }
