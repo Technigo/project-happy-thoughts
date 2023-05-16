@@ -2,15 +2,15 @@
 /* eslint-disable max-len */
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { ThoughtsList } from './ThoughtsList'
-import { ThoughtsForm } from './ThoughtsForm'
+import { ThoughtsList } from "./ThoughtsList";
+import { ThoughtsForm } from "./ThoughtsForm";
 
 export const Thoughts = ({ API_URL }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [thoughtsArray, setThoughtsArray] = useState([]);
-  const [newThought, setNewThought] = useState('');
+  const [newThought, setNewThought] = useState("");
 
   const fetchHappyThoughts = () => {
     setIsLoading(true);
@@ -19,21 +19,21 @@ export const Thoughts = ({ API_URL }) => {
       .then((data) => setThoughtsArray(data))
       .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
-  }
+  };
 
   useEffect(() => {
     fetchHappyThoughts();
-  }, [])
+  }, []);
 
   /* eslint-disable no-unused-vars */
   const handleNewThoughtChange = (event) => {
     setNewThought(event.target.value);
-  }
+  };
 
   const handleFormCleanup = () => {
     setNewThought('');
     setIsLoading(false);
-  }
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -46,16 +46,19 @@ export const Thoughts = ({ API_URL }) => {
       body: JSON.stringify({
         message: newThought
       })
-    }
+    };
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch(
+      API_URL,
+      options
+    )
       .then((res) => res.json())
       .then(() => fetchHappyThoughts())
       .finally(() => handleFormCleanup());
-  }
+  };
 
   const handleLikes = (thoughtId) => {
-    fetch(`${API_URL}/${thoughtId}/like`, { method: 'POST' })
+    fetch(`${API_URL}/${thoughtId}/like`, { method: "POST" })
       .then((response) => response.json())
       .then((data) => {
         const updatedLikes = thoughtsArray.map((thought) => {
@@ -74,9 +77,17 @@ export const Thoughts = ({ API_URL }) => {
   return (
     <div className="thoughts-container">
       <div className="form-container">
-        <ThoughtsForm newThought={newThought} setNewThought={setNewThought} onFormSubmit={onFormSubmit} />
+        <ThoughtsForm
+          newThought={newThought}
+          setNewThought={setNewThought}
+          onFormSubmit={onFormSubmit}
+        />
       </div>
-      <ThoughtsList thoughts={thoughtsArray} loading={isLoading} handleLikes={handleLikes} />
+      <ThoughtsList
+        thoughts={thoughtsArray}
+        loading={isLoading}
+        handleLikes={handleLikes}
+      />
     </div>
-  )
-}
+  );
+};
