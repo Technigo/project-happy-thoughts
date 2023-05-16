@@ -16,7 +16,7 @@ export const App = () => {
   // 1st fetch request included in this function
   const fetchMessages = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts')
       .then((result) => result.json())
       .then((data) => setMessageList(data))
       .catch((error) => console.error(error))
@@ -47,7 +47,7 @@ export const App = () => {
       })
     }
     // 2nd fetch request within OnFormSubmit
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts', options)
       .then((result) => result.json())
       .then((data) => {
         setMessageList([data, ...messageList])
@@ -68,7 +68,7 @@ export const App = () => {
     }
 
     // 3rd fetch-request for the likes
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${LikeID}/like`, options)
+    fetch(`https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts/${LikeID}/like`, options)
       .then((result) => result.json())
       .then(() => fetchMessages())
       .catch((error) => console.log(error))
