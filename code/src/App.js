@@ -9,7 +9,7 @@ export const App = () => {
   const [newThought, setNewThought] = useState('')
 
   const fetchMessage = () => {
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+    fetch('https://project-happy-thoughts-api-eihxehjbzq-lz.a.run.app/thoughts', {
       method: 'GET'
     })
       .then((res) => res.json())
@@ -19,7 +19,7 @@ export const App = () => {
   }
   const sendMessage = (event) => {
     event.preventDefault()
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+    fetch('https://project-happy-thoughts-api-eihxehjbzq-lz.a.run.app/thoughts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: newThought })
@@ -29,7 +29,7 @@ export const App = () => {
   }
 
   const sendLike = (_id) => {
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, {
+    fetch(`https://project-happy-thoughts-api-eihxehjbzq-lz.a.run.app/thoughts/${_id}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     }).catch((error) => console.log(error))
