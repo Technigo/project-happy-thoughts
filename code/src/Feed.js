@@ -11,7 +11,7 @@ export const Feed = () => {
   const [myLikesCount, setMyLikesCount] = useState(0)
 
   const fetchThoughts = () => {
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app')
       .then((response) => response.json())
       .then((data) => setThoughtsList(data))
       .catch((error) => console.log(error))
@@ -28,7 +28,7 @@ export const Feed = () => {
     if (newThought.length < 5) {
       return alert('Please enter atleast 5 charcaters.')
     } else {
-      fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+      fetch('https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: newThought })
@@ -57,7 +57,7 @@ export const Feed = () => {
 
       {!isLoading && thoughtsList.map((thought) => {
         const handleLikeSubmit = () => {
-          fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, {
+          fetch(`https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app/thoughts/${thought._id}/like`, {
             method: 'POST'
           })
             .then(() => setMyLikesCount(myLikesCount + 1))
