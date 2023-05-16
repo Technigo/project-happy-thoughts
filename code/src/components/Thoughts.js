@@ -40,9 +40,7 @@ export const Thoughts = ({ API_URL }) => {
 
     const options = {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+
       body: JSON.stringify({
         message: newThought
       })
