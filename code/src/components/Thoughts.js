@@ -2,15 +2,15 @@
 /* eslint-disable max-len */
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import { ThoughtsList } from "./ThoughtsList";
-import { ThoughtsForm } from "./ThoughtsForm";
+import { ThoughtsList } from './ThoughtsList';
+import { ThoughtsForm } from './ThoughtsForm';
 
 export const Thoughts = ({ API_URL }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [thoughtsArray, setThoughtsArray] = useState([]);
-  const [newThought, setNewThought] = useState("");
+  const [newThought, setNewThought] = useState('');
 
   const fetchHappyThoughts = () => {
     setIsLoading(true);
@@ -58,7 +58,7 @@ export const Thoughts = ({ API_URL }) => {
   };
 
   const handleLikes = (thoughtId) => {
-    fetch(`${API_URL}/${thoughtId}/like`, { method: "POST" })
+    fetch(`${API_URL}/${thoughtId}/like`, { method: 'POST' })
       .then((response) => response.json())
       .then((data) => {
         const updatedLikes = thoughtsArray.map((thought) => {
@@ -80,14 +80,12 @@ export const Thoughts = ({ API_URL }) => {
         <ThoughtsForm
           newThought={newThought}
           setNewThought={setNewThought}
-          onFormSubmit={onFormSubmit}
-        />
+          onFormSubmit={onFormSubmit} />
       </div>
       <ThoughtsList
         thoughts={thoughtsArray}
         loading={isLoading}
-        handleLikes={handleLikes}
-      />
+        handleLikes={handleLikes} />
     </div>
   );
 };
