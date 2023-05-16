@@ -11,7 +11,7 @@ export const Feed = () => {
   const [myLikesCount, setMyLikesCount] = useState(0)
 
   const fetchThoughts = () => {
-    fetch('https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app')
+    fetch('https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app/thoughts')
       .then((response) => response.json())
       .then((data) => setThoughtsList(data))
       .catch((error) => console.log(error))
@@ -28,7 +28,7 @@ export const Feed = () => {
     if (newThought.length < 5) {
       return alert('Please enter atleast 5 charcaters.')
     } else {
-      fetch('https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app', {
+      fetch('https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app/thoughts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: newThought })
