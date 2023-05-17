@@ -24,7 +24,7 @@ export const App = () => {
     setLoading(true)
     fetch('https://project-happy-thoughts-api-4tdp4buvnq-lz.a.run.app/thoughts')
       .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((data) => setThoughts(data.response))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false))
   }
