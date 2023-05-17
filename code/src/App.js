@@ -14,7 +14,7 @@ export const App = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setThoughts(data)
+        setThoughts(data.response)
       }).catch((error) => console.log(error))
   }
   const sendMessage = (event) => {
@@ -22,7 +22,7 @@ export const App = () => {
     fetch('https://project-happy-thoughts-api-eihxehjbzq-lz.a.run.app/thoughts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: newThought })
+      body: JSON.stringify({ message: newThought, createdAt: Date.now() })
     })
       .then(() => setNewThought(''))
       .catch((error) => console.log(error))
