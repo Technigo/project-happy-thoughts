@@ -57,20 +57,20 @@ export const App = () => {
   /* Function that posts new likes to API */
   const handleLike = (_id) => {
     fetch(`https://project-happy-thoughts-api-kukr2tatlq-lz.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         const updatedThoughtList = thoughtList.map((thought) => {
           if (thought._id === data._id) {
-            thought.likes += 1;
+            return data; // Replace the thought with the updated thought data
+          } else {
+            return thought;
           }
-          return thought;
         });
         setThoughtList(updatedThoughtList);
       })
       .catch((error) => {
         console.error(error);
+        // Handle any error during the API call
       });
   };
 
