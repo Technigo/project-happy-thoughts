@@ -15,12 +15,12 @@ export const App = () => {
   // FETCH MESSAGES-FUNCTION: used for fetching messages
   // 1st fetch request included in this function
   const fetchMessages = () => {
-    setLoading(true);
-    fetch('https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts')
-      .then((result) => result.json())
-      .then((data) => setMessageList(data.response))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+    setLoading(true); // we set the loading to true so that the spinner is visible during the fetch call
+    fetch('https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts') // fetch the api
+      .then((result) => result.json()) // return json
+      .then((data) => setMessageList(data.response)) // use the data.response (because the response-array is were all the messages are)
+      .catch((error) => console.error(error)) // If we get an error, we console-log it.
+      .finally(() => setLoading(false)); // the fetch call is done so we set the loading state to false.
   }
 
   // USE EFFECT that calls the function fetchMessages when component mounts. Empty array makes it only be called once.
@@ -30,11 +30,11 @@ export const App = () => {
 
   // HANDLE NEW MESSAGE-FUNCTION - gets the value that the user have entered
   const handleNewMessage = (event) => {
-    setNewMessage(event.target.value)
+    setNewMessage(event.target.value) // we listen to the new message that the user is typing and set that message as the newMessage.
   }
-  // ON FORM SUBMIT-FUNCTION Prevents the form from refreshing the page, sends data to the API with selected options. This happens everytime a user submits a new message.
+  // ON FORM SUBMIT-FUNCTION that listens to the button-click event in the PostMessageComponent
   const onFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevents the form from refreshing the page, sends data to the API with selected options. This happens everytime a user submits a new message.
 
     // options that says how the information we send should be added into the API
     const options = {
