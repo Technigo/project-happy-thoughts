@@ -11,7 +11,7 @@ const MessageCard = ({ item, sendLike }) => {
             <p>{item.message}</p>
             <div className="heartRow">
                 <div className="heartBtnSection">
-                    <button className="heartBtn" type="button" onClick={sendHearts}> ❤️ </button>  x   {item.hearts}
+                    <button className="heartBtn" type="button" onClick={sendHearts}> ❤️ </button>  x   {item.likes}
                 </div>
                 <p className="timeStamp">
                     {formatDistance(new Date(item.createdAt), Date.now(), { addSuffix: true })}
