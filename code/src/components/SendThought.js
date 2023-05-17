@@ -16,6 +16,13 @@ export const SendThought = ({
     setSendName(event.target.value);
   }
 
+  const pressEnter = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleFormSubmit(event);
+    }
+  }
+
   return (
     <div className="send-thought-div">
       <form onSubmit={handleFormSubmit}>
@@ -32,6 +39,7 @@ export const SendThought = ({
           placeholder="My happy thought..."
           maxLength="140"
           value={sendThought}
+          onKeyDown={pressEnter}
           onChange={handleSendThought} />
         <div className="character-div"><p className="character-count">{sendThought.length} / 140</p></div>
         <button
