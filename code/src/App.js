@@ -4,7 +4,7 @@ import ThoughtForm from 'components/ThoughtForm'
 import ThoughtItem from 'components/ThoughtItem'
 import Spinner from 'components/Spinner'
 
-const FETCH_API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+const FETCH_API = 'https://project-happy-thoughts-api-6nzr46lxka-uc.a.run.app/thoughts'
 
 export const App = () => {
   const [thoughts, setThoughts] = useState([])
@@ -15,7 +15,7 @@ export const App = () => {
     setLoading(true)
     fetch(FETCH_API)
       .then((res) => res.json())
-      .then((data) => setThoughts(data))
+      .then((data) => setThoughts(data.response))
       .finally(() => setLoading(false));
   }
 

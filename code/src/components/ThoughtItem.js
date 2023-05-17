@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { formatDistance } from 'date-fns'
 
-export const ThoughtItem = ({ thought, hearts, thoughtId }) => {
-  const [heartCount, setHeartCount] = useState(hearts)
+export const ThoughtItem = ({ thought, thoughtId }) => {
+  const [heartCount, setHeartCount] = useState(thought.hearts)
   const sendHearts = () => {
     // handleLikesIncrease();
     const options = {
-      method: 'POST'
+      method: 'PATCH'
     }
     // eslint-disable-next-line no-underscore-dangle
-    fetch(`https://project-happy-thoughts-api-6nzr46lxka-uc.a.run.app/thoughts/${thoughtId}`, options)
+    fetch(`https://project-happy-thoughts-api-6nzr46lxka-uc.a.run.app/thoughts/${thoughtId}/like`, options)
       .then((response) => response.json())
       .then((data) => { console.log(data); setHeartCount(data.hearts) })
       .catch((error) => console.log(error))
