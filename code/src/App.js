@@ -16,6 +16,7 @@ bgMusic.loop = true;
 
 export const App = () => {
   const [sendThought, setSendThought] = useState('');
+  const [sendName, setSendName] = useState('');
   const [thoughtsList, setThoughtsList] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -71,7 +72,8 @@ export const App = () => {
     fetch('https://project-happy-thoughts-api-z266fupacq-uc.a.run.app/thoughts', {
       method: 'POST',
       body: JSON.stringify({
-        message: `${sendThought}`
+        message: `${sendThought}`,
+        name: `${sendName}`
       }),
       headers: { 'Content-Type': 'application/json' }
     })
@@ -81,7 +83,11 @@ export const App = () => {
         setLatestMessage(data._id)
       })
       .catch((error) => console.log(error))
-      .finally(() => { setLoading(false); setSendThought('') })
+      .finally(() => {
+        setLoading(false);
+        setSendThought('')
+        setSendName('');
+      })
   }
 
   return (
@@ -93,6 +99,8 @@ export const App = () => {
         <SendThought
           sendThought={sendThought}
           setSendThought={setSendThought}
+          sendName={sendName}
+          setSendName={setSendName}
           handleFormSubmit={handleFormSubmit} />
         <ThoughtsList
           onHeartButtonClick={onHeartButtonClick}

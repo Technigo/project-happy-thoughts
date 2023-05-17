@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { formatDistance } from 'date-fns'
@@ -20,7 +21,9 @@ export const ThoughtsList = ({ loading, thoughtsList, onHeartButtonClick, latest
                 <button type="button" className="heart-emoji" onClick={() => onHeartButtonClick(thought._id)}>❤️</button>
                 <p>x {thought.hearts}</p>
               </div>
-              <p className="thought-date" key={thought.createdAt}>posted {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}</p>
+              <p className="thought-date" key={thought.createdAt}>
+              posted {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })} by {thought.name}
+              </p>
             </div>
           </div>)
       })}

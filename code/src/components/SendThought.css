@@ -4,6 +4,23 @@
   padding-bottom: 20px;
 }
 
+input[type=text] {
+  display: flex;
+  font-family: Cutive Mono;
+  font-size: 15px;
+  width: 200px;
+  height: 25px;
+  background-color: rgb(255, 240, 242);
+  padding-left: 10px;
+  border: 1px solid black;
+  box-shadow: 3px 3px 0px 0px black;
+  margin-bottom: 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
 textarea {
   display: flex;
     font-family: Cutive Mono;

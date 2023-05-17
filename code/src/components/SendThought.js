@@ -1,9 +1,19 @@
 import React from 'react';
 import './SendThought.css';
 
-export const SendThought = ({ sendThought, setSendThought, handleFormSubmit }) => {
+export const SendThought = ({
+  sendThought,
+  setSendThought,
+  sendName,
+  setSendName,
+  handleFormSubmit
+}) => {
   const handleSendThought = (event) => {
     setSendThought(event.target.value);
+  }
+
+  const handleSendName = (event) => {
+    setSendName(event.target.value);
   }
 
   return (
@@ -12,6 +22,12 @@ export const SendThought = ({ sendThought, setSendThought, handleFormSubmit }) =
         <p>Hello, friend.<br />
         What are you thinking about right now?
         </p>
+        <input
+          type="text"
+          placeholder="My name"
+          maxLength="30"
+          value={sendName}
+          onChange={handleSendName} />
         <textarea
           placeholder="My happy thought..."
           maxLength="140"
