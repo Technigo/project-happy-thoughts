@@ -18,12 +18,12 @@ const ThoughtList = ({ loading, thoughtList, handleLike }) => {
               <div className="likes-wrapper">
                 <button
                   /* different class-names depending on number og likes */
-                  className={thought.hearts === 0 ? 'heart-button-nolikes' : 'heart-button'}
+                  className={thought.likes === 0 ? 'heart-button-nolikes' : 'heart-button'}
                   type="button"
                   onClick={() => handleLike(thought._id)}>
                   ❤️
                 </button>
-                <span>x {thought.hearts}</span>
+                <span>x {thought.likes}</span>
               </div>
               <div className="time-wrapper">
                 <span className="time">{formatDistanceToNow(
