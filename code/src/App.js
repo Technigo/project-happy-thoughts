@@ -28,7 +28,7 @@ export const App = () => {
     fetchMessages();
   }, []);
 
-  // HANDLE NEW MESSAGE-FUNCTION - gets the value that the user have entered
+  /// /////// HANDLE NEW MESSAGE-FUNCTION - gets the value that the user have entered ////////////////////////////
   const handleNewMessage = (event) => {
     setNewMessage(event.target.value) // we listen to the new message that the user is typing and set that message as the newMessage.
   }
@@ -36,32 +36,37 @@ export const App = () => {
   const onFormSubmit = (event) => {
     event.preventDefault(); // Prevents the form from refreshing the page, sends data to the API with selected options. This happens everytime a user submits a new message.
 
-    // options that says how the information we send should be added into the API
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        message: newMessage,
-        createdAt: new Date().toISOString() // Include the createdAt field with the current timestamp
-      })
+    if (newMessage.length < 5) {
+      // If the message the user tries to send consists of less than 5 characters, the user will be informed with an alert.
+      alert('The thought must contain at least 5 characters. ❤️')
+    } else { // This will happen if the sends a correct message
+      // options that says how the information we send should be added into the API
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: newMessage,
+          createdAt: new Date().toISOString() // Include the createdAt field with the current timestamp
+        })
+      }
+      // //// 2ND FETCH REQUEST within OnFormSubmit //////////////////
+      fetch('https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts', options)
+        .then((result) => result.json())
+        .then((data) => {
+          if (data.success) {
+            fetchMessages();
+            // setMessageList([data.response, ...messageList])
+            setLatestMessage(data.response._id) // this sets the LatestMessage to the latest message using the data._id
+          } else {
+            console.error(data.message)
+          }
+        })
+        .catch((error) => console.log(error))
+        .finally(() => { setLoading(false); setNewMessage('') })
     }
-    // 2nd fetch request within OnFormSubmit
-    fetch('https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts', options)
-      .then((result) => result.json())
-      .then((data) => {
-        if (data.success) {
-          setMessageList([data.response, ...messageList])
-          setLatestMessage(data.response._id) // this sets the LatestMessage to the latest message using the data._id
-        } else {
-          console.error(data.message)
-        }
-      })
-      .catch((error) => console.log(error))
-      .finally(() => { setLoading(false); setNewMessage('') })
   }
-
   // LIKEINCREASE-FUNCTION
   const LikeCounter = (LikeID) => {
     // options-object decides how changes in the API should look
@@ -72,7 +77,7 @@ export const App = () => {
       }
     }
 
-    // 3rd fetch-request for the likes
+    // 3RD FETCH REQUEST for the likes
     fetch(`https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts/${LikeID}/like`, options)
       .then((result) => result.json())
       .then(() => fetchMessages())
@@ -80,8 +85,7 @@ export const App = () => {
       .finally(() => { setLoading(true) })
   }
 
-  // RETURN-SECTION HERE (Mounting the components)
-
+  // RETURN-SECTION (Mounting the components)
   return (
     <div>
       {/* the loading-container was added to be able to make the loading page go ontop. */}
