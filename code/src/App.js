@@ -61,7 +61,7 @@ export const App = () => {
       })
       .then((data) => {
         const updateLikes = thoughtList.map((like) => {
-          if (like._id === data._id.toString()) {
+          if (like._id.toString() === data._id.toString()) {
             like.likes += 1;
             return like;
           } else {
