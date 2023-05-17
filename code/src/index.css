@@ -6,8 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  background-image: url(https://images.unsplash.com/photo-1609075832891-4f05586b0042?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80);
+  background: #FFB1A4;
   background-size: cover;
+	font: 1em/1.5 sans-serif;
+	display: grid;
+	place-items: center;
 }
 
 code {
@@ -23,11 +26,6 @@ code {
   gap: 25px;
 }
 
-.main-wrapper {
-  padding: 20px 0;
-  overflow-x: hidden;
-}
-
 .card, .form-container {
   border: 1px solid #343434;
   width: 400px;
@@ -36,6 +34,7 @@ code {
   -moz-box-shadow: 7px 7px 0px 0px #343434;
   padding: 10px 20px 20px 20px;
   overflow-wrap: break-word;
+  border-radius: 10px;
 }
 
 /* FORM STYLE */
@@ -51,6 +50,7 @@ code {
   resize: none;
   width: 100%;
   font-size: 16px;
+  border-radius: 10px;
 }
 
 h3 {
@@ -168,6 +168,10 @@ h3 {
   animation-delay: 1s;
 }
 
+.main-wrapper {
+  padding: 20px 0;
+}
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -189,15 +193,13 @@ h3 {
     0%{    transform: rotate(0deg) scale(0.15)}
     50%{    transform: rotate(360deg) scale(1)}
     100%{    transform: rotate(720deg) scale(0.15)}
-  }
-      
+  } 
 
 @media (min-width:700px) {
 
   .feed-container {
     max-height: 55vh;
     width: 100%;
-    overflow: scroll;
     padding-bottom: 20px;
   }
 
