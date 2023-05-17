@@ -3,16 +3,16 @@ import React, { useState, useEffect } from 'react';
 import { formatDistance } from 'date-fns';
 import { ThoughtForm } from './ThoughtForm';
 
-const API = 'https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app'
-
+/* const API = 'https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app'
+ */
 export const ThoughtFeed = () => {
   const [thoughtList, setThoughtList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   const fetchThoughts = () => {
-    fetch(`${API}/thoughts`)
+    fetch('https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app/thoughts')
       .then((response) => response.json())
-      .then((data) => setThoughtList(data))
+      .then((data) => setThoughtList(data.response))
       .catch((error) => console.log(error))
       .finally(() => { setIsLoading(false) })
   }
@@ -24,20 +24,21 @@ export const ThoughtFeed = () => {
 
   const handleLikes = (_id) => {
     const options = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`${API}/${_id}/like`, options)
+    fetch(`https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app/${_id}/like`, options)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         const updatedThoughtList = thoughtList.map((thought) => {
-          if (thought._id === data._id) {
+          if (thought._id === data.response._id) {
             return {
-              ...thought, heart: data.heart
+              ...thought,
+              heart: data.response.heart
             };
           }
           return thought;
@@ -61,8 +62,8 @@ export const ThoughtFeed = () => {
                 <div className="heart-container">
                   <button
                     type="button"
-                    className={`heart-button ${thought.hearts > 0 ? 'heart-active' : ''}`}
-                    onClick={() => { handleLikes(thought._id, thought.hearts); }}>
+                    className={`heart-button ${thought.heart > 0 ? 'heart-active' : ''}`}
+                    onClick={() => { handleLikes(thought._id, thought.heart); }}>
                     <span
                       role="img"
                       className="heart-icon"
@@ -70,7 +71,7 @@ export const ThoughtFeed = () => {
                       ❤️
                     </span>
                   </button>
-                  <span className="total-hearts">x {thought.hearts}</span>
+                  <span className="total-hearts">x {thought.heart}</span>
                 </div>
                 <p className="date">
                   {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
