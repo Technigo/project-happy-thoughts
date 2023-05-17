@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-underscore-dangle */
+
 import React, { useState, useEffect } from 'react';
 import ThoughtForm from './components/ThoughtForm'
 import ThoughtList from './components/ThoughtList'
@@ -60,17 +61,20 @@ export const App = () => {
         return res.json();
       })
       .then((data) => {
-        const updateLikes = thoughtList.map((like) => {
-          if (like._id.toString() === data._id.toString()) {
-            like.likes += 1;
-            return like;
-          } else {
-            return like;
+        const updatedThoughtList = thoughtList.map((thought) => {
+          if (thought._id === data._id) {
+            // eslint-disable-next-line prefer-object-spread
+            return Object.assign({}, thought, { likes: thought.likes + 1 });
           }
+          return thought;
         });
-        setThoughtList(updateLikes)
+
+        setThoughtList(updatedThoughtList);
       })
-  }
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <div>
