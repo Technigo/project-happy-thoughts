@@ -15,7 +15,7 @@ export const MessageDisplay = ({ messageList, LikeCounter, latestMessage }) => {
       {messageList.map((message) => (
         <div className={`message-box ${message._id === latestMessage ? 'fade-in' : ''}`} key={message._id}>
           <p className="message-text">{message.message}</p>
-          <p className="message-text">{message.name}</p>
+          <p className="message-text">/{message.name}</p>
           <div className="like-and-date">
             <div className="button-and-counter">
               <button className={(message.likes === 0 ? 'no-like-button' : 'like-button')} disabled={isAnimating} onClick={() => { LikeCounter(message._id); reward() }}> <span id="rewardId" />❤️</button>
