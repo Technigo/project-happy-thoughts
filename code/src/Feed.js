@@ -64,6 +64,7 @@ export const Feed = () => {
             .then(() => fetchThoughts())
             .catch((error) => console.log(error))
         }
+
         return (
           <Thought
             key={thought._id}
