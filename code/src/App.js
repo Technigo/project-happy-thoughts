@@ -65,7 +65,7 @@ export const App = () => {
 
     fetch('https://project-happy-thoughts-api-4tdp4buvnq-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
-      .then((data) => { setThoughts([data, ...thoughts]) })
+      .then((data) => { setThoughts([data.response, ...thoughts]) })
       .finally(() => setNewMessage(''));
   }
 
