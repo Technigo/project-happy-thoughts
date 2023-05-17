@@ -10,7 +10,7 @@ export const ThoughtsOutput = (props) => {
         <div className="outputBox" key={thought._id}>
           <p className="thoughtOutputText">{thought.message}</p>
           <div className="outputBottom">
-            <LikeButton id={thought._id} hearts={thought.hearts} />
+            <LikeButton id={thought._id} heart={thought.heart} />
             <div className="date-display">
               {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
             </div>

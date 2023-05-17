@@ -8,12 +8,12 @@ export const App = () => {
   const [loading, setLoading] = useState(false)
   const submitHandler = (message) => {
     if (message.length >= 5 || message.length <= 140) {
-      fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+      fetch('https://project-happy-thoughts-api-milw6er7zq-lz.a.run.app/thoughts', {
         method: 'POST',
         body: JSON.stringify({ message }),
         headers: { 'Content-Type': 'application/json' }
       }).then((response) => response.json()).then((data) => {
-        setThoughtList((pv) => [data, ...pv])
+        setThoughtList((pv) => [data.response, ...pv])
       })
     } else {
       alert('make sure the input is between 5-140 characters long')
@@ -22,9 +22,9 @@ export const App = () => {
   /* Loads the 20 most recent happy thoughts from the API */
   useEffect(() => {
     setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-milw6er7zq-lz.a.run.app/thoughts')
       .then((response) => response.json())
-      .then((data) => setThoughtList(data))
+      .then((data) => setThoughtList(data.response))
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false) })
   }, []);
