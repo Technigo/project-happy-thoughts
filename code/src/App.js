@@ -35,7 +35,7 @@ export const App = () => {
     }
     fetch('https://irupe-happy-thoughts-api-kobjwpkrba-lz.a.run.app/thoughts', options)
       .then((response) => response.json())
-      .then((data) => setHappyList([data, ...happyList]))
+      .then((data) => setHappyList([data.response, ...happyList]))
       .catch((error) => console.log(error))
       .finally(() => setNewThought(''));
   }
@@ -68,33 +68,3 @@ export const App = () => {
 
   );
 }
-
-// https://happy-thoughts-ux7hkzgmwa-uc.a.run.app
-
-/* const fetchThoughts = () => {
-    fetch(FETCHAPI)
-      .then((response) => response.json())
-      .then((data) => setHappyList(data))
-      .catch((error) => console.log(error))
-      .finally(() => { setLoading(false) })
-  }
-  useEffect(() => {
-    fetchThoughts()
-  }, [])
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault()
-
-    fetch(FETCHAPI, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: newThought })
-    })
-      .then((res) => res.json())
-      .then(() => {
-        fetchThoughts()
-        setNewThought('')
-      })
-  } */

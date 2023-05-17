@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-export const Likes = ({ love, thought }) => {
-  const [hearts, setHearts] = useState(love.hearts);
+export const Likes = ({ thought }) => {
+  const [hearts, setHearts] = useState(thought.hearts);
 
   /* function to post the like and update the count */
   const postLike = () => {
-    return fetch(`https://irupe-happy-thoughts-api-kobjwpkrba-lz.a.run.app/thoughts/${love.id}/like`, {
+    /* eslint-disable-next-line no-underscore-dangle */
+    return fetch(`https://irupe-happy-thoughts-api-kobjwpkrba-lz.a.run.app/thoughts/${thought._id}/like`, {
       method: 'POST'
     })
       .then((response) => response.json())
