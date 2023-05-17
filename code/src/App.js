@@ -74,9 +74,7 @@ export const App = () => {
           loading={loading}
           key={thought._id}
           thought={thought}
-          thoughtId={thought._id}
-          // onLikesIncrease={handleLikesIncrease}
-        />
+          thoughtId={thought._id} />
       ))}
     </main>
   )
