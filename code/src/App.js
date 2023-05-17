@@ -36,7 +36,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-z266fupacq-uc.a.run.app/thoughts')
       .then((response) => response.json())
       .then((data) => setThoughtsList(data))
       .catch((error) => console.log(error))
@@ -54,18 +54,21 @@ export const App = () => {
         'Content-type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, options)
+    fetch(`https://project-happy-thoughts-api-z266fupacq-uc.a.run.app/thoughts/${_id}/like`, options)
       .then((response) => response.json())
       .then(() => fetchThoughts())
       .catch((error) => console.log(error))
-      .finally(() => setLoading(false), console.log('new like'))
+      .finally(() => {
+        setLoading(false);
+        console.log('new like');
+      });
   }
 
   // The function below sends the message to the API and updates the thoughtsList-component
   // automatically, so that the user's message shows up in the array of messages.
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+    fetch('https://project-happy-thoughts-api-z266fupacq-uc.a.run.app/thoughts', {
       method: 'POST',
       body: JSON.stringify({
         message: `${sendThought}`
