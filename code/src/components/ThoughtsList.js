@@ -11,26 +11,48 @@ export const ThoughtsList = ({ loading, thoughtsList, setThoughtsList, onHeartBu
     return <Loading />
   }
 
-  const onDeleteButtonClick = (thoughtId) => {
-    setThoughtsList(thoughtsList.filter((thought) => thought._id !== thoughtId));
-  };
+  // const onDeleteButtonClick = (thoughtId) => {
+  //   setThoughtsList(thoughtsList.filter((thought) => thought._id !== thoughtId));
+  // };
 
-  const handleDelete = (_id) => {
+  // const handleDelete = (_id) => {
+  //   const options = {
+  //     method: 'DELETE'
+  //   }
+  //   fetch(`https://project-happy-thoughts-api-z266fupacq-uc.a.run.app/thoughts/${_id}`, options)
+  //     .then((response) => response.json())
+  //     .then(() => onDeleteButtonClick(_id))
+  //     .catch((error) => console.log(error))
+  // };
+
+  const onDeleteButtonClick = (thoughtId) => {
+    const updatedThoughtsList = thoughtsList.map((thought) => {
+      if (thought._id === thoughtId) {
+        return { ...thought, isDeleting: true };
+      }
+      return thought;
+    });
+    setThoughtsList(updatedThoughtsList);
     const options = {
       method: 'DELETE'
-    }
-    fetch(`https://project-happy-thoughts-api-z266fupacq-uc.a.run.app/thoughts/${_id}`, options)
+    };
+    fetch(`https://project-happy-thoughts-api-z266fupacq-uc.a.run.app/thoughts/${thoughtId}`, options)
       .then((response) => response.json())
-      .then(() => onDeleteButtonClick(_id))
-      .catch((error) => console.log(error))
+      .then(() => {
+        setThoughtsList(updatedThoughtsList.filter((thought) => thought._id !== thoughtId));
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
     <div className="thoughts-list-wrapper">
       {thoughtsList.map((thought) => {
         return (
-          <div className={`single-thought-div ${thought._id === latestMessage ? 'fade-in' : ''}`} key={thought._id}>
-            <button type="button" className="delete-btn" onClick={() => handleDelete(thought._id)}>x</button>
+          <div
+            className={`single-thought-div ${thought._id === latestMessage ? 'fade-in' : ''}
+          ${thought.isDeleting ? 'fade-out' : ''}`}
+            key={thought._id}>
+            <button type="button" className="delete-btn" onClick={() => onDeleteButtonClick(thought._id)}>x</button>
             <p className="message-p">{thought.message}</p>
             <div className="thought-footer">
               <div className="heart-button">

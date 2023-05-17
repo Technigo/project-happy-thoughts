@@ -24,7 +24,12 @@
 .single-thought-div.fade-in {
     opacity: 0;
     animation: fade-in 0.9s ease forwards;
-  }
+}
+
+.single-thought-div.fade-out {
+    opacity: 1;
+    animation: fade-out 0.28s ease forwards;
+}
 
   @keyframes fade-in {
     from {
@@ -32,6 +37,15 @@
     }
     to {
       opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
     }
   }
 
