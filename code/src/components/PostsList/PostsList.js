@@ -1,4 +1,5 @@
 import React from 'react';
+import { Loader } from 'components/Loader/Loader.js';
 import { SinglePost } from './SinglePost/SinglePost.js';
 import './PostList.css';
 
@@ -15,7 +16,7 @@ export const PostList = ({ postList, loading }) => {
           )
         })}
       </ul>
-      {loading && (<h2>Loading thoughts...</h2>)}
+      {loading && (<Loader />)}
     </section>
   )
 }

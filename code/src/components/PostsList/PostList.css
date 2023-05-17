@@ -2,6 +2,7 @@
     grid-area: 2 / 2 / auto / 4;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .postlist li {
