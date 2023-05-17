@@ -10,9 +10,6 @@ export const ThoughtList = ({ loading, thoughts, onLikesIncrease, clickCount }) 
   if (loading) {
     return <div className="Loading">Loading</div>;
   }
-  const OnLikesIncrease = (id) => {
-    onLikesIncrease(id);
-  }
   return (
 
     <div className="list-wrapper">
@@ -24,7 +21,7 @@ export const ThoughtList = ({ loading, thoughts, onLikesIncrease, clickCount }) 
               <button
                 type="button"
                 className={(list.hearts === 0 ? 'like-btn' : 'no-like-btn')}
-                onClick={() => OnLikesIncrease(list._id)}>
+                onClick={() => onLikesIncrease(list._id)}>
                 ❤️
               </button>
               <p className="counter">x {list.hearts + clickCount}</p>
