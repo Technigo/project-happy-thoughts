@@ -1,6 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-underscore-dangle */
+
+// OLD URL https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts
+
+// MY URL https://project-happy-thoughts-api-ru2v7b5sba-lz.a.run.app/thoughts
+
 import React, { useState, useEffect } from 'react';
 import MessageList from 'components/MessageList';
 import NewThoughts from 'components/NewThoughts';
@@ -13,25 +18,18 @@ export const App = () => {
   const [newLike, setNewLike] = useState(false)
   const [messageList, setMessageList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   useEffect(() => {
     fetchMessages();
   }, [newLike, loading]);
 
   const fetchMessages = () => {
-    setLoading(false)
-    // const options = {
-    //   method: 'GET'
-    // }
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-ru2v7b5sba-lz.a.run.app/thoughts')
       .then((response) => response.json())
       .then((data) => setMessageList(data))
       .catch((error) => console.log(error))
-      .finally(() => {
-        setLoading(false)
-        setNewLike(false)
-      })
+      .finally(() => setLoading(false), setNewLike(false))
   }
 
   const handleNewThought = (event) => {
@@ -39,6 +37,7 @@ export const App = () => {
   }
 
   const onFormSubmit = (event) => {
+    setLoading(true)
     event.preventDefault();
 
     const options = {
@@ -48,13 +47,16 @@ export const App = () => {
       },
       body: JSON.stringify({ message: newThoughts })
     }
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-ru2v7b5sba-lz.a.run.app/thoughts', options)
       .then((result) => result.json())
       .then((data) => { setMessageList([data, ...messageList]) })
       .catch((error) => console.log(error))
       .finally(() => { setNewThoughts('')(setLoading(false)) });
   }
 
+  if (loading) {
+    return <p>Loading</p>
+  }
   return (
     <div className="content-container">
       <NewThoughts

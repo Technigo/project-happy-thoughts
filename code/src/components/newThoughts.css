@@ -30,7 +30,8 @@
     background-color: #ffadad;
     padding: 3%;
     border: none;
-    width: 60%;
+    width: 70%;
+    cursor: pointer;
 }
 
 .counter {
