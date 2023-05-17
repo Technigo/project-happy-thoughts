@@ -56,23 +56,22 @@ export const App = () => {
 
   /* Function that posts new likes to API */
   const handleLike = (_id) => {
-    fetch(`https://project-happy-thoughts-api-kukr2tatlq-lz.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
-      .then((res) => res.json())
+    fetch(`https://project-happy-thoughts-api-kukr2tatlq-lz.a.run.app/thoughts/${_id}/like`, { method: 'PATCH' })
+      .then((res) => {
+        return res.json();
+      })
       .then((data) => {
-        const updatedThoughtList = thoughtList.map((thought) => {
-          if (thought._id === data._id) {
-            return data; // Replace the thought with the updated thought data
+        const updateLikes = thoughtList.map((like) => {
+          if (like._id === data._id) {
+            like.likes += 1;
+            return like;
           } else {
-            return thought;
+            return like;
           }
         });
-        setThoughtList(updatedThoughtList);
+        setThoughtList(updateLikes)
       })
-      .catch((error) => {
-        console.error(error);
-        // Handle any error during the API call
-      });
-  };
+  }
 
   return (
     <div>
