@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { myApi } from './apiList';
 
 export const Submit = ({ thoughtsList, setThoughtsList }) => {
   const [inputText, setInputText] = useState('');
@@ -10,7 +11,7 @@ export const Submit = ({ thoughtsList, setThoughtsList }) => {
       console.log('too short')
     } else { console.log('enough') }
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+    fetch(myApi, {
       method: 'POST',
       body: JSON.stringify({ message: `${inputText}` }),
       headers: { 'Content-Type': 'application/json' }
@@ -42,4 +43,4 @@ export const Submit = ({ thoughtsList, setThoughtsList }) => {
       </form>
     </div>
   )
-}
+};
