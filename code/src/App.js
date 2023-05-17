@@ -48,10 +48,6 @@ export const App = () => {
     fetchThoughts();
   }, [])
 
-  const onDeleteButtonClick = (thoughtId) => {
-    setThoughtsList(thoughtsList.filter((thought) => thought._id !== thoughtId));
-  };
-
   const onHeartButtonClick = (thoughtId) => {
     const options = {
       method: 'POST',
@@ -108,8 +104,8 @@ export const App = () => {
           handleFormSubmit={handleFormSubmit} />
         <ThoughtsList
           onHeartButtonClick={onHeartButtonClick}
-          onDeleteButtonClick={onDeleteButtonClick}
           thoughtsList={thoughtsList}
+          setThoughtsList={setThoughtsList}
           latestMessage={latestMessage}
           loading={loading} />
       </div>

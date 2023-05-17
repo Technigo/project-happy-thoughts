@@ -6,23 +6,25 @@ import { Loading } from './Loading'
 import '../index.css';
 import './ThoughtsList.css';
 
-export const ThoughtsList = ({ loading, thoughtsList, onHeartButtonClick, onDeleteButtonClick, latestMessage }) => {
+export const ThoughtsList = ({ loading, thoughtsList, setThoughtsList, onHeartButtonClick, latestMessage }) => {
   if (loading) {
     return <Loading />
   }
 
+  const onDeleteButtonClick = (thoughtId) => {
+    setThoughtsList(thoughtsList.filter((thought) => thought._id !== thoughtId));
+  };
+
   const handleDelete = (_id) => {
     const options = {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      method: 'DELETE'
     }
     fetch(`https://project-happy-thoughts-api-z266fupacq-uc.a.run.app/thoughts/${_id}`, options)
       .then((response) => response.json())
       .then(() => onDeleteButtonClick(_id))
       .catch((error) => console.log(error))
   };
+
   return (
     <div className="thoughts-list-wrapper">
       {thoughtsList.map((thought) => {
