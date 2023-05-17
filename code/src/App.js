@@ -11,7 +11,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://project-happy-thoughts-api-8aw2.onrender.com/thoughts')
+    fetch('https://project-happy-thoughts-api-l8j3.onrender.com/thoughts')
       .then((response) => response.json())
       .then((data) => setThoughtsList(data))
       .catch((error) => console.log(error))
@@ -35,7 +35,7 @@ export const App = () => {
       body: JSON.stringify({ message: submitThoughts }),
       headers: { 'Content-Type': 'application/json' }
     }
-    fetch('https://project-happy-thoughts-api-8aw2.onrender.com/thoughts', options)
+    fetch('https://project-happy-thoughts-api-l8j3.onrender.com/thoughts', options)
       .then((response) => response.json())
       .then((data) => { setThoughtsList([data, ...thoughtsList]) })
       .catch((error) => console.log(error))
@@ -47,7 +47,7 @@ export const App = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     }
-    fetch('https://project-happy-thoughts-api-8aw2.onrender.com/thoughts/:thoughtId/like', options)
+    fetch('https://project-happy-thoughts-api-l8j3.onrender.com/thoughts/:thoughtId/like', options)
       .then((res) => res.json())
       .catch((error) => console(error))
       .finally(() => fetchThoughts(''))
