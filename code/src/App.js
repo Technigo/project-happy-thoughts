@@ -11,7 +11,7 @@ export const App = () => {
   const [loading, setLoading] = useState(false); // used for loading
   const [newMessage, setNewMessage] = useState(''); // keeps track of the user input of new message
   const [latestMessage, setLatestMessage] = useState(null) // helps ypu keep track of the latest message in order to add animation when added
-  const [newName, setNewName] = useState('')
+  const [newName, setNewName] = useState('');
 
   // FETCH MESSAGES-FUNCTION: used for fetching messages
   // 1st fetch request included in this function
@@ -104,6 +104,7 @@ export const App = () => {
       <div className="happy-thoughts-box">
         <PostMessage
           handleNewName={handleNewName}
+          newName={newName}
           newMessage={newMessage}
           onFormSubmit={onFormSubmit}
           handleNewMessage={handleNewMessage} />
