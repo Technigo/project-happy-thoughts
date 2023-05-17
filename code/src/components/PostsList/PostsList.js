@@ -1,24 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { SinglePost } from './SinglePost/SinglePost.js';
 import './PostList.css';
 
-export const PostList = () => {
-  const [postList, setPostList] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetchThoughts = () => {
-    setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
-      .then((response) => response.json())
-      .then((data) => setPostList(data))
-      .catch((error) => console.log(error))
-      .finally(() => { setLoading(false) })
-  }
-
-  useEffect(() => {
-    fetchThoughts();
-  }, []);
-
+export const PostList = ({ postList, loading }) => {
   return (
     <section className="postlist" aria-label="List of thoughts">
       <ul>
@@ -26,8 +10,7 @@ export const PostList = () => {
           return (
             // eslint-disable-next-line no-underscore-dangle
             <li key={thought._id}>
-              <SinglePost
-                thought={thought} />
+              <SinglePost thought={thought} />
             </li>
           )
         })}

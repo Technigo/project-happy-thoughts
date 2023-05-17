@@ -10,13 +10,23 @@ export const PostFooter = ({ thought }) => {
   const timeAgo = formatDistanceToNow(dateObject, { addSuffix: true })
 
   const onHeartCountIncrease = () => {
-    setCurrentThought({ currentThought, hearts: currentThought.hearts + 1 });
+    const options = {
+      method: 'POST'
+    }
+
+    // eslint-disable-next-line no-underscore-dangle
+    fetch(`https://project-happy-thoughts-api-t716.onrender.com/thoughts/${thought._id}/like`, options)
+      .then((response) => response.json())
+      .then((updatedThought) => setCurrentThought(updatedThought))
+      .catch((error) => console.log(error))
   }
 
   return (
     <section className="post-footer">
       <div className="likes" aria-label="Likes section">
-        <LikeBtn thought={currentThought} onHeartCountIncrease={onHeartCountIncrease} />
+        <LikeBtn thought={thought} onHeartCountIncrease={onHeartCountIncrease}>
+          Increase Heart Count
+        </LikeBtn>
         <p>x {currentThought.hearts}</p>
       </div>
       <div className="time-ago" aria-label="Time since the thought was posted">

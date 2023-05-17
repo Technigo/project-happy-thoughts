@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LikeBtn.css';
 
 export const LikeBtn = ({ thought, onHeartCountIncrease }) => {
+  const [hasLike, setHasLike] = useState(thought.hearts > 0);
+
   const onHeartCountIncreaseButtonClick = () => {
     onHeartCountIncrease();
+    setHasLike(true);
     const options = {
       method: 'POST'
     }
@@ -13,11 +16,14 @@ export const LikeBtn = ({ thought, onHeartCountIncrease }) => {
     `, options)
       .then((response) => response.json())
       .then((data) => { console.log(data) })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        console.log(error);
+        setHasLike(false);
+      })
       .finally(() => { console.log('heart count increased') })
   }
 
-  const likeBtnColor = thought.hearts > 0 ? 'like-btn like-btn-active' : 'like-btn';
+  const likeBtnColor = hasLike ? 'like-btn like-btn-active' : 'like-btn';
 
   return (
     <button
@@ -25,7 +31,7 @@ export const LikeBtn = ({ thought, onHeartCountIncrease }) => {
       type="button"
       className={likeBtnColor}
       aria-label="Like this thought"
-      aria-pressed={thought.hearts > 0 ? 'true' : 'false'}>
+      aria-pressed={hasLike ? 'true' : 'false'}>
       <span className="heart">❤️</span>
       <span className="heart-hover">💘</span>
     </button>
