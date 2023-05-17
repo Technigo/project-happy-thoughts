@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { formatDistance } from 'date-fns';
 
@@ -14,7 +15,7 @@ const MessageCard = ({ item, sendLike }) => {
                     <button className="heartBtn" type="button" onClick={sendHearts}> ❤️ </button>  x   {item.hearts}
                 </div>
                 <p className="timeStamp">
-                    {formatDistance(new Date(item.createdAt), Date.now(), { addSuffix: true })}
+                    {formatDistance(new Date(item.response.createdAt), Date.now(), { addSuffix: true })}
                 </p>
             </div>
         </div>
