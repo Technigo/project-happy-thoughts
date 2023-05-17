@@ -8,7 +8,7 @@ export const ThoughtItem = ({ thought, thoughtId }) => {
     const options = {
       method: 'POST'
     }
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, options)
+    fetch(`https://project-happy-thoughts-api-6nzr46lxka-uc.a.run.app/thoughts/${thoughtId}/like`, options)
       .then((response) => response.json())
       .then((data) => { console.log(data); setHeartCount(data.hearts) })
       .catch((error) => console.log(error))
