@@ -22,7 +22,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-4tdp4buvnq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughts(data))
       .catch((error) => console.error(error))
@@ -63,7 +63,7 @@ export const App = () => {
       body: JSON.stringify({ message: newMessage })
     }
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-4tdp4buvnq-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then((data) => { setThoughts([data, ...thoughts]) })
       .finally(() => setNewMessage(''));
@@ -83,7 +83,7 @@ export const App = () => {
     // witch number of likes should be updated
     // the options in this request is set to POST for we want to send a new heart-value.
 
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${LikeID}/like`, options)
+    fetch(`https://project-happy-thoughts-api-4tdp4buvnq-lz.a.run.app/${LikeID}/like`, options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => fetchThoughts())
