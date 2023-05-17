@@ -1,29 +1,26 @@
-import React from 'react'
+import React from 'react';
 import { SingleThought } from './SingleThought';
-/* eslint-disable no-underscore-dangle */
 
 export const HappyList = ({ loading, happyList }) => {
   if (loading) {
-    return <h1 className="loading">Happy thoughts coming soon</h1>
+    return <h1 className="loading">Happy thoughts coming soon</h1>;
   }
+
+  if (!happyList || !Array.isArray(happyList)) {
+    return <p>No happy thoughts available.</p>;
+  }
+  console.log(typeof happyList)
   return (
     <div>
       <section className="thoughts-container">
         {happyList.map((thought) => (
+          // eslint-disable-next-line no-underscore-dangle
           <div key={thought._id} className="thoughts">
-            <SingleThought key={thought._id} thought={thought} />
+            <SingleThought thought={thought} />
           </div>
         ))}
       </section>
     </div>
+  );
+};
 
-  )
-}
-
-// här vill vi få upp listan av texter som skrivs och fetchas från apin post
-/* I set my my heart fetch to: .finally(() => fetchThoughts(''))
- and it refreshes the page with the new heart likes
- */
-
-/* {happyList.map((thought) => (
-          <div key={thought._id} className="thoughts"> */

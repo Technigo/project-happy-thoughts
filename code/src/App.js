@@ -15,12 +15,15 @@ export const App = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://irupe-happy-thoughts-api-kobjwpkrba-lz.a.run.app/thoughts')
       .then((response) => response.json())
-      .then((data) => setHappyList(data))
+      .then((data) => {
+        setHappyList(data.response);
+        console.log(data); // Log the data received from the API
+      })
       .catch((error) => console.log(error))
-      .finally(() => { setLoading(false) })
-  }, [])
+      .finally(() => setLoading(false));
+  }, []);
 
   const handleFormSubmit = (event) => {
     console.log('form submitted');
@@ -30,7 +33,7 @@ export const App = () => {
       body: JSON.stringify({ message: newThought }),
       headers: { 'Content-Type': 'application/json' }
     }
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://irupe-happy-thoughts-api-kobjwpkrba-lz.a.run.app/thoughts', options)
       .then((response) => response.json())
       .then((data) => setHappyList([data, ...happyList]))
       .catch((error) => console.log(error))
