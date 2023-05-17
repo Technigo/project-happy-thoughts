@@ -13,7 +13,7 @@ export const Feed = () => {
   const fetchThoughts = () => {
     fetch('https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app/thoughts')
       .then((response) => response.json())
-      .then((data) => setThoughtsList(data))
+      .then((data) => setThoughtsList(data.response))
       .catch((error) => console.log(error))
       .finally(() => { setIsLoading(false) })
   }
@@ -58,7 +58,7 @@ export const Feed = () => {
       {!isLoading && thoughtsList.map((thought) => {
         const handleLikeSubmit = () => {
           fetch(`https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app/thoughts/${thought._id}/like`, {
-            method: 'POST'
+            method: 'PATCH'
           })
             .then(() => setMyLikesCount(myLikesCount + 1))
             .then(() => fetchThoughts())
