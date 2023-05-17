@@ -18,7 +18,7 @@ export const App = () => {
     setLoading(true);
     fetch('https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts')
       .then((result) => result.json())
-      .then((data) => setMessageList(data))
+      .then((data) => setMessageList(data.response))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
@@ -43,15 +43,20 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        message: newMessage
+        message: newMessage,
+        createdAt: new Date().toISOString() // Include the createdAt field with the current timestamp
       })
     }
     // 2nd fetch request within OnFormSubmit
     fetch('https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts', options)
       .then((result) => result.json())
       .then((data) => {
-        setMessageList([data, ...messageList])
-        setLatestMessage(data._id) // this sets the LatestMessage to the latest message using the data._id
+        if (data.success) {
+          setMessageList([data.response, ...messageList])
+          setLatestMessage(data.response._id) // this sets the LatestMessage to the latest message using the data._id
+        } else {
+          console.error(data.message)
+        }
       })
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false); setNewMessage('') })

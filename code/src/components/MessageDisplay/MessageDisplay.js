@@ -12,15 +12,15 @@ export const MessageDisplay = ({ messageList, LikeCounter, latestMessage }) => {
 
   return (
     <div className="message-list-container">
-      {messageList.map((list) => (
-        <div className={`message-box ${list._id === latestMessage ? 'fade-in' : ''}`} key={list._id}>
-          <p className="message-text">{list.message}</p>
+      {messageList.map((message) => (
+        <div className={`message-box ${message._id === latestMessage ? 'fade-in' : ''}`} key={message._id}>
+          <p className="message-text">{message.message}</p>
           <div className="like-and-date">
             <div className="button-and-counter">
-              <button className={(list.hearts === 0 ? 'no-like-button' : 'like-button')} disabled={isAnimating} onClick={() => { LikeCounter(list._id); reward() }}> <span id="rewardId" />❤️</button>
-              <p className="counter">x {list.hearts}</p>
+              <button className={(message.likes === 0 ? 'no-like-button' : 'like-button')} disabled={isAnimating} onClick={() => { LikeCounter(message._id); reward() }}> <span id="rewardId" />❤️</button>
+              <p className="counter">x {message.likes}</p>
             </div>
-            <p className="date-text">{formatDistance(new Date(list.createdAt), Date.now(), { addSuffix: true })}</p>
+            <p className="date-text">{formatDistance(new Date(message.createdAt), Date.now(), { addSuffix: true })}</p>
           </div>
         </div>
       ))}
