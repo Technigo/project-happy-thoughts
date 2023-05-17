@@ -1,13 +1,14 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A little app that lets you both fetch from and post to an API. Previously we've only fetched data, so this was the first time we could actually impact the API ourselves from our own code. We created a Twitter-like message app using React, specifically the useEffect hook which was new this week. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Fetching the data from the API was no problem, what I found more difficult was actually posting data (in the form of messages and likes) to the API successfully and updating the message list and like button automatically without having the entire page update with every new addition to the API.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://twitterbutnicer.netlify.app
+
+
+<img width="613" alt="Skärmavbild 2023-04-11 kl  21 57 21" src="https://user-images.githubusercontent.com/95037306/231262198-5ed9e184-d3b9-42d8-8546-dc96f764126d.png">
