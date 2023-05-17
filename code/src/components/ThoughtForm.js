@@ -4,7 +4,7 @@ export const ThoughtForm = () => {
   const [newThought, setNewThought] = useState('');
   const [minMaxCount, setMinMaxCount] = useState(false);
 
-  const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+  const API = 'https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app/thoughts'
 
   const onFormSubmit = (event) => {
     event.preventDefault()

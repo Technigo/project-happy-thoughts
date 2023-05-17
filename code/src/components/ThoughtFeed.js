@@ -3,14 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { formatDistance } from 'date-fns';
 import { ThoughtForm } from './ThoughtForm';
 
-const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+const API = 'https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app'
 
 export const ThoughtFeed = () => {
   const [thoughtList, setThoughtList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   const fetchThoughts = () => {
-    fetch(`${API}`)
+    fetch(`${API}/thoughts`)
       .then((response) => response.json())
       .then((data) => setThoughtList(data))
       .catch((error) => console.log(error))
@@ -37,7 +37,7 @@ export const ThoughtFeed = () => {
         const updatedThoughtList = thoughtList.map((thought) => {
           if (thought._id === data._id) {
             return {
-              ...thought, hearts: data.hearts
+              ...thought, heart: data.heart
             };
           }
           return thought;
