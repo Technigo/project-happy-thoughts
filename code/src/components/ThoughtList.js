@@ -13,7 +13,7 @@ const ThoughtList = ({ loading, thoughtList, handleLike }) => {
       {thoughtList.map((thought) => {
         return (
           <div key={thought._id} className="single-thought">
-            <p>{thought.message}</p>
+            <p>{thought.text}</p>
             <div className="thought-details">
               <div className="likes-wrapper">
                 <button

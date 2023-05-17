@@ -12,7 +12,7 @@ export const App = () => {
   /* Fetches the most recent happy thoughts from the API */
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-kukr2tatlq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
@@ -35,10 +35,10 @@ export const App = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newThought })
+      body: JSON.stringify({ text: newThought })
     };
 
-    fetch('https://project-happy-thoughts-api-kukr2tatlq-lz.a.run.app//thoughts', options)
+    fetch('https://project-happy-thoughts-api-kukr2tatlq-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then((data) => {
         setThoughtList((prevList) => [data, ...prevList]);
@@ -55,14 +55,14 @@ export const App = () => {
 
   /* Function that posts new likes to API */
   const handleLike = (_id) => {
-    fetch(`https://project-happy-thoughts-api-kukr2tatlq-lz.a.run.app//thoughts/${_id}/like`, { method: 'POST' })
+    fetch(`https://project-happy-thoughts-api-kukr2tatlq-lz.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         const updateLikes = thoughtList.map((like) => {
           if (like._id === data._id) {
-            like.hearts += 1;
+            like.likes += 1;
             return like;
           } else {
             return like;
