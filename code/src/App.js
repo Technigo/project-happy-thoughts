@@ -63,12 +63,10 @@ export const App = () => {
       .then((data) => {
         const updatedThoughtList = thoughtList.map((thought) => {
           if (thought._id === data._id) {
-            // eslint-disable-next-line prefer-object-spread
-            return Object.assign({}, thought, { likes: thought.likes + 1 });
+            thought.likes += 1;
           }
           return thought;
         });
-
         setThoughtList(updatedThoughtList);
       })
       .catch((error) => {
