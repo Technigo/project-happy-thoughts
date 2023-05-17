@@ -11,6 +11,7 @@ export const App = () => {
   const [loading, setLoading] = useState(false); // used for loading
   const [newMessage, setNewMessage] = useState(''); // keeps track of the user input of new message
   const [latestMessage, setLatestMessage] = useState(null) // helps ypu keep track of the latest message in order to add animation when added
+  const [newName, setNewName] = useState('')
 
   // FETCH MESSAGES-FUNCTION: used for fetching messages
   // 1st fetch request included in this function
@@ -32,6 +33,11 @@ export const App = () => {
   const handleNewMessage = (event) => {
     setNewMessage(event.target.value) // we listen to the new message that the user is typing and set that message as the newMessage.
   }
+
+  const handleNewName = (event) => {
+    setNewName(event.target.value)
+  }
+
   // ON FORM SUBMIT-FUNCTION that listens to the button-click event in the PostMessageComponent
   const onFormSubmit = (event) => {
     event.preventDefault(); // Prevents the form from refreshing the page, sends data to the API with selected options. This happens everytime a user submits a new message.
@@ -48,6 +54,7 @@ export const App = () => {
         },
         body: JSON.stringify({
           message: newMessage,
+          name: newName,
           createdAt: new Date().toISOString() // Include the createdAt field with the current timestamp
         })
       }
@@ -64,7 +71,11 @@ export const App = () => {
           }
         })
         .catch((error) => console.log(error))
-        .finally(() => { setLoading(false); setNewMessage('') })
+        .finally(() => {
+          setLoading(false)
+          setNewMessage('')
+          setNewName('')
+        })
     }
   }
   // LIKEINCREASE-FUNCTION
@@ -92,6 +103,7 @@ export const App = () => {
       {loading && <div className="loading-container"><Loading /></div>}
       <div className="happy-thoughts-box">
         <PostMessage
+          handleNewName={handleNewName}
           newMessage={newMessage}
           onFormSubmit={onFormSubmit}
           handleNewMessage={handleNewMessage} />
