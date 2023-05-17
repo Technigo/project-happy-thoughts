@@ -6,16 +6,30 @@ import { Loading } from './Loading'
 import '../index.css';
 import './ThoughtsList.css';
 
-export const ThoughtsList = ({ loading, thoughtsList, onHeartButtonClick, latestMessage }) => {
+export const ThoughtsList = ({ loading, thoughtsList, onHeartButtonClick, onDeleteButtonClick, latestMessage }) => {
   if (loading) {
     return <Loading />
   }
+
+  const handleDelete = (_id) => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`https://project-happy-thoughts-api-z266fupacq-uc.a.run.app/thoughts/${_id}`, options)
+      .then((response) => response.json())
+      .then(() => onDeleteButtonClick(_id))
+      .catch((error) => console.log(error))
+  };
   return (
     <div className="thoughts-list-wrapper">
       {thoughtsList.map((thought) => {
         return (
           <div className={`single-thought-div ${thought._id === latestMessage ? 'fade-in' : ''}`} key={thought._id}>
-            <p>{thought.message}</p>
+            <button type="button" className="delete-btn" onClick={() => handleDelete(thought._id)}>x</button>
+            <p className="message-p">{thought.message}</p>
             <div className="thought-footer">
               <div className="heart-button">
                 <button type="button" className="heart-emoji" onClick={() => onHeartButtonClick(thought._id)}>❤️</button>

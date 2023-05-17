@@ -17,6 +17,10 @@
     box-shadow: 5px 5px 0px 0px black;
 }
 
+.message-p {
+    margin-top: -40px;
+}
+
 .single-thought-div.fade-in {
     opacity: 0;
     animation: fade-in 0.9s ease forwards;
@@ -60,4 +64,14 @@
 
 .thought-date {
     font-size: 12px;
+}
+
+.delete-btn {
+    border: none;
+    background: transparent;
+    font-family: Cutive Mono;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
 }
