@@ -59,7 +59,7 @@ export const App = () => {
       })
     }
 
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts", options)
+    fetch("https://project-happy-thoughts-api-s7fgmoqnaa-lz.a.run.app", options)
       .then((result) => result.json())
       .then((data) => {
         fetchThoughts()   //data.response)
