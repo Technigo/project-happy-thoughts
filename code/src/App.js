@@ -7,7 +7,7 @@ export const App = () => {
   const [stateVariable, setStateVariable] = useState('');
   const [thoughtsList, setThoughtsList] = useState([]);
   const [likedThoughts, setLikedThoughts] = useState([]);
-  const happyEndpoint = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
+  const happyEndpoint = 'https://happy-thoughts-urhkb27xua-lz.a.run.app/thoughts';
   const [likedPostsCount, setLikedPostsCount] = useState(
     Number(localStorage.getItem('likedPostsCount')) || 0
   );
@@ -40,7 +40,7 @@ export const App = () => {
     }
 
     // eslint-disable-next-line no-underscore-dangle
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like
+    fetch(`https://happy-thoughts-urhkb27xua-lz.a.run.app/thoughts/${thought._id}/like
     `, options)
       .then((response) => response.json())
       .then((data) => { console.log(data) })
