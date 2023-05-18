@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-underscore-dangle */
+/* eslint-disable react/jsx-props-no-spreading */
 
 import React, { useState, useEffect } from 'react';
 import ThoughtForm from './components/ThoughtForm'
@@ -58,20 +59,23 @@ export const App = () => {
   const handleLike = (_id) => {
     fetch(`https://project-happy-thoughts-api-kukr2tatlq-lz.a.run.app/thoughts/${_id}/like`, { method: 'PATCH' })
       .then((res) => {
-        return res.json();
+        if (res.ok) {
+          const updatedThoughtList = thoughtList.map((thought) => {
+            if (thought._id === _id) {
+              return {
+                ...thought,
+                likes: thought.likes + 1
+              };
+            }
+            return thought;
+          });
+          setThoughtList(updatedThoughtList);
+        } else {
+          throw new Error('Like operation failed');
+        }
       })
-      .then((data) => {
-        const updateLikes = thoughtList.map((like) => {
-          if (like._id === data._id) {
-            like.likes += 1;
-            return like;
-          } else {
-            return like;
-          }
-        });
-        setThoughtList(updateLikes)
-      })
-  }
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div>
