@@ -16,7 +16,7 @@ export const App = () => {
   const fetchThoughts = () => {
     //setLoading(true);
     // console.log("fetchThoughts")
-    fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://project-happy-thoughts-api-s7fgmoqnaa-lz.a.run.app")
       .then((result) => result.json())
       .then((json) => {
         setThoughtsList(json)
