@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Footer from 'components/Footer';
 import { ThoughtList } from './components/ThoughtList';
 import { ThoughtForm } from './components/ThoughtForm';
 
@@ -67,6 +68,7 @@ export const App = () => {
         loading={loading}
         thoughtList={thoughtList}
         handleLikeChange={handleLikeChange} />
+      <Footer />
     </div>
   );
 }

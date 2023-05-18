@@ -143,7 +143,8 @@ color: grey;
 @media (min-width: 480px) and (max-width: 1024px) {
   
   .submit-form,
-  .thought-boxes{
+  .thought-boxes,
+  .footer{
     width: 70%; 
   }
 
@@ -155,7 +156,8 @@ color: grey;
 
 @media (max-width: 480px) {
   .submit-form,
-  .thought-boxes{
+  .thought-boxes,
+  .footer {
     width: 90%; 
   }
 
@@ -163,4 +165,45 @@ color: grey;
     width: 90%; 
     padding: 20px; 
   }
+}
+
+/* Footer */
+
+footer {
+  align-self:center;
+  margin-top: 20px 0px;
+  width: 40%;
+  padding: 5px;
+  background-color: rgb(245, 212, 212);
+  border: 1px solid black;
+  box-shadow: 10px 10px black;
+  bottom: 0;
+  
+}
+
+.contact-me {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.contact-logo{
+  width: 30px;
+  opacity: .75;
+}
+
+.contact-logo:hover{
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align:center;
 }
