@@ -12,8 +12,9 @@ export const App = () => {
   const [newMessage, setNewMessage] = useState(''); // keeps track of the user input of new message
   const [latestMessage, setLatestMessage] = useState(null) // helps ypu keep track of the latest message in order to add animation when added
   const [newName, setNewName] = useState('');
+  const [messageToDelete, setMessageToDelete] = useState(null)
 
-  // FETCH MESSAGES-FUNCTION: used for fetching messages
+  // ////////////// FETCH MESSAGES-FUNCTION: used for fetching messages ////////////////////////
   // 1st fetch request included in this function
   const fetchMessages = () => {
     setLoading(true); // we set the loading to true so that the spinner is visible during the fetch call
@@ -24,7 +25,8 @@ export const App = () => {
       .finally(() => setLoading(false)); // the fetch call is done so we set the loading state to false.
   }
 
-  // USE EFFECT that calls the function fetchMessages when component mounts. Empty array makes it only be called once.
+  // /////////// USE EFFECT -hook /////////////////////////
+  // that calls the function fetchMessages when component mounts. Empty array makes it only be called once.
   useEffect(() => {
     fetchMessages();
   }, []);
@@ -35,7 +37,7 @@ export const App = () => {
   }
 
   const handleNewName = (event) => {
-    setNewName(event.target.value)
+    setNewName(event.target.value) // we listen to the new name that the user is typing and set that name as the newName.
   }
 
   // ON FORM SUBMIT-FUNCTION that listens to the button-click event in the PostMessageComponent
@@ -45,6 +47,8 @@ export const App = () => {
     if (newMessage.length < 5) {
       // If the message the user tries to send consists of less than 5 characters, the user will be informed with an alert.
       alert('The thought must contain at least 5 characters. ❤️')
+    } else if (newName === '') {
+      alert('You need to enter a name. ❤️')
     } else { // This will happen if the sends a correct message
       // options that says how the information we send should be added into the API
       const options = {
@@ -63,8 +67,8 @@ export const App = () => {
         .then((result) => result.json())
         .then((data) => {
           if (data.success) {
-            fetchMessages();
-            // setMessageList([data.response, ...messageList])
+            fetchMessages(); // We fetch the messages again after the new message has been updated.
+            // setMessageList([data.response, ...messageList]) removed this because the limit of 20 didn't work.
             setLatestMessage(data.response._id) // this sets the LatestMessage to the latest message using the data._id
           } else {
             console.error(data.message)
@@ -73,29 +77,60 @@ export const App = () => {
         .catch((error) => console.log(error))
         .finally(() => {
           setLoading(false)
-          setNewMessage('')
-          setNewName('')
+          setNewMessage('') // Reset the message in the text area
+          setNewName('') // Reset the name in the input field
         })
     }
   }
-  // LIKEINCREASE-FUNCTION
+  // ////////// LIKEINCREASE-FUNCTION with fetch-request//////////////////////////////
   const LikeCounter = (LikeID) => {
     // options-object decides how changes in the API should look
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      }
+      } // There is no need to send a when calling the likes-function
     }
 
-    // 3RD FETCH REQUEST for the likes
+    // //////////////3RD FETCH REQUEST for the likes//////////////////////////////
     fetch(`https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts/${LikeID}/like`, options)
       .then((result) => result.json())
-      .then(() => fetchMessages())
+      .then((data) => {
+        if (data.success) {
+          setLatestMessage(data.response._id) // this sets the LatestMessage to the latest message using the data._id
+          fetchMessages(); // We fetch the messages again after the new message has been updated.
+          // setMessageList([data.response, ...messageList]) removed this because the limit of 20 didn't work.
+        } else {
+          console.error(data.message)
+        }
+      })
       .catch((error) => console.log(error))
-      .finally(() => { setLoading(true) })
+      .finally(() => { setLoading(false) })
   }
-
+  // ///////////////////////////DELETE MESSAGE /////////////////////////////////////
+  const DeleteMessage = (deleteID) => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      } // There is no need to send a when calling the likes-function
+    }
+    fetch(`https://project-happy-thoughts-api-wbm4xjxtua-uc.a.run.app/thoughts/${deleteID}/delete`, options)
+      .then((result) => result.json())
+      .then((data) => {
+        if (data.success) {
+          setMessageToDelete(data.response._id);
+          // Remove the deleted message from the message list
+          fetchMessages()
+        } else {
+          console.error(data.message)
+        }
+      })
+      .catch((error) => console.log(error))
+      .finally(() => {
+        setLoading(false);
+      });
+  }
   // RETURN-SECTION (Mounting the components)
   return (
     <div>
@@ -111,9 +146,11 @@ export const App = () => {
         <div className="message-conatiner">
           <MessageDisplay
             latestMessage={latestMessage}
+            messageToDelete={messageToDelete}
             messageList={messageList}
             setMessageList={setMessageList}
             LikeCounter={LikeCounter}
+            DeleteMessage={DeleteMessage}
             loading={loading} />
           <div className="footer">
             <Footer />
