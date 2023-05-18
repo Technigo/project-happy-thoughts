@@ -19,7 +19,9 @@ export const SendThought = ({
   const pressEnter = (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      handleFormSubmit(event);
+      if (sendName.trim() !== '') { // if name-field is not empty, execute the handleFormSubmit-function
+        handleFormSubmit(event);
+      }
     }
   }
 
@@ -40,7 +42,6 @@ export const SendThought = ({
         <textarea
           placeholder="My happy thought..."
           maxLength="140"
-          required
           value={sendThought}
           onKeyDown={pressEnter}
           onChange={handleSendThought} />
