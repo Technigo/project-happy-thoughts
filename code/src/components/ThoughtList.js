@@ -4,7 +4,7 @@ import moment from 'moment';
 
 export const ThoughtList = ({ loading, thoughtList, handleLikeChange }) => {
   if (loading) {
-    return <h1> Preparing some happiness..</h1>
+    return <h1 className="loading"> Preparing some happiness..</h1>
   }
 
   return (

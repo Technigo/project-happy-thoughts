@@ -9,7 +9,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch(' https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-6anhpdtyoa-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
@@ -36,7 +36,7 @@ export const App = () => {
       })
     }
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-6anhpdtyoa-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .then(() => setNewThought(''));
@@ -49,7 +49,7 @@ export const App = () => {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+    fetch(`https://project-happy-thoughts-api-6anhpdtyoa-lz.a.run.app/thoughts/${id}/like`, options)
       .then((res) => res.json())
       .then(console.log('bajskorv'))
       .then((error) => console.error(error))
