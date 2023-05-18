@@ -2,7 +2,11 @@
 import React from 'react'
 import moment from 'moment';
 
-export const ThoughtList = ({ loading, thoughtList, handleLikeChange }) => {
+export const ThoughtList = ({
+  loading,
+  thoughtList,
+  handleLikeChange
+}) => {
   if (loading) {
     return <h1 className="loading"> Preparing some happiness..</h1>
   }
@@ -11,12 +15,12 @@ export const ThoughtList = ({ loading, thoughtList, handleLikeChange }) => {
     <section className="thought-list">
       {thoughtList.map((thought) => {
         return (
-          <div className="thought-boxes">
-            <p className="thought-text" key={thought._id}>{thought.message} </p>
+          <div className="thought-boxes" key={thought._id}>
+            <p className="thought-text">{thought.message} </p>
             <div className="thought-specs">
               <div className="likes-section">
                 <button
-                  className={thought.hearts === 0 ? 'heart-passive' : 'heart-active'}
+                  className={(thought.hearts === 0 ? 'heart-passive' : 'heart-active')}
                   type="submit"
                   onClick={() => handleLikeChange(thought._id)}>❤️
                 </button>
