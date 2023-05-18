@@ -43,7 +43,7 @@ const HeartButton = ({
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, options)
+    fetch(`https://project-happy-thoughts-api-3l2qjuyada-lz.a.run.app/thoughts/${thoughtId}/like`, options)
       .then((response) => response.json())
       .then(() => fetchThoughts())
       .catch((error) => console.log(error))
