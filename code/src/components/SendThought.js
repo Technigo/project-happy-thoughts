@@ -48,7 +48,7 @@ export const SendThought = ({
         <button
           type="submit"
           className="send-thought-btn"
-          disabled={sendThought.length < 5 || sendThought.length > 140}>
+          disabled={sendThought.length < 5 || sendThought.length > 140 || sendName.length < 2}>
             &#128140; Send Happy Thought &#128140;
         </button>
       </form>
