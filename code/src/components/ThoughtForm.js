@@ -16,6 +16,13 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
       return (<p className="character-count">{newThought.length} / 140</p>)
     }
   }
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      onFormSubmit();
+    }
+  };
+
   return (
     <section className="form-section">
       <form className="form" onSubmit={onFormSubmit}>
@@ -26,7 +33,8 @@ const ThoughtForm = ({ newThought, onNewThoughtChange, onFormSubmit }) => {
             id="thought-input"
             placeholder="Write your happy thought here..."
             value={newThought}
-            onChange={onNewThoughtChange} />
+            onChange={onNewThoughtChange}
+            onKeyDown={handleKeyDown} />
         </label>
         {characterWarning()}
         <button
