@@ -44,7 +44,7 @@ export const App = () => {
 
   const handleLikeChange = (thoughtId) => {
     const options = {
-      method: 'PATCH',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
