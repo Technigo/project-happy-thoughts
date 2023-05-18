@@ -23,7 +23,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-oivc6zag6a-lz.a.run.app/thoughts')
       .then((data) => data.json())
       .then((jsonData) => setThoughts(jsonData))
       .catch((error) => console.error(error))
@@ -49,7 +49,7 @@ export const App = () => {
     };
 
     fetch(
-      'https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts',
+      'https://project-happy-thoughts-api-oivc6zag6a-lz.a.run.app/thoughts',
       options
     )
       .then((res) => res.json())
@@ -60,14 +60,14 @@ export const App = () => {
   const onLikesIncrease = (LikeID) => {
     setClickCount(clickCount + 1);
     const options = {
-      method: 'PATCH',
+      method: 'POST',
       headers: {
         'content-type': 'application/json'
       }
     };
 
     fetch(
-      `https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts/${LikeID}/like`,
+      `https://project-happy-thoughts-api-oivc6zag6a-lz.a.run.app/thoughts/${LikeID}/like`,
       options
     )
       .then((res) => res.json())
