@@ -32,12 +32,15 @@ export const SendThought = ({
         <input
           type="text"
           placeholder="My name"
+          minLength="2"
           maxLength="30"
+          required
           value={sendName}
           onChange={handleSendName} />
         <textarea
           placeholder="My happy thought..."
           maxLength="140"
+          required
           value={sendThought}
           onKeyDown={pressEnter}
           onChange={handleSendThought} />
