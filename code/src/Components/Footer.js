@@ -1,13 +1,10 @@
-/* eslint-disable max-len */
-
 import React from 'react';
 import styled from 'styled-components';
-/* import { Link } from 'react-router-dom'; */
 
 const FooterWrapper = styled.footer`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     background-color: #f5f5f5;
     padding: 20px;
@@ -25,23 +22,24 @@ const FooterText = styled.p`
     font-size: 12px;
     color: #4d4d4d;
     margin: 0px;
+    text-align: center; /* Center align the text */
 `;
 
-/* const FooterLink = styled(Link)`
+const FooterLink = styled.a`
     text-decoration: none;
     color: #4d4d4d;
     font-weight: bold;
     &:hover {
         color: #4d4d4d;
     }
-`; */
+`;
 
 export const Footer = () => {
   return (
     <FooterWrapper>
-      <FooterText>© 2021 Happy Thoughts</FooterText>
+      <img src="/annika.jpg" alt="annika portrait" width={50} />
       <FooterText>Created by Annika Lindberg</FooterText>
-      {/*       <FooterText>Powered by <FooterLink to="https://annikalindberg-portfolio.netlify.app/">Annikas portfolio</FooterLink></FooterText> */}
+      <FooterText><FooterLink href="https://annikalindberg-portfolio.netlify.app/" /></FooterText><FooterText><FooterLink href="https://www.linkedin.com/in/annika-lindberg-a3398b263/">Annikas LinkedIn Profile</FooterLink></FooterText><FooterText> <FooterLink href="https://github.com/annikalindberg">Annikas Github profile</FooterLink></FooterText>
     </FooterWrapper>
   );
 };
