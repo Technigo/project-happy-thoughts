@@ -47,7 +47,7 @@ export const App = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     }
-    fetch(`https://project-happy-thoughts-api-l8j3.onrender.com/thoughts/${id}/like`, options)
+    fetch('https://project-happy-thoughts-api-l8j3.onrender.com/thoughts/:thoughtId/like', options)
       .then((res) => res.json())
       .catch((error) => console(error))
       .finally(() => fetchThoughts(''))
