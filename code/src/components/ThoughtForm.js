@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-export const ThoughtForm = () => {
+export const ThoughtForm = ({ likeCount }) => {
   const [newThought, setNewThought] = useState('');
+  const [newName, setNewName] = useState('');
+  const [newCategory, setNewCategory] = useState();
   const [minMaxCount, setMinMaxCount] = useState(false);
 
   const API = 'https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app/thoughts'
@@ -14,12 +16,14 @@ export const ThoughtForm = () => {
       const options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: newThought })
+        body: JSON.stringify({ message: newThought, name: newName, category: newCategory })
       };
       fetch(`${API}`, options)
         .then((response) => response.json())
         .then(() => {
           setNewThought('');
+          setNewName('');
+          setNewCategory('')
           window.location.reload();
         })
     }
@@ -27,6 +31,14 @@ export const ThoughtForm = () => {
 
   const onNewThoughtChange = (event) => {
     setNewThought(event.target.value);
+  }
+
+  const onNewNameChange = (event) => {
+    setNewName(event.target.value);
+  }
+
+  const onNewCategoryChange = (event) => {
+    setNewCategory(event.target.value);
   }
 
   useEffect(() => {
@@ -49,17 +61,44 @@ export const ThoughtForm = () => {
           onChange={onNewThoughtChange}
           placeholder="Type your happy thought..." />
       </label>
+      <div className="form-input">
+        <label htmlFor="name-input">
+          <input
+            type="text"
+            name="name-input"
+            id="name-input"
+            className="text-input name"
+            value={newName}
+            onChange={onNewNameChange}
+            placeholder="Name..." />
+        </label>
+        <label htmlFor="category">
+          <select
+            id="category"
+            className="select"
+            onChange={onNewCategoryChange}
+            value={newCategory}>
+            <option value="">Category...</option>
+            <option value="Food thought">Food thought</option>
+            <option value="Project thought">Project thought</option>
+            <option value="Home thought">Home thought</option>
+          </select>
+        </label>
+      </div>
       <div className="form-details">
-        <p>
-          <span className={`number-count ${minMaxCount ? 'red-number' : ''}`}>
-            {newThought.length}
-          </span> / 140
-        </p>
         <button
           className="send-button"
           type="submit">
           ❤️ <span>Send Happy Thought</span> ❤️
         </button>
+        <div className="details-count">
+          <p>
+            <span className={`number-count ${minMaxCount ? 'red-number' : ''}`}>
+              {newThought.length}
+            </span> / 140
+          </p>
+          <p>Likes: {likeCount}</p>
+        </div>
       </div>
     </form>
   )

@@ -1,16 +1,22 @@
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  background: #FFB1A4;
-  background-size: cover;
+  background-color: #FFB1A4;
+
 	font: 1em/1.5 sans-serif;
-	display: grid;
-	place-items: center;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 code {
@@ -19,11 +25,44 @@ code {
 }
 
 /* GENERAL STYLE */
-.feed-container, .main-wrapper {
+
+#root {
+  height: 100%;
+}
+
+.main-wrapper {
+  padding: 20px 0 40px 0;
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.feed-wrapper {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   gap: 25px;
+}
+
+.feed-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  animation: fade-in 2s ease-in forwards;
 }
 
 .card, .form-container {
@@ -44,12 +83,44 @@ code {
 
 .text-input {
   box-sizing: border-box;
-  color: #000;
-  margin: 15px 0 10px;
+  margin: 15px 0 0 0;
   padding: 8px;
   resize: none;
   width: 100%;
   font-size: 16px;
+  border-radius: 10px;
+  font-family: "Courier New",
+    monospace;
+}
+
+.form-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.text-input.name {
+  max-width: 182px;
+  border: 1px solid #767676;
+  margin-top: 5px;
+  height: 30px;
+}
+
+.text-input.name::placeholder, .text-input::placeholder, select {
+  font-size: 15px;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  color: #ff3f318a;
+}
+
+select {
+  max-width: 107px;
+  border: 1px solid #767676;
+  margin-top: 5px;
+  height: 30px;
+  padding: 0 4px;
   border-radius: 10px;
 }
 
@@ -59,6 +130,14 @@ h3 {
   margin: 16px 0 5px 0;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
+  text-align: center;
+}
+
+.form-details {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .form-details p {
@@ -68,18 +147,44 @@ h3 {
 }
 
 .send-button {
-  background-color: #ffadad;
+  background-color:  #FFB1A4;
   border: none;
   border-radius: 20px;
   font-family: Segoe UI,sans-serif;
   padding: 10px 15px;
-  border: 1px solid #ffadad;
+  border: 1px solid  #FFB1A4;
 }
 
 .send-button:hover {
-  color: #ff3f31;
-  background-color: white;
-  border: 1px solid #ff3f31;
+	-webkit-animation: vibrate-1 0.5s linear infinite both;
+	        animation: vibrate-1 0.5s linear infinite both;
+}
+
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
 }
 
 .send-button span {
@@ -91,6 +196,13 @@ h3 {
   color: #ff3f31;
 }
 
+.details-count {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
 /* MESSAGE LIST STYLE */
 
 .card {
@@ -100,12 +212,22 @@ h3 {
 .card-details {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .happy-message {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+.happy-name {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
 .heart-container {
@@ -129,12 +251,21 @@ h3 {
 }
 
 .heart-active {
-  background-color: #ffadad;
+  background-color: #FFB1A4;
 }
 
 .date {
+  display: flex;
+  flex-direction: column;
   font-size: 14px;
   color: #afafaf;
+  max-width: 156px;
+  text-align: right;
+  margin: 0;
+}
+
+.empasis {
+  color: #ff3f31a1;
 }
 
 .total-hearts {
@@ -168,10 +299,6 @@ h3 {
   animation-delay: 1s;
 }
 
-.main-wrapper {
-  padding: 20px 0;
-}
-
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -198,11 +325,8 @@ h3 {
 @media (min-width:700px) {
 
   .feed-container {
-    max-height: 55vh;
     width: 100%;
-    padding-bottom: 20px;
   }
-
 }
 
 @media (max-width:500px) {
@@ -210,6 +334,7 @@ h3 {
  .card, .form-container {
     width: 300px;
   }
+
 }
 
 @media (max-width:350px) {
@@ -220,5 +345,10 @@ h3 {
 
   .send-button {
     margin-top: 20px;
+    max-width: 159px;
+  }
+
+  .form-details {
+    align-items: flex-end;
   } 
 }

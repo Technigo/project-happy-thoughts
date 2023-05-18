@@ -2,19 +2,23 @@
 import React, { useState, useEffect } from 'react';
 import { formatDistance } from 'date-fns';
 import { ThoughtForm } from './ThoughtForm';
+import { Loader } from './Loader';
 
 /* const API = 'https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app'
  */
 export const ThoughtFeed = () => {
   const [thoughtList, setThoughtList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [likeCount, setLikeCount] = useState(0)
 
   const fetchThoughts = () => {
     fetch('https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app/thoughts')
       .then((response) => response.json())
       .then((data) => setThoughtList(data.response))
       .catch((error) => console.log(error))
-      .finally(() => { setIsLoading(false) })
+      .finally(() => {
+        setTimeout(() => setIsLoading(false), 2000)
+      })
   }
 
   useEffect(() => {
@@ -23,8 +27,9 @@ export const ThoughtFeed = () => {
   }, []);
 
   const handleLikes = (_id) => {
+    setLikeCount(likeCount + 1)
     const options = {
-      method: 'PATCH',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       }
@@ -49,40 +54,46 @@ export const ThoughtFeed = () => {
   }
 
   return (
-    <>
-      <section className="form-container">
-        <ThoughtForm />
-      </section>
-      <section className="feed-container">
-        {!isLoading && thoughtList.map((thought) => {
-          return (
-            <div key={thought._id} className="card">
-              <p className="happy-message">{thought.message}</p>
-              <div className="card-details">
-                <div className="heart-container">
-                  <button
-                    type="button"
-                    className={`heart-button ${thought.heart > 0 ? 'heart-active' : ''}`}
-                    onClick={() => { handleLikes(thought._id, thought.heart); }}>
-                    <span
-                      role="img"
-                      className="heart-icon"
-                      aria-label="Like post">
-                      ❤️
+    <div className="main-wrapper">
+      <div className="feed-wrapper">
+        <section className="form-container">
+          <ThoughtForm likeCount={likeCount} />
+        </section>
+        <section className="feed-container">
+          {!isLoading && thoughtList.map((thought) => {
+            return (
+              <div key={thought._id} className="card">
+                <p className="happy-message">{thought.message}</p>
+                <div className="card-details">
+                  <div className="heart-container">
+                    <button
+                      type="button"
+                      className={`heart-button ${thought.heart > 0 ? 'heart-active' : ''}`}
+                      onClick={() => { handleLikes(thought._id, thought.heart); }}>
+                      <span
+                        role="img"
+                        className="heart-icon"
+                        aria-label="Like post">
+                        ❤️
+                      </span>
+                    </button>
+                    <span className="total-hearts">x {thought.heart}</span>
+                  </div>
+                  <p className="date">
+                    <span className="empasis">{thought.category}</span>
+                    <span>
+                      {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
                     </span>
-                  </button>
-                  <span className="total-hearts">x {thought.heart}</span>
+                    <span>{`${thought.name === '' ? '' : 'by'}`} <span className="empasis">{thought.name}</span></span>
+                  </p>
                 </div>
-                <p className="date">
-                  {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
-                </p>
               </div>
-            </div>
-          )
-        })}
-      </section>
-      {isLoading && (<span className="is-loading" />)}
-    </>
+            )
+          })}
+        </section>
+      </div>
+      {isLoading && (<Loader />)}
+    </div>
   )
 }
 
