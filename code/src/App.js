@@ -42,18 +42,18 @@ export const App = () => {
       .then(() => setNewThought(''));
   }
 
-  const handleLikeChange = (id) => {
+  const handleLikeChange = (thoughtId) => {
     const options = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://project-happy-thoughts-api-6anhpdtyoa-lz.a.run.app/thoughts/${id}/like`, options)
+    fetch(`https://project-happy-thoughts-api-6anhpdtyoa-lz.a.run.app/thoughts/${thoughtId}/like`, options)
       .then((res) => res.json())
-      .then(console.log('bajskorv'))
-      .then((error) => console.error(error))
-      .finally(() => fetchThoughts(''));
+      .then(console.log('like amount updated'))
+      .catch((error) => console.error(error))
+      .finally(() => fetchThoughts(''))
   }
 
   return (
