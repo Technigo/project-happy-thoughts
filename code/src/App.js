@@ -79,23 +79,28 @@ export const App = () => {
         'Content-Type': 'application/json'
       } }
 
+    setLoading(true);
+
     // In this fetch (network request) the argument is a url with the ID of the thought
     // witch number of likes should be updated
     // the options in this request is set to POST for we want to send a likes-value.
 
-    fetch(`https://project-happy-thoughts-api-4tdp4buvnq-lz.a.run.app/${LikeID}/like`, options)
-      .then((response) => response.json())
+    fetch(`https://project-happy-thoughts-api-4tdp4buvnq-lz.a.run.app/thoughts/${LikeID}/like`, options)
+      .then((banana) => banana.json())
       .then((data) => {
-        if (data.sucess) {
-          fetchThoughts()
+        if (data.success) {
+          fetchThoughts();
         } else {
-          console.error(data.message)
+          console.error(data.message);
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => {
+        setLoading(false);
+      });
+  };
     // After the request is completed the fetchThoughts function is executed
     // This updates the list of thoughts and also updates the number of likes in them
-  }
 
   // /////////////// MAIN APP RETURNS JXS //////////////////////// //
 
