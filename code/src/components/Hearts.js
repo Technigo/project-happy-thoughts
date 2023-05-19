@@ -4,7 +4,7 @@ import React from 'react';
 export const Hearts = ({ thought, fetchThoughts }) => {
   const onHeartCountIncreaseButtonClick = () => {
     const options = {
-      method: 'POST'
+      method: 'PATCH'
     }
     console.log('options', options)
 

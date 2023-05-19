@@ -15,7 +15,7 @@ export const App = () => {
     fetch('https://fiona-klacar-project-happy-thoughts-api.onrender.com/thoughts')
       .then((res) => res.json()) // converts the 'response' object to a JSON object
       .then((data) => setThoughtInput(data.response)) // updates the state with the data from the
-    // response using the 'setThoughtInput' function
+    // response using the 'setThoughtInput' function // changed from data to data.repsonse to make it work with my backend
       .catch((error) => console.error(error)) // catches errors
       .finally(() => { console.log('fetch was successful') }) // this is where setLoading(false)); would go
   }
