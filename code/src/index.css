@@ -8,7 +8,7 @@ body {
       sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FFB1A4;
+/*   background-color: #FFB1A4; */
 
 	font: 1em/1.5 sans-serif;
 }
@@ -130,7 +130,6 @@ h3 {
   margin: 16px 0 5px 0;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
-  text-align: center;
 }
 
 .form-details {
@@ -273,54 +272,13 @@ h3 {
   color: #8d8d8d;
 }
 
-.is-loading {
-  height: 150px;
-  display: block;
-  margin:15px auto;
-  position: relative;
-  box-sizing: border-box;
-  animation: rotation 2s linear infinite;
-}
 
-.is-loading::after,
-.is-loading::before {
-  content: '❤️';  
-  box-sizing: border-box;
-  position: absolute;
-  font-size: 75px;
-  top: 0;
-  border-radius: 50%;
-  animation: scale50 2s infinite ease-in-out;
-}
 
 .is-loading::before {
   top: auto;
   bottom: 0;
   animation-delay: 1s;
 }
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} 
-@keyframes scale50 {
-  0%, 100% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-  }
-} 
-
-  @keyframes starRotate {
-    0%{    transform: rotate(0deg) scale(0.15)}
-    50%{    transform: rotate(360deg) scale(1)}
-    100%{    transform: rotate(720deg) scale(0.15)}
-  } 
 
 @media (min-width:700px) {
 

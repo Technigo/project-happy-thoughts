@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { formatDistance } from 'date-fns';
 import { ThoughtForm } from './ThoughtForm';
 import { Loader } from './Loader';
+import { Background } from './Background';
 
 /* const API = 'https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app'
  */
@@ -55,6 +56,7 @@ export const ThoughtFeed = () => {
 
   return (
     <div className="main-wrapper">
+      <Background />
       <div className="feed-wrapper">
         <section className="form-container">
           <ThoughtForm likeCount={likeCount} />
