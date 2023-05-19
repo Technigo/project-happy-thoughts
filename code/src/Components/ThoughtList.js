@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { formatDistance } from 'date-fns';
 // the ThoughtList-component renders a list of thoughts that are passed in as props.
@@ -7,8 +8,7 @@ import { formatDistance } from 'date-fns';
 export const ThoughtList = ({
   loading,
   thoughts,
-  onLikesIncrease,
-  clickCount
+  onLikesIncrease
 }) => {
   if (loading) {
     return <div className="Loading">Loading</div>;
@@ -23,10 +23,10 @@ export const ThoughtList = ({
             <button
               type="button"
               className={list.hearts === 0 ? 'like-btn' : 'no-like-btn'}
-              onClick={() => onLikesIncrease(list.id)}>
+              onClick={() => onLikesIncrease(list._id)}>
               ❤️
             </button>
-            <p className="counter">x {list.hearts + clickCount}</p>
+            <p className="counter">x {list.heart}</p>
             <p className="date">
               {formatDistance(new Date(list.createdAt), Date.now(), {
                 addSuffix: true

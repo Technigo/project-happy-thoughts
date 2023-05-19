@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable max-len */
 /* eslint-disable spaced-comment */
 /* eslint-disable no-trailing-spaces */
@@ -12,9 +13,6 @@ export const App = () => {
   const [thoughts, setThoughts] = useState([]); //variable is used to store an array of objects, which will represent the thoughts fetched from the API.
   const [loading, setLoading] = useState(false); // a boolean value that indicates whether the API call is in progress.
   const [newMessage, setNewMessage] = useState(''); //variable to store the value of the text area in the NewThought component.
-
-  // A clickcount state wich handles clicks
-  const [clickCount, setClickCount] = useState(0);
 
   //handleNewThoughtsChange is a function that updates the newMessage state variable when the user types in the text area.
   const handleNewThoughtsChange = (event) => {
@@ -57,8 +55,23 @@ export const App = () => {
       .finally(() => setNewMessage(''));
   };
 
+  /* const onLikesIncrease = (LikeID) => {
+    const options = {
+      method: 'POST',
+      body: '',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }
+  
+    fetch(
+      `https://project-happy-thoughts-api-oivc6zag6a-lz.a.run.app/thoughts/${LikeID}/like`,
+      options
+    )
+      .catch((error) => error)
+      .finally(() => fetchThoughts())
+  } */
   const onLikesIncrease = (LikeID) => {
-    setClickCount(clickCount + 1);
     const options = {
       method: 'POST',
       headers: {
@@ -71,6 +84,15 @@ export const App = () => {
       options
     )
       .then((res) => res.json())
+      .then((tomato) => { 
+        const updatedThoughts = thoughts.map((thought) => {
+          if (thought._id === tomato._id) {
+            thought.heart += 1;
+          }
+          return thought;
+        });
+        setThoughts(updatedThoughts);
+      }) 
       .catch((error) => error);
   };
 
@@ -85,8 +107,7 @@ export const App = () => {
         <ThoughtList
           loading={loading}
           thoughts={thoughts}
-          onLikesIncrease={onLikesIncrease}
-          clickCount={clickCount} />
+          onLikesIncrease={onLikesIncrease} />
         <Footer />
       </div>
     </div>
