@@ -7,4 +7,4 @@ Using React and Postman to retrieve an API which allows all the students to post
 
 
 ## View it live
-https://jennifers-happy-thoughts-page.netlify.app/
+https://happy-thoughts-by-jennifer.netlify.app/
