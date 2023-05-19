@@ -36,6 +36,7 @@ export const Thoughts = ({ thoughtsList, setThoughtsList, loading }) => {
           return (
             <div className="single-thought" key={thought._id}>
               <p>{thought.message}</p>
+              <p className="category-tag">[{thought.category}]</p>
               <span className="heart-span">
                 <div className="heart-div">
                   <button onClick={() => handleLike(thought._id)} type="button" className="heart-button">❤️</button>
