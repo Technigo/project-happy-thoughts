@@ -27,7 +27,7 @@ export const App = () => {
   const fetchMessages = () => {
     fetch('https://project-happy-thoughts-api-ru2v7b5sba-lz.a.run.app/thoughts')
       .then((response) => response.json())
-      .then((data) => setMessageList(data))
+      .then((data) => setMessageList(data.reponse))
       .catch((error) => console.log(error))
       .finally(() => setLoading(false), setNewLike(false))
   }
@@ -48,7 +48,7 @@ export const App = () => {
       body: JSON.stringify({ message: newThoughts })
     }
     fetch('https://project-happy-thoughts-api-ru2v7b5sba-lz.a.run.app/thoughts', options)
-      .then((result) => result.json())
+      .then((response) => response.json())
       .then((data) => { setMessageList([data, ...messageList]) })
       .catch((error) => console.log(error))
       .finally(() => { setNewThoughts('')(setLoading(false)) });
