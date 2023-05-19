@@ -126,7 +126,7 @@ code {
 select {
   max-width: 168px;
   border: none;
-/*   border: 1px solid #023F92; */
+  cursor: pointer;
   margin-top: 5px;
   height: 30px;
   padding: 0 4px;
