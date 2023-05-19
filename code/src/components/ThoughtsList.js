@@ -6,7 +6,8 @@ import { TimeStamp } from "./TimeStamp";
 
 
 export const ThoughtsList = ({ loading, setLoading, thoughtList, setNewLike }) => {
-    
+    console.log(thoughtList)
+
     return (
         <section className="thoughtsListWrapper" >
             {thoughtList.map((singleThought) => (

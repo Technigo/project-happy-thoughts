@@ -15,21 +15,23 @@ export const App = () => {
   // create function to fetch thoughts from database
   const fetchThoughts = () => {
     //setLoading(true);
-    // console.log("fetchThoughts")
-    fetch("https://project-happy-thoughts-api-s7fgmoqnaa-lz.a.run.app")
+    console.log("fetchThoughts")
+    //  old API url https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts
+    // fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
+    fetch("https://project-happy-thoughts-api-s7fgmoqnaa-lz.a.run.app/thoughts")
+    // fetch("http://localhost:8080/thoughts")
       .then((result) => result.json())
       .then((json) => {
-        setThoughtsList(json)
-        // console.log(json)
+        setThoughtsList(json.response)
       })
       .catch(error => console.log(error))
       .finally(() => { setLoading(false), setNewLike(false) })
-
+    
   }
 
   // useEffect is triggered on restart,newLike and loading
   useEffect(() => {
-    // console.log("useEffect")
+    console.log("useEffect")
     if (newLike === true || loading === true) {
       fetchThoughts();
     }
@@ -47,7 +49,8 @@ export const App = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-
+    console.log("creating new thought")
+    console.log(newThoughts)
     const options =
     {
       method: 'POST',
@@ -59,11 +62,11 @@ export const App = () => {
       })
     }
 
-    fetch("https://project-happy-thoughts-api-s7fgmoqnaa-lz.a.run.app", options)
-      .then((result) => result.json())
+
+    fetch("https://project-happy-thoughts-api-s7fgmoqnaa-lz.a.run.app/thoughts", options)
+    .then((result) => result.json())
       .then((data) => {
         fetchThoughts()   //data.response)
-//        console.log(data)
       }
       )
       .catch((error) => console.error(error))
