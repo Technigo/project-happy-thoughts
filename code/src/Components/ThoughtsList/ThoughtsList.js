@@ -35,7 +35,7 @@ export const ThoughtsList = ({ loading, thoughts, theLikeIncreaser }) => { // <-
               onClick={() => theLikeIncreaser(array._id)}>❤️
             </button>
             <div className="counter-time-container">
-              <p className="counter">x {array.hearts}</p>
+              <p className="counter">x {array.likes}</p>
               <div className="time-div">
                 <p className="time">
                   {formatDistance(new Date(array.createdAt), Date.now(), { addSuffix: true })}
