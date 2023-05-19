@@ -9,6 +9,7 @@ export const Feed = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [newThought, setNewThought] = useState('')
   const [myLikesCount, setMyLikesCount] = useState(0)
+  const [username, setUsername] = useState('')
 
   const fetchThoughts = () => {
     fetch('https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app/thoughts')
@@ -31,11 +32,16 @@ export const Feed = () => {
       fetch('https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app/thoughts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: newThought })
+        body: JSON.stringify({ message: newThought, username })
       })
         .then(() => fetchThoughts())
         .catch((error) => console.log(error))
     }
+  }
+
+  const onUsernameChange = (event) => {
+    setUsername(event.target.value)
+    console.log(username)
   }
 
   const handleEnterKey = (event) => {
@@ -53,6 +59,7 @@ export const Feed = () => {
         }}
         characterCounter={140 - newThought.length}
         handleFormSubmit={handleFormSubmit}
+        onUsernameChange={onUsernameChange}
         handleEnterKey={handleEnterKey} />
 
       {!isLoading && thoughtsList.map((thought) => {
@@ -71,7 +78,8 @@ export const Feed = () => {
             thoughtMessage={thought.message}
             timeStamp={thought.createdAt}
             handleLikeSubmit={handleLikeSubmit}
-            likesCounter={thought.hearts} />
+            likesCounter={thought.hearts}
+            username={thought.username} />
         )
       })}
       {isLoading && (<h2>Loading happy thoughts...</h2>)}

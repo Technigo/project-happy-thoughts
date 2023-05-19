@@ -18,7 +18,7 @@ export const Thought = (props) => {
             <p>x{props.likesCounter}</p>
           </div>
           <div>
-            <p>{formatDistance(new Date(props.timeStamp), Date.now(), {
+            <p>Posted by {props.username} {formatDistance(new Date(props.timeStamp), Date.now(), {
               addSuffix: true
             })}
             </p>
