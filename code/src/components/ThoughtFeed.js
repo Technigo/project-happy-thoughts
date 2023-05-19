@@ -83,10 +83,10 @@ export const ThoughtFeed = () => {
                   </div>
                   <p className="date">
                     <span className="empasis">{thought.category}</span>
-                    <span>
+                    <span className="span-blue">
                       {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
                     </span>
-                    <span>{`${thought.name === '' ? '' : 'by'}`} <span className="empasis">{thought.name}</span></span>
+                    <span className="span-blue">{`${thought.name === '' ? '' : 'by'}`} <span className="empasis">{thought.name}</span></span>
                   </p>
                 </div>
               </div>

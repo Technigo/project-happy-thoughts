@@ -8,7 +8,7 @@ body {
       sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-/*   background-color: #FFB1A4; */
+  background-color: #023F92;
 
 	font: 1em/1.5 sans-serif;
 }
@@ -66,11 +66,11 @@ code {
 }
 
 .card, .form-container {
-  border: 1px solid #343434;
+  border: 1px solid #023F92;
   width: 400px;
-  box-shadow: 7px 7px 0px 0px #343434;
-  -webkit-box-shadow: 7px 7px 0px 0px #343434;
-  -moz-box-shadow: 7px 7px 0px 0px #343434;
+  box-shadow: 7px 7px 0px 0px #023F92;
+  -webkit-box-shadow: 7px 7px 0px 0px #023F92;
+  -moz-box-shadow: 7px 7px 0px 0px #023F92;
   padding: 10px 20px 20px 20px;
   overflow-wrap: break-word;
   border-radius: 10px;
@@ -91,6 +91,7 @@ code {
   border-radius: 10px;
   font-family: "Courier New",
     monospace;
+  border: 1px solid #023F92;
 }
 
 .form-input {
@@ -103,7 +104,7 @@ code {
 
 .text-input.name {
   max-width: 182px;
-  border: 1px solid #767676;
+  border: 1px solid #023F92;
   margin-top: 5px;
   height: 30px;
 }
@@ -112,12 +113,12 @@ code {
   font-size: 15px;
   font-family: "Courier New", monospace;
   font-size: 16px;
-  color: #ff3f318a;
+  color:  #ff3f31a1;
 }
 
 select {
   max-width: 107px;
-  border: 1px solid #767676;
+  border: 1px solid #023F92;
   margin-top: 5px;
   height: 30px;
   padding: 0 4px;
@@ -125,11 +126,11 @@ select {
 }
 
 h3 {
+  color: #023F92;
   font-weight: 700;
   font-size: 18px;
   margin: 16px 0 5px 0;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .form-details {
@@ -143,15 +144,34 @@ h3 {
   font-size: 14px;
   margin: 0;
   text-align: right;
+  color: #023F92;
 }
 
 .send-button {
-  background-color:  #FFB1A4;
+  background: rgb(254,127,103);
+background: linear-gradient(0deg, rgba(254,127,103,1) 0%, rgba(253,214,207,1) 100%);
+/*   background: rgb(255,177,164);
+background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 100%); */
+/*   background: rgb(255,102,74);
+  background: linear-gradient(0deg, rgba(255,102,74,1) 0%, rgba(253,214,207,1) 78%); */
+/*   background-color: #FFB1A4;; */
+ /*   background-color:  #FFB1A4; */
   border: none;
   border-radius: 20px;
   font-family: Segoe UI,sans-serif;
   padding: 10px 15px;
-  border: 1px solid  #FFB1A4;
+/*   border: 1px solid  #FFB1A4; */
+  color: #023F92;
+  font-weight: 700;
+/*     box-shadow: 3px 5px 0px 0px #023F92;
+  -webkit-box-shadow: 3px 5px 0px 0px #023F92;
+  -moz-box-shadow: 3px 5px 0px 0px #023F92;
+  border: 1px solid #023F92; */
+}
+
+.send-button span {
+  color: #023F92;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .send-button:hover {
@@ -220,13 +240,7 @@ h3 {
   font-size: 20px;
   font-weight: 900;
   margin-top: 10px;
-}
-
-.happy-name {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
-  font-size: 14px;
-  margin-bottom: 10px;
+  color: #023F92;
 }
 
 .heart-container {
@@ -242,15 +256,28 @@ h3 {
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  color: #afafaf
+  color: #afafaf;
 }
 
 .heart-icon:hover {
   font-size: 20px;
 }
 
+.heart-button:hover {
+   -webkit-animation: vibrate-1 0.5s linear infinite both;
+	        animation: vibrate-1 0.5s linear infinite both;
+}
+
 .heart-active {
-  background-color: #FFB1A4;
+  /* background-color: #FFB1A4; */
+  background: rgb(254,127,103);
+background: linear-gradient(0deg, rgba(254,127,103,1) 0%, rgba(253,214,207,1) 100%);
+  /* background: rgb(255,177,164);
+background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 100%); */
+/* box-shadow: 2px 2px 0px 0px #023F92;
+  -webkit-box-shadow: 2px 2px 0px 0px #023F92;
+  -moz-box-shadow: 2px 2px 0px 0px #023F92; */
+/*   border: 1px solid #023F92; */
 }
 
 .date {
@@ -261,6 +288,11 @@ h3 {
   max-width: 156px;
   text-align: right;
   margin: 0;
+  
+}
+
+.span-blue {
+  color: #023e92a1;
 }
 
 .empasis {
@@ -269,10 +301,8 @@ h3 {
 
 .total-hearts {
   font-size: 14px;
-  color: #8d8d8d;
+  color: #023e92a1;
 }
-
-
 
 .is-loading::before {
   top: auto;
