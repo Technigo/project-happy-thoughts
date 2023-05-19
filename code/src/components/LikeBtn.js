@@ -25,8 +25,8 @@ const LikeBtn = ({ thought, setNewLike }) => {
         body: ''
       }
 
-      fetch(`https://project-happy-thoughts-api-ru2v7b5sba-lz.a.run.app/thoughts/${thought._id}/like`, options)
-        .then((data) => data.json())
+      fetch(`https://project-happy-thoughts-ru2v7b5sba-lz.a.run.app/${thought._id}/like`, options)
+        .then((response) => response.json())
         .catch((error) => console.log(error))
         .finally(() => {
           setLiked(false)

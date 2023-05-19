@@ -4,7 +4,7 @@
 
 // OLD URL https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts
 
-// MY URL https://project-happy-thoughts-api-ru2v7b5sba-lz.a.run.app/thoughts
+// MY URL https://project-happy-thoughts-ru2v7b5sba-lz.a.run.app/thoughts
 
 import React, { useState, useEffect } from 'react';
 import MessageList from 'components/MessageList';
@@ -25,9 +25,9 @@ export const App = () => {
   }, [newLike, loading]);
 
   const fetchMessages = () => {
-    fetch('https://project-happy-thoughts-api-ru2v7b5sba-lz.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-ru2v7b5sba-lz.a.run.app/thoughts')
       .then((response) => response.json())
-      .then((data) => setMessageList(data.reponse))
+      .then((data) => setMessageList(data.response))
       .catch((error) => console.log(error))
       .finally(() => setLoading(false), setNewLike(false))
   }
@@ -47,9 +47,9 @@ export const App = () => {
       },
       body: JSON.stringify({ message: newThoughts })
     }
-    fetch('https://project-happy-thoughts-api-ru2v7b5sba-lz.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-ru2v7b5sba-lz.a.run.app/thoughts', options)
       .then((response) => response.json())
-      .then((data) => { setMessageList([data, ...messageList]) })
+      .then((data) => { setMessageList([data.response, ...messageList]) })
       .catch((error) => console.log(error))
       .finally(() => { setNewThoughts('')(setLoading(false)) });
   }
