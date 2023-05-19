@@ -27,18 +27,22 @@ export const ThoughtsList = ({ loading, thoughts, theLikeIncreaser }) => { // <-
 
     <section>
       {thoughts.map((array) => (/* Here we are mapping trough the thoughts array */
-        <div className="thoughts-list-container" key={array._id}>
-          <p className="thoughts-list-text">{array.message}</p>
+        <div className="thoughts-list-container" key={array.response._id}>
+          <p className="thoughts-list-text">{array.response.message}</p>
           <div className="like-count-time-container">
             <button
-              className={(array.likes === 0 ? 'like-button' : 'unliked-button')}
+              className={(array.response.likes === 0 ? 'like-button' : 'unliked-button')}
               onClick={() => theLikeIncreaser(array._id)}>❤️
             </button>
             <div className="counter-time-container">
-              <p className="counter">x {array.likes}</p>
+              <p className="counter">x {array.response.likes}</p>
               <div className="time-div">
                 <p className="time">
-                  {formatDistance(new Date(array.createdAt), Date.now(), { addSuffix: true })}
+                  {formatDistance(
+                    new Date(array.response.createdAt),
+                    Date.now(),
+                    { addSuffix: true }
+                  )}
                 </p>
               </div>
             </div>
