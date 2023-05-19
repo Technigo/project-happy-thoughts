@@ -31,7 +31,7 @@ export const ThoughtsList = ({ loading, thoughts, theLikeIncreaser }) => { // <-
           <p className="thoughts-list-text">{array.message}</p>
           <div className="like-count-time-container">
             <button
-              className={(array.hearts === 0 ? 'like-button' : 'unliked-button')}
+              className={(array.likes === 0 ? 'like-button' : 'unliked-button')}
               onClick={() => theLikeIncreaser(array._id)}>❤️
             </button>
             <div className="counter-time-container">

@@ -81,7 +81,7 @@ export const App = () => {
 
     // In this fetch (network request) the argument is a url with the ID of the thought
     // witch number of likes should be updated
-    // the options in this request is set to POST for we want to send a new heart-value.
+    // the options in this request is set to POST for we want to send a likes-value.
 
     fetch(`https://project-happy-thoughts-api-4tdp4buvnq-lz.a.run.app/${LikeID}/like`, options)
       .then((res) => res.json())
