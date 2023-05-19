@@ -84,9 +84,15 @@ export const App = () => {
     // the options in this request is set to POST for we want to send a likes-value.
 
     fetch(`https://project-happy-thoughts-api-4tdp4buvnq-lz.a.run.app/${LikeID}/like`, options)
-      .then(() => fetchThoughts())
-      .catch((error) => console.error(error));
-
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.sucess) {
+          setThoughts()
+        } else {
+          console.error(data.message)
+        }
+      })
+      .catch((error) => console.log(error));
     // After the request is completed the fetchThoughts function is executed
     // This updates the list of thoughts and also updates the number of likes in them
   }
