@@ -87,7 +87,7 @@ export const App = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.sucess) {
-          setThoughts()
+          fetchThoughts()
         } else {
           console.error(data.message)
         }
