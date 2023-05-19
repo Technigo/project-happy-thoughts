@@ -9,9 +9,9 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-gmyhdlk6aa-lz.a.run.app/thoughts')
       .then((res) => res.json())
-      .then((data) => setThoughtsList(data))
+      .then((data) => setThoughtsList(data.response))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false))
   }
@@ -33,11 +33,11 @@ export const App = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        message: newThought
+        text: newThought
       })
     }
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-gmyhdlk6aa-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => setNewThought(''))
@@ -50,7 +50,7 @@ export const App = () => {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+    fetch(`https://project-happy-thoughts-api-gmyhdlk6aa-lz.a.run.app/thoughts/${id}/like`, options)
       .then((res) => res.json())
       .catch((error) => console(error))
       .finally(() => fetchThoughts(''))

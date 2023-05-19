@@ -1,13 +1,15 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+This week we were creating a twitter, but with love. Fetching post and get requests from an API.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+UPDATE: my own created backend added to the project.
 
 ## The problem
+ 
+ We got a pretty strict design to follow but it was not all that hard. I got the API working pretty smoothly and not many problems in the way.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+ UPDATE: after fetching my own API I had to make some changes in the code. I used some different namings, but when I figuredd that out it worked fine. Did not change anything in the deign fot this week as I like the "cleaness" of it.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://tbl-happy-thoughts.netlify.app/

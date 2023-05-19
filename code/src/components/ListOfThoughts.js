@@ -13,7 +13,7 @@ export const ListOfThoughts = ({ thoughtsList, loading, handleLikeChange }) => {
       {thoughtsList.map((thought) => {
         return (
           <div className="thought-box">
-            <p key={thought._id}>{thought.message}</p>
+            <p key={thought._id}>{thought.text}</p>
             <div className="likes-and-time">
               <div className="likes-section">
                 <button
