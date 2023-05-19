@@ -1,12 +1,13 @@
 /* eslint-disable no-underscore-dangle */
 
 import React from 'react';
-import { formatDistanceStrict } from 'date-fns';
+import { formatDistance } from 'date-fns';
 
 const HappyThoughtTrain = ({ happyThoughtTrain, onGiveHeartChange }) => {
   return (
     <section className="list-wrapper">
       {happyThoughtTrain.map((thought) => {
+        console.log('thought.createdAt:', thought.createdAt);
         return (
           <div className="list-box" key={thought._id}>
             <h1 className="list-message"> {thought.message}</h1>
@@ -18,7 +19,7 @@ const HappyThoughtTrain = ({ happyThoughtTrain, onGiveHeartChange }) => {
               </button>
               <p className="give-heart"> x {thought.hearts}</p>
               <p className="time-stamp">
-                {formatDistanceStrict(new Date(thought.createdAt), Date.now(), {
+                {formatDistance(new Date(thought.createdAt), Date.now(), {
                   addSuffix: true
                 })}
               </p>
