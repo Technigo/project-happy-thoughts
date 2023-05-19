@@ -17,7 +17,7 @@ const NewPost = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: newPost })
       };
-      fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', Submit)
+      fetch('https://project-happy-thoughts-api-es4c3pthxq-lz.a.run.app/thoughts', Submit)
         .then((response) => response.json())
         .then(() => {
           setConfetti({ showConfetti: true })

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ReactTimeAgo from 'react-time-ago';
 import NewPost from './NewPost.js';
 
-const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+const API = 'https://project-happy-thoughts-api-es4c3pthxq-lz.a.run.app/thoughts'
 
 const Feed = () => {
   const [thoughtsList, setThoughtsList] = useState([]);
@@ -19,7 +19,7 @@ const Feed = () => {
   }, []);
 
   const HandleLike = (thoughtId) => {
-    fetch(`${API}/${thoughtId}/like`, { method: 'POST' })
+    fetch(`${API}/${thoughtId}/like`, { method: 'PATCH' })
       .then((response) => response.json())
       .then((data) => {
         const UpdateLikes = thoughtsList.map((like) => {
