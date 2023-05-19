@@ -91,8 +91,13 @@ code {
   border-radius: 10px;
   font-family: "Courier New",
     monospace;
-  border: 1px solid #023F92;
+    box-shadow: inset 8px 8px 8px #cbced1,
+    inset -8px -8px 8px #ffffff;
+  border: none;
+  background: #f2f0f0;
 }
+
+
 
 .form-input {
   display: flex;
@@ -104,7 +109,6 @@ code {
 
 .text-input.name {
   max-width: 182px;
-  border: 1px solid #023F92;
   margin-top: 5px;
   height: 30px;
 }
@@ -113,16 +117,34 @@ code {
   font-size: 15px;
   font-family: "Courier New", monospace;
   font-size: 16px;
-  color:  #ff3f31a1;
+  color:  #ff3f31b8;
+  font-weight: 500;
+}
+
+.text-input.name::placeholder, .text-input::placeholder {
+  padding: 9px;
 }
 
 select {
-  max-width: 107px;
-  border: 1px solid #023F92;
+  max-width: 168px;
+  border: none;
+/*   border: 1px solid #023F92; */
   margin-top: 5px;
   height: 30px;
   padding: 0 4px;
   border-radius: 10px;
+  box-shadow: 
+  12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset,
+  -8px -8px 12px 0 rgba(0, 0, 0, .25) inset;
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
 }
 
 h3 {
@@ -148,8 +170,11 @@ h3 {
 }
 
 .send-button {
-  background: rgb(254,127,103);
-background: linear-gradient(0deg, rgba(254,127,103,1) 0%, rgba(253,214,207,1) 100%);
+  background: #FFB1A4;
+  box-shadow: 
+  10px 10px 14px 0 rgba(255, 255, 255, 0.3) inset,
+  -5px -5px 10px 0 rgba(0, 0, 0, .25) inset;
+/* background: linear-gradient(0deg, rgba(254,127,103,1) 0%, rgba(253,214,207,1) 100%); */
 /*   background: rgb(255,177,164);
 background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 100%); */
 /*   background: rgb(255,102,74);
@@ -162,7 +187,7 @@ background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 10
   padding: 10px 15px;
 /*   border: 1px solid  #FFB1A4; */
   color: #023F92;
-  font-weight: 700;
+  font-weight: 500;
 /*     box-shadow: 3px 5px 0px 0px #023F92;
   -webkit-box-shadow: 3px 5px 0px 0px #023F92;
   -moz-box-shadow: 3px 5px 0px 0px #023F92;
@@ -257,6 +282,9 @@ background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 10
   border: none;
   cursor: pointer;
   color: #afafaf;
+  box-shadow: 
+  10px 10px 14px 0 rgba(255, 255, 255, 0.3) inset,
+  -5px -5px 10px 0 rgba(0, 0, 0, .25) inset;
 }
 
 .heart-icon:hover {
@@ -270,6 +298,9 @@ background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 10
 
 .heart-active {
   /* background-color: #FFB1A4; */
+  box-shadow: 
+  10px 10px 14px 0 rgba(255, 255, 255, 0.3) inset,
+  -5px -5px 10px 0 rgba(0, 0, 0, .25) inset;
   background: rgb(254,127,103);
 background: linear-gradient(0deg, rgba(254,127,103,1) 0%, rgba(253,214,207,1) 100%);
   /* background: rgb(255,177,164);
@@ -321,6 +352,10 @@ background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 10
 
  .card, .form-container {
     width: 300px;
+  }
+
+  select {
+    max-width: 107px;
   }
 
 }

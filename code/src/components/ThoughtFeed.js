@@ -5,8 +5,6 @@ import { ThoughtForm } from './ThoughtForm';
 import { Loader } from './Loader';
 import { Background } from './Background';
 
-/* const API = 'https://project-happy-thoughts-api-3t72lksv4a-lz.a.run.app'
- */
 export const ThoughtFeed = () => {
   const [thoughtList, setThoughtList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
