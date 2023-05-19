@@ -21,8 +21,8 @@ export const LikeButton = ({ thought, setNewLike }) => {
                 body: ''
             }
 
-//            fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, options)
-            fetch(`https://https://project-happy-thoughts-api-s7fgmoqnaa-lz.a.run.app/thoughts/${thought._id}/like`, options)
+            
+            fetch(`https://project-happy-thoughts-api-s7fgmoqnaa-lz.a.run.app/thoughts/${thought._id}/like`, options)
                 .then((data) => data.json())
                 .catch((error) => {
                     console.error(error)
@@ -42,7 +42,7 @@ export const LikeButton = ({ thought, setNewLike }) => {
                 style={{
                     backgroundColor: liked ? '#FFADAD' : '',
                     color: liked ? 'black' : ''
-                  }}
+                }}
                 value={thought}
                 onClick={onButtonClick}>
                 <span>❤️</span>

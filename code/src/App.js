@@ -17,9 +17,7 @@ export const App = () => {
     //setLoading(true);
     console.log("fetchThoughts")
     //  old API url https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts
-    // fetch("https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts")
     fetch("https://project-happy-thoughts-api-s7fgmoqnaa-lz.a.run.app/thoughts")
-    // fetch("http://localhost:8080/thoughts")
       .then((result) => result.json())
       .then((json) => {
         setThoughtsList(json.response)
