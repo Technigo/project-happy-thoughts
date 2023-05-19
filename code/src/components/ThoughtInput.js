@@ -8,7 +8,7 @@ export const ThoughtInput = ({ eachThought, onEachThoughtChange, onFormSubmit })
       <textarea
         value={eachThought}
         onChange={onEachThoughtChange}
-        placeholder="React is making me happy!" />
+        placeholder="This is my happy thought!" />
       <div className="characterCount">{eachThought.length < 5 || eachThought.length > 140 ? (
         <p className="redText">{eachThought.length}/140</p>
       ) : (

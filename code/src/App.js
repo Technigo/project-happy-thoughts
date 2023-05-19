@@ -11,7 +11,8 @@ export const App = () => {
   // because the Thought Input changes state when a new thought is added
 
   const fetchThoughts = () => {
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    // fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://fiona-klacar-project-happy-thoughts-api.onrender.com/thoughts')
       .then((res) => res.json()) // converts the 'response' object to a JSON object
       .then((data) => setThoughtInput(data)) // updates the state with the data from the
     // response using the 'setThoughtInput' function
@@ -44,7 +45,8 @@ export const App = () => {
       })
     }
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    // fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://fiona-klacar-project-happy-thoughts-api.onrender.com/thoughts', options)
       .then((res) => res.json())
       .then((data) => console.log(data)) // Don't put setThoughtInput as the whole thing will be replaced
       .catch((error) => console.error(error)) // catches errors

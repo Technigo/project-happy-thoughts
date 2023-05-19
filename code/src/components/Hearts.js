@@ -8,7 +8,8 @@ export const Hearts = ({ thought, fetchThoughts }) => {
     }
     console.log('options', options)
 
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, options)
+    // fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like`, options)
+    fetch(`https://fiona-klacar-project-happy-thoughts-api.onrender.com/thoughts/${thought._id}/like`, options)
       .then((res) => res.json())
       .then((data) => console.log(data))
       .catch((error) => console.log(error))
