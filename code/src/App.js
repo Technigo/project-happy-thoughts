@@ -69,7 +69,7 @@ export const App = () => {
         const updatedThoughtList = thoughtList.map((thought) => {
           if (thought._id === data._id) {
             return {
-              thought,
+              ...thought,
               hearts: data.hearts
             };
           }
