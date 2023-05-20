@@ -10,6 +10,8 @@ export const Feed = () => {
   const [newThought, setNewThought] = useState('')
   const [myLikesCount, setMyLikesCount] = useState(0)
   const [username, setUsername] = useState('')
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState('');
 
   const APIBaseURL = 'http://localhost:8080/thoughts'
 
@@ -17,6 +19,8 @@ export const Feed = () => {
     fetch(`${APIBaseURL}`)
       .then((response) => response.json())
       .then((data) => setThoughtsList(data.body.thoughtsList))
+      .then((data) => setCurrentPage(data.body.currentPage))
+      .then((data) => setTotalPages(data.body.totalPages))
       .catch((error) => console.log(error))
       .finally(() => { setIsLoading(false) })
   }
@@ -52,6 +56,16 @@ export const Feed = () => {
     }
   };
 
+  const onPreviousPageClick = () => {
+    setCurrentPage(parseInt(currentPage, 10) - 1);
+  };
+
+  const onNextPageClick = () => {
+    setCurrentPage(parseInt(currentPage, 10) + 1);
+  };
+
+  console.log({ currentPage, totalPages })
+
   return (
     <div>
       <Header myLikesCount={myLikesCount} />
@@ -63,6 +77,12 @@ export const Feed = () => {
         handleFormSubmit={handleFormSubmit}
         onUsernameChange={onUsernameChange}
         handleEnterKey={handleEnterKey} />
+
+      <div className="page-buttons-wrapper">
+        <p>Page {currentPage} of {totalPages}</p>
+        <button className="page-button" type="button" onClick={onPreviousPageClick} disabled={currentPage === 1}>Prev</button>
+        <button className="page-button" type="button" onClick={onNextPageClick} disabled={currentPage === totalPages}>Next</button>
+      </div>
 
       {!isLoading && thoughtsList.map((thought) => {
         const handleLikeSubmit = () => {
