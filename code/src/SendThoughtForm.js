@@ -12,8 +12,8 @@ export const SendThoughtForm = (props) => {
           placeholder="Type your happy thought here..."
           maxLength="140" />
         <div className="characterCounter">{props.characterCounter} characters left</div>
-        <label className="username" htmlFor="username">
-          Thought by:
+        <label className="usernameInput" htmlFor="username">
+          Posted by:
           <input
             type="text"
             value={props.username}

@@ -139,6 +139,7 @@ textarea{
   padding:10px;
   max-width:250px;
   border-radius: 20px;
+  align-self:center;
 }
 
 .send-button:hover{
@@ -196,6 +197,16 @@ textarea{
   flex-direction: row;
   gap:10px;
 }
+
+.usernameInput{
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 
 
  @media (max-width: 600px)  {
