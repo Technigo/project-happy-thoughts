@@ -27,7 +27,7 @@ export const NewPost = ({ newPost, fetchThoughts }) => {
         body: JSON.stringify({ message: newThought })
       };
 
-      fetch('https://project-happy-thoughts-api-t716.onrender.com/thoughts', options)
+      fetch('https://project-happy-thoughts-api-kr5kua5o2a-lz.a.run.app/thoughts', options)
         .then((response) => response.json())
         .then((data) => {
           newPost(data);

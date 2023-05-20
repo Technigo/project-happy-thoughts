@@ -15,7 +15,7 @@ export const PostFooter = ({ thought }) => {
     }
 
     // eslint-disable-next-line no-underscore-dangle
-    fetch(`https://project-happy-thoughts-api-t716.onrender.com/thoughts/${thought._id}/like`, options)
+    fetch(`https://project-happy-thoughts-api-kr5kua5o2a-lz.a.run.app/thoughts/${thought._id}/like`, options)
       .then((response) => response.json())
       .then((updatedThought) => setCurrentThought(updatedThought))
       .catch((error) => console.log(error))

@@ -10,9 +10,9 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://project-happy-thoughts-api-t716.onrender.com/thoughts')
+    fetch('https://project-happy-thoughts-api-kr5kua5o2a-lz.a.run.app/thoughts')
       .then((response) => response.json())
-      .then((data) => setPostList(data))
+      .then((data) => setPostList(data.response))
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false) })
   }
