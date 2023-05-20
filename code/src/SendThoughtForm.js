@@ -17,6 +17,8 @@ export const SendThoughtForm = (props) => {
           <input
             type="text"
             value={props.username}
+            minLength={2}
+            maxLength={20}
             onChange={props.onUsernameChange} />
         </label>
         <button className="send-button" type="submit" onKeyDown={props.handleEnterKey}> ❤️ Send Happy Thought ❤️ </button>

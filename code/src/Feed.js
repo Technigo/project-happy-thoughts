@@ -9,26 +9,28 @@ export const Feed = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [newThought, setNewThought] = useState('')
   const [myLikesCount, setMyLikesCount] = useState(0)
-  const [username, setUsername] = useState('')
+  const [username, setUsername] = useState('Anonymous')
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState('');
 
   const APIBaseURL = 'http://localhost:8080/thoughts'
 
   const fetchThoughts = () => {
-    fetch(`${APIBaseURL}`)
+    fetch(`${APIBaseURL}?page=${currentPage}`)
       .then((response) => response.json())
-      .then((data) => setThoughtsList(data.body.thoughtsList))
-      .then((data) => setCurrentPage(data.body.currentPage))
-      .then((data) => setTotalPages(data.body.totalPages))
+      .then((data) => {
+        setThoughtsList(data.body.thoughtsList);
+        setCurrentPage(data.body.currentPage);
+        setTotalPages(data.body.totalPages);
+      })
       .catch((error) => console.log(error))
       .finally(() => { setIsLoading(false) })
   }
 
   useEffect(() => {
     setIsLoading(true);
-    setInterval(fetchThoughts(), 2000);
-  }, []);
+    fetchThoughts();
+  }, [currentPage]);
 
   const handleFormSubmit = (event) => {
     event.preventDefault()
@@ -40,7 +42,11 @@ export const Feed = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: newThought, username })
       })
-        .then(() => fetchThoughts())
+        .then(() => {
+          setNewThought('');
+          setUsername('Anonymous');
+          fetchThoughts();
+        })
         .catch((error) => console.log(error))
     }
   }
@@ -51,7 +57,7 @@ export const Feed = () => {
   }
 
   const handleEnterKey = (event) => {
-    if (event.KeyCode === 13) {
+    if (event.keyCode === 13) {
       handleFormSubmit();
     }
   };
@@ -80,8 +86,10 @@ export const Feed = () => {
 
       <div className="page-buttons-wrapper">
         <p>Page {currentPage} of {totalPages}</p>
-        <button className="page-button" type="button" onClick={onPreviousPageClick} disabled={currentPage === 1}>Prev</button>
-        <button className="page-button" type="button" onClick={onNextPageClick} disabled={currentPage === totalPages}>Next</button>
+        <div>
+          <button className="page-button" type="button" onClick={onPreviousPageClick} disabled={currentPage === 1}>Prev</button>
+          <button className="page-button" type="button" onClick={onNextPageClick} disabled={currentPage === totalPages}>Next</button>
+        </div>
       </div>
 
       {!isLoading && thoughtsList.map((thought) => {
