@@ -5,8 +5,8 @@ import moment from 'moment';
 const Feed = () => {
   const [stateVariable, setStateVariable] = useState('');
   const [thoughtsList, setThoughtsList] = useState([]);
-  const APIEndpoint = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
-
+  // const APIEndpoint = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
+  const APIEndpoint = 'https://project-happy-thoughts-api-sgcqkoiltq-lz.a.run.app/thoughts';
   // Fetching
 
   const fetchHappy = () => {
@@ -33,12 +33,12 @@ const Feed = () => {
   }
   const increaseLike = (thought) => {
     const options = {
-      method: 'POST'
+      method: 'PATCH'
     }
 
     console.log('options', options)
     // eslint-disable-next-line no-underscore-dangle
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thought._id}/like
+    fetch(`https://project-happy-thoughts-api-sgcqkoiltq-lz.a.run.app/thoughts/${thought._id}/like
     `, options)
       .then((response) => response.json())
       .then((data) => { console.log(data) })
