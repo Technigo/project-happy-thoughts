@@ -345,7 +345,7 @@ background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 10
 
 .blobSvg {
   width: auto;
-  height: 100%;
+  height: 120%;
 }
 
 }
@@ -358,6 +358,11 @@ background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 10
 
   select {
     max-width: 107px;
+  }
+
+  .text-input, select {
+    border: 1px solid #023F92;
+    background: white;
   }
 
 }
@@ -375,10 +380,5 @@ background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 10
 
   .form-details {
     align-items: flex-end;
-  }
-
-  .text-input, select {
-    border: 1px solid #023F92;
-    background: white;
   }
 }
