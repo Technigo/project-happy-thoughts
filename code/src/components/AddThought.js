@@ -5,8 +5,8 @@ import CreatePost from './CreatePost';
 import Loading from './Loading';
 import '../index.css'
 
-const API = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
-const LIKES_URL = (id) => `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`
+const API = 'https://project-happy-thoughts-api-m6dxuape5q-lz.a.run.app/thoughts'
+const LIKES_URL = (id) => `https://project-happy-thoughts-api-m6dxuape5q-lz.a.run.app/thoughts/${id}/like`
 
 const AddThought = () => {
   const [posts, setPosts] = useState([]);
@@ -18,7 +18,8 @@ const AddThought = () => {
   const fetchPosts = () => {
     fetch(API)
       .then((res) => res.json())
-      .then((data) => setPosts(data))
+      .then((data) => setPosts(data.response))
+      .catch((err) => console.log(err))
       .finally(() => setLoading(false))
   }
 
@@ -36,9 +37,10 @@ const AddThought = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message: newPost })
+      body: JSON.stringify({ text: newPost })
     };
     fetch(API, options)
+      .then((res) => res.json())
       .then(() => {
         fetchPosts();
         setNewPost('');
@@ -71,7 +73,7 @@ const AddThought = () => {
         newPost={newPost}
         setNewPost={setNewPost} />
       {posts.map((post) => (
-        <ListThought key={post._id} post={post} handleLikes={handleLikes} />
+        <ListThought key={post._id} post={post.text} handleLikes={handleLikes} />
       ))}
     </div>
   )

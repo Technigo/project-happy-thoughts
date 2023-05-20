@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CreatePost = ({ handleSubmitPosts, newPost, setNewPost, id }) => {
+const CreatePost = ({ handleSubmitPosts, newPost, setNewPost }) => {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
@@ -8,7 +8,7 @@ const CreatePost = ({ handleSubmitPosts, newPost, setNewPost, id }) => {
     }
   };
   return (
-    <form onSubmit={handleSubmitPosts} key={id}>
+    <form onSubmit={handleSubmitPosts}>
       <div className="main-post">
         <h1>What is making you happy right now?</h1>
         <div>

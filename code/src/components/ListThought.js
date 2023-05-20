@@ -6,7 +6,7 @@ const ListThought = ({ post, handleLikes }) => {
   return (
     <div className="post-card">
       <div className="post-message-wrapper">
-        <p>{post.message}</p>
+        <p>{post.text}</p>
       </div>
       <div className="post-bottom">
         <div className="likes-wrapper">
