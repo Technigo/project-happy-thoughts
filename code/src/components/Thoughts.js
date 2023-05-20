@@ -37,19 +37,9 @@ export const Thoughts = ({ API_URL }) => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+    console.log(newThought)
 
-    const options = {
-      method: 'POST',
-
-      body: JSON.stringify({
-        message: newThought
-      })
-    };
-
-    fetch(
-      API_URL,
-      options
-    )
+    fetch(`${API_URL}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: newThought }) })
       .then((res) => res.json())
       .then(() => fetchHappyThoughts())
       .finally(() => handleFormCleanup());
