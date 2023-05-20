@@ -10,7 +10,7 @@ export const App = () => {
 
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-potyd2almq-lz.a.run.app/thoughts')
       .then((res) => {
         return res.json();
       })
@@ -47,7 +47,7 @@ export const App = () => {
       })
     }
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-potyd2almq-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => handleFormCleanup());
@@ -61,7 +61,7 @@ export const App = () => {
       }
     }
 
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, options)
+    fetch(`https://project-happy-thoughts-api-potyd2almq-lz.a.run.app/thoughts/${_id}/like`, options)
       .then((res) => {
         return res.json();
       })
