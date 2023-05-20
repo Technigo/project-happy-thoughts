@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Background = () => {
   return (
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="120%" id="blobSvg" transform="rotate(16)" style={{ opacity: '1', position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1' }}>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" transform="rotate(16)" className="blobSvg">
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" style={{ stopColor: 'rgb(253, 214, 207)' }} />

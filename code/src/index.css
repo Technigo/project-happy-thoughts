@@ -76,6 +76,16 @@ code {
   border-radius: 10px;
 }
 
+.blobSvg {
+  width: 120%;
+  opacity: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
 /* FORM STYLE */
 .form-container {
   background: #f2f0f0;
@@ -117,10 +127,6 @@ code {
   font-size: 16px;
   color:  #ff3f31b8;
   font-weight: 500;
-}
-
-.text-input.name::placeholder, .text-input::placeholder {
-/*   padding: 8px; */
 }
 
 select {
@@ -335,6 +341,15 @@ background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 10
   }
 }
 
+@media (max-width:900px) {
+
+.blobSvg {
+  width: auto;
+  height: 100%;
+}
+
+}
+
 @media (max-width:500px) {
 
  .card, .form-container {
@@ -360,5 +375,10 @@ background: linear-gradient(0deg, rgba(255,177,164,1) 0%, rgba(253,214,207,1) 10
 
   .form-details {
     align-items: flex-end;
-  } 
+  }
+
+  .text-input, select {
+    border: 1px solid #023F92;
+    background: white;
+  }
 }
