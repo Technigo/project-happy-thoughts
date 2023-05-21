@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { SendThoughtForm } from 'SendThoughtForm';
