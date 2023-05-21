@@ -54,7 +54,7 @@ export const SendThoughtForm = (props) => {
           placeholder="Type your happy thought here..."
           maxLength="140" />
         <div className="characterCounter">{140 - newThought.length} characters left</div>
-        <div clasname="username-tags-wrapper">
+        <div className="username-tags-wrapper">
           <label className="usernameInput" htmlFor="username">
           Posted by:
             <input
@@ -62,7 +62,7 @@ export const SendThoughtForm = (props) => {
               value={username}
               minLength={2}
               maxLength={20}
-              placeholder="John Doe"
+              placeholder="Your name"
               onChange={handleUsernameChange} />
           </label>
           <label className="tagsInput" htmlFor="tags">
