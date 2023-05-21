@@ -9,23 +9,20 @@
   },
   "env": {
     "node": true,
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "parserOptions": {
     "parser": "@babel/eslint-parser",
     "requireConfigFile": false,
     "sourceType": "module",
-    "ecmaVersion": 2017,
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true,
-      "modules": true
-    }
+    "ecmaVersion": 2018
   },
   "plugins": [
     "react-hooks"
   ],
   "rules": {
+    "no-underscore-dangle": "off",
     "react/function-component-definition": [
       2,
       {

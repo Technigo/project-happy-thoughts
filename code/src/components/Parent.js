@@ -13,6 +13,7 @@ import Loader from 'Loader';
 
 const Parent = () => {
   const [latestMessage, setLatestMessage] = useState(null)
+  const [sendName, setSendName] = useState('');
   const [thoughtsList, setThoughtsList] = useState([]);
   const [sendThought, setSendThought] = useState('');
   const [loading, setLoading] = useState(false);
@@ -23,11 +24,11 @@ const Parent = () => {
   // When everything is loaded we set loading (and loader) to false
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://science-lab.onrender.com/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughtsList(data))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+      .finally(() => { setLoading(false) });
   }
 
   // This is an React hook called useEffect. It executes the fetchThoughts function.
@@ -46,7 +47,7 @@ const Parent = () => {
         'Content-type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, options)
+    fetch(`https://science-lab.onrender.com/thoughts/${_id}/like`, options)
       .then((response) => response.json())
       .then(() => fetchThoughts())
       .catch((error) => console.log(error))
@@ -59,9 +60,10 @@ const Parent = () => {
   // Submits a new thought by sending a POST request to the API.
 
   const submitThought = () => {
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', {
+    fetch('https://science-lab.onrender.com/thoughts', {
       method: 'POST',
       body: JSON.stringify({
+        name: `${sendName}`,
         message: `${sendThought}`
       }),
       headers: { 'Content-Type': 'application/json' }
@@ -72,7 +74,11 @@ const Parent = () => {
         setLatestMessage(data._id)
       })
       .catch((error) => console.log(error))
-      .finally(() => { setLoading(false); setSendThought('') });
+      .finally(() => {
+        setLoading(false);
+        setSendName('');
+        setSendThought('')
+      });
   }
   // data represents the new thought object received after submitting the form.
   // ...thoughtsList expands the elements of the current thoughtsList array.
@@ -80,8 +86,8 @@ const Parent = () => {
   // The setThoughtsList function updates the state of thoughtsList with the new array.
 
   // Handles form submission for the new thought.
-  const onSubmit = (event) => {
-    event.preventDefault();
+  const onSubmit = (e) => {
+    e.preventDefault();
     submitThought();
   }
 
@@ -96,14 +102,18 @@ const Parent = () => {
       {loading && <div className="loader-container"><Loader /></div>}
       <div className={`content-container ${loading ? '' : 'visible'}`}>
         <SubmitForm
+          sendName={sendName}
+          setSendName={setSendName}
           sendThought={sendThought}
           setSendThought={setSendThought}
           onSubmit={onSubmit} />
         <ThoughtCard
           onHeartButtonClick={onHeartButtonClick}
           thoughtsList={thoughtsList}
+          setThoughtsList={setThoughtsList}
           latestMessage={latestMessage}
           loading={loading} />
+
         <Footer />
       </div>
     </div>
