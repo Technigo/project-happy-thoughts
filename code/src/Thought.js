@@ -25,6 +25,9 @@ export const Thought = (props) => {
             </p>
           </div>
         </div>
+        <div>
+          <p>#{props.tag}</p>
+        </div>
       </article>
     </div>
   )

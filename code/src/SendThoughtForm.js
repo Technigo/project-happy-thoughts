@@ -23,14 +23,14 @@ export const SendThoughtForm = (props) => {
               onChange={props.onUsernameChange} />
           </label>
           <label className="tagsInput" htmlFor="tags">
-          Tags:
+          Tag:
             <input
               type="text"
               value={props.tags}
-              minLength={4}
-              maxLength={30}
-              placeholder="work, life, happy"
-              onChange={props.onTagsInput} />
+              minLength={1}
+              maxLength={10}
+              placeholder="random"
+              onChange={props.handleTagInput} />
           </label>
         </div>
         <button className="send-button" type="submit" onKeyDown={props.handleEnterKey}> ❤️ Send Happy Thought ❤️ </button>

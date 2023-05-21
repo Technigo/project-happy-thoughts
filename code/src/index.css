@@ -140,6 +140,7 @@ textarea{
   max-width:250px;
   border-radius: 20px;
   align-self:center;
+  margin-top:10px;
 }
 
 .send-button:hover{
@@ -205,6 +206,7 @@ textarea{
 input[type="text"] {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+    max-width: 100px;
 }
 .page-buttons-wrapper{
   display:flex;
@@ -217,8 +219,6 @@ input[type="text"] {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
 }
-
-
 
  @media (max-width: 600px)  {
  
