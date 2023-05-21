@@ -31,7 +31,7 @@ export const App = () => {
       }
     };
     fetch(
-      `https://project-happy-thoughts-api-hgwjnnqcva-lz.a.run.app/thoughts${id}/like`,
+      `https://project-happy-thoughts-api-hgwjnnqcva-lz.a.run.app/thoughts/${id}/like`,
       options
     )
       .catch((error) => console.log(error))
