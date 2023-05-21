@@ -165,9 +165,6 @@ background-color: rgba(249, 164, 178, 0.548);
   overflow-wrap: anywhere; /* This will wrap the text to fit within the card */
 }
 
-.msg {
-
-}
 
 @media only screen and (max-width: 600px) {
   .messages-card {

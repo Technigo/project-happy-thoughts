@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { MessageCard } from 'components/Messagecard';
@@ -7,41 +9,43 @@ export const App = () => {
   const [stateVariable, setStateVariable] = useState('');
   const [thoughtsList, setThoughtsList] = useState([]);
   const [likedThoughts, setLikedThoughts] = useState([]);
+  /* state variables for pgae , username and tag */
+  const [page, setPage] = useState(1);
+  const [username, setUsername] = useState('');
+  const [tag, setTag] = useState('');
   const happyEndpoint = 'https://happy-thoughts-urhkb27xua-lz.a.run.app/thoughts';
   const [likedPostsCount, setLikedPostsCount] = useState(
     Number(localStorage.getItem('likedPostsCount')) || 0
   );
 
   const fetchHappy = () => {
-    fetch(happyEndpoint)
+    fetch(`${happyEndpoint}?page=${page}`)
       .then((response) => response.json())
       .then((data) => setThoughtsList(data))
       .catch((error) => console.log(error))
       .finally(() => { console.log('fetch was successful') });
   }
-
   const sendHappy = () => {
     fetch(happyEndpoint, {
       method: 'POST',
-      body: JSON.stringify({ message: stateVariable }),
+      body: JSON.stringify({ message: stateVariable, username, tag }),
       headers: { 'Content-type': 'application/json; charset=UTF-8' }
     })
       .then(() => {
-        setStateVariable(''); // Clear the input after the message has been sent to the API.
-        fetchHappy(); // Update/Bring me the thought list with the new ones
+        setStateVariable('');
+        setUsername('');
+        setTag('');
+        fetchHappy();
       })
       .finally(() => {
         console.log('POST request was successful');
       })
   }
-  const increaseLike = (thought) => {
-    const options = {
-      method: 'POST'
-    }
 
+  const increaseLike = (thought) => {
     // eslint-disable-next-line no-underscore-dangle
-    fetch(`https://happy-thoughts-urhkb27xua-lz.a.run.app/thoughts/${thought._id}/like
-    `, options)
+    // eslint-disable-next-line no-underscore-dangle
+    fetch(`https://happy-thoughts-urhkb27xua-lz.a.run.app/thoughts/${thought._id}/like`, options)
       .then((response) => response.json())
       .then((data) => { console.log(data) })
       .catch((error) => console.log(error))
@@ -79,6 +83,8 @@ export const App = () => {
         <Card
           stateVariable={stateVariable}
           setStateVariable={setStateVariable}
+          setUsername={setUsername}
+          setTag={setTag}
           sendHappy={sendHappy} />
       </div>
       <div>
@@ -90,6 +96,7 @@ export const App = () => {
             formatTimestamp={formatTimestamp} />
         ))}
       </div>
+      <button type="button" onClick={() => setPage(page + 1)}>Load More</button>
     </div>
   )
 }

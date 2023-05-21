@@ -7,6 +7,8 @@ export const MessageCard = ({ thought, likedThoughts, increaseLike, formatTimest
       {/* Display the message and like button */}
       <div className="interior">
         <p className="msg">{thought.message}</p>
+        <p className="user">{thought.username}</p>
+        <p className="tag">{thought.tag}</p>
         <p>
           <button
             className={`like-button${likedThoughts.includes(thought._id) ? ' beat' : ''}`}
