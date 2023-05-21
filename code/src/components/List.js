@@ -18,7 +18,7 @@ export const List = ({ thoughts, setThoughts, handleLikeChange }) => {
                 <div className="heart">
                   <p onClick={() => handleLikeChange(thought._id)}>❤️</p>
                 </div>
-                <p>x{thought.hearts}</p>
+                <p>x{thought.heart}</p>
               </div>
               <div className="time">
                 <p>{moment(thought.createdAt).fromNow()}</p>
