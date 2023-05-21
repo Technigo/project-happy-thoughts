@@ -7,13 +7,9 @@ import { Header } from 'Header';
 export const Feed = () => {
   const [thoughtsList, setThoughtsList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
-  const [newThought, setNewThought] = useState('')
   const [myLikesCount, setMyLikesCount] = useState(0)
-  const [username, setUsername] = useState('Anonymous')
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState('');
-  const [tag, setTag] = useState('random')
-
   const APIBaseURL = 'http://localhost:8080/thoughts'
 
   const fetchThoughts = () => {
@@ -33,37 +29,6 @@ export const Feed = () => {
     fetchThoughts();
   }, [currentPage]);
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault()
-    if (newThought.length < 5) {
-      return alert('Please enter atleast 5 charcaters.')
-    } else {
-      fetch(`${APIBaseURL}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: newThought, username, tag })
-      })
-        .then(() => {
-          setNewThought('');
-          setUsername('Anonymous');
-          setTag('random');
-          fetchThoughts();
-        })
-        .catch((error) => console.log(error))
-    }
-  }
-
-  const onUsernameChange = (event) => {
-    setUsername(event.target.value)
-    console.log(username)
-  }
-
-  const handleEnterKey = (event) => {
-    if (event.keyCode === 13) {
-      handleFormSubmit();
-    }
-  };
-
   const onPreviousPageClick = () => {
     setCurrentPage(parseInt(currentPage, 10) - 1);
   };
@@ -72,22 +37,21 @@ export const Feed = () => {
     setCurrentPage(parseInt(currentPage, 10) + 1);
   };
 
-  const handleTagInput = (event) => {
-    setTag(event.target.value);
-  };
+  const handleLikeSubmit = (thoughtID) => {
+    fetch(`${APIBaseURL}/${thoughtID}/like`, {
+      method: 'PATCH'
+    })
+      .then(() => setMyLikesCount(myLikesCount + 1))
+      .then(() => fetchThoughts())
+      .catch((error) => console.log(error))
+  }
 
   return (
     <div>
       <Header myLikesCount={myLikesCount} />
       <SendThoughtForm
-        onNewThoughtChange={(event) => {
-          setNewThought(event.target.value)
-        }}
-        characterCounter={140 - newThought.length}
-        handleFormSubmit={handleFormSubmit}
-        onUsernameChange={onUsernameChange}
-        handleEnterKey={handleEnterKey}
-        handleTagInput={handleTagInput} />
+        apiBaseUrl={APIBaseURL}
+        fetchThoughts={fetchThoughts} />
 
       <div className="page-buttons-wrapper">
         <p>Page {currentPage} of {totalPages}</p>
@@ -98,21 +62,12 @@ export const Feed = () => {
       </div>
 
       {!isLoading && thoughtsList.map((thought) => {
-        const handleLikeSubmit = () => {
-          fetch(`${APIBaseURL}/${thought._id}/like`, {
-            method: 'PATCH'
-          })
-            .then(() => setMyLikesCount(myLikesCount + 1))
-            .then(() => fetchThoughts())
-            .catch((error) => console.log(error))
-        }
-
         return (
           <Thought
             key={thought._id}
             thoughtMessage={thought.message}
             timeStamp={thought.createdAt}
-            handleLikeSubmit={handleLikeSubmit}
+            handleLikeSubmit={() => handleLikeSubmit(thought._id)}
             likesCounter={thought.hearts}
             username={thought.username}
             tag={thought.tag} />
