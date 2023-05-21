@@ -1,6 +1,6 @@
 *,
 *:before,
-*:after  {
+*:after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -12,7 +12,7 @@ body {
   font-family: 'Sora', helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-background-color: #0061ff;
+  background-color: #0061ff;
 
 }
 
@@ -20,20 +20,18 @@ code {
   font-family: 'Sora', Helvetica, sans-serif;
   font-size: 14px;
   color: black;
- 
+
 }
 
 h1 {
-color: white;
-font-family: "sora";
-font-size: 16px;
-text-align: center;
+  color: white;
+  font-family: "sora";
+  font-size: 16px;
+  text-align: center;
 }
 
-
-
 .footer-container {
-  
+
   height: 600px;
   max-width: 320px;
   overflow: hidden;
@@ -46,9 +44,9 @@ text-align: center;
 
 .bottom-text {
   display: flex;
-justify-content: center;
-align-items:center;
-flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   width: 100%;
   height: 200px;
 }
@@ -63,7 +61,7 @@ flex-direction: row;
   padding-top: 13px;
   margin-top: 0px;
   padding-bottom: 13px;
-  opacity:0.6
+  opacity: 0.6
 }
 
 
@@ -77,56 +75,65 @@ flex-direction: row;
 
 
 .bubbles {
-display: flex;
-align-items: center;  
-position: absolute;
+  display: flex;
+  align-items: center;
+  position: absolute;
 }
 
 .rotate-scale-up {
-	-webkit-animation: rotate-scale-up 80s cubic-bezier(.32,.42,.79,.80) infinite both;
-	        animation: rotate-scale-up 80s cubic-bezier(.32,.42,.79,.80) infinite both;
+  -webkit-animation: rotate-scale-up 80s cubic-bezier(.32, .42, .79, .80) infinite both;
+  animation: rotate-scale-up 80s cubic-bezier(.32, .42, .79, .80) infinite both;
 
-        }
- 
+}
+
 
 
 @-webkit-keyframes rotate-scale-up {
   0% {
     -webkit-transform: scale(0.5) rotateZ(1);
-            transform: scale(0.5) rotateZ(1);
+    transform: scale(0.5) rotateZ(1);
   }
+
   50% {
     -webkit-transform: scale(0.4) rotateZ(45deg);
-            transform: scale(0.4) rotateZ(45deg);
+    transform: scale(0.4) rotateZ(45deg);
   }
 
   75% {
     -webkit-transform: scale(0.3) rotateZ(90deg);
-            transform: scale(0.3) rotateZ(90deg);
+    transform: scale(0.3) rotateZ(90deg);
   }
 
   100% {
     -webkit-transform: scale(0.5) rotateZ(1);
-            transform: scale(0.5) rotateZ(1);
+    transform: scale(0.5) rotateZ(1);
   }
 }
+
 @keyframes rotate-scale-up {
   0% {
     -webkit-transform: scale(0.5) rotateZ(1);
-            transform: scale(0.5) rotateZ(1);
+    transform: scale(0.5) rotateZ(1);
   }
+
   50% {
     -webkit-transform: scale(0.4) rotateZ(45deg);
-            transform: scale(0.4) rotateZ(45deg);
+    transform: scale(0.4) rotateZ(45deg);
   }
 
   75% {
     -webkit-transform: scale(0.3) rotateZ(90deg);
-            transform: scale(0.3) rotateZ(90deg);
+    transform: scale(0.3) rotateZ(90deg);
   }
 
   100% {
     -webkit-transform: scale(0.5) rotateZ(1);
-            transform: scale(0.5) rotateZ(1);
+    transform: scale(0.5) rotateZ(1);
+  }
+}
+
+@media (min-width: 540px) {
+  .bottom-text {
+    height: 400px;
   }
 }

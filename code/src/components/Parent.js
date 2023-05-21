@@ -5,6 +5,7 @@ import ThoughtCard from 'components/ThoughtCard';
 import SubmitForm from 'components/SubmitForm';
 import Footer from 'components/Footer';
 import Loader from 'Loader';
+import './parent.css';
 
 // *************** MAIN APP ***************  //
 

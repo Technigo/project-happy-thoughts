@@ -77,7 +77,7 @@ const ThoughtCard = ({ loading, thoughtsList, onHeartButtonClick, setThoughtsLis
               <button type="button" className="delete-button" onClick={() => onDeleteButtonClick(thought._id)}>x</button>
             </div>
             {/* Show the message of the thought */}
-            <h4 className="posted-thought">{thought.name} says: {thought.message}</h4>
+            <h4 className="posted-thought">{thought.name}&apos;s next project will be about {thought.message}</h4>
             {/* Show how long ago the thought was posted */}
             <p className="posted-time" key={thought.createdAt}>
               {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })}
