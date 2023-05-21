@@ -34,6 +34,7 @@
  }
 
  .heart-button {
+
    width: 30px;
    height: 30px;
    border-radius: 50%;
@@ -41,13 +42,13 @@
  }
 
  .heart-button:hover {
-
    color: white;
    box-shadow: 4px 4px 7px #003fa6,
      -4px -4px 7px #0083ff;
  }
 
  .no-likes-button {
+   padding: 2px 0 0 1px;
    margin: 16px 2px 10px 20px;
    border-radius: 50px;
    background: linear-gradient(145deg, #0057e6, #0068ff);
@@ -59,13 +60,13 @@
  }
 
  .no-likes-button:hover {
-
    color: white;
    box-shadow: 4px 4px 7px #003fa6,
      -4px -4px 7px #0083ff;
  }
 
  .like-button {
+   padding: 2px 0 0 1px;
    margin: 16px 2px 10px 20px;
    background: linear-gradient(145deg, #0068ff, #0057e6);
    box-shadow: 7px 7px 14px #003285, -7px -7px 14px #0090ff;
@@ -76,7 +77,6 @@
  }
 
  .like-button:hover {
-
    color: white;
    box-shadow: 4px 4px 7px #003fa6,
      -4px -4px 7px #0083ff;
