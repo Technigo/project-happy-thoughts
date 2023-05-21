@@ -1,6 +1,7 @@
 # Happy Thoughts
 
-Create a site were you can see, send and like posts from an shared APi.
+Create a site were you can read, send and like posts.
+Update! I have now replaced the API with one created by me and the data is stored in a mongoDB.
 
 ## The problem
 
@@ -12,3 +13,4 @@ I'm still trying to wrap my head around how the useEffect works, but I'm very pl
 ## View it live
 
 [Happy thoughts project](https://happy-vibes.netlify.app)
+[Link to API](https://project-happy-thoughts-api-c6cfxyvlgq-lz.a.run.app/)
