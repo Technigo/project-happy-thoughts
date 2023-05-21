@@ -14,5 +14,9 @@ The first step was to plan out what components were needed and what states they 
 
 https://happy-thoughts-joannaphilips.netlify.app/
 
+## Backend Repo
+
+https://github.com/Joanna-Philips/project-happy-thoughts-api
+
 ## Image credits
 https://www.flaticon.com/free-icons/heart Heart icons created by Freepik - Flaticon
