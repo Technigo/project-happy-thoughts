@@ -14,7 +14,10 @@ export const Input = ({ newPost, setNewPost, thoughts, setThoughts }) => {
       body: JSON.stringify({ message: newPost })
     };
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch(
+      'https://project-happy-thoughts-api-hgwjnnqcva-lz.a.run.app/thoughts',
+      options
+    )
       .then((res) => res.json())
       .then((newThought) => {
         setThoughts((prevThoughts) => [newThought, ...prevThoughts]);

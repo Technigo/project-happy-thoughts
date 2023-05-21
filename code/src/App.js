@@ -10,7 +10,7 @@ export const App = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchThoughts = () => {
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-hgwjnnqcva-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => {
         setThoughts(data);
@@ -31,7 +31,7 @@ export const App = () => {
       }
     };
     fetch(
-      `https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`,
+      `https://project-happy-thoughts-api-hgwjnnqcva-lz.a.run.app/thoughts${id}/like`,
       options
     )
       .catch((error) => console.log(error))
