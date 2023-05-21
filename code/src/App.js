@@ -9,7 +9,6 @@ export const App = () => {
   const [stateVariable, setStateVariable] = useState('');
   const [thoughtsList, setThoughtsList] = useState([]);
   const [likedThoughts, setLikedThoughts] = useState([]);
-  /* state variables for pgae , username and tag */
   const [page, setPage] = useState(1);
   const [username, setUsername] = useState('');
   const [tag, setTag] = useState('');
@@ -43,27 +42,30 @@ export const App = () => {
   }
 
   const increaseLike = (thought) => {
-    // eslint-disable-next-line no-underscore-dangle
-    // eslint-disable-next-line no-underscore-dangle
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
     fetch(`https://happy-thoughts-urhkb27xua-lz.a.run.app/thoughts/${thought._id}/like`, options)
-      .then((response) => response.json())
-      .then((data) => { console.log(data) })
-      .catch((error) => console.log(error))
-      .finally(() => {
-        fetchHappy();
-        console.log('heart count increased');
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to like the post');
+        }
+        return response.json();
       })
-    setLikedThoughts([...likedThoughts, thought._id]);
-
-    // Update the liked posts count
-    if (!likedThoughts.includes(thought._id)) {
-      setLikedPostsCount(likedPostsCount + 1);
-      localStorage.setItem('likedPostsCount', likedPostsCount + 1);
-    }
-
-    setTimeout(() => {
-      setLikedThoughts(likedThoughts.filter((id) => id !== thought._id));
-    }, 1000);
+      .then(() => {
+        if (!likedThoughts.includes(thought._id)) {
+          setLikedThoughts([...likedThoughts, thought._id]);
+          setLikedPostsCount(likedPostsCount + 1);
+          localStorage.setItem('likedPostsCount', likedPostsCount + 1);
+        }
+        fetchHappy();
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
 
   // excecute the fetch happy on the first render since the array is empty
