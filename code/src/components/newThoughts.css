@@ -1,0 +1,39 @@
+
+.thought-container {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+.new-thought-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f0f0;
+    border: solid 1px black;
+    padding: 20px;
+    box-shadow: black 10px 10px;
+    margin: 10px 0;
+    width: 50vw;
+  }
+
+  .new-thought {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 5%;
+}
+
+.submit-Btn {
+    border-radius: 50px;
+    font-size: 1em;
+    background-color: #ffadad;
+    padding: 3%;
+    border: none;
+    width: 70%;
+    cursor: pointer;
+}
+
+.counter {
+    justify-items: flex-end;
+}
