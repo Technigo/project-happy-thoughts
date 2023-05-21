@@ -10,7 +10,7 @@ export const Feed = () => {
   const [myLikesCount, setMyLikesCount] = useState(0)
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState('');
-  const APIBaseURL = 'http://localhost:8080/thoughts'
+  const APIBaseURL = 'https://project-happy-thoughts-api-zrwa4mpyyq-lz.a.run.app/thoughts'
 
   const fetchThoughts = () => {
     fetch(`${APIBaseURL}?page=${currentPage}`)
