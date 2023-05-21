@@ -13,7 +13,7 @@ export const App = () => {
     setLoading(true)
     fetch('https://project-happy-thoughts-api-l8j3.onrender.com/thoughts')
       .then((response) => response.json())
-      .then((data) => setThoughtsList(data))
+      .then((data) => setThoughtsList(data.response))
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false) })
   }
@@ -37,19 +37,19 @@ export const App = () => {
     }
     fetch('https://project-happy-thoughts-api-l8j3.onrender.com/thoughts', options)
       .then((response) => response.json())
-      .then((data) => { setThoughtsList([data, ...thoughtsList]) })
+      .then((data) => { setThoughtsList([data.response, ...thoughtsList]) })
       .catch((error) => console.log(error))
       .finally(() => { setLoading(false); setSubmitThoughts('') })
   }
 
-  const handleLikeChange = (id) => {
+  const handleLikeChange = (thoughtId) => {
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     }
-    fetch('https://project-happy-thoughts-api-l8j3.onrender.com/thoughts/:thoughtId/like', options)
-      .then((res) => res.json())
-      .catch((error) => console(error))
+    fetch(`https://project-happy-thoughts-api-l8j3.onrender.com/thoughts/${thoughtId}/like`, options)
+      .then((response) => response.json())
+      .catch((error) => console.log(error))
       .finally(() => fetchThoughts(''))
   }
 
