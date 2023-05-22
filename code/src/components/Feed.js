@@ -1,9 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import Moment from 'react-moment';
+import { formatDistance } from 'date-fns';
 
-const Feed = ({ id, hearts, post, handleLikes }) => {
-  console.log(post)
+const Feed = ({ time, id, hearts, post, handleLikes }) => {
   return (
     <div className="post-card">
       <div className="post-message-wrapper">
@@ -19,7 +18,7 @@ const Feed = ({ id, hearts, post, handleLikes }) => {
           <p className="number-likes">x {hearts}</p>
         </div>
         <p className="time-stamp">
-          <Moment>{post.CreatedAt}</Moment>
+          {formatDistance(new Date(time), Date.now(), { addSuffix: true })}
         </p>
       </div>
     </div>

@@ -82,7 +82,12 @@ const Main = () => {
         newPost={newPost}
         setNewPost={setNewPost} />
       {postList.map((post) => (
-        <Feed id={post._id} post={post.text} handleLikes={handleLikes} hearts={post.hearts} />
+        <Feed
+          time={post.createdAt}
+          id={post._id}
+          post={post.text}
+          handleLikes={handleLikes}
+          hearts={post.hearts} />
       ))}
     </div>
   )

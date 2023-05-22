@@ -5,6 +5,7 @@
   "dependencies": {
     "babel-eslint": "^10.1.0",
     "date-and-time": "^3.0.0",
+    "date-fns": "^2.30.0",
     "dayjs": "^1.11.7",
     "eslint": "^8.21.0",
     "eslint-config-airbnb": "^19.0.4",
