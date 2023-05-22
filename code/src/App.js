@@ -22,10 +22,9 @@ export const App = () => {
     fetch(`${happyEndpoint}?page=${currentPage}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data); // log the data here
-        setThoughtsList(data);
-        setCurrentPage(data.body.currentPage);
-        setTotalPages(data.body.totalPages);
+        setThoughtsList(data.thoughts);
+        setCurrentPage(data.currentPage);
+        setTotalPages(data.totalPages);
       })
       .catch((error) => console.log(error))
       .finally(() => { console.log('fetch was successful') });
