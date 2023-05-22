@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react'
-import ListThought from './ListThought';
+import Feed from './Feed';
 import CreatePost from './CreatePost';
 import Loading from './Loading';
 import '../index.css'
@@ -8,8 +8,8 @@ import '../index.css'
 const API = 'https://project-happy-thoughts-api-m6dxuape5q-lz.a.run.app/thoughts'
 const LIKES_URL = (id) => `https://project-happy-thoughts-api-m6dxuape5q-lz.a.run.app/thoughts/${id}/like`
 
-const AddThought = () => {
-  const [posts, setPosts] = useState([]);
+const Main = () => {
+  const [postList, setPostList] = useState([]);
   const [newPost, setNewPost] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -17,19 +17,23 @@ const AddThought = () => {
 
   const fetchPosts = () => {
     fetch(API)
-      .then((res) => res.json())
-      .then((data) => setPosts(data.response))
+      .then((response) => response.json())
+      .then((data) => setPostList(data.response))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false))
   }
 
   useEffect(() => {
     fetchPosts()
-  }, [])
+  }, [setNewPost])
 
-  /* Onclick event from Create post */
+  /* Onclick event from CreatePost */
 
-  const handleSubmitPosts = (event) => {
+  const handleCreatePost = (event) => {
+    setNewPost(event.target.value)
+  }
+
+  const onFormSubmit = (event) => {
     event.preventDefault()
 
     const options = {
@@ -40,43 +44,48 @@ const AddThought = () => {
       body: JSON.stringify({ text: newPost })
     };
     fetch(API, options)
-      .then((res) => res.json())
-      .then(() => {
-        fetchPosts();
-        setNewPost('');
-        return ((res) => res.json())
-      })
+      .then((response) => response.json())
+      .then((data) => { setPostList([data.response, ...postList]) })
       .catch((error) => alert(`Something went wrong! 😭 Please reload and try again. The error is: ${error.errors.message.message}`))
+      .finally(() => setNewPost(''))
   }
 
   /* Onclick event from the ListThought */
 
-  const handleLikes = (_id) => {
+  const handleLikes = (id) => {
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     }
 
-    fetch(LIKES_URL(_id), options)
+    fetch(LIKES_URL(id), options)
       .then((res) => res.json())
-      .catch((error) => console.log(error))
-      .finally(() => {
-        fetchPosts('')
+      .then((data) => {
+        const updateLikes = postList.map((post) => {
+          if (post._id === data.response._id) {
+            post.hearts += 1
+            return post
+          } else {
+            return post
+          }
+        })
+        setPostList(updateLikes)
       })
+      .catch((error) => console.log(error))
   }
-
   return (
     <div className="main-container">
       <div>{loading && <Loading />}</div>
       <CreatePost
-        handleSubmitPosts={handleSubmitPosts}
+        onFormSubmit={onFormSubmit}
+        handleCreatePost={handleCreatePost}
         newPost={newPost}
         setNewPost={setNewPost} />
-      {posts.map((post) => (
-        <ListThought key={post._id} post={post.text} handleLikes={handleLikes} />
+      {postList.map((post) => (
+        <Feed id={post._id} post={post.text} handleLikes={handleLikes} hearts={post.hearts} />
       ))}
     </div>
   )
 }
 
-export default AddThought;
+export default Main;

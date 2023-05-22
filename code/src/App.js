@@ -1,11 +1,11 @@
 import React from 'react';
-import AddThought from './components/AddThought'
+import Main from 'components/Main';
 
 export const App = () => {
   return (
     <div>
       <div>
-        <AddThought />
+        <Main />
       </div>
     </div>
   )

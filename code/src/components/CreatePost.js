@@ -1,14 +1,8 @@
 import React from 'react';
 
-const CreatePost = ({ handleSubmitPosts, newPost, setNewPost }) => {
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleSubmitPosts();
-    }
-  };
+const CreatePost = ({ onFormSubmit, handleCreatePost, newPost }) => {
   return (
-    <form onSubmit={handleSubmitPosts}>
+    <form onSubmit={onFormSubmit}>
       <div className="main-post">
         <h1>What is making you happy right now?</h1>
         <div>
@@ -17,8 +11,7 @@ const CreatePost = ({ handleSubmitPosts, newPost, setNewPost }) => {
             id="textarea"
             className={newPost.length > 140 ? 'long-textarea' : 'textarea'}
             value={newPost}
-            onChange={(e) => setNewPost(e.target.value)}
-            onKeyDown={handleKeyDown} />
+            onChange={handleCreatePost} />
         </div>
         <p className="character-counter">Characters: {newPost.length} / 140</p>
         <div>
