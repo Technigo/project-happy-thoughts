@@ -1,46 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const SingleThought = ({ thought, onHeartClick }) => {
-  const [timeStamp, setTimeStamp] = useState(''); // Initialize with empty string
-  const [isLoading, setIsLoading] = useState(true); // Initialize with loading state
-
-  useEffect(() => {
-    const fetchTimeStamp = async () => {
-      const date = new Date(thought.createdAt);
-      const timeDiff = Math.round((Date.now() - date) / (1000 * 60));
-
-      if (timeDiff < 1) {
-        setTimeStamp('just now');
-      } else if (timeDiff < 90) {
-        setTimeStamp(`${timeDiff} min ago`);
-      } else {
-        const hoursDiff = Math.round(timeDiff / 60);
-        setTimeStamp(`${hoursDiff} hour${hoursDiff > 1 ? 's' : ''} ago`);
-      }
-
-      setIsLoading(false); // Set loading state to false when timestamp is fetched
-    };
-
-    fetchTimeStamp();
-  }, [thought.createdAt]);
-
-  console.log('singlelistitem');
-
+  let timeStamp;
+  const date = new Date(thought.createdAt);
+  const timeDiff = Math.round((new Date() - date) / (1000 * 60));
+  if (timeDiff < 1) {
+    timeStamp = 'just now';
+  } else if (timeDiff < 90) {
+    timeStamp = `${timeDiff} min ago`;
+  } else {
+    const hoursDiff = Math.round(timeDiff / 60);
+    timeStamp = `${hoursDiff} hour${hoursDiff > 1 ? 's' : ''} ago`;
+  }
+  console.log('singlelistitem')
   return (
     <div className="singleListItem">
       <h3 id="stretched">{thought.message}</h3>
       <div className="buttonTimestampBox">
-        <div className="heartCounter">
-          <button onClick={() => onHeartClick(thought)} type="button">
-            <span id="heartButton">🧡</span>
-          </button>
+        <div className="heartCounter"><button onClick={() => onHeartClick(thought)} type="button"><span id="heartButton">🧡</span></button>
           <span> x {thought.hearts}</span>
         </div>
-        {isLoading ? (
-          <p className="timeStamp">Loading timestamp...</p>
-        ) : (
-          <p className="timeStamp">{timeStamp}</p>
-        )}
+        <p className="timeStamp">{timeStamp}</p>
       </div>
     </div>
   );
