@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { HappyList } from 'components/HappyList';
 import { HappyThoughtsForm } from './components/HappyThoughtsForm'
 
-const fetchAPI = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts'
+const fetchAPI = 'https://project-happy-thoughts-api-t7sozngaeq-uc.a.run.app/thoughts'
 
 export const App = () => {
   const [happyThoughts, setHappyThoughts] = useState([])
@@ -39,7 +39,7 @@ export const App = () => {
         message: newHappyThoughts
       })
     }
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch(fetchAPI, options)
       .then((res) => res.json)
       .then(() => fetchThoughts())
       .finally(() => setNewHappyThoughts(''))
@@ -52,7 +52,7 @@ export const App = () => {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+    fetch(`https://project-happy-thoughts-api-t7sozngaeq-uc.a.run.app/thoughts/${id}/like`, options)
       .then((res) => res.json())
       .then(console.log('Like'))
       .then((error) => console.error(error))
