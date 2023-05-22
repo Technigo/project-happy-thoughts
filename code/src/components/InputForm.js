@@ -13,7 +13,7 @@ const InputForm = ({
   const updateThoughtsList = () => {
     setLoading(true);
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-hu2xbjrrma-lz.a.run.app/thoughts')
       .then((response) => response.json())
       .then((data) => setHappyThoughtsList(data))
       .catch((error) => console.log(error))
@@ -39,7 +39,7 @@ const InputForm = ({
     };
 
     console.log('options', options);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-hu2xbjrrma-lz.a.run.app/thoughts', options)
       .then((response) => response.json())
       .then((data) => {
         setHappyThoughtsList([data, ...happyThoughtsList]);
