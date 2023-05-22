@@ -9,7 +9,8 @@ export const App = () => {
   const [stateVariable, setStateVariable] = useState('');
   const [thoughtsList, setThoughtsList] = useState([]);
   const [likedThoughts, setLikedThoughts] = useState([]);
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState('');
   const [username, setUsername] = useState('');
   const [tag, setTag] = useState('');
   const happyEndpoint = 'https://happy-thoughts-urhkb27xua-lz.a.run.app/thoughts';
@@ -18,12 +19,30 @@ export const App = () => {
   );
 
   const fetchHappy = () => {
-    fetch(`${happyEndpoint}?page=${page}`)
+    fetch(`${happyEndpoint}?page=${currentPage}`)
       .then((response) => response.json())
-      .then((data) => setThoughtsList(data))
+      .then((data) => {
+        console.log(data); // log the data here
+        setThoughtsList(data);
+        setCurrentPage(data.body.currentPage);
+        setTotalPages(data.body.totalPages);
+      })
       .catch((error) => console.log(error))
       .finally(() => { console.log('fetch was successful') });
   }
+
+  useEffect(() => {
+    fetchHappy();
+  }, [currentPage]);
+
+  const onPreviousPageClick = () => {
+    setCurrentPage(parseInt(currentPage, 10) - 1);
+  };
+
+  const onNextPageClick = () => {
+    setCurrentPage(parseInt(currentPage, 10) + 1);
+  };
+
   const sendHappy = () => {
     fetch(happyEndpoint, {
       method: 'POST',
@@ -94,6 +113,13 @@ export const App = () => {
   return (
     <div className="cards">
       <p className="header"> Make stranger&apos;s hearts beat by clicking the ❤️! Your love counter here: {likedPostsCount}</p>
+      <div className="page-buttons-wrapper">
+        <p>Page {currentPage} of {totalPages}</p>
+        <div>
+          <button className="page-button" type="button" onClick={onPreviousPageClick} disabled={currentPage === 1}>Prev</button>
+          <button className="page-button" type="button" onClick={onNextPageClick} disabled={currentPage === totalPages}>Next</button>
+        </div>
+      </div>
       <div>
         <Card
           stateVariable={stateVariable}
@@ -111,7 +137,6 @@ export const App = () => {
             formatTimestamp={formatTimestamp} />
         ))}
       </div>
-      <button type="button" onClick={() => setPage(page + 1)}>Load More</button>
     </div>
   )
 }

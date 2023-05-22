@@ -12,7 +12,7 @@ export const Card = ({ stateVariable, setStateVariable, setUsername, setTag, sen
         value={stateVariable}
         onChange={(event) => setStateVariable(event.target.value)} />
 
-      {/* Add new inputs for username and tag */}
+      {/* new inputs for username and tag */}
       <input
         type="text"
         maxLength="50"
