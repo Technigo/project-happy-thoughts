@@ -27,13 +27,11 @@ const DataList = ({ happyThoughtsList, setHappyThoughtsList }) => {
         setHappyThoughtsList(updatedThoughtsList);
         console.log('updated thoughts list;', updatedThoughtsList)
       })
-      /*
       .catch((error) => console.log(error))
       .finally(() => {
-        setLoading(false);
         console.log('heart count increased')
         console.log(thought.hearts)
-      }); */
+      });
   };
 
   return (
