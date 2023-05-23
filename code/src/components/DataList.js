@@ -32,6 +32,7 @@ const DataList = ({ happyThoughtsList, setHappyThoughtsList }) => {
       .finally(() => {
         console.log('heart count increased')
       });
+    console.log(Array.isArray(happyThoughtsList)); // true if happyThoughtsList is an array
   };
 
   return (
