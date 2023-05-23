@@ -60,7 +60,6 @@ const InputForm = ({
   const handleInputChange = (event) => {
     const { value } = event.target;
     setCharCount(0 + value.length); // update character count
-    console.log(charCount)
     setNewThought(value);
   };
 
