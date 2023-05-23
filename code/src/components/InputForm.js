@@ -20,8 +20,8 @@ const InputForm = ({
       .finally(() => {
         console.log('it worked');
         setLoading(false);
-        console.log('loading-Get');
         console.log(happyThoughtsList);
+        console.log(Array.isArray(happyThoughtsList));
       });
   };
 
@@ -42,11 +42,13 @@ const InputForm = ({
       .then((response) => response.json())
       .then((data) => {
         setHappyThoughtsList([data.response, ...happyThoughtsList]);
+        console.log(Array.isArray(happyThoughtsList));
         console.log(data);
       })
       .catch((error) => console.log(error))
       .finally(() => {
         console.log(happyThoughtsList)
+        console.log(Array.isArray(happyThoughtsList));
         setNewThought(''); // clear textarea
         setCharCount(140);
       });

@@ -15,12 +15,12 @@ const DataList = ({ happyThoughtsList, setHappyThoughtsList }) => {
         console.log('updated thought:', updatedThought);
 
         // create a new array with the updated thought
-        const updatedThoughtsList = happyThoughtsList.map((thoughtItem) => {
-          if (thoughtItem._id === updatedThought.response._id) {
-            thoughtItem.hearts += 1;
-            return thoughtItem;
+        const updatedThoughtsList = happyThoughtsList.map((like) => {
+          if (like._id === updatedThought.response._id) {
+            like.hearts += 1;
+            return like;
           } else {
-            return thoughtItem;
+            return like;
           }
         });
         // set the updated thoughts list
