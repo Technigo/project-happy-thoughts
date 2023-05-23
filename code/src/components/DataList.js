@@ -1,15 +1,14 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import SingleThought from './SingleThought';
 
-const DataList = ({ loading, setLoading, happyThoughtsList, setHappyThoughtsList }) => {
-  const updateList = (thought) => {
-    setLoading(true)
+const DataList = ({ happyThoughtsList, setHappyThoughtsList }) => {
+  const heartCountClick = (thought) => {
     const options = {
-      method: 'POST'
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' }
     };
 
-    console.log('options', options);
-    // eslint-disable-next-line no-underscore-dangle
     fetch(`https://project-happy-thoughts-api-hu2xbjrrma-lz.a.run.app/thoughts/${thought._id}/like`, options)
       .then((response) => response.json())
       .then((updatedThought) => {
@@ -17,30 +16,24 @@ const DataList = ({ loading, setLoading, happyThoughtsList, setHappyThoughtsList
 
         // create a new array with the updated thought
         const updatedThoughtsList = happyThoughtsList.map((thoughtItem) => {
-          // eslint-disable-next-line no-underscore-dangle
           if (thoughtItem._id === updatedThought._id) {
-            return updatedThought;
+            thoughtItem.hearts += 1;
+            return thoughtItem;
+          } else {
+            return thoughtItem;
           }
-          return thoughtItem;
         });
-
-        if (loading) {
-          return (<h2>loading in process...</h2>);
-        }
-
         // set the updated thoughts list
         setHappyThoughtsList(updatedThoughtsList);
+        console.log('updated thoughts list;', updatedThoughtsList)
       })
+      /*
       .catch((error) => console.log(error))
       .finally(() => {
         setLoading(false);
         console.log('heart count increased')
-      });
-  };
-
-  const heartCountClick = (thought) => {
-    console.log('like-click')
-    updateList(thought);
+        console.log(thought.hearts)
+      }); */
   };
 
   return (

@@ -27,7 +27,6 @@ const InputForm = ({
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    setLoading(true);
     const options = {
       method: 'POST',
       headers: {
@@ -47,7 +46,6 @@ const InputForm = ({
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        setLoading(false);
         console.log(happyThoughtsList)
         setNewThought(''); // clear textarea
         setCharCount(140);
