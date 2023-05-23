@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import moment from 'moment';
 
@@ -16,7 +17,7 @@ const SingleThought = ({ thought, onHeartClick }) => {
   console.log('singlelistitem') */
   return (
     <div className="singleListItem">
-      <h3 id="stretched">{thought.message}</h3>
+      <h3 id="stretched">{thought.message} key={thought._id}</h3>
       <div className="buttonTimestampBox">
         <div className="heartCounter"><button onClick={() => onHeartClick(thought)} type="button"><span id="heartButton">🧡</span></button>
           <span> x {thought.hearts}</span>

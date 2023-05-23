@@ -1,22 +1,22 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import SingleThought from './SingleThought';
+import moment from 'moment';
 
 const DataList = ({ happyThoughtsList, setHappyThoughtsList }) => {
   const heartCountClick = (thought) => {
     const options = {
-      method: 'PATCH',
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     };
 
     fetch(`https://project-happy-thoughts-api-hu2xbjrrma-lz.a.run.app/thoughts/${thought._id}/like`, options)
       .then((response) => response.json())
       .then((updatedThought) => {
-        console.log(updatedThought);
+        console.log('updated thought:', updatedThought);
 
         // create a new array with the updated thought
         const updatedThoughtsList = happyThoughtsList.map((thoughtItem) => {
-          if (thoughtItem._id === updatedThought._id) {
+          if (thoughtItem._id === updatedThought.response._id) {
             thoughtItem.hearts += 1;
             return thoughtItem;
           } else {
@@ -26,22 +26,32 @@ const DataList = ({ happyThoughtsList, setHappyThoughtsList }) => {
         // set the updated thoughts list
         setHappyThoughtsList(updatedThoughtsList);
         console.log('updated thoughts list;', updatedThoughtsList)
+        console.log('number of hearts:', updatedThought.hearts)
       })
       .catch((error) => console.log(error))
       .finally(() => {
         console.log('heart count increased')
-        console.log(thought.hearts)
       });
   };
 
   return (
     <div className="listItems">
       {happyThoughtsList.map((thought) => (
-        // eslint-disable-next-line no-underscore-dangle
-        <SingleThought key={thought._id} thought={thought} onHeartClick={heartCountClick} />
+        <div className="singleListItem" key={thought._id}>
+          <h3 id="stretched">{thought.message}</h3>
+          <div className="buttonTimestampBox">
+            <div className="heartCounter">
+              <button onClick={() => heartCountClick(thought)} type="button">
+                <span id="heartButton">🧡</span>
+              </button>
+              <span> x {thought.hearts}</span>
+            </div>
+            {moment(thought.createdAt).fromNow()}
+          </div>
+        </div>
       ))}
     </div>
-  )
+  );
 };
 
 export default DataList;

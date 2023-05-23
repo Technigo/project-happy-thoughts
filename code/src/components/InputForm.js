@@ -15,7 +15,7 @@ const InputForm = ({
 
     fetch('https://project-happy-thoughts-api-hu2xbjrrma-lz.a.run.app/thoughts')
       .then((response) => response.json())
-      .then((data) => setHappyThoughtsList(data))
+      .then((data) => setHappyThoughtsList(data.response))
       .catch((error) => console.log(error))
       .finally(() => {
         console.log('it worked');
@@ -41,7 +41,7 @@ const InputForm = ({
     fetch('https://project-happy-thoughts-api-hu2xbjrrma-lz.a.run.app/thoughts', options)
       .then((response) => response.json())
       .then((data) => {
-        setHappyThoughtsList([data, ...happyThoughtsList]);
+        setHappyThoughtsList([data.response, ...happyThoughtsList]);
         console.log(data);
       })
       .catch((error) => console.log(error))
