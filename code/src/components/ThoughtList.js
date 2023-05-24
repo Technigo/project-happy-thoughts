@@ -21,8 +21,8 @@ export const ThoughtList = ({
               <div className="likes-section">
                 <button
                   className={(thought.hearts === 0 ? 'heart-passive' : 'heart-active')}
-                  type="submit"
-                  onClick={() => handleLikeChange(thought._id)}>❤️
+                  type="button"
+                  onClick={() => { handleLikeChange(thought._id) }}>❤️
                 </button>
                 <p className="number-likes">x{thought.hearts}</p>
               </div>

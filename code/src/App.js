@@ -9,7 +9,6 @@ export const App = () => {
   const [newThought, setNewThought] = useState('');
 
   const fetchThoughts = () => {
-    setLoading(true);
     fetch('https://project-happy-thoughts-api-b3mvziy4bq-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughtList(data))
