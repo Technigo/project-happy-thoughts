@@ -2,6 +2,8 @@
 
 Week 7 project with React - the task was to fetch happy thoughts from an API and showing them in a list plus have a form for new happy thoughts where people could post their happy thoughts in and make the new thoughts to also show up in the list.
 
+W 15 - updated this project with my own API for Happy Thoughts.
+
 ## The problem
 
 This week started off very good but ended in a catastrophical way for me...
