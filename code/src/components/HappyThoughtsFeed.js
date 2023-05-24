@@ -16,7 +16,8 @@ const HappyThoughtsFeed = () => {
   const [loading, setLoading] = useState(false);
   // const [newHappyThought, setNewHappyThought] = useState('');
 
-  const API_URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
+  const API_URL = 'https://happy-thoughts-api-w15-o6447lrzoq-ew.a.run.app/thoughts'
+  // const API_URL = 'https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts';
   
   const fetchThoughts = () => {
     setLoading(true);
@@ -69,8 +70,9 @@ const HappyThoughtsFeed = () => {
         'Content-Type': 'application/json'
       }
     };
-
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+    
+    // fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${id}/like`, options)
+    fetch(`https://happy-thoughts-api-w15-o6447lrzoq-ew.a.run.app/thoughts/${id}/like`, options)
       .then((res) => res.json())
       .then(console.log('likes'))
       .then((error) => console.error(error))

@@ -35,7 +35,7 @@ const HappyThought = ({ thoughtId, text, hearts, timestamp, handleHearts }) => {
           <span> x {hearts}</span>
         </div>
         <div className="card-bottom-right-timestamp">
-          <p>{moment(timestamp).startOf('hour').fromNow()}</p>
+          <p>{moment(timestamp).fromNow()}</p>
         </div>
       </div>
     </article>

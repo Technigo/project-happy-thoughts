@@ -6,15 +6,15 @@ const Footer = () => {
     <footer>
       <div aria-hidden="true" className="contact">
         <p>
-          CREATED BY YLVA KARLSSON
+          Created by Ylva Karlsson
           <br />
-          STUDENT @ TECHNIGO 2023
+          Student @ TECHNIGO 2023
         </p>
         <button
           type="button"
           className="contactMe"
           onClick={() => window.open('https://www.linkedin.com/in/ylvakarlsson87/')}>
-          Contact
+          Add me on LinkedIn
         </button>
       </div>
     </footer>

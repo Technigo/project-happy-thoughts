@@ -45,10 +45,6 @@ code {
   overflow: hidden;
 }
   
-.happy-thoughts-list {
-
-}
-
 .happy-thoughts-form-wrapper {
   display: flex;
   align-self: center;
@@ -88,6 +84,7 @@ code {
   border: 1px solid var(--black);
   box-shadow: 0.4rem 0.4rem var(--black);
   margin: 1.5rem 1rem;
+  padding: 0.5rem;
 }
 
 .heart-button {
@@ -169,10 +166,6 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-  
-.card-bottom-right-timestamp {
-  
 }
 
 .loading-overlay {
