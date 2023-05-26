@@ -1,13 +1,10 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+We followed the design provided by Technigo to generate a happy thoughts page. 
 
 ## The problem
+Using React and Postman to retrieve an API which allows all the students to post happy thoughts within our projects. The project features an input area to add your own happy thought as well as the last 20 happy thoughts uploaded to the system. The previous thoughts display hearts which can be pressed and each selection is counted and the number of hearts/happy thought are listed next to the hearts. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-by-jennifer.netlify.app/
