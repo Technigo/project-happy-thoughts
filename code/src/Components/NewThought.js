@@ -24,7 +24,7 @@ export const NewThought = ({ newMessage, handleNewThoughtsChange, onFormSubmit }
         onChange={handleInputChange} />
       <div className="main">
         <div className="char-count">{remainingChars} / 160characters remaining</div>
-        <button className="submit-btn" type="submit" disabled={newMessage.length < 1 || newMessage.length > 160}>
+        <button className="submit-btn" type="submit" disabled={newMessage.length < 4 || newMessage.length > 160}>
           ❤️ Send a Happy Thought ❤️
         </button>
       </div>

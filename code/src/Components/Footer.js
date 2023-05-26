@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -48,23 +49,10 @@ const LinksWrapper = styled.div`
 
 `;
 
-const FooterImage = styled.img`
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-
-`;
-
 export const Footer = () => {
   return (
     <FooterWrapper>
       <FooterText>
-        <FooterImage src="/annika.jpg" alt="annika portrait" />
         <LinksWrapper>
           <FooterText>Created by Annika Lindberg</FooterText>
           <FooterLink href="https://www.annikalindberg-portfolio.netlify.app/">Portfolio</FooterLink>
