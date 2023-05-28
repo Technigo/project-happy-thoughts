@@ -12,9 +12,9 @@ export const App = () => {
   const [newPost, setNewPost] = useState('');
 
   const fetchPost = () => {
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://happy-thoughts-xnbzjt5ahq-oc.a.run.app/thoughts')
       .then((res) => res.json())
-      .then((data) => setFeed(data))
+      .then((data) => setFeed(data.response))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   };
@@ -39,8 +39,8 @@ export const App = () => {
         message: newPost
       })
     }
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', option)
-      .then((res) => res.json())
+    fetch('https://happy-thoughts-xnbzjt5ahq-oc.a.run.app/thoughts', option)
+      .then((res) => res.json().response)
       .catch((error) => console.error(error))
       .then(() => fetchPost())
       .finally(() => setNewPost(''));
@@ -54,8 +54,8 @@ export const App = () => {
         'Content-Type': 'application/json'
       }
     }
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${post._id}/like`, option)
-      .then((res) => res.json())
+    fetch(`https://happy-thoughts-xnbzjt5ahq-oc.a.run.app/thoughts/${post._id}/like`, option)
+      .then((res) => res.json().response)
       .catch((error) => console.error(error))
       .then(() => fetchPost())
   };
