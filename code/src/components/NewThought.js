@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 
-export const NewThought = ({ newMessage, handleNewThoughtsChange, onFormSubmit }) => {
+export const NewThought = ({ newMessage, handleNewThoughtsChange, onFormSubmit, handleLikesIncrease }) => {
   const [remainingChars, setRemainingChars] = useState(140 - newMessage.length);
 
   const handleInputChange = (event) => {
@@ -10,8 +11,16 @@ export const NewThought = ({ newMessage, handleNewThoughtsChange, onFormSubmit }
     handleNewThoughtsChange(event);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (newMessage.trim() !== '') {
+      onFormSubmit();
+      handleLikesIncrease(newMessage); // Call handleLikesIncrease with newMessage as an argument
+    }
+  };
+
   return (
-    <form className="message-container" onSubmit={onFormSubmit}>
+    <form className="message-container" onSubmit={handleSubmit}>
       <p className="thought-text">Post your happy thought here!</p>
       <textarea
         className="input-message"
