@@ -1,0 +1,61 @@
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.singlePost {
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    font-family: Cutive Mono;
+    font-size: 15px;
+    width: 80%;
+    max-height: 200px;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 2%;
+    resize: none;
+    border: 1px solid black;
+    box-shadow: 5px 5px 0px 0px black;
+
+}
+
+.singlePost.fade-in {
+    opacity: 0;
+    animation: fade-in 0.9s ease forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .singlePostFooter {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .singlePost button {
+    border: none;
+    width: fit-content;
+    background-color: transparent;
+    padding: 10px 10px 10px 10px;
+    border-radius: 100%;
+  }
+
+  .singlePost button:hover {
+    background-color: rgb(255, 234, 234);
+    cursor: pointer;
+}
+
+.singlePost p {
+    color: black;
+}
