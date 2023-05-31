@@ -8,8 +8,6 @@ I started with sketching out the components that I wanted. I wanted one for disp
 
 I was able to add some animation for when a new message was added by the user to the message list. (I asked ChatGPT and implemented their solution to my code). I also asked another student about how she added the confetti effects for the likes. And lastly I added a footer that would go on top of the other components and be shown at the bottom of the browser. 
 
-If I would have had more time, I would have tried to figure out on how to get a message to pop-up for the user when he/she had tried to add a message that was too short. Instead, I disabled the button if the message was shorter than 5 characters. 
-
 This was a fun project and I learned a lot!
 
 ## View it live
