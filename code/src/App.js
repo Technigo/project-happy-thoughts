@@ -1,9 +1,10 @@
 import React from 'react';
+import Parent from './components/Parent'
 
-export const App = () => {
+const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <Parent />
   );
 }
+
+export default App;
