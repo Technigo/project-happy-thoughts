@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap');
+.box {
+  background-color: rgb(250, 255, 253);
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid black;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin: 2rem;
+}
+
+.list {
+  width: 80%;
+}
+.message-text {
+  font-family: 'Roboto Mono', monospace;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0 0 0 1rem;
+  overflow-wrap: break-word;
+}
+.stats-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.like-container {
+  display: flex;
+  justify-content: space-between;
+  width: 5rem;
+}
+.like-container p {
+  margin: auto;
+}
+.heart {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(253, 254, 254);
+}
+.heart:hover {
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.time {
+  display: flex;
+}
+
+.time p {
+  margin: auto;
+}
