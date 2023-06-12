@@ -1,0 +1,9 @@
+.post-content {
+    font-family: 'Noto Sans Mono', monospace;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.post-content {
+    word-wrap: break-word;
+}

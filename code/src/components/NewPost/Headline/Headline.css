@@ -1,0 +1,19 @@
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/*Tablet media query*/
+@media (min-width: 667px) {
+    h2 {
+        font-size: 18px;
+    }
+}
+
+/*Desktop media query*/
+@media (min-width: 1025px) {
+    h2 {
+        font-size: 20px;
+    }
+}

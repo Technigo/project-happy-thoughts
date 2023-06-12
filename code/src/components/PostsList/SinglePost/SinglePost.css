@@ -1,0 +1,8 @@
+.single-post-wrapper {
+    flex-direction: column;
+    align-content: center;
+    border: solid #000000 1px;
+    box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+    padding: 20px 15px;
+    background-color: white;
+}

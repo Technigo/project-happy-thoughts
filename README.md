@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A web React app where you can post and see messages from and to an API.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The web app is built using React and an API. Content is posted to the API and fetched from the same API. Layout is constructed with CSS Grid. Posts can be liked using a heart-button. Amount of likes and time since posted is displayed for every post. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-thoughts-feed.netlify.app/
