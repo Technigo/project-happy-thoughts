@@ -1,75 +1,75 @@
-import React, { useEffect, useState } from 'react';
-
-import { NewThought } from 'components/NewThought';
-import { ThoughtList } from 'components/ThoughtList';
+/* eslint-disable no-underscore-dangle */
+import React, { useState, useEffect } from 'react'
+import Header from 'components/Header'
+import NewThoughts from 'components/NewThoughts'
+import List from 'components/List'
 
 export const App = () => {
-  const [thoughts, setThoughts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [newMessage, setNewMessage] = useState('');
+  const [newThought, setNewThought] = useState('')
+  const [thoughtList, setThoughtList] = useState([])
+  const [loading, setLoading] = useState(false)
 
-  const handleNewThoughtsChange = (event) => {
-    setNewMessage(event.target.value);
-  };
+  const onNewThoughtsChange = (event) => {
+    setNewThought(event.target.value);
+  }
 
-  const fetchThoughts = () => {
-    setLoading(true);
-    fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts')
-      .then((response) => response.json())
-      .then((data) => setThoughts(data))
+  const fetchData = () => {
+    setLoading(true)
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+      .then((res) => res.json())
+      .then((data) => setThoughtList(data))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  };
+      .finally(() => setLoading(false))
+  }
 
   useEffect(() => {
-    fetchThoughts();
-  }, []);
+    fetchData()
+  }, [])
 
   const onFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-type': 'application/json'
       },
-      body: JSON.stringify({
-        message: newMessage
-      })
-    };
+      body: JSON.stringify({ message: newThought })
+    }
 
-    fetch('https://project-happy-thoughts-api-7irwn4hbpa-lz.a.run.app/thoughts', options)
-      .then((response) => response.json())
-      .then(console.log('Posted :)'))
-      .then(() => fetchThoughts())
-      .finally(() => setNewMessage(''));
-  };
+    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+      .then((res) => res.json())
+      .then(() => fetchData())
+      .catch((error) => console.error(error))
+      .finally(() => setNewThought(''))
+  }
 
   const onLikesIncrease = (thoughtId) => {
-    const options = {
-      method: 'POST',
+    const options = { method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
-      }
-    };
+        'Content-type': 'application/json'
+      } }
 
     fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${thoughtId}/like`, options)
       .then((res) => res.json())
-      .then(console.log('Post liked :)'))
       .catch((error) => console.error(error))
-      .finally(() => fetchThoughts());
-  };
+      .finally(() => fetchData())
+  }
 
   return (
-    <div className="main-container">
-      <div className="thoughts">
-        <NewThought
-          newMessage={newMessage}
-          handleNewThoughtsChange={handleNewThoughtsChange}
-          onFormSubmit={onFormSubmit}
-          handleLikesIncrease={onLikesIncrease} />
-        <ThoughtList loading={loading} thoughts={thoughts} handleLikesIncrease={onLikesIncrease} />
-      </div>
+    <div>
+
+      <Header />
+      <NewThoughts
+        newThought={newThought}
+        onNewThoughtsChange={onNewThoughtsChange}
+        onFormSubmit={onFormSubmit} />
+
+      <List
+        loading={loading}
+        thoughtList={thoughtList}
+        onLikesIncrease={onLikesIncrease} />
     </div>
-  );
-};
+
+  )
+}
