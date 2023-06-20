@@ -1,13 +1,194 @@
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: monospace;
+  background-color: rgb(245, 190, 199);
+  overflow-x: hidden;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.header{
+  position: relative;
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 6px 6px black;
+  padding: 24px 24px 32px 24px;
+  width: 390px;
+  font-weight: 700;
+  color: rgb(85, 84, 84);
+}
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+.Card {
+  position: relative;
+  margin-top: 20px;
+  background-color: rgb(229, 229, 229);
+  border: 1px solid black;
+  box-shadow: 6px 6px black;
+  padding: 24px 24px 32px 24px;
+  width: 390px;
+}
+
+
+input {
+  resize: none;
+  width: 100%;
+  height: 40px;
+  margin: 16px 0;
+  padding: 8px 0 0 0;
+  border: none;
+  font-family: monospace;
+  font-size: 1em;
+  font-weight: 700px;
+}
+
+input:focus {
+  outline: 2px solid pink;
+}
+
+h1{
+  font-size: 1.05rem;
+}
+
+.send{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgb(247, 192, 201);
+  border: none;
+  border-radius: 25px;
+  color: rgb(46, 46, 46);
+  cursor: pointer;
+  padding: 0.7rem 0.8rem;
+  width: fit-content;
+  font-size: 1rem;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.send:hover{
+  background-color: rgba(255, 255, 255, 0.721);
+}
+
+.like-button {
+  background-color: rgb(236, 236, 236);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 11px 14px;
+}
+
+.like-button:hover{
+background-color: rgba(249, 164, 178, 0.548);
+}
+
+
+
+.messages-card {
+  margin: 20px;
+  background-color:white;
+  border: 1px solid black;
+  box-shadow: 6px 6px black;
+  padding: 44px 24px 32px 24px;
+  width: 350px;
+}
+
+.msg {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: monospace;
+  font-weight: 600;
+  font-size: larger;
+}
+
+.timestamp {
+
+ color: gray;
+ padding-left: 250px;
+
+}
+
+.interior {
+  display: flex;
+  flex-direction: column;
+}
+.like-button.beat {
+  animation: beat 1s linear;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  25% {
+    transform: scale(2);
+  }
+}
+
+
+@keyframes slicing {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.messages-card {
+  animation-name: slicing;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  word-wrap: break-word; /* This will break the long words and prevent overflow */
+  overflow-wrap: anywhere; /* This will wrap the text to fit within the card */
+}
+
+
+@media only screen and (max-width: 600px) {
+  .messages-card {
+    width: 200px;
+  }
+
+  .Card {
+  width: 200px;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header{
+    width: 240px;
+  }
+
+  .timestamp {
+
+    color: gray;
+    padding-left: 100px;
+
+}
 }
