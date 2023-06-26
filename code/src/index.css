@@ -1,13 +1,136 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e5989b;
+  align-items: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  color: #6d6875;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.happy-page {
+  margin: 0 auto;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.form,
+.card {
+  border: 1px solid #000;
+  box-shadow: 0.4rem 0.4rem #000;
+  margin: 1.5rem 1rem;
+}
+
+.form {
+  background-color: #dcdcdc;
+  padding: 0.5rem 1rem;
+}
+
+.thought-length span {
+  font-size: 0.8rem;
+}
+
+.thought-input {
+  width: 100%;
+  padding: 0.3rem;
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+  resize: vertical;
+}
+
+.send-button {
+  background-color: #faaab7;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  padding: 0.3rem;
+  margin: 0.5rem 0;
+}
+
+.send-button > span {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85em;
+}
+
+.card {
+  background-color: #fff;
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 1rem;
+}
+
+.card-bottom span,
+.card-bottom p {
+  color: #808080;
+  font-size: 0.8rem;
+}
+
+.card-bottom-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+}
+
+.lightgrey {
+  background-color: #dcdcdc;
+}
+
+.pink {
+  background-color: #faaab7;
+}
+
+
+@media (min-width: 768px) {
+  .happy-page {
+    width: 600px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card:hover {
+    background-color: #faaab7;
+  }
 }
