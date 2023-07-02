@@ -41,14 +41,14 @@ const postNewThought = () => {
     fetch('https://project-happy-thoughts-api-qq5asptyza-lz.a.run.app/thoughts', options)
       .then((response) => response.json())
       .then((data) => {
-        setThoughtList((prevList) => [data, ...prevList]);
+        setThoughtList((prevList) => [data.response, ...prevList]);
+        setNewThought('');
       });    
 }
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
   postNewThought();
-  setNewThought('')
 };
 
 //Handle likes from users when the heart icon has been clicked. The number of likes will be increased by one every time the heart is clicked.
@@ -59,7 +59,7 @@ const handleLike = (_id) => {
   })
   .then ((data) => {
     const updateLikes = thoughtList.map((like) => {
-      if (like._id === data._id) {
+      if (like._id === data.response._id) {
         like.hearts += 1;
         return like;
       } else {
