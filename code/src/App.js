@@ -13,10 +13,10 @@ export const App = () => {
 const fetchThoughts = () => {
   setLoading(true);
   fetch('https://project-happy-thoughts-api-qq5asptyza-lz.a.run.app/thoughts')
-    .then((res) => res.json())
-    .then((data) => setThoughtList(data))
+    .then((response) => response.json())
+    .then((data) => setThoughtList(data.response))
     .catch((error) => console.error(error))
-    .finally(() => setLoading(false));
+    .finally(() => {setLoading(false)});
 }
 
 useEffect(() => {
@@ -39,7 +39,7 @@ const postNewThought = () => {
     }; 
 
     fetch('https://project-happy-thoughts-api-qq5asptyza-lz.a.run.app/thoughts', options)
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => {
         setThoughtList((prevList) => [data, ...prevList]);
       });    
@@ -54,8 +54,8 @@ const handleFormSubmit = (event) => {
 //Handle likes from users when the heart icon has been clicked. The number of likes will be increased by one every time the heart is clicked.
 const handleLike = (_id) => {
   fetch(`https://project-happy-thoughts-api-qq5asptyza-lz.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
-  .then((res) => {
-    return res.json()
+  .then((response) => {
+    return response.json()
   })
   .then ((data) => {
     const updateLikes = thoughtList.map((like) => {
