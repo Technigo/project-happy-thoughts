@@ -12,7 +12,7 @@ export const App = () => {
 //Fetching the latest 20 thoughts from the API
 const fetchThoughts = () => {
   setLoading(true);
-  fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+  fetch('https://project-happy-thoughts-api-qq5asptyza-lz.a.run.app/thoughts')
     .then((res) => res.json())
     .then((data) => setThoughtList(data))
     .catch((error) => console.error(error))
@@ -38,7 +38,7 @@ const postNewThought = () => {
         body: JSON.stringify({ message: newThought })
     }; 
 
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-qq5asptyza-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then((data) => {
         setThoughtList((prevList) => [data, ...prevList]);
@@ -53,7 +53,7 @@ const handleFormSubmit = (event) => {
 
 //Handle likes from users when the heart icon has been clicked. The number of likes will be increased by one every time the heart is clicked.
 const handleLike = (_id) => {
-  fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
+  fetch(`https://project-happy-thoughts-api-qq5asptyza-lz.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
   .then((res) => {
     return res.json()
   })
