@@ -1,13 +1,10 @@
 # Happy Thoughts
+Message app for posting happy thoughts to a backend server (AtlasDb). The app uses RESTful API to get, post and like messages. The app let's you add an optional topic to your message and adds it to the data.
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Backend
+The backend server was built using Express and can be found here:
+https://github.com/jonsjak/project-happy-thoughts-api
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+The deployed frontend site is deployed here:
+https://eloquent-bunny-a273b7.netlify.app/
