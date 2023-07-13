@@ -1,7 +1,10 @@
 
 .send-thought-div {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 10px 20px 10px;
+
+  @media (min-width: 600px) {
+    padding: 20px 0px 20px 0px;
+  }
 }
 
 input[type=text] {
@@ -15,6 +18,8 @@ input[type=text] {
   border: 1px solid black;
   box-shadow: 3px 3px 0px 0px black;
   margin-bottom: 15px;
+
+
 }
 
 input:focus {
@@ -25,7 +30,7 @@ textarea {
   display: flex;
     font-family: Cutive Mono;
     font-size: 15px;
-    width: 400px;
+    width: 260px;
     height: 100px;
     background-color: rgb(255, 240, 242);
     padding: 10px;
@@ -34,6 +39,10 @@ textarea {
     background-color: rgb(255, 246, 246);
     box-shadow: 5px 5px 0px 0px black;
     margin-bottom: 5px;
+
+    @media (min-width: 600px) {
+      width: 400px;
+    }
   }
 
   textarea:focus {

@@ -6,7 +6,7 @@
 
 .single-thought-div {
     border: 1px solid black;
-    width: 400px;
+    width: 260px;
     height: 150px;
     padding: 10px;
     display: flex;
@@ -15,6 +15,10 @@
     justify-content: space-between;
     background-color: white;
     box-shadow: 5px 5px 0px 0px black;
+
+    @media (min-width: 600px) {
+      width: 400px;
+    }
 }
 
 .message-p {
@@ -63,13 +67,21 @@
 .thought-footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 600px) {
+      justify-content: space-between;
+    }
 }
 
 .heart-button {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     height: 35px;
+    @media (min-width: 600px) {
+      gap: 10px;
+    }
 }
 
 .heart-button button {
@@ -77,13 +89,18 @@
 }
 
 .thought-date {
-    font-size: 12px;
+    font-size: 8px;
+
+    @media (min-width: 600px) {
+      font-size: 12px;
+    }
 }
 
 .delete-btn {
     border: none;
     background: transparent;
     font-family: Cutive Mono;
+    color: black;
     font-size: 15px;
     display: flex;
     justify-content: flex-end;

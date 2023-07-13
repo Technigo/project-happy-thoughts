@@ -11,20 +11,6 @@ export const ThoughtsList = ({ loading, thoughtsList, setThoughtsList, onHeartBu
     return <Loading />
   }
 
-  // const onDeleteButtonClick = (thoughtId) => {
-  //   setThoughtsList(thoughtsList.filter((thought) => thought._id !== thoughtId));
-  // };
-
-  // const handleDelete = (_id) => {
-  //   const options = {
-  //     method: 'DELETE'
-  //   }
-  //   fetch(`https://project-happy-thoughts-api-z266fupacq-uc.a.run.app/thoughts/${_id}`, options)
-  //     .then((response) => response.json())
-  //     .then(() => onDeleteButtonClick(_id))
-  //     .catch((error) => console.log(error))
-  // };
-
   const onDeleteButtonClick = (thoughtId) => {
     const updatedThoughtsList = thoughtsList.map((thought) => {
       if (thought._id === thoughtId) {
@@ -57,7 +43,7 @@ export const ThoughtsList = ({ loading, thoughtsList, setThoughtsList, onHeartBu
             <div className="thought-footer">
               <div className="heart-button">
                 <button type="button" className="heart-emoji" onClick={() => onHeartButtonClick(thought._id)}>❤️</button>
-                <p>x {thought.hearts}</p>
+                <p className="thought-date">x {thought.hearts}</p>
               </div>
               <p className="thought-date" key={thought.createdAt}>
               posted {formatDistance(new Date(thought.createdAt), Date.now(), { addSuffix: true })} by {thought.name}

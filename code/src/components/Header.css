@@ -8,12 +8,12 @@
   h1 {
     color: white;
     padding: 10px;
-    font-size: 20px;
+    font-size: 15px;
     letter-spacing: .15em;
     font-family: "Press Start 2P";
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 666px) {
     h1 {
         font-size: 32px;  
     }

@@ -20,7 +20,7 @@ h2 {
 }
 
 .app-wrapper {
-  width: 475px;
+  width: 320px;
   display: flex;
   gap: 30px;
   flex-direction: column;
@@ -63,7 +63,7 @@ transition: transform 0.2s ease-in-out;
   transform: scale(1.7);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 600px) {
   .bunny-icon {
     margin-left: 60%;
   position: absolute;
