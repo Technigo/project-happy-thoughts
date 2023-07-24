@@ -13,4 +13,8 @@ I'm still trying to wrap my head around how the useEffect works, but I'm very pl
 ## View it live
 
 [Happy thoughts project](https://happy-vibes.netlify.app)
+
 [Link to API](https://project-happy-thoughts-api-c6cfxyvlgq-lz.a.run.app/)
+
+## Backend repo:
+[Backend repository Happy thoughts project](https://github.com/MalinSkill/project-happy-thoughts-api)
