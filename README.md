@@ -20,7 +20,11 @@ Things id like to improve the site (and intend to fix later on) is:
 
 ## Backend integration
 
-Currently the backend is not deployed,due to google could session expired and Im looking for a new solution and will update the readme when its done. The backend can be run locally and can be found here: https://github.com/annikalindberg/project-happy-thoughts-api
+ The backend can be run locally or using server deployed on Render. 
+ 
+Deployed: https://happy-thoughts-express-api.onrender.com/
+
+Github repo: https://github.com/annikalindberg/project-happy-thoughts-api
 
 ## View it live
 The frontend deployed page: https://sweet-unicorn-99f547.netlify.app/
