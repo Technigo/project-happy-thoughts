@@ -20,7 +20,7 @@ export const App = () => {
   //fetchThoughts function makes a GET request to the API to retrieve the thoughts and update the thoughts state variable. 
   const fetchThoughts = () => {
     setLoading(true)
-    fetch('https://happy-thoughts-express-api.onrender.com//thoughts')
+    fetch('https://happy-thoughts-express-api.onrender.com/thoughts')
       .then((res) => res.json())
       .then((data) => { setThoughts(data.response); console.log(data) })
       .catch((error) => console.error(error))
@@ -47,7 +47,7 @@ export const App = () => {
       })
     }
     // below is the fetch to the API with the new thought message and updates the thoughts state variable.
-    fetch('https://happy-thoughts-express-api.onrender.com//thoughts', options)
+    fetch('https://happy-thoughts-express-api.onrender.com/thoughts', options)
       .then((res) => res.json())
       .then(() => fetchThoughts())
       .finally(() => setNewMessage(''));
