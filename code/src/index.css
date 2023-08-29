@@ -11,3 +11,123 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: fit-content;
+  width: 100%; 
+  min-width: 320px; 
+  flex-wrap: wrap;
+  align-content: center;
+  padding-top: 30px;
+}
+
+h1 {
+  font-size: 15px;
+}
+
+/* THOUGHT INPUT */
+
+.thoughtInput {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin-bottom: 20px;
+  border-style: solid;
+  box-shadow: 5px 5px black;
+  padding: 20px 20px;
+  background-color: rgba(234, 229, 229, 0.899); font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+.submitButtonText {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.submitButton {
+  border-radius: 50px;
+  border-style: hidden;
+  height: 40px;
+  width: 50%;
+  min-width: fit-content;
+  background-color: rgb(237, 164, 175);
+  margin-top: -10px;
+}
+
+.characterCount {
+ display: flex;
+ align-self: flex-end;
+ font-size: 14px;
+}
+
+.redText {
+  color: red;
+}
+
+.normalText {
+  color: rgb(97, 92, 92);
+}
+
+/* EACH THOUGHT */
+
+.eachThought {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  border-style: solid;
+  box-shadow: 5px 5px black;
+  margin: 20px 0px;
+  max-width: 600px;
+}
+
+.eachThought p {
+  font-size: 18px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.eachThoughtLower {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeStamp {
+  color:rgba(162, 157, 157, 0.899);
+}
+
+.timeStamp.date {
+  font-size: 15px;
+}
+
+/* HEARTS */
+
+.heartsSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.heartsSection p {
+  color:  rgba(105, 102, 102, 0.899);
+}
+
+.heartButton {
+  border-radius: 50px;
+  width: 45px;
+  height: 45px;
+  border-style: hidden;
+}
+
+.heartCount {
+  font-size: 15px !important;
+}
+
+.heartCountNumber {
+  font-size: 15px;
+}
+
