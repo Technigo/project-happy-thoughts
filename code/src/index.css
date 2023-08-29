@@ -1,5 +1,8 @@
 body {
-  margin: 0;
+  margin-left:  auto;
+  margin-right: auto;
+  margin-top: 4em;
+  max-width: 600px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -11,3 +14,118 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.listItems {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  word-wrap: break-word;
+}
+
+.singleListItem,
+.inputForm {
+  display: block;
+  border: 1px solid black;
+  box-shadow: 10px 10px 0 0 black;
+}
+
+.inputForm {
+  background-color: rgb(233, 233, 232);
+  margin-bottom: 2em;
+}
+
+h3 {
+  display: block;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+textarea {
+  margin-left: 2em;
+  margin-right: 1em;
+  width: calc(95% - 3em);
+  height: 4em;
+  caret-color: rgb(197, 62, 57);
+}
+
+textarea.tooFewChar {
+  color: rgb(197, 62, 57);
+}
+
+button {
+margin-left: 5%;
+margin-top: 1em;
+margin-bottom: 1.5em;
+width: 45%;
+padding: 10px 10px 10px 10px;
+border-radius: 20px;
+border: none;
+background-color: rgb(252, 166, 163);
+font-weight: bold;
+font-size: medium;
+cursor: pointer;
+}
+
+button:hover,
+button:focus-within {
+  background-color:rgb(245, 79, 73);
+}
+
+button:active {
+  background-color: white;
+  border: 1px solid red;
+}
+
+.noWrapButton {
+  white-space:nowrap;
+}
+
+#heart::before,
+#heart::after {
+  content: '🧡';
+}
+
+.buttonTimestampBox button {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+#stretched {
+  font-size: 1.2em;
+  transform: scaleY(1.2);
+}
+
+#counter {
+  margin-left: 5%;
+}
+
+.buttonTimestampBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 1em;
+  margin-right: 2em;
+}
+
+.heartCounter {
+  white-space: nowrap;
+  align-self: flex-end;
+}
+
+.timeStamp {
+  display: inline-block;
+ align-self: center;
+}
+
+@media screen and (max-width: 667px) {
+  .inputForm,
+  .listItems {
+    margin-left: 1em;
+    margin-right: 2em;
+  }
+}
+  
