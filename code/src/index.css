@@ -5,9 +5,212 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 1500px;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+div#root {
+  width: 100%;
+}
+/* Whole page */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffeef1;
+  width: 100%;
+}
+header {
+  padding: 15px;
+}
+/* Input field with send button BOX */
+h3 {
+  font-size: 10px;
+  text-align: center;
+}
+
+form.message-container {
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  margin: 40px;
+  top: 10px;
+  width: 520px;
+  height: 210px;
+  position: relative;
+  top: -30px;
+  background-color: #f2f0f0;
+  border: 2px solid #7c7c7c;
+  box-shadow: 5px 5px;
+  padding-bottom: 22px;
+}
+/* Whats on your mind*/
+textarea {
+  width: 400px;
+  height: 100px;
+}
+/* User´s thoughts boxes */
+div.Thoughts {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 20px;
+  background-color: #f2f0f0;
+  border: 2px solid #7c7c7c;
+  box-shadow: 5px 5px;
+  width: 450px;
+  height: 170px;
+}
+/* User´s box container */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Send button */
+.submit-btn {
+    cursor: pointer;
+    margin: 10px;
+    color: black;
+    background: pink;
+    border-radius: 16px;
+    align-items: 20px;
+    left: 137px;
+    height: 30px;
+    top: -9px;
+}
+.submit-btn:hover {
+  background-color: rgb(161, 95, 115);
+}
+/* how many likes x1 */
+p.counter {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+/* user´s message */
+p.thought-text {
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+}
+/* time when message´s was sent */
+p.date {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 12px;
+  position: relative;
+  right: -36px;
+}
+.buttoncounter {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 13px;
+}
+/* the like <3 button */
+.like-btn {
+  cursor: pointer;
+  left: -35px;
+  border: none;
+  background: pink;
+  border-radius: 21px;
+  animation: bounce 0.5s;
+  left: 32px;
+  position: absolute;
+  height: 25px;
+  width: 40px;
+  height: 40px;
+}
+.like-btn:hover {
+  background-color: rgb(161, 95, 115);
+}
+.no-like-btn:hover {
+  background-color: rgb(161, 95, 115);
+}
+.no-like-btn {
+  cursor: pointer;
+  left: -35px;
+  border: none;
+  background: pink;
+  border-radius: 21px;
+  animation: bounce 0.5s;
+  left: 32px;
+  position: absolute;
+  height: 25px;
+  width: 40px;
+  height: 40px;
+}
+/* Define the animation */
+/*@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(2.2); }
+} */
+
+/* likes, time container*/
+div.likes {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  bottom: -76px;
+}
+/* counting the text-characters */
+.char-count {
+  text-align: right;
+  font-size: 9px;
+  left: 2px;
+  position: relative;
+  left: -59px;
+  font-style: oblique;
+}
+
+.svg-icon {
+  width: 4%;
+  fill: black;
+}
+.svg-icon:hover {
+  fill: rgb(161, 95, 115);
+}
+.github {
+  text-align: center;
+}
+
+
+/* Mobile devices */
+@media only screen and (max-width: 768px) {
+  .main-container {
+    padding-bottom: 5px;
+  }
+  form.message-container {
+    width: 90%;
+    margin: 20px auto; 
+  }
+  textarea {
+    width: 95%;
+  }
+  div.Thoughts {
+    width: 90%;
+    margin: 20px auto;
+  }
+  section {
+    width: 100%;
+    margin: -2px;
+  }
+  .like-btn, .no-like-btn {
+    height: 20px;
+    width: 30px;
+    margin: -18px;
+  }
+  .char-count {
+    font-size: 8px;
+    left: -4px;
+  }
 }
