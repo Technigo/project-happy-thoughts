@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +6,176 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  background-color:#f0d3d3;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+.image-wrapper {
+  display: block;
+  margin: 1.5rem auto 1.5rem auto;
+  max-width: 520px;
+  min-width: 350px;
+}
+
+.logo {
+  width: 100%;
+  padding-top: 1.5rem;
+}
+
+main {
+  min-width: 340px;
+  max-width: 500px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  margin: 1.5rem auto 1rem auto;
+  padding: 10px 12px 5px 10px;
+  background-color: #eab5c6;
+  border-radius: 5px;
+}
+
+/* Form section */
+.form-section {
+  border: rgb(66, 63, 63) solid 1.4px;
+  border-radius: 3px;
+  background-color: #f2f0f0;
+  box-shadow: 0.3rem 0.3rem rgb(66, 63, 63);
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.thought-input {
+  margin: 1rem 0 0 0;
+  padding: 0.4rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.8rem;
+}
+
+.character-count,
+.character-warning {
+  margin: 0.3rem 0 0 0;
+  text-align: right;
+  font-size: 0.8rem;
+  color:#6b6b6b;
+  margin-bottom: 1rem;
+}
+
+.submit-button {
+  background-color: #f0d3d3;
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.7em 1rem;
+  width: fit-content;
+  border-radius: 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #fdbebe;
+}
+
+/*Keyframes for thought-list section*/
+@keyframes rotate {
+  0% {
+    transform: rotateX(-90deg)
+  }
+  70% {
+    transform: rotateX(20deg) 
+  }
+  100% {
+    transform: rotateX(0deg) 
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/*Thought list section*/
+.loading-animation {
+  display: block;
+  margin: 1.5rem auto 1.5rem auto;
+  width: fit-content;
+  animation: rotation 0.8s;
+}
+
+.thought-section {
+  margin-top: 4rem;
+}
+
+.single-thought {
+  border: black solid 1.4px;
+  border-radius: 4px;
+  background-color: white;
+  margin: 1.5rem 1rem 1rem 1rem;
+  box-shadow: 0.3rem 0.3rem rgb(66, 63, 63);
+  padding: 1.2rem;
+  animation: rotate 700ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+.single-thought p {
+  margin: 0.5rem auto 1.5rem auto;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.thought-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.heart-button,
+.heart-button-nolikes {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 100%;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.heart-button {
+  background-color: #ffadad;
+}
+
+.heart-button:hover {
+  background-color: #fdbebe;
+}
+
+.heart-button-nolikes {
+  background-color: #f2f0f0;
+}
+
+.heart-button-nolikes:hover {
+  background-color: #fdbebe;
+}
+
+.time {
+  color: #939292;
 }

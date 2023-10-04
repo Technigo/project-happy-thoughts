@@ -1,13 +1,19 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
+The project was about learning useState and useEffect regarding React. 
+It is like a simpler version of twitter.
+We learned about POSTMAN.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Project Happy Thoughts is a full-stack web application that allows users to share their positive thoughts and view others' positive messages. 
+It was about learning to fetch the message inputs from an API and also to POST request with JSON body.
+The message you send is validated - it must be present and be between 5 and 140 characters long. If it fails these validations, you'll get a response with detailed error information, which you could use to show a friendly error to the user. This was something that I failed in doing, it was very difficult!
+There should also be a heart button that was clickable.
+When you submit the form to add a new thought, the API returns the new thought object in the same way it would look if it was part of the full list response. You can use this to avoid having to send a second API request to fetch all thoughts again after submitting a new thought. See the react documentation for a more detailed explanation of adding an object to an existing array in state, but in a nutshell, you'll want to do something like this:
+One of the main challenges facing this project is managing user-generated content.
+Overall, Project Happy Thoughts presents several challenges that require careful planning and execution to ensure a successful and enjoyable user experience.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+
