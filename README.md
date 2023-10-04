@@ -1,13 +1,11 @@
 # Happy Thoughts
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Alternative for Twitter, filled with happy thoughts!
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I did not have much energy and time for this project this week, so I set the goal to be just to deliver a working product. I had lots of help from my team members on this, and luckily in the end it works and looks okay.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://super-cascaron-66ee0f.netlify.app/
