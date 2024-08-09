@@ -11,3 +11,146 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.main-container {
+  padding: 0 15px;
+  box-sizing: border-box;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.card {
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #000;
+  margin: 20px 0;
+  padding: 15px;
+  box-shadow: 5px 5px;
+  overflow-wrap: break-word;
+}
+
+.card p {
+  margin: 0;
+}
+
+.form {
+  background-color: #e4e4e4;
+}
+
+textarea {
+  margin: 15px 0 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea.red-text {
+  color: #e22a01;
+}
+
+.submit-button {
+  border: none;
+  border-radius: 20px;
+  background-color: #ffadad;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form p {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+}
+
+.thought-text {
+  margin: 0;
+  padding: 10px 0;
+  min-height: 40px;
+}
+
+.likes,
+.button-card {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.likes {
+  justify-content: space-between;
+}
+
+.like-button {
+  margin-right: 10px;
+  border: none;
+  border-radius: 50%;
+  height: 38px;
+  width: 38px;
+  cursor: pointer;
+}
+
+.date {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.3);
+  text-align: right;
+}
+
+.loading-thoughts {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px black solid;
+  padding: 15px;
+  padding-top: 3px;
+  background-color: #F2F0F0;
+  box-shadow: 5px 7px 0px 0px black;
+  width: 350px;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9em;
+}
+
+.loading-thoughts-spinner {
+  animation-name: loadspinner;
+  display: block;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  margin-top: 30px;
+  margin: 30px auto;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.character-count-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+@keyframes loadspinner {
+from {
+    transform: rotate(0deg)
+
+  } 
+to {
+    transform: rotate(360deg)
+  }
+}
+
+/*---- MEDIA QUERIES ----*/
+
+@media (min-width: 768px) {
+  .main-container {
+    width: 450px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    width: 500px;
+  }
+}
