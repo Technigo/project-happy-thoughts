@@ -1,0 +1,22 @@
+.footer-div {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-icons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-icons i {
+    transition: transform 0.2s ease-in-out;
+    color: black;
+  }
+  
+  .footer-icons i:hover {
+  color: white;
+  transform: scale(1.5);
+  }
