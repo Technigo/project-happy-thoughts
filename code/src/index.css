@@ -1,13 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffeeff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+} 
+
+form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 80%;
+  align-self: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f2f0f0;
+  box-shadow: 5px 5px black;
+  margin-top: 15px;
+}
+h1 {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+textarea {
+  border: 2px solid #d0cfcf;
+  padding: 7px;
+  font-size: 16px;
+}
+
+textarea:focus {
+  outline-color: black;
+}
+
+.counter, .counter-red {
+  align-self: flex-end;
+  color:grey;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.counter-red {
+  color: red;
+}
+
+.post-button {
+  width: fit-content;
+  padding: 8px 10px;
+  border-radius: 20px;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+}
+
+button {
+  background-color: #ffadad;
+}
+
+button:disabled {
+  background-color: #eaeaea;
+}
+
+.thought-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  gap: 20px;
+  height: 55vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.single-thought {
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  gap: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 5px 5px black;
+  background-color: white;
+}
+
+.thought-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thought-details p {
+  color:grey;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.likes-section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.heart-wrapper-nolikes, .heart-wrapper {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffadad;
+}
+
+.heart-wrapper-nolikes {
+  background-color: #eaeaea;
+}
+
+@media (min-width: 668px) {
+  form {
+    width: 60%;
+  }
+
+  .thought-list {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  form {
+    width: 30%;
+  }
+
+  .thought-list {
+    width: 30%;
+  }
 }
