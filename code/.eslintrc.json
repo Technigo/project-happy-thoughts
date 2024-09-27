@@ -54,7 +54,7 @@
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "indent": [
-      "error",
+      "off",
       2,
       {
         "SwitchCase": 1
